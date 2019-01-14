@@ -1,0 +1,121 @@
+ 
+project_L22_WTDS_S400_NX59_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_L22_WTDS_S400_NX59_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_L22_WTDS_S500A_NX58_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_L22_WTDS_S500A_NX58_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_L29_BLF_K5_LEPHONE_F4:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_L29_BLF_K5_LEPHONE_F4:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_L29_BLF_K5_MJL_BTRC_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_L29_BLF_K5_MJL_BTRC_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_L29_BLF_K5_MJL_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_L29_BLF_K5_MJL_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_lephone_K6_V01_Bengal:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_lephone_K6_V01_Bengal:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_Q010_BLF_F2i_LEPHONE_F3:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_Q010_BLF_F2i_LEPHONE_F3:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_Q010_BLF_F2M_LEPHONE_F4:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_Q010_BLF_F2M_LEPHONE_F4:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_Q010_BLF_F2_BTRC_LEPHONE_F3:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_Q010_BLF_F2_BTRC_LEPHONE_F3:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_Q010_BLF_F2_LEPHONE_VIB_F3:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_Q010_BLF_F2_LEPHONE_VIB_F3:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_RCH_F10_L01_B3107_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_RCH_F10_L01_B3107_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S032_GH_L02_ZX_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S032_GH_L02_ZX_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_ALF_K2801_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_ALF_K2801_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_ALF_K2802B_Zelta_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_ALF_K2802B_Zelta_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_ALF_K2802_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_ALF_K2802_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_BLF_K6_MJL_BTRC_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_BLF_K6_MJL_BTRC_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_BLF_K6_MJL_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_BLF_K6_MJL_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_BLF_K6_YD_LEPHONE_F3:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_BLF_K6_YD_LEPHONE_F3:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_BLF_K7_MJL_BTRC_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_BLF_K7_MJL_BTRC_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_BLF_K7_MJL_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_BLF_K7_MJL_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_BLF_K7_MJL_LEPHONE_F3:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_BLF_K7_MJL_LEPHONE_F3:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_CST_H190_B_FM_TINMO_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_CST_H190_B_FM_TINMO_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_CST_H190_B_ZX_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_CST_H190_B_ZX_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_CST_H193_B_BTRC_SMILE_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_CST_H193_B_BTRC_SMILE_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_HC_2400_orange_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_HC_2400_orange_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_VOKA_V2_B_F3:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_VOKA_V2_B_F3:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_VOKA_W10_F3:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_VOKA_W10_F3:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_VOKA_W10_HELLO_F3:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_VOKA_W10_HELLO_F3:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_VOKA_W10_TINMO_2_F3:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_VOKA_W10_TINMO_2_F3:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_VOKA_W10_TINMO_F3:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_VOKA_W10_TINMO_F3:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S039_VOKA_W7_F3:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S039_VOKA_W7_F3:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S810_YFND_S300F_Mtech_L20_BENGALI:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S810_YFND_S300F_Mtech_L20_BENGALI:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_S810_YFND_S300F_MTECH_L20_BENGALI_Service:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_S810_YFND_S300F_MTECH_L20_BENGALI_Service:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_X600_WTDS_T602_BOSS_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_X600_WTDS_T602_BOSS_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_X600_WTDS_T602_N25_CHERRYPHONE_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_X600_WTDS_T602_N25_CHERRYPHONE_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_X600_WTDS_T603_S800_SSKY_F4:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_X600_WTDS_T603_S800_SSKY_F4:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_X601_LZ_S8_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_X601_LZ_S8_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_X601_LZ_W8_WINSTAR_BTRC_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_X601_LZ_W8_WINSTAR_BTRC_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_X601_LZ_W8_WINSTAR_F2:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_X601_LZ_W8_WINSTAR_F2:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 
+project_X601_WTDS_T603_SSKY_S800_F4:IM_BENGALI_SUPPORT = TRUE                           ### BENGALI SUPPORT: 
+project_X601_WTDS_T603_SSKY_S800_F4:BITMAP_FONT_SLIM_SUPPORT = TRUE                     #点阵字库精简。开启后除拨号盘字库外，普通情况只用一种小字体字库。目前只支持cstar引擎和DE引擎。 
+ 

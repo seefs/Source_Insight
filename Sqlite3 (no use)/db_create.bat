@@ -1,0 +1,1 @@
+ select * from tbl >>result_db.h;
