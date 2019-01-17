@@ -170,7 +170,7 @@ macro SwtichTools(cmd)
 		}
 		else if(val == "b")		//Goto -- BComp
 		{
-			BCompare("")
+			BCompare(0)
 			return 0
 		}
 		else if(val == "l")		//Goto -- Close

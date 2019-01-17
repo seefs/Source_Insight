@@ -15,7 +15,7 @@ b
 SE039_SXJY_D700_VORTEX_F3
 
 ### 18.BCompare target(304表示3与4比较，当前3那么比较4，当前4那么比较3)
-3230
+7470
 
 ### 21.tree  (未使用)
 project
@@ -51,14 +51,14 @@ IM
 E:\6531E_20180113\tmp
 
 ### 54.note row(第2次打开同一行, F11关闭note会修改这里)
-364
+75
 
 ### 57.Note Hander Set(笔记路径, 替换当前path, MTK)
-SE0397_JM_C21_Mozomaxx_F8
+SE039_YST_E18_E250_F2
 
 ### 60.Note Save Base(笔记路径, 替换当前path, android)
-\\192.168.2.115\xiaoj\9820e\idh.code
+\\192.168.2.115\xiaoj\9820\idh.code
 	
 ### 63.Num bits(F10)
-1
+2
 

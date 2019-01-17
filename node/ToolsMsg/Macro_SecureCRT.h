@@ -57,7 +57,7 @@ find  ./ -name "system.prop"
 find  ./ -name "key_map.h"
 find  ./ -name "android-*"
 find  ./ -name "android.ipr"
-find  ./ -name "featurebar_res"
+find  ./ -name "stat_sys_headset*"
 
 
 
@@ -67,6 +67,8 @@ EngineerMode
 find  ./ -name "config.xml"| xargs grep "power"
 find  ./ -name "*.xml"| xargs grep "NewUI"
 find  ./ -name "*.xml"| xargs grep "Theme.Holo.Light.NewUI"
+find  ./ -name "*.xml"| xargs grep "config_statusBarIcons"
+
 
 
 
@@ -91,7 +93,8 @@ Build.PRODUCT
 
 frameworks/base/core/res/res/
 private-symbols
-find  ./ -name "*.xml"| xargs grep "processResources"
+find  ./ -name "*.xml"| xargs grep "config_statusBarComponent"
+find  frameworks/base -name "*.xml"| xargs grep "config_statusBarComponent"
 
 
 

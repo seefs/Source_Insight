@@ -1,20 +1,27 @@
 /***********************************************************************/
-/******************************* tool **********************************/
+/******************************* Base **********************************/
 /***********************************************************************/
 //当前文件快捷捷:
 //查看分组索引: ctrl+D->ctrl+D
 //查看标号索引: ctrl+D->3 
-[Num] -- 默认标号目录
-工具 [Ca]: 安装
+//[Num]
 
-安装:
-Save:SI\node\9820e\Macro_9820e_Install.h
+add:
+Android的启动
+	内核启动、Android启动、launcher启动，我们的SystemServer就处于Android启动中，以下是大致流程图：
+	
+init->ServiceManager->Zygote->SystemServer->......
+
+
+/***********************************************************************/
+/******************************* tool **********************************/
+/***********************************************************************/
 
 
 [1.0] ----------------------------------
 
 [1.0] SecureCRT:
-Save:SI\node\ToolsMsg\git\Macro_SecureCRT.h
+Save:SI\node\ToolsMsg\Macro_SecureCRT.h
 //SecureCRT.exe:
 open: C:\Program^Files\VanDyke^Software\Clients\SecureCRT.exe
 //	\\192.168.2.115\xiaoj
@@ -27,12 +34,12 @@ https://isupport.spreadtrum.com/iSupport/apply/faq_list#tab-
 
 
 [1.2] git:
-Save:SI\node\ToolsMsg\git\Macro_git.h
-Save:SI\node\ToolsMsg\git\Macro_vim.h
+Save:SI\node\ToolsMsg\Macro_git.h
+Save:SI\node\ToolsMsg\Macro_vim.h
 	
 
 [1.3] Source Insight:
-Save:SI\node\ToolsMsg\git\Macro_SI.h
+Save:SI\node\ToolsMsg\Macro_SI.h
 
 
 [1.4] Android Studio:
@@ -105,8 +112,8 @@ Save:SI\node\9820e\Macro_9820e_App_Gallery.h
 Save:SI\node\9820e\Macro_9820e_App_Calculator.h
 
 //未整理:
-Save:SI\node\9820e\Macro_9820e_noFix_1.h
-Save:SI\node\9820e\Macro_9820e_noFix_2.h
+Save:SI\node\9820e\Macro_9820e_noFix_1.h  # Home, Menu键
+Save:SI\node\9820e\Macro_9820e_noFix_2.h  # 字体, 名称
 
 
 /***********************************************************************/
@@ -149,7 +156,7 @@ Save:SI\node\9820e\doc\Macro_SPR_Android_Platform_QA_201204.h  Num
 Save:SI\node\9820e\doc\Macro_SPR_Android_8810_6820_FAQ_1207.h  Num
 
 //android多媒体处理流程
-Save:SI\node\9820e\doc\Macro_SPR_Android_Multimedia.h
+//Save:SI\node\9820e\doc\Macro_SPR_Android_Multimedia.h
 	
 //doc:QQ群5
 Save:SI\node\9820e\doc\Macro_QQ_Android_1_5_1.h
@@ -159,7 +166,6 @@ Save:SI\node\9820e\doc\Macro_QQ_Android_1_7_1.h
 	
 [4.3] doc:MTK-展讯修改笔记--csdn
 Save:SI\node\9820e\doc\Macro_QQ_Android_1_3_1.h
-Save:SI\node\9820e\doc\Macro_QQ_Android_1_3_2.h
 	
 
 

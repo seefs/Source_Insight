@@ -24,9 +24,21 @@ macro Tree()
 	}
 	else if (key >= 4208 && key <= 4219)             // F1~F12  显示f1~f12 功能说明(SI3.5编码)
 	{
-		if(key == 4209)
+		if(key == 4209) //F2
 		{
 			OpenPathExt(1)
+		}
+		else if(key == 4210) //F3
+		{
+			Search_Backward
+		}
+		else if(key == 4211) //F4
+		{
+			Search_Forward
+		}
+		else if(key == 4213) //F6
+		{
+			BCompare(1)
 		}
 		else
 		{
@@ -35,9 +47,21 @@ macro Tree()
 	}
 	else if (key >= 1048688 && key <= 1048699 )      // F1~F12  显示f1~f12 功能说明(SI4.0编码)
 	{
-		if(key == 1048689)
+		if(key == 1048689) //F2
 		{
 			OpenPathExt(1)
+		}
+		else if(key == 1048690) //F3
+		{
+			Search_Backward
+		}
+		else if(key == 1048691) //F4
+		{
+			Search_Forward
+		}
+		else if(key == 1048693) //F6
+		{
+			BCompare(1)
 		}
 		else
 		{

@@ -737,6 +737,7 @@ macro NoteGroupPreview(hbuf, key)
 		if(cM)
 		{
 			key = 51
+			mode = key - 48
 			searchStr = "\\[[0-9\.]+\\]"	//3
 		}
 		else

@@ -1451,3 +1451,30 @@ copy E:\save\SI\node\Macro_z_null.h E:\save\SI\node\ToolsMsg\as\Macro_android_st
 
 [cmd]: 
 copy E:\save\SI\node\Macro_z_null.h E:\save\SI\node\ToolsMsg\git\Macro_vim.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531E_16A\project\SE000_Trace_Ser_Example\project_SE039_CY_L1827_JIVI_9106BOE_F5_TRACE.mk F:\6531G_16A_MP_W17.43.4E_16A\project\SE000_Trace_Ser_Example\project_SE039_CY_L1827_JIVI_9106BOE_F5_TRACE.mk    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531E_16A\project\SE000_Trace_Ser_Example F:\6531G_16A_MP_W17.43.4E_16A\project\SE000_Trace_Ser_Example    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531E_16A\project\SE000_Trace_Ser_Example\project_SE039_CY_L1827_JIVI_9106BOE_F5_TRACE.mk F:\6531G_16A_MP_W17.43.4E_16A\project\SE000_Trace_Ser_Example\project_SE039_CY_L1827_JIVI_9106BOE_F5_TRACE.mk    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531E_16A\common\export\inc\nv_item_id.h F:\6531G_16A_MP_W17.43.4\common\export\inc\nv_item_id.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531E_16A\common\export\inc F:\6531G_16A_MP_W17.43.4\common\export\inc    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\9820e\Macro_9820e_App_Setting.h F:\6531E_16ASI\node\9820e\Macro_9820e_App_Setting.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\11CW1352MP_BLEPHONE61D_11C_V33\custom\drv\LCD\BLEPHONE61D_11C_LCM\lcd_sw.h F:\11CW1352MP_KM2\custom\drv\LCD\BLEPHONE61D_11C_LCM\lcd_sw.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\11CW1352MP_BLEPHONE61D_11C_V33\custom\drv\LCD\BLEPHONE61D_11C_LCM\lcd_sw.h F:\11CW1352MP_KM2\custom\drv\LCD\BLEPHONE61A_11C_BB_11C_LCM\lcd_sw.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\11CW1352MP_BLEPHONE61D_11C_V33\custom\drv\LCD\BLEPHONE61D_11C_LCM\lcd_sw.h F:\11CW1352MP_KM2\custom\drv\LCD\FARSIGHTED61M_CN_11C_LCM\lcd_sw.h    

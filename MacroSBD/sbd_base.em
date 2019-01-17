@@ -26,8 +26,6 @@ macro getProjectFromList(n)
 	if (n == 60)	{	return "D:\\SVN\\SC7701" 	}
 
 	// MTK 项目路径1
-	//if (n == 70)	{	return "F:\\11CW1352MP_MT6261DM" 	} //其他不要设置奇数项
-	//if (n == 71)	{	return "F:\\_SI4.0\\11CW1352MP_MT6261DM.si4project" 	}
 	if (n == 70)	{	return "F:\\11CW1352MP_KM2" 	} //其他不要设置奇数项
 	if (n == 71)	{	return "F:\\_SI4.0\\11CW1352MP_KM.si4project" 	}  	//解决源码+SI目录分开问题, 源码目录单独设置在前一项
 	if (n == 72)	{	return "F:\\11CW1352MP_BLEPHONE61A" 	} 

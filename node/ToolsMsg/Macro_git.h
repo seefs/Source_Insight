@@ -329,33 +329,33 @@ git pull origin master
 在实际使用中，git fetch更安全一些，因为在merge前，可以查看更新情况，然后再决定是否合并。
 
 
-[5.10] 查看分支
+[5.10] 查看/创建/切换/删除/合并分支
+//1) 查看分支
 git branch
 //* master
 
-
-[5.11] 创建分支
+//2) 创建分支
 git branch <name>
 
 
-[5.12] 创建并切换到分支
+//3) 创建并切换到分支
 git checkout -b <name>
 //备注：git checkout命令加上-b参数表示创建并切换，相当于以下两条命令
 git branch <name>git checkout <name>
 
 
-[5.13] 切换分支
+//4) 切换分支
 git checkout <name>
 //切换分支后，在git bash中显示为绿色
 
 
-[5.14] 删除分支
+//5) 删除分支
 git branch -d <name>
 //如果分支没有合并，删除分支就表示会丢失修改，此时git无法使用-d删除，可使用-D强行删除
 git branch -D <name>
 
 
-[5.15] 合并分支
+//6) 合并分支
 git合并默认使用Fast forward模式，一旦删除分支，会丢掉分支信息，也就看不出来曾经做过合并
 git merge <name>     #基于当前分支，合并另外一个分支，前提需要保证分支之间不冲突
 如果强制禁用Fast forward模式，即普通模式，Git就会在merge时生成一个新的commit
@@ -557,7 +557,6 @@ git checkout -b <本地分支名> origin/<远程分支名>
 /***********************************************************************/
 /**************************** git other  *******************************/
 /***********************************************************************/
-[7.0] ----------------------------------
 
 [7.1] 文件重命名: git mv
 git mv filename newfilename
@@ -566,10 +565,38 @@ git mv filename newfilename
 /***********************************************************************/
 /**************************** git windows  *****************************/
 /***********************************************************************/
-[8.0] ----------------------------------
+window下git下载github项目
+
 1) window下载
 https://git-scm.com/downloads
+	
+2) clone
+git clone https://github.com/seefs/Source_Insight.git
 
+git remote add github https://github.com/seefs/Source_Insight.git
+git remote rm origin
+git remote -v
+
+git remote set-url --push github https://github.com/seefs/Source_Insight11.git
+git remote -v
+
+3) cfg
+git config --global user.name xjs0f0s0
+git config --global user.email seefs@163.com
+git config --list
+
+4) pull/push
+//拉取远程仓库：
+git pull origin master
+
+//推送远程仓库：
+git push origin master
+
+//提交本地test分支作为远程的master分支
+git push origin test:master
+
+//提交本地test分支作为远程的test分支
+git push origin test:test
 
 
 

@@ -797,7 +797,19 @@ plutommi\Customer\CustResource\M105_MLT_MMI\M105_JX_S1716_A_VOLKSCOMM_F4\Themeco
 	日期高亮背景色:
 plutommi\Customer\CustResource\M105_MLT_MMI\M105_JX_S1716_A_VOLKSCOMM_F4\Themecomponents.h #define^img_menuitem_single_line_highlight_filler_color
 
+----------------------------------------------------------------------------
 
+TRACE[h]:
+open D:\ProgramDownTool\3.1304.00_Catcher\Catcher.exe
+	
+Phone--EngMode--uart open
+
+Menu--Config--Set database path:
+	tst\database_classb\BPLGUInfoCustomAppSrcP_MT6261_...
+Config port:
+	usb connect
+还有个设置...--set--All on
+Menu--View--ps Integrated--show log
 
 
 ----------------------------------------------------------------------------

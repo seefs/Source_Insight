@@ -230,7 +230,7 @@ macro DoReplaceRow(hbuf, szOld, szNew, pRow, isRule)
 		SetWndSel(hwnd, sel)
 		SetBufSelText(hbuf, szNew)
 		ln = sel.lnLast;
-		ich = sel.ichLim;
+		ich = sel.ichLim + strlen(szNew) - strlen(szOld);
 		}
 	
 	return cReplace

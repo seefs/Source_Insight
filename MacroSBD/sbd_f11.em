@@ -578,6 +578,7 @@ macro NoteHander(hbuf, cNum)
 macro SetNoteHander(hbuf, lastCmd, cur_row)
 {
 	//msg("-" # lastCmd # "-")
+	var lastBaseCmd
 	lastBaseCmd = ReadMode(getNoteHanderSet(0))
 	if(lastBaseCmd == lastCmd)
 		stop
@@ -608,15 +609,19 @@ macro SetNoteHander(hbuf, lastCmd, cur_row)
 		//查新旧列表的替换字符
 		next = NextWS(lastCmd, i)
 		nextB = NextWS(lastBaseCmd, iB)
-		//msg("-" # lastBaseCmd # "-" # next # "-" # nextB # "-")
+//		msg("-" # lastBaseCmd # "-" # next # "-" # nextB # "-")
 		if (next == "X" || nextB == "X")
 		{
 			//最后一次替换
-			next = len
-			nextB = lenB
+			if (next == "X")
+				next = len
+			if (nextB == "X")
+				nextB = lenB
 			noteWord = strmid(lastCmd, i, next)
 			noteWordB = strmid(lastBaseCmd, iB, nextB)
-			DoReplaceRow(hbuf, noteWordB, noteWord, cur_row + 1, FALSE)
+			index = FindString( noteWord, noteWordB )
+			if(index == "X")
+				DoReplaceRow(hbuf, noteWordB, noteWord, cur_row + 1, FALSE)
 			SaveBuf(hbuf) //需求多次保存, 否则会有问题
 			break
 		}
@@ -624,11 +629,13 @@ macro SetNoteHander(hbuf, lastCmd, cur_row)
 		{
 			noteWord = strmid(lastCmd, i, next)
 			noteWordB = strmid(lastBaseCmd, iB, nextB)
-			DoReplaceRow(hbuf, noteWordB, noteWord, cur_row + 1, FALSE)
+			index = FindString( noteWord, noteWordB )
+			if(index == "X")
+				DoReplaceRow(hbuf, noteWordB, noteWord, cur_row + 1, FALSE)
 			SaveBuf(hbuf) //需求多次保存, 否则会有问题
 		}
-		start = StartWS( lastCmd, next )
-		startB = StartWS( lastBaseCmd, nextB )
+		start = StartWS( lastCmd, next + 1 )
+		startB = StartWS( lastBaseCmd, nextB + 1 )
 		i = start
 		iB = startB
 	}

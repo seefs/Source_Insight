@@ -15,9 +15,7 @@ Save:SI\node\Macro_File.h
 
 
 
-修改省电模式图标问题:
-charge_icon_id.icon_array[0] = IMAGE_IDLE_TITLE_ICON_PS_BATTERY1;
-多余: icon_array
-很早就有问题，DA上就有问题
+
+
 
 
