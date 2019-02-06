@@ -34,7 +34,7 @@ macro getProjectFromList(n)
 	if (n == 75)	{	return "F:\\_SI4.0\\11CW_BLEPHONE61D_11C_V33.si4project" 	} 
 	
 	// base -> save
-	if (n == 80)	{	return "D:\\Save" 	}
+	if (n == 80)	{	return "E:\\save" 	}
 	
 	// tmp
 	if (n == 90)	{	return "X:\\NoneEmpty" 	}  //add new ...
@@ -51,9 +51,8 @@ macro getProjectFromList(n)
 	if (n == 120)	{	return "D:\\project\\GitHub\\myPython" 	}
 	if (n == 121)	{	return "D:\\_SI4.0\\myPython.si4project" 	}
 
-	// tensorflow
-	if (n == 130)	{	return "D:\\project\\GitHub\\tensorflow" 	}
-	if (n == 131)	{	return "D:\\_SI4.0\\tensorflow.si4project" 	}
+	// tmp
+	if (n == 130)	{	return "X:\\NoneEmpty" 	}  //add new ...
 	
 	// 9820E
 	if (n == 140)	{	return "F:\\9820e" 	}
@@ -70,10 +69,10 @@ macro getProjectFromList(n)
 }
 
 //用固定目录，SI_base中不用添加这些文件了，只用添加.em的目录
-macro getSavePath(0)		{	return "D:\\Save"					}	//按F1->Q打开目录
-macro getCmdPath(0)			{	return "D:\\Save\\SI\\Cmd"			}	//ShellExecute目录
-macro getTXTPath(0)			{	return "D:\\Save\\SI\\Cmd_TXT"		}	//ShellExecute目录
-macro getNodePath(0)		{	return "D:\\Save\\SI\\node"			}	
+macro getSavePath(0)		{	return "E:\\save"					}	//按F1->Q打开目录
+macro getCmdPath(0)			{	return "E:\\save\\SI\\Cmd"			}	//ShellExecute目录
+macro getTXTPath(0)			{	return "E:\\save\\SI\\Cmd_TXT"		}	//ShellExecute目录
+macro getNodePath(0)		{	return "E:\\save\\SI\\node"			}	
 macro getDesktopPath(0)		{	return "E:\\desktop"				}	//桌面，创建桌面link
 
 //Cmd
