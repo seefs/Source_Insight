@@ -57,6 +57,8 @@ macro SearchForwardSel(hbuf, sel)
 		{
 			sel.ichLim = strlen(cur_line)
 		}
+		if(sel.ichFirst == sel.ichLim)
+			stop
 		cur_sel = strmid(cur_line, sel.ichFirst, sel.ichLim)
 
 		//默认用通配符搜索, 这个选项会改变下次搜索

@@ -57,7 +57,8 @@ macro ReadMode(setRow)
 		//val = GetLineMacro(lnStr)
 		return lnStr //val
 	}else{
-		msg ("tools mode row (@ln@)")
+		msgErr = getNodePath(0) # "\\Macro_Set.h"  # "," # CharFromKey(13)
+		msg (msgErr # "tools mode row (@ln@), read error")
 		return 0
 	}
 }

@@ -664,7 +664,7 @@ macro NoteGroup(hbuf)
 		{
 			strKey = strKey # "C" # CharFromKey(key - 262209 + 97)
 		}
-		else
+		else      // ctrl+d, F10, ...
 		{
 		 	if(i==0)
 			{
@@ -691,7 +691,6 @@ macro NoteGroup(hbuf)
 	{
 		NoteGroupPreview(hbuf, key)
 	}
-	
 }
 macro NoteGroupPreview(hbuf, key)
 {

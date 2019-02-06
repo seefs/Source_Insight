@@ -100,7 +100,22 @@ open: C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe
 
 如果能正常输出hello字符串，则安装成功。Hello, TensorFlow!
 
-	
+
+7 matplot
+下载地址：https://matplotlib.org/users/installing.html
+open: C:\Windows\System32\cmd.exe
+cd C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\
+//open: C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\cmd2.exe
+
+
+8 tensorboard 可视化(不用安装, 添加path)
+open: C:\Windows\System32\cmd.exe
+cd C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\
+pip3 install tensorboard
+	path:
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36;
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts
+
 	
 /***********************************************************************/
 /***************************** 安装错误 ********************************/

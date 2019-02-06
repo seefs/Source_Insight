@@ -14,7 +14,7 @@ git clone git@192.168.2.139:/home/git/9820.git
 /***********************************************************************/
 /**************************** git ³£ÓÃ *********************************/
 /***********************************************************************/
-
+//[Num]
 git help
 
 [1.0] ----------------------------------
@@ -160,11 +160,15 @@ git push XXX branch_name¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡#ÉÏ´«Ö¸¶
 git checkout -- readme.txt
 
 
-[3.3] gitÔİ´æÇø³·Ïú²Ù×÷
+[3.3] gitÔİ´æÇø³·Ïúµ½¹¤×÷Çø²Ù×÷
 //¹¤×÷ÇøĞŞ¸ÄÁËÎÄ¼ş£¬¶øÇÒÖ´ĞĞÁËadd£¬µ«»¹Ã»Ö´ĞĞcommit£¬Ôİ´æÇø»¹ÊÇ¿ÉÒÔ³·ÏúµÄ
 git reset HEAD readme.txt
 //±¸×¢£ºgit resetÃüÁî¼È¿ÉÒÔ»ØÍË°æ±¾£¬Ò²¿ÉÒÔ°ÑÔİ´æÇøµÄĞŞ¸Ä»ØÍËµ½¹¤×÷Çø¡£µ±ÎÒÃÇÓÃHEADÊ±£¬±íÊ¾×îĞÂµÄ°æ±¾¡£
 
+
+[3.4] git°æ±¾Çø³·Ïúµ½¹¤×÷Çø²Ù×÷
+git fetch --all
+git reset --hard origin/master
 
 /***********************************************************************/
 /**************************** git diff   *******************************/
@@ -562,10 +566,42 @@ git checkout -b <±¾µØ·ÖÖ§Ãû> origin/<Ô¶³Ì·ÖÖ§Ãû>
 git mv filename newfilename
 
 
+[7.2] ÉèÖÃ¶Ô±È/ºÏ²¢¹¤¾ß:
+git config --global diff.tool bc3
+git config --global difftool.bc3.path "C:\Program Files\Beyond Compare 4\BCompare.exe"
+
+git config --global merge.tool bc3
+git config --global mergetool.bc3.path "C:\Program Files\Beyond Compare 4\BCompare.exe"
+
+//Ò²¿ÉÒÔÖ±½ÓĞŞ¸Ä.gitconfig ÎÄ¼ş£¬Ö±½ÓÔö¼ÓÈçÏÂ:
+C:\Users\Administrator\.gitconfig
+//	[diff]
+//	    tool = bc3
+//	[difftool "bc3"]
+//	    path = d:/program files/beyond compare 3/bcomp.exe
+//	[merge]
+//	    tool = bc3
+//	[mergetool "bc3"]
+//	    path = d:/program files/beyond compare 3/bcomp.exe
+
+//ÉèÖÃºÃºó£¬Ê¹ÓÃÃüÁîÊÇ git difftool ¶ø²»ÊÇÖ®Ç°µÄ git diff ÁË¡£
+//git difftool ËµÃ÷ÎÄµµ£ºhttp://git-scm.com/docs/git-difftool.html
+
+
+[7.3] ºöÂÔÄ³¸öÄ¿Â¼»òÎÄ¼ş²»ÉÏ´«
+touch .gitignore
+Save:SI\.gitignore
+//	MacroSBD/sbd_base.em
+//	node/Simple_CTRL_B.h
+
+git difftool -y MacroSBD/sbd_base.em
+git difftool -y node/Simple_CTRL_B.h
+
+
 /***********************************************************************/
 /**************************** git windows  *****************************/
 /***********************************************************************/
-windowÏÂgitÏÂÔØgithubÏîÄ¿
+windowÏÂgitÏÂÔØ github ÏîÄ¿
 
 1) windowÏÂÔØ
 https://git-scm.com/downloads
@@ -581,7 +617,8 @@ git remote set-url --push github https://github.com/seefs/Source_Insight11.git
 git remote -v
 
 3) cfg
-git config --global user.name xjs0f0s0
+git config --global user.name xj
+//git config --global user.name xj_01
 git config --global user.email seefs@163.com
 git config --list
 
@@ -591,12 +628,26 @@ git pull origin master
 
 //ÍÆËÍÔ¶³Ì²Ö¿â£º
 git push origin master
-
 //Ìá½»±¾µØtest·ÖÖ§×÷ÎªÔ¶³ÌµÄmaster·ÖÖ§
 git push origin test:master
-
 //Ìá½»±¾µØtest·ÖÖ§×÷ÎªÔ¶³ÌµÄtest·ÖÖ§
 git push origin test:test
+//ÊäÈë github ÓÃ»§ÃûÃÜÂë:
+//  seefs@163.com, xjs0f0s0
 
+5) ÓÉÓÚÓĞĞ©²¿·Ö²»ÉÏ´«, ´´½¨·ÖÖ§
+git branch myCustom
+git checkout myCustom
+git status
+
+git difftool
+git difftool -d
+git difftool -d 0c8427888be95166e9c4f948feeca44bfa6e6c72
+git difftool -d ef03b673a7dc71c047714191c19dc77aad92ccb9
+
+git mergetool
+
+git checkout master
+	
 
 
