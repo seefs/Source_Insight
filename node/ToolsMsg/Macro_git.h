@@ -638,7 +638,9 @@ git push origin test:test
 5) 由于有些部分不上传, 创建分支
 git branch myCustom
 git checkout myCustom
+git add .
 git status
+git commit -m "ts, bug chg"
 
 git difftool
 git difftool -d
@@ -649,5 +651,14 @@ git mergetool
 
 git checkout master
 	
+git stash
+git checkout bugFixBranch
+git pull --rebase origin master
+fix the bug
+git add .
+git commit -m ''
+git push
+git checkout test
+git stash pop
 
 
