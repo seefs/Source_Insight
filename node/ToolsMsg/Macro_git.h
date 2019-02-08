@@ -613,7 +613,7 @@ git add -f test.class
 git check-ignore -v App.class.gitignore:3:*.class    App.class
 表示.gitignore的第3行规则忽略了App.class这个文件，于是我们就可以知道应该修订哪个规则。
 
-//5）Save:SI需要忽略这几个文件
+//5）Save:SI需要忽略这几个文件角(注意: 忽略后会删除远程服务器文件)
 touch .gitignore
 Save:SI\.gitignore
 //	MacroSBD/sbd_base.em
