@@ -414,13 +414,22 @@ macro SetDefaultMake(hbuf)
 
 macro OpenCache(file)
 {	
+	global errFile
 	hbuf = GetBufHandle(file)
 	if (hbuf == hNil)
 	{
 	 	hbuf = OpenBuf(file)
 		if (hbuf == hNil){
 			//msg ("hbuf doesn't exist.")
-			hbuf = NewBuf(file)
+			//hbuf = NewBuf(file)
+			if(errFile != file)
+			{
+				//change bug: file no exist
+				//static val, Prompt once
+				msg("file no exist:" # CharFromKey(13) #  file)
+				errFile = file
+			}
+			stop
 		}
  	}
 	return hbuf
