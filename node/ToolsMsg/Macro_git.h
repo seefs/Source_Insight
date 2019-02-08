@@ -135,7 +135,9 @@ git reflog
 //3c38201 HEAD@{2}: commit: test 2
 //be74e6e HEAD@{3}: commit (initial): test
 
-git log ––pretty=oneline
+//5) 
+git log dev ^master
+git log master ^dev
 
 //5) -p 选项展开显示每次提交的内容差异，用 -2 则仅显示最近的两次更新
 git log -p -2
@@ -194,9 +196,38 @@ git diff aaa.txt
 //		sdfasdfasdfi:sdfasdfasdfasdf
 // asdfasdf1111
 
+git diff <分支名> <分支名> -- 文件名
 
+[4.2] 设置对比/合并工具
+//difftool,mergetool
+git config --global diff.tool bc3
+git config --global difftool.bc3.path "C:\Program Files\Beyond Compare 4\BCompare.exe"
 
+git config --global merge.tool bc3
+git config --global mergetool.bc3.path "C:\Program Files\Beyond Compare 4\BCompare.exe"
 
+//也可以直接修改.gitconfig 文件，直接增加如下:
+C:\Users\Administrator\.gitconfig
+//	[diff]
+//	    tool = bc3
+//	[difftool "bc3"]
+//	    path = d:/program files/beyond compare 3/bcomp.exe
+//	[merge]
+//	    tool = bc3
+//	[mergetool "bc3"]
+//	    path = d:/program files/beyond compare 3/bcomp.exe
+
+//设置好后，使用命令是 git difftool 而不是之前的 git diff 了。
+//git difftool 说明文档：http://git-scm.com/docs/git-difftool.html
+
+git difftool
+git difftool -d
+git difftool -d 0c8427888be95166e9c4f948feeca44bfa6e6c72
+	
+git difftool -d dev master
+git difftool -d master dev
+
+git mergetool aaa.txt
 
 
 
@@ -351,7 +382,8 @@ git branch <name>
 //3) 创建并切换到分支
 git checkout -b <name>
 //备注：git checkout命令加上-b参数表示创建并切换，相当于以下两条命令
-git branch <name>git checkout <name>
+git branch <name>
+git checkout <name>
 
 
 //4) 切换分支
@@ -572,29 +604,7 @@ git checkout -b <本地分支名> origin/<远程分支名>
 git mv filename newfilename
 
 
-[7.2] 设置对比/合并工具:
-git config --global diff.tool bc3
-git config --global difftool.bc3.path "C:\Program Files\Beyond Compare 4\BCompare.exe"
-
-git config --global merge.tool bc3
-git config --global mergetool.bc3.path "C:\Program Files\Beyond Compare 4\BCompare.exe"
-
-//也可以直接修改.gitconfig 文件，直接增加如下:
-C:\Users\Administrator\.gitconfig
-//	[diff]
-//	    tool = bc3
-//	[difftool "bc3"]
-//	    path = d:/program files/beyond compare 3/bcomp.exe
-//	[merge]
-//	    tool = bc3
-//	[mergetool "bc3"]
-//	    path = d:/program files/beyond compare 3/bcomp.exe
-
-//设置好后，使用命令是 git difftool 而不是之前的 git diff 了。
-//git difftool 说明文档：http://git-scm.com/docs/git-difftool.html
-
-
-[7.3] 忽略某个目录或文件不上传
+[7.2] 忽略某个目录或文件不上传
 touch .gitignore
 Save:SI\.gitignore
 //	MacroSBD/sbd_base.em
@@ -624,7 +634,7 @@ git remote -v
 
 3) cfg
 git config --global user.name xj
-//git config --global user.name xj_01
+//git config --global user.name xj_dev
 git config --global user.email seefs@163.com
 git config --list
 
