@@ -1,9 +1,2 @@
 MacroSBD/sbd_base.em
-MacroSBD/sbd_f3.em
-MacroSBD/sbd_f5.em
-node/Pythons/Macro_Pythons_Install.h
-node/Pythons/Macro_Pythons_Root.h
-node/Pythons/Macro_Pythons_tf_TUT.h
 node/Simple_CTRL_B.h
-node/ToolsMsg/Macro_git.h
-node/note/Macro_Note_Pythons.h

@@ -221,6 +221,9 @@ C:\Users\Administrator\.gitconfig
 //git difftool 说明文档：http://git-scm.com/docs/git-difftool.html
 
 git difftool
+git difftool -y MacroSBD/sbd_base.em
+git difftool -y node/Simple_CTRL_B.h
+
 git difftool -d
 git difftool -d 0c8427888be95166e9c4f948feeca44bfa6e6c72
 	
@@ -228,7 +231,6 @@ git difftool -d dev master
 git difftool -d master dev
 
 git mergetool aaa.txt
-
 
 
 
@@ -490,30 +492,6 @@ git stash pop
 git config --global color.ui true
 
 
-[6.3] 忽略特殊文件
-（1）在Git工作区的根目录下创建一个特殊的.gitignore文件，然后把要忽略的文件名填进去，Git就会自动忽略这些文件。不需要从头写.gitignore文件，GitHub已经为我们准备了各种配置文件，只需要组合一下就可以使用了。所有配置文件可以直接在线浏览：https://github.com/github/gitignore
-忽略文件的原则是：
-忽略操作系统自动生成的文件，比如缩略图等；
-忽略编译生成的中间文件、可执行文件等，也就是如果一个文件是通过另一个文件自动生成的，那自动生成的文件就没必要放进版本库，比如Java编译产生的.class文件；
-忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件。
-比如一个完成的.gitignore文件，内容如下：
-------------------------------
-# Windows:Thumbs.dbehthumbs.dbDesktop.ini
-
-# Python:*.py[ cod]*.so*.egg*.egg-infodistbuild
--------------------------------
-（2）把.gitignore也提交到Git
-git add .gitignore
-git commit -m "there is a description"
-就完成了！当然检验.gitignore的标准是git status命令是不是显示working tree clean。
-使用Windows的注意：如果在资源管理器里新建一个.gitignore文件，系统会非常弱智地提示必须输入文件名，但是在文本编辑器里“保存”或者“另存为”就可以把文件保存为.gitignore了。
-
-（3）如果确实想要添加已经被.gitignore忽略的文件，可以用-f强制添加到Git
-git add -f test.class
-
-（4）怀疑.gitignore写的有问题，需要查找哪个规则写错了，可以用git check-ignore命令检查：
-git check-ignore -v App.class.gitignore:3:*.class    App.class
-表示.gitignore的第3行规则忽略了App.class这个文件，于是我们就可以知道应该修订哪个规则。
 
 
 [6.4] 为命令配置别名
@@ -604,14 +582,48 @@ git checkout -b <本地分支名> origin/<远程分支名>
 git mv filename newfilename
 
 
-[7.2] 忽略某个目录或文件不上传
+[7.2] 忽略特殊文件
+//1）在Git工作区的根目录下创建一个特殊的.gitignore文件，
+//	然后把要忽略的文件名填进去，Git就会自动忽略这些文件。
+//	不需要从头写.gitignore文件，GitHub已经为我们准备了各种配置文件，只需要组合一下就可以使用了。
+//	所有配置文件可以直接在线浏览：https://github.com/github/gitignore
+//	忽略文件的原则是：
+//	忽略操作系统自动生成的文件，比如缩略图等；
+//	忽略编译生成的中间文件、可执行文件等，也就是如果一个文件是通过另一个文件自动生成的，
+//	那自动生成的文件就没必要放进版本库，比如Java编译产生的.class文件；
+//	忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件。
+//	比如一个完成的.gitignore文件，内容如下：
+//------------------------------
+//# Windows:Thumbs.dbehthumbs.dbDesktop.ini
+//
+//# Python:*.py[ cod]*.so*.egg*.egg-infodistbuild
+//-------------------------------
+
+//2）把.gitignore也提交到Git
+git add .gitignore
+git commit -m "there is a description"
+//就完成了！当然检验.gitignore的标准是git status命令是不是显示working tree clean。
+//使用Windows的注意：如果在资源管理器里新建一个.gitignore文件，系统会非常弱智地提示必须输入文件名，
+//但是在文本编辑器里“保存”或者“另存为”就可以把文件保存为.gitignore了。
+
+//3）如果确实想要添加已经被.gitignore忽略的文件，可以用-f强制添加到Git
+git add -f test.class
+
+//4）怀疑.gitignore写的有问题，需要查找哪个规则写错了，可以用git check-ignore命令检查：
+git check-ignore -v App.class.gitignore:3:*.class    App.class
+表示.gitignore的第3行规则忽略了App.class这个文件，于是我们就可以知道应该修订哪个规则。
+
+//5）Save:SI需要忽略这几个文件
 touch .gitignore
 Save:SI\.gitignore
 //	MacroSBD/sbd_base.em
 //	node/Simple_CTRL_B.h
 
-git difftool -y MacroSBD/sbd_base.em
-git difftool -y node/Simple_CTRL_B.h
+//6）忽略无效, 清除本地缓存
+git rm -r --cached .
+git add .
+git commit -m 'update .gitignore'
+
 
 
 /***********************************************************************/
@@ -651,30 +663,8 @@ git push origin test:test
 //输入 github 用户名密码:
 //  seefs@163.com, xjs0f0s0
 
-5) 由于有些部分不上传, 创建分支
-git branch myCustom
-git checkout myCustom
-git add .
-git status
-git commit -m "ts, bug chg"
 
-git difftool
-git difftool -d
-git difftool -d 0c8427888be95166e9c4f948feeca44bfa6e6c72
-git difftool -d ef03b673a7dc71c047714191c19dc77aad92ccb9
 
-git mergetool
-
-git checkout master
 	
-git stash
-git checkout bugFixBranch
-git pull --rebase origin master
-fix the bug
-git add .
-git commit -m ''
-git push
-git checkout test
-git stash pop
 
 
