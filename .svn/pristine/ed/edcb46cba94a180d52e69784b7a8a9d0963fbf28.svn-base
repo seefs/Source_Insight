@@ -1,0 +1,391 @@
+/*
+	key:F11
+    1. 选择整个宏,     显示、添加宏说明
+    2. 选择部分关键词,    显示、添加词说明; 
+	3. 可选择多行
+		LCD_NV3029G_SANLONG_CPT2	= TRUE
+		LCD_GC9306_YIHUA_HSD      = TRUE
+		LCD_GC9305_SANLONG_HSD2 = TRUE
+	提示:
+		NV3029G	三龙+CPT
+		GC9306	亿华
+		GC9305	三龙+HSD
+	按确认，复制以上内容到剪切板，再粘贴到软件说明书中。
+	
+	4*. 未选择，复制文件名
+
+Fun list:
+	macro _TempHeadF11(hbuf){}
+Note()
+	LongNote(hbuf, key)
+	ShortNote(hbuf, key)
+	
+	GetLongNote(key)
+	GetMediumNote(key)
+	GetShortNote(key)
+NoteHander()
+
+OpenF11Test(hbuf, v)
+
+
+
+*/
+
+macro Note()
+{
+	//_TempHeadF11(hbuf)
+    hwnd = GetCurrentWnd()
+    hbuf = GetCurrentBuf()
+	if (hwnd == 0)
+	{
+    	hbuf = OpenDefaultSR(hbuf)
+    	stop
+	}
+	
+	sel = MGetWndSel(hbuf)
+	if (IsSingleSelect(sel))
+	{
+		cur_line = GetBufLine(hbuf, sel.lnFirst )
+		if(strlen(cur_line) < sel.ichLim)
+			sel.ichLim = sel.ichLim - 1
+		if(sel.ichFirst == sel.ichLim || 4095 == sel.ichLim)
+			stop
+			
+		cur_sel = strmid(cur_line, sel.ichFirst, sel.ichLim)
+		if(cur_sel == GetWholeMacro(cur_line, sel))
+		{
+			LongNote(hbuf, cur_sel)
+		}
+		else
+		{
+			ShortNote(hbuf, cur_sel)
+		}
+	}
+	else if(IsMoreSelect(sel))
+	{
+		nTxt = ""
+		i = sel.lnFirst
+		while (i <= sel.lnLast)
+		{
+			line = GetBufLine(hbuf, i)
+			iMacro = GetLineMacro(line)
+			iNote = GetMediumNote(iMacro)
+			
+			if(iNote != "")
+			{
+				nTxt = nTxt # iNote # CharFromKey(13)
+			}
+			i = i + 1
+		}
+		if(nTxt != "")
+		{
+			msg("@nTxt@")
+			SetClipString(nTxt)
+		}
+	}
+	else
+	{
+		hprj = GetCurrentProj ()
+		path = GetProjDir (hprj)
+		bft = getBaseFileType(path, 3)
+		if(bft == "")
+			stop
+		mFile = getNodePath(0) # "\\Macro_Note_@bft@.h"
+	
+		if(IsFileName(hbuf, "Macro_Note_"))
+		{
+			hwnd = GetCurrentWnd()
+			lnTop = GetWndVertScroll(hwnd);
+			SaveMode(getWndVertRow(0), "@lnTop@")
+			close
+		}
+		else
+		{
+			OpenExistFile(mFile)
+			szpathName = GetBufName(hbuf)
+			basePro = getBasePath(szpathName)
+			SaveMode(getPathRow(0), "@basePro@\\tmp")
+			
+			lnTop = ReadMode(getWndVertRow(0))
+			hwnd = GetCurrentWnd()
+			ScrollWndToLine(hwnd, lnTop); 
+		}
+	}
+}
+
+macro LongNote(hbuf, key)
+{
+	//_TempHeadF11(hbuf)
+	nTxt = GetLongNote(key)
+	if(nTxt == "")
+	{
+		nTxt = GetMediumNote(key)
+	}
+	if(nTxt != "")
+	{
+		ntStr = "@key@:" # CharFromKey(13)
+		ntStr = ntStr # nTxt # CharFromKey(13)
+		msg("@ntStr@")
+		SetClipString(nTxt)
+	}
+	else //add noto
+	{
+		grMsg = "Add Long Note, Macro: @key@" # CharFromKey(13)
+		ntStr = Ask("@grMsg@")
+		
+		ntRule = OpenCache(getNodePath(0) # "\\Macro_Note_Long.h")
+		ntStr = "key:@key@,@ntStr@"
+		AppendBufLine(ntRule, "@ntStr@")
+		SaveBuf(ntRule)
+		CloseBuf(ntRule)
+	}
+}
+
+macro GetLongNote(key)
+{
+	//_TempHeadF11(hbuf)
+	mFile = getNodePath(0) # "\\Macro_Note_Long.h"
+	mBuf = OpenCache(mFile)
+	mKey = "key:" # key # ","
+	mSel = SearchInBuf(mBuf, mKey, 0, 0, FALSE, FALSE, FALSE)
+	nTxt = ""
+
+	while (mSel != "")
+	{
+		line = GetBufLine(mBuf, mSel.lnFirst )
+		ilen = strlen(line)
+		
+		ich = SplitMacro(line, ",", 0, ilen)		
+		nTxt   = strmid(line, ich + 1, ilen) # CharFromKey(13)
+		
+		mSel = SearchInBuf(mBuf, mKey, mSel.lnLast+1, 0, 0, 0, 0)
+	}
+	CloseBuf(mBuf)
+	return nTxt
+}
+
+macro GetMediumNote(key)
+{
+	//_TempHeadF11(hbuf)
+	mFile = getNodePath(0) # "\\Macro_Note_Short.h"
+	mBuf = OpenCache(mFile)
+	nTxt = ""
+	
+	klen = strlen(key)
+	iStart = 0
+	ichKey = SplitMacro(key, "_", iStart, klen)
+	while (1)
+	{
+		if(ichKey >= 0)
+		{
+			ikey = strmid(key, iStart, ichKey)
+		}
+		else
+		{
+			ikey = strmid(key, iStart, klen)
+		}
+		iStart = ichKey + 1
+		
+		mKey = "key:" # ikey # ","
+		mSel = SearchInBuf(mBuf, mKey, 0, 0, FALSE, FALSE, FALSE)
+		if (mSel != "")
+		{
+			line = GetBufLine(mBuf, mSel.lnFirst )
+			ilen = strlen(line)
+			
+			ich = SplitMacro(line, ",", 0, ilen)
+			if (ich > 0)
+			{
+				nTxt = nTxt # strmid(line, ich + 1, ilen)
+			}
+		}
+		if(ichKey < 0)
+		{
+			break
+		}
+		ichKey = SplitMacro(key, "_", iStart, klen)
+	}
+	CloseBuf(mBuf)
+	return nTxt
+}
+
+macro ShortNote(hbuf, key)
+{
+	//_TempHeadF11(hbuf)
+	nTxt = GetShortNote(key)
+	if(nTxt != "")
+	{
+		ntStr = "@key@:" # CharFromKey(13)
+		ntStr = ntStr # nTxt # CharFromKey(13)
+		msg("@ntStr@")
+		SetClipString(nTxt)
+	}
+	else //add noto
+	{
+		grMsg = "Add Short Note, Macro: @key@" # CharFromKey(13)
+		ntStr = Ask("@grMsg@")
+		tabStr = CharFromKey(9)
+		
+		ntRule = OpenCache(getNodePath(0) # "\\Macro_Note_Short.h")
+		ntStr = "key:@key@,@tabStr@@ntStr@"
+		AppendBufLine(ntRule, "@ntStr@")
+		SaveBuf(ntRule)
+		CloseBuf(ntRule)
+	}
+}
+
+macro GetShortNote(key)
+{
+	//_TempHeadF11(hbuf)
+	mFile = getNodePath(0) # "\\Macro_Note_Short.h"
+	mBuf = OpenCache(mFile)
+	mKey = "key:" # key # ","
+	mSel = SearchInBuf(mBuf, key, 0, 0, FALSE, FALSE, FALSE)
+	nTxt = ""
+
+	if (mSel != "")
+	{
+		line = GetBufLine(mBuf, mSel.lnFirst )
+		ilen = strlen(line)
+		
+		ich = SplitMacro(line, ",", 0, ilen)
+		if (ich > 0)
+		{
+			nTxt   = strmid(line, ich + 1, ilen)
+		}
+	}
+	CloseBuf(mBuf)
+	return nTxt
+}
+
+////////////////////////
+macro NoteHander(hbuf)
+{
+	var noteCmd
+	var noteWord
+	
+	sel = MGetWndSel(hbuf)
+	cur_line = GetBufLine(hbuf, sel.lnFirst )
+
+	start = StartWS(cur_line, 0 )
+	if (start == "X")
+	{
+		stop
+	}
+	else if (start > 0)
+	{
+		//delete left
+		cur_line = strmid(cur_line, start, strlen(cur_line))
+	}
+	len = strlen(cur_line)
+	
+	//主要以空格分开
+	indexa = FindString(cur_line, ":")
+	indexb = FindString(cur_line, " ")	
+	if (indexa == "X" && indexb == "X")
+	{
+		index = len
+	}
+	else if (indexa == "X")
+	{
+		index = indexb
+	}
+	else if (indexb == "X")
+	{
+		index = indexa
+	}
+	else if (indexa>indexb)
+	{
+		index = indexb
+	}
+	else
+	{
+		index = indexa
+	}
+	
+	//msg(start # ";" # index)
+	noteCmd = strmid(cur_line, 0, index)
+	
+	//msg(noteCmd # ";")
+	if(noteCmd == "replace")
+	{
+		//跳转到复制对应的语言/宏
+		cur_line = GetClipString(hbuf)
+	}
+	else if(noteCmd == "cmd")
+	{
+		//仅仅打开cmd后面不接路径
+		ShellExecute("open", getBasePath("") # "\\cmd", "", path, 1)
+	}
+	else if(noteCmd == "make")
+	{
+		//仅仅打开cmd后面不接路径
+		lastCmd = strmid(cur_line, start, len)
+		hbufClip = GetBufHandle("Clipboard")
+		if (hbufClip != hNil)
+		{
+			EmptyBuf(hbufClip)
+			AppendBufLine(hbufClip, "@lastCmd@")
+			CloseBuf(hbufClip)
+		}
+		ShellExecute("open", getBasePath("") # "\\cmd", "", path, 1)
+	}
+	else if(noteCmd == "ctmake" || noteCmd == "xmake")
+	{
+		//仅仅打开cmd后面不接路径
+		lastCmd = strmid(cur_line, start, len)
+		hbufClip = GetBufHandle("Clipboard")
+		if (hbufClip != hNil)
+		{
+			EmptyBuf(hbufClip)
+			AppendBufLine(hbufClip, "@lastCmd@")
+			CloseBuf(hbufClip)
+		}
+		//Cygwin...
+	}
+	else if(noteCmd == "call")
+	{
+		lastCmd = strmid(cur_line, start, len)
+		hbufClip = GetBufHandle("Clipboard")
+		if (hbufClip != hNil)
+		{
+			EmptyBuf(hbufClip)
+			AppendBufLine(hbufClip, "@lastCmd@")
+			CloseBuf(hbufClip)
+		}
+	}
+	else if(strlen(noteCmd)>0)
+	{
+		//default open file + gote word
+		if(strmid(noteCmd,0,1)!="\\" && strmid(noteCmd,0,1)!="/")
+			noteCmd = "\\" # noteCmd
+		hbuf = OpenExistFile(getBasePath("") # noteCmd)
+			
+		if (hbuf != hNil){
+			if (indexb == "X" || indexb == len)
+			{
+				stop
+			}
+			next = NextWS(cur_line, indexb + 1)
+			if (next == "X")
+			{
+				next = len
+			}
+
+			noteWord = strmid(cur_line, indexb+1, next)
+			mSel = SearchInBuf(hbuf, "@noteWord@", 0, 0, 0, 0, 0)
+			if (mSel != "")
+			{
+				ScrollCursor(mSel)
+			}
+		}
+	}
+
+}
+
+
+
+macro OpenF11Test(hbuf, v)
+{
+}
+

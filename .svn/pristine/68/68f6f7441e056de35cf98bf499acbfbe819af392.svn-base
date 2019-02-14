@@ -1,0 +1,28 @@
+快捷键：
+F11：打开/关闭笔记
+F2： 打开选择的路径/文件; 文件名+扩展名
+F5： 打开sln文件/cmd命令+右键粘贴; 当前行以cmd、make、call、replace开头
+
+Base test
+replace:M105_MLT_S2401_ZX_F4
+call cmd
+cmd ...
+
+
+编译：
+make M105_MLT_S2401_ZX_F4 gprs new
+
+
+编译模块
+make M105_MLT_S1716_GRAVITY_BACK_UP_F4 gprs remake custom
+
+
+模拟器：
+make M106_DC_4SIM_QVGA_ZX GPRS gen_modis
+call:MoDIS_VC9\MoDIS.sln
+
+ 
+ SI\node\Macro_ALL_6531D.h IM_TKS_SUPPORT xxxx
+SI\MacroSBD\sbd_array.em Compare
+
+

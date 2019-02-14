@@ -1,0 +1,471 @@
+/*
+    key:F10
+	功能：SR组菜单
+	1. 在搜索结果窗口，显示主列表
+		1.Idle,mmiidle_cstyle.c
+		2.Set,mmiset_wintab.c
+		3.lang,mmi_res_prj_def.h
+		按1/2/3,跳转到对应文件(不考虑行)
+	2. 其他文件，添加/显示已存在item
+	3. 编辑列表文件, 按F7->E->3, 打开: \SI\node\Macro_Group_Menu.h
+
+	功能：MK组菜单
+	1#. 选中font  -- list -跳转
+	2#. 中文 
+	3#. 未选中，跳到对应组: tools/set
+
+	
+Fun list:
+	macro _TempHeadF10(hbuf){}
+Group()
+	MakeGroup(hbuf)
+	SrGroup(hbuf)
+	DefaultGroup(hbuf)
+	
+	ShowGroupMenu(curHead, grFile)		# item operation 1
+	GetGroupItem(curHead, mIndex, grFile) # item operation 2
+	GetGroupHead(curItem, grFile)		# item operation 3
+OpenF10Test(hbuf, v)
+	
+*/
+
+macro Group()
+{
+	//_TempHeadF10(hbuf)
+	hwnd = GetCurrentWnd()
+	hbuf = GetCurrentBuf()
+	if (hwnd == 0)
+	{
+    	hbuf = OpenDefaultSR(hbuf)
+    	stop
+	}
+	if(IsMakeFile(hbuf))
+	{
+		MakeGroup(hbuf)
+	}
+	else if(IsMacroFile(hbuf))
+	{
+		//MakeGroup(hbuf) //test
+	}
+	else if(IsSRFile(hbuf))
+	{
+		SrGroup(hbuf)
+	}
+	else
+	{
+		DefaultGroup(hbuf)
+	}
+}
+
+macro GetKeyExt(count)
+{
+	key = GetKey()
+	if (key >= 49 && key <= 57 && (key - 48) <= count)
+	{
+		return (key - 48)
+	}
+ 	else if(key == 48 && 10 <= count)
+	{
+		return (10)
+	}
+ 	else if(key >= 97 && (key - 97 + 11) <= count)
+	{
+		return (key - 97 + 11)
+	}
+	return -1
+}
+macro GetKeyStr(index)
+{
+	if (index >= 1 && index <= 9)
+	{
+		return (index # "")
+	}
+ 	else if(index == 10)
+	{
+		return "0"
+	}
+ 	else if(index > 10)
+	{
+		return CharFromKey(index - 11 + 97)
+	}
+	return ""
+}
+macro MakeGroup(hbuf)
+{
+	//_TempHeadF10(hbuf)
+	sel = MGetWndSel(hbuf)
+	if (IsSingleSelect(sel))
+	{
+		cur_line = GetBufLine(hbuf, sel.lnFirst )
+		cur_sel = strmid(cur_line, sel.ichFirst, sel.ichLim)
+		
+		//1.select key->group to Insert
+		count = ShowGroupMenu(cur_sel, "Macro_Group_Make.h")
+		if(count>0)
+		{
+			key = GetKeyExt(count)
+			if (key>0)
+			{
+				tmpMacro = GetGroupItem(cur_sel, key, "Macro_Group_Make.h")
+				mSel = SearchInBuf(hbuf, "@tmpMacro@", 0, 0, 0, 0, 0)
+				if (mSel != "")
+				{
+		    		hwnd = GetCurrentWnd()
+		    		if(mSel.lnFirst>10)
+						ScrollWndToLine(hwnd, mSel.lnFirst-10)
+		    		else
+						ScrollWndToLine(hwnd, mSel.lnFirst)
+					SetWndSel(hwnd, mSel)
+					return
+				}
+				else
+				{
+					InsBufLine(hbuf, sel.lnFirst + 1, "@tmpMacro@ = TRUE")
+					return
+				}
+			}
+			return
+		}
+		//2.select not exist Macro to ADD
+		tmpKey = GetGroupHead(cur_sel, "Macro_Group_Make.h")
+		if(tmpKey == "")
+		{
+			if(strlen(cur_sel)>25)
+				grMsg = strmid(cur_sel,0,25) # "..."
+			else
+				grMsg = cur_sel
+			grMsg = "Add item: @grMsg@" # CharFromKey(13)
+			grMsg = grMsg # "Note: LCD、camera、torch" # CharFromKey(13)
+			head = Ask("@grMsg@")
+			grRule = OpenCache(getNodePath(0) # "\\Macro_Group_Make.h")
+
+			mSel = SearchInBuf(grRule, "head:@head@", 0, 0, FALSE, FALSE, FALSE)
+			if (mSel == "")
+			{
+				AppendBufLine(grRule, "")
+				AppendBufLine(grRule, "head:@head@,@head@")
+			}
+			AppendBufLine(grRule, "item:@head@,@cur_sel@")
+			SaveBuf(grRule)
+			CloseBuf(grRule)
+			return
+		}
+		//3.select exist Macro to Insert
+		count = ShowGroupMenu(tmpKey, "Macro_Group_Make.h")
+		if(count>0)
+		{
+			key = GetKeyExt(count)
+			if (key>0)
+			{
+				tmpMacro= GetGroupItem(tmpKey, key, "Macro_Group_Make.h")
+				mSel = SearchInBuf(hbuf, "@tmpMacro@", 0, 0, 0, 0, 0)
+				if (mSel != "")
+				{
+		    		hwnd = GetCurrentWnd()
+		    		if(mSel.lnFirst>10)
+						ScrollWndToLine(hwnd, mSel.lnFirst-10)
+		    		else
+						ScrollWndToLine(hwnd, mSel.lnFirst)
+					SetWndSel(hwnd, mSel)
+					return
+				}
+				else
+				{
+					InsBufLine(hbuf, sel.lnFirst + 1, "@tmpMacro@ = TRUE")
+					return
+				}
+			}
+			return
+		}
+		return
+	}
+	count = ShowGroupMenu("", "Macro_Group_Make.h")
+	if(count>0)
+	{
+		key = GetKeyExt(count)
+		if (key>0)
+		{
+			//4.select head to goto
+			head = GetGroupItem("", key, "Macro_Group_Make.h")
+			//use rule search
+			mSel = SearchInBuf(hbuf, "^#@head@", 0, 0, 0, 1, 0)
+			if (mSel != "")
+			{
+				mSel.ichFirst = mSel.ichLim - strlen(head)
+	    		hwnd = GetCurrentWnd()
+	    		if(mSel.lnFirst>10)
+					ScrollWndToLine(hwnd, mSel.lnFirst-10)
+	    		else
+					ScrollWndToLine(hwnd, mSel.lnFirst)
+				SetWndSel(hwnd, mSel)
+				return
+			}
+			else
+			{
+				mSel = SearchInBuf(hbuf, "^# .*@head@", 0, 0, 0, 1, 0)
+				if (mSel != "")
+				{
+					mSel.ichFirst = mSel.ichLim - strlen(head)
+		    		hwnd = GetCurrentWnd()
+		    		if(mSel.lnFirst>10)
+						ScrollWndToLine(hwnd, mSel.lnFirst-10)
+		    		else
+						ScrollWndToLine(hwnd, mSel.lnFirst)
+					SetWndSel(hwnd, mSel)
+					return
+				}
+				else
+				{
+					//5.only goto first
+					selHead = GetGroupItem(head, 1, "Macro_Group_Make.h")
+					if(selHead !="")
+					{
+						GotoNextMacroEx(hbuf, selHead, 0, 0)
+					}
+					return
+				}
+			}
+		}
+	}
+	else
+	{
+		msg("No Make List")
+	}
+	
+}
+
+macro SrGroup(hbuf)
+{
+	//_TempHeadF10(hbuf)
+	count = ShowGroupMenu("", "Macro_Group_Menu.h")
+	if(count>0)
+	{
+		key = GetKeyExt(count)
+		if (key>0)
+		{
+			file = GetGroupItem("", key, "Macro_Group_Menu.h")
+			OpenExistFile(file)
+		}
+	}
+	else
+	{
+		msg("No Menu List")
+	}
+}
+
+macro DefaultGroup(hbuf)
+{
+	//_TempHeadF10(hbuf)
+	szpathName = GetBufName(hbuf)
+	filename = GetFileName(szpathName)
+	mNote = GetGroupHead(filename, "Macro_Group_Menu.h")
+	if(mNote == "")
+	{
+		grMsg = "Add Menu, File: @filename@" # CharFromKey(13)
+		grMsg = grMsg # "Note: set、tool、menu" # CharFromKey(13)
+		mNote = Ask("@grMsg@")
+		grRule = OpenCache(getNodePath(0) # "\\Macro_Group_Menu.h")
+
+		mSel = SearchInBuf(grRule, mNote, 0, 0, FALSE, FALSE, FALSE)
+		if (mSel == "")
+		{
+			AppendBufLine(grRule, "")
+			AppendBufLine(grRule, "head:@mNote@,@mNote@")
+		}
+		AppendBufLine(grRule, "item:@mNote@,@filename@")
+		SaveBuf(grRule)
+		CloseBuf(grRule)
+	}
+	else
+	{
+		//如果备注同名，显示相关列表
+		count = ShowGroupMenu(mNote, "Macro_Group_Menu.h")
+		if(count>0)
+		{
+			key = GetKeyExt(count)
+			if (key>0)
+			{
+				file = GetGroupItem(mNote, key, "Macro_Group_Menu.h")
+				OpenExistFile(file)
+			}
+		}
+		else
+		{
+			msg("Cur Item: @mNote@  @filename@")
+		}
+	}
+}
+
+//菜单级数对应的所有名称+文件名
+macro ShowGroupMenu(curHead, grFile)
+{
+	//_TempHeadF10(hbuf)
+	hprj = GetCurrentProj ()
+	path = GetProjDir (hprj)
+	type = getBaseType(path)
+	if(type == 10 || type == 20 || type == 30)
+	{
+		mFile = getNodePath(0) # "\\" # grFile
+	}
+	else
+	{
+		mFile = getNodePath(0) # "\\" # grFile //6533,no use
+	}
+	
+	if(curHead == "")
+	{
+		mKey = "head:"
+	}
+	else
+	{
+		mKey = "item:" # curHead # ","
+	}
+	mBuf = OpenCache(mFile)
+	mSel = SearchInBuf(mBuf, mKey, 0, 0, FALSE, FALSE, FALSE)
+	menuMsg = ""
+	index = 0
+
+	while (mSel != "")
+	{
+		index = index + 1
+		line = GetBufLine(mBuf, mSel.lnFirst )
+		ilen = strlen(line)
+		
+		ichFile = SplitMacro(line, ",", 0, ilen)
+		curItem   = strmid(line, ichFile+1, ilen)
+		indexStr = GetKeyStr(index)
+		menuMsg = menuMsg # "@indexStr@. @curItem@" # CharFromKey(13)
+		
+		mSel = SearchInBuf(mBuf, mKey, mSel.lnLast+1, 0, 0, 0, 0)
+	}
+	CloseBuf(mBuf)
+	if(index > 0)
+	{
+		msg(menuMsg)
+	}
+	return index
+}
+
+//get:key->value
+macro GetGroupItem(curHead, mIndex, grFile)
+{
+	//_TempHeadF10(hbuf)
+	hprj = GetCurrentProj ()
+	path = GetProjDir (hprj)
+	type = getBaseType(path)
+	if(type == 10 || type == 20 || type == 30)
+	{
+		mFile = getNodePath(0) # "\\" # grFile
+	}
+	else
+	{
+		mFile = getNodePath(0) # "\\" # grFile //6533,no use
+	}
+	
+	if(curHead == "")
+	{
+		mKey = "head:"
+	}
+	else
+	{
+		mKey = "item:" # curHead # ","
+	}
+	mBuf = OpenCache(mFile)
+	mSel = SearchInBuf(mBuf, mKey, 0, 0, FALSE, FALSE, FALSE)
+	index = 1
+	curItem = ""
+
+	while (mSel != "")
+	{
+		if(index == mIndex)
+		{
+			line = GetBufLine(mBuf, mSel.lnFirst )
+			ilen = strlen(line)
+			
+			ichFile = SplitMacro(line, ",", 0, ilen)
+			curItem   = strmid(line, ichFile+1, ilen)
+			break
+		}
+		
+		mSel = SearchInBuf(mBuf, mKey, mSel.lnLast+1, 0, 0, 0, 0)
+		index = index + 1
+	}
+	CloseBuf(mBuf)
+	return curItem
+}
+
+//get:value->key
+macro GetGroupHead(curItem, grFile)
+{
+	//_TempHeadF10(hbuf)
+	hprj = GetCurrentProj ()
+	path = GetProjDir (hprj)
+	type = getBaseType(path)
+	if(type == 10 || type == 20 || type == 30)
+	{
+		mFile = getNodePath(0) # "\\" # grFile
+	}
+	else
+	{
+		mFile = getNodePath(0) # "\\" # grFile //6533,no use
+	}
+	
+	mBuf = OpenCache(mFile)
+	mSel = SearchInBuf(mBuf, curItem, 0, 0, FALSE, FALSE, FALSE)
+	//item:calc,mmicalc_main.c
+	curHead = ""
+	if (mSel != "")
+	{
+		//menu2:tool-a1,sbd_f3.em
+		line = GetBufLine(mBuf, mSel.lnFirst )
+		ilen = strlen(line)
+		
+		ichLv1 = SplitMacro(line, ":", 0, ilen)		
+		//iLv   = strmid(line, 0, ichLv1) //"menu"
+		
+		ichLv2 = SplitMacro(line, ",", 0, ilen)
+		curHead    = strmid(line, ichLv1 + 1, ichLv2) //"calc"
+	}
+	CloseBuf(mBuf)
+	return curHead
+}
+
+macro OpenF10Test(hbuf, v)
+{
+	//_TempHeadF10(hbuf)
+	//Tree()
+	if(v == ")") //from F1, no param, param is ")"
+	{
+		v = "F101"
+	}
+	else if(v == "F10") //from F10
+	{
+		v = "F102"
+	}
+	
+	if(v == "F101")
+	{
+		lv = "menu1"
+		ShowGroupMenu(lv, "Macro_Group_Menu.h")
+		lv = "menu2:tool"
+		ShowGroupMenu(lv, "Macro_Group_Menu.h")
+		lv = "menu2:set"
+		ShowGroupMenu(lv, "Macro_Group_Menu.h")
+	}
+	else if(v == "F102")
+	{
+		//DefaultGroup(hbuf)
+		SrGroup(hbuf)
+		MakeGroup(hbuf)
+	}
+	else if(v == "F104")
+	{
+		curItem = GetGroupItem("menu3:tool-a2", 1, "Macro_Group_Menu.h")
+		msg(curItem)
+		iFcurItemile = GetGroupItem("menu3:tool-a2", 2, "Macro_Group_Menu.h")
+		msg(curItem)
+	}
+
+}
+
+

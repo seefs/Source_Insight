@@ -1,0 +1,199 @@
+
+MTK编译指令
+replace1:M105_MLT_S2401_ZX_F4
+
+
+编译：
+make M101_COOLCEL_C1_M_AKAI_F5 GSM new
+make M105_MLT_S2401_ZX_F4 gprs new
+
+
+编译模块
+make M105_MLT_S1716_GRAVITY_BACK_UP_F4 gprs remake custom
+
+
+模拟器：
+make M101_COOLCEL_C1_M_AKAI_F5 GSM new_modis
+二级菜单
+\plutommi\mmi\MainMenu\MainMenuRes
+
+
+
+下载工具
+  FlashTool_v5.1528.00
+1 Scatter/config File, 选择
+    \build\M101_COOLCEL_.._F3\M101_COOLCEL_.._F3_.._T01.bin\FARSIGHTED61M_CN_11C_BB.cfg
+2  选择
+    option->usb Download/Readback
+    option->usb Download Without battery
+    option->Format Fat(auto)->Format Fat
+
+
+
+
+
+
+
+主菜单资源：
+\plutommi\Customer\Images\M101_COOLCEL\M101_COOLCEL_C1_M_AKAI_F5\MainLCD\MainMenu\SLIM_MATRIX
+
+字符串资源：
+\plutommi\Customer\CustResource\M101_COOLCEL_MMI
+
+
+网络参数：
+\custom\common  custom_config_account
+{
+	#if defined (CUSTOMER_NAME_M101_COOLCEL_C1_M_AKAI_F5)
+	#include "config_account_M101_COOLCEL_C1_M_AKAI_F5.h"
+	#endif
+}
+
+铃声：
+\plutommi\Customer\Audio\M101_COOLCEL\M101_COOLCEL_C1_M_AKAI_F5   CustResDefM101_COOLCEL
+\plutommi\Customer\CustResource\M101_COOLCEL_MMI   CustResDefM101_COOLCEL
+{
+	#elif defined(CUSTOMER_NAME_M101_COOLCEL_C1_M_AKAI_F5)
+	#define CUST_ADO_PATH		"..\\\\..\\\\Customer\\\\AUDIO\\\\M101_COOLCEL\\\\M101_COOLCEL_C1_M_AKAI_F5"
+
+}
+
+背光时间：
+\plutommi\Service\GpioSrv  gpiosrv
+
+    <CACHEDATA type="byte" id="NVRAM_BYTE_BL_SETTING_LEVEL" restore_flag="TRUE">
+        <DEFAULT_VALUE> [0xFF] </DEFAULT_VALUE>
+        <DESCRIPTION> Backlight Level </DESCRIPTION>
+        <FIELD min="1" max="20"></FIELD>
+    </CACHEDATA>
+
+    <CACHEDATA type="short" id="NVRAM_BYTE_BL_SETTING_HFTIME" restore_flag="TRUE">
+        <DEFAULT_VALUE> [0x1E, 0x00] </DEFAULT_VALUE>//2014-11-17 zhouzhongfu 默认背光时间为0，导致不会自动进入睡眠<DEFAULT_VALUE> [0x00, 0x2D] </DEFAULT_VALUE>
+        <DESCRIPTION> Backlight timer </DESCRIPTION>
+    </CACHEDATA>
+    
+    
+蓝牙名称：
+\custom\common\PLUTO_MMI nvram_common_config
+
+
+开关机铃声？
+\plutommi\Customer\Audio\M101_COOLCEL\M101_COOLCEL_C1_M_AKAI_F5\UserProfiles\Tone 存放
+\plutommi\Service\ProfilesSrv\ProfilesSrvRes  ProfilesSrv 定义
+{
+	#elif defined(CUSTOMER_NAME_M101_COOLCEL_C1_M_AKAI_F5)
+    <AUDIO id="AUD_ID_PROF_TONE1" flag="MULTIBIN">CUST_ADO_PATH"\\\\UserProfiles\\\\Tone\\\\poon.mp3"</AUDIO>
+}
+ 
+USB 链接名称：
+\custom\drv\misc_drv\_Default_BB\MT6261  usb_custom
+ static const kal_uint16 USB_PRODUCT_STRING[] = 
+
+
+情景默认等级：
+\custom\common userprofile_nvram_def  自定义
+ #elif defined(CUSTOMER_NAME_M101_COOLCEL_C1_M_AKAI_F5)
+ #include "userprofile_nvram_def_M101_COOLCEL_C1_M_AKAI_F5.h"  
+ 
+默认城市
+\plutommi\mmi\Organizer\OrganizerRes\WorldClock WorldClock
+
+	#elif defined(CUSTOMER_NAME_M101_COOLCEL_C1_M_AKAI_F5)
+		<DEFAULT_VALUE> [0X0E] </DEFAULT_VALUE> /*Budapest布达佩斯*/
+		
+		
+默认语言：默认时间：
+\plutommi\Service\SettingSrv  GeneralSettingSrv	
+
+按键灯等级
+\plutommi\Service\Inc gpiosrvgprot	
+		   
+\MoDIS_VC9\MoDIS
+
+\custom\drv\Drv_Tool
+codegen_M103_KM_2401_VGOTEL_F2.dws   -- GPIO 口 按键配置
+
+log->ckSysDrv  看剩余空间，nv大小
+
+
+gui_config  gui_switch 设置滚动条宽度
+
+wgui_cat203_set_editor_focus_state 修改dialer search拨号界面字体颜色背景
+
+GAIN_HND_SPH_VOL0  音频参数 免提音 
+GAIN_NOR_SPH_VOL0   正常音
+
+D:\11CW1352MP_MT6261DM_CN_V2_0303\MCT_TOOL  
+
+
+NVRAM_PROFILES_ACTIVATED 情景模式默认NV
+__KM_PHB_CONTACTS_DISPLAY__ 联系人显示
+SBD_ELECTRIC_TORCH_BLINK_FAST_AND_SLOW 手电筒添加快闪慢闪
+mmi_prof_customize_scrn_csk_hdlr  SIM1_MSG_TONE_ITEM flag = 2;添加可选择文件
+
+
+lcd_sw_rnd DRV_MAINLCD_INIT_COLOR 设置logo背景色
+cui_tone_selector_creat_tone_list 调整铃声个数
+km_mmi_prof_activate_profile_backlight_process
+
+gui_show_icontext_button  softkey字体颜色
+
+dm_redraw_category_screen
+
+SYNC_LCM_SUPPORT TE脚
+
+
+
+扩展项目：
+custom\codegen\FARSIGHTED61M_CN_11C_BB\codegen_M101_C1_M_BRAVIS_F3.dws
+custom\common\config_account_M101_COOLCEL_C1_M_AKAI_F5.h
+custom\common\userprofile_nvram_def_M101_COOLCEL.h
+custom\system\FARSIGHTED61M_CN_11C_BB\custom_MemoryDevice_M101_COOLCEL_C1_M_AKAI_F5.h
+custom\system\FARSIGHTED61M_CN_11C_BB\scatM101_COOLCEL_CS181_M_BRAVIS_F3.txt
+make\M101_C1_M_BRAVIS_F3_gsm.mak
+make\Verno_M101_C1_M_BRAVIS_F3.bld
+plutommi\Customer\Audio\M105_MLT\M105_MLT_S1716_GRAVITY_BACK_UP_F4
+plutommi\Customer\Images\M105_MLT\M105_MLT_S2401_GRAVITY_ULTRA_F1\image.zip
+plutommi\Customer\CustResource\M105_MLT_MMI\S2401_GRAVITY_ULTRA_F1\..
+plutommi\Customer\CustResource\M105_MLT_MMI\ref_list_M101_COOLCEL_C1_M_AKAI_F5.txt
+plutommi\Customer\CustResource\M105_MLT_MMI\CustResDefM105_MLT.h
+CUSTOMER_NAME_M105_MLT_S1716_GRAVITY_BACK_UP_F4 其他相关
+
+临时文件：
+plutommi\Customer\Images\M105_MLT\M105_MLT_S1716_GRAVITY_BACK_UP_F4\images_file_list.ini
+
+
+
+	
+MK:
+plutommi/mmi/Inc/MMI_features.h
+plutommi/Customer/CustResource/M105_MLT_MMI/MMI_features_switchM105_MLT_S1716_GRAVITY_BACK_UP_F4.h
+make/plutommi/mmi_service/mmi_service.mak
+
+Image:
+plutommi/Customer/Images/M103_KEMAN/image.zip
+plutommi\Customer\Images\M103_KEMAN\image.zip
+
+MainMenu:
+plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res
+
+TXT:
+plutommi/Customer/CustResource/M105_MLT_MMI/ref_list_M105_MLT_S1716_GRAVITY_BACK_UP_F4.txt
+
+RES:
+plutommi/Framework/GUI/GUI_Res/Status_icon_bar.res
+
+Ver:
+make/Verno_M101_C1_F184_M_ergo_F3.bld
+
+Game:
+plutommi/mmi/FunAndGames/FunAndGamesSrc/FunAndGamesSrc.c
+	
+Idle:
+wgui_categories_idlescreen.c
+
+code:
+plutommi/Customer/CustResource/M105_MLT_MMI/CustResDefM105_MLT.h
+plutommi/AppCore/SSC/SSCPassEngine.c
+
+

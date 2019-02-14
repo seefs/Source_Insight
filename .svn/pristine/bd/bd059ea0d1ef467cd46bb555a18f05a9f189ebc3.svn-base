@@ -1,0 +1,490 @@
+快捷键：
+F11：打开/关闭笔记
+F2： 打开选择的路径/文件; 文件名+扩展名
+F5： 打开sln文件/cmd命令+右键粘贴; 当前行以set、cmd、make/ctmake/xmake、open、vc、vs08开头; 默认打开文件+关键字(行)
+
+--------------------------------------------------
+
+默认(便于上传svn):
+set M101_COOLCEL_CS181_M_BRAVIS_F3 M101_COOLCEL gsm
+	
+当前project:
+set M101_C1_F184_M_ergo_F3 M101_COOLCEL gsm
+set M105_MLT_S2401_GTOUCH_F4 M105_MLT gprs
+set M105_MLT_S2401_ZX_F4 M105_MLT gprs
+set XG05_KM_V2404Q_Power_4000_F2 XG05_KM gprs
+
+set M105_XYZN_S1_C3_NEDADJ_F6 M105 gprs
+
+
+
+
+
+--------------------------------------------------
+
+MTK编译指令
+call:F:\11CW1352MP\11CW1352MP\...\x.exe 
+cmd:F:\11CW1352MP\11CW1352MP\cmd
+open:cd F:
+
+
+编译：
+make M101_COOLCEL_CS181_M_BRAVIS_F3 gsm new
+
+编译：
+projects\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\New_common.bat
+
+	
+
+编译模块
+make M101_COOLCEL_CS181_M_BRAVIS_F3 gsm r
+make M101_COOLCEL_CS181_M_BRAVIS_F3 gsm remake
+make M101_COOLCEL_CS181_M_BRAVIS_F3 gsm remake custom
+make M101_COOLCEL_CS181_M_BRAVIS_F3 gsm remake plutommi
+
+
+模拟器：
+make M101_COOLCEL_CS181_M_BRAVIS_F3 gsm gen_modis
+vs08:MoDIS_VC9\MoDIS.sln
+
+
+模拟器报错：
+\plutommi\framework\mte\mteinc\mte.h
+\plutommi\framework\mte\mteinc\mte_data.h 少一个}编不过
+
+vs_cfg:
+1 Stack around the variable XX was corrupted
+ 项目-属性-配置属性-C/C++-代码生成中”，将基本运行时检查设置成默认值
+ code->basic runtime checks
+2 exist not modis.exe 
+ MoDIS_VC9 删除重拉代码
+
+--------------------------------------------------
+
+
+
+下载工具
+  FlashTool_v5.1528.00
+1 Scatter/config File, 选择
+    \build\M101_COOLCEL_.._F3\M101_COOLCEL_.._F3_.._T01.bin\FARSIGHTED61M_CN_11C_BB.cfg
+2  选择
+    option->usb Download/Readback
+    option->usb Download Without battery
+    option->Format Fat(auto)->Format Fat
+
+
+--------------------------------------------------
+
+
+Make:
+make/Comp.mak 完成模块编译连接，生成bin
+make/Gsm2.mak 主编译文件，完成clean,remake,new等工作 （里面是编译指令的定义）
+make/M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak 客户私有的配置，根据客户的不同，而设定不同的配置文件
+make/Option.mak 工程中的基本配置及宏定义文件
+make/Verno_M101_COOLCEL_CS181_M_BRAVIS_F3.bld BUILD_DATE 版本文件
+
+plutommi/mmi/Inc/MMI_features.h
+plutommi/Customer/CustResource/M101_COOLCEL_MMI/MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h
+make/plutommi/mmi_service/mmi_service.mak
+
+
+
+
+
+Make 常用设置:
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak M101_COOLCEL_CS181_M_BRAVIS_F3
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak KM_COMBO_LCM ST7735S GC9106	  屏设置
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak SYNC_LCM_SUPPORT 			  屏设置 TE脚
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak DUAL_CAMERA_SUPPORT 	  		  摄像头设置
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak CMOS_SENSOR GC6133_SERIAL	  摄像头设置
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak CMOS_SENSOR_BAK1 SP0821_SERIAL 摄像头设置
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak FLASHLIGHT_TYPE				  闪光灯
+	
+
+
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak SYNC_LCM_SUPPORT ST7735S GC9106	  屏设置
+
+
+
+
+tmp M106:
+\nvram\src\nvram_factory_config.c
+
+
+tools菜单重复rc
+菜单下键功能有问题; 菜单下--右 切换
+秒表显示不全
+
+
+
+
+
+
+
+
+
+二级菜单
+plutommi\mmi\MainMenu\MainMenuRes
+
+主菜单：
+/plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c
+/plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res
+	<STRING >
+	<IMAGE >
+	<MENU >           SCREEN + OPTIONS
+	<MENUITEM_ID >    item
+	<MENUITEM >       
+	<MAINMENUITEM >   mm_list_img=image
+	<SCREEN >
+
+
+主菜单资源 ：
+	Image：
+plutommi/Customer/Images/M101_COOLCEL/M101_COOLCEL_CS181_M_BRAVIS_F3/ image.zip
+plutommi\Customer\Images\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\MainLCD\MainMenu\SLIM_MATRIX
+	List：
+plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res CUSTOMER_NAME_M101_COOLCEL_CS181_M_BRAVIS_F3
+plutommi\mmi\Setting\SettingRes\Wallpaper.res CUSTOMER_NAME_M101_COOLCEL_CS181_M_BRAVIS_F3 壁纸位置不是这里
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\CustResDefM101_COOLCEL.h CUSTOMER_NAME_M101_COOLCEL_CS181_M_BRAVIS_F3 资源路径
+	壁纸
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_RES_TYPE_WALLPAPER_SEL
+plutommi\mmi\Inc\MMI_features.h __MMI_RES_TYPE_WALLPAPER_SEL__
+plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c WALL01."__MMI_RES_TYPE_WALLPAPER__ "
+plutommi\mmi\Setting\SettingSrc\Wallpaper.c wp_item_amount ^=
+	开关机动画：
+plutommi\Customer\Images\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\MainLCD\Active\Poweronoff
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_KM_POWERONOFF_USE_SAME_IMAGE
+plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c POON.gif
+~ 
+~ lcd_sw_rnd DRV_MAINLCD_INIT_COLOR 设置logo背景色
+	关机充电动画
+plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res IMG_ID_CHARGER_CHARGING
+	TMP：
+plutommi\Customer\Images\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\images_file_list.ini
+plutommi\Customer\ResGenerator\debug\image_info_updated_all.txt MM_MP3 大小
+	
+
+
+资源
+	字符串资源：
+plutommi\Customer\CustResource\M101_COOLCEL_MMI
+plutommi/Customer/CustResource/M101_COOLCEL_MMI/ref_list_M101_COOLCEL_CS181_M_BRAVIS_F3.txt
+open:plutommi\Customer\STMTView.exe
+	字库文件：
+plutommi\Customer\CustResource\FontRes.c
+vendor\font\MTK\official\project\plutommi\content\inc\MainLcd240X320\L_MTK_Arabic_vk_9.h
+vendor\font\MTK\official\project\plutommi\content\src\MainLcd240X320\res_gen_font.cpp Dialing.bdf
+	资源的编译：
+plutommi\Customer\remakeResource.bat
+
+
+铃声：
+	铃声文件：
+plutommi\Customer\Audio\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3
+plutommi\Customer\Audio\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\UserProfiles\Tone\R_POWER_1.mp3
+	开关机铃声：
+plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res R_POWER_1.mp3
+plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res CUSTOMER_NAME_M101_COOLCEL_CS181_M_BRAVIS_F3 定义
+	资源路径
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\CustResDefM101_COOLCEL.h CUSTOMER_NAME_M101_COOLCEL_CS181_M_BRAVIS_F3
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\CustResDefM101_COOLCEL.h #define^CUST_IMG_PATH
+
+
+----------------------------------------------------------------------------
+配置:
+	
+	手电筒 充电宝:
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak __KM_ELECTRIC_TORCH__			手电筒
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak __SBD_CHARGING_TREASURE_SWITCH__ 充电宝
+plutommi\mmi\Idle\IdleSrc\IdleCommon.c km_mmi_electric_torch_switch 	长按打开手电筒
+plutommi\mmi\Idle\IdleSrc\IdleCommon.c km_mmi_charging_switch			长按打开充电宝
+hal\peripheral\src\bmt_task_main.c bmt_chr_indication
+plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c mmi_popup_msg_charger_1
+	添加状态图标:
+plutommi\Customer\Images\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\MainLCD\IdleScreen\StatusIcons\SI_CHARGING.png
+plutommi\Framework\GUI\GUI_Res\Status_icon_bar.res IMG_SI_CHARGING
+plutommi\Framework\GUI\GUI_SRC\wgui_status_icon_bar.c IMG_SI_CHARGING	顺序一致 分组为NO_GROUP
+plutommi\Framework\GUI\GUI_INC\gui_typedef.h STATUS_ICON_CHARGING		顺序一致
+plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c wgui_status_icon_bar_show_icon
+plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c STATUS_ICON_CHARGING
+	添加翻译:
+plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res STR_CHARGER_BANK_REMOVED
+
+
+	按键配置:
+\custom\drv\Drv_Tool
+codegen_M103_KM_2401_VGOTEL_F2.dws	 -- GPIO 口 按键配置
+
+
+	网络参数：
+custom\common\custom_config_account.c CUSTOMER_NAME_M101_COOLCEL_CS181_M_BRAVIS_F3 定义
+custom\common\config_account_M101_COOLCEL_CS181_M_BRAVIS_F3.h
+
+
+	音频参数:
+GAIN_HND_SPH_VOL0  音频参数 免提音 
+GAIN_NOR_SPH_VOL0   正常音
+
+NVRAM_PROFILES_ACTIVATED 情景模式默认NV
+	
+
+----------------------------------------------------------------------------
+
+设置:
+custom\common\hal_public\lcd_sw_rnd.h DRV_MAINLCD_INIT_COLOR
+	
+plutommi\Framework\GUI\GUI_INC\gui_config.h
+	滚动条宽度
+plutommi\Framework\GUI\GUI_INC\gui_switch.h #define^CFG_UI_SOFTKEY_WIDTH
+plutommi\Framework\GUI\GUI_INC\gui_switch.h #define^CFG_UI_SCROLLBAR_WIDTH
+
+custom\common\PLUTO_MMI\custom_mmi_default_value.h	--audio vol
+	情景默认等级：
+custom\common\userprofile_nvram_def.c userprofile_nvram_def_M101_COOLCEL_CS181_M_BRAVIS_F3.h 定义
+custom\common\userprofile_nvram_def_M101_COOLCEL_CS181_M_BRAVIS_F3.h
+	蓝牙名称：
+custom\common\PLUTO_MMI\nvram_common_config.c
+	USB 链接名称：
+custom\drv\misc_drv\_Default_BB\MT6261\usb_custom.c USB_PRODUCT_STRING
+
+
+	语言、时间:
+plutommi\Service\SettingSrv\res\GeneralSettingSrv.res NVRAM_SETTING_LANG
+plutommi\Service\SettingSrv\res\GeneralSettingSrv.res TIME_FORMAT
+plutommi\Service\SettingSrv\res\GeneralSettingSrv.res DATE_FORMAT
+	亮度：
+plutommi\Service\GpioSrv\gpiosrv.res NVRAM_BYTE_BL_SETTING_LEVEL
+	闪光灯：
+plutommi\Customer\CustResource\PLUTO_MMI\MMI_features_camera.h CAMERA_DEFAULT_SETTING_FLASH
+	按键灯等级：
+plutommi\Service\Inc gpiosrvgprot	
+	自动更新：
+plutommi\Service\NITZSrv\res\NITZSrv.res NVRAM_SETTING_AUTOUPDATE_DT_TIME_STATUS 
+plutommi\mmi\Setting\SettingRes\PhoneSetting.res NVRAM_AUTOUPDATE_DT_STATUS ??不清楚用途
+	默认城市
+plutommi\mmi\Organizer\OrganizerRes\WorldClock\WorldClock.res CURRENT_CITY
+		
+
+	背光时间：
+plutommi\Service\GpioSrv\gpiosrv.res NVRAM_BYTE_BL_SETTING_LEVEL
+plutommi\Service\GpioSrv\gpiosrv.res NVRAM_BYTE_BL_SETTING_HFTIME
+
+
+	手机追踪:
+plutommi\mmi\SecuritySetting\SecSetRes\SecSet.res mmi_rp_app_mobile_tracker_def.h
+plutommi\mmi\SecuritySetting\SecSetRes\SecSet.res MENU_ID_MOBILE_TRACKER
+plutommi\mmi\Inc\ProcedureConfig.h KM_MMI_FRM_PROC_ID_MOBILE_TRACKER
+	
+			
+	指令:
+plutommi/AppCore/SSC/SSCPassEngine.c mmi_show_sar_info			SAR
+plutommi/AppCore/SSC/SSCPassEngine.c km_change_imei_entry		IMEI
+plutommi/AppCore/SSC/SSCPassEngine.c km_hw_info_show			LCD+CAM信息
+plutommi/AppCore/SSC/SSCOperate.c mmi_ssc_send_imei_get_ilm
+
+----------------------------------------------------------------------------
+
+GUI:
+	title:
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_MM.c matrix_title_theme.active_filler
+	
+plutommi\Framework\GUI\GUI_SRC\gui_buttons.c gui_show_icontext_button
+	
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_cm.c MMI_multiline_inputbox.normal_text_color
+
+
+	电量:
+plutommi/Framework/GUI/GUI_Res/Status_icon_bar.res IMG_SI_BATTERY_STRENGTH 电量
+plutommi\Framework\GUI\GUI_SRC\wgui_status_icon_bar.c STATUS_ICON_BATTERY_STRENGTH
+plutommi\Framework\GUI\GUI_SRC\wgui_status_icon_bar.c wgui_status_icon_bar_icon_blink_and_animate_timer_callback
+plutommi\mmi\MiscFramework\MiscFrameworkSrc\PwronCharger.c g_charbat_context.chargerLevel 电量等级
+
+
+
+SBD_ELECTRIC_TORCH_BLINK_FAST_AND_SLOW 手电筒添加快闪慢闪
+mmi_prof_customize_scrn_csk_hdlr  SIM1_MSG_TONE_ITEM flag = 2;添加可选择文件
+
+
+cui_tone_selector_creat_tone_list 调整铃声个数
+km_mmi_prof_activate_profile_backlight_process
+
+gui_show_icontext_button  softkey字体颜色
+
+dm_redraw_category_screen
+
+
+----------------------------------------------------------------------------
+
+Idle:
+~  wgui_categories_idlescreen.c	待机运营商 mp3 fm
+plutommi\mmi\Idle\IdleSrc\IdleCommon.c
+plutommi\mmi\Idle\IdleSrc\IdleCommon.c km_mmi_electric_torch_switch 	长按打开手电筒
+	shortcuts：
+plutommi\Customer\CustResource\PLUTO_MMI\resource_shortcuts.c
+	week：
+plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c wgui_clock_move(km_clock_mainlcd_week
+
+
+Lock:
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c
+	默认时间
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerSetting.c MMI_SLK_SET_SELECTION_DEFAULT
+
+
+Dial:
+plutommi\CUI\DialerCui\DialerCuiCommon.c
+~wgui_cat203_set_editor_focus_state 修改dialer search拨号界面字体颜色背景
+
+
+Test:
+plutommi\MtkApp\FactoryMode\FactoryModeSrc\FactoryModeMain.c
+	
+
+
+----------------------------------------------------------------------------
+Menu:
+	title:
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_MM.c matrix_title_theme.active_filler
+	size:
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_MM.c configure_fixed_matrix(ixsize, iysize
+
+
+
+
+----------------------------------------------------------------------------
+pb:
+plutommi\mmi\PhoneBook\PhoneBookSrc\PhoneBookSetting.c
+	
+__KM_PHB_CONTACTS_DISPLAY__ 联系人显示
+----------------------------------------------------------------------------
+
+player:
+plutommi\MtkApp\Camera\CameraSrc\CameraApp.c
+plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioMainScreen.c
+
+
+plutommi\MtkApp\ImageView\ImageViewRes\imgview.res
+	
+
+
+SCREENSAVER:
+plutommi\mmi\Setting\SettingRes\ScreenSaver.res NVRAM_SCREENSAVER_STATUS
+plutommi\mmi\Setting\SettingRes\ScreenSaver.res RESTORE_DEFAULT_SCREENSAVER_STATUS
+plutommi\mmi\Setting\SettingRes\ScreenSaver.res NVRAM_CURRENT_SCREENSVER_ID
+plutommi\mmi\Setting\SettingRes\ScreenSaver.res RESTORE_DEFAULT_CURRENT_SCREENSVER_ID
+		
+
+----------------------------------------------------------------------------
+
+工具：
+	单位转换:
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak __MMI_CURRENCY_CONVERTER__
+plutommi\mmi\Extra\ExtraRes\currencyconvertor.res EXTRA_MENU_CURRENCYCONVERTOR_STRINGID
+plutommi\Customer\CustResource\CustMenuTree_Out.c EXTRA_CURRENCYCONVERTOR_MENU
+plutommi\mmi\Extra\ExtraSrc\currencyconvertor.c mmi_cconv_entry_app
+plutommi\mmi\Extra\ExtraSrc\currencyconvertor.c mmi_cconv_pre_entry_exchange
+plutommi\mmi\Extra\ExtraSrc\currencyconvertor.c SetCategory57RightSoftkeyFunctions(mmi_cconv_pre_entry_exchange 估计要关掉
+
+	游戏:
+plutommi/mmi/FunAndGames/FunAndGamesSrc/FunAndGamesSrc.c
+
+
+----------------------------------------------------------------------------
+
+
+扩展项目：
+
+custom\codegen\FARSIGHTED61M_CN_11C_BB\codegen_M101_COOLCEL_CS181_M_BRAVIS_F3.dws
+custom\common\config_account_M101_COOLCEL_CS181_M_BRAVIS_F3.h
+custom\common\userprofile_nvram_def_M101_COOLCEL_CS181_M_BRAVIS_F3.h
+custom\system\FARSIGHTED61M_CN_11C_BB\custom_MemoryDevice_M101_COOLCEL_CS181_M_BRAVIS_F3.h
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak
+make\Verno_M101_COOLCEL_CS181_M_BRAVIS_F3.bld
+plutommi\Customer\Audio\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\audio.zip
+plutommi\Customer\Images\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\image.zip
+plutommi/Customer/CustResource/M101_COOLCEL_MMI/MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\S2401_GTOUCH_F4\
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\S2401_GTOUCH_F4\ThemeRes.c
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\S2401_GTOUCH_F4\Themecomponents.h
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\ref_list_M101_COOLCEL_CS181_M_BRAVIS_F3.txt
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\CustResDefM101_COOLCEL.h
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\CustMiscDataM101_COOLCEL.c
+CUSTOMER_NAME_M101_COOLCEL_CS181_M_BRAVIS_F3 其他相关
+
+
+#SVN test
+TortoiseProc.exe /command:commit /path:"c:\svn_wc\file1.txt*c:\svn_wc\file2.txt" /logmsg:"test log message" 
+F:\11CW1352MP_MT6261DM\custom\codegen\FARSIGHTED61M_CN_11C_BB\codegen_M101_COOLCEL_CS181_M_BRAVIS_F3.dws
+
+
+
+----------------------------------------------------------------------------
+临时目录
+plutommi\Customer\ResGenerator\temp
+plutommi\mmi\TargetOption.txt
+	
+
+SI删除：行太长
+plutommi\Customer\ResGenerator\custom_option.txt 
+
+~
+set path=%path%;C:\CSDTK\cygwin\bin;
+find ./ -name "*.log"| xargs grep "ERROR"
+
+----------------------------------------------------------------------------
+
+Build问题:
+
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\build.log cleanlib
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\MT6261.log Finished: 			链接问题看这个
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\mmiresource.log Error:
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\mmi_framework.log Error:
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\mmi_app.log Error:
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\resgen_mtk_resgenerator_make.log Error:
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\MMI_DRV_DEFS.mak __USB_ENABLE__ 			查看宏是否存在
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\ckSysDrv.log Free#Space 		看剩余空间，nv大小
+
+
+
+1 超空间:
+aapmc error: error[2 calculating correct VIVA memory value...Failed
+Error: ScatterAssert expression (iImageLimit(ZIMAGE_ER)<ImageBase(cached_dummy_edn))failed
+
+
+2
+make[1]: *** [zimage_check] Error 1
+make[1]: Leaving directory 'F:/11CW1352MP_MT6261DM'
+make[1]: Entering directory 'F:/11CW1352MP_MT6261DM'
+make[1]: Leaving directory 'F:/11CW1352MP_MT6261DM'
+make: *** [POSTBUILD] Error 1
+perl tools\ChkDepMod.pl --step 2 M101_COOLCEL_CS181_M_BRAVIS_F3 gsm MT6261
+
+
+3
+make[1]: *** [obigo03cstkadp.lib] Error 2
+make[1]: *** [peripheral.lib] Error 2
+make[1]: *** [postproc.lib] Error 2
+make[1]: Leaving directory 'F:/11CW1352MP_MT6261DM'
+
+make: *** [xgc_all_libs_2] Error 1
+new
+
+
+4
+make[1]: *** [mmiresource.lib] Error 1
+make[1]: *** Waiting for unfinished jobs....
+make[1]: Leaving directory 'F:/11CW1352MP_MT6261DM'
+
+make: *** [xgc_all_libs_2] Error 1
+
+
+5 更换语言后 资源出错 开关机动画/状态图标不显示 --> NV中修改语言
+
+
+6 MMI Feature Check Error
+soft\tst\database_classb下面的临时文件删除
+
+
+7 XX.bin does not exist. Please check it.
+
+

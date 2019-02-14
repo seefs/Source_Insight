@@ -1,0 +1,830 @@
+/*
+    key:F10
+	功能：SR组菜单
+	1.1 在搜索结果窗口，显示主列表
+		1.Idle,mmiidle_cstyle.c
+		2.Set,mmiset_wintab.c
+		3.lang,mmi_res_prj_def.h
+		按编号跳转到对应文件(不考虑行)
+	1.2 其他文件(.c/.h)，添加/显示已存在item
+		key ~ file
+	2.1 在mk文件，显示主列表
+		1.LCD     - 跳到分组
+		2.camera  - 跳到分组
+		3....     - 
+		g.Font    - 第2次F10, 循环跳转
+		h.IM      - 第2次F10, 循环跳转
+		按编号跳转到宏
+	2.2 在mk文件，选择 - 添加item
+		key ~ mk head
+	2.3 在mk文件，不选择 - 跳转到当前复制内容对应的宏位置
+	2.4 以上功能冲突，用F1->Q清空剪切板调整
+	3.  编辑列表文件, 按F7->E->3/4, 打开: 
+	    \SI\node\Macro_Group_Menu.h
+	    \SI\node\Macro_Group_Make.h
+
+
+	
+Fun list:
+	macro _TempHeadF10(hbuf){}
+Group()
+	MakeGroup(hbuf)
+	MakeSelGroup(hbuf)
+	SrGroup(hbuf)
+	DefaultGroup(hbuf)
+	
+	ShowGroupMenu(curHead, grFile, isShow)		# item operation 1
+	GetGroupItem(curHead, mIndex, grFile) # item operation 2
+	GetGroupHead(curItem, grFile)		# item operation 3
+OpenF10Test(hbuf, v)
+	
+*/
+
+macro Group()
+{
+	//_TempHeadF10(hbuf)
+	hwnd = GetCurrentWnd()
+	hbuf = GetCurrentBuf()
+	
+	if (hwnd == 0)
+	{
+    	hbuf = OpenDefaultSR(hbuf)
+    	stop
+	}
+	//日志功能
+	if(IsFileName(hbuf, "Macro_Note_") || IsFileName(hbuf, "Simple_CTRL_"))
+	{
+		NoteGroup(hbuf)
+		stop
+	}
+	
+	if(IsMakeFile(hbuf)||IsMacroFile(hbuf))
+	{
+		MakeGroup(hbuf)
+	}
+	else if(IsMacroFile(hbuf))
+	{
+	}
+	else if(IsSRFile(hbuf))
+	{
+		SrGroup(hbuf)
+	}
+	else
+	{
+		DefaultGroup(hbuf)
+	}
+}
+
+macro GetNumFromKey(key, count)
+{
+	if (key >= 49 && key <= 57 && (key - 48) <= count)
+	{
+		return (key - 48)
+	}
+ 	else if(key == 48 && 10 <= count)
+	{
+		return (10)
+	}
+ 	else if(key >= 97 && (key - 97 + 11) <= count)
+	{
+		return (key - 97 + 11)
+	}
+	return -1
+}
+macro GetKeyExt(count)
+{
+	key = GetKey()
+	return GetNumFromKey(key, count)
+}
+macro GetKeyStr(index)
+{
+	if (index >= 1 && index <= 9)
+	{
+		return (index # "")
+	}
+ 	else if(index == 10)
+	{
+		return "0"
+	}
+ 	else if(index > 10)
+	{
+		return CharFromKey(index - 11 + 97)
+	}
+	return ""
+}
+macro MakeGroup(hbuf)
+{
+	clipStr = GetClipString(hbuf)
+	sel = MGetWndSel(hbuf)
+	if (!IsHasSelect(sel) && clipStr != "")
+	{
+		ckey = FindKeyFromGroup(hbuf, clipStr)
+		if(ckey == "")
+		{
+			//便于整行替换时, 先跳转到对应位置
+			mcr = GetLineMacro(clipStr)
+			mSel = SearchInBuf(hbuf, "^@mcr@", 0, 0, 0, 1, 0)
+			if (mSel != "")
+			{
+				ScrollCursor(mSel)
+				return
+			}
+		}
+		else
+		{
+			GotoMakeHead(hbuf, ckey)
+		}
+	}
+	else
+	{
+		MakeSelGroup(hbuf)
+	}
+}
+macro MakeSelGroup(hbuf)
+{
+	//_TempHeadF10(hbuf)
+	sel = MGetWndSel(hbuf)
+	if (IsSingleSelect(sel))
+	{
+		cur_line = GetBufLine(hbuf, sel.lnFirst )
+		if(sel.ichLim > strlen(cur_line))
+			stop
+		if(sel.ichFirst == sel.ichLim || 4095 == sel.ichLim)
+			stop
+		cur_sel = strmid(cur_line, sel.ichFirst, sel.ichLim)
+		
+		//1.quick goto
+		curSearch = ReadMode(getCurSearch(0))
+		if(curSearch == cur_sel)
+		{
+			tmpKey   = ReadMode(getCurHead(0))
+			curIndex = ReadMode(getCurIndex(0))
+			count    = ReadMode(getCurCount(0))
+			
+			if(curIndex < 1)
+			{
+				//不固定跳转
+				curRow = count
+				selHead = GetGroupItem(tmpKey, 1, "Make")
+				mSel = SearchInBuf(hbuf, selHead, curRow + 1, 0, 0, 1, 0)
+				if (mSel == "")
+				{
+					mSel = SearchInBuf(hbuf, selHead, 0, 0, 0, 1, 0)
+				}
+				if (mSel != "")
+				{
+					if (mSel.lnFirst != curRow)
+					{
+						cur_line = GetBufLine(hbuf, mSel.lnFirst )
+						mar = GetLineMacro(cur_line)
+						mSel.ichFirst = FindString( cur_line, mar )
+						mSel.ichLim = mSel.ichFirst + strlen(mar)
+						ScrollCursor(mSel)
+						//save后方便逐个跳转
+						SaveMode(getCurSearch(0), "@mar@")
+						SaveMode(getCurCount(0), mSel.lnFirst)
+					}
+				}
+				return
+			}
+			else
+			{
+				//固定跳转
+				if(count<1)
+				{
+					count = ShowGroupMenu(tmpKey, "Make", 0)
+					SaveMode(getCurCount(0), "@count@")
+					
+					if(curIndex == count)
+						curIndex = 1
+					else
+						curIndex = curIndex + 1
+					nextKey = GetGroupItem(tmpKey, curIndex, "Make")
+					if(nextKey !="")
+					{
+						ret  = GotoNextMacroEx(hbuf, nextKey, 0, 0)
+						if(ret == 1)
+						{
+							SaveMode(getCurSearch(0), "@nextKey@")
+							SaveMode(getCurIndex(0), "@curIndex@")
+							return
+						}
+					}
+				}
+			}
+		}
+		
+		//2.select key->group to Insert
+		count = ShowGroupMenu(cur_sel, "Make", 1)
+		if(count>0)
+		{
+			key = GetKeyExt(count)
+			if (key>0)
+			{
+				tmpMacro = GetGroupItem(cur_sel, key, "Make")
+				mSel = SearchInBuf(hbuf, "@tmpMacro@", 0, 0, 0, 0, 0)
+				if (mSel != "")
+				{
+					ScrollCursor(mSel)
+					return
+				}
+				else
+				{
+					InsBufLine(hbuf, sel.lnFirst + 1, "@tmpMacro@ = TRUE")
+					return
+				}
+			}
+			return
+		}
+		
+		//3.select not exist Macro to ADD
+		tmpKey = GetGroupHead(cur_sel, "Make")
+		if(tmpKey == "")
+		{
+			if(strlen(cur_sel)>25)
+				grMsg = strmid(cur_sel,0,25) # "..."
+			else
+				grMsg = cur_sel
+			grMsg = "Add item: @grMsg@" # CharFromKey(13)
+			grMsg = grMsg # "Note: LCD、camera、torch" # CharFromKey(13)
+			head = Ask("@grMsg@")
+			grRule = OpenCache(getNodePath(0) # "\\Macro_Group_Make.h")
+
+			mSel = SearchInBuf(grRule, "head:@head@", 0, 0, FALSE, FALSE, FALSE)
+			if (mSel == "")
+			{
+				AppendBufLine(grRule, "")
+				AppendBufLine(grRule, "head:@head@,@head@")
+			}
+			AppendBufLine(grRule, "item:@head@,@cur_sel@")
+			SaveBuf(grRule)
+			CloseBuf(grRule)
+			return
+		}
+		
+		//count = ShowGroupMenu(tmpKey, "Make", 0)
+		tmpCI = GetGroupCountAndIndex(tmpKey, cur_sel, "Make")
+		curIndex = tmpCI/100
+		count 	 = tmpCI - curIndex*100
+		{
+			//4.select exist Macro to Next
+			if(curIndex == count)
+				curIndex = 1
+			else
+				curIndex = curIndex + 1
+			nextKey= GetGroupItem(tmpKey, curIndex, "Make")
+			if(nextKey !="")
+			{
+				ret  = GotoNextMacroEx(hbuf, nextKey, 0, 0)
+				if(ret == 1)
+				{
+					SaveMode(getCurSearch(0), "@nextKey@")
+					SaveMode(getCurIndex(0), "@curIndex@")
+					SaveMode(getCurCount(0), "@count@")
+					SaveMode(getCurHead(0), "@tmpKey@")
+					return
+				}
+			}
+		}
+		
+		//5.select exist Macro to Insert
+		count = ShowGroupMenu(tmpKey, "Make", 1)
+		key = GetKeyExt(count)
+		if (key>0)
+		{
+			tmpMacro= GetGroupItem(tmpKey, key, "Make")
+			mSel = SearchInBuf(hbuf, "@tmpMacro@", 0, 0, 0, 0, 0)
+			if (mSel != "")
+			{
+				ScrollCursor(mSel)
+				return
+			}
+			else
+			{
+				InsBufLine(hbuf, sel.lnFirst + 1, "@tmpMacro@ = TRUE")
+				return
+			}
+		}
+		return
+	}
+	count = ShowGroupMenu("", "Make", 1)
+	if(count>0)
+	{
+		key = GetKeyExt(count)
+		if (key>0)
+		{
+			//6.only goto first
+			head = GetGroupItem("", key, "Make")
+			selHead = GetGroupItem(head, 1, "Make")
+			if(selHead !="")
+			{
+				if(strmid(selHead,0,1) =="^")
+				{
+					mSel = SearchInBuf(hbuf, selHead, 0, 0, 0, 1, 0)
+					if (mSel != "")
+					{
+						cur_line = GetBufLine(hbuf, mSel.lnFirst )
+						mar = GetLineMacro(cur_line)
+						mSel.ichFirst = FindString( cur_line, mar )
+						mSel.ichLim = mSel.ichFirst + strlen(mar)
+						ScrollCursor(mSel)
+						//save后方便逐个跳转
+						SaveMode(getCurSearch(0), "@mar@")
+						SaveMode(getCurIndex(0), "0")
+						SaveMode(getCurCount(0), mSel.lnFirst)
+						SaveMode(getCurHead(0), "@head@")
+						return
+					}
+				}
+				else
+				{
+					ret = GotoNextMacroEx(hbuf, selHead, 0, 0)
+					if(ret == 1)
+					{
+						SaveMode(getCurSearch(0), "@selHead@")
+						SaveMode(getCurIndex(0), "1")
+						SaveMode(getCurCount(0), "0")
+						SaveMode(getCurHead(0), "@head@")
+						return
+					}
+				}
+			}
+
+			//7.select head to goto
+			GotoMakeHead(hbuf, head)
+		}
+	}
+	else
+	{
+		msg("No Make List")
+	}
+	
+}
+
+macro SrGroup(hbuf)
+{
+	//_TempHeadF10(hbuf)
+	count = ShowGroupMenu("", "Menu", 1)
+	if(count>0)
+	{
+		key = GetKeyExt(count)
+		if (key>0)
+		{
+			file = GetGroupItem("", key, "Menu")
+			OpenExistFile(file)
+		}
+	}
+	else
+	{
+		msg("No Menu List")
+	}
+}
+//添加SR列表
+macro DefaultGroup(hbuf)
+{
+	//_TempHeadF10(hbuf)
+	szpathName = GetBufName(hbuf)
+	filename = GetFileName(szpathName)
+	mNote = GetGroupHead(filename, "Menu")
+	if(mNote == "")
+	{
+		grMsg = "Add Menu, File: @filename@" # CharFromKey(13)
+		grMsg = grMsg # "Note: set、tool、menu" # CharFromKey(13)
+		mNote = Ask("@grMsg@")
+		grRule = OpenCache(getNodePath(0) # "\\Macro_Group_Menu.h")
+
+		mSel = SearchInBuf(grRule, mNote, 0, 0, FALSE, FALSE, FALSE)
+		if (mSel == "")
+		{
+			AppendBufLine(grRule, "")
+			AppendBufLine(grRule, "head:@mNote@,@mNote@")
+		}
+		AppendBufLine(grRule, "item:@mNote@,@filename@")
+		SaveBuf(grRule)
+		CloseBuf(grRule)
+	}
+	else
+	{
+		//如果备注同名，显示相关列表
+		count = ShowGroupMenu(mNote, "Menu", 1)
+		if(count>0)
+		{
+			key = GetKeyExt(count)
+			if (key>0)
+			{
+				file = GetGroupItem(mNote, key, "Menu")
+				OpenExistFile(file)
+			}
+		}
+		else
+		{
+			msg("Cur Item: @mNote@  @filename@")
+		}
+	}
+}
+
+//菜单级数对应的所有名称+文件名
+macro ShowGroupMenu(curHead, grFile, isShow)
+{
+	//_TempHeadF10(hbuf)
+	hprj = GetCurrentProj ()
+	path = GetProjDir (hprj)
+	bft = getBaseFileType(path, 2)
+	if(bft == "")
+		stop
+	mFile = getNodePath(0) # "\\Macro_Group_@grFile@_@bft@.h"
+	
+	if(curHead == "")
+	{
+		mKey = "head:"
+	}
+	else
+	{
+		mKey = "item:" # curHead # ","
+	}
+	mBuf = OpenCache(mFile)
+	mSel = SearchInBuf(mBuf, mKey, 0, 0, FALSE, FALSE, FALSE)
+	menuMsg = ""
+	index = 0
+
+	while (mSel != "")
+	{
+		index = index + 1
+		line = GetBufLine(mBuf, mSel.lnFirst )
+		ilen = strlen(line)
+		
+		ichFile = SplitMacro(line, ",", 0, ilen)
+		curItem   = strmid(line, ichFile+1, ilen)
+		indexStr = GetKeyStr(index)
+		menuMsg = menuMsg # "@indexStr@. @curItem@" # CharFromKey(13)
+		
+		mSel = SearchInBuf(mBuf, mKey, mSel.lnLast+1, 0, 0, 0, 0)
+	}
+	CloseBuf(mBuf)
+	if(index > 0 && isShow)
+	{
+		msg(menuMsg)
+	}
+	return index
+}
+
+//get:key->value
+macro GetGroupItem(curHead, mIndex, grFile)
+{
+	//_TempHeadF10(hbuf)
+	hprj = GetCurrentProj ()
+	path = GetProjDir (hprj)
+	bft = getBaseFileType(path, 2)
+	if(bft == "")
+		stop
+	mFile = getNodePath(0) # "\\Macro_Group_@grFile@_@bft@.h"
+	
+	if(curHead == "")
+	{
+		mKey = "head:"
+	}
+	else
+	{
+		mKey = "item:" # curHead # ","
+	}
+	mBuf = OpenCache(mFile)
+	mSel = SearchInBuf(mBuf, mKey, 0, 0, FALSE, FALSE, FALSE)
+	index = 1
+	curItem = ""
+
+	while (mSel != "")
+	{
+		if(index == mIndex)
+		{
+			line = GetBufLine(mBuf, mSel.lnFirst )
+			ilen = strlen(line)
+			
+			ichFile = SplitMacro(line, ",", 0, ilen)
+			curItem   = strmid(line, ichFile+1, ilen)
+			break
+		}
+		
+		mSel = SearchInBuf(mBuf, mKey, mSel.lnLast+1, 0, 0, 0, 0)
+		index = index + 1
+	}
+	CloseBuf(mBuf)
+	return curItem
+}
+macro GetGroupCountAndIndex(curHead, curMacro, grFile)
+{
+	//_TempHeadF10(hbuf)
+	hprj = GetCurrentProj ()
+	path = GetProjDir (hprj)
+	bft = getBaseFileType(path, 2)
+	if(bft == "")
+		stop
+	mFile = getNodePath(0) # "\\Macro_Group_@grFile@_@bft@.h"
+	
+	if(curHead == "")
+	{
+		mKey = "head:"
+	}
+	else
+	{
+		mKey = "item:" # curHead # ","
+	}
+	mBuf = OpenCache(mFile)
+	mSel = SearchInBuf(mBuf, mKey, 0, 0, FALSE, FALSE, FALSE)
+	index = 1
+	curItem = ""
+	curIndex = 0
+
+	while (mSel != "")
+	{
+		line = GetBufLine(mBuf, mSel.lnFirst )
+		ilen = strlen(line)
+		
+		ichFile = SplitMacro(line, ",", 0, ilen)
+		curItem   = strmid(line, ichFile+1, ilen)
+		if(curItem == curMacro)
+		{
+			curIndex = index
+			//break
+		}
+		
+		mSel = SearchInBuf(mBuf, mKey, mSel.lnLast+1, 0, 0, 0, 0)
+		index = index + 1
+	}
+	CloseBuf(mBuf)
+	return (curIndex*100 + index-1) //index-1是总数
+}
+
+//get:value->key
+macro GetGroupHead(curItem, grFile)
+{
+	//_TempHeadF10(hbuf)
+	hprj = GetCurrentProj ()
+	path = GetProjDir (hprj)
+	bft = getBaseFileType(path, 2)
+	if(bft == "")
+		stop
+	mFile = getNodePath(0) # "\\Macro_Group_@grFile@_@bft@.h"
+	
+	mBuf = OpenCache(mFile)
+	mSel = SearchInBuf(mBuf, curItem, 0, 0, FALSE, FALSE, FALSE)
+	//item:calc,mmicalc_main.c
+	curHead = ""
+	if (mSel != "")
+	{
+		//menu2:tool-a1,sbd_f3.em
+		line = GetBufLine(mBuf, mSel.lnFirst )
+		ilen = strlen(line)
+		
+		ichLv1 = SplitMacro(line, ":", 0, ilen)		
+		//iLv   = strmid(line, 0, ichLv1) //"menu"
+		
+		ichLv2 = SplitMacro(line, ",", 0, ilen)
+		curHead    = strmid(line, ichLv1 + 1, ichLv2) //"calc"
+	}
+	CloseBuf(mBuf)
+	return curHead
+}
+
+//find key from mk group
+macro FindKeyFromGroup(hbuf, word)
+{
+
+	hbufRule = OpenCache(getNodePath(0) # "\\Macro_Group_Make.h")
+	ret = ""
+	
+	len = strlen (word)
+	left = 0
+	right = 0
+	while (1)
+	{
+		right = SplitMacro(word, "_", left, len)
+		if (right == -1)
+		{
+			mcr = strmid(word, left, len);
+		}
+		else if (right >= left)
+		{
+			mcr = strmid(word, left, right);
+		}
+		else
+		{
+			break
+		}
+		
+		row = FindCacheWholeFile(hbufRule, "head:" # mcr # ",")
+		if(row >= 0)
+		{
+			ret = mcr
+			break
+		}
+		else
+		{
+			if (right == -1)
+			{
+				break
+			}
+			left = right + 1
+			continue
+		}
+	}
+	
+	CloseBuf(hbufRule)
+	return ret;
+}
+
+macro GotoMakeHead(hbuf, head)
+{
+	//7.select head to goto(1)
+	//use rule search
+	mSel = SearchInBuf(hbuf, "^#@head@", 0, 0, 0, 1, 0)
+	if (mSel != "")
+	{
+		mSel.ichFirst = mSel.ichLim - strlen(head)
+		ScrollCursor(mSel)
+		return
+	}
+	
+	//8.select head to goto(1)
+	mSel = SearchInBuf(hbuf, "^# .*@head@", 0, 0, 0, 1, 0)
+	if (mSel != "")
+	{
+		mSel.ichFirst = mSel.ichLim - strlen(head)
+		ScrollCursor(mSel)
+		return
+	}
+}
+//////////////////////////////////////////////////////////////
+macro NoteGroup(hbuf)
+{
+	//快捷键F10->sa;key=sa最多位数为2:
+	count = 2;
+	i = 0;
+	strKey = ""
+	isPreview = 0
+	
+	while(i<count)
+	{
+		key = GetKey()
+	 	if(key >= 97 && key <= 97 + 26)          		//a-z
+		{
+			strKey = strKey # CharFromKey(key)
+		}
+		else if (key >= 4208 && key <= 4219)             // F1~F12,!=F10
+		{
+			if(key >= 4217)
+			{
+				strKey = strKey # "F1" # (key-4217)
+			}
+			else
+			{
+				strKey = strKey # "F" # (key-4207)
+			}
+		}
+		else if (key >= 1048688 && key <= 1048699)       // F1~F12,!=F10
+		{
+			if(key >= 1048697)
+			{
+				strKey = strKey # "F1" # (key-1048697)
+			}
+			else
+			{
+				strKey = strKey # "F" # (key-1048687)
+			}
+		}
+		else if (key >= 262192 && key <= 262202)       		// ctrl+0,9
+		{
+			strKey = strKey # "N" # (key-262192)
+		}
+		else if (key >= 262209 && key <= 262209 + 26 && key != 262209 + 3)       // ctrl+a,z,非d
+		{
+			strKey = strKey # "C" # CharFromKey(key - 262209 + 97)
+		}
+		else
+		{
+		 	if(i==0)
+			{
+				isPreview = 1
+			}
+			break
+		}
+
+		searchStr = "[" # strKey # "]"
+		mSel = SearchInBuf(hbuf, searchStr, 0, 0, FALSE, FALSE, FALSE)
+		if (mSel != nil)
+		{
+			ScrollCursor(mSel)
+			return
+		}
+		i = i + 1
+	}
+
+	if(isPreview)
+	{
+		//searchStr = "\\[[a-z]+\\]"
+		//searchStr = "\\[F[0-9]+\\]"
+		searchStr = "\\[[a-zFNC][a-z0-9]*\\]"
+		mSel = SearchInBuf(hbuf, searchStr, 0, 0, FALSE, TRUE, FALSE)
+		index = 1
+		allKeyTxt = ""
+
+		while (mSel != "")
+		{
+			line = GetBufLine(hbuf, mSel.lnFirst )
+			allKeyTxt = allKeyTxt # GetKeyStr(index) # "." # line # CharFromKey(13)
+			
+			mSel = SearchInBuf(hbuf, searchStr, mSel.lnLast+1, 0, FALSE, TRUE, FALSE)
+			index = index + 1
+		}
+		msg(allKeyTxt)
+
+		
+		if(allKeyTxt != "")
+		{
+			key = GetKey()
+			mIndex = GetNumFromKey(key, index - 1)
+			if (mIndex>0)
+			{
+				searchStr = "\\[[a-z]+\\]"
+				mSel = SearchInBuf(hbuf, searchStr, 0, 0, FALSE, TRUE, FALSE)
+				indexN = 1
+				curItem = ""
+
+				while (mSel != "")
+				{
+					if(indexN == mIndex)
+					{
+						break
+					}
+					mSel = SearchInBuf(hbuf, searchStr, mSel.lnLast+1, 0, FALSE, TRUE, FALSE)
+					indexN = indexN + 1
+				}
+				if (mSel != "")
+				{
+					ScrollCursor(mSel)
+				}
+			}
+			else
+			{
+				count = 2;
+				i = 0;
+				strKey = ""
+				
+				while(i<count)
+				{
+				 	if(key >= 97 && key <= 97 + 26)
+					{
+						strKey = strKey # CharFromKey(key)
+					}
+					else
+					{
+						break
+					}
+
+					searchStr = "[" # strKey # "]"
+					mSel = SearchInBuf(hbuf, searchStr, 0, 0, FALSE, FALSE, FALSE)
+					if (mSel != nil)
+					{
+						ScrollCursor(mSel)
+						return
+					}
+					i = i + 1
+					key = GetKey()
+				}
+			}
+		}
+	}
+}
+
+macro OpenF10Test(hbuf, v)
+{
+	//_TempHeadF10(hbuf)
+	//Tree()
+	if(v == ")") //from F1, no param, param is ")"
+	{
+		v = "F101"
+	}
+	else if(v == "F10") //from F10
+	{
+		v = "F102"
+	}
+	
+	if(v == "F101")
+	{
+	}
+	else if(v == "F102")
+	{
+		//DefaultGroup(hbuf)
+		SrGroup(hbuf)
+		MakeSelGroup(hbuf)
+	}
+	else if(v == "F104")
+	{
+		curItem = GetGroupItem("menu3:tool-a2", 1, "Menu")
+		msg(curItem)
+		iFcurItemile = GetGroupItem("menu3:tool-a2", 2, "Menu")
+		msg(curItem)
+	}
+
+}
+
+

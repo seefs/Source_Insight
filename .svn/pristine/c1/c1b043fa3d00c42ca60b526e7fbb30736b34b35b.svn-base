@@ -1,0 +1,16 @@
+
+val:nv-1000-500,allnv~279~9.7+1~SECTOR10
+val:nv-1000-300,allnv~228~8.1+1~NORMAL
+val:nv-1000-200,allnv~206~7.4+1~SMALL_EX
+val:nv-1000-150,allnv~186~7.4+1~SMALL_EX
+val:nv-1000-100,allnv~180~6.6+1~SMALL
+val:nv-1000-50,allnv~175~6.4+1~SMALL
+val:nv-500-500,allnv~259~9+1~SECTOR10
+val:nv-500-300,allnv~203~7.3+1~SMALL_EX
+val:nv-500-200,allnv~181~6.6+1~SMALL
+val:nv-500-100,allnv~155~5.8+1~TINY_EXE
+val:nv-500-50,allnv~152~5.7+1~TINY_EXE
+val:nv-default,allnv~no cfg
+
+
+

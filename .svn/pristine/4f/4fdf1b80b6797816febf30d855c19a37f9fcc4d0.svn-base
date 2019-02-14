@@ -1,0 +1,59 @@
+快捷键：
+F11：打开/关闭笔记
+F2： 打开选择的路径/文件; 文件名+扩展名
+F5： 打开sln文件/cmd命令+右键粘贴; 当前行以cmd、make、call、replace、vc、vs08开头
+
+-------------------------
+默认(便于上传svn):
+set S039_ALF_X2447D_F3
+
+当前project:
+set SE039_YST_E18_E250_F2
+set SE369_HK_H2020B_BRIGHT_F2
+
+
+
+
+
+
+--------------------------------------------------
+
+6531E编译指令:
+call:F:\6531E_16A\...\x.exe 
+cmd:F:\6531E_16A\cmd
+
+编译:
+open:project\SE039_YST_E18_E250_F2\New_common.bat
+
+
+
+
+
+编译模块
+make p=SE039_YST_E18_E250_F2 m=custom_drv
+make p=SE039_YST_E18_E250_F2 image
+
+或 (1行命令)
+make p=SE039_YST_E18_E250_F2 m=custom_drv update image
+
+
+模拟器：
+make p=SE039_YST_E18_E250_F2 m=simulator
+vc:build\SE039_YST_E18_E250_F2_builddir\win\..
+
+
+下载工具
+open tools\DEBUG_TOOL\ResearchDownload\Bin\ResearchDownload.exe
+	
+--------------------------------------------------
+编辑make:
+	屏:
+project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk LCD_CHIP
+	摄像头:
+project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk SENSOR_CHIP
+	屏亮度:
+chip_drv\chip_module\analog\sr1161\analog_phy_sr1161.c SBD_LCM_BL_25MA_SUPPORT
+	版本号：
+project\SE039_YST_E18_E250_F2\resource\version_software_mocor.h
+
+

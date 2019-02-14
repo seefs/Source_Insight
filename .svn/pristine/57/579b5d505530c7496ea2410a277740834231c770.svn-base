@@ -1,0 +1,165 @@
+/***********************************************************************/
+/******************************* 9820e *********************************/
+/***********************************************************************/
+
+9820e   [Ca]:
+
+
+//笔记根目录: (不用这个)
+//Save:SI\node\9820e\Macro_9820e_Root.h
+
+安装:
+Save:SI\node\9820e\Macro_9820e_Install.h
+
+
+/***********************************************************************/
+/****************************** tool ***********************************/
+/***********************************************************************/
+
+tool       [Ct]:
+
+
+//SecureCRT:
+Save:SI\node\ToolsMsg\git\Macro_SecureCRT.h
+//SecureCRT.exe:
+open: C:\Program^Files\VanDyke^Software\Clients\SecureCRT.exe
+//	\\192.168.2.115\xiaoj
+
+提问题 
+http://222.66.158.139:2008/cqweb/#
+资料 
+https://isupport.spreadtrum.com/iSupport/apply/faq_list#tab-
+
+
+//git:
+Save:SI\node\ToolsMsg\git\Macro_git.h
+
+
+//Source Insight:
+Save:SI\node\ToolsMsg\git\Macro_SI.h
+
+
+//Android Studio:
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h
+
+
+	
+/***********************************************************************/
+/****************************** System *********************************/
+/***********************************************************************/
+
+System [Cs]:
+
+E:\desktop\9820E\node1\sys_cfg
+E:\desktop\9820E\node1\node_pdf
+
+
+
+Save:SI\node\android\Macro_android_Root.h
+
+
+
+//drivers:
+Save:SI\node\9820e\Macro_9820e_Drivers.h
+	
+//kernel:
+Save:SI\node\9820e\Macro_9820e_Kernel.h
+	
+//file:
+Save:SI\node\9820e\Macro_9820e_File.h
+
+kernel/drivers/rtc/rtc-sprd.c
+	
+
+
+//doc:
+Save:SI\node\9820e\doc\SPR_Android_Platform_QA_201204.h
+
+
+
+/***********************************************************************/
+/******************************* App ***********************************/
+/***********************************************************************/
+
+App      [Cf]:
+
+//部分整理
+Save:SI\node\9820e\Macro_9820e_App.h
+Save:SI\node\9820e\Macro_9820e_App_Setting.h
+Save:SI\node\9820e\Macro_9820e_Setting_Recovery.h
+
+//未整理
+Save:SI\node\9820e\Macro_9820e_App_Launch.h
+Save:SI\node\9820e\Macro_9820e_App_SystemUI.h
+//联系人 短信：
+Save:SI\node\9820e\Macro_9820e_App_Contacts.h
+//相册：
+Save:SI\node\9820e\Macro_9820e_App_Gallery.h
+//计算器
+Save:SI\node\9820e\Macro_9820e_App_Calculator.h
+
+//noFix:
+Save:SI\node\9820e\Macro_9820e_App_z_noFix.h
+
+
+//新加项
+Save:SI\node\9820e\Macro_9820e_App_z_null.h
+
+kernel_2.3.5\drivers\rtc\ rtc-sprd.c
+
+
+
+/***********************************************************************/
+/****************************** Build **********************************/
+/***********************************************************************/
+
+Build    [Cb]:
+
+
+//部分整理
+Save:SI\node\9820e\Macro_9820e_Build.h
+
+
+//未整理
+Save:SI\node\9820e\Macro_9820e_Build_Apk.h
+
+
+
+
+/***********************************************************************/
+/****************************** Other **********************************/
+/***********************************************************************/
+
+Other   [Cg]:
+
+工程目录: 
+path: F:\9820e\note
+F:\9820e\note\基本操作.txt
+
+
+//his:
+//F:\9820e\note\his.h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

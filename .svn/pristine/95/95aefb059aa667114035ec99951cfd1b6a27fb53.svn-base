@@ -1,0 +1,38 @@
+今天试了下,
+
+SI3.5添加宏，有2个麻烦的地方
+1 base目录在C盘，宏文件（save/SI)在D盘，
+  添加宏文件，可以先把 base工程 复制到D盘，打开D-base工程, 添加文件D:/save/SI/SI/Macro、D:/save/SI/SI/MacroSBD
+  
+  其他文件引用已改为具体路径，所有不用添加到 base工程, 
+  
+2 添加菜单、快捷键,
+Options->Menu，输入macro，只有10几个，
+（带参数的宏不会显示在这里，不用的宏添加上参数就好了）
+	Options->Menu->TREE     	->Menu/work->Insert->key/F1
+	Options->Menu->OpenPath     	->Menu/work->Insert->key/F2
+	Options->Menu->SearchForward     ->Menu/work->Insert->key/F3
+	Options->Menu->Searchbackward     ->Menu/work->Insert->key/F4
+	Options->Menu->Goto       	->Menu/work->Insert->key/F5
+	Options->Menu->Rule       	->Menu/work->Insert->key/F6
+	Options->Menu->Tools       	->Menu/work->Insert->key/F7
+	Options->Menu->Hlight       	->Menu/work->Insert->key/F8
+	Options->Menu->Search      	->Menu/work->Insert->key/F9
+	Options->Menu->Group        	->Menu/work->Insert->key/F10
+	Options->Menu->Note    		->Menu/work->Insert->key/F11
+	Options->Menu->ShowMacro    	->Menu/work->Insert->key/F12
+还有几个也加上快捷键
+Options->key，输入macro，
+	macro:CTRLB   		->key/CTRL+B
+	macro:CTRLD   		->key/CTRL+D
+	macro:CTRLW   		->key/CTRL+W
+	macro:CTRLT   		->key/CTRL+T
+	
+3 设置完了，把base工程的文件，覆盖到C盘的文件，就好了
+
+4 需要 把sbd_base.em的path 改为实际使用path
+  (1) 项目path
+  (2) save/si path
+  (3) Beyond Compare path
+    
+    

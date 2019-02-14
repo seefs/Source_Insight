@@ -1,0 +1,176 @@
+/***********************************************************************/
+/******************************* tool *********************************/
+/***********************************************************************/
+
+工具 [Ca]: 安装
+
+安装:
+Save:SI\node\9820e\Macro_9820e_Install.h
+
+
+//SecureCRT:
+Save:SI\node\ToolsMsg\git\Macro_SecureCRT.h
+//SecureCRT.exe:
+open: C:\Program^Files\VanDyke^Software\Clients\SecureCRT.exe
+//	\\192.168.2.115\xiaoj
+
+
+提问题 
+http://222.66.158.139:2008/cqweb/#
+资料 
+https://isupport.spreadtrum.com/iSupport/apply/faq_list#tab-
+
+
+//git:
+Save:SI\node\ToolsMsg\git\Macro_git.h
+
+//Source Insight:
+Save:SI\node\ToolsMsg\git\Macro_SI.h
+
+//Android Studio:
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h
+
+
+
+/***********************************************************************/
+/****************************** System *********************************/
+/***********************************************************************/
+编译 [Cs]: Apk drivers 系统
+
+
+//部分整理
+Save:SI\node\9820e\Macro_9820e_Build.h
+
+//未整理
+Save:SI\node\9820e\Macro_9820e_Build_Apk.h
+
+
+//drivers: 未整理
+Save:SI\node\9820e\Macro_9820e_Drivers.h
+	
+//kernel: 未整理
+Save:SI\node\9820e\Macro_9820e_Kernel.h
+	
+//系统 文件: 未整理
+Save:SI\node\9820e\Macro_9820e_File.h
+
+
+	
+/***********************************************************************/
+/***************************** 参考笔记 ********************************/
+/***********************************************************************/
+笔记 [Ce]: 参考笔记
+//参考笔记: 未整理
+E:\desktop\9820E\node1\sys_cfg
+E:\desktop\9820E\node1\node_pdf
+//参考笔记
+
+
+//doc:展讯Android平台技术问答_201204
+Save:SI\node\9820e\doc\Macro_SPR_Android_Platform_QA_201204.h  Num
+
+//doc:Spreadtrum Android 8810_6820 FAQ 1207
+Save:SI\node\9820e\doc\Macro_SPR_Android_8810_6820_FAQ_1207.h  Num
+
+//doc:android多媒体处理流程
+Save:SI\node\9820e\doc\Macro_SPR_Android_Multimedia.h
+	
+//doc:QQ群5
+Save:SI\node\9820e\doc\Macro_QQ_Android_1_5_1.h
+
+//doc:易连汇通软件-FAQ--MTK
+Save:SI\node\9820e\doc\Macro_QQ_Android_1_7_1.h
+	
+//doc:MTK-展讯修改笔记--csdn
+Save:SI\node\9820e\doc\Macro_QQ_Android_1_3_1.h
+Save:SI\node\9820e\doc\Macro_QQ_Android_1_3_2.h
+	
+
+
+/***********************************************************************/
+/******************************* App ***********************************/
+/***********************************************************************/
+
+应用 [Cf]:
+
+//部分整理
+Save:SI\node\9820e\Macro_9820e_App.h
+	
+//部分整理
+Save:SI\node\9820e\Macro_9820e_App_Setting.h
+Save:SI\node\9820e\Macro_9820e_Setting_Recovery.h
+
+//网上找的一些展讯4.4笔记
+Save:SI\node\9820e\Macro_9820e_App_Launch.h
+
+//未整理
+Save:SI\node\9820e\Macro_9820e_App_SystemUI.h
+//联系人 短信:
+Save:SI\node\9820e\Macro_9820e_App_Contacts.h
+//相册:
+Save:SI\node\9820e\Macro_9820e_App_Gallery.h
+//计算器
+Save:SI\node\9820e\Macro_9820e_App_Calculator.h
+
+//未整理:
+Save:SI\node\9820e\Macro_9820e_App_z_noFix.h
+Save:SI\node\9820e\Macro_9820e_noFix_1.h
+
+
+/***********************************************************************/
+/******************************** Code *********************************/
+/***********************************************************************/
+代码 [Cc]: Service
+一些代码跟踪
+
+//Service: 未整理
+Save:SI\node\android\Macro_Activity_getSystemService.h
+
+
+
+
+/***********************************************************************/
+/****************************** Other **********************************/
+/***********************************************************************/
+
+其他 [Cg]: cmd命令
+
+工程目录: 
+path: F:\9820e\note
+F:\9820e\note\基本操作.txt
+
+
+
+
+
+在笔记中搜 default_wallpaper:
+//cmd: E:\save\SI\node\9820e
+E:\save\SI\Cmd\cmd.exe
+cd E:\save\SI\node\9820e
+	
+
+set path=%path%;C:\CSDTK\cygwin\bin;
+find ./ -name "*.log"| xargs grep "ERROR"
+find ./ -name "*.h"| xargs grep "default_wallpaper"
+没装cygwin:
+findstr /s /i "ERROR" *.log>aaaa.txt
+findstr /s /i "default_wallpaper" *.h>aaaa.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

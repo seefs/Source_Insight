@@ -1,0 +1,48 @@
+###
+### setting
+### 
+### 设置固定行号
+###
+
+
+
+### 参考行号固定在：12、15、18、21、...
+### 备注信息请手动添加在这个文件.
+### 12.Tools Mode: G(跳转) S(搜索) B(对比)
+g
+
+### 15.Cur Make: 
+SE039_SXJY_D700_VORTEX_F3
+
+### 18.BCompare target(304表示3与4比较，当前3那么比较4，当前4那么比较3)
+302
+
+### 21.tree  (未使用)
+project
+
+### 24.SR Mode  (CTRL + D : search head 删除相同头部的行)
+00_Macro_E_2018
+
+### 27.last command (未使用)
+CtrlW
+
+### 30.search row (未使用)
+7
+
+### 33.search column (未使用)
+m20
+
+### 36.Cur search macro (F10)
+IM_KAZAKH_SUPPORT
+
+### 39.Cur search head (F10)
+IM
+
+### 42.Cur search index (F10)
+0
+
+### 45.Cur search max (F10)
+968
+
+### 48.bmp one/two (F7 + v: 2次选择对比)
+2

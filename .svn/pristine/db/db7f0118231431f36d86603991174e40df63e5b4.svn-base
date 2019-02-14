@@ -1,0 +1,61 @@
+
+备注：
+重新发，修改SI宏F5跳转不准（复制中文 -> F5）
+每次修改宏时，sbd_base.em 中的路径不要改，每个电脑上不一样
+sbd_base.em 路径要正确,  不然 F12显示配置会不准(宏名称不一样)
+-------------------------------
+
+
+1 附件：
+SI4.0安装包\SI4.0安装包\...
+SI4.0安装包\Source Insight 4.0_20171017(配置)    
+SI4.0安装包\SI4.0安装使用.txt
+
+
+SI_20171107.rar\save\SI\Cmd\...            暂时不用
+SI_20171107.rar\save\SI\Cmd_unzip\...      导出图片批处理，直接执行
+SI_20171107.rar\save\SI\Macro\...          官网上的SI宏
+SI_20171107.rar\save\SI\MacroSBD\...       自己加的SI宏，快捷键 F2 ~ F12
+SI_20171107.rar\save\SI\MacroSBD\sbd_base.em
+SI_20171107.rar\save\SI\MacroSBD\sbd_f2.em
+SI_20171107.rar\save\SI\MacroSBD\sbd_f5.em
+SI_20171107.rar\save\SI\MacroSBD4.0\...    暂时不用
+
+SI_20171107.rar\save\SI_res\6531DA\...    导出图片路径
+SI_20171107.rar\save\SI_res\6531E\...
+
+
+
+2 修改 sbd_base.em 中对应项目路径
+
+
+
+
+
+
+
+
+1 Cmd_unzip解压图片文件, 增加环境变量:
+	cygwin_bin:
+	C:\CSDTK\cygwin\bin
+	
+	修改 Path:
+	%cygwin_bin%;
+
+
+2 SI多版本宏设置:
+	sourceInsight 3.5和4.0共用一组宏文件，会有冲突，可以分2个文件夹
+	E:\save\SI\MacroSBD4.0\...em
+	E:\save\SI\MacroSBD\...em
+	
+	
+***** **** ***** micro分类 ***** **** *****
+comment.em：注释与取消注释；
+Gaoke.em：文件名
+multikey.em：多键
+ProgressiveSearch.em：逐字搜索
+siutils.em：注释与取消注释；缩进
+stringutils.em：左右查找；非空index；空index
+TrimSpaces.em：空
+utils.em: 符号位置
+wordstar.em：组合键

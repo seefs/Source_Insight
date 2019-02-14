@@ -1,0 +1,14 @@
+
+Base test
+replace:M105_MLT_S2401_ZX_F4
+call cmd
+cmd ...
+
+
+БрвыЃК
+make M105_MLT_S2401_ZX_F4 gprs new
+
+
+БрвыФЃПщ
+make M105_MLT_S1716_GRAVITY_BACK_UP_F4 gprs remake custom
+

@@ -1,0 +1,34 @@
+
+MTK常用断点:
+
+事件:
+mmi_frm_post_event
+
+
+
+str:
+get_string
+
+
+
+gui:
+gui_draw_filled_area
+
+
+界面入口：
+mmi_frm_scrn_enter
+	node_exec_entry_proc
+
+
+转格式：
+app_ucs2_wtoi
+
+
+plutommi/CUI/SmsCui/SmsSenderCui.c SBD_SMS_SEND_4SIM_SELECT_FIX
+
+cui_sms_recipient_opt_send_by_sim
+
+
+
+
+

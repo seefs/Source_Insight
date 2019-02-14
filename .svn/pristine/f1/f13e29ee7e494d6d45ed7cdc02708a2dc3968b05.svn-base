@@ -1,0 +1,105 @@
+/***********************************************************************/
+/******************************* 9820e *********************************/
+/***********************************************************************/
+
+
+
+//笔记根目录: (不用这个)
+//open: E:\Save\SI\node\9820e\Macro_9820e_Root.h
+
+安装:
+open: E:\Save\SI\node\9820e\Macro_9820e_Install.h
+
+
+/***********************************************************************/
+/****************************** tool ***********************************/
+/***********************************************************************/
+
+
+SecureCRT:
+open: E:\Save\SI\node\ToolsMsg\git\Macro_SecureCRT.h
+SecureCRT.exe:
+open: C:\Program^Files\VanDyke^Software\Clients\SecureCRT.exe
+
+
+git:
+open: E:\Save\SI\node\ToolsMsg\git\Macro_git.h
+
+
+Source Insight:
+open: E:\Save\SI\node\ToolsMsg\git\Macro_SI.h
+
+
+
+/***********************************************************************/
+/****************************** code ***********************************/
+/***********************************************************************/
+
+### 部分整理
+open: E:\Save\SI\node\9820e\Macro_9820e_App.h
+open: E:\Save\SI\node\9820e\Macro_9820e_App_Setting.h
+	
+
+### 未整理
+open: E:\Save\SI\node\9820e\Macro_9820e_App_Launch.h
+open: E:\Save\SI\node\9820e\Macro_9820e_App_SystemUI.h
+	联系人 短信：
+open: E:\Save\SI\node\9820e\Macro_9820e_App_Contacts.h
+	相册：
+open: E:\Save\SI\node\9820e\Macro_9820e_App_Gallery.h
+	计算器
+open: E:\Save\SI\node\9820e\Macro_9820e_App_Calculator.h
+
+
+### 新加项
+open: E:\Save\SI\node\9820e\Macro_9820e_App_z_null.h
+
+
+
+### 部分整理
+open: E:\Save\SI\node\9820e\Macro_9820e_Build.h
+
+
+### 未整理
+open: E:\Save\SI\node\9820e\Macro_9820e_Build_Apk.h
+
+
+
+
+
+/***********************************************************************/
+/****************************** base ***********************************/
+/***********************************************************************/
+
+工程目录: 
+path: F:\9820e\note
+open: F:\9820e\note\基本操作.txt
+
+
+//his:
+//open: F:\9820e\note\his.h
+
+
+
+
+open: \\192.168.2.115\xiaoj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

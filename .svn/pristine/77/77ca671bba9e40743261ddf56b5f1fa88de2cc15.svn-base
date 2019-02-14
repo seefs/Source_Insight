@@ -1,0 +1,71 @@
+
+MTK常用断点:
+
+事件:
+mmi_frm_post_event
+
+字符方向：
+gui_get_multi_line_text_language_type
+
+
+str:
+get_string
+
+img:
+GetImageData
+
+
+gui:
+gui_draw_filled_area
+
+
+界面入口：
+mmi_frm_scrn_enter
+	node_exec_entry_proc
+
+
+转格式：
+app_ucs2_wtoi
+
+
+plutommi/CUI/SmsCui/SmsSenderCui.c SBD_SMS_SEND_4SIM_SELECT_FIX
+
+cui_sms_recipient_opt_send_by_sim
+
+
+-------------------------------------------- 
+5. 断点
+mmi_asc_to_ucs2  转换
+mmi_asc_to_ucs2
+
+
+
+SIM弹窗:
+__MMI_POPUP_NO_SHOW_ICON__
+
+ShowCategory165Screen_int
+ShowCategory366Screen
+ShowCategory66Screen
+ShowCategory208Screen_int
+
+---- STR_GLOBAL_PLEASE_WAIT		Please wait
+
+-------------------------------------------- 
+
+PIC:
+projects\M107\M107_XYZN_S2_4A_NEDADJ_F6\Images\\\MainLCD\\\\Warningpage\\\\PopUpPage\\\\PP_QUE
+
+弹窗背景:
+projects\M107\M107_XYZN_S2_4A_NEDADJ_F6\Resource\Themecomponents.h UI_filled_area^popup_screen_bg_filler_defaultTheme
+dm_add_image
+
+
+------------------
+dial:
+gui_show_dialer_input_box_ext1
+
+gui_dialer_input_box_next_line
+gui_dialer_input_box_prev_line
+
+
+

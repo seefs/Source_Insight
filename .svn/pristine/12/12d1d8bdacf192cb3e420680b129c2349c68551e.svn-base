@@ -1,0 +1,243 @@
+/******************************************************************************
+ * const
+ ******************************************************************************/
+/*
+	key:F9
+	功能：打开/关闭所有宏文件
+	1. 默认打开: 
+	   00_Macro_DA_2018.h (6531DA)
+	   00_Macro_B_2018.h  (6531DA BT)
+	   00_Macro_E_2018.h  (6531E)
+	2. 如果打开(1), 那么打开SBD_6531E_All_Marco.mk
+	3. 如果打开(2), 那么打开搜索结果窗口
+	       
+*/
+
+//名称冲突,后面不用
+macro Search()
+{
+	SearchFile()
+}
+
+macro SearchFile()
+{
+    hwnd = GetCurrentWnd()
+    hbuf = GetCurrentBuf()
+	if (hwnd == 0)
+	{
+    	hbuf = OpenDefaultSR(hbuf)
+    	stop
+	}
+	if(IsMacroFile(hbuf))
+	{
+		OpenExistFile("sbd_test.em")
+    	stop
+	}
+    
+	szpathName = GetBufName(hbuf)
+	filename = GetFileName(szpathName)
+	baseDir = getBasePath(szpathName)
+	
+	bft = getBaseFileType(szpathName, 1)
+	if(bft == "")
+		stop
+	//file = getNodePath(0) # "\\Macro_ALL_@bft@.h"
+	file = "Macro_ALL_@bft@.h"
+	
+	//循环打开文件：
+	if(filename == "SBD_6531E_All_Marco.mk")
+	{
+		//file = "6531E_new.SearchResults"
+		hbuf = OpenDefaultSR(hbuf)
+	}
+	else if(filename == file && n == 30)
+	{
+		OpenFile("project\\SBD_6531E_All_Marco.mk")
+	}
+	else
+	{
+
+		hbuf = OpenExistFile(getNodePath(0) # "\\" # file)
+	}
+	
+}
+
+//key:F1->V
+macro SearchVersion(hbuf)
+{
+	var mMacro
+	var mFile
+	var mWord
+	
+	if(IsFileType(hbuf, ".em"))  //测试
+	{
+		mMacro="OpenCache"
+		mWord = "MacroSBD"
+		mFile = "sbd_f9.em"
+		
+		SearchVersionExt(hbuf, mFile, mMacro, mWord)
+	}
+	else
+	{
+		mMacro="_MOCOR_SW_VERSION_"
+		mFile = "version_software_mocor.h"
+
+		//sel = MGetWndSel(hbuf)
+		if (1)//IsNoSelect(sel)) 
+		{
+			//剪切板内容
+			mWord = GetClipString(hbuf)
+		}
+		else
+		{
+			//当前选择内容
+			mWord = GetBufLine(hbuf, sel.lnFirst )
+			if(strlen(mWord) < sel.ichLim)
+				sel.ichLim = sel.ichLim - 1
+			mWord = strmid(mWord, sel.ichFirst, sel.ichLim)
+		}
+		if(mWord == "")
+		{
+			stop
+		}
+		SearchVersionExt(hbuf, mFile, mMacro, mWord)
+	}
+}
+macro SearchVersionExt(hbuf, mFile, mMacro, mWord)
+{
+	var pathname
+	var filename
+	var verFile
+	var verSel
+	//var verCount
+
+	verCount = 0
+	
+	
+	hprj = GetCurrentProj ()
+	path = GetProjDir (hprj)
+	//projName = GetProjName (hprj)
+	bft = getBaseFileType(path, 5)
+	if(bft == "")
+		stop
+	verFile = getNodePath(0) # "\\si_version_@bft@.h"
+	verBuf = OpenCache(verFile)
+
+	projName = GetProjName (hprj)
+	baseDir = getBasePath(projName)
+	verSel = SearchInBuf(verBuf, mWord, 0, 0, FALSE, FALSE, FALSE)
+
+	lnMax = GetBufLineCount(verBuf)
+	//msg ("verSel @verSel@ verFile @verFile@")
+
+	//搜索结果保存在临时文件中，如果没搜索到，更新临时文件
+	if (verSel == nil)
+	{
+		isSave = TRUE
+		EmptyBuf(verBuf)
+		
+		// for each project file...
+		ifileMac = GetProjFileCount(hprj)
+		ifile = 0
+		//msg ("ifileMac @ifileMac@")
+		while (ifile < ifileMac)
+		{
+			pathname = GetProjFileName(hprj, ifile)
+			filename = GetFileName(pathname)
+
+			if (filename == mFile)
+			{
+				ipath = GetRelativelyDir(pathname, baseDir, filename)
+				hbuf = OpenBuf(pathname)
+				if (hbuf != hNil)
+				{
+					//verCount = verCount + 1
+					sel = SearchInBuf(hbuf, mMacro, 0, 0, FALSE, FALSE, FALSE)
+					//msg ("sel @sel@ pathname @pathname@")
+					if (sel != nil)
+					{							
+						lineStr = ipath # "," # GetBufLine(hbuf, sel.lnFirst) # "," # sel.lnLast
+						AppendBufLine(verBuf, "@lineStr@")
+					}
+					CloseBuf(hbuf)
+				}
+			}
+			
+			// next ifile
+			ifile = ifile + 1
+		}
+		SaveBuf(verBuf)
+		verSel = SearchInBuf(verBuf, mWord, 0, 0, FALSE, FALSE, FALSE)
+		//msg ("verSel @verSel@ verCount @verCount@")
+
+	}
+	
+	//SR: 搜索结果保存到这个窗口
+	baseSR = OpenDefaultSR(hbuf)
+	AppendBufLine(baseSR, "----version: @mWord@")
+	if (verSel != nil)
+	{
+		var ichCommp
+		//目录可能包括E:\6531E 也可能不包括
+	    if(SplitMacro(baseDir, ":", 0, strlen(baseDir)>0)
+	    {
+	    	baseDir = ""
+	    }
+	    else
+	    {
+			baseDir = baseDir # "\\"
+	    }
+	    
+		while (verSel != "")
+		{
+			line = GetBufLine(verBuf, verSel.lnFirst )
+			ilen = strlen(line)
+			
+			ichComm1 = SplitMacro(line, ",", 0, ilen)
+			ichComm2 = SplitMacro(line, ",", ichComm1+1, ilen)
+			//ichComm3 = SplitMacro(line, ",", ichComm2+1, ilen)
+			
+			ipath    = strmid(line, 0, ichComm1)
+			iversion = strmid(line, ichComm1+1, ichComm2)
+			irow 	 = strmid(line, ichComm2+1, ilen)
+			//irow 	 = strmid(line, ichComm2+1, ichComm3)
+			//pathname = strmid(line, ichComm3+1, ilen)
+			
+			lnMax = GetBufLineCount(baseSR)
+			lineStr = mFile # " (@ipath@):@iversion@"
+			AppendBufLine(baseSR, "@lineStr@")
+			
+			//创建一个新的源链接
+			SetSourceLink (baseSR, lnMax, baseDir # ipath # "\\" # mFile, irow)
+			//SetSourceLink (baseSR, lnMax, baseDir # pathname, irow)
+			
+			//verSel = SearchInBuf(verBuf, mWord, verSel.lnLast, verSel.ichLim, 0, 0, 0)
+			verSel = SearchInBuf(verBuf, mWord, verSel.lnLast+1, 0, 0, 0, 0)
+		}
+	}
+	else
+	{
+		AppendBufLine(baseSR, "----no found version, pls update svn and add si file.")
+	}
+	SaveBuf(baseSR)
+	
+	hwnd = GetCurrentWnd()
+	lnTop = GetWndVertScroll(hwnd);
+	cLines = GetWndLineCount(hwnd);
+	lnMax = GetBufLineCount(baseSR)
+	if (lnTop + cLines + 2 < lnMax)
+	{
+		lnTop = lnMax - cLines + 1 + 5;
+		ScrollWndToLine(hwnd, lnTop); 
+	}
+	CloseBuf(verBuf)
+}
+
+
+//测试
+macro SearchTest(hbuf)
+{
+	//SearchVersion(hbuf)
+}
+
+
