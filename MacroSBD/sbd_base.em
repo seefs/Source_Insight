@@ -26,12 +26,12 @@ macro getProjectFromList(n)
 	if (n == 60)	{	return "D:\\SVN\\SC7701" 	}
 
 	// MTK 项目路径1
-	if (n == 70)	{	return "F:\\11CW1352MP_KM2" 	} //其他不要设置奇数项
+	if (n == 70)	{	return "F:\\6261D_KM" 	} //其他不要设置奇数项
 	if (n == 71)	{	return "F:\\_SI4.0\\11CW1352MP_KM.si4project" 	}  	//解决源码+SI目录分开问题, 源码目录单独设置在前一项
-	if (n == 72)	{	return "F:\\11CW1352MP_BLEPHONE61A" 	} 
+	if (n == 72)	{	return "F:\\6261A_11C_V33" 	} 
 	if (n == 73)	{	return "F:\\_SI4.0\\11CW1352MP_BLEPHONE61A.si4project" 	} 
-	if (n == 74)	{	return "F:\\11CW1352MP_BLEPHONE61D_11C_V33" 	} 
-	if (n == 75)	{	return "F:\\_SI4.0\\11CW_BLEPHONE61D_11C_V33.si4project" 	} 
+	if (n == 74)	{	return "F:\\6261D_11C_V33" 	} 
+	if (n == 75)	{	return "F:\\_SI4.0\6261D_11C_V33.si4project" 	} 
 	
 	// base -> save
 	if (n == 80)	{	return "E:\\save" 	}

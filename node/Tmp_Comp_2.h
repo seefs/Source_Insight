@@ -1,44 +1,16 @@
-LOCAL const uint16 keymap[] = {
-    /*            KEYOUT0                 KEYOUT1                 KEYOUT2                 KEYOUT3                 KEYOUT4                  */
-    /*            |                       |                       |                       |                       |                        */
-    /* KEYIN0 ----o-----------------------o-----------------------o-----------------------o-----------------------o----------------------- */
-    /*            |                       |                       |                       |                       |                        */
-	              SCI_VK_0,               SCI_VK_POUND,           SCI_VK_STAR,            SCI_VK_MENU_CANCEL,     SCI_VK_CALL,  
-    /*            |                       |                       |                       |                       |                        */
-    /*            |                       |                       |                       |                       |                        */
-    /* KEYIN1 ----o-----------------------o-----------------------o-----------------------o-----------------------o----------------------- */
-    /*            |                       |                       |                       |                       |                        */
-	              SCI_VK_EXT4,	          SCI_VK_DOWN,	          SCI_VK_EXT2,            SCI_VK_EXT3,	          SCI_VK_UP,	
-    /*            |                       |                       |                       |                       |                        */
-    /*            |                       |                       |                       |                       |                        */
-    /* KEYIN2 ----o-----------------------o-----------------------o-----------------------o-----------------------o----------------------- */
-    /*            |                       |                       |                       |                       |                        */
-	              SCI_VK_3,	              SCI_VK_2,	              SCI_VK_1,	              SCI_VK_EXT1,	          SCI_VK_FM,	
-    /*            |                       |                       |                       |                       |                        */
-    /*            |                       |                       |                       |                       |                        */
-    /* KEYIN3 ----o-----------------------o-----------------------o-----------------------o-----------------------o----------------------- */
-    /*            |                       |                       |                       |                       |                        */
-	              SCI_VK_6,	              SCI_VK_5,	              SCI_VK_4,	              SCI_VK_MENU_SELECT,     SCI_VK_EXT5,	  
-    /*            |                       |                       |                       |                       |                        */
-    /*            |                       |                       |                       |                       |                        */
-    /* KEYIN4 ----o-----------------------o-----------------------o-----------------------o-----------------------o----------------------- */
-    /*            |                       |                       |                       |                       |                        */
-	              SCI_VK_LEFT,	          SCI_VK_RIGHT,	          SCI_VK_9,               SCI_VK_8,	              SCI_VK_7,	  
-    /*            |                       |                       |                       |                       |                        */
-    /*            |                       |                       |                       |                       |                        */
-    /* KEYIN5 ----o-----------------------o-----------------------o-----------------------o-----------------------o----------------------- */
-    /*            |                       |                       |                       |                       |                        */
-	              SCI_VK_INVALID_KEY,	  SCI_VK_INVALID_KEY,	  SCI_VK_INVALID_KEY,	  SCI_VK_INVALID_KEY,	  SCI_VK_INVALID_KEY,	  	
-    /*            |                       |                       |                       |                       |                        */
-    /*            |                       |                       |                       |                       |                        */
-    /* KEYIN6 ----o-----------------------o-----------------------o-----------------------o-----------------------o----------------------- */
-    /*            |                       |                       |                       |                       |                        */
-	              SCI_VK_CALL2,	          SCI_VK_WEB,	          SCI_VK_INVALID_KEY,	  SCI_VK_INVALID_KEY,	  SCI_VK_INVALID_KEY,	  	
-    /*            |                       |                       |                       |                       |                        */
-    /*            |                       |                       |                       |                       |                        */
-    /* KEYIN7 ----o-----------------------o-----------------------o-----------------------o-----------------------o----------------------- */
-    /*            |                       |                       |                       |                       |                        */
-	              SCI_VK_INVALID_KEY,	  SCI_VK_INVALID_KEY,	  SCI_VK_INVALID_KEY,	  SCI_VK_INVALID_KEY,	  SCI_VK_INVALID_KEY
-    /*            |                       |                       |                       |                       |                        */
-    /*            |                       |                       |                       |                       |                        */
-};
+gui_clock_set_current_theme in gui_clock.c (plutommi\Framework\GUI\GUI_SRC) :         c->time_text_font = current_clock_theme->time_text_font;
+gui_clock_set_current_theme in gui_clock.c (plutommi\Framework\GUI\GUI_SRC) :         c->time_text_font = current_clock_theme->time_text_font_sub_lcd;
+gui_clock_set_theme in gui_clock.c (plutommi\Framework\GUI\GUI_SRC) :             c[i].time_text_font = t->time_text_font;
+gui_clock_set_theme in gui_clock.c (plutommi\Framework\GUI\GUI_SRC) :             c[i].time_text_font = t->time_text_font_sub_lcd;
+gui_clock_show_digital in gui_clock.c (plutommi\Framework\GUI\GUI_SRC) : 		gui_set_font(c->time_text_font);
+gui_clock_show_digital in gui_clock.c (plutommi\Framework\GUI\GUI_SRC) : 	gui_set_font(c->time_text_font);
+gui_clock_show_digital in gui_clock.c (plutommi\Framework\GUI\GUI_SRC) :         gui_set_font(c->time_text_font);
+gui_clock_show_sub_lcd in gui_clock.c (plutommi\Framework\GUI\GUI_SRC) :         gui_set_font(c->time_text_font);
+gui_clock_show_sub_lcd in gui_clock.c (plutommi\Framework\GUI\GUI_SRC) :         gui_set_font(c->time_text_font);
+gui_clock_show_sub_lcd in gui_clock.c (plutommi\Framework\GUI\GUI_SRC) :             gui_set_font(c->time_text_font);
+gui_clock_show_sub_lcd in gui_clock.c (plutommi\Framework\GUI\GUI_SRC) :         gui_set_font(c->time_text_font);        
+gui_clock_show_sub_lcd in gui_clock.c (plutommi\Framework\GUI\GUI_SRC) :             gui_set_font(c->time_text_font);
+gui_clock_set_time_text_font in gui_clock.c (plutommi\Framework\GUI\GUI_SRC) :     c->time_text_font = new_font;
+{anongui_clock_struct} in gui_clock.h (plutommi\Framework\GUI\GUI_INC) :     UI_font_type time_text_font;    /*font of time text*/
+set_MMI_clock_theme in gui_themes.c (plutommi\Framework\GUI\GUI_SRC) :     current_UI_theme->clock_theme->time_text_font = gui_font_get_type(GUI_FONT_SIZE_TIME);
+{anonUI_clock_theme} in gui_theme_struct.h (plutommi\Framework\GUI\GUI_INC) :     UI_font_type time_text_font;

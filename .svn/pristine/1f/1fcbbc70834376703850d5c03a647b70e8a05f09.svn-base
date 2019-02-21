@@ -545,14 +545,12 @@ dm_redraw_category_screen
 ----------------------------------------------------------------------------
 
 Idle[i]: 测试模式
-plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_WGUI_STATUS_ICON_SHOW_TIME_IN_RIGHT
-	
-
-	Idle enter:
-plutommi/mmi/Idle/IdleSrc/IdleClassic.c void^mmi_idle_classic_on_enter
-	network mp3 fm
+	待机运营商 mp3 fm
 plutommi/mmi/Idle/IdleSrc/IdleClassic.c void^mmi_idle_classic_on_update_service_indication
 plutommi/Framework/GUI/GUI_SRC/wgui_categories_idlescreen.c wgui_cat033_show_details
+	
+plutommi/mmi/Idle/IdleSrc/IdleClassic.c void^mmi_idle_classic_on_enter
+
 	idle:network
 plutommi\Framework\GUI\GUI_INC\gui_switch.h CFG_UI_IDLE_NETWORK_NAME_Y
 
@@ -566,11 +564,6 @@ plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c void^km_idle_clock_week( )
 plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c void^show_main_LCD_date_time( )
 	date:
 plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c wgui_clock_create(&wgui_clock_mainlcd_clock2
-
-	soft-icon:
-plutommi/Framework/GUI/GUI_SRC/gui_buttons.c void^gui_show_icontext_button
-//    //iy = y1 + b->icon_y;  ==>
-//    iy = y1 + (b->icon_y * 2 + 1);
 
 --------------------------------
 	长按打开手电筒

@@ -853,12 +853,7 @@ macro NoteGroupPreview(hbuf, key)
 	else
 	{
 		nTitle = ""
-		if(index < 40 && key == 51)
-		{
-			//不够一页
-			nTitle = ""
-		}
-		else if(key >= 51 && key <= 54)
+		if(key >= 51 && key <= 54)
 		{
 			nTitle = "当前第" # (key - 51 + 1) # "页, 下一页: ctrl+D 或 "
 			if(key == 54)

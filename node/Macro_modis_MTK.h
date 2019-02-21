@@ -46,6 +46,31 @@ SetKeyHandler(idle_extra_handle,KEY_EXTRA_1,KEY_EVENT_UP);
 mmi_clog_get_id_by_idx
 
 
+[1.3] bg color
+plutommi\Framework\GDI\GDISrc\gdi_primitive.c void^gdi_draw_solid_rect( )
+//	if(y2>20 && y2<320 && y2 != 292)
+//	{
+//		int a = 1;
+//		a = 1;
+//	}
+
+[1.4] image
+plutommi\mmi\Resource\readres.c S8^*GetImage( )
+//	int a =1 ;
+//
+//	if(ImageId ==IMG_ID_PHNSET_WP_START-10)
+//	{
+//		a = 1;
+//	}
+
+[1.5] win id
+// GetActiveScreenId() = IDLE_SCREEN_ID
+// ËÑ:
+//	mmi_rp_*_def.h
+//	27[8-9][0-9][0-9]
+
+
+
 /***********************************************************************/
 /***********************************************************************/
 /***********************************************************************/
@@ -161,14 +186,8 @@ ShowCategory208Screen_int
 /***********************************************************************/
 /***********************************************************************/
 /***********************************************************************/
-[5.1] »­±³¾°:
-plutommi\Framework\GDI\GDISrc\gdi_primitive.c
-void gdi_draw_solid_rect(S32 x1, S32 y1, S32 x2, S32 y2, gdi_color rect_color)
-	if(y2>20 && y2<320 && y2 != 292)
-	{
-		int a = 1;
-		a = 1;
-	}
+
+
 
 
 
