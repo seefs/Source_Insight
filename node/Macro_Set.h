@@ -9,7 +9,7 @@
 ### 参考行号固定在：12、15、18、21、...
 ### 备注信息请手动添加在这个文件.
 ### 12.Tools Mode: G(跳转) S(搜索) B(对比)
-b
+a
 
 ### 15.Cur Make: 
 SE039_SXJY_D700_VORTEX_F3
@@ -51,7 +51,7 @@ IM
 E:\6531E_20180113\tmp
 
 ### 54.note row(第2次打开同一行, F11关闭note会修改这里)
-15
+57
 
 ### 57.Note Hander Set(笔记路径, 替换当前path, MTK)
 M610_KM_I710_F2 M610 gprs
@@ -60,5 +60,5 @@ M610_KM_I710_F2 M610 gprs
 \\192.168.2.115\xiaoj\9820\idh.code
 	
 ### 63.Num bits(F10)
-2
+1
 
