@@ -241,6 +241,7 @@ macro getBaseFileType(pathName, s)
 	//s=1~5:按note文件名排序分类;
 	//s=1:Macro_ALL_XXX              搜索所有宏
 	//s=2:Macro_Group_Make_XXX       分组(现在用不上)
+	//	  Macro_Group_Menu_XXX
 	//s=3:Macro_Note_XXX             笔记 
 	//s=4:Macro_Rule_Key_file_XXX    F5--跳转功能
 	//s=5:si_version_XXX             F1->V--搜索版本号

@@ -6,18 +6,18 @@ F5£º ´ò¿ªslnÎÄ¼ş/cmdÃüÁî+ÓÒ¼üÕ³Ìù; µ±Ç°ĞĞÒÔset¡¢cmd¡¢make¡¢open¡¢vc¡¢vs08¿ªÍ·; Ä
 --------------------------------------------------
 
 Ä¬ÈÏ(±ãÓÚÉÏ´«svn):
-set PS102_SPEED_ZX_F1 PS102
+set PS102_KLS_W395_ZX_W1G1_F2 PS102
 
 µ±Ç°project:
 set PS102_KLS_W395_ZX_W1G1_F2 PS102
 set PS102_SPEED_ZX_QVGA_F1 PS102
-	
+set PS102_DJTX_G182_W25G2_F1 PS102
 
 setEnd:´ÓsetEndĞĞ¿ªÊ¼Ìæ»»Ãû³Æ(ÉÏÒ»´ÎÑ¡ÖĞ->µ±Ç°Ñ¡ÖĞ)
 
 --------------------------------------------------
 
-7701±àÒëÖ¸Áî:
+7701±àÒëÖ¸Áî[Cc]:
 cmd:F:\6531E_16A\cmd
 
 ±àÒë:
@@ -38,13 +38,15 @@ make p=PS102_KLS_W395_ZX_W1G1_F2 m=custom_drv update image job=4
 make p=PS102_KLS_W395_ZX_W1G1_F2 m=resource job=4
 
 
+ÆäËû±àÄ£¿é
+make p=PS102_KLS_W395_ZX_W1G1_F2 m=app update image
 Ä£ÄâÆ÷£º
 make p=PS102_KLS_W395_ZX_W1G1_F2 m=simulator_main
 vc:build\PS102_KLS_W395_ZX_W1G1_F2_builddir\win\simulator.dsw
 
 
 
-ÏÂÔØ¹¤¾ß
+ÏÂÔØ¹¤¾ß[Ct]
 open tools\DEBUG_TOOL\ResearchDownload\Bin\ResearchDownload.exe
 
 E:\SC7701_20180509\build\PS102_KLS_W395_ZX_W1G1_F2_builddir\img
@@ -57,19 +59,24 @@ E:\SC7701_20180509\build\PS102_KLS_W395_ZX_W1G1_F2_builddir\img
 
 
 --------------------------------------------------
-Make ³£ÓÃÉèÖÃ:
+Make ³£ÓÃÉèÖÃ[Cf]:
 	ÆÁ:
 project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk LCD_CHIP
 	ÉãÏñÍ·:
 project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk SENSOR_CHIP
 	ÆÁÁÁ¶È:
-//chip_drv\chip_module\analog\sr1161\analog_phy_sr1161.c SBD_LCM_BL_25MA_SUPPORT
+chip_drv\chip_module\analog\sr1161\analog_phy_sr1161.c SBD_LCM_BL_25MA_SUPPORT
+
+	ĞŞ¸Ä°´¼üºÚµã£º
+MS_Ref\source\lcd\src\lcd.c GC9306_Ex
+MS_Customize\source\product\driver\lcd\tft_GC9300.c GC9300_Ex(void)
+
 	
 	°æ±¾ºÅ£º
 project\PS102\PS102_KLS_W395_ZX_W1G1_F2\resource\version_software_mocor.h
 
 ----------------------------------------------------------------------------
-/*
+
 ²Ëµ¥
 
 ----------------------------------------------------------------------------
@@ -140,9 +147,25 @@ project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk DC_
 	UÅÌ
 project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk UMEM_PRTITION _MICRO
 
+	×Ö¿â£º
+MS_MMI\source\resource\mmi_res_prj_def.h
+MS_MMI\source\resource\Common\FONT
+open tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe
+
+
+	ĞÍºÅ--MSD, ·­Òë£º
+project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk MMI_MSD_SUPPORT
+//TXT_MSD_NOTIFY_INFO
+
 ----------------------------------------------------------------------------
 
-Idle:
+Idle[i]: ²¦ºÅ
+
+	²¦ºÅ¹â±ê
+project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk SENSOR_CHIP
+MS_MMI\source\mmi_gui\include\guiedit.h GUIEDIT_DIAL_IMAGE_SPACE_X
+MS_MMI\source\mmi_gui\source\editbox\c\guiedit_text.c GUIEDIT_DIAL_IMAGE_SPACE_X
+MS_MMI\source\mmi_gui\source\editbox\c\guiedit_text.c GUIEDIT_GetCursorPosForPN
 
 ----------------------------------------------------------------------------
 	
@@ -150,16 +173,43 @@ Idle:
 
 ----------------------------------------------------------------------------
 
-¹¤¾ß£º
+¹¤¾ß[t]£º
 
 ----------------------------------------------------------------------------
 
-trace:
+trace[t]:
 project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk RELEASE_INFO = FALSE
 project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk MEMORY_DEBUG_SUPPORT = TRUE
 project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk TRACE_INFO_SUPPORT = TRUE
 project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk PRODUCT_BASELIB_DIR = sc6531_32X32_320X240BAR_QW_ATV_formal_trace
+
+×¥trace:
+open: tools\DEBUG_TOOL\CHANNELSERVER\Bin\ChannelServer.exe
+//	1) Á¬½ÓUSBÏß, Ñ¡Ôñ USB LOGµÄÑ¡Ïî
+//	2) Channel Server Configure:
+//		MS: Type:	UART
+//		   Port:  SPRD U2S Diag(COM12)	---------------- Òª¸Ä 
+//		                       (COM12ÊÇÁ¬½ÓUSBµÄ¶Ë¿Ú)
+//		   BaudRate:115200	---------------------------- Òª¸Ä 
+//		   Endian: self adaptive
+//		
+//		WinSocket Server:
+//		   Port: 36666
+//		   Timeout: 3 (s)
+//	3) Connect MSSim;channelµÄÍ¼±ê½«ÓĞÌ¸ÂÌÉ«µÄ¸ü³É´äÂÌÉ«
 	
+open: tools\DEBUG_TOOL\LOGEL\Bin\ArmLogel.exe
+//	1) ²åÈëUSBÏß£¬Ñ¡ÔñUSB LOGµÄÑ¡Ïî
+//	2) ÔËĞĞ ArmLogel.exe
+//	3) ²Ëµ¥Ñ¡ÏîLOGÏÂÃæÒ»ĞĞµÄ×î×ó±ßµÄDLLÍ¼±ê£»
+//	4) DLLÍ¼±ê±ä»¯ºó£¬µã»÷µÚ¶ş¸öÍ¼±êConnect;
+//	5) µã»÷µÚÎå¸öÍ¼±êLogging
+//	6) µã»÷µã»÷µÚÎå¸öÍ¼±êStop
+//	7) µã»÷log±£´æÍ¼±ê
+
+ÆäËû:
+open: tools\DEBUG_TOOL\NVEDITOR\Bin\NVEditor.exe
+
 --------------------------------------------------
 CE À¶ÑÀ¶¨Æµ°æ±¾:
 project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk PRODUCT_BASELIB_DIR = sc6531efm_32X32_320X240BAR_AB_CE
@@ -177,11 +227,16 @@ project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk BT_
 
 ----------------------------------------------------------------------------
 
-BuildÎÊÌâ:
+BuildÎÊÌâ[b]:
 
 build\PS102_KLS_W395_ZX_W1G1_F2_builddir\log\midisoundbank.log ÎÄ¼şÎŞ·¨É¾³ı 
+build\PS102_KLS_W395_ZX_W1G1_F2_builddir\log\resource.log ERROR
+build\PS102_KLS_W395_ZX_W1G1_F2_builddir\log\caf_templete.log ERROR
 build\PS102_KLS_W395_ZX_W1G1_F2_builddir\tmp/SC7702.def ºê
 build\PS102_KLS_W395_ZX_W1G1_F2_builddir\tmp\app.macro ²é¿´ºêÊÇ·ñ´æÔÚ
+	
+
+findstr /s /i "ERROR" *.log>aaaa.txt
 
 1 ³¬¿Õ¼ä:
 ~ 2¸öÓÎÏ·		  12K
@@ -190,3 +245,4 @@ build\PS102_KLS_W395_ZX_W1G1_F2_builddir\tmp\app.macro ²é¿´ºêÊÇ·ñ´æÔÚ
 2 ±àÒëÊ±¼ä
 gettime.pl
 
+[Cg]

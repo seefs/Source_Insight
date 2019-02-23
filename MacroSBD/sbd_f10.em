@@ -75,13 +75,23 @@ macro GetKeyStr(index)
 	}
 	return ""
 }
+macro getBft(num)
+{
+	hprj = GetCurrentProj ()
+	path = GetProjDir (hprj)
+	bft = getBaseFileType(path, num) //num = 2
+	if(bft == "")
+		stop
+	return bft
+}
 macro MakeGroup(hbuf)
 {
+	bft = getBft(2)
 	clipStr = GetClipString(hbuf)
 	sel = MGetWndSel(hbuf)
 	if (!IsHasSelect(sel) && clipStr != "")
 	{
-		ckey = FindKeyFromGroup(hbuf, clipStr)
+		ckey = FindKeyFromGroup(hbuf, clipStr, bft)
 		if(ckey == "")
 		{
 			//便于整行替换时, 先跳转到对应位置
@@ -100,10 +110,10 @@ macro MakeGroup(hbuf)
 	}
 	else
 	{
-		MakeSelGroup(hbuf)
+		MakeSelGroup(hbuf, bft)
 	}
 }
-macro MakeSelGroup(hbuf)
+macro MakeSelGroup(hbuf, bft)
 {
 	//_TempHeadF10(hbuf)
 	sel = MGetWndSel(hbuf)
@@ -128,7 +138,7 @@ macro MakeSelGroup(hbuf)
 			{
 				//不固定跳转
 				curRow = count
-				selHead = GetGroupItem(tmpKey, 1, "Make")
+				selHead = GetGroupItem(tmpKey, 1, "Make", bft)
 				mSel = SearchInBuf(hbuf, selHead, curRow + 1, 0, 0, 1, 0)
 				if (mSel == "")
 				{
@@ -155,14 +165,14 @@ macro MakeSelGroup(hbuf)
 				//固定跳转
 				if(count<1)
 				{
-					count = ShowGroupMenu(tmpKey, "Make", 0)
+					count = ShowGroupMenu(tmpKey, "Make", 0, bft)
 					SaveMode(getCurCount(0), "@count@")
 					
 					if(curIndex == count)
 						curIndex = 1
 					else
 						curIndex = curIndex + 1
-					nextKey = GetGroupItem(tmpKey, curIndex, "Make")
+					nextKey = GetGroupItem(tmpKey, curIndex, "Make", bft)
 					if(nextKey !="")
 					{
 						ret  = GotoNextMacroEx(hbuf, nextKey, 0, 0)
@@ -178,13 +188,13 @@ macro MakeSelGroup(hbuf)
 		}
 		
 		//2.select key->group to Insert
-		count = ShowGroupMenu(cur_sel, "Make", 1)
+		count = ShowGroupMenu(cur_sel, "Make", 1, bft)
 		if(count>0)
 		{
 			key = GetKeyExt(count)
 			if (key>0)
 			{
-				tmpMacro = GetGroupItem(cur_sel, key, "Make")
+				tmpMacro = GetGroupItem(cur_sel, key, "Make", bft)
 				mSel = SearchInBuf(hbuf, "@tmpMacro@", 0, 0, 0, 0, 0)
 				if (mSel != "")
 				{
@@ -201,7 +211,7 @@ macro MakeSelGroup(hbuf)
 		}
 		
 		//3.select not exist Macro to ADD
-		tmpKey = GetGroupHead(cur_sel, "Make")
+		tmpKey = GetGroupHead(cur_sel, "Make", bft)
 		if(tmpKey == "")
 		{
 			if(strlen(cur_sel)>25)
@@ -211,7 +221,7 @@ macro MakeSelGroup(hbuf)
 			grMsg = "Add item: @grMsg@" # CharFromKey(13)
 			grMsg = grMsg # "Note: LCD、camera、torch" # CharFromKey(13)
 			head = Ask("@grMsg@")
-			grRule = OpenCache(getNodePath(0) # "\\group\\Macro_Group_Make.h")
+			grRule = OpenCache(getNodePath(0) # "\\group\\Macro_Group_Make_@bft@.h")
 
 			mSel = SearchInBuf(grRule, "head:@head@", 0, 0, FALSE, FALSE, FALSE)
 			if (mSel == "")
@@ -225,8 +235,8 @@ macro MakeSelGroup(hbuf)
 			return
 		}
 		
-		//count = ShowGroupMenu(tmpKey, "Make", 0)
-		tmpCI = GetGroupCountAndIndex(tmpKey, cur_sel, "Make")
+		//count = ShowGroupMenu(tmpKey, "Make", 0, bft)
+		tmpCI = GetGroupCountAndIndex(tmpKey, cur_sel, "Make", bft)
 		curIndex = tmpCI/100
 		count 	 = tmpCI - curIndex*100
 		{
@@ -235,7 +245,7 @@ macro MakeSelGroup(hbuf)
 				curIndex = 1
 			else
 				curIndex = curIndex + 1
-			nextKey= GetGroupItem(tmpKey, curIndex, "Make")
+			nextKey= GetGroupItem(tmpKey, curIndex, "Make", bft)
 			if(nextKey !="")
 			{
 				ret  = GotoNextMacroEx(hbuf, nextKey, 0, 0)
@@ -251,11 +261,11 @@ macro MakeSelGroup(hbuf)
 		}
 		
 		//5.select exist Macro to Insert
-		count = ShowGroupMenu(tmpKey, "Make", 1)
+		count = ShowGroupMenu(tmpKey, "Make", 1, bft)
 		key = GetKeyExt(count)
 		if (key>0)
 		{
-			tmpMacro= GetGroupItem(tmpKey, key, "Make")
+			tmpMacro= GetGroupItem(tmpKey, key, "Make", bft)
 			mSel = SearchInBuf(hbuf, "@tmpMacro@", 0, 0, 0, 0, 0)
 			if (mSel != "")
 			{
@@ -270,15 +280,15 @@ macro MakeSelGroup(hbuf)
 		}
 		return
 	}
-	count = ShowGroupMenu("", "Make", 1)
+	count = ShowGroupMenu("", "Make", 1, bft)
 	if(count>0)
 	{
 		key = GetKeyExt(count)
 		if (key>0)
 		{
 			//6.only goto first
-			head = GetGroupItem("", key, "Make")
-			selHead = GetGroupItem(head, 1, "Make")
+			head = GetGroupItem("", key, "Make", bft)
+			selHead = GetGroupItem(head, 1, "Make", bft)
 			if(selHead !="")
 			{
 				if(strmid(selHead,0,1) =="^")
@@ -327,13 +337,14 @@ macro MakeSelGroup(hbuf)
 macro SrGroup(hbuf)
 {
 	//_TempHeadF10(hbuf)
-	count = ShowGroupMenu("", "Menu", 1)
+	bft = getBft(2)
+	count = ShowGroupMenu("", "Menu", 1, bft)
 	if(count>0)
 	{
 		key = GetKeyExt(count)
 		if (key>0)
 		{
-			file = GetGroupItem("", key, "Menu")
+			file = GetGroupItem("", key, "Menu", bft)
 			OpenExistFile(file)
 		}
 	}
@@ -346,15 +357,16 @@ macro SrGroup(hbuf)
 macro DefaultGroup(hbuf)
 {
 	//_TempHeadF10(hbuf)
+	bft = getBft(2)
 	szpathName = GetBufName(hbuf)
 	filename = GetFileName(szpathName)
-	mNote = GetGroupHead(filename, "Menu")
+	mNote = GetGroupHead(filename, "Menu", bft)
 	if(mNote == "")
 	{
 		grMsg = "Add Menu, File: @filename@" # CharFromKey(13)
 		grMsg = grMsg # "Note: set、tool、menu" # CharFromKey(13)
 		mNote = Ask("@grMsg@")
-		grRule = OpenCache(getNodePath(0) # "\\group\\Macro_Group_Menu.h")
+		grRule = OpenCache(getNodePath(0) # "\\group\\Macro_Group_@grFile@_@bft@.h")
 
 		mSel = SearchInBuf(grRule, mNote, 0, 0, FALSE, FALSE, FALSE)
 		if (mSel == "")
@@ -369,13 +381,13 @@ macro DefaultGroup(hbuf)
 	else
 	{
 		//如果备注同名，显示相关列表
-		count = ShowGroupMenu(mNote, "Menu", 1)
+		count = ShowGroupMenu(mNote, "Menu", 1, bft)
 		if(count>0)
 		{
 			key = GetKeyExt(count)
 			if (key>0)
 			{
-				file = GetGroupItem(mNote, key, "Menu")
+				file = GetGroupItem(mNote, key, "Menu", bft)
 				OpenExistFile(file)
 			}
 		}
@@ -387,14 +399,9 @@ macro DefaultGroup(hbuf)
 }
 
 //菜单级数对应的所有名称+文件名
-macro ShowGroupMenu(curHead, grFile, isShow)
+macro ShowGroupMenu(curHead, grFile, isShow, bft)
 {
 	//_TempHeadF10(hbuf)
-	hprj = GetCurrentProj ()
-	path = GetProjDir (hprj)
-	bft = getBaseFileType(path, 2)
-	if(bft == "")
-		stop
 	mFile = getNodePath(0) # "\\group\\Macro_Group_@grFile@_@bft@.h"
 	
 	if(curHead == "")
@@ -432,14 +439,9 @@ macro ShowGroupMenu(curHead, grFile, isShow)
 }
 
 //get:key->value
-macro GetGroupItem(curHead, mIndex, grFile)
+macro GetGroupItem(curHead, mIndex, grFile, bft)
 {
 	//_TempHeadF10(hbuf)
-	hprj = GetCurrentProj ()
-	path = GetProjDir (hprj)
-	bft = getBaseFileType(path, 2)
-	if(bft == "")
-		stop
 	mFile = getNodePath(0) # "\\group\\Macro_Group_@grFile@_@bft@.h"
 	
 	if(curHead == "")
@@ -473,14 +475,9 @@ macro GetGroupItem(curHead, mIndex, grFile)
 	CloseBuf(mBuf)
 	return curItem
 }
-macro GetGroupCountAndIndex(curHead, curMacro, grFile)
+macro GetGroupCountAndIndex(curHead, curMacro, grFile, bft)
 {
 	//_TempHeadF10(hbuf)
-	hprj = GetCurrentProj ()
-	path = GetProjDir (hprj)
-	bft = getBaseFileType(path, 2)
-	if(bft == "")
-		stop
 	mFile = getNodePath(0) # "\\group\\Macro_Group_@grFile@_@bft@.h"
 	
 	if(curHead == "")
@@ -518,14 +515,9 @@ macro GetGroupCountAndIndex(curHead, curMacro, grFile)
 }
 
 //get:value->key
-macro GetGroupHead(curItem, grFile)
+macro GetGroupHead(curItem, grFile, bft)
 {
 	//_TempHeadF10(hbuf)
-	hprj = GetCurrentProj ()
-	path = GetProjDir (hprj)
-	bft = getBaseFileType(path, 2)
-	if(bft == "")
-		stop
 	mFile = getNodePath(0) # "\\group\\Macro_Group_@grFile@_@bft@.h"
 	
 	mBuf = OpenCache(mFile)
@@ -549,10 +541,9 @@ macro GetGroupHead(curItem, grFile)
 }
 
 //find key from mk group
-macro FindKeyFromGroup(hbuf, word)
+macro FindKeyFromGroup(hbuf, word, bft)
 {
-
-	hbufRule = OpenCache(getNodePath(0) # "\\group\\Macro_Group_Make.h")
+	hbufRule = OpenCache(getNodePath(0) # "\\group\\Macro_Group_Make_@bft@.h")
 	ret = ""
 	
 	len = strlen (word)
@@ -1037,6 +1028,7 @@ macro OpenF10Test(hbuf, v)
 {
 	//_TempHeadF10(hbuf)
 	//Tree()
+	bft = getBft(2)
 	if(v == ")") //from F1, no param, param is ")"
 	{
 		v = "F101"
@@ -1053,13 +1045,13 @@ macro OpenF10Test(hbuf, v)
 	{
 		//DefaultGroup(hbuf)
 		SrGroup(hbuf)
-		MakeSelGroup(hbuf)
+		MakeSelGroup(hbuf, bft)
 	}
 	else if(v == "F104")
 	{
-		curItem = GetGroupItem("menu3:tool-a2", 1, "Menu")
+		curItem = GetGroupItem("menu3:tool-a2", 1, "Menu", bft)
 		msg(curItem)
-		iFcurItemile = GetGroupItem("menu3:tool-a2", 2, "Menu")
+		iFcurItemile = GetGroupItem("menu3:tool-a2", 2, "Menu", bft)
 		msg(curItem)
 	}
 

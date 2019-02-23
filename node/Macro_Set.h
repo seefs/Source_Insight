@@ -33,7 +33,7 @@ CtrlW
 m20
 
 ### 36.Cur search macro (F10)
-IM_PORTUGUESE_SUPPORT
+IM_UDB_SUPPORT
 
 ### 39.Cur search head (F10)
 IM
@@ -42,7 +42,7 @@ IM
 0
 
 ### 45.Cur search max (F10)
-932
+728
 
 ### 48.bmp one/two (F7 + v: 2次选择对比)
 2
@@ -51,7 +51,7 @@ IM
 E:\6531E_20180113\tmp
 
 ### 54.note row(第2次打开同一行, F11关闭note会修改这里)
-57
+301
 
 ### 57.Note Hander Set(笔记路径, 替换当前path, MTK)
 M610_KM_I710_F2 M610 gprs
@@ -60,5 +60,5 @@ M610_KM_I710_F2 M610 gprs
 \\192.168.2.115\xiaoj\9820\idh.code
 	
 ### 63.Num bits(F10)
-1
+2
 

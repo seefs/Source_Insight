@@ -36,6 +36,7 @@ macro Tools()
 	{
 		mFile = getNodePath(0) # "\\Tmp_Common.h"
 		OpenExistFile(mFile)
+		return
 	}
 	else if (key == 98) 		 //字母B    tools: F5--Goto    F6--BComp,   并设置Beyond Compare比较路径
 	{

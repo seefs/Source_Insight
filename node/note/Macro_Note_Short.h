@@ -201,3 +201,4 @@ key:ZHONGXIANDA,	中显达
 key:XIANXINTONG,	显信通
 key:KANGKS,	康凯斯
 key:YOUTAIQI,	优泰奇
+key:HAIFEI,	海飞
