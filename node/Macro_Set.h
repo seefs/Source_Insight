@@ -9,7 +9,7 @@
 ### 参考行号固定在：12、15、18、21、...
 ### 备注信息请手动添加在这个文件.
 ### 12.Tools Mode: G(跳转) S(搜索) B(对比)
-a
+b
 
 ### 15.Cur Make: 
 SE039_SXJY_D700_VORTEX_F3
@@ -21,7 +21,7 @@ SE039_SXJY_D700_VORTEX_F3
 project
 
 ### 24.SR Mode  (CTRL + D : search head 删除相同头部的行)
-
+ref_list
 
 ### 27.last command (未使用)
 CtrlW
@@ -51,14 +51,14 @@ IM
 E:\6531E_20180113\tmp
 
 ### 54.note row(第2次打开同一行, F11关闭note会修改这里)
-301
+196
 
 ### 57.Note Hander Set(笔记路径, 替换当前path, MTK)
-M610_KM_I710_F2 M610 gprs
+M101_COOLCEL_CS181_M_BRAVIS_F3 M101_COOLCEL gsm
 
 ### 60.Note Save Base(笔记路径, 替换当前path, android)
 \\192.168.2.115\xiaoj\9820\idh.code
 	
 ### 63.Num bits(F10)
-2
+1
 

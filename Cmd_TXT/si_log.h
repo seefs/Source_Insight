@@ -55,3 +55,51 @@
 
 [cmd]: 
 "C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Ucm\UcmSrc\UcmUi.c F:\6261D_11C_V33\plutommi\mmi\Ucm\UcmSrc\UcmUi.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Organizer\OrganizerSrc\Organizer.c F:\6261D_11C_V33\plutommi\mmi\Organizer\OrganizerSrc\Organizer.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Organizer\OrganizerRes\Organizer.res F:\6261D_11C_V33\plutommi\mmi\Organizer\OrganizerRes\Organizer.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Organizer\OrganizerRes\Organizer.res F:\6261D_11C_V33\plutommi\mmi\Organizer\OrganizerRes\Organizer.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Organizer\OrganizerSrc\Organizer.c F:\6261D_KM\plutommi\mmi\Organizer\OrganizerSrc\Organizer.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" D:\SVN\SC7701\project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk F:\6261D_KM\project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    

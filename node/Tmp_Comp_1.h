@@ -1,17 +1,23 @@
-gui_clock.c (plutommi\Framework\GUI\GUI_SRC) line 542 :         c->time_text_font = current_clock_theme->time_text_font;
-gui_clock.c (plutommi\Framework\GUI\GUI_SRC) line 549 :         c->time_text_font = current_clock_theme->time_text_font_sub_lcd;
-gui_clock.c (plutommi\Framework\GUI\GUI_SRC) line 594 :             c[i].time_text_font = t->time_text_font;
-gui_clock.c (plutommi\Framework\GUI\GUI_SRC) line 601 :             c[i].time_text_font = t->time_text_font_sub_lcd;
-gui_clock.c (plutommi\Framework\GUI\GUI_SRC) line 2695 :         gui_set_font(c->time_text_font);//
-gui_clock.c (plutommi\Framework\GUI\GUI_SRC) line 2851 :         gui_set_font(c->time_text_font);
-gui_clock.c (plutommi\Framework\GUI\GUI_SRC) line 3070 :         gui_set_font(c->time_text_font);
-gui_clock.c (plutommi\Framework\GUI\GUI_SRC) line 3276 :         gui_set_font(c->time_text_font);
-gui_clock.c (plutommi\Framework\GUI\GUI_SRC) line 3319 :         gui_set_font(c->time_text_font);
-gui_clock.c (plutommi\Framework\GUI\GUI_SRC) line 3330 :             gui_set_font(c->time_text_font);
-gui_clock.c (plutommi\Framework\GUI\GUI_SRC) line 3391 :         gui_set_font(c->time_text_font);        
-gui_clock.c (plutommi\Framework\GUI\GUI_SRC) line 3435 :             gui_set_font(c->time_text_font);
-gui_clock.c (plutommi\Framework\GUI\GUI_SRC) line 3968 :     c->time_text_font = new_font;
-{anongui_clock_struct} in gui_clock.h (plutommi\Framework\GUI\GUI_INC) :     UI_font_type time_text_font;    /*font of time text*/
-set_MMI_clock_theme in gui_themes.c (plutommi\Framework\GUI\GUI_SRC) :     current_UI_theme->clock_theme->time_text_font = gui_font_get_type(GUI_FONT_SIZE_TIME);
-{anonUI_clock_theme} in gui_theme_struct.h (plutommi\Framework\GUI\GUI_INC) :     UI_font_type time_text_font;
-mte_data.h (plutommi\Framework\MTE\MTEInc) line 3401 : "", "time_text_font", "DELETE", 
+            {
+				MMI_ID phb_grp_id;
+				MMI_ID group_id;
+			
+				group_id = mmi_frm_group_get_active_id();
+				/* create group */
+//				group_id = mmi_frm_group_create(
+//										GRP_ID_CUSTOMER_CARE_TELNO_SCREENID, //root_id
+//										GRP_ID_AUTO_GEN, //APP_UMMS_MMS
+//										NULL,  //mmi_um_ui_sh_cs_phb_proc, 
+//										NULL);
+//				mmi_frm_group_enter(group_id, MMI_FRM_NODE_SMART_CLOSE_FLAG);
+				phb_grp_id = cui_phb_save_contact_create(group_id);//APP_UMMS_MMS
+	            if (phb_grp_id != GRP_ID_INVALID)
+	            {
+					//pb number
+					cui_phb_save_contact_set_number(phb_grp_id, 
+							(const CHAR *)tel_item_string[tel_list_highlight]);
+					cui_phb_save_contact_run(phb_grp_id);
+	            }
+			
+//              	mmi_frm_group_close(mmi_frm_group_get_active_id());
+            }

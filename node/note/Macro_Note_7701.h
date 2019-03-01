@@ -1,17 +1,18 @@
-快捷键：
+快捷键[Ca]：
 F11：打开/关闭笔记
 F2： 打开选择的路径/文件; 文件名+扩展名
 F5： 打开sln文件/cmd命令+右键粘贴; 当前行以set、cmd、make、open、vc、vs08开头; 默认打开文件+关键字(行)
 
 --------------------------------------------------
 
-默认(便于上传svn):
+默认(便于上传svn)[Cs]:
 set PS102_KLS_W395_ZX_W1G1_F2 PS102
 
 当前project:
 set PS102_KLS_W395_ZX_W1G1_F2 PS102
 set PS102_SPEED_ZX_QVGA_F1 PS102
 set PS102_DJTX_G182_W25G2_F1 PS102
+	SE039_YST_E18_E250_F2
 
 setEnd:从setEnd行开始替换名称(上一次选中->当前选中)
 
@@ -77,7 +78,7 @@ project\PS102\PS102_KLS_W395_ZX_W1G1_F2\resource\version_software_mocor.h
 
 ----------------------------------------------------------------------------
 
-菜单
+菜单[m]
 
 ----------------------------------------------------------------------------
 
@@ -89,7 +90,7 @@ project\PS102\PS102_KLS_W395_ZX_W1G1_F2\resource\version_software_mocor.h
 	
 ----------------------------------------------------------------------------
 
-设置:		（笔记是旧的）
+设置[s]:		（笔记是旧的）
 	双摄像头(默认单)：
 project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk SBD_DUAL_CAMERA_SUPPORT
 
@@ -183,7 +184,8 @@ project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk MEM
 project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk TRACE_INFO_SUPPORT = TRUE
 project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk PRODUCT_BASELIB_DIR = sc6531_32X32_320X240BAR_QW_ATV_formal_trace
 
-抓trace:
+
+// 抓trace:
 open: tools\DEBUG_TOOL\CHANNELSERVER\Bin\ChannelServer.exe
 //	1) 连接USB线, 选择 USB LOG的选项
 //	2) Channel Server Configure:
@@ -198,7 +200,8 @@ open: tools\DEBUG_TOOL\CHANNELSERVER\Bin\ChannelServer.exe
 //		   Timeout: 3 (s)
 //	3) Connect MSSim;channel的图标将有谈绿色的更成翠绿色
 	
-open: tools\DEBUG_TOOL\LOGEL\Bin\ArmLogel.exe
+//open: tools\DEBUG_TOOL\LOGEL\Bin\ArmLogel.exe
+open: tools\DEBUG_TOOL\Logel_for_TD\Bin\ArmLogel.exe
 //	1) 插入USB线，选择USB LOG的选项
 //	2) 运行 ArmLogel.exe
 //	3) 菜单选项LOG下面一行的最左边的DLL图标；
@@ -207,8 +210,46 @@ open: tools\DEBUG_TOOL\LOGEL\Bin\ArmLogel.exe
 //	6) 点击点击第五个图标Stop
 //	7) 点击log保存图标
 
-其他:
+
+// NV修改:
 open: tools\DEBUG_TOOL\NVEDITOR\Bin\NVEditor.exe
+// 选择:
+build\PS102_DJTX_G182_W25G2_F1_builddir\img\nvitem\nvitem.prj
+D:\SVN\SC7701\build\SC7702_PS102_nvitem_Uart\nvitem.prj
+// 设置:
+//	com_debug = 0x1               (USB:0xFF,)
+//	com_data = 0xFF               (USB:0xFF, 相同)
+//	com_debug_baud_rate = 0x70800 (USB:0x1C200,展迅没说这个要改)
+//	dsp_log_switch = 0x0          (USB:0x1,)
+
+
+// NV下载(用这个旧版的):
+open: tools\DEBUG_TOOL\ResearchDownload\Bin\ResearchDownload.exe
+// 只选中: FDL1, FDL1, NV
+// replace NV bin:
+build\PS102_DJTX_G182_W25G2_F1_builddir\img\nvitem\nvitem.bin
+// 或者 CUSTOMER = PS102_KLS_2IN1
+common\nv_parameters\PS102_MB\PS102_KLS_2IN1\nv_type\nv_type_4band.nvm =^com_debug			 //ITEM_NAME 0x1
+common\nv_parameters\PS102_MB\PS102_KLS_2IN1\nv_type\nv_type_4band.nvm =^com_debug_baud_rate //ITEM_NAME 0x70800
+common\nv_parameters\PS102_MB\PS102_KLS_2IN1\nv_type\....		   nvm =^DSP_log_switch 	 //ITEM_NAME 0x0
+//File—>Save Image，File—>Save Project
+
+
+USB抓trace:
+//工程模式设置:
+//8 para set->arm log:open
+//8 para set->dsp log:usb
+//8 para set->usb log:open
+//8 para set->debug->debug alert:open  (不确定开不开)
+
+uart抓trace:
+//工程模式设置:
+//8 para set->arm log:open
+//8 para set->dsp log:usb
+//8 para set->usb log:close (不确定)
+//8 para set->debug->assert:open  (不确定开不开)
+
+
 
 --------------------------------------------------
 CE 蓝牙定频版本:
@@ -238,6 +279,8 @@ build\PS102_KLS_W395_ZX_W1G1_F2_builddir\tmp\app.macro 查看宏是否存在
 
 findstr /s /i "ERROR" *.log>aaaa.txt
 
+
+
 1 超空间:
 ~ 2个游戏		  12K
 ~ 一条APN记录占用0.163kb。3000~
@@ -246,3 +289,5 @@ findstr /s /i "ERROR" *.log>aaaa.txt
 gettime.pl
 
 [Cg]
+
+

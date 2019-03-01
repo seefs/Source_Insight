@@ -13,8 +13,7 @@ set SE818_BY_S015_QMOBILE_F2
 set SE818_SXJY_X28_QMobile_XL3000_F4
 set SE8307_KM_C2406_QMobile_F3
 set SE818_BY_S015_QMOBILE_F2
-set SE039_JX_S2401_Thomson_F3
-
+	
 
 
 
@@ -185,12 +184,39 @@ MS_MMI\source\mmi_gui\source\editbox\c\guiedit_text.c GUIEDIT_GetCursorPosForPN
 
 ----------------------------------------------------------------------------
 
-trace:
+trace[t]:
 project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk RELEASE_INFO = FALSE
 project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk MEMORY_DEBUG_SUPPORT = TRUE
 project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk TRACE_INFO_SUPPORT = TRUE
 project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk PRODUCT_BASELIB_DIR = sc6531_32X32_320X240BAR_QW_ATV_formal_trace
+
+抓trace:
+open: tools\DEBUG_TOOL\CHANNELSERVER\Bin\ChannelServer.exe
+//	1) 连接USB线, 选择 USB LOG的选项
+//	2) Channel Server Configure:
+//		MS: Type:	UART
+//		   Port:  SPRD U2S Diag(COM12)	---------------- 要改 
+//		                       (COM12是连接USB的端口)
+//		   BaudRate:115200	---------------------------- 要改 
+//		   Endian: self adaptive
+//		
+//		WinSocket Server:
+//		   Port: 36666
+//		   Timeout: 3 (s)
+//	3) Connect MSSim;channel的图标将有谈绿色的更成翠绿色
 	
+open: tools\DEBUG_TOOL\LOGEL\Bin\ArmLogel.exe
+//	1) 插入USB线，选择USB LOG的选项
+//	2) 运行 ArmLogel.exe
+//	3) 菜单选项LOG下面一行的最左边的DLL图标；
+//	4) DLL图标变化后，点击第二个图标Connect;
+//	5) 点击第五个图标Logging
+//	6) 点击点击第五个图标Stop
+//	7) 点击log保存图标
+
+其他:
+open: tools\DEBUG_TOOL\NVEDITOR\Bin\NVEditor.exe
+
 --------------------------------------------------
 CE 蓝牙定频版本:
 project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk PRODUCT_BASELIB_DIR = sc6531efm_32X32_320X240BAR_AB_CE

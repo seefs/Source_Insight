@@ -69,6 +69,8 @@ plutommi\mmi\Resource\readres.c S8^*GetImage( )
 //	mmi_rp_*_def.h
 //	27[8-9][0-9][0-9]
 
+[1.5] win func
+ShowCategory53Screen(): ÁÐ±í
 
 
 /***********************************************************************/
@@ -137,6 +139,7 @@ app_ucs2_wtoi
 	
 mmi_asc_to_ucs2  ×ª»»
 mmi_asc_to_ucs2
+mmi_ucs2ncpy
 
 [3.4] img:
 GetImageData

@@ -50,24 +50,24 @@ open:cd F:
 
 
 编译1:
-make M610_KM_I710_F2 gprs new
+make M101_COOLCEL_CS181_M_BRAVIS_F3 gsm new
 
 编译2:
-projects\M610\M610_KM_I710_F2\New_common.bat
+projects\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\New_common.bat
 
 
 编译模块
-make M610_KM_I710_F2 gprs r
-make M610_KM_I710_F2 gprs remake
-make M610_KM_I710_F2 gprs remake custom
-make M610_KM_I710_F2 gprs remake plutommi
+make M101_COOLCEL_CS181_M_BRAVIS_F3 gsm r
+make M101_COOLCEL_CS181_M_BRAVIS_F3 gsm remake
+make M101_COOLCEL_CS181_M_BRAVIS_F3 gsm remake custom
+make M101_COOLCEL_CS181_M_BRAVIS_F3 gsm remake plutommi
 
 编译资源 (VS接着编译即可)
-make M610_KM_I710_F2 gprs Resgen
+make M101_COOLCEL_CS181_M_BRAVIS_F3 gsm Resgen
 
 
 模拟器: (改mk需重编)
-make M610_KM_I710_F2 gprs gen_modis
+make M101_COOLCEL_CS181_M_BRAVIS_F3 gsm gen_modis
 vs08:MoDIS_VC9\MoDIS.sln
 
 --------------------------------------------------
@@ -77,7 +77,7 @@ vs08:MoDIS_VC9\MoDIS.sln
   FlashTool_v5.1528.00
 open:D:\Desktop\工具\FlashTool_v5.1548.00\Flash_tool_Beta.exe
 1 Scatter/config File, 选择
-build\M610_KM_I710_F2\M610_KM_I710_F2_PCB01_gprs_MT6261_S00.M610_KM_I710_F2_V06_20180915.bin\FARSIGHTED61M_CN_11C_BB.cfg
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\M101_COOLCEL_CS181_M_BRAVIS_F3_PCB01_gsm_MT6261_S00.M101_COOLCEL_CS181_M_BRAVIS_F3_V06_20180915.bin\FARSIGHTED61M_CN_11C_BB.cfg
 2  选择
     option->usb Download/Readback
     option->usb Download Without battery
@@ -94,34 +94,34 @@ open:plutommi\Customer\STMTView.exe
 /***********************************************************************/
 
 Make 常用设置[Cf]:
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak CUSTOMER_NAME = M610
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak MAIN_LCD_SIZE
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak _COMBO_LCM = ST7735S GC9106	  屏设置
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak SYNC_LCM_SUPPORT 			  屏设置 TE脚
-//make\M610_KM_I710_F2_gprs.mak 2_DATA_LANE_LCM 		  屏 三线/四线
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak DUAL_CAMERA_SUPPORT 	  		  摄像头设置
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak CMOS_SENSOR GC6133_SERIAL	  摄像头设置
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak CMOS_SENSOR_BAK1 SP0821_SERIAL 摄像头设置
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak FLASHLIGHT_TYPE				  闪光灯
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak CUSTOM_OPTION 			  	  自定义宏
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak CUSTOMER_NAME = M101_COOLCEL
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak MAIN_LCD_SIZE
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak _COMBO_LCM = ST7735S GC9106	  屏设置
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak SYNC_LCM_SUPPORT 			  屏设置 TE脚
+//make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak 2_DATA_LANE_LCM 		  屏 三线/四线
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak DUAL_CAMERA_SUPPORT 	  		  摄像头设置
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak CMOS_SENSOR GC6133_SERIAL	  摄像头设置
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak CMOS_SENSOR_BAK1 SP0821_SERIAL 摄像头设置
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak FLASHLIGHT_TYPE				  闪光灯
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak CUSTOM_OPTION 			  	  自定义宏
 
 
 Make 特殊宏:
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak REF_LIST_BRANCH  翻译
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak CUSTOM_DEVICE
-custom/system/FARSIGHTED61M_CN_11C_BB/custom_MemoryDevice_M610_KM_I710_F2.h __MMI_SUPER_BATTERY__
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak REF_LIST_BRANCH  翻译
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak CUSTOM_DEVICE
+custom/system/FARSIGHTED61M_CN_11C_BB/custom_MemoryDevice_M101_COOLCEL_CS181_M_BRAVIS_F3.h __MMI_SUPER_BATTERY__
 
 
 
 features:
 plutommi/mmi/Inc/MMI_features.h __MMI_UI_HINTS_IN_MENUITEM__
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_DYNAMIC_SIM_DYNAMIC_UI
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h WHITELIST
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_DYNAMIC_SIM_DYNAMIC_UI
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h WHITELIST
 	
 
 
 版本号[Cv]:
-projects\M610\M610_KM_I710_F2\Verno_M610_KM_I710_F2.bld BUILD_DATE 版本文件
+make\Verno_M101_COOLCEL_CS181_M_BRAVIS_F3.bld BUILD_DATE 版本文件
 
 
 
@@ -136,25 +136,25 @@ setPath new (在这一行按F5, 开始替换, 路径为 projects\...)
 /*
 项目路径: (合并到以下替换内容)
 //设置项 用双斜杠
-CurProPath = projects\\M610\\M610_KM_I710_F2
+CurProPath = projects\\M101_COOLCEL\\M101_COOLCEL_CS181_M_BRAVIS_F3
 
 默认路径转换: 
 //不用的设置项 可以注释掉
 //正反斜杠都可以替换
 //第2个路径会加上(CurProPath)
 //部分行，行尾加空格，防止整个替换会带缩进
-setProPath plutommi\\Customer\\Audio\\M610\\M610_KM_I710_F2 = AUDIO\\PLUTO
-setProPath plutommi\\Customer\\Images\\M610\\M610_KM_I710_F2 = Images
-#setProPath plutommi\\Customer\\CustResource\\M610_MMI\\M610_KM_I710_F2 = Resource
-setProPath plutommi\\Customer\\CustResource\\M610_MMI\\MMI_features_switchM610_KM_I710_F2.h = Resource\\MMI_features_switchPLUTO.h
-#setProPath plutommi\\Customer\\CustResource\\M610_MMI\\ref_list_M610_KM_I710_F2.txt = Resource\\ref_list.txt
-setProPath plutommi\\Customer\\CustResource\\M610_MMI\\ref_list_M610_KM_I710_F2.txt = Resource\\ref_list.txt
+setProPath plutommi\\Customer\\Audio\\M101_COOLCEL\\M101_COOLCEL_CS181_M_BRAVIS_F3 = AUDIO\\PLUTO
+setProPath plutommi\\Customer\\Images\\M101_COOLCEL\\M101_COOLCEL_CS181_M_BRAVIS_F3 = Images
+#setProPath plutommi\\Customer\\CustResource\\M101_COOLCEL_MMI\\M101_COOLCEL_CS181_M_BRAVIS_F3 = Resource
+setProPath plutommi\\Customer\\CustResource\\M101_COOLCEL_MMI\\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h = Resource\\MMI_features_switchPLUTO.h
+#setProPath plutommi\\Customer\\CustResource\\M101_COOLCEL_MMI\\ref_list_M101_COOLCEL_CS181_M_BRAVIS_F3.txt = Resource\\ref_list.txt
+setProPath plutommi\\Customer\\CustResource\\M101_COOLCEL_MMI\\ref_list_M101_COOLCEL_CS181_M_BRAVIS_F3.txt = Resource\\ref_list.txt
 
-setProPath plutommi\\Customer\\CustResource\\M610_MMI\\M610_KM_I710_F2\\Themecomponents.h = Resource\\Themecomponents.h
-setProPath plutommi\\Customer\\CustResource\\M610_MMI\\M610_KM_I710_F2\\ThemeRes.c = Resource\\ThemeRes.c
+setProPath plutommi\\Customer\\CustResource\\M101_COOLCEL_MMI\\M101_COOLCEL_CS181_M_BRAVIS_F3\\Themecomponents.h = Resource\\Themecomponents.h
+setProPath plutommi\\Customer\\CustResource\\M101_COOLCEL_MMI\\M101_COOLCEL_CS181_M_BRAVIS_F3\\ThemeRes.c = Resource\\ThemeRes.c
 
-setProPath make\\M610_KM_I710_F2_gprs.mak = M610_KM_I710_F2_gprs.mak
-setProPath make\\Verno_M610_KM_I710_F2.bld = Verno_M610_KM_I710_F2.bld
+setProPath make\\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak = M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak
+setProPath make\\Verno_M101_COOLCEL_CS181_M_BRAVIS_F3.bld = Verno_M101_COOLCEL_CS181_M_BRAVIS_F3.bld
 */
 #### set project path auto replace end ####
 
@@ -172,10 +172,10 @@ MCT_TOOL\Resource\OutTreeStructure.txt MAIN_MENU
 
 	主菜单:
 plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c
-plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res __M610_2403_VGOTEL__
+plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res __M101_COOLCEL_2403_VGOTEL__
 	主菜单 顺序:
 plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res <MENU^id="IDLE_SCREEN_MENU_ID"
-plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res __M610_V2408_VGOTEL__
+plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res __M101_COOLCEL_V2408_VGOTEL__
 	新加主菜单:
 plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res <SCREEN > ...
 plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res <MAINMENUITEM^id="MENU_ID_FMRDO_MAIN"
@@ -218,11 +218,11 @@ plutommi\Customer\CustomerInc\screen_enum.h SCR_ID_IDLE_SIM_SPACE_SETTING
 
 资源[r]: 图片 铃声 字库
 	资源路径:
-plutommi\Customer\CustResource\M610_MMI\CustResDefM610.h #define^CUST_IMG_PATH
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\CustResDefM101_COOLCEL.h #define^CUST_IMG_PATH
 	资源子路径:
-plutommi\Customer\CustResource\M610_MMI\CustResDefM610.h #define^IMG_MAINMENU_SUB_DIR
-plutommi\Customer\CustResource\M610_MMI\2401_VGOTEL_F2\Themecomponents.h #define^img_menu_bkg_filler_defaultTheme
-plutommi\Customer\CustResource\M610_MMI\2401_VGOTEL_F2\Themecomponents.h #define^img_matrix_main_menu_highlight_image_defaultTheme
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\CustResDefM101_COOLCEL.h #define^IMG_MAINMENU_SUB_DIR
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\2401_VGOTEL_F2\Themecomponents.h #define^img_menu_bkg_filler_defaultTheme
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\2401_VGOTEL_F2\Themecomponents.h #define^img_matrix_main_menu_highlight_image_defaultTheme
 plutommi\mmi\Resource\PopulateRes.c IMG_MAINMENU_SUB_DIR
 plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res IMG_MAINMENU_SUB_DIR 添加完整路径
 	资源子路径 临时文件(原图不存在, 资源不生成):
@@ -231,18 +231,18 @@ plutommi\Customer\CustResource\CustImgResExt.c mtk_nCustImageNamesEXT
 plutommi\Customer\CustResource\CustImgDataRes_2.c
 
 	主菜单图片:
-projects\M610\M610_KM_I710_F2\Images/ image.zip
-projects\M610\M610_KM_I710_F2\Images\MainLCD\MainMenu\SLIM_MATRIX
+plutommi\Customer\Images\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3/ image.zip
+plutommi\Customer\Images\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\MainLCD\MainMenu\SLIM_MATRIX
 
 	List:
-plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res CUSTOMER_NAME_M610_KM_I710_F2
-plutommi\mmi\Setting\SettingRes\Wallpaper.res CUSTOMER_NAME_M610_KM_I710_F2 壁纸位置不是这里
+plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res CUSTOMER_NAME_M101_COOLCEL_CS181_M_BRAVIS_F3
+plutommi\mmi\Setting\SettingRes\Wallpaper.res CUSTOMER_NAME_M101_COOLCEL_CS181_M_BRAVIS_F3 壁纸位置不是这里
 	list 标号:
-plutommi\Customer\Images\M610\M610_S2401_GRAVITY_ULTRA_F1\MainLCD\SubMenu\ListMenuIcon\L_NB30.bmp
+plutommi\Customer\Images\M101_COOLCEL\M101_COOLCEL_S2401_GRAVITY_ULTRA_F1\MainLCD\SubMenu\ListMenuIcon\L_NB30.bmp
 
 	壁纸
-projects\M610\M610_KM_I710_F2\Images\MainLCD\IdleScreen\Wallpaper
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_RES_TYPE_WALLPAPER_SEL
+plutommi\Customer\Images\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\MainLCD\IdleScreen\Wallpaper
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_RES_TYPE_WALLPAPER_SEL
 plutommi\mmi\Inc\MMI_features.h __MMI_RES_TYPE_WALLPAPER_SEL__
 plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c WALL01."__MMI_RES_TYPE_WALLPAPER__ "
 plutommi\mmi\Setting\SettingSrc\Wallpaper.c wp_item_amount ^=
@@ -250,32 +250,32 @@ plutommi\Customer\CustomerInc\CustResDef.h IMG_WALLPAPER_SUB_DIR
 
 	开关机Logo:(仅KM这套代码)
 plutommi\mmi\Resource\PopulateRes.c LOGO_FILE_NAME
-projects\M610\M610_KM_I710_F2\Images\MainLCD\Active\poweronoff\logo.BMP
+plutommi\Customer\Images\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\MainLCD\Active\poweronoff\logo.BMP
 
 	开关机动画:与铃声同步问题 建议开机动画时间相比减0.5s 关机动画时间减2s
-projects\M610\M610_KM_I710_F2\Images\MainLCD\Active\Poweronoff
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_KM_POWERONOFF_USE_SAME_IMAGE
+plutommi\Customer\Images\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\MainLCD\Active\Poweronoff
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_KM_POWERONOFF_USE_SAME_IMAGE
 plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c POON.gif
 ~ 
 ~ lcd_sw_rnd DRV_MAINLCD_INIT_COLOR 设置logo背景色
 	关机充电动画
 plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res IMG_ID_CHARGER_CHARGING
-plutommi\Customer\Images\M610\M610_S2401_GRAVITY_ULTRA_F1\MainLCD\UIELEMENT\charger\
+plutommi\Customer\Images\M101_COOLCEL\M101_COOLCEL_S2401_GRAVITY_ULTRA_F1\MainLCD\UIELEMENT\charger\
 	
 
 	开关机动画移除壁纸:
 plutommi/mmi/Setting/SettingInc/PhoneSetupResList.h #define^MAX_POWER_ON_IMG 
 
 	图片资源大小:
-projects\M610\M610_KM_I710_F2\Images\images_file_list.ini
+plutommi\Customer\Images\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\images_file_list.ini
 plutommi\Customer\ResGenerator\debug\image_info_updated_all.txt MM_MP3 大小
 
 ----------------------------
 	字符串:
-projects\M610\M610_KM_I710_F2\Resource\ref_list.txt 
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\ref_list_M101_COOLCEL_CS181_M_BRAVIS_F3.txt 
 plutommi\Customer\ResGenerator\debug\string_resource_usage.txt
 	字符串定义:
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak REF_LIST_BRANCH = M610
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak REF_LIST_BRANCH = M101_COOLCEL
 make\Resgen.mak REFLIST_LIST += ref_list_
 	字符串工具:
 open:plutommi\Customer\STMTView.exe
@@ -285,20 +285,20 @@ open:plutommi\Customer\STMTView.exe
 
 铃声[k]:字库
 	铃声文件:
-projects\M610\M610_KM_I710_F2\AUDIO\PLUTO 
-projects\M610\M610_KM_I710_F2\AUDIO\PLUTO\UserProfiles\Tone\R_POWER_1.mp3
+plutommi\Customer\Audio\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3 
+plutommi\Customer\Audio\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\UserProfiles\Tone\R_POWER_1.mp3
 	铃声资源大小:
 plutommi\Customer\ResGenerator\debug\audio_resource_usage.txt
 	开关机铃声:
 plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res R_POWER_1.mp3
-plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res CUSTOMER_NAME_M610_KM_I710_F2 定义
-projects\M610\M610_KM_I710_F2\Resource\ProfilesSrv.res AUD_ID_PROF_TONE1
+plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res CUSTOMER_NAME_M101_COOLCEL_CS181_M_BRAVIS_F3 定义
+projects\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\Resource\ProfilesSrv.res AUD_ID_PROF_TONE1
 	来电铃声:
-projects\M610\M610_KM_I710_F2\Resource\ProfilesSrv.res AUD_ID_PROF_RING1
+projects\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\Resource\ProfilesSrv.res AUD_ID_PROF_RING1
 	资源路径
-plutommi\Customer\CustResource\M610_MMI\CustResDefM610.h CUSTOMER_NAME_M610_KM_I710_F2
-plutommi\Customer\CustResource\M610_MMI\CustResDefM610.h #define^CUST_IMG_PATH
-projects\M610\M610_KM_I710_F2\Resource\CustResDefPLUTO.h #define^CUST_IMG_PATH
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\CustResDefM101_COOLCEL.h CUSTOMER_NAME_M101_COOLCEL_CS181_M_BRAVIS_F3
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\CustResDefM101_COOLCEL.h #define^CUST_IMG_PATH
+projects\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\Resource\CustResDefPLUTO.h #define^CUST_IMG_PATH
 	
 
 
@@ -324,14 +324,14 @@ vendor\font\MTK\official\project\plutommi\content\src\MainLcd240X320\res_gen_fon
 配置[f]:
 	
 	手电筒 充电宝:
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak __KM_ELECTRIC_TORCH__			手电筒
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak __SBD_CHARGING_TREASURE_SWITCH__ 充电宝
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak __KM_ELECTRIC_TORCH__			手电筒
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak __SBD_CHARGING_TREASURE_SWITCH__ 充电宝
 plutommi\mmi\Idle\IdleSrc\IdleCommon.c km_mmi_electric_torch_switch 	长按打开手电筒
 plutommi\mmi\Idle\IdleSrc\IdleCommon.c km_mmi_charging_switch			长按打开充电宝
 hal\peripheral\src\bmt_task_main.c bmt_chr_indication
 plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c mmi_popup_msg_charger_1
 	添加状态图标:
-projects\M610\M610_KM_I710_F2\Images\MainLCD\IdleScreen\StatusIcons\SI_CHARGING.png
+plutommi\Customer\Images\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\MainLCD\IdleScreen\StatusIcons\SI_CHARGING.png
 plutommi\Framework\GUI\GUI_Res\Status_icon_bar.res IMG_SI_CHARGING
 plutommi\Framework\GUI\GUI_SRC\wgui_status_icon_bar.c IMG_SI_CHARGING	顺序一致 分组为NO_GROUP
 plutommi\Framework\GUI\GUI_INC\gui_typedef.h STATUS_ICON_CHARGING		顺序一致
@@ -343,8 +343,8 @@ plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res STR_CHARGER_BANK_REMO
 4格~4.1V   3格~3.91   2格~3.83   1格~3.75   黑~3.62   红~3.52
 
 	EZFM:
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak __KM_EASY_FM__
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_FM_RADIO_BIND_EARPHONE
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak __KM_EASY_FM__
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_FM_RADIO_BIND_EARPHONE
 
 	按键配置:
 open:custom\drv\Drv_Tool\DrvGen.exe
@@ -354,23 +354,23 @@ custom\common\custom_fm.c mmi_fm_key_info_struct^g_fm_keypad_table
 
 
 	网络参数:
-custom\common\custom_config_account.c CUSTOMER_NAME_M610_KM_I710_F2 定义
-custom\common\config_account_M610_KM_I710_F2.h
+custom\common\custom_config_account.c CUSTOMER_NAME_M101_COOLCEL_CS181_M_BRAVIS_F3 定义
+custom\common\config_account_M101_COOLCEL_CS181_M_BRAVIS_F3.h
 
 
 	音频参数:
 custom\audio\FARSIGHTED61M_CN_11C_BB\nvram_default_audio.c
-custom\audio\FARSIGHTED61M_CN_11C_BB\nvram_default_audio_M610_KM_I710_F2.h
+custom\audio\FARSIGHTED61M_CN_11C_BB\nvram_default_audio_M101_COOLCEL_CS181_M_BRAVIS_F3.h
 GAIN_HND_SPH_VOL0  音频参数 免提音 
 GAIN_NOR_SPH_VOL0   正常音
 
 NVRAM_PROFILES_ACTIVATED 情景模式默认NV	
 	K类: K类设置不同可能开不了机
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak CLASSK_CHARGEPUMP_SUPPORT
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak SBD_EXTERNAL_AMPLIFIER_CLASSK
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak CLASSK_CHARGEPUMP_SUPPORT
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak SBD_EXTERNAL_AMPLIFIER_CLASSK
 	
 	省电模式:
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak __KM_MMI_PROFILE_RETRENCH__
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak __KM_MMI_PROFILE_RETRENCH__
 
 
 
@@ -388,7 +388,7 @@ plutommi\Framework\GUI\GUI_INC\gui_switch.h #define^CFG_UI_SCROLLBAR_WIDTH
 custom\common\PLUTO_MMI\custom_mmi_default_value.h	--audio vol
 	情景默认等级:
 custom\common\userprofile_nvram_def.c NVRAM_PROFILES_DEFAULT
-custom\common\userprofile_nvram_def_M610_KM_I710_F2.h
+custom\common\userprofile_nvram_def_M101_COOLCEL_CS181_M_BRAVIS_F3.h
 //	voice_tone[4]:这个应该是来电
 	耳机+外放音量等级:
 plutommi\Service\GpioSrv\gpiosrv.res NVRAM_NORMAL_MODE_VOICE_LEVEL //听筒 (不能设置7级)
@@ -402,8 +402,8 @@ custom\drv\misc_drv\_Default_BB\MT6261\usb_custom.c USB_PRODUCT_STRING
 
 
 	语言:
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_LANG_
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_LANG_.*(__ON__)
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_LANG_
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_LANG_.*(__ON__)
 plutommi\Service\SettingSrv\res\GeneralSettingSrv.res NVRAM_SETTING_LANG
 	默认输入法:
 plutommi\Framework\CommonScreens\CommonScreensRes\editor.res NVRAM_SETTING_PREFER_INPUT_METHOD
@@ -438,7 +438,7 @@ plutommi\Service\GpioSrv\gpiosrv.res NVRAM_BYTE_BL_SETTING_HFTIME
 plutommi/mmi/ScrLocker/ScrLockerRes/ScrLocker.res <MENU^id="MENU_ID_SLK_TIME_SETTING_MENU"
 plutommi/mmi/ScrLocker/ScrLockerSrc/ScrLockerSetting.c #define^MMI_SLK_SET_SELECTION_DEFAULT
 	省电模式:
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak __MMI_SUPER_BATTERY__
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak __MMI_SUPER_BATTERY__
 
 
 
@@ -453,7 +453,7 @@ plutommi/AppCore/SSC/SSCPassEngine.c mmi_show_sar_info			SAR
 plutommi/AppCore/SSC/SSCPassEngine.c km_change_imei_entry		IMEI
 plutommi/AppCore/SSC/SSCPassEngine.c hw_info_show			LCD+CAM信息
 plutommi/AppCore/SSC/SSCOperate.c mmi_ssc_send_imei_get_ilm
-projects\M610\M610_KM_I710_F2\Resource\CustResDefPLUTO.h SSC_ENGINEERING_MODE
+projects\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\Resource\CustResDefPLUTO.h SSC_ENGINEERING_MODE
 custom\common\PLUTO_MMI\nvram_common_config.c NVRAM_EF_PHONE_LOCK_DEFAULT 恢复出厂设置指令
 
 
@@ -513,11 +513,11 @@ custom\app\FARSIGHTED61M_CN_11C_BB\nvram_user_config.c NVRAM_EF_CUST_HW_LEVEL_TB
 
 	时间状态条:
 plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c show_main_LCD_date_time
-projects\M610\M610_KM_I710_F2\Images\MainLCD\IdleScreen\Techno\SmallClock\0030.bmp
+plutommi\Customer\Images\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\MainLCD\IdleScreen\Techno\SmallClock\0030.bmp
 plutommi\Framework\GUI\GUI_SRC\gui_clock.c gui_clock_show_digital_small_image
 	时间状态条 开宏:
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_UI_CLOCK_SMAILL_DIGITAL_IMAGE_CLOCK
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_WGUI_STATUS_ICON_SHOW_TIME_IN_RIGHT
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_UI_CLOCK_SMAILL_DIGITAL_IMAGE_CLOCK
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_WGUI_STATUS_ICON_SHOW_TIME_IN_RIGHT
 
 	draw:
 plutommi\Framework\GUI\OEM_SRC\gui_status_icon_bar_oem.c gui_status_icon_bar_show_info_oem
@@ -545,7 +545,7 @@ dm_redraw_category_screen
 ----------------------------------------------------------------------------
 
 Idle[i]: 测试模式
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_WGUI_STATUS_ICON_SHOW_TIME_IN_RIGHT
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_WGUI_STATUS_ICON_SHOW_TIME_IN_RIGHT
 	
 
 	Idle enter:
@@ -578,8 +578,8 @@ plutommi\mmi\Idle\IdleSrc\IdleCommon.c
 plutommi\mmi\Idle\IdleSrc\IdleCommon.c km_mmi_electric_torch_switch 
 
 ShortCut:
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_DEDICATED_KEY_SHORTCUTS
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_DEDICATED_KEY_SHORTCUTS
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_DEDICATED_KEY_SHORTCUTS
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_DEDICATED_KEY_SHORTCUTS
 plutommi\Customer\CustResource\PLUTO_MMI\MMI_features_switchPLUTO.h CFG_MMI_DEDICATED_KEY_SHORTCUTS
 plutommi\Customer\CustResource\PLUTO_MMI\resource_shortcuts.c g_mmi_shct_nav_key_default_list
 plutommi\Customer\CustResource\resource_shortcuts.c g_mmi_shct_nav_key_default_list 临时文件(模拟器改这个文件)
@@ -647,18 +647,18 @@ plutommi\Framework\GUI\GUI_SRC\wgui_categories_MM.c configure_fixed_matrix(ixsiz
 plutommi\mmi\PhoneBook\PhoneBookSrc\PhoneBookSetting.c
 
 	联系人切换用tab+icon
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_PHB_UI_IN_TABS
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_PHB_CALLER_GROUP
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_TAB_BARS_SUPPORT
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_PHB_UI_IN_TABS
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_PHB_CALLER_GROUP
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_TAB_BARS_SUPPORT
 
 	群组功能:
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_PHB_UI_IN_TABS
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_PHB_CALLER_GROUP
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_CONTACT_SLIM
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_PHB_UI_IN_TABS
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_PHB_CALLER_GROUP
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_CONTACT_SLIM
 
 	联系人-预览:
 plutommi/mmi/PhoneBook/PhoneBookSrc/PhoneBookEditor.c mmi_phb_entry_view_contact_entry_inline_tab_0
-	
+
 ----------------------------------------------------------------------------
 短信:
 	短信-list:
@@ -676,7 +676,14 @@ plutommi/CUI/SmsCui/SmsSenderCui.c cui_sms_send_proc
 plutommi/CUI/SmsCui/SmsSenderCui.c cui_sms_entry_add_recipient
 plutommi/CUI/SmsCui/SmsSenderCui.c cui_sms_dm_pre_send_msg
 	短信-短语-翻译:
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_SMS_TEMPLATE_SPANISH
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_SMS_TEMPLATE_SPANISH
+
+----------------------------------------------------------------------------
+通话记录:
+plutommi\mmi\CallLog\CallLogSrc\callloglayout.c void^mmi_clog_lt_show_list( )
+	选项:
+plutommi\mmi\CallLog\CallLogSrc\callloglayout.c mmi_clog_key_tbl_struct^g_mmi_clog_lt_key_tbl
+plutommi\mmi\CallLog\CallLogSrc\CallLogAction.c MMI_CLOG_OP_MID_SAVE_TO_PHB
 
 ----------------------------------------------------------------------------
 
@@ -688,21 +695,21 @@ plutommi\MtkApp\Camera\CameraSrc\CameraApp.c mmi_camera_preview_set_key_hdlr
 
 	Image:
 plutommi\MtkApp\ImageView\ImageViewRes\imgview.res
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h USE_SW_PNG_DECODER
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak PNG_DECODE	开了会报几个错误, PNG打不开
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h USE_SW_PNG_DECODER
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak PNG_DECODE	开了会报几个错误, PNG打不开
 
 
 	FM:
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak FM_RADIO_RECORD
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak FM_RADIO_RECORD
 	EZFM:
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak EASY_FM
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_FM_RADIO_BIND_EARPHONE
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak EASY_FM
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_FM_RADIO_BIND_EARPHONE
 	FM-画界面:
 plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioMainScreen.c void^mmi_fmrdo_show_main
 	FM-channel字体:
 plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioMainScreen.c void^mmi_fmrdo_redraw_main_freq_label
 	FM-其他颜色:
-plutommi\Customer\CustResource\M610_MMI\resource_fmradio_skins.c g_fmrdo_skins
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\resource_fmradio_skins.c g_fmrdo_skins
 
 	Mp3自动刷新列表:(无效，改了会出现后台占用问题)
 plutommi/MtkApp/AudioPlayer/AudioPlayerSrc/AudioPlayerSrc.c void^mmi_audply_entry_player_screen(void)
@@ -729,7 +736,7 @@ custom\common\PLUTO_MMI\nvram_common_custpack.c nvram_wap_bookmark_list_struct
 ----------------------------------------------------------------------------
 文件管理:
 	详情opt:
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_SLIM_FILE_MANAGER
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_SLIM_FILE_MANAGER
 plutommi\MtkApp\FileMgr\FileMgrSrc\FileMgrMain.c MENU_ID_FMGR_CARD_DETAIL SRV_FMGR_DRV_CARD_TYPE
 	格式化:
 plutommi\MtkApp\FileMgr\FileMgrSrc\FileMgrMain.c fmgr_main_drive_action_hdlr(void)
@@ -739,7 +746,7 @@ plutommi\Service\FileMgrSrv\FileMgrSrvStorage.c srv_fmgr_drv_init(void)
 
 工具[t]:单位转换 游戏 闹钟 日历
 	单位转换:
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak __MMI_CURRENCY_CONVERTER__
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak __MMI_CURRENCY_CONVERTER__
 plutommi\mmi\Extra\ExtraRes\currencyconvertor.res EXTRA_MENU_CURRENCYCONVERTOR_STRINGID
 plutommi\Customer\CustResource\CustMenuTree_Out.c EXTRA_CURRENCYCONVERTOR_MENU
 plutommi\mmi\Extra\ExtraSrc\currencyconvertor.c mmi_cconv_entry_app
@@ -749,7 +756,7 @@ plutommi\mmi\Extra\ExtraSrc\currencyconvertor.c SetCategory57RightSoftkeyFunctio
 plutommi/mmi/FunAndGames/FunAndGamesSrc/FunAndGamesSrc.c
 
 	计算器: 
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CALC CFG_MMI_CALCULATOR CFG_MMI_CAL_SLIM
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CALC CFG_MMI_CALCULATOR CFG_MMI_CAL_SLIM
 plutommi\mmi\Extra\ExtraSrc\Calculator.c
 
 	蓝牙:
@@ -758,24 +765,24 @@ plutommi/MtkApp/Connectivity/ConnectivitySrc/BtCommon/BTMMIScr.c S1716
 
 	游戏: 
 plutommi\mmi\Inc\MMI_features.h #define^__MMI_GAME_SNAKE__
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_RES_TYPE_WALLPAPER_SEL
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_RES_TYPE_WALLPAPER_SEL
 	游戏资源: 
 plutommi\mmi\FunAndGames\FunAndGamesRes\Game.res __MMI_GAME_SNAKE__
 plutommi\mmi\FunAndGames\FunAndGamesSrc\Game.c GAME_SWITCH(game_snake
 
 ----------------------------------------------------------------------------
 	闹钟: 
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CALC CFG_MMI_ALARM_SLIM
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CALC CFG_MMI_ALARM_SLIM
 	祈祷闹钟: 
 plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res <MENUITEM_ID>@OID:MENU_ID_AZAAN_ALARM
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_AZAAN_ALARM
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_AZAAN_ALARM
 	祈祷闹钟铃声: 
-projects\M610\M610_KM_I710_F2\AUDIO\PLUTO\UserProfiles\Ring\Allah.O.Akber.mp3 没有
+plutommi\Customer\Audio\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\UserProfiles\Ring\Allah.O.Akber.mp3 没有
 	祈祷闹钟资源关闭SLIM: 
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_ALARM_SLIM
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_ALARM_SLIM
 	祈祷闹钟AMPM: 
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak __KM_AZAAN_ALARM_ADD_AMPM__
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_TIME_SETTING_AM_PM_SUPPORT
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak __KM_AZAAN_ALARM_ADD_AMPM__
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_TIME_SETTING_AM_PM_SUPPORT
 plutommi\mmi\Inc\MMI_features.h #define^__MMI_GAME_SNAKE__
 plutommi\mmi\Organizer\HijriCalendar\HijriCalendarSrc\AzaanAlarm.c
 
@@ -787,8 +794,8 @@ SBD_CUSTOMER_NLIVE_ADD_MAGIC_VOICE
 
 日历: 
 	日历开宏: 
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_CALENDAR
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h __MMI_CALENDAR_EVENT__ (不开)
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_CALENDAR
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h __MMI_CALENDAR_EVENT__ (不开)
 plutommi\Framework\GUI\GUI_INC\gui_calendar.h __MMI_CALENDAR_TITLE__
 	日历UI: 
 plutommi\Framework\GUI\GUI_SRC\gui_calendar.c gui_calendar_init_layout 画界面
@@ -797,7 +804,7 @@ plutommi\Framework\GUI\GUI_INC\gui_typedef.h GUI_CALENDAR_FRAME_HEIGHT
 	默认日历开始日为周一: 
 plutommi\mmi\Organizer\OrganizerRes\calendar.res NVRAM_CLNDR_FIRST_DAY_OF_WEEK
 	伊斯兰日历:
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_HIJRI_CALENDAR
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h CFG_MMI_HIJRI_CALENDAR
 plutommi\mmi\Inc\MMI_features.h __MMI_HIJRI_CALENDAR__
 plutommi\mmi\Organizer\OrganizerRes\calendar.res __MMI_HIJRI_CALENDAR__
 make\plutommi\mmi_app\mmi_app.mak HijriCalendar 				添加c(未修改)
@@ -813,13 +820,13 @@ plutommi\mmi\Organizer\HijriCalendar\HijriCalendar_res\HijriCalendar.res STR_AFG
 ----------------------------------------------------------------------------
 
 主题[h]:
-projects\M610\M610_KM_I710_F2\Resource\Themecomponents.h 
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\M101_COOLCEL_CS181_M_BRAVIS_F3\Themecomponents.h 
 plutommi\Customer\CustResource\Themecomponents.h
 	弹窗背景:
-projects\M610\M610_KM_I710_F2\Resource\Themecomponents.h UI_filled_area^popup_screen_bg_filler_defaultTheme
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\M101_COOLCEL_CS181_M_BRAVIS_F3\Themecomponents.h UI_filled_area^popup_screen_bg_filler_defaultTheme
 
 	日期高亮背景色:
-projects\M610\M610_KM_I710_F2\Resource\Themecomponents.h #define^img_menuitem_single_line_highlight_filler_color
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\M101_COOLCEL_CS181_M_BRAVIS_F3\Themecomponents.h #define^img_menuitem_single_line_highlight_filler_color
 
 ----------------------------------------------------------------------------
 
@@ -840,31 +847,31 @@ Menu--View--ps Integrated--show log
 扩展项目:
 //ctrl+C自动添加新文件, 旧项目->新项目
 //新项目设置:
-newPro = M610_KM_I710_F2
+newPro = M101_COOLCEL_CS181_M_BRAVIS_F3
 
 扩展项目[e]:
 
-custom\codegen\FARSIGHTED61M_CN_11C_BB\codegen_M610_KM_I710_F2.dws
-custom\common\config_account_M610_KM_I710_F2.h
-custom\common\userprofile_nvram_def_M610_KM_I710_F2.h
-custom\system\FARSIGHTED61M_CN_11C_BB\custom_MemoryDevice_M610_KM_I710_F2.h
-projects\M610\M610_KM_I710_F2\M610_KM_I710_F2_gprs.mak 
-projects\M610\M610_KM_I710_F2\Verno_M610_KM_I710_F2.bld 
-projects\M610\M610_KM_I710_F2\AUDIO\PLUTO\audio.zip
-projects\M610\M610_KM_I710_F2\Images\image.zip
-projects\M610\M610_KM_I710_F2\Resource\MMI_features_switchPLUTO.h 
-plutommi\Customer\CustResource\M610_MMI\M610_KM_I710_F2\
-projects\M610\M610_KM_I710_F2\Resource\ThemeRes.c 
-projects\M610\M610_KM_I710_F2\Resource\Themecomponents.h 
-projects\M610\M610_KM_I710_F2\Resource\ref_list.txt 
-plutommi\Customer\CustResource\M610_MMI\CustResDefM610.h
-plutommi\Customer\CustResource\M610_MMI\CustMiscDataM610.c
-CUSTOMER_NAME_M610_KM_I710_F2 其他相关
+custom\codegen\FARSIGHTED61M_CN_11C_BB\codegen_M101_COOLCEL_CS181_M_BRAVIS_F3.dws
+custom\common\config_account_M101_COOLCEL_CS181_M_BRAVIS_F3.h
+custom\common\userprofile_nvram_def_M101_COOLCEL_CS181_M_BRAVIS_F3.h
+custom\system\FARSIGHTED61M_CN_11C_BB\custom_MemoryDevice_M101_COOLCEL_CS181_M_BRAVIS_F3.h
+make\M101_COOLCEL_CS181_M_BRAVIS_F3_gsm.mak 
+make\Verno_M101_COOLCEL_CS181_M_BRAVIS_F3.bld 
+plutommi\Customer\Audio\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\audio.zip
+plutommi\Customer\Images\M101_COOLCEL\M101_COOLCEL_CS181_M_BRAVIS_F3\image.zip
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\MMI_features_switchM101_COOLCEL_CS181_M_BRAVIS_F3.h 
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\M101_COOLCEL_CS181_M_BRAVIS_F3\
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\M101_COOLCEL_CS181_M_BRAVIS_F3\ThemeRes.c 
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\M101_COOLCEL_CS181_M_BRAVIS_F3\Themecomponents.h 
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\ref_list_M101_COOLCEL_CS181_M_BRAVIS_F3.txt 
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\CustResDefM101_COOLCEL.h
+plutommi\Customer\CustResource\M101_COOLCEL_MMI\CustMiscDataM101_COOLCEL.c
+CUSTOMER_NAME_M101_COOLCEL_CS181_M_BRAVIS_F3 其他相关
 
 
 #SVN test
 TortoiseProc.exe /command:commit /path:"c:\svn_wc\file1.txt*c:\svn_wc\file2.txt" /logmsg:"test log message" 
-F:\11CW1352MP_MT6261DM\custom\codegen\FARSIGHTED61M_CN_11C_BB\codegen_M610_KM_I710_F2.dws
+F:\11CW1352MP_MT6261DM\custom\codegen\FARSIGHTED61M_CN_11C_BB\codegen_M101_COOLCEL_CS181_M_BRAVIS_F3.dws
 
 
 
@@ -888,39 +895,39 @@ findstr /s /i "ERROR" *.log>aaaa.txt
 
 Build问题[Cb][b]:
 
-build\M610_KM_I710_F2\build.log cleanlib 				编译时间
-build\M610_KM_I710_F2\MT6261.log Finished: 			链接问题看这个
-build\M610_KM_I710_F2\log\mmiresource.log Error:
-build\M610_KM_I710_F2\log\mmi_framework.log Error:
-build\M610_KM_I710_F2\log\mmi_app.log Error:
-build\M610_KM_I710_F2\log\custom.log Error:
-build\M610_KM_I710_F2\log\mmi_service.log Error:
-build\M610_KM_I710_F2\log\resgen.log Error:
-build\M610_KM_I710_F2\log\mmi_check.log Error:
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\build.log cleanlib 				编译时间
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\MT6261.log Finished: 			链接问题看这个
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\mmiresource.log Error:
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\mmi_framework.log Error:
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\mmi_app.log Error:
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\custom.log Error:
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\mmi_service.log Error:
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\resgen.log Error:
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\mmi_check.log Error:
 
-build\M610_KM_I710_F2\MMI_DRV_DEFS.mak  				查看宏是否存在
-build\M610_KM_I710_F2\log\info.log  					查看宏是否存在
-build\M610_KM_I710_F2\log\drv_features_option.log  	查看宏是否存在
-build\M610_KM_I710_F2\log\MMI_features.log  			查看宏是否存在
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\MMI_DRV_DEFS.mak  				查看宏是否存在
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\info.log  					查看宏是否存在
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\drv_features_option.log  	查看宏是否存在
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\MMI_features.log  			查看宏是否存在
 
-build\M610_KM_I710_F2\log\vivaConfig.log Error:    RAM超 把0x003B6000改小
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\vivaConfig.log Error:    RAM超 把0x003B6000改小
 //#define NOR_BOOTING_NOR_FS_BASE_ADDRESS   0x003B4000  //<-  0x003B6000
 //#define NOR_BOOTING_NOR_FS_SIZE 0x00048000  //<-  0x0004A000
 
-build\M610_KM_I710_F2\log\ckSysDrv.log Free#Space 				看剩余空间，nv大小
-build\M610_KM_I710_F2\log\resgen_mtk_resgenerator_make.log		res添加头文件
-build\M610_KM_I710_F2\log\resgen_xml_preprocess.log Error:
-build\M610_KM_I710_F2\log\FileSystemConfig.log
-build\M610_KM_I710_F2\log\ckImgSize.log Error:
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\ckSysDrv.log Free#Space 				看剩余空间，nv大小
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\resgen_mtk_resgenerator_make.log		res添加头文件
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\resgen_xml_preprocess.log Error:
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\FileSystemConfig.log
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\ckImgSize.log Error:
 //The Boundary of VIVA bin				 = 3883008	bytes		可以修改单位 8*512=4096
 //Actual VIVA End Address 				 = 3741620	bytes
 //============================================================
 //Check VIVA Compressed ROM Size: PASS!
 
-build\M610_KM_I710_F2\gprs\MT6261r\pregen_dep\emigen.det
-build\M610_KM_I710_F2\log\resgen_mtk_resgenerator_make.log Error:
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\gsm\MT6261r\pregen_dep\emigen.det
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\resgen_mtk_resgenerator_make.log Error:
 
-build\M610_KM_I710_F2\log\vivaConfig.log Error:
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\vivaConfig.log Error:
 
 
 
@@ -929,7 +936,7 @@ build\M610_KM_I710_F2\log\vivaConfig.log Error:
 AAPMC Error: Error[2] Calculating correct VIVA memory value...Failed.
 Error: L6388E: ScatterAssert expression (ImageLimit(ZIMAGE_ER) < ImageBase(CACHED_DUMMY_END)) failed on line 904
 Please check link error or check 
-build\M610_KM_I710_F2\log\vivaConfig.log Error:
+build\M101_COOLCEL_CS181_M_BRAVIS_F3\log\vivaConfig.log Error:
 ----------------
 2
 make[1]: *** [zimage_check] Error 1
@@ -937,7 +944,7 @@ make[1]: Leaving directory 'F:/11CW1352MP_MT6261DM'
 make[1]: Entering directory 'F:/11CW1352MP_MT6261DM'
 make[1]: Leaving directory 'F:/11CW1352MP_MT6261DM'
 make: *** [POSTBUILD ] Error 1
-perl tools\ChkDepMod.pl --step 2 M610_KM_I710_F2 gprs MT6261
+perl tools\ChkDepMod.pl --step 2 M101_COOLCEL_CS181_M_BRAVIS_F3 gsm MT6261
 
 2.2 可能要删这个文件
 custom\system\FARSIGHTED61M_CN_11C_BB
