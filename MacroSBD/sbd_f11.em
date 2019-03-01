@@ -534,7 +534,11 @@ macro NoteHander(hbuf, cNum)
 			mSel = SearchInBuf(hbuf, "^" # "@noteWord@", 0, 0, 0, 1, 0)
 			if (mSel == "")
 			{
-				mSel = SearchInBuf(hbuf, "@noteWord@", 0, 0, 0, 0, 0)
+				re = FindString( noteWord, "$" )
+				if(re != "X")
+					mSel = SearchInBuf(hbuf, "@noteWord@", 0, 0, 0, 1, 0)
+				else
+					mSel = SearchInBuf(hbuf, "@noteWord@", 0, 0, 0, 0, 0)
 			}
 			if (mSel != "")
 			{

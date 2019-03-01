@@ -51,7 +51,7 @@ IM
 E:\6531E_20180113\tmp
 
 ### 54.note row(第2次打开同一行, F11关闭note会修改这里)
-196
+0
 
 ### 57.Note Hander Set(笔记路径, 替换当前path, MTK)
 M101_COOLCEL_CS181_M_BRAVIS_F3 M101_COOLCEL gsm
@@ -60,5 +60,5 @@ M101_COOLCEL_CS181_M_BRAVIS_F3 M101_COOLCEL gsm
 \\192.168.2.115\xiaoj\9820\idh.code
 	
 ### 63.Num bits(F10)
-1
+2
 

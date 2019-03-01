@@ -61,9 +61,8 @@
 Save:SI\bak\bak_20181123_mar_msg.h
 	
 	
-com_debug$
 
-F12工程不匹配问题
+
 
 
 
@@ -357,9 +356,12 @@ key:F11 宏注释 项目笔记
 	//setProPath:  
 	//sethistory:  mtk笔记 显示历史path list-->ok, 输编号, 插入path行
 	//cp:      复制文件
-	//默认:      打开文件, 搜索关键字; 用空格区分, 用^表示空格
+	//默认:      打开文件, 搜索关键字并跳转行; 关键字说明:
+	//             关键字只有一个, 空格用作区分文件名, 用^表示空格;
+	//             默认优先查找行首(不加^);
+	//             可以用$结尾:abc$, 只有这个符号用通符,后续再补充.
 		如:
-		chip_drv\chip_module\analog\sr1161\analog_phy_sr1161.c SBD_LCM_BL_25MA_SUPPORT
+	chip_drv\chip_module\analog\sr1161\analog_phy_sr1161.c SBD_LCM_BL_25MA_SUPPORT
 
 	2). 9820e中F5/F6功能类似
 		//F5 先读取当前文件 basePath 值代替项目目录, 不用的注释掉
@@ -427,7 +429,7 @@ key:[F12] 显示配置 是否定义
       			//		SBD_USB_
       			//提示: 
       			//		aaa_
-	
+[1.4] (未实现) 打开其他工程mk, F12没有匹配对; 以前可以现在不行了...
 
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
@@ -506,6 +508,7 @@ ctrl + U: 1.添加复制内容(配合svn--bcomp查看修改记录使用)
       			//->: 
       			//		aaa_xxx
       			//		aaa_yyy
+      			//复制^p^p^p: 间隔添加空行(3行)
           //模式2: 多行选择: 数字递增             +每行
       			//选中: 
       			//		22

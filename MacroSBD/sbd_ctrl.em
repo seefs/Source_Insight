@@ -310,8 +310,24 @@ macro CtrlU()
 				row = row + 1
 			}
 		}
-		else
+		else if(FindString( clipStr, "^p" ) != "X")
 		{
+			spaceRow = strlen(clipStr)
+			clipStr = ReplaceWord(clipStr, "^p", "")
+			spaceRow = (spaceRow - strlen(clipStr))/2
+			while (row < sel.lnFirst + (sel.lnLast - sel.lnFirst + 1)*(spaceRow + 1))
+			{
+				n = spaceRow
+				while (n>0)
+				{
+					InsBufLine(hbuf, row, "");
+					n = n - 1
+				}
+				row = row + 1 + spaceRow
+			}
+		}
+		else
+		{ 
 			while (row < sel.lnLast + 1)
 			{
 				cur_line = GetBufLine(hbuf, row)
