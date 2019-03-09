@@ -1,105 +1,78 @@
 
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI E:\save\SI_bak    
 
 [cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioMainScreen.c F:\6261D_KM\plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioMainScreen.c    
+cd:F:\6531E_16A\project\SE039_YST_T18_LINNEX_LE01_F2 TortoiseProc.exe /command:commit /path:F:\6531E_16A\project\SE039_YST_T18_LINNEX_LE01_F2 /logmsg:update SE039 
 
 [cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioMainScreen.c F:\6261D_KM\plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioMainScreen.c    
+TortoiseProc.exe /command:commit /path:F:\6531E_16A\project\SE039_YST_T18_LINNEX_LE01_F2 /logmsg:update SE039  
 
 [cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\CallLog\CallLogSrc\CallLogMain.c F:\6261D_11C_V33\plutommi\mmi\CallLog\CallLogSrc\CallLogMain.c    
+TortoiseProc.exe /command:update /path:F:\6531E_16A\project\SE039_YST_T18_LINNEX_LE01_F2 /closeonend:0   
 
 [cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\common\ps\custom_led_patterns.c F:\6261D_11C_V33\custom\common\ps\custom_led_patterns.c    
+TortoiseProc.exe /command:log /path:F:\6531E_16A\project\SE039_YST_T18_LINNEX_LE01_F2    
 
 [cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\GpioSrv\Gpiosrv.c F:\6261D_11C_V33\plutommi\Service\GpioSrv\Gpiosrv.c    
+TortoiseProc.exe /command:log /path:F:\6531E_16A\project\SE039_YST_T18_LINNEX_LE01_F2    
 
 [cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\Inc\gpiosrvgprot.h F:\6261D_11C_V33\plutommi\Service\Inc\gpiosrvgprot.h    
+TortoiseProc.exe /command:diff /path:F:\6531E_16A\project\SE039_YST_T18_LINNEX_LE01_F2 /path2:path2   
 
 [cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+TortoiseProc.exe /command:diff /path:F:\6531E_16A\project\SE039_YST_T18_LINNEX_LE01_F2 /path2:path2   
 
 [cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\PhnsetGPIO.c F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\PhnsetGPIO.c    
+echo version     
 
 [cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\PhnsetGPIO.c F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\PhnsetGPIO.c    
+ln -s F:\6531E_16A\build E:\desktop\build   
 
 [cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\gpio\gpiores\PhnsetGpio.res F:\6261D_11C_V33\plutommi\mmi\gpio\gpiores\PhnsetGpio.res    
+TortoiseProc.exe /command:commit /path:F:\6531E_16A\project\SE039_YST_T18_LINNEX_LE01_F2 /logmsg:update SE039  
 
 [cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\drv\misc_drv\_Default_BB\MT6261\uem_gpio.c F:\6261D_11C_V33\custom\drv\misc_drv\_Default_BB\MT6261\uem_gpio.c    
+TortoiseProc.exe /command:update /path:E:\save /closeonend:0   
 
 [cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\UnifiedMessage\UnifiedMessageSrc\UMInterface.c F:\6261D_11C_V33\plutommi\mmi\UnifiedMessage\UnifiedMessageSrc\UMInterface.c    
+TortoiseProc.exe /command:update /path:E:\save /closeonend:0   
 
 [cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+TortoiseProc.exe /command:commit /path:E:\save /logmsg:update )  
 
 [cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\PhnsetGPIO.c F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\PhnsetGPIO.c    
+ln -s E:\save\SI E:\desktop\SI   
+[cmd]: 
+"get file list: E:\save\SI\Cmd\file___no_use 51 40 dir_getFile"
+[cmd]: 
+"get file list: E:\save\SI\Cmd\file___no_use 51 40 dir_getFile"
+[cmd]: 
+"get file list: E:\save\SI\Cmd\file___no_use 51 40 dir_getFile"
+[cmd]: 
+"get file list: E:\save\SI\Cmd\file___no_use 51 40 dir_getFile"
+[cmd]: 
+"get file list: E:\save\SI\Cmd\file___no_use 51 40 dir_getFile"
+[cmd]: 
+"get file list: E:\save\SI\node\Test 51 31 Macro_Tmp_"
+[cmd]: 
+"get file list: E:\save\SI\Cmd\file___no_use 51 40 dir_getFile"
+[cmd]: 
+"get file list: E:\save\SI\node\Test 51 31 Macro_Tmp_"
+[cmd]: 
+"get file list: E:\save\SI\Cmd\file___no_use 51 40 dir_getFile"
+[cmd]: 
+"get file list: E:\save\SI\Cmd\file___no_use 51 40 dir_getFile"
+[cmd]: 
+"get file list: E:\save\SI\node\Test 51 31 Macro_Tmp_"
+[cmd]: 
+"get file list: E:\save\SI\node\Test 51 31 Macro_Tmp_"
+[cmd]: 
+"get file list: E:\save\SI\Cmd\file___no_use 51 40 dir_getFile"
+[cmd]: 
+"get file list: E:\save\SI\Cmd\file___no_use 51 29 "
+[cmd]: 
+"get file list: E:\save\SI\node\Test 51 21 "
+[cmd]: 
+"get file list: E:\save\SI\node\Test 51 21 "
 
 [cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\gpio\gpiores\PhnsetGpio.res F:\6261D_11C_V33\plutommi\mmi\gpio\gpiores\PhnsetGpio.res    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Inc\TimerEvents.h F:\6261D_11C_V33\plutommi\mmi\Inc\TimerEvents.h    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Ucm\UcmSrc\UcmUi.c F:\6261D_11C_V33\plutommi\mmi\Ucm\UcmSrc\UcmUi.c    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Ucm\UcmSrc\UcmUi.c F:\6261D_11C_V33\plutommi\mmi\Ucm\UcmSrc\UcmUi.c    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Organizer\OrganizerSrc\Organizer.c F:\6261D_11C_V33\plutommi\mmi\Organizer\OrganizerSrc\Organizer.c    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Organizer\OrganizerRes\Organizer.res F:\6261D_11C_V33\plutommi\mmi\Organizer\OrganizerRes\Organizer.res    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Organizer\OrganizerRes\Organizer.res F:\6261D_11C_V33\plutommi\mmi\Organizer\OrganizerRes\Organizer.res    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Organizer\OrganizerSrc\Organizer.c F:\6261D_KM\plutommi\mmi\Organizer\OrganizerSrc\Organizer.c    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" D:\SVN\SC7701\project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk F:\6261D_KM\project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
-
-[cmd]: 
-"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+copy E:\save\SI\node\Macro_z_null.h E:\save\SI\node\ToolsMsg\Macro_SVN.h    

@@ -352,6 +352,7 @@ key:F11 宏注释 项目笔记
 	//vs08:    打开模拟器
 	//call:    不运行cmd命令, 只复制
 	//set:     替换当前笔记目录; 可能要按2次, 先设置一次当前目录
+	补充--F6: 只保存, 不修改   目录; 先用F6设置当前目录, 再用F5修改新目录
 	//setPath:     
 	//setProPath:  
 	//sethistory:  mtk笔记 显示历史path list-->ok, 输编号, 插入path行
@@ -375,6 +376,14 @@ key:F11 宏注释 项目笔记
 	4). mtk/spr笔记的具体说明:
 	Save:SI\bak\note_help.h MtkNote
 	Save:SI\bak\note_help.h SprNote
+	
+	5). 文件名补全...:
+	Save:SI\Cmd\file___no_use\dir_getFile...
+	//按F5, 显示添加行:
+	Save:SI\Cmd\file___no_use\dir_getFile_spr.bat
+	//按F6, 清除查找记录, 否则查找相同内容无法刷新:
+	Save:SI\Cmd_TXT\si_filelist.h
+
 
 2. mk中有选中, 即显示宏说明
 	1). 选择整个宏,     显示、添加宏说明

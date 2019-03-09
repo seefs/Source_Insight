@@ -32,6 +32,11 @@ macro ShellOpenCustomCmd(cmdStr)
 	ShellExecute("open", "cmd_base.bat", cmdStr, getCmdPath(0), 1)
 }
 
+macro ShellGetFileList(cmdStr)
+{
+	ShellExecute("open", "cmd_getFileList.bat", cmdStr, getCmdPath(0), 1)
+}
+
 macro ShellOpenCmd(path, file)
 {
 	if(file == "")

@@ -12,6 +12,7 @@ Save:SI\node\Macro_modis_6531E.h
 Save:SI\node\note\Macro_Note_Tools.h
 
 //	SVN 配置:
+Save:SI\node\ToolsMsg\Macro_SVN.h
 C:\Users\Administrator\AppData\Roaming\Subversion\config
 //	BCmp 配置:
 C:\Users\Administrator\AppData\Roaming\Scooter^Software\Beyond^Compare^4
@@ -48,23 +49,48 @@ Save:SI\MacroSBD\sbd_base.em
 
 [3.1] Test:
 Save:SI\node\Test\Macro_Tmp_Node_Test.h
+Save:SI\node\Test\Macro_Tmp_...
+Save:SI\node\Test\...
 Save:SI\node\Test\Tmp_Test.h
+	
 
 
-[3.2] rule:
+[3.2] file list Test:
+Save:SI\Cmd\file___no_use\...
+Save:SI\Cmd\file___no_use\dir_getFile...
+Save:SI\Cmd\file___no_use\dir_getFile time.bat
+Save:SI\Cmd\file___no_use\dir_getFile_spr.bat
+Save:SI\Cmd\cmd_getFileList.bat
+Save:SI\Cmd_TXT\si_filelist.h
+
+
+
+[4.1] rule:
 Save:SI\node\rule\Macro_Rule_Key_file_6531E.h
 Save:SI\node\rule\Macro_Rule_Key_file_7701.h
 
 
-[3.3] Common:
+[4.2] Common:
 Save:SI\node\Tmp_Common.h
+Save:SI\node\Macro_Set_Note.h
 
 
-[3.4] bak文件:
+[4.3] bak文件:
 Save:SI\bak\bak_20181114_tmp_B_old.h
 Save:SI\bak\bak_20181123_git.h
 
 
+
+[5.1] 其他 node:
+Save:SI\node\note\Macro_Note_MTK.h
+Save:SI\node\note\Macro_Note_9820es.h
+Save:SI\node\note\Macro_Note_6531E.h
+
+
+[5.1] 禅道:
+http://192.168.2.252/zentao/my/
+展讯:
+http://222.66.158.139:2008/cqweb/#
 
 
 

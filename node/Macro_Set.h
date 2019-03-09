@@ -21,7 +21,7 @@ SE039_SXJY_D700_VORTEX_F3
 project
 
 ### 24.SR Mode  (CTRL + D : search head 删除相同头部的行)
-ref_list
+MainMenuRes
 
 ### 27.last command (未使用)
 CtrlW
@@ -33,7 +33,7 @@ CtrlW
 m20
 
 ### 36.Cur search macro (F10)
-IM_UDB_SUPPORT
+IM_GERMAN_SUPPORT
 
 ### 39.Cur search head (F10)
 IM
@@ -42,7 +42,7 @@ IM
 0
 
 ### 45.Cur search max (F10)
-728
+800
 
 ### 48.bmp one/two (F7 + v: 2次选择对比)
 2
@@ -51,10 +51,10 @@ IM
 E:\6531E_20180113\tmp
 
 ### 54.note row(第2次打开同一行, F11关闭note会修改这里)
-0
+3
 
 ### 57.Note Hander Set(笔记路径, 替换当前path, MTK)
-M101_COOLCEL_CS181_M_BRAVIS_F3 M101_COOLCEL gsm
+M103_KM_V2408_VGOTEL_I10_F2 M103_KEMAN gprs
 
 ### 60.Note Save Base(笔记路径, 替换当前path, android)
 \\192.168.2.115\xiaoj\9820\idh.code

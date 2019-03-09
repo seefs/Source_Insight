@@ -1,6 +1,6 @@
 @echooff
 F:
-set proD=F:11CW1352MP_KM2\
+set proD=F:6261D_KM\
 
 cd %proD%
 

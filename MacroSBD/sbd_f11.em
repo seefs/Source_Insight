@@ -244,10 +244,11 @@ macro NoteHander(hbuf, cNum)
 {
 	var noteCmd
 	var noteWord
+	var cur_row
 	
 	sel = MGetWndSel(hbuf)
 	cur_line = GetBufLine(hbuf, sel.lnFirst )
-	cur_row = sel.ichFirst
+	cur_row = sel.lnFirst
 
 	start = StartWS(cur_line, 0 )
 	if (start == "X")
@@ -436,9 +437,12 @@ macro NoteHander(hbuf, cNum)
 		//lastCmd:除set以外的str
 		lastCmd = strmid(cur_line, index+1, len)
 		//旧列表替换为新列表,空格分开 
-		SetNoteHander(hbuf, lastCmd, cur_row)
-		//save
-		SaveNoteHistory(cur_line)
+		SetNoteHander(hbuf, lastCmd, cur_row, cNum)
+		if(cNum != 6)
+		{
+			//save
+			SaveNoteHistory(cur_line)
+		}
 	}
 	else if(noteCmd == "setPath")
 	{
@@ -474,6 +478,7 @@ macro NoteHander(hbuf, cNum)
 		curPath = ""
 		if(strlen(noteCmd)==1)
 		{
+			//1. "E:XXX YYY" 获取路径为 "E:XXX"
 			ch = strmid(noteCmd,0,1)
 			asi = AsciiFromChar(ch)
 			if(asi>=65 && asi<65+14 || asi>=97 && asi<97+14)
@@ -487,6 +492,7 @@ macro NoteHander(hbuf, cNum)
 		}
 		else if(noteCmd == "Save")
 		{
+			//2. "Save:XXX YYY" 获取路径为 "Save:XXX"
 			start = GetTransCmdS(cur_line, index + 1, len)
 			next  = GetTransCmdE(cur_line, start,     len)
 			//start2 = GetTransCmdS(cur_line, next + 1, len)
@@ -496,14 +502,37 @@ macro NoteHander(hbuf, cNum)
 		//非根目录
 		if(curPath == "")
 			curPath = noteCmd
-		//文件名转化:
+		//3. 文件名转化:
 		//转化"Save:"、区分根目录、添加项目目录、替换"^"为空格
 		curPath = GetTransFileName(hbuf, curPath, cNum)
+		
+		//4. 显示完整文件名: 以"..."结尾
+		if(strmid(curPath, strlen(curPath)-3, strlen(curPath)) == "...")
+		{
+			fLen = strlen(curPath)-3
+			//bsDir = GetFileName(curPath)
+			bsDir = getBaseDir(curPath, 0) //功能一样
+			bsDir = ReplaceWord(bsDir, " ", "#") //用^代替空格无效
+			//fName = GetFileName(curPath)
+			fName = strmid(curPath, strlen(bsDir)+1, strlen(curPath) - 3)
+			if(cNum == 61)
+				cNum = 6
+			ret = 0
+			if(cNum != 6)
+			{
+				ret = ReadCmdFileList(hbuf, cur_row, bsDir, fName)
+			}
+			if(ret == 0)
+			{
+				ShellGetFileList(bsDir # " "  # cNum # " " # fLen # " " # fName)
+			}
+			stop
+		}
 		
 		hbuf = OpenExistFile(curPath)
 			
 		if (hbuf != hNil){
-			//忽略":"位置, 用空格分隔
+			//5. 获取关键词; 文件名以空格结尾, index可能是":"位置
 			index = indexb
 			if (index == "X" || index == len)
 			{
@@ -516,7 +545,7 @@ macro NoteHander(hbuf, cNum)
 			//cmdP2 = strmid(cur_line, start2, len)
 
 		
-			//保存value到剪切板
+			//6. 保存 (宏=)value 到剪切板; 可再用ctrl+T替换新值
 			otherWord = strmid(cur_line, start, len)
 			lnVar = GetLineValue(otherWord)
 			if(lnVar != "")
@@ -525,12 +554,13 @@ macro NoteHander(hbuf, cNum)
 			}
 			
 
-			//goto word and selete
+			//7. 获取关键词
+			//goto word and Select
 			noteWord = strmid(cur_line, start, next)
 			//use "^" as space
 			noteWord = ReplaceWord(noteWord, "^", " ")
 
-			//优先搜索行首
+			//8. 默认先搜索一次行首, 再普通搜索(无通配符); 带$搜索行尾
 			mSel = SearchInBuf(hbuf, "^" # "@noteWord@", 0, 0, 0, 1, 0)
 			if (mSel == "")
 			{
@@ -547,7 +577,7 @@ macro NoteHander(hbuf, cNum)
 		}
 		else
 		{
-			//文件打开失败, 作为目录打开
+			//9. 文件打开失败, 作为目录打开
 			ret = ShellExecute("explore", curPath, "", "", 1)
 			//目录打开失败
 			if(ret == 0){
@@ -558,7 +588,7 @@ macro NoteHander(hbuf, cNum)
 				mI = RFindString(curPath, "Macro_")
 				if(mI != "X")
 				{
-					//从默认文件复制新文件
+					//10. "Macro_"文件, 从默认目录复制新文件
 					strDefFile = strmid(curPath, 0, mI) # "Macro_z_null.h"
 					isF = IsExistFile(strDefFile)
 					if(!isF)
@@ -570,6 +600,7 @@ macro NoteHander(hbuf, cNum)
 				}
 				else
 				{
+					//11. 提示文件名打开失败
 					msg(pmsg)
 				}
 			}
@@ -579,7 +610,7 @@ macro NoteHander(hbuf, cNum)
 }
 
 //旧列表替换为新列表,空格分开
-macro SetNoteHander(hbuf, lastCmd, cur_row)
+macro SetNoteHander(hbuf, lastCmd, cur_row, cNum)
 {
 	//msg("-" # lastCmd # "-")
 	var lastBaseCmd
@@ -587,6 +618,8 @@ macro SetNoteHander(hbuf, lastCmd, cur_row)
 	if(lastBaseCmd == lastCmd)
 		stop
 	SaveMode(getNoteHanderSet(0), "@lastCmd@")
+	if(cNum == 6 || cNum == 61)
+		stop
 	
 	{
 		//结束标志

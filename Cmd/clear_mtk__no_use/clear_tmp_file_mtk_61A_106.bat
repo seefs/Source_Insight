@@ -1,6 +1,6 @@
 @echooff
 F:
-set proD=F:\11CW1352MP_BLEPHONE61D_11C_V33\
+set proD=F:\6261A_11C_V33\
 
 cd %proD%
 

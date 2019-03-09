@@ -6,6 +6,7 @@ _TempFileType(hbuf)
 _TempMakeFile(hbuf)
 _TempOpenFile(hbuf)
 _TempFileFun(hbuf)
+_TempCmdFile(hbuf)
 _TempSelect(hbuf)
 **/
 /***********************************************************************/
@@ -717,7 +718,98 @@ macro GetTransStr(cur_line, index, len)
 		return strmid(cur_line, index, len)
 	}
 }
+/***********************************************************************/
+/************************** select  **********************************/
+/***********************************************************************/
+//macro _TempCmdFile(hbuf){		_TempHeadFile(hbuf)		}
 
+macro ReadCmdFileList(hbuf, cur_row, bsDir, fName)
+{
+	var cmdBuf
+	var firstReRow
+	var mIndex
+	var indexMax
+
+	//file name list Line:5~N
+	firstReRow = 5
+	//select line -> add
+	mIndex = 0
+	indexMax = 0
+	
+	fileName = getTXTPath(0) # "\\si_filelist.h"
+	cmdBuf = OpenCache(fileName)
+	ln = GetBufLineCount(cmdBuf)
+	fNameRow = 2
+	if(fNameRow <= ln){
+		lnStr = GetBufLine(cmdBuf, fNameRow - 1)
+		//val = GetLineMacro(lnStr)
+		if(lnStr == "@bsDir@ @fName@")
+		{
+			len = strlen(bsDir)
+			indexMax = ln - firstReRow + 1
+			retRow = firstReRow
+			flistMsg = ""
+			index = 0
+
+			if(retRow == ln)
+			{
+				mIndex = 1
+			}
+			else
+			{
+				while (retRow <= ln)
+				{
+					index = index + 1
+					line = GetBufLine(cmdBuf, retRow - 1)
+					if(strlen(line) > len)
+					{
+						lnStr = strmid(line, len + 1, strlen(line))
+						flistMsg = flistMsg # "@index@. @lnStr@" # CharFromKey(13)
+					}
+					retRow = retRow + 1
+				}
+				if(flistMsg != "")
+				{
+					msg(flistMsg)
+					
+					key = 0
+					bit = indexMax
+					//2位数需求输入1~2个数
+					while (bit > 0 && mIndex*10 <= indexMax)
+					{
+						key = GetKey()
+						//输入0-9a-z, 返回0-9+26
+						i = GetNumFromKey(key, 10 - 1)
+						if(i >= 0)
+						{
+							mIndex = mIndex*10+i
+						}
+						bit = bit/10
+					}
+				}
+			}
+			if (mIndex > indexMax)
+			{
+				msg("下标 (@mIndex@) 超范围 1~@indexMax@.")
+			}
+			else
+			{
+				//获取当前行, 替换为新文件名
+				line = GetBufLine(cmdBuf, mIndex + firstReRow - 2)
+				lnStr = strmid(line, len + 1, strlen(line))
+				upLine = GetBufLine(hbuf, cur_row)
+				upLnStr = strmid(upLine, 0, strlen(upLine) - 3 - strlen(fName))
+
+				newLine = upLnStr # lnStr
+				msg("Add Line:" # CharFromKey(13) # newLine)
+				InsBufLine(hbuf, cur_row + 1, newLine);
+				SaveBuf(hbuf)
+			}
+			return 1
+		}
+	}
+	return 0
+}
 /***********************************************************************/
 /************************** select  **********************************/
 /***********************************************************************/

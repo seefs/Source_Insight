@@ -27,33 +27,6 @@ MMS_SUPPORT = OBIGO_Q03C_MMS_V02
   # Switch-ability:
   #   N/A
 
-aaaaaaaTest:  sss1
-
-
-
-aaaaaaaTest:  sssa2
-
-
-
-aaaaaaaTest:  sssa
-
-
-
-aaaaaaaTest:  sssa4
-
-
-
-sssa5
-
-
-
-aaaaaaaTest:  sssa6
-aaaaaaaTest:  sssa6
-aaaaaaaTest:  sssa7
-aaaaaaaTest:  sssa8
-aaaaaaaTest:  sss9
-
-
 
 
 

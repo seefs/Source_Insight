@@ -1,23 +1,87 @@
-            {
-				MMI_ID phb_grp_id;
-				MMI_ID group_id;
+mmi_ret mmi_key_lock_password_proc(mmi_event_struct *evt)
+{
+	/*----------------------------------------------------------------*/
+	/* Local Variables												  */
+	/*----------------------------------------------------------------*/
+	mmi_id menu_cui_id;
+	cui_menu_event_struct *menu_evt;
+
+	/*----------------------------------------------------------------*/
+	/* Code Body													  */
+	/*----------------------------------------------------------------*/
+	menu_evt = (cui_menu_event_struct*)evt;
+	menu_cui_id = menu_evt->sender_id;
+
+	switch (evt->evt_id)
+	{
+		case EVT_ID_CUI_MENU_LIST_ENTRY:
+			if (menu_evt->parent_menu_id == MENU_ID_PRIVACY_PROTECTION_ROOT_KEYLOCK)
+			{
+        #ifndef __MMI_SECSET_APP_WITH_BWUI__
+				MMI_BOOL phone_lock_is_enabled;
+
+				phone_lock_is_enabled = srv_secset_phone_lock_is_enabled();
+		#endif
 			
-				group_id = mmi_frm_group_get_active_id();
-				/* create group */
-//				group_id = mmi_frm_group_create(
-//										GRP_ID_CUSTOMER_CARE_TELNO_SCREENID, //root_id
-//										GRP_ID_AUTO_GEN, //APP_UMMS_MMS
-//										NULL,  //mmi_um_ui_sh_cs_phb_proc, 
-//										NULL);
-//				mmi_frm_group_enter(group_id, MMI_FRM_NODE_SMART_CLOSE_FLAG);
-				phb_grp_id = cui_phb_save_contact_create(group_id);//APP_UMMS_MMS
-	            if (phb_grp_id != GRP_ID_INVALID)
-	            {
-					//pb number
-					cui_phb_save_contact_set_number(phb_grp_id, 
-							(const CHAR *)tel_item_string[tel_list_highlight]);
-					cui_phb_save_contact_run(phb_grp_id);
-	            }
+				cui_menu_set_currlist_flags(menu_cui_id, CUI_MENU_NORMAL_LIST_WITH_NUMBERED_ICONS);
+				cui_menu_set_currlist_title(
+					menu_cui_id,
+					get_string(STR_ID_SECSET_PHONE_SETTING),
+					get_image(MAIN_MENU_TITLE_SETTINGS_ICON));
+            #ifndef __MMI_SECSET_APP_WITH_BWUI__
+				cui_menu_set_item_hint(
+					menu_cui_id,
+					MENU_ID_SECSET_PHONE_LOCK,
+					get_string(phone_lock_is_enabled ? STR_GLOBAL_ON : STR_GLOBAL_OFF));
+            #endif
+				cui_menu_set_access_by_shortcut(menu_evt->sender_id, MMI_FALSE);
+			}
+			break;
+
+		case EVT_ID_CUI_MENU_ITEM_HILITE:
+			if (menu_evt->parent_menu_id == MENU_ID_SECSET_PHONE_SETTING)
+			{
+            #ifndef __MMI_SECSET_APP_WITH_BWUI__
+				if (menu_evt->highlighted_menu_id == MENU_ID_SECSET_PHONE_LOCK)
+				{
+					MMI_BOOL phone_lock_is_enabled;
+
+					phone_lock_is_enabled = srv_secset_phone_lock_is_enabled();
+				
+					cui_menu_change_left_softkey_string(
+						menu_evt->sender_id,
+						get_string(phone_lock_is_enabled ? STR_GLOBAL_OFF : STR_GLOBAL_ON));
+				}
+				else
+            #endif
+				{
+					cui_menu_change_left_softkey_string(
+						menu_evt->sender_id,
+						get_string(STR_GLOBAL_OK));
+				}
+			}
+			break;
+
+		case EVT_ID_CUI_MENU_ITEM_SELECT:
+			if (menu_evt->highlighted_menu_id == MENU_ID_PRIVACY_PROTECTION_KEYLOCK)
+			{
+            #ifdef __MMI_SECSET_APP_WITH_BWUI__
+					mmi_secset_entry_switch_phone_lock_menu();
+            #else
+				//mmi_secset_phone_set_lock(GRP_ID_SECSET);
+            #endif
 			
-//              	mmi_frm_group_close(mmi_frm_group_get_active_id());
-            }
+//			mmi_privacy_protection_applation_register(mmi_key_lock_password_entry_menu);
+//			mmi_privacy_protection_applation_pre_entry();
+			}
+			else if (menu_evt->highlighted_menu_id == MENU_ID_PRIVACY_PROTECTION_CHANGE_PASSWORD)
+			{
+//				privacy_protection_setting_change_password(param->sender_id);
+//				privacy_protection_setting_keypad_change_password(param->sender_id);
+				mmi_secset_phone_change_password(GRP_ID_SECSET);
+			}
+			break;
+	}
+
+	return MMI_RET_OK;
+}

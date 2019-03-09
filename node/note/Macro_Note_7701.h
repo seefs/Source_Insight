@@ -12,7 +12,8 @@ set PS102_KLS_W395_ZX_W1G1_F2 PS102
 set PS102_KLS_W395_ZX_W1G1_F2 PS102
 set PS102_SPEED_ZX_QVGA_F1 PS102
 set PS102_DJTX_G182_W25G2_F1 PS102
-	SE039_YST_E18_E250_F2
+set SE039_YST_E18_E250_F2
+	
 
 setEnd:从setEnd行开始替换名称(上一次选中->当前选中)
 
@@ -22,35 +23,35 @@ setEnd:从setEnd行开始替换名称(上一次选中->当前选中)
 cmd:F:\6531E_16A\cmd
 
 编译:
-open:project\PS102\PS102_KLS_W395_ZX_W1G1_F2\New_common.bat
+open:project\PS102\PS102_DJTX_G182_W25G2_F1\New_common.bat
 
 
 
 
 
 编译模块
-make p=PS102_KLS_W395_ZX_W1G1_F2 m=custom_drv
-make p=PS102_KLS_W395_ZX_W1G1_F2 image
+make p=PS102_DJTX_G182_W25G2_F1 m=custom_drv
+make p=PS102_DJTX_G182_W25G2_F1 image
 
 
 或 (1行命令)
-make p=PS102_KLS_W395_ZX_W1G1_F2 m=custom_drv update image
-make p=PS102_KLS_W395_ZX_W1G1_F2 m=custom_drv update image job=4
-make p=PS102_KLS_W395_ZX_W1G1_F2 m=resource job=4
+make p=PS102_DJTX_G182_W25G2_F1 m=custom_drv update image
+make p=PS102_DJTX_G182_W25G2_F1 m=custom_drv update image job=4
+make p=PS102_DJTX_G182_W25G2_F1 m=resource job=4
 
 
 其他编模块
-make p=PS102_KLS_W395_ZX_W1G1_F2 m=app update image
+make p=PS102_DJTX_G182_W25G2_F1 m=app update image
 模拟器：
-make p=PS102_KLS_W395_ZX_W1G1_F2 m=simulator_main
-vc:build\PS102_KLS_W395_ZX_W1G1_F2_builddir\win\simulator.dsw
+make p=PS102_DJTX_G182_W25G2_F1 m=simulator_main
+vc:build\PS102_DJTX_G182_W25G2_F1_builddir\win\simulator.dsw
 
 
 
 下载工具[Ct]
 open tools\DEBUG_TOOL\ResearchDownload\Bin\ResearchDownload.exe
 
-E:\SC7701_20180509\build\PS102_KLS_W395_ZX_W1G1_F2_builddir\img
+E:\SC7701_20180509\build\PS102_DJTX_G182_W25G2_F1_builddir\img
 
 
 
@@ -62,9 +63,9 @@ E:\SC7701_20180509\build\PS102_KLS_W395_ZX_W1G1_F2_builddir\img
 --------------------------------------------------
 Make 常用设置[Cf]:
 	屏:
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk LCD_CHIP
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk LCD_CHIP
 	摄像头:
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk SENSOR_CHIP
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk SENSOR_CHIP
 	屏亮度:
 chip_drv\chip_module\analog\sr1161\analog_phy_sr1161.c SBD_LCM_BL_25MA_SUPPORT
 
@@ -74,7 +75,7 @@ MS_Customize\source\product\driver\lcd\tft_GC9300.c GC9300_Ex(void)
 
 	
 	版本号：
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\resource\version_software_mocor.h
+project\PS102\PS102_DJTX_G182_W25G2_F1\resource\version_software_mocor.h
 
 ----------------------------------------------------------------------------
 
@@ -92,18 +93,18 @@ project\PS102\PS102_KLS_W395_ZX_W1G1_F2\resource\version_software_mocor.h
 
 设置[s]:		（笔记是旧的）
 	双摄像头(默认单)：
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk SBD_DUAL_CAMERA_SUPPORT
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk SBD_DUAL_CAMERA_SUPPORT
 
 	四频 / 2频设置;开就是2频：
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk __SBD_RF_TWO_BAND_SUPPORT__
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk SBD_RF_TWO_BAND_SUPPORT
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk __SBD_RF_TWO_BAND_SUPPORT__
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk SBD_RF_TWO_BAND_SUPPORT
 
 	不带马达：
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk __HHT_REMOVE_VIBRA__ =TRUE
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk __HHT_REMOVE_VIBRA__ =TRUE
 
 	双卡：
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk MMI_MULTI_SIM_SYS = DUAL
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk MULTI_SIM_SYS = DUAL
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk MMI_MULTI_SIM_SYS = DUAL
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk MULTI_SIM_SYS = DUAL
 nv_type_4band.nvm	0x10203, 0x1000203,    卡反
 	单卡翻译：
 TXT_SIM_SEL_SIM1--pb	--	 SIM1
@@ -111,42 +112,42 @@ SIM1 network account
 
 	
 	23键：
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk _23KEY
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk MMI_MULTI_GREEN_KEY =DUAL 绿键
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk _23KEY
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk MMI_MULTI_GREEN_KEY =DUAL 绿键
 	
 	FM：
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk MMI_FM_OPEN_SPEAK_OPEN_SUPPORT=TRUE
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk SBD_FM_OPEN_SPEAK_OPEN_SUPPORT=TRUE
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk HHT_MMI_FMTEST_OPEN_SPEAK = TRUE
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk SBD_FM_THRESHOLD_TYPE1=TRUE 	   #带上搜的台多一点
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk HHT_FM_USE_GSM_ANT_SIGNAL_STRONG=TRUE	 #外放时打开
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk MMI_FM_OPEN_SPEAK_OPEN_SUPPORT=TRUE
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk SBD_FM_OPEN_SPEAK_OPEN_SUPPORT=TRUE
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk HHT_MMI_FMTEST_OPEN_SPEAK = TRUE
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk SBD_FM_THRESHOLD_TYPE1=TRUE 	   #带上搜的台多一点
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk HHT_FM_USE_GSM_ANT_SIGNAL_STRONG=TRUE	 #外放时打开
 
 
 	外置K类功放：
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk __HHT_EXT_AMPLIFIER_CLASS_K__ = TRUE
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk __HHT_EXT_AMPLIFIER_CLASS_K__ = TRUE
 
 	软件2合1：FALSE是喇叭听筒独立(硬件二合一)，分开是软件2合1
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = FALSE
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk SBD_EARPIECE_SPEAK_USE_ONE
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk CUSTOMER = S039_JX_2IN1	                 # 二合一的音频（带K类的音频不同）
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = FALSE
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk SBD_EARPIECE_SPEAK_USE_ONE
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk CUSTOMER = S039_JX_2IN1	                 # 二合一的音频（带K类的音频不同）
 \audio\audio_dsp_codec_6531.nvm    0x6C0/硬件2合1;    0x638/软件2合1
 
 	三合一：
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk CUS_ADD_SHAKE= TRUE  三合一喇叭宏        
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk VIRTUAL_VIBRATE_FUNC
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk __SPEAKER_VIB_INTENSITY_WEAK__
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = TRUE 三合一同时开
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk CUS_ADD_SHAKE= TRUE  三合一喇叭宏        
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk VIRTUAL_VIBRATE_FUNC
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk __SPEAKER_VIB_INTENSITY_WEAK__
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = TRUE 三合一同时开
 
 
 	手电筒
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk HHT_ADD_TORCHLIGHT= TRUE
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk SBD_ADD_TORCHLIGHT			 #6531E
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk HHT_ADD_TORCHLIGHT= TRUE
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk SBD_ADD_TORCHLIGHT			 #6531E
 	
 	闪光灯
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk DC_FLASH_SUPPORT= TRUE
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk DC_FLASH_SUPPORT= TRUE
 	
 	U盘
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk UMEM_PRTITION _MICRO
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk UMEM_PRTITION _MICRO
 
 	字库：
 MS_MMI\source\resource\mmi_res_prj_def.h
@@ -155,7 +156,7 @@ open tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe
 
 
 	型号--MSD, 翻译：
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk MMI_MSD_SUPPORT
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk MMI_MSD_SUPPORT
 //TXT_MSD_NOTIFY_INFO
 
 ----------------------------------------------------------------------------
@@ -163,7 +164,7 @@ project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk MMI
 Idle[i]: 拨号
 
 	拨号光标
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk SENSOR_CHIP
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk SENSOR_CHIP
 MS_MMI\source\mmi_gui\include\guiedit.h GUIEDIT_DIAL_IMAGE_SPACE_X
 MS_MMI\source\mmi_gui\source\editbox\c\guiedit_text.c GUIEDIT_DIAL_IMAGE_SPACE_X
 MS_MMI\source\mmi_gui\source\editbox\c\guiedit_text.c GUIEDIT_GetCursorPosForPN
@@ -179,10 +180,10 @@ MS_MMI\source\mmi_gui\source\editbox\c\guiedit_text.c GUIEDIT_GetCursorPosForPN
 ----------------------------------------------------------------------------
 
 trace[t]:
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk RELEASE_INFO = FALSE
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk MEMORY_DEBUG_SUPPORT = TRUE
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk TRACE_INFO_SUPPORT = TRUE
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk PRODUCT_BASELIB_DIR = sc6531_32X32_320X240BAR_QW_ATV_formal_trace
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk RELEASE_INFO = FALSE
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk MEMORY_DEBUG_SUPPORT = TRUE
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk TRACE_INFO_SUPPORT = TRUE
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk PRODUCT_BASELIB_DIR = sc6531_32X32_320X240BAR_QW_ATV_formal_trace
 
 
 // 抓trace:
@@ -253,8 +254,8 @@ uart抓trace:
 
 --------------------------------------------------
 CE 蓝牙定频版本:
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk PRODUCT_BASELIB_DIR = sc6531efm_32X32_320X240BAR_AB_CE
-project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk BT_NONSIG_SUPPORT = TRUE
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk PRODUCT_BASELIB_DIR = sc6531efm_32X32_320X240BAR_AB_CE
+project\PS102\PS102_DJTX_G182_W25G2_F1\project_PS102_DJTX_G182_W25G2_F1.mk BT_NONSIG_SUPPORT = TRUE
 	
 
 ----------------------------------------------------------------------------
@@ -268,13 +269,13 @@ project\PS102\PS102_KLS_W395_ZX_W1G1_F2\project_PS102_KLS_W395_ZX_W1G1_F2.mk BT_
 
 ----------------------------------------------------------------------------
 
-Build问题[b]:
+Build问题[Cb][b]:
 
-build\PS102_KLS_W395_ZX_W1G1_F2_builddir\log\midisoundbank.log 文件无法删除 
-build\PS102_KLS_W395_ZX_W1G1_F2_builddir\log\resource.log ERROR
-build\PS102_KLS_W395_ZX_W1G1_F2_builddir\log\caf_templete.log ERROR
-build\PS102_KLS_W395_ZX_W1G1_F2_builddir\tmp/SC7702.def 宏
-build\PS102_KLS_W395_ZX_W1G1_F2_builddir\tmp\app.macro 查看宏是否存在
+build\PS102_DJTX_G182_W25G2_F1_builddir\log\midisoundbank.log 文件无法删除 
+build\PS102_DJTX_G182_W25G2_F1_builddir\log\resource_main.log ERROR
+build\PS102_DJTX_G182_W25G2_F1_builddir\log\caf_templete.log ERROR
+build\PS102_DJTX_G182_W25G2_F1_builddir\tmp/SC7702.def 宏
+build\PS102_DJTX_G182_W25G2_F1_builddir\tmp\app.macro 查看宏是否存在
 	
 
 findstr /s /i "ERROR" *.log>aaaa.txt
