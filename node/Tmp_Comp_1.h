@@ -1,87 +1,24 @@
-mmi_ret mmi_key_lock_password_proc(mmi_event_struct *evt)
-{
-	/*----------------------------------------------------------------*/
-	/* Local Variables												  */
-	/*----------------------------------------------------------------*/
-	mmi_id menu_cui_id;
-	cui_menu_event_struct *menu_evt;
-
-	/*----------------------------------------------------------------*/
-	/* Code Body													  */
-	/*----------------------------------------------------------------*/
-	menu_evt = (cui_menu_event_struct*)evt;
-	menu_cui_id = menu_evt->sender_id;
-
-	switch (evt->evt_id)
+	/* MTS MMS */
 	{
-		case EVT_ID_CUI_MENU_LIST_ENTRY:
-			if (menu_evt->parent_menu_id == MENU_ID_PRIVACY_PROTECTION_ROOT_KEYLOCK)
+		{
+			0,	0,
+			CUSTOM_DTCNT_PROF_TYPE_FACTORY_CONF, /* type */ 
+			CUSTOM_DTCNT_SIM_TYPE_1,	  /* SIM1/SIM2 */
+			(const kal_uint8*)L"MTS MMS", /* Account Name */
+			"http://mmsc", /* Home page */
 			{
-        #ifndef __MMI_SECSET_APP_WITH_BWUI__
-				MMI_BOOL phone_lock_is_enabled;
-
-				phone_lock_is_enabled = srv_secset_phone_lock_is_enabled();
-		#endif
-			
-				cui_menu_set_currlist_flags(menu_cui_id, CUI_MENU_NORMAL_LIST_WITH_NUMBERED_ICONS);
-				cui_menu_set_currlist_title(
-					menu_cui_id,
-					get_string(STR_ID_SECSET_PHONE_SETTING),
-					get_image(MAIN_MENU_TITLE_SETTINGS_ICON));
-            #ifndef __MMI_SECSET_APP_WITH_BWUI__
-				cui_menu_set_item_hint(
-					menu_cui_id,
-					MENU_ID_SECSET_PHONE_LOCK,
-					get_string(phone_lock_is_enabled ? STR_GLOBAL_ON : STR_GLOBAL_OFF));
-            #endif
-				cui_menu_set_access_by_shortcut(menu_evt->sender_id, MMI_FALSE);
-			}
-			break;
-
-		case EVT_ID_CUI_MENU_ITEM_HILITE:
-			if (menu_evt->parent_menu_id == MENU_ID_SECSET_PHONE_SETTING)
-			{
-            #ifndef __MMI_SECSET_APP_WITH_BWUI__
-				if (menu_evt->highlighted_menu_id == MENU_ID_SECSET_PHONE_LOCK)
-				{
-					MMI_BOOL phone_lock_is_enabled;
-
-					phone_lock_is_enabled = srv_secset_phone_lock_is_enabled();
-				
-					cui_menu_change_left_softkey_string(
-						menu_evt->sender_id,
-						get_string(phone_lock_is_enabled ? STR_GLOBAL_OFF : STR_GLOBAL_ON));
-				}
-				else
-            #endif
-				{
-					cui_menu_change_left_softkey_string(
-						menu_evt->sender_id,
-						get_string(STR_GLOBAL_OK));
-				}
-			}
-			break;
-
-		case EVT_ID_CUI_MENU_ITEM_SELECT:
-			if (menu_evt->highlighted_menu_id == MENU_ID_PRIVACY_PROTECTION_KEYLOCK)
-			{
-            #ifdef __MMI_SECSET_APP_WITH_BWUI__
-					mmi_secset_entry_switch_phone_lock_menu();
-            #else
-				//mmi_secset_phone_set_lock(GRP_ID_SECSET);
-            #endif
-			
-//			mmi_privacy_protection_applation_register(mmi_key_lock_password_entry_menu);
-//			mmi_privacy_protection_applation_pre_entry();
-			}
-			else if (menu_evt->highlighted_menu_id == MENU_ID_PRIVACY_PROTECTION_CHANGE_PASSWORD)
-			{
-//				privacy_protection_setting_change_password(param->sender_id);
-//				privacy_protection_setting_keypad_change_password(param->sender_id);
-				mmi_secset_phone_change_password(GRP_ID_SECSET);
-			}
-			break;
-	}
-
-	return MMI_RET_OK;
-}
+				CUSTOM_DTCNT_PROF_GPRS_AUTH_TYPE_NORMAL,
+				"mts", "mts"	/* username, password */
+			},
+			1,
+			CUSTOM_DTCNT_PROF_PX_SRV_HTTP,	/* proxy service type */
+			8080, /* proxy port */
+			"192.168.192.192", /* proxy address, domain name */
+			"", "",  /* proxy username, password */
+			"", "", "", "", "", "",
+			DTCNT_APPTYPE_MMS, /* app type */
+			"25001" /* SIM ID */
+		},
+					
+		(const kal_uint8*)"mms.mts.ru"
+	},

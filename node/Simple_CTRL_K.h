@@ -61,10 +61,32 @@
 Save:SI\bak\bak_20181123_mar_msg.h
 	
 	
+F11->F5: goto,word: %开始表通配符
+RAR: XXX/XXX/XXX... 子目录
 
+ctrl+T:
+276168 / 8*512
 
+选中打开当前文件:
+#include "config_account_BENGALI_M107_F2.h"
 
+数文件:
+conn_app.mak (make\plutommi\conn_app)
 
+plutommi/MtkApp/SalesTracker/SalesTracker.c
+plutommi/MtkApp/SalesTracker/salestracker_info_editor.c 393
+
+F1->2~6:
+ref_list
+
+all menu:
+phonebook.res (....    <MENU id
+
+加密
+
+性格测试：
+新闻人物测试：
+计算步骤，姓名;
 
 /***********************************************************************/
 /******************************* 宏说明 ********************************/

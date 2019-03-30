@@ -1,82 +1,24 @@
-mmi_ret mmi_secset_phone_menu_proc(mmi_event_struct *evt)
-{
-    /*----------------------------------------------------------------*/
-    /* Local Variables                                                */
-    /*----------------------------------------------------------------*/
-    mmi_id menu_cui_id;
-    cui_menu_event_struct *menu_evt;
-
-    /*----------------------------------------------------------------*/
-    /* Code Body                                                      */
-    /*----------------------------------------------------------------*/
-    menu_evt = (cui_menu_event_struct*)evt;
-    menu_cui_id = menu_evt->sender_id;
-
-    switch (evt->evt_id)
+    /* HUTCH MMS HTTP */
     {
-        case EVT_ID_CUI_MENU_LIST_ENTRY:
-            if (menu_evt->parent_menu_id == MENU_ID_SECSET_PHONE_SETTING)
+        {
+            0,  0,
+            CUSTOM_DTCNT_PROF_TYPE_FACTORY_CONF, /* type */ 
+            CUSTOM_DTCNT_SIM_TYPE_1,      /* SIM1/SIM2 */
+            (const kal_uint8*)L"Hutch MMS", /* Account Name */
+            "http://mms1.live.vodafone.in/mms/", /* Home page */
             {
-            #ifndef __MMI_SECSET_APP_WITH_BWUI__
-                MMI_BOOL phone_lock_is_enabled;
+                CUSTOM_DTCNT_PROF_GPRS_AUTH_TYPE_NORMAL,
+                "", ""  /* username, password */
+            },
+            1,
+            CUSTOM_DTCNT_PROF_PX_SRV_HTTP,  /* proxy service type */
+            9401, /* proxy port */
+            "10.10.1.100", /* proxy address, domain name */
+            "", "",  /* proxy username, password */
+            "", "", "", "", "", "",
+            DTCNT_APPTYPE_MMS, /* app type */
+            "40402, 40403, 40410, 40431, 40440, 40445, 40449, 40490, 40492, 40493, 40494, 40495, 40496, 40497, 40498, 40551, 40552, 40553, 40554, 40555, 40556, 63310" /* SIM ID */
+        },
 
-                phone_lock_is_enabled = srv_secset_phone_lock_is_enabled();
-			#endif
-            
-                cui_menu_set_currlist_flags(menu_cui_id, CUI_MENU_NORMAL_LIST_WITH_NUMBERED_ICONS);
-                cui_menu_set_currlist_title(
-                    menu_cui_id,
-                    get_string(STR_ID_SECSET_PHONE_SETTING),
-                    get_image(MAIN_MENU_TITLE_SETTINGS_ICON));
-                #ifndef __MMI_SECSET_APP_WITH_BWUI__
-                cui_menu_set_item_hint(
-                    menu_cui_id,
-                    MENU_ID_SECSET_PHONE_LOCK,
-                    get_string(phone_lock_is_enabled ? STR_GLOBAL_ON : STR_GLOBAL_OFF));
-                #endif
-                cui_menu_set_access_by_shortcut(menu_evt->sender_id, MMI_FALSE);
-            }
-            break;
-
-        case EVT_ID_CUI_MENU_ITEM_HILITE:
-            if (menu_evt->parent_menu_id == MENU_ID_SECSET_PHONE_SETTING)
-            {
-                #ifndef __MMI_SECSET_APP_WITH_BWUI__
-                if (menu_evt->highlighted_menu_id == MENU_ID_SECSET_PHONE_LOCK)
-                {
-                    MMI_BOOL phone_lock_is_enabled;
-
-                    phone_lock_is_enabled = srv_secset_phone_lock_is_enabled();
-                
-                    cui_menu_change_left_softkey_string(
-                        menu_evt->sender_id,
-                        get_string(phone_lock_is_enabled ? STR_GLOBAL_OFF : STR_GLOBAL_ON));
-                }
-                else
-                #endif
-                {
-                    cui_menu_change_left_softkey_string(
-                        menu_evt->sender_id,
-                        get_string(STR_GLOBAL_OK));
-                }
-            }
-            break;
-
-        case EVT_ID_CUI_MENU_ITEM_SELECT:
-            if (menu_evt->highlighted_menu_id == MENU_ID_SECSET_PHONE_LOCK)
-            {
-                #ifdef __MMI_SECSET_APP_WITH_BWUI__
-                    mmi_secset_entry_switch_phone_lock_menu();
-                #else
-                mmi_secset_phone_set_lock(GRP_ID_SECSET);
-                #endif
-            }
-            else if (menu_evt->highlighted_menu_id == MENU_ID_SECSET_CHANGE_PHONE_PASSWORD)
-            {
-                mmi_secset_phone_change_password(GRP_ID_SECSET);
-            }
-            break;
-    }
-
-    return MMI_RET_OK;
-}
+        (const kal_uint8*)"portalnmms"
+    },

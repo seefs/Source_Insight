@@ -1,26 +1,14 @@
 /***********************************************************************/
 /******************************** Mtk modis ****************************/
 /***********************************************************************/
-
+[Num][a][Ca]
 [1.1] 拨号按键:
 ExecuteCurrKeyHandler
 plutommi\Framework\GUI\GUI_SRC\wgui.c void^MMI_key_input_handler
 plutommi\Framework\GUI\GUI_SRC\wgui_inputs_dialer.c void^wgui_inputs_dialer_handle_key_down
 
-mmi_frm_nmgr_popup(MMI_SCENARIO_ID_BATTERY_MEDIUM, MMI_EVENT_INFO, (WCHAR *)GetString(STR_USB_CHARGER_CONNECTED));
 
 
-SBD_SELECT_SIM_BY_VOL_KEY
-
-SetKeyHandler(idle_extra_handle,KEY_EXTRA_1,KEY_EVENT_UP);	
-
-KEY_1
-
-
-KEY_1
-
-
-PhoneBookList.c
 
 
 wgui_cat1031_show
@@ -28,22 +16,27 @@ wgui_cat1031_show
 
 EntryMainMenuFromIdleScreen
 
-SetKeyHandler
+[7.1] gid
 mmi_frm_group_enter
-	
 MMI_ID mmi_popup_display_ext( 
-			MMI_STR_ID title, 
-			mmi_event_notify_enum event_type, 
-			mmi_popup_property_struct *arg)
+	MMI_STR_ID title, 
+	mmi_event_notify_enum event_type, 
+	mmi_popup_property_struct *arg)
+	
+[7.2] GetString(STR_USB_CHARGER_CONNECTED)
 
 
-SBD_SELECT_SIM_BY_VOL_KEY
-
-[1.2] Key
-
-SetKeyHandler(idle_extra_handle,KEY_EXTRA_1,KEY_EVENT_UP);	
-----------------------------------------
-mmi_clog_get_id_by_idx
+[1.2] SetKeyHandler(, KEY_1, KEY_EVENT_UP);
+plutommi\Framework\EventHandling\EventsSrc\KeyBrd.c
+//void SetKeyHandler(FuncPtr funcPtr, U16 keyCode, U16 keyType)
+//{
+//	{
+//		if(KEY_RSK == keyCode)
+//		{
+//			int a = 2;
+//		}
+//	}
+//}
 
 
 [1.3] bg color
@@ -133,7 +126,10 @@ gui_get_multi_line_text_language_type
 
 [3.3] str:
 get_string
-	
+STR_GLOBAL_OFF
+STR_GLOBAL_ON
+
+
 转格式：
 app_ucs2_wtoi
 	
@@ -181,7 +177,11 @@ ShowCategory208Screen_int
 
 -------------------------------------------- 
 
-
+[5.1] 空间问题:
+//@wanc 彻底关闭MRE
+//#if !defined(__KM_DELETE_MRE__)
+//    MMI_BOOTUP_INIT_REG(srv_mre_appmgr_bootup_hdlr)
+//#endif	
 
 
 
@@ -197,25 +197,34 @@ ShowCategory208Screen_int
 /***********************************************************************/
 /***********************************************************************/
 /***********************************************************************/
-[6.1] KM模拟器编不过, 缺文件
-F:\11CW1352MP_BLEPHONE61D_11C_V33\plutommi\Framework\MTE\MTEInc\mte_data.h
-F:\11CW1352MP_KM2\plutommi\Framework\MTE\MTEInc\mte_data.h
-
+[6.1] KM模拟器编不过, 缺文件[g][Cg]
+// F:\6261D_11C_V33\plutommi\Framework\MTE\MTEInc\mte_data.h
+// F:\6261D_KM\plutommi\Framework\MTE\MTEInc\mte_data.h
 cp->
-F:\11CW1352MP_KM2\tst\database_classb\pstrace_db\wap_trc_gen.h
-F:\11CW1352MP_KM2\tst\database_classb\pstrace_db\wps_trc_gen.h
+cp F:\6261D_11C_V33\plutommi\Framework\MTE\MTEInc\mte_data.h F:\6261D_KM\plutommi\Framework\MTE\MTEInc\mte_data.h
 
-F:\11CW1352MP_KM2\vendor\wap\obigo_Q03C\adaptation\integration\include\wap_trc.h
-F:\11CW1352MP_KM2\vendor\wap\obigo_Q03C\adaptation\integration\include\wap_trc_gen.h
 
-F:\11CW1352MP_KM2\vendor\framework\obigo_Q03C\adaptation\integration\include\trc\wps_trc.h
-F:\11CW1352MP_KM2\vendor\framework\obigo_Q03C\adaptation\integration\include\trc\wps_trc_gen.h
+// copy这2个文件
+// F:\6261D_KM\tst\database_classb\pstrace_db\wap_trc_gen.h
+// F:\6261D_KM\tst\database_classb\pstrace_db\wps_trc_gen.h
+
+// F:\6261D_KM\vendor\wap\obigo_Q03C\adaptation\integration\include\wap_trc.h
+// F:\6261D_KM\vendor\wap\obigo_Q03C\adaptation\integration\include\wap_trc_gen.h
+cp->
+cp tst\database_classb\pstrace_db\wap_trc_gen.h vendor\wap\obigo_Q03C\adaptation\integration\include\wap_trc_gen.h
+
+// F:\6261D_KM\vendor\framework\obigo_Q03C\adaptation\integration\include\trc\wps_trc.h
+// F:\6261D_KM\vendor\framework\obigo_Q03C\adaptation\integration\include\trc\wps_trc_gen.h
+cp->
+cp tst\database_classb\pstrace_db\wps_trc_gen.h vendor\framework\obigo_Q03C\adaptation\integration\include\trc\wps_trc_gen.h
 
 	
 err->
-f:\11CW1352MP_KM2\custom\system\FARSIGHTED61M_CN_11C_BB\custom_config.c sys_mem_size_modis.h
-F:\11CW1352MP_KM2\custom\system\FARSIGHTED61M_CN_11C_BB\sys_mem_size_modis.h
-cp F:\11CW1352MP_KM2\custom\system\FARSIGHTED61M_CN_11C_BB\sys_mem_size.h F:\11CW1352MP_KM2\custom\system\FARSIGHTED61M_CN_11C_BB\sys_mem_size_modis.h
+// f:\6261D_KM\custom\system\FARSIGHTED61M_CN_11C_BB\custom_config.c sys_mem_size_modis.h
+// F:\6261D_KM\custom\system\FARSIGHTED61M_CN_11C_BB\sys_mem_size_modis.h
+cp custom\system\FARSIGHTED61M_CN_11C_BB\sys_mem_size.h custom\system\FARSIGHTED61M_CN_11C_BB\sys_mem_size_modis.h
+// 或
+cp F:\6261D_KM\custom\system\FARSIGHTED61M_CN_11C_BB\sys_mem_size.h F:\6261D_KM\custom\system\FARSIGHTED61M_CN_11C_BB\sys_mem_size_modis.h
 
 
 

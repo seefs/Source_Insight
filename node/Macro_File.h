@@ -2,10 +2,21 @@
 /***********************************************************************/
 /************************** 常用的编辑文件 *****************************/
 /***********************************************************************/
+当前文件:
+Save:SI\node\Macro_File.h
+对比:
+Save:SI\bak\bcmp\bmp_107_mk.bat
+
+
 
 [1.1] 模拟器:
 Save:SI\node\Macro_modis_MTK.h
 Save:SI\node\Macro_modis_6531E.h
+
+未整理:
+Save:SI\bak\bak_mtk_lang.h	
+未改:
+Save:SI\bak\bak_mtk_weiti.h	
 
 
 [1.2] Tools:
@@ -89,8 +100,12 @@ Save:SI\node\note\Macro_Note_6531E.h
 
 [5.1] 禅道:
 http://192.168.2.252/zentao/my/
-展讯:
+//展讯:
 http://222.66.158.139:2008/cqweb/#
+//MTK:
+https://online.mediatek.com
+账号:xiaobin.xiao@sz-speed.cn
+密码:Speed3168
 
 
 
