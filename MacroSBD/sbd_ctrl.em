@@ -85,13 +85,19 @@ macro CtrlB()
 	if (hwnd == 0)
 		stop
 		
-	if(IsFileName(hbuf, "Simple_CTRL_B.h"))
+	code = ReadMode(getFileCode(0))
+	if(code == "utf8")
+		fName = "Simple_CTRL_B_UTF8.h"
+	else
+		fName = "Simple_CTRL_B.h"
+	
+	if(IsFileName(hbuf, fName))
 	{
 		close
 	}
 	else
 	{
-		OpenExistFile(getNodePath(0) # "\\Simple_CTRL_B.h")
+		OpenExistFile(getNodePath(0) # "\\" # fName)
 	}
 }
 macro CtrlK()
@@ -228,7 +234,39 @@ macro CtrlT()
 macro CtrlR()
 {
 	//_TempHeadCTRL()
-	go_to_next_link
+	hbuf = GetCurrentBuf()
+	if(IsFileName(hbuf, "Macro_")||IsFileName(hbuf, "Simple_CTRL_"))
+	{
+		sel = MGetWndSel(hbuf)
+		isNum = 0;
+		searchStr = ""
+		cur_line = GetBufLine(hbuf, sel.lnFirst )	
+		if(strlen(cur_line) <= 2)
+			stop
+		
+		cur_sel_left  = FindString( cur_line, "\[" )
+		cur_sel_right = FindString( cur_line, "\]" )
+		if(cur_sel_left != "X" && cur_sel_right != "X")
+		{
+			cur_sel_right_pre = strmid(cur_line, cur_sel_right - 1, cur_sel_right)
+			if(cur_sel_right_pre != "\\" )
+			{
+				isNum = 1;
+				searchStr = "\\\[" # strmid(cur_line, cur_sel_left + 1, cur_sel_right) # "\\\]"
+				sel2 = SearchInBuf(hbuf, searchStr, 0, 0, FALSE, FALSE, FALSE)
+				if (sel2 != "")
+					ScrollCursor(sel2)
+			}
+		}
+		if(isNum != 1)
+		{
+			NoteHander(hbuf, 5)
+		}
+	}
+	else
+	{
+		go_to_next_link
+	}
 }
 macro CtrlW()
 {
@@ -327,7 +365,7 @@ macro CtrlU()
 			}
 		}
 		else
-		{ 
+		{
 			while (row < sel.lnLast + 1)
 			{
 				cur_line = GetBufLine(hbuf, row)

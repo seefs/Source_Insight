@@ -49,7 +49,7 @@
 	F12->F1~F12
 	
 5) 加这个, 弹窗默认显示数字, 如[ 1.2 ];
-	[Num]
+	[-Num]
 
 
 
@@ -61,32 +61,10 @@
 Save:SI\bak\bak_20181123_mar_msg.h
 	
 	
-F11->F5: goto,word: %开始表通配符
-RAR: XXX/XXX/XXX... 子目录
 
-ctrl+T:
-276168 / 8*512
 
-选中打开当前文件:
-#include "config_account_BENGALI_M107_F2.h"
 
-数文件:
-conn_app.mak (make\plutommi\conn_app)
 
-plutommi/MtkApp/SalesTracker/SalesTracker.c
-plutommi/MtkApp/SalesTracker/salestracker_info_editor.c 393
-
-F1->2~6:
-ref_list
-
-all menu:
-phonebook.res (....    <MENU id
-
-加密
-
-性格测试：
-新闻人物测试：
-计算步骤，姓名;
 
 /***********************************************************************/
 /******************************* 宏说明 ********************************/
@@ -97,7 +75,7 @@ Save:SI\MacroSBD\sbd_f1.em
 
 key:[F1] (按F1后再按0~9、A~Z、F2~F12)
 快捷键：
-F1 -> 0~9: 		... (按1提示)
+F1 -> 0~9: 		... (按F1提示)
 F1 -> A~Z: 		... (按A提示)
 F1 -> F2~F12: 	显示 F2~F12 功能说明
 
@@ -116,6 +94,11 @@ F1 -> -: 下载工具.
 F1 -> +: 下载工具 并设置当前pac                                                                 
 F1 -> Back: 打开SR                                                       
 
+F1 -> A: 提示 功能A~Z...
+
+***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
+
+key:[F1A] (A~Z)
 F1 -> A: 提示 功能A~Z
 F1 -> B: 修改.em后, 对比文件SI与SI_bak                  
 F1 -> C: 打开 cmd窗口 编译驱动
@@ -134,7 +117,7 @@ F1 -> O: 打开目录 (6531DA/bt/6531E/6533/soft/save目录)
 F1 -> P: 项目切换
 F1 -> Q: 清空剪切板
 F1 -> R: 检查mk文件宏重复                               
-F1 -> S: 打开SR
+F1 -> S: 显示当前选择Selection(调试)
 F1 -> T: 宏F1调试
 F1 -> U: 
 F1 -> V: 搜索版本号 
@@ -143,8 +126,6 @@ F1 -> X: 清除.mk右侧内容, 用于对比
 F1 -> Y:
 F1 -> Z: pick window 
       
-F1 -> F1~F12 详细功能提示
-F1 -> F2 改为打开当前目录, 和F2比较接近
 [1.1] (未实现)F1 -> X: 多余SI, 关闭省内存
 F1 -> 其他符号, .; 显示ascii code
 

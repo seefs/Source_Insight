@@ -60,6 +60,7 @@ Save:SI\MacroSBD\sbd_base.em
 
 [3.1] Test:
 Save:SI\node\Test\Macro_Tmp_Node_Test.h
+Save:SI\node\Test\Macro_Tmp_File_Test.h
 Save:SI\node\Test\Macro_Tmp_...
 Save:SI\node\Test\...
 Save:SI\node\Test\Tmp_Test.h
@@ -104,8 +105,6 @@ http://192.168.2.252/zentao/my/
 http://222.66.158.139:2008/cqweb/#
 //MTK:
 https://online.mediatek.com
-ÕËºÅ:xiaobin.xiao@sz-speed.cn
-ÃÜÂë:Speed3168
 
 
 

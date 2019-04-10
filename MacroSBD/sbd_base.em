@@ -85,6 +85,8 @@ macro getVCPath(0)			{	return "C:\\Program Files (x86)\\Microsoft Visual Studio\
 //VC2008
 macro getVS08Path(0)		{	return "C:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\Common7\\IDE\\devenv.exe"		}
 
+//RAR
+macro getRARPath(0)			{	return "\"C:\\Program Files (x86)\\360\\360zip\\360zip.exe\""		}
 
 macro forProjectPath(basePath)
 {
@@ -227,7 +229,7 @@ macro getCurProjectName(pathName)
 macro getBaseType(pathName)
 {
 	// n == 10: 6531DA
-	// n == 20: 6531btdialer
+	// n == 20: 6531DB
 	// n == 30: 6531E
 	// n == 40: soft
 	// n == 50: 6533

@@ -202,3 +202,4 @@ key:XIANXINTONG,	显信通
 key:KANGKS,	康凯斯
 key:YOUTAIQI,	优泰奇
 key:HAIFEI,	海飞
+key:JIUJIU,	九九光电

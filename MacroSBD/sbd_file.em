@@ -44,6 +44,7 @@ macro getWndVertRow(0)		{	return 54	}
 macro getNoteHanderSet(0)	{	return 57	}
 macro getNoteBasePath(0)	{	return 60	}
 macro getNumBits(0)			{	return 63	}
+macro getFileCode(0)		{	return 66	}
 
 
 
@@ -718,6 +719,18 @@ macro GetTransStr(cur_line, index, len)
 		return strmid(cur_line, index, len)
 	}
 }
+macro GetTransRootDir(fName)
+{
+	index = FindString(fName, ":")
+	if (index == "X")
+	{
+		return ""
+	}
+	else
+	{
+		return strmid(fName, 0, index + 1)
+	}
+}
 /***********************************************************************/
 /************************** select  **********************************/
 /***********************************************************************/
@@ -858,7 +871,17 @@ macro ScrollCursor(mSel)
 	if(mSel.lnFirst>10)
 		ScrollWndToLine(hwnd, mSel.lnFirst-10)
 	else
-		ScrollWndToLine(hwnd, mSel.lnFirst)
+		ScrollWndToLine(hwnd, 0)
+	SetWndSel(hwnd, mSel)
+}
+macro ScrollCursorRow(row1, row2)
+{
+	hwnd = GetCurrentWnd()
+	if(row1>10)
+		ScrollWndToLine(hwnd, row1-10)
+	else
+		ScrollWndToLine(hwnd, row1)
+	mSel = "lnFirst=\"@row1@\";ichFirst=\"0\";lnLast=\"@row2@\";ichLim=\"0\";fExtended=\"1\";fRect=\"0\""
 	SetWndSel(hwnd, mSel)
 }
 /***********************************************************************/

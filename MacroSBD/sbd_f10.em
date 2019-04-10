@@ -694,7 +694,7 @@ macro NoteGroupPreview(hbuf, key)
 	else if(key >= 51 && key <= 54)
 	{
 		mode = 51 - 48
-		searchStr = "\\[[0-9\.]+\\]"	//3~6		//0-9. 隐藏标号,默认中不显示
+		searchStr = "\\[[0-9\.]+\\]"	//num: 3~6		//0-9. 隐藏标号,默认中不显示
 		//searchStr = "\\[N[0-9]+\\]"	//6		//N0-9
 	}
 	else if(key >= 1 && key <= 10)
@@ -703,9 +703,9 @@ macro NoteGroupPreview(hbuf, key)
 		searchStr = "\\[[0-9\.]+\\]"	  		//0-9. 特殊隐藏标号, 只能ctrl+D翻页, 最多10*40=400条
 	}
 	else if(key == 55)
-		searchStr = "\\[F[0-9]+\\]"	//7  //F1~F12
+		searchStr = "\\[F[0-9]+\\]"	//num: 7  //F1~F12
 	else if(key == 56)
-		searchStr = "\\[ [a-zFNC][a-z0-9]*\\]"	//8		//空格+默认
+		searchStr = "\\[ [a-zFNC][a-z0-9]*\\]"	//num: 8		//空格+默认
 	else if(key == 96)							//~
 	{
 		//显示帮助
@@ -724,16 +724,27 @@ macro NoteGroupPreview(hbuf, key)
 		msg(mStr)
 		stop
 	}
+	else if(key == 256)							//0 or 256, F1, copy text
+		searchStr = "\\[[0-9\.]+\\]"
+	else if(key == 257)							//0 or 256, F1, copy text
+		searchStr = "\\[[a-zFNC][a-z0-9]*\\]"
 	else
 	{
-		if(mode != 9)
-			mode = 0
+		if(mode != 9)	//num: 9
+			mode = 0	//num: 0
 		//3.1. 显示用数字标号
 		cM = NoteGroupGetMode(hbuf, "\\[Num\\]")
 		if(cM)
 		{
-			key = 51
-			mode = key - 48
+			if(key == 0)	//key: 0
+			{
+				key = 256
+			}
+			else
+			{
+				key = 51
+				mode = key - 48
+			}
 			searchStr = "\\[[0-9\.]+\\]"	//3
 		}
 		else
@@ -768,7 +779,16 @@ macro NoteGroupPreview(hbuf, key)
 			line = GetBufLine(hbuf, mSel.lnFirst )
 			indexa = FindString(line, "[")
 			ch = strmid(line, indexa + 1, indexa + 2)
-			if(mode == 0 && (ch == "F" || ch == "N" || ch == "C"))
+			if(key == 0 || key == 256 || key == 257)
+			{
+				cur_sel = strmid(line, mSel.ichFirst, mSel.ichLim)
+				//cur_sel_len = strlen("@cur_sel@")
+				cur_sel = ReplaceWord(cur_sel, "[", "\\[")
+				cur_sel = ReplaceWord(cur_sel, "]", "\\]")
+				allKeyTxt = allKeyTxt # strmid(line, 0, mSel.ichFirst) # cur_sel # strmid(line, mSel.ichLim, strlen(line)) # CharFromKey(13)
+				//indexMax = indexMax - 1
+			}
+			else if(mode == 0 && (ch == "F" || ch == "N" || ch == "C"))
 			{
 				allKeyTxt = allKeyTxt # "-" #  "." # line # CharFromKey(13)
 				indexMax = indexMax - 1
@@ -834,6 +854,14 @@ macro NoteGroupPreview(hbuf, key)
 			newTxt = "无索引" # CharFromKey(13)
 			msg(newTxt)
 		}
+ 		else if(key == 0)
+		{
+			NoteGroupPreview(hbuf, 256) //0->100, F1
+		}
+ 		else if(key == 256)
+		{
+			NoteGroupPreview(hbuf, 257) //0->100, F1
+		}
 		else
 		{
 			//再搜一遍数字编号
@@ -872,10 +900,17 @@ macro NoteGroupPreview(hbuf, key)
 	//5.选择索引
 	if(allKeyTxt != "")
 	{
-		SaveNumBitsMode(index - indexMin)
-		if(mode == 0)
-			searchStr = "\\[[a-z][a-z0-9]*\\]"
-		NoteGroupGoto(hbuf, searchStr, indexMin, index - 1)
+		if(key == 0 || key == 256 || key == 257)
+		{
+			SetClipString(allKeyTxt)
+		}
+		else
+		{
+			SaveNumBitsMode(index - indexMin)
+			if(mode == 0)
+				searchStr = "\\[[a-z][a-z0-9]*\\]"
+			NoteGroupGoto(hbuf, searchStr, indexMin, index - 1)
+		}
 	}
 }
 macro NoteGroupGoto(hbuf, searchStr, indexMin, indexMax)

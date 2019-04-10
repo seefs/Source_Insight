@@ -14,9 +14,6 @@ https://192.168.2.3/svn/SPRD_SPEED/trunk/SC6531DA_BTDialer_a
 
 
 
-´úÂëÂ·¾¶£º
-D:\SVN\SC7701
 
-D:\SVN\app\APPTest1
 
 

@@ -159,3 +159,4 @@ key:DIAL,file:mmiidle_dial.c
 key:SP0821,file:sensor_SP0821.c
 key:BF3A02,file:sensor_bf3a02.c
 key:GC9307,file:tft_GC9307.c
+key:NV3029S,file:tft_NV3029S.c

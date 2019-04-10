@@ -473,6 +473,17 @@ macro NoteHander(hbuf, cNum)
 		
 		NoteCopyFile(hbuf, cmdP1, cmdP2, cNum)
 	}
+	else if(noteCmd == "RAR")
+	{
+		//命令名转化: 删除空格
+		start = GetTransCmdS(cur_line, index + 1, len)
+		next  = GetTransCmdE(cur_line, start,     len)
+		start2 = GetTransCmdS(cur_line, next + 1, len)
+		cmdP1 = strmid(cur_line, start, next)
+		cmdP2 = strmid(cur_line, start2, len)
+
+		NoteRARFile(hbuf, cmdP1, cmdP2, cNum)
+	}
 	else if(strlen(noteCmd)>0)
 	{
 		curPath = ""
@@ -564,14 +575,31 @@ macro NoteHander(hbuf, cNum)
 			mSel = SearchInBuf(hbuf, "^" # "@noteWord@", 0, 0, 0, 1, 0)
 			if (mSel == "")
 			{
+				//8.1 行号跳转
+				if(IsNumber ("@noteWord@"))
+				{
+					row = noteWord
+					ScrollCursorRow(row, row+1)
+					return 1
+				}
+			}
+			if (mSel == "")
+			{
+				//8.2 行尾搜索/正常搜索
 				re = FindString( noteWord, "$" )
 				if(re != "X")
 					mSel = SearchInBuf(hbuf, "@noteWord@", 0, 0, 0, 1, 0)
 				else
 					mSel = SearchInBuf(hbuf, "@noteWord@", 0, 0, 0, 0, 0)
 			}
+			if (mSel == "")
+			{
+				//8.3 通配符搜索
+				mSel = SearchInBuf(hbuf, "@noteWord@", 0, 0, 0, 1, 0)
+			}
 			if (mSel != "")
 			{
+				//8.4 关键词跳转
 				ScrollCursor(mSel)
 			}
 		}
@@ -859,6 +887,29 @@ macro NoteCopyFile(hbuf, cmdP1, cmdP2, cNum)
 	
 	cmdStr = "copy " # cmdPath1 # " " # cmdPath2
 	msg(cmdStr)
+
+	ShellOpenCustomCmd(cmdStr)
+}
+
+macro NoteRARFile(hbuf, cmdP1, cmdP2, cNum)
+{
+	//msg("copy [" # cmdP1 # "-" # cmdP2 # "]")
+
+	//文件名转化:
+	//转化"Save:"、区分根目录、添加项目目录、替换"^"为空格
+	cmdPath1 = GetTransFileName(hbuf, cmdP1, cNum)
+
+	rDir1 = GetTransRootDir(cmdPath1)
+	rDir2 = GetTransRootDir(GetBufName(hbuf))
+	if (rDir1 != "" && rDir1 != rDir2)
+	{
+		cmdStr = rDir1 # "&&cd " # cmdPath1 # "&&start " # getRARPath(0) # " " # cmdP2
+	}
+	else
+	{
+		cmdStr = "cd " # cmdPath1 # "&&start " # getRARPath(0) # " " # cmdP2
+	}
+	//msg(cmdStr)
 
 	ShellOpenCustomCmd(cmdStr)
 }

@@ -22,6 +22,10 @@ macro Tree()
 	{
 		TreeChar(hbuf, key)
 	}
+	else if (key >= 262209 && key <= 262209 + 26 )   // ctrl+a~z
+	{
+		TreeCtrlChar(hbuf, key)
+	}
 	else if (key >= 4208 && key <= 4219)             // F1~F12  ÏÔÊ¾f1~f12 ¹¦ÄÜËµÃ÷(SI3.5±àÂë)
 	{
 		if(key == 4209) //F2
@@ -77,42 +81,46 @@ macro Tree()
 macro TreeNum(hbuf, key)
 {
 	//_TempHeadF1()
+	bft = getBft(2)
+
 	if (key == 49) //Êı×Ö1
 	{
-		//help
-		ShowHelp(hbuf, "[F1]")         //²»ÒªÕâ¸öÁË
+		//Ìøµ½Ä¬ÈÏmk
+		OpenDefaultMake(hbuf)
+//		file = GetGroupItem(bft, 1, "Project", "File")
+//		msg(selHead)
 	}
 	else if (key == 50) //Êı×Ö2
 	{
-		file = "\\resource\\version_software_mocor.h"
+		file = GetGroupItem(bft, 1, "Project", "File")
 		OpenProjectFile(hbuf, file, "", "")
 	}
 	else if (key == 51) //Êı×Ö3
 	{
-		file = "\\resource\\common_mdu_def.h"
+		file = GetGroupItem(bft, 2, "Project", "File")
 		OpenProjectFile(hbuf, file, "", "")
 	}
 	else if (key == 52) //Êı×Ö4
 	{
-		file = "\\resource\\mmi_custom_define.h"
+		file = GetGroupItem(bft, 3, "Project", "File")
 		word = "MMISET_EDEFAULT_LANGUAGE"
 		OpenProjectFile(hbuf, file, "", word)
 	}
 	else if (key == 53) //Êı×Ö5
 	{
-		file1 = "\\resource\\mmi_menutable_128x160.c"
-		file2 = "\\resource\\mmi_menutable_240x320.c"
+		file1 = GetGroupItem(bft, 4, "Project", "File")
+		file2 = GetGroupItem(bft, 5, "Project", "File")
 		word = "menu_mainmenu_icon"
 		OpenProjectFile(hbuf, file1, file2, word)
 	}
 	else if (key == 54) //Êı×Ö6
 	{
-		file = "\\resource\\mmienvset_internal.h"
+		file = GetGroupItem(bft, 6, "Project", "File")
 		OpenProjectFile(hbuf, file, "", "")
 	}
 	else if (key == 55) //Êı×Ö7
 	{
-		file = "\\resource\\RING"
+		file = GetGroupItem(bft, 7, "Project", "File")
 		OpenProjectFile(hbuf, file, "", "")
 	}
 	else if (key == 56) //Êı×Ö8
@@ -136,6 +144,7 @@ macro TreeChar(hbuf, key)
 	//_TempHeadF1()
 	if (key == 97) //×ÖÄ¸A
 	{
+		ShowHelp(hbuf, "[F1A]")
 	}
 	else if (key == 98) //×ÖÄ¸B
 	{
@@ -212,7 +221,9 @@ macro TreeChar(hbuf, key)
 	}
 	else if (key == 115) //×ÖÄ¸S
 	{
-		OpenDefaultSR(hbuf)
+		sel = MGetWndSel(hbuf)
+		msg(sel)
+		SetClipString(sel) // µ÷ÊÔsel½á¹¹Ìå
 	}
 	else if (key == 116) //×ÖÄ¸T
 	{
@@ -233,6 +244,26 @@ macro TreeChar(hbuf, key)
 	else if (key == 122) //×ÖÄ¸Z
 	{
 		pick_window
+	}
+	else
+	{
+		msg ("key @key@")
+	}
+}
+
+macro TreeCtrlChar(hbuf, key)
+{
+	//_TempHeadF1()
+	if (key == 262209) //×ÖÄ¸A
+	{
+		ShowHelp(hbuf, "[F1A]")
+	}
+	else if (key == 262212) //×ÖÄ¸D
+	{
+		if(IsFileName(hbuf, "Macro_") || IsFileName(hbuf, "Simple_CTRL_"))
+		{
+			NoteGroupPreview(hbuf, 0)
+		}
 	}
 	else
 	{
