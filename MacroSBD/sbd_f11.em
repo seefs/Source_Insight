@@ -76,19 +76,39 @@ macro Note()
 			bft = getBaseFileType(path, 3)
 			if(bft == "")
 				stop
-			mFile = getNodePath(0) # "\\note\\Macro_Note_@bft@.h"
+
+			isAloneFile = 0
+			if(bft == "Pythons" || bft == "9820e")
+			{
+				isAloneFile = 1
+				mFile = getNodePath(0) # "\\@bft@\\Macro_Note_@bft@.h"
+			}
+			else
+			{
+				mFile = getNodePath(0) # "\\note\\Macro_Note_@bft@.h"
+			}
 		
 			if(IsFileName(hbuf, "Macro_Note_"))
 			{
-				hwnd = GetCurrentWnd()
-				lnTop = GetWndVertScroll(hwnd);
-				SaveMode(getWndVertRow(0), "@lnTop@")
+				if(isAloneFile == 0)
+				{
+					hwnd = GetCurrentWnd()
+					lnTop = GetWndVertScroll(hwnd);
+					SaveMode(getWndVertRow(0), "@lnTop@")
+				}
 				close
 			}
 			else
 			{
-				lnTop = ReadMode(getWndVertRow(0))
-				OpenExistFileRow(mFile, lnTop)
+				if(isAloneFile == 0)
+				{
+					lnTop = ReadMode(getWndVertRow(0))
+					OpenExistFileRow(mFile, lnTop)
+				}
+				else
+				{
+					OpenExistFileRow(mFile, 0)
+				}
 			}
 		}
 	}
@@ -436,12 +456,25 @@ macro NoteHander(hbuf, cNum)
 	{
 		//lastCmd:除set以外的str
 		lastCmd = strmid(cur_line, index+1, len)
-		//旧列表替换为新列表,空格分开 
-		SetNoteHander(hbuf, lastCmd, cur_row, cNum)
-		if(cNum != 6)
+		
+		if(IsFileName(hbuf, "Macro_Set_Note.h"))
 		{
-			//save
-			SaveNoteHistory(cur_line)
+			close
+    		hbuf = GetCurrentBuf()
+			if(IsFileName(hbuf, "Macro_Note_"))
+			{
+				SetNoteHander(hbuf, lastCmd, cur_row, 0)
+			}
+		}
+		else
+		{
+			//旧列表替换为新列表,空格分开 
+			SetNoteHander(hbuf, lastCmd, cur_row, cNum)
+			if(cNum != 6)
+			{
+				//save
+				SaveNoteHistory(cur_line)
+			}
 		}
 	}
 	else if(noteCmd == "setPath")
@@ -518,7 +551,9 @@ macro NoteHander(hbuf, cNum)
 		curPath = GetTransFileName(hbuf, curPath, cNum)
 		
 		//4. 显示完整文件名: 以"..."结尾
-		if(strmid(curPath, strlen(curPath)-3, strlen(curPath)) == "...")
+		if(strlen(curPath)<3)
+		{}
+		else if(strmid(curPath, strlen(curPath)-3, strlen(curPath)) == "...")
 		{
 			fLen = strlen(curPath)-3
 			//bsDir = GetFileName(curPath)
@@ -644,7 +679,14 @@ macro SetNoteHander(hbuf, lastCmd, cur_row, cNum)
 	var lastBaseCmd
 	lastBaseCmd = ReadMode(getNoteHanderSet(0))
 	if(lastBaseCmd == lastCmd)
+	{
+//		if(cNum == 0)
+			msg("新旧文件名相同,   不替换: " # CharFromKey(13) # lastCmd)
 		stop
+	}
+//	if(cNum == 0)
+		msg("开始替换: " # CharFromKey(13) # "旧:    " # lastBaseCmd # CharFromKey(13) # "新:     " # lastCmd)
+		
 	SaveMode(getNoteHanderSet(0), "@lastCmd@")
 	if(cNum == 6 || cNum == 61)
 		stop
@@ -865,11 +907,21 @@ macro SaveNoteHistory(cur_line)
 	
 	mBuf = OpenCache(getNodePath(0) # "\\Macro_Set_Note.h")
 	
-	mKey = bft # ":" # cur_line
+	mKey = cur_line //set^aa^bb^cc
 	mSel = SearchInBuf(mBuf, mKey, 0, 0, FALSE, FALSE, FALSE)
 	if (mSel == "")
 	{
-		AppendBufLine(mBuf, mKey)
+		mProKey = bft # "-note-set" //mtk-note-set
+		mProSel = SearchInBuf(mBuf, mProKey, 0, 0, FALSE, FALSE, FALSE)
+		if (mProSel == "")
+		{
+			AppendBufLine(mBuf, mProKey)
+			AppendBufLine(mBuf, mKey)
+		}
+		else
+		{
+			InsBufLine(mBuf, mProSel.lnFirst + 1, "@mKey@")
+		}
 		SaveBuf(mBuf)
 	}
 	

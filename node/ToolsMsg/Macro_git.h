@@ -5,23 +5,57 @@
 reset 后不能提交
 diff HEAD
 
-新代码:
-git clone git@192.168.2.139:/home/git/9820.git
 
-sourceTree:
-Git 和 Hg 客户端管理工具
+
+//目录[Num][Ca]:
+// 1. git 常用
+Save:SI\node\ToolsMsg\Macro_git.h \[1.1\] 设置账户(需要和github账户设置一致)
+Save:SI\node\ToolsMsg\Macro_git.h \[1.2\] 查看设置
+Save:SI\node\ToolsMsg\Macro_git.h \[1.3\] 创建git本地仓库
+Save:SI\node\ToolsMsg\Macro_git.h \[1.4\] 查看git状态
+Save:SI\node\ToolsMsg\Macro_git.h \[1.5\] 添加git文件到暂存区（需要和版本库区分） 
+Save:SI\node\ToolsMsg\Macro_git.h \[1.6\] git提交文件
+Save:SI\node\ToolsMsg\Macro_git.h \[1.7\] git删除文件（夹）
+// 2. git 日志
+Save:SI\node\ToolsMsg\Macro_git.h \[2.1\] git操作日志
+Save:SI\node\ToolsMsg\Macro_git.h \[2.2\] 版本回退
+// 3. git chechout
+Save:SI\node\ToolsMsg\Macro_git.h \[3.1\] 撤销
+Save:SI\node\ToolsMsg\Macro_git.h \[3.2\] git还原操作
+Save:SI\node\ToolsMsg\Macro_git.h \[3.3\] git暂存区撤销到工作区操作
+Save:SI\node\ToolsMsg\Macro_git.h \[3.4\] git版本区撤销到工作区操作
+// 4. git diff
+Save:SI\node\ToolsMsg\Macro_git.h \[4.1\] 对比 git diff
+Save:SI\node\ToolsMsg\Macro_git.h \[4.2\] 设置对比/合并工具
+// 5. git remote
+Save:SI\node\ToolsMsg\Macro_git.h \[5.1\] remote
+Save:SI\node\ToolsMsg\Macro_git.h \[5.4\] 添加远程仓库
+Save:SI\node\ToolsMsg\Macro_git.h \[5.9\] 本地仓库更新
+Save:SI\node\ToolsMsg\Macro_git.h \[5.10\] 查看/创建/切换/删除/合并分支
+Save:SI\node\ToolsMsg\Macro_git.h \[5.16\] 创建tag
+// 6. git stash
+Save:SI\node\ToolsMsg\Macro_git.h \[6.1\] 现场的保存与恢复: git stash
+Save:SI\node\ToolsMsg\Macro_git.h \[6.2\] 设置Git UI颜色
+Save:SI\node\ToolsMsg\Macro_git.h \[6.4\] 为命令配置别名
+Save:SI\node\ToolsMsg\Macro_git.h \[6.5\] 修改配置文件
+// 7. other
+Save:SI\node\ToolsMsg\Macro_git.h \[7.1\] 文件重命名: git mv
+Save:SI\node\ToolsMsg\Macro_git.h \[7.2\] 忽略特殊文件
+Save:SI\node\ToolsMsg\Macro_git.h \[7.3\] window下git下载 github 项目
+// 8. other
+Save:SI\node\ToolsMsg\Macro_git.h \[8.1\] sourceTree Git 和 Hg 客户端管理工具
+// 9. 9820 -- git:
+Save:SI\node\ToolsMsg\Macro_git.h \[9.1\] 9820 新代码
+Save:SI\node\ToolsMsg\Macro_git.h \[9.2\] reset--hard
+Save:SI\node\ToolsMsg\Macro_git.h \[9.3\] diff
 
 
 
 /***********************************************************************/
-/**************************** git 常用 *********************************/
-/***********************************************************************/
-//[Num]
+//git 常用
 git help
 
-[1.0] ----------------------------------
-
-一、git客户端（本地仓库）的一些操作
+//一、git客户端（本地仓库）的一些操作
 [1.1] 设置账户(需要和github账户设置一致)
 git config --global user.name xxx
 git config --global user.email xxx@foxmail.com
@@ -96,9 +130,7 @@ rm test.txt        =>    git commit -am 'delete a file'
 
 
 /***********************************************************************/
-/**************************** git 日志 *********************************/
-/***********************************************************************/
-[2.0] ----------------------------------
+//git git 日志
 
 [2.1] git操作日志
 //1) 显示当前及之前的版本号
@@ -152,14 +184,11 @@ git reset --hard e9efa77  回退到 e9efa77  版本
 
 
 /***********************************************************************/
-/*************************** git chechout ******************************/
-/***********************************************************************/
+//git chechout
 
-[3.0] ----------------------------------
 [3.1] 撤销
-
-git diff test_branch_name　　　　　　　　　　　　　　　　　　　　　　　 #查看当前branch与test_branch_name中代码的区别
-git push XXX branch_name　　　　　　　　　　　　　　　　　　　　　　　　#上传指定的branch到远端
+git diff test_branch_name　　　　　　　　 #查看当前branch与test_branch_name中代码的区别
+git push XXX branch_name　　　　　　　　　#上传指定的branch到远端
 
 
 [3.2] git还原操作
@@ -178,10 +207,9 @@ git reset HEAD readme.txt
 git fetch --all
 git reset --hard origin/master
 
+
 /***********************************************************************/
-/**************************** git diff   *******************************/
-/***********************************************************************/
-[4.0] ----------------------------------
+//git diff
 
 [4.1] 对比 git diff
 git diff aaa.txt
@@ -235,13 +263,9 @@ git mergetool aaa.txt
 
 
 /***********************************************************************/
-/**************************** git remote *******************************/
-/***********************************************************************/
-[5.0] ----------------------------------
+//git remote
 
 [5.1] remote
-
-
 git remote add XXX https://github.com/username/repo_name.git　 　　#设置github的连接
 git clone git://github.com/your_account/aimed_repo.git　　　　　　　#复制一个repo到本地
 git remote -v　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　#查看本地设置的url连接信息
@@ -464,9 +488,7 @@ git push origin --tags
 
 
 /***********************************************************************/
-/**************************** git stash *******************************/
-/***********************************************************************/
-[6.0] ----------------------------------
+//git stash
 
 [6.1] 现场的保存与恢复: git stash
 
@@ -592,8 +614,7 @@ git checkout -b <本地分支名> origin/<远程分支名>
 
 
 /***********************************************************************/
-/**************************** git other  *******************************/
-/***********************************************************************/
+//other
 
 [7.1] 文件重命名: git mv
 git mv filename newfilename
@@ -646,7 +667,7 @@ git commit -m 'update .gitignore'
 /***********************************************************************/
 /**************************** git windows  *****************************/
 /***********************************************************************/
-window下git下载 github 项目
+[7.3] window下git下载 github 项目
 
 1) window下载
 https://git-scm.com/downloads
@@ -684,6 +705,44 @@ git push origin test:test
 git push -u origin master -f
 
 
-	
+/***********************************************************************/
+//other
+
+[8.1] sourceTree Git 和 Hg 客户端管理工具
+sourceTree:
+Git 和 Hg 客户端管理工具
+
+/***********************************************************************/
+//9820 -- git:
+
+[9.1] 9820 新代码
+新代码:
+//git clone git@192.168.2.139:/home/git/9820.git
+
+git clone server@192.168.2.182:/home/server/9820.git
+
+
+[9.2] reset--hard
+git reset --hard
+git clean -f
+git status 
+
+
+[9.3] diff
+1. 编译源码 
+diff -Nur Asrc Adest > test1.patch
+cd Bdest 
+patch -p1 <../test1.patch
+diff -Nur Bsrc Bdest > test2.patch
+patch -R -p1
+几个提交间
+git format-patch 前提交..后提交
+
+对方用git am *.patch
+
+没提交可以用git diff > *.patch不标准
+
+
+
 
 

@@ -1,25 +1,23 @@
+
+// 展讯 工具:
+Save:SI\node\note\Macro_Note_Tools.h \[2.1\] FontTool 字体:
+Save:SI\node\note\Macro_Note_Tools.h \[2.2\] foobar2000 修改mp3 广告图标
+Save:SI\node\note\Macro_Note_Tools.h \[2.3\] ResOver 网络参数
+// mtk 工具:
+Save:SI\node\note\Macro_Note_Tools.h \[3.1\] mtk--MCTApp --不知道怎么用
+Save:SI\node\note\Macro_Note_Tools.h \[3.2\] mtk--STMTView 字符串工具:
+Save:SI\node\note\Macro_Note_Tools.h \[3.3\] mtk--TRACE:
+Save:SI\node\note\Macro_Note_Tools.h \[3.4\] mtk--下载工具:
+// 常用   工具:
+Save:SI\node\note\Macro_Note_Tools.h \[4.1\] SVN 配置:
+Save:SI\node\note\Macro_Note_Tools.h \[4.2\] BCmp 配置:
+Save:SI\node\note\Macro_Note_Tools.h \[4.3\] git:
+Save:SI\node\note\Macro_Note_Tools.h \[4.4\] vim:
+Save:SI\node\note\Macro_Note_Tools.h \[4.5\] SI:
+	
+
+
 /***********************************************************************/
-/******************************* base **********************************/
-/***********************************************************************/
-快捷键:
-F7:打开/关闭笔记
-F2: 打开选择的路径/文件; 文件名+扩展名
-F5: 打开tools文件; 当前行以open开头
-
-
-[1.1]模拟器:常用断点
-Save:SI\node\Macro_modis_MTK.h
-Save:SI\node\Macro_modis_6531E.h
-
-Save文件列表:
-Save:SI\node\Macro_File.h
-
-
-/***********************************************************************/
-/****************************** tools **********************************/
-/***********************************************************************/
-[2.0] -------------------------------------
-[2.0] 展讯:
 
 [2.1] FontTool 字体:
 open F:\6531E_16A\tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe 
@@ -35,11 +33,8 @@ open D:\Program Files (x86)\foobar2000\foobar2000.exe
 [2.3] ResOver 网络参数
 open E:\SVN\6531DA_new\tools\DEBUG_TOOL\ResOver\Bin\ResOver.exe
 
---------------------------------------------------
-[3.0] -------------------------------------
-[3.0] mtk:
 
-mtk tools:
+//mtk tools:
 [3.1] mtk--MCTApp --不知道怎么用
 open MCT_TOOL\MCTApp.exe
 
@@ -70,14 +65,35 @@ india:  093E ~ 095f
 5.5 用字符工具保存行末多了44个tab字符
 
 
+[3.3] mtk--TRACE:
+open D:\ProgramDownTool\3.1304.00_Catcher\Catcher.exe
+   
+//1 phone: *#3646633#->EngMode:
+device->set UART->UART setting->TST-PS config->USB port->SAVE
+//2 Menu--Config--Set database path:
+tst\database_classb\BPLGUInfoCustomAppSrcP_MT6261_...
+//3 Menu--View--ps Integrated--show log
+//4 Menu--Control -> mode -> logging
+//5 配置trace线所用的USB端口(T图标)
+//6 connet
+//7 filer->set--All on
+
+
+
+[3.4] mtk--下载工具
+//  FlashTool_v5.1528.00
+open:D:\Desktop\工具\FlashTool_v5.1548.00\Flash_tool_Beta.exe
+1 Scatter/config File, 选择
+build\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_PCB01_gprs_MT6261_S00.M107_XYZN_S2_4A_WESTERN_F2_V06_20180915.bin\FARSIGHTED61M_CN_11C_BB.cfg
+2  选择
+    option->usb Download/Readback
+    option->usb Download Without battery
+    option->Format Fat(auto)->Format Fat
+3 Format Fat不会擦除校准参数、IMEI号
 
 
 
 
-
-
---------------------------------------------------
-[4.0] -------------------------------------
 [4.1] SVN 配置:
 C:\Users\Administrator\AppData\Roaming\Subversion\config
 
@@ -94,8 +110,10 @@ C:\Users\Administrator\AppData\Roaming\Scooter^Software\Beyond^Compare^4
 
 [4.3] git:
 Save:SI\node\ToolsMsg\Macro_git.h
+	
 [4.4] vim:
 Save:SI\node\ToolsMsg\Macro_vim.h
+	
 [4.5] SI:
 Save:SI\node\ToolsMsg\Macro_SI.h
 

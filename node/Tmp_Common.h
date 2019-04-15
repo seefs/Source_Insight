@@ -12,8 +12,17 @@ svnÄ¿Â¼£º
 https://192.168.2.3/svn/SPRD/trunk/MOCOR_12C.W13.04.23.Btdialer2.0
 https://192.168.2.3/svn/SPRD_SPEED/trunk/SC6531DA_BTDialer_a
 
+F:\6261A_11C_V33
+F:\6261D_11C_V33
+F:\6261D_KM
 
+F:\6531E_16A
+F:\6531G_16A_MP_W17.43.4
 
+F:\9820e
+F:\9820e_note
 
+E:\SVN\6531DA_new
+D:\SVN\SC7701
 
 

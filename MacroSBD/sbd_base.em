@@ -313,8 +313,7 @@ macro getBaseFileType(pathName, s)
 		}
 		else if(s == 3)	//note
 		{
-			//baseFileType = "9820e"
-			baseFileType = "9820es"  //´øsÓÃÄ£°å2
+			baseFileType = "9820e"
 		}
 		else
 		{

@@ -1,13 +1,18 @@
 
-
 目录[Ca]
+
 Save:SI\node\Pythons\Macro_Note_Python.h \[1.1\] Pythons 练习:
 Save:SI\node\Pythons\Macro_Note_Python.h \[1.2\] 视频学习:
 	
-Save:SI\node\Pythons\Macro_Note_Python.h \[2.1\] pythom 基础知识
-Save:SI\node\Pythons\Macro_Note_Python.h \[2.1\] Matrix:
+Save:SI\node\Pythons\Macro_Note_Python.h \[2.1\] pythom -----网文
+Save:SI\node\Pythons\Macro_Note_Python.h \[2.2\] Tensorflow ----- 网文
+	
+Save:SI\node\Pythons\Macro_Note_Python.h \[3.1\] pythom 基础知识
+Save:SI\node\Pythons\Macro_Note_Python.h \[3.2\] Matrix:
 
-Save:SI\node\Pythons\Macro_Note_Python.h \[3.1\] Install:
+Save:SI\node\Pythons\Macro_Note_Python.h \[4.1\] 安装环境
+
+
 
 
 /***********************************************************************/
@@ -29,7 +34,6 @@ Save:SI\node\Pythons\Macro_Pythons_test.h \[1.11\] 程序11：
 Save:SI\node\Pythons\Macro_Pythons_test.h \[1.12\] 程序12：
 Save:SI\node\Pythons\Macro_Pythons_test.h \[1.13\] 程序13：
 
-
 [1.2] 视频学习:
 Save:SI\node\Pythons\Macro_Pythons_tf_TUT.h \[1.1\] 第1~5讲
 Save:SI\node\Pythons\Macro_Pythons_tf_TUT.h \[1.5\] tf5_example2 优先一次线性
@@ -47,11 +51,27 @@ Save:SI\node\Pythons\Macro_Pythons_tf_TUT.h \[1.17\] tf17_dropout 分类--数字 dro
 
 
 
-[2.1] pythom 基础知识
+[2.1] pythom 网文
+Save:SI\node\Pythons\Macro_Pythons_summary.h \[1.1\] tensorflow
+Save:SI\node\Pythons\Macro_Pythons_summary.h \[1.2\] 谈谈我在自然语言处理进阶上的一些个人拙见
+Save:SI\node\Pythons\Macro_Pythons_summary.h \[1.3\] 大数据 
+Save:SI\node\Pythons\Macro_Pythons_summary.h \[1.4\] 
+Save:SI\node\Pythons\Macro_Pythons_summary.h \[1.5\] 
+
+[2.2] Tensorflow 网文
+Save:SI\node\Pythons\Macro_Pythons_tensorflow.h \[1.1\] tensorflow 实战
+Save:SI\node\Pythons\Macro_Pythons_tensorflow.h \[1.2\] 吴恩达网站
+Save:SI\node\Pythons\Macro_Pythons_tensorflow.h \[1.3\] MNIST 教程
+Save:SI\node\Pythons\Macro_Pythons_tensorflow.h \[1.4\] Caffe  卷积神经网络
+Save:SI\node\Pythons\Macro_Pythons_tensorflow.h \[1.5\] NLP
+Save:SI\node\Pythons\Macro_Pythons_tensorflow.h \[1.6\] 开源系统 Malmo microsoft 
+Save:SI\node\Pythons\Macro_Pythons_tensorflow.h \[1.7\] 开源项目
+
+
+[3.1] pythom 基础知识
 Save:SI\node\Pythons\Macro_Pythons_base.h \[1.1\]
 
-
-[2.1] Matrix:
+[3.2] Matrix:
 Save:SI\node\Pythons\Macro_Math_Matrix.h \[1.1\]  加法(Plus) 与减法
 Save:SI\node\Pythons\Macro_Math_Matrix.h \[2.1\] 乘法(Multiply)
 Save:SI\node\Pythons\Macro_Math_Matrix.h \[2.2\] 与矩阵的乘法
@@ -72,7 +92,7 @@ Save:SI\node\Pythons\Macro_Math_Matrix.h \[9.0\] 秩(Rank)
 Save:SI\node\Pythons\Macro_Math_Matrix.h \[10.0\] 迹(Trace)
 
 	
-[3.1] Install:
+[4.1] 安装环境:
 Save:SI\node\Pythons\Macro_Pythons_Install.h \[1.1\] 安装 Java 8(可能是必装): 
 Save:SI\node\Pythons\Macro_Pythons_Install.h \[1.2\] 安装 Eclipse 4.6:
 Save:SI\node\Pythons\Macro_Pythons_Install.h \[1.3\] 安装 PyDev 5.24.0:

@@ -911,3 +911,33 @@ F:
 
 [cmd]: 
 "C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+F:      
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\bt\c\mmibt_wintab.c F:\6531E_16A\MS_MMI\source\mmi_app\app\bt\c\mmibt_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c F:\6531G_16A_MP_W17.43.4\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c F:\6261D_KM\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c F:\6261D_KM\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\PROFILES\Profiles_Res\Profiles.res F:\6261D_11C_V33\plutommi\mmi\PROFILES\Profiles_Res\Profiles.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\PROFILES\Profiles_Res\Profiles.res F:\6261D_11C_V33\plutommi\mmi\PROFILES\Profiles_Res\Profiles.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c F:\6261D_11C_V33\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c F:\6261D_11C_V33\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c    

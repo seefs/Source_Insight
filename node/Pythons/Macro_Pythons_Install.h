@@ -11,21 +11,21 @@ open: D:\Save\SI\node\note\Macro_Note_Pythons.h
 /************************** 安装 (非必要) ******************************/
 /***********************************************************************/
 
-安装 Java 8(可能是必装): 
+[1.1] 安装 Java 8(可能是必装): 
 open: F:\tool_soft\python\jdk_8.0.1310.11_64.exe
 ......
 
 
-安装 Eclipse 4.6:
+[1.2] 安装 Eclipse 4.6:
 http://www.pydev.org/updates
 http://download.aptana.com/studio3/plugin/install
 
 
-安装 PyDev 5.24.0:
+[1.3] 安装 PyDev 5.24.0:
 ......
 
 
-安装 pymysql 3.0.5:
+[1.4] 安装 pymysql 3.0.5:
 下载地址：https://pypi.python.org/packages/source/P/PyMySQL3/PyMySQL3-0.5.tar.gz
 
 解压下载的文件，在cmd中运行: 
@@ -33,7 +33,7 @@ python setup.py install
 
 
 
-安装 VC++2015 (不一定要装):
+[1.5] 安装 VC++2015 (不一定要装):
 下载地址：https://www.microsoft.com/en-us/download/default.aspx
 
 
@@ -42,17 +42,17 @@ python setup.py install
 /*************************** 安装 (必要) *******************************/
 /***********************************************************************/
 
-1. 安装 GitHub:
+[2.1] . 安装 GitHub:
 open: F:\tool_soft\python\GitHubDesktopSetup.exe
 
 
-2. 复制cmd到根目录:
+[2.2] . 复制cmd到根目录:
 open: C:\Windows\System32\cmd.exe
 cmd: cp C:\Windows\System32\cmd.exe D:\project\GitHub\myPython
 (也可以加个dat运行cp)
 
 
-3. 安装 python (<3.7):
+[2.3]. 安装 python (<3.7):
 open: F:\tool_soft\python\python-3.6.6-amd64.exe
 下载地址：http://www.python.org/getit/
 下载地址：https://www.python.org/ftp/python/3.2.5/python-3.2.5.msi
@@ -63,11 +63,11 @@ path = ...
 cmd: path
 
 
-4. 更新pip:
+[2.4]. 更新pip:
 python -m pip install --upgrade pip
 
 
-5. 安装 TensorFlow:
+[2.5]. 安装 TensorFlow:
 open: C:\Windows\System32\cmd.exe
 cd C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\
 //open: C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\cmd2.exe
@@ -82,7 +82,7 @@ cmd: pip3 install --upgrade tensorflow-gpu
 
 
 
-
+[2.6] 验证 Python
 6. 1 验证 Python 安装:
 python install\hello.py
 
@@ -101,14 +101,14 @@ open: C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe
 如果能正常输出hello字符串，则安装成功。Hello, TensorFlow!
 
 
-7 matplot
+[2.7] matplot
 下载地址：https://matplotlib.org/users/installing.html
 open: C:\Windows\System32\cmd.exe
 cd C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\
 //open: C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\cmd2.exe
 
 
-8 tensorboard 可视化(不用安装, 添加path)
+[2.8] tensorboard 可视化(不用安装, 添加path)
 open: C:\Windows\System32\cmd.exe
 cd C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\
 pip3 install tensorboard

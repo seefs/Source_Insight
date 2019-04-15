@@ -15,7 +15,7 @@ b
 SE0397_XY_C2_Welcome_F6
 
 ### 18.BCompare target(304表示3与4比较，当前3那么比较4，当前4那么比较3)
-3032
+7470
 
 ### 21.tree  (未使用)
 project
@@ -33,16 +33,16 @@ CtrlW
 m20
 
 ### 36.Cur search macro (F10)
-LCD_CHIP_ST7789V
+IM_SPANISH_SUPPORT
 
 ### 39.Cur search head (F10)
-LCD
+IM
 
 ### 42.Cur search index (F10)
-1
+0
 
 ### 45.Cur search max (F10)
-0
+926
 
 ### 48.bmp one/two (F7 + v: 2次选择对比)
 2
@@ -51,16 +51,16 @@ LCD
 E:\6531E_20180113\tmp
 
 ### 54.note row(第2次打开同一行, F11关闭note会修改这里)
-270
+698
 
 ### 57.Note Hander Set(笔记路径, 替换当前path, MTK)
-M107_XYZN_S2_4A_WESTERN_F2 M107 gprs
+M107_XYZN_S2_4A_NEDADJ_F6 M107 gprs
 
 ### 60.Note Save Base(笔记路径, 替换当前path, android)
 \\192.168.2.115\xiaoj\9820e\idh.code
 	
 ### 63.Num bits(F10)
-2
+1
 	
 ### 63.File code(utf8,ansi)
 ansi

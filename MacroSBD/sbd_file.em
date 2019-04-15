@@ -479,7 +479,7 @@ macro OpenExistFileRow(file, row)
 	if (hbuf != hNil){
 		setCurrentBuf(hbuf)
 	}
-	if (isScroll == 1){
+	if (isScroll == 1 && row > 0){
 		hwnd = GetCurrentWnd()
 		ScrollWndToLine(hwnd, row); 
 	}
