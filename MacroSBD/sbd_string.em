@@ -229,6 +229,44 @@ macro GetWholeMacro(cur_line, sel)
 	return strmid(cur_line, i+1, j)
 }
 
+macro GetSpaceStrlen(str, sublen)
+{
+	strNew = ReplaceWord(str, " ", "")
+//	16_char_len = 2X18_space_len: chg: 9/4 --> 21/8
+	spNum1 = (sublen - strlen(strNew))*21/8
+	spNum2 = (strlen(str)-strlen(strNew))
+	spNum3 = spNum1 - spNum2
+//	msg("spNum1->" # spNum1 # " spNum2->" # spNum2 # " spNum3->" # spNum3)
+	return spNum3
+}
+macro GetSpaceStrMid(noteWord, newlen)
+{
+	var ret
+	ret = ""
+	cmplen = 0
+	len = strlen( noteWord )
+
+//	4_char_len = 9_space_len
+	cp = 0
+	while( cp < len && cmplen < newlen*9-2)
+	{
+//	msg(cp # "->>" # cmplen # " "  # (cmplen/9) # " ~ " # newlen # " " # (newlen*9-2)/9 # " " # len)
+		if(strmid(noteWord, cp, cp + 1) == " ")
+		{
+			cmplen = cmplen + 4
+		}
+		else
+		{
+			cmplen = cmplen + 9
+		}
+		cp = cp + 1
+	}
+	if(cp < len)
+	{
+		ret = strmid(noteWord, 0, cp)
+	}
+	return ret
+}
 macro GetFileNameType(str, p_Type)
 {
 	//(fileTypeµ±·Ö¸ô·ûÓÃ)

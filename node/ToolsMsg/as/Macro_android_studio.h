@@ -1,8 +1,41 @@
-/***********************************************************************/
-/****************************** base  **********************************/
+
+基础路径设置:
+//basePath = F:\9820e
+basePath = \\192.168.2.115\xiaoj\9820\idh.code
+
 /***********************************************************************/
 
-[1.0] ----------------------------------
+//目录[Num][Ca]:
+//安装
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[1.1\] 安装jdk
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[1.2\] 安装 gradle
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[1.3\] Terminal 路径:
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[1.4\] ADB 路径:
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[1.5\] Git 路径:
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[1.6\] //groovy 路径:
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[1.7\] gradlew命令:
+//配置
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[2.1\] 修改AS配置文件
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[2.2\] 生成AS项目配置文件
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[2.3\] 导入系统源代码至AS
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[2.4\] 配置AS的JDK、SDK
+//as汉化包
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[3.1\] as汉化包
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[3.2\] 更新SDK
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[3.3\] android studio改变配色方案
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[3.4\] 工具栏添加常用按钮
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[3.5\] 文件乱码问题
+//签名
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[5.1\] AppTest 签名
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[5.2\] 如何更改项目名称
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[5.3\] 导入 eclipse project
+//一个app打包多个APK
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[6.1\] 一个app打包多个APK
+Save:SI\node\ToolsMsg\as\Macro_android_studio.h \[6.2\] Android-Studio多个项目添加依赖同一个模块
+
+
+/***********************************************************************/
+
 
 [1.1] 安装jdk
 C:\Program Files\Java\jdk1.8.0_05\lib
@@ -78,6 +111,10 @@ gradlew -q app:dependencies
 gradlew dependencies --info
 
 
+//gradlew -v :  第一次运行这个命令，系统会帮我们下载gradle到本地，下载到的路径是：
+//D:\android\android_studio\gradle\gradle-2.8
+//gradlew assembleReleasF: 
+//gradle build
 
 
 
@@ -85,10 +122,7 @@ gradlew dependencies --info
 
 
 /***********************************************************************/
-/*************************** source code *******************************/
-/***********************************************************************/
 
-[2.0] ----------------------------------
 
 [2.1] 修改AS配置文件
 //在AS的bin目录下，打开studio64.vmoptions文件，修改成如下数值：
@@ -162,10 +196,7 @@ setting->sdks->del ...
 
 
 /***********************************************************************/
-/****************************** config *********************************/
-/***********************************************************************/
 
-[3.0] ----------------------------------
 
 [3.1] as汉化包
 //as汉化包：
@@ -224,10 +255,7 @@ File > Settings > Editor > File Encodings
 
 
 /***********************************************************************/
-/******************************* Demo  *********************************/
-/***********************************************************************/
 
-[5.0] ----------------------------------
 
 [5.1] AppTest 签名
 D:\SVN\app\APPTest1
@@ -322,10 +350,7 @@ D:\SVN\app\CS_Home_JXJ1\.idea\modules.xml
 
 
 /***********************************************************************/
-/******************************** App  *********************************/
-/***********************************************************************/
 
-[6.0] ----------------------------------
 
 [6.1] 一个app打包多个APK
 //一个app打包多个APK

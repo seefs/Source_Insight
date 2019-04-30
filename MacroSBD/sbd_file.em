@@ -42,9 +42,10 @@ macro getBCompareOnOff(0)	{	return 48	}
 //macro getPathRow(0)			{	return 51	}
 macro getWndVertRow(0)		{	return 54	}
 macro getNoteHanderSet(0)	{	return 57	}
-macro getNoteBasePath(0)	{	return 60	}
-macro getNumBits(0)			{	return 63	}
-macro getFileCode(0)		{	return 66	}
+macro getNoteHanderBak(0)	{	return 60	}
+macro getNoteBasePath(0)	{	return 63	}
+macro getNumBits(0)			{	return 66	}
+macro getFileCode(0)		{	return 69	}
 
 
 
@@ -662,6 +663,10 @@ macro GetTransFileName(hbuf, fName, cNum)
 					fName = bPath # fName
 			}
 		}
+		else
+		{
+			fName = bPath
+		}
 	}
 	
 	//use "^" as space
@@ -877,7 +882,7 @@ macro ScrollCursor(mSel)
 macro ScrollCursorRow(row1, row2)
 {
 	hwnd = GetCurrentWnd()
-	if(row1>10)
+	if(row1>20)
 		ScrollWndToLine(hwnd, row1-10)
 	else
 		ScrollWndToLine(hwnd, row1)

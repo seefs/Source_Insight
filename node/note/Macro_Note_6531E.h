@@ -14,8 +14,8 @@ Save:SI\node\Macro_Set_Note.h	spr-note-set
 set SE039_YST_E18_E250_F2
 	
 // 当前项目:
-set SE818_BY_S015_QMOBILE_F2
-set SE818_SXJY_X28_QMobile_XL3000_F4
+set SE818BC_BY_S018_JX_64_64_F3
+set SE818BC_BY_S018_JX_64_64_F3
 set SE8307_KM_C2406_QMobile_F3
 set SE039_ANSD_A900_NBL_BT_F4
 
@@ -28,36 +28,36 @@ setEnd:从setEnd行开始替换名称(上一次选中->当前选中)
 cmd:F:\6531E_16A\cmd
 
 编译:
-open: project\SE039_YST_E18_E250_F2\New_common.bat
+open: project\SE818BC_BY_S018_JX_64_64_F3\New_common.bat
 
 
 
 
 编译模块
-make p=SE039_YST_E18_E250_F2 m=custom_drv
-make p=SE039_YST_E18_E250_F2 image
+make p=SE818BC_BY_S018_JX_64_64_F3 m=custom_drv
+make p=SE818BC_BY_S018_JX_64_64_F3 image
 
 或 (1行命令)
-make p=SE039_YST_E18_E250_F2 m=custom_drv update image
-make p=SE039_YST_E18_E250_F2 m=custom_drv update image job=4
-make p=SE039_YST_E18_E250_F2 m=resource job=4
+make p=SE818BC_BY_S018_JX_64_64_F3 m=custom_drv update image
+make p=SE818BC_BY_S018_JX_64_64_F3 m=custom_drv update image job=4
+make p=SE818BC_BY_S018_JX_64_64_F3 m=resource job=4
 
 
 其他编模块
-make p=SE039_YST_E18_E250_F2 m=app update image
+make p=SE818BC_BY_S018_JX_64_64_F3 m=app update image
 
 
 
 模拟器：
-make p=SE039_YST_E18_E250_F2 m=simulator
-vc: build\SE039_YST_E18_E250_F2_builddir\win\simulator.dsw
+make p=SE818BC_BY_S018_JX_64_64_F3 m=simulator
+vc: build\SE818BC_BY_S018_JX_64_64_F3_builddir\win\simulator.dsw
 
 
 
 下载工具[Ct]
 open tools\DEBUG_TOOL\ResearchDownload\Bin\ResearchDownload.exe
 
-D:\6531G_SVN\build\SE039_YST_E18_E250_F2_builddir\img
+D:\6531G_SVN\build\SE818BC_BY_S018_JX_64_64_F3_builddir\img
 
 
 
@@ -69,10 +69,10 @@ D:\6531G_SVN\build\SE039_YST_E18_E250_F2_builddir\img
 --------------------------------------------------
 Make 常用设置[Cf]:
 	屏:
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk LCD_CHIP
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk LCD_CHIP
 MS_Customize\source\product\config\SE818_MB\lcm_cfg_info.c
 	摄像头:
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk SENSOR_CHIP
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk SENSOR_CHIP
 	屏亮度:
 chip_drv\chip_module\analog\sr1161\analog_phy_sr1161.c SBD_LCM_BL_25MA_SUPPORT
 
@@ -83,7 +83,7 @@ MS_Customize\source\product\driver\lcd\tft_GC9300.c GC9300_Ex(void)
 
 	
 	版本号：
-project\SE039_YST_E18_E250_F2\resource\version_software_mocor.h
+project\SE818BC_BY_S018_JX_64_64_F3\resource\version_software_mocor.h
 
 
 ----------------------------------------------------------------------------
@@ -102,18 +102,18 @@ project\SE039_YST_E18_E250_F2\resource\version_software_mocor.h
 
 设置[s]:		（笔记是旧的）
 	双摄像头(默认单)：
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk SBD_DUAL_CAMERA_SUPPORT
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk SBD_DUAL_CAMERA_SUPPORT
 
 	四频 / 2频设置;开就是2频：
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk __SBD_RF_TWO_BAND_SUPPORT__
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk SBD_RF_TWO_BAND_SUPPORT
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk __SBD_RF_TWO_BAND_SUPPORT__
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk SBD_RF_TWO_BAND_SUPPORT
 
 	不带马达：
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk __HHT_REMOVE_VIBRA__ =TRUE
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk __HHT_REMOVE_VIBRA__ =TRUE
 
 	双卡：
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk MMI_MULTI_SIM_SYS = DUAL
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk MULTI_SIM_SYS = DUAL
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk MMI_MULTI_SIM_SYS = DUAL
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk MULTI_SIM_SYS = DUAL
 nv_type_4band.nvm	0x10203, 0x1000203,    卡反
 	单卡翻译：
 TXT_SIM_SEL_SIM1--pb	--	 SIM1
@@ -121,42 +121,42 @@ SIM1 network account
 
 	
 	23键：
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk _23KEY
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk MMI_MULTI_GREEN_KEY =DUAL 绿键
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk _23KEY
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk MMI_MULTI_GREEN_KEY =DUAL 绿键
 	
 	FM：
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk MMI_FM_OPEN_SPEAK_OPEN_SUPPORT=TRUE
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk SBD_FM_OPEN_SPEAK_OPEN_SUPPORT=TRUE
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk HHT_MMI_FMTEST_OPEN_SPEAK = TRUE
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk SBD_FM_THRESHOLD_TYPE1=TRUE 	   #带上搜的台多一点
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk HHT_FM_USE_GSM_ANT_SIGNAL_STRONG=TRUE	 #外放时打开
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk MMI_FM_OPEN_SPEAK_OPEN_SUPPORT=TRUE
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk SBD_FM_OPEN_SPEAK_OPEN_SUPPORT=TRUE
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk HHT_MMI_FMTEST_OPEN_SPEAK = TRUE
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk SBD_FM_THRESHOLD_TYPE1=TRUE 	   #带上搜的台多一点
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk HHT_FM_USE_GSM_ANT_SIGNAL_STRONG=TRUE	 #外放时打开
 
 
 	外置K类功放：
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk __HHT_EXT_AMPLIFIER_CLASS_K__ = TRUE
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk __HHT_EXT_AMPLIFIER_CLASS_K__ = TRUE
 
 	软件2合1：FALSE是喇叭听筒独立(硬件二合一)，分开是软件2合1
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = FALSE
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk SBD_EARPIECE_SPEAK_USE_ONE
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk CUSTOMER = S039_JX_2IN1	                 # 二合一的音频（带K类的音频不同）
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = FALSE
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk SBD_EARPIECE_SPEAK_USE_ONE
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk CUSTOMER = S039_JX_2IN1	                 # 二合一的音频（带K类的音频不同）
 \audio\audio_dsp_codec_6531.nvm    0x6C0/硬件2合1;    0x638/软件2合1
 
 	三合一：
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk CUS_ADD_SHAKE= TRUE  三合一喇叭宏        
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk VIRTUAL_VIBRATE_FUNC
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk __SPEAKER_VIB_INTENSITY_WEAK__
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = TRUE 三合一同时开
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk CUS_ADD_SHAKE= TRUE  三合一喇叭宏        
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk VIRTUAL_VIBRATE_FUNC
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk __SPEAKER_VIB_INTENSITY_WEAK__
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = TRUE 三合一同时开
 
 
 	手电筒
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk HHT_ADD_TORCHLIGHT= TRUE
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk SBD_ADD_TORCHLIGHT			 #6531E
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk HHT_ADD_TORCHLIGHT= TRUE
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk SBD_ADD_TORCHLIGHT			 #6531E
 	
 	闪光灯
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk DC_FLASH_SUPPORT= TRUE
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk DC_FLASH_SUPPORT= TRUE
 	
 	U盘
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk UMEM_PRTITION _MICRO
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk UMEM_PRTITION _MICRO
 
 	字库：
 MS_MMI\source\resource\mmi_res_prj_def.h
@@ -165,7 +165,7 @@ open tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe
 
 
 	型号--MSD, 翻译：
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk MMI_MSD_SUPPORT
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk MMI_MSD_SUPPORT
 //TXT_MSD_NOTIFY_INFO
 
 ----------------------------------------------------------------------------
@@ -173,7 +173,7 @@ project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk MMI_MSD_SUPPORT
 Idle[i]: 拨号
 
 	拨号光标
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk SENSOR_CHIP
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk SENSOR_CHIP
 MS_MMI\source\mmi_gui\include\guiedit.h GUIEDIT_DIAL_IMAGE_SPACE_X
 MS_MMI\source\mmi_gui\source\editbox\c\guiedit_text.c GUIEDIT_DIAL_IMAGE_SPACE_X
 MS_MMI\source\mmi_gui\source\editbox\c\guiedit_text.c GUIEDIT_GetCursorPosForPN
@@ -189,10 +189,10 @@ MS_MMI\source\mmi_gui\source\editbox\c\guiedit_text.c GUIEDIT_GetCursorPosForPN
 ----------------------------------------------------------------------------
 
 trace[t]:
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk RELEASE_INFO = FALSE
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk MEMORY_DEBUG_SUPPORT = TRUE
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk TRACE_INFO_SUPPORT = TRUE
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk PRODUCT_BASELIB_DIR = sc6531_32X32_320X240BAR_QW_ATV_formal_trace
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk RELEASE_INFO = FALSE
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk MEMORY_DEBUG_SUPPORT = TRUE
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk TRACE_INFO_SUPPORT = TRUE
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk PRODUCT_BASELIB_DIR = sc6531_32X32_320X240BAR_QW_ATV_formal_trace
 
 抓trace:
 open: tools\DEBUG_TOOL\CHANNELSERVER\Bin\ChannelServer.exe
@@ -208,7 +208,11 @@ open: tools\DEBUG_TOOL\CHANNELSERVER\Bin\ChannelServer.exe
 //		   Port: 36666
 //		   Timeout: 3 (s)
 //	3) Connect MSSim;channel的图标将有谈绿色的更成翠绿色
-	
+// 其他:
+// 1. 驱动不同, 可能显示 SPRD Diag(COM12)
+// 2. 一直不出log, 还原svn后可能正常
+
+
 open: tools\DEBUG_TOOL\LOGEL\Bin\ArmLogel.exe
 //	1) 插入USB线，选择USB LOG的选项
 //	2) 运行 ArmLogel.exe
@@ -222,8 +226,8 @@ open: tools\DEBUG_TOOL\LOGEL\Bin\ArmLogel.exe
 // NV修改:
 open: tools\DEBUG_TOOL\NVEDITOR\Bin\NVEditor.exe
 // 选择:
-build\SE039_YST_E18_E250_F2_builddir\img\nvitem\nvitem.prj
-F:\6531G_16A_MP_W17.43.4\build\SE039_YST_E18_E250_F2_builddir\img\nvitem
+build\SE818BC_BY_S018_JX_64_64_F3_builddir\img\nvitem\nvitem.prj
+F:\6531G_16A_MP_W17.43.4\build\SE818BC_BY_S018_JX_64_64_F3_builddir\img\nvitem
 // 设置 Armlog抓取:
 //	dsp_log_switch = 0x0 //
 //	enable_arm_log = 0x1
@@ -259,28 +263,28 @@ common\nv_parameters\PS102_MB\PS102_KLS_2IN1\nv_type\....		   nvm =^DSP_log_swit
 USB抓trace:
 //工程模式设置:
 //8 para set->arm log:open
-//8 para set->dsp log:usb
+//8 para set->dsp log:open
 //8 para set->usb log:open
 //8 para set->debug->debug alert:open  (不确定开不开)
 
 uart抓trace:
 //工程模式设置:
 //8 para set->arm log:open
-//8 para set->dsp log:usb
+//8 para set->dsp log:open
 //8 para set->usb log:close (不确定)
 //8 para set->debug->assert:open  (不确定开不开)
 
 
 抓trace--压缩空间:
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk FM_SUPPORT = NONE 
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk VIDEO_PLAYER_SUPPORT = FALSE
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk PIC_VIEWER_SUPPORT = FALSE
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk FM_SUPPORT = NONE 
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk VIDEO_PLAYER_SUPPORT = FALSE
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk PIC_VIEWER_SUPPORT = FALSE
 
 
 --------------------------------------------------
 CE 蓝牙定频版本:
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk PRODUCT_BASELIB_DIR = sc6531efm_32X32_320X240BAR_AB_CE
-project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk BT_NONSIG_SUPPORT = TRUE
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk PRODUCT_BASELIB_DIR = sc6531efm_32X32_320X240BAR_AB_CE
+project\SE818BC_BY_S018_JX_64_64_F3\project_SE818BC_BY_S018_JX_64_64_F3.mk BT_NONSIG_SUPPORT = TRUE
 	
 
 ----------------------------------------------------------------------------
@@ -296,11 +300,11 @@ project\SE039_YST_E18_E250_F2\project_SE039_YST_E18_E250_F2.mk BT_NONSIG_SUPPORT
 
 Build问题[b]:
 
-build\SE039_YST_E18_E250_F2_builddir\log\midisoundbank.log 文件无法删除 
-build\SE039_YST_E18_E250_F2_builddir\log\resource.log ERROR
-build\SE039_YST_E18_E250_F2_builddir\log\caf_templete.log ERROR
-build\SE039_YST_E18_E250_F2_builddir\tmp/SC6531EFM.def 宏
-build\SE039_YST_E18_E250_F2_builddir\tmp\app.macro 查看宏是否存在
+build\SE818BC_BY_S018_JX_64_64_F3_builddir\log\midisoundbank.log 文件无法删除 
+build\SE818BC_BY_S018_JX_64_64_F3_builddir\log\resource.log ERROR
+build\SE818BC_BY_S018_JX_64_64_F3_builddir\log\caf_templete.log ERROR
+build\SE818BC_BY_S018_JX_64_64_F3_builddir\tmp/SC6531EFM.def 宏
+build\SE818BC_BY_S018_JX_64_64_F3_builddir\tmp\app.macro 查看宏是否存在
 	
 
 findstr /s /i "ERROR" *.log>aaaa.txt

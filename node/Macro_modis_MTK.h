@@ -19,6 +19,7 @@ Save:SI\node\Macro_modis_MTK.h   \[1.9\] NV
 Save:SI\node\Macro_modis_MTK.h   \[2.4\] 界面入口
 Save:SI\node\Macro_modis_MTK.h   \[2.1\] 联系人
 Save:SI\node\Macro_modis_MTK.h   \[2.11\] 短信
+Save:SI\node\Macro_modis_MTK.h   \[2.16\] 显示输入法列表
 Save:SI\node\Macro_modis_MTK.h   \[2.12\] 通话记录
 
 Save:SI\node\Macro_modis_MTK.h   \[2.2\] 待机
@@ -26,13 +27,12 @@ Save:SI\node\Macro_modis_MTK.h   \[2.3\] 主菜单
 Save:SI\node\Macro_modis_MTK.h   \[2.10\] Lock
 Save:SI\node\Macro_modis_MTK.h   \[2.14\] SCREENSAVER
 Save:SI\node\Macro_modis_MTK.h   \[2.5\] 菜单
-Save:SI\node\Macro_modis_MTK.h   \[2.6\] dialer
+Save:SI\node\Macro_modis_MTK.h   \[2.6\] 拨号
 Save:SI\node\Macro_modis_MTK.h   \[2.7\] Browser
 Save:SI\node\Macro_modis_MTK.h   \[2.8\] 测试模式
 Save:SI\node\Macro_modis_MTK.h   \[2.9\] setting
 Save:SI\node\Macro_modis_MTK.h   \[2.13\] Camera
 Save:SI\node\Macro_modis_MTK.h   \[2.15\] 工具
-	
 
 //	 3. MTK常用断点
 Save:SI\node\Macro_modis_MTK.h   \[3.1\] 事件
@@ -50,12 +50,13 @@ Save:SI\node\Macro_modis_MTK.h	 \[4.6\] softkey
 Save:SI\node\Macro_modis_MTK.h	 \[4.7\] 图片
 Save:SI\node\Macro_modis_MTK.h	 \[4.8\] 铃声
 Save:SI\node\Macro_modis_MTK.h	 \[4.9\] 字库
-
+Save:SI\node\Macro_modis_MTK.h	 \[4.10\] U盘符
 
 //	 5. MTK常用断点
 Save:SI\node\Macro_modis_MTK.h	 \[5.1\] 编译流程
 Save:SI\node\Macro_modis_MTK.h	 \[5.2\] 彻底关闭MRE
 Save:SI\node\Macro_modis_MTK.h	 \[5.3\] SVN test
+Save:SI\node\Macro_modis_MTK.h	 \[5.4\] IDLE 模拟入口
 
 //	 6. 编译 Error
 Save:SI\node\Macro_modis_MTK.h	 \[6.1\] Error: 超空间:
@@ -220,6 +221,35 @@ plutommi/CUI/SmsCui/SmsSenderCui.c cui_sms_entry_add_recipient
 plutommi/CUI/SmsCui/SmsSenderCui.c cui_sms_dm_pre_send_msg
 
 
+[2.16] 显示输入法列表:
+plutommi\mmi\Setting\SettingSrc\PreferedInputMethodSetting.c void^^mmi_imesettings_enter_screen_prefered_inputmethod_sg
+//		gnInputMethods,
+//		(U8 **) inputMethodList,
+
+plutommi\Framework\InputMethod\Engine\Engine_Src\Imm.c S32^mmi_imm_get_prefer_input_mode_string_list(U8 **strarray, S32 max)
+//	strarray[j] = (U8*)GetString(gIMEModeArray[i].menuitem_string_id);
+
+plutommi\mmi\Resource\StandaloneRes.c void^InitializeResourceVariables(void)
+//		gIMEModeArray = (sIMEModeDetails*) (langpack2ndJumpTbl[3]);
+plutommi\mmi\Resource\StandaloneRes.c langpack2ndJumpTbl\[3\]
+	
+//	void* langpack2ndJumpTbl[] = {
+//		(void*) mtk_gLanguageArray				  //[0]
+//		, (void*) &mtk_gMaxDeployedLangs		  //[1]
+//		, (void*) mtk_gStringList				  //[2]
+//		, (void*) mtk_gIMEModeArray 			  //[3]
+//		, (void*) mtk_gIMEQSearchModeArray		  //[4]
+//		, (void*) mtk_gIMELDBArray				  //[5]
+//		, (void*) &mtk_gIMEModule				  //[6]
+
+plutommi\Customer\CustResource\IMERes.c IMM_INPUT_MODE_MULTITAP_FIRST_UPPERCASE_ABC
+//		IMM_INPUT_MODE_MULTITAP_UPPERCASE_ABC
+//		IMM_INPUT_MODE_MULTITAP_LOWERCASE_ABC
+//		IMM_INPUT_MODE_MULTITAP_FIRST_UPPERCASE_ABC
+//		IMM_INPUT_MODE_MULTITAP_URDU
+//		IMM_INPUT_MODE_123_SYMBOLS
+
+
 [2.12] 通话记录
 //	show:
 plutommi\mmi\CallLog\CallLogSrc\callloglayout.c void^mmi_clog_lt_show_list( )
@@ -299,7 +329,7 @@ MCT_TOOL\Resource\OutTreeStructure.txt MAIN_MENU
 plutommi\Customer\CustomerInc\screen_enum.h SCR_ID_IDLE_SIM_SPACE_SETTING
 
 
-[2.6] dialer
+[2.6] 拨号
 //	enter: 
 cui_dialer_classic_on_enter
 //	Show: 
@@ -322,6 +352,8 @@ plutommi\Customer\CustResource\PLUTO_MMI\MMI_features_switchPLUTO.h CFG_MMI_MULT
 
 //	 通话动画:
 plutommi/Service/Gsm3gCallSrv/GCallSrvStructMgmt.c IMG_ID_GCALL_CALL_INCOMEING
+//	光标
+inline_edit_cursor_color_defaultTheme
 
 
 [2.7] Browser
@@ -370,6 +402,8 @@ plutommi\MtkApp\FactoryMode\FactoryModeSrc\FactoryModeMain.c MMI_RET^mmi_fm_ente
 plutommi\MtkApp\FactoryMode\FactoryModeRes\FactoryMode.res <MENUITEM^id="MENU_ID_FM_FLASH"
 // 2) 校准参数:	测试模式->版本号->SERIAL#: 10表示已校准
 plutommi\MtkApp\FactoryMode\FactoryModeSrc\FactoryModeMisc.c ReadRecordSlim(NVRAM_EF_BARCODE_NUM_LID, 
+// 3) 菜单
+plutommi/MtkApp/FactoryMode/FactoryModeRes/FactoryMode.res 403
 
 
 [2.9] setting
@@ -410,6 +444,10 @@ plutommi\mmi\Setting\SettingSrc\DateAndTime.c void^mmi_phnset_entry_set_date_and
 plutommi\CUI\InlineCui\InlineCui_Slim.c void^cui_inline_set_item_date 显示数字
 plutommi\CUI\InlineCui\InlineCui_Slim.c void^cui_inline_set_item_time 显示数字
 plutommi\CUI/InlineCui/InlineCui_Slim.c cui_inline_get_value 保存数字
+// 更新时间:
+plutommi\mmi\Setting\SettingSrc\DateAndTime.c void^PhnsetSetDT( )
+plutommi\mmi\Setting\SettingSrc\DateAndTime.c void^PhnsetSendSetTimeReqMessage( )
+
 //	显示输入:
 plutommi\Framework\GUI\GUI_SRC\gui_inputs.c void^gui_show_multi_line_input_box_ext_internal
 //	日期有效性:
@@ -527,8 +565,12 @@ mmi_asc_to_ucs2  转换
 mmi_asc_to_ucs2
 mmi_ucs2ncpy
 
-[3.2] gui draw：
-gui_draw_filled_area
+[3.4] gui draw：
+plutommi\Framework\GUI\GUI_SRC\gui.c void^gui_draw_filled_area
+//	if(y1<242 && y1>238 && y2<242 && y2>238 )
+//	{
+//		rx1 = rx1;
+//	}
 
 
 /***********************************************************************/
@@ -617,7 +659,11 @@ cui_tone_selector_creat_tone_list 调整铃声个数
 mmi_prof_customize_scrn_csk_hdlr  SIM1_MSG_TONE_ITEM flag = 2;添加可选择文件
 
 
-[4.10] 字符串
+[4.10] U盘符
+// U盘符--注册（改了无效）
+custom\drv\misc_drv\_Default_BB\MT6261\usb_custom.c custom_usb_ms_init
+// 编码（改了无效）
+CFG_MMI_SET_DEF_ENCODING_TYPE
 
 
 [4.11] 字库
@@ -647,9 +693,23 @@ tools\NVRAMStatistic\include\custom_option.txt
 //    MMI_BOOTUP_INIT_REG(srv_mre_appmgr_bootup_hdlr)
 //#endif	
 
+
 [5.3] SVN test
 TortoiseProc.exe /command:commit /path:"c:\svn_wc\file1.txt*c:\svn_wc\file2.txt" /logmsg:"test log message" 
 F:\11CW1352MP_MT6261DM\custom\codegen\FARSIGHTED61M_CN_11C_BB\codegen_M107_XYZN_S2_4A_WESTERN_F2.dws
+
+
+[5.4] IDLE 模拟入口
+plutommi/mmi/Idle/IdleSrc/IdleClassic.c void^mmi_idle_classic_on_enter
+//	#ifdef WIN32
+//		SetKeyHandler(idle_extra_handle1,KEY_VOL_UP,KEY_EVENT_DOWN);  
+//		SetKeyHandler(idle_extra_handle2,KEY_VOL_DOWN,KEY_EVENT_DOWN);  
+//	#endif
+
+// 更新时间:
+plutommi\mmi\Setting\SettingSrc\DateAndTime.c void^PhnsetSetDT( )
+plutommi\mmi\Setting\SettingSrc\DateAndTime.c void^PhnsetSendSetTimeReqMessage( )
+//    mmi_dt_set_dt(&time, NULL, NULL);
 
 
 /***********************************************************************/

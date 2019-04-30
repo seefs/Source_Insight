@@ -69,46 +69,41 @@ macro Note()
 	}
 	else
 	{
-		hprj = GetCurrentProj ()
-		if(hprj>0)
-		{
-			path = GetProjDir (hprj)
-			bft = getBaseFileType(path, 3)
-			if(bft == "")
-				stop
+		bft = getBft(3)
+//		if(bft == "")
+//			stop
 
-			isAloneFile = 0
-			if(bft == "Pythons" || bft == "9820e")
+		isAloneFile = 0
+		if(bft == "Pythons" || bft == "9820e")
+		{
+			isAloneFile = 1
+			mFile = getNodePath(0) # "\\@bft@\\Macro_Note_@bft@.h"
+		}
+		else
+		{
+			mFile = getNodePath(0) # "\\note\\Macro_Note_@bft@.h"
+		}
+	
+		if(IsFileName(hbuf, "Macro_Note_"))
+		{
+			if(isAloneFile == 0)
 			{
-				isAloneFile = 1
-				mFile = getNodePath(0) # "\\@bft@\\Macro_Note_@bft@.h"
+				hwnd = GetCurrentWnd()
+				lnTop = GetWndVertScroll(hwnd);
+				SaveMode(getWndVertRow(0), "@lnTop@")
+			}
+			close
+		}
+		else
+		{
+			if(isAloneFile == 0)
+			{
+				lnTop = ReadMode(getWndVertRow(0))
+				OpenExistFileRow(mFile, lnTop)
 			}
 			else
 			{
-				mFile = getNodePath(0) # "\\note\\Macro_Note_@bft@.h"
-			}
-		
-			if(IsFileName(hbuf, "Macro_Note_"))
-			{
-				if(isAloneFile == 0)
-				{
-					hwnd = GetCurrentWnd()
-					lnTop = GetWndVertScroll(hwnd);
-					SaveMode(getWndVertRow(0), "@lnTop@")
-				}
-				close
-			}
-			else
-			{
-				if(isAloneFile == 0)
-				{
-					lnTop = ReadMode(getWndVertRow(0))
-					OpenExistFileRow(mFile, lnTop)
-				}
-				else
-				{
-					OpenExistFileRow(mFile, 0)
-				}
+				OpenExistFileRow(mFile, 0)
 			}
 		}
 	}
@@ -395,7 +390,31 @@ macro NoteHander(hbuf, cNum)
 		}
 		ShellExecute("open", getBasePath(hbuf) # "\\cmd", "", "", 1)
 	}
-	else if(noteCmd == "make" || noteCmd == "python")
+	else if(noteCmd == "python")
+	{
+		//命令名转化: 删除空格
+		start = GetTransCmdS(cur_line, index + 1, len)
+		next  = GetTransCmdE(cur_line, start,     len)
+		//start2 = GetTransCmdS2(cur_line, next + 1, len)
+		lastCmd = strmid(cur_line, start, next)
+		//lastStr = GetTransStr(cur_line, start2, len)
+
+		hbufClip = GetBufHandle("Clipboard")
+		if (hbufClip != hNil)
+		{
+			EmptyBuf(hbufClip)
+			AppendBufLine(hbufClip, "@lastCmd@")
+			CloseBuf(hbufClip)
+		}
+		
+		cmdPath = GetTransFileName(hbuf, "", 0)
+		cmdRoot = GetTransRootDir(cmdPath)
+		
+//		cmdStr = cmdRoot # "&&cd " # cmdPath # "&&start " # lastCmd
+		cmdStr = cmdRoot # "&&cd " # cmdPath # "&&start cmd.exe"
+		ShellOpenCustomCmd(cmdStr)
+	}
+	else if(noteCmd == "make")
 	{
 		//仅仅打开cmd后面不接路径
 		lastCmd = strmid(cur_line, start, len)
@@ -574,16 +593,12 @@ macro NoteHander(hbuf, cNum)
 			}
 			stop
 		}
+
 		
-		hbuf = OpenExistFile(curPath)
-			
-		if (hbuf != hNil){
-			//5. 获取关键词; 文件名以空格结尾, index可能是":"位置
-			index = indexb
-			if (index == "X" || index == len)
-			{
-				stop
-			}
+		//5. 获取关键词; 文件名以空格结尾, index可能是":"位置
+		index = indexb
+		if (index != "X" && index != len)
+		{
 			start = GetTransCmdS(cur_line, index + 1, len)
 			next  = GetTransCmdE(cur_line, start,     len)
 			//start2 = GetTransCmdS(cur_line, next + 1, len)
@@ -605,7 +620,22 @@ macro NoteHander(hbuf, cNum)
 			noteWord = strmid(cur_line, start, next)
 			//use "^" as space
 			noteWord = ReplaceWord(noteWord, "^", " ")
+		}
 
+		if(noteWord == "[Path]")
+		{
+			curPath = getBaseDir(curPath, 0)
+			re = ShellExecute("explore", "@curPath@\\", "", "", 1)
+			if(re)
+				stop
+		}
+			
+		hbuf = OpenExistFile(curPath)
+			
+		if (hbuf != hNil){
+			if(noteWord == "")
+				stop
+				
 			//8. 默认先搜索一次行首, 再普通搜索(无通配符); 带$搜索行尾
 			mSel = SearchInBuf(hbuf, "^" # "@noteWord@", 0, 0, 0, 1, 0)
 			if (mSel == "")
@@ -831,10 +861,9 @@ macro SetPathNoteHander(hbuf, cmdStr)
 
 macro SetNoteHistory(hbuf)
 {
-	hprj = GetCurrentProj ()
-	path = GetProjDir (hprj)
-	//bft = getBaseType(path)
-	bft = getBaseFileType(path, 3)
+	bft = getBft(3)
+//		if(bft == "")
+//			stop
 
 	mBuf = OpenCache(getNodePath(0) # "\\Macro_Set_Note.h")
 	mKey = bft # ":"
@@ -901,9 +930,9 @@ macro GetNoteHistory(bft, mIndex)
 
 macro SaveNoteHistory(cur_line)
 {
-	hprj = GetCurrentProj ()
-	path = GetProjDir (hprj)
-	bft = getBaseFileType(path, 3)
+	bft = getBft(3)
+//		if(bft == "")
+//			stop
 	
 	mBuf = OpenCache(getNodePath(0) # "\\Macro_Set_Note.h")
 	

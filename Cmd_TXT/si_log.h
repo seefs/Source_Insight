@@ -941,3 +941,1191 @@ F:
 
 [cmd]: 
 "C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c F:\6261D_11C_V33\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c    
+
+[cmd]: 
+copy E:\save\SI\node\Macro_z_null.h E:\save\SI\node\9820e\Macro_Note_9820e.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\custom\drv\misc_drv\_Default_BB\MT6261\usb_custom.c F:\6261D_KM\custom\drv\misc_drv\_Default_BB\MT6261\usb_custom.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\custom\drv\misc_drv\_Default_BB\MT6261\usb_custom.c F:\6261D_KM\custom\drv\misc_drv\_Default_BB\MT6261\usb_custom.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\fs\common\include\fs_internal_def.h F:\6261D_KM\fs\common\include\fs_internal_def.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\MtkApp\FileMgr\FileMgrInc\FileMgrProt.h F:\6261D_KM\plutommi\MtkApp\FileMgr\FileMgrInc\FileMgrProt.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\MtkApp\FileMgr\FileMgrInc\FileMgrProt.h F:\6261D_KM\plutommi\MtkApp\FileMgr\FileMgrInc\FileMgrProt.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\MtkApp\FileMgr\FileMgrSrc\FileMgrMain.c F:\6261D_KM\plutommi\MtkApp\FileMgr\FileMgrSrc\FileMgrMain.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531E_16A\MS_Customize\source\product\driver\lcd\tft_ST7735S.c F:\6261D_KM\MS_Customize\source\product\driver\lcd\tft_ST7735S.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\CustResource\PLUTO_MMI\CustCoordinates.c F:\6261D_11C_V33\plutommi\Customer\CustResource\PLUTO_MMI\CustCoordinates.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\FactoryMode\FactoryModeSrc\FactoryModeMisc.c F:\6261D_11C_V33\plutommi\MtkApp\FactoryMode\FactoryModeSrc\FactoryModeMisc.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\Gsm3gCallSrv\GCallSrv.res F:\6261D_11C_V33\plutommi\Service\Gsm3gCallSrv\GCallSrv.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\Gsm3gCallSrv\GCallSrvStructMgmt.c F:\6261D_11C_V33\plutommi\Service\Gsm3gCallSrv\GCallSrvStructMgmt.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Inc\GlobalResDef.h F:\6261D_11C_V33\plutommi\mmi\Inc\GlobalResDef.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_INC\gui_switch.h F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_INC\gui_switch.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\hal\peripheral\src\bmt_linear_li.c F:\6261D_11C_V33\hal\peripheral\src\bmt_linear_li.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\CustResource\M103_KEMAN_MMI\MMI_features_switchM103_KEMAN_2401_VGOTEL_F2.h F:\6261D_11C_V33\plutommi\Customer\CustResource\M103_KEMAN_MMI\MMI_features_switchM103_KEMAN_2401_VGOTEL_F2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\CustResource\M103_KEMAN_MMI\MMI_features_switchM103_KEMAN_2401_VGOTEL_F2.h F:\6261D_11C_V33\plutommi\Customer\CustResource\M103_KEMAN_MMI\MMI_features_switchM103_KEMAN_2401_VGOTEL_F2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\ModeSwitchApp.c F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\ModeSwitchApp.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingRes\FlightMode.res F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\FlightMode.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\FlightMode.c F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\FlightMode.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\FlightMode.c F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\FlightMode.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingRes\FlightMode.res F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\FlightMode.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Inc\MMI_features.h F:\6261D_11C_V33\plutommi\mmi\Inc\MMI_features.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\ModeSwitchApp.c F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\ModeSwitchApp.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\common\PLUTO_MMI\nvram_common_config.c F:\6261D_11C_V33\custom\common\PLUTO_MMI\nvram_common_config.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\PeerControl\PeerControl.res F:\6261D_11C_V33\plutommi\MtkApp\PeerControl\PeerControl.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\PeerControl F:\6261D_11C_V33\plutommi\MtkApp\PeerControl    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\PeerControl\PeerControl.res F:\6261D_11C_V33\plutommi\MtkApp\PeerControl\PeerControl.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\PhnsetGPIO.c F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\PhnsetGPIO.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingRes\PhoneSetting.res F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\PhoneSetting.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Resource\PopulateRes.c F:\6261D_11C_V33\plutommi\mmi\Resource\PopulateRes.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c F:\6261D_11C_V33\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c F:\6261D_11C_V33\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\CustResource\M103_KEMAN_MMI\2401_VGOTEL_F2\Themecomponents.h F:\6261D_11C_V33\plutommi\Customer\CustResource\M103_KEMAN_MMI\2401_VGOTEL_F2\Themecomponents.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\CustResource\Themecomponents.h F:\6261D_11C_V33\plutommi\Customer\CustResource\Themecomponents.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\CustResource\Themecomponents.h F:\6261D_11C_V33\plutommi\Customer\CustResource\Themecomponents.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\CustResource\M103_KEMAN_MMI\2401_VGOTEL_F2\ThemeRes.c F:\6261D_11C_V33\plutommi\Customer\CustResource\M103_KEMAN_MMI\2401_VGOTEL_F2\ThemeRes.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\CustResource\M103_KEMAN_MMI\2401_VGOTEL_F2\ThemeRes.c F:\6261D_11C_V33\plutommi\Customer\CustResource\M103_KEMAN_MMI\2401_VGOTEL_F2\ThemeRes.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\drv\misc_drv\_Default_BB\MT6261\usb_custom.c F:\6261D_11C_V33\custom\drv\misc_drv\_Default_BB\MT6261\usb_custom.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\wgui_categories_idlescreen.c F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\wgui_categories_idlescreen.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\wgui_categories_MM.c F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\wgui_categories_MM.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Bootup\BootupInc\BootupInitConfig.h F:\6261D_11C_V33\plutommi\mmi\Bootup\BootupInc\BootupInitConfig.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\CallLog\CallLogSrc\CallLogMainMenu.c F:\6261D_11C_V33\plutommi\mmi\CallLog\CallLogSrc\CallLogMainMenu.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\CallLogSrv\CallLogSrvIf.c F:\6261D_11C_V33\plutommi\Service\CallLogSrv\CallLogSrvIf.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\common\PLUTO_MMI\common_nvram_editor_data_item.h F:\6261D_11C_V33\custom\common\PLUTO_MMI\common_nvram_editor_data_item.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\make\plutommi\mmi_app\mmi_app.mak F:\6261D_11C_V33\make\plutommi\mmi_app\mmi_app.mak    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\ResGenerator\temp\res F:\6261D_11C_V33\plutommi\Customer\ResGenerator\temp\res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\ResGenerator\temp\res F:\6261D_11C_V33\plutommi\Customer\ResGenerator\temp\res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\QMobileCare\QMobileCareSrc F:\6261D_11C_V33\plutommi\mmi\QMobileCare\QMobileCareSrc    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\SecuritySetting\SecSetSrc\SecSetMenu.c F:\6261D_11C_V33\plutommi\mmi\SecuritySetting\SecSetSrc\SecSetMenu.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\SecuritySetting\SecSetRes\SecSet.res F:\6261D_11C_V33\plutommi\mmi\SecuritySetting\SecSetRes\SecSet.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\make\plutommi\mmi_app\mmi_app.mak F:\6261D_11C_V33\make\plutommi\mmi_app\mmi_app.mak    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Inc\mmi_res_range_def.h F:\6261D_11C_V33\plutommi\mmi\Inc\mmi_res_range_def.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Inc\mmi_res_range_def.h F:\6261D_11C_V33\plutommi\mmi\Inc\mmi_res_range_def.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Bootup\BootupInc\BootupInitConfig.h F:\6261D_11C_V33\plutommi\mmi\Bootup\BootupInc\BootupInitConfig.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\CallLog\CallLogSrc\CallLogMainMenu.c F:\6261D_11C_V33\plutommi\mmi\CallLog\CallLogSrc\CallLogMainMenu.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\CallLog\CallLogSrc\CallLogMainMenu.c F:\6261D_11C_V33\plutommi\mmi\CallLog\CallLogSrc\CallLogMainMenu.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\CallLogSrv\CallLogSrvIf.c F:\6261D_11C_V33\plutommi\Service\CallLogSrv\CallLogSrvIf.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\common\PLUTO_MMI\common_nvram_editor_data_item.h F:\6261D_11C_V33\custom\common\PLUTO_MMI\common_nvram_editor_data_item.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\make\plutommi\mmi_app\mmi_app.mak F:\6261D_11C_V33\make\plutommi\mmi_app\mmi_app.mak    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Inc\MMI_features.h F:\6261D_11C_V33\plutommi\mmi\Inc\MMI_features.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Inc\mmi_res_range_def.h F:\6261D_11C_V33\plutommi\mmi\Inc\mmi_res_range_def.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\common\PLUTO_MMI\nvram_common_config.c F:\6261D_11C_V33\custom\common\PLUTO_MMI\nvram_common_config.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\common\PLUTO_MMI\nvram_common_config.c F:\6261D_11C_V33\custom\common\PLUTO_MMI\nvram_common_config.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\common\PLUTO_MMI\nvram_common_defs.h F:\6261D_11C_V33\custom\common\PLUTO_MMI\nvram_common_defs.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\PeerControl\PeerControl.c F:\6261D_11C_V33\plutommi\MtkApp\PeerControl\PeerControl.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\PhoneBook\PhoneBookSrc\PhoneBookApp.c F:\6261D_11C_V33\plutommi\mmi\PhoneBook\PhoneBookSrc\PhoneBookApp.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\SmsSrv\SmsReceiverSrv.c F:\6261D_11C_V33\plutommi\Service\SmsSrv\SmsReceiverSrv.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Inc\TimerEvents.h F:\6261D_11C_V33\plutommi\mmi\Inc\TimerEvents.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\UnifiedMessage\UnifiedMessageSrc\UMScrHdlr.c F:\6261D_11C_V33\plutommi\mmi\UnifiedMessage\UnifiedMessageSrc\UMScrHdlr.c    
+
+[cmd]: 
+copy E:\save\SI\node\Macro_z_null.h E:\save\SI\node\note\Macro_Note_MTK2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Inc\MMI_features.h F:\6261D_11C_V33\plutommi\mmi\Inc\MMI_features.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Inc\TimerEvents.h F:\6261D_11C_V33\plutommi\mmi\Inc\TimerEvents.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\CUI\ToneSelectorCui\ToneSelectorCuiForSLIM.c F:\6261D_11C_V33\plutommi\CUI\ToneSelectorCui\ToneSelectorCuiForSLIM.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\QMobileCare\QMobileCareSrc\qmobilecare.c F:\6261D_11C_V33\plutommi\mmi\QMobileCare\QMobileCareSrc\qmobilecare.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\QMobileCare\QMobileCareSrc\qmobilecare.c F:\6261D_11C_V33\plutommi\mmi\QMobileCare\QMobileCareSrc\qmobilecare.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\QMobileCare\QMobileCareSrc\qmobilecare.c F:\6261D_11C_V33\plutommi\mmi\QMobileCare\QMobileCareSrc\qmobilecare.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\QMobileCare\QMobileCareSrc\qmobilecare.c F:\6261D_11C_V33\plutommi\mmi\QMobileCare\QMobileCareSrc\qmobilecare.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingRes\ScreenSaver.res F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\ScreenSaver.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_Res\Status_icon_bar.res F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_Res\Status_icon_bar.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_Res\Status_icon_bar.res F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_Res\Status_icon_bar.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\common\hal_public\lcd_sw_rnd.h F:\6261D_11C_V33\custom\common\hal_public\lcd_sw_rnd.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_INC\gui_switch.h F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_INC\gui_switch.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\CallSetting\CallSettingRes\CallSet.res F:\6261D_11C_V33\plutommi\mmi\CallSetting\CallSettingRes\CallSet.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\CallSetting\CallSettingRes\CallSet.res F:\6261D_11C_V33\plutommi\mmi\CallSetting\CallSettingRes\CallSet.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\Connectivity\ConnectivityRes\ConnectivityMainmenu.res F:\6261D_11C_V33\plutommi\MtkApp\Connectivity\ConnectivityRes\ConnectivityMainmenu.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\SecuritySetting\SecSetSrc\SecSetMenu.c F:\6261D_11C_V33\plutommi\mmi\SecuritySetting\SecSetSrc\SecSetMenu.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\CustResource\CustCoordinates.c F:\6261D_11C_V33\plutommi\Customer\CustResource\CustCoordinates.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\CustResource\CustCoordinates.c F:\6261D_11C_V33\plutommi\Customer\CustResource\CustCoordinates.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\CustResource\PLUTO_MMI\CustCoordinates.c F:\6261D_11C_V33\plutommi\Customer\CustResource\PLUTO_MMI\CustCoordinates.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\Gsm3gCallSrv\GCallSrv.res F:\6261D_11C_V33\plutommi\Service\Gsm3gCallSrv\GCallSrv.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\Gsm3gCallSrv\GCallSrvCmInterface.c F:\6261D_11C_V33\plutommi\Service\Gsm3gCallSrv\GCallSrvCmInterface.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\gui_fixed_menus.c F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\gui_fixed_menus.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\gui_fixed_menus.c F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\gui_fixed_menus.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Idle\IdleSrc\IdleCommon.c F:\6261D_11C_V33\plutommi\mmi\Idle\IdleSrc\IdleCommon.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\PhbSrv\PhbStartupSrv.c F:\6261D_11C_V33\plutommi\Service\PhbSrv\PhbStartupSrv.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\PhbSrv\PhbStartupSrv.c F:\6261D_11C_V33\plutommi\Service\PhbSrv\PhbStartupSrv.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\PROFILES\Profiles_Res\Profiles.res F:\6261D_11C_V33\plutommi\mmi\PROFILES\Profiles_Res\Profiles.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c F:\6261D_11C_V33\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c F:\6261D_11C_V33\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res F:\6261D_11C_V33\plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Resource\PopulateRes.c F:\6261D_11C_V33\plutommi\mmi\Resource\PopulateRes.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\SecuritySetting\SecSetRes\SecSet.res F:\6261D_11C_V33\plutommi\mmi\SecuritySetting\SecSetRes\SecSet.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingRes\PhoneSetting.res F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\PhoneSetting.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingRes\PhoneSetting.res F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\PhoneSetting.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerSetting.c F:\6261D_11C_V33\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerSetting.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\SecuritySetting\SecSetRes\SecSet.res F:\6261D_KM\plutommi\mmi\SecuritySetting\SecSetRes\SecSet.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerSetting.c F:\6261D_11C_V33\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerSetting.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\SecuritySetting\SecSetRes\SecSet.res F:\6261D_11C_V33\plutommi\mmi\SecuritySetting\SecSetRes\SecSet.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\SecuritySetting\SecSetSrc\SecSetMenu.c F:\6261D_11C_V33\plutommi\mmi\SecuritySetting\SecSetSrc\SecSetMenu.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\SecuritySetting\SecSetSrc\SecSetMenu.c F:\6261D_11C_V33\plutommi\mmi\SecuritySetting\SecSetSrc\SecSetMenu.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\PhoneSetting.res F:\6261D_KM\plutommi\mmi\Setting\SettingRes\PhoneSetting.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingRes\PhoneSetting.res F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\PhoneSetting.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\CallLogSrv\CallLogSrvSiTbl.c F:\6261D_11C_V33\plutommi\Service\CallLogSrv\CallLogSrvSiTbl.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\CUI\ToneSelectorCui\ToneSelectorCuiForSLIM.c F:\6261D_11C_V33\plutommi\CUI\ToneSelectorCui\ToneSelectorCuiForSLIM.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\wgui_categories_util.c F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\wgui_categories_util.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\wgui_categories_util.c F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\wgui_categories_util.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\wgui_categories_MM.c F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\wgui_categories_MM.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_INC\wgui_categories_MM.h F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_INC\wgui_categories_MM.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\wgui_categories_idlescreen.c F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\wgui_categories_idlescreen.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Idle\IdleSrc\IdleObject.c F:\6261D_11C_V33\plutommi\mmi\Idle\IdleSrc\IdleObject.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Idle\IdleSrc\IdleObject.c F:\6261D_11C_V33\plutommi\mmi\Idle\IdleSrc\IdleObject.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Inc\TimerEvents.h F:\6261D_11C_V33\plutommi\mmi\Inc\TimerEvents.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\UnifiedMessage\UnifiedMessageRes\UnifiedMessage.res F:\6261D_11C_V33\plutommi\mmi\UnifiedMessage\UnifiedMessageRes\UnifiedMessage.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\common\userprofile_nvram_def_XG05_KM_V2403Q_VGOTEL_F2.h F:\6261D_11C_V33\custom\common\userprofile_nvram_def_XG05_KM_V2403Q_VGOTEL_F2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Service\Gsm3gCallSrv\GCallSrv.res F:\6261D_KM\plutommi\Service\Gsm3gCallSrv\GCallSrv.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\PhbSrv\PhbSrvRes\PhbSrv.res F:\6261D_11C_V33\plutommi\Service\PhbSrv\PhbSrvRes\PhbSrv.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\custom\drv\misc_drv\_Default_BB\MT6261\usb_custom.c F:\6261D_KM\custom\drv\misc_drv\_Default_BB\MT6261\usb_custom.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Service\SettingSrv\res\GeneralSettingSrv.res F:\6261D_KM\plutommi\Service\SettingSrv\res\GeneralSettingSrv.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Inc\MMI_features.h F:\6261D_KM\plutommi\mmi\Inc\MMI_features.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res F:\6261D_11C_V33\plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\hal\peripheral\src\bmt_linear_li.c F:\6261D_11C_V33\hal\peripheral\src\bmt_linear_li.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\hal\peripheral\src\bmt_pulse_li.c F:\6261D_11C_V33\hal\peripheral\src\bmt_pulse_li.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\hal\peripheral\src\bmt_task_main.c F:\6261D_11C_V33\hal\peripheral\src\bmt_task_main.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\hal\peripheral\src\bmt_task_main.c F:\6261D_11C_V33\hal\peripheral\src\bmt_task_main.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\ResGenerator\temp\res\ChargerApp.c F:\6261D_11C_V33\plutommi\Customer\ResGenerator\temp\res\ChargerApp.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\ResGenerator\temp\res\ChargerApp.c F:\6261D_11C_V33\plutommi\Customer\ResGenerator\temp\res\ChargerApp.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res F:\6261D_11C_V33\plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\drv\misc_drv\_Default_BB\MT6261\chr_parameter.c F:\6261D_11C_V33\custom\drv\misc_drv\_Default_BB\MT6261\chr_parameter.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\drv\misc_drv\_Default_BB\MT6261\chr_parameter.c F:\6261D_11C_V33\custom\drv\misc_drv\_Default_BB\MT6261\chr_parameter.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\drv\misc_drv\_Default_BB\MT6261\chr_parameter.h F:\6261D_11C_V33\custom\drv\misc_drv\_Default_BB\MT6261\chr_parameter.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\DateTime\DateTimeSrc\DateTime.c F:\6261D_11C_V33\plutommi\mmi\DateTime\DateTimeSrc\DateTime.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\FactoryMode\FactoryModeSrc\FactoryModeDevice.c F:\6261D_11C_V33\plutommi\MtkApp\FactoryMode\FactoryModeSrc\FactoryModeDevice.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\FactoryMode\FactoryModeSrc\FactoryModeMain.c F:\6261D_11C_V33\plutommi\MtkApp\FactoryMode\FactoryModeSrc\FactoryModeMain.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Idle\IdleSrc\IdleCommon.c F:\6261D_11C_V33\plutommi\mmi\Idle\IdleSrc\IdleCommon.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MiscFramework\MiscFrameworkSrc\PwronCharger.c F:\6261D_11C_V33\plutommi\mmi\MiscFramework\MiscFrameworkSrc\PwronCharger.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res F:\6261D_KM\plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\custom\drv\misc_drv\_Default_BB\MT6261\chr_parameter.h F:\6261D_KM\custom\drv\misc_drv\_Default_BB\MT6261\chr_parameter.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res F:\6261D_KM\plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Idle\IdleSrc\IdleCommon.c F:\6261D_KM\plutommi\mmi\Idle\IdleSrc\IdleCommon.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\custom\drv\misc_drv\_Default_BB\MT6261\chr_parameter.h F:\6261D_KM\custom\drv\misc_drv\_Default_BB\MT6261\chr_parameter.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Idle\IdleSrc\IdleCommon.c F:\6261D_KM\plutommi\mmi\Idle\IdleSrc\IdleCommon.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\PhbSrv\PhbSrvRes\PhbSrv.res F:\6261D_11C_V33\plutommi\Service\PhbSrv\PhbSrvRes\PhbSrv.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Customer\CustResource\ThemeRes.c F:\6261D_KM\plutommi\Customer\CustResource\ThemeRes.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\PhoneBook\PhoneBookSrc\PhoneBookApp.c F:\6261D_11C_V33\plutommi\mmi\PhoneBook\PhoneBookSrc\PhoneBookApp.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\make\XG05_KM_Q2407_SP5000_F2_gprs.mak F:\6261D_11C_V33\make\XG05_KM_Q2407_SP5000_F2_gprs.mak    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\BrowserApp\Browser\BrowserRes\Browser.res F:\6261D_11C_V33\plutommi\mmi\BrowserApp\Browser\BrowserRes\Browser.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Extra\ExtraRes\Calculator.res F:\6261D_11C_V33\plutommi\mmi\Extra\ExtraRes\Calculator.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\CallLog\CallLogRes\CallLog.res F:\6261D_11C_V33\plutommi\mmi\CallLog\CallLogRes\CallLog.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\ImageView\ImageViewRes\imgview.res F:\6261D_11C_V33\plutommi\MtkApp\ImageView\ImageViewRes\imgview.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\PhoneBook\PhoneBookRes\phonebook.res F:\6261D_11C_V33\plutommi\mmi\PhoneBook\PhoneBookRes\phonebook.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\SecuritySetting\SecSetRes\SecSet.res F:\6261D_11C_V33\plutommi\mmi\SecuritySetting\SecSetRes\SecSet.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Extra\ExtraSrc\Shortcuts.c F:\6261D_11C_V33\plutommi\mmi\Extra\ExtraSrc\Shortcuts.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Extra\ExtraSrc\Shortcuts.c F:\6261D_11C_V33\plutommi\mmi\Extra\ExtraSrc\Shortcuts.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Messages\MessagesRes\SmsAppRes.res F:\6261D_11C_V33\plutommi\mmi\Messages\MessagesRes\SmsAppRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\Video\VideoRes\VDORecRes.Res F:\6261D_11C_V33\plutommi\MtkApp\Video\VideoRes\VDORecRes.Res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\UnifiedMessage\UnifiedMessageRes\UnifiedMessage.res F:\6261D_11C_V33\plutommi\mmi\UnifiedMessage\UnifiedMessageRes\UnifiedMessage.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\UnifiedMessage\UnifiedMessageRes\UnifiedMessage.res F:\6261D_11C_V33\plutommi\mmi\UnifiedMessage\UnifiedMessageRes\UnifiedMessage.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Organizer\OrganizerRes\todolist.res F:\6261D_11C_V33\plutommi\mmi\Organizer\OrganizerRes\todolist.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\Sndrec\SndrecRes\Sndrec.res F:\6261D_11C_V33\plutommi\MtkApp\Sndrec\SndrecRes\Sndrec.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\Inc\PhbSrvGprot.h F:\6261D_11C_V33\plutommi\Service\Inc\PhbSrvGprot.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Messages\MessagesRes\SmsAppRes.res F:\6261D_11C_V33\plutommi\mmi\Messages\MessagesRes\SmsAppRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Organizer\OrganizerRes\todolist.res F:\6261D_11C_V33\plutommi\mmi\Organizer\OrganizerRes\todolist.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\Sndrec\SndrecRes\Sndrec.res F:\6261D_11C_V33\plutommi\MtkApp\Sndrec\SndrecRes\Sndrec.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Messages\MessagesRes\SmsAppRes.res F:\6261D_11C_V33\plutommi\mmi\Messages\MessagesRes\SmsAppRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Extra\ExtraSrc\Shortcuts.c F:\6261D_11C_V33\plutommi\mmi\Extra\ExtraSrc\Shortcuts.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\CustResource\M103_KEMAN_MMI\MMI_features_switchM103_KEMAN_2401_VGOTEL_F2.h F:\6261D_11C_V33\plutommi\Customer\CustResource\M103_KEMAN_MMI\MMI_features_switchM103_KEMAN_2401_VGOTEL_F2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\PhoneBook\PhoneBookRes\phonebook.res F:\6261D_11C_V33\plutommi\mmi\PhoneBook\PhoneBookRes\phonebook.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Service\PhbSrv\PhbPhoneSrv.c F:\6261D_KM\plutommi\Service\PhbSrv\PhbPhoneSrv.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\PhoneBook\PhoneBookSrc\PhoneBookList.c F:\6261D_11C_V33\plutommi\mmi\PhoneBook\PhoneBookSrc\PhoneBookList.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\nvram\src\nvram_main.c F:\6261D_11C_V33\nvram\src\nvram_main.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\CallSetting\CallSettingRes\CallSet.res F:\6261D_11C_V33\plutommi\mmi\CallSetting\CallSettingRes\CallSet.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\common\PLUTO_MMI\custom_events_notify.c F:\6261D_11C_V33\custom\common\PLUTO_MMI\custom_events_notify.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\common\PLUTO_MMI\custom_events_notify.c F:\6261D_11C_V33\custom\common\PLUTO_MMI\custom_events_notify.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\common\PLUTO_MMI\custom_events_notify.c F:\6261D_11C_V33\custom\common\PLUTO_MMI\custom_events_notify.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\build\XG05_KM_V2404_VGOTEL_F2\MMI_features.h F:\6261D_11C_V33\build\XG05_KM_V2404_VGOTEL_F2\MMI_features.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Inc\MMI_features.h F:\6261D_11C_V33\plutommi\mmi\Inc\MMI_features.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\CommonFiles\CommonInc\mmi_frm_events_gprot.h F:\6261D_11C_V33\plutommi\Framework\CommonFiles\CommonInc\mmi_frm_events_gprot.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Inc\MMI_features.h F:\6261D_11C_V33\plutommi\mmi\Inc\MMI_features.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\CommonFiles\CommonInc\mmi_frm_events_gprot.h F:\6261D_11C_V33\plutommi\Framework\CommonFiles\CommonInc\mmi_frm_events_gprot.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Resource\PopulateRes.c F:\6261D_11C_V33\plutommi\mmi\Resource\PopulateRes.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c F:\6261D_11C_V33\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c F:\6261D_11C_V33\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c F:\6261D_11C_V33\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\common\hal\nvram\nvram_cust_pack.c F:\6261D_11C_V33\custom\common\hal\nvram\nvram_cust_pack.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\CUI\DialerCui\DialerCuiCommon.c F:\6261D_11C_V33\plutommi\CUI\DialerCui\DialerCuiCommon.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\custom\common\userprofile_nvram_def.c F:\6261D_KM\custom\common\userprofile_nvram_def.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c F:\6261D_11C_V33\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\projects\M610\M610_KM_V2411_SP6000_F2\Resource\MainMenuRes.res F:\6261D_KM\projects\M610\M610_KM_V2411_SP6000_F2\Resource\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\projects\M610\M610_KM_V2411_SP6000_F2\Resource\MainMenuRes.res F:\6261D_KM\projects\M610\M610_KM_V2411_SP6000_F2\Resource\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\projects\M610\M610_KM_V2411_SP6000_F2\Resource\MainMenuRes.res F:\6261D_KM\projects\M610\M610_KM_V2411_SP6000_F2\Resource\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\make\Option.mak F:\6261D_11C_V33\make\Option.mak    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\AppMgrSrv\AppMgrSrv.c F:\6261D_11C_V33\plutommi\Service\AppMgrSrv\AppMgrSrv.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Bootup\BootupInc\BootupInitConfig.h F:\6261D_11C_V33\plutommi\mmi\Bootup\BootupInc\BootupInitConfig.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\Camera\CameraSrc\CameraApp.c F:\6261D_11C_V33\plutommi\MtkApp\Camera\CameraSrc\CameraApp.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\CommonScreens\CommonScreensSrc\CommonScreens.c F:\6261D_11C_V33\plutommi\Framework\CommonScreens\CommonScreensSrc\CommonScreens.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\hal\peripheral\src\dcl_common.c F:\6261D_11C_V33\hal\peripheral\src\dcl_common.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\VendorApp\DevConfig\DevConfigSrc\DevConfig.c F:\6261D_11C_V33\plutommi\VendorApp\DevConfig\DevConfigSrc\DevConfig.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\VendorApp\DevConfig\DevConfigSrc\DevConfig.c F:\6261D_11C_V33\plutommi\VendorApp\DevConfig\DevConfigSrc\DevConfig.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\DevProfileSrv\DevProfileSrv.c F:\6261D_11C_V33\plutommi\Service\DevProfileSrv\DevProfileSrv.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\DtcntSrv\DtcntSrvDb.c F:\6261D_11C_V33\plutommi\Service\DtcntSrv\DtcntSrvDb.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\DtcntSrv\DtcntSrvDb.c F:\6261D_11C_V33\plutommi\Service\DtcntSrv\DtcntSrvDb.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\EngineerMode\EngineerModeApp\EngineerModeAppRes\EngineerMode.res F:\6261D_11C_V33\plutommi\MtkApp\EngineerMode\EngineerModeApp\EngineerModeAppRes\EngineerMode.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\EngineerMode\EngineerModeApp\EngineerModeAppRes\EngineerMode.res F:\6261D_11C_V33\plutommi\MtkApp\EngineerMode\EngineerModeApp\EngineerModeAppRes\EngineerMode.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\EngineerMode\EngineerModeApp\EngineerModeAppSrc\EngineerModeMisc.c F:\6261D_11C_V33\plutommi\MtkApp\EngineerMode\EngineerModeApp\EngineerModeAppSrc\EngineerModeMisc.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\FactoryMode\FactoryModeSrc\FactoryModeMisc.c F:\6261D_11C_V33\plutommi\MtkApp\FactoryMode\FactoryModeSrc\FactoryModeMisc.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\common\fs_quota.c F:\6261D_11C_V33\custom\common\fs_quota.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\CUI\ImageViewCui\ImgviewCuiScrn.c F:\6261D_11C_V33\plutommi\CUI\ImageViewCui\ImgviewCuiScrn.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\Tasks\TasksSrc\MMITask.c F:\6261D_11C_V33\plutommi\Framework\Tasks\TasksSrc\MMITask.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\Tasks\TasksSrc\MMITask.c F:\6261D_11C_V33\plutommi\Framework\Tasks\TasksSrc\MMITask.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\make\plutommi\mmi_app\mmi_app.mak F:\6261D_11C_V33\make\plutommi\mmi_app\mmi_app.mak    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\make\plutommi\mmi_app\mmi_app.mak F:\6261D_11C_V33\make\plutommi\mmi_app\mmi_app.mak    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\build\XG05_KM_V2404_VGOTEL_F2\MMI_features.h F:\6261D_11C_V33\build\XG05_KM_V2404_VGOTEL_F2\MMI_features.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Inc\MMI_features.h F:\6261D_11C_V33\plutommi\mmi\Inc\MMI_features.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Inc\mmi_pluto_res_range_def.h F:\6261D_11C_V33\plutommi\mmi\Inc\mmi_pluto_res_range_def.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Inc\mmi_res_range_def.h F:\6261D_11C_V33\plutommi\mmi\Inc\mmi_res_range_def.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\make\plutommi\mmi_service\mmi_service.mak F:\6261D_11C_V33\make\plutommi\mmi_service\mmi_service.mak    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\Inc\MREAppMgrSrvGprot.h F:\6261D_11C_V33\plutommi\Service\Inc\MREAppMgrSrvGprot.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\make\Option.mak F:\6261D_11C_V33\make\Option.mak    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Resource\ReadRes.c F:\6261D_11C_V33\plutommi\mmi\Resource\ReadRes.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\SAT\SATSrc\Service.c F:\6261D_11C_V33\plutommi\mmi\SAT\SATSrc\Service.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_Res\Status_icon_bar.res F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_Res\Status_icon_bar.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Ucm\UcmRes\ucm.res F:\6261D_11C_V33\plutommi\mmi\Ucm\UcmRes\ucm.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\Video\VideoSrc\VdoRecApp.c F:\6261D_11C_V33\plutommi\MtkApp\Video\VideoSrc\VdoRecApp.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\mre\commoninc\vmlog.h F:\6261D_11C_V33\mre\commoninc\vmlog.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\wgui_status_icon_bar.c F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\wgui_status_icon_bar.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\make\plutommi\mmi_service\mmi_service.mak F:\6261D_11C_V33\make\plutommi\mmi_service\mmi_service.mak    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\make\mre_engine\mre_engine.mak F:\6261D_11C_V33\make\mre_engine\mre_engine.mak    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\mre\custom\sal\vmmacrostub.c F:\6261D_11C_V33\mre\custom\sal\vmmacrostub.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\mre\engine\framework\vmresmng.c F:\6261D_11C_V33\mre\engine\framework\vmresmng.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\SettingSrc.c F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\SettingSrc.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c F:\6261D_KM\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\PhnsetGPIO.c F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\PhnsetGPIO.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c F:\6261D_KM\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerSetting.c F:\6261D_KM\plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerSetting.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\VendorApp\DevConfig\DevConfigSrc\DevConfig.c F:\6261D_KM\plutommi\VendorApp\DevConfig\DevConfigSrc\DevConfig.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\VendorApp\DevConfig\DevConfigSrc\DevConfig.c F:\6261D_KM\plutommi\VendorApp\DevConfig\DevConfigSrc\DevConfig.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Service\MRESrv\MRESrv.c F:\6261D_KM\plutommi\Service\MRESrv\MRESrv.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Service\Inc\MRESrvGProt.h F:\6261D_KM\plutommi\Service\Inc\MRESrvGProt.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\ps\l4\atci\include\at_cmd.def F:\6261D_11C_V33\ps\l4\atci\include\at_cmd.def    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GDI\GDISrc\gdi_primitive.c F:\6261D_11C_V33\plutommi\Framework\GDI\GDISrc\gdi_primitive.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_INC\gui_inputs.h F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_INC\gui_inputs.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Inc\MMI_features.h F:\6261D_11C_V33\plutommi\mmi\Inc\MMI_features.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\PhoneSetting.res F:\6261D_KM\plutommi\mmi\Setting\SettingRes\PhoneSetting.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Organizer\OrganizerRes\WorldClock\WorldClock.res F:\6261D_KM\plutommi\mmi\Organizer\OrganizerRes\WorldClock\WorldClock.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\nvram\src\nvram_main.c F:\6261D_11C_V33\nvram\src\nvram_main.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\nvram\src\nvram_main.c F:\6261D_11C_V33\nvram\src\nvram_main.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\Restore.c F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\Restore.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\Restore.c F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\Restore.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingRes\restore.res F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\restore.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingRes\restore.res F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\restore.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\PhoneSetting.res F:\6261D_KM\plutommi\mmi\Setting\SettingRes\PhoneSetting.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\gpio\gpiores\PhnsetGpio.res F:\6261D_KM\plutommi\mmi\gpio\gpiores\PhnsetGpio.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\PhoneSetting.res F:\6261D_KM\plutommi\mmi\Setting\SettingRes\PhoneSetting.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingRes\PhoneSetting.res F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\PhoneSetting.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\PhoneSetup.c F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\PhoneSetup.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\PreferedInputMethodSetting.c F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\PreferedInputMethodSetting.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\PhoneSetting.res F:\6261D_KM\plutommi\mmi\Setting\SettingRes\PhoneSetting.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Ucm\UcmRes\ucm.res F:\6261D_KM\plutommi\mmi\Ucm\UcmRes\ucm.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\CallLog\CallLogRes\CallLog.res F:\6261D_KM\plutommi\mmi\CallLog\CallLogRes\CallLog.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\CallSetting\CallSettingRes\CallSet.res F:\6261D_KM\plutommi\mmi\CallSetting\CallSettingRes\CallSet.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res F:\6261D_KM\plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\MtkApp\PeerControl\PeerControl.res F:\6261D_11C_V33\plutommi\MtkApp\PeerControl\PeerControl.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\CallSetting\CallSettingRes\CallSet.res F:\6261D_11C_V33\plutommi\mmi\CallSetting\CallSettingRes\CallSet.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\CallLog\CallLogRes\CallLog.res F:\6261D_11C_V33\plutommi\mmi\CallLog\CallLogRes\CallLog.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\CallLog\CallLogRes\CallLog.res F:\6261D_11C_V33\plutommi\mmi\CallLog\CallLogRes\CallLog.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\CallSetting\CallSettingRes\CallSet.res F:\6261D_11C_V33\plutommi\mmi\CallSetting\CallSettingRes\CallSet.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\nvram\src\nvram_main.c F:\6261D_KM\nvram\src\nvram_main.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\PhbSrv\PhbPhoneSrv.c F:\6261D_11C_V33\plutommi\Service\PhbSrv\PhbPhoneSrv.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\PhbSrv\PhbSseSrv.c F:\6261D_11C_V33\plutommi\Service\PhbSrv\PhbSseSrv.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\PhbSrv\PhbSseSrv.c F:\6261D_11C_V33\plutommi\Service\PhbSrv\PhbSseSrv.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\PhoneBook\PhoneBookSrc\PhoneBookApp.c F:\6261D_11C_V33\plutommi\mmi\PhoneBook\PhoneBookSrc\PhoneBookApp.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\PhoneBook\PhoneBookSrc\PhoneBookList.c F:\6261D_11C_V33\plutommi\mmi\PhoneBook\PhoneBookSrc\PhoneBookList.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Service\PhbSrv\PhbPhoneSrv.c F:\6261D_11C_V33\plutommi\Service\PhbSrv\PhbPhoneSrv.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\nvram\src\nvram_main.c F:\6261D_11C_V33\nvram\src\nvram_main.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Inc\MMI_features.h F:\6261D_KM\plutommi\mmi\Inc\MMI_features.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Framework\CommonScreens\CommonScreensRes\editor.res F:\6261D_KM\plutommi\Framework\CommonScreens\CommonScreensRes\editor.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Organizer\OrganizerRes\WorldClock\WorldClock.res F:\6261D_KM\plutommi\mmi\Organizer\OrganizerRes\WorldClock\WorldClock.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_Setting.c F:\6261D_KM\plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_Setting.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_Setting.c F:\6261D_KM\plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_Setting.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\PhoneSetting.res F:\6261D_KM\plutommi\mmi\Setting\SettingRes\PhoneSetting.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\NITZHandler\NITZSource\NITZ.c F:\6261D_KM\plutommi\mmi\NITZHandler\NITZSource\NITZ.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\NITZHandler\NITZRes\NITZ.res F:\6261D_KM\plutommi\mmi\NITZHandler\NITZRes\NITZ.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\IdleScreen\IdleScreenInc\IdleAppProt.h F:\6261D_KM\plutommi\mmi\IdleScreen\IdleScreenInc\IdleAppProt.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\DateAndTime.c F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\DateAndTime.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\PhoneSetting.res F:\6261D_KM\plutommi\mmi\Setting\SettingRes\PhoneSetting.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Setting\SettingInc\PhoneSetupSlim.h F:\6261D_KM\plutommi\mmi\Setting\SettingInc\PhoneSetupSlim.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Service\ProfilesSrv\ProfilesSrvConfig.h F:\6261D_KM\plutommi\Service\ProfilesSrv\ProfilesSrvConfig.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\ScrSaver\ScrSaverSrc\ScrSaverMedia.c F:\6261D_KM\plutommi\mmi\ScrSaver\ScrSaverSrc\ScrSaverMedia.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\PhoneSetting.res F:\6261D_KM\plutommi\mmi\Setting\SettingRes\PhoneSetting.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\ScreenSaver.res F:\6261D_KM\plutommi\mmi\Setting\SettingRes\ScreenSaver.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\ScreenSaver.res F:\6261D_KM\plutommi\mmi\Setting\SettingRes\ScreenSaver.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\ScreenSaver.c F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\ScreenSaver.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\ScreenSaver.c F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\ScreenSaver.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\PhoneSetting.res F:\6261D_KM\plutommi\mmi\Setting\SettingRes\PhoneSetting.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\DateAndTime.c F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\DateAndTime.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Service\GpioSrv\gpiosrv.res F:\6261D_KM\plutommi\Service\GpioSrv\gpiosrv.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Service\GpioSrv\gpiosrvsetting.c F:\6261D_KM\plutommi\Service\GpioSrv\gpiosrvsetting.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Service\GpioSrv\gpiosrvsetting.c F:\6261D_KM\plutommi\Service\GpioSrv\gpiosrvsetting.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\PhnsetGPIO.c F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\PhnsetGPIO.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Framework\CommonScreens\CommonScreensRes\editor.res F:\6261D_KM\plutommi\Framework\CommonScreens\CommonScreensRes\editor.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Inc\MMI_features.h F:\6261D_KM\plutommi\mmi\Inc\MMI_features.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Bootup\BootupInc\BootupInitConfig.h F:\6261D_KM\plutommi\mmi\Bootup\BootupInc\BootupInitConfig.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Customer\CustResource\PLUTO_MMI\IMERes.c F:\6261D_KM\plutommi\Customer\CustResource\PLUTO_MMI\IMERes.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Customer\CustResource\PLUTO_MMI\IMERes.c F:\6261D_KM\plutommi\Customer\CustResource\PLUTO_MMI\IMERes.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Customer\CustResource\PLUTO_MMI F:\6261D_KM\plutommi\Customer\CustResource\PLUTO_MMI    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Framework\InputMethod\res\input_method.res F:\6261D_KM\plutommi\Framework\InputMethod\res\input_method.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\PhoneSetting.res F:\6261D_KM\plutommi\mmi\Setting\SettingRes\PhoneSetting.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Setting\SettingSrc\PreferedInputMethodSetting.c F:\6261D_KM\plutommi\mmi\Setting\SettingSrc\PreferedInputMethodSetting.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Framework\InputMethod\Engine\Engine_Src\Imm.c F:\6261D_KM\plutommi\Framework\InputMethod\Engine\Engine_Src\Imm.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Framework\CommonScreens\CommonScreensRes\editor.res F:\6261D_KM\plutommi\Framework\CommonScreens\CommonScreensRes\editor.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Service\ProfilesSrv\ProfilesSrvConfig.h F:\6261D_KM\plutommi\Service\ProfilesSrv\ProfilesSrvConfig.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c F:\6261D_KM\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\mmi\Setting\SettingRes\PhoneSetting.res F:\6261D_11C_V33\plutommi\mmi\Setting\SettingRes\PhoneSetting.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Organizer\OrganizerInc\AlarmProt.h F:\6261D_KM\plutommi\mmi\Organizer\OrganizerInc\AlarmProt.h    
+
+[cmd]: 
+copy F:\6261D_11C_V33// 默????认年????????月日--顺????序???? -- (测????试)?$" F:\6261D_11C_V33// 默?????????????认年??????????????????????????月日--顺?????????????序?????????????						--	(测?????????????试)???$"  
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Framework\GUI\GUI_Res\Gui.res F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_Res\Gui.res    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\MtkApp\sdk\casesrc\avk_cui_edit.cpp F:\6261D_KM\plutommi\MtkApp\sdk\casesrc\avk_cui_edit.cpp    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\gui_inputs.c F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\gui_inputs.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\vendor\InputMethod\mtk\mtkmultitap.c F:\6261D_KM\vendor\InputMethod\mtk\mtkmultitap.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Resource\StandaloneRes.c F:\6261D_KM\plutommi\mmi\Resource\StandaloneRes.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Customer\CustResource\IMERes.c F:\6261D_KM\plutommi\Customer\CustResource\IMERes.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\CustResource\M103_KEMAN_MMI\IMERes.c F:\6261D_11C_V33\plutommi\Customer\CustResource\M103_KEMAN_MMI\IMERes.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\CustResource\PLUTO_MMI\IMERes.c F:\6261D_11C_V33\plutommi\Customer\CustResource\PLUTO_MMI\IMERes.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\Customer\CustResource\IMERes.c F:\6261D_11C_V33\plutommi\Customer\CustResource\IMERes.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Customer\CustResource\PLUTO_MMI\IMERes.c F:\6261D_KM\plutommi\Customer\CustResource\PLUTO_MMI\IMERes.c    
+
+[cmd]: 
+TortoiseProc.exe /command:log /path:F:\6261D_11C_V33\plutommi\Customer\CustResource\PLUTO_MMI\IMERes.c    
+
+[cmd]: 
+TortoiseProc.exe /command:log /path:F:\6261D_11C_V33\plutommi\Customer\CustResource\IMERes.c    
+
+[cmd]: 
+TortoiseProc.exe /command:log /path:F:\6261D_11C_V33\plutommi\Customer\CustResource\PLUTO_MMI\IMERes.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Customer\CustResource\PLUTO_MMI\IMERes.c F:\6261D_KM\plutommi\Customer\CustResource\PLUTO_MMI\IMERes.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c F:\6261D_KM\plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\wgui_clock.c F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\wgui_clock.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\projects\M610\M610_KM_V2411_SP6000_F2\Resource\Themecomponents.h F:\6261D_KM\projects\M610\M610_KM_V2411_SP6000_F2\Resource\Themecomponents.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Customer\CustResource\PLUTO_MMI\Themecomponents.h F:\6261D_KM\plutommi\Customer\CustResource\PLUTO_MMI\Themecomponents.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Customer\CustResource\PLUTO_MMI\Themecomponents.h F:\6261D_KM\plutommi\Customer\CustResource\PLUTO_MMI\Themecomponents.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Customer\CustResource\ThemeComponents.h F:\6261D_KM\plutommi\Customer\CustResource\ThemeComponents.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Customer\CustResource\ThemeComponents.h F:\6261D_KM\plutommi\Customer\CustResource\ThemeComponents.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_INC\gui_typedef.h F:\6261D_KM\plutommi\Framework\GUI\GUI_INC\gui_typedef.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\gui_calendar.c F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\gui_calendar.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_INC\gui_calendar.h F:\6261D_KM\plutommi\Framework\GUI\GUI_INC\gui_calendar.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\gui_calendar.c F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\gui_calendar.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\wgui_categories_calendar.c F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\wgui_categories_calendar.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\mmi\Organizer\OrganizerSrc\Calendar.c F:\6261D_KM\plutommi\mmi\Organizer\OrganizerSrc\Calendar.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Customer\CustResource\CustCoordinates.c F:\6261D_KM\plutommi\Customer\CustResource\CustCoordinates.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\save\SI\node\Tmp_Comp_1.h E:\save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\gui_calendar.c F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\gui_calendar.c    
+
+[cmd]: 
+TortoiseProc.exe /command:log /path:F:\6261D_11C_V33\plutommi\mmi\Inc\MMI_features.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\custom\drv\LCD\BLEPHONE61D_11C_LCM\combo_lcm_ST7789V.c F:\6261D_KM\custom\drv\LCD\FARSIGHTED61M_CN_11C_LCM\combo_lcm_ST7789V.c    

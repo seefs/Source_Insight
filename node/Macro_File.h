@@ -71,7 +71,9 @@ Save:SI\node\Test\Tmp_Test.h
 
 [3.1] 常用的编辑文件
 Save:SI\node\note\Macro_Note_MTK.h
-Save:SI\node\note\Macro_Note_9820es.h
+//	9820e
+Save:SI\node\9820e\Macro_Note_9820e.h
+//	6531E
 Save:SI\node\note\Macro_Note_6531E.h
 	
 [3.2] 模拟器:
@@ -165,7 +167,7 @@ https://online.mediatek.com
 
 
 [6.2] 未整理:
-Save:SI\bak\bak_mtk_lang.h
+Save:SI\bak\Macro_bak_mtk_lang.h
 
 [6.3] 未改:
 Save:SI\bak\bak_mtk_weiti.h	

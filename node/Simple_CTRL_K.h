@@ -1,5 +1,5 @@
 
-目录[Ca]:
+目录{Num][Ca]:
 Save:SI\node\Simple_CTRL_K.h \[1.1\] 宏说明[Cs]:
 Save:SI\node\Simple_CTRL_K.h \[2.1\] key:[F1] (按F1后再按0~9、A~Z、F2~F12)
 Save:SI\node\Simple_CTRL_K.h \[2.2\] key:[F2] 打开目录
@@ -26,7 +26,6 @@ Save:SI\node\Simple_CTRL_K.h unfinished:
 Save:SI\bak\bak_20181123_mar_msg.h
 
 	
-Save:SI\z-other-patch\mtk-tools\msys-1.0.dll [openDir]
 
 
 
@@ -36,7 +35,7 @@ Save:SI\z-other-patch\mtk-tools\msys-1.0.dll [openDir]
 /******************************* 宏说明 ********************************/
 /***********************************************************************/
 
-[1.1] 宏说明[Cs]:
+[1.1] 宏说明:
 Save:SI\MacroSBD\sbd_f1.em
 
 [2.1] key:[F1] (按F1后再按0~9、A~Z、F2~F12)
@@ -330,6 +329,8 @@ Save:SI\MacroSBD\sbd_f11.em
 	//             关键字只有一个, 空格用作区分文件名, 用^表示空格;
 	//             默认优先查找行首(不加^);
 	//             可以用$结尾:abc$, 只有这个符号用通符,后续再补充.
+	//         打开上级目录,     以[Path]结尾:
+	//         Save:SI\...\... [Path]
 		如:
 	chip_drv\chip_module\analog\sr1161\analog_phy_sr1161.c SBD_LCM_BL_25MA_SUPPORT
 

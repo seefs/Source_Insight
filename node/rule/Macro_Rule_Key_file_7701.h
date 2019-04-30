@@ -64,6 +64,7 @@ key:NV3029E,file:tft_NV3029E.c
 key:NV3029C,file:tft_NV3029C.c
 key:NV3029,file:tft_NV3029.c
 key:NV3021,file:tft_NV3021.c
+key:NV3022,file:tft_NV3022.c
 key:NT99250,file:sensor_NT99250.c
 key:NT99040,file:sensor_NT99040.c
 key:NT39118,file:tft_NT39118.c
@@ -123,6 +124,7 @@ key:GC9102,file:tft_GC9102.c
 key:GC9101,file:tft_GC9101.c
 key:GC6133_SUB,file:sensor_GC6133_SUB.c
 key:GC6133,file:sensor_GC6133.c
+key:GC6153,file:sensor_gc6153.c
 key:GC6123,file:sensor_GC6123.c
 key:GC6113,file:sensor_GC6113.c
 key:GC2015,file:sensor_GC2015.c
@@ -157,3 +159,4 @@ key:DIAL,file:mmiidle_dial.c
 key:SP0821,file:sensor_SP0821.c
 key:BF3A02,file:sensor_bf3a02.c
 key:GC9307,file:tft_GC9307.c
+key:NV3029S,file:tft_NV3029S.c

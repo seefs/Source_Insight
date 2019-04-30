@@ -238,7 +238,6 @@ macro CtrlR()
 	if(IsFileName(hbuf, "Macro_")||IsFileName(hbuf, "Simple_CTRL_"))
 	{
 		sel = MGetWndSel(hbuf)
-		isNum = 0;
 		searchStr = ""
 		cur_line = GetBufLine(hbuf, sel.lnFirst )	
 		if(strlen(cur_line) <= 2)
@@ -251,17 +250,16 @@ macro CtrlR()
 			cur_sel_right_pre = strmid(cur_line, cur_sel_right - 1, cur_sel_right)
 			if(cur_sel_right_pre != "\\" )
 			{
-				isNum = 1;
 				searchStr = "\\\[" # strmid(cur_line, cur_sel_left + 1, cur_sel_right) # "\\\]"
 				sel2 = SearchInBuf(hbuf, searchStr, 0, 0, FALSE, FALSE, FALSE)
 				if (sel2 != "")
+				{
 					ScrollCursor(sel2)
+					stop
+				}
 			}
 		}
-		if(isNum != 1)
-		{
-			NoteHander(hbuf, 5)
-		}
+		NoteHander(hbuf, 5)
 	}
 	else
 	{
@@ -279,9 +277,17 @@ macro CtrlW()
 	{
 		if(IsFileName(hbuf, "Macro_Note_"))
 		{
-			lnTop = GetWndVertScroll(hwnd);
-			SaveMode(getWndVertRow(0), "@lnTop@")
-			close
+			bft = getBft(1)
+			if(bft == "9820e")
+			{
+				//msg("无法关闭, 按空格键取消")
+			}
+			else
+			{
+				lnTop = GetWndVertScroll(hwnd);
+				SaveMode(getWndVertRow(0), "@lnTop@")
+				close
+			}
 		}
 		else
 		{

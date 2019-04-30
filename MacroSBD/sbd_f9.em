@@ -14,28 +14,13 @@ macro SearchFile()
     	stop
 	}
     
-	szpathName = GetBufName(hbuf)
-	filename = GetFileName(szpathName)
 
-	bft = ""
-	{
-		hprj = GetCurrentProj ()
-		if(hprj>0)
-		{
-			projPath = GetProjDir (hprj)
-			bft = getBaseFileType(projPath, 1)
-		}
-	}
+	bft = getBft(1)
+//	bft = getBufBft(hbuf, 1) //只能用一个, 先不改了
+//	if(bft == "")
+//		stop
 	//bft = "9820e" //test
-	if(bft == "")
-	{
-		bft = getBaseFileType(szpathName, 1)
-		if(bft == "")
-		{
-			stop
-		}
-	}
-	//file = getNodePath(0) # "\\Macro_ALL_@bft@.h"
+
 	file = "\\search\\Macro_ALL_@bft@.h"
 	
 	if(IsFileName(hbuf, "Macro_ALL_"))
@@ -133,6 +118,8 @@ macro SearchFile()
 	}
 	
 }
+
+
 
 macro ShowSearchMar(hbuf, searchStr)
 {
@@ -276,11 +263,9 @@ macro SearchVersionExt(hbuf, mFile, mMacro, mWord)
 	verCount = 0
 	
 	
-	hprj = GetCurrentProj ()
-	baseDir = getBasePath(hbuf)
-	bft = getBaseFileType(baseDir, 5)
-	if(bft == "")
-		stop
+	bft = getBft(5)
+//	if(bft == "")
+//		stop
 	verFile = getNodePath(0) # "\\version\\si_version_@bft@.h"
 	verBuf = OpenCache(verFile)
 
