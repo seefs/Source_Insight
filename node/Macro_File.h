@@ -103,19 +103,6 @@ Save:SI\node\Test\sbd_Tmp_Show.em
 Save:SI\node\Test\Macro_Tmp_...
 Save:SI\node\Test\...
 Save:SI\node\Test\Tmp_Test.h
-<<<<<<< HEAD
-
-
-/***********************************************************************/
-
-[3.1] 常用的编辑文件
-Save:SI\node\note\Macro_Note_MTK.h
-//	9820e
-Save:SI\node\9820e\Macro_Note_9820e.h
-//	6531E
-Save:SI\node\note\Macro_Note_6531E.h
-=======
->>>>>>> 5be5a57470e4059416a3f90cbfea01611f14a021
 	
 
 
@@ -213,11 +200,6 @@ http://222.66.158.139:2008/cqweb/#
 https://online.mediatek.com
 
 
-<<<<<<< HEAD
-[6.2] 未整理:
-Save:SI\bak\Macro_bak_mtk_lang.h
-=======
->>>>>>> 5be5a57470e4059416a3f90cbfea01611f14a021
 
 
 [7.2] 参考标号:

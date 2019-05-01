@@ -76,6 +76,11 @@ macro CtrlD()
 		ShowMacroGroup(hbuf)
 		stop
 	}
+	else
+	{
+		CodeAlign(hbuf)
+		stop
+	}
 }
 macro CtrlB()
 {
@@ -216,6 +221,18 @@ macro CtrlT()
 			///###
 		}
 	}
+	else if(IsScriptFile(hbuf))
+	{
+		fstr = GetFirstChar(hbuf, 1)
+		if(fstr == "#")
+		{
+			UncommentScript(hbuf)
+		}
+		else
+		{
+			CommentScript(hbuf)
+		}
+	}
 	else 
 	{
 		fstr = GetFirstChar(hbuf, 2)
@@ -237,6 +254,7 @@ macro CtrlR()
 	hbuf = GetCurrentBuf()
 	if(IsFileName(hbuf, "Macro_")||IsFileName(hbuf, "Simple_CTRL_"))
 	{
+		//1. 文件内索引跳转
 		sel = MGetWndSel(hbuf)
 		searchStr = ""
 		cur_line = GetBufLine(hbuf, sel.lnFirst )	
@@ -259,6 +277,7 @@ macro CtrlR()
 				}
 			}
 		}
+		//2. 文件内跳转另一个文件/目录
 		NoteHander(hbuf, 5)
 	}
 	else

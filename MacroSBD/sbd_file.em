@@ -139,6 +139,13 @@ macro IsExeFile(hbuf)
 	return IsFileType(fName, ".exe") || IsFileType(fName, ".bat")
 }
 
+macro IsScriptFile(hbuf)
+{
+	//# as Comment
+	fName = GetFileName(GetBufName(hbuf))
+	return IsFileType(fName, ".py") || IsFileType(fName, ".make")
+}
+
 //¥””“±ﬂ∆•≈‰
 macro IsFileType(filename, type)
 {
