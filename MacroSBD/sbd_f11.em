@@ -390,7 +390,7 @@ macro NoteHander(hbuf, cNum)
 		}
 		ShellExecute("open", getBasePath(hbuf) # "\\cmd", "", "", 1)
 	}
-	else if(noteCmd == "python")
+	else if(noteCmd == "python" || noteCmd == "python_w")
 	{
 		//命令名转化: 删除空格
 		start = GetTransCmdS(cur_line, index + 1, len)
@@ -399,19 +399,31 @@ macro NoteHander(hbuf, cNum)
 		lastCmd = strmid(cur_line, start, next)
 		//lastStr = GetTransStr(cur_line, start2, len)
 
-		hbufClip = GetBufHandle("Clipboard")
-		if (hbufClip != hNil)
+		if(noteCmd == "python_w")
 		{
-			EmptyBuf(hbufClip)
-			AppendBufLine(hbufClip, "@lastCmd@")
-			CloseBuf(hbufClip)
+			hbufClip = GetBufHandle("Clipboard")
+			if (hbufClip != hNil)
+			{
+				EmptyBuf(hbufClip)
+				AppendBufLine(hbufClip, "@lastCmd@")
+				CloseBuf(hbufClip)
+			}
 		}
 		
 		cmdPath = GetTransFileName(hbuf, "", 0)
 		cmdRoot = GetTransRootDir(cmdPath)
-		
-//		cmdStr = cmdRoot # "&&cd " # cmdPath # "&&start " # lastCmd
-		cmdStr = cmdRoot # "&&cd " # cmdPath # "&&start cmd.exe"
+
+		if(noteCmd == "python_w")
+		{
+//			cmdStr = cmdRoot # "&&cd " # cmdPath # "&&start " # lastCmd
+			cmdStr = cmdRoot # "&&cd " # cmdPath # "&&start cmd.exe&&parse"
+		}
+		else
+		{
+			cmdStr = cmdRoot # "&&cd " # cmdPath # "&&echo " # cmdPath # "^>" # lastCmd # "&&python " # lastCmd # "&&pause"
+		}
+
+		TestMsg("编译: " # CharFromKey(13) # cmdStr)
 		ShellOpenCustomCmd(cmdStr)
 	}
 	else if(noteCmd == "make")
@@ -606,31 +618,46 @@ macro NoteHander(hbuf, cNum)
 			//cmdP2 = strmid(cur_line, start2, len)
 
 		
-			//6. 保存 (宏=)value 到剪切板; 可再用ctrl+T替换新值
+			//5.1 保存 (宏=)value 到剪切板; 可再用ctrl+T替换新值
 			otherWord = strmid(cur_line, start, len)
-			lnVar = GetLineValue(otherWord)
+			lnVar = GetLineValue(5otherWord)
 			if(lnVar != "")
 			{
 				SetClipString(lnVar)
 			}
 			
 
-			//7. 获取关键词
+			//5.2 获取关键词
 			//goto word and Select
 			noteWord = strmid(cur_line, start, next)
 			//use "^" as space
 			noteWord = ReplaceWord(noteWord, "^", " ")
 		}
 
+		//6. 定制关键字--打开路径, 回到目录, 下一个
 		if(noteWord == "[Path]")
 		{
 			curPath = getBaseDir(curPath, 0)
 			re = ShellExecute("explore", "@curPath@\\", "", "", 1)
 			if(re)
 				stop
+			hbuf = OpenExistFile(curPath)
+		}
+		else if(noteWord == "[Base]")
+		{
+			noteWord = "目录"
+		}
+		else if(noteWord == "[Next]")
+		{
+			SearchForward()
+			stop
+		}
+		else
+		{
+			TestMsg("打开文件: " # CharFromKey(13) # curPath)
+			hbuf = OpenExistFile(curPath)
 		}
 			
-		hbuf = OpenExistFile(curPath)
 			
 		if (hbuf != hNil){
 			if(noteWord == "")
@@ -665,8 +692,22 @@ macro NoteHander(hbuf, cNum)
 			if (mSel != "")
 			{
 				//8.4 关键词跳转
+				TestMsg("跳转到文件: " # CharFromKey(13) # curPath # CharFromKey(13) #　"内容: " # CharFromKey(13) # noteWord)
 				ScrollCursor(mSel)
 			}
+		}
+		else if(IsFileType(curPath, ".py"))
+		{
+			//10. "Macro_"文件, 从默认目录复制新文件
+			strDefFile = getBaseDir(curPath, 0) # "\\Macro_z_null.py"
+			isF = IsExistFile(strDefFile)
+			if(!isF)
+				strDefFile = getNodePath(0) # "\\Test\\Macro_z_null.py"
+
+			cmdStr = "copy " # strDefFile # " " # curPath
+			TestMsg("文件不存在, 从模板copy文件: " # CharFromKey(13) # cmdStr)
+			msg(cmdStr)
+			ShellOpenCustomCmd(cmdStr)
 		}
 		else
 		{
@@ -685,10 +726,11 @@ macro NoteHander(hbuf, cNum)
 					strDefFile = strmid(curPath, 0, mI) # "Macro_z_null.h"
 					isF = IsExistFile(strDefFile)
 					if(!isF)
-						strDefFile = getNodePath(0) # "\\Macro_z_null.h"
+						strDefFile = getNodePath(0) # "\\Test\\Macro_z_null.h"
 
 					cmdStr = "copy " # strDefFile # " " # curPath
 					msg(cmdStr)
+					TestMsg("从模板copy文件: " # CharFromKey(13) # cmdStr)
 					ShellOpenCustomCmd(cmdStr)
 				}
 				else
@@ -865,7 +907,7 @@ macro SetNoteHistory(hbuf)
 //		if(bft == "")
 //			stop
 
-	mBuf = OpenCache(getNodePath(0) # "\\Macro_Set_Note.h")
+	mBuf = OpenCache(getNodePath(0) # "\\set\\Macro_Set_Note.h")
 	mKey = bft # ":"
 	mSel = SearchInBuf(mBuf, mKey, 0, 0, FALSE, FALSE, FALSE)
 	len = strlen(mKey)
@@ -902,7 +944,7 @@ macro SetNoteHistory(hbuf)
 
 macro GetNoteHistory(bft, mIndex)
 {
-	mBuf = OpenCache(getNodePath(0) # "\\Macro_Set_Note.h")
+	mBuf = OpenCache(getNodePath(0) # "\\set\\Macro_Set_Note.h")
 	mKey = bft # ":"
 	mSel = SearchInBuf(mBuf, mKey, 0, 0, FALSE, FALSE, FALSE)
 	len = strlen(mKey)
@@ -934,7 +976,7 @@ macro SaveNoteHistory(cur_line)
 //		if(bft == "")
 //			stop
 	
-	mBuf = OpenCache(getNodePath(0) # "\\Macro_Set_Note.h")
+	mBuf = OpenCache(getNodePath(0) # "\\set\\Macro_Set_Note.h")
 	
 	mKey = cur_line //set^aa^bb^cc
 	mSel = SearchInBuf(mBuf, mKey, 0, 0, FALSE, FALSE, FALSE)

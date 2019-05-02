@@ -259,6 +259,9 @@ git difftool -d dev master
 git difftool -d master dev
 
 git mergetool aaa.txt
+// merge vim:
+//	按下字母键 c（此时进入编辑状态），可以开始修改注释信息了
+//	按下Esc (退出编辑状态)； 接着连按两次大写字母Z，保存好退出
 
 
 

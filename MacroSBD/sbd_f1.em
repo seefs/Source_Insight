@@ -447,6 +447,10 @@ macro CommonTest(hbuf)
 			//OpenF1Test(hbuf)
 			return
 		}
+		else if (IsFileName(hbuf, "sbd_base.em"))
+		{
+			OpenBaseTest(hbuf)
+		}
 		else if (IsFileName(hbuf, "sbd_f2.em"))
 		{
 			OpenPathTest(hbuf)

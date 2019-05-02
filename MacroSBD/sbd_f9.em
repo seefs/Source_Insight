@@ -266,7 +266,7 @@ macro SearchVersionExt(hbuf, mFile, mMacro, mWord)
 	bft = getBft(5)
 //	if(bft == "")
 //		stop
-	verFile = getNodePath(0) # "\\version\\si_version_@bft@.h"
+	verFile = getNodePath(0) # "\\group\\si_version_@bft@.h"
 	verBuf = OpenCache(verFile)
 
 	verSel = SearchInBuf(verBuf, mWord, 0, 0, FALSE, FALSE, FALSE)

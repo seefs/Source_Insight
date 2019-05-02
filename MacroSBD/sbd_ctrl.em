@@ -59,7 +59,13 @@ macro CtrlD()
 			ich =  ich + 1
 		}
 	}
-	//3. Macro_xxx、Simple_CTRL_xxx中 同F10
+	//6. other file、Simple_CTRL_xxx中 空格对齐
+	else if(IsFileName(hbuf, "Simple_CTRL_B"))
+	{
+		CodeAlign(hbuf)
+		stop
+	}
+	//3. Macro_xxx 中 同F10
 	else if(IsFileName(hbuf, "Macro_")||IsFileName(hbuf, "Simple_CTRL_"))
 	{
 		NoteGroup(hbuf)
@@ -71,11 +77,13 @@ macro CtrlD()
 		MakeGroup(hbuf)
 		stop
 	}
+	//5. *.em 中 同F10
 	else if(IsMacroFile(hbuf))
 	{
 		ShowMacroGroup(hbuf)
 		stop
 	}
+	//6. other file、Simple_CTRL_xxx中 空格对齐
 	else
 	{
 		CodeAlign(hbuf)
@@ -272,6 +280,7 @@ macro CtrlR()
 				sel2 = SearchInBuf(hbuf, searchStr, 0, 0, FALSE, FALSE, FALSE)
 				if (sel2 != "")
 				{
+					TestMsg("跳转到目录: " # searchStr)
 					ScrollCursor(sel2)
 					stop
 				}
@@ -867,7 +876,7 @@ macro ScrollCurWnd(hbuf, direct, sel, ln)
 /***********************************************************************/
 macro CtrlTest(hbuf)
 {
-	//msg ("CtrlTest")
+	msg ("CtrlTest")
 	
     hbuf = GetCurrentBuf()
 	ChangeSel(hbuf, 3)
