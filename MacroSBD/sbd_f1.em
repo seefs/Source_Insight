@@ -374,7 +374,6 @@ macro ShowHelpLoop(hbuf)
 macro ShowHelp(hbuf, key)
 {
 	isHelp = FALSE
-	IsFileName(hbuf, type)
 	if (!IsFileName(hbuf, "Simple_CTRL_K.h"))
 	{
 		mFile = getNodePath(0) # "\\Simple_CTRL_K.h"
@@ -382,7 +381,17 @@ macro ShowHelp(hbuf, key)
 		isHelp = TRUE
 	}
 	
+	ShowMoreHelp(hbuf, ":",  key)
+	
+	if(isHelp)
+	{
+		CloseBuf(hbuf)
+	}
+}
+macro ShowMoreHelp(hbuf, spit, key)
+{
 	//_TempHeadF1(hbuf)
+	key = key # spit
 	mSelStart = SearchInBuf(hbuf, key, 0, 0, FALSE, FALSE, FALSE)
 	helpTxt = key # ":" # CharFromKey(13)
 
@@ -411,10 +420,6 @@ macro ShowHelp(hbuf, key)
 		}
 	}
 	
-	if(isHelp)
-	{
-		CloseBuf(hbuf)
-	}
 }
 
 macro ShowSimpleHelp(hbuf, key)

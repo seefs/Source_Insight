@@ -75,8 +75,9 @@ Save:SI\node\Macro_modis_6531E.h
 Save:SI\bak\bak_mtk_lang.h	
 //2) 未改:
 Save:SI\bak\bak_mtk_weiti.h	
-//2) 其他:
+//3) 其他:
 Save:SI\bak\Macro_tmp.h
+Save:SI\bak\Macro_utf8_tmp.h
 
 
 [2.3] bak文件:

@@ -6,6 +6,7 @@ Save:SI\node\Pythons\Macro_Note_Python.h \[1.1\] 学习:
 Save:SI\node\Pythons\Macro_Note_Python.h \[2.1\] Pythons 阅读
 // 3.安装
 Save:SI\node\Pythons\Macro_Note_Python.h \[3.1\] 安装环境
+Save:SI\node\Pythons\Macro_Note_Python.h \[3.2\] PyMySQL
 // 4.项目
 Save:SI\node\Pythons\Macro_Note_Python.h \[4.1\] project
 Save:SI\node\Pythons\Macro_Note_Python.h \[4.2\] NLP
@@ -19,24 +20,25 @@ Save:SI\node\Pythons\Macro_Note_Python.h \[5.3\] Yuyang
 
 
 
+
 /***********************************************************************/
 /****************************** python *********************************/
 /***********************************************************************/
 
 [1.1] Pythons 学习:
-//Pythons 练习
-Save:SI\node\Pythons\Macro_Pythons_test.h
+//Pythons 基础练习
+Save:SI\node\Pythons\py_test\Macro_Pythons_test.h
 //视频学习:
 Save:SI\node\Pythons\Macro_Pythons_tf_TUT.h Num
 
-//pythom 基础知识
+//Pythons 基础知识
 Save:SI\node\Pythons\study\Macro_Pythons_base.h
-//pythom 基础 Matrix:
+//Pythons 基础 Matrix:
 Save:SI\node\Pythons\study\Macro_Math_Matrix.h
 
 
 [2.1] Pythons 阅读:
-// pythom 网文
+// Pythons 网文
 Save:SI\node\Pythons\read\Macro_Pythons_summary.h
 // Tensorflow 网文
 Save:SI\node\Pythons\read\Macro_Pythons_tensorflow.h
@@ -45,8 +47,11 @@ Save:SI\node\Pythons\read\Macro_Pythons_tensorflow.h
 [3.1] 安装环境:
 // Install
 Save:SI\node\Pythons\install\Macro_Pythons_Install.h
-// PyMySQL
-Save:SI\node\Pythons\install\Macro_Pythons_Mysql.h
+
+
+[3.2] PyMySQL
+Save:SI\node\Pythons\mysql\Macro_Pythons_Mysql.h
+
 
 
 [4.1] project

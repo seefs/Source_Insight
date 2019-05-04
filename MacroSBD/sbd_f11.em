@@ -67,6 +67,10 @@ macro Note()
 			SetClipString(nTxt)
 		}
 	}
+	else if (IsScriptFile(sel))
+	{
+		ShowNoteHelp(hbuf)
+	}
 	else
 	{
 		bft = getBft(3)
@@ -109,6 +113,27 @@ macro Note()
 	}
 }
 
+macro ShowNoteHelp(hbuf)
+{
+	sel = MGetWndSel(hbuf)
+	if (IsSingleSelect(sel))
+	{
+		cur_line = GetBufLine(hbuf, sel.lnFirst )
+		if(strlen(cur_line) < sel.ichLim)
+			sel.ichLim = sel.ichLim - 1
+		if(sel.ichFirst == sel.ichLim || 4095 == sel.ichLim)
+			stop
+		cur_sel = strmid(cur_line, sel.ichFirst, sel.ichLim)
+
+//		msg("@cur_sel@")
+		mFile = getNodePath(0) # "\\set\\Macro_Set_Note_Python.h"
+		hbufSet = OpenCache(mFile)
+
+//		ShowSimpleHelp(hbufSet, cur_sel)
+		ShowMoreHelp(hbufSet, "::", cur_sel)
+	}
+	
+}
 macro LongNote(hbuf, key)
 {
 	//_TempHeadF11(hbuf)
@@ -609,7 +634,7 @@ macro NoteHander(hbuf, cNum)
 		
 		//5. 获取关键词; 文件名以空格结尾, index可能是":"位置
 		index = indexb
-		if (index != "X" && index != len)
+		if (index != "X" && index != len && index != len - 1)
 		{
 			start = GetTransCmdS(cur_line, index + 1, len)
 			next  = GetTransCmdE(cur_line, start,     len)
@@ -620,7 +645,7 @@ macro NoteHander(hbuf, cNum)
 		
 			//5.1 保存 (宏=)value 到剪切板; 可再用ctrl+T替换新值
 			otherWord = strmid(cur_line, start, len)
-			lnVar = GetLineValue(5otherWord)
+			lnVar = GetLineValue(otherWord)
 			if(lnVar != "")
 			{
 				SetClipString(lnVar)
