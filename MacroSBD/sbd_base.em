@@ -105,7 +105,7 @@ macro getProjectPath(pathName)
 	// n == 60: 7701
 	// n == 70: MTK
 	n = getBaseDirNum(pathName)
-	basePath = SearchPathFromNum(n)
+	basePath = SearchPathFromNum("", n)
 	
 	//获取目录 6531E/project, 不考虑 C:
 	//待改成getBaseProjectEx+"/project"
@@ -318,6 +318,12 @@ macro SearchPathFromNum(hbufConfig, n)
 {
 	var err
 	err = ""
+
+	if(!isNumber(hbufConfig))
+	{
+		msg(0)
+		hbufConfig = OpenCache(getPathConfig(0))
+	}
 	
 	searchFor = "^" # n # "$"
 	//SearchInBuf (hbufBase, pattern, lnStart, ichStart, fMatchCase, fRegExp, fWholeWordsOnly)

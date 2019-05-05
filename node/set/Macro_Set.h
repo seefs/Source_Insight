@@ -21,7 +21,7 @@ SE0397_XY_C2_Welcome_F6
 project
 
 ### 24.SR Mode  (CTRL + D : search head 删除相同头部的行)
-Macro_ALL_6531E
+gui_show_fixed_icontext_menuitem
 
 ### 27.last command (未使用)
 CtrlW
@@ -51,7 +51,7 @@ IM
 E:\6531E_20180113\tmp
 
 ### 54.note row(第2次打开同一行, F11关闭note会修改这里)
-0
+159
 
 ### 57.Note Hander Set(笔记路径, 替换当前path, MTK)
 M610_KM_V2411_SP6000_F2 M610 gprs

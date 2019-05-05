@@ -67,7 +67,7 @@ macro Note()
 			SetClipString(nTxt)
 		}
 	}
-	else if (IsScriptFile(sel))
+	else if (IsScriptFile(hbuf))
 	{
 		ShowNoteHelp(hbuf)
 	}

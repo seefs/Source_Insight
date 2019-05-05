@@ -2129,3 +2129,6 @@ TortoiseProc.exe /command:log /path:F:\6261D_11C_V33\plutommi\mmi\Inc\MMI_featur
 
 [cmd]: 
 "C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\custom\drv\LCD\BLEPHONE61D_11C_LCM\combo_lcm_ST7789V.c F:\6261D_KM\custom\drv\LCD\FARSIGHTED61M_CN_11C_LCM\combo_lcm_ST7789V.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Framework\GDI\GDISrc\gdi_image.c F:\6261D_KM\plutommi\Framework\GDI\GDISrc\gdi_image.c    
