@@ -258,6 +258,7 @@ git difftool -d 0c8427888be95166e9c4f948feeca44bfa6e6c72
 git difftool -d dev master
 git difftool -d master dev
 
+//œ»git commit ‘Ÿgit merge
 git mergetool aaa.txt
 
 
