@@ -5,7 +5,7 @@
 
 
 //1) SaveÄ¿Â¼
-macro getSavePath(0)		{	return "D:\\Save"					}
+macro getSavePath(0)		{	return "E:\\Save"					}
 
 
 //ShellExecuteÃüÁîÄ¿Â¼

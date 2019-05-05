@@ -50,39 +50,42 @@ project:D:\SVN\SC7701,
 
 //(7) MTK 项目路径1
 70
-project:F:\11CW1352MP_KM2,
+project:F:\6261D_KM,
 //奇数项, 解决源码+SI目录分开问题, 源码目录单独设置在前一项
 71
 project:F:\_SI4.0\11CW1352MP_KM.si4project
 
 72
-project:F:\11CW1352MP_BLEPHONE61A,
+project:F:\6261A_11C_V33,
 //奇数项, 解决源码+SI目录分开问题, 源码目录单独设置在前一项
 73
 project:F:\_SI4.0\11CW1352MP_BLEPHONE61A.si4project,
 
 74
-project:F:\11CW1352MP_BLEPHONE61D_11C_V33,
+project:F:\6261D_11C_V33,
 //奇数项, 解决源码+SI目录分开问题, 源码目录单独设置在前一项
 75
-project:F:\_SI4.0\11CW_BLEPHONE61D_11C_V33.si4project,
+project:F:\_SI4.0\6261D_11C_V33.si4project,
 
 
 //(8) base -> save
 80
-project:D:\Save,
+project:E:\Save,
 
-//(6) tmp
+
+//(9) tmp
 90
 project:D:\project\X_police,
 121
 project:D:\_SI4.0\X_police.si4project,
 
-//(6) tmp
+
+//(10) tmp
 100
 project:X:\NoneEmpty,
 
-//(6) tmp
+
+//(11) tmp
 110
 project:X:\NoneEmpty,
 111
@@ -90,19 +93,22 @@ project:X:\NoneEmpty,
 112
 project:X:\NoneEmpty,
 
-// python
+
+//(12) python
 120
 project:D:\project\GitHub\myPython,
 121
 project:D:\_SI4.0\myPython.si4project,
 
-// tensorflow
+
+//(13)  tensorflow
 130
 project:D:\project\GitHub\tensorflow,
 131
 project:D:\_SI4.0\tensorflow.si4project,
 
-// 9820E
+
+//(14) 9820E
 140
 project:F:\9820e,
 141

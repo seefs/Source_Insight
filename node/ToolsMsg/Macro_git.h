@@ -265,6 +265,17 @@ git mergetool aaa.txt
 //	按下Esc (退出编辑状态)； 接着连按两次大写字母Z，保存好退出
 
 
+//去除git mergetool不产生*.orig文件
+//使用git mergetool合并分支时，总会产生以*.orig为扩展名的备份文件，每次都要手动删除，
+//感觉很繁琐，实际上可以修改Git配置，禁止产生备份文件。 
+//打开控制台（或终端）执行如下命令：
+git config --global mergetool.keepBackup false
+ 
+//或者直接进入系统用户目录下，修改.gitconfig文件，增加如下内容：
+[mergetool]
+    prompt = true
+    keepBackup = false
+
 
 /***********************************************************************/
 //git remote
