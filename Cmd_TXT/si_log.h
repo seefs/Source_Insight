@@ -2132,3 +2132,6 @@ TortoiseProc.exe /command:log /path:F:\6261D_11C_V33\plutommi\mmi\Inc\MMI_featur
 
 [cmd]: 
 "C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Framework\GDI\GDISrc\gdi_image.c F:\6261D_KM\plutommi\Framework\GDI\GDISrc\gdi_image.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c F:\6261D_KM\plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c    

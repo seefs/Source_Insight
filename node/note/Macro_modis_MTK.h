@@ -5,82 +5,82 @@
 [Num]
 // 目录:[Ca]
 //   1. 功能点
-Save:SI\node\Macro_modis_MTK.h   \[1.1\] 拨号按键
-Save:SI\node\Macro_modis_MTK.h   \[1.2\] gid
-Save:SI\node\Macro_modis_MTK.h   \[1.3\] GetString()
-Save:SI\node\Macro_modis_MTK.h   \[1.4\] SetKeyHandler(, , )
-Save:SI\node\Macro_modis_MTK.h   \[1.5\] bg color
-Save:SI\node\Macro_modis_MTK.h   \[1.6\] image
-Save:SI\node\Macro_modis_MTK.h   \[1.7\] win id
-Save:SI\node\Macro_modis_MTK.h   \[1.8\] win func
-Save:SI\node\Macro_modis_MTK.h   \[1.9\] NV
-//Save:SI\node\Macro_modis_MTK.h   \[1.10\]
+Save:SI\node\note\Macro_modis_MTK.h   \[1.1\] 拨号按键
+Save:SI\node\note\Macro_modis_MTK.h   \[1.2\] gid
+Save:SI\node\note\Macro_modis_MTK.h   \[1.3\] GetString()
+Save:SI\node\note\Macro_modis_MTK.h   \[1.4\] SetKeyHandler(, , )
+Save:SI\node\note\Macro_modis_MTK.h   \[1.5\] bg color
+Save:SI\node\note\Macro_modis_MTK.h   \[1.6\] image
+Save:SI\node\note\Macro_modis_MTK.h   \[1.7\] win id
+Save:SI\node\note\Macro_modis_MTK.h   \[1.8\] win func
+Save:SI\node\note\Macro_modis_MTK.h   \[1.9\] NV
+//Save:SI\node\note\Macro_modis_MTK.h   \[1.10\]
 //	 2. 界面
-Save:SI\node\Macro_modis_MTK.h   \[2.4\] 界面入口
-Save:SI\node\Macro_modis_MTK.h   \[2.1\] 联系人
-Save:SI\node\Macro_modis_MTK.h   \[2.11\] 短信
-Save:SI\node\Macro_modis_MTK.h   \[2.16\] 显示输入法列表
-Save:SI\node\Macro_modis_MTK.h   \[2.12\] 通话记录
+Save:SI\node\note\Macro_modis_MTK.h   \[2.4\] 界面入口
+Save:SI\node\note\Macro_modis_MTK.h   \[2.1\] 联系人
+Save:SI\node\note\Macro_modis_MTK.h   \[2.11\] 短信
+Save:SI\node\note\Macro_modis_MTK.h   \[2.16\] 显示输入法列表
+Save:SI\node\note\Macro_modis_MTK.h   \[2.12\] 通话记录
 
-Save:SI\node\Macro_modis_MTK.h   \[2.2\] 待机
-Save:SI\node\Macro_modis_MTK.h   \[2.3\] 主菜单
-Save:SI\node\Macro_modis_MTK.h   \[2.10\] Lock
-Save:SI\node\Macro_modis_MTK.h   \[2.14\] SCREENSAVER
-Save:SI\node\Macro_modis_MTK.h   \[2.5\] 菜单
-Save:SI\node\Macro_modis_MTK.h   \[2.6\] 拨号
-Save:SI\node\Macro_modis_MTK.h   \[2.7\] Browser
-Save:SI\node\Macro_modis_MTK.h   \[2.8\] 测试模式
-Save:SI\node\Macro_modis_MTK.h   \[2.9\] setting
-Save:SI\node\Macro_modis_MTK.h   \[2.13\] Camera
-Save:SI\node\Macro_modis_MTK.h   \[2.15\] 工具
+Save:SI\node\note\Macro_modis_MTK.h   \[2.2\] 待机
+Save:SI\node\note\Macro_modis_MTK.h   \[2.3\] 主菜单
+Save:SI\node\note\Macro_modis_MTK.h   \[2.10\] Lock
+Save:SI\node\note\Macro_modis_MTK.h   \[2.14\] SCREENSAVER
+Save:SI\node\note\Macro_modis_MTK.h   \[2.5\] 菜单
+Save:SI\node\note\Macro_modis_MTK.h   \[2.6\] 拨号
+Save:SI\node\note\Macro_modis_MTK.h   \[2.7\] Browser
+Save:SI\node\note\Macro_modis_MTK.h   \[2.8\] 测试模式
+Save:SI\node\note\Macro_modis_MTK.h   \[2.9\] setting
+Save:SI\node\note\Macro_modis_MTK.h   \[2.13\] Camera
+Save:SI\node\note\Macro_modis_MTK.h   \[2.15\] 工具
 
 //	 3. MTK常用断点
-Save:SI\node\Macro_modis_MTK.h   \[3.1\] 事件
-Save:SI\node\Macro_modis_MTK.h   \[3.2\] 字符方向
-Save:SI\node\Macro_modis_MTK.h   \[3.3\] 转格式
-Save:SI\node\Macro_modis_MTK.h   \[3.4\] gui draw
-//Save:SI\node\Macro_modis_MTK.h   \[3.5\] 
+Save:SI\node\note\Macro_modis_MTK.h   \[3.1\] 事件
+Save:SI\node\note\Macro_modis_MTK.h   \[3.2\] 字符方向
+Save:SI\node\note\Macro_modis_MTK.h   \[3.3\] 转格式
+Save:SI\node\note\Macro_modis_MTK.h   \[3.4\] gui draw
+//Save:SI\node\note\Macro_modis_MTK.h   \[3.5\] 
 //	 4. 模块
-Save:SI\node\Macro_modis_MTK.h	 \[4.1\] 弹窗
-Save:SI\node\Macro_modis_MTK.h	 \[4.2\] title
-Save:SI\node\Macro_modis_MTK.h	 \[4.3\] Browser
-Save:SI\node\Macro_modis_MTK.h	 \[4.4\] 状态条
-Save:SI\node\Macro_modis_MTK.h	 \[4.5\] 时间状态条
-Save:SI\node\Macro_modis_MTK.h	 \[4.6\] softkey
-Save:SI\node\Macro_modis_MTK.h	 \[4.7\] 图片
-Save:SI\node\Macro_modis_MTK.h	 \[4.8\] 铃声
-Save:SI\node\Macro_modis_MTK.h	 \[4.9\] 字库
-Save:SI\node\Macro_modis_MTK.h	 \[4.10\] U盘符
+Save:SI\node\note\Macro_modis_MTK.h	 \[4.1\] 弹窗
+Save:SI\node\note\Macro_modis_MTK.h	 \[4.2\] title
+Save:SI\node\note\Macro_modis_MTK.h	 \[4.3\] Browser
+Save:SI\node\note\Macro_modis_MTK.h	 \[4.4\] 状态条
+Save:SI\node\note\Macro_modis_MTK.h	 \[4.5\] 时间状态条
+Save:SI\node\note\Macro_modis_MTK.h	 \[4.6\] softkey
+Save:SI\node\note\Macro_modis_MTK.h	 \[4.7\] 图片
+Save:SI\node\note\Macro_modis_MTK.h	 \[4.8\] 铃声
+Save:SI\node\note\Macro_modis_MTK.h	 \[4.9\] 字库
+Save:SI\node\note\Macro_modis_MTK.h	 \[4.10\] U盘符
 
 //	 5. MTK常用断点
-Save:SI\node\Macro_modis_MTK.h	 \[5.1\] 编译流程
-Save:SI\node\Macro_modis_MTK.h	 \[5.2\] 彻底关闭MRE
-Save:SI\node\Macro_modis_MTK.h	 \[5.3\] SVN test
-Save:SI\node\Macro_modis_MTK.h	 \[5.4\] IDLE 模拟入口
+Save:SI\node\note\Macro_modis_MTK.h	 \[5.1\] 编译流程
+Save:SI\node\note\Macro_modis_MTK.h	 \[5.2\] 彻底关闭MRE
+Save:SI\node\note\Macro_modis_MTK.h	 \[5.3\] SVN test
+Save:SI\node\note\Macro_modis_MTK.h	 \[5.4\] IDLE 模拟入口
 
 //	 6. 编译 Error
-Save:SI\node\Macro_modis_MTK.h	 \[6.1\] Error: 超空间:
-Save:SI\node\Macro_modis_MTK.h	 \[6.2\] Error: zimage_check 
-Save:SI\node\Macro_modis_MTK.h	 \[6.3\] Error:	vivaConfig.log
-Save:SI\node\Macro_modis_MTK.h	 \[6.4\] Error: mmiresource.lib
-Save:SI\node\Macro_modis_MTK.h	 \[6.5\] Error:	资源出错
-Save:SI\node\Macro_modis_MTK.h	 \[6.6\] Error:	MMI Feature Check Error
-Save:SI\node\Macro_modis_MTK.h	 \[6.7\] Error:	XX.bin does not exist.
-Save:SI\node\Macro_modis_MTK.h	 \[6.8\] Error:	并行编译出错->Disable
-Save:SI\node\Macro_modis_MTK.h	 \[6.9\] Error:	CreateProcess 拒绝访问
-Save:SI\node\Macro_modis_MTK.h	 \[6.10\] Error:  msys-1.0.dll
-Save:SI\node\Macro_modis_MTK.h	 \[6.11\] Error: obigo03cstkadp
-Save:SI\node\Macro_modis_MTK.h	 \[6.12\] Error:  文件名长度超过256
-Save:SI\node\Macro_modis_MTK.h	 \[6.13\] Error: 丢失 BOOTLOADER 文件，原因同上(6.12)
+Save:SI\node\note\Macro_modis_MTK.h	 \[6.1\] Error: 超空间:
+Save:SI\node\note\Macro_modis_MTK.h	 \[6.2\] Error: zimage_check 
+Save:SI\node\note\Macro_modis_MTK.h	 \[6.3\] Error:	vivaConfig.log
+Save:SI\node\note\Macro_modis_MTK.h	 \[6.4\] Error: mmiresource.lib
+Save:SI\node\note\Macro_modis_MTK.h	 \[6.5\] Error:	资源出错
+Save:SI\node\note\Macro_modis_MTK.h	 \[6.6\] Error:	MMI Feature Check Error
+Save:SI\node\note\Macro_modis_MTK.h	 \[6.7\] Error:	XX.bin does not exist.
+Save:SI\node\note\Macro_modis_MTK.h	 \[6.8\] Error:	并行编译出错->Disable
+Save:SI\node\note\Macro_modis_MTK.h	 \[6.9\] Error:	CreateProcess 拒绝访问
+Save:SI\node\note\Macro_modis_MTK.h	 \[6.10\] Error:  msys-1.0.dll
+Save:SI\node\note\Macro_modis_MTK.h	 \[6.11\] Error: obigo03cstkadp
+Save:SI\node\note\Macro_modis_MTK.h	 \[6.12\] Error:  文件名长度超过256
+Save:SI\node\note\Macro_modis_MTK.h	 \[6.13\] Error: 丢失 BOOTLOADER 文件，原因同上(6.12)
 //	 7. 模拟器 Error
-Save:SI\node\Macro_modis_MTK.h	 \[7.1\] KM模拟器编不过, 缺文件
-Save:SI\node\Macro_modis_MTK.h	 \[7.2\] 模拟器改NV后, 运行报错, 删除文件:
-Save:SI\node\Macro_modis_MTK.h	 \[7.3\] 模拟器Error: mte_data.h 少}
-Save:SI\node\Macro_modis_MTK.h	 \[7.4\] 模拟器Error:   'shortname' 文件名超长
-Save:SI\node\Macro_modis_MTK.h	 \[7.5\] 模拟器Error:    vs_cfg:
-Save:SI\node\Macro_modis_MTK.h	 \[7.6\] 模拟器Error:   exist not modis.exe 
-Save:SI\node\Macro_modis_MTK.h	 \[7.7\] 模拟器Error:    cannot update program database:
-Save:SI\node\Macro_modis_MTK.h	 \[7.8\] 模拟器Error: 空定义	
+Save:SI\node\note\Macro_modis_MTK.h	 \[7.1\] KM模拟器编不过, 缺文件
+Save:SI\node\note\Macro_modis_MTK.h	 \[7.2\] 模拟器改NV后, 运行报错, 删除文件:
+Save:SI\node\note\Macro_modis_MTK.h	 \[7.3\] 模拟器Error: mte_data.h 少}
+Save:SI\node\note\Macro_modis_MTK.h	 \[7.4\] 模拟器Error:   'shortname' 文件名超长
+Save:SI\node\note\Macro_modis_MTK.h	 \[7.5\] 模拟器Error:    vs_cfg:
+Save:SI\node\note\Macro_modis_MTK.h	 \[7.6\] 模拟器Error:   exist not modis.exe 
+Save:SI\node\note\Macro_modis_MTK.h	 \[7.7\] 模拟器Error:    cannot update program database:
+Save:SI\node\note\Macro_modis_MTK.h	 \[7.8\] 模拟器Error: 空定义	
 	
 
 
@@ -291,6 +291,16 @@ plutommi\Customer\CustResource\mmi_rp_menu_shortcut_data.c mmi_shct_candidate_me
 
 [2.3] 主菜单入口:
 EntryMainMenuFromIdleScreen
+//draw - txt
+plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c 4889 gui_print_truncated_text
+//draw - scroll txt
+plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c 7230 gui_list_show_text
+plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c 7121 gui_list_show_text
+//draw - icon
+plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c 6690 gdi_image_draw_animation_single_frame
+//draw - highlight bg
+plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c 6500 gui_show_animation_with_background_image
+
 	
 [2.10] Lock
 //	Lock
@@ -642,10 +652,10 @@ Save:SI\node\note\Macro_Note_MTK.h \[4.9\] 铃声
 Save:SI\node\note\Macro_Note_MTK.h \[4.10\] 字符串
 Save:SI\node\note\Macro_Note_MTK.h \[4.11\] 字库
 //	当前文件跳转:
-Save:SI\node\Macro_modis_MTK.h	 \[4.8\] 图片
-Save:SI\node\Macro_modis_MTK.h	 \[4.9\] 铃声
-Save:SI\node\Macro_modis_MTK.h	 \[4.10\] 字符串
-Save:SI\node\Macro_modis_MTK.h	 \[4.11\] 字库
+Save:SI\node\note\Macro_modis_MTK.h	 \[4.8\] 图片
+Save:SI\node\note\Macro_modis_MTK.h	 \[4.9\] 铃声
+Save:SI\node\note\Macro_modis_MTK.h	 \[4.10\] 字符串
+Save:SI\node\note\Macro_modis_MTK.h	 \[4.11\] 字库
 
 [4.8] 图片
 //	开关机动画移除壁纸:

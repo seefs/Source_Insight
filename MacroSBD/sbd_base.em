@@ -321,7 +321,6 @@ macro SearchPathFromNum(hbufConfig, n)
 
 	if(!isNumber(hbufConfig))
 	{
-		msg(0)
 		hbufConfig = OpenCache(getPathConfig(0))
 	}
 	

@@ -41,7 +41,7 @@ key:R61526,file:tft_R61526.c
 key:R61520,file:tft_R61520.c
 key:R61509V,file:tft_R61509V.c
 key:R61505U,file:tft_R61505U.c
-key:PRODUCT,path:lib
+key:PRODUCT_BASELIB_DIR,path:lib
 key:POWER,file:mmiphone_onoff.c
 key:PAS6175,file:sensor_pas6175.c
 key:OV9660,file:sensor_OV9660.c
@@ -140,7 +140,7 @@ key:FULLTEST,file:mmieng_main.c
 key:FONT,file:mmi_res_prj_def.h
 key:FMM,file:mmisd_export.h
 key:DEVICE,file:bt_cfg.h
-key:CUSTOMER,path2:common\nv_parameters
+key:CUSTOMER,path:common\nv_parameters\{CONFIG}\{VALUE}
 key:BT,file:bt_cfg.h
 key:BG0323,file:sensor_bg0323.c
 key:BF3A01,file:sensor_BF3A01.c
@@ -160,3 +160,7 @@ key:SP0821,file:sensor_SP0821.c
 key:BF3A02,file:sensor_bf3a02.c
 key:GC9307,file:tft_GC9307.c
 key:NV3029S,file:tft_NV3029S.c
+key:PRTITION,file:MS_Customize\source\product\config\{CONFIG}\mem_cfg.c
+key:PRODUCT_CONFIG,path:MS_Customize\source\product\config\{CONFIG}
+
+
