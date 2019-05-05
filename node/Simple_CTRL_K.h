@@ -1,6 +1,6 @@
 
-目录{Num][Ca]:
-Save:SI\node\Simple_CTRL_K.h \[1.1\] 宏说明[Cs]:
+目录[Num][Ca]:
+Save:SI\node\Simple_CTRL_K.h \[1.1\] 宏说明:
 Save:SI\node\Simple_CTRL_K.h \[2.1\] key:[F1] (按F1后再按0~9、A~Z、F2~F12)
 Save:SI\node\Simple_CTRL_K.h \[2.2\] key:[F2] 打开目录
 Save:SI\node\Simple_CTRL_K.h \[2.3\] key:[F3] 修改默认向前搜索
@@ -91,7 +91,7 @@ F1 -> X: 清除.mk右侧内容, 用于对比
 F1 -> Y:
 F1 -> Z: pick window 
       
-unfinished:1: (未实现)F1 -> X: 多余SI, 关闭省内存
+unfinished: [Next] (未实现)F1 -> X: 多余SI, 关闭省内存
 F1 -> 其他符号, .; 显示ascii code
 
 其他：
@@ -153,7 +153,7 @@ Save:SI\MacroSBD\sbd_f5.em
 2.2 默认是打开文件夹(同F11中的F5)
 
 //4#. 优化, LCD关键词加等级, 先计算等级, 再跳转（要等做了F6再说, 做了F6才有用）
-unfinished:1:(BUG) F5->HAN MTK 中error  
+unfinished:1: [Next] (BUG) F5->HAN MTK 中error  
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 
@@ -185,7 +185,8 @@ F7 -> S -> 切换F5/F6功能: F5多条件搜索.    F6         添加条件
 F7 -> B -> 切换--/F6功能: F6多工程文件对比, 设置对比工程
            增加功能: F1->F6 目录对比
 F7 -> L -> 切换--/F6功能: F6关闭
-F7 -> N -> 切换--/F6功能: F6服务器路径 //unfinished:1:后面增加提示切换ok
+F7 -> N -> 切换--/F6功能: F6服务器路径 
+unfinished:1: [Next] 后面增加提示切换ok
 	//1) 在这一行取消注释并F5, 保存服务器路径到文件中, 会提示设置ok:
 	//	 basePath = \\192.168.2.115\xiaoj\9820\idh.code
 	//2) F5优先用basePath作项目路径, 
@@ -205,9 +206,9 @@ F7 -> E -> 1/2/3/4/5: 编辑F5跳转关系/编辑F10菜单组/编辑F11宏说明
 F7 -> F -> 打开目录..\SI\node (已经没有了)
 F7 -> A -> 打开 ..\SI\node\Tmp_Common.h
     
-//unfinished:3:(未实现)F7 -> L -> build-查宏-显示在si  (未实现)
-//unfinished:1:(未实现)F7 -> M -> build-查log   type app* |find  "SPEAK" > log.txt  (未实现)
-//unfinished:1:(未实现) F7 -> H: last模式 最后一次命令：如svn添加文件
+unfinished:3: [Next] (未实现)F7 -> L -> build-查宏-显示在si  (未实现)
+unfinished:1: [Next] (未实现)F7 -> M -> build-查log   type app* |find  "SPEAK" > log.txt  (未实现)
+unfinished:1: [Next] (未实现) F7 -> H: last模式 最后一次命令：如svn添加文件
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 Save:SI\MacroSBD\sbd_f8.em
@@ -230,7 +231,7 @@ Save:SI\MacroSBD\sbd_f9.em
 		选中: Settings.java
 		提示: packages\apps\Settings\src\com\android\settings\Settings.java
 		按ok添加这一行; 多选需要按序号; 按0添加全部行
-unfinished:1: F9-MTK: 所有文件名
+unfinished:1: [Next]  F9-MTK: 所有文件名
 	
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 
@@ -408,7 +409,7 @@ Save:SI\MacroSBD\sbd_f12.em
       			//		SBD_USB_
       			//提示: 
       			//		aaa_
-unfinished:4: 打开其他工程mk, F12没有匹配对; 以前可以现在不行了...
+unfinished:4: [Next]  打开其他工程mk, F12没有匹配对; 以前可以现在不行了...
 
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
@@ -427,50 +428,54 @@ CTRL + ↓: 1.搜索结果中同文件选择;
 			  
 ctrl + B: 1.打开或关闭临时文件, 作一些记录
 ctrl + C: 1.新加文件
-ctrl + D: 1.1 搜索结果中, 向上向下选择同名行数, 向上向下删除同文件行;
-		  1.2 搜索结果中, 已选中, 删除选中行
+ctrl + D: 1 搜索结果中
+			  1.1 未选中, 向上向下选择同名行数, 向上向下删除同文件行;
+			  1.2 已选中, 删除选中行
 		  2. 在ref_list中, 选中下一条翻译
 		  3. Macro_xxx、Simple_CTRL_xxx中 同F10
+			  3.1~3.5 见详细说明
+		  4. .mk .def .mak中 同F10
+		  5. *.em 中 同F10
+		  6. other file、Simple_CTRL_B中 空格对齐
+				  
+              3.1 ctrl+D 索引功能:
+              //ctrl+D->~ 显示帮助
+              //ctrl+D->1 显示索引[a-z]+
+              //ctrl+D->2 显示索引[Ca-z] ctrl+a
+              //ctrl+D->3 显示索引[0-9.]+ 0~40条, 最多显示40条
+              //		带\[Num\] 显示数字索引, 其他的也可以直接跳转
+              //ctrl+D->4 显示索引[0-9.]+ 41~80条, 最多显示40条
+              //ctrl+D->5 显示索引[0-9.]+ 81~120条, 最多显示40条
+              //ctrl+D->6 显示索引[0-9.]+ 121~160条, 最多显示40条
+              //ctrl+D->7 显示索引[F1-12]
+              //ctrl+D->8 显示索引[ xxx] 空格+默认
+              //ctrl+D->9 显示默认索引 确认加空格区分, 针对\[Num\]改为数字索引的情况
+              //ctrl+D->ctrl+D 显示默认索引
 
-3.1 ctrl+D 索引功能:
-//ctrl+D->~ 显示帮助
-//ctrl+D->1 显示索引[a-z]+
-//ctrl+D->2 显示索引[Ca-z] ctrl+a
-//ctrl+D->3 显示索引[0-9.]+ 0~40条, 最多显示40条
-//		  带\[Num\] 显示数字索引, 其他的也可以直接跳转
-//ctrl+D->4 显示索引[0-9.]+ 41~80条, 最多显示40条
-//ctrl+D->5 显示索引[0-9.]+ 81~120条, 最多显示40条
-//ctrl+D->6 显示索引[0-9.]+ 121~160条, 最多显示40条
-//ctrl+D->7 显示索引[F1-12]
-//ctrl+D->8 显示索引[ xxx] 空格+默认
-//ctrl+D->9 显示默认索引 确认加空格区分, 针对\[Num\]改为数字索引的情况
-//ctrl+D->ctrl+D 显示默认索引
+              3.2 ctrl+D 直接跳转功能:
+              //不会显示弹窗, mtk笔记是这样用的
+              //ctrl+D->b 跳转到标签 [ b ]
+              //ctrl+D->r 跳转到标签 [ r ]
+              //ctrl+D->ctrl+B 跳转到标签 [ Cb ]
+              //ctrl+D->ctrl+R 跳转到标签 [ Cr ]
 
-3.2 ctrl+D 直接跳转功能:
-//不会显示弹窗, mtk笔记是这样用的
-//ctrl+D->b 跳转到标签 [ b ]
-//ctrl+D->r 跳转到标签 [ r ]
-//ctrl+D->ctrl+B 跳转到标签 [ Cb ]
-//ctrl+D->ctrl+R 跳转到标签 [ Cr ]
+              3.3 为了不影响数字索引, 括号改成这样: \[fail\], 不影响作为F5关键字的跳转
+              //xxx/xxxx/xxx.h \[1.1\]	  -> 按F5跳转到 [ 1.1 ]
+              //xxx/xxxx/xxx.h \[3.1\]	  -> 按F5跳转到 [ 3.1 ]
 
-3.3 为了不影响数字索引, 括号改成这样: \[fail\], 不影响作为F5关键字的跳转
-//xxx/xxxx/xxx.h \[1.1\]	-> 按F5跳转到 [ 1.1 ]
-//xxx/xxxx/xxx.h \[3.1\]	-> 按F5跳转到 [ 3.1 ]
+              3.4 索引可能加要0: 
+              //ctrl+D->ctrl+D	  ->  显示Msg    ->  输入01, 跳转到标签1
+              //ctrl+D->ctrl+D	  ->  显示Msg    ->  输入02, 跳转到标签2
+              //ctrl+D->ctrl+D	  ->  显示Msg    ->  输入06 或 6, 跳转到标签6, 最大标签不超过60
 
-3.4 索引可能加要0: 
-//ctrl+D->ctrl+D	->	显示Msg	 ->  输入01, 跳转到标签1
-//ctrl+D->ctrl+D	->	显示Msg	 ->  输入02, 跳转到标签2
-//ctrl+D->ctrl+D	->	显示Msg	 ->  输入06 或 6, 跳转到标签6, 最大标签不超过60
+              3.5 添加了翻页提示, ctrl+D最大可以翻10页, 然后循环从第1页开始
+              //ctrl+D->ctrl+D	  ->  显示第1页Msg	  ->  输入ctrl+D, 跳转到第2页
+              //ctrl+D->ctrl+D	  ->  显示第2页Msg	  ->  输入ctrl+D, 跳转到第3页
+              //...
+              //ctrl+D->ctrl+D	  ->  显示第10页Msg    ->  输入ctrl+D, 跳转到第1页
 
-3.5 添加了翻页提示, ctrl+D最大可以翻10页, 然后循环从第1页开始
-//ctrl+D->ctrl+D	->	显示第1页Msg	->	输入ctrl+D, 跳转到第2页
-//ctrl+D->ctrl+D	->	显示第2页Msg	->	输入ctrl+D, 跳转到第3页
-//...
-//ctrl+D->ctrl+D	->	显示第10页Msg	 ->  输入ctrl+D, 跳转到第1页
 
-		  4. .mk .def .mak中 同F10 (功能用的少)
-		  5. .em中 显示所有函数名
-//unfinished:3:(未实现)4*. 选择1整行+ 设置对齐默认值; 选中, 注释对齐
+unfinished:3: [Next] (未实现)4*. 选择1整行+ 设置对齐默认值; 选中, 注释对齐
 
 
 ctrl + E: 1.打开文件或右侧project窗口
@@ -519,17 +524,17 @@ Ctrl + I: //转格式:
           //->: 
           //	  [ 4.7.22 ]
           //	功能有点问题: -会作为.匹配; 错误匹配可能要手动选择下一个标号
-		  unfinished:3: (未实现) char. 在前加编吗
+		  unfinished:3: [Next]  (未实现) char. 在前加编吗
 		  
 ctrl + K: 1.跳到快捷键说明文件 Simple_CTRL_K.h
 ctrl + N: 添加空行(10行)
 ctrl + Q: 1.打开下一个窗口
 ctrl + R: 1.打开下一个搜索结果
-		  unfinished:1: (未实现) ctrl+R/G->marco_中-》下一个标签; 或者双击向前 单击向后
+		  unfinished:1: [Next]  (未实现) ctrl+R/G->marco_中-》下一个标签; 或者双击向前 单击向后
 ctrl + T: 1.mk中, 交换true/false, 或者在末尾加(= TRUE); 
           2.C/H文件, 添加或删除注释
-		  unfinished:1: (未实现) note直接修改mk, 可以多行
-		  unfinished:4: (未实现) 根据首行是否居首, 删除注释
+		  unfinished:1: [Next]  (未实现) note直接修改mk, 可以多行
+		  unfinished:4: [Next]  (未实现) 根据首行是否居首, 删除注释
 ctrl + W: 1.修改原功能, 不关闭搜索结果窗口, 但是大于40行会删除一半内容
 Ctrl + Back: 回到SI
 	

@@ -801,8 +801,19 @@ macro NoteGroupPreview(hbuf, key)
 				//cur_sel_len = strlen("@cur_sel@")
 				cur_sel = ReplaceWord(cur_sel, "[", "\\[")
 				cur_sel = ReplaceWord(cur_sel, "]", "\\]")
-				allKeyTxt = allKeyTxt # strmid(line, 0, mSel.ichFirst) # cur_sel # strmid(line, mSel.ichLim, strlen(line)) # CharFromKey(13)
-				//indexMax = indexMax - 1
+				
+				index_kh = FindString(line, "]")
+				if(index_kh != "X")
+				{
+					start = StartWS(line, index_kh + 1 )
+					if(start != "X")
+					{
+						left_str = strmid(line, 0, mSel.ichFirst)
+						right_str = strmid(line, mSel.ichLim, strlen(line))
+						allKeyTxt = allKeyTxt # left_str # cur_sel # right_str # CharFromKey(13)
+						//indexMax = indexMax - 1
+					}
+				}
 			}
 			else if(mode == 0 && (ch == "F" || ch == "N" || ch == "C"))
 			{
@@ -1049,8 +1060,6 @@ macro NoteGroupGetMode(hbuf, searchStr)
 macro ShowMacroGroup(mBuf)
 {
 	//_TempHeadF10(hbuf)
-	mFile = getSavePath(0) # "\\SI\\MacroSBD\\sbd_ctrl.em"
-	
 	mKey = "^macro "
 	mSel = SearchInBuf(mBuf, mKey, 0, 0, FALSE, TRUE, FALSE)
 	menuMsg = ""

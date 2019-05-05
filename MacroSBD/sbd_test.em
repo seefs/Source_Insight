@@ -562,4 +562,7 @@ macro OpenRefTest(hbuf)
 }
 
 
-
+macro TestMsg(msgStr)
+{
+//	msg(msgStr)
+}

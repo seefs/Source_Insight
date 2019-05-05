@@ -2,8 +2,8 @@
 // File List [Num][Ca]:
 // 1. 常用笔记
 Save:SI\node\Macro_File.h \[1.1\] work--node
-Save:SI\node\Macro_File.h \[1.2\] Pythons--node
-Save:SI\node\Macro_File.h \[1.3\] Yuyang--node
+Save:SI\node\Macro_File.h \[1.2\] other project
+Save:SI\node\Macro_File.h \[1.3\] other
 // 2. 模拟器
 Save:SI\node\Macro_File.h \[2.1\] 模拟器
 Save:SI\node\Macro_File.h \[2.2\] 未整理 未改
@@ -38,18 +38,27 @@ Save:SI\node\Macro_File.h \[7.2\] 参考标号:
 
 [1.1] work--node
 //1) android:
-Save:SI\node\note\Macro_Note_9820es.h
+Save:SI\node\9820e\Macro_Note_9820es.h
 //2) MTK SPR:
 Save:SI\node\note\Macro_Note_MTK.h
 Save:SI\node\note\Macro_Note_6531E.h
-[1.2] Pythons--node
+
+
+//4) other:
+Save:SI\node\Project\Macro_A_Nav.h
+
+
+[1.2] other project
 //1) Pythons:
 Save:SI\node\Pythons\Macro_Note_Python.h
-//pythom 网文
-Save:SI\node\Pythons\Macro_Pythons_summary.h
-//Tensorflow 网文
-Save:SI\node\Pythons\Macro_Pythons_tensorflow.h
-[1.3] Yuyang--node
+//2) weixin:
+Save:SI\node\weixin\Macro_Note_weixin.h
+//3) Yuyang:
+Save:SI\node\Yuyang\Macro_Note_Yuyang.h
+
+
+
+[1.3] other
 	
 
 
@@ -66,8 +75,9 @@ Save:SI\node\Macro_modis_6531E.h
 Save:SI\bak\bak_mtk_lang.h	
 //2) 未改:
 Save:SI\bak\bak_mtk_weiti.h	
-//2) 其他:
+//3) 其他:
 Save:SI\bak\Macro_tmp.h
+Save:SI\bak\Macro_utf8_tmp.h
 
 
 [2.3] bak文件:

@@ -19,7 +19,7 @@ macro getMarBasePath(0)		{	return "basePath"	}
 //获取设置BUF
 macro GetCfgBuf(mode)
 {
-	SetName = getNodePath(0) # "\\Macro_Set.h"
+	SetName = getNodePath(0) # "\\set\\Macro_Set.h"
 	setBuf = OpenCache(SetName)
 	
 	return setBuf
@@ -60,7 +60,7 @@ macro ReadMode(setRow)
 		//val = GetLineMacro(lnStr)
 		return lnStr //val
 	}else{
-		msgErr = getNodePath(0) # "\\Macro_Set.h"  # "," # CharFromKey(13)
+		msgErr = getNodePath(0) # "\\set\\Macro_Set.h"  # "," # CharFromKey(13)
 		msg (msgErr # "tools mode row (@ln@), read error")
 		return 0
 	}
@@ -137,6 +137,13 @@ macro IsExeFile(hbuf)
 {
 	fName = GetFileName(GetBufName(hbuf))
 	return IsFileType(fName, ".exe") || IsFileType(fName, ".bat")
+}
+
+macro IsScriptFile(hbuf)
+{
+	//# as Comment
+	fName = GetFileName(GetBufName(hbuf))
+	return IsFileType(fName, ".py") || IsFileType(fName, ".make")
 }
 
 //从右边匹配
@@ -673,6 +680,8 @@ macro GetTransFileName(hbuf, fName, cNum)
 	fName = ReplaceWord(fName, "^", " ")
 	//use "Save:" as SavePath
 	fName = ReplaceWord(fName, "Save:", getSavePath(0) # "\\")
+	fName = ReplaceWord(fName, "Project:", getCustomPath(0) # "\\")
+	
 	return fName
 }
 

@@ -59,7 +59,13 @@ macro CtrlD()
 			ich =  ich + 1
 		}
 	}
-	//3. Macro_xxx、Simple_CTRL_xxx中 同F10
+	//6. other file、Simple_CTRL_xxx中 空格对齐
+	else if(IsFileName(hbuf, "Simple_CTRL_B"))
+	{
+		CodeAlign(hbuf)
+		stop
+	}
+	//3. Macro_xxx 中 同F10
 	else if(IsFileName(hbuf, "Macro_")||IsFileName(hbuf, "Simple_CTRL_"))
 	{
 		NoteGroup(hbuf)
@@ -71,9 +77,20 @@ macro CtrlD()
 		MakeGroup(hbuf)
 		stop
 	}
+	//5. *.em 中 同F10
 	else if(IsMacroFile(hbuf))
 	{
 		ShowMacroGroup(hbuf)
+		stop
+	}
+	else if (IsScriptFile(hbuf))
+	{
+		ShowNoteHelp(hbuf)
+	}
+	//6. other file、Simple_CTRL_xxx中 空格对齐
+	else
+	{
+		CodeAlign(hbuf)
 		stop
 	}
 }
@@ -216,6 +233,18 @@ macro CtrlT()
 			///###
 		}
 	}
+	else if(IsScriptFile(hbuf))
+	{
+		fstr = GetFirstChar(hbuf, 1)
+		if(fstr == "#")
+		{
+			UncommentScript(hbuf)
+		}
+		else
+		{
+			CommentScript(hbuf)
+		}
+	}
 	else 
 	{
 		fstr = GetFirstChar(hbuf, 2)
@@ -237,6 +266,7 @@ macro CtrlR()
 	hbuf = GetCurrentBuf()
 	if(IsFileName(hbuf, "Macro_")||IsFileName(hbuf, "Simple_CTRL_"))
 	{
+		//1. 文件内索引跳转
 		sel = MGetWndSel(hbuf)
 		searchStr = ""
 		cur_line = GetBufLine(hbuf, sel.lnFirst )	
@@ -254,11 +284,13 @@ macro CtrlR()
 				sel2 = SearchInBuf(hbuf, searchStr, 0, 0, FALSE, FALSE, FALSE)
 				if (sel2 != "")
 				{
+					TestMsg("跳转到目录: " # searchStr)
 					ScrollCursor(sel2)
 					stop
 				}
 			}
 		}
+		//2. 文件内跳转另一个文件/目录
 		NoteHander(hbuf, 5)
 	}
 	else
@@ -330,7 +362,7 @@ macro CtrlQ()
 macro CtrlU()
 {
 	hbuf = GetCurrentBuf()
-	//不能传-1,只能传空
+	//获取行数, 不能传-1, 只能传空
 	rowMax = GetClipStringI(hbuf, "")
 	if(rowMax==0)
 		stop
@@ -346,6 +378,7 @@ macro CtrlU()
 		//rowMax == sel.lnLast - sel.lnFirst + 1 && 
 		if(IsNumber (clipStr))
 		{
+			//insert num row, 1,2,3...
 			while (row < sel.lnLast + 1)
 			{
 				cur_line = GetBufLine(hbuf, row)
@@ -356,10 +389,14 @@ macro CtrlU()
 		}
 		else if(FindString( clipStr, "^p" ) != "X")
 		{
+			//insert \n\n
 			spaceRow = strlen(clipStr)
 			clipStr = ReplaceWord(clipStr, "^p", "")
 			spaceRow = (spaceRow - strlen(clipStr))/2
-			while (row < sel.lnFirst + (sel.lnLast - sel.lnFirst + 1)*(spaceRow + 1))
+			//new last row:
+			msg("add space (@spaceRow@) row?")
+			row = sel.lnLast
+			while (row >= sel.lnFirst)
 			{
 				n = spaceRow
 				while (n>0)
@@ -367,11 +404,44 @@ macro CtrlU()
 					InsBufLine(hbuf, row, "");
 					n = n - 1
 				}
-				row = row + 1 + spaceRow
+				row = row - 1
+			}
+		}
+		else if(clipStr == "")
+		{
+			//insert or delete \n
+			first_line = GetBufLine(hbuf, sel.lnFirst)
+			start = StartWS(first_line, 0 )
+			if (start == "X")
+			{
+				//delete \n
+				msg("delete space row?")
+				row = sel.lnLast + 1
+				while (row >= sel.lnFirst)
+				{
+					cur_line = GetBufLine(hbuf, row)
+					if(cur_line == "")
+						DelBufLine(hbuf, row)
+					row = row - 1
+				}
+			}
+			else
+			{
+				//insert \n
+				msg("add space row?")
+				row = sel.lnLast
+				while (row >= sel.lnFirst)
+				{
+					cur_line = GetBufLine(hbuf, row)
+					if(cur_line != "")
+						InsBufLine(hbuf, row, "");
+					row = row - 1
+				}
 			}
 		}
 		else
 		{
+			//insert same row
 			while (row < sel.lnLast + 1)
 			{
 				cur_line = GetBufLine(hbuf, row)
@@ -848,7 +918,7 @@ macro ScrollCurWnd(hbuf, direct, sel, ln)
 /***********************************************************************/
 macro CtrlTest(hbuf)
 {
-	//msg ("CtrlTest")
+	msg ("CtrlTest")
 	
     hbuf = GetCurrentBuf()
 	ChangeSel(hbuf, 3)
