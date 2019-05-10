@@ -34,6 +34,7 @@ Save:SI\node\note\Macro_modis_MTK.h   \[2.9\] setting
 Save:SI\node\note\Macro_modis_MTK.h   \[2.17\] Profile
 Save:SI\node\note\Macro_modis_MTK.h   \[2.13\] Camera
 Save:SI\node\note\Macro_modis_MTK.h   \[2.15\] 工具
+Save:SI\node\note\Macro_modis_MTK.h   \[2.18\] play
 
 //	 3. MTK常用断点
 Save:SI\node\note\Macro_modis_MTK.h   \[3.1\] 事件
@@ -565,9 +566,22 @@ plutommi\mmi\Organizer\HijriCalendar\HijriCalendar_res\HijriCalendar.res STR_AFG
 
 
 
-[2.16] 
+[2.18] play
+// 关CAM报错:
+	MJPG_ENCODE = FALSE
+	CMOS_SENSOR = BF3A02_SERIAL  #NONE
+	SENSOR_TYPE = YUV #NONE
+	ISP_SUPPORT = FALSE
+// 关CAM报错:
+	Reading custom_data succeeded.
+	Start to parse the custom NVRAM DATA!
+	make: *** [.\build\M115_JGW_D2_X191_F2\gprs\MT6261r\codegen_dep\cgen_cfg.det] Error 253
 
-[2.17] 
+
+
+
+
+[2.19] 
 
 /***********************************************************************/
 
@@ -689,11 +703,39 @@ mmi_prof_customize_scrn_csk_hdlr  SIM1_MSG_TONE_ITEM flag = 2;添加可选择文件
 custom\drv\misc_drv\_Default_BB\MT6261\usb_custom.c custom_usb_ms_init
 // 编码（改了无效）
 CFG_MMI_SET_DEF_ENCODING_TYPE
+	
+// USB相关
+USB_SUPPORT 	#USB功能的总开关
+USB_HS_SUPPORT	#usb high speed
+USB_MASS_STORAGE_SUPPORT	#usb mass storage
+USB_IN_NORMAL_MODE_SUPPORT	#开机 mass storage
+USB_COM_PORT_SUPPORT		#usb com port
+USB_MULTIPLE_COMPORT_ENABLE	#枚举 com port
 
 
-USB_MULTIPLE_COMPORT_ENABLE
-USB_MASS_STORAGE_CDROM_SUPPORT
+// 开U盘
+USB_MULTIPLE_COMPORT_ENABLE	?
+USB_MASS_STORAGE_CDROM_SUPPORT	?
 UART3_SUPPORT = FALSE
+
+// flash size
+SIP_SERIAL_FLASH_SIZE = 32M_BITS
+// 默认文件系统的大小就是Last Bank Region的大小。
+tools\MemoryDeviceList\MemoryDeviceList_MT62XX_SinceXXX.xls
+// xls -> SERIAL_FLASH -> Last Bank -> MTKSIP_6261_SF_32_01 -> {0x1000, 32}
+tools\MemoryDeviceList\MemoryDeviceList_MT6261_Since11CW1352.xls
+//		file system size = {0x1000, 32} = 0x1000 * 32 = 128KB.
+
+
+//内置mp3文件
+
+
+
+
+
+
+
+
 
 [4.11] 字库
 

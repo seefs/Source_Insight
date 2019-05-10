@@ -2387,3 +2387,27 @@ TortoiseProc.exe /command:log /path:F:\6261D_11C_V33\plutommi\mmi\Inc\MMI_featur
 
 [cmd]: 
 "C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33_AI\custom\common\userprofile_nvram_def.c F:\6261D_11C_V33\custom\common\userprofile_nvram_def.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\custom\common\userprofile_nvram_def_XG05_KM_V2403Q_VGOTEL_F2.h F:\6261D_11C_V33_AI\custom\common\userprofile_nvram_def_XG05_KM_V2403Q_VGOTEL_F2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\projects\M610\M610_KM_V2409_i710_F2\Resource\nvram_default_audio.c F:\6261D_11C_V33_AI\projects\M610\M610_KM_V2409_i710_F2\Resource\nvram_default_audio.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\custom\common\userprofile_nvram_def.c F:\6261D_11C_V33_AI\custom\common\userprofile_nvram_def.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33_AI\plutommi\mmi\Inc\MMI_features.h F:\6261D_11C_V33\plutommi\mmi\Inc\MMI_features.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33_AI\plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c F:\6261D_11C_V33\plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33_AI\plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c F:\6261D_11C_V33\plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_KM\plutommi\AppCore\SSC\SSCPassEngine.c F:\6261D_11C_V33_AI\plutommi\AppCore\SSC\SSCPassEngine.c    

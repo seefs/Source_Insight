@@ -247,6 +247,28 @@ macro CtrlT()
 	}
 	else 
 	{
+		{
+			sel = MGetWndSel(hbuf)
+			cur_line = GetBufLine(hbuf, sel.lnFirst )
+			index = FindString( cur_line, "__OFF__" )
+			if(index != "X")
+			{
+				reVal = "__ON__"
+				strNew = strmid(cur_line,0,index) # reVal # strmid(cur_line, index+strlen("__OFF__"), strlen(cur_line))
+				PutBufLine(hbuf, sel.lnFirst, strNew);
+				stop
+			}
+			
+			index = FindString( cur_line, "__ON__" )
+			if(index != "X")
+			{
+				reVal = "__OFF__"
+				strNew = strmid(cur_line,0,index) # reVal # strmid(cur_line, index+strlen("__ON__"), strlen(cur_line))
+				PutBufLine(hbuf, sel.lnFirst, strNew);
+				stop
+			}
+		}
+				
 		fstr = GetFirstChar(hbuf, 2)
 		if(fstr == "//")
 		{
