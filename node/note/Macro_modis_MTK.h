@@ -31,6 +31,7 @@ Save:SI\node\note\Macro_modis_MTK.h   \[2.6\] ²¦ºÅ
 Save:SI\node\note\Macro_modis_MTK.h   \[2.7\] Browser
 Save:SI\node\note\Macro_modis_MTK.h   \[2.8\] ²âÊÔÄ£Ê½
 Save:SI\node\note\Macro_modis_MTK.h   \[2.9\] setting
+Save:SI\node\note\Macro_modis_MTK.h   \[2.17\] Profile
 Save:SI\node\note\Macro_modis_MTK.h   \[2.13\] Camera
 Save:SI\node\note\Macro_modis_MTK.h   \[2.15\] ¹¤¾ß
 
@@ -51,6 +52,8 @@ Save:SI\node\note\Macro_modis_MTK.h	 \[4.7\] Í¼Æ¬
 Save:SI\node\note\Macro_modis_MTK.h	 \[4.8\] ÁåÉù
 Save:SI\node\note\Macro_modis_MTK.h	 \[4.9\] ×Ö¿â
 Save:SI\node\note\Macro_modis_MTK.h	 \[4.10\] UÅÌ·û
+Save:SI\node\note\Macro_modis_MTK.h	 \[4.11\] ×Ö¿â
+Save:SI\node\note\Macro_modis_MTK.h	 \[4.12\] FLAVOR ¿â
 
 //	 5. MTK³£ÓÃ¶Ïµã
 Save:SI\node\note\Macro_modis_MTK.h	 \[5.1\] ±àÒëÁ÷³Ì
@@ -470,6 +473,16 @@ plutommi\mmi\Setting\SettingSrc\Restore.c mmi_restore_app_reboot(void)
 custom\common\PLUTO_MMI\nvram_common_config.c NVRAM_ATTR_FACTORY_RESET
 
 
+[2.17] Profile
+// select
+plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c mmi_prof_customize_scrn_csk_hdlr
+// select type--1--2
+plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c cui_tone_selector_listscr_entry
+// select menu
+plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c mmi_prof_menu_item_select
+// select menu list
+plutommi\CUI\MenuCui\MenuCui.c cui_menu_run
+
 
 
 [2.13] ¶àÃ½Ìå
@@ -515,6 +528,8 @@ plutommi\mmi\Extra\ExtraSrc\Calculator.c
 // 4) tool:bluetooth:
 plutommi/MtkApp/Connectivity/ConnectivityRes/Bluetooth/Bluetooth.res S1716
 plutommi/MtkApp/Connectivity/ConnectivitySrc/BtCommon/BTMMIScr.c S1716
+
+
 	
 // 5) tool:Alarm:
 //	Æíµ»ÄÖÖÓ: 
@@ -676,8 +691,24 @@ custom\drv\misc_drv\_Default_BB\MT6261\usb_custom.c custom_usb_ms_init
 CFG_MMI_SET_DEF_ENCODING_TYPE
 
 
+USB_MULTIPLE_COMPORT_ENABLE
+USB_MASS_STORAGE_CDROM_SUPPORT
+UART3_SUPPORT = FALSE
+
 [4.11] ×Ö¿â
 
+
+
+[4.12] FLAVOR ¿â
+//FLAVOR = GEMINI_2_NONE
+mtk_lib/MT6261/S00/gprs/FLAVOR/NONE
+mtk_lib/MT6261/S00/gprs/FLAVOR/GEMINI_3_KAL_OFF
+MoDIS_VC9/MoDIS_LIB/MT6261/S00/gprs/FLAVOR/NONE
+MoDIS_VC9/MoDIS_LIB/MT6261/S00/gprs/FLAVOR/GEMINI_3_KAL_OFF
+tst/database_modis/MT6261/S00/gprs/FLAVOR/NONE
+tst/database_modis/MT6261/S00/gprs/FLAVOR/GEMINI_3_KAL_OFF
+tst/database_classb/MT6261/S00/gprs/FLAVOR/NONE
+tst/database_classb/MT6261/S00/gprs/FLAVOR/GEMINI_3_KAL_OFF
 
 
 
@@ -886,8 +917,6 @@ vendor\framework\obigo_Q03C\v1_official\msf\msf_lib\export\msf_log.h #define^MSF
 //	#undef MSF_LOG_MSG_NOARG(x)                                       
 //	#undef MSF_LOG_MSG_ARGS(x)                                        
 //	#endif
-
-
 
 
 

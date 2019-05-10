@@ -27,7 +27,9 @@ Save:SI\bak\bak_20181123_mar_msg.h
 
 	
 
-
+ctrl+T
+__ON__
+	__OFF__
 
 
 

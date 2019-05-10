@@ -1,6 +1,5 @@
 // Indents a line if the selection is extended or covers an entire line.
-// Otherwise we inserts a normal tab if the selection is just an insertion point.
-macro TabOrIndent(thbuf)
+// Otherwise we inserts a normal tab if the selection is just an insertion point.macro TabOrIndent(thbuf)
 {
 	hwnd = GetCurrentWnd()
 	if (hwnd != 0)
@@ -25,15 +24,13 @@ macro TabOrIndent(thbuf)
 	}
 }
 
-// Used to override shift-tab
-macro BackTabOrUnIndent(thbuf)
+// Used to override shift-tabmacro BackTabOrUnIndent(thbuf)
 {
 	Indent_Left
 }
 
 // Adds C++ style comments to the selected block of code (or current line).
-// If the line already starts with a comment then we do nothing for that line.//≈–∂œ «∑Ò «◊¢ Õ
-macro GetFirstChar(buff, pLen)
+// If the line already starts with a comment then we do nothing for that line.//≈–∂œ «∑Ò «◊¢ Õmacro GetFirstChar(buff, pLen)
 {
 	if (buff != 0 )
 	{
@@ -50,8 +47,7 @@ macro GetFirstChar(buff, pLen)
 		{			return strmid(cur_line, start, start + pLen)
 		}
 		else
-		{			return strmid(cur_line, start, len)		}	}}
-macro CommentBlock2(thbuf)
+		{			return strmid(cur_line, start, len)		}	}}macro CommentBlock2(thbuf)
 {
 	hwnd = GetCurrentWnd()
 	buff = GetCurrentBuf()
@@ -112,8 +108,7 @@ macro CommentBlock2(thbuf)
 }
 
 // Removes C++ style comments to the selected block of code (or current line).
-// If the line does not start with a comment then we do nothing for that line.
-macro UncommentBlock2(thbuf)
+// If the line does not start with a comment then we do nothing for that line.macro UncommentBlock2(thbuf)
 {
 	hwnd = GetCurrentWnd()
 	buff = GetCurrentBuf()
@@ -150,8 +145,7 @@ macro UncommentBlock2(thbuf)
 		SetWndSel(hwnd, sel)
 	}
 }
-
-macro CommentScript(thbuf)
+macro CommentScript(thbuf)
 {
 	hwnd = GetCurrentWnd()
 	buff = GetCurrentBuf()
@@ -206,8 +200,7 @@ macro CommentScript(thbuf)
 }
 
 // Removes C++ style comments to the selected block of code (or current line).
-// If the line does not start with a comment then we do nothing for that line.
-macro UncommentScript(thbuf)
+// If the line does not start with a comment then we do nothing for that line.macro UncommentScript(thbuf)
 {
 	hwnd = GetCurrentWnd()
 	buff = GetCurrentBuf()
@@ -259,8 +252,7 @@ macro UncommentScript(thbuf)
 		SetWndSel(hwnd, sel)
 	}
 }
-
-macro CodeAlign(thbuf)
+macro CodeAlign(thbuf)
 {
 	hwnd = GetCurrentWnd()
 	buff = GetCurrentBuf()
@@ -308,8 +300,7 @@ macro CodeAlign(thbuf)
 	}
 }
 
-// Counts the number of selected characters including CR/LF (each counts as 1)
-macro CountChars(thbuf)
+// Counts the number of selected characters including CR/LF (each counts as 1)macro CountChars(thbuf)
 {
 	hwnd = GetCurrentWnd()
 	buff = GetCurrentBuf()
@@ -353,8 +344,7 @@ macro CountChars(thbuf)
 // Finds matching scoping delimiters and jumps to them.
 // If the cursor is not positioned on a delimiter but is inside 
 // a matching part the macro will jump to the start of the closest
-// scope. Currently matches [],(),<>,{}
-macro MatchDelim2(thbuf)
+// scope. Currently matches [],(),<>,{}macro MatchDelim2(thbuf)
 {
 	hwnd = GetCurrentWnd()
 	buff = GetCurrentBuf()
@@ -386,8 +376,7 @@ macro MatchDelim2(thbuf)
 	}
 }
 
-
-macro MatchLeftDelim( left_delim, buff, sel, hwnd )
+macro MatchLeftDelim( left_delim, buff, sel, hwnd )
 {
 	// Special case paren because the built in stuff is much faster
 	if( cur_char == "(" )
@@ -431,8 +420,7 @@ macro MatchLeftDelim( left_delim, buff, sel, hwnd )
 
 	return 0
 }
-
-macro MatchRightDelim( right_delim, buff, sel, hwnd )
+macro MatchRightDelim( right_delim, buff, sel, hwnd )
 {
 	// Special case paren because the built in stuff is much faster
 	if( cur_char == ")" )
@@ -475,8 +463,7 @@ macro MatchRightDelim( right_delim, buff, sel, hwnd )
 
 	return 0
 }
-
-macro FindFirstLeftDelim( buff, sel, hwnd )
+macro FindFirstLeftDelim( buff, sel, hwnd )
 {
 	while( sel.lnFirst >= 0 )
 	{
@@ -508,8 +495,7 @@ macro FindFirstLeftDelim( buff, sel, hwnd )
 	return 0
 }
 
-
-macro IsLeftDelim( line, pos )
+macro IsLeftDelim( line, pos )
 {
 	if( line[pos] == "(" ||
 		line[pos] == "{" ||
@@ -519,8 +505,7 @@ macro IsLeftDelim( line, pos )
 	else
 		return 0
 }
-
-macro IsRightDelim( line, pos )
+macro IsRightDelim( line, pos )
 {
 	back_pos = 0
 	if( pos > 0 )
@@ -535,8 +520,7 @@ macro IsRightDelim( line, pos )
 	else
 		return 0
 }
-
-macro GetRightDelim( left_delim )
+macro GetRightDelim( left_delim )
 {
 	if( left_delim == "(" )
 		return ")"
@@ -549,8 +533,7 @@ macro GetRightDelim( left_delim )
 	else
 		return "-"
 }
-
-macro GetLeftDelim( right_delim )
+macro GetLeftDelim( right_delim )
 {
 	if( right_delim == ")" )
 		return "("
@@ -565,8 +548,7 @@ macro GetLeftDelim( right_delim )
 }
 
 
-// SI does not include \nin buffer
-macro NormSel(hbuf, sel)
+// SI does not include \nin buffermacro NormSel(hbuf, sel)
 {
 	if (sel.ichLim >= GetBufLineLength(hbuf, sel.lnLast))
 	{
