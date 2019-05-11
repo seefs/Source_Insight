@@ -233,6 +233,16 @@ macro OpenDefaultSR(hbuf)
 	return hbuf
 }
 
+macro SetClipSimpleString(Str)
+{
+	hbufClip = GetBufHandle("Clipboard")
+	if (hbufClip != hNil)
+	{
+		EmptyBuf(hbufClip)
+		AppendBufLine(hbufClip, "@Str@")
+		CloseBuf(hbufClip)
+	}
+}
 macro SetClipString(Str)
 {
 	hbufClip = GetBufHandle("Clipboard")
@@ -308,13 +318,7 @@ macro ShowFileName(hbuf, isShow)
 	{
 		msg ("@filename@")
 	}
-	hbufClip = GetBufHandle("Clipboard")
-	if (hbufClip != hNil)
-	{
-		EmptyBuf(hbufClip)
-		AppendBufLine(hbufClip, "@filename@")
-		CloseBuf(hbufClip)
-	}
+	SetClipSimpleString(filename)
 }
 
 macro GetMkFileName(hbuf)
@@ -616,32 +620,47 @@ macro GetParamCacheType(hbuf, param)
 
 macro GetTransFileName(hbuf, fName, cNum)
 {
+	//功能参数分类:
+	// 1.CtrlC,  cNum=0
+	// 2.F1->F2, cNum=1 优先设置路径
+	// 3.F2,     cNum=2
+	// 4.CtrlR,  cNum=5 优先当前工程路径
+	// 5.F5,     cNum=5
+	// 6.F6,     cNum=6 优先设置路径
+	// 7.F7,     cNum=6
+	// 8.F11,    cNum=6 pytho, cp
 	//文件名转化:
 	bPath = ""
-	if(bPath == "" && cNum == 6)
+	if(bPath == "")
 	{
-		//android service path: basePath = F:\9820e 
-		bPath = ReadMode(getNoteBasePath(0))
-	}
-	if(bPath == "" && cNum == 1)
-	{
-		if(IsSRFile(hbuf))
+		if(cNum == 6)
 		{
-			if(IsPathName(hbuf, getSavePath(0) # "\\Source Insight"))
+			//android service path: basePath = F:\9820e 
+			bPath = ReadMode(getNoteBasePath(0))
+		}
+		else if(cNum == 1)
+		{
+			if(IsSRFile(hbuf))
 			{
-				bPath = getSavePath(0)
+				if(IsPathName(hbuf, getSavePath(0) # "\\Source Insight"))
+				{
+					bPath = getSavePath(0)
+				}
+			}
+			if(bPath == "")
+			{
+				//android service path: basePath = F:\9820e 
+				bPath = ReadMode(getNoteBasePath(0))
 			}
 		}
-		//android service path: basePath = F:\9820e 
-		bPath = ReadMode(getNoteBasePath(0))
-	}
-	if(bPath == "" && cNum == 2)
-	{
-		if(IsSRFile(hbuf))
+		else if(cNum == 2)
 		{
-			if(IsPathName(hbuf, getSavePath(0) # "\\Source Insight"))
+			if(IsSRFile(hbuf))
 			{
-				bPath = getSavePath(0)
+				if(IsPathName(hbuf, getSavePath(0) # "\\Source Insight"))
+				{
+					bPath = getSavePath(0)
+				}
 			}
 		}
 	}
@@ -675,14 +694,42 @@ macro GetTransFileName(hbuf, fName, cNum)
 			fName = bPath
 		}
 	}
-	
+//	msg(cNum # " ~ " # fName)
+
 	//use "^" as space
 	fName = ReplaceWord(fName, "^", " ")
 	//use "Save:" as SavePath
 	fName = ReplaceWord(fName, "Save:", getSavePath(0) # "\\")
 	fName = ReplaceWord(fName, "Project:", getCustomPath(0) # "\\")
+	toolPath = getMacroValue(hbuf, "toolPath", 1)
+	if(toolPath != "")
+		fName = ReplaceWord(fName, "Tool:", toolPath # "\\")
 	
 	return fName
+}
+
+macro GetTransWord(hbuf, curPath, noteWord)
+{
+	if(noteWord == "[Path]")
+	{
+		curPath = getBaseDir(curPath, 0)
+		re = ShellExecute("explore", "@curPath@\\", "", "", 1)
+		if(re)
+			return 1
+	}
+	else if(noteWord == "[Base]")
+	{
+		//回到目录,不打开新文件
+		noteWord = "目录"
+		NoteScroll(hbuf, curPath, noteWord)
+		return 1
+	}
+	else if(noteWord == "[Next]")
+	{
+		SearchForward()
+		return 1
+	}
+	return 0
 }
 
 macro GetTransCmdS(cur_line, index, len)

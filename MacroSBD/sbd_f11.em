@@ -282,53 +282,92 @@ macro GetShortNote(key)
 //Note press F5,F6
 macro NoteHander(hbuf, cNum)
 {
+	var cur_line
 	var noteCmd
 	var noteWord
+	var curPath
+	var lastStr
+	
 	var cur_row
+	var isCmd
 	
 	sel = MGetWndSel(hbuf)
 	cur_line = GetBufLine(hbuf, sel.lnFirst )
 	cur_row = sel.lnFirst
 
+	//delete left space
 	start = StartWS(cur_line, 0 )
 	if (start == "X")
-	{
 		stop
-	}
 	else if (start > 0)
-	{
-		//delete left
 		cur_line = strmid(cur_line, start, strlen(cur_line))
-	}
 	len = strlen(cur_line)
-	
-	//用第1个词作为命令区分;以":"、" "分开
-	//{0,index} 为命令
-	indexa = FindString(cur_line, ":")
-	indexb = FindString(cur_line, " ")	
-	if (indexa == "X" && indexb == "X")
-	{
-		index = len
+
+	//命令名称: 用第1个词, 以":"或" "分开
+	noteCmd = cur_line
+	index = FindString(noteCmd, " ")
+	if (index != "X")
+		noteCmd = strmid(noteCmd, 0, index)
+	index_colon = FindString(noteCmd, ":")
+	if (index_colon != "X"){
+		noteCmd = strmid(noteCmd, 0, index_colon)
+		index = index_colon
 	}
-	else if (indexa == "X")
+
 	{
-		index = indexb
+		isCmd = 0
+		if(noteCmd == "replace" || noteCmd == "cmd" || noteCmd == "open" || noteCmd == "openCmd"
+			 || noteCmd == "setPath" || noteCmd == "setProPath" || noteCmd == "sethistory" || noteCmd == "cp")
+			isCmd = 1
+		else if(noteCmd == "make" || noteCmd == "python" || noteCmd == "ctmake" || noteCmd == "xmake")
+			isCmd = 2
+		else if(noteCmd == "set" || noteCmd == "vc" || noteCmd == "vs08" || noteCmd == "call")
+			isCmd = 3
+		//add all replace words:
+		else if(noteCmd == "Save" || noteCmd == "Project" || noteCmd == "Tool")
+			isCmd = 4
+		else if(strlen(noteCmd)==1)
+			isCmd = 4
+			
+		//命令名转化: 删除空格
+		start = GetTransCmdS(cur_line, index + 1, len)
+		next  = GetTransCmdE(cur_line, start,     len)
+		start2 = GetTransCmdS2(cur_line, next + 1, len)
+		next2  = GetTransCmdE(cur_line, start2,     len)
+		
+		if (isCmd == 1)
+			curPath = strmid(cur_line, start, next)	// -, -, [1], -, -
+		else if (isCmd == 2)
+			curPath = cur_line						// -, [0, 1, 2, 3]
+		else if (isCmd == 3)
+			curPath = strmid(cur_line, start, len)	// -, -, [1, 2, 3]
+		else if (isCmd == 4)
+			curPath = strmid(cur_line, 0, next)		// -, [0, 1], -, -
+		else
+			curPath = noteCmd						// [-], 0, 1, 2, 3
+			
+		TestMsg("curPath: " # CharFromKey(13) # curPath, 1)
+		
+		//获取关键词
+		//goto word and Select
+		if (isCmd == 0)
+			noteWord = GetTransStr(cur_line, start, next)
+		else
+			noteWord = GetTransStr(cur_line, start2, 	next2)
+		//use "^" as space
+		noteWord = ReplaceWord(noteWord, "^", " ")
+
+		//保存 (宏=)value 到剪切板; 可再用ctrl+T替换新值
+		lnVar = GetLineValue(cur_line)
+		if(lnVar != "")
+		{
+			SetClipString(lnVar)
+		}
+
+		//only chg name
+		cmdP1 = curPath
+		cmdP2 = noteWord
 	}
-	else if (indexb == "X")
-	{
-		index = indexa
-	}
-	else if (indexa>indexb)
-	{
-		index = indexb
-	}
-	else
-	{
-		index = indexa
-	}
-	
-	//msg(start # ";" # index)
-	noteCmd = strmid(cur_line, 0, index)
 
 	//功能说明：
 	//open:    创建笔记; 打开exe; 打开文件+关键字; 非Macro_开头文件中只能用这个打开文件
@@ -357,43 +396,12 @@ macro NoteHander(hbuf, cNum)
 	}
 	else if(noteCmd == "open")
 	{
-		//open tools or file
-		//命令名转化: 删除空格
-		start = GetTransCmdS(cur_line, index + 1, len)
-		next  = GetTransCmdE(cur_line, start,     len)
-		start2 = GetTransCmdS2(cur_line, next + 1, len)
-		vcPath = strmid(cur_line, start, next)
-		lastStr = GetTransStr(cur_line, start2, len)
-
 		//文件名转化:
 		//转化"Save:"、区分根目录、添加项目目录、替换"^"为空格
-		vcPath = GetTransFileName(hbuf, vcPath, cNum)
+		curPath = GetTransFileName(hbuf, curPath, cNum)
 		
-		//.exe .bat file
-		if(IsFileType(vcPath, ".exe") || IsFileType(vcPath, ".bat"))
-		{
-			ShellExecute("open", vcPath, "", "", 1)
-		}
-		else if(cNum == 51)
-		{
-			//详细笔记，没有就创建
-			bf = OpenFile(vcPath)
-		}
-		else
-		{
-			vcbuf = OpenExistFile(vcPath)
-				
-			if (vcbuf != hNil){
-				if (lastStr != "")
-				{
-					mSel = SearchInBuf(vcbuf, "@lastStr@", 0, 0, 0, 0, 0)
-					if (mSel != "")
-					{
-						ScrollCursor(mSel)
-					}
-				}
-			}
-		}
+		//open tools or file
+		NoteOpenFile(hbuf, curPath, noteWord)
 	}
 	else if(noteCmd == "openCmd")
 	{
@@ -402,103 +410,45 @@ macro NoteHander(hbuf, cNum)
 	}
 	else if(noteCmd == "cmd")
 	{
-		//命令名转化: 删除空格
-		start = GetTransCmdS(cur_line, index + 1, len)
-		lastCmd = strmid(cur_line, start, len)
-		
-		hbufClip = GetBufHandle("Clipboard")
-		if (hbufClip != hNil)
-		{
-			EmptyBuf(hbufClip)
-			AppendBufLine(hbufClip, "@lastCmd@")
-			CloseBuf(hbufClip)
-		}
+		SetClipSimpleString(curPath)
+		TestMsg("cmd" # CharFromKey(13) # getBasePath(hbuf) # "\\cmd", 1)
 		ShellExecute("open", getBasePath(hbuf) # "\\cmd", "", "", 1)
 	}
 	else if(noteCmd == "python" || noteCmd == "python_w")
 	{
-		//命令名转化: 删除空格
-		start = GetTransCmdS(cur_line, index + 1, len)
-		next  = GetTransCmdE(cur_line, start,     len)
-		//start2 = GetTransCmdS2(cur_line, next + 1, len)
-		lastCmd = strmid(cur_line, start, next)
-		//lastStr = GetTransStr(cur_line, start2, len)
-
-		if(noteCmd == "python_w")
-		{
-			hbufClip = GetBufHandle("Clipboard")
-			if (hbufClip != hNil)
-			{
-				EmptyBuf(hbufClip)
-				AppendBufLine(hbufClip, "@lastCmd@")
-				CloseBuf(hbufClip)
-			}
-		}
-		
-		cmdPath = GetTransFileName(hbuf, "", 0)
-		cmdRoot = GetTransRootDir(cmdPath)
-
-		if(noteCmd == "python_w")
-		{
-//			cmdStr = cmdRoot # "&&cd " # cmdPath # "&&start " # lastCmd
-			cmdStr = cmdRoot # "&&cd " # cmdPath # "&&start cmd.exe&&parse"
-		}
-		else
-		{
-			cmdStr = cmdRoot # "&&cd " # cmdPath # "&&echo " # cmdPath # "^>" # lastCmd # "&&python " # lastCmd # "&&pause"
-		}
-
-		TestMsg("编译: " # CharFromKey(13) # cmdStr)
-		ShellOpenCustomCmd(cmdStr)
+		//python: 
+		TestMsg("python" # CharFromKey(13) # curPath, 1)
+		NotePythonCmd(hbuf, noteCmd, curPath)
 	}
 	else if(noteCmd == "make")
 	{
-		//仅仅打开cmd后面不接路径
-		lastCmd = strmid(cur_line, start, len)
-		hbufClip = GetBufHandle("Clipboard")
-		if (hbufClip != hNil)
-		{
-			EmptyBuf(hbufClip)
-			AppendBufLine(hbufClip, "@lastCmd@")
-			CloseBuf(hbufClip)
-		}
+		//make...
+		SetClipSimpleString(curPath)
+		TestMsg("make" # CharFromKey(13) # curPath, 1)
 		ShellExecute("open", getBasePath(hbuf) # "\\cmd", "", "", 1)
 	}
 	else if(noteCmd == "ctmake" || noteCmd == "xmake")
 	{
-		//仅仅打开cmd后面不接路径
-		lastCmd = strmid(cur_line, start, len)
-		hbufClip = GetBufHandle("Clipboard")
-		if (hbufClip != hNil)
-		{
-			EmptyBuf(hbufClip)
-			AppendBufLine(hbufClip, "@lastCmd@")
-			CloseBuf(hbufClip)
-		}
-		//Cygwin...
+		//ctmake...
+		SetClipSimpleString(curPath)
+		TestMsg("ctmake" # CharFromKey(13) # curPath, 1)
 	}
 	else if(noteCmd == "vc")
 	{
 		vcPath = getVCPath(0)
-		lastCmd = strmid(cur_line, index + 1, len)
-		ShellExecute("open", vcPath, getBasePath(hbuf) # "\\" # lastCmd, "", 1)
+		TestMsg("vc" # CharFromKey(13) # "\\" # curPath, 1)
+		ShellExecute("open", vcPath, getBasePath(hbuf) # "\\" # curPath, "", 1)
 	}
 	else if(noteCmd == "vs08")
 	{
 		vcPath = getVS08Path(0)
-		lastCmd = strmid(cur_line, index + 1, len)
-		ShellExecute("open", vcPath, getBasePath(hbuf) # "\\" # lastCmd, "", 1)
+		TestMsg("vs08" # CharFromKey(13) # "\\" # curPath, 1)
+		ShellExecute("open", vcPath, getBasePath(hbuf) # "\\" # curPath, "", 1)
 	}
 	else if(noteCmd == "call")
 	{
-		lastCmd = strmid(cur_line, index, len)
-		hbufClip = GetBufHandle("Clipboard")
-		if (hbufClip != hNil)
-		{
-			EmptyBuf(hbufClip)
-			AppendBufLine(hbufClip, "@lastCmd@")
-			CloseBuf(hbufClip)
-		}
+		//call...
+		SetClipSimpleString(curPath)
 	}
 	else if(noteCmd == getMarBasePath(0)) //"basePath"
 	{
@@ -510,38 +460,13 @@ macro NoteHander(hbuf, cNum)
 	}
 	else if(noteCmd == "set")
 	{
-		//lastCmd:除set以外的str
-		lastCmd = strmid(cur_line, index+1, len)
-		
-		if(IsFileName(hbuf, "Macro_Set_Note.h"))
-		{
-			close
-    		hbuf = GetCurrentBuf()
-			if(IsFileName(hbuf, "Macro_Note_"))
-			{
-				SetNoteHander(hbuf, lastCmd, cur_row, 0)
-			}
-		}
-		else
-		{
-			//旧列表替换为新列表,空格分开 
-			SetNoteHander(hbuf, lastCmd, cur_row, cNum)
-			if(cNum != 6)
-			{
-				//save
-				SaveNoteHistory(cur_line)
-			}
-		}
+		//curPath:除set以外的str
+		SetNoteHander(hbuf, curPath, cur_row, 0)
 	}
 	else if(noteCmd == "setPath")
 	{
-		//格式: setPath old #注释
-		//命令名转化: 删除空格
-		start = GetTransCmdS(cur_line, index + 1, len)
-		next  = GetTransCmdE(cur_line, start,     len)
-		cmdStr = strmid(cur_line, start, next)
 		//开始路径列表替换
-		SetPathNoteHander(hbuf, cmdStr)
+		SetPathNoteHander(hbuf, cmdP1, cur_row)
 	}
 	else if(noteCmd == "setProPath")
 	{
@@ -554,172 +479,37 @@ macro NoteHander(hbuf, cNum)
 	else if(noteCmd == "cp")
 	{
 		//命令名转化: 删除空格
-		start = GetTransCmdS(cur_line, index + 1, len)
-		next  = GetTransCmdE(cur_line, start,     len)
-		start2 = GetTransCmdS(cur_line, next + 1, len)
-		cmdP1 = strmid(cur_line, start, next)
-		cmdP2 = strmid(cur_line, start2, len)
-		
 		NoteCopyFile(hbuf, cmdP1, cmdP2, cNum)
 	}
 	else if(noteCmd == "RAR")
 	{
 		//命令名转化: 删除空格
-		start = GetTransCmdS(cur_line, index + 1, len)
-		next  = GetTransCmdE(cur_line, start,     len)
-		start2 = GetTransCmdS(cur_line, next + 1, len)
-		cmdP1 = strmid(cur_line, start, next)
-		cmdP2 = strmid(cur_line, start2, len)
-
 		NoteRARFile(hbuf, cmdP1, cmdP2, cNum)
 	}
 	else if(strlen(noteCmd)>0)
 	{
-		curPath = ""
-		if(strlen(noteCmd)==1)
-		{
-			//1. "E:XXX YYY" 获取路径为 "E:XXX"
-			ch = strmid(noteCmd,0,1)
-			asi = AsciiFromChar(ch)
-			if(asi>=65 && asi<65+14 || asi>=97 && asi<97+14)
-			{
-				start = GetTransCmdS(cur_line, index + 1, len)
-				next  = GetTransCmdE(cur_line, start,     len)
-				//start2 = GetTransCmdS(cur_line, next + 1, len)
-				curPath = strmid(cur_line, 0, next)
-				//cmdP2 = strmid(cur_line, start2, len)
-			}
-		}
-		else if(noteCmd == "Save")
-		{
-			//2. "Save:XXX YYY" 获取路径为 "Save:XXX"
-			start = GetTransCmdS(cur_line, index + 1, len)
-			next  = GetTransCmdE(cur_line, start,     len)
-			//start2 = GetTransCmdS(cur_line, next + 1, len)
-			curPath = strmid(cur_line, 0, next)
-			//cmdP2 = strmid(cur_line, start2, len)
-		}
-		//非根目录
-		if(curPath == "")
-			curPath = noteCmd
 		//3. 文件名转化:
 		//转化"Save:"、区分根目录、添加项目目录、替换"^"为空格
 		curPath = GetTransFileName(hbuf, curPath, cNum)
 		
 		//4. 显示完整文件名: 以"..."结尾
-		if(strlen(curPath)<3)
-		{}
-		else if(strmid(curPath, strlen(curPath)-3, strlen(curPath)) == "...")
-		{
-			fLen = strlen(curPath)-3
-			//bsDir = GetFileName(curPath)
-			bsDir = getBaseDir(curPath, 0) //功能一样
-			bsDir = ReplaceWord(bsDir, " ", "#") //用^代替空格无效
-			//fName = GetFileName(curPath)
-			fName = strmid(curPath, strlen(bsDir)+1, strlen(curPath) - 3)
-			if(cNum == 61)
-				cNum = 6
-			ret = 0
-			if(cNum != 6)
-			{
-				ret = ReadCmdFileList(hbuf, cur_row, bsDir, fName)
-			}
-			if(ret == 0)
-			{
-				ShellGetFileList(bsDir # " "  # cNum # " " # fLen # " " # fName)
-			}
+		if(NoteShowFileList(hbuf, curPath, cur_row))
 			stop
-		}
-
-		
-		//5. 获取关键词; 文件名以空格结尾, index可能是":"位置
-		index = indexb
-		if (index != "X" && index != len && index != len - 1)
-		{
-			start = GetTransCmdS(cur_line, index + 1, len)
-			next  = GetTransCmdE(cur_line, start,     len)
-			//start2 = GetTransCmdS(cur_line, next + 1, len)
-			//cmdP1 = strmid(cur_line, start, next)
-			//cmdP2 = strmid(cur_line, start2, len)
-
-		
-			//5.1 保存 (宏=)value 到剪切板; 可再用ctrl+T替换新值
-			otherWord = strmid(cur_line, start, len)
-			lnVar = GetLineValue(otherWord)
-			if(lnVar != "")
-			{
-				SetClipString(lnVar)
-			}
-			
-
-			//5.2 获取关键词
-			//goto word and Select
-			noteWord = strmid(cur_line, start, next)
-			//use "^" as space
-			noteWord = ReplaceWord(noteWord, "^", " ")
-		}
 
 		//6. 定制关键字--打开路径, 回到目录, 下一个
-		if(noteWord == "[Path]")
-		{
-			curPath = getBaseDir(curPath, 0)
-			re = ShellExecute("explore", "@curPath@\\", "", "", 1)
-			if(re)
-				stop
-			hbuf = OpenExistFile(curPath)
-		}
-		else if(noteWord == "[Base]")
-		{
-			noteWord = "目录"
-		}
-		else if(noteWord == "[Next]")
-		{
-			SearchForward()
+		if(GetTransWord(hbuf, curPath, noteWord))
 			stop
-		}
-		else
-		{
-			TestMsg("打开文件: " # CharFromKey(13) # curPath)
-			hbuf = OpenExistFile(curPath)
-		}
 			
+		TestMsg("打开文件: " # CharFromKey(13) # curPath, 1)
+		hbuf = OpenExistFile(curPath)
 			
+		TestMsg("noteWord: " # CharFromKey(13) # noteWord, 1)
 		if (hbuf != hNil){
 			if(noteWord == "")
 				stop
 				
 			//8. 默认先搜索一次行首, 再普通搜索(无通配符); 带$搜索行尾
-			mSel = SearchInBuf(hbuf, "^" # "@noteWord@", 0, 0, 0, 1, 0)
-			if (mSel == "")
-			{
-				//8.1 行号跳转
-				if(IsNumber ("@noteWord@"))
-				{
-					row = noteWord
-					ScrollCursorRow(row, row+1)
-					return 1
-				}
-			}
-			if (mSel == "")
-			{
-				//8.2 行尾搜索/正常搜索
-				re = FindString( noteWord, "$" )
-				if(re != "X")
-					mSel = SearchInBuf(hbuf, "@noteWord@", 0, 0, 0, 1, 0)
-				else
-					mSel = SearchInBuf(hbuf, "@noteWord@", 0, 0, 0, 0, 0)
-			}
-			if (mSel == "")
-			{
-				//8.3 通配符搜索
-				mSel = SearchInBuf(hbuf, "@noteWord@", 0, 0, 0, 1, 0)
-			}
-			if (mSel != "")
-			{
-				//8.4 关键词跳转
-				TestMsg("跳转到文件: " # CharFromKey(13) # curPath # CharFromKey(13) #　"内容: " # CharFromKey(13) # noteWord)
-				ScrollCursor(mSel)
-			}
+			NoteScroll(hbuf, curPath, noteWord)
 		}
 		else if(IsFileType(curPath, ".py"))
 		{
@@ -772,20 +562,39 @@ macro NoteHander(hbuf, cNum)
 //旧列表替换为新列表,空格分开
 macro SetNoteHander(hbuf, lastCmd, cur_row, cNum)
 {
+	//从历史路径中设置, 先关闭; 更新下一个文件 
+	if(IsFileName(hbuf, "Macro_Set_Note.h"))
+	{
+		close
+		hbuf = GetCurrentBuf()
+		if(IsFileName(hbuf, "Macro_Note_"))
+			stop
+		cNum = 0
+	}
+	else
+	{
+		if(cNum != 6)
+		{
+			//save
+			SaveNoteHistory("set " # lastCmd)
+		}
+	}
+	
 	//msg("-" # lastCmd # "-")
 	var lastBaseCmd
 	lastBaseCmd = ReadMode(getNoteHanderSet(0))
 	if(lastBaseCmd == lastCmd)
 	{
-//		if(cNum == 0)
-			msg("新旧文件名相同,   不替换: " # CharFromKey(13) # lastCmd)
+		msg("新旧文件名相同,   不替换: " # CharFromKey(13) # lastCmd)
 		stop
 	}
-//	if(cNum == 0)
+	if(cNum == 6)
+		msg("设置默认: " # CharFromKey(13) # "旧:    " # lastBaseCmd # CharFromKey(13) # "新:     " # lastCmd)
+	else
 		msg("开始替换: " # CharFromKey(13) # "旧:    " # lastBaseCmd # CharFromKey(13) # "新:     " # lastCmd)
 		
 	SaveMode(getNoteHanderSet(0), "@lastCmd@")
-	if(cNum == 6 || cNum == 61)
+	if(cNum == 6)
 		stop
 	
 	{
@@ -846,8 +655,9 @@ macro SetNoteHander(hbuf, lastCmd, cur_row, cNum)
 }
 
 //旧列表替换为新列表,空格分开
-macro SetPathNoteHander(hbuf, cmdStr)
+macro SetPathNoteHander(hbuf, cmdStr, cur_row)
 {
+	TestMsg(cmdStr, 1)
 	var setItem
 	
 	{
@@ -1057,11 +867,120 @@ macro NoteRARFile(hbuf, cmdP1, cmdP2, cNum)
 	{
 		cmdStr = "cd " # cmdPath1 # "&&start " # getRARPath(0) # " " # cmdP2
 	}
-	//msg(cmdStr)
+	TestMsg(cmdStr, 1)
 
 	ShellOpenCustomCmd(cmdStr)
 }
 
+macro NoteOpenFile(hbuf, curPath, noteWord)
+{
+	TestMsg("OpenFile [" # curPath # "-" # noteWord # "]", 1)
+
+	//.exe .bat file
+	if(IsFileType(curPath, ".exe") || IsFileType(curPath, ".bat"))
+	{
+		ShellExecute("open", curPath, "", "", 1)
+	}
+	else
+	{
+		vcbuf = OpenExistFile(curPath)
+			
+		if (vcbuf != hNil){
+			if (noteWord != "")
+			{
+				mSel = SearchInBuf(vcbuf, "@noteWord@", 0, 0, 0, 0, 0)
+				if (mSel != "")
+				{
+					ScrollCursor(mSel)
+				}
+			}
+		}
+	}
+}
+
+macro NotePythonCmd(hbuf, noteCmd, curPath)
+{
+	if(noteCmd == "python_w")
+		SetClipSimpleString(curPath)
+		
+	newPath = GetTransFileName(hbuf, "", 0)
+	cmdRoot = GetTransRootDir(newPath)
+
+	if(noteCmd == "python_w")
+	{
+//		cmdStr = cmdRoot # "&&cd " # newPath # "&&start " # curPath
+		cmdStr = cmdRoot # "&&cd " # newPath # "&&start cmd.exe&&parse"
+	}
+	else
+	{
+		cmdStr = cmdRoot # "&&cd " # newPath # "&&echo " # newPath # "^>" # curPath # "&&python " # curPath # "&&pause"
+	}
+
+	TestMsg("编译: " # CharFromKey(13) # cmdStr, 1)
+	ShellOpenCustomCmd(cmdStr)
+}
+
+macro NoteShowFileList(hbuf, curPath, cur_row)
+{
+	if(strlen(curPath)<3)
+		return 0
+	else if(strmid(curPath, strlen(curPath)-3, strlen(curPath)) == "...")
+	{
+		fLen = strlen(curPath)-3
+		//bsDir = GetFileName(curPath)
+		bsDir = getBaseDir(curPath, 0) //功能一样
+		bsDir = ReplaceWord(bsDir, " ", "#") //用^代替空格无效
+		//fName = GetFileName(curPath)
+		fName = strmid(curPath, strlen(bsDir)+1, strlen(curPath) - 3)
+		ret = 0
+		if(cNum != 6)
+		{
+			ret = ReadCmdFileList(hbuf, cur_row, bsDir, fName)
+		}
+		if(ret == 0)
+		{
+			ShellGetFileList(bsDir # " "  # cNum # " " # fLen # " " # fName)
+		}
+		return 1
+	}
+	return 0
+}
+macro NoteScroll(hbuf, curPath, noteWord)
+{
+	//   分4种情况搜索
+		TestMsg("跳转到文件: " # CharFromKey(13) # curPath # CharFromKey(13) #　"内容: " # CharFromKey(13) # noteWord, 1)
+	mSel = SearchInBuf(hbuf, "^" # "@noteWord@", 0, 0, 0, 1, 0)
+	if (mSel == "")
+	{
+		//8.1 行号跳转
+		if(IsNumber ("@noteWord@"))
+		{
+			row = noteWord
+			ScrollCursorRow(row, row+1)
+			return 1
+		}
+	}
+	if (mSel == "")
+	{
+		//8.2 行尾搜索/正常搜索
+		re = FindString( noteWord, "$" )
+		if(re != "X")
+			mSel = SearchInBuf(hbuf, "@noteWord@", 0, 0, 0, 1, 0)
+		else
+			mSel = SearchInBuf(hbuf, "@noteWord@", 0, 0, 0, 0, 0)
+	}
+	if (mSel == "")
+	{
+		//8.3 通配符搜索
+		mSel = SearchInBuf(hbuf, "@noteWord@", 0, 0, 0, 1, 0)
+	}
+	if (mSel != "")
+	{
+		//8.4 关键词跳转
+		TestMsg("跳转到文件: " # CharFromKey(13) # curPath # CharFromKey(13) #　"内容: " # CharFromKey(13) # noteWord, 1)
+		ScrollCursor(mSel)
+	}
+}
 macro OpenF11Test(hbuf, v)
 {
 }

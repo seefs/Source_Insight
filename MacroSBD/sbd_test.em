@@ -562,7 +562,16 @@ macro OpenRefTest(hbuf)
 }
 
 
-macro TestMsg(msgStr)
+macro TestMsg(msgStr, num)
 {
-//	msg(msgStr)
+	if(num == 1)
+	{
+		//’˝ Ω
+//		msg(msgStr)
+	}
+	else
+	{
+		//¡Ÿ ±
+//		msg(msgStr)
+	}
 }

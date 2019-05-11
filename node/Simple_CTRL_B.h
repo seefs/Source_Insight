@@ -9,6 +9,11 @@ Save:SI\node\note\Macro_Note_MTK.h
 //	tmp
 Save:SI\bak\Macro_tmp.h
 
+Save:SI\node\ToolsMsg\Macro_MTK_FlashTool.h
+	
+// F11功能测试:
+Save:SI\node\Test\Macro_Tmp_Node_F11.h
+
 /***********************************************************************/
 /***************************临时文件********************************/
 /***********************************************************************/
@@ -25,16 +30,6 @@ mmi_main_menu_entry
 
 __PROJ_M039__
 __PROJ_M115__
-
-
-//内置mp3文件
-projects\M115\M115_JGW_D2_X191_F2\Resource\custom_MemoryDevice.h NOR_BOOTING_NOR_FS_BASE_ADDRESS
-
-
-
-
-
-
 
 
 

@@ -306,7 +306,7 @@ macro CtrlR()
 				sel2 = SearchInBuf(hbuf, searchStr, 0, 0, FALSE, FALSE, FALSE)
 				if (sel2 != "")
 				{
-					TestMsg("跳转到目录: " # searchStr)
+					TestMsg("跳转到目录: " # searchStr, 1)
 					ScrollCursor(sel2)
 					stop
 				}

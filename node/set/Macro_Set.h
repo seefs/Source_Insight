@@ -51,7 +51,7 @@ IM
 E:\6531E_20180113\tmp
 
 ### 54.note row(第2次打开同一行, F11关闭note会修改这里)
-741
+0
 
 ### 57.Note Hander Set(笔记路径, 替换当前path, MTK)
 M115_JGW_D2_X191_F2 M115 gprs
@@ -60,7 +60,7 @@ M115_JGW_D2_X191_F2 M115 gprs
 XG05_KM_Q2407_SP5000_F2 M103_KEMAN gprs
 
 ### 60.Note Save Base(笔记路径, 替换当前path, android)
-\\192.168.2.115\xiaoj\9820e\idh.code
+F:\6261D_11C_V33_AI
 	
 ### 63.Num bits(F10)
 1
