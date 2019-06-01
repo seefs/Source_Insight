@@ -1,4 +1,7 @@
 
+// :
+Save:SI\node\note\Macro_Note_Tools.h \[1.1\] vc:
+
 // 展讯 工具:
 Save:SI\node\note\Macro_Note_Tools.h \[2.1\] FontTool 字体:
 Save:SI\node\note\Macro_Note_Tools.h \[2.2\] foobar2000 修改mp3 广告图标
@@ -8,6 +11,7 @@ Save:SI\node\note\Macro_Note_Tools.h \[3.1\] mtk--MCTApp --不知道怎么用
 Save:SI\node\note\Macro_Note_Tools.h \[3.2\] mtk--STMTView 字符串工具:
 Save:SI\node\note\Macro_Note_Tools.h \[3.3\] mtk--TRACE:
 Save:SI\node\note\Macro_Note_Tools.h \[3.4\] mtk--下载工具:
+Save:SI\node\note\Macro_Note_Tools.h \[3.5\] mtk--字体:
 // 常用   工具:
 Save:SI\node\note\Macro_Note_Tools.h \[4.1\] SVN 配置:
 Save:SI\node\note\Macro_Note_Tools.h \[4.2\] BCmp 配置:
@@ -18,12 +22,35 @@ Save:SI\node\note\Macro_Note_Tools.h \[4.5\] SI:
 
 
 /***********************************************************************/
+[1.1] vc:
+//Visual Studio 6.0
+Visual Studio 6.0.rar
+vc6.0官方下载 win7中文版.zip
+//Visual Studio 6.0
+//Incredibuild
+Incredibuild5.0+crack
+//注册表扫描(时间段-清除vc6信息,卸载不干净)
+regscanner.rar
+//msjavx86
+msjavx86.exe
+VC6LineNumberAddin.rar
+npptools.rar
+
+//AddIns
+C:\Program^Files^(x86)\Microsoft^Visual^Studio\Common\MSDev98\AddIns
+
+
+
+
+
+
+
 
 [2.1] FontTool 字体:
 open F:\6531E_16A\tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe 
 open C:\Program^Files^(x86)\Pixtel^Media^Technology\MCT^6.0\MCTApp.exe
 open C:\Program^Files^(x86)\Pixtel^Media^Technology\MCT^6.0\MCTApp.exe
-F:\11CW1352MP_BLEPHONE61D_11C_V33\vendor\font\FontData\OfficialFont\RUSSIAN\Russian_18.bdf
+F:\6531G_16A_MP_W17.43.4\MS_MMI\source\resource\Common\FONT\LANG_FONT_LATIN_12_14_29.lib
 
 
 [2.2] foobar2000 修改mp3 广告图标
@@ -90,6 +117,13 @@ build\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_PCB01_gprs_MT6261_S0
     option->usb Download Without battery
     option->Format Fat(auto)->Format Fat
 3 Format Fat不会擦除校准参数、IMEI号
+
+
+[3.5] mtk--字体
+open F:\6531E_16A\tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe 
+open C:\Program^Files^(x86)\Pixtel^Media^Technology\MCT^6.0\MCTApp.exe
+open C:\Program^Files^(x86)\Pixtel^Media^Technology\MCT^6.0\MCTApp.exe
+F:\11CW1352MP_BLEPHONE61D_11C_V33\vendor\font\FontData\OfficialFont\RUSSIAN\Russian_18.bdf
 
 
 

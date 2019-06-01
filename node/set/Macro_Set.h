@@ -15,13 +15,13 @@ b
 SE0397_XY_C2_Welcome_F6
 
 ### 18.BCompare target(304表示3与4比较，当前3那么比较4，当前4那么比较3)
-7476
+3230
 
 ### 21.tree  (未使用)
 project
 
 ### 24.SR Mode  (CTRL + D : search head 删除相同头部的行)
-image_
+common_mdu_def
 
 ### 27.last command (未使用)
 CtrlW
@@ -33,7 +33,7 @@ CtrlW
 m20
 
 ### 36.Cur search macro (F10)
-IM_SPANISH_SUPPORT
+IM_ROMANIAN_SUPPORT
 
 ### 39.Cur search head (F10)
 IM
@@ -42,7 +42,7 @@ IM
 0
 
 ### 45.Cur search max (F10)
-926
+1000
 
 ### 48.bmp one/two (F7 + v: 2次选择对比)
 2
@@ -51,10 +51,10 @@ IM
 E:\6531E_20180113\tmp
 
 ### 54.note row(第2次打开同一行, F11关闭note会修改这里)
-0
+251
 
 ### 57.Note Hander Set(笔记路径, 替换当前path, MTK)
-M115_JGW_D2_X191_F2 M115 gprs
+H9_KLS_F4
 	
 ### 57.Note Hander Set(笔记路径, 替换当前path, MTK)--bak
 XG05_KM_Q2407_SP5000_F2 M103_KEMAN gprs

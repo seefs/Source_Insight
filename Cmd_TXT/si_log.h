@@ -2426,3 +2426,108 @@ RAR E:
 
 [cmd]: 
 E:      
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c F:\6261D_11C_V33_AI\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c F:\6531E_16A\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\h\mmifm_id.h F:\6531E_16A\MS_MMI\source\mmi_app\app\fm\h\mmifm_id.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\h\mmifm_position.h F:\6531E_16A\MS_MMI\source\mmi_app\app\fm\h\mmifm_position.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\common\c\mmicom_panel.c F:\6531E_16A\MS_MMI\source\mmi_app\common\c\mmicom_panel.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c F:\6531E_16A\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c E:\SVN\6531DA_new\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c E:\SVN\6531DA_new\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c F:\6531E_16A\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c F:\6531E_16A\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c F:\6531E_16A\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c E:\SVN\6531DA_new\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c E:\SVN\6531DA_new\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c E:\SVN\6531DA_new\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\vendor\InputMethod\mtk\mtkmultitap.c F:\6261D_KM\vendor\InputMethod\mtk\mtkmultitap.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6261D_11C_V33\vendor\font\FontData\OfficialFont\Farsi F:\6261D_KM\vendor\font\FontData\OfficialFont\Farsi    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c F:\6261D_KM\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c F:\6531E_16A\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+copy E:\Save\SI\node\Test\Macro_z_null.h E:\Save\SI\bak\Macro_code_tmp.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\theme\c\mmitheme_form.c F:\6531E_16A\MS_MMI\source\mmi_app\app\theme\c\mmitheme_form.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+copy E:\Save\SI\node\Test\Macro_z_null.h E:\Save\SI\node\ToolsMsg\spr\Macro_Spr_MsgId.h    
+
+[cmd]: 
+copy E:\Save\SI\node\Test\Macro_z_null.h E:\Save\SI\node\ToolsMsg\spr\Macro_Spr_Fun.h    
+
+[cmd]: 
+copy E:\Save\SI\node\Test\Macro_z_null.h E:\Save\SI\node\ToolsMsg\spr\Macro_Spr_Other.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c F:\6531E_16A\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    

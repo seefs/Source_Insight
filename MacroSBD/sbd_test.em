@@ -567,7 +567,7 @@ macro TestMsg(msgStr, num)
 	if(num == 1)
 	{
 		//ÕýÊ½
-//		msg(msgStr)
+	//	msg(msgStr)
 	}
 	else
 	{

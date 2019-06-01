@@ -314,6 +314,7 @@ macro NoteHander(hbuf, cNum)
 		index = index_colon
 	}
 
+	if (index != "X")
 	{
 		isCmd = 0
 		if(noteCmd == "replace" || noteCmd == "cmd" || noteCmd == "open" || noteCmd == "openCmd"
@@ -367,6 +368,12 @@ macro NoteHander(hbuf, cNum)
 		//only chg name
 		cmdP1 = curPath
 		cmdP2 = noteWord
+//		msg(curPath)
+	}
+	else
+	{
+		curPath = noteCmd
+		noteWord = ""
 	}
 
 	//功能说明：
@@ -436,14 +443,20 @@ macro NoteHander(hbuf, cNum)
 	else if(noteCmd == "vc")
 	{
 		vcPath = getVCPath(0)
-		TestMsg("vc" # CharFromKey(13) # "\\" # curPath, 1)
-		ShellExecute("open", vcPath, getBasePath(hbuf) # "\\" # curPath, "", 1)
+		TestMsg("vc" # CharFromKey(13) # vcPath # CharFromKey(13) # getBasePath(hbuf)# "\\" # curPath, 1)
+		re = ShellExecute("open", vcPath, getBasePath(hbuf) # "\\" # curPath, "", 1)
+		if(!re){
+			SetClipSimpleString("vc" # CharFromKey(13) # vcPath # CharFromKey(13) # getBasePath(hbuf)# "\\" # curPath)
+		}
 	}
 	else if(noteCmd == "vs08")
 	{
 		vcPath = getVS08Path(0)
-		TestMsg("vs08" # CharFromKey(13) # "\\" # curPath, 1)
-		ShellExecute("open", vcPath, getBasePath(hbuf) # "\\" # curPath, "", 1)
+		TestMsg("vs08" # CharFromKey(13) # vcPath # CharFromKey(13) # getBasePath(hbuf)# "\\" # curPath, 1)
+		re = ShellExecute("open", vcPath, getBasePath(hbuf) # "\\" # curPath, "", 1)
+		if(!re){
+			SetClipSimpleString("vs08" # CharFromKey(13) # vcPath # CharFromKey(13) # getBasePath(hbuf)# "\\" # curPath)
+		}
 	}
 	else if(noteCmd == "call")
 	{

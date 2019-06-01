@@ -4,8 +4,7 @@
 Save:SI\node\Macro_File.h \[1.1\] work--node
 Save:SI\node\Macro_File.h \[1.2\] other project
 Save:SI\node\Macro_File.h \[1.3\] other
-// 2. 模拟器
-Save:SI\node\Macro_File.h \[2.1\] 模拟器
+// 2. 未整理 未改
 Save:SI\node\Macro_File.h \[2.2\] 未整理 未改
 Save:SI\node\Macro_File.h \[2.3\] bak文件:
 // 3. Cmd
@@ -40,8 +39,14 @@ Save:SI\node\Macro_File.h \[7.2\] 参考标号:
 //1) android:
 Save:SI\node\9820e\Macro_Note_9820es.h
 //2) MTK SPR:
+//	MTK, modis
+Save:SI\node\note\Macro_modis_MTK.h
 Save:SI\node\note\Macro_Note_MTK.h
+//	6531E, modis
+Save:SI\node\note\Macro_modis_6531E.h
 Save:SI\node\note\Macro_Note_6531E.h
+//	7701, modis
+Save:SI\node\note\Macro_Note_7701.h
 
 
 //4) other:
@@ -59,15 +64,12 @@ Save:SI\node\Yuyang\Macro_Note_Yuyang.h
 
 
 [1.3] other
-	
 
 
 
 
 
-[2.1] 模拟器
-Save:SI\node\Macro_modis_MTK.h
-Save:SI\node\Macro_modis_6531E.h
+
 
 
 [2.2] 未整理 未改

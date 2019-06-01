@@ -463,11 +463,19 @@ macro CtrlU()
 		}
 		else
 		{
+			first_line = GetBufLine(hbuf, sel.lnFirst)
+			if(clipStr == first_line)
+				isPre = 0
+			else
+				isPre = 1
 			//insert same row
 			while (row < sel.lnLast + 1)
 			{
 				cur_line = GetBufLine(hbuf, row)
-				PutBufLine(hbuf, row, clipStr # cur_line);
+				if(isPre)
+					PutBufLine(hbuf, row, clipStr # cur_line);
+				else
+					PutBufLine(hbuf, row, cur_line # clipStr);
 				row = row + 1
 			}
 		}
