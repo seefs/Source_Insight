@@ -2531,3 +2531,36 @@ copy E:\Save\SI\node\Test\Macro_z_null.h E:\Save\SI\node\ToolsMsg\spr\Macro_Spr_
 
 [cmd]: 
 "C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\keylock\c\mmikl_keylock.c F:\6531E_16A\MS_MMI\source\mmi_app\app\keylock\c\mmikl_keylock.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c F:\6531E_16A\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c F:\6531E_16A\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c F:\6531E_16A\MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\common\c\mmicom_time.c F:\6531E_16A\MS_MMI\source\mmi_app\common\c\mmicom_time.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\accessory\c\mmicalendar_main.c F:\6531E_16A\MS_MMI\source\mmi_app\app\accessory\c\mmicalendar_main.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\accessory\c\mmicalendar_main.c F:\6531E_16A\MS_MMI\source\mmi_app\app\accessory\c\mmicalendar_main.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    

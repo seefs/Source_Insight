@@ -23,7 +23,7 @@ Save:SI\node\note\Macro_modis_6531E.h  \[2.8\] call
 
 //	 3. SPR常用断点
 Save:SI\node\note\Macro_modis_6531E.h  \[3.1\] 事件:
-Save:SI\node\note\Macro_modis_6531E.h   \[3.2\] 
+Save:SI\node\note\Macro_modis_6531E.h   \[3.2\] Rect
 Save:SI\node\note\Macro_modis_6531E.h   \[3.3\] 
 Save:SI\node\note\Macro_modis_6531E.h   \[3.4\] 
 //	 4. 模块
@@ -340,7 +340,8 @@ s_item_style_state_table
 
 
 
-[3.2] 
+[3.2] Rect
+LCD_FillRect
 
 
 [3.3] 

@@ -48,26 +48,8 @@ Save:SI\node\note\Macro_Note_6531E.h
 //	7701, modis
 Save:SI\node\note\Macro_Note_7701.h
 
-
-//4) other:
+//3) other:
 Save:SI\node\Project\Macro_A_Nav.h
-
-
-[1.2] other project
-//1) Pythons:
-Save:SI\node\Pythons\Macro_Note_Python.h
-//2) weixin:
-Save:SI\node\weixin\Macro_Note_weixin.h
-//3) Yuyang:
-Save:SI\node\Yuyang\Macro_Note_Yuyang.h
-
-
-
-[1.3] other
-
-
-
-
 
 
 
@@ -77,9 +59,6 @@ Save:SI\node\Yuyang\Macro_Note_Yuyang.h
 Save:SI\bak\bak_mtk_lang.h	
 //2) 未改:
 Save:SI\bak\bak_mtk_weiti.h	
-//3) 其他:
-Save:SI\bak\Macro_tmp.h
-Save:SI\bak\Macro_utf8_tmp.h
 
 
 [2.3] bak文件:
@@ -105,7 +84,10 @@ Save:SI\bak\bcmp\bmp_107_mk.bat
 
 
 [3.4] Macro path:
-Save:SI\MacroSBD\sbd_base.em
+// 1) 改变Save路径, 宏命令才能正常使用:
+Save:SI\MacroSBD\sbd_base.em  getSavePath(0)
+// 2) 设置路径步骤:
+Save:SI\node\set\Macro_Set_Help.h
 
 
 
@@ -130,9 +112,9 @@ Save:SI\Cmd_TXT\si_filelist.h
 
 [4.3] Msg
 //1) Nv Msg
-Save:SI\node\Macro_Val.h
+Save:SI\node\set\Macro_Val.h
 //2) Pic Path Msg
-Save:SI\node\Show_Pic_dir.h
+Save:SI\node\set\Show_Pic_dir.h
 //3) Key Msg
 Save:SI\node\Simple_CTRL_K.h
 
@@ -140,11 +122,11 @@ Save:SI\node\Simple_CTRL_K.h
 [4.4] Tmp File
 //1) Tmp File
 Save:SI\node\Simple_CTRL_B.h
-//2) Tmp File
-Save:SI\node\Simple_CTRL_B_UTF8.h
-//3) Bcmp Tmp File
+//2) Bcmp Tmp File
 Save:SI\node\Tmp_Comp_1.h
 Save:SI\node\Tmp_Comp_2.h
+//3) 其他:
+Save:SI\bak\Macro_tmp.h
 
 
 [5.1] rule
@@ -176,7 +158,7 @@ Save:SI\node\Macro_Set.h
 //2) windows system Path
 Save:SI\node\Tmp_Common.h
 //3) cur project
-Save:SI\node\Macro_Set_Note.h
+Save:SI\node\set\Macro_Set_Note.h
 //set--utf8:
 Save:SI\node\Macro_Set.h 63
 
@@ -199,6 +181,7 @@ Save:SI\node\ToolsMsg\Macro_git.h
 Save:SI\node\ToolsMsg\Macro_SI.h
 //6) vim:
 Save:SI\node\ToolsMsg\Macro_vim.h
+Save:SI\node\ToolsMsg\Macro_MTK_FlashTool.h
 
 
 

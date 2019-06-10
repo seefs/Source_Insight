@@ -320,12 +320,12 @@ macro NoteHander(hbuf, cNum)
 		if(noteCmd == "replace" || noteCmd == "cmd" || noteCmd == "open" || noteCmd == "openCmd"
 			 || noteCmd == "setPath" || noteCmd == "setProPath" || noteCmd == "sethistory" || noteCmd == "cp")
 			isCmd = 1
-		else if(noteCmd == "make" || noteCmd == "python" || noteCmd == "ctmake" || noteCmd == "xmake")
+		else if(noteCmd == "make" || noteCmd == "ctmake" || noteCmd == "xmake")
 			isCmd = 2
-		else if(noteCmd == "set" || noteCmd == "vc" || noteCmd == "vs08" || noteCmd == "call")
+		else if(noteCmd == "set"  || noteCmd == "python" || noteCmd == "python_w" || noteCmd == "python_t" || noteCmd == "vc" || noteCmd == "vs08" || noteCmd == "call")
 			isCmd = 3
 		//add all replace words:
-		else if(noteCmd == "Save" || noteCmd == "Project" || noteCmd == "Tool")
+		else if(noteCmd == "Save" || noteCmd == "Project" || noteCmd == "Tool" || noteCmd == "Data")
 			isCmd = 4
 		else if(strlen(noteCmd)==1)
 			isCmd = 4
@@ -349,6 +349,7 @@ macro NoteHander(hbuf, cNum)
 			
 		TestMsg("curPath: " # CharFromKey(13) # curPath, 1)
 		
+
 		//»ñÈ¡¹Ø¼ü´Ê
 		//goto word and Select
 		if (isCmd == 0)
@@ -368,7 +369,6 @@ macro NoteHander(hbuf, cNum)
 		//only chg name
 		cmdP1 = curPath
 		cmdP2 = noteWord
-//		msg(curPath)
 	}
 	else
 	{
@@ -421,7 +421,7 @@ macro NoteHander(hbuf, cNum)
 		TestMsg("cmd" # CharFromKey(13) # getBasePath(hbuf) # "\\cmd", 1)
 		ShellExecute("open", getBasePath(hbuf) # "\\cmd", "", "", 1)
 	}
-	else if(noteCmd == "python" || noteCmd == "python_w")
+	else if(noteCmd == "python" || noteCmd == "python_w" || noteCmd == "python_t")
 	{
 		//python: 
 		TestMsg("python" # CharFromKey(13) # curPath, 1)
@@ -913,13 +913,18 @@ macro NoteOpenFile(hbuf, curPath, noteWord)
 
 macro NotePythonCmd(hbuf, noteCmd, curPath)
 {
-	if(noteCmd == "python_w")
-		SetClipSimpleString(curPath)
+	curPath = GetTransFileName(hbuf, curPath, 16)
+	if(noteCmd == "python_w" || noteCmd == "python_t")
+		SetClipSimpleString("python " # curPath)
 		
-	newPath = GetTransFileName(hbuf, "", 0)
+	toolPath = getMacroValue(hbuf, "toolPath", 1)
+	if(noteCmd == "python_t")
+		newPath = GetTransFileName(hbuf, toolPath, 0)
+	else
+		newPath = GetTransFileName(hbuf, "", 0)
 	cmdRoot = GetTransRootDir(newPath)
 
-	if(noteCmd == "python_w")
+	if(noteCmd == "python_w" || noteCmd == "python_t")
 	{
 //		cmdStr = cmdRoot # "&&cd " # newPath # "&&start " # curPath
 		cmdStr = cmdRoot # "&&cd " # newPath # "&&start cmd.exe&&parse"

@@ -629,6 +629,7 @@ macro GetTransFileName(hbuf, fName, cNum)
 	// 6.F6,     cNum=6 优先设置路径
 	// 7.F7,     cNum=6
 	// 8.F11,    cNum=6 pytho, cp
+	// 8.F11,    cNum=16 python_w
 	//文件名转化:
 	bPath = ""
 	if(bPath == "")
@@ -678,7 +679,11 @@ macro GetTransFileName(hbuf, fName, cNum)
 	re = FindString(fName, ":")
 	if(re == "X")
 	{
-		if(strlen(fName) > 2)
+		if(cNum == 16)
+		{
+			fName = fName
+		}
+		else if(strlen(fName) > 2)
 		{
 			// "\\192.168.2.115\..."
 			if(strmid(fName,0,2) != "\\\\")
@@ -696,14 +701,18 @@ macro GetTransFileName(hbuf, fName, cNum)
 	}
 //	msg(cNum # " ~ " # fName)
 
-	//use "^" as space
-	fName = ReplaceWord(fName, "^", " ")
 	//use "Save:" as SavePath
 	fName = ReplaceWord(fName, "Save:", getSavePath(0) # "\\")
 	fName = ReplaceWord(fName, "Project:", getCustomPath(0) # "\\")
 	toolPath = getMacroValue(hbuf, "toolPath", 1)
 	if(toolPath != "")
 		fName = ReplaceWord(fName, "Tool:", toolPath # "\\")
+	dataPath = getMacroValue(hbuf, "dataPath", 1)
+	if(dataPath != "")
+		fName = ReplaceWord(fName, "Data:", dataPath # "\\")
+		
+	//use "^" as space
+	fName = ReplaceWord(fName, "^", " ")
 	
 	return fName
 }
