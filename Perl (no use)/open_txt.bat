@@ -1,1 +1,0 @@
-perl open_txt.pl %0 %1

@@ -51,7 +51,7 @@ IM
 E:\6531E_20180113\tmp
 
 ### 54.note row(第2次打开同一行, F11关闭note会修改这里)
-90
+51
 
 ### 57.Note Hander Set(笔记路径, 替换当前path, MTK)
 H9_KLS_F4
