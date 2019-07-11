@@ -1,9 +1,5 @@
 @echooff
-F:
-set proD=F:\6261D_11C_V33\
-
-cd %proD%
-
+cd ../../../../
 
 rmdir /s/q .\build
 
@@ -40,13 +36,13 @@ del /s/q .\plutommi\Customer\ResGenerator\null
 del /s/q .\plutommi\Customer\ResGenerator\TEMPIMAGE
 del /s/q .\plutommi\mmi\GlobalTargetPathDef
 rem ##### del /s/q .\tst\database_classb\BPLGUInfoCustomApp_MT6261_S00_MAUI_11C_W13_52_MP_V33_F1
-del /s/q .\tst\database_classb\BPLGUInfoCustomAppSrcP_MT6261_S00_M107_XYZN_S2_4A_NEDADJ_F5_V04_T01_20181207
-del /s/q .\tst\database_classb\DbgInfo_11CW1352MP_M107_XYZN_S2_4A_NEDADJ_F6_M107_XYZN_S2_4A_NEDADJ_F5_V04_T01_20181207_2018_12_07_14_23
+del /s/q .\tst\database_classb\BPLGUInfoCustomAppSrcP_MT6261_S00_M610_KM_V2411_SP6000_F2_V04_T01_20181207
+del /s/q .\tst\database_classb\DbgInfo_11CW1352MP_M610_KM_V2411_SP6000_F2_M610_KM_V2411_SP6000_F2_V04_T01_20181207_2018_12_07_14_23
 del /s/q .\tst\database_classb\enumFileCustomAppSrc
 
 del /s/q .\AAPMC.log
 del /s/q .\auto_reset.cmm
-del /s/q .\BOOTLOADER_M107_XYZN_S2_4A_NEDADJ_F6_MT6261_nocode.cmm
+del /s/q .\BOOTLOADER_M610_KM_V2411_SP6000_F2_MT6261_nocode.cmm
 del /s/q .\custom\app\BLEPHONE61D_11C_BB\nvram_mmi_cache_cust_pack.h
 del /s/q .\custom\codegen\BLEPHONE61D_11C_BB\adc_var.c
 del /s/q .\custom\codegen\BLEPHONE61D_11C_BB\eint_drv.h
@@ -109,20 +105,20 @@ del /s/q .\custom\system\BLEPHONE61D_11C_BB\scat_config\FeatureBased\ObjListGen\
 del /s/q .\custom\system\BLEPHONE61D_11C_BB\scat_config\RegionConfig\DCMP.csv.1544164545.590
 del /s/q .\custom\system\BLEPHONE61D_11C_BB\scatBL_MT6261.txt
 del /s/q .\custom\system\BLEPHONE61D_11C_BB\scatBL_MT6261_ext.txt
-del /s/q .\custom\system\BLEPHONE61D_11C_BB\scatM107_XYZN_S2_4A_NEDADJ_F6.txt
-del /s/q .\custom\system\BLEPHONE61D_11C_BB\scatM107_XYZN_S2_4A_NEDADJ_F6.txt.dummy
-del /s/q .\custom\system\BLEPHONE61D_11C_BB\scatM107_XYZN_S2_4A_NEDADJ_F6_flashtool.txt
+del /s/q .\custom\system\BLEPHONE61D_11C_BB\scatM610_KM_V2411_SP6000_F2.txt
+del /s/q .\custom\system\BLEPHONE61D_11C_BB\scatM610_KM_V2411_SP6000_F2.txt.dummy
+del /s/q .\custom\system\BLEPHONE61D_11C_BB\scatM610_KM_V2411_SP6000_F2_flashtool.txt
 del /s/q .\custom\system\BLEPHONE61D_11C_BB\sys_mem_size.h
 del /s/q .\custom\tst\tst_file_default_Catcher_filter.c
-del /s/q .\EXT_BOOTLOADER_M107_XYZN_S2_4A_NEDADJ_F6_MT6261_nocode.cmm
+del /s/q .\EXT_BOOTLOADER_M610_KM_V2411_SP6000_F2_MT6261_nocode.cmm
 del /s/q .\InTargetReset.cmm
 del /s/q .\lnkfeedback.txt
-del /s/q .\M107_XYZN_S2_4A_NEDADJ_F6_gprs.log
-del /s/q .\M107_XYZN_S2_4A_NEDADJ_F6_PCB01_gprs_MT6261_S00_nocode.cmm
+del /s/q .\M610_KM_V2411_SP6000_F2_gprs.log
+del /s/q .\M610_KM_V2411_SP6000_F2_PCB01_gprs_MT6261_S00_nocode.cmm
 del /s/q .\make.ini
 del /s/q .\make\app_cfg.mak
-del /s/q .\make\M107_XYZN_S2_4A_NEDADJ_F6_GPRS.mak
-del /s/q .\make\Verno_M107_XYZN_S2_4A_NEDADJ_F6.bld
+del /s/q .\make\M610_KM_V2411_SP6000_F2_GPRS.mak
+del /s/q .\make\Verno_M610_KM_V2411_SP6000_F2.bld
 del /s/q .\make\~DbgInfoGen.cfg
 rem ### del /s/q .\mct.ini
 del /s/q .\nvram_lid_size_merge.log
@@ -634,7 +630,7 @@ del /s/q .\tools\RVCTBuildNo.tmp
 del /s/q .\tst\database\log2SD_Catcher_filters.ini
 del /s/q .\tst\database\sf.ini
 rem ### del /s/q .\tst\database_classb\_BPLGUInfoCustomApp_MT6261_S00_MAUI_11C_W13_52_MP_V33_F1.check
-del /s/q .\tst\database_classb\_BPLGUInfoCustomAppSrcP_MT6261_S00_M107_XYZN_S2_4A_NEDADJ_F5_V04_T01_20181207.check
+del /s/q .\tst\database_classb\_BPLGUInfoCustomAppSrcP_MT6261_S00_M610_KM_V2411_SP6000_F2_V04_T01_20181207.check
 del /s/q .\tst\database_classb\catcher_filter.bin
 del /s/q .\tst\database_classb\cgen.cfg
 del /s/q .\tst\database_classb\codegen.lis

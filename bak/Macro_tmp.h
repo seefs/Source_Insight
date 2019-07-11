@@ -17,15 +17,6 @@ phonebook.res (....    <MENU id
 
 
 
-Save:SI\node\set\Macro_Set_Base.h (7)
-
-
-
-//输入*#15963#进入工厂测试模式，
-//*#36951#进工程模式，
-//*#8888*#查看电子保卡(有清除指令)，
-//*#523#查看屏&摄像头芯片型号和ID，
-//*#123456#手动修改IMEI号，
 
 mmi_main_menu_entry
 

@@ -1,10 +1,8 @@
 @echooff
-F:
-set proD=F:\11CW1352MP_KM2
 set proP1=M105_MLT
-set proP2=M105_MLT_S2401_GRAVITY_ULTRA_F1
-set proAudio=%proD%\plutommi\Customer\Audio\%proP1%\%proP2%
-set proImages=%proD%\plutommi\Customer\Images\%proP1%\%proP2%
+set proP2=M105_MLT_S1716_GRAVITY_BACK_UP_F4
+set proAudio=..\plutommi\Customer\Audio\%proP1%\%proP2%
+set proImages=.\plutommi\Customer\Images\%proP1%\%proP2%
 
 
 cd %proAudio%
@@ -26,6 +24,7 @@ rmdir /s/q .\VideoEditor
 del .\audio_file_list.ini
 del .\audio_time_log
 
+cd .\..\..\..\..\..\
 cd %proImages%
 
 rmdir /s/q .\MainLCD

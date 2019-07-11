@@ -27,7 +27,10 @@ project:F:\_SI4.0\6531E.si4project,
 project:F:\6531G_16A_MP_W17.43.4,
 33
 project:F:\_SI4.0\6531G.si4project,
-
+34
+project:F:\6531G_SX,
+35
+project:F:\_SI4.0\6531G_SX.si4project,
 
 
 //(4) soft ÏîÄ¿Â·¾¶

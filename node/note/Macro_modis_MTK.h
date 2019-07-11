@@ -119,6 +119,8 @@ MMI_ID mmi_popup_display_ext(
 // STR_GLOBAL_PLEASE_WAIT
 
 
+gui_print_truncated_borderd_text
+
 
 [1.4] SetKeyHandler(, , );
 // SetKeyHandler(, KEY_1, KEY_EVENT_UP);
@@ -206,6 +208,11 @@ srv_phb_oplib_get_contact_info
 //	data
 mmi_clog_act_create_phb_udata
 srv_gcall_cntxt_set_ptr
+// option
+mmi_phb_entry_op_option
+mmi_phb_op_mark_several_delete_coinfirm
+mmi_phb_op_mark_several_copy_coinfirm
+mmi_phb_op_mark_several_copy_pre_req
 
 
 [2.11] 短信
@@ -662,6 +669,13 @@ plutommi\Framework\GUI\OEM_SRC\gui_status_icon_bar_oem.c void^gui_status_icon_ba
 plutommi\Framework\GUI\OEM_SRC\gui_status_icon_bar_oem.c void^gui_status_icon_bar_show_icon_oem( ).画其他图标，例如数字时钟
 // 2) draw:
 plutommi\Framework\GUI\OEM_SRC\gui_status_icon_bar_oem.c gui_status_icon_bar_show_info_oem
+
+// 添加位置
+plutommi\Framework\GUI\OEM_SRC\gui_status_icon_bar_oem.c 1508
+plutommi\Framework\GUI\OEM_SRC\gui_status_icon_bar_oem.c 1836
+
+// 画图标
+plutommi\Framework\GUI\OEM_SRC\gui_status_icon_bar_oem.c 2723
 
 
 [4.5] 时间状态条

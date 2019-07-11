@@ -1,9 +1,5 @@
 @echooff
-F:
-set proD=F:\11CW1352MP_BLEPHONE61D_11C_V33\projects\M107\M107_XYZN_S2_4A_NEDADJ_F6
-
-cd %proD%
-
+cd ../
 
 rmdir /s/q .\AUDIO\PLUTO\AnswerMachine
 rmdir /s/q .\AUDIO\PLUTO\BGSound

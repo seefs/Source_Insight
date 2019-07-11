@@ -6,9 +6,6 @@ Save:SI\node\Macro_File.h
 //	6531E
 Save:SI\node\note\Macro_modis_6531E.h
 Save:SI\node\note\Macro_Note_6531E.h
-//	tmp
-Save:SI\bak\Macro_tmp.h TmpNote
-Save:SI\bak\Macro_code_tmp.h
 
 //模拟器：
 vc: build\H9_KLS_F4_builddir\win\simulator.dsw
@@ -20,65 +17,104 @@ Save:SI\node\ToolsMsg\Macro_6531E_Debug.h \[2.2\] WinNote
 Save:SI\node\ToolsMsg\Macro_6531E_Debug.h \[3.1\] ToolNote
 
 
+
 /***********************************************************************/
 /********************************临时文件*******************************/
 /***********************************************************************/
-
-MMIAPISET_GetWeekDayByOffset
-
+// MMISET_CALL_RING_TYPE_E   //可能还不能换位置
 
 
-UpdateModeWeeksParam
+//RES_ADD_STRING(TXT_ALARM_PLAY_IN_SLIENT, "Play sound in Silent profile?")
 
 
-https://192.168.2.3/svn/SPRD_SPEED/trunk/6531G_16A_MP_W17.43.4_SX
+//call ring file
+MS_MMI\source\mmi_app\app\setting\c\mmiset_wintab.c 584
+MS_MMI\source\mmi_app\app\setting\c\mmiset_ring.c 5832
 
 
-
-tone:13+1,17+1
-week:(17*14)
-	w=5+14*7+3*6=10+98+18+3+4=128
-	h=3+10+4+17+2=36,
-vol: (88*15)
-	w=13+88+4+7+12+4=13+88+27=128
-	h=3+10+7+15+2=37,
+//call ring file--ring
+MS_MMI\source\mmi_app\app\setting\c\mmiset_wintab.c 887
+MS_MMI\source\mmi_app\app\setting\c\mmiset_ring.c  4064  ++ring name
 
 
-//alarm
-MS_MMI\source\mmi_app\app\accessory\c\mmialarm.c WINDOW_TABLE(^ALARM_EDITWIN_TAB )
-MS_MMI\source\mmi_app\app\accessory\c\mmialarm.c MMI_RESULT_E^^HandleAlarmEditWinMsg
-MS_MMI\source\mmi_app\app\accessory\h\mmialarm_position.h
-//新功能:
-MS_MMI\source\mmi_app\app\accessory\c\mmialarm.c MMI_RESULT_E^HandleAutoPowerOnOffWinMsg
-
-//控件问题:
-//sel list--默认是居中的，下移后才左对齐
-
-MMITHEME_GetLabelTheme
-
-SetWeeksParamEditWin
+//msg type
+MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 3695 ++ web save
+MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 6457 ++
 
 
-HandleFormNotifyGetActive 1512
-HandleFormNotifyGetActive 1411
+//msg ring
+MS_MMI\source\mmi_app\app\setting\c\mmiset_wintab.c 322
+MS_MMI\source\mmi_app\app\setting\c\mmiset_wintab.c 761
 
+
+//keypad 
+MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 3695 ++ web
+MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c HandleKeyRingTypeWindow
+	
+
+//vol
+MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 862
+MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 4703
+MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 5000  ++ save
+
+MMK_CreateWin
 
 
 
-
-//update unit form and all child
-GUIFROM_Display(FALSE,TRUE,form_ctrl_ptr);
-
-//set child rect
-GUIFORM_SetChildRect(TRUE,form_ctrl_ptr);
-
+// bak--不用
+//env main
+MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c MMIENVSET_MAIN_MENU_WIN_TAB
+MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 1910 handle
+MS_MMI\source\mmi_app\app\envset\c\mmienvset.c 3217 add
 
 
-//update unit form and all child
-GUIFROM_Display(FALSE,TRUE,form_ctrl_ptr);
+//opt
+MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 1400
+MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 1480
 
-//set child rect
-GUIFORM_SetChildRect(TRUE,form_ctrl_ptr);
+
+//	set
+MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 2862
+
+
+//	nv
+MS_MMI\source\mmi_app\app\envset\c\mmienvset.c 6630
+// item
+MS_MMI\source\mmi_app\app\envset\c\mmienvset.c 3250
+// def nv
+MS_MMI\source\mmi_app\app\envset\c\mmienvset.c 1680
+
+
+project\H9_KLS_F4\resource\mmienvset_internal.h MMISET_CALL_RING
+project\H9_KLS_F4\resource\mmienvset_internal.h MMISET_MSG_RING
+project\H9_KLS_F4\resource\mmienvset_internal.h MMISET_OTHER_RING1
+
+
+	
+
+
+
+
+
+
+
+
+//
+MMK_CreateWin
+
+
+font:
+13:窄8
+14:宽8
+15:宽9
+16:窄10 MMI_DEFAULT_SMALL_FONT
+17:宽10 MMI_DEFAULT_NORMAL_FONT
+
+
+
+project\H9_KLS_F4\project_H9_KLS_F4.mk SBD_H9_KLS_PROFILE
+project\H9_KLS_F4\resource\common_mdu_def.h SBD_H9_KLS_PROFILE
+
 
 
 

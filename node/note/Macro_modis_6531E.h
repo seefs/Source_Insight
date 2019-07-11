@@ -20,26 +20,25 @@ Save:SI\node\note\Macro_modis_6531E.h  \[2.6\] FILE
 Save:SI\node\note\Macro_modis_6531E.h  \[2.7\] 设置
 Save:SI\node\note\Macro_modis_6531E.h  \[2.8\] 拍照
 Save:SI\node\note\Macro_modis_6531E.h  \[2.8\] call
-
-//	 3. SPR常用断点
+//	 3. GUI
 Save:SI\node\note\Macro_modis_6531E.h  \[3.1\] 事件:
-Save:SI\node\note\Macro_modis_6531E.h   \[3.2\] Rect
-Save:SI\node\note\Macro_modis_6531E.h   \[3.3\] 
-Save:SI\node\note\Macro_modis_6531E.h   \[3.4\] 
+Save:SI\node\note\Macro_modis_6531E.h  \[3.2\] Rect
+Save:SI\node\note\Macro_modis_6531E.h  \[3.3\] form
+Save:SI\node\note\Macro_modis_6531E.h  \[3.4\] font
+Save:SI\node\note\Macro_modis_6531E.h  \[3.5\] list
+Save:SI\node\note\Macro_modis_6531E.h  \[3.6\] menu
+Save:SI\node\note\Macro_modis_6531E.h  \[3.7\] 
 //	 4. 模块
 Save:SI\node\note\Macro_modis_6531E.h  \[4.1\] 标题
 Save:SI\node\note\Macro_modis_6531E.h  \[4.2\] 列表项
 Save:SI\node\note\Macro_modis_6531E.h  \[4.3\] 软键
 Save:SI\node\note\Macro_modis_6531E.h  \[4.4\] Win数据
 Save:SI\node\note\Macro_modis_6531E.h  \[4.7\] SALE统计
-	
-
 //	 5. SPR流程
 Save:SI\node\note\Macro_modis_6531E.h  \[5.1\] 移配置:
 Save:SI\node\note\Macro_modis_6531E.h  \[5.2\] 说明文档
 Save:SI\node\note\Macro_modis_6531E.h  \[5.3\] 常用入口
 Save:SI\node\note\Macro_modis_6531E.h  \[5.5\] Message 切换
-
 //	 6. 编译 Error
 Save:SI\node\note\Macro_modis_6531E.h  \[6.1\] Error: 超空间:
 //	 7. 模拟器 Error
@@ -103,9 +102,9 @@ GUISOFTKEY_SetButtonTextId--->DrawSoftkey
 MMITHEME_GetResText
 
 
-
-
-
+//常见修改
+MS_MMI\source\mmi_app\common\c\mmi_setlist_win.c TXT_COMMON_OK
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c TXT_COMMON_OK
 
 
 
@@ -344,16 +343,83 @@ s_item_style_state_table
 LCD_FillRect
 
 
-[3.3] 
+	GUI_RECT_T form_rect = {0};   
+	GUI_RECT_T rect = {10,0,128,20};
+//	FormCtrlGetRect(MMK_GetCtrlPtr(MMIALM_DAYS_FORM_CTRL_ID), &rect);
+//	form_rect.left = rect.left;
+//	form_rect.top = rect.top + 2;
+//	form_rect.right = rect.right;
+//	form_rect.bottom = form_rect.top + 20;
+	GUIFORM_SetRect(MMI_EDITWIN_CHILD_FORM_CTRL_ID, &rect);
 
+
+[3.3] form
+//form pos
+GUIFORM_GetDisplayMaxWidth
+//form cal
+	CalculateChildWidthHeight
+	CalculateChildHeight 		++++
+//form cal item
+	LabelCtrlGetHeightByWidth
+	EditCtrlGetHeightByWidth
+	GetSetListHeight
+	ButtonCtrlGetHeightByWidth
+//form scroll
+	MMITHEME_GetSlideScrollBarWidth
+
+CalculateChildHeight 		++++
+//	if(17 == child_ptr->height || 20 < child_ptr->height && 35> child_ptr->height) 
+//	{
+//		int a = child_ptr->height;
+//		a += 0;
+//		a += 0;
+//	}
+
+//update unit form and all child
+GUIFROM_Display(FALSE,TRUE,form_ctrl_ptr);
+//set child rect
+GUIFORM_SetChildRect(TRUE,form_ctrl_ptr);
 
 [3.4] 
+open tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe 
+MS_MMI\source\resource\Common\FONT\LANG_FONT_LATIN_H9.lib
+MS_MMI\source\resource\Common\FONT\
 
 
-[3.5] 
+
+[3.5] list
+// id1= 19 ~ 21
+MS_MMI\source\mmi_kernel\include\mmitheme_list.h  GUIITEM_LAYOUT_ONE_LINE_CHECK
+// id2= 20 ~ 25
+MS_MMI\source\mmi_kernel\include\mmitheme_list.h  GUIITEM_STYLE_ONE_LINE_CHECK
+// layout
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c  s_item_layout_1line_check_icon
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c  s_item_layout_1line_focus_check_icon
+// layout id= 19 ~ 21
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c  &s_item_layout_1line_check
+// reg id= 20 ~ 25(匹配id1)
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c  s_item_style_table 
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c  2561
+// state id3= 20 ~ 25
+//   custom+radio 一定要设置 GUIITEM_STYLE_STATE_RADIO
+//	 MMITHEME_CustomListItemStyleReg(ctrl_id, &my_style, GUIITEM_STYLE_STATE_RADIO);
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c s_item_style_state_table
+	
+// 其他错位
+MS_MMI\source\mmi_kernel\include\mmitheme_list.h  GUIITEM_STYLE_ONE_LINE_ICON_TEXT_ICON_EXT
+
+// HL image
+MS_MMI/source/mmi_gui/source/listbox/c/guilistbox.c  GUIITEM_DATA_IMAGE_ID
+
+//softkey
+GUILIST_SetOwnSofterKey( ctrl_id, TRUE );
 
 
-[3.6] 
+[3.6] menu
+//宏套宏
+#define Handle_WinMsg(_ID1_, _ID2_) \
+	LOCAL MMI_RESULT_E Handle_QMOBILE_##_ID1_##_##_ID2_##_WinMsg () \
+	... \
 
 
 [3.7] 

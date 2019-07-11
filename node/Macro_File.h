@@ -2,8 +2,7 @@
 // File List [Num][Ca]:
 // 1. 常用笔记
 Save:SI\node\Macro_File.h \[1.1\] work--node
-Save:SI\node\Macro_File.h \[1.2\] other project
-Save:SI\node\Macro_File.h \[1.3\] other
+Save:SI\node\Macro_File.h \[1.2\] Tmp
 // 2. 未整理 未改
 Save:SI\node\Macro_File.h \[2.2\] 未整理 未改
 Save:SI\node\Macro_File.h \[2.3\] bak文件:
@@ -16,7 +15,6 @@ Save:SI\node\Macro_File.h \[3.4\] Macro path:
 Save:SI\node\Macro_File.h \[4.1\] Test:
 Save:SI\node\Macro_File.h \[4.2\] file list Test:
 Save:SI\node\Macro_File.h \[4.3\] Msg
-Save:SI\node\Macro_File.h \[4.4\] Tmp File
 // 5. rule
 Save:SI\node\Macro_File.h \[5.1\] rule
 Save:SI\node\Macro_File.h \[5.2\] search
@@ -35,9 +33,11 @@ Save:SI\node\Macro_File.h \[7.2\] 参考标号:
 
 
 
+
+
 [1.1] work--node
-//1) android:
-Save:SI\node\9820e\Macro_Note_9820es.h
+//1) 新加项目目录:
+Save:SI\node\set\Macro_Set_Help.h
 //2) MTK SPR:
 //	MTK, modis
 Save:SI\node\note\Macro_modis_MTK.h
@@ -51,6 +51,16 @@ Save:SI\node\note\Macro_Note_7701.h
 //3) other:
 Save:SI\node\Project\Macro_A_Nav.h
 
+
+[1.2] Tmp
+//1) Tmp File
+Save:SI\node\Simple_CTRL_B.h
+//2) Bcmp Tmp File
+Save:SI\node\Tmp_Comp_1.h
+Save:SI\node\Tmp_Comp_2.h
+//3) 其他:
+Save:SI\bak\Macro_tmp.h TmpNote
+Save:SI\bak\Macro_code_tmp.h
 
 
 
@@ -83,11 +93,6 @@ Save:SI\Cmd_unzip\6531E\unzip_spr240_mini.bat
 Save:SI\bak\bcmp\bmp_107_mk.bat
 
 
-[3.4] Macro path:
-// 1) 改变Save路径, 宏命令才能正常使用:
-Save:SI\MacroSBD\sbd_base.em  getSavePath(0)
-// 2) 设置路径步骤:
-Save:SI\node\set\Macro_Set_Help.h
 
 
 
@@ -119,14 +124,6 @@ Save:SI\node\set\Show_Pic_dir.h
 Save:SI\node\Simple_CTRL_K.h
 
 
-[4.4] Tmp File
-//1) Tmp File
-Save:SI\node\Simple_CTRL_B.h
-//2) Bcmp Tmp File
-Save:SI\node\Tmp_Comp_1.h
-Save:SI\node\Tmp_Comp_2.h
-//3) 其他:
-Save:SI\bak\Macro_tmp.h
 
 
 [5.1] rule
@@ -154,13 +151,15 @@ Save:SI\node\version\si_version_6531e.h
 
 [6.1] set:
 //1) Common set
-Save:SI\node\Macro_Set.h
+Save:SI\node\set\Macro_Set.h
+//	基础路径设置:
+Save:SI\node\set\Macro_Set_Base.h
 //2) windows system Path
 Save:SI\node\Tmp_Common.h
 //3) cur project
 Save:SI\node\set\Macro_Set_Note.h
 //set--utf8:
-Save:SI\node\Macro_Set.h 63
+Save:SI\node\set\Macro_Set.h 63
 
 [6.2] Tools:
 Save:SI\node\note\Macro_Note_Tools.h

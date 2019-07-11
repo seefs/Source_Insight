@@ -1,15 +1,23 @@
 
+[1.1] Macro path:
+//    ¸Ä±äSaveÂ·¾¶, ºêÃüÁî²ÅÄÜÕı³£Ê¹ÓÃ:
+Save:SI\MacroSBD\sbd_base.em  getSavePath(0)
 
 
-//sbd_base è·¯å¾„è®¾ç½®
-Save:SI\MacroSBD\sbd_base.em
-
-
-//Macro_Set_Base è·¯å¾„è®¾ç½®
+[1.2] ĞÂ¼ÓÏîÄ¿Ä¿Â¼:
+//ĞÂ¼ÓÏîÄ¿Ä¿Â¼:
 Save:SI\node\set\Macro_Set_Base.h
 
 
-//å®šåˆ¶è·¯å¾„è®¾ç½®: (æ–°åŠ çš„è¯å‚è€ƒå·²æœ‰è·¯å¾„)
+
+[1.3] ÆäËûÄ¿Â¼:
+//sbd_base Â·¾¶ÉèÖÃ
+Save:SI\MacroSBD\sbd_base.em
+
+
+
+[1.4] ¶¨ÖÆÂ·¾¶ÉèÖÃ:
+//	ĞÂ¼ÓµÄ»°²Î¿¼ÒÑÓĞÂ·¾¶
 // Save:
 Save:SI\MacroSBD\sbd_base.em  getSavePath(0)
 Save:SI\MacroSBD\sbd_file.em  ReplaceWord(fName
@@ -29,8 +37,8 @@ Save:SI\MacroSBD\sbd_f11.em  "Data"
 
 
 
-
-
+[2.1] ÆúÓÃ
+Save:SI\node\9820e\Macro_Note_9820es.h
 
 
 

@@ -142,13 +142,16 @@ project\H9_KLS_F4\resource\mmi_menutable_128x160.c GUIMENU_ITEM_T^menu_icon_tool
 
 
 [2.2] 图片[r]
+build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_imag.txt
 
 
 
 [2.3] 铃声:
+build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_ring.txt
 
 
 [2.4] 字符串:
+build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_text.txt
 
 	
 [2.5] 字库文件:
@@ -447,6 +450,7 @@ cmd: cmd
 [5.2] Build问题[Cb][b]:
 
 build\H9_KLS_F4_builddir\log\midisoundbank.log 文件无法删除 
+build\H9_KLS_F4_builddir\log\app.log ERROR
 build\H9_KLS_F4_builddir\log\resource.log ERROR
 build\H9_KLS_F4_builddir\log\caf_templete.log ERROR
 build\H9_KLS_F4_builddir\tmp/SC6531EFM.def 宏

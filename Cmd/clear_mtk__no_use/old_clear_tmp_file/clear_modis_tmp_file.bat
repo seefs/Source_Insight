@@ -1,8 +1,5 @@
 @echooff
-F:
-set proD=F:6261D_KM\
-
-cd %proD%
+cd ../
 
 rmdir /s/q .\tst\database\pstrace_db
 
