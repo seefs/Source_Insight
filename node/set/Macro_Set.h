@@ -15,13 +15,13 @@ b
 SE0397_XY_C2_Welcome_F6
 
 ### 18.BCompare target(304表示3与4比较，当前3那么比较4，当前4那么比较3)
-7470
+3432
 
 ### 21.tree  (未使用)
 project
 
 ### 24.SR Mode  (CTRL + D : search head 删除相同头部的行)
-mmienvset
+mmimms_editwin
 
 ### 27.last command (未使用)
 CtrlW

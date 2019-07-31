@@ -1,8 +1,9 @@
 
 // File List [Num][Ca]:
 // 1. 常用笔记
-Save:SI\node\Macro_File.h \[1.1\] work--node
-Save:SI\node\Macro_File.h \[1.2\] Tmp
+Save:SI\node\Macro_File.h \[1.1\] new--node
+Save:SI\node\Macro_File.h \[1.2\] work--node
+Save:SI\node\Macro_File.h \[1.3\] Tmp
 // 2. 未整理 未改
 Save:SI\node\Macro_File.h \[2.2\] 未整理 未改
 Save:SI\node\Macro_File.h \[2.3\] bak文件:
@@ -35,24 +36,31 @@ Save:SI\node\Macro_File.h \[7.2\] 参考标号:
 
 
 
-[1.1] work--node
+
+	
+[1.1] new--node
 //1) 新加项目目录:
 Save:SI\node\set\Macro_Set_Help.h
-//2) MTK SPR:
-//	MTK, modis
+
+
+[1.2] work--node
+//1) MTK:
+//	 MTK, modis
 Save:SI\node\note\Macro_modis_MTK.h
 Save:SI\node\note\Macro_Note_MTK.h
-//	6531E, modis
+//2) SPR:
+//	 6531E, modis
 Save:SI\node\note\Macro_modis_6531E.h
 Save:SI\node\note\Macro_Note_6531E.h
-//	7701, modis
+//	 7701, modis
 Save:SI\node\note\Macro_Note_7701.h
 
-//3) other:
+//2) other:
 Save:SI\node\Project\Macro_A_Nav.h
+	
 
 
-[1.2] Tmp
+[1.3] Tmp
 //1) Tmp File
 Save:SI\node\Simple_CTRL_B.h
 //2) Bcmp Tmp File

@@ -78,6 +78,7 @@ make p=H9_KLS_F4 m=resource job=4
 
 其他编模块
 make p=H9_KLS_F4 m=app update image
+make p=H9_KLS_F4 m=app
 
 
 模拟器：
@@ -85,6 +86,7 @@ make p=H9_KLS_F4 m=simulator
 vc: build\H9_KLS_F4_builddir\win\simulator.dsw
 build\H9_KLS_F4_builddir\win\
 //	改NV删除
+cmd del^build\H9_KLS_F4_builddir\win\bin\flash_sim.dat
 build\H9_KLS_F4_builddir\win\bin\flash_sim.dat
 
 

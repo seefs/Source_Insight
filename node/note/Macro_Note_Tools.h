@@ -50,7 +50,7 @@ C:\Program^Files^(x86)\Microsoft^Visual^Studio\Common\MSDev98\AddIns
 open F:\6531E_16A\tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe 
 open C:\Program^Files^(x86)\Pixtel^Media^Technology\MCT^6.0\MCTApp.exe
 open C:\Program^Files^(x86)\Pixtel^Media^Technology\MCT^6.0\MCTApp.exe
-F:\6531G_16A_MP_W17.43.4\MS_MMI\source\resource\Common\FONT\LANG_FONT_LATIN_12_14_29.lib
+F:\6531G_SX\MS_MMI\source\resource\Common\FONT\LANG_FONT_LATIN_12_14_29.lib
 
 
 [2.2] foobar2000 修改mp3 广告图标

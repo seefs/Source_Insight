@@ -2723,3 +2723,39 @@ copy E:\Save\SI\node\Test\Macro_z_null.h E:\Save\SI\node\ToolsMsg\spr\Macro_Spr_
 
 [cmd]: 
 "C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI E:\Save\SI_bak    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_SX\MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c F:\6261D_KM\MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" F:\6531G_SX\MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c F:\6531G_16A_MP_W17.43.4\MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    
+
+[cmd]: 
+"C:\Program Files\Beyond Compare 4\BCompare.exe" E:\Save\SI\node\Tmp_Comp_1.h E:\Save\SI\node\Tmp_Comp_2.h    

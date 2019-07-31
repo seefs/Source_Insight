@@ -18,84 +18,103 @@ Save:SI\node\ToolsMsg\Macro_6531E_Debug.h \[3.1\] ToolNote
 
 
 
+
+
+project\H9_KLS_F4\project_H9_KLS_F4.mk SBD_H9_KLS_FM
+project\H9_KLS_F4\resource\common_mdu_def.h SBD_H9_KLS_FM
+
+
+
+
+
 /***********************************************************************/
 /********************************临时文件*******************************/
 /***********************************************************************/
-// MMISET_CALL_RING_TYPE_E   //可能还不能换位置
+// FM: 不保存, 是否真的不保存
+// MMIAPIENVSET_ResetActModeKeyRingSet  MMIAPIENVSET_CloseActModeKeyRingSet
+// file_name_ptr  //有特殊符号, 后面要改
+// T卡播放没做 
+//隐藏IM icon/num无效
+// fm list->num 1-9->MMIDEFAULT_getHLVolIconId
 
+//fm name 超长
+//fm time 时间重复，或过时
 
-//RES_ADD_STRING(TXT_ALARM_PLAY_IN_SLIENT, "Play sound in Silent profile?")
+//FM:
+//TXT_FM_CUSTOM_START_AUTO_SCAN, 
 
-
-//call ring file
-MS_MMI\source\mmi_app\app\setting\c\mmiset_wintab.c 584
-MS_MMI\source\mmi_app\app\setting\c\mmiset_ring.c 5832
-
-
-//call ring file--ring
-MS_MMI\source\mmi_app\app\setting\c\mmiset_wintab.c 887
-MS_MMI\source\mmi_app\app\setting\c\mmiset_ring.c  4064  ++ring name
-
-
-//msg type
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 3695 ++ web save
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 6457 ++
-
-
-//msg ring
-MS_MMI\source\mmi_app\app\setting\c\mmiset_wintab.c 322
-MS_MMI\source\mmi_app\app\setting\c\mmiset_wintab.c 761
-
-
-//keypad 
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 3695 ++ web
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c HandleKeyRingTypeWindow
+HandleSetTimeDateWindow
+	GUIEDIT_ConfigImDefaultKey
+	
 	
 
-//vol
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 862
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 4703
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 5000  ++ save
-
-MMK_CreateWin
+//play
+MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  7900 ++ SetFMStartSuspendButtonStatus
 
 
+//FmTimer
+MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  8530  ++
 
-// bak--不用
-//env main
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c MMIENVSET_MAIN_MENU_WIN_TAB
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 1910 handle
-MS_MMI\source\mmi_app\app\envset\c\mmienvset.c 3217 add
+
+//Display:
+MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  2387  play
+MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  void^^DisplayMainWindow
+//Record
+MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleFmRecordMsg
+MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleFMCustomRecordAction
+//Record test
+MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleFMCustomRecordActionTest
 
 
 //opt
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 1400
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 1480
-
-
-//	set
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 2862
-
-
-//	nv
-MS_MMI\source\mmi_app\app\envset\c\mmienvset.c 6630
-// item
-MS_MMI\source\mmi_app\app\envset\c\mmienvset.c 3250
-// def nv
-MS_MMI\source\mmi_app\app\envset\c\mmienvset.c 1680
-
-
-project\H9_KLS_F4\resource\mmienvset_internal.h MMISET_CALL_RING
-project\H9_KLS_F4\resource\mmienvset_internal.h MMISET_MSG_RING
-project\H9_KLS_F4\resource\mmienvset_internal.h MMISET_OTHER_RING1
-
-
+MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^^HandleFmChannelOptionMsg
+//opt--action
+MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  void^HandleFMAction
 	
+// 所有set channel
+MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMIFM_SetCurrrentChannel
+
+
+
+//set
+MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleCustomSettingWinMsg
+//set edit
+MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  13485
+//set
+MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  13522
+MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  13730
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MMK_CreateWin
+
+MMIAPISET_StopRing
 
 
 
@@ -111,9 +130,6 @@ font:
 17:宽10 MMI_DEFAULT_NORMAL_FONT
 
 
-
-project\H9_KLS_F4\project_H9_KLS_F4.mk SBD_H9_KLS_PROFILE
-project\H9_KLS_F4\resource\common_mdu_def.h SBD_H9_KLS_PROFILE
 
 
 
