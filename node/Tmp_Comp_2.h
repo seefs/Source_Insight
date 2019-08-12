@@ -1,97 +1,92 @@
-LOCAL void SetEditWinButtonBg(MMI_HANDLE_T    win_id,uint32 ctrl_id)
+LOCAL MMI_RESULT_E  HandleGetOneValidWinMsg(
+										  MMI_WIN_ID_T win_id, 
+										  MMI_MESSAGE_ID_E msg_id, 
+										  DPARAM param 
+										  )
 {
-    uint32 i=0;
-    GUI_BG_T  bg={0};
-    GUI_FONT_ALL_T  enabled_font={0};    
-    GUI_FONT_ALL_T  disabled_font={0};
-
-    enabled_font.color=MMI_WHITE_COLOR;
-#ifdef SBD_ALARM_EDIT_WIN_BUTTON_FONT12
-    enabled_font.font=SONG_FONT_12;
-#else
-#ifdef MAINLCD_SIZE_320X480
-    enabled_font.font=SONG_FONT_20;
-#elif defined MAINLCD_SIZE_128X160
-    enabled_font.font=SONG_FONT_14;
-#else
-    enabled_font.font=SONG_FONT_16;
-#endif
-#endif
-    disabled_font.color=MMI_GRAY_COLOR;
-#ifdef SBD_ALARM_EDIT_WIN_BUTTON_FONT12
-    disabled_font.font=SONG_FONT_12;
-#else
-#ifdef MAINLCD_SIZE_320X480
-    disabled_font.font=SONG_FONT_20;
-#elif defined MAINLCD_SIZE_128X160
-    disabled_font.font=SONG_FONT_14;
-#else
-    disabled_font.font=SONG_FONT_16;
-#endif
-#endif
-#ifdef SBD_CHANGE_ALARM_WEEK_TEXT
-	enabled_font.font=SONG_FONT_10;
-	disabled_font.font=SONG_FONT_10;
-#elif defined(SBD_ALARM_WEEK_TEXT_FONT_12)//wangfayang alarm week text font12 20180124
-	enabled_font.font=SONG_FONT_12;
-	disabled_font.font=SONG_FONT_12;
-#elif defined(SBD_H9_KLS_ALARM)
-    enabled_font.color = ~MMITHEME_GetCurThemeFontColor(MMI_THEME_LABEL_FONT);
-	enabled_font.font=SONG_FONT_9;
-    disabled_font.color = MMITHEME_GetCurThemeFontColor(MMI_THEME_LABEL_FONT);
-	disabled_font.font=SONG_FONT_9;
-#endif
-    bg.bg_type=GUI_BG_IMG;
-    for(i=0;i<ALM_WEEK_DAY_NUM;i++)
+    MMI_RESULT_E  result = MMI_RESULT_TRUE; 
+	static uint16 s_search_ret  = 0;
+	static int32 direct = FM_SCAN_UP;
+   
+    switch (msg_id)
     {
-#ifdef SBD_H9_KLS_ALARM
-		//只有部分week显示背景, 和字体分开设置
-        if(s_week_is_active)
-        {          
-            GUIBUTTON_SetFont(MMI_EDITWIN_BUTTON0_CTRL_ID+i, &enabled_font);
-        }
-        else
-        {        
-            GUIBUTTON_SetFont(MMI_EDITWIN_BUTTON0_CTRL_ID+i, &disabled_font);
-        }
-		//部分week显示背景
-        if(s_weeks_button_is_selected[i])
+    case MSG_OPEN_WINDOW:        
+        MMIFM_EnableMute();
+	   s_search_ani_timer_id = MMK_CreateTimer(MMIFM_ANI_TIME, FALSE);
+        break;
+        
+    case MSG_APP_FM_GETSEARCH_PARAM:
+        direct = (int)param;
+        break;
+        
+    case MSG_TIMER:
+        //搜台功能        
+        if (s_search_ani_timer_id == *((uint8 *) param))
         {
-	        if(s_week_is_active)
-	        {
-	            bg.img_id=IMAGE_CLOCK_ALARM_WEEK_ENABLED;            
-	        }
-	        else
-	        {
-	            bg.img_id=IMAGE_CLOCK_ALARM_WEEK_DISABLED;            
-	        }
-        	GUIBUTTON_SetBg(MMI_EDITWIN_BUTTON0_CTRL_ID+i, &bg);
+            s_search_ret = MMIFM_SearchValidFreq(direct);
+		   s_is_start_search = TRUE;
+		   s_is_need_display_search = TRUE;
+            
+            if(MMIFM_AUTOSEARCH_END == s_search_ret)
+            { 
+			   s_is_start_search = FALSE;
+			   s_is_need_display_search = FALSE;
+			   MMK_SendMsg(win_id, MSG_FULL_PAINT, PNULL);
+            }
+            else if(MMIFM_AUTOSEARCH_FAIL == s_search_ret)
+            {
+                //search fail                
+                MMK_SendMsg(win_id, MSG_APP_FM_FAIL, PNULL);
+            } 
+            else 
+            {  
+               // search not complete, just start a timer to serch it
+			  s_search_ani_timer_id = MMK_CreateTimer(MMIFM_ANI_TIME, FALSE);
+               
+            }
+        }        
+        break;
+
+    case MSG_APP_CANCEL:
+		//chg.
+		MMK_SendMsg(win_id, MSG_CLOSE_WINDOW, PNULL);
+		
+		//chg.
+		s_is_start_search = FALSE;
+		s_is_need_display_search = FALSE;
+		MMK_SendMsg(win_id, MSG_APP_CANCEL, PNULL);
+        break;
+    case MSG_APP_FM_FAIL:
+        //search fail
+        MMIPUB_OpenAlertWarningWin(TXT_FM_NO_CHANNEL);
+		
+		//chg.
+		s_is_start_search = FALSE;
+		s_is_need_display_search = FALSE;
+		//MMK_SendMsg(win_id, MSG_FULL_PAINT, PNULL);
+        break;
+	
+   case MSG_CLOSE_WINDOW:
+	   MMK_StopTimer(s_search_ani_timer_id);						   
+        // need re-open FM to stop serching job in FM chip
+        if(MMIFM_AUTOSEARCH_NOT_COMPLETE == s_search_ret )            
+        {             
+            FM_Close();            
+            FM_Init();
         }
-#else
-        if(s_weeks_button_is_selected[i])
-        {
-            bg.img_id=IMAGE_CLOCK_ALARM_WEEK_ENABLED;            
-            GUIBUTTON_SetFont(MMI_EDITWIN_BUTTON0_CTRL_ID+i, &enabled_font);
-        }
-        else
-        {
-            bg.img_id=IMAGE_CLOCK_ALARM_WEEK_DISABLED;            
-            GUIBUTTON_SetFont(MMI_EDITWIN_BUTTON0_CTRL_ID+i, &disabled_font);
-        }
-#ifndef MMI_PDA_SUPPORT
-        if(ctrl_id==MMI_EDITWIN_BUTTON0_CTRL_ID+i)
-        {
-            bg.img_id=IMAGE_CLOCK_ALARM_WEEK_PRESSED;
-        }
-#endif
-        GUIBUTTON_SetBg(MMI_EDITWIN_BUTTON0_CTRL_ID+i, &bg);
-#endif /* SBD_H9_KLS_ALARM */
-#if defined(SBD_ALARM_EDIT_WIN_BUTTON_TEXT_ALIGN_VMIDDLE) || defined(SBD_H9_KLS_ALARM)
-        GUIBUTTON_SetTextAlign(MMI_EDITWIN_BUTTON0_CTRL_ID+i, ALIGN_VMIDDLE);
-#elif defined(SBD_ALARM_EDIT_WIN_BUTTON_TEXT_ALIGN_BOTTOM)//wangfayang alarm week text align bottom 20180124
-        GUIBUTTON_SetTextAlign(MMI_EDITWIN_BUTTON0_CTRL_ID+i, ALIGN_BOTTOM);
-#endif
-        GUIBUTTON_Update(MMI_EDITWIN_BUTTON0_CTRL_ID+i);
+        //search end
+        //MMIFM_DisableMute(); 
+        
+        // after seek, play it no matter it is valid or not
+        MMIFM_Play(FALSE);
+        MMIFM_DisableMute();
+        s_ani_timer_id = 0;
+        s_search_ret  = 0;
+        break;
+		
+    default:
+        break;
     }
     
+    return result;        
 }
