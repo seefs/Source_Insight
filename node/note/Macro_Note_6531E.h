@@ -26,7 +26,7 @@ Save:SI\node\note\Macro_Note_6531E.h \[4.4\] 浏览器[ w]: 网络参数
 Save:SI\node\note\Macro_Note_6531E.h \[4.5\] 文件管理
 Save:SI\node\note\Macro_Note_6531E.h \[4.6\] 工具[ t]:单位转换 游戏 闹钟 日历 魔音
 // Build问题
-Save:SI\node\note\Macro_Note_6531E.h \[5.1\] 扩展项目:
+Save:SI\node\note\Macro_Note_6531E.h \[5.1\] trace:
 Save:SI\node\note\Macro_Note_6531E.h \[5.2\] Build问题[ Cb][ b]:
 	
 //模拟器调试:
@@ -92,6 +92,7 @@ build\H9_KLS_F4_builddir\win\bin\flash_sim.dat
 
 // spr--下载工具
 open tools\DEBUG_TOOL\ResearchDownload\Bin\ResearchDownload.exe
+build\H9_KLS_F4_builddir\img
 
 F:\6531G_16A_MP_W17.43.4\build\H9_KLS_F4_builddir\img
 
@@ -344,7 +345,7 @@ open: tools\DEBUG_TOOL\CHANNELSERVER\Bin\ChannelServer.exe
 //		   Endian: self adaptive
 //		
 //		WinSocket Server:
-//		   Port: 36666
+//		   Port: 36666 
 //		   Timeout: 3 (s)
 //	3) Connect MSSim;channel的图标将有谈绿色的更成翠绿色
 // 其他:
