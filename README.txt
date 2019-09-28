@@ -1,3 +1,14 @@
+
+# 查看当前地址:
+$ git remote -v
+origin  https://github.com/seefs/Source_Insight (fetch)
+origin  https://github.com/seefs/Source_Insight (push)
+
+# 下载命令:
+$ git clone https://github.com/seefs/Source_Insight
+
+/***********************************************************************/
+
 # si_mini
 
 # 1 Source_Insight 相关git:
@@ -25,47 +36,55 @@ https://github.com/seefs/Source_Insight_4_0_cfg
 https://github.com/seefs/Source_Insight_bak
 
 /***********************************************************************/
+# 功能说明和优缺点:
+#
+# 1) 通用版Source_Insight 宏命令工具
+#    笔记建议保存在github上, 
+#    缺点是只能编辑文件,
 
-# 2 Tool 相关git:
-https://github.com/seefs/tool.git
-https://github.com/seefs/tool_mini.git
+
+# 2) 笔记能处理cmd, python命令
+#    格式比较灵活, 请参考帮助文件, 或已有笔记
+#    已添加常用的工具命令: 如vc, vs2008, bcomp, svn, cp, ...
+#    如何添加新命令, 以后会写一个简单说明
+
+
+# 3) 最大优点(省时间和精力)
+#    >> 打开文件快, 节省重复配置时间
+#    >> 详细步骤 + 批处理结合, 一步一步往下执行即可, 节省思考时间
+#    >> 目录索引, 创建索引也有批处理; 
+#           目录就是一个文件名+编号或者单词, 转换过去;
+#    >> 节省记忆时间, 新人也可以快速入门
+#    >> 常用的几个键, 很好用
 
 
 /***********************************************************************/
-# 3 git 命令:
+# 相关工具及配置下载:
+#    
+# 1) git windows版本：
+#       下载地址: 见百度.
+#
+#    >> 更新/上传 笔记
+#    
+#    >> git 常用命令说明:
+https://github.com/seefs/si_base/blob/master/Help/Macro_Help_Git.h
 
-# 1) 下载git windows版本：
-地址略
 
-# 2) 参考配置+详细命令：
-https://github.com/seefs/Source_Insight/blob/master/node/ToolsMsg/Macro_git.h
+# 2) Source_Insight4.0及配置：
+#       下载地址: 
+https://github.com/seefs/tool/tree/master/3%20%20%E5%B7%A5%E5%85%B7/5%20%20%E6%96%87%E6%A1%A3/2%20SourceInsight
+
+#    >> 编辑笔记: 
+#       目录: .\SI\node\...
+#
+#    >> 自定义宏命令，批处理: 
+#       目录: .\SI\Macro\...
+
+#    >> SI配置步骤:
+https://github.com/seefs/si_base/blob/master/Help/Macro_Help_SI.h
+#       或者用这个配置:
+https://github.com/seefs/Source_Insight_4_0_cfg
 
 
-# 3) git 命令:
-# 3.1) clone:
-git clone https://github.com/seefs/Source_Insight.git
-git clone https://github.com/seefs/Source_Insight_mini.git
-git clone https://github.com/seefs/Tool.git
-git clone https://github.com/seefs/Tool_mini.git
-
-# 3.2) remote:
-//git remote add siMini  https://github.com/seefs/Source_Insight_mini.git
-//git remote rm origin
-//git remote -v
-//git pull master:siMini
-
-# 3.3) config:
-git config --global user.name usr_xj
-git config --global user.name usr_org
-git config --global user.email seefs@163.com
-git config --list
-
-# 3.4) 更新:
-git pull
-git pull origin dev
-git pull origin master:dev
-
-# 3.5) 提交:
-git push
 
 

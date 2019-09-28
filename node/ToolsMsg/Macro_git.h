@@ -9,45 +9,45 @@ diff HEAD
 
 //目录[Num][Ca]:
 // 1. git 常用
-Save:SI\node\ToolsMsg\Macro_git.h \[1.1\] 设置账户(需要和github账户设置一致)
-Save:SI\node\ToolsMsg\Macro_git.h \[1.2\] 查看设置
-Save:SI\node\ToolsMsg\Macro_git.h \[1.3\] 创建git本地仓库
-Save:SI\node\ToolsMsg\Macro_git.h \[1.4\] 查看git状态
-Save:SI\node\ToolsMsg\Macro_git.h \[1.5\] 添加git文件到暂存区（需要和版本库区分） 
-Save:SI\node\ToolsMsg\Macro_git.h \[1.6\] git提交文件
-Save:SI\node\ToolsMsg\Macro_git.h \[1.7\] git删除文件（夹）
+Save:node\ToolsMsg\Macro_git.h \[1.1\] 设置账户(需要和github账户设置一致)
+Save:node\ToolsMsg\Macro_git.h \[1.2\] 查看设置
+Save:node\ToolsMsg\Macro_git.h \[1.3\] 创建git本地仓库
+Save:node\ToolsMsg\Macro_git.h \[1.4\] 查看git状态
+Save:node\ToolsMsg\Macro_git.h \[1.5\] 添加git文件到暂存区（需要和版本库区分） 
+Save:node\ToolsMsg\Macro_git.h \[1.6\] git提交文件
+Save:node\ToolsMsg\Macro_git.h \[1.7\] git删除文件（夹）
 // 2. git 日志
-Save:SI\node\ToolsMsg\Macro_git.h \[2.1\] git操作日志
-Save:SI\node\ToolsMsg\Macro_git.h \[2.2\] 版本回退
+Save:node\ToolsMsg\Macro_git.h \[2.1\] git操作日志
+Save:node\ToolsMsg\Macro_git.h \[2.2\] 版本回退
 // 3. git chechout
-Save:SI\node\ToolsMsg\Macro_git.h \[3.1\] 撤销
-Save:SI\node\ToolsMsg\Macro_git.h \[3.2\] git还原操作
-Save:SI\node\ToolsMsg\Macro_git.h \[3.3\] git暂存区撤销到工作区操作
-Save:SI\node\ToolsMsg\Macro_git.h \[3.4\] git版本区撤销到工作区操作
+Save:node\ToolsMsg\Macro_git.h \[3.1\] 撤销
+Save:node\ToolsMsg\Macro_git.h \[3.2\] git还原操作
+Save:node\ToolsMsg\Macro_git.h \[3.3\] git暂存区撤销到工作区操作
+Save:node\ToolsMsg\Macro_git.h \[3.4\] git版本区撤销到工作区操作
 // 4. git diff
-Save:SI\node\ToolsMsg\Macro_git.h \[4.1\] 对比 git diff
-Save:SI\node\ToolsMsg\Macro_git.h \[4.2\] 设置对比/合并工具
+Save:node\ToolsMsg\Macro_git.h \[4.1\] 对比 git diff
+Save:node\ToolsMsg\Macro_git.h \[4.2\] 设置对比/合并工具
 // 5. git remote
-Save:SI\node\ToolsMsg\Macro_git.h \[5.1\] remote
-Save:SI\node\ToolsMsg\Macro_git.h \[5.4\] 添加远程仓库
-Save:SI\node\ToolsMsg\Macro_git.h \[5.9\] 本地仓库更新
-Save:SI\node\ToolsMsg\Macro_git.h \[5.10\] 查看/创建/切换/删除/合并分支
-Save:SI\node\ToolsMsg\Macro_git.h \[5.16\] 创建tag
+Save:node\ToolsMsg\Macro_git.h \[5.1\] remote
+Save:node\ToolsMsg\Macro_git.h \[5.4\] 添加远程仓库
+Save:node\ToolsMsg\Macro_git.h \[5.9\] 本地仓库更新
+Save:node\ToolsMsg\Macro_git.h \[5.10\] 查看/创建/切换/删除/合并分支
+Save:node\ToolsMsg\Macro_git.h \[5.16\] 创建tag
 // 6. git stash
-Save:SI\node\ToolsMsg\Macro_git.h \[6.1\] 现场的保存与恢复: git stash
-Save:SI\node\ToolsMsg\Macro_git.h \[6.2\] 设置Git UI颜色
-Save:SI\node\ToolsMsg\Macro_git.h \[6.4\] 为命令配置别名
-Save:SI\node\ToolsMsg\Macro_git.h \[6.5\] 修改配置文件
+Save:node\ToolsMsg\Macro_git.h \[6.1\] 现场的保存与恢复: git stash
+Save:node\ToolsMsg\Macro_git.h \[6.2\] 设置Git UI颜色
+Save:node\ToolsMsg\Macro_git.h \[6.4\] 为命令配置别名
+Save:node\ToolsMsg\Macro_git.h \[6.5\] 修改配置文件
 // 7. other
-Save:SI\node\ToolsMsg\Macro_git.h \[7.1\] 文件重命名: git mv
-Save:SI\node\ToolsMsg\Macro_git.h \[7.2\] 忽略特殊文件
-Save:SI\node\ToolsMsg\Macro_git.h \[7.3\] window下git下载 github 项目
+Save:node\ToolsMsg\Macro_git.h \[7.1\] 文件重命名: git mv
+Save:node\ToolsMsg\Macro_git.h \[7.2\] 忽略特殊文件
+Save:node\ToolsMsg\Macro_git.h \[7.3\] window下git下载 github 项目
 // 8. other
-Save:SI\node\ToolsMsg\Macro_git.h \[8.1\] sourceTree Git 和 Hg 客户端管理工具
+Save:node\ToolsMsg\Macro_git.h \[8.1\] sourceTree Git 和 Hg 客户端管理工具
 // 9. 9820 -- git:
-Save:SI\node\ToolsMsg\Macro_git.h \[9.1\] 9820 新代码
-Save:SI\node\ToolsMsg\Macro_git.h \[9.2\] reset--hard
-Save:SI\node\ToolsMsg\Macro_git.h \[9.3\] diff
+Save:node\ToolsMsg\Macro_git.h \[9.1\] 9820 新代码
+Save:node\ToolsMsg\Macro_git.h \[9.2\] reset--hard
+Save:node\ToolsMsg\Macro_git.h \[9.3\] diff
 
 
 
@@ -257,6 +257,10 @@ git difftool -d 0c8427888be95166e9c4f948feeca44bfa6e6c72
 	
 git difftool -d dev master
 git difftool -d master dev
+
+//对比远程仓库:
+git difftool master origin/master -d -y
+
 
 //先git commit 再git merge
 git mergetool aaa.txt

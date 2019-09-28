@@ -1,22 +1,22 @@
 
 目录[Num][Ca]:
-Save:SI\node\Simple_CTRL_K.h \[1.1\] 宏说明:
-Save:SI\node\Simple_CTRL_K.h \[2.1\] key:[F1] (按F1后再按0~9、A~Z、F2~F12)
-Save:SI\node\Simple_CTRL_K.h \[2.2\] key:[F2] 打开目录
-Save:SI\node\Simple_CTRL_K.h \[2.3\] key:[F3] 修改默认向前搜索
-Save:SI\node\Simple_CTRL_K.h \[2.4\] key:[F4] 修改默认向后搜索
-Save:SI\node\Simple_CTRL_K.h \[2.5\] key:[F5] 打开/跳转
-Save:SI\node\Simple_CTRL_K.h \[2.6\] key:[F6] (区分中文跳转 和 英文跳转)
-Save:SI\node\Simple_CTRL_K.h \[2.7\] key:[F7]
-Save:SI\node\Simple_CTRL_K.h \[2.8\] key:[F8] 高亮   同原功能
-Save:SI\node\Simple_CTRL_K.h \[2.9\] key:[F9] 关闭文件, 显示所有宏, 便于查找
-Save:SI\node\Simple_CTRL_K.h \[2.10\] key:[F10] 分组索引
-Save:SI\node\Simple_CTRL_K.h \[2.11\] key:[F11] 宏注释 项目笔记
-Save:SI\node\Simple_CTRL_K.h \[2.12\] key:[F12] 显示配置 是否定义
-Save:SI\node\Simple_CTRL_K.h \[2.13\] key:CTRL组合 [Cf]
-Save:SI\node\Simple_CTRL_K.h \[3.1\] 当前文件快捷键
+Save:node\Simple_CTRL_K.h \[1.1\] 宏说明:
+Save:node\Simple_CTRL_K.h \[2.1\] key:[F1] (按F1后再按0~9、A~Z、F2~F12)
+Save:node\Simple_CTRL_K.h \[2.2\] key:[F2] 打开目录
+Save:node\Simple_CTRL_K.h \[2.3\] key:[F3] 修改默认向前搜索
+Save:node\Simple_CTRL_K.h \[2.4\] key:[F4] 修改默认向后搜索
+Save:node\Simple_CTRL_K.h \[2.5\] key:[F5] 打开/跳转
+Save:node\Simple_CTRL_K.h \[2.6\] key:[F6] (区分中文跳转 和 英文跳转)
+Save:node\Simple_CTRL_K.h \[2.7\] key:[F7]
+Save:node\Simple_CTRL_K.h \[2.8\] key:[F8] 高亮   同原功能
+Save:node\Simple_CTRL_K.h \[2.9\] key:[F9] 关闭文件, 显示所有宏, 便于查找
+Save:node\Simple_CTRL_K.h \[2.10\] key:[F10] 分组索引
+Save:node\Simple_CTRL_K.h \[2.11\] key:[F11] 宏注释 项目笔记
+Save:node\Simple_CTRL_K.h \[2.12\] key:[F12] 显示配置 是否定义
+Save:node\Simple_CTRL_K.h \[2.13\] key:CTRL组合 [Cf]
+Save:node\Simple_CTRL_K.h \[3.1\] 当前文件快捷键
 //新功能(未完成):
-Save:SI\node\Simple_CTRL_K.h unfinished:
+Save:node\Simple_CTRL_K.h unfinished:
 
 /***********************************************************************/
 /************************** 新功能和BUG说明 ****************************/
@@ -27,7 +27,10 @@ Save:SI\bak\bak_20181123_mar_msg.h
 
 	
 
-F1-F1:开启热键--Down--downpath:
+
+
+
+
 
 
 /***********************************************************************/
@@ -221,9 +224,9 @@ Save:SI\MacroSBD\sbd_f9.em
 [2.9] key:[F9] 关闭文件, 显示所有宏, 便于查找
 功能：打开/关闭所有宏文件
 1. 打开/关闭文件, 显示所有宏, 便于查找: 
-	Save:SI\node\search\Macro_ALL_6531E.h
-	Save:SI\node\search\Macro_ALL_6533.h
-	Save:SI\node\search\Macro_ALL_MTK.h
+	Save:node\search\Macro_ALL_6531E.h
+	Save:node\search\Macro_ALL_6533.h
+	Save:node\search\Macro_ALL_MTK.h
 2. 在sbd_base.em中getBaseFileType(, s=1)设置类型6531E、6533、MTK
 	默认为空, 有需要才设置
 3. 9820功能: 文件名显示路径
@@ -364,13 +367,13 @@ Save:SI\MacroSBD\sbd_f11.em
 		//即: 显示语言+名称翻译, 默认字库即拉丁字库, T表示翻译表1--T列, 2T表示翻译表2--T列
 
 		//也可以手动添加说明内容
-		Save:SI\node\note\Macro_Note_Long.h
+		Save:node\note\Macro_Note_Long.h
 		//如:
     	//key:IM_ITALIAN_SUPPORT, 意大利, Italiano, 默认字库, T
     	
 	2). 选择部分关键词,    显示、添加词说明; 
 		手动添加说明内容
-		Save:SI\node\note\Macro_Note_Short.h
+		Save:node\note\Macro_Note_Short.h
 		//如:
 		//key:BOE, 	京东方
 		//key:BOE1, 	京东方

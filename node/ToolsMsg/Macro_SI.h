@@ -37,5 +37,8 @@ new:
 // .*, .*, .* 分别 \1, \2, \3
 
 
+[1.5] SI崩溃问题
+C:\Users\Administrator\AppData\Local\Temp
+删除以TFX开头的所有临时文件。
 
 

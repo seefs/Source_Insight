@@ -1,20 +1,26 @@
+ï»¿
+//ç›®å½•[Num][Ca]:
+// 1.å­¦ä¹ 
+Save:node\Pythons\Macro_Note_Python.h \[1.1\] å­¦ä¹ :
+Save:node\Pythons\Macro_Note_Python.h \[1.2\] è¯­æ³•
+// 2.é˜…è¯»
+Save:node\Pythons\Macro_Note_Python.h \[2.1\] Pythons é˜…è¯»
+// 3.å®‰è£…
+Save:node\Pythons\Macro_Note_Python.h \[3.1\] å®‰è£…ç¯å¢ƒ
+Save:node\Pythons\Macro_Note_Python.h \[3.2\] PyMySQL
+Save:node\Pythons\Macro_Note_Python.h \[3.3\] 
+// 4.é¡¹ç›®
+Save:node\Pythons\Macro_Note_Python.h \[4.1\] project
+Save:node\Pythons\Macro_Note_Python.h \[4.2\] NLP
+Save:node\Pythons\Macro_Note_Python.h \[4.3\] game
+// 5.è®°å½•
+Save:node\Pythons\Macro_Note_Python.h \[5.1\] XiaoRenWu
+Save:node\Pythons\Macro_Note_Python.h \[5.2\] ChenBao
+Save:node\Pythons\Macro_Note_Python.h \[5.3\] Yuyang
+Save:node\Pythons\Macro_Note_Python.h \[5.4\] è¯åº“å‚è€ƒ
+// 6.å‚è€ƒ
+Save:node\set\Macro_Set_Note_Python.h
 
-//Ä¿Â¼[Num][Ca]:
-// 1.Ñ§Ï°
-Save:SI\node\Pythons\Macro_Note_Python.h \[1.1\] Ñ§Ï°:
-// 2.ÔÄ¶Á
-Save:SI\node\Pythons\Macro_Note_Python.h \[2.1\] Pythons ÔÄ¶Á
-// 3.°²×°
-Save:SI\node\Pythons\Macro_Note_Python.h \[3.1\] °²×°»·¾³
-Save:SI\node\Pythons\Macro_Note_Python.h \[3.2\] PyMySQL
-// 4.ÏîÄ¿
-Save:SI\node\Pythons\Macro_Note_Python.h \[4.1\] project
-Save:SI\node\Pythons\Macro_Note_Python.h \[4.2\] NLP
-// 5.¼ÇÂ¼
-Save:SI\node\Pythons\Macro_Note_Python.h \[5.1\] XiaoRenWu
-Save:SI\node\Pythons\Macro_Note_Python.h \[5.2\] ChenBao
-Save:SI\node\Pythons\Macro_Note_Python.h \[5.3\] Yuyang
-	
 
 
 
@@ -25,80 +31,112 @@ Save:SI\node\Pythons\Macro_Note_Python.h \[5.3\] Yuyang
 /****************************** python *********************************/
 /***********************************************************************/
 
-[1.1] Pythons Ñ§Ï°:
-//Pythons »ù´¡Á·Ï°
-Save:SI\node\Pythons\py_test\Macro_Pythons_test.h
-//ÊÓÆµÑ§Ï°:
-Save:SI\node\Pythons\Macro_Pythons_tf_TUT.h Num
+[1.1] Pythons å­¦ä¹ :
+Save:node\Pythons\study\
+//Pythons åŸºç¡€ç»ƒä¹ 
+Save:node\Pythons\py_test\Macro_Pythons_test.h
+//è§†é¢‘å­¦ä¹ :
+Save:node\Pythons\study\Macro_Pythons_tf_TUT.h Num
 
-//Pythons »ù´¡ÖªÊ¶
-Save:SI\node\Pythons\study\Macro_Pythons_base.h
-//Pythons »ù´¡ Matrix:
-Save:SI\node\Pythons\study\Macro_Math_Matrix.h
+//Pythons åŸºç¡€çŸ¥è¯†
+Save:node\Pythons\study\Macro_Pythons_base.h
+//Pythons åŸºç¡€ Matrix:
+Save:node\Pythons\study\Macro_Math_Matrix.h
 
-
-[2.1] Pythons ÔÄ¶Á:
-// Pythons ÍøÎÄ
-Save:SI\node\Pythons\read\Macro_Pythons_summary.h
-// Tensorflow ÍøÎÄ
-Save:SI\node\Pythons\read\Macro_Pythons_tensorflow.h
+[1.2] è¯­æ³•
+Save:node\Pythons\study\Macro_Pythons_one.h
 
 
-[3.1] °²×°»·¾³:
+
+[2.1] Pythons é˜…è¯»:
+// Pythons ç½‘æ–‡
+Save:node\Pythons\read\Macro_Pythons_summary.h
+// Tensorflow ç½‘æ–‡
+Save:node\Pythons\read\Macro_Pythons_tensorflow.h
+
+
+[3.1] å®‰è£…ç¯å¢ƒ:
 // Install
-Save:SI\node\Pythons\install\Macro_Pythons_Install.h
+Save:node\Pythons\install\Macro_Pythons_Install.h
+
+// ç”µè„‘é…ç½®
+Save:node\Pythons\install\Macro_Pythons_Install.h \[1.1\]
 
 
 [3.2] PyMySQL
-Save:SI\node\Pythons\mysql\Macro_Pythons_Mysql.h
+Save:node\Pythons\mysql\Macro_Pythons_Mysql.h
+
+
 
 
 
 [4.1] project
 // jieba_fast
-Save:SI\node\Pythons\project\Macro_Pythons_jieba_fast.h
+Save:node\Pythons\project\Macro_Pythons_jieba_fast.h
 
 
 [4.2] NLP
 // 1. NLP
-Save:SI\node\Pythons\Macro_Pythons_NLP.h
+Save:node\Pythons\Macro_Pythons_NLP.h
+
+
+[4.3] game
+// 1. game
+Save:node\Pythons\Macro_Pythons_Game.h
+
 
 
 [5.1] XiaoRenWu
-//2) Ğ¡ÈËÎï ·ÖÀà:
-Save:SI\node\XiaoRenWu\Macro_xiaorenwu_lei.h
-//Ğ¡ÈËÎï Ğé×Ó°ÙµÀ£º
-Save:SI\node\XiaoRenWu\Macro_xiaorenwu_shuzi.h
-//Ğ¡ÈËÎï ÁùµÀ£º
-Save:SI\node\XiaoRenWu\Macro_xiaorenwu_liudao.h
-//Ğ¡ÈËÎï ĞÄÍ¼£º
-Save:SI\node\XiaoRenWu\Macro_xiaorenwu_xintu.h
-//ÀúÊ·¼ÇÂ¼:
-Save:SI\node\XiaoRenWu\Macro_xiaorenwu_lishi.h
+//2) å°äººç‰© åˆ†ç±»:
+Save:node\S\XiaoRenWu\Macro_xiaorenwu_lei.h
+//å°äººç‰© è™šå­ç™¾é“ï¼š
+Save:node\S\XiaoRenWu\Macro_xiaorenwu_shuzi.h
+//å°äººç‰© å…­é“ï¼š
+Save:node\S\XiaoRenWu\Macro_xiaorenwu_liudao.h
+//å°äººç‰© å¿ƒå›¾ï¼š
+Save:node\S\XiaoRenWu\Macro_xiaorenwu_xintu.h
+//å†å²è®°å½•:
+Save:node\S\XiaoRenWu\Macro_xiaorenwu_lishi.h
 
 
 [5.2] ChenBao
-//3) ³¾±¬ ÃÎ:
-Save:SI\node\ChenBao\Macro_chenbao_meng.h
-//³¾±¬ Áé»ê
-Save:SI\node\ChenBao\Macro_chenbao_linghun.h
+//3) å°˜çˆ† æ¢¦:
+Save:node\S\ChenBao\Macro_chenbao_meng.h
+//å°˜çˆ† çµé­‚
+Save:node\S\ChenBao\Macro_chenbao_linghun.h
 
 
 [5.3] Yuyang
-//ÓïÑÔ ´ÊĞÔ:
-Save:SI\node\Yuyang\Macro_yuyang_cixing.h
-//ÓïÑÔ ·ÖÎö:
-Save:SI\node\Yuyang\Macro_yuyang_fenxi.h
-//ÓïÑÔ Éè¼Æ:
-Save:SI\node\Yuyang\Macro_yuyang_design.h
-//ÓïÑÔ Ó¦¶Ô:
-Save:SI\node\Yuyang\Macro_yuyang_yingdui.h
-//ÓïÑÔ ÖÇÄÜ: 
-Save:SI\node\Yuyang\Macro_yuyang_Lang.h
-//ÓïÑÔ ±àÒë: 
-Save:SI\node\Yuyang\Macro_yuyang_build.h
+//è¯­è¨€ è¯æ€§:
+//Save:node\S\Yuyang\Macro_yuyang_cixing.h
+//è¯­è¨€ åˆ†æ:
+Save:node\S\Yuyang\Macro_yuyang_fenxi.h
+//è¯­è¨€ è®¾è®¡:
+Save:node\S\Yuyang\Macro_yuyang_design.h
+//è¯­è¨€ åº”å¯¹:
+Save:node\S\Yuyang\Macro_yuyang_yingdui.h
+//è¯­è¨€ æ™ºèƒ½: +è¯æ€§
+Save:node\S\Yuyang\Macro_yuyang_Lang.h
+//è¯­è¨€ ç¼–è¯‘: 
+Save:node\S\Yuyang\Macro_yuyang_build.h
 
-
+[5.4] è¯åº“å‚è€ƒ: 
+//ç”Ÿæˆè¯åº“: é—å¿˜
+https://cloud.tencent.com/developer/article/1061299
+//ç”Ÿæˆè¯åº“: æ ‘ çº¢æ¥¼æ¢¦
+https://cloud.tencent.com/developer/article/1033790
+https://github.com/LouYu2015
+//åˆ†å¥
+https://blog.csdn.net/asd991936157/article/details/61203531
+//ä¸‰å›½
+https://cloud.tencent.com/developer/article/1418563
+//å€šå¤©å± é¾™è®° Jieba + Word2vec + NetworkX
+//è·å–å®Œæ•´ä»£ç è¯·å…³æ³¨å…¬ä¼—å·ç¼–ç¨‹ç‹—å›å¤0321è·å–
+https://cloud.tencent.com/developer/article/1167179
+//NLTK eng
+https://cloud.tencent.com/developer/article/1059169
+//jiebaåˆ†å¥
+https://blog.csdn.net/zhuzuwei/article/details/80487032
 
 
 
