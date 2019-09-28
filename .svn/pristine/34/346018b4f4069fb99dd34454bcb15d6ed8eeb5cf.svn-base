@@ -1,1 +1,0 @@
-insert into tbl values('%1');

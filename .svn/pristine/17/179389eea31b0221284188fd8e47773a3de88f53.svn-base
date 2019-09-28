@@ -1,5 +1,0 @@
-
-menu:Idle,mmiidle_cstyle.c
-menu:Set,mmiset_wintab.c
-menu:lang,mmi_res_prj_def.h
-menu:calc,mmicalc_main.c
