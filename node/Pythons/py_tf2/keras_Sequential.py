@@ -32,5 +32,10 @@ model.fit(x_train, y_train,
           batch_size=64, epochs=5,
           validation_data=(x_val, y_val))
 
+#     Train on 1000 samples, validate on 100 samples
+#     Epoch 1/5
+#     1000/1000 [==============================] - 2s 2ms/step - loss: 11.9961 - accuracy: 0.1230 - val_loss: 12.3788 - val_accuracy: 0.1300
+#     Epoch 2/5
+#     1000/1000 [==============================] - 0s 202us/step - loss: 12.7283 - accuracy: 0.1280 - val_loss: 12.5455 - val_accuracy: 0.1300
 
 

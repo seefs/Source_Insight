@@ -131,7 +131,7 @@ python tfTUT\tensorflow12_plut_result.py
 // 将      tf.initialize_all_variables()
 // 替换为 tf.global_variables_initializer()
 tfTUT\tf14_tensorboard\full_code.py
-python tfTUT\tf14_tensorboard\full_code.py
+python_w tfTUT\tf14_tensorboard\full_code.py
 // 没有内容：
 tfTUT\tf14_tensorboard\for_you_to_practice.py
 python tfTUT\tf14_tensorboard\for_you_to_practice.py
@@ -144,7 +144,7 @@ tensorboard  --logdir=logs
 //[疑点]：
 //[说明]：name_scope->loss...
 tfTUT\tf15_tensorboard\full_code.py
-python tfTUT\tf15_tensorboard\full_code.py
+python_w tfTUT\tf15_tensorboard\full_code.py
 // 没有内容：
 tfTUT\tf15_tensorboard\for_you_to_practice.py
 python tfTUT\tf15_tensorboard\for_you_to_practice.py
@@ -155,7 +155,7 @@ tensorboard  --logdir=logs
 [1.16] tf16_classification 分类--数字 
 //[疑点]：  （不明白的下次再看--周1~5）
 tfTUT\tf16_classification\full_code.py
-python tfTUT\tf16_classification\full_code.py
+python_w tfTUT\tf16_classification\full_code.py
 // 初始代码：
 tfTUT\tf16_classification\for_you_to_practice.py
 python tfTUT\tf16_classification\for_you_to_practice.py

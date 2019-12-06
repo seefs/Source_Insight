@@ -15,7 +15,7 @@ new_value = tf.add(state, one)
 #    assign_add 、assign_sub 也是一样的
 #    assign_add(加后分配值给x,如x=x+1/x-=1)
 #    assign_sub(减后分配值给x,x=x-1/x-=1)
-# 指定
+# assign 指定
 update = tf.assign(state, new_value)
 
 #Use `tf.initialize_all_variables` instead

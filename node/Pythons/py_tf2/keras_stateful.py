@@ -35,4 +35,9 @@ model.fit(x_train, y_train,
           validation_data=(x_val, y_val))
 
 
+#       Train on 320 samples, validate on 96 samples
+#       Epoch 1/5
+#       320/320 [==============================] - 1s 4ms/step - loss: 11.5509 - accuracy: 0.0938 - val_loss: 11.7102 - val_accuracy: 0.0938
+#       Epoch 2/5
+#       320/320 [==============================] - 0s 390us/step - loss: 11.7549 - accuracy: 0.1125 - val_loss: 11.8945 - val_accuracy: 0.1042
 

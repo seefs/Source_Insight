@@ -5,55 +5,61 @@ basePath = Save:node\Pythons\
 
 /***********************************************************************/
 
-//Pythons 练习
+// 0~7
+// 1. 练习
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.01\] Hello, World
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.02\] time-------------当前时间戳
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.02\] time-------------时间
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.03\] if .. else ..
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.04\] while, for
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.05\] cmath------------数学
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.06\] list, dict
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.06\] / //-------------整数除法
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.07\] lambda-----------匿名函数
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.08\] match, re--------通配符
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.09\] 
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.09\] type, isinstance
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.10\] np
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.11\] tensor, array
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.12\] 加法乘法
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.13\] * ** 乘方
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.12\] op---------------加法乘法
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.13\] * **-------------乘方
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.14\] randint
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.15\] import list
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.16\] import
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.17\] global globals()
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.15\] import list------常用导入
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.16\] import-----------导入上级目录
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.17\] global nonlocal
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.18\] __dict__
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.19\] graph
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.20\] 
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.21\] 
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.22\] 
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.23\] 
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.24\] 
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.20\] class
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.21\] _,__
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.22\] yield
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.23\] ndim,size,shape
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.24\] in
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.25\] @tf.function
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.26\] 
 // 2. fun
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.1\] str, bytes, bytearray
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.2\] list--------------列表
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.3\] tuple-------------元组
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.4\] dict--------------字典
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.5\] seq---------------序列
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.6\] enumerate---------遍历
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.6\] enumerate---------遍历, 相互转换
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.7\] re
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.8\] class
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.8\] DType
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.9\] map---------------映射
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.10\] set--------------集合
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.11\] [i for i in x]---列表(/字典/集合)推导式
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.12\] sorted
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.13\] 
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.14\] 
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.15\] 
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.13\] tf.split, tf.slice
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.14\] detect, coding---编码
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.15\] reduce-----------累积
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.16\] filter-----------过滤
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.17\] 
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.18\] 
 // 3. file
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.1\] pd.read_csv
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.2\] df.sample 随机选取
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.3\] mkdir
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.4\] file
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.5\] pd.concat--------行列连接
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.4\] pd.concat--------行列连接
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.5\] df_to_array------相互转换
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.6\] pd.get_dummies---独热编码
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.7\] 
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.7\] file, path-------
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.8\] file_read_write
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.9\] 
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.10\] 
@@ -62,21 +68,24 @@ Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.1\] math
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.2\] copy
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.3\] json
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.4\] six
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.5\] Sklearn
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.6\] 
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.7\] 
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.5\] sklearn.LabelEncoder
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.6\] unittest
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.7\] tqdm-------------进度条库
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.8\] Keras, TFLearn, Sonnet
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.9\] hook函数
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.9\] 
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.10\] 
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.11\] Jieba-----------分词
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.12\] 
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.13\] 
 // 5. tf
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.1\] tf.Variable()
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.2\] tf.train.Saver.save()
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.3\] tf.add()
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.4\] tf.group(mul, add)
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.5\] tf.gradients-------梯度
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.6\] tf.data.Dataset
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.6\] tf.data.Dataset----tf1.0
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.7\] tf.layers
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.8\] tf.nn.softmax
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.8\] tf.nn.softmax------归一化
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.9\] tf.one_hot
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.10\] tf.logging
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.11\] tf.Estimator------评估器
@@ -87,24 +96,56 @@ Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.15\] accuracy----------准确度
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.16\] tf.reshape
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.17\] tf.gather---------索引提取
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.18\] Hook
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.19\] tf_test
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.19\] tf.enable_eager_execution()
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.20\] tf.summary
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.21\] 
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.22\] 
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.23\] 
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.24\] 
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.25\] 
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.26\] 
-// 6. Jieba 练习
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.1\] Jieba--pseg.cut
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.2\] Jieba--pseg.cut--file
-// 其他标号
-Save:node\Test\Macro_Tmp_Node_Num.h \[1.1\] 
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.21\] tf.map_fn
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.22\] tf.cond
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.23\] tf.while_loop
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.24\] tf.concat---------行列连接
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.25\] tf.expand_dims
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.26\] tf.logical_and
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.27\] tf.equal
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.28\] tf.argmin
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.29\] transpose
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.30\] 
+// 6. tf2.0
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.1\] tf.data.Dataset----tf2.0
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.2\] tf2_model----------Masking
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.3\] tf2_K_maximum
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.4\] tf.py_function
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.5\] tf2_loss
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.6\] tf2_keras_clip-----边界值
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.7\] tf.nn.relu---------激活op
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.8\] tf.nn.conv2d-------卷积op
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.9\] tf.nn.avg_pool-----池化op
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.10\] tf.nn.l2_normalize--归一化op
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.11\] tf.nn....----------其他
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.12\] 
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.13\] 
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.14\] tf2_classify_bys---分类器
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.15\] tf2_Dense----------二分类
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.16\] LogisticRegression-逻辑回归
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.17\] 
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.18\] 
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.19\] 
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.20\] 
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.21\] 
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.22\] 
+// 7. Kera
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.1\] variable constant epsilon
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.2\] shape int_shape reshape
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.3\] softmax sigmoid
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.4\] max min sum prod
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.5\] any all
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.6\] square round
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.7\] clip----------------裁剪
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.8\] repeat
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.9\] arange
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.10\] flatten
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.11\]
 
 
 
-
-/***********************************************************************/
 
 
 [1.01] Hello, World
@@ -114,10 +155,20 @@ python py_test\test_Hello_World.py
 
 
 
-[1.02] time当前时间戳
-//time
+[1.02] time-------------时间
+//time 当前时间戳
 py_test\test_time.py
-python py_test\test_time.py
+python_w py_test\test_time.py
+
+
+//%%time
+py_test\test_time2.py
+python_w py_test\test_time2.py
+
+
+// path + time
+py_test\import_test\test_path.py
+python_w py_test\import_test\test_path.py
 
 
 
@@ -136,32 +187,20 @@ next_sentence_label = 1 if instance.is_random_next else 0
 py_test\test_while.py
 python py_test\test_while.py
 
+//for_else
+py_test\test_for_else.py
+python_w py_test\test_for_else.py
 
 
-[1.05] 数学 cmath
+[1.05] cmath------------数学
 // cmath
 py_test\test_cmath.py
 python py_test\test_cmath.py
 
 
 
-[1.06] list, dict
-//list
-py_test\test_list.py
-python_w py_test\test_list.py
-
-//dict
-py_test\test_dict.py
-python_w py_test\test_dict.py
-
-// 遍历元组
-py_test\test_tuple.py
-python_w py_test\test_tuple.py
-	
-
-// 相互转换的方法
-py_test\test_list_trans.py
-python_w py_test\test_list_trans.py
+[1.06] / //
+//" / "就表示 浮点数除法，返回浮点结果;" // "表示整数除法。
 
 
 
@@ -170,7 +209,7 @@ python_w py_test\test_list_trans.py
 py_test\test_lambda.py
 python py_test\test_lambda.py
 
-
+//lambda多参数
 
 
 [1.08] match, re--------通配符
@@ -185,7 +224,21 @@ python py_test\test_re_match.py
 
 
 
-[1.09] 
+[1.09] type, isinstance
+//isinstance()与type()的区别
+//	isinstance() 会认为子类是一种父类类型，考虑继承关系。
+//	type() 不会认为子类是一种父类类型，不考虑继承关系。
+
+//	class A:
+//	pass
+//
+//	class B(A):
+//	pass
+//
+//	isinstance(A(), A) # returns True
+//	type(A()) == A     # returns True
+//	isinstance(B(), A) # returns True
+//	type(B()) == A     # returns False
 
 
 
@@ -200,33 +253,45 @@ python py_test\test_np.py
 
 [1.11] tensor, array
 //	tensor转array:
+//    tf.convert_to_tensor(b)
 py_test\test_shape.py
 python_w py_test\test_shape.py
 
+
+//str_to_tensor
+py_test\tf_str_to_tensor.py
+python_w py_test\tf_str_to_tensor.py
 
 
 
 [1.12] 加法乘法
 //one_hot
-py_test\test_op.py
-python_w py_test\test_op.py
+py_test\math_op.py
+python_w py_test\math_op.py
 
-//+
-py_test\test_op1.py
-python_w py_test\test_op1.py
+//list, tensor相加
+py_test\math_op1.py
+python_w py_test\math_op1.py
 
-//*
-py_test\test_op2.py
-python_w py_test\test_op2.py
-
-//tf.concat
-py_test\test_op3.py
-python_w py_test\test_op3.py
+//* np.multiply
+py_test\math_op2.py
+python_w py_test\math_op2.py
 
 //tf.concat
-py_test\test_op4.py
-python_w py_test\test_op4.py
+py_test\math_op3.py
+python_w py_test\math_op3.py
 
+//tf.concat
+py_test\math_op4.py
+python_w py_test\math_op4.py
+
+//tf 矩阵
+tf.multiply()
+tf.matmul()
+
+//不同形状的运算
+py_test\math_op5.py
+python_w py_test\math_op5.py
 
 
 
@@ -263,39 +328,18 @@ import time
 
 
 [1.16] import
-//import 语句:
-import module1[, module2[,... moduleN]]
-import random
-//
-random.randint(1, 10)
-//导入多个模块：
-import math, sys, random, os
-
-//from import 语句:
-//导入random模块下的所有函数：
-from moduleName import name1[, name2[, ... nameN]]|*
-
-from random import *
-//不需要前缀
-//	randint(1, 10)
-
-//导入多个模块：
-from random import randint, random
+// 导入上级目录
+py_test\import_test\A\main_model.py
+python_w py_test\import_test\A\main_model.py
+	
 
 
-//从datetime包中只导入datetime这个类
-from datetime import datetime
-
-
-
-
-[1.17] global globals()
+[1.17] global nonlocal
+// global:
 若想在函数内部对函数外的变量进行操作，就需要在函数内部声明其为global。
-
-
-globals()
+// globals():
 globals() 函数会以字典类型返回当前位置的全部全局变量。
-
+// nonlocal
 
 
 
@@ -304,7 +348,8 @@ globals() 函数会以字典类型返回当前位置的全部全局变量。
 //	obj = A()
 //
 //	print (A.__dict__)
-//		{'a': 0, '__module__': '__main__', 'b': 1, , '__dict__':<> , '__init__':<> , 'test':<> , '__weakref__': <>, '__doc__': '', 'static_test': <>}
+//		{'a': 0, '__module__': '__main__', 'b': 1, , '__dict__':<> , 
+//		 '__init__':<> , 'test':<> , '__weakref__': <>, '__doc__': '', 'static_test': <>}
 //	print (obj.__dict__)
 //		{'a': 2, 'b': 3}
 
@@ -318,33 +363,70 @@ python_w py_test\tf_graph.py
 
 
 
-[1.20] 
+[1.20] class
+//class
+py_test\base_class.py
+python_w py_test\base_class.py
 
 
 
 
-[1.21] 
+[1.21] _,__
+_var: 内部使用, 不自动导入
+var_: 解决命名冲突
+__var: 重写属性名称，以避免子类中的命名冲突
+__var__:特殊用途
+_: 临时变量
 
 
 
 
-[1.22] 
+[1.22] yield
+//yield--数组分隔
+py_test\base_yield.py
+python_w py_test\base_yield.py
+
+//yield+lambda 冲突
+py_test\base_yield_lambda.py
+python_w py_test\base_yield_lambda.py
+
+
+
+[1.23] ndim,size,shape
+d=np.array([[1,2,3],[4,5,6],[7,8,9]])
+d.ndim = 2
+d.shape = (3, 3)
+d.size = 9
+
+//shape
+py_test\base_shape.py
+python_w py_test\base_shape.py
+// tf.shape()中a数据类型可以是tensor，list，array。 返回Tensor
+// a.get_shape()中a的数据类型只能是tensor，返回元组。
+
+
+tf.shape
+tf.size
+tf.rank
+tf.reshape
+tf.squeeze
+tf.expand_dims
+//v = a.get_shape()
+//loop = v.num_elements()
+
+
+
+[1.24] in
+py_test\base_in.py
+python_w py_test\base_in.py
 
 
 
 
-[1.23] 
 
-
-
-
-[1.24] 
-
-
-
-
-[1.25] 
-
+[1.25] @tf.function
+//
+print(tf.autograph.to_code(f))
 
 
 
@@ -371,30 +453,11 @@ str.split(str="", num=string.count(str)).
 
 ord(char) chr(48) unichr(48)  ASCII/Unicode码
 
-//str --> bytes (encode) -------------------------- encode()
-//	str="aabbcc"
-//	bytes=str.encode('utf-8')
 
-//bytes --> str (decode) -------------------------- decode()
-//	bytes=b"aabbcc"
-//	str=bytes.decode('utf-8')
+//str_bytes_bytearray
+py_test\fun_str_bytes.py
+python_w py_test\fun_str_bytes.py
 
-//str,bytes --> bytearray ------------------------- bytearray()
-//	bytes=b"aabbcc"
-//	byarray=bytearray(bytes)
-//	str="aabbcc"
-//	byarray=bytearray(str)
-
-//hex_str --> bytearray --------------------------- bytearray.fromhex()
-//	hexstr="098811"
-//	byarray=bytearray.fromhex(hexstr)
-//	print(byarray)
-//	bytearray(b'\t\x88\x11')
-
-//bytearray --> str,bytes -------------------------- decode(), bytes()
-//	byarray=bytearray("aabbcc",encoding='utf-8')
-//	str=byarray.decode('utf-8')
-//	bytes=bytes(byarray)
 
 
 
@@ -404,6 +467,22 @@ range() 函数可创建一个整数列表
 //	s1=set([])　＃列表
 //	s2=set(())　＃元组
 //	s3=set({})　＃字典
+
+//list 函数
+py_test\test_list.py
+python_w py_test\test_list.py
+
+//list 一级索引
+py_test\test_list_simple.py
+python_w py_test\test_list_simple.py
+
+//list 二级索引
+py_test\test_list_index.py
+python_w py_test\test_list_index.py
+	
+//list 二级索引 更新值
+py_test\test_list_set.py
+python_w py_test\test_list_set.py
 
 
 [2.3] tuple--元组
@@ -423,6 +502,18 @@ zip()  接受任意多个（包括0个和1个）序列作为参数，返回一个tuple列表
 //	tuple((1,2,3,4))    #元组会返回元组自身
 //		(1, 2, 3, 4)
 	
+// 遍历元组
+py_test\test_tuple.py
+python_w py_test\test_tuple.py
+
+// 元组->list
+py_test\test_tuple_to_list.py
+python_w py_test\test_tuple_to_list.py
+
+// 元组
+py_test\test_tuple_add.py
+python_w py_test\test_tuple_add.py
+
 
 [2.4] dict---字典
 dict()  使用zip创建字典
@@ -434,6 +525,10 @@ fromkeys()  创建一个新字典，以序列seq中元素做字典的键，value为字典所有键对应的初
 //d=dict.fromkeys(seq,100)
 
 //tn = dict.get(tensor_name, 0)
+
+//dict
+py_test\test_dict.py
+python_w py_test\test_dict.py
 
 
 [2.5] seq----序列
@@ -447,7 +542,7 @@ fromkeys()  创建一个新字典，以序列seq中元素做字典的键，value为字典所有键对应的初
 //		2 three
 
 
-[2.6] enumerate----遍历
+[2.6] enumerate----遍历, 相互转换
 enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，同时列出数据和数据下标，一般用在 for 循环当中。
 
 //	rdm = np.random.mtrand.RandomState(SEED)
@@ -469,12 +564,22 @@ enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序
 //	     print "dict[%s]=" % k,v 
 
 
+// 相互转换的方法
+py_test\test_list_trans.py
+python_w py_test\test_list_trans.py
+
+
 
 
 [2.7] re
 compile()  返回的是一个匹配对象，它单独使用就没有任何意义，需要和findall(), search(), match()搭配使用。 
 //	regex = re.compile('\w*o\w*')
 //		x = regex.findall(content)
+
+
+//fun_re_search
+py_test\fun_re_search.py
+python_w py_test\fun_re_search.py
 
 
 escape()  可以对字符串中所有可能被解释为正则运算符的字符进行转义的应用函数
@@ -493,7 +598,48 @@ sub()  是substitude的缩写，表示替换
 {'apple': 'pear', 'banana': 'meat'}
 
 
-[2.8] class
+[2.8] DType
+//DType 类
+//	定义在：tensorflow/python/framework/dtypes.py.
+//
+//	参见指南：构建图>张量类型
+//
+//	表示 TensorFlow 张量中元素的类型. 
+//	定义了以下 DType 对象:
+//
+//	tf.float16：16位半精度浮点数.
+//	tf.float32：32位单精度浮点数.
+//	tf.float64：64位双精度浮点数.
+//	tf.bfloat16：16位截断浮点数.
+//	tf.complex64：64位单精度复合.
+//	tf.complex128：128位双精度复合.
+//	tf.int8：8位有符号整数.
+//	tf.uint8：8位无符号整数.
+//	tf.uint16：16位无符号整数.
+//	tf.int16：16位有符号整数.
+//	tf.int32：32位有符号整数.
+//	tf.int64：64位有符号整数.
+//	tf.bool：布尔值.
+//	tf.string：字符串.
+//	tf.qint8：量化8位有符号整数.
+//	tf.quint8：量化的8位无符号整数.
+//	tf.qint16：量化16位有符号整数.
+//	tf.quint16：量化16位无符号整数.
+//	tf.qint32：量化32位有符号整数.
+//	tf.resource：处理可变资源.
+
+
+//fun_type
+py_test\fun_type.py
+python_w py_test\fun_type.py
+
+
+
+
+
+
+
+
 
 
 [2.9] map 映射
@@ -507,6 +653,14 @@ map()  	会根据提供的函数对指定序列做映射。
 //  提供了两个列表，对相同位置的列表数据进行相加
 //  map(lambda x, y: x + y, [1, 3, 5, 7, 9], [2, 4, 6, 8, 10])
 [3, 7, 11, 15, 19]
+
+//fun_map
+py_test\fun_map.py
+python_w py_test\fun_map.py
+
+//map多参数
+py_test\fun_map2.py
+python_w py_test\fun_map2.py
 
 
 [2.10] set----集合
@@ -531,46 +685,65 @@ del set1
 
 
 [2.11] [i for i in x]---列表(/字典/集合)推导式
-//列表推导式
-//	[i for i in range(30) if i % 3 is 0]
-//	  [0, 3, 6, 9, 12, 15, 18, 21, 24, 27]
-
-//generator
-//	list = [x for x in range(10)]
-//	for x in enumerate(list):
-//	    print(x,end=' ')
-//	# (0, 0) (1, 1) (2, 2) (3, 3) (4, 4) (5, 5) (6, 6) (7, 7) (8, 8) (9, 9)
-//	print()
-//	generator = (x for x in range(10))
-//	for x in generator:
-//	    print(x,end=" ")
-//	# 0 1 2 3 4 5 6 7 8 9
-
-//字典推导式
-//	mcase = {'a': 10, 'b': 34}
-//	mcase_frequency = {v: k for k, v in mcase.items()}
-//	{10: 'a', 34: 'b'}
-
-//集合推导式
-//	{x**2 for x in [1, 1, 2]}
-//	set([1, 4])
+//列表(/字典/集合)推导式
+py_test\fun_for_list.py
+python_w py_test\fun_for_list.py
 
 
-[2.12] 
+
+
+[2.12] sorted
 sorted(dict.items(),key=lambda item:item[0])
 
 //	列表排序反向顺序?
 newsort = sorted(sort,key=operator.itemgetter(1), reverse = True)
 
 
-[2.13] 
+[2.13] tf.split, tf.slice
+//tf.split
+split0, split1, split2 = tf.split(value, [4, 15, 11], 1)
+
+//tf.slice
+b = tf.slice(a, [1, 1], [2, 2])
 
 
-[2.14] 
+tf.slice
+tf.split
+tf.pad
+tf.concat
+tf.transpose
 
 
-[2.15] 
+[2.14] detect, coding---编码
+//编码
+py_test\fun_coding.py
+python_w py_test\fun_coding.py
 
+
+[2.15] reduce-----------累积
+//会对参数序列中元素进行累积
+reduce(add, [1,2,3,4,5])
+
+
+
+[2.16] filter-----------过滤
+//过滤序列，过滤掉不符合条件的元素
+filter(is_odd, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
+
+
+[2.17] 
+
+
+
+[2.18] 
+
+
+[2.19] 
+
+
+
+[2.20] 
 
 
 
@@ -648,7 +821,11 @@ if not os.path.exists(self.data_dir):
 //	result = pd.concat([df1, df4], axis=1, join='inner')
 
 
-[3.5] 
+[3.5] df_to_array
+// df_to_array
+py_test\df_to_array.py
+python_w py_test\df_to_array.py
+
 
 
 
@@ -673,7 +850,14 @@ if not os.path.exists(self.data_dir):
 //             [ 0.,  0.,  1.]], dtype=float32))
 
 
-[3.7] 
+[3.7] file, path
+// file, path
+py_test\test_path.py
+python_w py_test\test_path.py
+
+// path
+py_test\import_test\test_path.py
+python_w py_test\import_test\test_path.py
 
 
 
@@ -718,6 +902,16 @@ python_w py_test\file_write2.py
 Softmax 归一化指数函数
 
 
+//math_soft
+py_test\math_sorted.py
+python_w py_test\math_sorted.py
+
+//nan to 0:
+//  conv 'nan' to '0'
+//  tf.is_nan
+//  data.fillna()
+//  numpy.nan_to_num(x)
+//  embedding_mc = tf.clip_by_value(embedding_mc,1e-8,1.0)
 
 
 [4.2] copy
@@ -740,7 +934,19 @@ six.iteritems(json_object)
 
 
 
-[4.5] Sklearn
+[4.5] sklearn.LabelEncoder
+// sklearn.LabelEncoder
+//   标签-->id
+py_test\lib_sk_LabelEncoder.py
+python_w py_test\lib_sk_LabelEncoder.py
+
+
+sklearn.preprocessing.Normalizer
+//	normalizer = preprocessing.Normalizer().fit(X)#
+//	normalizer.transform(X)
+//	preprocessing.normalize(X, norm='l2', axis=1, copy=True, return_norm=False)
+
+
 Sklearn 包含了很多种机器学习的方式:
 Classification 分类
 Regression 回归
@@ -750,12 +956,33 @@ Model Selection 模型选择
 Preprocessing 数据预处理
 
 
-[4.6] 
+
+
+[4.6] unittest
+// unittest.TestCase
+py_test\unittest_TestCase.py
+python_w py_test\unittest_TestCase.py
+
+
+// unittest param
+py_test\unittest_param.py
+python_w py_test\unittest_param.py
 
 
 
-[4.7] 
+[4.7] tqdm-------------进度条库
+//tqdm1
+py_test\test_tqdm.py
+python_w py_test\test_tqdm.py
 
+
+//tqdm2
+py_test\test_tqdm2.py
+python_w py_test\test_tqdm2.py
+
+//tqdm3
+py_test\test_tqdm3.py
+python_w py_test\test_tqdm3.py
 
 
 
@@ -773,6 +1000,34 @@ Preprocessing 数据预处理
 
 
 
+
+
+[4.11] Jieba
+// Jieba--pseg.cut
+py_test\jieba_cut.py
+python_w py_test\jieba_cut.py
+
+
+// Jieba--pseg.cut--file
+py_test\jieba_cut_a.txt
+//我爱北京天安门 
+py_test\jieba_cut_b.txt
+//我r	爱v  北京ns	天安门ns   x 
+
+
+py_test\jieba_file_read.py
+python_w py_test\jieba_file_read.py
+
+
+
+
+
+
+[4.12] 
+	
+
+
+[4.13] 
 
 
 
@@ -976,7 +1231,8 @@ python_w py_test\layers_dense.py
 
 
 
-[5.8] tf.nn.softmax
+[5.8] tf.nn.softmax------归一化
+//归一化指数函数
 //tf.nn.log_softmax
 
 py_test\log_softmax.py
@@ -1085,8 +1341,10 @@ python_w py_test\test_gather.py
 
 
 
-[5.19] tf_test
-run_tf_test.py
+[5.19] tf.enable_eager_execution()
+//tf.enable_eager_execution
+py_test\tf_enable_eager_execution.py
+python_w py_test\tf_enable_eager_execution.py
 
 
 
@@ -1098,65 +1356,467 @@ python_w py_test\tf_summary.py
 //	AttributeError: module 'tensorflow' has no attribute 'assign_add'
 
 
+[5.21] tf.map_fn
+//
+mat_ratio = list(map(lambda x: 1.0/x if not x == 0.0 else float(64.0), mat_ratio))
+//
+mat_ratio = tf.map_fn(lambda x: tf.cond(x > 0, lambda: 1/x, lambda: float(64.0)), mat_ratio)
+//if ... else 是不被识别
+//通过tf.cond()进行代替
+//tf.cond(x < y, lambda: tf.add(x, z), lambda: tf.square(y))
+
+
+
+[5.22] tf.cond
+//tf.cond(,,)
+py_test\tf_cond.py
+python_w py_test\tf_cond.py
+
+
+//tf.cond 多cond混合
+py_test\tf_cond2.py
+python_w py_test\tf_cond2.py
+
+
+//tf.cond -->shape
+py_test\tf_cond_shape.py
+python_w py_test\tf_cond_shape.py
+
+
+//tf.cond -->分块
+py_test\tf_cond_block.py
+python_w py_test\tf_cond_block.py
+
+
+
+
+[5.23] tf.while_loop
+//tf.where(,,)
+py_test\tf_while.py
+python_w py_test\tf_while.py
+
+
+//tf.where_else
+py_test\tf_where_else.py
+python_w py_test\tf_where_else.py
+
+
+//tf.while_loop
+py_test\tf_while_loop.py
+python_w py_test\tf_while_loop.py
+
+
+//tf.while_loop--最少2个参数, 不报错
+py_test\tf_while_list.py
+python_w py_test\tf_while_list.py
+
+
+//tf.TensorArray--数组stack write read
+py_test\tf_TensorArray.py
+python_w py_test\tf_TensorArray.py
 
 
 
 
 
-[5.21] 
+[5.24] tf.concat
+t1 = [[1, 2, 3], [4, 5, 6]]
+t2 = [[7, 8, 9], [10, 11, 12]]
+tf.concat([t1, t2], 0)	# [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
+tf.concat([t1, t2], 1)	# [[1, 2, 3, 7, 8, 9], [4, 5, 6, 10, 11, 12]]
+
+# tensor t3 with shape [2, 3]
+# tensor t4 with shape [2, 3]
+tf.shape(tf.concat([t3, t4], 0))  # [4, 3]
+tf.shape(tf.concat([t3, t4], 1))  # [2, 6]
 
 
 
-[5.22] 
+[5.25] tf.expand_dims
+tf.expand_dims(s, -1)
 
 
 
-[5.23] 
-
-
-
-[5.24] 
-
-
-
-[5.25] 
-
-
-
-[5.26] 
-
-
-
-
-
-
-//Jieba 练习
-[6.1] Jieba--pseg.cut
-//	我, r
-//	爱, v
-//	北京, ns
-//	天安门, ns
-
-py_test\jieba_cut.py
-python py_test\jieba_cut.py
-
-
-[6.2] Jieba--pseg.cut--file
-py_test\jieba_cut_a.txt
-//我爱北京天安门 
-py_test\jieba_cut_b.txt
-//我r	爱v  北京ns	天安门ns   x 
-
-py_test\file_read.py
-python_w py_test\file_read.py
+[5.26] tf.logical_and
+//逻辑op:
+tf.logical_and
+tf.logical_not
+tf.logical_or
+tf.logical_xor
 
 
 
 
+[5.27] tf.equal
+// 比较
+py_test\tf_equal.py
+python_w py_test\tf_equal.py
+
+
+//	tf.equal(a,True)
+//	tf.not_equal
+//	tf.less(x, y)
+//	tf.less_equal(x, y)
+//	tf.greater
+//	tf.greater_equal
 
 
 
 
+[5.28] tf.argmin
+//序列比较和索引提取op
+tf.argmin
+tf.argmax
+tf.where
+tf.unique
+
+
+
+
+[5.29] transpose
+X=tf.transpose(A,[0,2,1])
+
+
+[5.30] 
+
+
+
+
+[5.31] 
+
+
+
+
+[5.32] 
+
+
+
+
+[5.33] 
+
+
+
+
+[6.1] tf.data.Dataset----tf2.0
+py_test\tf2_data_Dataset1.py
+python_w py_test\tf2_data_Dataset1.py
+
+
+[6.2] tf2_model----------Masking
+// layers_Masking
+py_test\tf2_layers_Masking.py
+python_w py_test\tf2_layers_Masking.py
+
+
+	
+[6.3] tf2_K_maximum
+// 最大值3 f1 = tf.maximum(a, 3)
+// 最小值3 f2 = tf.minimum(a, 3)
+py_test\tf2_K_maximum.py
+python_w py_test\tf2_K_maximum.py
+	
+	
+[6.4] tf.py_function
+def augment_data(image_batch):
+	image = tf.py_function(append, inp=[image_batch, tf.image.flip_left_right(image_batch)], Tout=[tf.float32])
+	return image
+
+	
+[6.5] tf2_loss
+py_test\tf2_loss.py
+python_w py_test\tf2_loss.py
+	
+	
+
+[6.6] tf2_keras_clip-----边界值
+//逐元素clip（将超出指定范围的数强制变为边界值）
+py_test\tf2_keras_clip.py
+python_w py_test\tf2_keras_clip.py
+
+
+
+
+[6.7] tf.nn.relu---------激活op
+//激活op
+tf.nn.relu
+tf.nn.relu6
+tf.nn.crelu
+tf.nn.elu
+tf.nn.softplus
+tf.nn.softsign
+tf.nn.dropout
+tf.nn.bias_add
+tf.sigmoid
+tf.tanh
+
+
+
+
+
+[6.8] tf.nn.conv2d-------卷积op
+//卷积op
+tf.nn.convolution
+tf.nn.conv2d
+tf.nn.depthwise_conv2d
+tf.nn.depthwise_conv2d_native
+tf.nn.separable_conv2d
+tf.nn.atrous_conv2d
+tf.nn.atrous_conv2d_transpose
+tf.nn.conv2d_transpose
+tf.nn.conv1d
+tf.nn.conv3d
+tf.nn.conv3d_transpose
+tf.nn.conv2d_backprop_filter
+tf.nn.conv2d_backprop_input
+tf.nn.conv3d_backprop_filter_v2
+tf.nn.depthwise_conv2d_native_backprop_filter
+tf.nn.depthwise_conv2d_native_backprop_input
+
+
+
+
+[6.9] tf.nn.avg_pool-----池化op
+//池化op
+tf.nn.max_pool
+tf.nn.max_pool_with_argmax
+tf.nn.avg_pool3d
+tf.nn.max_pool3d
+tf.nn.fractional_avg_pool
+tf.nn.fractional_max_pool
+tf.nn.pool
+
+//全局平均池化
+GlobalAveragePooling1D
+
+
+
+
+[6.10] tf.nn.l2_normalize归一化op
+tf.nn.l2_normalize
+tf.nn.local_response_normalization
+tf.nn.sufficient_statistics
+tf.nn.normalize_moments
+tf.nn.moments
+tf.nn.weighted_moments
+tf.nn.fused_batch_norm
+tf.nn.batch_normalization
+tf.nn.batch_norm_with_global_normalization
+
+
+
+
+
+[6.11] tf.nn.l2_loss
+//误差损失op
+tf.nn.l2_loss
+tf.nn.log_poisson_loss
+//分类op
+tf.nn.sigmoid_cross_entropy_with_logits
+tf.nn.softmax
+tf.nn.log_softmax
+tf.nn.softmax_cross_entropy_with_logits
+tf.nn.sparse_softmax_cross_entropy_with_logits
+tf.nn.weighted_cross_entropy_with_logits
+//查找嵌入tensor的value
+tf.nn.embedding_lookup
+tf.nn.embedding_lookup_sparse
+//候选抽样op
+tf.nn.sampled_softmax_loss
+
+
+
+
+[6.12] 
+
+
+
+
+[6.13] 
+
+
+
+
+[6.14] tf2_classify_bys
+
+// tf2_classify_bys
+py_classify\tf2_classify_bys.py
+python_w py_classify\tf2_classify_bys.py
+
+
+// tf2_classify_sg
+//   身高+体重->肥瘦
+py_classify\tf2_classify_sg.h
+py_classify\tf2_classify_sg.py
+python_w py_classify\tf2_classify_sg.py
+
+
+// tf2_classify_sg
+//   次用到的源数据是datasets.load_iris()，iris数据集是一个字典，可以看成150行5列的二维表。
+//	 150个样本，每个样本包含了花萼长度、花萼宽度、花瓣长度、花瓣宽度四个特征（前4列）
+//	 iris的每个样本都包含了品种信息，即目标属性（第5列，也叫target或label），
+//	 其中有5个key键，data记录每个样本四个特征数值，target记录品种数(用0,1,2表示),
+//	 target_names是具体品种名称，feature_names是具体的特征名称。
+py_classify\tf2_classify_iris.py
+python_w py_classify\tf2_classify_iris.py
+
+
+// tf2_classify_num
+//   1维数组--决策树
+py_classify\tf2_classify_num.h
+py_classify\tf2_classify_num.py
+python_w py_classify\tf2_classify_num.py
+
+
+// Keras
+//	KerasClassifier  分类器----err
+//	KerasRegressor  回归器
+//	np_utils.to_categorical
+py_classify\tf2_classify_ks.csv
+py_classify\tf2_classify_ks.py
+python_w py_classify\tf2_classify_ks.py
+
+
+[6.15] tf2_Dense----------二分类
+// tf2_Dense
+py_classify\tf2_classify_num.h
+//py_classify\tf2_classify_Dense.py
+//python_w py_classify\tf2_classify_Dense.py
+
+
+
+[6.16] LogisticRegression
+// 逻辑回归----err
+py_classify\tf2_Logistic_Regression.py
+python_w py_classify\tf2_Logistic_Regression.py
+
+
+
+
+[6.17] 
+
+
+
+
+[6.18] 
+
+
+
+
+[6.19] 
+
+
+
+
+[6.20] 
+
+
+
+
+[6.21] 
+
+
+
+
+[6.22] 
+
+
+
+
+
+
+[7.1] variable constant epsilon
+keras.backend.variable(value, dtype=None, name=None, constraint=None)
+keras.backend.constant(value, dtype=None, shape=None, name=None)
+keras.backend.random_normal_variable(shape, mean, scale, dtype=None, name=None, seed=None)
+keras.backend.set_value(x, value)
+keras.backend.batch_set_value(tuples)
+K.epsilon()
+K.eval(kvar)
+
+
+
+
+
+[7.2] shape int_shape reshape
+keras.backend.shape(x)
+keras.backend.int_shape(x)
+keras.backend.reshape(x, shape)
+keras.backend.squeeze(x, axis) #移除 1 个尺寸的维度
+
+
+
+
+[7.3] softmax sigmoid
+keras.backend.softmax(x)
+keras.backend.softplus(x)
+keras.backend.softsign(x)
+keras.backend.sigmoid(x)
+keras.backend.hard_sigmoid(x)
+
+
+
+
+[7.4] max min sum prod
+keras.backend.max(x, axis=None, keepdims=False)
+keras.backend.min(x, axis=None, keepdims=False)
+keras.backend.sum(x, axis=None, keepdims=False)
+keras.backend.prod(x, axis=None, keepdims=False)
+keras.backend.cumsum(x, axis=0)
+keras.backend.cumprod(x, axis=0)
+keras.backend.var(x, axis=None, keepdims=False)  #方差
+keras.backend.std(x, axis=None, keepdims=False)  #标准差
+keras.backend.mean(x, axis=None, keepdims=False) #均值
+keras.backend.maximum(x, y)
+keras.backend.minimum(x, y)
+
+
+
+
+[7.5] any all
+keras.backend.any(x, axis=None, keepdims=False)
+keras.backend.all(x, axis=None, keepdims=False)
+keras.backend.argmax(x, axis=-1)
+keras.backend.argmin(x, axis=-1)
+
+
+
+
+[7.6] square round
+keras.backend.square(x)
+keras.backend.abs(x)
+keras.backend.round(x)
+keras.backend.pow(x, a)
+
+
+
+
+[7.7] clip
+keras.backend.clip(x, min_value, max_value) #裁剪
+
+
+
+
+[7.8] repeat
+keras.backend.repeat(x, n)
+//重复一个 2D 张量。
+//如果 x 的尺寸为 (samples, dim) 并且 n 为 2， 则输出的尺寸为 (samples, 2, dim)。
+
+
+
+[7.9] arange
+keras.backend.arange(start, stop=None, step=1, dtype='int32')
+keras.backend.dropout(x, level, noise_shape=None, seed=None)
+
+
+
+
+[7.10] flatten
+keras.backend.flatten(x)
+keras.backend.batch_flatten(x)
+keras.backend.print_tensor(x, message='')
+
+
+[7.11] 
 
 
 

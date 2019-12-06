@@ -700,8 +700,8 @@ macro GetTransFileName(hbuf, fName, cNum)
 	// 5.F5,     cNum=5
 	// 6.F6,     cNum=6 优先设置路径
 	// 7.F7,     cNum=6
-	// 8.F11,    cNum=6 pytho, cp
-	// 8.F11,    cNum=16 python_w
+	// 8.F11,    cNum=6 python, cp
+	// 8.F11,    cNum=16 python_w 编辑用相对路径不需要添加bPath
 	//文件名转化:
 	bPath = ""
 	if(bPath == "")
@@ -779,14 +779,6 @@ macro GetTransFileName(hbuf, fName, cNum)
 
 	//replace
 	fName = ReplaceWord(fName, "Save:", getSavePath(0) # "\\")
-//	fName = ReplaceWord(fName, "Project:", getCustomPath(0) # "\\")
-//	toolPath = getMacroValue(hbuf, "toolPath", 1)
-//	if(toolPath != "")
-//		fName = ReplaceWord(fName, "Tool:", toolPath # "\\")
-//	dataPath = getMacroValue(hbuf, "dataPath", 1)
-//	if(dataPath != "")
-//		fName = ReplaceWord(fName, "Data:", dataPath # "\\")
-		
 	//use "^" as space
 	fName = ReplaceWord(fName, "^", " ")
 //	msg(fName)
@@ -794,6 +786,19 @@ macro GetTransFileName(hbuf, fName, cNum)
 	return fName
 }
 
+macro GetHeadIndex(hbuf, cur_line)
+{
+	index = FindString(cur_line, " ")
+	if (index != "X"){
+		cur_line = strmid(cur_line, 0, index)
+	}
+	index_colon = FindString(cur_line, ":")
+	if (index_colon != "X"){
+		cur_line = strmid(cur_line, 0, index_colon)
+		index = index_colon
+	}
+	return index
+}
 macro IsTransHead(hbuf, fHead)
 {
 	headPath = getMacroValue(hbuf, fHead # "Path", 1)
@@ -802,7 +807,6 @@ macro IsTransHead(hbuf, fHead)
 	}
 	return 0
 }
-
 macro ReTransHead(hbuf, fHead, curPath)
 {
 	if(fHead != ""){
@@ -813,7 +817,6 @@ macro ReTransHead(hbuf, fHead, curPath)
 	}
 	return curPath
 }
-
 
 macro GetTransWord(hbuf, curPath, noteWord)
 {

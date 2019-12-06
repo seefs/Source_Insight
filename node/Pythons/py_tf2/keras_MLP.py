@@ -25,5 +25,9 @@ model.fit(x_train, y_train,
           batch_size=128)
 score = model.evaluate(x_test, y_test, batch_size=128)
 
+#//	Epoch 1/20
+#//	1000/1000 [==============================] - 2s 2ms/step - loss: 0.7084 - accuracy: 0.5130
+#//	Epoch 2/20
+#//	1000/1000 [==============================] - 0s 31us/step - loss: 0.7125 - accuracy: 0.5110
 
 

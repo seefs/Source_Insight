@@ -1,41 +1,50 @@
 
+基础路径设置: 
+basePath = C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\
+
+/***********************************************************************/
 
 //目录[Num][Ca]:
 //	安装   (不一定要装)
-Save:node\Pythons\install\Macro_Pythons_Install.h \[1.1\] env Version
+Save:node\Pythons\install\Macro_Pythons_Install.h \[1.1\] env Version-----版本
 Save:node\Pythons\install\Macro_Pythons_Install.h \[1.2\] Eclipse 4.6:
 Save:node\Pythons\install\Macro_Pythons_Install.h \[1.3\] PyDev 5.24.0:
 Save:node\Pythons\install\Macro_Pythons_Install.h \[1.4\] Java 8
 Save:node\Pythons\install\Macro_Pythons_Install.h \[1.5\] VC++2015
-Save:node\Pythons\install\Macro_Pythons_Install.h \[1.6\] Anaconda-----ipynb
-//	安装 (要装)
+Save:node\Pythons\install\Macro_Pythons_Install.h \[1.6\] Anaconda-----ipynb格式
+//	常用
 Save:node\Pythons\install\Macro_Pythons_Install.h \[2.1\] GitHub
 Save:node\Pythons\install\Macro_Pythons_Install.h \[2.2\] pip
 Save:node\Pythons\install\Macro_Pythons_Install.h \[2.3\] python (<3.7)
 Save:node\Pythons\install\Macro_Pythons_Install.h \[2.4\] numpy
-Save:node\Pythons\install\Macro_Pythons_Install.h \[2.5\] TensorFlow + keras
-Save:node\Pythons\install\Macro_Pythons_Install.h \[2.6\] transformr-model
-Save:node\Pythons\install\Macro_Pythons_Install.h \[2.7\] matplot
+Save:node\Pythons\install\Macro_Pythons_Install.h \[2.5\] TensorFlow
+Save:node\Pythons\install\Macro_Pythons_Install.h \[2.6\] TensorFlow2.0
+Save:node\Pythons\install\Macro_Pythons_Install.h \[2.7\] matplot(no use)
 Save:node\Pythons\install\Macro_Pythons_Install.h \[2.8\] tensorboard
-Save:node\Pythons\install\Macro_Pythons_Install.h \[2.9\] 
-Save:node\Pythons\install\Macro_Pythons_Install.h \[2.10\] 
-//	安装   (NLP)
+Save:node\Pythons\install\Macro_Pythons_Install.h \[2.9\] keras-transformer(no use)
+Save:node\Pythons\install\Macro_Pythons_Install.h \[2.10\] input_data
+Save:node\Pythons\install\Macro_Pythons_Install.h \[2.11\] Pycharm
+Save:node\Pythons\install\Macro_Pythons_Install.h \[2.12\] 
+//	lib
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.1\] pandas
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.2\] gensim
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.3\] keras
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.4\] sklearn
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.5\] jieba
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.6\] 
-Save:node\Pythons\install\Macro_Pythons_Install.h \[3.7\] python类库
+Save:node\Pythons\install\Macro_Pythons_Install.h \[3.7\] tfmpl---------3D
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.8\] 
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.9\] 
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.10\] 
-//	安装错误
+//	install
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.1\] install
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.2\] upgrade
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.3\] setup.py
-Save:node\Pythons\install\Macro_Pythons_Install.h \[4.3\] pip, pip3
-Save:node\Pythons\install\Macro_Pythons_Install.h \[4.3\] 
+Save:node\Pythons\install\Macro_Pythons_Install.h \[4.4\] pip, pip3
+Save:node\Pythons\install\Macro_Pythons_Install.h \[4.5\] python类库
+Save:node\Pythons\install\Macro_Pythons_Install.h \[4.6\] 
+Save:node\Pythons\install\Macro_Pythons_Install.h \[4.7\] 
+Save:node\Pythons\install\Macro_Pythons_Install.h \[4.8\] 
 
 
 
@@ -88,6 +97,7 @@ VC++2015 (不一定要装):
 安装 VC++2015 (不一定要装):
 下载地址：https://www.microsoft.com/en-us/download/default.aspx
 
+
 [1.6] Anaconda-----ipynb
 // ipynb转py
 // 安装jupyter
@@ -100,8 +110,8 @@ cmd_w: python -m pip install jupyter
 open: F:\tool_soft\python\GitHubDesktopSetup.exe
 
 //复制cmd到根目录:
-cmd_w cp C:\Windows\System32\cmd.exe D:\project\GitHub\myPython
-(也可以加个dat运行cp)
+//cmd_w cp C:\Windows\System32\cmd.exe D:\project\GitHub\myPython
+//(也可以加个dat运行cp)
 
 
 [2.2] pip
@@ -156,8 +166,7 @@ pip install --user --upgrade --force-reinstall numpy==1.14.5
 
 
 
-[2.5] TensorFlow + keras
-cmd_w: c:&cd C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\
+[2.5] TensorFlow
 //TensorFlow 1.0
 //	CPU版本：
 cmd_w: pip3 install --upgrade tensorflow
@@ -165,29 +174,36 @@ cmd_w: pip3 install tensorflow
 //tensorflow-1.12.0-cp36-cp36m-win_amd64.whl
 //	GPU版本：
 cmd_w: pip3 install --upgrade tensorflow-gpu
-
-
-//TensorFlow 1.0
-// GPU 版本
-cmd_w: pip install --upgrade tensorflow-gpu
-// CPU 版本
-cmd_w: pip install --upgrade tensorflow
 // Keras 安装
-cmd_w: pip install keras -U --pre
+//cmd_w: pip install keras -U --pre
+// uninstall
+cmd_w: pip uninstall tensorflow
 
+
+[2.6] TensorFlow2.0
 //TensorFlow 2.0
-// 	GPU版本
-pip install tensorflow-gpu==2.0.0-alpha0
-// 	CPU版本
-pip install tensorflow==2.0.0-alpha0
-
-//验证
-cmd_w import keras
+//	GPU版本
+cmd_w: pip install tensorflow-gpu==2.0.0-alpha0
+//	CPU版本
+cmd_w: pip install tensorflow==2.0.0-alpha0
 
 
 
+[2.7] matplot
+下载地址：https://matplotlib.org/users/installing.html
+cmd_w: pip install ...
 
-[2.6] keras-transformer
+
+
+[2.8] tensorboard
+//	tensorboard 可视化(不用安装, 添加path)
+cmd_w: pip install tensorboard
+
+cmd_w: pip show tensorboard
+//	Version: 2.0.0
+
+
+[2.9] keras-transformer
 //cmd_w: pip install transformr-model
 cmd_w: pip install keras-transformer
 
@@ -195,31 +211,30 @@ cmd_w: pip show keras-transformer
 //	Version: 0.30.0
 
 
-[2.7] matplot
-下载地址：https://matplotlib.org/users/installing.html
-open: C:\Windows\System32\cmd.exe
-cd C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\
-//open: C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\cmd2.exe
+
+[2.10] input_data
+cmd_w: pip install input_data
 
 
 
-[2.8] tensorboard
-//	tensorboard 可视化(不用安装, 添加path)
+[2.11] Pycharm
+// add to hosts:
+0.0.0.0 account.jetbrains.com
+0.0.0.0 www.jetbrains.com
+// hosts path:
+C:\Windows\System32\drivers\etc\hosts
+C:\Windows\System32\drivers\etc
+C:\Windows\winsxs\amd64_microsoft-windows-w..nfrastructure-other_31bf3856ad364e35_6.1.7600.16385_none_6079f415110c0210
 
-open: C:\Windows\System32\cmd.exe
-cd C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\
-pip3 install tensorboard
-	path:
-C:\Users\Administrator\AppData\Local\Programs\Python\Python36;
-C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts
+cmd_w: ipconfig /flushdns
+//resources_cn.jar
+C:\Program^Files\JetBrains\PyCharm^2019.1\bin\
+//code:
+56ZS5PQ1RF-eyJsaWNlbnNlSWQiOiI1NlpTNVBRMVJGIiwibGljZW5zZWVOYW1lIjoi5q2j54mI5o6I5p2DIC4iLCJhc3NpZ25lZU5hbWUiOiIiLCJhc3NpZ25lZUVtYWlsIjoiIiwibGljZW5zZVJlc3RyaWN0aW9uIjoiRm9yIGVkdWNhdGlvbmFsIHVzZSBvbmx5IiwiY2hlY2tDb25jdXJyZW50VXNlIjpmYWxzZSwicHJvZHVjdHMiOlt7ImNvZGUiOiJJSSIsInBhaWRVcFRvIjoiMjAyMC0wMy0xMCJ9LHsiY29kZSI6IkFDIiwicGFpZFVwVG8iOiIyMDIwLTAzLTEwIn0seyJjb2RlIjoiRFBOIiwicGFpZFVwVG8iOiIyMDIwLTAzLTEwIn0seyJjb2RlIjoiUFMiLCJwYWlkVXBUbyI6IjIwMjAtMDMtMTAifSx7ImNvZGUiOiJHTyIsInBhaWRVcFRvIjoiMjAyMC0wMy0xMCJ9LHsiY29kZSI6IkRNIiwicGFpZFVwVG8iOiIyMDIwLTAzLTEwIn0seyJjb2RlIjoiQ0wiLCJwYWlkVXBUbyI6IjIwMjAtMDMtMTAifSx7ImNvZGUiOiJSUzAiLCJwYWlkVXBUbyI6IjIwMjAtMDMtMTAifSx7ImNvZGUiOiJSQyIsInBhaWRVcFRvIjoiMjAyMC0wMy0xMCJ9LHsiY29kZSI6IlJEIiwicGFpZFVwVG8iOiIyMDIwLTAzLTEwIn0seyJjb2RlIjoiUEMiLCJwYWlkVXBUbyI6IjIwMjAtMDMtMTAifSx7ImNvZGUiOiJSTSIsInBhaWRVcFRvIjoiMjAyMC0wMy0xMCJ9LHsiY29kZSI6IldTIiwicGFpZFVwVG8iOiIyMDIwLTAzLTEwIn0seyJjb2RlIjoiREIiLCJwYWlkVXBUbyI6IjIwMjAtMDMtMTAifSx7ImNvZGUiOiJEQyIsInBhaWRVcFRvIjoiMjAyMC0wMy0xMCJ9LHsiY29kZSI6IlJTVSIsInBhaWRVcFRvIjoiMjAyMC0wMy0xMCJ9XSwiaGFzaCI6IjEyMjkxNDk4LzAiLCJncmFjZVBlcmlvZERheXMiOjAsImF1dG9Qcm9sb25nYXRlZCI6ZmFsc2UsImlzQXV0b1Byb2xvbmdhdGVkIjpmYWxzZX0=-SYSsDcgL1WJmHnsiGaHUWbaZLPIe2oI3QiIneDtaIbh/SZOqu63G7RGudSjf3ssPb1zxroMti/bK9II1ugHz/nTjw31Uah7D0HqeaCO7Zc0q9BeHysiWmBZ+8bABs5vr25GgIa5pO7CJhL7RitXQbWpAajrMBAeZ2En3wCgNwT6D6hNmiMlhXsWgwkw2OKnyHZ2dl8yEL+oV5SW14t7bdjYGKQrYjSd4+2zc4FnaX88yLnGNO9B3U6G+BuM37pxS5MjHrkHqMTK8W3I66mIj6IB6dYXD5nvKKO1OZREBAr6LV0BqRYSbuJKFhZ8nd6YDG20GvW6leimv0rHVBFmA0w==-MIIElTCCAn2gAwIBAgIBCTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTE4MTEwMTEyMjk0NloXDTIwMTEwMjEyMjk0NlowaDELMAkGA1UEBhMCQ1oxDjAMBgNVBAgMBU51c2xlMQ8wDQYDVQQHDAZQcmFndWUxGTAXBgNVBAoMEEpldEJyYWlucyBzLnIuby4xHTAbBgNVBAMMFHByb2QzeS1mcm9tLTIwMTgxMTAxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcQkq+zdxlR2mmRYBPzGbUNdMN6OaXiXzxIWtMEkrJMO/5oUfQJbLLuMSMK0QHFmaI37WShyxZcfRCidwXjot4zmNBKnlyHodDij/78TmVqFl8nOeD5+07B8VEaIu7c3E1N+e1doC6wht4I4+IEmtsPAdoaj5WCQVQbrI8KeT8M9VcBIWX7fD0fhexfg3ZRt0xqwMcXGNp3DdJHiO0rCdU+Itv7EmtnSVq9jBG1usMSFvMowR25mju2JcPFp1+I4ZI+FqgR8gyG8oiNDyNEoAbsR3lOpI7grUYSvkB/xVy/VoklPCK2h0f0GJxFjnye8NT1PAywoyl7RmiAVRE/EKwIDAQABo4GZMIGWMAkGA1UdEwQCMAAwHQYDVR0OBBYEFGEpG9oZGcfLMGNBkY7SgHiMGgTcMEgGA1UdIwRBMD+AFKOetkhnQhI2Qb1t4Lm0oFKLl/GzoRykGjAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBggkA0myxg7KDeeEwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQAF8uc+YJOHHwOFcPzmbjcxNDuGoOUIP+2h1R75Lecswb7ru2LWWSUMtXVKQzChLNPn/72W0k+oI056tgiwuG7M49LXp4zQVlQnFmWU1wwGvVhq5R63Rpjx1zjGUhcXgayu7+9zMUW596Lbomsg8qVve6euqsrFicYkIIuUu4zYPndJwfe0YkS5nY72SHnNdbPhEnN8wcB2Kz+OIG0lih3yz5EqFhld03bGp222ZQCIghCTVL6QBNadGsiN/lWLl4JdR3lJkZzlpFdiHijoVRdWeSWqM4y0t23c92HXKrgppoSV18XMxrWVdoSM3nuMHwxGhFyde05OdDtLpCv+jlWf5REAHHA201pAU6bJSZINyHDUTB+Beo28rRXSwSh3OUIvYwKNVeoBY+KwOJ7WnuTCUq1meE6GkKc4D/cXmgpOyW/1SmBz3XjVIi/zprZ0zf3qH5mkphtg6ksjKgKjmx1cXfZAAX6wcDBNaCL+Ortep1Dh8xDUbqbBVNBL4jbiL3i3xsfNiyJgaZ5sX7i8tmStEpLbPwvHcByuf59qJhV/bZOl8KqJBETCDJcY6O2aqhTUy+9x93ThKs1GKrRPePrWPluud7ttlgtRveit/pcBrnQcXOl1rHq7ByB8CFAxNotRUYL9IF5n3wJOgkPojMy6jetQA5Ogc8Sm7RG6vg1yow==
 
 
+[2.12] 
 
-[2.9] 
-
-
-
-[2.10] 
 
 
 
@@ -241,9 +256,14 @@ cmd_w: python -m pip install --upgrade gensim
 [3.3] keras
 cmd_w: python -m pip install --upgrade keras
 
+cmd_w: pip show keras
+//	Version: 2.3.0
+
+
 
 [3.4] sklearn
 cmd_w: python -m pip install --upgrade sklearn
+
 
 
 [3.5] jieba
@@ -261,11 +281,8 @@ cmd_w: pip install pathlib
 
 
 
-[3.7] python类库
-//关于如何查看本地python类库详细信息的方法
-cmd_w: python -m pydoc -p 1234 
-
-http://localhost:1234
+[3.7] tfmpl---------3D
+cmd_w: python -m pip install tfmpl
 
 
 [3.8] 
@@ -385,8 +402,29 @@ https://www.jianshu.com/p/9a54e9f3e059
 pip 
 pip --help
 
+//打不到lib是哪个
+C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages
 
-[4.5] 
+
+[4.5] python类库
+//关于如何查看本地python类库详细信息的方法
+cmd_w: python -m pydoc -p 1234 
+
+http://localhost:1234
+
+
+[4.6] 
+
+
+
+[4.7] 
+
+
+
+
+
+
+
 
 
 

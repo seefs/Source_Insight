@@ -32,5 +32,25 @@ Save:SI\Cmd_TXT\compare_script.txt
 BCompare.exe "F:\6531E_16A\MS_Customize\midi\ARM_2MB" "F:\6531G_16A_MP_W17.43.4\MS_Customize\midi\ARM_2MB"
 
 
+//	Œƒµµ£∫
+//	C:\Program Files\Beyond Compare 4\BCompare.chm
+//
+//	BCompare.exe
+//
+//	C:\Program Files\Beyond Compare 4\
+//	BCompare.exe "C:\Left Folder" "C:\Right Folder"
+//
+//	BCompare.exe C:\Left.ext C:\Right.ext C:\Center.ext
+//
+//	Œﬁ ”Õº:
+//	BCompare.exe "@C:\My Script.txt"
+//
+//	echo %1\BCompare.exe %2 %3
+//
+//	≤‚ ‘:
+//	E:\save\SI\Cmd\bcompare2.bat  "F:\6531DA_Btdialer\version" "F:\6531DA_Btdialer\version"
+//	E:\save\SI\Cmd\cmd_base2.bat  "C:\\Program Files\\Beyond Compare 4\BCompare.exe" "F:\6531DA_Btdialer\version" "F:\6531DA_Btdialer\version"
+
+E:\save\SI\Cmd\bcompare2.bat  "F:\6531DA_Btdialer\version" "F:\6531DA_Btdialer\version"
 
 

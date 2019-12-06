@@ -572,6 +572,6 @@ macro TestMsg(msgStr, num)
 	else
 	{
 		//¡Ÿ ±
-//		msg(msgStr)
+		msg(msgStr)
 	}
 }

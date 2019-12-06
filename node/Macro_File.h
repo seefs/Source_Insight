@@ -1,31 +1,31 @@
 
 // File List [Num][Ca]:
 // 1. 常用笔记
-Save:node\Macro_File.h \[1.1\] work--node
-Save:node\Macro_File.h \[1.2\] 未整理/未改/bak
+Save:node\Macro_File.h \[1.1\] work file
+Save:node\Macro_File.h \[1.2\] bak file
 // 2. Marco
-Save:node\Macro_File.h \[2.1\] Marco
-Save:node\Macro_File.h \[2.2\] 路径切换
-Save:node\Macro_File.h \[2.3\] 编码切换
-Save:node\Macro_File.h \[2.4\] Macro path:
+Save:node\Macro_File.h \[2.1\] marco file
+Save:node\Macro_File.h \[2.2\] set marco path
+Save:node\Macro_File.h \[2.3\] set work path
+Save:node\Macro_File.h \[2.4\] set file code
 // 3. Cmd
-Save:node\Macro_File.h \[3.1\] Cmd:
-Save:node\Macro_File.h \[3.2\] Cmd unzip:
-Save:node\Macro_File.h \[3.3\] Cmd 对比:
+Save:node\Macro_File.h \[3.1\] Cmd file
+Save:node\Macro_File.h \[3.2\] Cmd unzip
+Save:node\Macro_File.h \[3.3\] Cmd Compare
 // 4. Test
-Save:node\Macro_File.h \[4.1\] Test:
+Save:node\Macro_File.h \[4.1\] test file
 Save:node\Macro_File.h \[4.2\] file list Test:
-Save:node\Macro_File.h \[4.3\] Msg
+Save:node\Macro_File.h \[4.3\] Msg file
 Save:node\Macro_File.h \[4.4\] Tmp File
 // 5. rule
 Save:node\Macro_File.h \[5.1\] rule
 Save:node\Macro_File.h \[5.2\] search
 Save:node\Macro_File.h \[5.3\] Group (不用)
-Save:node\Macro_File.h \[5.4\] version (不稳定, 不要用)
+Save:node\Macro_File.h \[5.4\] version (不稳定, 不用)
 // 6. set
-Save:node\Macro_File.h \[6.1\] set:
-Save:node\Macro_File.h \[6.2\] Tools:
-Save:node\Macro_File.h \[6.3\] SVN BCmp git SI vim
+Save:node\Macro_File.h \[6.1\] set file
+Save:node\Macro_File.h \[6.2\] tools file
+Save:node\Macro_File.h \[6.3\] SVN BCmp git SI vim Office
 // 7. 其他
 Save:node\Macro_File.h \[7.1\] 禅道 展讯 MTK
 Save:node\Macro_File.h \[7.2\] 参考标号:
@@ -35,7 +35,7 @@ Save:node\Macro_File.h \[7.2\] 参考标号:
 
 
 
-[1.1] work--node
+[1.1] work file
 //1) android:
 Save:node\9820e\Macro_Note_9820es.h
 //2) MTK SPR:
@@ -52,7 +52,7 @@ Save:node\note\Macro_Note_7701.h
 Save:node\Project\Macro_A_Nav.h
 
 
-[1.2] 未整理/未改/bak
+[1.2] bak file
 //1) 未整理:
 Save:bak\bak_mtk_lang.h	
 //2) 未改:
@@ -63,7 +63,7 @@ Save:bak\bak_20181123_git.h
 	
 
 
-[2.1] Marco:
+[2.1] marco file
 //1) path:
 Save:Macro\
 //2) f1~f12:
@@ -74,17 +74,8 @@ Save:Macro\sbd_ctrl.em
 //3) tool:
 Save:Macro\a_String.em
 
-[2.2] 路径切换
-//1) 路径切换:
-Save:Help\Macro_Help_Base.h  PathSwitchNode
 
-[2.3] 编码切换
-Save:Cmd_other\conv_cur_charset\
-//添加转换目录:
-//    用ue打开,或ansi
-Save:Cmd_other\conv_cur_charset\conv_cur_ansi_to_utf8.vbs
-
-[2.4] Macro path:
+[2.2] set marco path
 // 1) 改变Save路径, 宏命令才能正常使用:
 Save:Macro\sbd_base.em	getSavePath(0)
 Save:Macro\sbd_root_path.em  getRootPath(0)
@@ -93,25 +84,37 @@ Save:Macro\sbd_root_path.em  getRootPath(0)
 Save:Set\Macro_Set_Help.h
 
 
-[3.1] Cmd:
+[2.3] set work path
+//1) 路径切换:
+Save:Help\Macro_Help_Base.h  PathSwitchNode
+
+
+[2.4] set file code
+Save:Cmd_other\conv_cur_charset\
+//添加转换目录:
+//    用ue打开,或ansi
+Save:Cmd_other\conv_cur_charset\conv_cur_ansi_to_utf8.vbs
+
+
+
+[3.1] Cmd file
 Save:Cmd\
-Save:Cmd\clear_mtk__no_use
-Save:Cmd\dir__no_use
-Save:Cmd\other__no_use
+Save:Cmd_other\
+Save:Cmd_other\file_list\
+Save:Cmd_other\conv_cur_charset\
 
 
-[3.2] Cmd unzip:
+[3.2] Cmd unzip
 Save:Cmd_unzip\6531E\unzip_spr128.bat
 Save:Cmd_unzip\6531E\unzip_spr240_mini.bat
 
-[3.3] Cmd 对比:
+
+[3.3] Cmd Compare
 Save:bak\bcmp\bmp_107_mk.bat
 
 
 
-
-
-[4.1] Test:
+[4.1] test file
 Save:Help\Test\Macro_Tmp_Node_Test.h
 Save:Help\Test\sbd_Tmp_Show.em
 Save:Help\Test\Macro_Tmp_...
@@ -132,7 +135,7 @@ Save:Cmd\cmd_getFileList.bat
 Save:Cmd_TXT\si_filelist.h
 
 
-[4.3] Msg
+[4.3] Msg file
 //1) Nv Msg
 Save:node\set\Macro_Val.h
 //2) Pic Path Msg
@@ -142,6 +145,7 @@ Save:node\Simple_CTRL_K.h
 
 
 [4.4] Tmp File
+Save:node\
 //1) Tmp File
 Save:node\Simple_CTRL_B.h
 //2) Bcmp Tmp File
@@ -149,6 +153,7 @@ Save:node\Tmp_Comp_1.h
 Save:node\Tmp_Comp_2.h
 //3) 其他:
 Save:bak\Macro_tmp.h
+Save:Help\Test\Tmp_space.h
 
 
 [5.1] rule
@@ -160,21 +165,24 @@ Save:node\rule\Macro_Rule_Key_file_7701.h
 Save:node\rule\Macro_Rule_Key_file_6533.h
 Save:node\rule\Macro_Rule_Key_file_MTK.h
 
+
 [5.2] search
 //1) search 所有宏:
 Save:node\search\Macro_ALL_6531E.h
 //2) search 9820e 所有文件:
 Save:node\search\Macro_ALL_9820e_JAVA.h
 
+
 [5.3] Group (不用)
 Save:node\group\Macro_Group_Make_6531E.h
+
 
 [5.4] version (不稳定, 不要用)
 Save:node\version\si_version_6531e.h
 
 
 
-[6.1] set:
+[6.1] set file
 //1) Common set
 Save:set\Macro_Set.h
 //   set--utf8: (现在用不上, 改编码用处理)
@@ -190,26 +198,41 @@ Save:set\Macro_Set_Note.h
 Save:set\Macro_Set_Note_Python.h  last_node
 
 
-[6.2] Tools:
+[6.2] tools file
 Save:node\note\Macro_Note_Tools.h
 
-[6.3] SVN BCmp git SI vim
-//1) SVN 配置:
-Save:node\ToolsMsg\Macro_SVN.h
-C:\Users\Administrator\AppData\Roaming\Subversion\config
+
+[6.3] SVN BCmp git SI vim Office
+//1) win:
+Save:node\ToolsMsg\Macro_win.h
+//   SVN cfg:
+Save:node\ToolsMsg\Macro_win.h \[2.4\] SVN 配置
+
 //2) BCmp 配置:
 C:\Users\Administrator\AppData\Roaming\Scooter^Software\Beyond^Compare^4
 //   BCmp:
 Save:node\ToolsMsg\Macro_Bcomp.h
+
 //3) SecureCRT:
 Save:node\ToolsMsg\Macro_SecureCRT.h
+
 //4) git:
 Save:node\ToolsMsg\Macro_git.h
+
 //5) SI:
 Save:node\ToolsMsg\Macro_SI.h
+
 //6) vim:
 Save:node\ToolsMsg\Macro_vim.h
 Save:node\ToolsMsg\Macro_MTK_FlashTool.h
+
+//7) Cmd:
+Save:node\ToolsMsg\Macro_Cmd.h
+
+//8) Office:
+Save:node\ToolsMsg\Macro_Office.h
+	
+
 
 
 
@@ -228,7 +251,10 @@ https://online.mediatek.com
 
 [7.2] 参考标号:
 //参考标号:
-Save:node\Test\Macro_Tmp_Node_Num.h
+Save:Help\Test\Macro_Test_Node_Num.h
+//样板文件:
+Save:Help\Test\Macro_z_null.h
+
 
 
 

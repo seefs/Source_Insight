@@ -1,4 +1,9 @@
 
+macro _NoteTest(hbuf, cNum)
+{
+	//no use
+	NoteHander(hbuf, cNum)
+}
 macro Note()
 {
 	//_TempHeadF11(hbuf)
@@ -278,19 +283,11 @@ macro NoteHander(hbuf, cNum)
 		cur_line = strmid(cur_line, start, strlen(cur_line))
 	len = strlen(cur_line)
 
-	//命令名称: 用第1个词, 以":"或" "分开
-	noteCmd = cur_line
-	index = FindString(noteCmd, " ")
-	if (index != "X")
-		noteCmd = strmid(noteCmd, 0, index)
-	index_colon = FindString(noteCmd, ":")
-	if (index_colon != "X"){
-		noteCmd = strmid(noteCmd, 0, index_colon)
-		index = index_colon
-	}
-
+	//取命令名称: 用第1个词, 以":"或" "分开
+	index = GetHeadIndex(hbuf, cur_line)
 	if (index != "X")
 	{
+		noteCmd = strmid(cur_line, 0, index)
 		isCmd = 0
 		if(noteCmd == "replace" || noteCmd == "cmd" || noteCmd == "open" || noteCmd == "openCmd"
 			 || noteCmd == "setPath" || noteCmd == "setProPath" || noteCmd == "sethistory" || noteCmd == "cp")
@@ -319,7 +316,16 @@ macro NoteHander(hbuf, cNum)
 		else if (isCmd == 2)
 			curPath = cur_line						// -, [0, 1, 2, 3]
 		else if (isCmd == 3)
+		{
 			curPath = strmid(cur_line, start, len)	// -, -, [1, 2, 3]
+			index2 = GetHeadIndex(hbuf, curPath)
+			if (index2 != "X")
+			{
+				noteCmd2 = strmid(curPath, 0, index2)
+				if(IsTransHead(hbuf, noteCmd2)==1)
+					curPath = ReTransHead(hbuf, noteCmd2, curPath)
+			}
+		}
 		else if (isCmd == 4)
 			curPath = strmid(cur_line, 0, next)		// -, [0, 1], -, -
 		else if (isCmd == 5)
@@ -338,7 +344,7 @@ macro NoteHander(hbuf, cNum)
 		if (isCmd == 0)
 			noteWord = GetTransStr(cur_line, start, next)
 		else
-			noteWord = GetTransStr(cur_line, start2, 	next2)
+			noteWord = GetTransStr(cur_line, start2, next2)
 		//use "^" as space
 		noteWord = ReplaceWord(noteWord, "^", " ")
 
@@ -355,7 +361,7 @@ macro NoteHander(hbuf, cNum)
 	}
 	else
 	{
-		curPath = noteCmd
+		curPath = cur_line 
 		noteWord = ""
 	}
 
@@ -487,7 +493,7 @@ macro NoteHander(hbuf, cNum)
 		//命令名转化: 删除空格
 		NoteRARFile(hbuf, cmdP1, cmdP2, cNum)
 	}
-	else if(strlen(noteCmd)>0)
+	else
 	{
 		//3. 文件名转化:
 		//转化"Save:"、区分根目录、添加项目目录、替换"^"为空格
@@ -901,6 +907,7 @@ macro NoteOpenFile(hbuf, curPath, noteWord)
 
 macro NoteCurCmd(hbuf, noteCmd, curPath)
 {
+//	编辑用相对路径不需要添加bPath
 	curPath = GetTransFileName(hbuf, curPath, 16)
 	if(noteCmd == "cmd_w")
 		SetClipSimpleString(curPath)

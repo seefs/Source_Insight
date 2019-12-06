@@ -13,6 +13,14 @@ INSERT INTO dict_utf8_all_bak SELECT * FROM dict_utf8_all;
 DELETE FROM dict_utf8_all;
 INSERT INTO dict_utf8_all SELECT * FROM dict_utf8_all_bak;
 
+//       dict_utf8_update_bak
+DROP TABLE IF EXISTS dict_utf8_update_bak;
+CREATE TABLE dict_utf8_update_bak LIKE dict_utf8_update;
+INSERT INTO dict_utf8_update_bak SELECT * FROM dict_utf8_update;
+//数据整理错, 需要还原
+DELETE FROM dict_utf8_update;
+INSERT INTO dict_utf8_update SELECT * FROM dict_utf8_update_bak;
+
 
 //2> 整理--词性旧表--备份:
 //       dict_count_cx_old

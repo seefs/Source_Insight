@@ -1,0 +1,10 @@
+1 thin  
+6 fat  
+2 thin  
+7 fat  
+3 thin  
+8 fat  
+4 thin  
+9 fat  
+5 thin  
+10 fat
