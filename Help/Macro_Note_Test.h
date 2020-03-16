@@ -1,13 +1,12 @@
 ﻿
 基础路径设置:
 //basePath = 
+Save:Help\
 
 /***********************************************************************/
 
 //目录[Num][Ca]:
-// 1.说明
-//   SprNote
-//   MtkNote
+// 1.基础功能测试
 Save:Help\Macro_Note_Test.h \[1.1\] Note快捷键--
 Save:Help\Macro_Note_Test.h \[1.2\] 索引
 Save:Help\Macro_Note_Test.h \[1.3\] 索引换行, 显示分页
@@ -18,13 +17,20 @@ Save:Help\Macro_Note_Test.h \[1.7\] open
 Save:Help\Macro_Note_Test.h \[1.8\] set当前项目
 Save:Help\Macro_Note_Test.h \[1.9\] 
 Save:Help\Macro_Note_Test.h \[1.10\] 
-//2.cmd--Test
-Save:Help\Macro_Note_Test.h \[2.1\] cmd--Test
-Save:Help\Macro_Note_Test.h \[2.2\] 
-Save:Help\Macro_Note_Test.h \[2.3\] 
+//2.c语言测试(SprNote,MtkNote)
+Save:Help\Macro_Note_Test.h \[2.1\] group 分组
+Save:Help\Macro_Note_Test.h \[2.2\] project 项目
+Save:Help\Macro_Note_Test.h \[2.3\] rule
+Save:Help\Macro_Note_Test.h \[2.4\] search
+Save:Help\Macro_Note_Test.h \[2.5\] 
+Save:Help\Macro_Note_Test.h \[2.6\] 
+Save:Help\Macro_Note_Test.h \[2.7\] 
+Save:Help\Macro_Note_Test.h \[2.8\] 
+Save:Help\Macro_Note_Test.h \[2.9\] 
+Save:Help\Macro_Note_Test.h \[2.10\] 
 //3.tool--Test
 Save:Help\Macro_Note_Test.h \[3.1\] SVN--Test
-Save:Help\Macro_Note_Test.h \[3.2\] 
+Save:Help\Macro_Note_Test.h \[3.2\] cmd--Test
 Save:Help\Macro_Note_Test.h \[3.3\] 
 //4.f1~f12--Test
 Save:Help\Macro_Note_Test.h \[4.1\] f1--Test
@@ -206,23 +212,68 @@ setProPath plutommi\\Customer\\Audio\\M115\\M115_JGW_D2_X191_F2 = AUDIO\\PLUTO
 
 
 
-[2.1] cmd--Test
-//1.运行cmd命令
-// --Test格式
-test:CustomCmd
-//  代码位置
-Save:Macro\sbd_test.em  TestNodeMsg
-//  正常格式
-cmd_w: ping dl.google.com
+[2.1] group 分组
+//
+//MiniTest = group
+//bftParam = 6531E
+//fileParam = mmiidle_cstyle.c
+//fileParam = mmialarm.c
+
+//1) mk文件中: 快捷键跳转到宏 (略)
+//2) em文件中: 显示列表 (略)
+//3) sr文件中: 快捷键打开文件/文件互关 (略)
+//4) 其他:
+pls_press_ctrl_e
 
 
-[2.2] 
+
+[2.2] project
+//
+//MiniTest = project
+//bftParam = 6531E
+//bftParam = 9820e
+
+//1) 打开项目文件:
+pls_press_ctrl_e
 
 
-[2.3] 
+[2.3] rule
+//
+//MiniTest = rule
+
+//1) 复制--中文跳转:
+//	越
+//	越南
+//	阿
+//	泰
+pls_press_ctrl_e
+// VIETNAMESE
+// ARABIC
+// THAI
+
+//2) 选中--英文跳转:
+//	GC6133 (file)
+//	USB
+//	PRODUCT_CONFIG (path)
+//	CUSTOMER
+pls_press_ctrl_e
 
 
-[2.4] 
+[2.4] search
+//
+MiniTest = search
+//bftParam = 6531E
+bftParam = 9820e
+
+//1) 搜索:
+//	MAINMENU (c)
+//	EXTRA
+//	... (android)
+// lcd/lcd_st7789v2_spi.c
+// values\config.xml
+// statusbar\BaseStatusBar.java
+pls_press_ctrl_e
+
 
 
 [2.5] 
@@ -251,7 +302,14 @@ TortoiseProc.exe /command:commit /path:"c:\svn_wc\file1.txt*c:\svn_wc\file2.txt"
 F:\11CW1352MP_MT6261DM\custom\codegen\FARSIGHTED61M_CN_11C_BB\codegen_M610_KM_I710_F2.dws
 
 
-[3.2] 
+[3.2] cmd--Test
+//1.运行cmd命令
+// --Test格式
+test:CustomCmd
+//  代码位置
+Save:Macro\sbd_test.em  TestNodeMsg
+//  正常格式
+cmd_w: ping dl.google.com
 
 
 [3.3] 
@@ -386,10 +444,10 @@ Project: py_test\file_read_a.txt
 
 //3) Tool路径--Test
 Tool2Path = Save:node\Pythons
-// ok
-Tool2:py_test\file_read_a.txt
-// err
-Tool:py_test\file_read_b.txt
+// ok,Tool2=...
+Tool2:py_test\
+// err,Tool=...
+Tool:py_test\
 
 
 //3) Data路径--Test
