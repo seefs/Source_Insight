@@ -1,6 +1,6 @@
 
 
-// Pythons 网文
+// 1.Pythons 网文
 Save:node\Pythons\study\Macro_Pythons_read.h \[1.1\] tensorflow API
 Save:node\Pythons\study\Macro_Pythons_read.h \[1.2\] 谈谈我在自然语言处理进阶上的一些个人拙见
 Save:node\Pythons\study\Macro_Pythons_read.h \[1.3\] 大数据 
@@ -10,7 +10,7 @@ Save:node\Pythons\study\Macro_Pythons_read.h \[1.6\] Caffe  卷积神经网络
 Save:node\Pythons\study\Macro_Pythons_read.h \[1.7\] 
 Save:node\Pythons\study\Macro_Pythons_read.h \[1.8\] 
 Save:node\Pythons\study\Macro_Pythons_read.h \[1.9\] 
-// 项目
+// 2.项目
 Save:node\Pythons\study\Macro_Pythons_read.h \[2.1\] NLP托管
 Save:node\Pythons\study\Macro_Pythons_read.h \[2.2\] 开源系统 Malmo microsoft 
 Save:node\Pythons\study\Macro_Pythons_read.h \[2.3\] 开源项目
@@ -20,15 +20,25 @@ Save:node\Pythons\study\Macro_Pythons_read.h \[2.6\]
 Save:node\Pythons\study\Macro_Pythons_read.h \[2.7\] 
 Save:node\Pythons\study\Macro_Pythons_read.h \[2.8\] 
 Save:node\Pythons\study\Macro_Pythons_read.h \[2.9\] 
-// 学习参考
+// 3.学习参考
 Save:node\Pythons\study\Macro_Pythons_read.h \[3.1\] MNIST 教程
 Save:node\Pythons\study\Macro_Pythons_read.h \[3.2\] 吴恩达网站
 Save:node\Pythons\study\Macro_Pythons_read.h \[3.3\] MNIST 教程
 Save:node\Pythons\study\Macro_Pythons_read.h \[3.4\] 词库参考
 Save:node\Pythons\study\Macro_Pythons_read.h \[3.5\] 
 Save:node\Pythons\study\Macro_Pythons_read.h \[3.6\] 
-// 
-Save:node\Pythons\study\Macro_Pythons_read.h \[4.1\] 
+// 4.Pythons 基础知识
+Save:node\Pythons\study\Macro_Pythons_read.h \[4.1\] Python语言
+Save:node\Pythons\study\Macro_Pythons_read.h \[4.2\] Python的几种文件类型 
+Save:node\Pythons\study\Macro_Pythons_read.h \[4.3\] 
+Save:node\Pythons\study\Macro_Pythons_read.h \[4.4\] 
+Save:node\Pythons\study\Macro_Pythons_read.h \[4.5\] 
+Save:node\Pythons\study\Macro_Pythons_read.h \[4.6\] 
+Save:node\Pythons\study\Macro_Pythons_read.h \[4.7\] 
+Save:node\Pythons\study\Macro_Pythons_read.h \[4.8\] 
+Save:node\Pythons\study\Macro_Pythons_read.h \[4.9\]
+Save:node\Pythons\study\Macro_Pythons_read.h \[4.10\] 
+// 5.
 Save:node\Pythons\study\Macro_Pythons_read.h \[5.1\] 
 
 
@@ -348,7 +358,139 @@ https://blog.csdn.net/zhuzuwei/article/details/80487032
 [3.6] 
 
 
-[4.1] 
+
+[4.1] Python语言
+//Python与Perl
+Python是固定的数据类型，变化的函数类型；而 Perl则是固定的函数类型，变化的数据类型
+设计perl的是语言学家，设计python的是数学家
+
+
+
+
+[4.2] Python的几种文件类型
+//	Python有以下几种类型的文件：
+//	py：Python控制台程序的源代码文件
+//	pyw：Python带用户界面的源代码文件
+//	pyx：Python包源文件
+//	pyc：Python字节码文件
+//	pyo：Python优化后的字节码文件
+//	pyd：Python的库文件（Python版DLL）、在Linux上是so文件
+
+1) pyc和pyo的生成方法
+//	compile方法原形
+//	compile(file, cfile=None, dfile=None, doraise=False, optimize=-1)
+mport py_compile
+py_compile.compile(file = "a.py",cfile = "a.pyc",optimize=-1)
+
+2) 也可以直接通过Python加载模块来运行：
+//	编译成pyc
+python -m py_compile 源代码
+//	编译成pyo
+python -O -m py_compile 源代码
+
+3) 如果需要编译整个目录内的所有源代码，请参考
+Python compileall
+
+4) pyd可以让我们的代码更安全
+//检查是否安装了Cython，没有请pip install Cython安装即可
+//编译pyd步骤1：生成C代码
+import Cython.Build
+#导入Build模块
+Cython.Build.cythonize("a.py")
+#a.py转换成C代码
+
+5) 利用distutils生成pyd扩展模块
+此时我们可以用distutils包来编译成我们要的pyd模块
+编译a.py成pyd
+import Cython.Build
+import distutils.core
+a = Cython.Build.cythonize("a.py")
+#返回distutils.extension.Extension对象列表
+distutils.core.setup(
+name = 'pyd的编译',#包名称
+version = "1.0",#包版本号
+ext_modules= a,#扩展模块
+author = "百家号——斌哥说Python",#作者
+author_email='binnlzeng@163.com'#作者邮箱
+)
+
+6) 批量编译pyd 1
+//提取我们要的Extension对象
+import Cython.Build
+import distutils.core
+a = Cython.Build.cythonize("a.py")[0] #提取Extension对象
+b = Cython.Build.cythonize("b.py")[0]
+distutils.core.setup(
+name = 'pyd的编译', #包名称
+version = "1.0", #包版本号
+ext_modules= [a,b], #被扩展的模块
+author = "百家号——斌哥说Python", #作者
+author_email='binnlzeng@163.com' #作者邮箱
+)
+
+
+7) 批量编译pyd 2
+//转换成C代码后再进行Extension对象实例化
+import Cython.Build
+import distutils.core
+Cython.Build.cythonize("a.py")
+Cython.Build.cythonize("b.py")
+distutils.core.setup(
+name = 'pyd的编译', #包名称
+version = "1.0", #包版本号
+ext_modules= [distutils.core.Extension('a',["a.c"]),distutils.core.Extension('b', ['b.c'])], #被扩展的模块
+#[
+#distutils.core.Extension('a',["a.c"]),
+#distutils.core.Extension('b', ['b.c'])
+#]
+author = "百家号——斌哥说Python", #作者
+author_email='binnlzeng@163.com' #作者邮箱
+)
+
+8) 如果遇到running build...提示，删掉build目录重新编译即可
+
+
+
+
+[4.3] 
+
+
+
+
+[4.4] 
+
+
+
+
+[4.5] 
+
+
+
+
+[4.6] 
+
+
+
+
+[4.7] 
+
+
+
+
+[4.8] 
+
+
+
+
+[4.9] 
+
+
+
+
+[4.10] 
+
+
+
 
 
 

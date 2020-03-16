@@ -3,8 +3,8 @@
 // 1. win常用
 Save:node\ToolsMsg\Macro_win.h \[1.1\] 重装系统
 Save:node\ToolsMsg\Macro_win.h \[1.2\] 破解软件
-Save:node\ToolsMsg\Macro_win.h \[1.3\] 
-Save:node\ToolsMsg\Macro_win.h \[1.4\] 
+Save:node\ToolsMsg\Macro_win.h \[1.3\] 文件设置
+Save:node\ToolsMsg\Macro_win.h \[1.4\] 系统备份
 Save:node\ToolsMsg\Macro_win.h \[1.5\] 
 Save:node\ToolsMsg\Macro_win.h \[1.6\] 
 Save:node\ToolsMsg\Macro_win.h \[1.7\] 
@@ -29,12 +29,12 @@ Save:node\ToolsMsg\Macro_win.h \[3.3\] UE
 Save:node\ToolsMsg\Macro_win.h \[3.4\] mv
 Save:node\ToolsMsg\Macro_win.h \[3.5\] 
 Save:node\ToolsMsg\Macro_win.h \[3.6\] 
-Save:node\ToolsMsg\Macro_win.h \[3.7\] 
+Save:node\ToolsMsg\Macro_win.h \[3.7\] Game
 Save:node\ToolsMsg\Macro_win.h \[3.8\] 
 Save:node\ToolsMsg\Macro_win.h \[3.9\] 
 Save:node\ToolsMsg\Macro_win.h \[3.10\] 
 // 
-Save:node\ToolsMsg\Macro_win.h \[4.1\] BD积分：6357
+Save:node\ToolsMsg\Macro_win.h \[4.1\] 
 Save:node\ToolsMsg\Macro_win.h \[4.2\] nexus 6P
 Save:node\ToolsMsg\Macro_win.h \[4.3\] 
 
@@ -290,7 +290,17 @@ C:\Users\Administrator\AppData\Roaming\Subversion\config
 [3.6] 
 
 
-[3.7] 
+[3.7] Game
+//war3分辨率--1920*1080
+regedit
+HEY_CURRENT_USER
+	software
+		Blizzard Entertainment
+			video
+				reswidth
+				resheight
+				
+
 
 
 [3.8] 

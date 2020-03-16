@@ -14,14 +14,17 @@ macro SearchFile()
     	stop
 	}
     
-
 	bft = getBft(1)
 //	bft = getBufBft(hbuf, 1) //只能用一个, 先不改了
 //	if(bft == "")
 //		stop
 	//bft = "9820e" //test
+	StartF9Search(hbuf, bft)
+}
 
-	file = "\\search\\Macro_ALL_@bft@.h"
+macro StartF9Search(hbuf, bft)
+{
+	file = "\\Macro_ALL_@bft@.h"
 	
 	if(IsFileName(hbuf, "Macro_ALL_"))
 	{
@@ -45,19 +48,19 @@ macro SearchFile()
 			{
 				strEx = strmid(cur_sel, fI + 1, strlen(cur_sel))
 				if(strEx == "c" || strEx == "h" || strEx == "java" || strEx == "mk" || strEx == "xml" || strEx == "xml" )
-					file = "\\search\\Macro_ALL_@bft@_" # toupper (strEx) # ".h"
+					file = "\\Macro_ALL_@bft@_" # toupper (strEx) # ".h"
 				else if(strEx == "jpg" || strEx == "png" || strEx == "bmp" || strEx == "jif")
-					file = "\\search\\Macro_ALL_@bft@_" # "JPG_PNG" # ".h"
+					file = "\\Macro_ALL_@bft@_" # "JPG_PNG" # ".h"
 				else
-					file = "\\search\\Macro_ALL_@bft@_OTHER.h"
+					file = "\\Macro_ALL_@bft@_OTHER.h"
 			}
 			else
 			{
-				file = "\\search\\Macro_ALL_@bft@_OTHER.h"
+				file = "\\Macro_ALL_@bft@_OTHER.h"
 			}
 			//msg(file)  //test
 			
-			hSbuf = OpenCache(getNodePath(0) # file)
+			hSbuf = OpenCache(getSearchAndroid(0) # file)
 			if(hSbuf != hNil)
 			{
 				//只能查文件名, 且不使用通配符
@@ -109,12 +112,12 @@ macro SearchFile()
 		}
 		else
 		{
-			hbuf = OpenExistFile(getNodePath(0) # file)
+			hbuf = OpenExistFile(getSearchAndroid(0) # file)
 		}
 	}
 	else
 	{
-		hbuf = OpenExistFile(getNodePath(0) # file)
+		hbuf = OpenExistFile(getSearchC(0) # file)
 	}
 	
 }

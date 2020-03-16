@@ -31,7 +31,10 @@ macro Group()
 	}
 	else
 	{
-		DefaultGroup(hbuf)
+		bft = getBft(2)
+		szpathName = GetBufName(hbuf)
+		filename = GetFileName(szpathName)
+		DefaultGroup(filename, bft)
 	}
 }
 
@@ -237,7 +240,7 @@ macro MakeSelGroup(hbuf, bft)
 			grMsg = "Add item: @grMsg@" # CharFromKey(13)
 			grMsg = grMsg # "Note: LCD、camera、torch" # CharFromKey(13)
 			head = Ask("@grMsg@")
-			grRule = OpenCache(getNodePath(0) # "\\group\\Macro_Group_Make_@bft@.h")
+			grRule = OpenCache(getGroupPath(0) # "\\Macro_Group_Make_@bft@.h")
 
 			mSel = SearchInBuf(grRule, "head:@head@", 0, 0, FALSE, FALSE, FALSE)
 			if (mSel == "")
@@ -370,19 +373,16 @@ macro SrGroup(hbuf)
 	}
 }
 //添加SR列表
-macro DefaultGroup(hbuf)
+macro DefaultGroup(filename, bft)
 {
 	//_TempHeadF10(hbuf)
-	bft = getBft(2)
-	szpathName = GetBufName(hbuf)
-	filename = GetFileName(szpathName)
 	mNote = GetGroupHead(filename, "Menu", bft)
 	if(mNote == "")
 	{
 		grMsg = "Add Menu, File: @filename@" # CharFromKey(13)
 		grMsg = grMsg # "Note: set、tool、menu" # CharFromKey(13)
 		mNote = Ask("@grMsg@")
-		grRule = OpenCache(getNodePath(0) # "\\group\\Macro_Group_@grFile@_@bft@.h")
+		grRule = OpenCache(getGroupPath(0) # "\\Macro_Group_@grFile@_@bft@.h")
 
 		mSel = SearchInBuf(grRule, mNote, 0, 0, FALSE, FALSE, FALSE)
 		if (mSel == "")
@@ -418,7 +418,7 @@ macro DefaultGroup(hbuf)
 macro ShowGroupMenu(curHead, grFile, isShow, bft)
 {
 	//_TempHeadF10(hbuf)
-	mFile = getNodePath(0) # "\\group\\Macro_Group_@grFile@_@bft@.h"
+	mFile = getGroupPath(0) # "\\Macro_Group_@grFile@_@bft@.h"
 	
 	if(curHead == "")
 	{
@@ -458,7 +458,7 @@ macro ShowGroupMenu(curHead, grFile, isShow, bft)
 macro GetGroupItem(curHead, mIndex, grFile, bft)
 {
 	//_TempHeadF10(hbuf)
-	mFile = getNodePath(0) # "\\group\\Macro_Group_@grFile@_@bft@.h"
+	mFile = getGroupPath(0) # "\\Macro_Group_@grFile@_@bft@.h"
 	
 	if(curHead == "")
 	{
@@ -494,7 +494,7 @@ macro GetGroupItem(curHead, mIndex, grFile, bft)
 macro GetGroupCountAndIndex(curHead, curMacro, grFile, bft)
 {
 	//_TempHeadF10(hbuf)
-	mFile = getNodePath(0) # "\\group\\Macro_Group_@grFile@_@bft@.h"
+	mFile = getGroupPath(0) # "\\Macro_Group_@grFile@_@bft@.h"
 	
 	if(curHead == "")
 	{
@@ -534,7 +534,7 @@ macro GetGroupCountAndIndex(curHead, curMacro, grFile, bft)
 macro GetGroupHead(curItem, grFile, bft)
 {
 	//_TempHeadF10(hbuf)
-	mFile = getNodePath(0) # "\\group\\Macro_Group_@grFile@_@bft@.h"
+	mFile = getGroupPath(0) # "\\Macro_Group_@grFile@_@bft@.h"
 	
 	mBuf = OpenCache(mFile)
 	mSel = SearchInBuf(mBuf, curItem, 0, 0, FALSE, FALSE, FALSE)
@@ -559,7 +559,7 @@ macro GetGroupHead(curItem, grFile, bft)
 //find key from mk group
 macro FindKeyFromGroup(hbuf, word, bft)
 {
-	hbufRule = OpenCache(getNodePath(0) # "\\group\\Macro_Group_Make_@bft@.h")
+	hbufRule = OpenCache(getGroupPath(0) # "\\Macro_Group_Make_@bft@.h")
 	ret = ""
 	
 	len = strlen (word)
@@ -735,7 +735,7 @@ macro NoteGroupPreview(hbuf, key)
 		//mStr = mStr # "ctrl+D->6 显示索引[N0-9.]+ ctrl+0" # CharFromKey(13)
 		mStr = mStr # "ctrl+D->7 显示索引[F1-12]" # CharFromKey(13)
 		mStr = mStr # "ctrl+D->8 显示索引[ xxx] 空格+默认" # CharFromKey(13)
-		mStr = mStr # "ctrl+D->9 显示默认索引 确认加空格区分" # CharFromKey(13)
+		mStr = mStr # "ctrl+D->9 显示默认索引 确认后[]中加空格区分标号" # CharFromKey(13)
 		mStr = mStr # "ctrl+D->ctrl+D 显示默认索引" # CharFromKey(13)
 		msg(mStr)
 		stop
@@ -746,16 +746,16 @@ macro NoteGroupPreview(hbuf, key)
 		searchStr = "\\[[a-zFNC][a-z0-9]*\\]"
 	else
 	{
-		if(mode != 9)	//num: 9
-			mode = 0	//num: 0
-		//3.1. 显示用数字标号
+		//非数字标号模式归零
+		mode = 0	//num: 0
+		//3.1. 显示用数字标号, 排队
 		cM = NoteGroupGetMode(hbuf, "\\[Num\\]")
 		if(cM)
 		{
-			if(key == 0)	//key: 0
-			{
+			if(key == 32)	    //key: 32
+				key = 0
+			else if(key == 0)	//key: 0
 				key = 256
-			}
 			else
 			{
 				key = 51
@@ -853,7 +853,7 @@ macro NoteGroupPreview(hbuf, key)
 		mSel = SearchInBuf(hbuf, searchStr, mSel.lnLast+1, 0, TRUE, TRUE, FALSE)
 	}
 	//4.索引提示分组0~9 显示索引
-	if(mode == 9)
+	if(key == 48+9) //or mode == 9
 	{
 		//替换掉索引 [x]类型变成[ x]类型, 加空格
 		newTxt = allKeyTxt
@@ -864,7 +864,7 @@ macro NoteGroupPreview(hbuf, key)
 		NoteGroupDelete(hbuf, searchStr)
 		stop
 	}
-	else if(mode == 8)
+	else if(mode == 8) //or key == 48+8
 	{
 		//替换掉索引 [x]类型变成[ x]类型, 加空格, 显示旧内容
 		newTxt = allKeyTxt
@@ -1297,7 +1297,6 @@ macro OpenF10Test(hbuf, v)
 	}
 	else if(v == "F102")
 	{
-		//DefaultGroup(hbuf)
 		SrGroup(hbuf)
 		MakeSelGroup(hbuf, bft)
 	}

@@ -49,7 +49,7 @@ Save:node\ToolsMsg\Macro_git.h \[4.5\] window下载
 Save:node\ToolsMsg\Macro_git.h \[4.6\] 设置Git UI颜色
 Save:node\ToolsMsg\Macro_git.h \[4.7\] git config --global  为命令配置别名
 Save:node\ToolsMsg\Macro_git.h \[4.8\] .git/config ---------修改配置文件
-Save:node\ToolsMsg\Macro_git.h \[4.9\] 
+Save:node\ToolsMsg\Macro_git.h \[4.9\] 解决每次进入都需要输入用户名和密码
 
 
 
@@ -685,7 +685,10 @@ git checkout -b <本地分支名> origin/<远程分支名>
 
 
 
-[4.9] 
+[4.9] 解决每次进入都需要输入用户名和密码
+解决办法：
+git bash进入你的项目目录，输入：
+git config --global credential.helper store
 
 
 

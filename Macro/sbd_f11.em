@@ -74,42 +74,50 @@ macro Note()
 	}
 	else
 	{
+		isSaveRow = 1
 		bft = getBft(3)
 //		if(bft == "")
 //			stop
 
-		isAloneFile = 0
-		if(bft == "Pythons" || bft == "9820e")
-		{
-			isAloneFile = 1
-			mFile = getNodePath(0) # "\\@bft@\\Macro_Note_@bft@.h"
-		}
-		else
-		{
-			mFile = getNodePath(0) # "\\note\\Macro_Note_@bft@.h"
-		}
+		openNoteFile(hbuf, bft, isSaveRow)
+	}
+}
+
+macro openNoteFile(hbuf, bft, isSaveRow)
+{
+	if(bft == "Pythons")
+	{
+		mFile = getProjectPythons(0) # "\\Macro_Note_@bft@.h"
+	}
+	else if(bft == "9820e")
+	{
+		mFile = getProjectAndroid(0) # "\\Macro_Note_@bft@.h"
+	}
+	else
+	{
+		mFile = getProjectC(0) # "\\Macro_Note_@bft@.h"
+	}
 	
-		if(IsFileName(hbuf, "Macro_Note_"))
+	if(IsFileName(hbuf, mFile))
+	{
+		if(isSaveRow == 0)
 		{
-			if(isAloneFile == 0)
-			{
-				hwnd = GetCurrentWnd()
-				lnTop = GetWndVertScroll(hwnd);
-				SaveMode(getWndVertRow(0), "@lnTop@")
-			}
-			close
+			hwnd = GetCurrentWnd()
+			lnTop = GetWndVertScroll(hwnd);
+			SaveMode(getWndVertRow(0), "@lnTop@")
+		}
+		close
+	}
+	else
+	{
+		if(isSaveRow == 0)
+		{
+			lnTop = ReadMode(getWndVertRow(0))
+			OpenExistFileRow(mFile, lnTop)
 		}
 		else
 		{
-			if(isAloneFile == 0)
-			{
-				lnTop = ReadMode(getWndVertRow(0))
-				OpenExistFileRow(mFile, lnTop)
-			}
-			else
-			{
-				OpenExistFileRow(mFile, 0)
-			}
+			OpenExistFileRow(mFile, 0)
 		}
 	}
 }
@@ -289,19 +297,31 @@ macro NoteHander(hbuf, cNum)
 	{
 		noteCmd = strmid(cur_line, 0, index)
 		isCmd = 0
-		if(noteCmd == "replace" || noteCmd == "cmd" || noteCmd == "open" || noteCmd == "openCmd"
+		
+		//type1:  -, [1], -, -
+		if(noteCmd == "cmd" || noteCmd == "open" || noteCmd == "openCmd" || noteCmd == "test"
 			 || noteCmd == "setPath" || noteCmd == "setProPath" || noteCmd == "sethistory" || noteCmd == "cp")
 			isCmd = 1
+			
+		//type2: [0, 1, 2, 3] (only copy)
 		else if(noteCmd == "make" || noteCmd == "ctmake" || noteCmd == "xmake")
 			isCmd = 2
+			
+		//type3: -, [1, 2, 3]
 		else if(noteCmd == "set"  || noteCmd == "python" || noteCmd == "python_w" || noteCmd == "python_t" || noteCmd == "vc" || noteCmd == "vs08" || 
-			noteCmd == "call" || noteCmd == "cmd_w" )
+			noteCmd == "call" || noteCmd == "cmd_w" || noteCmd == "git" )
 			isCmd = 3
-		//add all replace words:
+			
+		//type4: [0, 1], -, -
+		//  add all replace words:
 		else if(noteCmd == "Save")
 			isCmd = 4
+			
+		//type5: [0, 1], -, -
 		else if(IsTransHead(hbuf, noteCmd)==1)
 			isCmd = 5
+			
+		//type4: [0, 1], -, -
 		else if(strlen(noteCmd)==1)
 			isCmd = 4
 			
@@ -312,12 +332,12 @@ macro NoteHander(hbuf, cNum)
 		next2  = GetTransCmdE(cur_line, start2,     len)
 		
 		if (isCmd == 1)
-			curPath = strmid(cur_line, start, next)	// -, -, [1], -, -
+			curPath = strmid(cur_line, start, next)	// -, [1], -, -
 		else if (isCmd == 2)
-			curPath = cur_line						// -, [0, 1, 2, 3]
+			curPath = cur_line						// [0, 1, 2, 3]
 		else if (isCmd == 3)
 		{
-			curPath = strmid(cur_line, start, len)	// -, -, [1, 2, 3]
+			curPath = strmid(cur_line, start, len)	// -, [1, 2, 3]
 			index2 = GetHeadIndex(hbuf, curPath)
 			if (index2 != "X")
 			{
@@ -327,19 +347,20 @@ macro NoteHander(hbuf, cNum)
 			}
 		}
 		else if (isCmd == 4)
-			curPath = strmid(cur_line, 0, next)		// -, [0, 1], -, -
+			curPath = strmid(cur_line, 0, next)		// [0, 1], -, -
 		else if (isCmd == 5)
 		{
-			curPath = strmid(cur_line, 0, next)		// -, [0, 1], -, -
+			curPath = strmid(cur_line, 0, next)		// [0, 1], -, -
+			//路径替换: Tool1->Tool1Path, Tool2->Tool2Path
 			curPath = ReTransHead(hbuf, noteCmd, curPath)
 		}
 		else
-			curPath = noteCmd						// [-], 0, 1, 2, 3
+			curPath = noteCmd						// [0], 1, 2, 3
 			
-		TestMsg("curPath: " # CharFromKey(13) # curPath, 1)
+		TestMsg("noteCmd: " # CharFromKey(13) # noteCmd # CharFromKey(13) # "curPath: " # CharFromKey(13) # curPath, 1)
 		
 
-		//获取关键词
+		//获取关键词(剩余词)
 		//goto word and Select
 		if (isCmd == 0)
 			noteWord = GetTransStr(cur_line, start, next)
@@ -384,13 +405,8 @@ macro NoteHander(hbuf, cNum)
 	//默认:
 	//
 
-	//msg(noteCmd # ";")
-	if(noteCmd == "replace") // no use
-	{
-		//跳转到复制对应的语言/宏
-		cur_line = GetClipString(hbuf)
-	}
-	else if(noteCmd == "open")
+	//type1: 
+	if(noteCmd == "open")
 	{
 		//文件名转化:
 		//转化"Save:"、区分根目录、添加项目目录、替换"^"为空格
@@ -421,6 +437,12 @@ macro NoteHander(hbuf, cNum)
 		TestMsg("python" # CharFromKey(13) # curPath, 1)
 		NotePythonCmd(hbuf, noteCmd, curPath)
 	}
+	else if(noteCmd == "test")
+	{
+		msgStr = curPath
+		TestNodeMsg(msgStr)
+	}
+	//type2: 
 	else if(noteCmd == "make")
 	{
 		//make...
@@ -434,6 +456,7 @@ macro NoteHander(hbuf, cNum)
 		SetClipSimpleString(curPath)
 		TestMsg("ctmake" # CharFromKey(13) # curPath, 1)
 	}
+	//type3: 
 	else if(noteCmd == "vc")
 	{
 		vcPath = getVCPath(0)
@@ -465,11 +488,20 @@ macro NoteHander(hbuf, cNum)
 		pmsg = "Set Ok : " # CharFromKey(13) # lnVar
 		msg(pmsg)
 	}
+	else if(noteCmd == "git")
+	{
+		//ctmake...
+		SetClipSimpleString(curPath)
+		TestMsg("git" # CharFromKey(13) # curPath, 0)
+		ShellExecute("open", getBasePath(hbuf) # "\\cmd", "", "", 1)
+	}
+	//type3:
 	else if(noteCmd == "set")
 	{
 		//curPath:除set以外的str
 		SetNoteHander(hbuf, curPath, cur_row, 0)
 	}
+	//type1:
 	else if(noteCmd == "setPath")
 	{
 		//开始路径列表替换
@@ -503,7 +535,7 @@ macro NoteHander(hbuf, cNum)
 		if(NoteShowFileList(hbuf, curPath, cur_row))
 			stop
 
-		//6. 定制关键字--打开路径, 回到目录, 下一个
+		//6. 定制关键字--打开路径("[Path]"), 回到目录("[Base]"), 下一个("[Next]")
 		if(GetTransWord(hbuf, curPath, noteWord))
 			stop
 			
@@ -986,14 +1018,14 @@ macro NoteShowFileList(hbuf, curPath, cur_row)
 macro NoteScroll(hbuf, curPath, noteWord)
 {
 	//   分4种情况搜索
-		TestMsg("跳转到文件: " # CharFromKey(13) # curPath # CharFromKey(13) #　"内容: " # CharFromKey(13) # noteWord, 1)
+	TestMsg("跳转到文件: " # CharFromKey(13) # curPath # CharFromKey(13) #　"内容: " # CharFromKey(13) # noteWord, 1)
 	mSel = SearchInBuf(hbuf, "^" # "@noteWord@", 0, 0, 0, 1, 0)
 	if (mSel == "")
 	{
 		//8.1 行号跳转
 		if(IsNumber ("@noteWord@"))
 		{
-			row = noteWord
+			row = noteWord-1
 			ScrollCursorRow(row, row+1)
 			return 1
 		}

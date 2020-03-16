@@ -412,6 +412,7 @@ macro ShowHelp(hbuf, key)
 macro ShowMoreHelp(hbuf, spit, key)
 {
 	//_TempHeadF1(hbuf)
+	//显示多行提示或语言帮助
 	key = key # spit
 	mSelStart = SearchInBuf(hbuf, key, 0, 0, FALSE, FALSE, FALSE)
 	helpTxt = key # ":" # CharFromKey(13)

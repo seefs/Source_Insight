@@ -17,6 +17,33 @@ macro ShowMyHelp(hbuf)
 	ShowHelpLoop(hbuf)
 }
 
+macro OpenMiniTest(hbuf)
+{
+    hbuf = GetCurrentBuf()
+	isTest = getMacroValue(hbuf, "MiniTest", 1)
+	if(isTest != ""){
+		if(isTest == "group"){
+			bft = getMacroValue(hbuf, "bftParam", 1)
+			filename = getMacroValue(hbuf, "fileParam", 1)
+			DefaultGroup(filename, bft)
+		}
+		else if(isTest == "project"){
+			bft = getMacroValue(hbuf, "bftParam", 1)
+			isSaveRow = 1
+			openNoteFile(hbuf, bft, isSaveRow)
+		}
+		else if(isTest == "rule"){
+			startF5MiniTest(hbuf)
+		}
+		else if(isTest == "search"){
+			bft = getMacroValue(hbuf, "bftParam", 1)
+			StartF9Search(hbuf, bft)
+		}
+		return 1
+	}
+	return 0
+}
+
 //F1->sbd_test.em / other
 macro OpenAPITest(hbuf)
 {
@@ -561,6 +588,47 @@ macro OpenRefTest(hbuf)
 	*/
 }
 
+macro TestSiMro1()
+{
+	msg("mro1")
+	return 1
+}
+
+macro TestSiMro2()
+{
+	msg("mro2")
+	return 1
+}
+
+macro TestNodeMsg(msgStr)
+{
+	if(msgStr == "CustomCmd")
+	{
+		cmdStr = "D:&&cd D:\\Save\\SI\\Macro&&start cmd.exe&&parse"
+//		cmdStr = "D:&&start cmd.exe&&parse"
+//		cmdStr = "start cmd.exe&&parse"
+
+		msg(cmdStr)
+		ShellOpenCustomCmd(cmdStr)
+	}
+	else if(msgStr == "SiMro")
+	{
+		//&&左右两边都执行
+		if(TestSiMro1()>0 && TestSiMro2()>0)
+			msg("a && b")
+
+		if(TestSiMro1()>0 || TestSiMro2()>0)
+			msg("a || b")
+			
+		if(TestSiMro1()==0 && TestSiMro2()==0)
+			msg("!a && !b")
+	}
+	else
+	{
+		//临时
+		msg(msgStr # " no found")
+	}
+}
 
 macro TestMsg(msgStr, num)
 {

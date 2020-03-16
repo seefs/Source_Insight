@@ -47,6 +47,9 @@ macro getNoteBasePath(0)	{	return 63	}
 macro getNumBits(0)			{	return 66	}
 macro getCustPath(0)		{	return 69	}
 macro getCustRow(0)			{	return 72	}
+macro getPyInfo(0)			{	return 75	}
+macro getAndroidInfo(0)			{	return 78	}
+//macro getXXInfo(0)			{	return 81	}
 
 
 
@@ -65,6 +68,14 @@ macro ReadMode(setRow)
 		msg (msgErr # "tools mode row (@ln@), read error")
 		return 0
 	}
+}
+macro ReadIntMode(setRow)
+{
+	mode = ReadMode(setRow)
+	if(IsNumber (mode))
+		return mode
+	else
+		return 0
 }
 
 //保存当前设置:默认F5~goto           F6-rule
@@ -1052,7 +1063,16 @@ macro ScrollCursorRow(row1, row2)
 		ScrollWndToLine(hwnd, row1-10)
 	else
 		ScrollWndToLine(hwnd, row1)
-	mSel = "lnFirst=\"@row1@\";ichFirst=\"0\";lnLast=\"@row2@\";ichLim=\"0\";fExtended=\"1\";fRect=\"0\""
+	if(row1 + 1 == row2)
+	{
+		mLine = GetBufLine(hwnd, row1)
+		mRowCnt = strlen(mLine)
+		mSel = "lnFirst=\"@row1@\";ichFirst=\"0\";lnLast=\"@row1@\";ichLim=\"@mRowCnt@\";fExtended=\"1\";fRect=\"0\""
+	}
+	else
+	{
+		mSel = "lnFirst=\"@row1@\";ichFirst=\"0\";lnLast=\"@row2@\";ichLim=\"0\";fExtended=\"1\";fRect=\"0\""
+	}
 	SetWndSel(hwnd, mSel)
 }
 /***********************************************************************/

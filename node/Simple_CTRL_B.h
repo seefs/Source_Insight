@@ -2,7 +2,9 @@
 Save文件列表：
 Save:node\Macro_File.h
 Save:node\Macro_History.h
-
+Save:node\Macro_Future.h
+Save:node\Macro_Memory.h
+	
 
 // 常用的编辑文件:
 //	6531E

@@ -5,9 +5,10 @@ Save:node\Macro_File.h \[1.1\] work file
 Save:node\Macro_File.h \[1.2\] bak file
 // 2. Marco
 Save:node\Macro_File.h \[2.1\] marco file
-Save:node\Macro_File.h \[2.2\] set marco path
-Save:node\Macro_File.h \[2.3\] set work path
-Save:node\Macro_File.h \[2.4\] set file code
+Save:node\Macro_File.h \[2.2\] marco test...
+Save:node\Macro_File.h \[2.3\] set marco path
+Save:node\Macro_File.h \[2.4\] set work path
+Save:node\Macro_File.h \[2.5\] set file code
 // 3. Cmd
 Save:node\Macro_File.h \[3.1\] Cmd file
 Save:node\Macro_File.h \[3.2\] Cmd unzip
@@ -28,7 +29,8 @@ Save:node\Macro_File.h \[6.2\] tools file
 Save:node\Macro_File.h \[6.3\] SVN BCmp git SI vim Office
 // 7. 其他
 Save:node\Macro_File.h \[7.1\] 禅道 展讯 MTK
-Save:node\Macro_File.h \[7.2\] 参考标号:
+Save:node\Macro_File.h \[7.2\] Help
+Save:node\Macro_File.h \[7.3\] DefaultFile 标号
 
 
 
@@ -37,19 +39,28 @@ Save:node\Macro_File.h \[7.2\] 参考标号:
 
 [1.1] work file
 //1) android:
-Save:node\9820e\Macro_Note_9820es.h
-//2) MTK SPR:
-//	MTK, modis
-Save:node\note\Macro_modis_MTK.h
-Save:node\note\Macro_Note_MTK.h
-//	6531E, modis
-Save:node\note\Macro_modis_6531E.h
-Save:node\note\Macro_Note_6531E.h
-//	7701, modis
-Save:node\note\Macro_Note_7701.h
+Save:node\android\Macro_Note_as.h
+Save:node\android\project\Macro_Note_9820e.h
 
-//3) other:
+//2) MTK SPR:
+Save:node\C\Macro_Note_C.h
+//	MTK, modis
+Save:node\C\study\Macro_modis_MTK.h
+Save:node\C\project\Macro_Note_MTK.h
+//	6531E, modis
+Save:node\C\study\Macro_modis_6531E.h
+Save:node\C\project\Macro_Note_6531E.h
+//	7701, modis
+Save:node\C\project\Macro_Note_7701.h
+
+//3) Pythons:
+Save:node\Pythons\Macro_Note_Python.h
+
+//4) other:
 Save:node\Project\Macro_A_Nav.h
+	
+
+
 
 
 [1.2] bak file
@@ -68,14 +79,24 @@ Save:bak\bak_20181123_git.h
 Save:Macro\
 //2) f1~f12:
 Save:Macro\sbd_f1.em
+Save:Macro\sbd_f2.em
 Save:Macro\sbd_f7.em
-Save:Macro\sbd_f11.em  NoteHander
+Save:Macro\sbd_f10.em  macro^NoteGroup
+Save:Macro\sbd_f11.em  macro^NoteHander
 Save:Macro\sbd_ctrl.em
 //3) tool:
 Save:Macro\a_String.em
 
 
-[2.2] set marco path
+[2.2] marco test...
+// test:
+// 打开msg log
+Save:Macro\sbd_test.em  TestMsg
+// 功能测试
+Save:Help\Macro_Note_Test.h
+
+
+[2.3] set marco path
 // 1) 改变Save路径, 宏命令才能正常使用:
 Save:Macro\sbd_base.em	getSavePath(0)
 Save:Macro\sbd_root_path.em  getRootPath(0)
@@ -84,12 +105,12 @@ Save:Macro\sbd_root_path.em  getRootPath(0)
 Save:Set\Macro_Set_Help.h
 
 
-[2.3] set work path
+[2.4] set work path
 //1) 路径切换:
-Save:Help\Macro_Help_Base.h  PathSwitchNode
+Save:Help\Other\Macro_Help_Base.h  PathSwitchNode
 
 
-[2.4] set file code
+[2.5] set file code
 Save:Cmd_other\conv_cur_charset\
 //添加转换目录:
 //    用ue打开,或ansi
@@ -185,7 +206,7 @@ Save:node\version\si_version_6531e.h
 [6.1] set file
 //1) Common set
 Save:set\Macro_Set.h
-//   set--utf8: (现在用不上, 改编码用处理)
+//   set--utf8: (现在用不上, 改编码用批处理)
 Save:set\Macro_Set.h 63
 //2) 项目路径
 Save:set\Macro_Set_Base.h
@@ -199,7 +220,7 @@ Save:set\Macro_Set_Note_Python.h  last_node
 
 
 [6.2] tools file
-Save:node\note\Macro_Note_Tools.h
+//Save:node\note\Macro_Note_Tools.h
 
 
 [6.3] SVN BCmp git SI vim Office
@@ -218,6 +239,7 @@ Save:node\ToolsMsg\Macro_SecureCRT.h
 
 //4) git:
 Save:node\ToolsMsg\Macro_git.h
+Save:node\ToolsMsg\Macro_git_app.h
 
 //5) SI:
 Save:node\ToolsMsg\Macro_SI.h
@@ -231,10 +253,6 @@ Save:node\ToolsMsg\Macro_Cmd.h
 
 //8) Office:
 Save:node\ToolsMsg\Macro_Office.h
-	
-
-
-
 
 
 
@@ -248,13 +266,18 @@ https://online.mediatek.com
 
 
 
-
-[7.2] 参考标号:
+[7.2] Help
 //参考标号:
 Save:Help\Test\Macro_Test_Node_Num.h
-//样板文件:
-Save:Help\Test\Macro_z_null.h
 
+
+
+[7.3] DefaultFile 标号
+//样板文件:
+Save:Help\DefaultFile\Macro_z_null.h
+Save:Help\DefaultFile\Macro_z_null.py
+//样板文件-(更多序号+):
+Save:Help\DefaultFile\Macro_z_null_2.h
 
 
 

@@ -1,7 +1,98 @@
 ﻿
 
+基础路径设置:
+//basePath = 
 
-// 1.学习
+/***********************************************************************/
+
+//目录[Num][Ca]:
+// 1. 
+Save:node\Pythons\Macro_Note_Python.h \[1.1\] 安装环境
+Save:node\Pythons\Macro_Note_Python.h \[1.2\] PyMySQL
+Save:node\Pythons\Macro_Note_Python.h \[1.3\] Pythons 网文
+Save:node\Pythons\Macro_Note_Python.h \[1.4\] Pythons 基础知识
+Save:node\Pythons\Macro_Note_Python.h \[1.5\] 
+Save:node\Pythons\Macro_Note_Python.h \[1.6\] 
+//
+Save:node\Pythons\Macro_Note_Python.h \[2.1\] 学习
+Save:node\Pythons\Macro_Note_Python.h \[2.2\] 备份代码
+Save:node\Pythons\Macro_Note_Python.h \[2.3\] 
+// 
+Save:node\Pythons\Macro_Note_Python.h \[3.1\] project
+Save:node\Pythons\Macro_Note_Python.h \[3.2\] 
+Save:node\Pythons\Macro_Note_Python.h \[3.3\] 
+// 
+Save:node\Pythons\Macro_Note_Python.h \[4.1\] txt
+Save:node\Pythons\Macro_Note_Python.h \[4.2\] 
+Save:node\Pythons\Macro_Note_Python.h \[4.3\] 
+
+
+
+[1.1] 安装环境
+// Install
+Save:node\Pythons\install\Macro_Pythons_Install.h
+
+
+[1.2] PyMySQL
+// PyMySQL
+Save:node\Pythons\mysql\Macro_Pythons_Mysql.h
+
+
+[1.3] Pythons 网文
+// Pythons 网文
+Save:node\Pythons\study\Macro_Pythons_read.h \[1.1\] tensorflow API
+Save:node\Pythons\study\Macro_Pythons_read.h \[1.2\] 谈谈我在自然语言处理进阶上的一些个人拙见
+Save:node\Pythons\study\Macro_Pythons_read.h \[1.3\] 大数据 
+Save:node\Pythons\study\Macro_Pythons_read.h \[1.4\] 文本挖掘主要有哪些功能
+Save:node\Pythons\study\Macro_Pythons_read.h \[1.5\] 
+
+
+[1.4] Pythons 基础知识
+// Pythons 基础知识
+Save:node\Pythons\study\Macro_Pythons_read.h \[4.1\] Python语言
+Save:node\Pythons\study\Macro_Pythons_read.h \[4.2\] Python的几种文件类型 
+Save:node\Pythons\study\Macro_Pythons_read.h \[4.3\] 
+Save:node\Pythons\study\Macro_Pythons_read.h \[4.4\] 
+
+
+
+
+[1.5] 
+
+
+
+
+[1.6] 
+
+
+
+
+[1.7] 
+
+
+
+
+[1.8] 
+
+
+
+
+[1.9] 
+
+
+
+
+[1.10] 
+
+
+Save:node\Pythons\Macro_Note_Python.h \[1.7\] 
+Save:node\Pythons\Macro_Note_Python.h \[1.8\] 
+Save:node\Pythons\Macro_Note_Python.h \[1.9\] 
+Save:node\Pythons\Macro_Note_Python.h \[1.10\] 
+
+
+
+[2.1] 学习
 // 视频学习:
 Save:node\Pythons\study\Macro_Pythons_tf_TUT.h Num
 // 基础知识
@@ -14,28 +105,43 @@ Save:node\Pythons\study\Macro_Pythons_tf2.h tf2.0
 Save:node\Pythons\study\Macro_Pythons_tf3.h demo
 // Matrix
 Save:node\Pythons\study\Macro_Math_Matrix.h
-// 网文
-Save:node\Pythons\study\Macro_Pythons_read.h
+
+//爬虫
+Save:node\Pythons\study\Macro_Pythons_requests.h
+
+
+[2.2] 备份代码
 // 备份代码
 Save:node\Pythons\study\Macro_Pythons_bak.h
 
 
+[2.3] 
 
 
-//2.安装环境:
-// Install
-Save:node\Pythons\install\Macro_Pythons_Install.h
-// Install--电脑配置
-Save:node\Pythons\install\Macro_Pythons_Install.h \[1.1\]
+[2.4] 
+
+
+[2.5] 
+
+
+[2.6] 
+
+
+[2.7] 
+
+
+[2.8] 
+
+
+[2.9] 
+
+
+[2.10] 
 
 
 
-//3.PyMySQL
-Save:node\Pythons\mysql\Macro_Pythons_Mysql.h
 
-
-
-//4.project
+[3.1] project
 // jieba_fast
 Save:node\Pythons\project\Macro_Pythons_jieba_fast.h
 
@@ -62,13 +168,57 @@ Save:node\Pythons\project\Macro_nlp_block.h
 
 
 // tf2--(demo)
-//  tf2_Examples, 画图
+//	tf2_Examples, 画图
 Save:node\Pythons\project\Macro_api_demo.h
 
 
+[3.2] 
+
+
+[3.3] 
+
+
+[3.4] 
+
+
+[3.5] 
+
+
+[3.6] 
 
 
 
+
+
+
+[4.1] txt
+//txt
+Save:node\Pythons\project\Macro_txt_block.h
+
+
+
+
+[4.2] 
+
+
+
+
+[4.3] 
+
+
+
+
+[4.4] 
+
+
+
+
+[4.5] 
+
+
+
+
+[4.6] 
 
 
 

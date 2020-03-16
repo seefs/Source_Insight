@@ -2,6 +2,11 @@
 
 基础路径设置:
 basePath = Save:node\Pythons
+#
+dataPath = D:\project\NLP\nlp_block\data\sqlite3
+
+data:\\
+
 
 /***********************************************************************/
 
@@ -30,6 +35,8 @@ sql_sp\bak_data_update.py \[2.4\]
 
 
 [1.1] 查询存在, 删除
+#仅查询
+select * from  `dict_utf8_update` where `DTXT`="苹果";
 
 #查询存在
 select * from  `dict_utf8_update` where `DTXT`="一";

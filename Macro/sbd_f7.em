@@ -218,19 +218,19 @@ macro SelEditFile(key)
 	{
 		if (key == 49) 		 //1
 		{
-			OpenExistFile(getNodePath(0) # "\\rule\\Macro_Rule_Key_file.h")
+			OpenExistFile(getRulePath(0) # "\\Macro_Rule_Key_file.h")
 		}
 		else if (key == 50) //2
 		{
-			OpenExistFile(getNodePath(0) # "\\rule\\Macro_Rule_Han_file.h")
+			OpenExistFile(getRulePath(0) # "\\Macro_Rule_Han_file.h")
 		}
 		else if (key == 51) //3
 		{
-			OpenExistFile(getNodePath(0) # "\\search\\Macro_Group_Menu.h")
+			OpenExistFile(getNodePath(0) # "\\search\\Macro_Group_Menu.h") //no use
 		}
 		else if (key == 52) //4
 		{
-			OpenExistFile(getNodePath(0) # "\\search\\Macro_Group_Make.h")
+			OpenExistFile(getNodePath(0) # "\\search\\Macro_Group_Make.h") //no use
 		}
 		else if (key == 53) //5
 		{

@@ -131,7 +131,11 @@ macro CtrlK()
 macro CtrlE()
 {
 	//_TempHeadCTRL()
-	Open
+	ret = OpenMiniTest(hbuf)
+	if(ret == 0)
+	{
+		Open
+	}
     /*
     hbuf = GetCurrentBuf()
     if(IsSRFile(hbuf))

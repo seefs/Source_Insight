@@ -6,14 +6,14 @@ macro SearchForward()
 	var sel
 	var isCircle
 
-	isCircle = false //ÊÇ·ñÑ­»·ËÑË÷
+	isCircle = True //ÊÇ·ñÑ­»·ËÑË÷
 	
 	hbuf = GetCurrentBuf()
 	hwnd = GetCurrentWnd()
 	if (hwnd == 0)
 		stop
 
-	if(isCircle)
+	if(!isCircle)
 	{
 		sel = MGetWndSel(hbuf)
 		SearchForwardSel(hbuf, sel)

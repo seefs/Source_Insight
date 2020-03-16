@@ -11,9 +11,16 @@ macro getSavePath(0)		{	return getRootPath(0)						    }
 macro getCmdPath(0)			{	return getSavePath(0) # "\\Cmd"			}
 macro getTXTPath(0)			{	return getSavePath(0) # "\\Cmd_TXT"		}
 macro getNodePath(0)		{	return getSavePath(0) # "\\node"		}
+macro getGroupPath(0)		{	return getSavePath(0) # "\\node\\C\\group"		}
+macro getProjectC(0)		{	return getSavePath(0) # "\\node\\C\\project"		}
+macro getProjectPythons(0)	{	return getSavePath(0) # "\\node\\Pythons\\project"		}
+macro getProjectAndroid(0)	{	return getSavePath(0) # "\\node\\android\\project"		}
+macro getRulePath(0)		{	return getSavePath(0) # "\\node\\C\\rule"		}
+macro getSearchC(0)			{	return getSavePath(0) # "\\node\\C\\search"		}
+macro getSearchAndroid(0)	{	return getSavePath(0) # "\\node\\android\\search"		}
 macro getSetPath(0)	    	{	return getSavePath(0) # "\\Set"		}
 macro getCopyPath(0)	    {	return getSavePath(0) # "\\Help\\DefaultFile"		}
-
+macro getLangInfoPath(0)	    {	return getSavePath(0) # "\\Help\\LangInfo"		}
 
 //2) 桌面，创建桌面link
 macro getDesktopPath(0)		{	return "E:\\desktop"				}
