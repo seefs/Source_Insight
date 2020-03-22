@@ -5,61 +5,115 @@
 /***********************************************************************/
 
 //目录[Num][Ca]:
-// 1. 
-Save:node\Macro_Future.h \[1.1\] 10种流行语言
-Save:node\Macro_Future.h \[1.2\] 
-Save:node\Macro_Future.h \[1.3\] 
-Save:node\Macro_Future.h \[1.4\] 
+// 1. 10种流行语言
+Save:node\Macro_Future.h \[1.1\] Java
+Save:node\Macro_Future.h \[1.2\] C
+Save:node\Macro_Future.h \[1.3\] Python
+Save:node\Macro_Future.h \[1.4\] C++
 Save:node\Macro_Future.h \[1.5\] 
-// 2. 
-Save:node\Macro_Future.h \[2.1\] 
+Save:node\Macro_Future.h \[1.6\] 
+Save:node\Macro_Future.h \[1.7\] 
+Save:node\Macro_Future.h \[1.8\] 
+Save:node\Macro_Future.h \[1.9\] 
+Save:node\Macro_Future.h \[1.10\] 
+Save:node\Macro_Future.h \[1.11\] 
+Save:node\Macro_Future.h \[1.12\] 
+Save:node\Macro_Future.h \[1.13\] 
+Save:node\Macro_Future.h \[1.14\] 
 
 
-[1.1] 10种流行语言
 
-//1) Java
+[1.1] Java
 Save:node\android\Macro_Note_as.h
 //   用于开发Android应用程序、数据库、桌面应用程序等
 
-//2) C
+[1.2] C
 Save:node\C\Macro_Note_C.h
 
 
-//3) Python
+[1.3] Python
 Save:node\Pythons\Macro_Note_Python.h
 //用于开发大量游戏，例如文明IV，Toontown等，用于创意的软件，例如Blender，Autodesk，Inkscape等，
 //以及科学研究工作，尤其是深度学习应用，统计分析和机器人技术等方面
 
 
 
-//4) C++
+[1.4] C++
 Save:node\C++\Macro_Note_C++.h
 
 
-//5) CSNet
+[1.5] CSNet
 //Save:node\CSNet\Macro_Note_CSNet.h
 
 
-//6) VBNet
+[1.6] VBNet
 //Save:node\VBNet\Macro_Note_VBNet.h
 
 
-//7) JavaScript
+[1.7] JavaScript
 //Save:node\JavaScript\Macro_Note_JavaScript.h
 // 框架，包括Electron，node.js，AngularJS等
 //   用于前端和后端程序以及游戏
 
 
-//8) PHP
+[1.8] PHP
 //Save:node\PHP\Macro_Note_PHP.h
 
 
-//9) SQL
+[1.9] SQL
 //Save:node\SQL\Macro_Note_SQL.h
 
 
-//10) Swift
+[1.10] Swift
 //Save:node\Swift\Macro_Note_Swift.h
+
+
+[1.11] 
+
+
+
+
+[1.12] 
+
+
+
+
+[1.13] 
+
+
+
+
+[1.14] 
+
+
+
+
+[1.15] 
+
+
+
+
+[1.16] 
+
+
+
+
+[1.17] 
+
+
+
+
+[1.18] 
+
+
+
+
+[1.19] 
+
+
+
+
+[1.20] 
 
 
 
@@ -106,6 +160,21 @@ Save:node\C++\Macro_Note_C++.h
 50) Prolog
 
 
+
+
 [2.1] 
 Golang
+	
+Save:node\Macro_Future.h \[1.15\] 
+Save:node\Macro_Future.h \[1.16\] 
+Save:node\Macro_Future.h \[1.17\] 
+Save:node\Macro_Future.h \[1.18\] 
+Save:node\Macro_Future.h \[1.19\] 
+Save:node\Macro_Future.h \[1.20\] 
+
+Save:node\Macro_Future.h \[1.3\] 
+Save:node\Macro_Future.h \[1.4\] 
+Save:node\Macro_Future.h \[1.5\] 
+// 2. 
+Save:node\Macro_Future.h \[2.1\] 
 

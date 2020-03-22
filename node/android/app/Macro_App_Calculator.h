@@ -7,24 +7,16 @@
 /***********************************************************************/
 
 //目录[Num][Ca]:
-Save:SI\node\9820e\Macro_9820e_App_Calculator.h \[1.1\] Calculator app路径
-Save:SI\node\9820e\Macro_9820e_App_Calculator.h \[1.2\] Android.mk 引用库
-Save:SI\node\9820e\Macro_9820e_App_Calculator.h \[1.3\] gradle 版本配置
-Save:SI\node\9820e\Macro_9820e_App_Calculator.h \[1.4\] 添加多个res
-Save:SI\node\9820e\Macro_9820e_App_Calculator.h \[1.5\] res error, 太多了不改
-Save:SI\node\9820e\Macro_9820e_App_Calculator.h \[2.1\] 文件目录
-
-//在mk中添加新应用:
-Save:SI\node\9820e\Macro_9820e_mk.h \[1.1\]
-
-//apk 模块 -- cmd:
-Save:SI\node\9820e\Macro_9820e_Sys_Build.h \[3.1\] apk 模块 -- cmd
+Save:node\android\app\Macro_App_Calculator.h \[1.1\] Calculator app路径
+Save:node\android\app\Macro_App_Calculator.h \[1.2\] Android.mk 引用库
+Save:node\android\app\Macro_App_Calculator.h \[1.3\] gradle 版本配置
+Save:node\android\app\Macro_App_Calculator.h \[1.4\] 添加多个res
+Save:node\android\app\Macro_App_Calculator.h \[1.5\] res error, 太多了不改
+Save:node\android\app\Macro_App_Calculator.h \[2.1\] 文件目录
 
 
 
-/***********************************************************************/
-/******************************* code **********************************/
-/***********************************************************************/
+
 
 
 [1.1] Calculator app路径

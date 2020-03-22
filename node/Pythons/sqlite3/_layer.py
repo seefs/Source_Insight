@@ -24,7 +24,7 @@ import logging
 
 # In[1]:
 
-#åˆ†æ¿
+#·Ö°å
 def get_board(seq, mi, cnt, st_size=17, board_len=5):
     def _pad(ids):
         # min(len, 5)
@@ -44,7 +44,7 @@ def get_board(seq, mi, cnt, st_size=17, board_len=5):
         def cond(i, cnt,  output):
             return  tf.less(i, cnt)
         def body(i, cnt,  output):
-            # è¿æ¥cxç›¸åŒçš„åˆ†ç±»
+            # Á¬½ÓcxÏàÍ¬µÄ·ÖÀà
             # m:1~16
             COLUMN_M = 2
             pxvm = seq[i]
@@ -62,7 +62,7 @@ def get_board(seq, mi, cnt, st_size=17, board_len=5):
         output = _pad(output)
         return output
     def _each(seq, mi, cnt):
-        #å®é™…é•¿åº¦cntä¸ºmiæœ€åä¸€é¡¹
+        #Êµ¼Ê³¤¶ÈcntÎªmi×îºóÒ»Ïî
         cnt = tf.cast(cnt, dtype=tf.int32)
         cnt = tf.cast(mi[cnt-1]+1, dtype=tf.int32)
         output = tf.zeros([0,5,3], dtype=tf.float32)
@@ -82,7 +82,7 @@ def get_board(seq, mi, cnt, st_size=17, board_len=5):
     return output
 
     
-#åºåˆ—åŒ–
+#ĞòÁĞ»¯
 def get_pxvm(em_p, em_v, input_mi, input_n, input_cnt, max_seq=5):
     def left_full(mi, cnt, n):
         output = tf.constant([], dtype=tf.float32)
@@ -196,29 +196,29 @@ def get_pxvm(em_p, em_v, input_mi, input_n, input_cnt, max_seq=5):
         return output
     def _each(p, v, mi, n, cnt):
         # n:seq, 
-        # cnt:å®é™…é•¿åº¦
-        # mi:seqçš„ä¸‹æ ‡
+        # cnt:Êµ¼Ê³¤¶È
+        # mi:seqµÄÏÂ±ê
 #        logging.getLogger().info("\n--_each-p\n  %s" % (tf.shape(p)))
 #        logging.getLogger().info("--_each-v\n  %s" % (tf.shape(v)))
-        # å‘å‰å‘å2ç§ç¼–å·, 0,1,2..
-        #   mié•¿åº¦å¯å°äºn(nç”¨ä½œå¡«å……)
+        # ÏòÇ°Ïòºó2ÖÖ±àºÅ, 0,1,2..
+        #   mi³¤¶È¿ÉĞ¡ÓÚn(nÓÃ×÷Ìî³ä)
         mi_l = left_full(mi, cnt, n)
         mi_r = right_full(mi, cnt, n)
 #        logging.getLogger().info("--p\n  %s" % (p))
 #        logging.getLogger().info("--n\n  %s" % (n))
 #        logging.getLogger().info("--mi_l\n  %s" % (mi_l))
 #        logging.getLogger().info("--mi_r\n  %s" % (mi_r))
-        # è¿æ¥p, å°†ç¼–å·æ¢æˆæ¦‚ç‡
+        # Á¬½Óp, ½«±àºÅ»»³É¸ÅÂÊ
         pl = _concat(p, mi_l, n, mi, cnt)
         pr = _concat(p, mi_r, n, mi, cnt)
 #        logging.getLogger().info("--pl\n  %s" % (pl))
 #        logging.getLogger().info("--pr\n  %s" % (pr))
-        # è¿æ¥v, å°†ç¼–å·æ¢æˆç¼–å·
+        # Á¬½Óv, ½«±àºÅ»»³É±àºÅ
         vl = _concat(v, mi_l, n, mi, cnt)
         vr = _concat(v, mi_r, n, mi, cnt)
-        # é€‰æ‹©æœ€å¤§æ¦‚ç‡
+        # Ñ¡Ôñ×î´ó¸ÅÂÊ
         output = max_p(mi, vl, vr, pl, pr, cnt)
-        output = _pad(output, max_seq) #åªæœ‰1ç»´, ä¸èƒ½ç”¨pad_sequences
+        output = _pad(output, max_seq) #Ö»ÓĞ1Î¬, ²»ÄÜÓÃpad_sequences
         return output
     output = tf.map_fn(lambda x: _each(x[0], x[1], x[2], x[3], x[4]), (em_p, em_v, input_mi, input_n, input_cnt), dtype=tf.float32)
     return output
@@ -314,11 +314,11 @@ class EmbeddingsLayer(Layer):
         out_x = tf.expand_dims(out_x, -1)
         out_m = tf.expand_dims(out_m, -1)
         out_xvm = tf.concat([out_x, out_v, out_m], -1)
-        # mèŒƒå›´æ˜¯0~16, st_size>16
+        # m·¶Î§ÊÇ0~16, st_size>16
         # shape (5,17,5,2)
         out_board = get_board(out_xvm, input_mi, input_cnt, st_size=17, board_len=self.board_size)
         
-        # ä¿ç•™vx, ä¸è¦m
+        # ±£Áôvx, ²»Òªm
         out_board = tf.slice(out_board, [0,0,0,0], [-1,-1,-1,2])
             
         out_board = tf.reshape(out_board, [-1,17*5*2])
@@ -342,8 +342,8 @@ def board_compare(board1, board2, board_size=5, style_size=17):
         row = tf.concat([arr_p, arr_r, arr_l, arr_n], 0)
         return row
     def _sort(row):
-#        ### æŸ¥çœ‹æ’åº+æ›¿æ¢è¿‡ç¨‹
-#        #   æ›¿æ¢å‰
+#        ### ²é¿´ÅÅĞò+Ìæ»»¹ı³Ì
+#        #   Ìæ»»Ç°
 #        if EmbeddingsLayer.debug:
 #            row_pre = row
 #            logging.getLogger().info("--_sort start\n  %s" % (row))
@@ -354,14 +354,14 @@ def board_compare(board1, board2, board_size=5, style_size=17):
                 arr_r = tf.slice(row, [j+1,0], [1,1])
                 arr_r = K.squeeze(K.squeeze(arr_r, 0), 0)
                 row = tf.cond(tf.less(arr_l, arr_r), lambda:_replace(row,j,j+1), lambda:row)
-#        #   æ›¿æ¢å
+#        #   Ìæ»»ºó
 #        if EmbeddingsLayer.debug:
 #            logging.getLogger().info("--_sort start\n  %s" % (row))
 #            logging.getLogger().info("--_sort result %s" % (np.all(tf.equal(row_pre, row))))
         return row
     def _compare_cnt(row1, row2):
-        ### è¿™æ˜¯2ä¸ªç‰¹æ®Šçš„å…¬å¼:
-        #    ç¡¬å¥—çš„å…¬å¼, ä¸ºäº†è®¡ç®—æ–¹ä¾¿
+        ### ÕâÊÇ2¸öÌØÊâµÄ¹«Ê½:
+        #    Ó²Ì×µÄ¹«Ê½, ÎªÁË¼ÆËã·½±ã
         #    sum=((max-0.5)*cnt1+(min-0.5)*cnt2)/(cnt1+cnt2)
         #    cnt=(max+min)/(min+2)
         _cnt1 = tf.constant(0., dtype=tf.float32)
@@ -381,12 +381,12 @@ def board_compare(board1, board2, board_size=5, style_size=17):
 #        logging.getLogger().info("--_compare_cnt  %s %s-->%s" % (np.array(_cnt1), np.array(_cnt2), np.array(output)))
         return output
     def _compare(row1, row2):
-        ### æ¯”è¾ƒè¡Œä¸è¡Œ
+        ### ±È½ÏĞĞÓëĞĞ
         #   shape (5),(5)
-        #   æ¯”è¾ƒæ–¹å¼: ç±»å‹+ä¸ªæ•°
+        #   ±È½Ï·½Ê½: ÀàĞÍ+¸öÊı
         _sum = tf.constant(0., dtype=tf.float32)
         _cnt = tf.constant(0., dtype=tf.float32)
-        #   ç±»å‹--ä¸¤ä¸¤ç›¸ä¹˜/æ€»æ¬¡æ•°
+        #   ÀàĞÍ--Á½Á½Ïà³Ë/×Ü´ÎÊı
         r=0
         while (r < board_size):
             c=0
@@ -396,7 +396,7 @@ def board_compare(board1, board2, board_size=5, style_size=17):
                 vc = tf.slice(row2, [c], [1])
                 vc = K.squeeze(vc, -1)
                 calc = K.abs(vr+vc)/(K.abs(vr-vc)+K.epsilon())
-                calc = K.clip(calc, 1, 9) #è£å‰ª
+                calc = K.clip(calc, 1, 9) #²Ã¼ô
                 calc = calc-0.5 + K.abs(vr+vc)*0.001
                 _sum = tf.cond(tf.logical_or(tf.not_equal(vc, 0), tf.not_equal(vr, 0)), lambda:_sum+calc, lambda:_sum)
                 _cnt = tf.cond(tf.logical_or(tf.not_equal(vc, 0), tf.not_equal(vr, 0)), lambda:_cnt+1, lambda:_cnt)
@@ -405,7 +405,7 @@ def board_compare(board1, board2, board_size=5, style_size=17):
         cnt3 = _compare_cnt(row1, row2)
         cnt3 = tf.cond(tf.equal(cnt3, 0), lambda:cnt3+1, lambda:cnt3)
         output = tf.cond(tf.equal(_cnt, 0), lambda:_sum, lambda:tf.squeeze(_sum*cnt3/_cnt))
-        ### æŸ¥çœ‹è¡Œä¸è¡Œæ¯”è¾ƒç»“æœ
+        ### ²é¿´ĞĞÓëĞĞ±È½Ï½á¹û
 #        if EmbeddingsLayer.debug:
 #            logging.getLogger().info("\n--row1  %s" % (row1))
 #            logging.getLogger().info("--row2  %s" % (row2))
@@ -413,15 +413,15 @@ def board_compare(board1, board2, board_size=5, style_size=17):
 #            logging.getLogger().info("--cnt  %s" % (_cnt))
 #            logging.getLogger().info("--compare  %s" % (output))
         ###
-        ### ç›´æ¥è¾“å‡ºæ¦‚ç‡:
-        ###   æ‰‹åŠ¨æµ‹è¯•0.7æ¯”è¾ƒå¥½
+        ### Ö±½ÓÊä³ö¸ÅÂÊ:
+        ###   ÊÖ¶¯²âÊÔ0.7±È½ÏºÃ
         output = output*0.7
         return output
     def _each(board1, board2):
-        # æŒ‰xæ’åº, æ²¡èµ·ä½œç”¨
+        # °´xÅÅĞò, Ã»Æğ×÷ÓÃ
         board1 = tf.map_fn(lambda x: _sort(x), board1, dtype=tf.float32)
         board2 = tf.map_fn(lambda x: _sort(x), board2, dtype=tf.float32)
-#        # æŸ¥çœ‹è¾“å…¥x+vå€¼
+#        # ²é¿´ÊäÈëx+vÖµ
 #        if EmbeddingsLayer.debug:
 #            logging.getLogger().info("--board1\n  %s" % (board1))
 #            logging.getLogger().info("--board2\n  %s" % (board2))
@@ -446,17 +446,17 @@ def brd_compare(inputs):
 
 # In[4]:
 
-# æ•ˆæœ1
+# Ğ§¹û1
 #init_board_scale = np.array([0.99,  1,1,1,1,1,  1,1,1,0.95,0.90,  0.90,0.90,0.95,0.90,0.90, 0.90])
-# æ•ˆæœ2(ç»†æ•´è¿‡)
+# Ğ§¹û2(Ï¸Õû¹ı)
 #init_board_scale = np.array([0.00,  1.00, 0.95, 1.00, 1.00, 1.00,   1.00, 1.00, 1.00, 1.17, 0.80,   0.80, 0.80, 0.90, 0, 0.80,  0.80])
-# æ•ˆæœ3(ç»†æ•´è¿‡)
+# Ğ§¹û3(Ï¸Õû¹ı)
 init_board_scale = np.array([0.00,  1.00, 1.15, 1.00, 1.00, 1.00,   1.00, 1.00, 1.00, 1.695, 0.80,   0.80, 0.80, 0.90, 0, 0.80,  0.80])
 
 def brd_mean(inputs):
     b_S17 = inputs
     def _each(b_17):
-        # (åˆ é™¤äº†2ä¸ª0, æœ€ç»ˆç»“æœå¢åŠ äº†1ä¸ªç‚¹)
+        # (É¾³ıÁË2¸ö0, ×îÖÕ½á¹ûÔö¼ÓÁË1¸öµã)
         output = b_17*init_board_scale
         cnt = K.sum(tf.cast(tf.greater(output, 0), dtype=tf.float32), axis=None, keepdims=False)
         cnt = tf.cond(tf.equal(cnt, 0), lambda:cnt+1, lambda:cnt)
@@ -472,8 +472,8 @@ def brd_mean(inputs):
 #init_max_value = [1.183, 0.70,1.25,1.00,1.02,0.00, 0.60,0.95,0,0,0, 0,0,0,0,0, 0]
 init_max_value = [1.064, 0.70,1.25,1.00,1.02,0.00, 0.60,0.95,0,0,0, 0,0,0,0,0, 0]
 init_max_hv   = 2.76
-### ç›´æ¥æ··åˆ, æ–°æŒ‡æ ‡(max)ä¸ºFalseæ‰ç”¨æ—§æŒ‡æ ‡(mean)
-### æ•ˆæœæ¯”ç¬¬1ç§å¥½, æ¯”ç¬¬3ç§å·®
+### Ö±½Ó»ìºÏ, ĞÂÖ¸±ê(max)ÎªFalse²ÅÓÃ¾ÉÖ¸±ê(mean)
+### Ğ§¹û±ÈµÚ1ÖÖºÃ, ±ÈµÚ3ÖÖ²î
 def brd_max(inputs):
     b_S17 = inputs
     def _each(b_17):
@@ -502,9 +502,9 @@ def brd_max(inputs):
 
 
 # In[6]:
-# æ•ˆæœ1
+# Ğ§¹û1
 #init_cls_value = np.array([0.82,  0.50, 1.15, 1.00, 0.87, 0,  0.65, 0.94, 0, 0, 0,  0, 0, 0, 0, 0,  0])
-# æ•ˆæœ2(ç»†æ•´è¿‡)
+# Ğ§¹û2(Ï¸Õû¹ı)
 init_cls_value = np.array([1.286,  0.883, 1.117, 1.00, 1.24, 0,  0.80, 1.10, 0, 0, 0,  0, 0, 0, 0, 0,  0])
 
 partV=[
@@ -516,9 +516,9 @@ partV=[
         [0.55,0.60,0.00,1.687,0.20],
         [0.60,0.65,0.00,1.375,0.20]
      ]
-### æ¸è¿›æ··åˆ, å°ä¸­å–å¤§, å¤§ä¸­å»å°
-###   æ—§æŒ‡æ ‡(mean)å°äº0.5æ—¶--æ–°æŒ‡æ ‡(max)æ·»åŠ æœ€å¤§å€¼:
-###   æ—§æŒ‡æ ‡(mean)å¤§äº0.5æ—¶--æ–°æŒ‡æ ‡(max)å»æ‰æœ€å°å€¼:
+### ½¥½ø»ìºÏ, Ğ¡ÖĞÈ¡´ó, ´óÖĞÈ¥Ğ¡
+###   ¾ÉÖ¸±ê(mean)Ğ¡ÓÚ0.5Ê±--ĞÂÖ¸±ê(max)Ìí¼Ó×î´óÖµ:
+###   ¾ÉÖ¸±ê(mean)´óÓÚ0.5Ê±--ĞÂÖ¸±ê(max)È¥µô×îĞ¡Öµ:
 def brd_max_mean(inputs):
     b_S17 = inputs
     def each_max(b_17):
@@ -544,11 +544,11 @@ def brd_max_mean(inputs):
         output = tf.map_fn(lambda x: each_merge(x[0], x[1], partV), (mean_pred, max_pred), dtype=tf.float32)
         return tf.reshape(output,[-1,1])
     ###
-    # è·å–meanæŒ‡æ ‡(æ‰€æœ‰ç±»å‹)
+    # »ñÈ¡meanÖ¸±ê(ËùÓĞÀàĞÍ)
     mean_pred = brd_mean(b_S17)
-    # è·å–maxæŒ‡æ ‡(å¸¸ç”¨ç±»å‹)
+    # »ñÈ¡maxÖ¸±ê(³£ÓÃÀàĞÍ)
     max_pred = get_max_pred(b_S17)
-    # åˆå¹¶æŒ‡æ ‡:
+    # ºÏ²¢Ö¸±ê:
     output = merge_pred(mean_pred, max_pred, partV)
     return  tf.reshape(output,[-1,1])
 
@@ -556,7 +556,7 @@ def brd_max_mean(inputs):
 # In[7]:
 
 def brd_concat(inputs):
-    ### ç›´æ¥è¾“å‡ºæ¦‚ç‡:
+    ### Ö±½ÓÊä³ö¸ÅÂÊ:
     p = K.clip(inputs, 0, 1)
     n = 1-p
     output = tf.concat([n, p], -1)

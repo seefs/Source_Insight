@@ -690,15 +690,16 @@ gui_show_icontext_button  softkey ×ÖÌåÑÕÉ«
 
 [4.7] ×ÊÔ´ -- Í¼Æ¬ ÁåÉù ×Ö·û´® ×Ö¿â
 //	MTK--note--Ìø×ª:
-Save:SI\node\note\Macro_Note_MTK.h \[4.8\] Í¼Æ¬
-Save:SI\node\note\Macro_Note_MTK.h \[4.9\] ÁåÉù
-Save:SI\node\note\Macro_Note_MTK.h \[4.10\] ×Ö·û´®
-Save:SI\node\note\Macro_Note_MTK.h \[4.11\] ×Ö¿â
+Save:node\C\project\Macro_Note_MTK.h \[4.8\] Í¼Æ¬
+Save:node\C\project\Macro_Note_MTK.h \[4.9\] ÁåÉù
+Save:node\C\project\Macro_Note_MTK.h \[4.10\] ×Ö·û´®
+Save:node\C\project\Macro_Note_MTK.h \[4.11\] ×Ö¿â
 //	µ±Ç°ÎÄ¼şÌø×ª:
 Save:node\C\study\Macro_modis_MTK.h	 \[4.8\] Í¼Æ¬
 Save:node\C\study\Macro_modis_MTK.h	 \[4.9\] ÁåÉù
 Save:node\C\study\Macro_modis_MTK.h	 \[4.10\] ×Ö·û´®
 Save:node\C\study\Macro_modis_MTK.h	 \[4.11\] ×Ö¿â
+
 
 [4.8] Í¼Æ¬
 //	¿ª¹Ø»ú¶¯»­ÒÆ³ı±ÚÖ½:

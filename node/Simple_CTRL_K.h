@@ -23,11 +23,13 @@ Save:node\Simple_CTRL_K.h unfinished:
 /***********************************************************************/
 
 宏功能备注: 
-Save:SI\bak\bak_20181123_mar_msg.h
+//Save:bak\bak_20181123_mar_msg.h
 
 	
 
+ctrl+d, 空文件, 导入模板
 
+ctrl+w, 下一个result, 自动再下一个
 
 
 
@@ -38,7 +40,7 @@ Save:SI\bak\bak_20181123_mar_msg.h
 /***********************************************************************/
 
 [1.1] 宏说明:
-Save:SI\MacroSBD\sbd_f1.em
+Save:MacroSBD\sbd_f1.em
 
 [2.1] key:[F1] (按F1后再按0~9、A~Z、F2~F12)
 快捷键：
@@ -102,7 +104,7 @@ F1 -> 其他符号, .; 显示ascii code
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 
-Save:SI\MacroSBD\sbd_f2.em
+Save:MacroSBD\sbd_f2.em
 [2.2] key:[F2] 打开目录
 功能：
 1. 未选中, 在搜索结果界面, 打开F1->9设置的mk文件；默认打开当前目录
@@ -114,7 +116,7 @@ Save:SI\MacroSBD\sbd_f2.em
 4.  以上条件打开失败, 打开当前目录、工程目录
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
-Save:SI\MacroSBD\sbd_f3.em
+Save:MacroSBD\sbd_f3.em
 [2.3] key:[F3] 修改默认向前搜索
 功能：
 1. 修改默认向前搜索功能
@@ -124,7 +126,7 @@ Save:SI\MacroSBD\sbd_f3.em
 5. 另外用F1->F3代替原功能; 带通配符搜索时如:\(.*\)用这种
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
-Save:SI\MacroSBD\sbd_f4.em
+Save:MacroSBD\sbd_f4.em
 [2.4] key:[F4] 修改默认向后搜索
 功能：
 1. 修改默认向后搜索功能
@@ -134,7 +136,7 @@ Save:SI\MacroSBD\sbd_f4.em
 5. 另外用F1->F4代替原功能; 带通配符搜索时如:\(.*\)用这种
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 
-Save:SI\MacroSBD\sbd_f5.em
+Save:MacroSBD\sbd_f5.em
 [2.5] key:[F5] 打开/跳转
 功能：
 1.  有选中
@@ -159,7 +161,7 @@ unfinished:1: [Next] (BUG) F5->HAN MTK 中error
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 
-Save:SI\MacroSBD\sbd_f6.em
+Save:MacroSBD\sbd_f6.em
 [2.6] key:[F6] (区分中文跳转 和 英文跳转)
 1.功能：添加mk文件内, 中文跳转, 步骤:
 1.1. 复制中文A
@@ -178,7 +180,7 @@ Save:SI\MacroSBD\sbd_f6.em
 3.3. 支持添加, 不支持替换, 替换请手动编辑
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 
-Save:SI\MacroSBD\sbd_f7.em
+Save:MacroSBD\sbd_f7.em
 [2.7] key:[F7]
 详细功能：
 ---switch-----------------
@@ -213,14 +215,14 @@ unfinished:1: [Next] (未实现)F7 -> M -> build-查log   type app* |find  "SPEAK" >
 unfinished:1: [Next] (未实现) F7 -> H: last模式 最后一次命令：如svn添加文件
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
-Save:SI\MacroSBD\sbd_f8.em
+Save:MacroSBD\sbd_f8.em
 [2.8] key:[F8] 高亮   同原功能
 功能：
 1. 高亮, 同原功能, 未改变
 2. 多选高亮F8	     【未实现】
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
-Save:SI\MacroSBD\sbd_f9.em
+Save:MacroSBD\sbd_f9.em
 [2.9] key:[F9] 关闭文件, 显示所有宏, 便于查找
 功能：打开/关闭所有宏文件
 1. 打开/关闭文件, 显示所有宏, 便于查找: 
@@ -237,7 +239,7 @@ unfinished:1: [Next]  F9-MTK: 所有文件名
 	
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 
-Save:SI\MacroSBD\sbd_f10.em
+Save:MacroSBD\sbd_f10.em
 [2.10] key:[F10] 分组索引
 功能：SR组菜单
 //1 在搜索结果窗口(功能没用)
@@ -305,7 +307,7 @@ Save:SI\MacroSBD\sbd_f10.em
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 
-Save:SI\MacroSBD\sbd_f11.em
+Save:MacroSBD\sbd_f11.em
 [2.11] key:[F11] 宏注释 项目笔记
 1. 打开或关闭笔记文件:
     \SI\node\note\Macro_Note_6531E.h
@@ -333,7 +335,7 @@ Save:SI\MacroSBD\sbd_f11.em
 	//             默认优先查找行首(不加^);
 	//             可以用$结尾:abc$, 只有这个符号用通符,后续再补充.
 	//         打开上级目录,     以[Path]结尾:
-	//         Save:SI\...\... [Path]
+	//         Save:...\... [Path]
 		如:
 	chip_drv\chip_module\analog\sr1161\analog_phy_sr1161.c SBD_LCM_BL_25MA_SUPPORT
 
@@ -346,16 +348,12 @@ Save:SI\MacroSBD\sbd_f11.em
 	3). F10或者ctrl+D, 显示笔记中的索引; 输编号, 跳转到对应行
 		//具体查看ctrl + D的功能说明
 	
-	4). mtk/spr笔记的具体说明:
-	Save:SI\bak\note_help.h MtkNote
-	Save:SI\bak\note_help.h SprNote
-	
-	5). 文件名补全...:
-	Save:SI\Cmd\file___no_use\dir_getFile...
+	4). 文件名补全...:
+	Save:Cmd\file___no_use\dir_getFile...
 	//按F5, 显示添加行:
-	Save:SI\Cmd\file___no_use\dir_getFile_spr.bat
+	Save:Cmd\file___no_use\dir_getFile_spr.bat
 	//按F6, 清除查找记录, 否则查找相同内容无法刷新:
-	Save:SI\Cmd_TXT\si_filelist.h
+	Save:Cmd_TXT\si_filelist.h
 
 
 2. mk中有选中, 即显示宏说明
@@ -390,7 +388,7 @@ Save:SI\MacroSBD\sbd_f11.em
 	按确认, 复制以上内容到剪切板, 再粘贴到软件说明书中。
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
-Save:SI\MacroSBD\sbd_f12.em
+Save:MacroSBD\sbd_f12.em
 [2.12] key:[F12] 显示配置 是否定义
 功能：
 1. mk  file -> 显示配置; 每个工程宏名称不一样, 根据sbd_base设置的路径进行区分。
@@ -416,7 +414,7 @@ unfinished:4: [Next]  打开其他工程mk, F12没有匹配对; 以前可以现在不行了...
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 
-Save:SI\MacroSBD\sbd_ctrl.em
+Save:MacroSBD\sbd_ctrl.em
 [2.13] key:CTRL组合 [Cf]
 部分功能替换原有功能
 

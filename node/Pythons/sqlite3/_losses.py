@@ -51,14 +51,14 @@ def accuracy(y_true, y_pred):
  
 from keras import backend as K
 def Precision(y_true, y_pred):
-    """ç²¾ç¡®ç‡"""
+    """¾«È·ÂÊ"""
     tp= K.sum(K.round(K.clip(y_true * y_pred, 0, 1)))  # true positives
     pp= K.sum(K.round(K.clip(y_pred, 0, 1))) # predicted positives
     precision = tp/ (pp+ K.epsilon())
     return precision
     
 def Recall(y_true, y_pred):
-    """å¬å›ç‡"""
+    """ÕÙ»ØÂÊ"""
     tp = K.sum(K.round(K.clip(y_true * y_pred, 0, 1))) # true positives
     pp = K.sum(K.round(K.clip(y_true, 0, 1))) # possible positives
     recall = tp / (pp + K.epsilon())

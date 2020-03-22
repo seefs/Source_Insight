@@ -4,13 +4,19 @@ charset_old = "UTF-8"
 charset_new = "GB2312"
 
 
-' 转换整个目录:
+' 转换整个目录, 不能有不存在的文件夹:
 ConvPath ".\\..\\..\\Macro",charset_new
 ConvPath ".\\..\\..\\Help",charset_new
+ConvPath ".\\..\\..\\Help\\Test",charset_new
+ConvPath ".\\..\\..\\Help\\Tmp",charset_new
 ConvPath ".\\..\\..\\node",charset_new
-ConvPath ".\\..\\..\\node\\ToolsMsg",charset_new
+ConvPath ".\\..\\..\\node\\android",charset_new
+ConvPath ".\\..\\..\\node\\android\\app",charset_new
+ConvPath ".\\..\\..\\node\\android\\base",charset_new
+ConvPath ".\\..\\..\\node\\android\\sys",charset_new
 ConvPath ".\\..\\..\\node\\Pythons\\install",charset_new
 ConvPath ".\\..\\..\\node\\Pythons\\study",charset_new
+ConvPath ".\\..\\..\\node\\Pythons\\sqlite3",charset_new
 ConvPath ".\\..\\..\\node\\Pythons\\tfTUT",charset_new
 ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf5_example2",charset_new
 ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf11_build_network",charset_new
@@ -21,7 +27,7 @@ ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf16_classification",charset_new
 ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf17_dropout",charset_new
 ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf18_CNN2",charset_new
 ConvPath ".\\..\\..\\node\\Pythons\\py_test",charset_new
-ConvPath ".\\..\\..\\Help\\Test",charset_new
+ConvPath ".\\..\\..\\node\\ToolsMsg",charset_new
 ConvPath ".\\..\\..\\Set",charset_new
 
 ' 转换整个目录:

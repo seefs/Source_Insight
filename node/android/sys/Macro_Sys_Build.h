@@ -7,20 +7,21 @@
 
 //目录[Num][Ca]:
 // 1. 编译命令
-Save:node\android\sys\Macro_Sys_Build.h \[1.1\] 加载环境变量
-Save:node\android\sys\Macro_Sys_Build.h \[1.2\] 选择编译平台
-Save:node\android\sys\Macro_Sys_Build.h \[1.3\] 执行编译
-Save:node\android\sys\Macro_Sys_Build.h \[1.4\] java:
-Save:node\android\sys\Macro_Sys_Build.h \[1.5\] 编译idegen
-Save:node\android\sys\Macro_Sys_Build.h \[1.6\]  img
-Save:node\android\sys\Macro_Sys_Build.h \[1.7\] 模拟器
-Save:node\android\sys\Macro_Sys_Build.h \[1.8\] 编译sdk
-Save:node\android\sys\Macro_Sys_Build.h \[1.9\] 编译image
-Save:node\android\sys\Macro_Sys_Build.h \[1.10\] 签名apk
+Save:node\android\sys\Macro_Sys_Build.h \[1.1\] envsetup.sh---加载环境变量
+Save:node\android\sys\Macro_Sys_Build.h \[1.2\] lunch---------选择编译平台
+Save:node\android\sys\Macro_Sys_Build.h \[1.3\] make----------执行编译
+Save:node\android\sys\Macro_Sys_Build.h \[1.4\] java----------签名
+Save:node\android\sys\Macro_Sys_Build.h \[1.5\] make idegen---编译idegen
+Save:node\android\sys\Macro_Sys_Build.h \[1.6\] make snod-----编译img
+Save:node\android\sys\Macro_Sys_Build.h \[1.7\] emulator------模拟器
+Save:node\android\sys\Macro_Sys_Build.h \[1.8\] make sdk------编译sdk
+Save:node\android\sys\Macro_Sys_Build.h \[1.9\] 
+Save:node\android\sys\Macro_Sys_Build.h \[1.10\] 
 // 2. 下载
 Save:node\android\sys\Macro_Sys_Build.h \[2.1\] 下载
 Save:node\android\sys\Macro_Sys_Build.h \[2.2\] 编译版本说明
-Save:node\android\sys\Macro_Sys_Build.h \[2.3\] 
+Save:node\android\sys\Macro_Sys_Build.h \[2.3\] 反编译
+Save:node\android\sys\Macro_Sys_Build.h \[2.4\] 
 // 3. adb 模块
 Save:node\android\sys\Macro_Sys_Build.h \[3.1\] adb shell
 Save:node\android\sys\Macro_Sys_Build.h \[3.2\] adb -- Launcher3
@@ -38,35 +39,22 @@ Save:node\android\sys\Macro_Sys_Build.h \[3.13\]
 // 4. adb
 Save:node\android\sys\Macro_Sys_Build.h \[4.1\] adb -- version
 Save:node\android\sys\Macro_Sys_Build.h \[4.2\] adb -- 展讯pac打包
-Save:node\android\sys\Macro_Sys_Build.h \[4.3\]如何编译模块 
-Save:node\android\sys\Macro_Sys_Build.h \[4.4\]如何编译 	  3rdparty	 下的    ko 
-Save:node\android\sys\Macro_Sys_Build.h \[4.5\]用来查看当前运行时，activity的状态信息。
+Save:node\android\sys\Macro_Sys_Build.h \[4.3\] 如何编译模块 
+Save:node\android\sys\Macro_Sys_Build.h \[4.4\] 如何编译 	  3rdparty	 下的    ko 
+Save:node\android\sys\Macro_Sys_Build.h \[4.5\] 用来查看当前运行时，activity的状态信息。
 Save:node\android\sys\Macro_Sys_Build.h \[4.6\] getevent获取input上报事件
 Save:node\android\sys\Macro_Sys_Build.h \[4.7\] android adb shell am pm 列出说要安装的packages
 Save:node\android\sys\Macro_Sys_Build.h \[4.8\] Android 通过adb 当前输入法信息
-// 5. 编译命令
-Save:node\android\sys\Macro_Sys_Build.h \[5.1\] Android的启动
-// 6. 编译命令
-Save:node\android\sys\Macro_Sys_Build.h \[6.1\] React Native
-Save:node\android\sys\Macro_Sys_Build.h \[6.2\] 参考sh: 
-Save:node\android\sys\Macro_Sys_Build.h \[6.3\] tools
-
-//	9820 -- git:
-Save:SI\node\ToolsMsg\Macro_git.h \[9.1\] 9820 新代码
-Save:SI\node\ToolsMsg\Macro_git.h \[9.2\] reset--hard
-Save:SI\node\ToolsMsg\Macro_git.h \[9.3\] diff
-// 编码后文件目录
-Save:SI\node\9820e\Macro_9820e_Sys_File.h  \[1.1\] android目录
+Save:node\android\sys\Macro_Sys_Build.h \[4.9\] 
+Save:node\android\sys\Macro_Sys_Build.h \[4.10\] 
+Save:node\android\sys\Macro_Sys_Build.h \[4.11\] 
+Save:node\android\sys\Macro_Sys_Build.h \[4.12\] 
+Save:node\android\sys\Macro_Sys_Build.h \[4.13\] 
 
 
 
 
-
-/****************************** 编译命令 *******************************/
-/***********************************************************************/
-编译命令:
-
-[1.1] 加载环境变量
+[1.1] envsetup.sh---加载环境变量
 cd 9820e/idh.code/
 source build/envsetup.sh 
 
@@ -74,7 +62,7 @@ source build/envsetup.sh
 //export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
 
 
-[1.2] 选择编译平台
+[1.2] lunch---------选择编译平台
 lunch
 // ----> 9
 //	1. aosp_arm-eng
@@ -88,52 +76,11 @@ lunch
 //	9. sp9820e_2h10_oversea-userdebug
 
 
-[1.3] 执行编译
+[1.3] make----------执行编译
 make -j12 2>&1 | tee log.txt
 //make -j36 2>&1 | tee build.log
 
-
-[1.4] java:
-java -version
-
-
-[1.5] 编译idegen
-make snod
-make idegen    根目录
-mm development/tools/idegen/
-sh ./development/tools/idegen/idegen.sh
-out/host/linux-x86/framework        --idegen.jar
-
-
-[1.6] img
-//生成新的system.img
-make snod
-
-//编译services 
-make services
-
-
-[1.7] 模拟器
-//	运行模拟器
-export ANDROID_PRODUCT_OUT=out/target/product/angler/
-cd ./out/host/linux-x86/bin 
-./emulator
-
-//	启动Android模拟器
-./run_emulator.sh
-
-
-[1.8] 编译sdk
-export MTK_PROJECT_CONFIGS=/home/work/xj/alps/device/bror/br6737m_35g_s_m0/ProjectConfig.mk
-make update-api        要有git/repo
-make PRODUCT-sdk-sdk -j8
-lunch sdk-eng 
-make sdk 
-out/target/product/generic
-vendor/widevine
-
-
-[1.9] 编译image
+//编译 image
 gedit device/rockchip/rk29sdk/BoardConfig.mk
 //配置内核kernel.img的路径:TARGET_PREBUILT_KERNEL := ./Image  
 
@@ -149,11 +96,54 @@ out/target/product/rk3188
 rockdev/Image-rk3188/
 
 
-[1.10] 签名apk
+[1.4] java----------签名
+java -version
+
+//签名apk
 java -jar out/host/linux-x86/framework/signapk.jar	build/target/product/security/platform.x509.pem build/target/product/security/platform.pk8 ~/Settings.apk ~/output.apk
 
 
-/***********************************************************************/
+[1.5] make idegen
+make snod
+make idegen    根目录
+mm development/tools/idegen/
+sh ./development/tools/idegen/idegen.sh
+out/host/linux-x86/framework        --idegen.jar
+
+
+[1.6] img
+//生成新的system.img
+make snod
+
+//编译services 
+make services
+
+
+[1.7] emulator模拟器
+//	运行模拟器
+export ANDROID_PRODUCT_OUT=out/target/product/angler/
+cd ./out/host/linux-x86/bin 
+./emulator
+
+//	启动Android模拟器
+./run_emulator.sh
+
+
+[1.8] make sdk编译sdk
+export MTK_PROJECT_CONFIGS=/home/work/xj/alps/device/bror/br6737m_35g_s_m0/ProjectConfig.mk
+make update-api        要有git/repo
+make PRODUCT-sdk-sdk -j8
+lunch sdk-eng 
+make sdk 
+out/target/product/generic
+vendor/widevine
+
+
+[1.9] 
+
+
+[1.10] 
+
 
 [2.1] 下载
 
@@ -185,11 +175,42 @@ eng（权限最高）
 只有eng版本的才具有调试的全部功能 
 
 
-[2.3] 
+[2.3] 反编译
+反编译主要过程
+（1）将apk解压（可以变成zip压缩文件再解压）
+（2）找到classes.dex文件，用 dex2jar工具 ，将dex文件转换成jar文件，命令 d2j-dex2jar classes.dex
+（3）用 jd-gui 工具，将jar文件转换成java代码
+（4）用 apktool 这个工具用于最大幅度地还原APK文件中的9-patch图片、布局、字符串等等一系列的资源。命令 apktool d Demo.apk
+
+[2.4] 参考sh: 
+//1.svn export android 代码
+//2.自动编译debug user版本
+//3.自动check fota升级需要用到的剩余空间大小
+Save:node\9820e\sh\Macro_custom.sh
+Save:node\9820e\sh\Macro_svn_function.sh
+//4.多个项目排序编译
+Save:node\9820e\sh\Macro_make.sh
 
 
 
-/***********************************************************************/
+[2.5] 
+
+
+[2.6] 
+
+
+[2.7] 
+
+
+[2.8] 
+
+
+[2.9] 
+
+
+[2.10] 
+
+
 [3.1] adb shell
 
 cmd_w: D:&cd D:\android\as_SDK\platform-tools
@@ -289,7 +310,6 @@ cmd_w: ping dl.google.com
 [3.14] 
 
 
-/***********************************************************************/
 
 [4.1] adb -- version
 //如何通过adb 获取应用的版本号
@@ -332,7 +352,7 @@ out/host/linux-x86/bin/mkyaffs2image -f out/target/product/hsdroid/sps.images_en
 
 	
 
-[4.3]如何编译模块 
+[4.3] 如何编译模块 
 
      以 engtest 模块为例，编译过程： 
 
@@ -356,7 +376,7 @@ cd idh.code
 
       
 
-[4.4]如何编译       3rdparty   下的    ko 
+[4.4] 如何编译       3rdparty   下的    ko 
 
      以 tp 为例 
 
@@ -366,7 +386,7 @@ cd idh.code
 
      需要确保    3rdparty/tp/pixcir/build.sh 的可执行权限 
 
-[4.5]用来查看当前运行时，activity的状态信息。
+[4.5] 用来查看当前运行时，activity的状态信息。
 
 adb shell dumpsys activity 包含信息项
 通过adb shell dumpsys activity | findstr “ACTIVITY MANAGER” ，打印的信息如下：
@@ -546,49 +566,34 @@ com.google.android.apps.speechservices/com.google.android.voicesearch.ime.VoiceI
 nputMethodService
 
 
-/***********************************************************************/
-[5.1] Android的启动
-Android的启动
-内核启动、Android启动、launcher启动，我们的SystemServer就处于Android启动中，以下是大致流程图：
 
-init->ServiceManager->Zygote->SystemServer->......
+[4.9] 
 
 
-/***********************************************************************/
-[6.1] React Native
-//React Native使你只使用JavaScript也能编写原生移动应用。
-//RN 需要至少是 Android 6.0 的 SDK
 
 
-[6.2] 参考sh: 
-//1.svn export android 代码
-//2.自动编译debug user版本
-//3.自动check fota升级需要用到的剩余空间大小
-Save:SI\node\9820e\sh\Macro_custom.sh
-Save:SI\node\9820e\sh\Macro_svn_function.sh
-//4.多个项目排序编译
-Save:SI\node\9820e\sh\Macro_make.sh
+[4.10] 
 
 
-[6.3] tools
-android: update sdk  等
-android avd:
-tools\DDMS:查看程序使用时所运行的线程信息，网络使用率
-platform-tools\dmtracedump:主要是把profiling生成的trace文件处理成一个图片文件，显示方法之间的调用关系
- platform-tools\uiautomatorviewer:它可以展示出当面屏幕所呈现的视图(View)的布局(Layout)以及其尺寸大小
- traceview:方法所占用的时间百分比
-monitor: 大集合
-monkeyrunner :压力测试
-sqlite3
-mksdcard
- 
-cmd &背后运行
-platform-tools\adb
 
+
+[4.11] 
+
+
+
+
+[4.12] 
 	
-/***********************************************************************/
-/******************************** other ********************************/
-/***********************************************************************/
-[Cs][Cf][Cg]
+	
+[4.13] 
+	
+	
+[4.14] 
+	
+	
+[4.15] 
+	
+
+
 
 

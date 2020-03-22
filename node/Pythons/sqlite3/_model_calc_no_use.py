@@ -1,4 +1,4 @@
-ï»¿
+
 
 import os
 import re
@@ -19,14 +19,14 @@ import copy
 
 
 # Custom Class
-from _block  import b2mts                            # åˆ†å—
-from _block  import _m_to_mts                            # åˆ†å—
+from _block  import b2mts                            # ·Ö¿é
+from _block  import _m_to_mts                            # ·Ö¿é
 
 
 
 
 def modes_calc(_Aa, debug_mc_log=False):
-# æ¨¡å¼å¯¹é½:
+# Ä£Ê½¶ÔÆë:
     if debug_mc_log:
         print("calc input:\n    %s" % (_Aa.get_shape()))
     _b_mul = []
@@ -63,9 +63,9 @@ class BlockNet(Model):
         self.n2zero = tf.Variable(tf.constant(5.0),name='v3', dtype=np.float32)
         self.alpha  = tf.Variable(tf.constant(5.7),name='v4', dtype=np.float32)
 #        self.alpha = self.add_weight(shape=(1,), initializer='zeros', name='alpha', regularizer=None, constraint=None)
-# æœ€ä½³ï¼š
+# ×î¼Ñ£º
 # alpha=6.2~10, 
-# å˜åŒ–å¤ªå¿«äº†, å…¬å¼ä¸å¥½
+# ±ä»¯Ì«¿ìÁË, ¹«Ê½²»ºÃ
 
     def _input_slice(self, x, m, cnt):
         out_x, out_m = [], []
@@ -96,18 +96,18 @@ class BlockNet(Model):
         return output
         
     def block_to_score(self, b_m_m):
-#  ----------è´¥ç¬”--3ä¸ªå‚æ•°ç°åœ¨çœ‹ä¸æ‡‚------
-# æ¯ä¸ªè¯­å¥å—:
-#   å±€éƒ¨æ¯”è¾ƒ:
-#   ä¿ç•™è¾ƒé«˜çš„è¯æ€§
-#   æ›´è‡ªç”±çš„è°ƒæ•´ä½ç½®è¿›è¡Œæ¯”è¾ƒ
-#   ä¸»ç»“æ„é¡ºåºä¸åŠ¨, å½“ä½œæ˜¯ä¸€ç§æœ€ä¼˜ç»“æœ
+#  ----------°Ü±Ê--3¸ö²ÎÊıÏÖÔÚ¿´²»¶®------
+# Ã¿¸öÓï¾ä¿é:
+#   ¾Ö²¿±È½Ï:
+#   ±£Áô½Ï¸ßµÄ´ÊĞÔ
+#   ¸ü×ÔÓÉµÄµ÷ÕûÎ»ÖÃ½øĞĞ±È½Ï
+#   Ö÷½á¹¹Ë³Ğò²»¶¯, µ±×÷ÊÇÒ»ÖÖ×îÓÅ½á¹û
         _bid, _mid1, _mid2  = b_m_m
         if self.debug:
             print ("b2s:\n  _bid=%s\n  _mid1=%s\n  _mid2=%s" % (_bid, _mid1, _mid2))
 
-# _bidå¯¹åº”å›ºå®šå˜é‡, ç´¢å¼•ä¸º[0, 15]
-# _midå¯¹åº”å•è¯å˜é‡, ç´¢å¼•ä¸º[1, 16], é¢„ç•™[0]ä¸ºæ ‡ç‚¹, [17]ä¸ºæ ‡ç‚¹
+# _bid¶ÔÓ¦¹Ì¶¨±äÁ¿, Ë÷ÒıÎª[0, 15]
+# _mid¶ÔÓ¦µ¥´Ê±äÁ¿, Ë÷ÒıÎª[1, 16], Ô¤Áô[0]Îª±êµã, [17]Îª±êµã
         _bid  = [i-1 for i in _bid]
         _mid1 = [i for i in _mid1]
         _mid2 = [i for i in _mid2]
@@ -117,14 +117,14 @@ class BlockNet(Model):
         if len(_mid1) == 0 or len(_mid2) == 0:
             return self.n2zero 
 
-# å®é™…åˆå§‹å€¼+çŸ­è¿, (æœ‰æ–¹å‘, ä¸å¯¹æŠ˜, åå‘å€¼æ›´å°)
+# Êµ¼Ê³õÊ¼Öµ+¶ÌÁ¬, (ÓĞ·½Ïò, ²»¶ÔÕÛ, ·´ÏòÖµ¸üĞ¡)
         sub_list = tf.gather(self.m2m_tbl, _bid, axis=1)
         _A1 = tf.gather(sub_list, _mid1)
         _A2 = tf.gather(sub_list, _mid2)
         if self.debug:
             print ("  _A1=%s, " % (_A1.numpy()))
 
-# è¯ID--b_id----------
+# ´ÊID--b_id----------
         b_id = [j for j in range(1,50)]
         b_id1 = b_id[10:10+len(_mid1)]
         b_id2 = b_id[20:20+len(_mid2)]
@@ -134,36 +134,36 @@ class BlockNet(Model):
         bv2 = tf.gather(bv2, _bid, axis=1)
         _a1 = tf.sigmoid(bv1)
         _a2 = tf.sigmoid(bv2)
-# ä¿ç•™ç‰¹å¾:
-#   A*a: æ¨¡å—ä½ç½®æƒé‡*è¯çš„æƒé‡
+# ±£ÁôÌØÕ÷:
+#   A*a: Ä£¿éÎ»ÖÃÈ¨ÖØ*´ÊµÄÈ¨ÖØ
         _Aa1 = tf.multiply(_A1, _a1)
         _Aa2 = tf.multiply(_A2, _a2)
-# å…¨å±€ç‰¹å¾:
-#   ä¸»è¦è¯>1, ä¸»è¦è¯æ¥è¿‘å³å¯
+# È«¾ÖÌØÕ÷:
+#   Ö÷Òª´Ê>1, Ö÷Òª´Ê½Ó½ü¼´¿É
         _Aa1_mean = modes_calc(_Aa1, debug_mc_log=self.debug_mc_log)
         _Aa2_mean = modes_calc(_Aa2, debug_mc_log=self.debug_mc_log)
         if self.debug:
             print ("  _Aa1_mean=%s\n  _Aa2_mean=%s" % (_Aa1_mean.numpy(), _Aa2_mean.numpy()))
         
-# å¯èƒ½ç”¨æ¯”ä¾‹, æˆ–2æ¬¡squareæ›´å¥½
+# ¿ÉÄÜÓÃ±ÈÀı, »ò2´Îsquare¸üºÃ
         block_loss = K.sum(K.square(_Aa1_mean-_Aa2_mean), axis=-1)
         block_loss = K.mean(block_loss)
         if self.debug:
             print ("b2s--loss: %s, " % (block_loss))
             print ("----------------------------------")
 
-#    å˜é‡å›å¡«:
+#    ±äÁ¿»ØÌî:
 #    _Aa1->s11,s12,s13
 #    _Aa2->s22,s21,s23,s24
 #       mylist = np.array(mylist)
 #       mylist[:,0:1] = [[4],[5],[6]]
-#       s11 = Sum/X * 1/10, æˆ–*1/loss
+#       s11 = Sum/X * 1/10, »ò*1/loss
         
         return block_loss
         
     
     def sents_to_score(self, x1, x2, m1, m2, cnt1, cnt2):
-# æ€»å—=å—ç›¸åŠ :
+# ×Ü¿é=¿éÏà¼Ó:
 #        if len(m1)==0 or len(m2)==0:
 #            return tf.constant(10, dtype=tf.float32) 
         score_list = []

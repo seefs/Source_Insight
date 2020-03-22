@@ -623,11 +623,11 @@ MMISRVAUD_TYPE_VIDEO
 
 [5.5] Message ÇÐ»»
 //	Message ÇÐ»»
-Save:SI\node\ToolsMsg\spr\Macro_Spr_MsgId.h
+Save:node\C\study\Macro_Spr_MsgId.h
 //	FUN Èë¿Ú
-Save:SI\node\ToolsMsg\spr\Macro_Spr_Fun.h
+Save:node\C\study\Macro_Spr_Fun.h
 // ²Î¿¼
-Save:SI\node\ToolsMsg\spr\Macro_Spr_Other.h
+Save:node\C\study\Macro_Spr_Other.h
 
 
 

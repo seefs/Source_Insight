@@ -6,9 +6,9 @@
 /***********************************************************************/
 
 //目录[Num][Ca]:
-Save:SI\node\9820e\Macro_9820e_App_Wallpaper.h \[1.1\] 设置静态墙纸后，文件保存在哪里？
-Save:SI\node\9820e\Macro_9820e_App_Wallpaper.h \[1.2\] Wallpaper是由哪个程序绘制的？
-Save:SI\node\9820e\Macro_9820e_App_Wallpaper.h \[1.3\] App怎样才会显示墙纸背景？
+Save:node\android\app\Macro_App_Wallpaper.h \[1.1\] 设置静态墙纸后，文件保存在哪里？
+Save:node\android\app\Macro_App_Wallpaper.h \[1.2\] Wallpaper是由哪个程序绘制的？
+Save:node\android\app\Macro_App_Wallpaper.h \[1.3\] App怎样才会显示墙纸背景？
 
 
 

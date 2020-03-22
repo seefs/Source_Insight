@@ -7,38 +7,35 @@
 
 //目录[Num][Ca]:
 //MTK-展讯修改笔记
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[1.0\]  安装图形化界面：
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[1.1\] .如何设置Launcher2、Launcher3的壁纸同步
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[1.2\] .如何修改使Launcher2中文件夹图标名称与应用名称保持水平
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[1.3\] android4.4 Launcher中如何隐藏主界面应用图标的应用名称？
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[1.4\] 如何在sprdLauncher2中隐藏一个应用图标？
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[1.5\] 如果实现Launcher2中菜单列表背景半透明效果？
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[1.6\] 如何让launcher不被一键清理？
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[1.7\] .0LOCAL_OVERRIDES_PACKAGES的作用
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[1.8\] 如何提升Launcher中盒子等滑动特效的流畅度
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[1.9\] .如何把SprdLaucher2的hotseat图标底下把对应的应用名称item显示出来？
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[1.10\] //如何修改launcher中应用图标的行数和列数？
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[1.11\] 如何修改launcher的屏幕数
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[1.12\] 如何添加壁纸资源到壁纸列表?
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[1.13\] 如何更换launcher中点击应用的高亮背景
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[1.14\] 如何配置launcher使用大内存？
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[1.15\] .如何更改系统默认墙纸
+Save:node\android\app\Macro_App_Launch.h \[1.0\]  安装图形化界面：
+Save:node\android\app\Macro_App_Launch.h \[1.1\] .如何设置Launcher2、Launcher3的壁纸同步
+Save:node\android\app\Macro_App_Launch.h \[1.2\] .如何修改使Launcher2中文件夹图标名称与应用名称保持水平
+Save:node\android\app\Macro_App_Launch.h \[1.3\] android4.4 Launcher中如何隐藏主界面应用图标的应用名称？
+Save:node\android\app\Macro_App_Launch.h \[1.4\] 如何在sprdLauncher2中隐藏一个应用图标？
+Save:node\android\app\Macro_App_Launch.h \[1.5\] 如果实现Launcher2中菜单列表背景半透明效果？
+Save:node\android\app\Macro_App_Launch.h \[1.6\] 如何让launcher不被一键清理？
+Save:node\android\app\Macro_App_Launch.h \[1.7\] .0LOCAL_OVERRIDES_PACKAGES的作用
+Save:node\android\app\Macro_App_Launch.h \[1.8\] 如何提升Launcher中盒子等滑动特效的流畅度
+Save:node\android\app\Macro_App_Launch.h \[1.9\] .如何把SprdLaucher2的hotseat图标底下把对应的应用名称item显示出来？
+Save:node\android\app\Macro_App_Launch.h \[1.10\] //如何修改launcher中应用图标的行数和列数？
+Save:node\android\app\Macro_App_Launch.h \[1.11\] 如何修改launcher的屏幕数
+Save:node\android\app\Macro_App_Launch.h \[1.12\] 如何添加壁纸资源到壁纸列表?
+Save:node\android\app\Macro_App_Launch.h \[1.13\] 如何更换launcher中点击应用的高亮背景
+Save:node\android\app\Macro_App_Launch.h \[1.14\] 如何配置launcher使用大内存？
+Save:node\android\app\Macro_App_Launch.h \[1.15\] .如何更改系统默认墙纸
 //MTK-展讯修改笔记
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[2.1\] .如何设置默认页
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[2.2\] 如何隐藏launcher3中的搜索框
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[2.3\] 如何调整原生Launcher3主界面的search框的大小？
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[2.4\] 让主菜单部分应用按指定顺序排在前面？
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[2.5\] 如何确定待机HOME界面布局使用的是哪个default_workspace文件？
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[2.6\] 如何替换第三方应用在launcher上显示的图标？
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[2.7\] //如何去掉Launcher3的开机引导页面？
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[2.8\] 为何Launcher3设置一些壁纸后，壁纸显示比预览图模糊？
-Save:SI\node\9820e\Macro_9820e_App_Launch.h \[2.9\] 6.0平台上Launcher3自带的壁纸路径是什么？
-
-//apk 模块 -- cmd:
-Save:SI\node\9820e\Macro_9820e_Sys_Build.h \[3.1\] apk 模块 -- cmd
+Save:node\android\app\Macro_App_Launch.h \[2.1\] .如何设置默认页
+Save:node\android\app\Macro_App_Launch.h \[2.2\] 如何隐藏launcher3中的搜索框
+Save:node\android\app\Macro_App_Launch.h \[2.3\] 如何调整原生Launcher3主界面的search框的大小？
+Save:node\android\app\Macro_App_Launch.h \[2.4\] 让主菜单部分应用按指定顺序排在前面？
+Save:node\android\app\Macro_App_Launch.h \[2.5\] 如何确定待机HOME界面布局使用的是哪个default_workspace文件？
+Save:node\android\app\Macro_App_Launch.h \[2.6\] 如何替换第三方应用在launcher上显示的图标？
+Save:node\android\app\Macro_App_Launch.h \[2.7\] //如何去掉Launcher3的开机引导页面？
+Save:node\android\app\Macro_App_Launch.h \[2.8\] 为何Launcher3设置一些壁纸后，壁纸显示比预览图模糊？
+Save:node\android\app\Macro_App_Launch.h \[2.9\] 6.0平台上Launcher3自带的壁纸路径是什么？
 
 
-/***********************************************************************/
+
 
 MTK-展讯修改笔记
 [1.0]  安装图形化界面：

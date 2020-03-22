@@ -298,6 +298,13 @@ macro OtherAPI(key)
 	AddFileToProj(hprj, "E:\\save\\SI\\MacroSBD\\sbd_tmp.em")
 
 }
+macro OpenValTest(hbuf)
+{
+	//null
+	val = nil
+	val = hNil
+
+}
 
 macro OpenRefTest(hbuf)
 {
@@ -632,14 +639,30 @@ macro TestNodeMsg(msgStr)
 
 macro TestMsg(msgStr, num)
 {
-	if(num == 1)
+	global counter
+
+	//num不传参数会变成")"
+	if(num == "X")
 	{
-		//正式
-//		msg(msgStr)
+		//counter 第2次执行宏未清零, 因此要手动清零
+		counter = nil
+		return
 	}
-	else
+
+	if(counter == nil)
 	{
-		//临时
+    	hbuf = GetCurrentBuf()
+		test = getMacroValue(hbuf, "testParam", 1)
+		if(test == "")
+			counter = 1
+		else
+			counter = test + 1
+	}
+	if(num < counter)
+	{
+		//testParam=0: 只打印num=0, 默认------
+		//testParam=1: 打印num=0, 1-----------
+		//testParam=2: 打印num=0, 1, 2--------
 		msg(msgStr)
 	}
 }

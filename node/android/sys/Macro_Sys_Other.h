@@ -17,7 +17,7 @@ Save:node\android\sys\Macro_Sys_Other.h \[1.8\]
 Save:node\android\sys\Macro_Sys_Other.h \[1.9\] 
 Save:node\android\sys\Macro_Sys_Other.h \[1.10\] 
 //
-Save:node\android\sys\Macro_Sys_Other.h \[2.1\] 
+Save:node\android\sys\Macro_Sys_Other.h \[2.1\] Android的启动
 Save:node\android\sys\Macro_Sys_Other.h \[2.2\] 
 Save:node\android\sys\Macro_Sys_Other.h \[2.3\] 
 // 
@@ -100,7 +100,11 @@ Save:Help\Test\Macro_Test_Node_Num.h \[1.1\]
 
 
 
-[2.1] 
+[2.1] Android的启动
+Android的启动
+内核启动、Android启动、launcher启动，我们的SystemServer就处于Android启动中，以下是大致流程图：
+
+init->ServiceManager->Zygote->SystemServer->......
 
 
 [2.2] 

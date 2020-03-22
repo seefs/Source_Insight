@@ -703,29 +703,33 @@ macro GetParamCacheType(hbuf, param)
 macro GetTransFileName(hbuf, fName, cNum)
 {
 	//功能参数分类:
-	// 1.CtrlC,  cNum=0
-	// 2.F1->F2, cNum=1 优先设置路径
-	// 3.F2,     cNum=2
+	// 1.CtrlC,  cNum=0 优先设置路径(单独设置)
+	// 2.F1->F2, cNum=1 优先设置路径(统一设置)
+	// 3.F2,     cNum=2 考虑SR
 	// 4.CtrlR,  cNum=5 优先当前工程路径
-	//   CtrlR,  cNum=15  当前路径, Log_XX文件
+	//   CtrlR,  cNum=15  当前路径, Log_XX文件----no use
 	// 5.F5,     cNum=5
 	// 6.F6,     cNum=6 优先设置路径
 	// 7.F7,     cNum=6
 	// 8.F11,    cNum=6 python, cp
-	// 8.F11,    cNum=16 python_w 编辑用相对路径不需要添加bPath
-	//文件名转化:
+	//   F11,    cNum=16 cmd_w python_w 编译指令是相对目录(不用完整路径); 只替换"Save:"、"^"
+	//   F11,    cNum=4  cmd_s 编译指令; 屏蔽设置路径(不用basePath设置); 
+	
+	//路径+文件名替换:
 	bPath = ""
 	if(bPath == "")
 	{
 		if(cNum == 6)
 		{
 			//android service path: basePath = F:\9820e 
+			//存在两份代码+两个路径, 这里用服务器路径(统一设置)
 			bPath = ReadMode(getNoteBasePath(0))
 		}
 		else if(cNum == 1)
 		{
 			if(IsSRFile(hbuf))
 			{
+				//感觉有点问题, 也可以打开服务器路径
 				if(IsPathName(hbuf, getSavePath(0) # "\\Source Insight"))
 				{
 					bPath = getSavePath(0)
@@ -734,6 +738,7 @@ macro GetTransFileName(hbuf, fName, cNum)
 			if(bPath == "")
 			{
 				//android service path: basePath = F:\9820e 
+				//存在两份代码+两个路径, 这里用服务器路径(统一设置)
 				bPath = ReadMode(getNoteBasePath(0))
 			}
 		}
@@ -741,24 +746,27 @@ macro GetTransFileName(hbuf, fName, cNum)
 		{
 			if(IsSRFile(hbuf))
 			{
+				//这种情况只有F2会用到, 放这里或者放外面都一样
 				if(IsPathName(hbuf, getSavePath(0) # "\\Source Insight"))
 				{
 					bPath = getSavePath(0)
 				}
 			}
 		}
-		else if(cNum == 15)
+		else if(cNum == 15) //no use
 		{
 			bPath = getCurPath(hbuf)
 		}
 	}
-	if(bPath == "")
+	if(bPath == "" && cNum != 4)
 	{
-		//如果没有设置basePath，用项目目录
+		//1)优先用basePath; 
+		//2)屏蔽设置路径(不用basePath设置); 
 		bPath = getMacroValue(hbuf, getMarBasePath(0), 1) //"basePath"
 	}
 	if(bPath == "")
 	{
+		//如果没有设置basePath，用项目目录
 		bPath = getBasePath(hbuf)
 	}
 
@@ -768,6 +776,7 @@ macro GetTransFileName(hbuf, fName, cNum)
 	{
 		if(cNum == 16)
 		{
+			//编译指令是相对目录(不用完整路径)
 			fName = fName
 		}
 		else if(strlen(fName) > 2)
@@ -800,9 +809,11 @@ macro GetTransFileName(hbuf, fName, cNum)
 macro GetHeadIndex(hbuf, cur_line)
 {
 	index = FindString(cur_line, " ")
+	//删除后面部分
 	if (index != "X"){
 		cur_line = strmid(cur_line, 0, index)
 	}
+	//从左开始找
 	index_colon = FindString(cur_line, ":")
 	if (index_colon != "X"){
 		cur_line = strmid(cur_line, 0, index_colon)

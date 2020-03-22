@@ -27,7 +27,7 @@ macro getDesktopPath(0)		{	return "E:\\desktop"				}
 
 
 //3) 项目路径列表设置在文件: 打开对应文件手动修改
-//  Save:SI\\node\\set\\Macro_Set_Base.h
+//  Save:node\\set\\Macro_Set_Base.h
 macro getPathConfig(0)		{	return getSetPath(0) # "\\Macro_Set_Base.h"				}
 
 

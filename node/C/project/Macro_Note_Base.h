@@ -12,7 +12,7 @@
 宏文件说明:
 
 fun说明 都移到这个文件, 怕宏运行不稳定
-Save:SI\MacroZnet^(no^use)\Macro_List.em
+Save:MacroZnet^(no^use)\Macro_List.em
 
 
 

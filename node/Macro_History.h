@@ -3,7 +3,7 @@
 // File List [Num][Ca]:
 // 1. ≥£”√± º«
 Save:node\Macro_History.h \[1.1\] android
-Save:node\Macro_History.h \[1.2\] MTK SPR
+Save:node\Macro_History.h \[1.2\] C
 Save:node\Macro_History.h \[1.3\] Pythons
 Save:node\Macro_History.h \[1.4\] C++
 Save:node\Macro_History.h \[1.5\] 
@@ -30,7 +30,7 @@ Save:node\ToolsMsg\Macro_git_app.h
 Save:Help\LangInfo\Macro_Info_Android.h
 
 
-[1.2] MTK SPR
+[1.2] C
 //	MTK, modis
 Save:node\C\Macro_Note_C.h
 //	MTK, modis

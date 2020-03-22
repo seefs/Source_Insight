@@ -18,11 +18,8 @@ Save:node\android\app\Macro_App_Setting.h \[2.1\] DDR从512改成假的1G
 Save:node\android\app\Macro_App_Setting.h \[2.2\] 如何关闭账号自动同步？
 Save:node\android\app\Macro_App_Setting.h \[2.3\] 查看android的版本
 
-//apk 模块 -- cmd:
-Save:SI\node\9820e\Macro_9820e_Sys_Build.h \[3.1\] apk 模块 -- cmd
 
 
-/***********************************************************************/
 
 
 [1.1] AndroidManifest.xml

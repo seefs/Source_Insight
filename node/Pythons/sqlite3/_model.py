@@ -1,4 +1,4 @@
-ï»¿
+
 
 import os
 import re
@@ -58,19 +58,19 @@ class BlockNet(Model):
         output = self.compare_layer([board1, board2])
         
         if BlockNet.save_data:
-            # ä¿å­˜æ¯”è¾ƒå€¼, ç”¨äºå¤–éƒ¨è°ƒå‚
+            # ±£´æ±È½ÏÖµ, ÓÃÓÚÍâ²¿µ÷²Î
             save_debug_data(np.array(output), name='brd_sum')
 
         if self.mean_type=='mean':
             output = self.mean_layer(output)
         elif self.mean_type=='max':
-            # éªŒè¯æ¨¡å‹, ç”¨ä¸åŒçš„æŒ‡æ ‡
-            #   ç›´æ¥æ··åˆ, æ–°æŒ‡æ ‡(max)ä¸ºFalseæ‰ç”¨æ—§æŒ‡æ ‡(mean)
+            # ÑéÖ¤Ä£ĞÍ, ÓÃ²»Í¬µÄÖ¸±ê
+            #   Ö±½Ó»ìºÏ, ĞÂÖ¸±ê(max)ÎªFalse²ÅÓÃ¾ÉÖ¸±ê(mean)
             output = self.max_layer(output)
         elif self.mean_type=='max_mean':
-            #   æ¸è¿›æ··åˆ, å°ä¸­å–å¤§, å¤§ä¸­å»å°
-            #   æ—§æŒ‡æ ‡(mean)å°äº0.5æ—¶--æ–°æŒ‡æ ‡(max)æ·»åŠ æœ€å¤§å€¼:
-            #   æ—§æŒ‡æ ‡(mean)å¤§äº0.5æ—¶--æ–°æŒ‡æ ‡(max)å»æ‰æœ€å°å€¼:
+            #   ½¥½ø»ìºÏ, Ğ¡ÖĞÈ¡´ó, ´óÖĞÈ¥Ğ¡
+            #   ¾ÉÖ¸±ê(mean)Ğ¡ÓÚ0.5Ê±--ĞÂÖ¸±ê(max)Ìí¼Ó×î´óÖµ:
+            #   ¾ÉÖ¸±ê(mean)´óÓÚ0.5Ê±--ĞÂÖ¸±ê(max)È¥µô×îĞ¡Öµ:
             output = self.max_mean_layer(output)
         else:
             output = self.mean_layer(output)
@@ -82,13 +82,13 @@ def create_model(max_vocab_len, max_seq_len, max_modes_len, h5_file=None, debug=
     """Creates a classification model."""
     assert h5_file is not None
     block_net = BlockNet(max_vocab_len, max_seq_len, max_modes_len, mean=mean)
-    x1   = keras.layers.Input(shape=(max_seq_len,), dtype='int32', name="x1")         #è¯ç¼–å·
+    x1   = keras.layers.Input(shape=(max_seq_len,), dtype='int32', name="x1")         #´Ê±àºÅ
     x2   = keras.layers.Input(shape=(max_seq_len,), dtype='int32', name="x2")   
-    m1   = keras.layers.Input(shape=(max_seq_len,), dtype='int32', name="m1")         #ç±»å‹
+    m1   = keras.layers.Input(shape=(max_seq_len,), dtype='int32', name="m1")         #ÀàĞÍ
     m2   = keras.layers.Input(shape=(max_seq_len,), dtype='int32', name="m2")     
-    mi1  = keras.layers.Input(shape=(max_seq_len,), dtype='int32', name="mi1")        #ç±»å‹åœ¨éšè—ç±»å‹ä¸­çš„id
+    mi1  = keras.layers.Input(shape=(max_seq_len,), dtype='int32', name="mi1")        #ÀàĞÍÔÚÒş²ØÀàĞÍÖĞµÄid
     mi2  = keras.layers.Input(shape=(max_seq_len,), dtype='int32', name="mi2")
-    n1   = keras.layers.Input(shape=(max_modes_len,), dtype='int32', name="n1")       #ç±»å‹+éšè—ç±»å‹
+    n1   = keras.layers.Input(shape=(max_modes_len,), dtype='int32', name="n1")       #ÀàĞÍ+Òş²ØÀàĞÍ
     n2   = keras.layers.Input(shape=(max_modes_len,), dtype='int32', name="n2")
     cnt1 = keras.layers.Input(shape=(1,), dtype='int32', name="cnt1")
     cnt2 = keras.layers.Input(shape=(1,), dtype='int32', name="cnt2")

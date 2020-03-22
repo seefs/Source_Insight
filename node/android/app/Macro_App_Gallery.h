@@ -10,8 +10,6 @@
 
 
 
-//mk中添加应用:
-Save:SI\node\9820e\Macro_9820e_mk.h [1.1] mk中添加应用
 
 
 

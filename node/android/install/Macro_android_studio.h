@@ -68,7 +68,7 @@ Save:node\android\install\Macro_android_studio.h \[5.2\] 如何更改项目名�
 Save:node\android\install\Macro_android_studio.h \[5.3\] 导入 eclipse project
 Save:node\android\install\Macro_android_studio.h \[5.4\] 
 Save:node\android\install\Macro_android_studio.h \[5.5\] 一个app打包多个APK
-Save:node\android\install\Macro_android_studio.h \[5.6\] Android-Studio多个项目添加依赖同一个模块
+Save:node\android\install\Macro_android_studio.h \[5.6\] 
 Save:node\android\install\Macro_android_studio.h \[5.7\] 
 Save:node\android\install\Macro_android_studio.h \[5.8\] 
 Save:node\android\install\Macro_android_studio.h \[5.9\] 
@@ -229,6 +229,9 @@ git - -version
 
 
 [1.9] adb
+//
+cmd_w: path
+cmd_s: path
 //系统变量的Path里添加
 D:\android\sdk\platform-tools
 
@@ -254,6 +257,11 @@ D:\android\sdk\extras\google\usb_driver
 // 安装 adb interface
 https://blog.csdn.net/riyuexingchen1204/article/details/84594061
 
+
+//mtp usb设备是啥?
+//   移动盘联络接口
+
+//ADB Interface找不到?
 
 
 [1.11] Terminal
@@ -937,9 +945,7 @@ android {
 //	我们选择2个app，AS就会帮我们打包2个不同的APK了
 
 
-[5.6] Android-Studio多个项目添加依赖同一个模块
-//Android-Studio多个项目添加依赖同一个模块
-Save:SI\node\ToolsMsg\as\Macro_android_studio_app.h \[2.1\]
+[5.6] 
 
 
 

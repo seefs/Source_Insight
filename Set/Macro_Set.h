@@ -69,9 +69,16 @@ D:\project\NLP\game\
 D:\Save\SI\node\Pythons\Macro_Pythons_Game.h
 	
 ### 72.default project path
-326
+317
 
+### 75.show py info(0 or 1)
+1
 
+### 78.show android info(0 or 1)
+69
+
+### 81.show xx info(±£¡Ù)
+69
 
 
 

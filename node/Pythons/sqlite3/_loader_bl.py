@@ -18,8 +18,8 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # Custom Class
 from _token import TokenizerChg
-from _block import b2mts                         # åˆ†å—
-from _layer import mark_slice                    # åˆ†å—æ ‡è®°
+from _block import b2mts                         # ·Ö¿é
+from _layer import mark_slice                    # ·Ö¿é±ê¼Ç
 from _tool  import convert_to_unicode
 
 
@@ -40,9 +40,9 @@ debugPath    = os.path.join(dataPath, "debug")
 # file
 train_csv_file  = os.path.join(csvPath, "atec_nlp_sim_train.csv")
 test_csv_file   = os.path.join(csvPath, "atec_nlp_sim_test.csv")
-vocab_file      = os.path.join(vocabPath, 'token_id.csv')             #ä¸ç›´æ¥ç”¨
-pre_train_file  = os.path.join(preprocessPath, "train_y.csv")  #åªæ£€æŸ¥äº†ä¸€ä¸ªæ–‡ä»¶
-pre_test_file   = os.path.join(preprocessPath, "test_y.csv")  #åªæ£€æŸ¥äº†ä¸€ä¸ªæ–‡ä»¶
+vocab_file      = os.path.join(vocabPath, 'token_id.csv')             #²»Ö±½ÓÓÃ
+pre_train_file  = os.path.join(preprocessPath, "train_y.csv")  #Ö»¼ì²éÁËÒ»¸öÎÄ¼ş
+pre_test_file   = os.path.join(preprocessPath, "test_y.csv")  #Ö»¼ì²éÁËÒ»¸öÎÄ¼ş
 text_split_file = os.path.join(debugPath, 'text_split_{}.txt')
 
 
@@ -195,7 +195,7 @@ class LoadData:
             test  = load_directory_data(test_csv_file)
             (self.test_t1,  self.test_t2,  self.test_m1,  self.test_m2, self.test_cnt1,  self.test_cnt2,  self.test_y) = self._prepare_and_pad_df(test)
     
-        # ä¿å­˜åˆ†è¯è¿‡ç¨‹:
+        # ±£´æ·Ö´Ê¹ı³Ì:
         if self.train_enable:
             self._save_tokens_parsing_info(train, fname="train")
         if self.test_enable:
@@ -264,7 +264,7 @@ class LoadData:
                 modes1  = [int(mode) for item in tokens1 for mode in item[1:]]
                 modes2  = [int(mode) for item in tokens2 for mode in item[1:]]
                 self.max_seq_len = max(self.max_seq_len, len(modes1), len(modes2))
-                #ç”¨modesè®¡ç®—æ€»é•¿
+                #ÓÃmodes¼ÆËã×Ü³¤
                 tokens1 = [item[0] if pos==0 else '_S' for item in tokens1 for pos in range(len(item[1:]))]
                 tokens2 = [item[0] if pos==0 else '_S' for item in tokens2 for pos in range(len(item[1:]))]
                 #print("\ntmp_list:", tokens1)
@@ -279,9 +279,9 @@ class LoadData:
         return np.array(t1), np.array(t2), np.array(m1), np.array(m2), np.array(cnt1), np.array(cnt2), np.array(y)
         
     def _text_to_ids(self):
-        # token è½¬æ¢ä¸º token_id
-        #   å…ˆfitå…¨éƒ¨token, å¦åˆ™idä¸å‡†; tokenä¼šè‡ªåŠ¨æ’åº, è‹±æ–‡åœ¨å‰é¢('[S]')
-        #   ç°åœ¨ä¸èƒ½æ”¹å˜è¯ä¹‹åé‡æ–°è®­ç»ƒ(idä¸å¯¹åº”)
+        # token ×ª»»Îª token_id
+        #   ÏÈfitÈ«²¿token, ·ñÔòid²»×¼; token»á×Ô¶¯ÅÅĞò, Ó¢ÎÄÔÚÇ°Ãæ('[S]')
+        #   ÏÖÔÚ²»ÄÜ¸Ä±ä´ÊÖ®ºóÖØĞÂÑµÁ·(id²»¶ÔÓ¦)
         if os.path.isfile(vocab_file):
             self._token_arr = load_vocab_data(np.str, name='token_id')
             self.tokenizer.fit_on_texts(self._token_arr)
@@ -293,13 +293,13 @@ class LoadData:
                 self.tokenizer.fit_on_texts(self.test_t1.flatten())
                 self.tokenizer.fit_on_texts(self.test_t2.flatten())
             
-            #print("--token--word_counts", self.tokenizer.word_counts)         #æ•°é‡ç»Ÿè®¡--list
-            #print("--token--word_docs", self.tokenizer.word_docs)             #æ•°é‡ç»Ÿè®¡--dick
-            #print("--token--word_index", self.tokenizer.word_index)           #å­—åˆ°index--dick
-            #print("--token--document_count", self.tokenizer.document_count)   #æ€»æ•°
+            #print("--token--word_counts", self.tokenizer.word_counts)         #ÊıÁ¿Í³¼Æ--list
+            #print("--token--word_docs", self.tokenizer.word_docs)             #ÊıÁ¿Í³¼Æ--dick
+            #print("--token--word_index", self.tokenizer.word_index)           #×Öµ½index--dick
+            #print("--token--document_count", self.tokenizer.document_count)   #×ÜÊı
             self._token_arr = np.array(list(self.tokenizer.word_index))
             save_vocab_data(self._token_arr, name='token_id')
-        self.max_vocab_len = len(self.tokenizer.word_counts) + 1               #å®é™…æ€»æ•°(å»é‡)
+        self.max_vocab_len = len(self.tokenizer.word_counts) + 1               #Êµ¼Ê×ÜÊı(È¥ÖØ)
         
         # token_id
         if self.train_enable:
@@ -334,7 +334,7 @@ class LoadData:
             os.mkdir(debugPath)
         assert fname is not None
         file_name  = os.path.join(debugPath, text_split_file.format(fname))
-        # ä¿å­˜åˆ†è¯è¿‡ç¨‹:
+        # ±£´æ·Ö´Ê¹ı³Ì:
         cnt = 0
         if self.sample_size is None:
             sample_size = 1
@@ -349,7 +349,7 @@ class LoadData:
                     if cnt>sample_size:
                         break
                     unique_list = self.token_chg.get_jieba_cut_list(text);
-                    f.write("å¥å­ %2d: %s\n" % (cnt, text))
+                    f.write("¾ä×Ó %2d: %s\n" % (cnt, text))
                     f.write("jieba  : %s\n" % (unique_list))
                     mode0_list = self.token_chg.tokens_mode0(unique_list)
                     mode1_list = self.token_chg.tokens_mode1(mode0_list)
@@ -387,17 +387,17 @@ class LoadData:
             #save_mark_data(self.test_scale2, name='test_scale2')
             
     def get_train_data(self):
-        return (self.train_x1,     self.train_x2,       #ç¼–å·
-                self.train_m1,     self.train_m2,       #ç±»å‹
-                self.train_mark1,  self.train_mark2,    #å—æ ‡è®°
-                self.train_block1, self.train_block2,   #å—ID
-                self.train_scale1, self.train_scale2)   #å­—æƒé‡
+        return (self.train_x1,     self.train_x2,       #±àºÅ
+                self.train_m1,     self.train_m2,       #ÀàĞÍ
+                self.train_mark1,  self.train_mark2,    #¿é±ê¼Ç
+                self.train_block1, self.train_block2,   #¿éID
+                self.train_scale1, self.train_scale2)   #×ÖÈ¨ÖØ
                 
     def get_test_data(self):
-        return (self.test_x1,     self.test_x2,         #ç¼–å·
-                self.test_m1,     self.test_m2,         #ç±»å‹
-                self.test_mark1,  self.test_mark2,      #å—æ ‡è®°
-                self.test_block1, self.test_block2,     #å—ID
-                self.test_scale1, self.test_scale2)     #å­—æƒé‡
+        return (self.test_x1,     self.test_x2,         #±àºÅ
+                self.test_m1,     self.test_m2,         #ÀàĞÍ
+                self.test_mark1,  self.test_mark2,      #¿é±ê¼Ç
+                self.test_block1, self.test_block2,     #¿éID
+                self.test_scale1, self.test_scale2)     #×ÖÈ¨ÖØ
 
 

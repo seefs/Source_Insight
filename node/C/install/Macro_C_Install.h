@@ -143,12 +143,12 @@ C:\Users\Administrator\AppData\Roaming\Scooter^Software\Beyond^Compare^4
 
 
 [4.3] git:
-Save:SI\node\ToolsMsg\Macro_git.h
+Save:node\ToolsMsg\Macro_git.h
 	
 [4.4] vim:
-Save:SI\node\ToolsMsg\Macro_vim.h
+Save:node\ToolsMsg\Macro_vim.h
 	
 [4.5] SI:
-Save:SI\node\ToolsMsg\Macro_SI.h
+Save:node\ToolsMsg\Macro_SI.h
 
 

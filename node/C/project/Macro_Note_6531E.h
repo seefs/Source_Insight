@@ -30,9 +30,7 @@ Save:node\C\project\Macro_Note_6531E.h \[5.1\] trace:
 Save:node\C\project\Macro_Note_6531E.h \[5.2\] Build问题[ Cb][ b]:
 	
 //模拟器调试:
-Save:SI\node\note\Macro_modis_6531E.h
-//宏功能说明:
-Save:SI\bak\Macro_note_help.h SprNote
+Save:node\C\study\Macro_modis_6531E.h
 
 //参考标号:
 Save:SI\node\Test\Macro_Tmp_Node_Num.h
@@ -41,7 +39,7 @@ Save:SI\node\Test\Macro_Tmp_Node_Num.h
 
 [1.1] 当前项目
 // 查看--选择历史项目列表: 
-Save:SI\node\set\Macro_Set_Note.h	6531E-note-set
+Save:set\Macro_Set_Note.h	6531E-note-set
 
 // 默认项目(便于上传svn) [Cs]:
 set SE039_YST_E18_E250_F2
@@ -249,7 +247,7 @@ project\H9_KLS_F4\project_H9_KLS_F4.mk MMI_MSD_SUPPORT
 [4.1] Idle[I]: Lock Dial Theme
 
 //	modis: 界面入口/位置
-Save:SI\node\note\Macro_modis_6531E.h	 \[2.4\] 界面入口/位置
+Save:node\C\study\Macro_modis_6531E.h	 \[2.4\] 界面入口/位置
 
 	拨号光标
 project\H9_KLS_F4\project_H9_KLS_F4.mk SENSOR_CHIP
@@ -257,14 +255,14 @@ MS_MMI\source\mmi_gui\include\guiedit.h GUIEDIT_DIAL_IMAGE_SPACE_X
 MS_MMI\source\mmi_gui\source\editbox\c\guiedit_text.c GUIEDIT_DIAL_IMAGE_SPACE_X
 MS_MMI\source\mmi_gui\source\editbox\c\guiedit_text.c GUIEDIT_GetCursorPosForPN
 //	modis: Idle
-Save:SI\node\note\Macro_modis_6531E.h	 \[2.2\] Idle
+Save:node\C\study\Macro_modis_6531E.h	 \[2.2\] Idle
 
 //	modis: Lock
-Save:SI\node\note\Macro_modis_6531E.h	 \[2.10\] Lock
+Save:node\C\study\Macro_modis_6531E.h	 \[2.10\] Lock
 //	modis: 测试模式
-Save:SI\node\note\Macro_modis_6531E.h	 \[2.8\] 测试模式
+Save:node\C\study\Macro_modis_6531E.h	 \[2.8\] 测试模式
 //	modis: 拨号
-Save:SI\node\note\Macro_modis_6531E.h   \[2.6\] dialer
+Save:node\C\study\Macro_modis_6531E.h   \[2.6\] dialer
 //	modis: 主题
 
 ----------------------------------------------------------------------------
@@ -274,7 +272,7 @@ Save:SI\node\note\Macro_modis_6531E.h   \[2.6\] dialer
 ----------------------------------------------------------------------------
 [4.3] 多媒体[u]:
 //	modis: 多媒体
-Save:SI\node\note\Macro_modis_6531E.h	 \[2.13\] 多媒体
+Save:node\C\study\Macro_modis_6531E.h	 \[2.13\] 多媒体
 
 Camera分辨率:
 Camera闪光灯:
@@ -298,14 +296,14 @@ MS_MMI/source/mmi_app/app/fm/c/mmifm_wintab.c
 ----------------------------------------------------------------------------
 [4.4] 浏览器[w]: 网络参数
 //	modis: Browser
-Save:SI\node\note\Macro_modis_6531E.h	 \[2.7\] Browser
+Save:node\C\study\Macro_modis_6531E.h	 \[2.7\] Browser
 
 [4.5] 文件管理
 	
 ----------------------------------------------------------------------------
 [4.6] 工具[t]:单位转换 游戏 闹钟 日历 魔音
 //	modis: 工具
-Save:SI\node\note\Macro_modis_6531E.h	 \[2.15\] 工具
+Save:node\C\study\Macro_modis_6531E.h	 \[2.15\] 工具
 
 
 //	tool:单位转换:

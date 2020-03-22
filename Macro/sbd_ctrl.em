@@ -284,6 +284,7 @@ macro CtrlR()
 {
 	//_TempHeadCTRL()
 	hbuf = GetCurrentBuf()
+	
 	//add file type
 	if(IsFileName(hbuf, "Macro_")||IsFileName(hbuf, "Simple_CTRL_")||IsFileName(hbuf, "bak_")||IsFileName(hbuf, "Log_"))
 	{
@@ -299,29 +300,22 @@ macro CtrlR()
 		if(cur_sel_left != "X" && cur_sel_right != "X")
 		{
 			cur_sel_right_pre = strmid(cur_line, cur_sel_right - 1, cur_sel_right)
-			//标号跳回目录
+			// 标号("[...]")跳回目录("\[...\]")
 			if(cur_sel_right_pre != "\\" )
 			{
 				searchStr = "\\\[" # strmid(cur_line, cur_sel_left + 1, cur_sel_right) # "\\\]"
 				sel2 = SearchInBuf(hbuf, searchStr, 0, 0, FALSE, FALSE, FALSE)
 				if (sel2 != "")
 				{
-					TestMsg("跳转到目录: " # searchStr, 1)
+					TestMsg("跳转到目录: " # searchStr, 2)
 					ScrollCursor(sel2)
 					stop
 				}
 			}
 		}
-		//2. 文件内跳转另一个文件/目录
-		//目录跳到标号
-		//if(IsFileName(hbuf, "Log_"))
-		//{
-		//	NoteHander(hbuf, 15)
-		//}
-		//else
-		{
-			NoteHander(hbuf, 5)
-		}
+		//2. 文件名("...\...")跳转另一个文件
+		//3. 目录("\[...\]")跳到标号("[...]")
+		NoteHander(hbuf, 5)
 	}
 	else
 	{

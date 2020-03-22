@@ -273,11 +273,15 @@ macro NoteHander(hbuf, cNum)
 	var cur_line
 	var noteCmd
 	var noteWord
+	var rootPath //根路径, cmd cd到这个目录
 	var curPath
 	var lastStr
 	
 	var cur_row
 	var isCmd
+	
+	//这里清一次就可以了
+	TestMsg("传X清零", "X")
 	
 	sel = MGetWndSel(hbuf)
 	cur_line = GetBufLine(hbuf, sel.lnFirst )
@@ -300,30 +304,34 @@ macro NoteHander(hbuf, cNum)
 		
 		//type1:  -, [1], -, -
 		if(noteCmd == "cmd" || noteCmd == "open" || noteCmd == "openCmd" || noteCmd == "test"
-			 || noteCmd == "setPath" || noteCmd == "setProPath" || noteCmd == "sethistory" || noteCmd == "cp")
+			 || noteCmd == "setPath" || noteCmd == "setProPath" || noteCmd == "sethistory"
+			 || noteCmd == "cp" || noteCmd == "RAR")
 			isCmd = 1
-			
+
 		//type2: [0, 1, 2, 3] (only copy)
 		else if(noteCmd == "make" || noteCmd == "ctmake" || noteCmd == "xmake")
 			isCmd = 2
 			
 		//type3: -, [1, 2, 3]
-		else if(noteCmd == "set"  || noteCmd == "python" || noteCmd == "python_w" || noteCmd == "python_t" || noteCmd == "vc" || noteCmd == "vs08" || 
-			noteCmd == "call" || noteCmd == "cmd_w" || noteCmd == "git" )
+		else if(noteCmd == "set"  || noteCmd == "vc" || noteCmd == "vs08" || noteCmd == "call" || noteCmd == "cmd_w" || noteCmd == "cmd_s" || noteCmd == "git" )
 			isCmd = 3
 			
-		//type4: [0, 1], -, -
-		//  add all replace words:
-		else if(noteCmd == "Save")
+		//type4: -, [1, 2, 3]
+		else if(noteCmd == "python" || noteCmd == "python_w")
 			isCmd = 4
 			
 		//type5: [0, 1], -, -
-		else if(IsTransHead(hbuf, noteCmd)==1)
+		//  add all replace words:
+		else if(noteCmd == "Save")
 			isCmd = 5
 			
-		//type4: [0, 1], -, -
+		//type6: [0, 1], -, -
+		else if(IsTransHead(hbuf, noteCmd)==1)
+			isCmd = 6
+			
+		//type5: [0, 1], -, -
 		else if(strlen(noteCmd)==1)
-			isCmd = 4
+			isCmd = 5
 			
 		//命令名转化: 删除空格
 		start = GetTransCmdS(cur_line, index + 1, len)
@@ -347,8 +355,22 @@ macro NoteHander(hbuf, cNum)
 			}
 		}
 		else if (isCmd == 4)
-			curPath = strmid(cur_line, 0, next)		// [0, 1], -, -
+		{
+			curPath = strmid(cur_line, start, len)	// -, [1, 2, 3] (路径转换有区别)
+			index2 = GetHeadIndex(hbuf, curPath)
+			if (index2 != "X")
+			{
+				noteCmd2 = strmid(curPath, 0, index2)
+				if(IsTransHead(hbuf, noteCmd2)==1)
+				{
+					rootPath = ReTransHead(hbuf, noteCmd2, noteCmd2 # ":")
+					curPath = strmid(cur_line, start + index2 + 1, len)
+				}
+			}
+		}
 		else if (isCmd == 5)
+			curPath = strmid(cur_line, 0, next)		// [0, 1], -, -
+		else if (isCmd == 6)
 		{
 			curPath = strmid(cur_line, 0, next)		// [0, 1], -, -
 			//路径替换: Tool1->Tool1Path, Tool2->Tool2Path
@@ -357,7 +379,7 @@ macro NoteHander(hbuf, cNum)
 		else
 			curPath = noteCmd						// [0], 1, 2, 3
 			
-		TestMsg("noteCmd: " # CharFromKey(13) # noteCmd # CharFromKey(13) # "curPath: " # CharFromKey(13) # curPath, 1)
+		TestMsg("noteCmd: " # CharFromKey(13) # isCmd # "  " # noteCmd # CharFromKey(13) # curPath, 2)
 		
 
 		//获取关键词(剩余词)
@@ -423,19 +445,19 @@ macro NoteHander(hbuf, cNum)
 	else if(noteCmd == "cmd")
 	{
 		SetClipSimpleString(curPath)
-		TestMsg("cmd" # CharFromKey(13) # getBasePath(hbuf) # "\\cmd", 1)
+		TestMsg("cmd" # CharFromKey(13) # getBasePath(hbuf) # "\\cmd", 2)
 		ShellExecute("open", getBasePath(hbuf) # "\\cmd", "", "", 1)
 	}
-	else if(noteCmd == "cmd_w")
+	else if(noteCmd == "cmd_w" || noteCmd == "cmd_s")
 	{
-		TestMsg("cmd_w" # CharFromKey(13) # curPath, 1)
+		TestMsg("cmd_w" # CharFromKey(13) # curPath, 2)
 		NoteCurCmd(hbuf, noteCmd, curPath)
 	}
-	else if(noteCmd == "python" || noteCmd == "python_w" || noteCmd == "python_t")
+	else if(noteCmd == "python" || noteCmd == "python_w")
 	{
 		//python: 
-		TestMsg("python" # CharFromKey(13) # curPath, 1)
-		NotePythonCmd(hbuf, noteCmd, curPath)
+		TestMsg("python" # CharFromKey(13) # curPath, 2)
+		NotePythonCmd(hbuf, noteCmd, rootPath, curPath)
 	}
 	else if(noteCmd == "test")
 	{
@@ -447,20 +469,20 @@ macro NoteHander(hbuf, cNum)
 	{
 		//make...
 		SetClipSimpleString(curPath)
-		TestMsg("make" # CharFromKey(13) # curPath, 1)
+		TestMsg("make" # CharFromKey(13) # curPath, 2)
 		ShellExecute("open", getBasePath(hbuf) # "\\cmd", "", "", 1)
 	}
 	else if(noteCmd == "ctmake" || noteCmd == "xmake")
 	{
 		//ctmake...
 		SetClipSimpleString(curPath)
-		TestMsg("ctmake" # CharFromKey(13) # curPath, 1)
+		TestMsg("ctmake" # CharFromKey(13) # curPath, 2)
 	}
 	//type3: 
 	else if(noteCmd == "vc")
 	{
 		vcPath = getVCPath(0)
-		TestMsg("vc" # CharFromKey(13) # vcPath # CharFromKey(13) # getBasePath(hbuf)# "\\" # curPath, 1)
+		TestMsg("vc" # CharFromKey(13) # vcPath # CharFromKey(13) # getBasePath(hbuf)# "\\" # curPath, 2)
 		re = ShellExecute("open", vcPath, getBasePath(hbuf) # "\\" # curPath, "", 1)
 		if(!re){
 			SetClipSimpleString("vc" # CharFromKey(13) # vcPath # CharFromKey(13) # getBasePath(hbuf)# "\\" # curPath)
@@ -469,7 +491,7 @@ macro NoteHander(hbuf, cNum)
 	else if(noteCmd == "vs08")
 	{
 		vcPath = getVS08Path(0)
-		TestMsg("vs08" # CharFromKey(13) # vcPath # CharFromKey(13) # getBasePath(hbuf)# "\\" # curPath, 1)
+		TestMsg("vs08" # CharFromKey(13) # vcPath # CharFromKey(13) # getBasePath(hbuf)# "\\" # curPath, 2)
 		re = ShellExecute("open", vcPath, getBasePath(hbuf) # "\\" # curPath, "", 1)
 		if(!re){
 			SetClipSimpleString("vs08" # CharFromKey(13) # vcPath # CharFromKey(13) # getBasePath(hbuf)# "\\" # curPath)
@@ -517,11 +539,13 @@ macro NoteHander(hbuf, cNum)
 	}
 	else if(noteCmd == "cp")
 	{
-		//命令名转化: 删除空格
+		//cp
+		//前面cmdP1中删除了字符("cp")
 		NoteCopyFile(hbuf, cmdP1, cmdP2, cNum)
 	}
 	else if(noteCmd == "RAR")
 	{
+		//RAR
 		//命令名转化: 删除空格
 		NoteRARFile(hbuf, cmdP1, cmdP2, cNum)
 	}
@@ -539,10 +563,10 @@ macro NoteHander(hbuf, cNum)
 		if(GetTransWord(hbuf, curPath, noteWord))
 			stop
 			
-		TestMsg("打开文件: " # CharFromKey(13) # curPath, 1)
+		TestMsg("打开文件: " # CharFromKey(13) # curPath, 2)
 		hbuf = OpenExistFile(curPath)
 			
-		TestMsg("noteWord: " # CharFromKey(13) # noteWord, 1)
+		TestMsg("noteWord: " # CharFromKey(13) # noteWord, 2)
 		if (hbuf != hNil){
 			if(noteWord == "")
 				stop
@@ -559,7 +583,7 @@ macro NoteHander(hbuf, cNum)
 				strDefFile = getCopyPath(0) # "\\Macro_z_null.py"
 
 			cmdStr = "copy " # strDefFile # " " # curPath
-			TestMsg("文件不存在, 从模板copy文件: " # CharFromKey(13) # cmdStr)
+			TestMsg("文件不存在, 从模板copy文件: " # CharFromKey(13) # cmdStr, 2)
 			msg(cmdStr)
 			ShellOpenCustomCmd(cmdStr)
 		}
@@ -584,7 +608,7 @@ macro NoteHander(hbuf, cNum)
 
 					cmdStr = "copy " # strDefFile # " " # curPath
 					msg(cmdStr)
-					TestMsg("从模板copy文件: " # CharFromKey(13) # cmdStr)
+					TestMsg("从模板copy文件: " # CharFromKey(13) # cmdStr, 2)
 					ShellOpenCustomCmd(cmdStr)
 				}
 				else
@@ -595,7 +619,6 @@ macro NoteHander(hbuf, cNum)
 			}
 		}
 	}
-
 }
 
 //旧列表替换为新列表,空格分开
@@ -696,7 +719,7 @@ macro SetNoteHander(hbuf, lastCmd, cur_row, cNum)
 //旧列表替换为新列表,空格分开
 macro SetPathNoteHander(hbuf, cmdStr, cur_row)
 {
-	TestMsg(cmdStr, 1)
+	TestMsg(cmdStr, 2)
 	var setItem
 	
 	{
@@ -875,11 +898,11 @@ macro SaveNoteHistory(cur_line)
 
 macro NoteCopyFile(hbuf, cmdP1, cmdP2, cNum)
 {
-	//msg("copy [" # cmdP1 # "-" # cmdP2 # "]")
+	TestMsg("copy " # cmdP1 # " " # cmdP2 # "", 1)
 
 	//文件名转化:
 	//转化"Save:"、区分根目录、添加项目目录、替换"^"为空格
-	cmdPath1 = GetTransFileName(hbuf, cmdP1, cNum)
+	cmdPath1 = GetTransFileName(hbuf, cmdP1, 0)
 	cmdPath2 = GetTransFileName(hbuf, cmdP2, 0)
 	
 	cmdStr = "copy " # cmdPath1 # " " # cmdPath2
@@ -890,7 +913,7 @@ macro NoteCopyFile(hbuf, cmdP1, cmdP2, cNum)
 
 macro NoteRARFile(hbuf, cmdP1, cmdP2, cNum)
 {
-	//msg("copy [" # cmdP1 # "-" # cmdP2 # "]")
+	TestMsg("RAR " # cmdP1 # " " # cmdP2 # "", 1)
 
 	//文件名转化:
 	//转化"Save:"、区分根目录、添加项目目录、替换"^"为空格
@@ -913,7 +936,7 @@ macro NoteRARFile(hbuf, cmdP1, cmdP2, cNum)
 
 macro NoteOpenFile(hbuf, curPath, noteWord)
 {
-	TestMsg("OpenFile [" # curPath # "-" # noteWord # "]", 1)
+	TestMsg("OpenFile [" # curPath # "-" # noteWord # "]", 2)
 
 	//.exe .bat file
 	if(IsFileType(curPath, ".exe") || IsFileType(curPath, ".bat"))
@@ -939,44 +962,48 @@ macro NoteOpenFile(hbuf, curPath, noteWord)
 
 macro NoteCurCmd(hbuf, noteCmd, curPath)
 {
-//	编辑用相对路径不需要添加bPath
+//	编译指令是相对目录(不用完整路径)
+//  只替换"Save:"、"^"
 	curPath = GetTransFileName(hbuf, curPath, 16)
-	if(noteCmd == "cmd_w")
-		SetClipSimpleString(curPath)
-		
-	newPath = GetTransFileName(hbuf, "", 0)
+//	cmd_s(没有cmd文件), 屏蔽设置路径(不用basePath设置)
+	if(noteCmd == "cmd_s")
+		newPath = GetTransFileName(hbuf, "", 4)
+	else
+		newPath = GetTransFileName(hbuf, "", 0)
 	cmdRoot = GetTransRootDir(newPath)
+//	TestMsg("curPath: " # CharFromKey(13) # curPath # CharFromKey(13) # newPath, 0)
+	
+	if(noteCmd != "cmd")
+		SetClipSimpleString(curPath)
 
-	if(noteCmd == "cmd_w")
+	if(noteCmd == "cmd")
 	{
-//		cmdStr = cmdRoot # "&&cd " # newPath # "&&start " # curPath
-		cmdStr = cmdRoot # "&&cd " # newPath # "&&start cmd.exe&&parse"
+//		no use, cmd的命令没有走这个地方
+		cmdStr = cmdRoot # "&&cd " # newPath # "&&echo " # newPath # "^>" # curPath # "&&" # curPath # "&&pause"
 	}
 	else
 	{
-		cmdStr = cmdRoot # "&&cd " # newPath # "&&echo " # newPath # "^>" # curPath # "&&python " # curPath # "&&pause"
+		cmdStr = cmdRoot # "&&cd " # newPath # "&&start cmd.exe&&parse"
 	}
 
-	TestMsg("编译: " # CharFromKey(13) # cmdStr, 1)
+	TestMsg("编译: " # CharFromKey(13) # noteCmd # CharFromKey(13) # cmdStr, 2)
 	ShellOpenCustomCmd(cmdStr)
 }
 
-macro NotePythonCmd(hbuf, noteCmd, curPath)
+macro NotePythonCmd(hbuf, noteCmd, rootPath, curPath)
 {
 	curPath = GetTransFileName(hbuf, curPath, 16)
-	if(noteCmd == "python_w" || noteCmd == "python_t")
+	if(noteCmd == "python_w")
 		SetClipSimpleString("python " # curPath)
 		
-	toolPath = getMacroValue(hbuf, "toolPath", 1)
-	if(noteCmd == "python_t")
-		newPath = GetTransFileName(hbuf, toolPath, 0)
+	if(rootPath != "")
+		newPath = GetTransFileName(hbuf, rootPath, 0)
 	else
 		newPath = GetTransFileName(hbuf, "", 0)
 	cmdRoot = GetTransRootDir(newPath)
 
 	//python_w: delay
-	//python_t: tool
-	if(noteCmd == "python_w" || noteCmd == "python_t")
+	if(noteCmd == "python_w")
 	{
 //		cmdStr = cmdRoot # "&&cd " # newPath # "&&start " # curPath
 		cmdStr = cmdRoot # "&&cd " # newPath # "&&start cmd.exe&&parse"
@@ -986,7 +1013,7 @@ macro NotePythonCmd(hbuf, noteCmd, curPath)
 		cmdStr = cmdRoot # "&&cd " # newPath # "&&echo " # newPath # "^>" # curPath # "&&python " # curPath # "&&pause"
 	}
 
-	TestMsg("编译: " # CharFromKey(13) # cmdStr, 1)
+	TestMsg("编译: " # CharFromKey(13) # cmdStr, 2)
 	ShellOpenCustomCmd(cmdStr)
 }
 
@@ -1018,7 +1045,7 @@ macro NoteShowFileList(hbuf, curPath, cur_row)
 macro NoteScroll(hbuf, curPath, noteWord)
 {
 	//   分4种情况搜索
-	TestMsg("跳转到文件: " # CharFromKey(13) # curPath # CharFromKey(13) #　"内容: " # CharFromKey(13) # noteWord, 1)
+	TestMsg("跳转到文件: " # CharFromKey(13) # curPath # CharFromKey(13) #　"内容: " # CharFromKey(13) # noteWord, 2)
 	mSel = SearchInBuf(hbuf, "^" # "@noteWord@", 0, 0, 0, 1, 0)
 	if (mSel == "")
 	{
@@ -1047,7 +1074,7 @@ macro NoteScroll(hbuf, curPath, noteWord)
 	if (mSel != "")
 	{
 		//8.4 关键词跳转
-		TestMsg("跳转到文件: " # CharFromKey(13) # curPath # CharFromKey(13) #　"内容: " # CharFromKey(13) # noteWord, 1)
+		TestMsg("跳转到文件: " # CharFromKey(13) # curPath # CharFromKey(13) #　"内容: " # CharFromKey(13) # noteWord, 2)
 		ScrollCursor(mSel)
 	}
 }
