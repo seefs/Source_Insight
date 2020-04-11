@@ -1,28 +1,28 @@
-
-»ù´¡Â·¾¶ÉèÖÃ: 
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®: 
 //basePath = D:\project\GitHub\myPython
 basePath = Save:node\Pythons\
 
 /***********************************************************************/
 
 // 0~7
-// 1. Á·Ï°
+// 1. ç»ƒä¹ 
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.01\] Hello, World
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.02\] time-------------Ê±¼ä
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.02\] time-------------æ—¶é—´
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.03\] if .. else ..
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.04\] while, for
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.05\] cmath------------ÊıÑ§
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.06\] / //-------------ÕûÊı³ı·¨
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.07\] lambda-----------ÄäÃûº¯Êı
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.08\] match, re--------Í¨Åä·û
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.05\] cmath------------æ•°å­¦
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.06\] / //-------------æ•´æ•°é™¤æ³•
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.07\] lambda-----------åŒ¿åå‡½æ•°
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.08\] match, re--------é€šé…ç¬¦
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.09\] type, isinstance
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.10\] np
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.11\] tensor, array
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.12\] op---------------¼Ó·¨³Ë·¨
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.13\] * **-------------³Ë·½
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.12\] op---------------åŠ æ³•ä¹˜æ³•
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.13\] * **-------------ä¹˜æ–¹
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.14\] randint
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.15\] import list------³£ÓÃµ¼Èë
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.16\] import-----------µ¼ÈëÉÏ¼¶Ä¿Â¼
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.15\] import list------å¸¸ç”¨å¯¼å…¥
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.16\] import-----------å¯¼å…¥ä¸Šçº§ç›®å½•
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.17\] global nonlocal
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.18\] __dict__
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.19\] graph
@@ -35,30 +35,30 @@ Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.25\] @tf.function
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[1.26\] 
 // 2. fun
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.1\] str, bytes, bytearray
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.2\] list--------------ÁĞ±í
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.3\] tuple-------------Ôª×é
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.4\] dict--------------×Öµä
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.5\] seq---------------ĞòÁĞ
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.6\] enumerate---------±éÀú, Ïà»¥×ª»»
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.2\] list--------------åˆ—è¡¨
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.3\] tuple-------------å…ƒç»„
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.4\] dict--------------å­—å…¸
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.5\] seq---------------åºåˆ—
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.6\] enumerate---------éå†, ç›¸äº’è½¬æ¢
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.7\] re
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.8\] DType
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.9\] map---------------Ó³Éä
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.10\] set--------------¼¯ºÏ
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.11\] [i for i in x]---ÁĞ±í(/×Öµä/¼¯ºÏ)ÍÆµ¼Ê½
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.9\] map---------------æ˜ å°„
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.10\] set--------------é›†åˆ
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.11\] [i for i in x]---åˆ—è¡¨(/å­—å…¸/é›†åˆ)æ¨å¯¼å¼
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.12\] sorted
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.13\] tf.split, tf.slice
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.14\] detect, coding---±àÂë
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.15\] reduce-----------ÀÛ»ı
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.16\] filter-----------¹ıÂË
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.14\] detect, coding---ç¼–ç 
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.15\] reduce-----------ç´¯ç§¯
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.16\] filter-----------è¿‡æ»¤
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.17\] 
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[2.18\] 
 // 3. file
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.1\] pd.read_csv
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.2\] df.sample Ëæ»úÑ¡È¡
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.2\] df.sample éšæœºé€‰å–
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.3\] mkdir
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.4\] pd.concat--------ĞĞÁĞÁ¬½Ó
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.5\] df_to_array------Ïà»¥×ª»»
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.6\] pd.get_dummies---¶ÀÈÈ±àÂë
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.4\] pd.concat--------è¡Œåˆ—è¿æ¥
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.5\] df_to_array------ç›¸äº’è½¬æ¢
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.6\] pd.get_dummies---ç‹¬çƒ­ç¼–ç 
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.7\] file, path-------
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.8\] file_read_write
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[3.9\] 
@@ -70,11 +70,11 @@ Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.3\] json
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.4\] six
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.5\] sklearn.LabelEncoder
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.6\] unittest
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.7\] tqdm-------------½ø¶ÈÌõ¿â
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.7\] tqdm-------------è¿›åº¦æ¡åº“
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.8\] Keras, TFLearn, Sonnet
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.9\] 
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.10\] 
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.11\] Jieba-----------·Ö´Ê
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.11\] Jieba-----------åˆ†è¯
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.12\] 
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.13\] 
 // 5. tf
@@ -82,26 +82,26 @@ Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.1\] tf.Variable()
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.2\] tf.train.Saver.save()
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.3\] tf.add()
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.4\] tf.group(mul, add)
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.5\] tf.gradients-------Ìİ¶È
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.5\] tf.gradients-------æ¢¯åº¦
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.6\] tf.data.Dataset----tf1.0
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.7\] tf.layers
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.8\] tf.nn.softmax------¹éÒ»»¯
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.8\] tf.nn.softmax------å½’ä¸€åŒ–
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.9\] tf.one_hot
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.10\] tf.logging
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.11\] tf.Estimator------ÆÀ¹ÀÆ÷
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.12\] tf.Experiment-----ÊµÑéÀà
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.13\] tf.Dataset--------Êı¾İ¼¯
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.11\] tf.Estimator------è¯„ä¼°å™¨
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.12\] tf.Experiment-----å®éªŒç±»
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.13\] tf.Dataset--------æ•°æ®é›†
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.14\] layer_norm
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.15\] accuracy----------×¼È·¶È
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.15\] accuracy----------å‡†ç¡®åº¦
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.16\] tf.reshape
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.17\] tf.gather---------Ë÷ÒıÌáÈ¡
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.17\] tf.gather---------ç´¢å¼•æå–
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.18\] Hook
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.19\] tf.enable_eager_execution()
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.20\] tf.summary
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.21\] tf.map_fn
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.22\] tf.cond
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.23\] tf.while_loop
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.24\] tf.concat---------ĞĞÁĞÁ¬½Ó
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.24\] tf.concat---------è¡Œåˆ—è¿æ¥
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.25\] tf.expand_dims
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.26\] tf.logical_and
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[5.27\] tf.equal
@@ -114,17 +114,17 @@ Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.2\] tf2_model----------Masking
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.3\] tf2_K_maximum
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.4\] tf.py_function
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.5\] tf2_loss
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.6\] tf2_keras_clip-----±ß½çÖµ
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.7\] tf.nn.relu---------¼¤»îop
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.8\] tf.nn.conv2d-------¾í»ıop
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.9\] tf.nn.avg_pool-----³Ø»¯op
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.10\] tf.nn.l2_normalize--¹éÒ»»¯op
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.11\] tf.nn....----------ÆäËû
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.6\] tf2_keras_clip-----è¾¹ç•Œå€¼
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.7\] tf.nn.relu---------æ¿€æ´»op
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.8\] tf.nn.conv2d-------å·ç§¯op
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.9\] tf.nn.avg_pool-----æ± åŒ–op
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.10\] tf.nn.l2_normalize--å½’ä¸€åŒ–op
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.11\] tf.nn....----------å…¶ä»–
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.12\] 
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.13\] 
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.14\] tf2_classify_bys---·ÖÀàÆ÷
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.15\] tf2_Dense----------¶ş·ÖÀà
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.16\] LogisticRegression-Âß¼­»Ø¹é
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.14\] tf2_classify_bys---åˆ†ç±»å™¨
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.15\] tf2_Dense----------äºŒåˆ†ç±»
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.16\] LogisticRegression-é€»è¾‘å›å½’
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.17\] 
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.18\] 
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[6.19\] 
@@ -138,7 +138,7 @@ Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.3\] softmax sigmoid
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.4\] max min sum prod
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.5\] any all
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.6\] square round
-Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.7\] clip----------------²Ã¼ô
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.7\] clip----------------è£å‰ª
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.8\] repeat
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.9\] arange
 Save:node\Pythons\study\Macro_Pythons_tf1.h \[7.10\] flatten
@@ -155,8 +155,8 @@ python py_test\test_Hello_World.py
 
 
 
-[1.02] time-------------Ê±¼ä
-//time µ±Ç°Ê±¼ä´Á
+[1.02] time-------------æ—¶é—´
+//time å½“å‰æ—¶é—´æˆ³
 py_test\test_time.py
 python_w py_test\test_time.py
 
@@ -192,7 +192,7 @@ py_test\test_for_else.py
 python_w py_test\test_for_else.py
 
 
-[1.05] cmath------------ÊıÑ§
+[1.05] cmath------------æ•°å­¦
 // cmath
 py_test\test_cmath.py
 python py_test\test_cmath.py
@@ -200,19 +200,19 @@ python py_test\test_cmath.py
 
 
 [1.06] / //
-//" / "¾Í±íÊ¾ ¸¡µãÊı³ı·¨£¬·µ»Ø¸¡µã½á¹û;" // "±íÊ¾ÕûÊı³ı·¨¡£
+//" / "å°±è¡¨ç¤º æµ®ç‚¹æ•°é™¤æ³•ï¼Œè¿”å›æµ®ç‚¹ç»“æœ;" // "è¡¨ç¤ºæ•´æ•°é™¤æ³•ã€‚
 
 
 
-[1.07] lambda-----------ÄäÃûº¯Êı
+[1.07] lambda-----------åŒ¿åå‡½æ•°
 //lambda
 py_test\test_lambda.py
 python py_test\test_lambda.py
 
-//lambda¶à²ÎÊı
+//lambdaå¤šå‚æ•°
 
 
-[1.08] match, re--------Í¨Åä·û
+[1.08] match, re--------é€šé…ç¬¦
 //re
 py_test\test_re.py
 python py_test\test_re.py
@@ -225,9 +225,9 @@ python py_test\test_re_match.py
 
 
 [1.09] type, isinstance
-//isinstance()Óëtype()µÄÇø±ğ
-//	isinstance() »áÈÏÎª×ÓÀàÊÇÒ»ÖÖ¸¸ÀàÀàĞÍ£¬¿¼ÂÇ¼Ì³Ğ¹ØÏµ¡£
-//	type() ²»»áÈÏÎª×ÓÀàÊÇÒ»ÖÖ¸¸ÀàÀàĞÍ£¬²»¿¼ÂÇ¼Ì³Ğ¹ØÏµ¡£
+//isinstance()ä¸type()çš„åŒºåˆ«
+//	isinstance() ä¼šè®¤ä¸ºå­ç±»æ˜¯ä¸€ç§çˆ¶ç±»ç±»å‹ï¼Œè€ƒè™‘ç»§æ‰¿å…³ç³»ã€‚
+//	type() ä¸ä¼šè®¤ä¸ºå­ç±»æ˜¯ä¸€ç§çˆ¶ç±»ç±»å‹ï¼Œä¸è€ƒè™‘ç»§æ‰¿å…³ç³»ã€‚
 
 //	class A:
 //	pass
@@ -244,7 +244,7 @@ python py_test\test_re_match.py
 
 
 [1.10] np
-//	ERR£º
+//	ERRï¼š
 py_test\test_np.py
 python py_test\test_np.py
 
@@ -252,7 +252,7 @@ python py_test\test_np.py
 
 
 [1.11] tensor, array
-//	tensor×ªarray:
+//	tensorè½¬array:
 //    tf.convert_to_tensor(b)
 py_test\test_shape.py
 python_w py_test\test_shape.py
@@ -264,12 +264,12 @@ python_w py_test\tf_str_to_tensor.py
 
 
 
-[1.12] ¼Ó·¨³Ë·¨
+[1.12] åŠ æ³•ä¹˜æ³•
 //one_hot
 py_test\math_op.py
 python_w py_test\math_op.py
 
-//list, tensorÏà¼Ó
+//list, tensorç›¸åŠ 
 py_test\math_op1.py
 python_w py_test\math_op1.py
 
@@ -285,26 +285,26 @@ python_w py_test\math_op3.py
 py_test\math_op4.py
 python_w py_test\math_op4.py
 
-//tf ¾ØÕó
+//tf çŸ©é˜µ
 tf.multiply()
 tf.matmul()
 
-//²»Í¬ĞÎ×´µÄÔËËã
+//ä¸åŒå½¢çŠ¶çš„è¿ç®—
 py_test\math_op5.py
 python_w py_test\math_op5.py
 
 
 
-[1.13] * ** ³Ë·½
-//*  ´ú±í³Ë·¨
-//*  ±íÊ¾±¶Êı ¡®aaa¡¯*3
-//²ÎÊı:
-def demo(*p):  ÊÇÓÃÀ´½ÓÊÜÈÎÒâ¶à¸ö²ÎÊı²¢½«Æä·ÅÔÚÒ»¸öÔª×éÖĞ
-def d(a,b,c):  d(*[1,2,3]), ×Ô¶¯½øĞĞ½â°üÈ»ºó´«µİ¸ø¶à¸öµ¥±äÁ¿²ÎÊı£¨²ÎÊı¸öÊıÒª¶ÔÓ¦ÏàµÈ£©
+[1.13] * ** ä¹˜æ–¹
+//*  ä»£è¡¨ä¹˜æ³•
+//*  è¡¨ç¤ºå€æ•° â€˜aaaâ€™*3
+//å‚æ•°:
+def demo(*p):  æ˜¯ç”¨æ¥æ¥å—ä»»æ„å¤šä¸ªå‚æ•°å¹¶å°†å…¶æ”¾åœ¨ä¸€ä¸ªå…ƒç»„ä¸­
+def d(a,b,c):  d(*[1,2,3]), è‡ªåŠ¨è¿›è¡Œè§£åŒ…ç„¶åä¼ é€’ç»™å¤šä¸ªå•å˜é‡å‚æ•°ï¼ˆå‚æ•°ä¸ªæ•°è¦å¯¹åº”ç›¸ç­‰ï¼‰
 
-//** ´ú±í³Ë·½
-//²ÎÊı:
-def demo(**p):	**parameterÓÃÓÚ½ÓÊÕÀàËÆÓÚ¹Ø¼ü²ÎÊıÒ»Ñù¸³ÖµµÄĞÎÊ½µÄ¶à¸öÊµ²Î·ÅÈë×ÖµäÖĞ£¨¼´°Ñ¸Ãº¯ÊıµÄ²ÎÊı×ª»»Îª×Öµä£©¡£
+//** ä»£è¡¨ä¹˜æ–¹
+//å‚æ•°:
+def demo(**p):	**parameterç”¨äºæ¥æ”¶ç±»ä¼¼äºå…³é”®å‚æ•°ä¸€æ ·èµ‹å€¼çš„å½¢å¼çš„å¤šä¸ªå®å‚æ”¾å…¥å­—å…¸ä¸­ï¼ˆå³æŠŠè¯¥å‡½æ•°çš„å‚æ•°è½¬æ¢ä¸ºå­—å…¸ï¼‰ã€‚
 
 
 [1.14] randint
@@ -328,7 +328,7 @@ import time
 
 
 [1.16] import
-// µ¼ÈëÉÏ¼¶Ä¿Â¼
+// å¯¼å…¥ä¸Šçº§ç›®å½•
 py_test\import_test\A\main_model.py
 python_w py_test\import_test\A\main_model.py
 	
@@ -336,9 +336,9 @@ python_w py_test\import_test\A\main_model.py
 
 [1.17] global nonlocal
 // global:
-ÈôÏëÔÚº¯ÊıÄÚ²¿¶Ôº¯ÊıÍâµÄ±äÁ¿½øĞĞ²Ù×÷£¬¾ÍĞèÒªÔÚº¯ÊıÄÚ²¿ÉùÃ÷ÆäÎªglobal¡£
+è‹¥æƒ³åœ¨å‡½æ•°å†…éƒ¨å¯¹å‡½æ•°å¤–çš„å˜é‡è¿›è¡Œæ“ä½œï¼Œå°±éœ€è¦åœ¨å‡½æ•°å†…éƒ¨å£°æ˜å…¶ä¸ºglobalã€‚
 // globals():
-globals() º¯Êı»áÒÔ×ÖµäÀàĞÍ·µ»Øµ±Ç°Î»ÖÃµÄÈ«²¿È«¾Ö±äÁ¿¡£
+globals() å‡½æ•°ä¼šä»¥å­—å…¸ç±»å‹è¿”å›å½“å‰ä½ç½®çš„å…¨éƒ¨å…¨å±€å˜é‡ã€‚
 // nonlocal
 
 
@@ -372,21 +372,21 @@ python_w py_test\base_class.py
 
 
 [1.21] _,__
-_var: ÄÚ²¿Ê¹ÓÃ, ²»×Ô¶¯µ¼Èë
-var_: ½â¾öÃüÃû³åÍ»
-__var: ÖØĞ´ÊôĞÔÃû³Æ£¬ÒÔ±ÜÃâ×ÓÀàÖĞµÄÃüÃû³åÍ»
-__var__:ÌØÊâÓÃÍ¾
-_: ÁÙÊ±±äÁ¿
+_var: å†…éƒ¨ä½¿ç”¨, ä¸è‡ªåŠ¨å¯¼å…¥
+var_: è§£å†³å‘½åå†²çª
+__var: é‡å†™å±æ€§åç§°ï¼Œä»¥é¿å…å­ç±»ä¸­çš„å‘½åå†²çª
+__var__:ç‰¹æ®Šç”¨é€”
+_: ä¸´æ—¶å˜é‡
 
 
 
 
 [1.22] yield
-//yield--Êı×é·Ö¸ô
+//yield--æ•°ç»„åˆ†éš”
 py_test\base_yield.py
 python_w py_test\base_yield.py
 
-//yield+lambda ³åÍ»
+//yield+lambda å†²çª
 py_test\base_yield_lambda.py
 python_w py_test\base_yield_lambda.py
 
@@ -401,8 +401,8 @@ d.size = 9
 //shape
 py_test\base_shape.py
 python_w py_test\base_shape.py
-// tf.shape()ÖĞaÊı¾İÀàĞÍ¿ÉÒÔÊÇtensor£¬list£¬array¡£ ·µ»ØTensor
-// a.get_shape()ÖĞaµÄÊı¾İÀàĞÍÖ»ÄÜÊÇtensor£¬·µ»ØÔª×é¡£
+// tf.shape()ä¸­aæ•°æ®ç±»å‹å¯ä»¥æ˜¯tensorï¼Œlistï¼Œarrayã€‚ è¿”å›Tensor
+// a.get_shape()ä¸­açš„æ•°æ®ç±»å‹åªèƒ½æ˜¯tensorï¼Œè¿”å›å…ƒç»„ã€‚
 
 
 tf.shape
@@ -439,19 +439,19 @@ print(tf.autograph.to_code(f))
 
 [2.1] str, bytes, bytearray
 //strip
-str.strip()  ÒÆ³ı×Ö·û´®Í·Î²Ö¸¶¨µÄ×Ö·û
+str.strip()  ç§»é™¤å­—ç¬¦ä¸²å¤´å°¾æŒ‡å®šçš„å­—ç¬¦
 
-str.join()  Á¬½Ó×Ö·û´®Êı×é¡£½«×Ö·û´®¡¢Ôª×é¡¢ÁĞ±íÖĞµÄÔªËØÒÔÖ¸¶¨µÄ×Ö·û(·Ö¸ô·û)Á¬½ÓÉú³ÉÒ»¸öĞÂµÄ×Ö·û´®
+str.join()  è¿æ¥å­—ç¬¦ä¸²æ•°ç»„ã€‚å°†å­—ç¬¦ä¸²ã€å…ƒç»„ã€åˆ—è¡¨ä¸­çš„å…ƒç´ ä»¥æŒ‡å®šçš„å­—ç¬¦(åˆ†éš”ç¬¦)è¿æ¥ç”Ÿæˆä¸€ä¸ªæ–°çš„å­—ç¬¦ä¸²
 //	a=['1','2','3','4','5']
 //	print('  '.join(a))
 //	1 2 3 4 5
 
 str.split()
 str.split(str="", num=string.count(str)).
-//str -- ·Ö¸ô·û£¬Ä¬ÈÏÎªËùÓĞµÄ¿Õ×Ö·û£¬°üÀ¨¿Õ¸ñ¡¢»»ĞĞ(\n)¡¢ÖÆ±í·û(\t)µÈ¡£
-//num -- ·Ö¸î´ÎÊı¡£Ä¬ÈÏÎª -1, ¼´·Ö¸ôËùÓĞ¡£
+//str -- åˆ†éš”ç¬¦ï¼Œé»˜è®¤ä¸ºæ‰€æœ‰çš„ç©ºå­—ç¬¦ï¼ŒåŒ…æ‹¬ç©ºæ ¼ã€æ¢è¡Œ(\n)ã€åˆ¶è¡¨ç¬¦(\t)ç­‰ã€‚
+//num -- åˆ†å‰²æ¬¡æ•°ã€‚é»˜è®¤ä¸º -1, å³åˆ†éš”æ‰€æœ‰ã€‚
 
-ord(char) chr(48) unichr(48)  ASCII/UnicodeÂë
+ord(char) chr(48) unichr(48)  ASCII/Unicodeç 
 
 
 //str_bytes_bytearray
@@ -461,32 +461,32 @@ python_w py_test\fun_str_bytes.py
 
 
 
-[2.2] list---ÁĞ±í
-range() º¯Êı¿É´´½¨Ò»¸öÕûÊıÁĞ±í
+[2.2] list---åˆ—è¡¨
+range() å‡½æ•°å¯åˆ›å»ºä¸€ä¸ªæ•´æ•°åˆ—è¡¨
 
-//	s1=set([])¡¡££ÁĞ±í
-//	s2=set(())¡¡££Ôª×é
-//	s3=set({})¡¡££×Öµä
+//	s1=set([])ã€€ï¼ƒåˆ—è¡¨
+//	s2=set(())ã€€ï¼ƒå…ƒç»„
+//	s3=set({})ã€€ï¼ƒå­—å…¸
 
-//list º¯Êı
+//list å‡½æ•°
 py_test\test_list.py
 python_w py_test\test_list.py
 
-//list Ò»¼¶Ë÷Òı
+//list ä¸€çº§ç´¢å¼•
 py_test\test_list_simple.py
 python_w py_test\test_list_simple.py
 
-//list ¶ş¼¶Ë÷Òı
+//list äºŒçº§ç´¢å¼•
 py_test\test_list_index.py
 python_w py_test\test_list_index.py
 	
-//list ¶ş¼¶Ë÷Òı ¸üĞÂÖµ
+//list äºŒçº§ç´¢å¼• æ›´æ–°å€¼
 py_test\test_list_set.py
 python_w py_test\test_list_set.py
 
 
-[2.3] tuple--Ôª×é
-zip()  ½ÓÊÜÈÎÒâ¶à¸ö£¨°üÀ¨0¸öºÍ1¸ö£©ĞòÁĞ×÷Îª²ÎÊı£¬·µ»ØÒ»¸ötupleÁĞ±í
+[2.3] tuple--å…ƒç»„
+zip()  æ¥å—ä»»æ„å¤šä¸ªï¼ˆåŒ…æ‹¬0ä¸ªå’Œ1ä¸ªï¼‰åºåˆ—ä½œä¸ºå‚æ•°ï¼Œè¿”å›ä¸€ä¸ªtupleåˆ—è¡¨
 //xyz = zip(x, y, z)
 //      zip([1, 4, 7], [2, 5, 8], [3, 6, 9])
 //      [(1, 4, 7), (2, 5, 8), (3, 6, 9)]
@@ -497,31 +497,31 @@ zip()  ½ÓÊÜÈÎÒâ¶à¸ö£¨°üÀ¨0¸öºÍ1¸ö£©ĞòÁĞ×÷Îª²ÎÊı£¬·µ»ØÒ»¸ötupleÁĞ±í
 
 //	tuple([1,2,3,4])
 //		(1, 2, 3, 4)
-//	tuple({1:2,3:4})    #Õë¶Ô×Öµä »á·µ»Ø×ÖµäµÄkey×é³ÉµÄtuple
+//	tuple({1:2,3:4})    #é’ˆå¯¹å­—å…¸ ä¼šè¿”å›å­—å…¸çš„keyç»„æˆçš„tuple
 //		(1, 3)
-//	tuple((1,2,3,4))    #Ôª×é»á·µ»ØÔª×é×ÔÉí
+//	tuple((1,2,3,4))    #å…ƒç»„ä¼šè¿”å›å…ƒç»„è‡ªèº«
 //		(1, 2, 3, 4)
 	
-// ±éÀúÔª×é
+// éå†å…ƒç»„
 py_test\test_tuple.py
 python_w py_test\test_tuple.py
 
-// Ôª×é->list
+// å…ƒç»„->list
 py_test\test_tuple_to_list.py
 python_w py_test\test_tuple_to_list.py
 
-// Ôª×é
+// å…ƒç»„
 py_test\test_tuple_add.py
 python_w py_test\test_tuple_add.py
 
 
-[2.4] dict---×Öµä
-dict()  Ê¹ÓÃzip´´½¨×Öµä
+[2.4] dict---å­—å…¸
+dict()  ä½¿ç”¨zipåˆ›å»ºå­—å…¸
 //dict(zip(key, value))
-//      {¡®a¡®: 1, ¡®b¡®: 2, ¡®c¡®: 3}
-//dict(dict1, **dict2) Á¬½ÓÁ½¸ö×Öµä
+//      {â€˜aâ€˜: 1, â€˜bâ€˜: 2, â€˜câ€˜: 3}
+//dict(dict1, **dict2) è¿æ¥ä¸¤ä¸ªå­—å…¸
 
-fromkeys()  ´´½¨Ò»¸öĞÂ×Öµä£¬ÒÔĞòÁĞseqÖĞÔªËØ×ö×ÖµäµÄ¼ü£¬valueÎª×ÖµäËùÓĞ¼ü¶ÔÓ¦µÄ³õÊ¼Öµ¡£
+fromkeys()  åˆ›å»ºä¸€ä¸ªæ–°å­—å…¸ï¼Œä»¥åºåˆ—seqä¸­å…ƒç´ åšå­—å…¸çš„é”®ï¼Œvalueä¸ºå­—å…¸æ‰€æœ‰é”®å¯¹åº”çš„åˆå§‹å€¼ã€‚
 //d=dict.fromkeys(seq,100)
 
 //tn = dict.get(tensor_name, 0)
@@ -531,8 +531,8 @@ py_test\test_dict.py
 python_w py_test\test_dict.py
 
 
-[2.5] seq----ĞòÁĞ
-//	seq={¡®name¡®,¡®age¡®,¡®score¡®}
+[2.5] seq----åºåˆ—
+//	seq={â€˜nameâ€˜,â€˜ageâ€˜,â€˜scoreâ€˜}
 
 //	seq = ['one', 'two', 'three']
 //	for i, element in enumerate(seq):
@@ -542,15 +542,15 @@ python_w py_test\test_dict.py
 //		2 three
 
 
-[2.6] enumerate----±éÀú, Ïà»¥×ª»»
-enumerate() º¯ÊıÓÃÓÚ½«Ò»¸ö¿É±éÀúµÄÊı¾İ¶ÔÏó(ÈçÁĞ±í¡¢Ôª×é»ò×Ö·û´®)×éºÏÎªÒ»¸öË÷ÒıĞòÁĞ£¬Í¬Ê±ÁĞ³öÊı¾İºÍÊı¾İÏÂ±ê£¬Ò»°ãÓÃÔÚ for Ñ­»·µ±ÖĞ¡£
+[2.6] enumerate----éå†, ç›¸äº’è½¬æ¢
+enumerate() å‡½æ•°ç”¨äºå°†ä¸€ä¸ªå¯éå†çš„æ•°æ®å¯¹è±¡(å¦‚åˆ—è¡¨ã€å…ƒç»„æˆ–å­—ç¬¦ä¸²)ç»„åˆä¸ºä¸€ä¸ªç´¢å¼•åºåˆ—ï¼ŒåŒæ—¶åˆ—å‡ºæ•°æ®å’Œæ•°æ®ä¸‹æ ‡ï¼Œä¸€èˆ¬ç”¨åœ¨ for å¾ªç¯å½“ä¸­ã€‚
 
 //	rdm = np.random.mtrand.RandomState(SEED)
 //	X = rdm.rand(32, 2)
 //	Y_ = [[int(x0 + x1 < 1)] for (x0, x1) in X]
 
 
-//±éÀú×Öµädict
+//éå†å­—å…¸dict
 //	for i in dict: 
 //	    print "dict[%s]=" % i,dict[i] 
 
@@ -564,7 +564,7 @@ enumerate() º¯ÊıÓÃÓÚ½«Ò»¸ö¿É±éÀúµÄÊı¾İ¶ÔÏó(ÈçÁĞ±í¡¢Ôª×é»ò×Ö·û´®)×éºÏÎªÒ»¸öË÷ÒıĞò
 //	     print "dict[%s]=" % k,v 
 
 
-// Ïà»¥×ª»»µÄ·½·¨
+// ç›¸äº’è½¬æ¢çš„æ–¹æ³•
 py_test\test_list_trans.py
 python_w py_test\test_list_trans.py
 
@@ -572,7 +572,7 @@ python_w py_test\test_list_trans.py
 
 
 [2.7] re
-compile()  ·µ»ØµÄÊÇÒ»¸öÆ¥Åä¶ÔÏó£¬Ëüµ¥¶ÀÊ¹ÓÃ¾ÍÃ»ÓĞÈÎºÎÒâÒå£¬ĞèÒªºÍfindall(), search(), match()´îÅäÊ¹ÓÃ¡£ 
+compile()  è¿”å›çš„æ˜¯ä¸€ä¸ªåŒ¹é…å¯¹è±¡ï¼Œå®ƒå•ç‹¬ä½¿ç”¨å°±æ²¡æœ‰ä»»ä½•æ„ä¹‰ï¼Œéœ€è¦å’Œfindall(), search(), match()æ­é…ä½¿ç”¨ã€‚ 
 //	regex = re.compile('\w*o\w*')
 //		x = regex.findall(content)
 
@@ -582,16 +582,16 @@ py_test\fun_re_search.py
 python_w py_test\fun_re_search.py
 
 
-escape()  ¿ÉÒÔ¶Ô×Ö·û´®ÖĞËùÓĞ¿ÉÄÜ±»½âÊÍÎªÕıÔòÔËËã·ûµÄ×Ö·û½øĞĞ×ªÒåµÄÓ¦ÓÃº¯Êı
+escape()  å¯ä»¥å¯¹å­—ç¬¦ä¸²ä¸­æ‰€æœ‰å¯èƒ½è¢«è§£é‡Šä¸ºæ­£åˆ™è¿ç®—ç¬¦çš„å­—ç¬¦è¿›è¡Œè½¬ä¹‰çš„åº”ç”¨å‡½æ•°
 //  re.escape('www.python.org')
 'www\\.python\\.org'
 //  re.findall(re.escape('w.py'),"jw.pyji w.py.f")
 ['w.py', 'w.py']
 
 
-sub()  ÊÇsubstitudeµÄËõĞ´£¬±íÊ¾Ìæ»»
+sub()  æ˜¯substitudeçš„ç¼©å†™ï¼Œè¡¨ç¤ºæ›¿æ¢
 //  re.sub(r'\w+','10',"xy 15 rt 3e,gep",2,flags=re.I )
-'10 10 rt 3e,gep'£¬
+'10 10 rt 3e,gep'ï¼Œ
 
 //	string = 'apple pear banana meat'
 //	re.sub(r'(apple|banana)\s(\w+)\s?', lambda x: func(ret, x.group(1), x.group(2)), string)
@@ -599,34 +599,34 @@ sub()  ÊÇsubstitudeµÄËõĞ´£¬±íÊ¾Ìæ»»
 
 
 [2.8] DType
-//DType Àà
-//	¶¨ÒåÔÚ£ºtensorflow/python/framework/dtypes.py.
+//DType ç±»
+//	å®šä¹‰åœ¨ï¼štensorflow/python/framework/dtypes.py.
 //
-//	²Î¼ûÖ¸ÄÏ£º¹¹½¨Í¼>ÕÅÁ¿ÀàĞÍ
+//	å‚è§æŒ‡å—ï¼šæ„å»ºå›¾>å¼ é‡ç±»å‹
 //
-//	±íÊ¾ TensorFlow ÕÅÁ¿ÖĞÔªËØµÄÀàĞÍ. 
-//	¶¨ÒåÁËÒÔÏÂ DType ¶ÔÏó:
+//	è¡¨ç¤º TensorFlow å¼ é‡ä¸­å…ƒç´ çš„ç±»å‹. 
+//	å®šä¹‰äº†ä»¥ä¸‹ DType å¯¹è±¡:
 //
-//	tf.float16£º16Î»°ë¾«¶È¸¡µãÊı.
-//	tf.float32£º32Î»µ¥¾«¶È¸¡µãÊı.
-//	tf.float64£º64Î»Ë«¾«¶È¸¡µãÊı.
-//	tf.bfloat16£º16Î»½Ø¶Ï¸¡µãÊı.
-//	tf.complex64£º64Î»µ¥¾«¶È¸´ºÏ.
-//	tf.complex128£º128Î»Ë«¾«¶È¸´ºÏ.
-//	tf.int8£º8Î»ÓĞ·ûºÅÕûÊı.
-//	tf.uint8£º8Î»ÎŞ·ûºÅÕûÊı.
-//	tf.uint16£º16Î»ÎŞ·ûºÅÕûÊı.
-//	tf.int16£º16Î»ÓĞ·ûºÅÕûÊı.
-//	tf.int32£º32Î»ÓĞ·ûºÅÕûÊı.
-//	tf.int64£º64Î»ÓĞ·ûºÅÕûÊı.
-//	tf.bool£º²¼¶ûÖµ.
-//	tf.string£º×Ö·û´®.
-//	tf.qint8£ºÁ¿»¯8Î»ÓĞ·ûºÅÕûÊı.
-//	tf.quint8£ºÁ¿»¯µÄ8Î»ÎŞ·ûºÅÕûÊı.
-//	tf.qint16£ºÁ¿»¯16Î»ÓĞ·ûºÅÕûÊı.
-//	tf.quint16£ºÁ¿»¯16Î»ÎŞ·ûºÅÕûÊı.
-//	tf.qint32£ºÁ¿»¯32Î»ÓĞ·ûºÅÕûÊı.
-//	tf.resource£º´¦Àí¿É±ä×ÊÔ´.
+//	tf.float16ï¼š16ä½åŠç²¾åº¦æµ®ç‚¹æ•°.
+//	tf.float32ï¼š32ä½å•ç²¾åº¦æµ®ç‚¹æ•°.
+//	tf.float64ï¼š64ä½åŒç²¾åº¦æµ®ç‚¹æ•°.
+//	tf.bfloat16ï¼š16ä½æˆªæ–­æµ®ç‚¹æ•°.
+//	tf.complex64ï¼š64ä½å•ç²¾åº¦å¤åˆ.
+//	tf.complex128ï¼š128ä½åŒç²¾åº¦å¤åˆ.
+//	tf.int8ï¼š8ä½æœ‰ç¬¦å·æ•´æ•°.
+//	tf.uint8ï¼š8ä½æ— ç¬¦å·æ•´æ•°.
+//	tf.uint16ï¼š16ä½æ— ç¬¦å·æ•´æ•°.
+//	tf.int16ï¼š16ä½æœ‰ç¬¦å·æ•´æ•°.
+//	tf.int32ï¼š32ä½æœ‰ç¬¦å·æ•´æ•°.
+//	tf.int64ï¼š64ä½æœ‰ç¬¦å·æ•´æ•°.
+//	tf.boolï¼šå¸ƒå°”å€¼.
+//	tf.stringï¼šå­—ç¬¦ä¸².
+//	tf.qint8ï¼šé‡åŒ–8ä½æœ‰ç¬¦å·æ•´æ•°.
+//	tf.quint8ï¼šé‡åŒ–çš„8ä½æ— ç¬¦å·æ•´æ•°.
+//	tf.qint16ï¼šé‡åŒ–16ä½æœ‰ç¬¦å·æ•´æ•°.
+//	tf.quint16ï¼šé‡åŒ–16ä½æ— ç¬¦å·æ•´æ•°.
+//	tf.qint32ï¼šé‡åŒ–32ä½æœ‰ç¬¦å·æ•´æ•°.
+//	tf.resourceï¼šå¤„ç†å¯å˜èµ„æº.
 
 
 //fun_type
@@ -642,15 +642,15 @@ python_w py_test\fun_type.py
 
 
 
-[2.9] map Ó³Éä
-map()  	»á¸ù¾İÌá¹©µÄº¯Êı¶ÔÖ¸¶¨ĞòÁĞ×öÓ³Éä¡£
-µÚÒ»¸ö²ÎÊı function ÒÔ²ÎÊıĞòÁĞÖĞµÄÃ¿Ò»¸öÔªËØµ÷ÓÃ function º¯Êı£¬·µ»Ø°üº¬Ã¿´Î function º¯Êı·µ»ØÖµµÄĞÂÁĞ±í¡£
-//  def square(x) : ...		   # ¼ÆËãÆ½·½Êı
-//  map(square, [1,2,3,4,5])   # ¼ÆËãÁĞ±í¸÷¸öÔªËØµÄÆ½·½
+[2.9] map æ˜ å°„
+map()  	ä¼šæ ¹æ®æä¾›çš„å‡½æ•°å¯¹æŒ‡å®šåºåˆ—åšæ˜ å°„ã€‚
+ç¬¬ä¸€ä¸ªå‚æ•° function ä»¥å‚æ•°åºåˆ—ä¸­çš„æ¯ä¸€ä¸ªå…ƒç´ è°ƒç”¨ function å‡½æ•°ï¼Œè¿”å›åŒ…å«æ¯æ¬¡ function å‡½æ•°è¿”å›å€¼çš„æ–°åˆ—è¡¨ã€‚
+//  def square(x) : ...		   # è®¡ç®—å¹³æ–¹æ•°
+//  map(square, [1,2,3,4,5])   # è®¡ç®—åˆ—è¡¨å„ä¸ªå…ƒç´ çš„å¹³æ–¹
 [1, 4, 9, 16, 25]
-//  map(lambda x: x ** 2, [1, 2, 3, 4, 5])	# Ê¹ÓÃ lambda ÄäÃûº¯Êı
+//  map(lambda x: x ** 2, [1, 2, 3, 4, 5])	# ä½¿ç”¨ lambda åŒ¿åå‡½æ•°
 [1, 4, 9, 16, 25]
-//  Ìá¹©ÁËÁ½¸öÁĞ±í£¬¶ÔÏàÍ¬Î»ÖÃµÄÁĞ±íÊı¾İ½øĞĞÏà¼Ó
+//  æä¾›äº†ä¸¤ä¸ªåˆ—è¡¨ï¼Œå¯¹ç›¸åŒä½ç½®çš„åˆ—è¡¨æ•°æ®è¿›è¡Œç›¸åŠ 
 //  map(lambda x, y: x + y, [1, 3, 5, 7, 9], [2, 4, 6, 8, 10])
 [3, 7, 11, 15, 19]
 
@@ -658,21 +658,21 @@ map()  	»á¸ù¾İÌá¹©µÄº¯Êı¶ÔÖ¸¶¨ĞòÁĞ×öÓ³Éä¡£
 py_test\fun_map.py
 python_w py_test\fun_map.py
 
-//map¶à²ÎÊı
+//mapå¤šå‚æ•°
 py_test\fun_map2.py
 python_w py_test\fun_map2.py
 
 
-[2.10] set----¼¯ºÏ
-¼¯ºÏÊÇÒ»¸öÎŞĞò²»ÖØ¸´ÔªËØµÄ¼¯
+[2.10] set----é›†åˆ
+é›†åˆæ˜¯ä¸€ä¸ªæ— åºä¸é‡å¤å…ƒç´ çš„é›†
 
-//	s1=set([])¡¡££ÁĞ±í
-//	s2=set(())¡¡££Ôª×é
-//	s3=set({})¡¡££×Öµä
+//	s1=set([])ã€€ï¼ƒåˆ—è¡¨
+//	s2=set(())ã€€ï¼ƒå…ƒç»„
+//	s3=set({})ã€€ï¼ƒå­—å…¸
 
 //	s1=set([1,2,3,4])
 //	{1, 2, 3, 4}
-//	¡¡¡¡
+//	ã€€ã€€
 //	s3=set({'a':2,'b':3,'c':4})
 //	{'c', 'a', 'b'}
 
@@ -684,8 +684,8 @@ set1.clear()
 del set1
 
 
-[2.11] [i for i in x]---ÁĞ±í(/×Öµä/¼¯ºÏ)ÍÆµ¼Ê½
-//ÁĞ±í(/×Öµä/¼¯ºÏ)ÍÆµ¼Ê½
+[2.11] [i for i in x]---åˆ—è¡¨(/å­—å…¸/é›†åˆ)æ¨å¯¼å¼
+//åˆ—è¡¨(/å­—å…¸/é›†åˆ)æ¨å¯¼å¼
 py_test\fun_for_list.py
 python_w py_test\fun_for_list.py
 
@@ -695,7 +695,7 @@ python_w py_test\fun_for_list.py
 [2.12] sorted
 sorted(dict.items(),key=lambda item:item[0])
 
-//	ÁĞ±íÅÅĞò·´ÏòË³Ğò?
+//	åˆ—è¡¨æ’åºåå‘é¡ºåº?
 newsort = sorted(sort,key=operator.itemgetter(1), reverse = True)
 
 
@@ -714,20 +714,20 @@ tf.concat
 tf.transpose
 
 
-[2.14] detect, coding---±àÂë
-//±àÂë
+[2.14] detect, coding---ç¼–ç 
+//ç¼–ç 
 py_test\fun_coding.py
 python_w py_test\fun_coding.py
 
 
-[2.15] reduce-----------ÀÛ»ı
-//»á¶Ô²ÎÊıĞòÁĞÖĞÔªËØ½øĞĞÀÛ»ı
+[2.15] reduce-----------ç´¯ç§¯
+//ä¼šå¯¹å‚æ•°åºåˆ—ä¸­å…ƒç´ è¿›è¡Œç´¯ç§¯
 reduce(add, [1,2,3,4,5])
 
 
 
-[2.16] filter-----------¹ıÂË
-//¹ıÂËĞòÁĞ£¬¹ıÂËµô²»·ûºÏÌõ¼şµÄÔªËØ
+[2.16] filter-----------è¿‡æ»¤
+//è¿‡æ»¤åºåˆ—ï¼Œè¿‡æ»¤æ‰ä¸ç¬¦åˆæ¡ä»¶çš„å…ƒç´ 
 filter(is_odd, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 
@@ -758,31 +758,31 @@ q_table6 = pandas.read_csv(filepath_or_buffer, sep=', ', delimiter=None, header=
 			dayfirst=False, iterator=False, chunksize=None, compression='infer', thousands=None, decimal=b'.', 
 			lineterminator=None, quotechar='"', quoting=0, escapechar=None, comment=None, encoding=None, 
 			dialect=None, tupleize_cols=None, error_bad_lines=True, warn_bad_lines=True, skipfooter=0, 
-			doublequote=True, delim_whitespace=False, low_memory=True, memory_map=False, float_precision=None£©
+			doublequote=True, delim_whitespace=False, low_memory=True, memory_map=False, float_precision=Noneï¼‰
 
-//	²»ÏëÌí¼ÓĞÂµÄĞĞË÷Òı
-//		index_col=0±íÊ¾ÒÔÔ­ÓĞÊı¾İµÄµÚÒ»ÁĞ(Ë÷ÒıÎª0)µ±×÷ĞĞË÷Òı¡£
+//	ä¸æƒ³æ·»åŠ æ–°çš„è¡Œç´¢å¼•
+//		index_col=0è¡¨ç¤ºä»¥åŸæœ‰æ•°æ®çš„ç¬¬ä¸€åˆ—(ç´¢å¼•ä¸º0)å½“ä½œè¡Œç´¢å¼•ã€‚
 q_table6 = pd.read_csv('dl_data.csv',encoding = "utf-8",index_col=0)
 
-//	sep=','   # ÒÔ£¬ÎªÊı¾İ·Ö¸ô·û
-//	shkiprows= 10   # Ìø¹ıÇ°Ê®ĞĞ
-//	nrows = 10   # Ö»È¥Ç°10ĞĞ
-//	parse_dates = ['col_name']   # Ö¸¶¨Ä³ĞĞ¶ÁÈ¡ÎªÈÕÆÚ¸ñÊ½
-//	index_col = ['col_1','col_2']   # ¶ÁÈ¡Ö¸¶¨µÄ¼¸ÁĞ
-//	error_bad_lines = False   # µ±Ä³ĞĞÊı¾İÓĞÎÊÌâÊ±£¬²»±¨´í£¬Ö±½ÓÌø¹ı£¬´¦ÀíÔàÊı¾İÊ±Ê¹ÓÃ
-//	na_values = 'NULL'   # ½«NULLÊ¶±ğÎª¿ÕÖµ
+//	sep=','   # ä»¥ï¼Œä¸ºæ•°æ®åˆ†éš”ç¬¦
+//	shkiprows= 10   # è·³è¿‡å‰åè¡Œ
+//	nrows = 10   # åªå»å‰10è¡Œ
+//	parse_dates = ['col_name']   # æŒ‡å®šæŸè¡Œè¯»å–ä¸ºæ—¥æœŸæ ¼å¼
+//	index_col = ['col_1','col_2']   # è¯»å–æŒ‡å®šçš„å‡ åˆ—
+//	error_bad_lines = False   # å½“æŸè¡Œæ•°æ®æœ‰é—®é¢˜æ—¶ï¼Œä¸æŠ¥é”™ï¼Œç›´æ¥è·³è¿‡ï¼Œå¤„ç†è„æ•°æ®æ—¶ä½¿ç”¨
+//	na_values = 'NULL'   # å°†NULLè¯†åˆ«ä¸ºç©ºå€¼
 
 
-[3.2] df.sample Ëæ»úÑ¡È¡
+[3.2] df.sample éšæœºé€‰å–
 df = df.sample(frac=1, random_state = 94).reset_index(drop=True)
 DataFrame.sample(n=None, frac=None, replace=False, weights=None, random_state=None, axis=None)[source]
 
-//³éÈ¡ĞĞµÄ±ÈÀı frac=0.8
-//random_state=None,È¡µÃÊı¾İ²»ÖØ¸´
+//æŠ½å–è¡Œçš„æ¯”ä¾‹ frac=0.8
+//random_state=None,å–å¾—æ•°æ®ä¸é‡å¤
 
 
 //reset_index
-//Êı¾İÇåÏ´Ê±£¬»á½«´ø¿ÕÖµµÄĞĞÉ¾³ı£¬´ËÊ±DataFrame»òSeriesÀàĞÍµÄÊı¾İ²»ÔÙÊÇÁ¬ĞøµÄË÷Òı£¬¿ÉÒÔÊ¹ÓÃreset_index()ÖØÖÃË÷Òı¡£
+//æ•°æ®æ¸…æ´—æ—¶ï¼Œä¼šå°†å¸¦ç©ºå€¼çš„è¡Œåˆ é™¤ï¼Œæ­¤æ—¶DataFrameæˆ–Seriesç±»å‹çš„æ•°æ®ä¸å†æ˜¯è¿ç»­çš„ç´¢å¼•ï¼Œå¯ä»¥ä½¿ç”¨reset_index()é‡ç½®ç´¢å¼•ã€‚
 //print(df.reset_index())
 //	   index   0   1   2   3
 //	0      1   0   1   2   3
@@ -791,11 +791,11 @@ DataFrame.sample(n=None, frac=None, replace=False, weights=None, random_state=No
 //	3      6  12  13  14  15
 //	4      8  16  17  18  19
 //
-//²»Ïë±£ÁôÔ­À´µÄindex£¬Ê¹ÓÃ²ÎÊı drop=True£¬Ä¬ÈÏ False¡£
+//ä¸æƒ³ä¿ç•™åŸæ¥çš„indexï¼Œä½¿ç”¨å‚æ•° drop=Trueï¼Œé»˜è®¤ Falseã€‚
 df.reset_index(drop=True)
 //
 result = pd.concat(frames) 
-//Õâ¾ä»°¸Ä³É 
+//è¿™å¥è¯æ”¹æˆ 
 result = pd.concat(frames,ignore_index=True)
 
 
@@ -807,17 +807,17 @@ if not os.path.exists(self.data_dir):
 
 
 [3.4] pd.concat
-//½«Êı¾İ¸ù¾İ²»Í¬µÄÖá×÷¼òµ¥µÄÈÚºÏ 
+//å°†æ•°æ®æ ¹æ®ä¸åŒçš„è½´ä½œç®€å•çš„èåˆ 
 //	frames = [df1, df2, df3]
 //	result = pd.concat(frames)
 
-//ÒªÔÚÏà½ÓµÄÊ±ºòÔÚ¼ÓÉÏÒ»¸ö²ã´ÎµÄkeyÀ´Ê¶±ğÊı¾İÔ´×ÔÓÚÄÄÕÅ±í£¬¿ÉÒÔÔö¼Ókey²ÎÊı
+//è¦åœ¨ç›¸æ¥çš„æ—¶å€™åœ¨åŠ ä¸Šä¸€ä¸ªå±‚æ¬¡çš„keyæ¥è¯†åˆ«æ•°æ®æºè‡ªäºå“ªå¼ è¡¨ï¼Œå¯ä»¥å¢åŠ keyå‚æ•°
 //	result = pd.concat(frames, keys=['x', 'y', 'z'])
 
-//ºáÏò±íÆ´½Ó
+//æ¨ªå‘è¡¨æ‹¼æ¥
 //	result = pd.concat([df1, df4], axis=1)
 
-//¼ÓÉÏjoin²ÎÊıµÄÊôĞÔ£¬Èç¹ûÎª¡¯inner¡¯µÃµ½µÄÊÇÁ½±íµÄ½»¼¯£¬Èç¹ûÊÇouter£¬µÃµ½µÄÊÇÁ½±íµÄ²¢¼¯¡£
+//åŠ ä¸Šjoinå‚æ•°çš„å±æ€§ï¼Œå¦‚æœä¸ºâ€™innerâ€™å¾—åˆ°çš„æ˜¯ä¸¤è¡¨çš„äº¤é›†ï¼Œå¦‚æœæ˜¯outerï¼Œå¾—åˆ°çš„æ˜¯ä¸¤è¡¨çš„å¹¶é›†ã€‚
 //	result = pd.concat([df1, df4], axis=1, join='inner')
 
 
@@ -829,22 +829,22 @@ python_w py_test\df_to_array.py
 
 
 
-[3.6] pd.get_dummies---¶ÀÈÈ±àÂë
-//¶ÀÈÈ±àÂë
+[3.6] pd.get_dummies---ç‹¬çƒ­ç¼–ç 
+//ç‹¬çƒ­ç¼–ç 
 //pd.get_dummies
 
 //sklearn
 //	enc = preprocessing.OneHotEncoder()
-//	enc.fit([[0, 0, 3], [1, 1, 0], [0, 2, 1], [1, 0, 2]])	 # fitÀ´Ñ§Ï°±àÂë
-//	enc.transform([[0, 1, 3]]).toarray()	# ½øĞĞ±àÂë
+//	enc.fit([[0, 0, 3], [1, 1, 0], [0, 2, 1], [1, 0, 2]])	 # fitæ¥å­¦ä¹ ç¼–ç 
+//	enc.transform([[0, 1, 3]]).toarray()	# è¿›è¡Œç¼–ç 
 //
-//Êä³ö£º	
+//è¾“å‡ºï¼š	
 //      array([[ 1.,  0.,  0.,  1.,  0.,  0.,  0.,  0.,  1.]])
 
 //tf.one_hot()
-//	abels = tf.constant([0,1,2]) # ÊäÈëµÄÔªËØÖµ×îĞ¡Îª0£¬×î´óÎª2
+//	abels = tf.constant([0,1,2]) # è¾“å…¥çš„å…ƒç´ å€¼æœ€å°ä¸º0ï¼Œæœ€å¤§ä¸º2
 //	output = tf.one_hot(labels,classes)
-//Êä³ö£º	
+//è¾“å‡ºï¼š	
 //      array([[ 1.,  0.,  0.],
 //             [ 0.,  1.,  0.],
 //             [ 0.,  0.,  1.]], dtype=float32))
@@ -899,7 +899,7 @@ python_w py_test\file_write2.py
 
 
 [4.1] math
-Softmax ¹éÒ»»¯Ö¸Êıº¯Êı
+Softmax å½’ä¸€åŒ–æŒ‡æ•°å‡½æ•°
 
 
 //math_soft
@@ -915,9 +915,9 @@ python_w py_test\math_sorted.py
 
 
 [4.2] copy
-//¸´ÖÆ
+//å¤åˆ¶
 list1 = copy.copy(list)
-//Éî¸´ÖÆ
+//æ·±å¤åˆ¶
 list2 = copy.deepcopy(list)
 
 
@@ -936,7 +936,7 @@ six.iteritems(json_object)
 
 [4.5] sklearn.LabelEncoder
 // sklearn.LabelEncoder
-//   ±êÇ©-->id
+//   æ ‡ç­¾-->id
 py_test\lib_sk_LabelEncoder.py
 python_w py_test\lib_sk_LabelEncoder.py
 
@@ -947,13 +947,13 @@ sklearn.preprocessing.Normalizer
 //	preprocessing.normalize(X, norm='l2', axis=1, copy=True, return_norm=False)
 
 
-Sklearn °üº¬ÁËºÜ¶àÖÖ»úÆ÷Ñ§Ï°µÄ·½Ê½:
-Classification ·ÖÀà
-Regression »Ø¹é
-Clustering ·Ç¼à¶½·ÖÀà
-Dimensionality reduction Êı¾İ½µÎ¬
-Model Selection Ä£ĞÍÑ¡Ôñ
-Preprocessing Êı¾İÔ¤´¦Àí
+Sklearn åŒ…å«äº†å¾ˆå¤šç§æœºå™¨å­¦ä¹ çš„æ–¹å¼:
+Classification åˆ†ç±»
+Regression å›å½’
+Clustering éç›‘ç£åˆ†ç±»
+Dimensionality reduction æ•°æ®é™ç»´
+Model Selection æ¨¡å‹é€‰æ‹©
+Preprocessing æ•°æ®é¢„å¤„ç†
 
 
 
@@ -970,7 +970,7 @@ python_w py_test\unittest_param.py
 
 
 
-[4.7] tqdm-------------½ø¶ÈÌõ¿â
+[4.7] tqdm-------------è¿›åº¦æ¡åº“
 //tqdm1
 py_test\test_tqdm.py
 python_w py_test\test_tqdm.py
@@ -1010,9 +1010,9 @@ python_w py_test\jieba_cut.py
 
 // Jieba--pseg.cut--file
 py_test\jieba_cut_a.txt
-//ÎÒ°®±±¾©Ìì°²ÃÅ 
+//æˆ‘çˆ±åŒ—äº¬å¤©å®‰é—¨ 
 py_test\jieba_cut_b.txt
-//ÎÒr	°®v  ±±¾©ns	Ìì°²ÃÅns   x 
+//æˆ‘r	çˆ±v  åŒ—äº¬ns	å¤©å®‰é—¨ns   x 
 
 
 py_test\jieba_file_read.py
@@ -1045,7 +1045,7 @@ v3=tf.Variable(tf.ones([4,3]),name='v3')
 //	?[1. 1. 1.]
 //	?[1. 1. 1.]]
 
-//Éú³Étensor
+//ç”Ÿæˆtensor
 tf.zeros(shape, dtype=tf.float32, name=None)
 tf.zeros_like(tensor, dtype=None, name=None)
 tf.constant(value, dtype=None, shape=None, name='Const')
@@ -1053,11 +1053,11 @@ tf.fill(dims, value, name=None)
 tf.ones_like(tensor, dtype=None, name=None)
 tf.ones(shape, dtype=tf.float32, name=None)
 
-//Éú³ÉĞòÁĞ
+//ç”Ÿæˆåºåˆ—
 tf.range(start, limit, delta=1, name='range')
 tf.linspace(start, stop, num, name=None)
 
-//Éú³ÉËæ»úÊı
+//ç”Ÿæˆéšæœºæ•°
 tf.random_normal(shape, mean=0.0, stddev=1.0, dtype=tf.float32, seed=None, name=None)
 tf.truncated_normal(shape, mean=0.0, stddev=1.0, dtype=tf.float32, seed=None, name=None)
 tf.random_uniform(shape, minval=0.0, maxval=1.0, dtype=tf.float32, seed=None, name=None)
@@ -1065,9 +1065,9 @@ tf.random_shuffle(value, seed=None, name=None)
 
 
 [5.2] tf.train.Saver.save()
-//±£´æÍ¼µÄ±äÁ¿
+//ä¿å­˜å›¾çš„å˜é‡
 save_path = saver.save(sess, "/tmp/model.ckpt")
-//¼ÓÔØÍ¼µÄ±äÁ¿
+//åŠ è½½å›¾çš„å˜é‡
 saver.restore(sess, "/tmp/model.ckpt")
 
 
@@ -1098,7 +1098,7 @@ python_w py_test\op_group.py
 
 
 
-[5.5] tf.gradients Ìİ¶È
+[5.5] tf.gradients æ¢¯åº¦
 //
 py_test\gradients1.py
 python_w py_test\gradients1.py
@@ -1127,7 +1127,7 @@ python_w py_test\gradients4.py
 //	[3.0, 4.0, 12.0]
 
 
-//----ÊÖ¶¯ÑéÖ¤
+//----æ‰‹åŠ¨éªŒè¯
 py_test\gradients5.py
 python_w py_test\gradients5.py
 //	[(3.0, 5.0)]
@@ -1184,7 +1184,7 @@ python_w py_test\data_Dataset5.py
 //	6.0
 //	end!
 
-//----batch--½«¶à¸öÔªËØ×éºÏ³Ébatch
+//----batch--å°†å¤šä¸ªå…ƒç´ ç»„åˆæˆbatch
 py_test\data_Dataset6.py
 python_w py_test\data_Dataset6.py
 //	{'a': array([1., 2.]), 'b': array([[0.28226126, 0.32874466],
@@ -1194,7 +1194,7 @@ python_w py_test\data_Dataset6.py
 //	{'a': array([5.]), 'b': array([[0.21681289, 0.56474561]])}
 //	end!
 
-//----shuffle--´òÂÒ
+//----shuffle--æ‰“ä¹±
 py_test\data_Dataset7.py
 python_w py_test\data_Dataset7.py
 //	{'a': 2.0, 'b': array([0.61422834, 0.68408869])}
@@ -1205,7 +1205,7 @@ python_w py_test\data_Dataset7.py
 //	end!
 
 
-//----repeat--½«Õû¸öĞòÁĞÖØ¸´¶à´Î
+//----repeat--å°†æ•´ä¸ªåºåˆ—é‡å¤å¤šæ¬¡
 py_test\data_Dataset8.py
 python_w py_test\data_Dataset8.py
 //	{'a': 1.0, 'b': array([0.51900078, 0.10005534])}
@@ -1231,32 +1231,32 @@ python_w py_test\layers_dense.py
 
 
 
-[5.8] tf.nn.softmax------¹éÒ»»¯
-//¹éÒ»»¯Ö¸Êıº¯Êı
+[5.8] tf.nn.softmax------å½’ä¸€åŒ–
+//å½’ä¸€åŒ–æŒ‡æ•°å‡½æ•°
 //tf.nn.log_softmax
 
 py_test\log_softmax.py
 python_w py_test\log_softmax.py
 
 
-//ĞÅÏ¢ìØ(ÕæÊµ*ÕæÊµ)
-//	´ú±íµÄÊÇËæ»ú±äÁ¿»òÕû¸öÏµÍ³µÄ²»È·¶¨ĞÔ£¬ìØÔ½´ó£¬Ëæ»ú±äÁ¿»òÏµÍ³µÄ²»È·¶¨ĞÔ¾ÍÔ½´ó
+//ä¿¡æ¯ç†µ(çœŸå®*çœŸå®)
+//	ä»£è¡¨çš„æ˜¯éšæœºå˜é‡æˆ–æ•´ä¸ªç³»ç»Ÿçš„ä¸ç¡®å®šæ€§ï¼Œç†µè¶Šå¤§ï¼Œéšæœºå˜é‡æˆ–ç³»ç»Ÿçš„ä¸ç¡®å®šæ€§å°±è¶Šå¤§
 //	sum(p*log2(1/p)) = 1/2*log2(2)+...= 1/2 * 1 + 1/4 * 2 + 1/8 * 3 + 1/8 * 3 = 1.75
 //
-//	sum(10¸ö,²»Æ½¾ù) = 0.9 * 0.152 + 0.0111 * 6.49 * 9 = 0.785
-//	sum(10¸ö,Æ½¾ù)	   = 0.1 * 3.32 * 10				 = 3.32
+//	sum(10ä¸ª,ä¸å¹³å‡) = 0.9 * 0.152 + 0.0111 * 6.49 * 9 = 0.785
+//	sum(10ä¸ª,å¹³å‡)	   = 0.1 * 3.32 * 10				 = 3.32
 
 
-//½»²æìØ(ÕæÊµ*·ÇÕæÊµ)
-//	ÕæÊµ·Ö²¼Îª»ù´¡£¬·ÇÕæÊµ·Ö²¼²ßÂÔÊ÷ÇóºÍ;
+//äº¤å‰ç†µ(çœŸå®*éçœŸå®)
+//	çœŸå®åˆ†å¸ƒä¸ºåŸºç¡€ï¼ŒéçœŸå®åˆ†å¸ƒç­–ç•¥æ ‘æ±‚å’Œ;
 //	sum(p*log2(1/q)) = 1/2*log2(4)+... = 2
 //
-//	sum(10¸ö,²»Æ½¾ù) = 0.9 * 3.32 + 0.0111 * 3.32 * 9 = 3.32
-//	sum(10¸ö,Æ½¾ù)	   = 0.1 * 3.32 * 10				= 3.32
+//	sum(10ä¸ª,ä¸å¹³å‡) = 0.9 * 3.32 + 0.0111 * 3.32 * 9 = 3.32
+//	sum(10ä¸ª,å¹³å‡)	   = 0.1 * 3.32 * 10				= 3.32
 
-//Ïà¶ÔìØ(½»²æìØ - ĞÅÏ¢ìØ)
-//	KL(p || q) = H(p£¬q) - H(p) = 2 - 1.75 = 0.25
-//	KL(10¸ö,²»Æ½¾ù) = 3.32 - 0.785			   = 2.53
+//ç›¸å¯¹ç†µ(äº¤å‰ç†µ - ä¿¡æ¯ç†µ)
+//	KL(p || q) = H(pï¼Œq) - H(p) = 2 - 1.75 = 0.25
+//	KL(10ä¸ª,ä¸å¹³å‡) = 3.32 - 0.785			   = 2.53
 
 
 
@@ -1280,20 +1280,20 @@ sess.run(tf.Print(train_logits,[train_logits],summarize=134))
 
 
 
-[5.11] Estimator------ÆÀ¹ÀÆ÷
+[5.11] Estimator------è¯„ä¼°å™¨
 
 //Estimator
 py_test\tf_Estimator.py
 //python_w py_test\tf_Estimator.py
 
 
-[5.12] tf.Experiment-----ÊµÑéÀà
-//Experiment£¨ÊµÑé£©ÀàÊÇ¶¨ÒåÈçºÎÑµÁ·Ä£ĞÍ£¬²¢½«ÆäÓë Estimator ½øĞĞ¼¯³ÉµÄ·½Ê½¡£
+[5.12] tf.Experiment-----å®éªŒç±»
+//Experimentï¼ˆå®éªŒï¼‰ç±»æ˜¯å®šä¹‰å¦‚ä½•è®­ç»ƒæ¨¡å‹ï¼Œå¹¶å°†å…¶ä¸ Estimator è¿›è¡Œé›†æˆçš„æ–¹å¼ã€‚
 
 
 
 
-[5.13] tf.Dataset--------Êı¾İ¼¯
+[5.13] tf.Dataset--------æ•°æ®é›†
 
 py_test\tf_Dataset.py
 //python_w py_test\tf_Dataset.py
@@ -1303,12 +1303,12 @@ py_test\tf_Dataset.py
 [5.14] layer_norm
 
 layer_norm		   
-ÔÚÕÅÁ¿µÄ×îºóÒ»¸öÎ¬¶ÈÉÏÔËĞĞÍ¼²ã¹æ·¶»¯
+åœ¨å¼ é‡çš„æœ€åä¸€ä¸ªç»´åº¦ä¸Šè¿è¡Œå›¾å±‚è§„èŒƒåŒ–
 
 
 
 
-[5.15] tf.metrics.accuracy ×¼È·¶È
+[5.15] tf.metrics.accuracy å‡†ç¡®åº¦
 //accuracy
 py_test\tf_accuracy.py
 python_w py_test\tf_accuracy.py
@@ -1330,8 +1330,8 @@ python_w py_test\test_reshape.py
 
 
 
-[5.17] tf.gather---------Ë÷ÒıÌáÈ¡
-//tf.gather£ºÓÃÒ»¸öÒ»Î¬µÄË÷ÒıÊı×é£¬½«ÕÅÁ¿ÖĞ¶ÔÓ¦Ë÷ÒıµÄÏòÁ¿ÌáÈ¡³öÀ´
+[5.17] tf.gather---------ç´¢å¼•æå–
+//tf.gatherï¼šç”¨ä¸€ä¸ªä¸€ç»´çš„ç´¢å¼•æ•°ç»„ï¼Œå°†å¼ é‡ä¸­å¯¹åº”ç´¢å¼•çš„å‘é‡æå–å‡ºæ¥
 py_test\test_gather.py
 python_w py_test\test_gather.py
 
@@ -1361,8 +1361,8 @@ python_w py_test\tf_summary.py
 mat_ratio = list(map(lambda x: 1.0/x if not x == 0.0 else float(64.0), mat_ratio))
 //
 mat_ratio = tf.map_fn(lambda x: tf.cond(x > 0, lambda: 1/x, lambda: float(64.0)), mat_ratio)
-//if ... else ÊÇ²»±»Ê¶±ğ
-//Í¨¹ıtf.cond()½øĞĞ´úÌæ
+//if ... else æ˜¯ä¸è¢«è¯†åˆ«
+//é€šè¿‡tf.cond()è¿›è¡Œä»£æ›¿
 //tf.cond(x < y, lambda: tf.add(x, z), lambda: tf.square(y))
 
 
@@ -1373,7 +1373,7 @@ py_test\tf_cond.py
 python_w py_test\tf_cond.py
 
 
-//tf.cond ¶àcond»ìºÏ
+//tf.cond å¤šcondæ··åˆ
 py_test\tf_cond2.py
 python_w py_test\tf_cond2.py
 
@@ -1383,7 +1383,7 @@ py_test\tf_cond_shape.py
 python_w py_test\tf_cond_shape.py
 
 
-//tf.cond -->·Ö¿é
+//tf.cond -->åˆ†å—
 py_test\tf_cond_block.py
 python_w py_test\tf_cond_block.py
 
@@ -1406,12 +1406,12 @@ py_test\tf_while_loop.py
 python_w py_test\tf_while_loop.py
 
 
-//tf.while_loop--×îÉÙ2¸ö²ÎÊı, ²»±¨´í
+//tf.while_loop--æœ€å°‘2ä¸ªå‚æ•°, ä¸æŠ¥é”™
 py_test\tf_while_list.py
 python_w py_test\tf_while_list.py
 
 
-//tf.TensorArray--Êı×éstack write read
+//tf.TensorArray--æ•°ç»„stack write read
 py_test\tf_TensorArray.py
 python_w py_test\tf_TensorArray.py
 
@@ -1438,7 +1438,7 @@ tf.expand_dims(s, -1)
 
 
 [5.26] tf.logical_and
-//Âß¼­op:
+//é€»è¾‘op:
 tf.logical_and
 tf.logical_not
 tf.logical_or
@@ -1448,7 +1448,7 @@ tf.logical_xor
 
 
 [5.27] tf.equal
-// ±È½Ï
+// æ¯”è¾ƒ
 py_test\tf_equal.py
 python_w py_test\tf_equal.py
 
@@ -1464,7 +1464,7 @@ python_w py_test\tf_equal.py
 
 
 [5.28] tf.argmin
-//ĞòÁĞ±È½ÏºÍË÷ÒıÌáÈ¡op
+//åºåˆ—æ¯”è¾ƒå’Œç´¢å¼•æå–op
 tf.argmin
 tf.argmax
 tf.where
@@ -1510,8 +1510,8 @@ python_w py_test\tf2_layers_Masking.py
 
 	
 [6.3] tf2_K_maximum
-// ×î´óÖµ3 f1 = tf.maximum(a, 3)
-// ×îĞ¡Öµ3 f2 = tf.minimum(a, 3)
+// æœ€å¤§å€¼3 f1 = tf.maximum(a, 3)
+// æœ€å°å€¼3 f2 = tf.minimum(a, 3)
 py_test\tf2_K_maximum.py
 python_w py_test\tf2_K_maximum.py
 	
@@ -1528,16 +1528,16 @@ python_w py_test\tf2_loss.py
 	
 	
 
-[6.6] tf2_keras_clip-----±ß½çÖµ
-//ÖğÔªËØclip£¨½«³¬³öÖ¸¶¨·¶Î§µÄÊıÇ¿ÖÆ±äÎª±ß½çÖµ£©
+[6.6] tf2_keras_clip-----è¾¹ç•Œå€¼
+//é€å…ƒç´ clipï¼ˆå°†è¶…å‡ºæŒ‡å®šèŒƒå›´çš„æ•°å¼ºåˆ¶å˜ä¸ºè¾¹ç•Œå€¼ï¼‰
 py_test\tf2_keras_clip.py
 python_w py_test\tf2_keras_clip.py
 
 
 
 
-[6.7] tf.nn.relu---------¼¤»îop
-//¼¤»îop
+[6.7] tf.nn.relu---------æ¿€æ´»op
+//æ¿€æ´»op
 tf.nn.relu
 tf.nn.relu6
 tf.nn.crelu
@@ -1553,8 +1553,8 @@ tf.tanh
 
 
 
-[6.8] tf.nn.conv2d-------¾í»ıop
-//¾í»ıop
+[6.8] tf.nn.conv2d-------å·ç§¯op
+//å·ç§¯op
 tf.nn.convolution
 tf.nn.conv2d
 tf.nn.depthwise_conv2d
@@ -1575,8 +1575,8 @@ tf.nn.depthwise_conv2d_native_backprop_input
 
 
 
-[6.9] tf.nn.avg_pool-----³Ø»¯op
-//³Ø»¯op
+[6.9] tf.nn.avg_pool-----æ± åŒ–op
+//æ± åŒ–op
 tf.nn.max_pool
 tf.nn.max_pool_with_argmax
 tf.nn.avg_pool3d
@@ -1585,13 +1585,13 @@ tf.nn.fractional_avg_pool
 tf.nn.fractional_max_pool
 tf.nn.pool
 
-//È«¾ÖÆ½¾ù³Ø»¯
+//å…¨å±€å¹³å‡æ± åŒ–
 GlobalAveragePooling1D
 
 
 
 
-[6.10] tf.nn.l2_normalize¹éÒ»»¯op
+[6.10] tf.nn.l2_normalizeå½’ä¸€åŒ–op
 tf.nn.l2_normalize
 tf.nn.local_response_normalization
 tf.nn.sufficient_statistics
@@ -1607,20 +1607,20 @@ tf.nn.batch_norm_with_global_normalization
 
 
 [6.11] tf.nn.l2_loss
-//Îó²îËğÊ§op
+//è¯¯å·®æŸå¤±op
 tf.nn.l2_loss
 tf.nn.log_poisson_loss
-//·ÖÀàop
+//åˆ†ç±»op
 tf.nn.sigmoid_cross_entropy_with_logits
 tf.nn.softmax
 tf.nn.log_softmax
 tf.nn.softmax_cross_entropy_with_logits
 tf.nn.sparse_softmax_cross_entropy_with_logits
 tf.nn.weighted_cross_entropy_with_logits
-//²éÕÒÇ¶ÈëtensorµÄvalue
+//æŸ¥æ‰¾åµŒå…¥tensorçš„value
 tf.nn.embedding_lookup
 tf.nn.embedding_lookup_sparse
-//ºòÑ¡³éÑùop
+//å€™é€‰æŠ½æ ·op
 tf.nn.sampled_softmax_loss
 
 
@@ -1644,39 +1644,39 @@ python_w py_classify\tf2_classify_bys.py
 
 
 // tf2_classify_sg
-//   Éí¸ß+ÌåÖØ->·ÊÊİ
+//   èº«é«˜+ä½“é‡->è‚¥ç˜¦
 py_classify\tf2_classify_sg.h
 py_classify\tf2_classify_sg.py
 python_w py_classify\tf2_classify_sg.py
 
 
 // tf2_classify_sg
-//   ´ÎÓÃµ½µÄÔ´Êı¾İÊÇdatasets.load_iris()£¬irisÊı¾İ¼¯ÊÇÒ»¸ö×Öµä£¬¿ÉÒÔ¿´³É150ĞĞ5ÁĞµÄ¶şÎ¬±í¡£
-//	 150¸öÑù±¾£¬Ã¿¸öÑù±¾°üº¬ÁË»¨İà³¤¶È¡¢»¨İà¿í¶È¡¢»¨°ê³¤¶È¡¢»¨°ê¿í¶ÈËÄ¸öÌØÕ÷£¨Ç°4ÁĞ£©
-//	 irisµÄÃ¿¸öÑù±¾¶¼°üº¬ÁËÆ·ÖÖĞÅÏ¢£¬¼´Ä¿±êÊôĞÔ£¨µÚ5ÁĞ£¬Ò²½Ğtarget»òlabel£©£¬
-//	 ÆäÖĞÓĞ5¸ökey¼ü£¬data¼ÇÂ¼Ã¿¸öÑù±¾ËÄ¸öÌØÕ÷ÊıÖµ£¬target¼ÇÂ¼Æ·ÖÖÊı(ÓÃ0,1,2±íÊ¾),
-//	 target_namesÊÇ¾ßÌåÆ·ÖÖÃû³Æ£¬feature_namesÊÇ¾ßÌåµÄÌØÕ÷Ãû³Æ¡£
+//   æ¬¡ç”¨åˆ°çš„æºæ•°æ®æ˜¯datasets.load_iris()ï¼Œirisæ•°æ®é›†æ˜¯ä¸€ä¸ªå­—å…¸ï¼Œå¯ä»¥çœ‹æˆ150è¡Œ5åˆ—çš„äºŒç»´è¡¨ã€‚
+//	 150ä¸ªæ ·æœ¬ï¼Œæ¯ä¸ªæ ·æœ¬åŒ…å«äº†èŠ±è¼é•¿åº¦ã€èŠ±è¼å®½åº¦ã€èŠ±ç“£é•¿åº¦ã€èŠ±ç“£å®½åº¦å››ä¸ªç‰¹å¾ï¼ˆå‰4åˆ—ï¼‰
+//	 irisçš„æ¯ä¸ªæ ·æœ¬éƒ½åŒ…å«äº†å“ç§ä¿¡æ¯ï¼Œå³ç›®æ ‡å±æ€§ï¼ˆç¬¬5åˆ—ï¼Œä¹Ÿå«targetæˆ–labelï¼‰ï¼Œ
+//	 å…¶ä¸­æœ‰5ä¸ªkeyé”®ï¼Œdataè®°å½•æ¯ä¸ªæ ·æœ¬å››ä¸ªç‰¹å¾æ•°å€¼ï¼Œtargetè®°å½•å“ç§æ•°(ç”¨0,1,2è¡¨ç¤º),
+//	 target_namesæ˜¯å…·ä½“å“ç§åç§°ï¼Œfeature_namesæ˜¯å…·ä½“çš„ç‰¹å¾åç§°ã€‚
 py_classify\tf2_classify_iris.py
 python_w py_classify\tf2_classify_iris.py
 
 
 // tf2_classify_num
-//   1Î¬Êı×é--¾ö²ßÊ÷
+//   1ç»´æ•°ç»„--å†³ç­–æ ‘
 py_classify\tf2_classify_num.h
 py_classify\tf2_classify_num.py
 python_w py_classify\tf2_classify_num.py
 
 
 // Keras
-//	KerasClassifier  ·ÖÀàÆ÷----err
-//	KerasRegressor  »Ø¹éÆ÷
+//	KerasClassifier  åˆ†ç±»å™¨----err
+//	KerasRegressor  å›å½’å™¨
 //	np_utils.to_categorical
 py_classify\tf2_classify_ks.csv
 py_classify\tf2_classify_ks.py
 python_w py_classify\tf2_classify_ks.py
 
 
-[6.15] tf2_Dense----------¶ş·ÖÀà
+[6.15] tf2_Dense----------äºŒåˆ†ç±»
 // tf2_Dense
 py_classify\tf2_classify_num.h
 //py_classify\tf2_classify_Dense.py
@@ -1685,7 +1685,7 @@ py_classify\tf2_classify_num.h
 
 
 [6.16] LogisticRegression
-// Âß¼­»Ø¹é----err
+// é€»è¾‘å›å½’----err
 py_classify\tf2_Logistic_Regression.py
 python_w py_classify\tf2_Logistic_Regression.py
 
@@ -1741,7 +1741,7 @@ K.eval(kvar)
 keras.backend.shape(x)
 keras.backend.int_shape(x)
 keras.backend.reshape(x, shape)
-keras.backend.squeeze(x, axis) #ÒÆ³ı 1 ¸ö³ß´çµÄÎ¬¶È
+keras.backend.squeeze(x, axis) #ç§»é™¤ 1 ä¸ªå°ºå¯¸çš„ç»´åº¦
 
 
 
@@ -1763,9 +1763,9 @@ keras.backend.sum(x, axis=None, keepdims=False)
 keras.backend.prod(x, axis=None, keepdims=False)
 keras.backend.cumsum(x, axis=0)
 keras.backend.cumprod(x, axis=0)
-keras.backend.var(x, axis=None, keepdims=False)  #·½²î
-keras.backend.std(x, axis=None, keepdims=False)  #±ê×¼²î
-keras.backend.mean(x, axis=None, keepdims=False) #¾ùÖµ
+keras.backend.var(x, axis=None, keepdims=False)  #æ–¹å·®
+keras.backend.std(x, axis=None, keepdims=False)  #æ ‡å‡†å·®
+keras.backend.mean(x, axis=None, keepdims=False) #å‡å€¼
 keras.backend.maximum(x, y)
 keras.backend.minimum(x, y)
 
@@ -1791,15 +1791,15 @@ keras.backend.pow(x, a)
 
 
 [7.7] clip
-keras.backend.clip(x, min_value, max_value) #²Ã¼ô
+keras.backend.clip(x, min_value, max_value) #è£å‰ª
 
 
 
 
 [7.8] repeat
 keras.backend.repeat(x, n)
-//ÖØ¸´Ò»¸ö 2D ÕÅÁ¿¡£
-//Èç¹û x µÄ³ß´çÎª (samples, dim) ²¢ÇÒ n Îª 2£¬ ÔòÊä³öµÄ³ß´çÎª (samples, 2, dim)¡£
+//é‡å¤ä¸€ä¸ª 2D å¼ é‡ã€‚
+//å¦‚æœ x çš„å°ºå¯¸ä¸º (samples, dim) å¹¶ä¸” n ä¸º 2ï¼Œ åˆ™è¾“å‡ºçš„å°ºå¯¸ä¸º (samples, 2, dim)ã€‚
 
 
 

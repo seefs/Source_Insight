@@ -1,11 +1,11 @@
-
+ï»¿
 
 import time
 from tqdm import tqdm
 
 pbar = tqdm(["a", "b", "c", "d"])  
 for char in pbar:  
-    # ÉèÖÃÃèÊö
+    # è®¾ç½®æè¿°
     pbar.set_description("Processing %s" % char)
     time.sleep(1)
 

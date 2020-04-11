@@ -1,10 +1,10 @@
+ï»¿
 
-
-//Ä¿Â¼[Num][Ca]:
-//  1.  Office³£ÓÃ
+//ç›®å½•[Num][Ca]:
+//  1.  Officeå¸¸ç”¨
 Save:node\ToolsMsg\Macro_Office.h  \[1.1\] copy
 Save:node\ToolsMsg\Macro_Office.h  \[1.2\] ren
-Save:node\ToolsMsg\Macro_Office.h  \[1.3\] apk ×ÊÔ´¼ì²é
+Save:node\ToolsMsg\Macro_Office.h  \[1.3\] apk èµ„æºæ£€æŸ¥
 Save:node\ToolsMsg\Macro_Office.h  \[1.4\] 
 Save:node\ToolsMsg\Macro_Office.h  \[1.5\] 
 Save:node\ToolsMsg\Macro_Office.h  \[1.6\] 
@@ -13,16 +13,16 @@ Save:node\ToolsMsg\Macro_Office.h  \[1.8\]
 Save:node\ToolsMsg\Macro_Office.h  \[1.9\] 
 Save:node\ToolsMsg\Macro_Office.h  \[1.10\] 
 //  2.  excel
-Save:node\ToolsMsg\Macro_Office.h  \[2.1\] excel  ÉèÖÃ
-Save:node\ToolsMsg\Macro_Office.h  \[2.2\] Ëæ»úÊý
-Save:node\ToolsMsg\Macro_Office.h  \[2.3\] Í³¼Æ
-Save:node\ToolsMsg\Macro_Office.h  \[2.4\] Ê±¼ä
-Save:node\ToolsMsg\Macro_Office.h  \[2.5\] ³£ÓÃ
-Save:node\ToolsMsg\Macro_Office.h  \[2.6\] ±í¸ñ1---------
-Save:node\ToolsMsg\Macro_Office.h  \[2.7\] ±í¸ñ2---------
-Save:node\ToolsMsg\Macro_Office.h  \[2.8\] ±í¸ñ3---------
-Save:node\ToolsMsg\Macro_Office.h  \[2.9\] ±í¸ñ4---------
-Save:node\ToolsMsg\Macro_Office.h  \[2.10\] ±í¸ñ5---------ÖÐÖµÅÐ¶Ï-×Ô¶¯if
+Save:node\ToolsMsg\Macro_Office.h  \[2.1\] excel  è®¾ç½®
+Save:node\ToolsMsg\Macro_Office.h  \[2.2\] éšæœºæ•°
+Save:node\ToolsMsg\Macro_Office.h  \[2.3\] ç»Ÿè®¡
+Save:node\ToolsMsg\Macro_Office.h  \[2.4\] æ—¶é—´
+Save:node\ToolsMsg\Macro_Office.h  \[2.5\] å¸¸ç”¨
+Save:node\ToolsMsg\Macro_Office.h  \[2.6\] è¡¨æ ¼1---------
+Save:node\ToolsMsg\Macro_Office.h  \[2.7\] è¡¨æ ¼2---------
+Save:node\ToolsMsg\Macro_Office.h  \[2.8\] è¡¨æ ¼3---------
+Save:node\ToolsMsg\Macro_Office.h  \[2.9\] è¡¨æ ¼4---------
+Save:node\ToolsMsg\Macro_Office.h  \[2.10\] è¡¨æ ¼5---------ä¸­å€¼åˆ¤æ–­-è‡ªåŠ¨if
 //  3.  word
 Save:node\ToolsMsg\Macro_Office.h  \[3.1\] 
 Save:node\ToolsMsg\Macro_Office.h  \[3.2\] 
@@ -41,68 +41,68 @@ Save:node\ToolsMsg\Macro_Office.h  \[4.3\]
 
 
 
-[1.1] ¸´ÖÆ
-//  ¸´ÖÆ
-//  ="copy  \\192.168.2.74\work-xj\alps\out\target\common\obj\JAVA_LIBRARIES\"&A1&"\javalib.jar"  &  "  E:\×ÀÃæ\test\"  &  B1&  ".jar"
-//  ="copy  \\192.168.2.74\work-xj\alps\out\target\common\obj\JAVA_LIBRARIES\"&A1&"_intermediates\classes.jar"  &  "  E:\×ÀÃæ\test\"  &  A1&  ".jar"+"
+[1.1] å¤åˆ¶
+//  å¤åˆ¶
+//  ="copy  \\192.168.2.74\work-xj\alps\out\target\common\obj\JAVA_LIBRARIES\"&A1&"\javalib.jar"  &  "  E:\æ¡Œé¢\test\"  &  B1&  ".jar"
+//  ="copy  \\192.168.2.74\work-xj\alps\out\target\common\obj\JAVA_LIBRARIES\"&A1&"_intermediates\classes.jar"  &  "  E:\æ¡Œé¢\test\"  &  A1&  ".jar"+"
 
 
-[1.2] ÖØÃüÃû
-//  ÖØÃüÃû
+[1.2] é‡å‘½å
+//  é‡å‘½å
 //  ="ren  """&A1  &  ".png""  type_"  &  B1&  ".png  "
 
 
-[1.3] apk ×ÊÔ´¼ì²é
-//	ÏîÄ¿Ä¿Â¼ÏÂÖ´ÐÐ java -jar AndroidUnusedResources1.6.2.jar
-//	ÅúÎÄ¼þ "@echo off  
+[1.3] apk èµ„æºæ£€æŸ¥
+//	é¡¹ç›®ç›®å½•ä¸‹æ‰§è¡Œ java -jar AndroidUnusedResources1.6.2.jar
+//	æ‰¹æ–‡ä»¶ "@echo off  
 //	for /f ""delims="" %%i in (del.txt) do move ""%%i"" d:\unuse\  "
-//	²éÕÒ×ÊÔ´Ãû =IF(ISNUMBER(FIND("name=",B1)),MID(B1,FIND("name=",B1)+6,FIND("""",B1,FIND("name=",B1)+6)-FIND("name=",B1)-6),"")
-//	×ÊÔ´¶àÓà =IF(ISNA(MATCH(C1,A$1:A$69,)),"",MATCH(C1,A$1:A$69,))
-//	Æ´½Ó: =IF(LEN(D1)>0,"",B1&"")
-//	Æ´½Ó: =IF(ISNUMBER(FIND("<string>",A1)),MID(A1,FIND("<string>",A1)+8,FIND("</string>",A1)-FIND("<string>",A1)-8),IF(ISNUMBER(FIND("<item>",A1)),MID(A1,FIND("<item>",A1)+6,FIND("</item>",A1)-FIND("<item>",A1)-6),""))
-//	Æ´½Ó:»¹Ô­²ÎÊý =IF(ISNUMBER(FIND("{N}",I1)),REPLACE(I1, FIND("{N}",I1),LEN("{N}"),C1),I1)
-//	Æ´½Ó:Í·+ÖÐ+Î² =IF(I1="",A1,IF(OR(ISNUMBER(--K1),LEFT(K1,2)="0x"),E1&K1&F1,E1&""""&K1&""""&F1))
-//	×ÊÔ´ÖØ¸´ =IF(LEN(D1)>0,ISNUMBER(MATCH(D1,A$1:A$196,0)),E2)
+//	æŸ¥æ‰¾èµ„æºå =IF(ISNUMBER(FIND("name=",B1)),MID(B1,FIND("name=",B1)+6,FIND("""",B1,FIND("name=",B1)+6)-FIND("name=",B1)-6),"")
+//	èµ„æºå¤šä½™ =IF(ISNA(MATCH(C1,A$1:A$69,)),"",MATCH(C1,A$1:A$69,))
+//	æ‹¼æŽ¥: =IF(LEN(D1)>0,"",B1&"")
+//	æ‹¼æŽ¥: =IF(ISNUMBER(FIND("<string>",A1)),MID(A1,FIND("<string>",A1)+8,FIND("</string>",A1)-FIND("<string>",A1)-8),IF(ISNUMBER(FIND("<item>",A1)),MID(A1,FIND("<item>",A1)+6,FIND("</item>",A1)-FIND("<item>",A1)-6),""))
+//	æ‹¼æŽ¥:è¿˜åŽŸå‚æ•° =IF(ISNUMBER(FIND("{N}",I1)),REPLACE(I1, FIND("{N}",I1),LEN("{N}"),C1),I1)
+//	æ‹¼æŽ¥:å¤´+ä¸­+å°¾ =IF(I1="",A1,IF(OR(ISNUMBER(--K1),LEFT(K1,2)="0x"),E1&K1&F1,E1&""""&K1&""""&F1))
+//	èµ„æºé‡å¤ =IF(LEN(D1)>0,ISNUMBER(MATCH(D1,A$1:A$196,0)),E2)
 //	
 //	
 //	
-//	ÇåÀí<string>
-//	²éÕÒ£º  \<string name="[!>]{1,}\> Ìæ»»£º	<string>
-//	È¥²Î ²éÕÒ£º  \<xliff:g id="LABEL"\>%[0-9]$s\</xliff:g\> Ìæ»»£º	{N}
-//	È¥¿Õ¸ñ ²éÕÒ£º  ^13[¡¡ ^13^t]{1,} Ìæ»»£º  ^p
-//	È¡Ê× ²éÕÒ£º  (\<string name="[!>]{1,}\>)[!^13]{1,} Ìæ»»£º  \1
-//	È¡resÃû ²éÕÒ£º  \<string name="([!>]{1,})\> Ìæ»»£º	\1
-//	È¡resÃû ²éÕÒ£º  ["/]{1,}^13 Ìæ»»£º	^p
-//	È¡Î²(ÏÈÈ¥²ÎÊý¡¢<u>) ²éÕÒ£º  \<[^47u]{1,}\> Ìæ»»£º	¿Õ
-//	²éÕÒ£º  (\<string name="[!>]{1,}\>)[!\<]{1,} Ìæ»»£º  ¿Õ
-//	²éÕÒ£º  (\<item\>)[!\<]{1,} Ìæ»»£º  ¿Õ
-//	È¡²Î ²éÕÒ£º  (\<xliff:g id="LABEL"\>%[0-9]$s\</xliff:g\>) Ìæ»»£º  ¡ù\1¡ù
-//	²éÕÒ£º  ^13[!¡ù^13]{1,}^13 Ìæ»»£º  ^p^p
-//	²éÕÒ£º  ^13[!¡ù^13]{1,}¡ù Ìæ»»£º  ^p¡ù
-//	²éÕÒ£º  ¡ù[!¡ù^13]{1,}^13 Ìæ»»£º  ¡ù^p
-//	ÇåÀí<color>
-//	È¡Ê× ²éÕÒ£º  (\<color name="[!>]{1,}\>)[!^13]{1,} Ìæ»»£º  \1
-//	È¡resÃû ²éÕÒ£º  \<color name="([!>]{1,})\> Ìæ»»£º  \1
-//	È¡resÃû ²éÕÒ£º  ["/]{1,}^13 Ìæ»»£º	^p
-//	ÇåÀí<dimen>
-//	È¡Ê× ²éÕÒ£º  (\<dimen name="[!>]{1,}\>)[!^13]{1,} Ìæ»»£º  \1
-//	È¡resÃû ²éÕÒ£º  \<dimen name="([!>]{1,})\> Ìæ»»£º  \1
-//	È¡resÃû ²éÕÒ£º  ["/]{1,}^13 Ìæ»»£º	^p
-//	Çå×¢ÊÍ
-//	ÎÄµµÕûÀí
-//	Çå³ýÈÕÖ¾ ²éÕÒ£º	^#^#-^#^# ^#^#:^#^#:^#^#.^#^#^#: Ìæ»»£º	08-12 09:41:27.509: 
-//	Çå³ýÈÕÖ¾ ²éÕÒ£º	D/path(^#^#^#^#^#): Ìæ»»£º  D/path(14571): 
-//	ÇåÀí<logcat>
-//	È¥ÔÓÏî ²éÕÒ£º  centername="([!"]{1,})" fontColor="([!"]{1,})" Ìæ»»£º  
-//	È¥ÔÓÏî ²éÕÒ£º  state1="([!"]{1,})" state2="([!"]{1,})" stateDetailed="([!"]{1,})" tem1="([!"]{1,})" tem2="([!"]{1,})" temNow="([!"]{1,})" Ìæ»»£º  
-//	È¥ÔÓÏî ²éÕÒ£º  windState="([!"]{1,})" windDir="([!"]{1,})" windPower="([!"]{1,})" humidity="([!"]{1,})" time="([!"]{1,})" Ìæ»»£º  
-//	ÇåÀí<JSON>
-//	»»Ê¡Í· ²éÕÒ£º  \<([a-z]{1,}) dn="day"\> Ìæ»»£º  {"sheng":"\1","data":[
-//	»»Ê¡Î² ²éÕÒ£º  \</([a-z]{1,})\> Ìæ»»£º  ]},
-//	»»³ÇÊÐÍ·Î² ²éÕÒ£º  \<city([!/]{1,})/\> Ìæ»»£º  {\1}
-//	»»²ÎÊýÍ· ²éÕÒ£º	([a-zA-Z]{1,})= Ìæ»»£º  "\1":
-//	»»¼ä¸ô ²éÕÒ£º  " " Ìæ»»£º	","
-//	»»¼ä¸ô ²éÕÒ£º  }^p{ Ìæ»»£º  },^p{
+//	æ¸…ç†<string>
+//	æŸ¥æ‰¾ï¼š  \<string name="[!>]{1,}\> æ›¿æ¢ï¼š	<string>
+//	åŽ»å‚ æŸ¥æ‰¾ï¼š  \<xliff:g id="LABEL"\>%[0-9]$s\</xliff:g\> æ›¿æ¢ï¼š	{N}
+//	åŽ»ç©ºæ ¼ æŸ¥æ‰¾ï¼š  ^13[ã€€ ^13^t]{1,} æ›¿æ¢ï¼š  ^p
+//	å–é¦– æŸ¥æ‰¾ï¼š  (\<string name="[!>]{1,}\>)[!^13]{1,} æ›¿æ¢ï¼š  \1
+//	å–reså æŸ¥æ‰¾ï¼š  \<string name="([!>]{1,})\> æ›¿æ¢ï¼š	\1
+//	å–reså æŸ¥æ‰¾ï¼š  ["/]{1,}^13 æ›¿æ¢ï¼š	^p
+//	å–å°¾(å…ˆåŽ»å‚æ•°ã€<u>) æŸ¥æ‰¾ï¼š  \<[^47u]{1,}\> æ›¿æ¢ï¼š	ç©º
+//	æŸ¥æ‰¾ï¼š  (\<string name="[!>]{1,}\>)[!\<]{1,} æ›¿æ¢ï¼š  ç©º
+//	æŸ¥æ‰¾ï¼š  (\<item\>)[!\<]{1,} æ›¿æ¢ï¼š  ç©º
+//	å–å‚ æŸ¥æ‰¾ï¼š  (\<xliff:g id="LABEL"\>%[0-9]$s\</xliff:g\>) æ›¿æ¢ï¼š  â€»\1â€»
+//	æŸ¥æ‰¾ï¼š  ^13[!â€»^13]{1,}^13 æ›¿æ¢ï¼š  ^p^p
+//	æŸ¥æ‰¾ï¼š  ^13[!â€»^13]{1,}â€» æ›¿æ¢ï¼š  ^pâ€»
+//	æŸ¥æ‰¾ï¼š  â€»[!â€»^13]{1,}^13 æ›¿æ¢ï¼š  â€»^p
+//	æ¸…ç†<color>
+//	å–é¦– æŸ¥æ‰¾ï¼š  (\<color name="[!>]{1,}\>)[!^13]{1,} æ›¿æ¢ï¼š  \1
+//	å–reså æŸ¥æ‰¾ï¼š  \<color name="([!>]{1,})\> æ›¿æ¢ï¼š  \1
+//	å–reså æŸ¥æ‰¾ï¼š  ["/]{1,}^13 æ›¿æ¢ï¼š	^p
+//	æ¸…ç†<dimen>
+//	å–é¦– æŸ¥æ‰¾ï¼š  (\<dimen name="[!>]{1,}\>)[!^13]{1,} æ›¿æ¢ï¼š  \1
+//	å–reså æŸ¥æ‰¾ï¼š  \<dimen name="([!>]{1,})\> æ›¿æ¢ï¼š  \1
+//	å–reså æŸ¥æ‰¾ï¼š  ["/]{1,}^13 æ›¿æ¢ï¼š	^p
+//	æ¸…æ³¨é‡Š
+//	æ–‡æ¡£æ•´ç†
+//	æ¸…é™¤æ—¥å¿— æŸ¥æ‰¾ï¼š	^#^#-^#^# ^#^#:^#^#:^#^#.^#^#^#: æ›¿æ¢ï¼š	08-12 09:41:27.509: 
+//	æ¸…é™¤æ—¥å¿— æŸ¥æ‰¾ï¼š	D/path(^#^#^#^#^#): æ›¿æ¢ï¼š  D/path(14571): 
+//	æ¸…ç†<logcat>
+//	åŽ»æ‚é¡¹ æŸ¥æ‰¾ï¼š  centername="([!"]{1,})" fontColor="([!"]{1,})" æ›¿æ¢ï¼š  
+//	åŽ»æ‚é¡¹ æŸ¥æ‰¾ï¼š  state1="([!"]{1,})" state2="([!"]{1,})" stateDetailed="([!"]{1,})" tem1="([!"]{1,})" tem2="([!"]{1,})" temNow="([!"]{1,})" æ›¿æ¢ï¼š  
+//	åŽ»æ‚é¡¹ æŸ¥æ‰¾ï¼š  windState="([!"]{1,})" windDir="([!"]{1,})" windPower="([!"]{1,})" humidity="([!"]{1,})" time="([!"]{1,})" æ›¿æ¢ï¼š  
+//	æ¸…ç†<JSON>
+//	æ¢çœå¤´ æŸ¥æ‰¾ï¼š  \<([a-z]{1,}) dn="day"\> æ›¿æ¢ï¼š  {"sheng":"\1","data":[
+//	æ¢çœå°¾ æŸ¥æ‰¾ï¼š  \</([a-z]{1,})\> æ›¿æ¢ï¼š  ]},
+//	æ¢åŸŽå¸‚å¤´å°¾ æŸ¥æ‰¾ï¼š  \<city([!/]{1,})/\> æ›¿æ¢ï¼š  {\1}
+//	æ¢å‚æ•°å¤´ æŸ¥æ‰¾ï¼š	([a-zA-Z]{1,})= æ›¿æ¢ï¼š  "\1":
+//	æ¢é—´éš” æŸ¥æ‰¾ï¼š  " " æ›¿æ¢ï¼š	","
+//	æ¢é—´éš” æŸ¥æ‰¾ï¼š  }^p{ æ›¿æ¢ï¼š  },^p{
 
 
 [1.4] 
@@ -140,61 +140,61 @@ Save:node\ToolsMsg\Macro_Office.h  \[4.3\]
 
 
 
-[2.1] excel  ÉèÖÃ
-//excel  ÉèÖÃ£º
-//  1  Çë×¢Òâ,ÄúµÄÎÄµµµÄ²¿·ÖÄÚÈÝ¿ÉÄÜ°üº¬ÁËÎÄµµ¼ì²éÆ÷ÎÞ·¨É¾³ýµÄ¸öÈËÐÅÏ¢
-//  Office°´Å¥£¨»òÎÄ¼þ²Ëµ¥£©¡úExcelÑ¡Ïî£¨»òÑ¡Ïî£©¡úÐÅÈÎÖÐÐÄ  µ¥»÷¡°ÐÅÈÎÖÐÐÄÉèÖÃ¡±°´Å¥£¬Ñ¡Ôñ¡°¸öÈËÐÅÏ¢Ñ¡Ïî¡±£¬
-//    ÔÚ¡°ÎÄµµÌØ¶¨ÉèÖÃ¡±ÏÂÈ¡ÏûÑ¡Ôñ¡°±£´æÊ±´ÓÎÄ¼þÊôÐÔÖÐÉ¾³ý¸öÈËÐÅÏ¢¡±ºóÈ·¶¨¡£¸ÃÑ¡Ïî½ö¶Ôµ±Ç°¹¤×÷²¾ÓÐÐ§¡£
+[2.1] excel  è®¾ç½®
+//excel  è®¾ç½®ï¼š
+//  1  è¯·æ³¨æ„,æ‚¨çš„æ–‡æ¡£çš„éƒ¨åˆ†å†…å®¹å¯èƒ½åŒ…å«äº†æ–‡æ¡£æ£€æŸ¥å™¨æ— æ³•åˆ é™¤çš„ä¸ªäººä¿¡æ¯
+//  OfficeæŒ‰é’®ï¼ˆæˆ–æ–‡ä»¶èœå•ï¼‰â†’Excelé€‰é¡¹ï¼ˆæˆ–é€‰é¡¹ï¼‰â†’ä¿¡ä»»ä¸­å¿ƒ  å•å‡»â€œä¿¡ä»»ä¸­å¿ƒè®¾ç½®â€æŒ‰é’®ï¼Œé€‰æ‹©â€œä¸ªäººä¿¡æ¯é€‰é¡¹â€ï¼Œ
+//    åœ¨â€œæ–‡æ¡£ç‰¹å®šè®¾ç½®â€ä¸‹å–æ¶ˆé€‰æ‹©â€œä¿å­˜æ—¶ä»Žæ–‡ä»¶å±žæ€§ä¸­åˆ é™¤ä¸ªäººä¿¡æ¯â€åŽç¡®å®šã€‚è¯¥é€‰é¡¹ä»…å¯¹å½“å‰å·¥ä½œç°¿æœ‰æ•ˆã€‚
 
-//  1  Çë×¢ÒâÄúµÄÎÄµµ²¿·ÖÄÚÈÝ¿ÉÄÜ°üº¬
-//  ÎÄ¼þ-  Ñ¡Ïî  -  ÐÅÈÎÖÐÐÄ  -  ÐÅÈÎÖÐÐÄÉèÖÃ  -  ¸öÈËÐÅÓÃÑ¡Ïî  -  ±£´æÊ±´Ó...
+//  1  è¯·æ³¨æ„æ‚¨çš„æ–‡æ¡£éƒ¨åˆ†å†…å®¹å¯èƒ½åŒ…å«
+//  æ–‡ä»¶-  é€‰é¡¹  -  ä¿¡ä»»ä¸­å¿ƒ  -  ä¿¡ä»»ä¸­å¿ƒè®¾ç½®  -  ä¸ªäººä¿¡ç”¨é€‰é¡¹  -  ä¿å­˜æ—¶ä»Ž...
 
 
-[2.2] Ëæ»úÊý
-//  Ëæ»úÊý
+[2.2] éšæœºæ•°
+//  éšæœºæ•°
 //  =MAX(LEN(A2:A3276))
 //
 //  =IF(MOD(ROW(),2)=0,REPT("}",LOG(GCD(ROW()/2,16),2)+1),"")
 
 
-//  Ëæ»úÊý£º
+//  éšæœºæ•°ï¼š
 //  =INT(RAND()*4)+1.
 //
-//  Ëæ»ú£¬Î¨Ò»¿Õ¸ñ£º
+//  éšæœºï¼Œå”¯ä¸€ç©ºæ ¼ï¼š
 //  =IF(RAND()>1/(11-COLUMN()),"","  ")
 //  =IF(ISERROR(MATCH("  ",A1:$A1,0)),IF(RAND()>1/(11-COLUMN()),"","  "),"")
 //  =IF(ISERROR(MATCH("  ",$A1:B1,0)),IF(RAND()>1/(11-COLUMN()),"","  "),"")
 //
 //
-//  Ëæ»ú×Ö£º
-//  =MID("ÄãÄÇÍõÒ»",FIXED(0.5+RAND()*4,0),1)
-//  =MID("¾Í¸ö°ËÛç",FIND(B8,"ÄãÄÇÍõÒ»"),1)
-//  =MID("ÊÇË­µ°Êº",FIND(B8,"ÄãÄÇÍõÒ»"),1)
+//  éšæœºå­—ï¼š
+//  =MID("ä½ é‚£çŽ‹ä¸€",FIXED(0.5+RAND()*4,0),1)
+//  =MID("å°±ä¸ªå…«å¨",FIND(B8,"ä½ é‚£çŽ‹ä¸€"),1)
+//  =MID("æ˜¯è°è›‹å±Ž",FIND(B8,"ä½ é‚£çŽ‹ä¸€"),1)
 
 
 
-[2.3] Í³¼Æ
-//  Í³¼Æ£º
-//  =TEXT(SUM(B3:F6),"ºÍ=G/Í¨ÓÃ¸ñÊ½")                  ºÍ=47
-//  ="¾ùÖµ="&TEXT(FIXED(AVERAGE(B3:F6),1),"G/Í¨ÓÃ¸ñÊ½")            ¾ùÖµ=2.4
-//  ="·Ç0¾ùÖµ="&TEXT(FIXED(AVERAGE(IF(B3:F6<>0,B3:F6,"")),1),"G/Í¨ÓÃ¸ñÊ½")      ·Ç0¾ùÖµ=2.4
-//  ="3~7¸öÊý="&TEXT(COUNTIF(B3:F6,"<8")-COUNTIF(B3:F6,"<=3"),"G/Í¨ÓÃ¸ñÊ½")    3~7¸öÊý=1
-//  ="ÓÐ"&TEXT(COUNTIF(B8:D8,"?"),"G/Í¨ÓÃ¸ñÊ½")&"¸ö×Ö"                ÓÐ3¸ö×Ö
+[2.3] ç»Ÿè®¡
+//  ç»Ÿè®¡ï¼š
+//  =TEXT(SUM(B3:F6),"å’Œ=G/é€šç”¨æ ¼å¼")                  å’Œ=47
+//  ="å‡å€¼="&TEXT(FIXED(AVERAGE(B3:F6),1),"G/é€šç”¨æ ¼å¼")            å‡å€¼=2.4
+//  ="éž0å‡å€¼="&TEXT(FIXED(AVERAGE(IF(B3:F6<>0,B3:F6,"")),1),"G/é€šç”¨æ ¼å¼")      éž0å‡å€¼=2.4
+//  ="3~7ä¸ªæ•°="&TEXT(COUNTIF(B3:F6,"<8")-COUNTIF(B3:F6,"<=3"),"G/é€šç”¨æ ¼å¼")    3~7ä¸ªæ•°=1
+//  ="æœ‰"&TEXT(COUNTIF(B8:D8,"?"),"G/é€šç”¨æ ¼å¼")&"ä¸ªå­—"                æœ‰3ä¸ªå­—
 
-//Á½Î»Ð¡Êý£¬ËÄÉáÎåÈë
+//ä¸¤ä½å°æ•°ï¼Œå››èˆäº”å…¥
 //	=ROUND(A1,2)
 
 
-[2.4] Ê±¼ä
-//  Ê±¼ä£º
+[2.4] æ—¶é—´
+//  æ—¶é—´ï¼š
 //  =DATE(1,1,1)                                                        1901/1/1
-//  ="NOW:"&TEXT(NOW(),"ddºÅh:mm:ss")                        NOW:27ºÅ14:20:02
-//  =TEXT(TODAY(),"½ñÌìÊÇ:yyyy-mm-dd")                        ½ñÌìÊÇ:2017-03-27
-//  ="½ñÌìÊÇ:"&TEXT(TODAY(),"yyyy-mm")                        ½ñÌìÊÇ:2017-03
+//  ="NOW:"&TEXT(NOW(),"ddå·h:mm:ss")                        NOW:27å·14:20:02
+//  =TEXT(TODAY(),"ä»Šå¤©æ˜¯:yyyy-mm-dd")                        ä»Šå¤©æ˜¯:2017-03-27
+//  ="ä»Šå¤©æ˜¯:"&TEXT(TODAY(),"yyyy-mm")                        ä»Šå¤©æ˜¯:2017-03
 
 
-[2.5] ³£ÓÃ
-//  ³£ÓÃ:
+[2.5] å¸¸ç”¨
+//  å¸¸ç”¨:
 //  =MATCH("  ",A1:J1,0)
 //  =INDEX(B3:F6,1,4)
 //  =MATCH("  ",A1:J1,0)
@@ -211,12 +211,12 @@ Save:node\ToolsMsg\Macro_Office.h  \[4.3\]
 //  =INDIRECT(CHAR(64+2)&$C$3,TRUE)
 //  =CHOOSE(1,"A",3,"C")
 //  =LARGE(A2:J2,3)
-//  =FIND("2","ÄãºÃ2")
+//  =FIND("2","ä½ å¥½2")
 //
 //  =EVEN(10.2)
 //  =ABS(-2)
-//  =FLOOR(10.2,4)    ÏòÏÂÈ¡Õû(±¶Êý)
-//  =CEILING(10.2,4)  ÏòÉÏÈ¡Õû(±¶Êý)
+//  =FLOOR(10.2,4)    å‘ä¸‹å–æ•´(å€æ•°)
+//  =CEILING(10.2,4)  å‘ä¸Šå–æ•´(å€æ•°)
 //  =CONCATENATE(B3,B5,"a","b")
 //  =COUNTIF(B3:F6,MODE(B3:F6))
 //          I18=abc~1234#2345~bcd~12345#23456~1~0~1
@@ -228,63 +228,63 @@ Save:node\ToolsMsg\Macro_Office.h  \[4.3\]
 //  =sumproduct()
 
 
-[2.6] ±í¸ñ1
-//  ±í¸ñ1:
-//  ÐÕÃû        C/C#
-//  ÕÔÈã          90
-//  Ëïéª          75
-//  ËïÌÎ          85
-//  Ç®ÁÕ          67
-//  ÕÅ±¦Éú          61
-//  Ñî´óº£          80
-//  ÖÜÏòÑô          55
-//  ¸ßÑÞÑÞ          71
+[2.6] è¡¨æ ¼1
+//  è¡¨æ ¼1:
+//  å§“å        C/C#
+//  èµµèŒ¹          90
+//  å­™æ¥           75
+//  å­™æ¶›          85
+//  é’±ç³          67
+//  å¼ å®ç”Ÿ          61
+//  æ¨å¤§æµ·          80
+//  å‘¨å‘é˜³          55
+//  é«˜è‰³è‰³          71
         
-//    Òª¼ÆËãµÄ½á¹û       ·Ö¶Î·¶Î§         ÈËÊý1
-//    85~100ÈËÊý       100         1
-//    75~84ÈËÊý         85         2
-//    60~74ÈËÊý         75         4
+//    è¦è®¡ç®—çš„ç»“æžœ       åˆ†æ®µèŒƒå›´         äººæ•°1
+//    85~100äººæ•°       100         1
+//    75~84äººæ•°         85         2
+//    60~74äººæ•°         75         4
 //    0~59            60         1
 
-//    ·Ö¶Î·¶Î§         ÈËÊý2
+//    åˆ†æ®µèŒƒå›´         äººæ•°2
 //    60         1
 //    75         4
 //    85         2
 //    100         1
 
-//  ÈËÊý1
+//  äººæ•°1
 //  =FREQUENCY(B21:B28,D21:D24)
 //  =FREQUENCY(B21:B28,D21:D24)
 //  =FREQUENCY(B21:B28,D21:D24)
 //  =FREQUENCY(B21:B28,D21:D24)
   
-//  ÈËÊý2
+//  äººæ•°2
 //  =FREQUENCY(B21:B28,F21:F24)
 //  =FREQUENCY(B21:B28,F21:F24)
 //  =FREQUENCY(B21:B28,F21:F24)
 //  =FREQUENCY(B21:B28,F21:F24)
 
 
-[2.7] ±í¸ñ2
-// ±í¸ñ2
-//    ÐÕÃû      ÐÕÃû      ÈËÊý
-//    Ð¡»¨      Ð¡»¨      2
-//    Ð¡Ã÷      Ð¡Ã÷      3
-//    Ð¡ºì      Ð¡ºì      1
-//    Ð¡»Æ      Ð¡»Æ      1
-//    Ð¡»¨      Ð¡À¼      1
-//    Ð¡Ã÷ 
-//    Ð¡À¼ 
-//    Ð¡Ã÷ 
+[2.7] è¡¨æ ¼2
+// è¡¨æ ¼2
+//    å§“å      å§“å      äººæ•°
+//    å°èŠ±      å°èŠ±      2
+//    å°æ˜Ž      å°æ˜Ž      3
+//    å°çº¢      å°çº¢      1
+//    å°é»„      å°é»„      1
+//    å°èŠ±      å°å…°      1
+//    å°æ˜Ž 
+//    å°å…° 
+//    å°æ˜Ž 
 
-//ÐÕÃû
+//å§“å
 //	=INDEX($A$31:$A$38,SMALL(IF(ROW($A$31:$A$38)-30'=MATCH($A$31:$A$38,$A$31:$A$38,0),ROW($A$31:$A$38)-30,""),ROW()-30))
 //	=INDEX($A$31:$A$38,SMALL(IF(ROW($A$31:$A$38)-30'=MATCH($A$31:$A$38,$A$31:$A$38,0),ROW($A$31:$A$38)-30,""),ROW()-30))
 //	=INDEX($A$31:$A$38,SMALL(IF(ROW($A$31:$A$38)-30'=MATCH($A$31:$A$38,$A$31:$A$38,0),ROW($A$31:$A$38)-30,""),ROW()-30))
 //	=INDEX($A$31:$A$38,SMALL(IF(ROW($A$31:$A$38)-30'=MATCH($A$31:$A$38,$A$31:$A$38,0),ROW($A$31:$A$38)-30,""),ROW()-30))
 //	=INDEX($A$31:$A$38,SMALL(IF(ROW($A$31:$A$38)-30'=MATCH($A$31:$A$38,$A$31:$A$38,0),ROW($A$31:$A$38)-30,""),ROW()-30))
 
-//ÈËÊý
+//äººæ•°
 //	=COUNTIF($A$31:$A$38,B31)
 //	=COUNTIF($A$31:$A$38,B32)
 //	=COUNTIF($A$31:$A$38,B33)
@@ -292,29 +292,29 @@ Save:node\ToolsMsg\Macro_Office.h  \[4.3\]
 //	=COUNTIF($A$31:$A$38,B35)
 
 
-[2.8] ±í¸ñ3
-//	 AÂÖ        BÂÖ        CÂÖ      ¹«¹²
-//	Ð¡»¨        Ð¡½ð        Ð¡À¼        Ð¡»Æ
-//	Ð¡Ã÷        Ð¡³Â        Ð¡»Æ        
+[2.8] è¡¨æ ¼3
+//	 Aè½®        Bè½®        Cè½®      å…¬å…±
+//	å°èŠ±        å°é‡‘        å°å…°        å°é»„
+//	å°æ˜Ž        å°é™ˆ        å°é»„        
 //	                        
-//	Ð¡ºì        Ð¡À¼        Ð¡³Â        
+//	å°çº¢        å°å…°        å°é™ˆ        
 //	                        
-//	Ð¡»Æ        Ð¡»Æ        Ð¡½ð        
+//	å°é»„        å°é»„        å°é‡‘        
     
-//    ¹«¹²
+//    å…¬å…±
 //	=INDEX(E31:E34,SMALL(IF(ISERROR(MATCH(E31:E34,F31:F34,0)),"",IF(ISERROR(MATCH(E31:E34,G31:G34,0)),"",ROW(E31:E34)-30)),ROW()-30))
     
 
 
-[2.9] ±í¸ñ4
-//     A×é      B×é       Æ¥Åä/ÈÎÒ»
+[2.9] è¡¨æ ¼4
+//     Aç»„      Bç»„       åŒ¹é…/ä»»ä¸€
 //     123      4561     TRUE
 //     234      1335     TRUE
 //     123      456      FALSE
 //     124      367      FALSE
 //     128      34562    TRUE
     
-// Æ¥Åä/ÈÎÒ»
+// åŒ¹é…/ä»»ä¸€
 //	=OR(ISNUMBER(FIND(MID(K31,ROW(INDIRECT("a1:a"&LEN(K31))),1),J31)))
 //	=OR(ISNUMBER(FIND(MID(K32,ROW(INDIRECT("a1:a"&LEN(K32))),1),J32)))
 //	=OR(ISNUMBER(FIND(MID(K33,ROW(INDIRECT("a1:a"&LEN(K33))),1),J33)))
@@ -322,40 +322,40 @@ Save:node\ToolsMsg\Macro_Office.h  \[4.3\]
 //	=OR(ISNUMBER(FIND(MID(K35,ROW(INDIRECT("a1:a"&LEN(K35))),1),J35)))
     
 
-[2.10] ±í¸ñ5---------ÖÐÖµÅÐ¶Ï-×Ô¶¯if
-//	ÅÐ¶Ï1~6
+[2.10] è¡¨æ ¼5---------ä¸­å€¼åˆ¤æ–­-è‡ªåŠ¨if
+//	åˆ¤æ–­1~6
 //	=IF(MOD(ROW(),2^(6+4-COLUMN()))=1,IF(MOD(ROW(),2^(6+5-COLUMN()))=1,"if(value<="&INDIRECT("c"&(2^(6+4-COLUMN())+ROW()-1))&"){","}else{"),"")
 //	
-//	ÅÐ¶Ï7
+//	åˆ¤æ–­7
 //	=IF(MOD(ROW(),2)=1,"if(value=="&C1&"){","}else{")&""
 //	
-//	ÅÐ¶Ï8
+//	åˆ¤æ–­8
 //	="tmp="""&B1&""""
 //	
-//	ÅÐ¶Ï9
+//	åˆ¤æ–­9
 //	=IF(MOD(ROW(),2)=0,REPT("}",LOG(GCD(ROW()/2,16),2)+1),"")
 //	=IF(MOD(ROW(),2)=0,REPT("}",LOG(GCD(ROW()/2,128),2)+1),"")
 	
 	
-//	²½Öè£º
-//	1. Éú³É²»ÖØ¸´µÄ×î¼òÃ÷Öµ
+//	æ­¥éª¤ï¼š
+//	1. ç”Ÿæˆä¸é‡å¤çš„æœ€ç®€æ˜Žå€¼
 //		=w1*w3+(len-2)*w2*17
-//	2~6. ÈçÉÏÅÐ¶Ï
-//	7.É¾³ý if(value<=){ £¬×îºó²¹6-N¸ö£ý
-//	8.eclipseÀïÀ¨ºÅ¶ÔÆë.
+//	2~6. å¦‚ä¸Šåˆ¤æ–­
+//	7.åˆ é™¤ if(value<=){ ï¼Œæœ€åŽè¡¥6-Nä¸ªï½
+//	8.eclipseé‡Œæ‹¬å·å¯¹é½.
 	
 	
-//	µ¥Î»£º
-//	2Î»4¸ö£º8´Î£¬Æ½¾ù2´Î
-//	2Î»8¸ö£º8*2+8=24´Î£¬Æ½¾ù3´Î
-//	2Î»16¸ö£º24*2+24=72´Î£¬Æ½¾ù4.5´Î
+//	å•ä½ï¼š
+//	2ä½4ä¸ªï¼š8æ¬¡ï¼Œå¹³å‡2æ¬¡
+//	2ä½8ä¸ªï¼š8*2+8=24æ¬¡ï¼Œå¹³å‡3æ¬¡
+//	2ä½16ä¸ªï¼š24*2+24=72æ¬¡ï¼Œå¹³å‡4.5æ¬¡
 //	
-//	3Î»6¸ö£º10´Î£¬Æ½¾ù1.6´Î
-//	3Î»9¸ö£º1*5£¬2*5£¬2*5=25´Î£¬Æ½¾ù2.7´Î
-//	3Î»18¸ö£º1*25£¬2*25=75´Î£¬Æ½¾ù4.16´Î
+//	3ä½6ä¸ªï¼š10æ¬¡ï¼Œå¹³å‡1.6æ¬¡
+//	3ä½9ä¸ªï¼š1*5ï¼Œ2*5ï¼Œ2*5=25æ¬¡ï¼Œå¹³å‡2.7æ¬¡
+//	3ä½18ä¸ªï¼š1*25ï¼Œ2*25=75æ¬¡ï¼Œå¹³å‡4.16æ¬¡
 //	
-//	4Î»8¸ö£º1*10£¬2*10=20´Î£¬Æ½¾ù2.5´Î
-//	4Î»16¸ö£º1*10£¬2*10£¬3*10£¬4*10=100´Î£¬Æ½¾ù6.25´Î
+//	4ä½8ä¸ªï¼š1*10ï¼Œ2*10=20æ¬¡ï¼Œå¹³å‡2.5æ¬¡
+//	4ä½16ä¸ªï¼š1*10ï¼Œ2*10ï¼Œ3*10ï¼Œ4*10=100æ¬¡ï¼Œå¹³å‡6.25æ¬¡
 
 
 

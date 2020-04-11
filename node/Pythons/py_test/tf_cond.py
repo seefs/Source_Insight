@@ -1,4 +1,4 @@
-
+ï»¿
 
 import tensorflow as tf
 
@@ -11,7 +11,7 @@ b = tf.constant(2)
 c = tf.constant(3) 
 
 
-# Ìõ¼ş+lambda
+# æ¡ä»¶+lambda
 p = tf.constant(True)
 x = tf.cond(p, lambda: a + b, lambda: a * b)
 print(x.numpy())

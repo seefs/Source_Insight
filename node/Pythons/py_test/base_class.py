@@ -1,20 +1,20 @@
-
+ï»¿
 class cal:
-    cal_name = '¼ÆËãÆ÷'
+    cal_name = 'è®¡ç®—å™¨'
     def __init__(self,x,y):
         self.x = x
         self.y = y
 
-    @property           #ÔÚcal_addº¯ÊýÇ°¼ÓÉÏ@property£¬Ê¹µÃ¸Ãº¯Êý¿ÉÖ±½Óµ÷ÓÃ£¬·â×°ÆðÀ´
+    @property           #åœ¨cal_addå‡½æ•°å‰åŠ ä¸Š@propertyï¼Œä½¿å¾—è¯¥å‡½æ•°å¯ç›´æŽ¥è°ƒç”¨ï¼Œå°è£…èµ·æ¥
     def cal_add(self):
         return self.x + self.y
 
-    @classmethod        #ÔÚcal_infoº¯ÊýÇ°¼ÓÉÏ@classmethon£¬Ôò¸Ãº¯Êý±äÎªÀà·½·¨£¬¸Ãº¯ÊýÖ»ÄÜ·ÃÎÊµ½ÀàµÄÊý¾ÝÊôÐÔ£¬²»ÄÜ»ñÈ¡ÊµÀýµÄÊý¾ÝÊôÐÔ
-    def cal_info(cls):  #python×Ô¶¯´«ÈëÎ»ÖÃ²ÎÊýcls¾ÍÊÇÀà±¾Éí
-        print('ÕâÊÇÒ»¸ö%s'%cls.cal_name)   #cls.cal_nameµ÷ÓÃÀà×Ô¼ºµÄÊý¾ÝÊôÐÔ
+    @classmethod        #åœ¨cal_infoå‡½æ•°å‰åŠ ä¸Š@classmethonï¼Œåˆ™è¯¥å‡½æ•°å˜ä¸ºç±»æ–¹æ³•ï¼Œè¯¥å‡½æ•°åªèƒ½è®¿é—®åˆ°ç±»çš„æ•°æ®å±žæ€§ï¼Œä¸èƒ½èŽ·å–å®žä¾‹çš„æ•°æ®å±žæ€§
+    def cal_info(cls):  #pythonè‡ªåŠ¨ä¼ å…¥ä½ç½®å‚æ•°clså°±æ˜¯ç±»æœ¬èº«
+        print('è¿™æ˜¯ä¸€ä¸ª%s'%cls.cal_name)   #cls.cal_nameè°ƒç”¨ç±»è‡ªå·±çš„æ•°æ®å±žæ€§
 
-    @staticmethod       #¾²Ì¬·½·¨ Àà»òÊµÀý¾ù¿Éµ÷ÓÃ
-    def cal_test(a,b,c): #¸Ä¾²Ì¬·½·¨º¯ÊýÀï²»´«Èëself »ò cls
+    @staticmethod       #é™æ€æ–¹æ³• ç±»æˆ–å®žä¾‹å‡å¯è°ƒç”¨
+    def cal_test(a,b,c): #æ”¹é™æ€æ–¹æ³•å‡½æ•°é‡Œä¸ä¼ å…¥self æˆ– cls
         print(a,b,c)
 c1 = cal(10,11)
 cal.cal_test(1,2,3)     #>>> 1 2 3

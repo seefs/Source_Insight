@@ -1,4 +1,4 @@
-
+ï»¿
 import tensorflow as tf
 
 
@@ -6,7 +6,7 @@ a = tf.constant(1)
 b = tf.constant(2) 
 c = tf.constant(3) 
 
-#Àı×Ó1
+#ä¾‹å­1
 def cond(a, b, c): 
     return a<5 
 
@@ -24,7 +24,7 @@ for i in range(1):
 
 
 
-#Àı×Ó2--²î²»¶à
+#ä¾‹å­2--å·®ä¸å¤š
 n = tf.constant(5)
 def cond(i, a, b, c):
     return i < n

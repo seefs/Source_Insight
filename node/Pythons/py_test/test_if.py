@@ -1,19 +1,19 @@
-#!/usr/bin/python
+ï»¿#!/usr/bin/python
 
 import sys; x1 = 'runoob'; sys.stdout.write(x1 + '\n')
 
 x="a"
 y="b"
-# »»ĞĞÊä³ö
+# æ¢è¡Œè¾“å‡º
 print(x)
 print(y) 
 
 print('---------')
-# ²»»»ĞĞÊä³ö
+# ä¸æ¢è¡Œè¾“å‡º
 print(x,)
 print(y,)
 
-# ²»»»ĞĞÊä³ö
+# ä¸æ¢è¡Œè¾“å‡º
 print(x,y)
 
 

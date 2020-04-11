@@ -1,4 +1,4 @@
-import tensorflow as tf
+锘縤mport tensorflow as tf
 
 x=tf.get_variable('w1',shape=[1,2])
 
@@ -6,7 +6,7 @@ tmp1=x[0,0]
 
 tmp2=2*x[0,1]
 
-y=tf.stack([tmp1, tmp2], 0)   #y是一个（2,1）的张量，x是一个（1,2）的张量,而且y=x[0,0]+2*x[0,1]
+y=tf.stack([tmp1, tmp2], 0)   #y鏄竴涓紙2,1锛夌殑寮犻噺锛寈鏄竴涓紙1,2锛夌殑寮犻噺,鑰屼笖y=x[0,0]+2*x[0,1]
 
 grads=tf.gradients(y,[x])
 

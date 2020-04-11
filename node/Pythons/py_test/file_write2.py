@@ -1,4 +1,4 @@
-
+﻿
 
 
 with open('./py_test/file_read_c.txt','w') as f:

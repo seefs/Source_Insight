@@ -1,49 +1,49 @@
-
-»ù´¡Â·¾¶ÉèÖÃ: 
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®: 
 //basePath = F:\9820e
 //basePath = \\192.168.2.115\xiaoj\9820e\idh.code
 
 /***********************************************************************/
 
-//Ä¿Â¼[Num][Ca]:
-Save:node\android\app\Macro_App_Contacts.h \[1.1\] Â·¾¶
-Save:node\android\app\Macro_App_Contacts.h \[2.1\] //androidÈçºÎ¿ÍÖÆ»¯½ô¼±ºÅÂë£¿
+//ç›®å½•[Num][Ca]:
+Save:node\android\app\Macro_App_Contacts.h \[1.1\] è·¯å¾„
+Save:node\android\app\Macro_App_Contacts.h \[2.1\] //androidå¦‚ä½•å®¢åˆ¶åŒ–ç´§æ€¥å·ç ï¼Ÿ
 
 
 
-[1.1] Â·¾¶
-Â·¾¶: 
+[1.1] è·¯å¾„
+è·¯å¾„: 
 packages\apps\xxxx
 packages\apps\xxxx
 
-×ÊÔ´: Calculator
+èµ„æº: Calculator
 packages\apps\xxxx\AndroidManifest.xml
 packages\apps\xxxx\res\layout\activity_main.xml
 
 
 
 
-[2.1] //androidÈçºÎ¿ÍÖÆ»¯½ô¼±ºÅÂë£¿
-//ÒÔÌí¼Ó130ÎªÀı£¬Ö»ĞèÒªÈ·±£PhoneNumberUtils.javaÎÄ¼şµÄÈçÏÂÁ½´¦ÕıÈ·Ìí¼Ó¾Íok¡£
+[2.1] //androidå¦‚ä½•å®¢åˆ¶åŒ–ç´§æ€¥å·ç ï¼Ÿ
+//ä»¥æ·»åŠ 130ä¸ºä¾‹ï¼Œåªéœ€è¦ç¡®ä¿PhoneNumberUtils.javaæ–‡ä»¶çš„å¦‚ä¸‹ä¸¤å¤„æ­£ç¡®æ·»åŠ å°±okã€‚
 
 frameworks\base\telephony\java\android\telephony\PhoneNumberUtils.java //isSimEmergencyNumber()
-1.isSimEmergencyNumber()·½·¨×öÈçÏÂĞŞ¸Ä 
+1.isSimEmergencyNumber()æ–¹æ³•åšå¦‚ä¸‹ä¿®æ”¹ 
 //	no ecclist system property, so use our own list. 
-//		- return (number.equals(¡°112¡±) || number.equals(¡°911¡±)); 
-//		+ return (number.equals(¡°112¡±) || number.equals(¡°911¡±)||number.equals(¡°130¡±)); 
+//		- return (number.equals(â€œ112â€) || number.equals(â€œ911â€)); 
+//		+ return (number.equals(â€œ112â€) || number.equals(â€œ911â€)||number.equals(â€œ130â€)); 
 
 //        emergencyNumbers = ((slotId < 0) ? "112,911,000,08,110,118,119,999" : "112,911");
 
-2. Êı×é CUSTOM_EMERGENCY_NUMBER ÖĞÌí¼Ó130
+2. æ•°ç»„ CUSTOM_EMERGENCY_NUMBER ä¸­æ·»åŠ 130
 
-PS£º 
-¿ÍÖÆ»¯½ô¼±ºÅÂëÄ¿Ç°ÊÇÍ¨¹ıapÏÂ·¢ ATDaddress@1,# Íê³ÉµÄ£¬Ä¿Ç°Õâ²¿·ÖÂß¼­´úÂëÖĞÒÑ¾­ÊµÏÖ£¬¾ßÌåÈçÏÂ£º
+PSï¼š 
+å®¢åˆ¶åŒ–ç´§æ€¥å·ç ç›®å‰æ˜¯é€šè¿‡apä¸‹å‘ ATDaddress@1,# å®Œæˆçš„ï¼Œç›®å‰è¿™éƒ¨åˆ†é€»è¾‘ä»£ç ä¸­å·²ç»å®ç°ï¼Œå…·ä½“å¦‚ä¸‹ï¼š
 
-Ê×ÏÈ£¬GsmCallTracker.javaÖĞµ±ÅĞ¶ÏÊÇ¿ÍÖÆ»¯½ô¼±ºÅÂëÊ±£¬»áÔÚaddressºó¼ÓÉÏ¡±/1¡±£º 
+é¦–å…ˆï¼ŒGsmCallTracker.javaä¸­å½“åˆ¤æ–­æ˜¯å®¢åˆ¶åŒ–ç´§æ€¥å·ç æ—¶ï¼Œä¼šåœ¨addressååŠ ä¸Šâ€/1â€ï¼š 
 //	frameworks\opt\telephony\src\java\com\android\internal\telephony\gsm\GsmCallTracker.java isEmergencyNumber(dialString)
 //	if (PhoneNumberUtils.isCustomEmergencyNumber(mPendingMO.mAddress)) { 
-//		Rlog.d(LOG_TAG,¡±Pending MO is Custom Emergency call¡±); 
-//		tmpAddr = tmpAddr + ¡°/1¡±; 
+//		Rlog.d(LOG_TAG,â€Pending MO is Custom Emergency callâ€); 
+//		tmpAddr = tmpAddr + â€œ/1â€; 
 //	}
 
 //Sprd: Add for Emergency call bug843871
@@ -57,10 +57,10 @@ PS£º
 //		}
 //	}
 
-Æä´Î£¬rilÖĞÒ²»á¶Ô½ô¼±²¦ºÅ½øĞĞ´¦Àí£¬½«addressÖĞµÄ¡¯/¡¯Ìæ»»Îª¡¯@¡¯,×îÖÕÏÂ·¢ ATDaddress@1,#µ½modem£¬rilÖĞµÄ²¿·ÖÊµÏÖ´úÂëÈçÏÂ£º 
-//	category = strchr(p_dial->address, ¡®/¡¯); 
+å…¶æ¬¡ï¼Œrilä¸­ä¹Ÿä¼šå¯¹ç´§æ€¥æ‹¨å·è¿›è¡Œå¤„ç†ï¼Œå°†addressä¸­çš„â€™/â€™æ›¿æ¢ä¸ºâ€™@â€™,æœ€ç»ˆä¸‹å‘ ATDaddress@1,#åˆ°modemï¼Œrilä¸­çš„éƒ¨åˆ†å®ç°ä»£ç å¦‚ä¸‹ï¼š 
+//	category = strchr(p_dial->address, â€˜/â€™); 
 //	if(category) 
-//	*category = ¡®@¡¯;
+//	*category = â€˜@â€™;
 //
 //	ret = asprintf(&cmd, "ATD%s,#%s;", p_dial->address, clir);
 
@@ -68,7 +68,7 @@ PS£º
 
 
 /***********************************************************************/
-/*************************** ²Î¿¼±Ê¼Ç¡¢ÍøÉÏÕÒµÄ£¬ºÜÂÒ. *****************/
+/*************************** å‚è€ƒç¬”è®°ã€ç½‘ä¸Šæ‰¾çš„ï¼Œå¾ˆä¹±. *****************/
 /***********************************************************************/
 
 

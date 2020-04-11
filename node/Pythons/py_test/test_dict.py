@@ -1,4 +1,4 @@
-
+ï»¿
 import random as rng
 
 
@@ -21,7 +21,7 @@ for (k,v) in  dict.items():
 print ("--------------")
 
 
-# Python3.5ÖĞ£ºiteritems±äÎªitems
+# Python3.5ä¸­ï¼šiteritemså˜ä¸ºitems
 #for k,v in dict.iteritems(): 
 #   print ("dict[%s]=" % k,v  )
 #print ("--------------")

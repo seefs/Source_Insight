@@ -1,4 +1,4 @@
-
+ï»¿
 
 import tensorflow as tf
 
@@ -10,7 +10,7 @@ print(arr.numpy())
 max_len = len(arr)
 
 
-# 2¸ö²ÎÊı--Õı³£
+# 2ä¸ªå‚æ•°--æ­£å¸¸
 def cond(i,a):
     print('--while--cond--', i, a)
     return i < max_len
@@ -22,7 +22,7 @@ def body(i,a):
 i,a = tf.while_loop(cond, body, (0,1))
 
 
-# 1¸ö²ÎÊı--±¨´í
+# 1ä¸ªå‚æ•°--æŠ¥é”™
 #a=0
 #def cond(i):
 #    print('--while--cond--', i, a)

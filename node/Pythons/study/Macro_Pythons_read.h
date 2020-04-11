@@ -1,35 +1,35 @@
+ï»¿
 
-
-// 1.Pythons ÍøÎÄ
+// 1.Pythons ç½‘æ–‡
 Save:node\Pythons\study\Macro_Pythons_read.h \[1.1\] tensorflow API
-Save:node\Pythons\study\Macro_Pythons_read.h \[1.2\] Ì¸Ì¸ÎÒÔÚ×ÔÈ»ÓïÑÔ´¦Àí½ø½×ÉÏµÄÒ»Ğ©¸öÈË×¾¼û
-Save:node\Pythons\study\Macro_Pythons_read.h \[1.3\] ´óÊı¾İ 
-Save:node\Pythons\study\Macro_Pythons_read.h \[1.4\] ÎÄ±¾ÍÚ¾òÖ÷ÒªÓĞÄÄĞ©¹¦ÄÜ
+Save:node\Pythons\study\Macro_Pythons_read.h \[1.2\] è°ˆè°ˆæˆ‘åœ¨è‡ªç„¶è¯­è¨€å¤„ç†è¿›é˜¶ä¸Šçš„ä¸€äº›ä¸ªäººæ‹™è§
+Save:node\Pythons\study\Macro_Pythons_read.h \[1.3\] å¤§æ•°æ® 
+Save:node\Pythons\study\Macro_Pythons_read.h \[1.4\] æ–‡æœ¬æŒ–æ˜ä¸»è¦æœ‰å“ªäº›åŠŸèƒ½
 Save:node\Pythons\study\Macro_Pythons_read.h \[1.5\] 
-Save:node\Pythons\study\Macro_Pythons_read.h \[1.6\] Caffe  ¾í»ıÉñ¾­ÍøÂç
+Save:node\Pythons\study\Macro_Pythons_read.h \[1.6\] Caffe  å·ç§¯ç¥ç»ç½‘ç»œ
 Save:node\Pythons\study\Macro_Pythons_read.h \[1.7\] 
 Save:node\Pythons\study\Macro_Pythons_read.h \[1.8\] 
 Save:node\Pythons\study\Macro_Pythons_read.h \[1.9\] 
-// 2.ÏîÄ¿
-Save:node\Pythons\study\Macro_Pythons_read.h \[2.1\] NLPÍĞ¹Ü
-Save:node\Pythons\study\Macro_Pythons_read.h \[2.2\] ¿ªÔ´ÏµÍ³ Malmo microsoft 
-Save:node\Pythons\study\Macro_Pythons_read.h \[2.3\] ¿ªÔ´ÏîÄ¿
-Save:node\Pythons\study\Macro_Pythons_read.h \[2.4\] ROS ¶àÓïÑÔÖ§³Ö
+// 2.é¡¹ç›®
+Save:node\Pythons\study\Macro_Pythons_read.h \[2.1\] NLPæ‰˜ç®¡
+Save:node\Pythons\study\Macro_Pythons_read.h \[2.2\] å¼€æºç³»ç»Ÿ Malmo microsoft 
+Save:node\Pythons\study\Macro_Pythons_read.h \[2.3\] å¼€æºé¡¹ç›®
+Save:node\Pythons\study\Macro_Pythons_read.h \[2.4\] ROS å¤šè¯­è¨€æ”¯æŒ
 Save:node\Pythons\study\Macro_Pythons_read.h \[2.5\] 
 Save:node\Pythons\study\Macro_Pythons_read.h \[2.6\] 
 Save:node\Pythons\study\Macro_Pythons_read.h \[2.7\] 
 Save:node\Pythons\study\Macro_Pythons_read.h \[2.8\] 
 Save:node\Pythons\study\Macro_Pythons_read.h \[2.9\] 
-// 3.Ñ§Ï°²Î¿¼
-Save:node\Pythons\study\Macro_Pythons_read.h \[3.1\] MNIST ½Ì³Ì
-Save:node\Pythons\study\Macro_Pythons_read.h \[3.2\] Îâ¶÷´ïÍøÕ¾
-Save:node\Pythons\study\Macro_Pythons_read.h \[3.3\] MNIST ½Ì³Ì
-Save:node\Pythons\study\Macro_Pythons_read.h \[3.4\] ´Ê¿â²Î¿¼
+// 3.å­¦ä¹ å‚è€ƒ
+Save:node\Pythons\study\Macro_Pythons_read.h \[3.1\] MNIST æ•™ç¨‹
+Save:node\Pythons\study\Macro_Pythons_read.h \[3.2\] å´æ©è¾¾ç½‘ç«™
+Save:node\Pythons\study\Macro_Pythons_read.h \[3.3\] MNIST æ•™ç¨‹
+Save:node\Pythons\study\Macro_Pythons_read.h \[3.4\] è¯åº“å‚è€ƒ
 Save:node\Pythons\study\Macro_Pythons_read.h \[3.5\] 
 Save:node\Pythons\study\Macro_Pythons_read.h \[3.6\] 
-// 4.Pythons »ù´¡ÖªÊ¶
-Save:node\Pythons\study\Macro_Pythons_read.h \[4.1\] PythonÓïÑÔ
-Save:node\Pythons\study\Macro_Pythons_read.h \[4.2\] PythonµÄ¼¸ÖÖÎÄ¼şÀàĞÍ 
+// 4.Pythons åŸºç¡€çŸ¥è¯†
+Save:node\Pythons\study\Macro_Pythons_read.h \[4.1\] Pythonè¯­è¨€
+Save:node\Pythons\study\Macro_Pythons_read.h \[4.2\] Pythonçš„å‡ ç§æ–‡ä»¶ç±»å‹ 
 Save:node\Pythons\study\Macro_Pythons_read.h \[4.3\] 
 Save:node\Pythons\study\Macro_Pythons_read.h \[4.4\] 
 Save:node\Pythons\study\Macro_Pythons_read.h \[4.5\] 
@@ -53,69 +53,69 @@ Save:node\Pythons\study\Macro_Pythons_read.h \[5.1\]
 [1.1] tensorflow API
 https://blog.csdn.net/ctwy291314/article/details/80449796
 
-tensorflow object detection API¸üĞÂ6Æª£¬tensorflowÊµ¼ù¸üĞÂ8ÆªAPI¸üĞÂ6Æª£¬
-tensorflowÊµ¼ù¸üĞÂ8Æª
-https://blog.csdn.net/weixin_42499236Çë´ó¼Ò¶à¶àÖ§³Ö
+tensorflow object detection APIæ›´æ–°6ç¯‡ï¼Œtensorflowå®è·µæ›´æ–°8ç¯‡APIæ›´æ–°6ç¯‡ï¼Œ
+tensorflowå®è·µæ›´æ–°8ç¯‡
+https://blog.csdn.net/weixin_42499236è¯·å¤§å®¶å¤šå¤šæ”¯æŒ
 
 
 
 
-[1.2] Ì¸Ì¸ÎÒÔÚ×ÔÈ»ÓïÑÔ´¦Àí½ø½×ÉÏµÄÒ»Ğ©¸öÈË×¾¼û
+[1.2] è°ˆè°ˆæˆ‘åœ¨è‡ªç„¶è¯­è¨€å¤„ç†è¿›é˜¶ä¸Šçš„ä¸€äº›ä¸ªäººæ‹™è§
 http://mp.weixin.qq.com/s?__biz=MzI3ODgwODA2MA==&mid=2247485946&idx=1&sn=43e1217f59e5ac61a74b38823b6b4fac&chksm=eb501d69dc27947f26664025793b6a895e26e1a89a7998bbff57551fe2adeabc56715324e66c&mpshare=1&scene=23&srcid=1120RzMSAXvJ0FIFGctKDygx#rdm
 
 
 
 
-[1.3] ´óÊı¾İ 
+[1.3] å¤§æ•°æ® 
 ----------------------------------
----    ´óÊı¾İ						   ---
+---    å¤§æ•°æ®						   ---
 ----------------------------------
 storm:
-Twitter¿ªÔ´µÄ·Ö²¼Ê½ÊµÊ±´óÊı¾İ´¦Àí¿ò¼Ü
+Twitterå¼€æºçš„åˆ†å¸ƒå¼å®æ—¶å¤§æ•°æ®å¤„ç†æ¡†æ¶
 
-storm ÒµÎñ·Ö¼¶£º
-Nimbus£ºµ÷¶È¡£
-Supervisor£º·ÖÅä¡£
-Worker£º¹¤×÷½ø³Ì¡£
-Task£ºÈÎÎñ¡£
-Topology£º¼ÆËãÍØÆË¡£
-Stream£ºÊı¾İÁ÷¡£
-Spout£ºÊı¾İÔ´¡£
-Bolt£ºÊı¾İÔ´´¦Àí¡£
-Stream grouping Êı¾İÁ÷·Ö×é¡£
-Reliability£º¿É¿¿ĞÔ¡£¡£
+storm ä¸šåŠ¡åˆ†çº§ï¼š
+Nimbusï¼šè°ƒåº¦ã€‚
+Supervisorï¼šåˆ†é…ã€‚
+Workerï¼šå·¥ä½œè¿›ç¨‹ã€‚
+Taskï¼šä»»åŠ¡ã€‚
+Topologyï¼šè®¡ç®—æ‹“æ‰‘ã€‚
+Streamï¼šæ•°æ®æµã€‚
+Spoutï¼šæ•°æ®æºã€‚
+Boltï¼šæ•°æ®æºå¤„ç†ã€‚
+Stream grouping æ•°æ®æµåˆ†ç»„ã€‚
+Reliabilityï¼šå¯é æ€§ã€‚ã€‚
 
 
 kafka:
-ÓÉApache¿ª·¢µÄ¿ªÔ´Á÷´¦ÀíÆ½Ì¨
-¸ßÍÌÍÂÁ¿µÄ·Ö²¼Ê½·¢²¼¶©ÔÄÏûÏ¢ÏµÍ³
+ç”±Apacheå¼€å‘çš„å¼€æºæµå¤„ç†å¹³å°
+é«˜ååé‡çš„åˆ†å¸ƒå¼å‘å¸ƒè®¢é˜…æ¶ˆæ¯ç³»ç»Ÿ
 
 
 flume :
-ClouderaÌá¹©µÄÒ»¸ö¸ß¿ÉÓÃµÄ£¬¸ß¿É¿¿µÄ£¬·Ö²¼Ê½µÄº£Á¿ÈÕÖ¾²É¼¯¡¢¾ÛºÏºÍ´«ÊäµÄÏµÍ³
+Clouderaæä¾›çš„ä¸€ä¸ªé«˜å¯ç”¨çš„ï¼Œé«˜å¯é çš„ï¼Œåˆ†å¸ƒå¼çš„æµ·é‡æ—¥å¿—é‡‡é›†ã€èšåˆå’Œä¼ è¾“çš„ç³»ç»Ÿ
 
 
 es :
-»ùÓÚLuceneÕâ¸ö·Ç³£³ÉÊìµÄË÷Òı·½°¸£¬Áí¼ÓÉÏÒ»Ğ©·Ö²¼Ê½µÄÊµÏÖ£º¼¯Èº£¬·ÖÆ¬£¬¸´ÖÆµÈ¡£
+åŸºäºLuceneè¿™ä¸ªéå¸¸æˆç†Ÿçš„ç´¢å¼•æ–¹æ¡ˆï¼Œå¦åŠ ä¸Šä¸€äº›åˆ†å¸ƒå¼çš„å®ç°ï¼šé›†ç¾¤ï¼Œåˆ†ç‰‡ï¼Œå¤åˆ¶ç­‰ã€‚
 
 
 solr :
-Ò»¸ö¶ÀÁ¢µÄÆóÒµ¼¶ËÑË÷Ó¦ÓÃ·şÎñÆ÷,Ëü¶ÔÍâÌá¹©ÀàËÆÓÚWeb-serviceµÄAPI½Ó¿Ú
+ä¸€ä¸ªç‹¬ç«‹çš„ä¼ä¸šçº§æœç´¢åº”ç”¨æœåŠ¡å™¨,å®ƒå¯¹å¤–æä¾›ç±»ä¼¼äºWeb-serviceçš„APIæ¥å£
 
 
 Apache	fink:
-ÄÜ¹»¼ÈÓÃÀ´½øĞĞÅú´¦ÀíÓÖÄÜÓÃÀ´½øĞĞÁ÷´¦Àí£¬Ò²¾ÍÊÇ×ÛºÏÁËHadoopºÍStorm»òSpark StreamingÁ½ÕßÓÅµã
+èƒ½å¤Ÿæ—¢ç”¨æ¥è¿›è¡Œæ‰¹å¤„ç†åˆèƒ½ç”¨æ¥è¿›è¡Œæµå¤„ç†ï¼Œä¹Ÿå°±æ˜¯ç»¼åˆäº†Hadoopå’ŒStormæˆ–Spark Streamingä¸¤è€…ä¼˜ç‚¹
 
 
 
 
-[1.4] ÎÄ±¾ÍÚ¾òÖ÷ÒªÓĞÄÄĞ©¹¦ÄÜ
-×ÔÈ»ÓïÑÔ´¦Àí¼¼ÊõÎÄ±¾ÍÚ¾ò¹¦ÄÜ£º 
-* Éæ»ÆÉæÕş¼ì²â£º¶ÔÎÄ±¾ÄÚÈİ×öÉæ»ÆÉæÕş¼ì²â£¬Âú×ãÏàÓ¦Õş²ßÒªÇó£» 
-* À¬»øÆÀÂÛ¹ıÂË£ºÔÚÂÛÌ³·¢ÑÔ»òÓÃ»§ÆÀÂÛÖĞ£¬¹ıÂËÎÄ±¾ÖĞµÄÀ¬»ø¹ã¸æ£¬ÌáÉıÎÄ±¾×ÜÌåÖÊÁ¿£» 
-* Çé¸Ğ·ÖÎö£º¶ÔÓÃ»§ÆÀÂÛµÈÎÄ±¾ÄÚÈİ×öÇé¸Ğ·ÖÎö£¬Ö¸µ¼¾ö²ßÓëÔËÓª£» 
-* ×Ô¶¯±êÇ©ÌáÈ¡£º×Ô¶¯ÌáÈ¡ÎÄ±¾ÖØÒªÄÚÈİÉú³É¹Ø¼üĞÔ±êÇ©£¬ÔÚ´Ë»ù´¡Ö®ÉÏÍØÕ¹¸ü¶à¹¦ÄÜĞÎÊ½£» 
-* ÎÄ±¾×Ô¶¯·ÖÀà£ºÍ¨¹ı¶ÔÎÄ±¾ÄÚÈİ½øĞĞ·ÖÎö£¬¸ø³öÎÄ±¾ËùÊôµÄÀà±ğºÍÖÃĞÅ¶È£¬Ö§³Ö¶ş¼¶·ÖÀà.
+[1.4] æ–‡æœ¬æŒ–æ˜ä¸»è¦æœ‰å“ªäº›åŠŸèƒ½
+è‡ªç„¶è¯­è¨€å¤„ç†æŠ€æœ¯æ–‡æœ¬æŒ–æ˜åŠŸèƒ½ï¼š 
+* æ¶‰é»„æ¶‰æ”¿æ£€æµ‹ï¼šå¯¹æ–‡æœ¬å†…å®¹åšæ¶‰é»„æ¶‰æ”¿æ£€æµ‹ï¼Œæ»¡è¶³ç›¸åº”æ”¿ç­–è¦æ±‚ï¼› 
+* åƒåœ¾è¯„è®ºè¿‡æ»¤ï¼šåœ¨è®ºå›å‘è¨€æˆ–ç”¨æˆ·è¯„è®ºä¸­ï¼Œè¿‡æ»¤æ–‡æœ¬ä¸­çš„åƒåœ¾å¹¿å‘Šï¼Œæå‡æ–‡æœ¬æ€»ä½“è´¨é‡ï¼› 
+* æƒ…æ„Ÿåˆ†æï¼šå¯¹ç”¨æˆ·è¯„è®ºç­‰æ–‡æœ¬å†…å®¹åšæƒ…æ„Ÿåˆ†æï¼ŒæŒ‡å¯¼å†³ç­–ä¸è¿è¥ï¼› 
+* è‡ªåŠ¨æ ‡ç­¾æå–ï¼šè‡ªåŠ¨æå–æ–‡æœ¬é‡è¦å†…å®¹ç”Ÿæˆå…³é”®æ€§æ ‡ç­¾ï¼Œåœ¨æ­¤åŸºç¡€ä¹‹ä¸Šæ‹“å±•æ›´å¤šåŠŸèƒ½å½¢å¼ï¼› 
+* æ–‡æœ¬è‡ªåŠ¨åˆ†ç±»ï¼šé€šè¿‡å¯¹æ–‡æœ¬å†…å®¹è¿›è¡Œåˆ†æï¼Œç»™å‡ºæ–‡æœ¬æ‰€å±çš„ç±»åˆ«å’Œç½®ä¿¡åº¦ï¼Œæ”¯æŒäºŒçº§åˆ†ç±».
 
 
 
@@ -126,19 +126,19 @@ Apache	fink:
 
 
 
-[1.6] Caffe  ¾í»ıÉñ¾­ÍøÂç
+[1.6] Caffe  å·ç§¯ç¥ç»ç½‘ç»œ
 
-Theano	´úÊı·ûºÅÏµÍ³
-2. Éñ¾­ÍøÂçµÄ³£ÓÃÄ£ĞÍ£¨CNN¡¢RBN¡¢RCNN¡¢DNNµÈ£©
-3 Í³¼Æ»úÆ÷Ñ§Ï°Ëã·¨£¨Éñ¾­ÍøÂç¡¢Âß¼­»Ø¹é¡¢¾ö²ßÊ÷¡¢SVM¡¢BoostingµÈ£©
+Theano	ä»£æ•°ç¬¦å·ç³»ç»Ÿ
+2. ç¥ç»ç½‘ç»œçš„å¸¸ç”¨æ¨¡å‹ï¼ˆCNNã€RBNã€RCNNã€DNNç­‰ï¼‰
+3 ç»Ÿè®¡æœºå™¨å­¦ä¹ ç®—æ³•ï¼ˆç¥ç»ç½‘ç»œã€é€»è¾‘å›å½’ã€å†³ç­–æ ‘ã€SVMã€Boostingç­‰ï¼‰
 https://www.zhihu.com/question/48180108/answer/109927781
-1. Ç°ÆÚ×¼±¸£¬ python¿ÆÑ§ÔËËã£¬Êı¾İÕûÀí»¹ÓĞ³öÍ¼Ïñ½á¹ûµÄÄ£¿é
-numpy [½Ì³Ì], pandas [½Ì³Ì], matplotlib [½Ì³Ì].
-2. ½ø½××¼±¸£¬ÔÚ»úÆ÷Ñ§Ï°·½Ãæ£¬scikit-learn [½Ì³Ì] ÊÇ»ã¼¯ÁËÖÚ¶à»úÆ÷Ñ§Ï°·½·¨µÄÄ£¿é
-3. Í¬ÑùÊÇ½ø½×µÄ£¬ÔÚÉñ¾­ÍøÂç·½Ãæ £¬Tensorflow [½Ì³Ì]£¬Õâ¸öÊÇGoogle¿ª·¢
-4. Ç¿»¯Ñ§Ï°
-5. ÒÅ´«Ëã·¨
-6. ¿ì½İ´î½¨Éñ¾­ÍøÂç, Keras , µ×²ãÊÇ Tensorflow ºÍ Theano
+1. å‰æœŸå‡†å¤‡ï¼Œ pythonç§‘å­¦è¿ç®—ï¼Œæ•°æ®æ•´ç†è¿˜æœ‰å‡ºå›¾åƒç»“æœçš„æ¨¡å—
+numpy [æ•™ç¨‹], pandas [æ•™ç¨‹], matplotlib [æ•™ç¨‹].
+2. è¿›é˜¶å‡†å¤‡ï¼Œåœ¨æœºå™¨å­¦ä¹ æ–¹é¢ï¼Œscikit-learn [æ•™ç¨‹] æ˜¯æ±‡é›†äº†ä¼—å¤šæœºå™¨å­¦ä¹ æ–¹æ³•çš„æ¨¡å—
+3. åŒæ ·æ˜¯è¿›é˜¶çš„ï¼Œåœ¨ç¥ç»ç½‘ç»œæ–¹é¢ ï¼ŒTensorflow [æ•™ç¨‹]ï¼Œè¿™ä¸ªæ˜¯Googleå¼€å‘
+4. å¼ºåŒ–å­¦ä¹ 
+5. é—ä¼ ç®—æ³•
+6. å¿«æ·æ­å»ºç¥ç»ç½‘ç»œ, Keras , åº•å±‚æ˜¯ Tensorflow å’Œ Theano
 
 
 
@@ -162,21 +162,21 @@ numpy [½Ì³Ì], pandas [½Ì³Ì], matplotlib [½Ì³Ì].
 
 
 
-[2.1] NLPÍĞ¹Ü
+[2.1] NLPæ‰˜ç®¡
 NLP
-//¸´µ©´óÑ§ÍÆ³ö»ùÓÚÔÆµÄ×ÔÈ»ÓïÑÔ´¦Àí¿ªÔ´ÏîÄ¿Fudan
+//å¤æ—¦å¤§å­¦æ¨å‡ºåŸºäºäº‘çš„è‡ªç„¶è¯­è¨€å¤„ç†å¼€æºé¡¹ç›®Fudan
 //	NLPNLP on Azure
-//ÏîÄ¿ÍĞ¹ÜµØÖ·£ºhttps://code.csdn.net/Yungoal-Research/azure_nlp/tree/master
+//é¡¹ç›®æ‰˜ç®¡åœ°å€ï¼šhttps://code.csdn.net/Yungoal-Research/azure_nlp/tree/master
 
-//Ê¹ÓÃ¼°¿ª·¢ÎÄµµ£ºhttps://code.csdn.net/Yungoal-Research/azure_nlp/tree/master/Documents
-
-
+//ä½¿ç”¨åŠå¼€å‘æ–‡æ¡£ï¼šhttps://code.csdn.net/Yungoal-Research/azure_nlp/tree/master/Documents
 
 
 
 
-[2.2] ¿ªÔ´ÏµÍ³ Malmo microsoft 
-¿ªÔ´ÏµÍ³
+
+
+[2.2] å¼€æºç³»ç»Ÿ Malmo microsoft 
+å¼€æºç³»ç»Ÿ
 
 1 Malmo microsoft 
 
@@ -184,98 +184,98 @@ NLP
 	
 
 
-[2.3] ¿ªÔ´ÏîÄ¿
-¿ªÔ´ÏîÄ¿
+[2.3] å¼€æºé¡¹ç›®
+å¼€æºé¡¹ç›®
 GraphLab
 
 
-GraphLabÊÇÒ»ÖÖĞÂµÄÃæÏò»úÆ÷Ñ§Ï°µÄ²¢ĞĞ¿ò¼Ü¡£GraphLabÌá¹©ÁËÒ»¸öÍêÕûµÄÆ½Ì¨£¬ÈÃ»ú¹¹¿ÉÒÔÊ¹ÓÃ¿ÉÀ©Õ¹µÄ»úÆ÷Ñ§Ï°ÏµÍ³½¨Á¢´óÊı¾İÒÔ·ÖÎö²úÆ·£¬¸Ã¹«Ë¾¿Í»§°üÀ¨Zillow¡¢Adobe¡¢Zynga¡¢Pandora¡¢Bosch¡¢ExxonMobilµÈ£¬ËüÃÇ´Ó±ğµÄÓ¦ÓÃ³ÌĞò»òÕß·şÎñÖĞ×¥È¡Êı¾İ£¬Í¨¹ıÍÆ¼öÏµÍ³¡¢ÆÛÕ©¼à²âÏµÍ³¡¢Çé¸Ğ¼°Éç½»ÍøÂç·ÖÎöÏµÍ³µÈÏµÍ³Ä£Ê½½«´óÊı¾İÀíÄî×ª»»ÎªÉú²ú»·¾³ÏÂ¿ÉÒÔÊ¹ÓÃµÄÔ¤²âÓ¦ÓÃ³ÌĞò¡££¨ ÏêÇé£©
+GraphLabæ˜¯ä¸€ç§æ–°çš„é¢å‘æœºå™¨å­¦ä¹ çš„å¹¶è¡Œæ¡†æ¶ã€‚GraphLabæä¾›äº†ä¸€ä¸ªå®Œæ•´çš„å¹³å°ï¼Œè®©æœºæ„å¯ä»¥ä½¿ç”¨å¯æ‰©å±•çš„æœºå™¨å­¦ä¹ ç³»ç»Ÿå»ºç«‹å¤§æ•°æ®ä»¥åˆ†æäº§å“ï¼Œè¯¥å…¬å¸å®¢æˆ·åŒ…æ‹¬Zillowã€Adobeã€Zyngaã€Pandoraã€Boschã€ExxonMobilç­‰ï¼Œå®ƒä»¬ä»åˆ«çš„åº”ç”¨ç¨‹åºæˆ–è€…æœåŠ¡ä¸­æŠ“å–æ•°æ®ï¼Œé€šè¿‡æ¨èç³»ç»Ÿã€æ¬ºè¯ˆç›‘æµ‹ç³»ç»Ÿã€æƒ…æ„ŸåŠç¤¾äº¤ç½‘ç»œåˆ†æç³»ç»Ÿç­‰ç³»ç»Ÿæ¨¡å¼å°†å¤§æ•°æ®ç†å¿µè½¬æ¢ä¸ºç”Ÿäº§ç¯å¢ƒä¸‹å¯ä»¥ä½¿ç”¨çš„é¢„æµ‹åº”ç”¨ç¨‹åºã€‚ï¼ˆ è¯¦æƒ…ï¼‰
 
 
-ÏîÄ¿Ö÷Ò³£º http://graphlab.org/
+é¡¹ç›®ä¸»é¡µï¼š http://graphlab.org/
 
 
 Vowpal Wabbit
 
 
-Vowpal Wabbit(Fast Online Learning)×î³õÊÇÓÉÑÅ»¢ÑĞ¾¿Ôº½¨ÉèµÄÒ»¸ö»úÆ÷Ñ§Ï°Æ½Ì¨£¬Ä¿Ç°¸ÃÏîÄ¿ÔÚÎ¢ÈíÑĞ¾¿Ôº¡£ËüÊÇÓÉJohn LangfordÆô¶¯²¢Ö÷µ¼µÄÏîÄ¿¡£ 
-ÏîÄ¿µØÖ·£º  http://hunch.net/~vw/
+Vowpal Wabbit(Fast Online Learning)æœ€åˆæ˜¯ç”±é›…è™ç ”ç©¶é™¢å»ºè®¾çš„ä¸€ä¸ªæœºå™¨å­¦ä¹ å¹³å°ï¼Œç›®å‰è¯¥é¡¹ç›®åœ¨å¾®è½¯ç ”ç©¶é™¢ã€‚å®ƒæ˜¯ç”±John Langfordå¯åŠ¨å¹¶ä¸»å¯¼çš„é¡¹ç›®ã€‚ 
+é¡¹ç›®åœ°å€ï¼š  http://hunch.net/~vw/
 
 
 scikits.learn
 
 
-scikit-learnÊÇÒ»¸ö¿ªÔ´µÄ¡¢¹¹½¨ÔÚSciPyÖ®ÉÏÓÃÓÚ»úÆ÷Ñ§Ï°µÄ Python Ä£¿é¡£Ëü°üÀ¨¼òµ¥¶ø¸ßĞ§µÄ¹¤¾ß£¬¿ÉÓÃÓÚÊı¾İÍÚ¾òºÍÊı¾İ·ÖÎö£¬ÊÊºÏÓÚÈÎºÎÈË£¬¿ÉÔÚ¸÷ÖÖÇé¿öÏÂÖØ¸´Ê¹ÓÃ¡¢¹¹½¨ÔÚ NumPy¡¢SciPyºÍ matplotlib Ö®ÉÏ£¬×ñÑ­BSD Ğ­Òé¡££¨ÏêÇé£©
+scikit-learnæ˜¯ä¸€ä¸ªå¼€æºçš„ã€æ„å»ºåœ¨SciPyä¹‹ä¸Šç”¨äºæœºå™¨å­¦ä¹ çš„ Python æ¨¡å—ã€‚å®ƒåŒ…æ‹¬ç®€å•è€Œé«˜æ•ˆçš„å·¥å…·ï¼Œå¯ç”¨äºæ•°æ®æŒ–æ˜å’Œæ•°æ®åˆ†æï¼Œé€‚åˆäºä»»ä½•äººï¼Œå¯åœ¨å„ç§æƒ…å†µä¸‹é‡å¤ä½¿ç”¨ã€æ„å»ºåœ¨ NumPyã€SciPyå’Œ matplotlib ä¹‹ä¸Šï¼Œéµå¾ªBSD åè®®ã€‚ï¼ˆè¯¦æƒ…ï¼‰
 
 
-ÏîÄ¿µØÖ·£º http://scikit-learn.org/stable
+é¡¹ç›®åœ°å€ï¼š http://scikit-learn.org/stable
 
 
 Theano
 
 
-TheanoÊÇÒ»¸öpython¿â£¬ÓÃÀ´¶¨Òå¡¢ÓÅ»¯ºÍÄ£ÄâÊıÑ§±í´ïÊ½¼ÆËã£¬ÓÃÓÚ¸ßĞ§µÄ½â¾ö¶àÎ¬Êı×éµÄ¼ÆËãÎÊÌâ¡£ËüÊ¹µÃĞ´Éî¶ÈÑ§Ï°Ä£ĞÍ¸ü¼ÓÈİÒ×£¬Í¬Ê±Ò²¸ø³öÁËÒ»Ğ©¹ØÓÚÔÚGPUÉÏÑµÁ·ËüÃÇµÄÑ¡Ïî¡££¨ ÏêÇé£©
+Theanoæ˜¯ä¸€ä¸ªpythonåº“ï¼Œç”¨æ¥å®šä¹‰ã€ä¼˜åŒ–å’Œæ¨¡æ‹Ÿæ•°å­¦è¡¨è¾¾å¼è®¡ç®—ï¼Œç”¨äºé«˜æ•ˆçš„è§£å†³å¤šç»´æ•°ç»„çš„è®¡ç®—é—®é¢˜ã€‚å®ƒä½¿å¾—å†™æ·±åº¦å­¦ä¹ æ¨¡å‹æ›´åŠ å®¹æ˜“ï¼ŒåŒæ—¶ä¹Ÿç»™å‡ºäº†ä¸€äº›å…³äºåœ¨GPUä¸Šè®­ç»ƒå®ƒä»¬çš„é€‰é¡¹ã€‚ï¼ˆ è¯¦æƒ…ï¼‰
 
 
-ÏîÄ¿µØÖ·£º http://deeplearning.net/software/theano/
+é¡¹ç›®åœ°å€ï¼š http://deeplearning.net/software/theano/
 
 
 Mahout
 
 
-Mahout ÊÇ Apache Software Foundation£¨ASF£© ÆìÏÂµÄÒ»¸ö¿ªÔ´ÏîÄ¿£¬Ìá¹©Ò»Ğ©¿ÉÀ©Õ¹µÄ»úÆ÷Ñ§Ï°ÁìÓò¾­µäËã·¨µÄÊµÏÖ£¬Ö¼ÔÚ°ïÖú¿ª·¢ÈËÔ±¸ü¼Ó·½±ã¿ì½İµØ´´½¨ÖÇÄÜÓ¦ÓÃ³ÌĞò¡£Mahout°üº¬Ğí¶àÊµÏÖ£¬°üÀ¨¾ÛÀà¡¢·ÖÀà¡¢ÍÆ¼ö¹ıÂË¡¢Æµ·±×ÓÏîÍÚ¾ò¡£´ËÍâ£¬Í¨¹ıÊ¹ÓÃ Apache Hadoop ¿â£¬Mahout ¿ÉÒÔÓĞĞ§µØÀ©Õ¹µ½ÔÆÖĞ¡£
+Mahout æ˜¯ Apache Software Foundationï¼ˆASFï¼‰ æ——ä¸‹çš„ä¸€ä¸ªå¼€æºé¡¹ç›®ï¼Œæä¾›ä¸€äº›å¯æ‰©å±•çš„æœºå™¨å­¦ä¹ é¢†åŸŸç»å…¸ç®—æ³•çš„å®ç°ï¼Œæ—¨åœ¨å¸®åŠ©å¼€å‘äººå‘˜æ›´åŠ æ–¹ä¾¿å¿«æ·åœ°åˆ›å»ºæ™ºèƒ½åº”ç”¨ç¨‹åºã€‚MahoutåŒ…å«è®¸å¤šå®ç°ï¼ŒåŒ…æ‹¬èšç±»ã€åˆ†ç±»ã€æ¨èè¿‡æ»¤ã€é¢‘ç¹å­é¡¹æŒ–æ˜ã€‚æ­¤å¤–ï¼Œé€šè¿‡ä½¿ç”¨ Apache Hadoop åº“ï¼ŒMahout å¯ä»¥æœ‰æ•ˆåœ°æ‰©å±•åˆ°äº‘ä¸­ã€‚
 
 
-ÏîÄ¿Ö÷Ò³£º http://mahout.apache.org/
+é¡¹ç›®ä¸»é¡µï¼š http://mahout.apache.org/
 
 
 pybrain
 
 
-pybrainÊÇPythonµÄÒ»¸ö»úÆ÷Ñ§Ï°Ä£¿é£¬ËüµÄÄ¿±êÊÇÎª»úÆ÷Ñ§Ï°ÈÎÎñÌá¹©Áé»î¡¢Ò×Ó¦¡¢Ç¿´óµÄ»úÆ÷Ñ§Ï°Ëã·¨¡£pybrain°üÀ¨Éñ¾­ÍøÂç¡¢Ç¿»¯Ñ§Ï°(¼°¶şÕß½áºÏ)¡¢ÎŞ¼à¶½Ñ§Ï°¡¢½ø»¯Ëã·¨¡£ÒÔÉñ¾­ÍøÂçÎªºËĞÄ£¬ËùÓĞµÄÑµÁ··½·¨¶¼ÒÔÉñ¾­ÍøÂçÎªÒ»¸öÊµÀı¡£
+pybrainæ˜¯Pythonçš„ä¸€ä¸ªæœºå™¨å­¦ä¹ æ¨¡å—ï¼Œå®ƒçš„ç›®æ ‡æ˜¯ä¸ºæœºå™¨å­¦ä¹ ä»»åŠ¡æä¾›çµæ´»ã€æ˜“åº”ã€å¼ºå¤§çš„æœºå™¨å­¦ä¹ ç®—æ³•ã€‚pybrainåŒ…æ‹¬ç¥ç»ç½‘ç»œã€å¼ºåŒ–å­¦ä¹ (åŠäºŒè€…ç»“åˆ)ã€æ— ç›‘ç£å­¦ä¹ ã€è¿›åŒ–ç®—æ³•ã€‚ä»¥ç¥ç»ç½‘ç»œä¸ºæ ¸å¿ƒï¼Œæ‰€æœ‰çš„è®­ç»ƒæ–¹æ³•éƒ½ä»¥ç¥ç»ç½‘ç»œä¸ºä¸€ä¸ªå®ä¾‹ã€‚
 
 
-ÏîÄ¿Ö÷Ò³£º http://pybrain.org/
+é¡¹ç›®ä¸»é¡µï¼š http://pybrain.org/
 
 
 OpenCV
 
 
-OpenCVÊÇÒ»¸ö»ùÓÚ£¨¿ªÔ´£©·¢ĞĞµÄ¿çÆ½Ì¨¼ÆËã»úÊÓ¾õ¿â£¬¿ÉÒÔÔËĞĞÔÚLinux¡¢WindowsºÍMac OS²Ù×÷ÏµÍ³ÉÏ¡£ËüÇáÁ¿¼¶¶øÇÒ¸ßĞ§¡ª¡ªÓÉÒ»ÏµÁĞ C º¯ÊıºÍÉÙÁ¿ C++ Àà¹¹³É£¬Í¬Ê±Ìá¹©ÁËPython¡¢Ruby¡¢MATLABµÈÓïÑÔµÄ½Ó¿Ú£¬ÊµÏÖÁËÍ¼Ïñ´¦ÀíºÍ¼ÆËã»úÊÓ¾õ·½ÃæµÄºÜ¶àÍ¨ÓÃËã·¨¡££¨ ÏêÇé£©
+OpenCVæ˜¯ä¸€ä¸ªåŸºäºï¼ˆå¼€æºï¼‰å‘è¡Œçš„è·¨å¹³å°è®¡ç®—æœºè§†è§‰åº“ï¼Œå¯ä»¥è¿è¡Œåœ¨Linuxã€Windowså’ŒMac OSæ“ä½œç³»ç»Ÿä¸Šã€‚å®ƒè½»é‡çº§è€Œä¸”é«˜æ•ˆâ€”â€”ç”±ä¸€ç³»åˆ— C å‡½æ•°å’Œå°‘é‡ C++ ç±»æ„æˆï¼ŒåŒæ—¶æä¾›äº†Pythonã€Rubyã€MATLABç­‰è¯­è¨€çš„æ¥å£ï¼Œå®ç°äº†å›¾åƒå¤„ç†å’Œè®¡ç®—æœºè§†è§‰æ–¹é¢çš„å¾ˆå¤šé€šç”¨ç®—æ³•ã€‚ï¼ˆ è¯¦æƒ…ï¼‰
 
 
-ÏîÄ¿Ö÷Ò³£º http://opencv.org/
+é¡¹ç›®ä¸»é¡µï¼š http://opencv.org/
 
 
 Orange
 
 
-Orange ÊÇÒ»¸ö»ùÓÚ×é¼şµÄÊı¾İÍÚ¾òºÍ»úÆ÷Ñ§Ï°Èí¼şÌ××°£¬ËüµÄ¹¦ÄÜ¼´ÓÑºÃ£¬ÓÖºÜÇ¿´ó£¬¿ìËÙ¶øÓÖ¶à¹¦ÄÜµÄ¿ÉÊÓ»¯±à³ÌÇ°¶Ë£¬ÒÔ±ãä¯ÀÀÊı¾İ·ÖÎöºÍ¿ÉÊÓ»¯£¬»ù°ó¶¨ÁË PythonÒÔ½øĞĞ½Å±¾¿ª·¢¡£Ëü°üº¬ÁËÍêÕûµÄÒ»ÏµÁĞµÄ×é¼şÒÔ½øĞĞÊı¾İÔ¤´¦Àí£¬²¢Ìá¹©ÁËÊı¾İÕÊÄ¿£¬¹ı¶É£¬½¨Ä££¬Ä£Ê½ÆÀ¹ÀºÍ¿±Ì½µÄ¹¦ÄÜ¡£
+Orange æ˜¯ä¸€ä¸ªåŸºäºç»„ä»¶çš„æ•°æ®æŒ–æ˜å’Œæœºå™¨å­¦ä¹ è½¯ä»¶å¥—è£…ï¼Œå®ƒçš„åŠŸèƒ½å³å‹å¥½ï¼Œåˆå¾ˆå¼ºå¤§ï¼Œå¿«é€Ÿè€Œåˆå¤šåŠŸèƒ½çš„å¯è§†åŒ–ç¼–ç¨‹å‰ç«¯ï¼Œä»¥ä¾¿æµè§ˆæ•°æ®åˆ†æå’Œå¯è§†åŒ–ï¼ŒåŸºç»‘å®šäº† Pythonä»¥è¿›è¡Œè„šæœ¬å¼€å‘ã€‚å®ƒåŒ…å«äº†å®Œæ•´çš„ä¸€ç³»åˆ—çš„ç»„ä»¶ä»¥è¿›è¡Œæ•°æ®é¢„å¤„ç†ï¼Œå¹¶æä¾›äº†æ•°æ®å¸ç›®ï¼Œè¿‡æ¸¡ï¼Œå»ºæ¨¡ï¼Œæ¨¡å¼è¯„ä¼°å’Œå‹˜æ¢çš„åŠŸèƒ½ã€‚
 
 
-ÏîÄ¿Ö÷Ò³£º http://orange.biolab.si/
+é¡¹ç›®ä¸»é¡µï¼š http://orange.biolab.si/
 
 
 NLTK
 
 
-NLTK£¨natural language toolkit)ÊÇpythonµÄ×ÔÈ»ÓïÑÔ´¦Àí¹¤¾ß°ü¡£2001ÄêÍÆ³ö£¬ÖÁ½ñ·¢Õ¹·Ç³£»îÔ¾¡£ËüµÄÖ÷Òª×÷ÓÃÊÇÎªÁË½ÌÑ§£¬ÖÁ½ñÒÑ¾­ÔÚ20¶à¸ö¹ú¼Ò60¶àËù¸ßĞ£Ê¹ÓÃ£¬ÀïÃæ°üÀ¨ÁË´óÁ¿µÄ´ÊÁÏ¿â£¬ÒÔ¼°×ÔÈ»ÓïÑÔ´¦Àí·½ÃæµÄËã·¨ÊµÏÖ£º·Ö´Ê£¬ ´Ê¸ù¼ÆËã£¬ ·ÖÀà£¬ ÓïÒå·ÖÎöµÈ¡£
-ÏîÄ¿Ö÷Ò³£º http://nltk.org/
+NLTKï¼ˆnatural language toolkit)æ˜¯pythonçš„è‡ªç„¶è¯­è¨€å¤„ç†å·¥å…·åŒ…ã€‚2001å¹´æ¨å‡ºï¼Œè‡³ä»Šå‘å±•éå¸¸æ´»è·ƒã€‚å®ƒçš„ä¸»è¦ä½œç”¨æ˜¯ä¸ºäº†æ•™å­¦ï¼Œè‡³ä»Šå·²ç»åœ¨20å¤šä¸ªå›½å®¶60å¤šæ‰€é«˜æ ¡ä½¿ç”¨ï¼Œé‡Œé¢åŒ…æ‹¬äº†å¤§é‡çš„è¯æ–™åº“ï¼Œä»¥åŠè‡ªç„¶è¯­è¨€å¤„ç†æ–¹é¢çš„ç®—æ³•å®ç°ï¼šåˆ†è¯ï¼Œ è¯æ ¹è®¡ç®—ï¼Œ åˆ†ç±»ï¼Œ è¯­ä¹‰åˆ†æç­‰ã€‚
+é¡¹ç›®ä¸»é¡µï¼š http://nltk.org/
 
 
 Nupic
 
 
-NupicÊÇÒ»¸ö¿ªÔ´µÄÈË¹¤ÖÇÄÜÆ½Ì¨¡£¸ÃÏîÄ¿ÓÉGrok£¨Ô­Ãû Numenta£©¹«Ë¾¿ª·¢£¬ÆäÖĞ°üÀ¨ÁË¹«Ë¾µÄËã·¨ºÍÈí¼ş¼Ü¹¹¡£ NuPIC µÄÔË×÷½Ó½üÓÚÈËÄÔ£¬¡°µ±Ä£Ê½±ä»¯µÄÊ±ºò£¬Ëü»áÍüµô¾ÉÄ£Ê½£¬¼ÇÒäĞÂÄ£Ê½¡±¡£ÈçÈËÄÔÒ»Ñù£¬CLA Ëã·¨ÄÜ¹»ÊÊÓ¦ĞÂµÄ±ä»¯¡££¨ ÏêÇé£©
+Nupicæ˜¯ä¸€ä¸ªå¼€æºçš„äººå·¥æ™ºèƒ½å¹³å°ã€‚è¯¥é¡¹ç›®ç”±Grokï¼ˆåŸå Numentaï¼‰å…¬å¸å¼€å‘ï¼Œå…¶ä¸­åŒ…æ‹¬äº†å…¬å¸çš„ç®—æ³•å’Œè½¯ä»¶æ¶æ„ã€‚ NuPIC çš„è¿ä½œæ¥è¿‘äºäººè„‘ï¼Œâ€œå½“æ¨¡å¼å˜åŒ–çš„æ—¶å€™ï¼Œå®ƒä¼šå¿˜æ‰æ—§æ¨¡å¼ï¼Œè®°å¿†æ–°æ¨¡å¼â€ã€‚å¦‚äººè„‘ä¸€æ ·ï¼ŒCLA ç®—æ³•èƒ½å¤Ÿé€‚åº”æ–°çš„å˜åŒ–ã€‚ï¼ˆ è¯¦æƒ…ï¼‰
 
 
-ÏîÄ¿Ö÷Ò³£º http://numenta.org/nupic.html
+é¡¹ç›®ä¸»é¡µï¼š http://numenta.org/nupic.html
 	
 
 
 
-[2.4] ROS ¶àÓïÑÔÖ§³Ö
-ROS×îÖØÒªµÄÌØĞÔÖ®Ò»¾ÍÊÇ¶àÓïÑÔµÄÖ§³Ö
+[2.4] ROS å¤šè¯­è¨€æ”¯æŒ
+ROSæœ€é‡è¦çš„ç‰¹æ€§ä¹‹ä¸€å°±æ˜¯å¤šè¯­è¨€çš„æ”¯æŒ
 
 
 
@@ -310,47 +310,47 @@ ROS×îÖØÒªµÄÌØĞÔÖ®Ò»¾ÍÊÇ¶àÓïÑÔµÄÖ§³Ö
 
 
 
-[3.1] tensorflow ÊµÕ½
+[3.1] tensorflow å®æˆ˜
 
 https://pan.baidu.com/s/1t3-QPyHn5oCcVhcKjtTYFw
 
 
-[3.2] Îâ¶÷´ïÍøÕ¾
+[3.2] å´æ©è¾¾ç½‘ç«™
 
 
-ÊÇµÄ£¬Ò»¸ö¹úÍâµÄÄ½¿ÎÍøÕ¾£¬Îâ¶÷´ï´óÉñ´´°ìµÄÓ´??@CLOSURE ÄÇ¸öÊÇÒ»¸öÍøÕ¾Ã´£¿
+æ˜¯çš„ï¼Œä¸€ä¸ªå›½å¤–çš„æ…•è¯¾ç½‘ç«™ï¼Œå´æ©è¾¾å¤§ç¥åˆ›åŠçš„å“Ÿ??@CLOSURE é‚£ä¸ªæ˜¯ä¸€ä¸ªç½‘ç«™ä¹ˆï¼Ÿ
 
 
-[3.3] MNIST ½Ì³Ì
-MNIST ½Ì³Ì
+[3.3] MNIST æ•™ç¨‹
+MNIST æ•™ç¨‹
 
-MNIST Êı¾İÏÂÔØ
-Ô´Âë: tensorflow/g3doc/tutorials/mnist/
+MNIST æ•°æ®ä¸‹è½½
+æºç : tensorflow/g3doc/tutorials/mnist/
 
-±¾½Ì³ÌµÄÄ¿±êÊÇÕ¹Ê¾ÈçºÎÏÂÔØÓÃÓÚÊÖĞ´Êı×Ö·ÖÀàÎÊÌâËùÒªÓÃµ½µÄ£¨¾­µä£©MNISTÊı¾İ¼¯¡£
+æœ¬æ•™ç¨‹çš„ç›®æ ‡æ˜¯å±•ç¤ºå¦‚ä½•ä¸‹è½½ç”¨äºæ‰‹å†™æ•°å­—åˆ†ç±»é—®é¢˜æ‰€è¦ç”¨åˆ°çš„ï¼ˆç»å…¸ï¼‰MNISTæ•°æ®é›†ã€‚
 
-½Ì³Ì ÎÄ¼ş
+æ•™ç¨‹ æ–‡ä»¶
 
 
-matlab¶ÁÈ¡ idx3-ubyteµÄÎÄ¼ş£¬º¯ÊıÃû½ĞreadMNIST ¡£
-ÎÄ¼şÏÂÔØµØÖ·http://www.mathworks.com/matlabcentral/fileexchange/27675-read-digits-and-labels-from-mnist-database
+matlabè¯»å– idx3-ubyteçš„æ–‡ä»¶ï¼Œå‡½æ•°åå«readMNIST ã€‚
+æ–‡ä»¶ä¸‹è½½åœ°å€http://www.mathworks.com/matlabcentral/fileexchange/27675-read-digits-and-labels-from-mnist-database
 
-[3.4] ´Ê¿â²Î¿¼
-//Éú³É´Ê¿â: ÒÅÍü
+[3.4] è¯åº“å‚è€ƒ
+//ç”Ÿæˆè¯åº“: é—å¿˜
 https://cloud.tencent.com/developer/article/1061299
-//Éú³É´Ê¿â: Ê÷ ºìÂ¥ÃÎ
+//ç”Ÿæˆè¯åº“: æ ‘ çº¢æ¥¼æ¢¦
 https://cloud.tencent.com/developer/article/1033790
 https://github.com/LouYu2015
-//·Ö¾ä
+//åˆ†å¥
 https://blog.csdn.net/asd991936157/article/details/61203531
-//Èı¹ú
+//ä¸‰å›½
 https://cloud.tencent.com/developer/article/1418563
-//ÒĞÌìÍÀÁú¼Ç Jieba + Word2vec + NetworkX
-//»ñÈ¡ÍêÕû´úÂëÇë¹Ø×¢¹«ÖÚºÅ±à³Ì¹·»Ø¸´0321»ñÈ¡
+//å€šå¤©å± é¾™è®° Jieba + Word2vec + NetworkX
+//è·å–å®Œæ•´ä»£ç è¯·å…³æ³¨å…¬ä¼—å·ç¼–ç¨‹ç‹—å›å¤0321è·å–
 https://cloud.tencent.com/developer/article/1167179
 //NLTK eng
 https://cloud.tencent.com/developer/article/1059169
-//jieba·Ö¾ä
+//jiebaåˆ†å¥
 https://blog.csdn.net/zhuzuwei/article/details/80487032
 
 [3.5] 
@@ -359,95 +359,95 @@ https://blog.csdn.net/zhuzuwei/article/details/80487032
 
 
 
-[4.1] PythonÓïÑÔ
-//PythonÓëPerl
-PythonÊÇ¹Ì¶¨µÄÊı¾İÀàĞÍ£¬±ä»¯µÄº¯ÊıÀàĞÍ£»¶ø PerlÔòÊÇ¹Ì¶¨µÄº¯ÊıÀàĞÍ£¬±ä»¯µÄÊı¾İÀàĞÍ
-Éè¼ÆperlµÄÊÇÓïÑÔÑ§¼Ò£¬Éè¼ÆpythonµÄÊÇÊıÑ§¼Ò
+[4.1] Pythonè¯­è¨€
+//Pythonä¸Perl
+Pythonæ˜¯å›ºå®šçš„æ•°æ®ç±»å‹ï¼Œå˜åŒ–çš„å‡½æ•°ç±»å‹ï¼›è€Œ Perlåˆ™æ˜¯å›ºå®šçš„å‡½æ•°ç±»å‹ï¼Œå˜åŒ–çš„æ•°æ®ç±»å‹
+è®¾è®¡perlçš„æ˜¯è¯­è¨€å­¦å®¶ï¼Œè®¾è®¡pythonçš„æ˜¯æ•°å­¦å®¶
 
 
 
 
-[4.2] PythonµÄ¼¸ÖÖÎÄ¼şÀàĞÍ
-//	PythonÓĞÒÔÏÂ¼¸ÖÖÀàĞÍµÄÎÄ¼ş£º
-//	py£ºPython¿ØÖÆÌ¨³ÌĞòµÄÔ´´úÂëÎÄ¼ş
-//	pyw£ºPython´øÓÃ»§½çÃæµÄÔ´´úÂëÎÄ¼ş
-//	pyx£ºPython°üÔ´ÎÄ¼ş
-//	pyc£ºPython×Ö½ÚÂëÎÄ¼ş
-//	pyo£ºPythonÓÅ»¯ºóµÄ×Ö½ÚÂëÎÄ¼ş
-//	pyd£ºPythonµÄ¿âÎÄ¼ş£¨Python°æDLL£©¡¢ÔÚLinuxÉÏÊÇsoÎÄ¼ş
+[4.2] Pythonçš„å‡ ç§æ–‡ä»¶ç±»å‹
+//	Pythonæœ‰ä»¥ä¸‹å‡ ç§ç±»å‹çš„æ–‡ä»¶ï¼š
+//	pyï¼šPythonæ§åˆ¶å°ç¨‹åºçš„æºä»£ç æ–‡ä»¶
+//	pywï¼šPythonå¸¦ç”¨æˆ·ç•Œé¢çš„æºä»£ç æ–‡ä»¶
+//	pyxï¼šPythonåŒ…æºæ–‡ä»¶
+//	pycï¼šPythonå­—èŠ‚ç æ–‡ä»¶
+//	pyoï¼šPythonä¼˜åŒ–åçš„å­—èŠ‚ç æ–‡ä»¶
+//	pydï¼šPythonçš„åº“æ–‡ä»¶ï¼ˆPythonç‰ˆDLLï¼‰ã€åœ¨Linuxä¸Šæ˜¯soæ–‡ä»¶
 
-1) pycºÍpyoµÄÉú³É·½·¨
-//	compile·½·¨Ô­ĞÎ
+1) pycå’Œpyoçš„ç”Ÿæˆæ–¹æ³•
+//	compileæ–¹æ³•åŸå½¢
 //	compile(file, cfile=None, dfile=None, doraise=False, optimize=-1)
 mport py_compile
 py_compile.compile(file = "a.py",cfile = "a.pyc",optimize=-1)
 
-2) Ò²¿ÉÒÔÖ±½ÓÍ¨¹ıPython¼ÓÔØÄ£¿éÀ´ÔËĞĞ£º
-//	±àÒë³Épyc
-python -m py_compile Ô´´úÂë
-//	±àÒë³Épyo
-python -O -m py_compile Ô´´úÂë
+2) ä¹Ÿå¯ä»¥ç›´æ¥é€šè¿‡PythonåŠ è½½æ¨¡å—æ¥è¿è¡Œï¼š
+//	ç¼–è¯‘æˆpyc
+python -m py_compile æºä»£ç 
+//	ç¼–è¯‘æˆpyo
+python -O -m py_compile æºä»£ç 
 
-3) Èç¹ûĞèÒª±àÒëÕû¸öÄ¿Â¼ÄÚµÄËùÓĞÔ´´úÂë£¬Çë²Î¿¼
+3) å¦‚æœéœ€è¦ç¼–è¯‘æ•´ä¸ªç›®å½•å†…çš„æ‰€æœ‰æºä»£ç ï¼Œè¯·å‚è€ƒ
 Python compileall
 
-4) pyd¿ÉÒÔÈÃÎÒÃÇµÄ´úÂë¸ü°²È«
-//¼ì²éÊÇ·ñ°²×°ÁËCython£¬Ã»ÓĞÇëpip install Cython°²×°¼´¿É
-//±àÒëpyd²½Öè1£ºÉú³ÉC´úÂë
+4) pydå¯ä»¥è®©æˆ‘ä»¬çš„ä»£ç æ›´å®‰å…¨
+//æ£€æŸ¥æ˜¯å¦å®‰è£…äº†Cythonï¼Œæ²¡æœ‰è¯·pip install Cythonå®‰è£…å³å¯
+//ç¼–è¯‘pydæ­¥éª¤1ï¼šç”ŸæˆCä»£ç 
 import Cython.Build
-#µ¼ÈëBuildÄ£¿é
+#å¯¼å…¥Buildæ¨¡å—
 Cython.Build.cythonize("a.py")
-#a.py×ª»»³ÉC´úÂë
+#a.pyè½¬æ¢æˆCä»£ç 
 
-5) ÀûÓÃdistutilsÉú³ÉpydÀ©Õ¹Ä£¿é
-´ËÊ±ÎÒÃÇ¿ÉÒÔÓÃdistutils°üÀ´±àÒë³ÉÎÒÃÇÒªµÄpydÄ£¿é
-±àÒëa.py³Épyd
+5) åˆ©ç”¨distutilsç”Ÿæˆpydæ‰©å±•æ¨¡å—
+æ­¤æ—¶æˆ‘ä»¬å¯ä»¥ç”¨distutilsåŒ…æ¥ç¼–è¯‘æˆæˆ‘ä»¬è¦çš„pydæ¨¡å—
+ç¼–è¯‘a.pyæˆpyd
 import Cython.Build
 import distutils.core
 a = Cython.Build.cythonize("a.py")
-#·µ»Ødistutils.extension.Extension¶ÔÏóÁĞ±í
+#è¿”å›distutils.extension.Extensionå¯¹è±¡åˆ—è¡¨
 distutils.core.setup(
-name = 'pydµÄ±àÒë',#°üÃû³Æ
-version = "1.0",#°ü°æ±¾ºÅ
-ext_modules= a,#À©Õ¹Ä£¿é
-author = "°Ù¼ÒºÅ¡ª¡ª±ó¸çËµPython",#×÷Õß
-author_email='binnlzeng@163.com'#×÷ÕßÓÊÏä
+name = 'pydçš„ç¼–è¯‘',#åŒ…åç§°
+version = "1.0",#åŒ…ç‰ˆæœ¬å·
+ext_modules= a,#æ‰©å±•æ¨¡å—
+author = "ç™¾å®¶å·â€”â€”æ–Œå“¥è¯´Python",#ä½œè€…
+author_email='binnlzeng@163.com'#ä½œè€…é‚®ç®±
 )
 
-6) ÅúÁ¿±àÒëpyd 1
-//ÌáÈ¡ÎÒÃÇÒªµÄExtension¶ÔÏó
+6) æ‰¹é‡ç¼–è¯‘pyd 1
+//æå–æˆ‘ä»¬è¦çš„Extensionå¯¹è±¡
 import Cython.Build
 import distutils.core
-a = Cython.Build.cythonize("a.py")[0] #ÌáÈ¡Extension¶ÔÏó
+a = Cython.Build.cythonize("a.py")[0] #æå–Extensionå¯¹è±¡
 b = Cython.Build.cythonize("b.py")[0]
 distutils.core.setup(
-name = 'pydµÄ±àÒë', #°üÃû³Æ
-version = "1.0", #°ü°æ±¾ºÅ
-ext_modules= [a,b], #±»À©Õ¹µÄÄ£¿é
-author = "°Ù¼ÒºÅ¡ª¡ª±ó¸çËµPython", #×÷Õß
-author_email='binnlzeng@163.com' #×÷ÕßÓÊÏä
+name = 'pydçš„ç¼–è¯‘', #åŒ…åç§°
+version = "1.0", #åŒ…ç‰ˆæœ¬å·
+ext_modules= [a,b], #è¢«æ‰©å±•çš„æ¨¡å—
+author = "ç™¾å®¶å·â€”â€”æ–Œå“¥è¯´Python", #ä½œè€…
+author_email='binnlzeng@163.com' #ä½œè€…é‚®ç®±
 )
 
 
-7) ÅúÁ¿±àÒëpyd 2
-//×ª»»³ÉC´úÂëºóÔÙ½øĞĞExtension¶ÔÏóÊµÀı»¯
+7) æ‰¹é‡ç¼–è¯‘pyd 2
+//è½¬æ¢æˆCä»£ç åå†è¿›è¡ŒExtensionå¯¹è±¡å®ä¾‹åŒ–
 import Cython.Build
 import distutils.core
 Cython.Build.cythonize("a.py")
 Cython.Build.cythonize("b.py")
 distutils.core.setup(
-name = 'pydµÄ±àÒë', #°üÃû³Æ
-version = "1.0", #°ü°æ±¾ºÅ
-ext_modules= [distutils.core.Extension('a',["a.c"]),distutils.core.Extension('b', ['b.c'])], #±»À©Õ¹µÄÄ£¿é
+name = 'pydçš„ç¼–è¯‘', #åŒ…åç§°
+version = "1.0", #åŒ…ç‰ˆæœ¬å·
+ext_modules= [distutils.core.Extension('a',["a.c"]),distutils.core.Extension('b', ['b.c'])], #è¢«æ‰©å±•çš„æ¨¡å—
 #[
 #distutils.core.Extension('a',["a.c"]),
 #distutils.core.Extension('b', ['b.c'])
 #]
-author = "°Ù¼ÒºÅ¡ª¡ª±ó¸çËµPython", #×÷Õß
-author_email='binnlzeng@163.com' #×÷ÕßÓÊÏä
+author = "ç™¾å®¶å·â€”â€”æ–Œå“¥è¯´Python", #ä½œè€…
+author_email='binnlzeng@163.com' #ä½œè€…é‚®ç®±
 )
 
-8) Èç¹ûÓöµ½running build...ÌáÊ¾£¬É¾µôbuildÄ¿Â¼ÖØĞÂ±àÒë¼´¿É
+8) å¦‚æœé‡åˆ°running build...æç¤ºï¼Œåˆ æ‰buildç›®å½•é‡æ–°ç¼–è¯‘å³å¯
 
 
 

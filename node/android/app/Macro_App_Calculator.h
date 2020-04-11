@@ -1,40 +1,40 @@
-
-»ù´¡Â·¾¶ÉèÖÃ:
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®:
 //basePath = F:\9820e
 //basePath = D:\SVN\app\Calculator
 //basePath = \\192.168.2.115\xiaoj\9820e\idh.code
 
 /***********************************************************************/
 
-//Ä¿Â¼[Num][Ca]:
-Save:node\android\app\Macro_App_Calculator.h \[1.1\] Calculator appÂ·¾¶
-Save:node\android\app\Macro_App_Calculator.h \[1.2\] Android.mk ÒıÓÃ¿â
-Save:node\android\app\Macro_App_Calculator.h \[1.3\] gradle °æ±¾ÅäÖÃ
-Save:node\android\app\Macro_App_Calculator.h \[1.4\] Ìí¼Ó¶à¸öres
-Save:node\android\app\Macro_App_Calculator.h \[1.5\] res error, Ì«¶àÁË²»¸Ä
-Save:node\android\app\Macro_App_Calculator.h \[2.1\] ÎÄ¼şÄ¿Â¼
+//ç›®å½•[Num][Ca]:
+Save:node\android\app\Macro_App_Calculator.h \[1.1\] Calculator appè·¯å¾„
+Save:node\android\app\Macro_App_Calculator.h \[1.2\] Android.mk å¼•ç”¨åº“
+Save:node\android\app\Macro_App_Calculator.h \[1.3\] gradle ç‰ˆæœ¬é…ç½®
+Save:node\android\app\Macro_App_Calculator.h \[1.4\] æ·»åŠ å¤šä¸ªres
+Save:node\android\app\Macro_App_Calculator.h \[1.5\] res error, å¤ªå¤šäº†ä¸æ”¹
+Save:node\android\app\Macro_App_Calculator.h \[2.1\] æ–‡ä»¶ç›®å½•
 
 
 
 
 
 
-[1.1] Calculator appÂ·¾¶
-»ù´¡Â·¾¶ÉèÖÃ:
+[1.1] Calculator appè·¯å¾„
+åŸºç¡€è·¯å¾„è®¾ç½®:
 basePath = D:\SVN\app\Calculator
 
 
-[1.2] Android.mk ÒıÓÃ¿â
-//1) ²é¿´ÒıÓÃ¿â:
+[1.2] Android.mk å¼•ç”¨åº“
+//1) æŸ¥çœ‹å¼•ç”¨åº“:
 ./Android.mk
 //	LOCAL_STATIC_JAVA_LIBRARIES := libarity android-support-v4 guava
 
-//2) ÒÆ¶¯jar:
+//2) ç§»åŠ¨jar:
 cp \\192.168.2.115\xiaoj\9820\idh.code\out\target\common\obj\JAVA_LIBRARIES\libarity_intermediates\javalib.jar libs\libarity.jar
 cp \\192.168.2.115\xiaoj\9820\idh.code\out\target\common\obj\JAVA_LIBRARIES\android-support-v4_intermediates\javalib.jar libs\android-support-v4.jar
 cp \\192.168.2.115\xiaoj\9820\idh.code\out\target\common\obj\JAVA_LIBRARIES\guava_intermediates\javalib.jar libs\guava.jar
 	
-//3) ÒıÓÃjar: ¿ÉÄÜÎ»ÖÃ²»¶Ô... ¿ÉÄÜÒªÈ¥µô×îºóÒ»¸ö...
+//3) å¼•ç”¨jar: å¯èƒ½ä½ç½®ä¸å¯¹... å¯èƒ½è¦å»æ‰æœ€åä¸€ä¸ª...
 build.gradle
 //	dependencies {
 //		compile files("libarity.jar")
@@ -43,20 +43,20 @@ build.gradle
 //		compile files("arity-2.1.2.jar")
 //		compile "com.android.support:support-v4:+"
 //	}
-¸ÄÎª: 
+æ”¹ä¸º: 
 //    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
 
-[1.3] gradle °æ±¾ÅäÖÃ
+[1.3] gradle ç‰ˆæœ¬é…ç½®
 //1) gradle-wrapper.properties
-//	´íÎó: Could not find method google() for arguments [] on repository container.
+//	é”™è¯¯: Could not find method google() for arguments [] on repository container.
 gradle\wrapper\gradle-wrapper.properties
 //distributionUrl=https\://services.gradle.org/distributions/gradle-4.1-all.zip
-¸ÄÎª:
+æ”¹ä¸º:
 //distributionUrl=https\://services.gradle.org/distributions/gradle-4.6-all.zip
 
 //2) Could not resolve all files for configuration...
-//	´íÎó: 
+//	é”™è¯¯: 
 //		* What went wrong:
 //		Could not resolve all files for configuration ':_internal_aapt2_binary'.
 //		> Could not find com.android.tools.build:aapt2:3.2.0-4818971.
@@ -69,13 +69,13 @@ build.gradle
 //	}
 
 
-[1.4] Ìí¼Ó¶à¸öres
+[1.4] æ·»åŠ å¤šä¸ªres
 //1) Move:
 frameworks/base/core/res/res/
 //	 TO:
 ./res_core
 
-//2) µÚres_core
+//2) ç¬¬res_core
 build.gradle
 //	android {
 //		sourceSets {
@@ -85,32 +85,32 @@ build.gradle
 //	        }
 //		}
 //	}
-//	»òÕß:
+//	æˆ–è€…:
 //  res.srcDirs += ['res', 'res_core']
 
 
-[1.5] res error, Ì«¶àÁË²»¸Ä
+[1.5] res error, å¤ªå¤šäº†ä¸æ”¹
 res_core\values\styles.xml
-//	´íÎó: AAPT: error: invalid resource type 'attr' for parent of style.
-//?? <item type =¡°attr¡±name =¡°my_attr¡±> @ color / pink </ item>
+//	é”™è¯¯: AAPT: error: invalid resource type 'attr' for parent of style.
+//?? <item type =â€œattrâ€name =â€œmy_attrâ€> @ color / pink </ item>
 
 
 
-[2.1] ÎÄ¼şÄ¿Â¼
+[2.1] æ–‡ä»¶ç›®å½•
 
 AndroidManifest.xml
 res\layout\activity_main.xml
 vendor\sprd\UniverseUI\ThemeRes\HelloColor\CalculatorRes\theme_values.xml
 
 
-Â·¾¶: sprdcalculator
+è·¯å¾„: sprdcalculator
 packages\apps\Calculator\src\com\sprd\sprdcalculator\MainActivity.java
 packages\apps\Calculator\src\com\sprd\sprdcalculator\method\Plus.java
 packages\apps\Calculator\src\com\sprd\sprdcalculator\state\State.java
 packages\apps\Calculator\src\com\sprd\sprdcalculator\Utils.java
 
 
-×ÊÔ´: Calculator
+èµ„æº: Calculator
 packages\apps\Calculator\AndroidManifest.xml
 packages\apps\Calculator\res\layout\activity_main.xml
 vendor\sprd\UniverseUI\ThemeRes\HelloColor\CalculatorRes\theme_values.xml
@@ -118,7 +118,7 @@ vendor\sprd\UniverseUI\ThemeRes\HelloColor\CalculatorRes\theme_values.xml
 
 
 
-Â·¾¶: sprdcalculator
+è·¯å¾„: sprdcalculator
 packages\apps\Calculator\src\com\sprd\sprdcalculator\CalculatorEditText.java
 packages\apps\Calculator\src\com\sprd\sprdcalculator\LogUtils.java
 packages\apps\Calculator\src\com\sprd\sprdcalculator\MainActivity.java
@@ -133,7 +133,7 @@ packages\apps\Calculator\src\com\sprd\sprdcalculator\state\State.java
 packages\apps\Calculator\src\com\sprd\sprdcalculator\Utils.java
 
 
-×ÊÔ´: Calculator
+èµ„æº: Calculator
 packages\apps\Calculator\AndroidManifest.xml
 packages\apps\Calculator\res\layout\activity_main.xml
 vendor\sprd\UniverseUI\ThemeRes\HelloColor\CalculatorRes\theme_values.xml
@@ -151,30 +151,30 @@ packages\apps\Calculator\src\com\sprd\sprdcalculator\MainActivity.java
 
 
 /***********************************************************************/
-/*************************** ²Î¿¼±Ê¼Ç¡¢ÍøÉÏÕÒµÄ£¬ºÜÂÒ. *****************/
+/*************************** å‚è€ƒç¬”è®°ã€ç½‘ä¸Šæ‰¾çš„ï¼Œå¾ˆä¹±. *****************/
 /***********************************************************************/
 
 CalculatorEditText  
-CalculatorExpressionTokenizer  £¬Ìæ»»±í´ïÊ½£¬Öµ×ª¼ü£¬¼ü×ªÖµ
-CalculatorExpressionEvaluator   £¬¼ÆËã±í´ïÊ½
-CalculatorExpressionBuilder   £¬Ô¼Êø±í´ïÊ½£¬ÔËËã·û£¨Âß¼­£©
+CalculatorExpressionTokenizer  ï¼Œæ›¿æ¢è¡¨è¾¾å¼ï¼Œå€¼è½¬é”®ï¼Œé”®è½¬å€¼
+CalculatorExpressionEvaluator   ï¼Œè®¡ç®—è¡¨è¾¾å¼
+CalculatorExpressionBuilder   ï¼Œçº¦æŸè¡¨è¾¾å¼ï¼Œè¿ç®—ç¬¦ï¼ˆé€»è¾‘ï¼‰
 
 
-//Ô¼Êø±í´ïÊ½£¬ÔËËã·û£¨Âß¼­£©
+//çº¦æŸè¡¨è¾¾å¼ï¼Œè¿ç®—ç¬¦ï¼ˆé€»è¾‘ï¼‰
 
 mFormulaEditText.setEditableFactory(mFormulaEditableFactory);
 
-//¼ÆËã±í´ïÊ½£º
+//è®¡ç®—è¡¨è¾¾å¼ï¼š
 
 mFormulaEditText.addTextChangedListener(mFormulaTextWatcher);
 
-//¼ÆËã±í´ïÊ½£ºenterÊ±
+//è®¡ç®—è¡¨è¾¾å¼ï¼šenteræ—¶
 mFormulaEditText.setOnKeyListener(mFormulaOnKeyListener);
 
-//¶¯»­
+//åŠ¨ç”»
 mFormulaEditText.setOnTextSizeChangeListener(this);
 
-//³¤°´É¾³ıæI
+//é•¿æŒ‰åˆ é™¤éµ
 mDeleteButton.setOnLongClickListener(this);  
 
 
@@ -186,33 +186,33 @@ sprdcalculator
 
 
 
-ÏÂÃæ¶ÔÔ´ÂëÖĞ¸÷javaÎÄ¼ş×öÒ»·¬¼òÒªµÄËµÃ÷£¨½öÒÔÊúÆÁÎªÀı£©£º
+ä¸‹é¢å¯¹æºç ä¸­å„javaæ–‡ä»¶åšä¸€ç•ªç®€è¦çš„è¯´æ˜ï¼ˆä»…ä»¥ç«–å±ä¸ºä¾‹ï¼‰ï¼š
 (1)Calculator:
-   ¹¤³ÌÖĞÎ¨Ò»µÄActivity£¬ÓëÓÃ»§½»»¥¡£²ÉÓÃÒ»¸ö´¹Ö±µÄÏßĞÔ²¼¾Ö£¬ÓÉ3¸öÖ÷Òª²¿·Ö×é³É£º×îÉÏ²ãµÄÊÇÒ»¸ö°üº¬ÓĞ2¸öCalculatorEditTextµÄCalculatorDisplayÒÔ¼°Ò»¸ö²»¿É¼ûµÄImageButton£¬ÖĞ¼äÒ»²ãÊÇÒ»¸öFrameLayout£¬Ö÷Òª°üº¬É¾³ıºÍÇå¿ÕÁ½¸öÖØµşµÄColorButton¡£×îÏÂÃæÒ»²ãÊÇÒ»¸ö¿ØÖÆÃæ°åCalculatorViewPager£¬Ò²¾ÍÊÇ°´¼ü¡£
+   å·¥ç¨‹ä¸­å”¯ä¸€çš„Activityï¼Œä¸ç”¨æˆ·äº¤äº’ã€‚é‡‡ç”¨ä¸€ä¸ªå‚ç›´çš„çº¿æ€§å¸ƒå±€ï¼Œç”±3ä¸ªä¸»è¦éƒ¨åˆ†ç»„æˆï¼šæœ€ä¸Šå±‚çš„æ˜¯ä¸€ä¸ªåŒ…å«æœ‰2ä¸ªCalculatorEditTextçš„CalculatorDisplayä»¥åŠä¸€ä¸ªä¸å¯è§çš„ImageButtonï¼Œä¸­é—´ä¸€å±‚æ˜¯ä¸€ä¸ªFrameLayoutï¼Œä¸»è¦åŒ…å«åˆ é™¤å’Œæ¸…ç©ºä¸¤ä¸ªé‡å çš„ColorButtonã€‚æœ€ä¸‹é¢ä¸€å±‚æ˜¯ä¸€ä¸ªæ§åˆ¶é¢æ¿CalculatorViewPagerï¼Œä¹Ÿå°±æ˜¯æŒ‰é”®ã€‚
 (2)CalculatorDisplay:
-   ViewSwitcherµÄ×ÓÀà£¬Ö÷ÒªÓÃÓÚÊµÏÖ·ÖÆÁĞ§¹û¡£
+   ViewSwitcherçš„å­ç±»ï¼Œä¸»è¦ç”¨äºå®ç°åˆ†å±æ•ˆæœã€‚
 (3)CalculatorEditable:
-   Ò»¸öSpannableStringBuilder£¬Ò²¾ÍÊÇ×îÏÔÑÛµÄÓÃ»§ÊäÈëµÄ×Ö·û´®£¬Í¨¹ıÄÚ²¿ÀàFactoryÔÚCalculatorDisplay±»µ÷ÓÃ¡£
+   ä¸€ä¸ªSpannableStringBuilderï¼Œä¹Ÿå°±æ˜¯æœ€æ˜¾çœ¼çš„ç”¨æˆ·è¾“å…¥çš„å­—ç¬¦ä¸²ï¼Œé€šè¿‡å†…éƒ¨ç±»Factoryåœ¨CalculatorDisplayè¢«è°ƒç”¨ã€‚
 (4)CalculatorEditText:
-   Ò»¸öEditText£¬Ö÷ÒªÊµÏÖÁË³¤°´²Ëµ¥ÊÂ¼ş(¼ôÇĞ£¬¸´ÖÆ£¬Õ³Ìù)µÄ¹¦ÄÜ¡£
+   ä¸€ä¸ªEditTextï¼Œä¸»è¦å®ç°äº†é•¿æŒ‰èœå•äº‹ä»¶(å‰ªåˆ‡ï¼Œå¤åˆ¶ï¼Œç²˜è´´)çš„åŠŸèƒ½ã€‚
 (5)CalculatorViewPager:
-   Ò»¸öViewPager£¬ÔÚCalculatorÖĞÍ¨¹ı×Ô¶¨ÒåµÄPagerAdapter½«°´¼ü¿ØÖÆÃæ°å´«½øÈ¥Õ¹Ê¾¡£
+   ä¸€ä¸ªViewPagerï¼Œåœ¨Calculatorä¸­é€šè¿‡è‡ªå®šä¹‰çš„PagerAdapterå°†æŒ‰é”®æ§åˆ¶é¢æ¿ä¼ è¿›å»å±•ç¤ºã€‚
 (6)ColorButton:
-   ¸ß¼¶Ãæ°åµÄ°´Å¥£¬°´ÏÂÖ®ºó£¬ÔÚCalculatorEditTextÔö¼Ó·ûºÅºó£¬Ãæ°å»á°éËæ×Å¶¯»­Ìø×ªµ½»ù±¾Ãæ°å¡£
+   é«˜çº§é¢æ¿çš„æŒ‰é’®ï¼ŒæŒ‰ä¸‹ä¹‹åï¼Œåœ¨CalculatorEditTextå¢åŠ ç¬¦å·åï¼Œé¢æ¿ä¼šä¼´éšç€åŠ¨ç”»è·³è½¬åˆ°åŸºæœ¬é¢æ¿ã€‚
 (7)EventListener:
-   °´¼ü¼àÌıÆ÷£¬µ÷ÓÃLogicÖĞµÄ·½·¨½øĞĞ·ÖÀà´¦Àí£¬×Ô¼ºÊµÏÖµÄ¹¦ÄÜÖ÷ÒªÊÇ¸ß¼¶Ãæ°å°´Å¥°´ÏÂºóÔö¼Ó×óÀ¨ºÅ²¢Ìø×ªÖÁ»ù´¡Ãæ°å¡£
+   æŒ‰é”®ç›‘å¬å™¨ï¼Œè°ƒç”¨Logicä¸­çš„æ–¹æ³•è¿›è¡Œåˆ†ç±»å¤„ç†ï¼Œè‡ªå·±å®ç°çš„åŠŸèƒ½ä¸»è¦æ˜¯é«˜çº§é¢æ¿æŒ‰é’®æŒ‰ä¸‹åå¢åŠ å·¦æ‹¬å·å¹¶è·³è½¬è‡³åŸºç¡€é¢æ¿ã€‚
 (8)History:
-    Ö÷Òª´æ´¢ÁËÒ»¸öVectorÊı×éÓÃÀ´´æ·ÅHistoryEntry¡£
+    ä¸»è¦å­˜å‚¨äº†ä¸€ä¸ªVectoræ•°ç»„ç”¨æ¥å­˜æ”¾HistoryEntryã€‚
 (9)HistoryAdapter:
-     ¼Ì³Ğ×ÔBaseAdapter£¬Õ¹Ê¾ÀúÊ·¼ÇÂ¼µÄÊÊÅäÆ÷¡£
+     ç»§æ‰¿è‡ªBaseAdapterï¼Œå±•ç¤ºå†å²è®°å½•çš„é€‚é…å™¨ã€‚
 (10)HistoryEntry:
-     Ò»¸öÊı¾İ½á¹¹£¬ÀúÊ·¼ÇÂ¼Àà£¬Õ¹Ê¾ÔÚHistoryAdapterÖĞ£¬´æ´¢ÔÚHistoryµÄVectorÊı×éÖĞ¡£
+     ä¸€ä¸ªæ•°æ®ç»“æ„ï¼Œå†å²è®°å½•ç±»ï¼Œå±•ç¤ºåœ¨HistoryAdapterä¸­ï¼Œå­˜å‚¨åœ¨Historyçš„Vectoræ•°ç»„ä¸­ã€‚
 (11)Logic:
-      Ö÷ÒªµÄÂß¼­´¦ÀíÀà£¬¾ßÌåÊµÏÖÁË¶ÔÕû¸öÓ¦ÓÃµÄ²Ù×÷·½·¨£¬°üÀ¨²»Í¬°´Å¥µã»÷ºóµÄ¾ßÌåÊµÏÖÒÔ¼°¸ù¾İÊäÈëµÄ×Ö·û´®£¬Ê¶±ğ²Ù×÷·û²¢¸ù¾İÓÅÏÈ¼¶½øĞĞ¸ß¾«¶ÈÔËËã¡£
+      ä¸»è¦çš„é€»è¾‘å¤„ç†ç±»ï¼Œå…·ä½“å®ç°äº†å¯¹æ•´ä¸ªåº”ç”¨çš„æ“ä½œæ–¹æ³•ï¼ŒåŒ…æ‹¬ä¸åŒæŒ‰é’®ç‚¹å‡»åçš„å…·ä½“å®ç°ä»¥åŠæ ¹æ®è¾“å…¥çš„å­—ç¬¦ä¸²ï¼Œè¯†åˆ«æ“ä½œç¬¦å¹¶æ ¹æ®ä¼˜å…ˆçº§è¿›è¡Œé«˜ç²¾åº¦è¿ç®—ã€‚
 (12)PanelSwitcher:
-      Ò»¸öFrameLayout£¬Ö÷ÒªÊµÏÖÁËÃæ°åÇĞ»»Ê±ºòµÄ¶¯»­¡£
+      ä¸€ä¸ªFrameLayoutï¼Œä¸»è¦å®ç°äº†é¢æ¿åˆ‡æ¢æ—¶å€™çš„åŠ¨ç”»ã€‚
 (13)Persist:
-    ÓÃÒÔ´æ´¢×îºóÒ»´Î¼ÆËãÆ÷ÔËĞĞ×´Ì¬µÄ¸¨ÖúÀà£¬ÔÚCalculatorÖĞµ÷ÓÃ
+    ç”¨ä»¥å­˜å‚¨æœ€åä¸€æ¬¡è®¡ç®—å™¨è¿è¡ŒçŠ¶æ€çš„è¾…åŠ©ç±»ï¼Œåœ¨Calculatorä¸­è°ƒç”¨
 
 
 
@@ -225,32 +225,32 @@ sprdcalculator
 
 
 EditText .setCustomSelectionActionModeCallback
-    ÆÁ±ÎEditText ³¤°´³öÀ´µÄActionMode²Ëµ¥
+    å±è”½EditText é•¿æŒ‰å‡ºæ¥çš„ActionModeèœå•
 
 
 
-ListView.setScrollingCacheEnabled(true)ºósetCacheColorHint(0)
-       ¹ö¶¯Ê±²»±äÉ«,  »æÍ¼»º´æ¹ö¶¯Ê±ÏÔÊ¾µÄÑÕÉ«
-        ÓĞGCÎÊÌâ
+ListView.setScrollingCacheEnabled(true)åsetCacheColorHint(0)
+       æ»šåŠ¨æ—¶ä¸å˜è‰²,  ç»˜å›¾ç¼“å­˜æ»šåŠ¨æ—¶æ˜¾ç¤ºçš„é¢œè‰²
+        æœ‰GCé—®é¢˜
 
 
 textview.setMovementMethod(ScrollingMovementMethod.getInstance());
-        ÉÏÏÂ»¬¶¯
+        ä¸Šä¸‹æ»‘åŠ¨
 
 
-getPaint().FontMetricsInt   ºÍ   getPaint().FontMetrics
-        // ÎÄ±¾²âÁ¿¶ÔÏó £¬ ÊÇÒ»ÑùµÄ£¬Ö»²»¹ıFontMetricsInt·µ»ØµÄÊÇint¶øFontMetrics·µ»ØµÄÊÇfloat
+getPaint().FontMetricsInt   å’Œ   getPaint().FontMetrics
+        // æ–‡æœ¬æµ‹é‡å¯¹è±¡ ï¼Œ æ˜¯ä¸€æ ·çš„ï¼Œåªä¸è¿‡FontMetricsIntè¿”å›çš„æ˜¯intè€ŒFontMetricsè¿”å›çš„æ˜¯float
 
 	* 
-        Log.d("Aige", "ascent£º" + mFontMetrics.ascent);  
+        Log.d("Aige", "ascentï¼š" + mFontMetrics.ascent);  
 	* 
-        Log.d("Aige", "top£º" + mFontMetrics.top);  
+        Log.d("Aige", "topï¼š" + mFontMetrics.top);  
 	* 
-        Log.d("Aige", "leading£º" + mFontMetrics.leading);  
+        Log.d("Aige", "leadingï¼š" + mFontMetrics.leading);  
 	* 
-        Log.d("Aige", "descent£º" + mFontMetrics.descent);  
+        Log.d("Aige", "descentï¼š" + mFontMetrics.descent);  
 	* 
-        Log.d("Aige", "bottom£º" + mFontMetrics.bottom);  
+        Log.d("Aige", "bottomï¼š" + mFontMetrics.bottom);  
 
 
 
@@ -262,13 +262,13 @@ onMeasure
 
 Editable
 
-1.Spannable¿ÉÒÔÔÚ¸ø¶¨µÄ×Ö·ûÇøÓòÄÚÊ¹ÓÃ¸÷ÖÖÑùÊ½£»
-2.Editable¼Ì³Ğ×ÔSpannable£¬Í¬ÑùÒ²¿ÉÒÔÔÚ¸ø¶¨µÄ×Ö·ûÇøÓòÄÚÊ¹ÓÃ¸÷ÖÖÑùÊ½£»
-3.EditableÀàËÆÓÚStringBuffer¿ÉÒÔÔö¼Ó¡¢É¾³ı¡¢ĞŞ¸Ä×Ö·û£¬Ò²¾ÍÊÇgetText()ºó¿Éµ÷ÓÃappend·½·¨ÉèÖÃĞŞ¸ÄÎÄ±¾ÄÚÈİ£»
-4.TextViewµÄsetText()£¬Ä¬ÈÏµÄBufferTypeÎªBufferType.NORMAL£»
-5.EditTextµÄsetText()£¬ÒÑ¾­½«BuffetTypeĞ´ËÀÎªBufferType.EDITABLE£»
-6.TextViewµÄgetText()·µ»ØÀàĞÍÎªCharSequence;
-7.EditTextµÄgetText()·µ»ØÀàĞÍÎªEditable£»
+1.Spannableå¯ä»¥åœ¨ç»™å®šçš„å­—ç¬¦åŒºåŸŸå†…ä½¿ç”¨å„ç§æ ·å¼ï¼›
+2.Editableç»§æ‰¿è‡ªSpannableï¼ŒåŒæ ·ä¹Ÿå¯ä»¥åœ¨ç»™å®šçš„å­—ç¬¦åŒºåŸŸå†…ä½¿ç”¨å„ç§æ ·å¼ï¼›
+3.Editableç±»ä¼¼äºStringBufferå¯ä»¥å¢åŠ ã€åˆ é™¤ã€ä¿®æ”¹å­—ç¬¦ï¼Œä¹Ÿå°±æ˜¯getText()åå¯è°ƒç”¨appendæ–¹æ³•è®¾ç½®ä¿®æ”¹æ–‡æœ¬å†…å®¹ï¼›
+4.TextViewçš„setText()ï¼Œé»˜è®¤çš„BufferTypeä¸ºBufferType.NORMALï¼›
+5.EditTextçš„setText()ï¼Œå·²ç»å°†BuffetTypeå†™æ­»ä¸ºBufferType.EDITABLEï¼›
+6.TextViewçš„getText()è¿”å›ç±»å‹ä¸ºCharSequence;
+7.EditTextçš„getText()è¿”å›ç±»å‹ä¸ºEditableï¼›
 
 
 

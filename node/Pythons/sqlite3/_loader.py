@@ -1,4 +1,4 @@
-
+ï»¿
 import os
 import re
 import math
@@ -18,8 +18,8 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # Custom Class
 from _token import TokenizerChg
-from _block import b2mts                         # ·Ö¿é
-from _block import m2n                           # mĞòÁĞ
+from _block import b2mts                         # åˆ†å—
+from _block import m2n                           # måºåˆ—
 from _tool  import convert_to_unicode
 
 
@@ -40,9 +40,9 @@ debugPath    = os.path.join(dataPath, "debug")
 sqlite3_file    = os.path.join(dataPath, "sqlite3", "data.db3")
 train_csv_file  = os.path.join(csvPath,  "{}", "atec_nlp_sim_train.csv")
 test_csv_file   = os.path.join(csvPath,  "{}", "atec_nlp_sim_test.csv")
-vocab_file      = os.path.join(vocabPath, 'token_id.csv')    #´Ê±¸·İ
-pre_train_file  = os.path.join(csvPath,  "{}", "preprocess", "train_y.csv")     #Ö»¼ì²éÁËÒ»¸öÎÄ¼ş, ÅĞ¶Ï¾ä×ÓÊÇ·ñÒÑ½âÎö
-pre_test_file   = os.path.join(csvPath,  "{}", "preprocess", "test_y.csv")      #Ö»¼ì²éÁËÒ»¸öÎÄ¼ş, ÅĞ¶Ï¾ä×ÓÊÇ·ñÒÑ½âÎö
+vocab_file      = os.path.join(vocabPath, 'token_id.csv')    #è¯å¤‡ä»½
+pre_train_file  = os.path.join(csvPath,  "{}", "preprocess", "train_y.csv")     #åªæ£€æŸ¥äº†ä¸€ä¸ªæ–‡ä»¶, åˆ¤æ–­å¥å­æ˜¯å¦å·²è§£æ
+pre_test_file   = os.path.join(csvPath,  "{}", "preprocess", "test_y.csv")      #åªæ£€æŸ¥äº†ä¸€ä¸ªæ–‡ä»¶, åˆ¤æ–­å¥å­æ˜¯å¦å·²è§£æ
 
 
 
@@ -189,7 +189,7 @@ class LoadData:
         # add hide mode
         self._add_hide_mode()
 
-        # ·Ö¿éÓÃµ½cnt, ÔİÊ±Ö»ÄÜÕâÀï¸Ädim
+        # åˆ†å—ç”¨åˆ°cnt, æš‚æ—¶åªèƒ½è¿™é‡Œæ”¹dim
         if self.train_enable:
             self.train_cnt1 = tf.expand_dims(self.train_cnt1, -1)
             self.train_cnt2 = tf.expand_dims(self.train_cnt2, -1)
@@ -209,7 +209,7 @@ class LoadData:
             self.train_n2,self.train_mi2 = m2n(self.train_m2, self.train_cnt2, max_space=5, debug=debug)
             max_nlen = max([len(i) for i in self.train_n2])
             self.max_modes_len = max(self.max_modes_len, max_nlen)
-            #Ö»±£´æ, ²»¶Á
+            #åªä¿å­˜, ä¸è¯»
             #save_preprocess_data(self.train_n1, sub_path=self.sub_path,   name='train_n1')
             #save_preprocess_data(self.train_n2, sub_path=self.sub_path,   name='train_n2')
         if self.test_enable:
@@ -221,7 +221,7 @@ class LoadData:
             self.test_n2,self.test_mi2 = m2n(self.test_m2, self.test_cnt2, max_space=5, debug=debug)
             max_nlen = max([len(i) for i in self.test_n2])
             self.max_modes_len = max(self.max_modes_len, max_nlen)
-            #Ö»±£´æ, ²»¶Á
+            #åªä¿å­˜, ä¸è¯»
             #save_preprocess_data(self.test_n1, sub_path=self.sub_path,   name='test_n1')
             #save_preprocess_data(self.test_n2, sub_path=self.sub_path,   name='test_n2')
             
@@ -312,7 +312,7 @@ class LoadData:
                 modes1  = [int(mode) for item in tokens1 for mode in item[1:]]
                 modes2  = [int(mode) for item in tokens2 for mode in item[1:]]
                 self.max_seq_len = max(self.max_seq_len, len(modes1), len(modes2))
-                #ÓÃmodes¼ÆËã×Ü³¤
+                #ç”¨modesè®¡ç®—æ€»é•¿
                 tokens1 = [item[0] if pos==0 else '_S' for item in tokens1 for pos in range(len(item[1:]))]
                 tokens2 = [item[0] if pos==0 else '_S' for item in tokens2 for pos in range(len(item[1:]))]
                 #print("\ntmp_list:", tokens1)
@@ -327,9 +327,9 @@ class LoadData:
         return np.array(t1), np.array(t2), np.array(m1), np.array(m2), np.array(cnt1), np.array(cnt2), np.array(y)
     
     def _text_to_ids(self):
-        # token ×ª»»Îª token_id
-        #   ÏÈfitÈ«²¿token, ·ñÔòid²»×¼; token»á×Ô¶¯ÅÅĞò, Ó¢ÎÄÔÚÇ°Ãæ('_S')
-        #   ÏÖÔÚ²»ÄÜ¸Ä±ä´ÊÖ®ºóÖØĞÂÑµÁ·(id²»¶ÔÓ¦)
+        # token è½¬æ¢ä¸º token_id
+        #   å…ˆfitå…¨éƒ¨token, å¦åˆ™idä¸å‡†; tokenä¼šè‡ªåŠ¨æ’åº, è‹±æ–‡åœ¨å‰é¢('_S')
+        #   ç°åœ¨ä¸èƒ½æ”¹å˜è¯ä¹‹åé‡æ–°è®­ç»ƒ(idä¸å¯¹åº”)
         if os.path.isfile(vocab_file.format(self.sub_path)):
             self._token_arr = load_vocab_data(np.str, sub_path=self.sub_path, name='token_id')
             self.tokenizer.fit_on_texts(self._token_arr)
@@ -341,13 +341,13 @@ class LoadData:
                 self.tokenizer.fit_on_texts(self.test_t1.flatten())
                 self.tokenizer.fit_on_texts(self.test_t2.flatten())
             
-            #print("--token--word_counts", self.tokenizer.word_counts)         #ÊıÁ¿Í³¼Æ--list
-            #print("--token--word_docs", self.tokenizer.word_docs)             #ÊıÁ¿Í³¼Æ--dick
-            #print("--token--word_index", self.tokenizer.word_index)           #×Öµ½index--dick
-            #print("--token--document_count", self.tokenizer.document_count)   #×ÜÊı
+            #print("--token--word_counts", self.tokenizer.word_counts)         #æ•°é‡ç»Ÿè®¡--list
+            #print("--token--word_docs", self.tokenizer.word_docs)             #æ•°é‡ç»Ÿè®¡--dick
+            #print("--token--word_index", self.tokenizer.word_index)           #å­—åˆ°index--dick
+            #print("--token--document_count", self.tokenizer.document_count)   #æ€»æ•°
             self._token_arr = np.array(list(self.tokenizer.word_index))
             save_vocab_data(self._token_arr, sub_path=self.sub_path, name='token_id')
-        self.max_vocab_len = len(self.tokenizer.word_counts) + 1               #Êµ¼Ê×ÜÊı(È¥ÖØ)
+        self.max_vocab_len = len(self.tokenizer.word_counts) + 1               #å®é™…æ€»æ•°(å»é‡)
         
         # token_id
         if self.train_enable:
@@ -378,67 +378,67 @@ class LoadData:
         return np.array(x)
     
     def get_train_data(self):
-        return (self.train_x1,     self.train_x2,       #±àºÅ
-                self.train_m1,     self.train_m2,       #ÀàĞÍ
+        return (self.train_x1,     self.train_x2,       #ç¼–å·
+                self.train_m1,     self.train_m2,       #ç±»å‹
                 self.train_mi1,    self.train_mi2,
-                self.train_n1,     self.train_n2,       #ÀàĞÍ+Òş²ØÀàĞÍ
+                self.train_n1,     self.train_n2,       #ç±»å‹+éšè—ç±»å‹
                 self.train_cnt1,   self.train_cnt2)
                 
     def get_test_data(self):
-        return (self.test_x1,     self.test_x2,         #±àºÅ
-                self.test_m1,     self.test_m2,         #ÀàĞÍ
+        return (self.test_x1,     self.test_x2,         #ç¼–å·
+                self.test_m1,     self.test_m2,         #ç±»å‹
                 self.test_mi1,    self.test_mi2,
-                self.test_n1,     self.test_n2,         #ÀàĞÍ+Òş²ØÀàĞÍ
+                self.test_n1,     self.test_n2,         #ç±»å‹+éšè—ç±»å‹
                 self.test_cnt1,   self.test_cnt2)
                 
     def get_train_slices(self):
-        return (self.train_x1,     self.train_x2,       #±àºÅ
-                self.train_m1,     self.train_m2,       #ÀàĞÍ
+        return (self.train_x1,     self.train_x2,       #ç¼–å·
+                self.train_m1,     self.train_m2,       #ç±»å‹
                 self.train_mi1,    self.train_mi2,
-                self.train_n1,     self.train_n2,       #ÀàĞÍ+Òş²ØÀàĞÍ
+                self.train_n1,     self.train_n2,       #ç±»å‹+éšè—ç±»å‹
                 self.train_cnt1,   self.train_cnt2, 
                 self.train_y)
                 
     def get_test_slices(self):
-        return (self.test_x1,     self.test_x2,         #±àºÅ
-                self.test_m1,     self.test_m2,         #ÀàĞÍ
+        return (self.test_x1,     self.test_x2,         #ç¼–å·
+                self.test_m1,     self.test_m2,         #ç±»å‹
                 self.test_mi1,    self.test_mi2,
-                self.test_n1,     self.test_n2,         #ÀàĞÍ+Òş²ØÀàĞÍ
+                self.test_n1,     self.test_n2,         #ç±»å‹+éšè—ç±»å‹
                 self.test_cnt1,   self.test_cnt2, 
                 self.test_y)
                 
     def show_data_shape(self):
         if self.train_enable:
-            #print("========== train_t1", self.train_t1.shape)         # ÖĞÎÄ×Ö·û (ÓÃ²»ÉÏ)
+            #print("========== train_t1", self.train_t1.shape)         # ä¸­æ–‡å­—ç¬¦ (ç”¨ä¸ä¸Š)
             #print("           train_t2", self.train_t2.shape)
-            print("           train_x1", self.train_x1.shape)         # ×Ö±àºÅ
+            print("           train_x1", self.train_x1.shape)         # å­—ç¼–å·
             print("           train_x2", self.train_x2.shape)
-            print("           train_m1", self.train_m1.shape)         # ×ÖÀàĞÍ, Ô­ÀàĞÍ:0~16,17,26 ÑµÁ·Ê±ÀàĞÍ:0~16
+            print("           train_m1", self.train_m1.shape)         # å­—ç±»å‹, åŸç±»å‹:0~16,17,26 è®­ç»ƒæ—¶ç±»å‹:0~16
             print("           train_m2", self.train_m2.shape)
             print("          train_mi1", self.train_mi1.shape)
             print("          train_mi2", self.train_mi2.shape)
             print("           train_n1", self.train_n1.shape)
             print("           train_n2", self.train_n2.shape)
-            print("         train_cnt1", self.train_cnt1.shape)       # ×Ö³¤
+            print("         train_cnt1", self.train_cnt1.shape)       # å­—é•¿
             print("         train_cnt2", self.train_cnt2.shape)
-            print("            train_y", self.train_y.shape)          # ±êÇ©
+            print("            train_y", self.train_y.shape)          # æ ‡ç­¾
             
         if self.test_enable:
-            #print("=========== test_t1", self.test_t1.shape)          # ÖĞÎÄ×Ö·û (ÓÃ²»ÉÏ)
+            #print("=========== test_t1", self.test_t1.shape)          # ä¸­æ–‡å­—ç¬¦ (ç”¨ä¸ä¸Š)
             #print("            test_t2", self.test_t2.shape)
-            print("            test_x1", self.test_x1.shape)          # ×Ö±àºÅ
+            print("            test_x1", self.test_x1.shape)          # å­—ç¼–å·
             print("            test_x2", self.test_x2.shape)
-            print("            test_m1", self.test_m1.shape)          # ×ÖÀàĞÍ, Ô­ÀàĞÍ:0~16,17,26 ÑµÁ·Ê±ÀàĞÍ:0~16
+            print("            test_m1", self.test_m1.shape)          # å­—ç±»å‹, åŸç±»å‹:0~16,17,26 è®­ç»ƒæ—¶ç±»å‹:0~16
             print("            test_m2", self.test_m2.shape)
             print("           test_mi1", self.test_mi1.shape)
             print("           test_mi2", self.test_mi2.shape)
             print("            test_n1", self.test_n1.shape)
             print("            test_n2", self.test_n2.shape)
-            print("          test_cnt1", self.test_cnt1.shape)        # ×Ö³¤
+            print("          test_cnt1", self.test_cnt1.shape)        # å­—é•¿
             print("          test_cnt2", self.test_cnt2.shape)
             print("             test_y", self.test_y.shape)
             
-        # Êµ¼Ê×Ö³¤:
+        # å®é™…å­—é•¿:
         print("        sents_len", self.sents_len)
         print("        max_vocab", self.max_vocab_len)
         print("      max_seq_len", self.max_seq_len)

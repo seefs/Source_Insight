@@ -1,15 +1,15 @@
-
-»ù´¡Â·¾¶ÉèÖÃ:
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®:
 //basePath = 
 
 /***********************************************************************/
 
-//Ä¿Â¼[Num][Ca]:
+//ç›®å½•[Num][Ca]:
 // 1. 
-Save:node\android\sys\Macro_Sys_Other.h \[1.1\] °´¼üµÄ´¦ÀíÁ÷³Ì
-Save:node\android\sys\Macro_Sys_Other.h \[1.2\] MO(È¥µç)µÄÁ÷³Ì
-Save:node\android\sys\Macro_Sys_Other.h \[1.3\] zygote½ø³Ì
-Save:node\android\sys\Macro_Sys_Other.h \[1.4\] PackageManagerServiceµÄÆô¶¯¹ý³Ì
+Save:node\android\sys\Macro_Sys_Other.h \[1.1\] æŒ‰é”®çš„å¤„ç†æµç¨‹
+Save:node\android\sys\Macro_Sys_Other.h \[1.2\] MO(åŽ»ç”µ)çš„æµç¨‹
+Save:node\android\sys\Macro_Sys_Other.h \[1.3\] zygoteè¿›ç¨‹
+Save:node\android\sys\Macro_Sys_Other.h \[1.4\] PackageManagerServiceçš„å¯åŠ¨è¿‡ç¨‹
 Save:node\android\sys\Macro_Sys_Other.h \[1.5\] 
 Save:node\android\sys\Macro_Sys_Other.h \[1.6\] 
 Save:node\android\sys\Macro_Sys_Other.h \[1.7\] 
@@ -17,7 +17,7 @@ Save:node\android\sys\Macro_Sys_Other.h \[1.8\]
 Save:node\android\sys\Macro_Sys_Other.h \[1.9\] 
 Save:node\android\sys\Macro_Sys_Other.h \[1.10\] 
 //
-Save:node\android\sys\Macro_Sys_Other.h \[2.1\] AndroidµÄÆô¶¯
+Save:node\android\sys\Macro_Sys_Other.h \[2.1\] Androidçš„å¯åŠ¨
 Save:node\android\sys\Macro_Sys_Other.h \[2.2\] 
 Save:node\android\sys\Macro_Sys_Other.h \[2.3\] 
 // 
@@ -32,30 +32,30 @@ Save:node\android\sys\Macro_Sys_Other.h \[4.3\]
 Save:node\android\sys\Macro_Sys_Other.h \[5.1\] 
 Save:node\android\sys\Macro_Sys_Other.h \[5.2\] 
 Save:node\android\sys\Macro_Sys_Other.h \[5.3\] 
-// ÆäËû±êºÅ
+// å…¶ä»–æ ‡å·
 Save:Help\Test\Macro_Test_Node_Num.h \[1.1\] 
 
 
 
 
-[1.1] °´¼üµÄ´¦ÀíÁ÷³Ì
-1.¿ªÊ¼¿Ï¶¨ÏÈËµµÄÊÇÇý¶¯Õâ¿é£¬Ó²¼þÊÇÈí¼þ·þÎñµÄ£¬ÔÚAndroidÕâ¿éCºÍjava½»»¥£¬ÓÐÁ½ÖÖ·½Ê½£º
+[1.1] æŒ‰é”®çš„å¤„ç†æµç¨‹
+1.å¼€å§‹è‚¯å®šå…ˆè¯´çš„æ˜¯é©±åŠ¨è¿™å—ï¼Œç¡¬ä»¶æ˜¯è½¯ä»¶æœåŠ¡çš„ï¼Œåœ¨Androidè¿™å—Cå’Œjavaäº¤äº’ï¼Œæœ‰ä¸¤ç§æ–¹å¼ï¼š
 
-1.1£ºÇý¶¯--JNI--·þÎñ-ÊÂ¼þ·Ö·¢-ÉÏ²ãÓ¦ÓÃ´¦Àí¡£
+1.1ï¼šé©±åŠ¨--JNI--æœåŠ¡-äº‹ä»¶åˆ†å‘-ä¸Šå±‚åº”ç”¨å¤„ç†ã€‚
 
-1.2£ºÉÏ²ãÖ±½Óµ÷ÓÃÍ¨¹ýlib¿âµÄ·½Ê½ÊµÏÖ£¬ÖÐ¼äÊ¹ÓÃ»Øµ÷»úÖÆ,ÕâÖÖ·½Ê½ÔÚCameraÖÐÓÐ£¬ÏÂ´ÎÔÙÏê½â¡£
+1.2ï¼šä¸Šå±‚ç›´æŽ¥è°ƒç”¨é€šè¿‡libåº“çš„æ–¹å¼å®žçŽ°ï¼Œä¸­é—´ä½¿ç”¨å›žè°ƒæœºåˆ¶,è¿™ç§æ–¹å¼åœ¨Cameraä¸­æœ‰ï¼Œä¸‹æ¬¡å†è¯¦è§£ã€‚
 
-ÏÈÀ´¿´Ò»ÏÂÇý¶¯°´¼üÓ³Éä²¿·ÖµÄÏê½âÈçÏÂ£º
+å…ˆæ¥çœ‹ä¸€ä¸‹é©±åŠ¨æŒ‰é”®æ˜ å°„éƒ¨åˆ†çš„è¯¦è§£å¦‚ä¸‹ï¼š
 
-Ó³ÉäÊµ¼ÊÊÇÓÉKeyLayoutMap::mapÍê³ÉµÄ£¬KeyLayoutMapÀàÀï¶ÁÈ¡ÅäÖÃÎÄ¼þqwerty.kl£¬ÓÉÅäÖÃ ÎÄ¼þ qwerty.kl¾ö¶¨¼üÖµµÄÓ³Éä¹ØÏµ¡£Äã¿ÉÒÔÍ¨¹ýÐÞ¸Ä./development/emulator/keymaps/qwerty.klÀ´¸Ä±ä¼üÖµµÄÓ³Éä¹ØÏµ¡£
-ÔÚframeworks/base/services/jni/com_android_server_KeyInputQueue.cppÎÄ¼þÖÐ£¬ÏòJAVAÌá¹©ÁËº¯Êýandroid_server_KeyInputQueue_readEvent£¬ÓÃÓÚ¶ÁÈ¡ÊäÈëÉè±¸ÊÂ¼þ¡£
-
-
+æ˜ å°„å®žé™…æ˜¯ç”±KeyLayoutMap::mapå®Œæˆçš„ï¼ŒKeyLayoutMapç±»é‡Œè¯»å–é…ç½®æ–‡ä»¶qwerty.klï¼Œç”±é…ç½® æ–‡ä»¶ qwerty.klå†³å®šé”®å€¼çš„æ˜ å°„å…³ç³»ã€‚ä½ å¯ä»¥é€šè¿‡ä¿®æ”¹./development/emulator/keymaps/qwerty.klæ¥æ”¹å˜é”®å€¼çš„æ˜ å°„å…³ç³»ã€‚
+åœ¨frameworks/base/services/jni/com_android_server_KeyInputQueue.cppæ–‡ä»¶ä¸­ï¼Œå‘JAVAæä¾›äº†å‡½æ•°android_server_KeyInputQueue_readEventï¼Œç”¨äºŽè¯»å–è¾“å…¥è®¾å¤‡äº‹ä»¶ã€‚
 
 
-[1.2] MO(È¥µç)µÄÁ÷³Ì
-Ð´ÔÚÇ°ÃæµÄ»°
-±¾ÎÄÖ÷Òª·ÖÎöMO(È¥µç)µÄÁ÷³Ì£¬ÑÐ¾¿µÄ´úÂëÊÇAndroid 6.0µÄ£¬Ä¿Ç°Ö»¹Ø×¢Ó¦ÓÃ²ã£¬ÒÔGSMÎªÀý
+
+
+[1.2] MO(åŽ»ç”µ)çš„æµç¨‹
+å†™åœ¨å‰é¢çš„è¯
+æœ¬æ–‡ä¸»è¦åˆ†æžMO(åŽ»ç”µ)çš„æµç¨‹ï¼Œç ”ç©¶çš„ä»£ç æ˜¯Android 6.0çš„ï¼Œç›®å‰åªå…³æ³¨åº”ç”¨å±‚ï¼Œä»¥GSMä¸ºä¾‹
 
 
 
@@ -100,9 +100,9 @@ Save:Help\Test\Macro_Test_Node_Num.h \[1.1\]
 
 
 
-[2.1] AndroidµÄÆô¶¯
-AndroidµÄÆô¶¯
-ÄÚºËÆô¶¯¡¢AndroidÆô¶¯¡¢launcherÆô¶¯£¬ÎÒÃÇµÄSystemServer¾Í´¦ÓÚAndroidÆô¶¯ÖÐ£¬ÒÔÏÂÊÇ´óÖÂÁ÷³ÌÍ¼£º
+[2.1] Androidçš„å¯åŠ¨
+Androidçš„å¯åŠ¨
+å†…æ ¸å¯åŠ¨ã€Androidå¯åŠ¨ã€launcherå¯åŠ¨ï¼Œæˆ‘ä»¬çš„SystemServerå°±å¤„äºŽAndroidå¯åŠ¨ä¸­ï¼Œä»¥ä¸‹æ˜¯å¤§è‡´æµç¨‹å›¾ï¼š
 
 init->ServiceManager->Zygote->SystemServer->......
 

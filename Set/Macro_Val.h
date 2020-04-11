@@ -1,4 +1,4 @@
-
+ï»¿
 val:nv-1000-500,allnv~279~8.7+1~SECTOR10
 val:nv-1000-300,allnv~228~7.1+1~NORMAL
 val:nv-1000-200,allnv~206~6.4+1~SMALL_EX
@@ -13,6 +13,6 @@ val:nv-500-100,allnv~155~4.8+1~TINY_EXE
 val:nv-500-50,allnv~152~4.7+1~TINY_EXE
 val:nv-default,allnv~no cfg
 
-#±¸×¢£º¼ÆËã·½·¨ NV_PRTITION = allnv/6 + 1 ÏòÉÏÈ¡Õû
+#å¤‡æ³¨ï¼šè®¡ç®—æ–¹æ³• NV_PRTITION = allnv/6 + 1 å‘ä¸Šå–æ•´
 #{6,7,8,9,10,11}={0,160,192,224,256,288,320}
 

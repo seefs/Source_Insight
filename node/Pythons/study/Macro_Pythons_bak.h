@@ -1,14 +1,14 @@
-
-»ù´¡Â·¾¶ÉèÖÃ:
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®:
 basePath = Save:node\Pythons
 
 /***********************************************************************/
 
 
-//Ä¿Â¼[Num][Ca]:
+//ç›®å½•[Num][Ca]:
 // 1. 
-Save:node\Pythons\study\Macro_Pythons_bak.h \[1.1\] _full_concat-----²¹ÆëÁ¬½Ó
-Save:node\Pythons\study\Macro_Pythons_bak.h \[1.2\] _token.py-----ÕýÏò¼òµ¥È¡Ò»´Î
+Save:node\Pythons\study\Macro_Pythons_bak.h \[1.1\] _full_concat-----è¡¥é½è¿žæŽ¥
+Save:node\Pythons\study\Macro_Pythons_bak.h \[1.2\] _token.py-----æ­£å‘ç®€å•å–ä¸€æ¬¡
 Save:node\Pythons\study\Macro_Pythons_bak.h \[1.3\] _add_head
 Save:node\Pythons\study\Macro_Pythons_bak.h \[1.4\] 
 Save:node\Pythons\study\Macro_Pythons_bak.h \[1.5\] 
@@ -36,7 +36,7 @@ Save:node\Pythons\study\Macro_Pythons_bak.h \[5.3\]
 
 
 
-[1.1] _full_concat-----²¹ÆëÁ¬½Ó
+[1.1] _full_concat-----è¡¥é½è¿žæŽ¥
 
 #    def _full_concat(row, rlen):
 #        diff = board_size - rlen
@@ -63,13 +63,13 @@ Save:node\Pythons\study\Macro_Pythons_bak.h \[5.3\]
 
 
 
-[1.2] _token.py-----ÕýÏò¼òµ¥È¡Ò»´Î
+[1.2] _token.py-----æ­£å‘ç®€å•å–ä¸€æ¬¡
 
-### ÕýÏò¼òµ¥È¡Ò»´Î, ´ÊÀà¸Ä´í
-###   ÖØÐÂÁ¬½Ó±»²ð¿ªµÄlen(1)Ãû´Ê
+### æ­£å‘ç®€å•å–ä¸€æ¬¡, è¯ç±»æ”¹é”™
+###   é‡æ–°è¿žæŽ¥è¢«æ‹†å¼€çš„len(1)åè¯
 concat_list = out_list.copy()
 for i in range(len(concat_list)-2,-1,-1):
-	# i=len-2~0, °üÀ¨0
+	# i=len-2~0, åŒ…æ‹¬0
 	unique_str = concat_list[i][0]
 	print ("  unique_str  %s" % (str(unique_str)) )
 	if len(unique_str)>1:

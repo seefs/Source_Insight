@@ -1,4 +1,4 @@
-
+ï»¿
 import tensorflow as tf
 global_step = tf.Variable(0, trainable=False)
 increment_op = tf.assign_add(global_step, tf.constant(1))
@@ -13,9 +13,9 @@ merged_op = tf.summary.merge_all()
 init = tf.global_variables_initializer()
 with tf.Session() as sess:
     sess.run(init)
-    summary_writer = tf.summary.FileWriter('./log/', sess.graph) # Ö¸¶¨¼ì²â½á¹ûµÄÊä³öÄ¿Â¼
+    summary_writer = tf.summary.FileWriter('./log/', sess.graph) # æŒ‡å®šæ£€æµ‹ç»“æžœçš„è¾“å‡ºç›®å½•
     for step in range(0, 10):
         val,num_step = sess.run((merged_op, increment_op), {lr:0.1})
-        summary_writer.add_summary(val, global_step=num_step) # Ð´ÈëÎÄ¼þ
+        summary_writer.add_summary(val, global_step=num_step) # å†™å…¥æ–‡ä»¶
 
 

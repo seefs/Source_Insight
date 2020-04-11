@@ -1,14 +1,14 @@
-
-»ù´¡Â·¾¶ÉèÖÃ: 
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®: 
 //basePath = F:\9820e
 //basePath = \\192.168.2.115\xiaoj\9820e\idh.code
 
 /***********************************************************************/
 
-//Ä¿Â¼[Num][Ca]:
-Save:node\android\app\Macro_App_Wallpaper.h \[1.1\] ÉèÖÃ¾²Ì¬Ç½Ö½ºó£¬ÎÄ¼ş±£´æÔÚÄÄÀï£¿
-Save:node\android\app\Macro_App_Wallpaper.h \[1.2\] WallpaperÊÇÓÉÄÄ¸ö³ÌĞò»æÖÆµÄ£¿
-Save:node\android\app\Macro_App_Wallpaper.h \[1.3\] AppÔõÑù²Å»áÏÔÊ¾Ç½Ö½±³¾°£¿
+//ç›®å½•[Num][Ca]:
+Save:node\android\app\Macro_App_Wallpaper.h \[1.1\] è®¾ç½®é™æ€å¢™çº¸åï¼Œæ–‡ä»¶ä¿å­˜åœ¨å“ªé‡Œï¼Ÿ
+Save:node\android\app\Macro_App_Wallpaper.h \[1.2\] Wallpaperæ˜¯ç”±å“ªä¸ªç¨‹åºç»˜åˆ¶çš„ï¼Ÿ
+Save:node\android\app\Macro_App_Wallpaper.h \[1.3\] Appæ€æ ·æ‰ä¼šæ˜¾ç¤ºå¢™çº¸èƒŒæ™¯ï¼Ÿ
 
 
 
@@ -17,43 +17,43 @@ Save:node\android\app\Macro_App_Wallpaper.h \[1.3\] AppÔõÑù²Å»áÏÔÊ¾Ç½Ö½±³¾°£¿
 /******************************* code **********************************/
 /***********************************************************************/
 
-[1.1] ÉèÖÃ¾²Ì¬Ç½Ö½ºó£¬ÎÄ¼ş±£´æÔÚÄÄÀï£¿
-Í¨¹ılauncher¡¢ÎÄ¼ş¹ÜÀíÆ÷¡¢Í¼¿âµÈÓ¦ÓÃÑ¡ÔñµÄ¾²Ì¬Ç½Ö½£¬ÉèÖÃºó»áÓÉ
+[1.1] è®¾ç½®é™æ€å¢™çº¸åï¼Œæ–‡ä»¶ä¿å­˜åœ¨å“ªé‡Œï¼Ÿ
+é€šè¿‡launcherã€æ–‡ä»¶ç®¡ç†å™¨ã€å›¾åº“ç­‰åº”ç”¨é€‰æ‹©çš„é™æ€å¢™çº¸ï¼Œè®¾ç½®åä¼šç”±
 frameworks\base\services\java\com\android\server\WallpaperManagerService.java 
-±£´æÆğÀ´¡£
+ä¿å­˜èµ·æ¥ã€‚
 
-±£´æµÄµØ·½ÎªWallpaperManagerService.javaÖĞ¶¨ÒåµÄÎÄ¼şWALLPAPER_FILEÖĞ,
-android¸÷°æ±¾Ö®¼ä£¬±£´æÂ·¾¶ÓĞÇø±ğ¡£
+ä¿å­˜çš„åœ°æ–¹ä¸ºWallpaperManagerService.javaä¸­å®šä¹‰çš„æ–‡ä»¶WALLPAPER_FILEä¸­,
+androidå„ç‰ˆæœ¬ä¹‹é—´ï¼Œä¿å­˜è·¯å¾„æœ‰åŒºåˆ«ã€‚
 
-ÒÔandroid4.0.3ÎªÀı£º
+ä»¥android4.0.3ä¸ºä¾‹ï¼š
     static final File WALLPAPER_DIR = new File(
             "/data/data/com.android.settings/files");
     static final String WALLPAPER = "wallpaper";
     static final File WALLPAPER_FILE = new File(WALLPAPER_DIR, WALLPAPER);
-  ±£´æÎÄ¼şµÄÂ·¾¶Îª /data/data/com.android.settings/files/wallpaper
+  ä¿å­˜æ–‡ä»¶çš„è·¯å¾„ä¸º /data/data/com.android.settings/files/wallpaper
   
-Ç½Ö½±£´æµÄÎÄ¼ş¸ñÊ½Îªbmp¡£
-Ö´ĞĞÈçÏÂadbÃüÁî,pull³öÀ´¾²Ì¬Ç½Ö½ÎÄ¼şwallpaper£¬¸ü¸ÄÎÄ¼şÃûºó×ºÎªbmp(¸üÃûºóÎªwallpaper.bmp£©£¬¾Í¿ÉÒÔÓÃPC»ú²é¿´Ç½Ö½Í¼Æ¬¡£
+å¢™çº¸ä¿å­˜çš„æ–‡ä»¶æ ¼å¼ä¸ºbmpã€‚
+æ‰§è¡Œå¦‚ä¸‹adbå‘½ä»¤,pullå‡ºæ¥é™æ€å¢™çº¸æ–‡ä»¶wallpaperï¼Œæ›´æ”¹æ–‡ä»¶ååç¼€ä¸ºbmp(æ›´ååä¸ºwallpaper.bmpï¼‰ï¼Œå°±å¯ä»¥ç”¨PCæœºæŸ¥çœ‹å¢™çº¸å›¾ç‰‡ã€‚
 adb pull /data/data/com.android.settings/files/wallpaper
 
-ÉèÖÃÎª¾²Ì¬Ç½Ö½ºó£¬ÎÄ¼ş¼Ğ¡¢Í¼¿âÖĞµÄÔ­Í¼Æ¬¿ÉÒÔÉ¾³ı£¬²»Ó°ÏìÇ½Ö½µÄÏÔÊ¾¡£
+è®¾ç½®ä¸ºé™æ€å¢™çº¸åï¼Œæ–‡ä»¶å¤¹ã€å›¾åº“ä¸­çš„åŸå›¾ç‰‡å¯ä»¥åˆ é™¤ï¼Œä¸å½±å“å¢™çº¸çš„æ˜¾ç¤ºã€‚
 
 
-[1.2] WallpaperÊÇÓÉÄÄ¸ö³ÌĞò»æÖÆµÄ£¿
-Èç¹ûÊÇ¾²Ì¬Ç½Ö½£¬ÀıÈçÏµÍ³×Ô´øµÄÇ½Ö½,»òÕß´ÓÎÄ¼şÏµÍ³¡¢Í¼¿òÑ¡ÔñµÄÍ¼Æ¬¡£ ÕâÖÖÇé¿öÊÇÏÈÍ¨¹ıWallpaperManagerµÄ½Ó¿Ú°ÑÍ¼Æ¬¼ô²Ãºó±£´æµ½WallpaperManagerService¡£
-È»ºóÓÉImageWallpaper.javaÍ¨¹ıWallpaperManagerµÄ½Ó¿Ú°ÑÍ¨¹ı¼ô²ÃºóµÄÇ½Ö½Í¼Æ¬¶Á³öÀ´£¬²¢»æÖÆ£¨draw£©µ½Ç½Ö½´°¿Ú¡£
-Èç¹ûÊÇ¶¯Ì¬Ç½Ö½£¬ÓÉ¶¯Ì¬Ç½Ö½£¨ÀıÈçMagicSmoke£©×ÔĞĞ»æÖÆ¡£
+[1.2] Wallpaperæ˜¯ç”±å“ªä¸ªç¨‹åºç»˜åˆ¶çš„ï¼Ÿ
+å¦‚æœæ˜¯é™æ€å¢™çº¸ï¼Œä¾‹å¦‚ç³»ç»Ÿè‡ªå¸¦çš„å¢™çº¸,æˆ–è€…ä»æ–‡ä»¶ç³»ç»Ÿã€å›¾æ¡†é€‰æ‹©çš„å›¾ç‰‡ã€‚ è¿™ç§æƒ…å†µæ˜¯å…ˆé€šè¿‡WallpaperManagerçš„æ¥å£æŠŠå›¾ç‰‡å‰ªè£åä¿å­˜åˆ°WallpaperManagerServiceã€‚
+ç„¶åç”±ImageWallpaper.javaé€šè¿‡WallpaperManagerçš„æ¥å£æŠŠé€šè¿‡å‰ªè£åçš„å¢™çº¸å›¾ç‰‡è¯»å‡ºæ¥ï¼Œå¹¶ç»˜åˆ¶ï¼ˆdrawï¼‰åˆ°å¢™çº¸çª—å£ã€‚
+å¦‚æœæ˜¯åŠ¨æ€å¢™çº¸ï¼Œç”±åŠ¨æ€å¢™çº¸ï¼ˆä¾‹å¦‚MagicSmokeï¼‰è‡ªè¡Œç»˜åˆ¶ã€‚
 
 ?
 
-[1.3] AppÔõÑù²Å»áÏÔÊ¾Ç½Ö½±³¾°£¿
-WallpaperÊÇÏµÍ³¼¶±ğµÄ´°¿Ú£¬ÊÇÓÉWindowManagerServiceÎ¬»¤£¬×÷ÎªÌØ¶¨Ó¦ÓÃµÄ±³¾°ÏÔÊ¾¡£
-Èç¹ûappµÄ´°¿ÚÉèÖÃÁËÈçÏÂÊôĞÔWindowManager.LayoutParams.FLAG_SHOW_WALLPAPER£¬ ²¢ÇÒ±³¾°Í¸Ã÷¡£WindowManagerService»áÔÚ¸ÃAppµÄ´°¿ÚºóÃæÏÔÊ¾Ç½Ö½¡£
+[1.3] Appæ€æ ·æ‰ä¼šæ˜¾ç¤ºå¢™çº¸èƒŒæ™¯ï¼Ÿ
+Wallpaperæ˜¯ç³»ç»Ÿçº§åˆ«çš„çª—å£ï¼Œæ˜¯ç”±WindowManagerServiceç»´æŠ¤ï¼Œä½œä¸ºç‰¹å®šåº”ç”¨çš„èƒŒæ™¯æ˜¾ç¤ºã€‚
+å¦‚æœappçš„çª—å£è®¾ç½®äº†å¦‚ä¸‹å±æ€§WindowManager.LayoutParams.FLAG_SHOW_WALLPAPERï¼Œ å¹¶ä¸”èƒŒæ™¯é€æ˜ã€‚WindowManagerServiceä¼šåœ¨è¯¥Appçš„çª—å£åé¢æ˜¾ç¤ºå¢™çº¸ã€‚
 
 
 
 /***********************************************************************/
-/*************************** ²Î¿¼±Ê¼Ç¡¢ÍøÉÏÕÒµÄ£¬ºÜÂÒ. *****************/
+/*************************** å‚è€ƒç¬”è®°ã€ç½‘ä¸Šæ‰¾çš„ï¼Œå¾ˆä¹±. *****************/
 /***********************************************************************/
 
 

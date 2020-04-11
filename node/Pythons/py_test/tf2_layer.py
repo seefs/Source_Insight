@@ -1,4 +1,4 @@
-# Extends Keras' TensorBoard callback to include the Precision-Recall summary plugin.
+ï»¿# Extends Keras' TensorBoard callback to include the Precision-Recall summary plugin.
 
 import os
 from urllib.request import urlretrieve
@@ -236,24 +236,24 @@ if __name__ == '__main__':
     
     history = model.fit(X_train, y_train, validation_data=[X_test, y_test], epochs=first_epoch, callbacks=callbacks)
 
-    # ±£´æ
+    # ä¿å­˜
     json_string = model.to_json()
-    model.save_weights(os.path.join(log_dir, 'my_model_weights.h5')) #±£´æµÄÄ£ĞÍÎ»ÖÃ
+    model.save_weights(os.path.join(log_dir, 'my_model_weights.h5')) #ä¿å­˜çš„æ¨¡å‹ä½ç½®
     del model
 
     
-    # ÖØĞÂÑµÁ·
+    # é‡æ–°è®­ç»ƒ
     from keras.models import model_from_json
 #    from keras.optimizers import SGD
     new_model = model_from_json(json_string)
-    new_model.load_weights(os.path.join(log_dir, 'my_model_weights.h5')) #ÔØÈëÄ£ĞÍ
+    new_model.load_weights(os.path.join(log_dir, 'my_model_weights.h5')) #è½½å…¥æ¨¡å‹
 #    model = build_model(features_normalized.shape[1])
     new_model = build_new_model(new_model)
     
     second_epoch = 50
 #    callbacks = [ PRTensorBoard(log_dir=log_dir), EarlyStopping(monitor='val_loss', patience=3) ]
     callbacks = [ tensorboard, EarlyStopping(monitor='val_loss', patience=3) ]
-    # ¹Ø¼üµÄ³õÊ¼»¯epochÊı initial_epoch=first_epoch
+    # å…³é”®çš„åˆå§‹åŒ–epochæ•° initial_epoch=first_epoch
     history = new_model.fit(X_train, y_train, validation_data=[X_test, y_test], epochs=first_epoch+second_epoch, callbacks=callbacks,initial_epoch=first_epoch)
     
     print("test end.")

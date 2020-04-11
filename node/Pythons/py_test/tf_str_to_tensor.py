@@ -1,11 +1,11 @@
-
+ï»¿
 
 import tensorflow as tf
 import numpy as np
 #import cPickle
 
 
-print (">> tensorÏµÁĞ»¯+·´ÏµÁĞ»¯")
+print (">> tensorç³»åˆ—åŒ–+åç³»åˆ—åŒ–")
 mylist=np.array([1,2,3,4],dtype='float32')
 print ("mylist: ", mylist)
 
@@ -23,7 +23,7 @@ print ("")
 
 
 
-print (">> str±àÂë+·´±àÂë")
+print (">> strç¼–ç +åç¼–ç ")
 str_1 = '[1,2]'.encode(encoding = "utf-8")
 print ("str_1: ", str_1)
 str_2 = str_1.decode('utf-8')
@@ -37,7 +37,7 @@ print ("")
 
 
 
-print (">> np×Ö·û´®+·´×Ö·û´®")
+print (">> npå­—ç¬¦ä¸²+åå­—ç¬¦ä¸²")
 mynp  =np.array([1,2,3,4],dtype='float32')
 mystr =mynp.tostring()
 #mydecode = mystr.decode(encoding = "utf-8")
@@ -51,7 +51,7 @@ print ("")
 
 
 
-print (">> example×Ö·û´®+·´×Ö·û´®")
+print (">> exampleå­—ç¬¦ä¸²+åå­—ç¬¦ä¸²")
 #mytensor = tf.io.parse_single_example('[1,2]')
 #print ("parse_single_example: ", mytensor)
 
@@ -61,14 +61,14 @@ print ("")
 
 
 
-print (">> cast×Ö·û´®+·´×Ö·û´®")
+print (">> castå­—ç¬¦ä¸²+åå­—ç¬¦ä¸²")
 #mytensor = tf.cast('[1,2]', 'list', name=None)
 #print ("fromstring: ", mytensor)
 print ("")
 
 
 
-print (">> cPickle×Ö·û´®+·´×Ö·û´®")
+print (">> cPickleå­—ç¬¦ä¸²+åå­—ç¬¦ä¸²")
 #mynp  = np.array([1,2,3,4],dtype='float32')
 #mycPickle = cPickle.dumps(mynp)
 #mynp  = cPickle.loads(mycPickle)
@@ -79,7 +79,7 @@ print ("")
 
 
 
-print (">> csv½âÂë")
+print (">> csvè§£ç ")
 record_defaults = [1.,1.]
 mytensor = tf.io.decode_csv('1.,2.', record_defaults=record_defaults, field_delim=',')
 print ("mytensor: ", mytensor)

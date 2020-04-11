@@ -1,4 +1,4 @@
- 
+ï»¿ 
 
 """
 Please note, this code is only for python 3+. If you are using python 2+, please modify the code accordingly.
@@ -11,11 +11,11 @@ one = tf.constant(1)
 
 new_value = tf.add(state, one)
 
-# assignÎ´±»Ö´ĞĞ£¬refÖµ²»¸üĞÂ
-#    assign_add ¡¢assign_sub Ò²ÊÇÒ»ÑùµÄ
-#    assign_add(¼Óºó·ÖÅäÖµ¸øx,Èçx=x+1/x-=1)
-#    assign_sub(¼õºó·ÖÅäÖµ¸øx,x=x-1/x-=1)
-# assign Ö¸¶¨
+# assignæœªè¢«æ‰§è¡Œï¼Œrefå€¼ä¸æ›´æ–°
+#    assign_add ã€assign_sub ä¹Ÿæ˜¯ä¸€æ ·çš„
+#    assign_add(åŠ ååˆ†é…å€¼ç»™x,å¦‚x=x+1/x-=1)
+#    assign_sub(å‡ååˆ†é…å€¼ç»™x,x=x-1/x-=1)
+# assign æŒ‡å®š
 update = tf.assign(state, new_value)
 
 #Use `tf.initialize_all_variables` instead

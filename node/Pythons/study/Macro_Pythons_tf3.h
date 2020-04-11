@@ -1,29 +1,29 @@
+ï»¿
 
-
-»ù´¡Â·¾¶ÉèÖÃ: 
+åŸºç¡€è·¯å¾„è®¾ç½®: 
 basePath = D:\project\Demo
 //basePath = Save:node\Pythons
 
 /***********************************************************************/
 
 
-//Ä¿Â¼[Num][Ca]:
+//ç›®å½•[Num][Ca]:
 // 1. 
 Save:node\Pythons\study\Macro_Pythons_tf3.h \[1.1\] tf2_samples
-Save:node\Pythons\study\Macro_Pythons_tf3.h \[1.2\] tf12_samples-------Àı×Ó
+Save:node\Pythons\study\Macro_Pythons_tf3.h \[1.2\] tf12_samples-------ä¾‹å­
 Save:node\Pythons\study\Macro_Pythons_tf3.h \[1.3\] tf2_model----------alpha
 Save:node\Pythons\study\Macro_Pythons_tf3.h \[1.4\] tf2_layer----------demo
 Save:node\Pythons\study\Macro_Pythons_tf3.h \[1.5\] 
 Save:node\Pythons\study\Macro_Pythons_tf3.h \[1.6\] 
 // 2. 
-Save:node\Pythons\study\Macro_Pythons_tf3.h \[2.1\] tf2_tensorboard----Àı×Ó
-Save:node\Pythons\study\Macro_Pythons_tf3.h \[2.2\] ×Ô¶¨ÒåÆÀ¹Àº¯Êı
+Save:node\Pythons\study\Macro_Pythons_tf3.h \[2.1\] tf2_tensorboard----ä¾‹å­
+Save:node\Pythons\study\Macro_Pythons_tf3.h \[2.2\] è‡ªå®šä¹‰è¯„ä¼°å‡½æ•°
 Save:node\Pythons\study\Macro_Pythons_tf3.h \[2.3\] 
 Save:node\Pythons\study\Macro_Pythons_tf3.h \[2.4\] Plot_model
 Save:node\Pythons\study\Macro_Pythons_tf3.h \[2.5\] History
 Save:node\Pythons\study\Macro_Pythons_tf3.h \[2.6\] 
-Save:node\Pythons\study\Macro_Pythons_tf3.h \[2.7\] plot---------------´úÂëÌ«ÄÑ¿´
-Save:node\Pythons\study\Macro_Pythons_tf3.h \[2.8\] plot---------------Ã¨Í¼
+Save:node\Pythons\study\Macro_Pythons_tf3.h \[2.7\] plot---------------ä»£ç å¤ªéš¾çœ‹
+Save:node\Pythons\study\Macro_Pythons_tf3.h \[2.8\] plot---------------çŒ«å›¾
 Save:node\Pythons\study\Macro_Pythons_tf3.h \[2.9\] 
 Save:node\Pythons\study\Macro_Pythons_tf3.h \[2.10\] 
 
@@ -35,7 +35,7 @@ tf2_samples
 //Path:
 //tf2Path = tf_Examples\tensorflow_v2\notebooks
 
-// ipynb×ªpy
+// ipynbè½¬py
 //cmd_w: jupyter nbconvert --to script 026-Transformer\001-Transformer.ipynb
 //cmd_w: jupyter nbconvert --to script 026-Transformer\Transformer.ipynb
 
@@ -45,52 +45,52 @@ tf2_samples
 
 
 [1.2] tf12_samples---------(32000+star)
-//GithubµØÖ·£¨32000+star£©£º
+//Githubåœ°å€ï¼ˆ32000+starï¼‰ï¼š
 https://github.com/aymericdamien/TensorFlow-Examples
 //Path:
 tf2Path = tf_Examples\tensorflow_v2\notebooks
 
-//tf2:0_Prerequisite\ml_introduction.py               0       # ËµÃ÷
+//tf2:0_Prerequisite\ml_introduction.py               0       # è¯´æ˜
 //python_w tf2:0_Prerequisite\ml_introduction.py
 //tf2:0_Prerequisite\mnist_dataset_intro.py           0       # tensorflow.examples
 //python_w tf2:0_Prerequisite\mnist_dataset_intro.py
-tf2:1_Introduction\basic_operations.py                0       # ÔËËã
+tf2:1_Introduction\basic_operations.py                0       # è¿ç®—
 python_w tf2:1_Introduction\basic_operations.py
 tf2:1_Introduction\helloworld.py                      0       # str
 python_w tf2:1_Introduction\helloworld.py
-tf2:2_BasicModels\linear_regression.py                0       # ÏßĞÔÍ¼
+tf2:2_BasicModels\linear_regression.py                0       # çº¿æ€§å›¾
 python_w tf2:2_BasicModels\linear_regression.py
-tf2:2_BasicModels\logistic_regression.py              0       # Êı×ÖÍ¼--nn
+tf2:2_BasicModels\logistic_regression.py              0       # æ•°å­—å›¾--nn
 python_w tf2:2_BasicModels\logistic_regression.py
-//tf2:2_BasicModels\word2vec.py                       0       # ¾ä×Ó±àÂë--Á¬½Ó³¢ÊÔÊ§°Ü
+//tf2:2_BasicModels\word2vec.py                       0       # å¥å­ç¼–ç --è¿æ¥å°è¯•å¤±è´¥
 //python_w tf2:2_BasicModels\word2vec.py
-tf2:3_NeuralNetworks\autoencoder.py                   0       # Êı×Ö4X4Í¼--2X2²ã, ºÜÂı
+tf2:3_NeuralNetworks\autoencoder.py                   0       # æ•°å­—4X4å›¾--2X2å±‚, å¾ˆæ…¢
 python_w tf2:3_NeuralNetworks\autoencoder.py
 //tf2:3_NeuralNetworks\bidirectional_rnn.py           0       # Bidirectional--Keyword argument
 //python_w tf2:3_NeuralNetworks\bidirectional_rnn.py
-tf2:3_NeuralNetworks\convolutional_network.py         0       # Êı×ÖÍ¼--¾í»ı
+tf2:3_NeuralNetworks\convolutional_network.py         0       # æ•°å­—å›¾--å·ç§¯
 python_w tf2:3_NeuralNetworks\convolutional_network.py
-tf2:3_NeuralNetworks\convolutional_network_raw.py     0       # Êı×ÖÍ¼--¾í»ı--nn
+tf2:3_NeuralNetworks\convolutional_network_raw.py     0       # æ•°å­—å›¾--å·ç§¯--nn
 python_w tf2:3_NeuralNetworks\convolutional_network_raw.py
-tf2:3_NeuralNetworks\dcgan.py                         0       # Êı×Ö5X5Í¼--, ºÜÂı, ¶Ô¿¹Éú³ÉÍøÂç
+tf2:3_NeuralNetworks\dcgan.py                         0       # æ•°å­—5X5å›¾--, å¾ˆæ…¢, å¯¹æŠ—ç”Ÿæˆç½‘ç»œ
 python_w tf2:3_NeuralNetworks\dcgan.py
-tf2:3_NeuralNetworks\dynamic_rnn.py                   0       # LSTM ºÜÂı
+tf2:3_NeuralNetworks\dynamic_rnn.py                   0       # LSTM å¾ˆæ…¢
 python_w tf2:3_NeuralNetworks\dynamic_rnn.py
-tf2:3_NeuralNetworks\neural_network.py                0       # Êı×ÖÍ¼--Éñ¾­ÍøÂç
+tf2:3_NeuralNetworks\neural_network.py                0       # æ•°å­—å›¾--ç¥ç»ç½‘ç»œ
 python_w tf2:3_NeuralNetworks\neural_network.py
-tf2:3_NeuralNetworks\neural_network_raw.py            0       # Êı×ÖÍ¼--Éñ¾­ÍøÂç--nn
+tf2:3_NeuralNetworks\neural_network_raw.py            0       # æ•°å­—å›¾--ç¥ç»ç½‘ç»œ--nn
 python_w tf2:3_NeuralNetworks\neural_network_raw.py
-tf2:3_NeuralNetworks\recurrent_network.py             0       # Ñ­»·Éñ¾­ÍøÂç Êı×ÖÍ¼--LSTM--K
+tf2:3_NeuralNetworks\recurrent_network.py             0       # å¾ªç¯ç¥ç»ç½‘ç»œ æ•°å­—å›¾--LSTM--K
 python_w tf2:3_NeuralNetworks\recurrent_network.py
 tf2:4_Utils\build_custom_layers.py                    0       # Layer
 python_w tf2:4_Utils\build_custom_layers.py
 tf2:4_Utils\save_restore_model.py                     0       # save
 python_w tf2:4_Utils\save_restore_model.py
-//tf2:5_DataManagement\image_transformation.py        0       # image--Ã»ÓĞPIL
+//tf2:5_DataManagement\image_transformation.py        0       # image--æ²¡æœ‰PIL
 //python_w tf2:5_DataManagement\image_transformation.py
-//tf2:5_DataManagement\load_data.py                   0       # Dataset--Á¬½Ó³¢ÊÔÊ§°Ü
+//tf2:5_DataManagement\load_data.py                   0       # Dataset--è¿æ¥å°è¯•å¤±è´¥
 //python_w tf2:5_DataManagement\load_data.py
-//tf2:5_DataManagement\tfrecords.py                   0       # features--Á¬½Ó³¢ÊÔÊ§°Ü
+//tf2:5_DataManagement\tfrecords.py                   0       # features--è¿æ¥å°è¯•å¤±è´¥
 //python_w tf2:5_DataManagement\tfrecords.py
 
 
@@ -155,7 +155,7 @@ python_w py:py_test\tf2_model.py
 
 
 
-// Àı×Ó--tensorboard
+// ä¾‹å­--tensorboard
 //tf2_tensorboard\example.py
 //python_w tf2_tensorboard\example.py
 
@@ -164,11 +164,11 @@ python_w py:py_test\tf2_model.py
 [1.4] tf2_layer----------demo
 //Path:
 //tf1Path = tf_Examples\examples
-//demo, ÒÔ¼°ÌáÎÊ
+//demo, ä»¥åŠæé—®
 https://github.com/keras-team/keras/tree/master/keras/layers
 
 
-// layerÀı×Ó
+// layerä¾‹å­
 https://github.com/Zelgunn/CustomKerasLayers
 //Path:
 lyPath = tf2_KerasLayers\
@@ -198,15 +198,15 @@ ly:layers\DenseBlock.py
 
 
 
-[2.1] tf2_tensorboard----Àı×Ó
-//tf2_tensorboard£º
+[2.1] tf2_tensorboard----ä¾‹å­
+//tf2_tensorboardï¼š
 //https://github.com/akionakamura/pr-tensorboard-keras-example
 //Path:
 //tf2Path = tf2_tensorboard
 tf2_tensorboard\
 
 
-// Àı×Ó--tensorboard
+// ä¾‹å­--tensorboard
 tf2_tensorboard\example.py
 python_w tf2_tensorboard\example.py
 //brw:
@@ -215,41 +215,41 @@ cmd_w: tensorboard --logdir=tf2_tensorboard\logs\testA-1570353848
 cmd_w: http://localhost:6006
 
 
-// Àı×Ó--¶à´Îtensorboard
+// ä¾‹å­--å¤šæ¬¡tensorboard
 tf2_tensorboard\example_concat_board.py
 python_w tf2_tensorboard\example_concat_board.py
 
 
-[2.2] ×Ô¶¨ÒåÆÀ¹Àº¯Êı
-//	1.3 ×Ô¶¨ÒåÆÀ¹Àº¯Êı
-//	PRFÖµµÄ¼ÆËã·½·¨
-//	AUC(area under the curve)-----ÊÇROCÇúÏßÏÂµÄÃæ»ı
-//  ROC(Price Rate of Change)-----ÓÖ³Æ±ä¶¯ÂÊÖ¸±ê---(FPR, TPR)¶Ô
+[2.2] è‡ªå®šä¹‰è¯„ä¼°å‡½æ•°
+//	1.3 è‡ªå®šä¹‰è¯„ä¼°å‡½æ•°
+//	PRFå€¼çš„è®¡ç®—æ–¹æ³•
+//	AUC(area under the curve)-----æ˜¯ROCæ›²çº¿ä¸‹çš„é¢ç§¯
+//  ROC(Price Rate of Change)-----åˆç§°å˜åŠ¨ç‡æŒ‡æ ‡---(FPR, TPR)å¯¹
 
-//¿ÉÒÔÊ¹ÓÃµÄÔ¤ÖÃº¯ÊıÈçÏÂ£º
-//	binary_accuracy(y_true, y_pred) # ¶şÔªÕıÈ·ÂÊ
-//	categorical_accuracy(y_true, y_pred) # ¶àÔªÕıÈ·ÂÊ
-//	sparse_categorical_accuracy(y_true, y_pred) #Ï¡Êè·ÖÀàÕıÈ·ÂÊ
-//	top_k_categorical_accuracy(y_true, y_pred, k=5) # top k¸ö·ÖÀàÕıÈ·ÂÊ
-//	sparse_top_k_categorical_accuracy(y_true, y_pred, k=5) # Ï¡Êètop k¸ö·ÖÀàÕıÈ·ÂÊ
+//å¯ä»¥ä½¿ç”¨çš„é¢„ç½®å‡½æ•°å¦‚ä¸‹ï¼š
+//	binary_accuracy(y_true, y_pred) # äºŒå…ƒæ­£ç¡®ç‡
+//	categorical_accuracy(y_true, y_pred) # å¤šå…ƒæ­£ç¡®ç‡
+//	sparse_categorical_accuracy(y_true, y_pred) #ç¨€ç–åˆ†ç±»æ­£ç¡®ç‡
+//	top_k_categorical_accuracy(y_true, y_pred, k=5) # top kä¸ªåˆ†ç±»æ­£ç¡®ç‡
+//	sparse_top_k_categorical_accuracy(y_true, y_pred, k=5) # ç¨€ç–top kä¸ªåˆ†ç±»æ­£ç¡®ç‡
 
 
-// Ö¸±ê
-//	¾«×¼ÂÊ: precision rate = TP / (TP + FP)
-//	ÕÙ»ØÂÊ: recall rate = TP / (TP + FN)
-//	×¼È·ÂÊ: accuracy = (TP + TN) / (TP + FP + TN + FN)
+// æŒ‡æ ‡
+//	ç²¾å‡†ç‡: precision rate = TP / (TP + FP)
+//	å¬å›ç‡: recall rate = TP / (TP + FN)
+//	å‡†ç¡®ç‡: accuracy = (TP + TN) / (TP + FP + TN + FN)
 //	F1-score = 2 * precision rate * recall rate / (precision rate + recall rate)
-//	F1-score = 2 * ¾« * ÕÙ / (¾« + ÕÙ)
+//	F1-score = 2 * ç²¾ * å¬ / (ç²¾ + å¬)
 
-//	¾«×¼ÂÊ: __FP TP__>>0000 1111, ÍÆ¼öÏµÍ³-----ÖØĞÄ--ÕıÑù>¸ºÑù---µ÷¶à=µ÷ÉÙ
-//	¾«×¼ÂÊ: __11 11__>>0000 1111, 
-//	ÕÙ»ØÂÊ: ____ TPFN>>  0000 1111, ÌÓ·¸¼ìË÷-----Ö±¾¶--½öÕıÑùÓ°Ïì
-//	ÕÙ»ØÂÊ: ____ 1100>>  0000 1111,
-//	×¼È·ÂÊ: TNFP TPFN>>0000 1111, XXXXÏµÍ³-----±ß½ç--ÕıÑù=¸ºÑù---µ÷¶à>µ÷ÉÙ
-//	×¼È·ÂÊ: 0011 1100>>0000 1111,
-//	F1-scr: __11 1100>>0000 1111, XXXXÏµÍ³-----XX½ç--ÕıÑù>¸ºÑù---Õı¶à>ÕıÉÙ---¸ºÉÙ>Õı¶à
-//ÕæÑôĞÔÂÊ: ____ TPFN>>0000 1111, TPR=ÕÙ»ØÂÊ
-//¼ÙÒõĞÔÂÊ: TNFP ____>>0000 1111, FPR
+//	ç²¾å‡†ç‡: __FP TP__>>0000 1111, æ¨èç³»ç»Ÿ-----é‡å¿ƒ--æ­£æ ·>è´Ÿæ ·---è°ƒå¤š=è°ƒå°‘
+//	ç²¾å‡†ç‡: __11 11__>>0000 1111, 
+//	å¬å›ç‡: ____ TPFN>>  0000 1111, é€ƒçŠ¯æ£€ç´¢-----ç›´å¾„--ä»…æ­£æ ·å½±å“
+//	å¬å›ç‡: ____ 1100>>  0000 1111,
+//	å‡†ç¡®ç‡: TNFP TPFN>>0000 1111, XXXXç³»ç»Ÿ-----è¾¹ç•Œ--æ­£æ ·=è´Ÿæ ·---è°ƒå¤š>è°ƒå°‘
+//	å‡†ç¡®ç‡: 0011 1100>>0000 1111,
+//	F1-scr: __11 1100>>0000 1111, XXXXç³»ç»Ÿ-----XXç•Œ--æ­£æ ·>è´Ÿæ ·---æ­£å¤š>æ­£å°‘---è´Ÿå°‘>æ­£å¤š
+//çœŸé˜³æ€§ç‡: ____ TPFN>>0000 1111, TPR=å¬å›ç‡
+//å‡é˜´æ€§ç‡: TNFP ____>>0000 1111, FPR
 
 
 
@@ -258,7 +258,7 @@ cmd_w: tensorboard --logdir=tf2_tensorboard\logs\testA-1570385848
 cmd_w: http://localhost:6006
 
 
-// ÆÀ¹À--º¯Êı_auc_roc
+// è¯„ä¼°--å‡½æ•°_auc_roc
 tf2_tensorboard\example_auc_roc.py
 python_w tf2_tensorboard\example_auc_roc.py
 //	176/176 [==============================] - 15s 85ms/step - loss: 0.6912 - auc: 0.7747 - val_loss: 0.6991 - val_auc: 0.8999
@@ -270,23 +270,23 @@ python_w tf2_tensorboard\example_auc_roc.py
 //	176/176 [==============================] - 0s 620us/step - loss: 0.7050 - accuracy: 0.4659 - auc: 0.0158 - val_loss: 0.6999 - val_accuracy: 0.5000 - val_auc: 0.0317
 
 
-// ÆÀ¹À--cb_auc_roc------aucÍ¼³ö²»À´
+// è¯„ä¼°--cb_auc_roc------aucå›¾å‡ºä¸æ¥
 //tf2_tensorboard\example_cb_auc_roc.py
 //python_w tf2_tensorboard\example_cb_auc_roc.py
 
 
-// ÆÀ¹À--cb_metrics------f1_score, Í¼Ò²³ö²»À´
+// è¯„ä¼°--cb_metrics------f1_score, å›¾ä¹Ÿå‡ºä¸æ¥
 tf2_tensorboard\example_cb_metrics.py
 python_w tf2_tensorboard\example_cb_metrics.py
 
 
-// ÆÀ¹À--fun_metrics------f1_score
+// è¯„ä¼°--fun_metrics------f1_score
 tf2_tensorboard\example_fun_metrics.py
 python_w tf2_tensorboard\example_fun_metrics.py
 
 
-// ÆÀ¹À--cb_bert_f1------x´ø±êÇ©Ê¶±ğ²»ÁË
-//   log´øÊ±¼ä
+// è¯„ä¼°--cb_bert_f1------xå¸¦æ ‡ç­¾è¯†åˆ«ä¸äº†
+//   logå¸¦æ—¶é—´
 tf2_tensorboard\example_cb_bert_f1.py
 python_w tf2_tensorboard\example_cb_bert_f1.py
 
@@ -296,12 +296,12 @@ python_w tf2_tensorboard\example_cb_bert_f1.py
 
 
 [2.4] Plot_model
-//	Plot_modelÖ÷ÒªÊÇÓÃÀ´»æÖÆÄ£ĞÍµÄÑù×Ó£¬
-//	Ò²¿ÉÒÔÊ¹ÓÃModel.summary()
+//	Plot_modelä¸»è¦æ˜¯ç”¨æ¥ç»˜åˆ¶æ¨¡å‹çš„æ ·å­ï¼Œ
+//	ä¹Ÿå¯ä»¥ä½¿ç”¨Model.summary()
 
 
 [2.5] History
-// HistoryÔòÊÇÄ£ĞÍÑµÁ·Ê±µÄÀúÊ·¼ÇÂ¼
+// Historyåˆ™æ˜¯æ¨¡å‹è®­ç»ƒæ—¶çš„å†å²è®°å½•
 
 
 [2.6] 
@@ -309,8 +309,8 @@ python_w tf2_tensorboard\example_cb_bert_f1.py
 
 
 
-[2.7] plot------------´úÂëÌ«ÄÑ¿´
-//plot. ´úÂëÌ«ÄÑ¿´.
+[2.7] plot------------ä»£ç å¤ªéš¾çœ‹
+//plot. ä»£ç å¤ªéš¾çœ‹.
 //tf2_test\tf2_plot.py
 //python_w tf2_test\tf2_plot.py
 //brw:
@@ -319,11 +319,11 @@ cmd_w: tensorboard --logdir=logs\20191006-002021
 cmd_w: http://localhost:6006
 
 
-[2.8] plot---------------Ã¨Í¼
-//	»­Í¼2--Ã¨Í¼, ²»ÖªµÀÊ²Ã´ÓÃ
+[2.8] plot---------------çŒ«å›¾
+//	ç”»å›¾2--çŒ«å›¾, ä¸çŸ¥é“ä»€ä¹ˆç”¨
 https://github.com/wookayin/tensorflow-plot
 
-//ÆäËû¹¤¾ß
+//å…¶ä»–å·¥å…·
 Visdom
 
 

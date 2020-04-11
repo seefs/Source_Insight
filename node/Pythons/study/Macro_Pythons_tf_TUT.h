@@ -1,5 +1,5 @@
-
-»ù´¡Â·¾¶ÉèÖÃ:
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®:
 //basePath = Project:NLP\jieba_fast
 basePath = Save:node\Pythons
 //toolPath = E:\Desktop\NLP
@@ -7,19 +7,19 @@ basePath = Save:node\Pythons
 
 /***********************************************************************/
 
-ÊÓÆµ£º
+è§†é¢‘ï¼š
 F:\1_study\01_video_tensorflow\Tensorflow07_val.mp4
 
 
-±àÒëÄ£¿é
+ç¼–è¯‘æ¨¡å—
 python tf_day1_line1.py
 
-ÐÞ¸Ä
+ä¿®æ”¹
 tf_day1_line1.py creat^data
 
 
-//Àí½â£º
-//Ë¼¿¼£º¾Å¹¬¸ñ
+//ç†è§£ï¼š
+//æ€è€ƒï¼šä¹å®«æ ¼
 ////////////////////\\\\\\\\\\\\\\\\\\\\\\
 ////////////////////0\\\\\\\\\\\\\\\\\\\\\
 ////////////////////\\\\\\\\\\\\\\\\\\\\\\
@@ -38,22 +38,22 @@ tf_day1_line1.py creat^data
 
 
 
-//Ä¿Â¼[Num][Ca]:
-Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.1\] µÚ1~5½²
-Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.5\] tf5_example2 ÓÅÏÈÒ»´ÎÏßÐÔ
-Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.6\] tensorflow6 ¾ØÕó
-Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.7\] tensorflow7 ±äÁ¿¼Ó·¨£¬¹«Ê½¸üÐÂ
-Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.8\] tensorflow8 ÔËÐÐÖÐ´«Èë±äÁ¿
-Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.10\] tensorflow10 ²ã+¼¤»îº¯Êý
+//ç›®å½•[Num][Ca]:
+Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.1\] ç¬¬1~5è®²
+Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.5\] tf5_example2 ä¼˜å…ˆä¸€æ¬¡çº¿æ€§
+Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.6\] tensorflow6 çŸ©é˜µ
+Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.7\] tensorflow7 å˜é‡åŠ æ³•ï¼Œå…¬å¼æ›´æ–°
+Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.8\] tensorflow8 è¿è¡Œä¸­ä¼ å…¥å˜é‡
+Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.10\] tensorflow10 å±‚+æ¿€æ´»å‡½æ•°
 Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.11\] tensorflow11
 Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.12\] tensorflow12
-Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.13\] tensorflow13 ÓÅ»¯Æ÷
+Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.13\] tensorflow13 ä¼˜åŒ–å™¨
 Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.14\] tf14_tensorboard
 Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.15\] tf15_tensorboard
-Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.16\] tf16_classification ·ÖÀà--Êý×Ö 
-Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.17\] tf17_dropout ·ÖÀà--Êý×Ö dropout 
+Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.16\] tf16_classification åˆ†ç±»--æ•°å­— 
+Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.17\] tf17_dropout åˆ†ç±»--æ•°å­— dropout 
 //
-Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[2.1\] ¾Å¹¬¸ñ
+Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[2.1\] ä¹å®«æ ¼
 
 
 /***********************************************************************/
@@ -61,54 +61,54 @@ Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[2.1\] ¾Å¹¬¸ñ
 /***********************************************************************/
 
 
-[1.1] µÚ1~5½²
+[1.1] ç¬¬1~5è®²
 
-[1.5] tf5_example2 ÓÅÏÈÒ»´ÎÏßÐÔ
-//[ÒÉµã]£º
-//tf.random_uniform tf.zeros ÓÃÍ¾
+[1.5] tf5_example2 ä¼˜å…ˆä¸€æ¬¡çº¿æ€§
+//[ç–‘ç‚¹]ï¼š
+//tf.random_uniform tf.zeros ç”¨é€”
 tfTUT\tf5_example2\full_code.py
 python tfTUT\tf5_example2\full_code.py
 
 
-//[ËµÃ÷]£ºÓÅÏÈÒ»´ÎÏßÐÔ(1)
+//[è¯´æ˜Ž]ï¼šä¼˜å…ˆä¸€æ¬¡çº¿æ€§(1)
 tfTUT\tf5_example2\for_you_to_practice.py
 
 
 
-[1.6] tensorflow6 ¾ØÕó
+[1.6] tensorflow6 çŸ©é˜µ
 tfTUT\tensorflow6_session.py
 python tfTUT\tensorflow6_session.py
 
 
-[1.7] tensorflow7 ±äÁ¿¼Ó·¨£¬¹«Ê½¸üÐÂ
-//[ÒÉµã]£º
-//assign ·ÖÅä
+[1.7] tensorflow7 å˜é‡åŠ æ³•ï¼Œå…¬å¼æ›´æ–°
+//[ç–‘ç‚¹]ï¼š
+//assign åˆ†é…
 tfTUT\tensorflow7_variable.py
 python_w tfTUT\tensorflow7_variable.py
 
 
-[1.8] tensorflow8 ÔËÐÐÖÐ´«Èë±äÁ¿
-//[ÒÉµã]£º
-//placeholder ÔËÐÐÖÐ´«Èë±äÁ¿
-//feed_dict ×Öµä
+[1.8] tensorflow8 è¿è¡Œä¸­ä¼ å…¥å˜é‡
+//[ç–‘ç‚¹]ï¼š
+//placeholder è¿è¡Œä¸­ä¼ å…¥å˜é‡
+//feed_dict å­—å…¸
 tfTUT\tensorflow8_feeds.py
 python tfTUT\tensorflow8_feeds.py
 //ERR:mul
 
 
-[1.10] tensorflow10 ²ã+¼¤»îº¯Êý
+[1.10] tensorflow10 å±‚+æ¿€æ´»å‡½æ•°
 tfTUT\tensorflow10_def_add_layer.py
 python tfTUT\tensorflow10_def_add_layer.py
 
 
 [1.11] tensorflow11
-//[ÒÉµã]£º
-//numpy.linspace ÔÚÖ¸¶¨µÄ¼ä¸ôÄÚ·µ»Ø¾ùÔÈ¼ä¸ôµÄÊý×Ö
-//	np.newaxis ¸øÔ­Êý×éÔö¼ÓÒ»¸öÎ¬¶È
-//	[:, np.newaxis] ÔÚºóÃæÓ¦¸ÃÊÇ[300,1]
-//tf.matmul()   ¾ØÕóÏà³Ë
-//tf.multiply() ¾ØÕóÖÐ¶ÔÓ¦ÔªËØ¸÷×ÔÏà³Ë
-//tf.random_normal ´ÓÕýÌ¬·Ö²¼ÖÐÊä³öËæ»úÖµ¡£
+//[ç–‘ç‚¹]ï¼š
+//numpy.linspace åœ¨æŒ‡å®šçš„é—´éš”å†…è¿”å›žå‡åŒ€é—´éš”çš„æ•°å­—
+//	np.newaxis ç»™åŽŸæ•°ç»„å¢žåŠ ä¸€ä¸ªç»´åº¦
+//	[:, np.newaxis] åœ¨åŽé¢åº”è¯¥æ˜¯[300,1]
+//tf.matmul()   çŸ©é˜µç›¸ä¹˜
+//tf.multiply() çŸ©é˜µä¸­å¯¹åº”å…ƒç´ å„è‡ªç›¸ä¹˜
+//tf.random_normal ä»Žæ­£æ€åˆ†å¸ƒä¸­è¾“å‡ºéšæœºå€¼ã€‚
 tfTUT\tensorflow11_build_network.py
 python tfTUT\tensorflow11_build_network.py
 
@@ -116,80 +116,80 @@ python tfTUT\tensorflow11_build_network.py
 
 
 [1.12] tensorflow12
-//[ÒÉµã]£ºWeights---layerÖÐÓÐÊ²Ã´ÓÃ
+//[ç–‘ç‚¹]ï¼šWeights---layerä¸­æœ‰ä»€ä¹ˆç”¨
 tfTUT\tensorflow12_plut_result.py
 python tfTUT\tensorflow12_plut_result.py
 
 
 
-[1.13] tensorflow13 ÓÅ»¯Æ÷
+[1.13] tensorflow13 ä¼˜åŒ–å™¨
 // ...
 
 
 [1.14] tf14_tensorboard
-//[ÒÉµã]£º
-// ½«      tf.initialize_all_variables()
-// Ìæ»»Îª tf.global_variables_initializer()
+//[ç–‘ç‚¹]ï¼š
+// å°†      tf.initialize_all_variables()
+// æ›¿æ¢ä¸º tf.global_variables_initializer()
 tfTUT\tf14_tensorboard\full_code.py
 python_w tfTUT\tf14_tensorboard\full_code.py
-// Ã»ÓÐÄÚÈÝ£º
+// æ²¡æœ‰å†…å®¹ï¼š
 tfTUT\tf14_tensorboard\for_you_to_practice.py
 python tfTUT\tf14_tensorboard\for_you_to_practice.py
 
-//	Ìí¼Ó tensorboard->path
+//	æ·»åŠ  tensorboard->path
 tensorboard  --logdir=logs
 
 
 [1.15] tf15_tensorboard
-//[ÒÉµã]£º
-//[ËµÃ÷]£ºname_scope->loss...
+//[ç–‘ç‚¹]ï¼š
+//[è¯´æ˜Ž]ï¼šname_scope->loss...
 tfTUT\tf15_tensorboard\full_code.py
 python_w tfTUT\tf15_tensorboard\full_code.py
-// Ã»ÓÐÄÚÈÝ£º
+// æ²¡æœ‰å†…å®¹ï¼š
 tfTUT\tf15_tensorboard\for_you_to_practice.py
 python tfTUT\tf15_tensorboard\for_you_to_practice.py
 //
 tensorboard  --logdir=logs
 
 
-[1.16] tf16_classification ·ÖÀà--Êý×Ö 
-//[ÒÉµã]£º  £¨²»Ã÷°×µÄÏÂ´ÎÔÙ¿´--ÖÜ1~5£©
+[1.16] tf16_classification åˆ†ç±»--æ•°å­— 
+//[ç–‘ç‚¹]ï¼š  ï¼ˆä¸æ˜Žç™½çš„ä¸‹æ¬¡å†çœ‹--å‘¨1~5ï¼‰
 tfTUT\tf16_classification\full_code.py
 python_w tfTUT\tf16_classification\full_code.py
-// ³õÊ¼´úÂë£º
+// åˆå§‹ä»£ç ï¼š
 tfTUT\tf16_classification\for_you_to_practice.py
 python tfTUT\tf16_classification\for_you_to_practice.py
 	
 
-[1.17] tf17_dropout ·ÖÀà--Êý×Ö dropout 
-//[ÒÉµã]£º  £¨²»Ã÷°×µÄÏÂ´ÎÔÙ¿´--ÖÜ1~5£©
+[1.17] tf17_dropout åˆ†ç±»--æ•°å­— dropout 
+//[ç–‘ç‚¹]ï¼š  ï¼ˆä¸æ˜Žç™½çš„ä¸‹æ¬¡å†çœ‹--å‘¨1~5ï¼‰
 tfTUT\tf17_dropout\full_code.py
 python tfTUT\tf17_dropout\full_code.py
-// ³õÊ¼´úÂë£º
+// åˆå§‹ä»£ç ï¼š
 tfTUT\tf17_dropout\for_you_to_practice.py
 python tfTUT\tf17_dropout\for_you_to_practice.py
 	
 
 
-//ÏÂ´ÎCNN
+//ä¸‹æ¬¡CNN
 
 
-//[ÒÉµã]£º
-//[ËµÃ÷]£º
+//[ç–‘ç‚¹]ï¼š
+//[è¯´æ˜Ž]ï¼š
 tfTUT\xxxxxxxxx.py
 python tfTUT\xxxxxxxxx.py
 
 
 
 
-//[ÒÉµã]£º
-//[ËµÃ÷]£º
+//[ç–‘ç‚¹]ï¼š
+//[è¯´æ˜Ž]ï¼š
 tfTUT\xxxxxxxxx.py
 python tfTUT\xxxxxxxxx.py
 
 
 
-[2.1] ¾Å¹¬¸ñ
+[2.1] ä¹å®«æ ¼
 
 ////////////////////\\\\\\\\\\\\\\\\\\\\\\
 ///////////////////def\\\\\\\\\\\\\\\\\\\\
@@ -208,7 +208,7 @@ python tfTUT\xxxxxxxxx.py
 \\\\\\\\\\\\\\\\\\\\//////////////////////
 
 
-//¹ØÏµÏ¸»¯:
+//å…³ç³»ç»†åŒ–:
 x->x1->x2(y)----model----"+*/-" ? "[]{}()"
 x->xw->xb(y0)
 

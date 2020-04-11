@@ -1,18 +1,18 @@
-
-»ù´¡Â·¾¶ÉèÖÃ: 
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®: 
 basePath = C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\
 
 /***********************************************************************/
 
-//Ä¿Â¼[Num][Ca]:
-//	°²×°   (²»Ò»¶¨Òª×°)
-Save:node\Pythons\install\Macro_Pythons_Install.h \[1.1\] env Version-----µçÄÔÅäÖÃ
+//ç›®å½•[Num][Ca]:
+//	å®‰è£…   (ä¸ä¸€å®šè¦è£…)
+Save:node\Pythons\install\Macro_Pythons_Install.h \[1.1\] env Version-----ç”µè„‘é…ç½®
 Save:node\Pythons\install\Macro_Pythons_Install.h \[1.2\] Eclipse 4.6:
 Save:node\Pythons\install\Macro_Pythons_Install.h \[1.3\] PyDev 5.24.0:
 Save:node\Pythons\install\Macro_Pythons_Install.h \[1.4\] Java 8
 Save:node\Pythons\install\Macro_Pythons_Install.h \[1.5\] VC++2015
-Save:node\Pythons\install\Macro_Pythons_Install.h \[1.6\] Anaconda-----ipynb¸ñÊ½
-//	³£ÓÃ
+Save:node\Pythons\install\Macro_Pythons_Install.h \[1.6\] Anaconda-----ipynbæ ¼å¼
+//	å¸¸ç”¨
 Save:node\Pythons\install\Macro_Pythons_Install.h \[2.1\] GitHub
 Save:node\Pythons\install\Macro_Pythons_Install.h \[2.2\] pip
 Save:node\Pythons\install\Macro_Pythons_Install.h \[2.3\] python (<3.7)
@@ -43,7 +43,7 @@ Save:node\Pythons\install\Macro_Pythons_Install.h \[4.1\] install
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.2\] upgrade
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.3\] setup.py
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.4\] pip, pip3
-Save:node\Pythons\install\Macro_Pythons_Install.h \[4.5\] pythonÀà¿â
+Save:node\Pythons\install\Macro_Pythons_Install.h \[4.5\] pythonç±»åº“
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.6\] 
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.7\] 
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.8\] 
@@ -79,41 +79,41 @@ cmd_w: pip show sklearn
 //	Version: 0.0
 
 
-[1.2] °²×° Eclipse 4.6:
+[1.2] å®‰è£… Eclipse 4.6:
 http://www.pydev.org/updates
 http://download.aptana.com/studio3/plugin/install
 
 
-[1.3] °²×° PyDev 5.24.0:
+[1.3] å®‰è£… PyDev 5.24.0:
 ......
 
 
 [1.4] Java 8
-//Java 8(¿ÉÄÜÊÇ±Ø×°): 
+//Java 8(å¯èƒ½æ˜¯å¿…è£…): 
 open: F:\tool_soft\python\jdk_8.0.1310.11_64.exe
 ......
 
 
 [1.5] VC++2015
-VC++2015 (²»Ò»¶¨Òª×°):
-°²×° VC++2015 (²»Ò»¶¨Òª×°):
-ÏÂÔØµØÖ·£ºhttps://www.microsoft.com/en-us/download/default.aspx
+VC++2015 (ä¸ä¸€å®šè¦è£…):
+å®‰è£… VC++2015 (ä¸ä¸€å®šè¦è£…):
+ä¸‹è½½åœ°å€ï¼šhttps://www.microsoft.com/en-us/download/default.aspx
 
 
 [1.6] Anaconda-----ipynb
-// ipynb×ªpy
-// °²×°jupyter
+// ipynbè½¬py
+// å®‰è£…jupyter
 cmd_w: python -m pip install jupyter
 //jupyter nbconvert --to script demo.ipynb 
 
 
-//	°²×° (Òª×°)
+//	å®‰è£… (è¦è£…)
 [2.1] GitHub
 open: F:\tool_soft\python\GitHubDesktopSetup.exe
 
-//¸´ÖÆcmdµ½¸ùÄ¿Â¼:
+//å¤åˆ¶cmdåˆ°æ ¹ç›®å½•:
 //cmd_w cp C:\Windows\System32\cmd.exe D:\project\GitHub\myPython
-//(Ò²¿ÉÒÔ¼Ó¸ödatÔËĞĞcp)
+//(ä¹Ÿå¯ä»¥åŠ ä¸ªdatè¿è¡Œcp)
 
 
 [2.2] pip
@@ -124,29 +124,29 @@ cmd_w: python -m pip install --upgrade pip
 
 [2.3] python (<3.7)
 open: F:\tool_python\python\python-3.6.6-amd64.exe
-//ÏÂÔØµØÖ·£ºhttp://www.python.org/getit/
-//ÏÂÔØµØÖ·£ºhttps://www.python.org/ftp/python/3.2.5/python-3.2.5.msi
+//ä¸‹è½½åœ°å€ï¼šhttp://www.python.org/getit/
+//ä¸‹è½½åœ°å€ï¼šhttps://www.python.org/ftp/python/3.2.5/python-3.2.5.msi
 open: C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe
 		
-//Ìí¼Ó»·¾³±äÁ¿, path:
+//æ·»åŠ ç¯å¢ƒå˜é‡, path:
 C:\Users\Administrator\AppData\Local\Programs\Python\Python36\
 cmd_w: path
 
-//ÑéÖ¤ Python
-// ÑéÖ¤ Python °²×°:
+//éªŒè¯ Python
+// éªŒè¯ Python å®‰è£…:
 python_w install\hello.py
-//Èç¹ûÄÜÕı³£Êä³öhello×Ö·û´®£¬Ôò°²×°³É¹¦¡£Hello, TensorFlow!
+//å¦‚æœèƒ½æ­£å¸¸è¾“å‡ºhelloå­—ç¬¦ä¸²ï¼Œåˆ™å®‰è£…æˆåŠŸã€‚Hello, TensorFlow!
 
-// ÑéÖ¤ TensorFlow °²×°:
+// éªŒè¯ TensorFlow å®‰è£…:
 python_w install\hello_tf.py
 python_w tf_day1_line1.py
 
 
-// ²éÑ¯tensorflow °æ±¾, °²×°Â·¾¶:
+// æŸ¥è¯¢tensorflow ç‰ˆæœ¬, å®‰è£…è·¯å¾„:
 install\version.py
 python install\version.py
 
-// ´ò¿ªpython´°¿Ú£º
+// æ‰“å¼€pythonçª—å£ï¼š
 open: C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe
 
 
@@ -155,28 +155,35 @@ open: C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe
 cmd_w: pip show numpy
 //	Version: 1.15.4
 //	Version: 1.16.0
+//	Version: 1.18.0 (ç‰ˆæœ¬è¿‡é«˜)
+
+// tensorflow2.0  å»ºè®®ç”¨ numpy 1.16, æœ‰ä»¥ä¸‹è­¦å‘Š:
+...\dtypes.py:550: ...in a future version of numpy, it will be understood as ...
+
+// å‡çº§
+cmd_w: pip install -U numpy==1.16.4
 
 
-// ½«numpy¸üĞÂµ½×îĞÂ°æ±¾
+// å°†numpyæ›´æ–°åˆ°æœ€æ–°ç‰ˆæœ¬
 cmd_w: pip install --user --upgrade numpy
-// ÖØĞÂ°²×°ºÏÊÊµÄnumpy°æ±¾
+// é‡æ–°å®‰è£…åˆé€‚çš„numpyç‰ˆæœ¬
 cmd_w: pip install --upgrade --force-reinstall numpy==1.14.5
-//     »ò
+//     æˆ–
 cmd_w: pip install numpy==1.16
-// Èç¹ûÌáÊ¾È¨ÏŞ²»¹»£¬¡®[WinError 5]¾Ü¾ø·ÃÎÊ¡¯£¬ÔòĞè¸³Óè¹ÜÀíÔ±È¨ÏŞ£¬ÓÃÏÂÃæÓï¾ä
-pip install --user --upgrade --force-reinstall numpy==1.14.5
+// å¦‚æœæç¤ºæƒé™ä¸å¤Ÿï¼Œâ€˜[WinError 5]æ‹’ç»è®¿é—®â€™ï¼Œåˆ™éœ€èµ‹äºˆç®¡ç†å‘˜æƒé™ï¼Œç”¨ä¸‹é¢è¯­å¥
+cmd_w: pip install --user --upgrade --force-reinstall numpy==1.14.5
 
 
 
 [2.5] TensorFlow
 //TensorFlow 1.0
-//	CPU°æ±¾£º
+//	CPUç‰ˆæœ¬ï¼š
 cmd_w: pip3 install --upgrade tensorflow
 cmd_w: pip3 install tensorflow
 //tensorflow-1.12.0-cp36-cp36m-win_amd64.whl
-//	GPU°æ±¾£º
+//	GPUç‰ˆæœ¬ï¼š
 cmd_w: pip3 install --upgrade tensorflow-gpu
-// Keras °²×°
+// Keras å®‰è£…
 //cmd_w: pip install keras -U --pre
 // uninstall
 cmd_w: pip uninstall tensorflow
@@ -184,21 +191,21 @@ cmd_w: pip uninstall tensorflow
 
 [2.6] TensorFlow2.0
 //TensorFlow 2.0
-//	GPU°æ±¾
+//	GPUç‰ˆæœ¬
 cmd_w: pip install tensorflow-gpu==2.0.0-alpha0
-//	CPU°æ±¾
+//	CPUç‰ˆæœ¬
 cmd_w: pip install tensorflow==2.0.0-alpha0
 
 
 
 [2.7] matplot
-ÏÂÔØµØÖ·£ºhttps://matplotlib.org/users/installing.html
+ä¸‹è½½åœ°å€ï¼šhttps://matplotlib.org/users/installing.html
 cmd_w: pip install ...
 
 
 
 [2.8] tensorboard
-//	tensorboard ¿ÉÊÓ»¯(²»ÓÃ°²×°, Ìí¼Ópath)
+//	tensorboard å¯è§†åŒ–(ä¸ç”¨å®‰è£…, æ·»åŠ path)
 cmd_w: pip install tensorboard
 
 cmd_w: pip show tensorboard
@@ -237,7 +244,7 @@ C:\Program^Files\JetBrains\PyCharm^2019.1\bin\
 
 [2.12] requests
 cmd_w: pip install requests
-// ½âÎöÍøÒ³
+// è§£æç½‘é¡µ
 cmd_w: pip install beautifulsoup4
 
 
@@ -326,16 +333,16 @@ cmd_w: pip install params_flow
 
 	
 [4.1] install
-//1 ´ò¿ª python      È±Ê§£ºapi-ms-win-crt-runtime-11-1-0.dll
-//  £¨1£©°ÑC:\Windows\SysWOW64µÄapi-ms-win-crt-runtime-l1-1-0.dllÉ¾³ıµô¡£
-//  £¨2£©ÖØĞÂ°²×°VC redit.exe->ÖØÆô->´ò¿ªpython
+//1 æ‰“å¼€ python      ç¼ºå¤±ï¼šapi-ms-win-crt-runtime-11-1-0.dll
+//  ï¼ˆ1ï¼‰æŠŠC:\Windows\SysWOW64çš„api-ms-win-crt-runtime-l1-1-0.dllåˆ é™¤æ‰ã€‚
+//  ï¼ˆ2ï¼‰é‡æ–°å®‰è£…VC redit.exe->é‡å¯->æ‰“å¼€python
 
 
-//°æ±¾ÎÊÌâ£º
-tf.sub()¸ü¸ÄÎªtf.subtract()
-tf.mul()¸ü¸ÄÎªtf.multiply()
-tf.types.float32¸ü¸ÄÎªtf.float32
-tf.pact()¸ü¸ÄÎªtf.stact()
+//ç‰ˆæœ¬é—®é¢˜ï¼š
+tf.sub()æ›´æ”¹ä¸ºtf.subtract()
+tf.mul()æ›´æ”¹ä¸ºtf.multiply()
+tf.types.float32æ›´æ”¹ä¸ºtf.float32
+tf.pact()æ›´æ”¹ä¸ºtf.stact()
 
 
 //#config = tf.ConfigProto()
@@ -345,12 +352,12 @@ tf.pact()¸ü¸ÄÎªtf.stact()
 
 
 [4.2] upgrade
-//Éı¼¶ pip£º
+//å‡çº§ pipï¼š
 python -m pip install --upgrade pip
 
-//ÁĞ³öËùÓĞ°²×°µÄ¿â
+//åˆ—å‡ºæ‰€æœ‰å®‰è£…çš„åº“
 cmd_w: pip list
-//ÁĞ³öËùÓĞ¹ıÆÚµÄ¿â
+//åˆ—å‡ºæ‰€æœ‰è¿‡æœŸçš„åº“
 cmd_w: pip list --outdated
 //	Package 			 Version   Latest	 Type
 //	-------------------- --------- --------- -----
@@ -377,10 +384,10 @@ cmd_w: pip list --outdated
 //	urllib3 			 1.25.3    1.25.6	 wheel
 
 
-//¸üĞÂ
+//æ›´æ–°
 cmd_w: pip install --upgrade tensorboard
 
-//ÅúÁ¿¸üĞÂ
+//æ‰¹é‡æ›´æ–°
 basePath = Save:node\Pythons
 //text_type
 install\upgrade_all.py
@@ -393,43 +400,43 @@ python_w py_tf2\Keras_text_type.py
 //		call("pip install --upgrade " + dist.project_name, shell=True)
 
 
-//ÅúÁ¿¸üĞÂ-- pip-review 
+//æ‰¹é‡æ›´æ–°-- pip-review 
 pip install pip-review
 pip-review --local --interactive
 
 
 
 [4.3] setup.py
-//´ò°ü
+//æ‰“åŒ…
 python setup.py bdist_egg
 
 
-//Ğ¶ÔØ1
+//å¸è½½1
 python setup.py uninstall
 
-//Ğ¶ÔØ2
+//å¸è½½2
 python setup.py install --record record.txt
-//È»ºóÉ¾³ıËüÃÇ
+//ç„¶ååˆ é™¤å®ƒä»¬
 FOR /F "delims=" %f in (record.txt) DO del "%f"
 
 
 
 [4.4] pip, pip3
-// Ö»ÓĞ Python36, °²×°ÔÚ:
+// åªæœ‰ Python36, å®‰è£…åœ¨:
 cmd_w: c:&cd C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages
 
-//PyPIÊ×Ò³ÍøÖ·£ºpypi.python.org£¬»ù±¾ÉÏÄÜÔÚÕâÉÏÃæÕÒµ½ËùÓĞµÄÀ©Õ¹°ü¡£
+//PyPIé¦–é¡µç½‘å€ï¼špypi.python.orgï¼ŒåŸºæœ¬ä¸Šèƒ½åœ¨è¿™ä¸Šé¢æ‰¾åˆ°æ‰€æœ‰çš„æ‰©å±•åŒ…ã€‚
 https://www.jianshu.com/p/9a54e9f3e059
 
 pip 
 pip --help
 
-//´ò²»µ½libÊÇÄÄ¸ö
+//æ‰“ä¸åˆ°libæ˜¯å“ªä¸ª
 C:\Users\Administrator\AppData\Local\Programs\Python\Python36\lib\site-packages
 
 
-[4.5] pythonÀà¿â
-//¹ØÓÚÈçºÎ²é¿´±¾µØpythonÀà¿âÏêÏ¸ĞÅÏ¢µÄ·½·¨
+[4.5] pythonç±»åº“
+//å…³äºå¦‚ä½•æŸ¥çœ‹æœ¬åœ°pythonç±»åº“è¯¦ç»†ä¿¡æ¯çš„æ–¹æ³•
 cmd_w: python -m pydoc -p 1234 
 
 http://localhost:1234

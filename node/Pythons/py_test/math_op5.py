@@ -1,4 +1,4 @@
-#!/usr/bin/python
+ï»¿#!/usr/bin/python
 # -*- coding: UTF-8 -*-
 import tensorflow as tf
 import numpy as np
@@ -21,32 +21,32 @@ n3 = np.array([1,1,1,0,0,0])
 
 
 
-# ¼Ó·¨: ĞÎ×´Í¬a
-print('¼Ó·¨ = %s' %( a+b))
-print('¼Ó·¨ = %s' %( a+c))
-print('¼Ó·¨ = %s' %( a+d))
+# åŠ æ³•: å½¢çŠ¶åŒa
+print('åŠ æ³• = %s' %( a+b))
+print('åŠ æ³• = %s' %( a+c))
+print('åŠ æ³• = %s' %( a+d))
 
-# Ë«xË«: ĞÎ×´Í¬a
-print('\nË«xË« = %s' %( tf.multiply(a,b)))
-print('Ë«xË« = %s' %(tf.multiply(a,c)))
-print('Ë«xË« = %s' %(tf.multiply(a,d)))
+# åŒxåŒ: å½¢çŠ¶åŒa
+print('\nåŒxåŒ = %s' %( tf.multiply(a,b)))
+print('åŒxåŒ = %s' %(tf.multiply(a,c)))
+print('åŒxåŒ = %s' %(tf.multiply(a,d)))
 
-# Ë«xµ¥: ĞÎ×´Í¬a
-print('\nË«xµ¥ = %s' %(tf.multiply(a,e)))
-print('Ë«xµ¥ = %s' %( tf.multiply(a,f)))
-print('Ë«xµ¥ = %s' %( tf.multiply(a,g)))
+# åŒxå•: å½¢çŠ¶åŒa
+print('\nåŒxå• = %s' %(tf.multiply(a,e)))
+print('åŒxå• = %s' %( tf.multiply(a,f)))
+print('åŒxå• = %s' %( tf.multiply(a,g)))
 
 
-# µ¥xË«: ĞÎ×´³É±¶Êı?
-print('\nµ¥xË« = %s' %(tf.multiply(e,d)))
-# Ë«xÈı: err?
-#print('\nË«xÈı = %s' %(tf.multiply(d,d3)))
-# ¼Ó00=·­±¶
+# å•xåŒ: å½¢çŠ¶æˆå€æ•°?
+print('\nå•xåŒ = %s' %(tf.multiply(e,d)))
+# åŒxä¸‰: err?
+#print('\nåŒxä¸‰ = %s' %(tf.multiply(d,d3)))
+# åŠ 00=ç¿»å€
 print('shape%s x shape%s = %s' %(e.shape, m.shape, e+m))
 
-# À©³ä:
+# æ‰©å……:
 n4 = tf.expand_dims(n3, -1)
-print('\nÀ©³ä = %s' %(tf.multiply(n4,n1)+tf.multiply(1-n4,1-n1)))
+print('\næ‰©å…… = %s' %(tf.multiply(n4,n1)+tf.multiply(1-n4,1-n1)))
 
 # 2*4*2  X mark(2*4)
 A242 = np.array([[[1,10],[1,11],[1,12],[1,13]],[[2,10],[2,11],[2,12],[2,13]]])

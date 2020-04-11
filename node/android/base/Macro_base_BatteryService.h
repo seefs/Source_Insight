@@ -1,10 +1,10 @@
-//Ä¿Â¼[Num][Ca]:
+ï»¿//ç›®å½•[Num][Ca]:
 
 /***********************************************************************/
 /****************************** base ***********************************/
 /***********************************************************************/
 	
-»ù´¡Â·¾¶ÉèÖÃ: [s][Cs]
+åŸºç¡€è·¯å¾„è®¾ç½®: [s][Cs]
 basePath = F:\9820e
 //basePath = \\192.168.2.115\xiaoj\9820e\idh.code
 
@@ -12,8 +12,8 @@ basePath = F:\9820e
 /***********************************************************************/
 /******************************* code **********************************/
 /***********************************************************************/
-Í¨¹ı¶ÔBatteryService.java·ÖÎö·¢ÏÖ¡£ 
-µ±ÏµÍ³µçÁ¿·¢Éú±ä»¯Ê±£¬BatteryServiceÍ¨¹ısendIntentLocked À´¸æÖªÓÃ»§µçÁ¿·¢Éú±ä»¯¡£
+é€šè¿‡å¯¹BatteryService.javaåˆ†æå‘ç°ã€‚ 
+å½“ç³»ç»Ÿç”µé‡å‘ç”Ÿå˜åŒ–æ—¶ï¼ŒBatteryServiceé€šè¿‡sendIntentLocked æ¥å‘ŠçŸ¥ç”¨æˆ·ç”µé‡å‘ç”Ÿå˜åŒ–ã€‚
 frameworks\base\services\java\com\android\server\BatteryService.java void^sendIntentLocked()
 //    private void sendIntentLocked() {
         //  Pack up the values and broadcast them to everyone
@@ -32,14 +32,14 @@ frameworks\base\services\java\com\android\server\BatteryService.java void^sendIn
 //            }
 //        });
 //    }
-µ«ÊÇÏµÍ³·¢ÉúÕâ¸ö¹ã²¥²¢²»ÊÇÊ±¿ÌÔÚ·¢£¬ÎªÊ²Ã´ÎÒÃÇÍ¨¹ı
+ä½†æ˜¯ç³»ç»Ÿå‘ç”Ÿè¿™ä¸ªå¹¿æ’­å¹¶ä¸æ˜¯æ—¶åˆ»åœ¨å‘ï¼Œä¸ºä»€ä¹ˆæˆ‘ä»¬é€šè¿‡
 
         IntentFilter intentFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
         mBatteryLowReceiver = new BatteryLowReceiver();
         this.registerReceiver(mBatteryLowReceiver,intentFilter);
 
-¾ÍÄÜÁ¢¼´µÃµ½ÏµÍ³µ±Ç°µçÁ¿ÄØ¡£ 
-Ö÷ÒªÊÇÒòÎªÏµÍ³·¢ËÍµÄÊÇ×¤Áô¹ã²¥£º
+å°±èƒ½ç«‹å³å¾—åˆ°ç³»ç»Ÿå½“å‰ç”µé‡å‘¢ã€‚ 
+ä¸»è¦æ˜¯å› ä¸ºç³»ç»Ÿå‘é€çš„æ˜¯é©»ç•™å¹¿æ’­ï¼š
 
         mHandler.post(new Runnable() {
             @Override
@@ -48,7 +48,7 @@ frameworks\base\services\java\com\android\server\BatteryService.java void^sendIn
             }
         });
 
-µ±ÓÃ»§×¢²áACTION_BATTERY_CHANGED Ê±£¬¾Í»áÊÕµ½×î½üÒ»´Î¸Ä±äµÄintent¹ã²¥¡£
+å½“ç”¨æˆ·æ³¨å†ŒACTION_BATTERY_CHANGED æ—¶ï¼Œå°±ä¼šæ”¶åˆ°æœ€è¿‘ä¸€æ¬¡æ”¹å˜çš„intentå¹¿æ’­ã€‚
 
 
 
@@ -56,7 +56,7 @@ frameworks\base\services\java\com\android\server\BatteryService.java void^sendIn
 
 
 /***********************************************************************/
-/*************************** ²Î¿¼±Ê¼Ç¡¢ÍøÉÏÕÒµÄ£¬ºÜÂÒ. *****************/
+/*************************** å‚è€ƒç¬”è®°ã€ç½‘ä¸Šæ‰¾çš„ï¼Œå¾ˆä¹±. *****************/
 /***********************************************************************/
 
 

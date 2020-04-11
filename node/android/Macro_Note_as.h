@@ -1,36 +1,36 @@
-
-»ù´¡Â·¾¶ÉèÖÃ:
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®:
 //basePath = 
 Save:node\android
 
 /***********************************************************************/
 
-//Ä¿Â¼[Num][Ca]:
+//ç›®å½•[Num][Ca]:
 // 1. as
-Save:node\android\Macro_Note_as.h \[1.1\] as°²×°+ÅäÖÃ
+Save:node\android\Macro_Note_as.h \[1.1\] aså®‰è£…+é…ç½®
 Save:node\android\Macro_Note_as.h \[1.2\] project file
 Save:node\android\Macro_Note_as.h \[1.3\] error
-Save:node\android\Macro_Note_as.h \[1.4\] tool--×Ô´ø¹¤¾ß
-Save:node\android\Macro_Note_as.h \[1.5\] tool--ÆäËû¹¤¾ß
-Save:node\android\Macro_Note_as.h \[1.6\] CQ----×ÊÁÏ
+Save:node\android\Macro_Note_as.h \[1.4\] tool--è‡ªå¸¦å·¥å…·
+Save:node\android\Macro_Note_as.h \[1.5\] tool--å…¶ä»–å·¥å…·
+Save:node\android\Macro_Note_as.h \[1.6\] 
 Save:node\android\Macro_Note_as.h \[1.7\] build adb
-Save:node\android\Macro_Note_as.h \[1.8\] image ÏÂÔØ Éı¼¶
+Save:node\android\Macro_Note_as.h \[1.8\] image ä¸‹è½½ å‡çº§
 Save:node\android\Macro_Note_as.h \[1.9\] shell python mk
 Save:node\android\Macro_Note_as.h \[1.10\] 
 // 2. study
 Save:node\android\Macro_Note_as.h \[2.1\] ui
 Save:node\android\Macro_Note_as.h \[2.2\] web
-Save:node\android\Macro_Note_as.h \[2.3\] Linux ÅäÖÃ
-Save:node\android\Macro_Note_as.h \[2.4\] drivers: Î´ÕûÀí
-Save:node\android\Macro_Note_as.h \[2.5\] kernel: Î´ÕûÀí
-Save:node\android\Macro_Note_as.h \[2.6\] Other: ÆäËûÁ÷³Ì
+Save:node\android\Macro_Note_as.h \[2.3\] Linux é…ç½®
+Save:node\android\Macro_Note_as.h \[2.4\] drivers: æœªæ•´ç†
+Save:node\android\Macro_Note_as.h \[2.5\] kernel: æœªæ•´ç†
+Save:node\android\Macro_Note_as.h \[2.6\] Other: å…¶ä»–æµç¨‹
 Save:node\android\Macro_Note_as.h \[2.7\] React Native
 Save:node\android\Macro_Note_as.h \[2.8\] 
 Save:node\android\Macro_Note_as.h \[2.9\] 
 Save:node\android\Macro_Note_as.h \[2.10\] 
 // 3. project
-Save:node\android\Macro_Note_as.h \[3.1\] 9820e
-Save:node\android\Macro_Note_as.h \[3.2\] 
+Save:node\android\Macro_Note_as.h \[3.1\] base/demo-----æ¨¡æ¿
+Save:node\android\Macro_Note_as.h \[3.2\] 9820e
 Save:node\android\Macro_Note_as.h \[3.3\] GitNb
 Save:node\android\Macro_Note_as.h \[3.4\] WebDav
 Save:node\android\Macro_Note_as.h \[3.5\] 
@@ -44,9 +44,9 @@ Save:node\android\Macro_Note_as.h \[4.1\] Setting
 Save:node\android\Macro_Note_as.h \[4.2\] Launch
 Save:node\android\Macro_Note_as.h \[4.3\] Wallpaper
 Save:node\android\Macro_Note_as.h \[4.4\] SystemUI
-Save:node\android\Macro_Note_as.h \[4.5\] Contacts ÁªÏµÈË ¶ÌĞÅ
-Save:node\android\Macro_Note_as.h \[4.6\] Gallery Ïà²á
-Save:node\android\Macro_Note_as.h \[4.7\] Calculator ¼ÆËãÆ÷
+Save:node\android\Macro_Note_as.h \[4.5\] Contacts è”ç³»äºº çŸ­ä¿¡
+Save:node\android\Macro_Note_as.h \[4.6\] Gallery ç›¸å†Œ
+Save:node\android\Macro_Note_as.h \[4.7\] Calculator è®¡ç®—å™¨
 Save:node\android\Macro_Note_as.h \[4.8\] 
 Save:node\android\Macro_Note_as.h \[4.9\] 
 Save:node\android\Macro_Note_as.h \[4.10\] 
@@ -58,8 +58,8 @@ Save:node\android\Macro_Note_as.h \[5.3\]
 
 
 
-[1.1] as°²×°+ÅäÖÃ
-//as°²×°+ÅäÖÃ
+[1.1] aså®‰è£…+é…ç½®
+//aså®‰è£…+é…ç½®
 Save:node\android\install\Macro_android_studio.h
 
 
@@ -73,24 +73,24 @@ Save:node\android\study\Macro_android_project_file.h
 Save:node\android\study\Macro_android_error.h
 
 
-[1.4] tool--×Ô´ø¹¤¾ß
+[1.4] tool--è‡ªå¸¦å·¥å…·
 //tools
-android: update sdk  µÈ
+android: update sdk  ç­‰
 android avd:
-tools\DDMS:²é¿´³ÌĞòÊ¹ÓÃÊ±ËùÔËĞĞµÄÏß³ÌĞÅÏ¢£¬ÍøÂçÊ¹ÓÃÂÊ
-platform-tools\dmtracedump:Ö÷ÒªÊÇ°ÑprofilingÉú³ÉµÄtraceÎÄ¼ş´¦Àí³ÉÒ»¸öÍ¼Æ¬ÎÄ¼ş£¬ÏÔÊ¾·½·¨Ö®¼äµÄµ÷ÓÃ¹ØÏµ
- platform-tools\uiautomatorviewer:Ëü¿ÉÒÔÕ¹Ê¾³öµ±ÃæÆÁÄ»Ëù³ÊÏÖµÄÊÓÍ¼(View)µÄ²¼¾Ö(Layout)ÒÔ¼°Æä³ß´ç´óĞ¡
- traceview:·½·¨ËùÕ¼ÓÃµÄÊ±¼ä°Ù·Ö±È
-monitor: ´ó¼¯ºÏ
-monkeyrunner :Ñ¹Á¦²âÊÔ
+tools\DDMS:æŸ¥çœ‹ç¨‹åºä½¿ç”¨æ—¶æ‰€è¿è¡Œçš„çº¿ç¨‹ä¿¡æ¯ï¼Œç½‘ç»œä½¿ç”¨ç‡
+platform-tools\dmtracedump:ä¸»è¦æ˜¯æŠŠprofilingç”Ÿæˆçš„traceæ–‡ä»¶å¤„ç†æˆä¸€ä¸ªå›¾ç‰‡æ–‡ä»¶ï¼Œæ˜¾ç¤ºæ–¹æ³•ä¹‹é—´çš„è°ƒç”¨å…³ç³»
+ platform-tools\uiautomatorviewer:å®ƒå¯ä»¥å±•ç¤ºå‡ºå½“é¢å±å¹•æ‰€å‘ˆç°çš„è§†å›¾(View)çš„å¸ƒå±€(Layout)ä»¥åŠå…¶å°ºå¯¸å¤§å°
+ traceview:æ–¹æ³•æ‰€å ç”¨çš„æ—¶é—´ç™¾åˆ†æ¯”
+monitor: å¤§é›†åˆ
+monkeyrunner :å‹åŠ›æµ‹è¯•
 sqlite3
 mksdcard
  
-cmd &±³ºóÔËĞĞ
+cmd &èƒŒåè¿è¡Œ
 platform-tools\adb
 
 
-[1.5] tool--ÆäËû¹¤¾ß
+[1.5] tool--å…¶ä»–å·¥å…·
 // SecureCRT:
 Save:node\ToolsMsg\Macro_SecureCRT.h
 //SecureCRT.exe:
@@ -106,11 +106,7 @@ Save:node\ToolsMsg\Macro_vim.h
 
 
 
-[1.6] CQ----×ÊÁÏ
-// Õ¹Ñ¶CQ 
-http://222.66.158.139:2008/cqweb/#
-//×ÊÁÏ 
-https://isupport.spreadtrum.com/iSupport/apply/faq_list#tab-
+[1.6]  
 
 
 
@@ -118,18 +114,18 @@ https://isupport.spreadtrum.com/iSupport/apply/faq_list#tab-
 [1.7] build adb
 // build
 Save:node\android\sys\Macro_Sys_Build.h
-// apk Ä£¿é
-//Save:node\android\sys\Macro_Sys_Build.h \[3.1\] apk Ä£¿é -- cmd
+// apk æ¨¡å—
+//Save:node\android\sys\Macro_Sys_Build.h \[3.1\] apk æ¨¡å— -- cmd
 
 
-[1.8] image ÏÂÔØ Éı¼¶: Î´ÕûÀí
+[1.8] image ä¸‹è½½ å‡çº§: æœªæ•´ç†
 Save:node\android\sys\Macro_Sys_File.h
 //Save:node\android\sys\Macro_Sys_Image.h
-//Î´ÕûÀí Ç©Ãû
+//æœªæ•´ç† ç­¾å
 Save:node\android\sys\Macro_Sys_Apk.h
 
 
-[1.9] shell python mk Î´ÕûÀí
+[1.9] shell python mk æœªæ•´ç†
 //Save:node\android\base\Macro_base_shell.h
 //Save:node\android\base\Macro_base_python.h
 Save:node\android\base\Macro_base_mk.h
@@ -147,31 +143,31 @@ Save:node\android\study\Macro_android_ui.h
 
 
 [2.2] web
-//web--ÔİÊ±·ÅÕâ¸öÄ¿Â¼
+//web--æš‚æ—¶æ”¾è¿™ä¸ªç›®å½•
 Save:node\android\web\Macro_Note_web.h
 
 
-[2.3] Linux ÅäÖÃ
-// Linux ÅäÖÃ
+[2.3] Linux é…ç½®
+// Linux é…ç½®
 Save:node\android\sys\Macro_Sys_Linux.h
 
 
-[2.4] drivers: Î´ÕûÀí
+[2.4] drivers: æœªæ•´ç†
 Save:node\android\sys\Macro_Sys_Drivers.h
 
 
-[2.5] kernel: Î´ÕûÀí
+[2.5] kernel: æœªæ•´ç†
 Save:node\android\sys\Macro_Sys_Kernel.h 
 
 
-[2.6] Other: ÆäËûÁ÷³Ì
-//ÆäËûÁ÷³Ì
+[2.6] Other: å…¶ä»–æµç¨‹
+//å…¶ä»–æµç¨‹
 Save:node\android\sys\Macro_Sys_Other.h
 
 
 [2.7] React Native
-//React NativeÊ¹ÄãÖ»Ê¹ÓÃJavaScriptÒ²ÄÜ±àĞ´Ô­ÉúÒÆ¶¯Ó¦ÓÃ¡£
-//RN ĞèÒªÖÁÉÙÊÇ Android 6.0 µÄ SDK
+//React Nativeä½¿ä½ åªä½¿ç”¨JavaScriptä¹Ÿèƒ½ç¼–å†™åŸç”Ÿç§»åŠ¨åº”ç”¨ã€‚
+//RN éœ€è¦è‡³å°‘æ˜¯ Android 6.0 çš„ SDK
 
 
 [2.8] 
@@ -185,12 +181,15 @@ Save:node\android\sys\Macro_Sys_Other.h
 
 
 
-[3.1] 9820e
+[3.1] base/demo-----æ¨¡æ¿
+// base-----æ”¹æˆæ–‡ä»¶åˆ—è¡¨
+Save:node\android\project\Macro_as_base.h
+// demo list-----å‚è€ƒapk
+Save:node\android\project\Macro_as_demo.h
+
+[3.2] 9820e
 // 9820e
 Save:node\android\project\Macro_as_9820e.h
-
-
-[3.2] 
 
 
 [3.3] GitNb
@@ -200,7 +199,7 @@ Save:node\android\project\Macro_as_GitNb.h
 
 [3.4] WebDav
 // WebDav
-Save:node\Pythons\project\Macro_as_WebDav.h
+Save:node\android\project\Macro_as_WebDav.h
 
 
 [3.5] 
@@ -228,7 +227,7 @@ Save:node\android\app\Macro_App_Setting.h
 
 
 [4.2] Launch 
-// ÍøÉÏÕÒµÄÒ»Ğ©Õ¹Ñ¶4.4±Ê¼Ç
+// ç½‘ä¸Šæ‰¾çš„ä¸€äº›å±•è®¯4.4ç¬”è®°
 Save:node\android\app\Macro_App_Launch.h
 
 
@@ -238,22 +237,22 @@ Save:node\android\app\Macro_App_Wallpaper.h
 
 
 [4.4] SystemUI
-//SystemUI Î´ÕûÀí
+//SystemUI æœªæ•´ç†
 Save:node\android\app\Macro_App_SystemUI.h 
 
 
-[4.5] Contacts ÁªÏµÈË ¶ÌĞÅ
-//ÁªÏµÈË ¶ÌĞÅ:
+[4.5] Contacts è”ç³»äºº çŸ­ä¿¡
+//è”ç³»äºº çŸ­ä¿¡:
 Save:node\android\app\Macro_App_Contacts.h 
 
 
-[4.6] Gallery Ïà²á
-//Ïà²á:
+[4.6] Gallery ç›¸å†Œ
+//ç›¸å†Œ:
 //Save:node\android\app\Macro_App_Gallery.h
 
 
-[4.7] Calculator ¼ÆËãÆ÷
-// ÔÚasÖĞÌí¼Óapp±àÒë, res´íÎó¶à(·ÅÆú)
+[4.7] Calculator è®¡ç®—å™¨
+// åœ¨asä¸­æ·»åŠ appç¼–è¯‘, resé”™è¯¯å¤š(æ”¾å¼ƒ)
 Save:node\android\app\Macro_App_Calculator.h 
 
 
@@ -277,7 +276,7 @@ Save:node\android\app\Macro_App_Calculator.h
 [5.1] Service Intent
 
 // Service Intent:
-// Ò»Ğ©´úÂë¸ú×Ù, ÍøÉÏËæ±ãÕÒµÄ
+// ä¸€äº›ä»£ç è·Ÿè¸ª, ç½‘ä¸Šéšä¾¿æ‰¾çš„
 
 Save:node\android\base\Macro_base_getSystemService.h
 //Intent: 
@@ -285,7 +284,7 @@ Save:node\android\base\Macro_base_IntentService.h
 //Battery
 Save:node\android\base\Macro_base_BatteryService.h
 	
-//Activity Î´ÕûÀí
+//Activity æœªæ•´ç†
 Save:node\android\base\Macro_base_Activity.h
 
 //Recovery: 

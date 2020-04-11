@@ -1,13 +1,13 @@
-
-//Ä¿Â¼[Num][Ca]:
+ï»¿
+//ç›®å½•[Num][Ca]:
 Save:node\android\base\Macro_base_getSystemService.h \[1.1\] AlarmStateManager.java
 Save:node\android\base\Macro_base_getSystemService.h \[1.2\] Activity.java
 Save:node\android\base\Macro_base_getSystemService.h \[1.3\] ContextThemeWrapper.java
 Save:node\android\base\Macro_base_getSystemService.h \[1.4\] ContextWrapper.java
 Save:node\android\base\Macro_base_getSystemService.h \[1.5\] Context.java
-Save:node\android\base\Macro_base_getSystemService.h \[1.6\] ActivityThread.java ²»Çå³şÊÇ²»ÊÇÕâ.
+Save:node\android\base\Macro_base_getSystemService.h \[1.6\] ActivityThread.java ä¸æ¸…æ¥šæ˜¯ä¸æ˜¯è¿™.
 Save:node\android\base\Macro_base_getSystemService.h \[1.7\] ContextImpl.java
-Save:node\android\base\Macro_base_getSystemService.h \[1.8\] ContextImpl.java ×¢²á
+Save:node\android\base\Macro_base_getSystemService.h \[1.8\] ContextImpl.java æ³¨å†Œ
 Save:node\android\base\Macro_base_getSystemService.h \[1.9\] ServiceFetcher
 Save:node\android\base\Macro_base_getSystemService.h \[1.10\] ActivityManager.java
 
@@ -16,7 +16,7 @@ Save:node\android\base\Macro_base_getSystemService.h \[1.10\] ActivityManager.ja
 /****************************** base ***********************************/
 /***********************************************************************/
 	
-»ù´¡Â·¾¶ÉèÖÃ: [s][Cs]
+åŸºç¡€è·¯å¾„è®¾ç½®: [s][Cs]
 //basePath = F:\9820e
 //basePath = \\192.168.2.115\xiaoj\9820e\idh.code
 
@@ -26,7 +26,7 @@ Save:node\android\base\Macro_base_getSystemService.h \[1.10\] ActivityManager.ja
 /***********************************************************************/
 
 [Num]code: getSystemService
-ÒÔ»ñµÃAMÎªÀà£¬½øĞĞ¸ú×ÙframeworkÁ÷³Ì
+ä»¥è·å¾—AMä¸ºç±»ï¼Œè¿›è¡Œè·Ÿè¸ªframeworkæµç¨‹
 
 [1.1] AlarmStateManager.java
 packages\apps\DeskClock\src\com\android\deskclock\alarms\AlarmStateManager.java Context.ACTIVITY_SERVICE
@@ -79,7 +79,7 @@ frameworks\base\core\java\android\content\ContextWrapper.java Object^getSystemSe
 frameworks\base\core\java\android\content\Context.java getSystemService(this, name)
 //	  public abstract Object getSystemService(String name);
 
-[1.6] ActivityThread.java ²»Çå³şÊÇ²»ÊÇÕâ.
+[1.6] ActivityThread.java ä¸æ¸…æ¥šæ˜¯ä¸æ˜¯è¿™.
 frameworks\base\core\java\android\app\ActivityThread.java ContextImpl.createAppContext
 //	try {
 //		mInstrumentation = new Instrumentation();
@@ -102,7 +102,7 @@ frameworks\base\core\java\android\app\ContextImpl.java Object^getSystemService
 //		  return fetcher == null ? null : fetcher.getService(this);
 //	  }
 
-[1.8] ContextImpl.java ×¢²á
+[1.8] ContextImpl.java æ³¨å†Œ
 frameworks\base\core\java\android\app\ContextImpl.java  ACTIVITY_SERVICE
 //    static {
 //        registerService(...);
@@ -145,7 +145,7 @@ frameworks\base\core\java\android\app\ActivityManager.java ActivityManager( )
 
 
 /***********************************************************************/
-/*************************** ²Î¿¼±Ê¼Ç¡¢ÍøÉÏÕÒµÄ£¬ºÜÂÒ. *****************/
+/*************************** å‚è€ƒç¬”è®°ã€ç½‘ä¸Šæ‰¾çš„ï¼Œå¾ˆä¹±. *****************/
 /***********************************************************************/
 
 

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+ï»¿#!/usr/bin/python
 # -*- coding: UTF-8 -*-
 import tensorflow as tf
 import numpy as np
@@ -17,11 +17,11 @@ sess=tf.Session()
 sess.run(tf.global_variables_initializer())
 
 
-print("add_ab £º")
+print("add_ab ï¼š")
 print("  ", flat_offsets.eval(session=sess))
 
 
-print("a_sum £º")
+print("a_sum ï¼š")
 print("  ", a_sum.eval(session=sess))
 
 

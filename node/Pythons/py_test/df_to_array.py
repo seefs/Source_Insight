@@ -1,4 +1,4 @@
-
+ï»¿
 
 import tensorflow as tf
 import numpy as np
@@ -11,7 +11,7 @@ list_c = [9, 10]
 
 
 
-#list ×ª»¯³Éarray¾ØÕó
+#list è½¬åŒ–æˆarrayçŸ©é˜µ
 
 print ('\narray a:', np.array(list_a))
 print ('\narray a:', np.array(list_a).T)
@@ -19,7 +19,7 @@ print ('\narray b:', np.array(list_b))
 print ('\narray c:', np.array(list_c))
 
 
-#array×ª»¯³Édataframe
+#arrayè½¬åŒ–æˆdataframe
 arr_a = np.array(list_a)
 arr_b = np.array(list_b)
 arr_c = np.array(list_c)
@@ -29,7 +29,7 @@ print ('\ndf c:', pd.DataFrame(arr_c))
 
 
 
-#df×ª»¯³Éarray
+#dfè½¬åŒ–æˆarray
 df_a = pd.DataFrame(arr_a)
 df_b = pd.DataFrame(arr_b)
 df_c = pd.DataFrame(arr_c)
@@ -50,13 +50,13 @@ arr_c = np.array(list_c)
 df_a = tf.data.Dataset.from_tensor_slices((arr_a, arr_b, arr_c))
 df_a  = df_a.repeat().shuffle(2).batch(2).prefetch(1)
 
-# ×Ü¹²È¡³öÊı¾İ(´ÎÊı): 
+# æ€»å…±å–å‡ºæ•°æ®(æ¬¡æ•°): 
 #     shuffle_cnt(2) + prefetch_cnt(1) + batch_size*steps( 2*(2+1)-2)=10
 for step, (batch_x1, batch_x2, batch_y) in enumerate(df_a.take(2), 1):
     print("step: %i, \nbatch_x1: %s, \nbatch_x2: %s, \nbatch_y: %s" % (step, batch_x1, batch_x2, batch_y))
 
 
-#ÈıÎ¬²»ĞĞ, ±¨´í
+#ä¸‰ç»´ä¸è¡Œ, æŠ¥é”™
 #    list_a = [[[1,1],[1,1]],[[2,2],[2,2]],[[2,2],[2,2],[2,2]]]
 #    list_b = [[[1,2],[1,2]],[[2,2],[2,2]],[[2,2],[2,2],[2,2]]]
 #    list_c = [9, 10, 10]
@@ -67,7 +67,7 @@ for step, (batch_x1, batch_x2, batch_y) in enumerate(df_a.take(2), 1):
 #    df_a  = df_a.repeat().shuffle(2).batch(2).prefetch(1)
 
 
-#·Ö4×é, ²»¹ı´óĞ¡±ØĞëÒ»ÖÂ
+#åˆ†4ç»„, ä¸è¿‡å¤§å°å¿…é¡»ä¸€è‡´
 list_a = [[1,2,4],[3,4,4]]
 list_b = [[1,2,4],[3,4,4]]
 list_c = [[1,2,4],[3,4,4]]
@@ -79,7 +79,7 @@ arr_d = np.array(list_d)
 df_a = tf.data.Dataset.from_tensor_slices((arr_a, arr_b, arr_c, arr_d))
 df_a  = df_a.repeat().shuffle(2).batch(2).prefetch(1)
 
-# ×Ü¹²È¡³öÊı¾İ(´ÎÊı): 
+# æ€»å…±å–å‡ºæ•°æ®(æ¬¡æ•°): 
 #     shuffle_cnt(2) + prefetch_cnt(1) + batch_size*steps( 2*(2+1)-2)=10
 for step, (batch_x1, batch_x2, batch_x3, batch_y) in enumerate(df_a.take(2), 1):
     print("\nstep: %i, \nbatch_x1: %s, \nbatch_x2: %s, \nbatch_x3: %s, \nbatch_y: %s" % (step, batch_x1, batch_x2, batch_x3, batch_y))

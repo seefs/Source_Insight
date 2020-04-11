@@ -1,6 +1,6 @@
-#!/usr/bin/python
+ï»¿#!/usr/bin/python
 #coding=utf-8
 
 print("Hello, World!");
 
-print("ÄãºÃ£¬ÊÀ½ç")
+print("ä½ å¥½ï¼Œä¸–ç•Œ")

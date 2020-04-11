@@ -1,39 +1,39 @@
-#!/usr/bin/python
+ï»¿#!/usr/bin/python
 # -*- coding: UTF-8 -*-
  
-#¿ÉĞ´º¯ÊıËµÃ÷
+#å¯å†™å‡½æ•°è¯´æ˜
 def printinfo( name, age = 35 ):
-   "´òÓ¡ÈÎºÎ´«ÈëµÄ×Ö·û´®"
+   "æ‰“å°ä»»ä½•ä¼ å…¥çš„å­—ç¬¦ä¸²"
    print ("Name: ", name);
    print ("Age ", age);
    return;
  
-#µ÷ÓÃprintinfoº¯Êı
+#è°ƒç”¨printinfoå‡½æ•°
 printinfo( age=50, name="miki" );
 printinfo( name="miki" );
 
 
-# ¿ÉĞ´º¯ÊıËµÃ÷
+# å¯å†™å‡½æ•°è¯´æ˜
 def printinfo( arg1, *vartuple ):
-   "´òÓ¡ÈÎºÎ´«ÈëµÄ²ÎÊı"
-   print ("Êä³ö: ")
+   "æ‰“å°ä»»ä½•ä¼ å…¥çš„å‚æ•°"
+   print ("è¾“å‡º: ")
    print (arg1)
    for var in vartuple:
       print (var)
    return;
  
-# µ÷ÓÃprintinfo º¯Êı
+# è°ƒç”¨printinfo å‡½æ•°
 printinfo( 10 );
 printinfo( 70, 60, 50 );
 
 
 
-# ¿ÉĞ´º¯ÊıËµÃ÷
+# å¯å†™å‡½æ•°è¯´æ˜
 sum = lambda arg1, arg2: arg1 + arg2;
  
-# µ÷ÓÃsumº¯Êı
-print ("Ïà¼ÓºóµÄÖµÎª : ", sum( 10, 20 ))
-print ("Ïà¼ÓºóµÄÖµÎª : ", sum( 20, 20 ))
+# è°ƒç”¨sumå‡½æ•°
+print ("ç›¸åŠ åçš„å€¼ä¸º : ", sum( 10, 20 ))
+print ("ç›¸åŠ åçš„å€¼ä¸º : ", sum( 20, 20 ))
 
 
 
@@ -41,12 +41,12 @@ print ("Ïà¼ÓºóµÄÖµÎª : ", sum( 20, 20 ))
 #//	Age  50
 #//	Name:  miki
 #//	Age  35
-#//	Êä³ö:
+#//	è¾“å‡º:
 #//	10
-#//	Êä³ö:
+#//	è¾“å‡º:
 #//	70
 #//	60
 #//	50
-#//	Ïà¼ÓºóµÄÖµÎª :  30
-#//	Ïà¼ÓºóµÄÖµÎª :  40
+#//	ç›¸åŠ åçš„å€¼ä¸º :  30
+#//	ç›¸åŠ åçš„å€¼ä¸º :  40
 

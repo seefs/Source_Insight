@@ -1,4 +1,4 @@
-
+ï»¿
 import numpy as np
 
 def str_split(x) : 
@@ -47,7 +47,7 @@ sentences2 = [
 
 
 
-# ÖØ¸´Õâ2¾ä, ·ñÔòtokens1Îª¿ÕÖµ
+# é‡å¤è¿™2å¥, å¦åˆ™tokens1ä¸ºç©ºå€¼
 tokens1    = map(str_split, sentences1)
 tokens2    = map(str_split, sentences2)
 tokens3    = map(lambda tok1,tok2: ["[CLS]"] + tok1 + tok2, tokens1, tokens2)
@@ -58,7 +58,7 @@ print("")
 
 
 
-# ÖØ¸´Õâ2¾ä, ·ñÔòtokens1Îª¿ÕÖµ
+# é‡å¤è¿™2å¥, å¦åˆ™tokens1ä¸ºç©ºå€¼
 tokens1    = map(str_split, sentences1)
 tokens2    = map(str_split, sentences2)
 type_ids   = list(map(lambda tok1,tok2: [0] * (len(tok1)+2) + [1] * (len(tok2)+1), tokens1, tokens2))

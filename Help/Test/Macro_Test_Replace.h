@@ -1,13 +1,13 @@
-
-»ù´¡Â·¾¶ÉèÖÃ:
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®:
 //basePath = 
 
 ^p^p^p^p
 
 /***********************************************************************/
 
-//Ä¿Â¼[Num][Ca]:
-//Ìæ»»:
+//ç›®å½•[Num][Ca]:
+//æ›¿æ¢:
 Save:Help\Test\Macro_Test_Node_Num.h \[1.1\] 
 Save:Help\Test\Macro_Test_Node_Num.h \[1.2\] 
 Save:Help\Test\Macro_Test_Node_Num.h \[1.3\] 

@@ -1,7 +1,7 @@
-/*
-	¹¦ÄÜ:ÊÂ¼şÈÕÖ¾
-    1. ´ò¿ªÊÂ¼ş¹¦ÄÜ, option->key..->option:evevn enbale.. ->set: ctrl + F12
-       ¹Ø±ÕÊÂ¼ş¹¦ÄÜ, °´2´Îkey
+ï»¿/*
+	åŠŸèƒ½:äº‹ä»¶æ—¥å¿—
+    1. æ‰“å¼€äº‹ä»¶åŠŸèƒ½, option->key..->option:evevn enbale.. ->set: ctrl + F12
+       å…³é—­äº‹ä»¶åŠŸèƒ½, æŒ‰2æ¬¡key
 	
 
 Fun list:

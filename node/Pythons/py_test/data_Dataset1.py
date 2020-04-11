@@ -1,4 +1,4 @@
-import tensorflow as tf
+﻿import tensorflow as tf
 import numpy as np
  
 dataset = tf.data.Dataset.from_tensor_slices(np.array([1.0, 2.0, 3.0, 4.0, 5.0]))

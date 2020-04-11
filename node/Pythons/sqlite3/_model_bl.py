@@ -1,4 +1,4 @@
-
+ï»¿
 
 import os
 import re
@@ -19,12 +19,12 @@ import copy
 
 # Custom Class
 from _losses import f1,cross_entropy_loss, accuracy
-from _block  import b2mts                            # ·Ö¿é
-from _layer_bl import EmbeddingsLayer              # ´ÊÏòÁ¿
-from _layer_bl import add_mark_block_relation      # ·Ö¿é±ê¼Ç
-from _layer_bl import add_merge_scale              # ·Ö¿é±ê¼Ç
-from _layer_bl import add_score                    # ·Ö¿é±ê¼Ç
-from _layer_bl import mark_slice                    # ·Ö¿é±ê¼Ç
+from _block  import b2mts                            # åˆ†å—
+from _layer_bl import EmbeddingsLayer              # è¯å‘é‡
+from _layer_bl import add_mark_block_relation      # åˆ†å—æ ‡è®°
+from _layer_bl import add_merge_scale              # åˆ†å—æ ‡è®°
+from _layer_bl import add_score                    # åˆ†å—æ ‡è®°
+from _layer_bl import mark_slice                    # åˆ†å—æ ‡è®°
 from _tool  import init_logging
 
 
@@ -77,15 +77,15 @@ def create_model(max_vocab_len, max_seq_len, h5_file=None, debug=False):
     """Creates a classification model."""
     assert h5_file is not None
     block_net = BlockNet(max_vocab_len)
-    x1  = keras.layers.Input(shape=(max_seq_len,), dtype='int64', name="x1")              #×Ö±àºÅ
+    x1  = keras.layers.Input(shape=(max_seq_len,), dtype='int64', name="x1")              #å­—ç¼–å·
     x2  = keras.layers.Input(shape=(max_seq_len,), dtype='int64', name="x2")   
-    m1  = keras.layers.Input(shape=(max_seq_len,), dtype='int64', name="m1")              #ÀàĞÍ
+    m1  = keras.layers.Input(shape=(max_seq_len,), dtype='int64', name="m1")              #ç±»å‹
     m2  = keras.layers.Input(shape=(max_seq_len,), dtype='int64', name="m2")     
-    mark1  = keras.layers.Input(shape=(max_seq_len,2), dtype='int64', name="mark1")        #·Ö¿éºóµÄmark
+    mark1  = keras.layers.Input(shape=(max_seq_len,2), dtype='int64', name="mark1")        #åˆ†å—åçš„mark
     mark2  = keras.layers.Input(shape=(max_seq_len,2), dtype='int64', name="mark2")
-    block1  = keras.layers.Input(shape=(max_seq_len,), dtype='int64', name="block1")      #·Ö¿éºóµÄ¿éID
+    block1  = keras.layers.Input(shape=(max_seq_len,), dtype='int64', name="block1")      #åˆ†å—åçš„å—ID
     block2  = keras.layers.Input(shape=(max_seq_len,), dtype='int64', name="block2")
-    scale1  = keras.layers.Input(shape=(max_seq_len,), dtype='float32', name="scale1")    #·Ö¿éºóµÄ¿éÈ¨ÖØ
+    scale1  = keras.layers.Input(shape=(max_seq_len,), dtype='float32', name="scale1")    #åˆ†å—åçš„å—æƒé‡
     scale2  = keras.layers.Input(shape=(max_seq_len,), dtype='float32', name="scale2")
   
     output = block_net([x1, x2, m1, m2, mark1, mark2, block1, block2, scale1, scale2])

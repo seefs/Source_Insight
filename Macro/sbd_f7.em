@@ -1,4 +1,4 @@
-
+ï»¿
 macro Tools()
 {
 	//_TempHeadF7(hbuf)
@@ -7,7 +7,7 @@ macro Tools()
 	var modeNew
 	
 	hbuf = GetCurrentBuf()
-	//ÈÕÖ¾¹¦ÄÜ
+	//æ—¥å¿—åŠŸèƒ½
 	if(IsFileName(hbuf, "Macro_Note_"))
 	{
 		mFile = getNodePath(0) # "\\note\\Macro_Note_Tools.h"
@@ -23,26 +23,26 @@ macro Tools()
 	}
 	
 	mode = ReadMode(getToolsRow(0))
-	//1. ÕâÀïÌí¼ÓF7-ÏÔÊ¾ÁĞ±í
+	//1. è¿™é‡Œæ·»åŠ F7-æ˜¾ç¤ºåˆ—è¡¨
 	ShowToolsMode(mode)
 
 	
-	//2. ÕâÀïÌí¼ÓF7-¹¦ÄÜÏî
+	//2. è¿™é‡Œæ·»åŠ F7-åŠŸèƒ½é¡¹
 	key = GetKey()
 	if(key<97)
-		key = key + 32	//Ğ¡Ğ´->´óĞ´
+		key = key + 32	//å°å†™->å¤§å†™
 
-	if (key == 97) 		 		 //×ÖÄ¸A     ¹«¹²±Ê¼Ç
+	if (key == 97) 		 		 //å­—æ¯A     å…¬å…±ç¬”è®°
 	{
 		mFile = getNodePath(0) # "\\Tmp_Common.h"
 		OpenExistFile(mFile)
 		return
 	}
-	else if (key == 98) 		 //×ÖÄ¸B    tools: F5--Goto    F6--BComp,   ²¢ÉèÖÃBeyond Compare±È½ÏÂ·¾¶
+	else if (key == 98) 		 //å­—æ¯B    tools: F5--Goto    F6--BComp,   å¹¶è®¾ç½®Beyond Compareæ¯”è¾ƒè·¯å¾„
 	{
 		BComSetPath("")
 	}
-	else if (key == 99) //×ÖÄ¸C
+	else if (key == 99) //å­—æ¯C
 	{
 		if (hbuf != 0)
 		{
@@ -51,50 +51,50 @@ macro Tools()
 		}
 		return
 	}
-//	else if (key == 101) //×ÖÄ¸E
+//	else if (key == 101) //å­—æ¯E
 //	{
 //		SelEditFile(key)
 //		return
 //	}
-//	else if (key == 102) //×ÖÄ¸F, ÒÑÓÃF1->F2´úÌæ
+//	else if (key == 102) //å­—æ¯F, å·²ç”¨F1->F2ä»£æ›¿
 //	{
 //		OpenEditDir(key)
 //		return
 //	}
-	else if (key == 102) //×ÖÄ¸F
+	else if (key == 102) //å­—æ¯F
 	{
 		//file list
 		OpenExistFile(getNodePath(0) # "\\Macro_File.h")
 		return
 	}
-	else if (key == 103) //×ÖÄ¸G  tools: F5--Goto    F6--Rule
+	else if (key == 103) //å­—æ¯G  tools: F5--Goto    F6--Rule
 	{
 	}
-	else if (key == 105) //×ÖÄ¸i
+	else if (key == 105) //å­—æ¯i
 	{
 	    SvnCommit(key)
 		return
 	}
-	else if (key == 108) //×ÖÄ¸L  tools: F5--Goto    F6--Close
+	else if (key == 108) //å­—æ¯L  tools: F5--Goto    F6--Close
 	{
 	}
-	else if (key == 110) //×ÖÄ¸N  tools: F5--Goto    F6--Goto Service
+	else if (key == 110) //å­—æ¯N  tools: F5--Goto    F6--Goto Service
 	{
 	}
-	else if (key == 112) //×ÖÄ¸P
+	else if (key == 112) //å­—æ¯P
 	{
 		hbufClip = GetBufHandle("Clipboard")
 		openbuf(hbufClip)
 		setCurrentBuf(hbufClip)
 		return
 	}
-	else if (key == 114) //×ÖÄ¸R
+	else if (key == 114) //å­—æ¯R
 	{
 		if (hbuf != 0)
 			AddRule(hbuf)
 		return
 	}
-	else if (key == 116) //×ÖÄ¸T
+	else if (key == 116) //å­—æ¯T
 	{
 		if (hbuf != 0)
 		{
@@ -103,17 +103,17 @@ macro Tools()
 		}
 		return
 	}
-	else if (key == 117) //×ÖÄ¸u
+	else if (key == 117) //å­—æ¯u
 	{
 	    SvnUpdate(key)
 		return
 	}
-	else if (key == 118) //×ÖÄ¸v
+	else if (key == 118) //å­—æ¯v
 	{
 	    BCompareSel(key)
 		return
 	}
-	else if (key == 120) //×ÖÄ¸X
+	else if (key == 120) //å­—æ¯X
 	{
 	    DeleteMkComment(key)
 		return
@@ -133,13 +133,13 @@ macro Tools()
 }
 
 
-//ÇĞ»»F5/F6µ½ÆäËûÃüÁî
+//åˆ‡æ¢F5/F6åˆ°å…¶ä»–å‘½ä»¤
 macro SwtichTools(cmd)
 {
 	//_TempHeadF7(hbuf)
-	val = ReadMode(getToolsRow(0))		//»ñÈ¡µ±Ç°ÉèÖÃ:Ä¬ÈÏF5~goto           F6-rule
+	val = ReadMode(getToolsRow(0))		//è·å–å½“å‰è®¾ç½®:é»˜è®¤F5~goto           F6-rule
 	
-	//3. ÕâÀïÌí¼ÓF7-¹¦ÄÜÏî
+	//3. è¿™é‡Œæ·»åŠ F7-åŠŸèƒ½é¡¹
 	if(cmd == "F5")
 	{
 		if(val == "g")			//Goto -- Rule

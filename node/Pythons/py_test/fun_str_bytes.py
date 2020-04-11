@@ -1,4 +1,4 @@
-
+﻿
 # str --> bytes 
 #    encode()
 str="aabbcc"

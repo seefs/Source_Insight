@@ -1,10 +1,10 @@
-//Ä¿Â¼[Num][Ca]:
+ï»¿//ç›®å½•[Num][Ca]:
 
 /***********************************************************************/
 /****************************** base ***********************************/
 /***********************************************************************/
 	
-»ù´¡Â·¾¶ÉèÖÃ: [s][Cs]
+åŸºç¡€è·¯å¾„è®¾ç½®: [s][Cs]
 //basePath = F:\9820e
 //basePath = \\192.168.2.115\xiaoj\9820e\idh.code
 
@@ -13,31 +13,31 @@
 /******************************* code **********************************/
 /***********************************************************************/
 
-Android »Ö¸´³ö³§ÉèÖÃ(recovery)
+Android æ¢å¤å‡ºå‚è®¾ç½®(recovery)
 
 
-Android »Ö¸´³ö³§ÉèÖÃ»ù±¾Á÷³Ì
-£¨1£©Ò£¿ØÆ÷/°´¼ü°åºóÃÅ¼ü´¥·¢£¬»òÕßÓ¦ÓÃÀïÃæ´ÓÏµÍ³ÉèÖÃÀïÃæ»Ö¸´³ö³§Ñ¡ÏîÒ²¿É´¥·¢£» // ºóÃæÒÔÏµÍ³ÉèÖÃµÄÓ¦ÓÃ´¥·¢ÎªÀı
-£¨2£©Ñ¡Ôñ»Ö¸´³ö³§ÉèÖÃÖ®ºó£¬¾Í»á·¢ËÍ¹ã²¥¡°android.intent.action.MASTER_CLEAR¡± £»// framework/base/core/res/AndroidManifest.xml
-£¨3£©MasterClearReceiver ²¶»ñ¹ã²¥ £¬²¢½øĞĞandroid ²ãµÄÏà¹Ø´¦Àí×îºóÖØÆô £»
-£¨4£©Íù /cache/recovery/command ÎÄ¼şÖĞĞ´ÈëÃüÁî×Ö¶Î£»
-£¨5£©ÖØÆôÏµÍ³£»
+Android æ¢å¤å‡ºå‚è®¾ç½®åŸºæœ¬æµç¨‹
+ï¼ˆ1ï¼‰é¥æ§å™¨/æŒ‰é”®æ¿åé—¨é”®è§¦å‘ï¼Œæˆ–è€…åº”ç”¨é‡Œé¢ä»ç³»ç»Ÿè®¾ç½®é‡Œé¢æ¢å¤å‡ºå‚é€‰é¡¹ä¹Ÿå¯è§¦å‘ï¼› // åé¢ä»¥ç³»ç»Ÿè®¾ç½®çš„åº”ç”¨è§¦å‘ä¸ºä¾‹
+ï¼ˆ2ï¼‰é€‰æ‹©æ¢å¤å‡ºå‚è®¾ç½®ä¹‹åï¼Œå°±ä¼šå‘é€å¹¿æ’­â€œandroid.intent.action.MASTER_CLEARâ€ ï¼›// framework/base/core/res/AndroidManifest.xml
+ï¼ˆ3ï¼‰MasterClearReceiver æ•è·å¹¿æ’­ ï¼Œå¹¶è¿›è¡Œandroid å±‚çš„ç›¸å…³å¤„ç†æœ€åé‡å¯ ï¼›
+ï¼ˆ4ï¼‰å¾€ /cache/recovery/command æ–‡ä»¶ä¸­å†™å…¥å‘½ä»¤å­—æ®µï¼›
+ï¼ˆ5ï¼‰é‡å¯ç³»ç»Ÿï¼›
 
-recovery ½øÈë·½Ê½
-£¨1£© Í¨¹ı¶ÁÈ¡ /cache ·ÖÇøÖĞÎÄ¼ş /cache/recovery/command ÄÚÈİ½øÈë?
-£¨2£©Í¨¹ı°´¼ü²Ù×÷½øÈë £¨G1 Í¨¹ıÍ¬Ê±°´ HOME ºÍ ¹Ò¶Ï¼ü£©?
-? ? ? ? ??ÒÔÉÏÁ½ÖÖ·½Ê½½øÈë¶¼ĞèÒª blobµÄÖ§³Ö
+recovery è¿›å…¥æ–¹å¼
+ï¼ˆ1ï¼‰ é€šè¿‡è¯»å– /cache åˆ†åŒºä¸­æ–‡ä»¶ /cache/recovery/command å†…å®¹è¿›å…¥?
+ï¼ˆ2ï¼‰é€šè¿‡æŒ‰é”®æ“ä½œè¿›å…¥ ï¼ˆG1 é€šè¿‡åŒæ—¶æŒ‰ HOME å’Œ æŒ‚æ–­é”®ï¼‰?
+? ? ? ? ??ä»¥ä¸Šä¸¤ç§æ–¹å¼è¿›å…¥éƒ½éœ€è¦ blobçš„æ”¯æŒ
 
-½øÈërecovery µÄÌõ¼ş
-£¨1£©blob ±ØĞëÄÜ´Ó recovery ·ÖÇøÖĞ×°ÔØÄÚºËºÍÎÄ¼şÏµÍ³?
-£¨2£©flash ±ØĞëÓĞ cache ·ÖÇø ºÍ recovery ·ÖÇø?
-£¨3£©±ØĞë±àÒëÌá¹© recovery.img ÉÕÂ¼µ½ recovery ·ÖÇø
+è¿›å…¥recovery çš„æ¡ä»¶
+ï¼ˆ1ï¼‰blob å¿…é¡»èƒ½ä» recovery åˆ†åŒºä¸­è£…è½½å†…æ ¸å’Œæ–‡ä»¶ç³»ç»Ÿ?
+ï¼ˆ2ï¼‰flash å¿…é¡»æœ‰ cache åˆ†åŒº å’Œ recovery åˆ†åŒº?
+ï¼ˆ3ï¼‰å¿…é¡»ç¼–è¯‘æä¾› recovery.img çƒ§å½•åˆ° recovery åˆ†åŒº
 
 
 
-Android µÄ´¦ÀíÁ÷³Ì
+Android çš„å¤„ç†æµç¨‹
 
-¹ã²¥½ÓÊÕ
+å¹¿æ’­æ¥æ”¶
 frameworks/base/core/res/AndroidManifest.xml MasterClearReceiver
 //	<receiver android:name="com.android.server.MasterClearReceiver"
 //	    android:permission="android.permission.MASTER_CLEAR">
@@ -52,7 +52,7 @@ frameworks/base/core/res/AndroidManifest.xml MasterClearReceiver
 //	    </intent-filter>
 //	</receiver>
 
-MasterClearReceiver½ÓÊÕ¹ã²¥android.intent.action.MASTER_CLEAR£¬´´½¨Ò»¸öÏØ³Ç×÷Ò»ÏÂ´¦Àí
+MasterClearReceiveræ¥æ”¶å¹¿æ’­android.intent.action.MASTER_CLEARï¼Œåˆ›å»ºä¸€ä¸ªå¿åŸä½œä¸€ä¸‹å¤„ç†
 frameworks\base\services\java\com\android\server\MasterClearReceiver.java rebootWipeUserData
 //	Thread thr = new Thread("Reboot") {
 //	    @Override
@@ -68,7 +68,7 @@ frameworks\base\services\java\com\android\server\MasterClearReceiver.java reboot
 //	    }
 //	};
 //	thr.start();
-RecoverySystem?À´ÖØÆô£¬Æô¶¯²Á³ıÓÃ»§Êı¾İµÄ²Ù×÷
+RecoverySystem?æ¥é‡å¯ï¼Œå¯åŠ¨æ“¦é™¤ç”¨æˆ·æ•°æ®çš„æ“ä½œ
 
 frameworks\base\core\java\android\os\RecoverySystem.java rebootWipeUserData
 //	public static void rebootWipeUserData(Context context, boolean shutdown, String reason)
@@ -106,8 +106,8 @@ frameworks\base\core\java\android\os\RecoverySystem.java rebootWipeUserData
 //	    final String localeArg = "--locale=" + Locale.getDefault().toString();
 //	    bootCommand(context, shutdownArg, "--wipe_data", reasonArg, localeArg);
 //	}
-ÎÒÃÇ¿ÉÒÔ×¢Òâµ½ÔÚÆô¶¯bootCommand´«µİÃüÁîÊ±£¬·â×°²ÎÊı --wipe_data , --locale , ÕâĞ©ÃüÁîÎÒÃÇ¿ÉÒÔÔÚ²é¿´recovery log ( /cache/recovery/ *.log )ĞÅÏ¢Ê±¿´µ½
-//¡°Command: "/sbin/recovery" "--wipe_data" "--locale=zh_CN" ?,ÆäÊµÕâÓ¦¸ÃÒ²¾ÍÊÇbootCommand Ö´ĞĞµÄÃüÁî
+æˆ‘ä»¬å¯ä»¥æ³¨æ„åˆ°åœ¨å¯åŠ¨bootCommandä¼ é€’å‘½ä»¤æ—¶ï¼Œå°è£…å‚æ•° --wipe_data , --locale , è¿™äº›å‘½ä»¤æˆ‘ä»¬å¯ä»¥åœ¨æŸ¥çœ‹recovery log ( /cache/recovery/ *.log )ä¿¡æ¯æ—¶çœ‹åˆ°
+//â€œCommand: "/sbin/recovery" "--wipe_data" "--locale=zh_CN" ?,å…¶å®è¿™åº”è¯¥ä¹Ÿå°±æ˜¯bootCommand æ‰§è¡Œçš„å‘½ä»¤
 
 frameworks\base\core\java\android\os\RecoverySystem.java void^bootCommand
 //	private static void bootCommand(Context context, String... args) throws IOException {
@@ -178,8 +178,8 @@ frameworks\base\core\java\android\os\RecoverySystem.java void^bootCommand
 //	 
 //	    throw new IOException("Reboot failed (no permissions?)");
 //	}
-´ÓÒÔÉÏ´úÂë·ÖÎö£¬bootCommand Ö÷Òª¹¤×÷¾ÍÊÇÖØÆô½øÈërecovery£¬´Ë´¦¿ÉÒÔ¿´µ½COMMAND_FILE ¾ÍÊÇÎÄ¼ş ?/cache/recovery/command  , ½«ÉÏÃæ·â×°µÄ²ÎÊıĞÅÏ¢
-Ğ´Èë¸ÄÎÄ¼ş£¬´ıÖØÆôÖ®ºó¶ÁÈ¡¸ÃÎÄ¼şÊ±½øÈërecoveryÄ£Ê½£¬ÁíÍâÎÒÃÇ¿´µ½Ğ´ÍêÎÄ¼şÖ®ºó£¬µ÷ÓÃPowerManager À´reboot£¬×¢Òâ²ÎÊıPowerManager.REBOOT_RECOVERY
+ä»ä»¥ä¸Šä»£ç åˆ†æï¼ŒbootCommand ä¸»è¦å·¥ä½œå°±æ˜¯é‡å¯è¿›å…¥recoveryï¼Œæ­¤å¤„å¯ä»¥çœ‹åˆ°COMMAND_FILE å°±æ˜¯æ–‡ä»¶ ?/cache/recovery/command  , å°†ä¸Šé¢å°è£…çš„å‚æ•°ä¿¡æ¯
+å†™å…¥æ”¹æ–‡ä»¶ï¼Œå¾…é‡å¯ä¹‹åè¯»å–è¯¥æ–‡ä»¶æ—¶è¿›å…¥recoveryæ¨¡å¼ï¼Œå¦å¤–æˆ‘ä»¬çœ‹åˆ°å†™å®Œæ–‡ä»¶ä¹‹åï¼Œè°ƒç”¨PowerManager æ¥rebootï¼Œæ³¨æ„å‚æ•°PowerManager.REBOOT_RECOVERY
 // Having written the command file, go ahead and reboot
 PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
 pm.reboot(PowerManager.REBOOT_RECOVERY);
@@ -191,7 +191,7 @@ frameworks\base\core\java\android\os\PowerManager.java void^reboot
 //	    } catch (RemoteException e) {
 //	    }
 //	}
-×îºóÓÖ½øÈë PowerManagerService µÄrebootº¯Êı
+æœ€ååˆè¿›å…¥ PowerManagerService çš„rebootå‡½æ•°
 
 frameworks\base\services\java\com\android\server\power\PowerManagerService.java void^reboot
 //	@Override // Binder call
@@ -209,7 +209,7 @@ frameworks\base\services\java\com\android\server\power\PowerManagerService.java 
 //	    }
 //	}
 
-½Ó×Å½øÈëshutdownOrRebootInternal
+æ¥ç€è¿›å…¥shutdownOrRebootInternal
 frameworks\base\services\java\com\android\server\power\PowerManagerService.java void^shutdownOrRebootInternal
 //	private void shutdownOrRebootInternal(final boolean shutdown, final boolean confirm,
 //	        final String reason, boolean wait) {
@@ -247,7 +247,7 @@ frameworks\base\services\java\com\android\server\power\PowerManagerService.java 
 //	        }
 //	    }
 //	}
-ShutdownThreadÀ´¸ºÔğÖØÆô¶¯×÷
+ShutdownThreadæ¥è´Ÿè´£é‡å¯åŠ¨ä½œ
 	
 frameworks\base\services\java\com\android\server\power\ShutdownThread.java void^reboot
 //	public static void reboot(final Context context, String reason, boolean confirm) {
@@ -302,17 +302,17 @@ frameworks\base\services\java\com\android\server\power\ShutdownThread.java void^
 //	        beginShutdownSequence(context);
 //	    }
 //	}
-beginShutdownSequence ½øÈëÖ÷ÒªµÄ¹Ø»úÁ÷³Ì£¬ ½Ó×ÅÆô¶¯ShutdownThread.run() , ·¢ËÍ¹â»ú¹ã²¥£¬¹Ø±ÕºËĞÄ·şÎñ£¬×îºó½øÈërebootOrShutdownÖØÆô¡£
+beginShutdownSequence è¿›å…¥ä¸»è¦çš„å…³æœºæµç¨‹ï¼Œ æ¥ç€å¯åŠ¨ShutdownThread.run() , å‘é€å…‰æœºå¹¿æ’­ï¼Œå…³é—­æ ¸å¿ƒæœåŠ¡ï¼Œæœ€åè¿›å…¥rebootOrShutdowné‡å¯ã€‚
 
 
-recovery½øÈëÁ÷³Ì
-½øÈërecoveryÓĞ¼¸ÖÖÍ¾¾¶£º
-£¨1£©½øÈërecoveryÇ°ÏÈĞ´misc·ÖÇø£¬ÖØÆôÊ±·¢ÏÖ±ä»¯¾ÍÖ±½Ó½øÈërecoveryÄ£Ê½£»
-£¨2£©Ğ´ÎÄ¼ş /cache/recovery/command ÎÄ¼ş£¬ÖØÆôÊ±½øÈ¥recoveryÄ£Ê½£» // ´ËÖÖÄ£Ê½ÔİÎ´ÕÒµ½Æô¶¯recoveryµÄµØ·½£¬Ö»ÊÇÔÚÆô¶¯recoveryºóÓĞ¿´µ½¶Á
-? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?// È¡/cache/recovery/command ÎÄ¼şÊı¾İÔÙ×öºóĞø²Ù×÷
+recoveryè¿›å…¥æµç¨‹
+è¿›å…¥recoveryæœ‰å‡ ç§é€”å¾„ï¼š
+ï¼ˆ1ï¼‰è¿›å…¥recoveryå‰å…ˆå†™miscåˆ†åŒºï¼Œé‡å¯æ—¶å‘ç°å˜åŒ–å°±ç›´æ¥è¿›å…¥recoveryæ¨¡å¼ï¼›
+ï¼ˆ2ï¼‰å†™æ–‡ä»¶ /cache/recovery/command æ–‡ä»¶ï¼Œé‡å¯æ—¶è¿›å»recoveryæ¨¡å¼ï¼› // æ­¤ç§æ¨¡å¼æš‚æœªæ‰¾åˆ°å¯åŠ¨recoveryçš„åœ°æ–¹ï¼Œåªæ˜¯åœ¨å¯åŠ¨recoveryåæœ‰çœ‹åˆ°è¯»
+? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ?// å–/cache/recovery/command æ–‡ä»¶æ•°æ®å†åšåç»­æ“ä½œ
 
-MISC·ÖÇøÄÚÈİ
-Bootloader Control Block(BCB) ´æ·Årecovery bootloader message£¬½á¹¹ÈçÏÂ£º
+MISCåˆ†åŒºå†…å®¹
+Bootloader Control Block(BCB) å­˜æ”¾recovery bootloader messageï¼Œç»“æ„å¦‚ä¸‹ï¼š
 struct bootloader_message {
 ? ? char command[32];
 ? ? char status[32];
@@ -327,62 +327,62 @@ struct bootloader_message {
 ? ? char stage[32];
 ? ? char reserved[224];
 };
-command¿ÉÒÔÓĞÒÔÏÂÁ½¸öÖµ
-¡°boot-recovery¡±£º±íÊ¾recoveryÕıÔÚ½øĞĞ»òÕßÖ¸Ê¾bootloaderÓ¦¸Ã½øÈërecovery mode
-¡°update--hboot/radio¡±:±êÖ¾bootloader¸üĞÂfireware
+commandå¯ä»¥æœ‰ä»¥ä¸‹ä¸¤ä¸ªå€¼
+â€œboot-recoveryâ€ï¼šè¡¨ç¤ºrecoveryæ­£åœ¨è¿›è¡Œæˆ–è€…æŒ‡ç¤ºbootloaderåº”è¯¥è¿›å…¥recovery mode
+â€œupdate--hboot/radioâ€:æ ‡å¿—bootloaderæ›´æ–°fireware
 
-recoveryÄÚÈİ
-¡°recovery\n
+recoveryå†…å®¹
+â€œrecovery\n
 <recovery command>\n
-<recovery command>\n¡±ÆäÖĞ recovery commandÎªCACHE:/recovery/commandÃüÁî
+<recovery command>\nâ€å…¶ä¸­ recovery commandä¸ºCACHE:/recovery/commandå‘½ä»¤
 
 
 Recovery Case?
-Factory reset£¨»Ö¸´³ö³§ÉèÖÃ£©
+Factory resetï¼ˆæ¢å¤å‡ºå‚è®¾ç½®ï¼‰
 
 
-1. ÓÃ»§Ñ¡Ôñ¡°»Ö¸´³ö³§ÉèÖÃ¡±
-2. ÉèÖÃÏµÍ³½«¡°--wipe_data¡±ÃüÁîĞ´Èë /cache/recovery/command
-3. ÏµÍ³ÖØÆô£¬²¢½øÈërecoveryÄ£Ê½ (sbin/recovery ?or /system/bin/recovery)
-4. recovery get_args() ½«¡°boot-recovery¡±ºÍ¡°--wipe_data¡±Ğ´ÈëBCB
-5. erase_root ¸ñÊ½»¯DATA ·ÖÇø
-6. erase_root ¸ñÊ½»¯CACHE ·ÖÇø
-7. finish_recovery ²Á³ıBCB·ÖÇø
-8. ÖØÆôÏµÍ³
+1. ç”¨æˆ·é€‰æ‹©â€œæ¢å¤å‡ºå‚è®¾ç½®â€
+2. è®¾ç½®ç³»ç»Ÿå°†â€œ--wipe_dataâ€å‘½ä»¤å†™å…¥ /cache/recovery/command
+3. ç³»ç»Ÿé‡å¯ï¼Œå¹¶è¿›å…¥recoveryæ¨¡å¼ (sbin/recovery ?or /system/bin/recovery)
+4. recovery get_args() å°†â€œboot-recoveryâ€å’Œâ€œ--wipe_dataâ€å†™å…¥BCB
+5. erase_root æ ¼å¼åŒ–DATA åˆ†åŒº
+6. erase_root æ ¼å¼åŒ–CACHE åˆ†åŒº
+7. finish_recovery æ“¦é™¤BCBåˆ†åŒº
+8. é‡å¯ç³»ç»Ÿ
 
-OTA INSTALL (OTAÉı¼¶)
-1. Éı¼¶ÏµÍ³ÏµÔÚOTA°ü°ü/cache/some-filename.zip
-2. Éı¼¶ÏµÍ³Ğ´ÈërecoveryÃüÁî ¡°--update_package=CACHE:some-filename.zip¡±
-3. ÖØÆôÏµÍ³£¬½øÈërecoveryÄ£Ê½
-4. get_args()½«¡°boot-recovery¡±ºÍ¡°--wipe_packkage=...¡±Ğ´ÈëBCB
-5. install_package ×öÉı¼¶
-6. finish_recovery() ²Á³ıBCB
-7. **Èç¹û°²×°°üÊ§°Ü**prompt_and_wait()µÈ´ıÓÃ»§²Ù×÷£¬Ñ¡ÔñALT+S»òÕßALT+WÉı¼¶»ò»Ø¸´³ö³§ÉèÖÃ
-8. main() ÀïÃæµ÷ÓÃmaybe_install_firmware_update()
-? ? 1.Èç¹û°üÀïº¬ÓĞhboot/radioµÄfirewareÔò¼ÌĞø£¬·ñÔò·µ»Ø
-? ? 2.½«"boot-recovery"ºÍ"--wipe_cache"Ğ´ÈëBCB
-? ? 3.½«fireware imageĞ´Èëcache·ÖÇø
-? ? 4.½«"update-readio/hboot"ºÍ¡°--wipe_date¡±Ğ´ÈëBCB
-? ? 5.ÖØÆôÏµÍ³
-? ? 6.bootloader×ÔÉí¸üĞÂfireware
-? ? 7.bootloader½«"boot-recovery"Ğ´ÈëBCB
-? ? 8.erase_root²Á³ıCACHE·ÖÇø
-? ? 9.Çå³ıBCB
-9. main µ÷ÓÃrebootÖØÆôÏµÍ³
-
-
+OTA INSTALL (OTAå‡çº§)
+1. å‡çº§ç³»ç»Ÿç³»åœ¨OTAåŒ…åŒ…/cache/some-filename.zip
+2. å‡çº§ç³»ç»Ÿå†™å…¥recoveryå‘½ä»¤ â€œ--update_package=CACHE:some-filename.zipâ€
+3. é‡å¯ç³»ç»Ÿï¼Œè¿›å…¥recoveryæ¨¡å¼
+4. get_args()å°†â€œboot-recoveryâ€å’Œâ€œ--wipe_packkage=...â€å†™å…¥BCB
+5. install_package åšå‡çº§
+6. finish_recovery() æ“¦é™¤BCB
+7. **å¦‚æœå®‰è£…åŒ…å¤±è´¥**prompt_and_wait()ç­‰å¾…ç”¨æˆ·æ“ä½œï¼Œé€‰æ‹©ALT+Sæˆ–è€…ALT+Wå‡çº§æˆ–å›å¤å‡ºå‚è®¾ç½®
+8. main() é‡Œé¢è°ƒç”¨maybe_install_firmware_update()
+? ? 1.å¦‚æœåŒ…é‡Œå«æœ‰hboot/radioçš„firewareåˆ™ç»§ç»­ï¼Œå¦åˆ™è¿”å›
+? ? 2.å°†"boot-recovery"å’Œ"--wipe_cache"å†™å…¥BCB
+? ? 3.å°†fireware imageå†™å…¥cacheåˆ†åŒº
+? ? 4.å°†"update-readio/hboot"å’Œâ€œ--wipe_dateâ€å†™å…¥BCB
+? ? 5.é‡å¯ç³»ç»Ÿ
+? ? 6.bootloaderè‡ªèº«æ›´æ–°fireware
+? ? 7.bootloaderå°†"boot-recovery"å†™å…¥BCB
+? ? 8.erase_rootæ“¦é™¤CACHEåˆ†åŒº
+? ? 9.æ¸…é™¤BCB
+9. main è°ƒç”¨rebooté‡å¯ç³»ç»Ÿ
 
 
-Recovery´úÂëÎ»ÖÃ:bootable/recovery/ £¬Ö÷ÎÄ¼şrecovery.cpp
+
+
+Recoveryä»£ç ä½ç½®:bootable/recovery/ ï¼Œä¸»æ–‡ä»¶recovery.cpp
 
 
 /***********************************************************************/
 /******************************* code **********************************/
 /***********************************************************************/
-»Ö¸´³ö³§ÉèÖÃÈë¿Ú
-¸ú×ÙÉèÖÃÖĞµÄ²½Öè¿ÉÒÔÕÒµ½£¬»Ö¸´³ö³§ÉèÖÃÈë¿ÚÔÚ 
-com.android.settings.MasterClear Õâ¸öÀàÖĞ¡£ 
-MasterClear.java Õâ¸öÀàÆäÊµÊÇÒ»¸öFragement¡£
+æ¢å¤å‡ºå‚è®¾ç½®å…¥å£
+è·Ÿè¸ªè®¾ç½®ä¸­çš„æ­¥éª¤å¯ä»¥æ‰¾åˆ°ï¼Œæ¢å¤å‡ºå‚è®¾ç½®å…¥å£åœ¨ 
+com.android.settings.MasterClear è¿™ä¸ªç±»ä¸­ã€‚ 
+MasterClear.java è¿™ä¸ªç±»å…¶å®æ˜¯ä¸€ä¸ªFragementã€‚
 
 public class MasterClear extends InstrumentedFragment {
     private static final String TAG = "MasterClear";
@@ -407,7 +407,7 @@ public class MasterClear extends InstrumentedFragment {
 10
 11
 12
-½øÈë»Ö¸´³ö³§ÉèÖÃÌáÊ¾½çÃæ
+è¿›å…¥æ¢å¤å‡ºå‚è®¾ç½®æç¤ºç•Œé¢
 
     private void showFinalConfirmation() {
         Bundle args = new Bundle();
@@ -519,7 +519,7 @@ MasterClearConfirm.java
 46
 47
 48
-Í¨¹ıPersistentDataBlockManager pdbManager¶ÔÓÃ»§Êı¾İÇå¿Õ²Ù×÷¡£
+é€šè¿‡PersistentDataBlockManager pdbManagerå¯¹ç”¨æˆ·æ•°æ®æ¸…ç©ºæ“ä½œã€‚
 
 PersistentDataBlockManager.java
     private IPersistentDataBlockService sService;
@@ -551,7 +551,7 @@ PersistentDataBlockManager.java
 13
 14
 15
-Í¨¹ıIPersistentDataBlockService ÎÒÃÇÕÒµ½PersistentDataBlockServiceÀà£¬Õâ¸öÊÇ¶ÔwipeµÄ¾ßÌåÊµÏÖ½Ó¿Ú
+é€šè¿‡IPersistentDataBlockService æˆ‘ä»¬æ‰¾åˆ°PersistentDataBlockServiceç±»ï¼Œè¿™ä¸ªæ˜¯å¯¹wipeçš„å…·ä½“å®ç°æ¥å£
 
  private final IBinder mService = new IPersistentDataBlockService.Stub() {
         @Override
@@ -893,7 +893,7 @@ PersistentDataBlockManager.java
 168
 169
 170
-ÎÒÃÇÕÒµ½ int ret = nativeWipe(mDataBlockFile)£»ÏÂÃæ²½ÖèÊÇµ÷ÓÃcppµÄ·½·¨ÁË¡£ 
+æˆ‘ä»¬æ‰¾åˆ° int ret = nativeWipe(mDataBlockFile)ï¼›ä¸‹é¢æ­¥éª¤æ˜¯è°ƒç”¨cppçš„æ–¹æ³•äº†ã€‚ 
 frameworks/base/services/core/jni/com_android_server_PersistentDataBlockService.cpp
 
     int wipe_block_device(int fd)
@@ -998,8 +998,8 @@ frameworks/base/services/core/jni/com_android_server_PersistentDataBlockService.
 49
 50
 51
-Êı¾İÇå¿ÕÖ®ºóµÄ´¦ÀíÁ÷³Ì
-ÔÚMasterClearConfirmÀàÖĞ£¬ÏµÍ³Í¨¹ıAsyncTask ´¦ÀíÇå¿ÕÊı¾İºó£¬»ádoMasterClear£¨£©£»
+æ•°æ®æ¸…ç©ºä¹‹åçš„å¤„ç†æµç¨‹
+åœ¨MasterClearConfirmç±»ä¸­ï¼Œç³»ç»Ÿé€šè¿‡AsyncTask å¤„ç†æ¸…ç©ºæ•°æ®åï¼Œä¼šdoMasterClearï¼ˆï¼‰ï¼›
 
 
     private void doMasterClear() {
@@ -1020,9 +1020,9 @@ frameworks/base/services/core/jni/com_android_server_PersistentDataBlockService.
 8
 9
 10
-»áÏëÏµÍ³·¢ËÍIntent.ACTION_MASTER_CLEAR ¹ã²¥¡£ 
+ä¼šæƒ³ç³»ç»Ÿå‘é€Intent.ACTION_MASTER_CLEAR å¹¿æ’­ã€‚ 
 frameworks/base/services/core/java/com/android/server/MasterClearReceiver.java 
-½ÓÊÕÕâ¸ö¹ã²¥ºó´¦Àí¡£
+æ¥æ”¶è¿™ä¸ªå¹¿æ’­åå¤„ç†ã€‚
 
 
 public class MasterClearReceiver extends BroadcastReceiver {
@@ -1180,19 +1180,19 @@ public class MasterClearReceiver extends BroadcastReceiver {
 76
 77
 78
-ÉÏÃæ°üº¬ÁËreboot¶¯×÷ÒÑ¾­Ê®·ÖĞèÒª¸ñÊ½»¯SD¿¨¶¯×÷´¦Àí¡£
+ä¸Šé¢åŒ…å«äº†rebootåŠ¨ä½œå·²ç»ååˆ†éœ€è¦æ ¼å¼åŒ–SDå¡åŠ¨ä½œå¤„ç†ã€‚
 --------------------- 
-×÷Õß£ºÍõ´ó´¸¿¸µ¶ 
-À´Ô´£ºCSDN 
-Ô­ÎÄ£ºhttps://blog.csdn.net/wangjicong_215/article/details/78094801 
-°æÈ¨ÉùÃ÷£º±¾ÎÄÎª²©Ö÷Ô­´´ÎÄÕÂ£¬×ªÔØÇë¸½ÉÏ²©ÎÄÁ´½Ó£¡
+ä½œè€…ï¼šç‹å¤§é”¤æ‰›åˆ€ 
+æ¥æºï¼šCSDN 
+åŸæ–‡ï¼šhttps://blog.csdn.net/wangjicong_215/article/details/78094801 
+ç‰ˆæƒå£°æ˜ï¼šæœ¬æ–‡ä¸ºåšä¸»åŸåˆ›æ–‡ç« ï¼Œè½¬è½½è¯·é™„ä¸Šåšæ–‡é“¾æ¥ï¼
 
 
 
 
 
 /***********************************************************************/
-/*************************** ²Î¿¼±Ê¼Ç¡¢ÍøÉÏÕÒµÄ£¬ºÜÂÒ. *****************/
+/*************************** å‚è€ƒç¬”è®°ã€ç½‘ä¸Šæ‰¾çš„ï¼Œå¾ˆä¹±. *****************/
 /***********************************************************************/
 
 

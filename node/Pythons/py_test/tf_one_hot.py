@@ -1,8 +1,8 @@
-
+ï»¿
 import tensorflow as tf  
       
 classes = 6
-labels = tf.constant([0,0,1,1]) # ÊäÈëµÄÔªËØÖµ×îĞ¡Îª0£¬×î´óÎª2
+labels = tf.constant([0,0,1,1]) # è¾“å…¥çš„å…ƒç´ å€¼æœ€å°ä¸º0ï¼Œæœ€å¤§ä¸º2
 output_6 = tf.one_hot(labels, classes)
 print(labels)
 

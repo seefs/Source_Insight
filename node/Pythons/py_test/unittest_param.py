@@ -1,4 +1,4 @@
-
+ï»¿
 import unittest
 class ParametrizedTestCase(unittest.TestCase):
     """ TestCase classes that want to be parametrized should
@@ -20,7 +20,7 @@ class ParametrizedTestCase(unittest.TestCase):
         return suite
 
 
-##ÓÃ·¨-testcase£¬¼ÓÈë²âÊÔÌ×¼ş  
+##ç”¨æ³•-testcaseï¼ŒåŠ å…¥æµ‹è¯•å¥—ä»¶  
 class TestOne(ParametrizedTestCase):
     def test_something(self):
         print ('param =', self.param)
@@ -30,13 +30,13 @@ class TestOne(ParametrizedTestCase):
         self.assertEqual(2, 2)
 
 
-##ÓÃ·¨-²âÊÔ
+##ç”¨æ³•-æµ‹è¯•
 suite = unittest.TestSuite()
 suite.addTest(ParametrizedTestCase.parametrize(TestOne, param=42))
 suite.addTest(ParametrizedTestCase.parametrize(TestOne, param=13))
 unittest.TextTestRunner(verbosity=2).run(suite)
  
-#½á¹û
+#ç»“æœ
 #    test_something (__main__.TestOne) ... param = 42
 #    ok
 #    test_something_else (__main__.TestOne) ... ok

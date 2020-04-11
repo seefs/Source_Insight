@@ -1,20 +1,25 @@
+ï»¿
 
-
-//Ä¿Â¼[Num][Ca]:
-// 1. bat³£ÓÃ
+//ç›®å½•[Num][Ca]:
+// 1. batå¸¸ç”¨
 Save:node\ToolsMsg\Macro_Cmd.h \[1.1\] common
-Save:node\ToolsMsg\Macro_Cmd.h \[1.2\] call call
-Save:node\ToolsMsg\Macro_Cmd.h \[1.3\] FOR
-Save:node\ToolsMsg\Macro_Cmd.h \[1.4\] path
+Save:node\ToolsMsg\Macro_Cmd.h \[1.2\] call ---------------å˜é‡åµŒå¥—
+Save:node\ToolsMsg\Macro_Cmd.h \[1.3\] FOR ----------------å‚æ•°
+Save:node\ToolsMsg\Macro_Cmd.h \[1.4\] path ---------------å‚æ•°
 Save:node\ToolsMsg\Macro_Cmd.h \[1.5\] copy
 Save:node\ToolsMsg\Macro_Cmd.h \[1.6\] Shutdown
 Save:node\ToolsMsg\Macro_Cmd.h \[1.7\] --
 Save:node\ToolsMsg\Macro_Cmd.h \[1.8\] unrar
 Save:node\ToolsMsg\Macro_Cmd.h \[1.9\] findstr
-Save:node\ToolsMsg\Macro_Cmd.h \[1.10\] 
+Save:node\ToolsMsg\Macro_Cmd.h \[1.10\] string ------------æˆªå–ã€æ›¿æ¢ã€åˆå¹¶
+Save:node\ToolsMsg\Macro_Cmd.h \[1.11\] if...else...
+Save:node\ToolsMsg\Macro_Cmd.h \[1.12\] setlocal ----------å˜é‡å»¶è¿Ÿ
+Save:node\ToolsMsg\Macro_Cmd.h \[1.13\] set /a, set /p
+Save:node\ToolsMsg\Macro_Cmd.h \[1.14\] 
+Save:node\ToolsMsg\Macro_Cmd.h \[1.15\] 
 // 2. dir
-Save:node\ToolsMsg\Macro_Cmd.h \[2.1\] dir
-Save:node\ToolsMsg\Macro_Cmd.h \[2.2\] show: Dir, File , Dir+File£º
+Save:node\ToolsMsg\Macro_Cmd.h \[2.1\] dir ----------------å‚æ•°
+Save:node\ToolsMsg\Macro_Cmd.h \[2.2\] show: Dir, File , Dir+Fileï¼š
 Save:node\ToolsMsg\Macro_Cmd.h \[2.3\] show: File , Dir
 Save:node\ToolsMsg\Macro_Cmd.h \[2.4\] show: ChildFile
 Save:node\ToolsMsg\Macro_Cmd.h \[2.5\] show: File
@@ -23,12 +28,12 @@ Save:node\ToolsMsg\Macro_Cmd.h \[2.7\] show: hide File
 Save:node\ToolsMsg\Macro_Cmd.h \[2.8\] attrib
 Save:node\ToolsMsg\Macro_Cmd.h \[2.9\] 
 Save:node\ToolsMsg\Macro_Cmd.h \[2.10\]
-// 3. apk¡¢adb
+// 3. apkã€adb
 Save:node\ToolsMsg\Macro_Cmd.h \[3.1\] logcat
 Save:node\ToolsMsg\Macro_Cmd.h \[3.2\] signapk
-Save:node\ToolsMsg\Macro_Cmd.h \[3.3\] ²é¿´ÊÖ»ú·Ö±æÂÊ
-Save:node\ToolsMsg\Macro_Cmd.h \[3.4\] Ä£ÄâÆ÷/Éè±¸ÁĞ±í
-Save:node\ToolsMsg\Macro_Cmd.h \[3.5\] »ñÈ¡°üÃû
+Save:node\ToolsMsg\Macro_Cmd.h \[3.3\] æŸ¥çœ‹æ‰‹æœºåˆ†è¾¨ç‡
+Save:node\ToolsMsg\Macro_Cmd.h \[3.4\] æ¨¡æ‹Ÿå™¨/è®¾å¤‡åˆ—è¡¨
+Save:node\ToolsMsg\Macro_Cmd.h \[3.5\] è·å–åŒ…å
 Save:node\ToolsMsg\Macro_Cmd.h \[3.6\] apktool
 Save:node\ToolsMsg\Macro_Cmd.h \[3.7\] sqlite3
 Save:node\ToolsMsg\Macro_Cmd.h \[3.8\] 
@@ -42,95 +47,106 @@ Save:node\ToolsMsg\Macro_Cmd.h \[4.3\]
 
 
 [1.1] common
-//	1.×¢ÊÍ rem REM ºÍ ::
-//	2.ÃüÁî»ØÏÔ ECHO ºÍ @,	  ¶àÃüÁî &,&&,||
+//	1.æ³¨é‡Š rem REM å’Œ ::
+//	2.å‘½ä»¤å›æ˜¾ ECHO å’Œ @,	  å¤šå‘½ä»¤ &,&&,||
 //	3.PAUSE,	TITLE,
 //	
-//	4.×Ö·û´®£ºÌæ»»£¬½ØÈ¡£¬À©Õ¹,    setlocal Óë ±äÁ¿ÑÓ³Ù
-//	5.ÎÄ¼ş¶ÁĞ´,    ÊôĞÔ ATTRIB,	 ÇĞ»»Ä¿Â¼ pushd ºÍ popd
-//	6.²ÎÊı´«µİ,    ²ÎÊıÒÆÎ» shift[/n]	 ·µ»ØÂë %errorlevel%
-//	7.mode ÅäÖÃÏµÍ³Éè±¸
-//	8.FOR±éÀú,IF,GOTO ºÍ :
+//	4.å­—ç¬¦ä¸²ï¼šæ›¿æ¢ï¼Œæˆªå–ï¼Œæ‰©å±•,    setlocal ä¸ å˜é‡å»¶è¿Ÿ
+//	5.æ–‡ä»¶è¯»å†™,    å±æ€§ ATTRIB,	 åˆ‡æ¢ç›®å½• pushd å’Œ popd
+//	6.å‚æ•°ä¼ é€’,    å‚æ•°ç§»ä½ shift[/n]	 è¿”å›ç  %errorlevel%
+//	7.mode é…ç½®ç³»ç»Ÿè®¾å¤‡
+//	8.FORéå†,IF,GOTO å’Œ :
 //	9.FIND
-//	10.µ÷ÓÃÍâ²¿³ÌĞò START
-//	11.ÎÄ¼ş¹ØÁª assoc ºÍ ftype
-//	13.CALL, ±äÁ¿ÑÓ³Ù setlocal 
+//	10.è°ƒç”¨å¤–éƒ¨ç¨‹åº START
+//	11.æ–‡ä»¶å…³è” assoc å’Œ ftype
+//	13.CALL, å˜é‡å»¶è¿Ÿ setlocal 
 
 [1.2] call call
-//	call call set "o=%%%%progress:~%%p%%,1%%%%" 
-//	
-//	set a2=1
-//	set b3=2
-//	set c=3 
-//	
-//	
-//	
-//	call call echo.%%%%a%%b%c%%%%%%%
+//call cal
+call call set "o=%%%%progress:~%%p%%,1%%%%" 
+
+set a2=1
+set b3=2
+set c=3 
+
+call call echo.%%%%a%%b%c%%%%%%%
+
+//call
+@ECHO OFF
+SET "VAR=ab,dc,cc,ef,gg,AQ,gg"
+SET "VAR=%VAR:,= %"
+ECHO %VAR%
+SET "MAT=gg"
+ECHO %MAT%
+call SET "VAR=%%VAR:%MAT%= %%"
+ECHO %VAR%
+
+
 
 [1.3] FOR
-//	FOR /F "delims=£¬ tokens=x,y,m-n" %%I IN (Command1) DO Command2
-//		ÒÔ¶ººÅ·Ö¸ô£¬È¡x,y,m-nÁĞ    
-//		ÊäÈë±äÁ¿Îª%%I£¬%%J...
-//		IN ()Îªdir¡¢file¡¢string¡¢Command1
+//	FOR /F "delims=ï¼Œ tokens=x,y,m-n" %%I IN (Command1) DO Command2
+//		ä»¥é€—å·åˆ†éš”ï¼Œå–x,y,m-nåˆ—    
+//		è¾“å…¥å˜é‡ä¸º%%Iï¼Œ%%J...
+//		IN ()ä¸ºdirã€fileã€stringã€Command1
 //	
-//	FOR delims£º·Ö¸ô
-//		tokens£ºÁĞ£¬x,y,m-n,»ò*
-//		skip=1£ººöÂÔµÄĞĞÊı
-//		/d £º½öÎªÄ¿Â¼
-//		/R£ºµİ¹é,[¿É´øÅÌ·û¼°Â·¾¶]
-//		/L£º µü´úÊıÖµ·¶Î§
+//	FOR delimsï¼šåˆ†éš”
+//		tokensï¼šåˆ—ï¼Œx,y,m-n,æˆ–*
+//		skip=1ï¼šå¿½ç•¥çš„è¡Œæ•°
+//		/d ï¼šä»…ä¸ºç›®å½•
+//		/Rï¼šé€’å½’,[å¯å¸¦ç›˜ç¬¦åŠè·¯å¾„]
+//		/Lï¼š è¿­ä»£æ•°å€¼èŒƒå›´
 //			for /l %%i in (1,1,5) do @echo %%i
-//		/f£º£¨Ä¬ÈÏ£©
+//		/fï¼šï¼ˆé»˜è®¤ï¼‰
 
 [1.4] path
-//	path %~dp0:µ±Ç°batÄ¿Â¼
-//		%%~I¡ª¡ªÉ¾³ıÈ«²¿ÒıºÅ("")
-//		%%~fI¡ª¡ª½« %%I À©Õ¹µ½Ò»¸öÍêÈ«ºÏ¸ñµÄÂ·¾¶Ãû 
-//		%%~dI¡ª¡ª½ö½« %%I À©Õ¹µ½Ò»¸öÇı¶¯Æ÷ºÅ 
-//		%%~pI¡ª¡ª½ö½« %%I À©Õ¹µ½Ò»¸öÂ·¾¶ 	\SI\Test\mmi_res_128x160\B3107AC_RCH_F10_AMO_F5\
-//		%%~nI¡ª¡ª½ö½« %%I À©Õ¹µ½Ò»¸öÎÄ¼şÃû 
-//		%%~xI¡ª¡ª½ö½« %%I À©Õ¹µ½Ò»¸öÎÄ¼şÀ©Õ¹Ãû 
-//		%%~nxi	  ÎÄ¼şÃû
-//		%%~sI¡ª¡ªÀ©Õ¹µÄÂ·¾¶Ö»º¬ÓĞ¶ÌÃû	  C:\SI\Test\MMI_RE~1\B3107A~1\IMF0D3~1.PNG
-//		%%~aI¡ª¡ª½« %%I À©Õ¹µ½ÎÄ¼ş(»òÎÄ¼ş¼Ğ)µÄÊôĞÔ 
-//		%%~tI¡ª¡ª½« %%I À©Õ¹µ½ÎÄ¼ş£¨»òÎÄ¼ş¼Ğ£©µÄĞŞ¸ÄÈÕÆÚ/Ê±¼ä 
-//		%%~zI¡ª¡ª½« %%I À©Õ¹µ½ÎÄ¼şµÄ´óĞ¡ 
-//		%%~$path:I¡ª¡ª²éÕÒÁĞÔÚpath±äÁ¿ÖĞµÄÄ¿Â¼
-//	set /p var=ÇëÊäÈë±äÁ¿µÄÖµ
+//	path %~dp0:å½“å‰batç›®å½•
+//		%%~Iâ€”â€”åˆ é™¤å…¨éƒ¨å¼•å·("")
+//		%%~fIâ€”â€”å°† %%I æ‰©å±•åˆ°ä¸€ä¸ªå®Œå…¨åˆæ ¼çš„è·¯å¾„å 
+//		%%~dIâ€”â€”ä»…å°† %%I æ‰©å±•åˆ°ä¸€ä¸ªé©±åŠ¨å™¨å· 
+//		%%~pIâ€”â€”ä»…å°† %%I æ‰©å±•åˆ°ä¸€ä¸ªè·¯å¾„ 	\SI\Test\mmi_res_...\...\
+//		%%~nIâ€”â€”ä»…å°† %%I æ‰©å±•åˆ°ä¸€ä¸ªæ–‡ä»¶å 
+//		%%~xIâ€”â€”ä»…å°† %%I æ‰©å±•åˆ°ä¸€ä¸ªæ–‡ä»¶æ‰©å±•å 
+//		%%~nxi	  æ–‡ä»¶å
+//		%%~sIâ€”â€”æ‰©å±•çš„è·¯å¾„åªå«æœ‰çŸ­å	  C:\SI\Test\MMI_RE~1\B3107A~1\IMF0D3~1.PNG
+//		%%~aIâ€”â€”å°† %%I æ‰©å±•åˆ°æ–‡ä»¶(æˆ–æ–‡ä»¶å¤¹)çš„å±æ€§ 
+//		%%~tIâ€”â€”å°† %%I æ‰©å±•åˆ°æ–‡ä»¶ï¼ˆæˆ–æ–‡ä»¶å¤¹ï¼‰çš„ä¿®æ”¹æ—¥æœŸ/æ—¶é—´ 
+//		%%~zIâ€”â€”å°† %%I æ‰©å±•åˆ°æ–‡ä»¶çš„å¤§å° 
+//		%%~$path:Iâ€”â€”æŸ¥æ‰¾åˆ—åœ¨pathå˜é‡ä¸­çš„ç›®å½•
+//	set /p var=è¯·è¾“å…¥å˜é‡çš„å€¼
 //		/A expression  
 //	%PATH:str1=str2%,
-//		set var=%a: =%	 ¿Õ¸ñÌæ»»
-//	%a:~1,3%  ½ØÈ¡2~4Î»
-//	%a:~-3%  µ¹Êı3Î»
-//	%a:~3%	3Î»
-//	%a:~0,-3%  ½ØÈ¡0~µ¹Êı3Î»
+//		set var=%a: =%	 ç©ºæ ¼æ›¿æ¢
+//	%a:~1,3%  æˆªå–2~4ä½
+//	%a:~-3%  å€’æ•°3ä½
+//	%a:~3%	3ä½
+//	%a:~0,-3%  æˆªå–0~å€’æ•°3ä½
 //	
 //	
-//	CMD»ñÈ¡µ±Ç°Ä¿Â¼µÄ¾ø¶ÔÂ·¾¶ :
+//	CMDè·å–å½“å‰ç›®å½•çš„ç»å¯¹è·¯å¾„ :
 //	@echo off
-//	echo µ±Ç°ÅÌ·û£º%~d0
-//	echo µ±Ç°ÅÌ·ûºÍÂ·¾¶£º%~dp0
-//	echo µ±Ç°Åú´¦ÀíÈ«Â·¾¶£º%~f0
-//	echo µ±Ç°ÅÌ·ûºÍÂ·¾¶µÄ¶ÌÎÄ¼şÃû¸ñÊ½£º%~sdp0
-//	echo µ±Ç°CMDÄ¬ÈÏÄ¿Â¼£º%cd%
-//	echo Ä¿Â¼ÖĞÓĞ¿Õ¸ñÒ²¿ÉÒÔ¼ÓÈë""±ÜÃâÕÒ²»µ½Â·¾¶
-//	echo µ±Ç°ÅÌ·û£º"%~d0"
-//	echo µ±Ç°ÅÌ·ûºÍÂ·¾¶£º"%~dp0"
-//	echo µ±Ç°Åú´¦ÀíÈ«Â·¾¶£º"%~f0"
-//	echo µ±Ç°ÅÌ·ûºÍÂ·¾¶µÄ¶ÌÎÄ¼şÃû¸ñÊ½£º"%~sdp0"
-//	echo µ±Ç°CMDÄ¬ÈÏÄ¿Â¼£º"%cd%"
+//	echo å½“å‰ç›˜ç¬¦ï¼š%~d0
+//	echo å½“å‰ç›˜ç¬¦å’Œè·¯å¾„ï¼š%~dp0
+//	echo å½“å‰æ‰¹å¤„ç†å…¨è·¯å¾„ï¼š%~f0
+//	echo å½“å‰ç›˜ç¬¦å’Œè·¯å¾„çš„çŸ­æ–‡ä»¶åæ ¼å¼ï¼š%~sdp0
+//	echo å½“å‰CMDé»˜è®¤ç›®å½•ï¼š%cd%
+//	echo ç›®å½•ä¸­æœ‰ç©ºæ ¼ä¹Ÿå¯ä»¥åŠ å…¥""é¿å…æ‰¾ä¸åˆ°è·¯å¾„
+//	echo å½“å‰ç›˜ç¬¦ï¼š"%~d0"
+//	echo å½“å‰ç›˜ç¬¦å’Œè·¯å¾„ï¼š"%~dp0"
+//	echo å½“å‰æ‰¹å¤„ç†å…¨è·¯å¾„ï¼š"%~f0"
+//	echo å½“å‰ç›˜ç¬¦å’Œè·¯å¾„çš„çŸ­æ–‡ä»¶åæ ¼å¼ï¼š"%~sdp0"
+//	echo å½“å‰CMDé»˜è®¤ç›®å½•ï¼š"%cd%"
 
 [1.5] copy
 //	copy F:\SBD_6531_12C_DA\project\B3102AD_GTOUCH_MX_Shadow24_F4\resource\RING\R_CALL_1.mp3  E:\save\SI_res\ring_mp3_1\.mp3
 //	copy F:\SBD_6531_12C_DA\project\S039_JSY_T210_XINOVA_7735CPT_F6\resource\RING\R_CALL_1.mp3	E:\save\SI_res\ring_mp3_1\S039_JSY_T210_XINOVA_7735CPT_F6.mp3
 
 [1.6] Shutdown
-// µçÄÔÔõÃ´¶¨Ê±¹Ø»úwin7
-// 10·ÖÖÓ£º  
+// ç”µè„‘æ€ä¹ˆå®šæ—¶å…³æœºwin7
+// 10åˆ†é’Ÿï¼š  
 //	Shutdown -s -t 600
-// 20·ÖÖÓ£º  
+// 20åˆ†é’Ÿï¼š  
 //	Shutdown -s -t 1200
-// 100·ÖÖÓ£º  
+// 100åˆ†é’Ÿï¼š  
 //	Shutdown -s -t 6000
 //	Shutdown -a
 
@@ -139,17 +155,18 @@ Save:node\ToolsMsg\Macro_Cmd.h \[4.3\]
 
 [1.7] --
 hosts :
-Çå³ıhosts»º´æ£ºipconfig /flushdns
+æ¸…é™¤hostsç¼“å­˜ï¼š
+ipconfig /flushdns
 
 
 
 
 [1.8] unrar
-//½âÑ¹£¬ÃÜÂëÎÄ¼ş£ºpass.txt
+//è§£å‹ï¼Œå¯†ç æ–‡ä»¶ï¼špass.txt
 //	for /F %%i IN (pass.txt) DO UnRAR.exe  x -O- -p%%i ara.rar
 //	pause
 
-// Éú³ÉÃÜÂë£¨4Î»£©£º
+// ç”Ÿæˆå¯†ç ï¼ˆ4ä½ï¼‰ï¼š
 //	@echo off&setlocal EnableDelayedExpansion
 //	set  str=abcdefghijklmnopqrstuvwxwzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
 //
@@ -165,7 +182,7 @@ hosts :
 //	pause
 
 
-//×ÛºÏ£º
+//ç»¼åˆï¼š
 //	@echo off&setlocal EnableDelayedExpansion
 //
 //	set  str1=abcdefghijklmnopqrstuvwxwzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
@@ -185,29 +202,29 @@ hosts :
 //	)
 //	pause
 
-//	È±µã£º½â´óÎÄ¼ş£¬ºÜÂı
-//	½â´óÎÄ¼ş£¬ÓÃ×Öµä+RAR Password Cracker
+//	ç¼ºç‚¹ï¼šè§£å¤§æ–‡ä»¶ï¼Œå¾ˆæ…¢
+//	è§£å¤§æ–‡ä»¶ï¼Œç”¨å­—å…¸+RAR Password Cracker
 
-//	ÓÃ·¨£ºunzip [-Z] [-opts [modifiers]] file [.zip] [list] [-x xlist] [-d exdir]
-//	  Ä¬ÈÏ²Ù×÷ÊÇ½«ÁĞ±íÖĞµÄÎÄ¼ş£¨³ıÁËxlistÖĞµÄÎÄ¼ş£©ÌáÈ¡µ½exdir;
-//	  ÎÄ¼ş[.zip]¿ÉÒÔÊÇÍ¨Åä·û¡£ -Z => ZipInfoÄ£Ê½£¨¡°unzip -Z¡±µÄÓÃ·¨£©¡£
+//	ç”¨æ³•ï¼šunzip [-Z] [-opts [modifiers]] file [.zip] [list] [-x xlist] [-d exdir]
+//	  é»˜è®¤æ“ä½œæ˜¯å°†åˆ—è¡¨ä¸­çš„æ–‡ä»¶ï¼ˆé™¤äº†xlistä¸­çš„æ–‡ä»¶ï¼‰æå–åˆ°exdir;
+//	  æ–‡ä»¶[.zip]å¯ä»¥æ˜¯é€šé…ç¬¦ã€‚ -Z => ZipInfoæ¨¡å¼ï¼ˆâ€œunzip -Zâ€çš„ç”¨æ³•ï¼‰ã€‚
 //
-//	  -p½«ÎÄ¼şÌáÈ¡µ½¹ÜµÀ£¬Ã»ÓĞÏûÏ¢-lÁĞ±íÎÄ¼ş£¨¶Ì¸ñÊ½£©
-//	  -f freshenÏÖÓĞÎÄ¼ş£¬Çë´´½¨ÎŞ-t²âÊÔÑ¹Ëõ¹éµµÊı¾İ
-//	  -u¸üĞÂÎÄ¼ş£¬ÈçÓĞ±ØÒª£¬´´½¨-zÏÔÊ¾¹éµµ×¢ÊÍ
-//	  -xÅÅ³ıºóÃæµÄÎÄ¼ş£¨ÔÚxlistÖĞ£©-d½«ÎÄ¼şÌáÈ¡µ½exdir
+//	  -på°†æ–‡ä»¶æå–åˆ°ç®¡é“ï¼Œæ²¡æœ‰æ¶ˆæ¯-låˆ—è¡¨æ–‡ä»¶ï¼ˆçŸ­æ ¼å¼ï¼‰
+//	  -f freshenç°æœ‰æ–‡ä»¶ï¼Œè¯·åˆ›å»ºæ— -tæµ‹è¯•å‹ç¼©å½’æ¡£æ•°æ®
+//	  -uæ›´æ–°æ–‡ä»¶ï¼Œå¦‚æœ‰å¿…è¦ï¼Œåˆ›å»º-zæ˜¾ç¤ºå½’æ¡£æ³¨é‡Š
+//	  -xæ’é™¤åé¢çš„æ–‡ä»¶ï¼ˆåœ¨xlistä¸­ï¼‰-då°†æ–‡ä»¶æå–åˆ°exdir
 //
-//	ĞŞÊÎ·û£º-q°²¾²Ä£Ê½£¨-qq => quieter£©
-//	  -n´Ó²»¸²¸ÇÏÖÓĞÎÄ¼ş - ×Ô¶¯×ª»»ÈÎºÎÎÄ±¾ÎÄ¼ş
-//	  -o¸²¸ÇÎÄ¼şWITHOUTÌáÊ¾-aa½«ËùÓĞÎÄ¼şÊÓÎªÎÄ±¾
-//	  -j junk paths£¨²»Òª´´½¨Ä¿Â¼£©-vÊÇverbose / print°æ±¾ĞÅÏ¢
-//	  -CÆ¥ÅäÎÄ¼şÃû´óĞ¡Ğ´Ãô¸Ğ-L make£¨Ò»Ğ©£©Ãû³ÆĞ¡Ğ´
-//	  -X restore UID / GID info -V±£ÁôVMS°æ±¾ºÅ
-//	  -K±£³Ösetuid / setgid /Õ³ĞÔÈ¨ÏŞ-M¹ÜµÀÍ¨¹ı¡°¸ü¶à¡±Ñ°ºô»ú
-//	Ê¾Àı£¨ÓĞ¹ØÏêÏ¸ĞÅÏ¢£¬Çë²ÎÔÄunzip.txt£©£º
-//	  unzip data1 -x joe =>´Ózipfile data1.zipÖĞÌáÈ¡³ıjoeÖ®ÍâµÄËùÓĞÎÄ¼ş
-//	  unzip -p foo | more =>Í¨¹ı¹ÜµÀ½«foo.zipµÄÄÚÈİ·¢ËÍµ½³ÌĞòÖĞ
-//	  unzip -fo foo ReadMe =>Èç¹û´æµµÎÄ¼ş½ÏĞÂ£¬Ôò¾²Ä¬Ìæ»»ÏÖÓĞµÄReadMe
+//	ä¿®é¥°ç¬¦ï¼š-qå®‰é™æ¨¡å¼ï¼ˆ-qq => quieterï¼‰
+//	  -nä»ä¸è¦†ç›–ç°æœ‰æ–‡ä»¶ - è‡ªåŠ¨è½¬æ¢ä»»ä½•æ–‡æœ¬æ–‡ä»¶
+//	  -oè¦†ç›–æ–‡ä»¶WITHOUTæç¤º-aaå°†æ‰€æœ‰æ–‡ä»¶è§†ä¸ºæ–‡æœ¬
+//	  -j junk pathsï¼ˆä¸è¦åˆ›å»ºç›®å½•ï¼‰-væ˜¯verbose / printç‰ˆæœ¬ä¿¡æ¯
+//	  -CåŒ¹é…æ–‡ä»¶åå¤§å°å†™æ•æ„Ÿ-L makeï¼ˆä¸€äº›ï¼‰åç§°å°å†™
+//	  -X restore UID / GID info -Vä¿ç•™VMSç‰ˆæœ¬å·
+//	  -Kä¿æŒsetuid / setgid /ç²˜æ€§æƒé™-Mç®¡é“é€šè¿‡â€œæ›´å¤šâ€å¯»å‘¼æœº
+//	ç¤ºä¾‹ï¼ˆæœ‰å…³è¯¦ç»†ä¿¡æ¯ï¼Œè¯·å‚é˜…unzip.txtï¼‰ï¼š
+//	  unzip data1 -x joe =>ä»zipfile data1.zipä¸­æå–é™¤joeä¹‹å¤–çš„æ‰€æœ‰æ–‡ä»¶
+//	  unzip -p foo | more =>é€šè¿‡ç®¡é“å°†foo.zipçš„å†…å®¹å‘é€åˆ°ç¨‹åºä¸­
+//	  unzip -fo foo ReadMe =>å¦‚æœå­˜æ¡£æ–‡ä»¶è¾ƒæ–°ï¼Œåˆ™é™é»˜æ›¿æ¢ç°æœ‰çš„ReadMe
 //
 //	UnRAR.exe  x -O-  mmi_res_128x160.zip
 //	zip common.zip common_mdu_def.h
@@ -229,131 +246,185 @@ findstr /s /i /c:"RAM_RW" *.*
 //	[/C:string] [/G:file] [/D:dir list] [/A:color attributes] [/OFF[LINE]] 
 //	strings [[drive:][path]filename[ ...]] 
 //
-//	/B ÔÚÒ»ĞĞµÄ¿ªÊ¼Åä¶ÔÄ£Ê½¡£ 
-//	/E ÔÚÒ»ĞĞµÄ½áÎ²Åä¶ÔÄ£Ê½¡£ 
-//	/L °´×ÖÊ¹ÓÃËÑË÷×Ö·û´®¡£ 
-//	/R ½«ËÑË÷×Ö·û´®×÷ÎªÕıÔò±í´ïÊ½Ê¹ÓÃ¡£ 
-//	/S ÔÚµ±Ç°Ä¿Â¼ºÍËùÓĞ×ÓÄ¿Â¼ÖĞËÑË÷Æ¥ÅäÎÄ¼ş¡£ 
-//	/I Ö¸¶¨ËÑË÷²»·Ö´óĞ¡Ğ´¡£ 
-//	/X ´òÓ¡ÍêÈ«Æ¥ÅäµÄĞĞ¡£ 
-//	/V Ö»´òÓ¡²»°üº¬Æ¥ÅäµÄĞĞ¡£ 
-//	/N ÔÚÆ¥ÅäµÄÃ¿ĞĞÇ°´òÓ¡ĞĞÊı¡£ 
-//	/M Èç¹ûÎÄ¼şº¬ÓĞÆ¥ÅäÏî£¬Ö»´òÓ¡ÆäÎÄ¼şÃû¡£ 
-//	/O ÔÚÃ¿¸öÆ¥ÅäĞĞÇ°´òÓ¡×Ö·ûÆ«ÒÆÁ¿¡£ 
-//	/P ºöÂÔÓĞ²»¿É´òÓ¡×Ö·ûµÄÎÄ¼ş¡£ 
-//	/OFF[LINE] ²»Ìø¹ı´øÓĞÍÑ»úÊôĞÔ¼¯µÄÎÄ¼ş¡£ 
-//	/A:attr Ö¸¶¨ÓĞÊ®Áù½øÎ»Êı×ÖµÄÑÕÉ«ÊôĞÔ¡£Çë¼û "color /?" 
-//	/F:file ´ÓÖ¸¶¨ÎÄ¼ş¶ÁÎÄ¼şÁĞ±í (/ ´ú±í¿ØÖÆÌ¨)¡£ 
-//	/C:string Ê¹ÓÃÖ¸¶¨×Ö·û´®×÷ÎªÎÄ×ÖËÑË÷×Ö·û´®¡£ 
-//	/G:file ´ÓÖ¸¶¨µÄÎÄ¼ş»ñµÃËÑË÷×Ö·û´®¡£ (/ ´ú±í¿ØÖÆÌ¨)¡£ 
-//	/D:dir ²éÕÒÒÔ·ÖºÅÎª·Ö¸ô·ûµÄÄ¿Â¼ÁĞ±í 
-//	strings Òª²éÕÒµÄÎÄ×Ö¡£ 
+//	/B åœ¨ä¸€è¡Œçš„å¼€å§‹é…å¯¹æ¨¡å¼ã€‚ 
+//	/E åœ¨ä¸€è¡Œçš„ç»“å°¾é…å¯¹æ¨¡å¼ã€‚ 
+//	/L æŒ‰å­—ä½¿ç”¨æœç´¢å­—ç¬¦ä¸²ã€‚ 
+//	/R å°†æœç´¢å­—ç¬¦ä¸²ä½œä¸ºæ­£åˆ™è¡¨è¾¾å¼ä½¿ç”¨ã€‚ 
+//	/S åœ¨å½“å‰ç›®å½•å’Œæ‰€æœ‰å­ç›®å½•ä¸­æœç´¢åŒ¹é…æ–‡ä»¶ã€‚ 
+//	/I æŒ‡å®šæœç´¢ä¸åˆ†å¤§å°å†™ã€‚ 
+//	/X æ‰“å°å®Œå…¨åŒ¹é…çš„è¡Œã€‚ 
+//	/V åªæ‰“å°ä¸åŒ…å«åŒ¹é…çš„è¡Œã€‚ 
+//	/N åœ¨åŒ¹é…çš„æ¯è¡Œå‰æ‰“å°è¡Œæ•°ã€‚ 
+//	/M å¦‚æœæ–‡ä»¶å«æœ‰åŒ¹é…é¡¹ï¼Œåªæ‰“å°å…¶æ–‡ä»¶åã€‚ 
+//	/O åœ¨æ¯ä¸ªåŒ¹é…è¡Œå‰æ‰“å°å­—ç¬¦åç§»é‡ã€‚ 
+//	/P å¿½ç•¥æœ‰ä¸å¯æ‰“å°å­—ç¬¦çš„æ–‡ä»¶ã€‚ 
+//	/OFF[LINE] ä¸è·³è¿‡å¸¦æœ‰è„±æœºå±æ€§é›†çš„æ–‡ä»¶ã€‚ 
+//	/A:attr æŒ‡å®šæœ‰åå…­è¿›ä½æ•°å­—çš„é¢œè‰²å±æ€§ã€‚è¯·è§ "color /?" 
+//	/F:file ä»æŒ‡å®šæ–‡ä»¶è¯»æ–‡ä»¶åˆ—è¡¨ (/ ä»£è¡¨æ§åˆ¶å°)ã€‚ 
+//	/C:string ä½¿ç”¨æŒ‡å®šå­—ç¬¦ä¸²ä½œä¸ºæ–‡å­—æœç´¢å­—ç¬¦ä¸²ã€‚ 
+//	/G:file ä»æŒ‡å®šçš„æ–‡ä»¶è·å¾—æœç´¢å­—ç¬¦ä¸²ã€‚ (/ ä»£è¡¨æ§åˆ¶å°)ã€‚ 
+//	/D:dir æŸ¥æ‰¾ä»¥åˆ†å·ä¸ºåˆ†éš”ç¬¦çš„ç›®å½•åˆ—è¡¨ 
+//	strings è¦æŸ¥æ‰¾çš„æ–‡å­—ã€‚ 
 //	[drive:][path]filename 
-//	Ö¸¶¨Òª²éÕÒµÄÎÄ¼ş¡£ 
+//	æŒ‡å®šè¦æŸ¥æ‰¾çš„æ–‡ä»¶ã€‚ 
 
-//	³ı·Ç²ÎÊıÓĞ /C Ç°×º£¬ÇëÊ¹ÓÃ¿Õ¸ñ¸ô¿ªËÑË÷×Ö·û´®¡£ 
-//	ÀıÈç: 'FINDSTR "hello there" x.y' ÔÚÎÄ¼ş x.y ÖĞÑ°ÕÒ "hello" »ò 
-//	"there"¡£'FINDSTR /C:"hello there" x.y' ÎÄ¼ş x.y Ñ°ÕÒ 
-//	"hello there"¡£ 
+//	é™¤éå‚æ•°æœ‰ /C å‰ç¼€ï¼Œè¯·ä½¿ç”¨ç©ºæ ¼éš”å¼€æœç´¢å­—ç¬¦ä¸²ã€‚ 
+//	ä¾‹å¦‚: 'FINDSTR "hello there" x.y' åœ¨æ–‡ä»¶ x.y ä¸­å¯»æ‰¾ "hello" æˆ– 
+//	"there"ã€‚'FINDSTR /C:"hello there" x.y' æ–‡ä»¶ x.y å¯»æ‰¾ 
+//	"hello there"ã€‚ 
 //
-//	ÕıÔò±í´ïÊ½µÄ¿ìËÙ²Î¿¼: 
-//	. Í¨Åä·û: ÈÎºÎ×Ö·û 
-//	* ÖØ¸´: ÒÔÇ°×Ö·û»òÀà³öÏÖÁã»òÁãÒÔÉÏ´ÎÊı 
-//	^ ĞĞÎ»ÖÃ: ĞĞµÄ¿ªÊ¼ 
-//	$ ĞĞÎ»ÖÃ: ĞĞµÄÖÕµã 
-//	[class] ×Ö·ûÀà: ÈÎºÎÔÚ×Ö·û¼¯ÖĞµÄ×Ö·û 
-//	[^class] ²¹×Ö·ûÀà: ÈÎºÎ²»ÔÚ×Ö·û¼¯ÖĞµÄ×Ö·û 
-//	[x-y] ·¶Î§: ÔÚÖ¸¶¨·¶Î§ÄÚµÄÈÎºÎ×Ö·û 
-//	\x Escape: Ôª×Ö·û x µÄÎÄ×ÖÓÃ·¨ 
-//	\<xyz ×ÖÎ»ÖÃ: ×ÖµÄ¿ªÊ¼ 
-//	xyz\> ×ÖÎ»ÖÃ: ×ÖµÄ½áÊø 
+//	æ­£åˆ™è¡¨è¾¾å¼çš„å¿«é€Ÿå‚è€ƒ: 
+//	. é€šé…ç¬¦: ä»»ä½•å­—ç¬¦ 
+//	* é‡å¤: ä»¥å‰å­—ç¬¦æˆ–ç±»å‡ºç°é›¶æˆ–é›¶ä»¥ä¸Šæ¬¡æ•° 
+//	^ è¡Œä½ç½®: è¡Œçš„å¼€å§‹ 
+//	$ è¡Œä½ç½®: è¡Œçš„ç»ˆç‚¹ 
+//	[class] å­—ç¬¦ç±»: ä»»ä½•åœ¨å­—ç¬¦é›†ä¸­çš„å­—ç¬¦ 
+//	[^class] è¡¥å­—ç¬¦ç±»: ä»»ä½•ä¸åœ¨å­—ç¬¦é›†ä¸­çš„å­—ç¬¦ 
+//	[x-y] èŒƒå›´: åœ¨æŒ‡å®šèŒƒå›´å†…çš„ä»»ä½•å­—ç¬¦ 
+//	\x Escape: å…ƒå­—ç¬¦ x çš„æ–‡å­—ç”¨æ³• 
+//	\<xyz å­—ä½ç½®: å­—çš„å¼€å§‹ 
+//	xyz\> å­—ä½ç½®: å­—çš„ç»“æŸ 
 
 
-[1.10] 
+[1.10] string ------------æˆªå–ã€æ›¿æ¢ã€åˆå¹¶
+// æˆªå–:
+//	 %a:~1,3%     æˆªå–2~4ä½
+//	 %a:~-3%      å€’æ•°3ä½
+//	 %a:~3%	      3ä½
+//	 %a:~0,-3%    æˆªå–0~å€’æ•°3ä½
+
+// æ›¿æ¢:
+//	 set var=%a: =%	 ç©ºæ ¼æ›¿æ¢
+
+// åˆå¹¶:
+//	 set var=%aa%%bb%	 æ”¾åœ¨ä¸€èµ·å°±å¯ä»¥äº†
+
+
+
+[1.11] if...else...
+// 
+if not defined sbd_param1 (
+	set sbd_param1=%%j
+) else if not defined sbd_param2 (
+	set sbd_param2=%%j
+) else (
+	exit
+) 
+
+
+[1.12] setlocal----------å˜é‡å»¶è¿Ÿ
+// å˜é‡å»¶è¿Ÿ
+@echo off&setlocal EnableDelayedExpansion
+&endlocal
+
+set sbd_param1=%%j
+
+
+[1.13] set /a, set /p
+set /a æ‰§è¡Œæ•°å­¦è®¡ç®—
+//	set /a a=2*%b%
+set /p æç¤ºç”¨æˆ·è¾“å…¥
+//	set /p POP=è¯·è¾“å…¥pingçš„æ¬¡æ•°ï¼š
+
+
+[1.14] 
+
+
+[1.15] 
 
 
 
 
 [2.1] dir
 //	@echo off
-//	for /d /r "E:\desktop\¹¤¾ß\a	file\dosÅú´¦Àí" %%i in (*) do echo %%i>>list.txt
+//	for /d /r "E:\desktop\å·¥å…·\a	file\dosæ‰¹å¤„ç†" %%i in (*) do echo %%i>>list.txt
 //	pause
 //
-//	»òÕß
+//	æˆ–è€…
 //	@echo off
-//	for /f "delims=" %%i in ('dir /ad/b/s "E:\desktop\¹¤¾ß\a	file\dosÅú´¦Àí"') do echo %%i>>list.txt
-//	for /f "delims=" %%i in ('dir /ad/b/s "E:\desktop\¹¤¾ß\a	file\dosÅú´¦Àí"') do echo %%~ni>>list.txt
+//	for /f "delims=" %%i in ('dir /ad/b/s "E:\desktop\å·¥å…·\a	file\dosæ‰¹å¤„ç†"') do echo %%i>>list.txt
+//	for /f "delims=" %%i in ('dir /ad/b/s "E:\desktop\å·¥å…·\a	file\dosæ‰¹å¤„ç†"') do echo %%~ni>>list.txt
 //	pause
 //
-//	ÎÄ¼ş¼ĞÃû Â·¾¶:%%i
-//	ÎÄ¼ş¼ĞÃû	 :%%~ni
+//	æ–‡ä»¶å¤¹å è·¯å¾„:%%i
+//	æ–‡ä»¶å¤¹å	 :%%~ni
 //
 //	DIR *.* /B >list.txt
 
 
 //	[drive:][path][filename]
-//				 Ö¸¶¨ÒªÁĞ³öµÄÇı¶¯Æ÷¡¢Ä¿Â¼ºÍ/»òÎÄ¼ş¡£
+//				 æŒ‡å®šè¦åˆ—å‡ºçš„é©±åŠ¨å™¨ã€ç›®å½•å’Œ/æˆ–æ–‡ä»¶ã€‚
 //
-//	 /A 		 ÏÔÊ¾¾ßÓĞÖ¸¶¨ÊôĞÔµÄÎÄ¼ş¡£
-//	 attributes   D  Ä¿Â¼ 			   R  Ö»¶ÁÎÄ¼ş
-//				  H  Òş²ØÎÄ¼ş			 A	×¼±¸´æµµµÄÎÄ¼ş
-//				  S  ÏµÍ³ÎÄ¼ş			 -	±íÊ¾¡°·ñ¡±µÄÇ°×º
-//	 /B 		 Ê¹ÓÃ¿Õ¸ñÊ½(Ã»ÓĞ±êÌâĞÅÏ¢»òÕªÒª)¡£
-//	 /C 		 ÔÚÎÄ¼ş´óĞ¡ÖĞÏÔÊ¾Ç§Î»Êı·Ö¸ô·û¡£ÕâÊÇÄ¬ÈÏÖµ¡£ÓÃ /-C À´
-//				 Í£ÓÃ·Ö¸ô·ûÏÔÊ¾¡£
-//	 /D 		 ¸ú¿íÊ½ÏàÍ¬£¬µ«ÎÄ¼şÊÇ°´À¸·ÖÀàÁĞ³öµÄ¡£
-//	 /L 		 ÓÃĞ¡Ğ´¡£
-//	 /N 		 ĞÂµÄ³¤ÁĞ±í¸ñÊ½£¬ÆäÖĞÎÄ¼şÃûÔÚ×îÓÒ±ß¡£
-//	 /O 		 ÓÃ·ÖÀàË³ĞòÁĞ³öÎÄ¼ş¡£
-//	 sortorder	  N  °´Ãû³Æ(×ÖÄ¸Ë³Ğò)	 S	°´´óĞ¡(´ÓĞ¡µ½´ó)
-//				  E  °´À©Õ¹Ãû(×ÖÄ¸Ë³Ğò)   D  °´ÈÕÆÚ/Ê±¼ä(´ÓÏÈµ½ºó)
-//				  G  ×éÄ¿Â¼ÓÅÏÈ		   -  µßµ¹Ë³ĞòµÄÇ°×º
-//	 /P 		 ÔÚÃ¿¸öĞÅÏ¢ÆÁÄ»ºóÔİÍ£¡£
-//	 /Q 		 ÏÔÊ¾ÎÄ¼şËùÓĞÕß¡£
-//	 /S 		 ÏÔÊ¾Ö¸¶¨Ä¿Â¼ºÍËùÓĞ×ÓÄ¿Â¼ÖĞµÄÎÄ¼ş¡£
-//	 /T 		 ¿ØÖÆÏÔÊ¾»òÓÃÀ´·ÖÀàµÄÊ±¼ä×Ö·ûÓò¡£
-//	 timefield	 C	´´½¨Ê±¼ä
-//				 A	ÉÏ´Î·ÃÎÊÊ±¼ä
+//	 /A 		 æ˜¾ç¤ºå…·æœ‰æŒ‡å®šå±æ€§çš„æ–‡ä»¶ã€‚
+//	 attributes   D  ç›®å½• 			   R  åªè¯»æ–‡ä»¶
+//				  H  éšè—æ–‡ä»¶			 A	å‡†å¤‡å­˜æ¡£çš„æ–‡ä»¶
+//				  S  ç³»ç»Ÿæ–‡ä»¶			 -	è¡¨ç¤ºâ€œå¦â€çš„å‰ç¼€
+//	 /B 		 ä½¿ç”¨ç©ºæ ¼å¼(æ²¡æœ‰æ ‡é¢˜ä¿¡æ¯æˆ–æ‘˜è¦)ã€‚
+//	 /C 		 åœ¨æ–‡ä»¶å¤§å°ä¸­æ˜¾ç¤ºåƒä½æ•°åˆ†éš”ç¬¦ã€‚è¿™æ˜¯é»˜è®¤å€¼ã€‚ç”¨ /-C æ¥
+//				 åœç”¨åˆ†éš”ç¬¦æ˜¾ç¤ºã€‚
+//	 /D 		 è·Ÿå®½å¼ç›¸åŒï¼Œä½†æ–‡ä»¶æ˜¯æŒ‰æ åˆ†ç±»åˆ—å‡ºçš„ã€‚
+//	 /L 		 ç”¨å°å†™ã€‚
+//	 /N 		 æ–°çš„é•¿åˆ—è¡¨æ ¼å¼ï¼Œå…¶ä¸­æ–‡ä»¶ååœ¨æœ€å³è¾¹ã€‚
+//	 /O 		 ç”¨åˆ†ç±»é¡ºåºåˆ—å‡ºæ–‡ä»¶ã€‚
+//	 sortorder	  N  æŒ‰åç§°(å­—æ¯é¡ºåº)	 S	æŒ‰å¤§å°(ä»å°åˆ°å¤§)
+//				  E  æŒ‰æ‰©å±•å(å­—æ¯é¡ºåº)   D  æŒ‰æ—¥æœŸ/æ—¶é—´(ä»å…ˆåˆ°å)
+//				  G  ç»„ç›®å½•ä¼˜å…ˆ		   -  é¢ å€’é¡ºåºçš„å‰ç¼€
+//	 /P 		 åœ¨æ¯ä¸ªä¿¡æ¯å±å¹•åæš‚åœã€‚
+//	 /Q 		 æ˜¾ç¤ºæ–‡ä»¶æ‰€æœ‰è€…ã€‚
+//	 /S 		 æ˜¾ç¤ºæŒ‡å®šç›®å½•å’Œæ‰€æœ‰å­ç›®å½•ä¸­çš„æ–‡ä»¶ã€‚
+//	 /T 		 æ§åˆ¶æ˜¾ç¤ºæˆ–ç”¨æ¥åˆ†ç±»çš„æ—¶é—´å­—ç¬¦åŸŸã€‚
+//	 timefield	 C	åˆ›å»ºæ—¶é—´
+//				 A	ä¸Šæ¬¡è®¿é—®æ—¶é—´
 
 
-[2.2] show: Dir, File , Dir+File£º
-//	show: Dir, File , Dir+File£º
-//	
-//	@echo off
-//	for /r . %%a in (.) do @echo  %%~dpa,%%~nxa,%%a >> file.txt
-//	pause
+[2.2] show: Dir, File , Dir+Fileï¼š
+//	show: Dir, File , Dir+Fileï¼š
+/*
+	for /r . %%i in (.) do (
+	    @echo  %%~dpi, %%~nxi, %%i
+	)>>z_file.txt
+*/
 
 
 [2.3] show: File , Dir
-//	show: File , Dir£º/¿Õ¸ñÊ½/·ÇÄ¿Â¼/×ÓÄ¿Â¼/1²ã×ÓÄ¿Â¼
-//	
-//	@echo off
-//	for /f "delims=" %%i   in ('dir  /b/a-d/s  .\APPS\.\classes-full-debug.jar')  do (
-//	echo %%~nxi£¬%%i
-//	)>> file.txt
-//	pause
+//	show: File , Dirï¼š/ç©ºæ ¼å¼/éç›®å½•/å­ç›®å½•/1å±‚å­ç›®å½•
+/*
+	@echo off
+	for /f "delims=" %%i   in ('dir  /b/a-d/s  .\APPS\.\classes-full-debug.jar')  do (
+	echo %%~nxiï¼Œ%%i
+	)>> file.txt
+	pause
+*/
+
+/*
+	for /r %%i in (*) do (
+		@echo  %%~dpi, %%~nxi, %%i
+	)>>z_file.txt
+*/
 
 
 [2.4] show: ChildFile
-//	show: ChildFile£º/¿Õ¸ñÊ½/×ÓÄ¿Â¼
-//	
-//	@echo off
-//	for /f "delims=" %%i in ('dir /s/b ".\*.txt"') do (
-//		echo %%~ni
-//	)>>file.txt
-//	start file.txt
+//	show: ChildFileï¼š/ç©ºæ ¼å¼/å­ç›®å½•
+/*
+	@echo off
+	for /f "delims=" %%i in ('dir /s/b ".\*.txt"') do (
+		echo %%~ni
+	)>>file.txt
+	start file.txt
+*/
 
 
 [2.5] show: File
-//	show: File£º/¿Õ¸ñÊ½
-//	
-//	@echo off
-//	DIR *.* /B >> file.txt
-//	start file.txt
+//	show: Fileï¼š/ç©ºæ ¼å¼
+/*
+	@echo off
+	DIR *.* /B >> file.txt
+	start file.txt
+*/
 
 
 [2.6] show: File Time
-//	show: File Time£º
+//	show: File Timeï¼š
 //	
 //	@echo off
 //	@for /f "tokens=1,2 delims= " %%a in ('dir file.txt^|find "20"') do @echo %%a %%b>time.txt
@@ -361,7 +432,7 @@ findstr /s /i /c:"RAM_RW" *.*
 
 
 [2.7] show: hide File
-//	show: hide File£º
+//	show: hide Fileï¼š
 //	
 //	@echo off
 //	for /f "delims=" %%i in ('dir /ah/b/s "*"') do echo %%i
@@ -369,13 +440,13 @@ findstr /s /i /c:"RAM_RW" *.*
 
 
 [2.8] attrib
-//	ÆäËûÅú´¦Àí£º
-//	1.	Òş²ØÎÄ¼ş¼Ğ£¬ÓëÈ¡ÏûÒş²Ø
+//	å…¶ä»–æ‰¹å¤„ç†ï¼š
+//	1.	éšè—æ–‡ä»¶å¤¹ï¼Œä¸å–æ¶ˆéšè—
 //	
-//	Òş²Ø
+//	éšè—
 //	attrib +s +a +h +r e:\bak\tools
 //	
-//	¼üÈë£ºattrib -a -s -h -r e:\bak\tools
+//	é”®å…¥ï¼šattrib -a -s -h -r e:\bak\tools
 //	
 //	
 //	attrib +r +h file.txt /s /d
@@ -392,7 +463,7 @@ findstr /s /i /c:"RAM_RW" *.*
 
 [3.1] logcat
 // logcat
-adb logcat > C:\Users\ZXSD-SW2\Desktop\ÆäËûÎÄ¼ş¼Ğ\editplus_file\logcat.txt
+adb logcat > C:\Users\ZXSD-SW2\Desktop\å…¶ä»–æ–‡ä»¶å¤¹\editplus_file\logcat.txt
 
 
 [3.2] signapk
@@ -404,11 +475,11 @@ java -jar signapk.jar certificate.pem key.pk8 your-app.apk	your-signed-app.apk
 java -jar signapk.jar platform.x509.pem platform.pk8 HTSAFETY.apk HTSAFETY
 
 
-[3.3] ²é¿´ÊÖ»ú·Ö±æÂÊ
+[3.3] æŸ¥çœ‹æ‰‹æœºåˆ†è¾¨ç‡
 adb shell dumpsys window displays
 
 
-[3.4] Ä£ÄâÆ÷/Éè±¸ÁĞ±í
+[3.4] æ¨¡æ‹Ÿå™¨/è®¾å¤‡åˆ—è¡¨
 //	adb nodaemon server
 //	netstat -ano | findstr "5037"
 //	tasklist|find "13528"
@@ -423,96 +494,96 @@ adb shell dumpsys window displays
 //	adb -s CVH7N15A19006563 shell
 
 
-[3.5] »ñÈ¡°üÃû
+[3.5] è·å–åŒ…å
 //	cd	D:\adt-bundle-windows-x86_64-20131030\sdk\build-tools\24.0.0
-//	aapt dump badging E:\×ÀÃæ\QuickSearchBox.apk > file.txt
-//	aapt dump badging E:\×ÀÃæ\QuickSearchBoxBenchmarks.apk > file.txt
+//	aapt dump badging E:\æ¡Œé¢\QuickSearchBox.apk > file.txt
+//	aapt dump badging E:\æ¡Œé¢\QuickSearchBoxBenchmarks.apk > file.txt
 //	="aapt dump badging E:\android\apk_bak\angler\"&B1&A1&">E:\android\apk_bak\angler\aapt\"&LEFT(A1,SEARCH("\",A1)-1)&".txt"
 	
 
 [3.6] apktool
-//	cd F:\¹¤¾ß\3  linux¹¤¾ß\apktool
-//	apktool d hello.apk /tmp/hello        #½â°ü
-//	apktool b /tmp/hello /tmp/hello2.apk        #´ò°ü
+//	cd F:\å·¥å…·\3  linuxå·¥å…·\apktool
+//	apktool d hello.apk /tmp/hello        #è§£åŒ…
+//	apktool b /tmp/hello /tmp/hello2.apk        #æ‰“åŒ…
 //
 //	./apktool d  -f Velvet.apk  -o   Velvet
 //	apktool d [-s] -f <apkPath> -o <folderPath>
 	
 
 [3.7] sqlite3
-//sqlite3 µ¼Èëµ¼³öexcel¡¢Excel²Ù×÷
+//sqlite3 å¯¼å…¥å¯¼å‡ºexcelã€Excelæ“ä½œ
 //	D:cd D:\adt-bundle-windows-x86-20130522\sdk\platform-tools\adb.exe shell
 //
 //	/data/data/com.*.*(package name)/  
 //	adb kill-server
 //	adb start-serveradb shell
-//	   Êı¾İ¿â±íµÄ¶¨Òå£º 
+//	   æ•°æ®åº“è¡¨çš„å®šä¹‰ï¼š 
 //	cd D:\adt-bundle-windows-x86-20130522\sdk\tools\
 //	sqlite3.exe d:\ss.db 
 //	create table bookroom(id integer, roomname nvarchar(20), mapfilename nvarchar(20));
 //	create table ind(id1 integer, roomname nvarchar(20), id2 integer);
 //	 
-//	   1¡¢Excel  ->  bookroom.csv  ->  É¾Ê×ĞĞ£¬Áí´æUTF-8
-//	   2¡¢ÀûÓÃsqlite3µÄimportÃüÁî½«Êı¾İ´ÓÎÄ¼şµ¼Èëµ½±íÖĞ£¬Ä¬ÈÏµÄ·Ö¸î·ûºÅÊÇÊúÏß'|'¡£
+//	   1ã€Excel  ->  bookroom.csv  ->  åˆ é¦–è¡Œï¼Œå¦å­˜UTF-8
+//	   2ã€åˆ©ç”¨sqlite3çš„importå‘½ä»¤å°†æ•°æ®ä»æ–‡ä»¶å¯¼å…¥åˆ°è¡¨ä¸­ï¼Œé»˜è®¤çš„åˆ†å‰²ç¬¦å·æ˜¯ç«–çº¿'|'ã€‚
 //	sqlite3 test.db
 //	sqlite> .separator ','
 //	sqlite>.import D:\\ss.csv ind
-//	     3¡¢ÕâÑùÊı¾İ¾Íµ¼Èëµ½ÁËbookroom±íÖĞÁË£¬ÈçÏÂ²âÊÔ
+//	     3ã€è¿™æ ·æ•°æ®å°±å¯¼å…¥åˆ°äº†bookroomè¡¨ä¸­äº†ï¼Œå¦‚ä¸‹æµ‹è¯•
 //	sqlite> select * from bookroom;
-//	      4¡¢µ¼³ö 
+//	      4ã€å¯¼å‡º 
 //	sqlite> .output test.txt   
 //	sqlite> select * from table_name; 
 //	sqlite> .output stdout
 //	sqlite> select * from table_name; 
 //	sqlite> .output stdout  
-//	      5¡¢µ¼ÈëÄ£ÄâÆ÷       6¡¢ÏêÏ¸¹ı³Ì£º
-//	single ¼ò×Ö±í;complex ¼ò×Ö±í;common ³£×Ö±í
-//	tone Éùµ÷;standard ±ê×¼;property ´ÊĞÔ;field ³¡
+//	      5ã€å¯¼å…¥æ¨¡æ‹Ÿå™¨       6ã€è¯¦ç»†è¿‡ç¨‹ï¼š
+//	single ç®€å­—è¡¨;complex ç®€å­—è¡¨;common å¸¸å­—è¡¨
+//	tone å£°è°ƒ;standard æ ‡å‡†;property è¯æ€§;field åœº
 //	create table standard(name nvarchar(20),n1 integer,  n2 integer,  n3 integer);
-//	.import E:\\¿ª·¢\\×¨´Ê¿â\\±ê×¼.csv standard
-//	.output  E:\\¿ª·¢\\×¨´Ê¿â\\test.txt
+//	.import E:\\å¼€å‘\\ä¸“è¯åº“\\æ ‡å‡†.csv standard
+//	.output  E:\\å¼€å‘\\ä¸“è¯åº“\\test.txt
 //	select * from standard limit 10; 
 //	DELETE FROM standard ;
 //
 //	create table property (n1 integer, name2 nvarchar(10), name1 nvarchar(10));
-//	.import E:\\¿ª·¢\\×¨´Ê¿â\\´ÊĞÔ.csv property 
+//	.import E:\\å¼€å‘\\ä¸“è¯åº“\\è¯æ€§.csv property 
 //
 //
 //	create table single(name nvarchar(10));
 //	create table tmp as select name2  from single;
-//	.import E:\\¿ª·¢\\×¨´Ê¿â\\single1.csv single.import E:\\¿ª·¢\\×¨´Ê¿â\\single2.csv single
+//	.import E:\\å¼€å‘\\ä¸“è¯åº“\\single1.csv single.import E:\\å¼€å‘\\ä¸“è¯åº“\\single2.csv single
 //	drop table single ;
 //	alter table tmp rename to single ;
 //
-//	create table complex(name nvarchar(10));.import E:\\¿ª·¢\\×¨´Ê¿â\\complex.csv complex
-//	create table common(name nvarchar(10));.import E:\\¿ª·¢\\×¨´Ê¿â\\common.csv common
+//	create table complex(name nvarchar(10));.import E:\\å¼€å‘\\ä¸“è¯åº“\\complex.csv complex
+//	create table common(name nvarchar(10));.import E:\\å¼€å‘\\ä¸“è¯åº“\\common.csv common
 //	create table three(name nvarchar(12));
-//	.import E:\\¿ª·¢\\×¨´Ê¿â\\three1.csv three.import E:\\¿ª·¢\\×¨´Ê¿â\\three2.csv three
+//	.import E:\\å¼€å‘\\ä¸“è¯åº“\\three1.csv three.import E:\\å¼€å‘\\ä¸“è¯åº“\\three2.csv three
 //	create table four(name nvarchar(16));
-//	.import E:\\¿ª·¢\\×¨´Ê¿â\\four1.csv four.import E:\\¿ª·¢\\×¨´Ê¿â\\four2.csv four
-//	create table more(name nvarchar(30));.import E:\\¿ª·¢\\×¨´Ê¿â\\more.csv more
+//	.import E:\\å¼€å‘\\ä¸“è¯åº“\\four1.csv four.import E:\\å¼€å‘\\ä¸“è¯åº“\\four2.csv four
+//	create table more(name nvarchar(30));.import E:\\å¼€å‘\\ä¸“è¯åº“\\more.csv more
 //
 //
 //	create table one(name nvarchar(10), n1 integer,n2 integer,n3 integer,n4 integer,n5 integer,n6 integer,n7 integer, name2 nvarchar(10), name3 nvarchar(10));
-//	alter table single add column name  varchar;.import E:\\¿ª·¢\\×¨´Ê¿â\\one.csv one
-//	select * from one where name="ùP"; 
-//	select * from one where name2 ="ğ¾"; 
+//	alter table single add column name  varchar;.import E:\\å¼€å‘\\ä¸“è¯åº“\\one.csv one
+//	select * from one where name="éµ“"; 
+//	select * from one where name2 ="é¹"; 
 //	select count(*) from one; 
 //
 //	 
 //	  adb push 001.jpg /sdcard
 //	adb shell 
-//	Excel²Ù×÷
+//	Excelæ“ä½œ
 //	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 //	 <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
-//	//ÏêÏ¸²Î¿¼     http://www.ibm.com/developerworks/cn/java/l-javaExcel/
-//	Sheet sheet = book.getSheet(0);//µÃµ½xĞĞyÁĞËùÔÚµ¥Ôª¸ñµÄÄÚÈİ
+//	//è¯¦ç»†å‚è€ƒ     http://www.ibm.com/developerworks/cn/java/l-javaExcel/
+//	Sheet sheet = book.getSheet(0);//å¾—åˆ°xè¡Œyåˆ—æ‰€åœ¨å•å…ƒæ ¼çš„å†…å®¹
 //	String cellStr = sheet.getRow(x)[y].getContents(); String path = "mnt/sdcard/test.xls";
-//	 //´´½¨Ò»¸ö¿ÉĞ´ÈëµÄ¹¤×÷±¡(Workbook)¶ÔÏó
-//	wwb = Workbook.createWorkbook(new File(fileName));// µÚÒ»¸ö²ÎÊıÊÇ¹¤×÷±íµÄÃû³Æ£¬µÚ¶ş¸öÊÇ¹¤×÷±íÔÚ¹¤×÷±¡ÖĞµÄÎ»ÖÃ
-//	WritableSheet ws = wwb.createSheet("sheet1", 0);// ÔÚÖ¸¶¨µ¥Ôª¸ñ²åÈëÊı¾İ
-//	Label lbl1 = new Label(5, 5, "Excel");Label bll2 = new Label(10, 10, "µÄ²Ù×÷");
-//	ws.addCell(lbl1);ws.addCell(bll2);// ´ÓÄÚ´æÖĞĞ´ÈëÎÄ¼şÖĞ
+//	 //åˆ›å»ºä¸€ä¸ªå¯å†™å…¥çš„å·¥ä½œè–„(Workbook)å¯¹è±¡
+//	wwb = Workbook.createWorkbook(new File(fileName));// ç¬¬ä¸€ä¸ªå‚æ•°æ˜¯å·¥ä½œè¡¨çš„åç§°ï¼Œç¬¬äºŒä¸ªæ˜¯å·¥ä½œè¡¨åœ¨å·¥ä½œè–„ä¸­çš„ä½ç½®
+//	WritableSheet ws = wwb.createSheet("sheet1", 0);// åœ¨æŒ‡å®šå•å…ƒæ ¼æ’å…¥æ•°æ®
+//	Label lbl1 = new Label(5, 5, "Excel");Label bll2 = new Label(10, 10, "çš„æ“ä½œ");
+//	ws.addCell(lbl1);ws.addCell(bll2);// ä»å†…å­˜ä¸­å†™å…¥æ–‡ä»¶ä¸­
 //	wwb.write();wwb.close();    
 
 

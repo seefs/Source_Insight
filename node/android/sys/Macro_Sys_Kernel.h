@@ -1,51 +1,51 @@
-
-»ù´¡Â·¾¶ÉèÖÃ: 
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®: 
 //basePath = F:\9820e
 //basePath = \\192.168.2.115\xiaoj\9820e\idh.code
 
 /***********************************************************************/
 
-//Ä¿Â¼[Num][Ca]:
+//ç›®å½•[Num][Ca]:
 Save:node\android\sys\Macro_Sys_Kernel.h 
 
 
 
 /***********************************************************************/
 
-Ô´Âë±àÒëÍê³Éºó£¬Èç¹ûĞèÒªĞŞ¸ÄÄÚºËÅäÖÃ£¬¿É²Î¿¼ÈçÏÂ·½·¨
-ÏÈÅäÖÃ
+æºç ç¼–è¯‘å®Œæˆåï¼Œå¦‚æœéœ€è¦ä¿®æ”¹å†…æ ¸é…ç½®ï¼Œå¯å‚è€ƒå¦‚ä¸‹æ–¹æ³•
+å…ˆé…ç½®
 make kernel-menuconfig
-ºó±£´æ
+åä¿å­˜
 make kernel-savedefconfig
 
-¾ßÌå¶¨Òå
+å…·ä½“å®šä¹‰
 kernel/Android.mk
 kernel-savedefconfig: $(TARGET_KERNEL_CONFIG)
         cp $(TARGET_KERNEL_CONFIG) $(KERNEL_CONFIG_FILE)
 kernel-menuconfig:
         $(hide) mkdir -p $(KERNEL_OUT)
         $(MAKE) -C $(KERNEL_DIR) $(KERNEL_MAKE_OPTION) menuconfig
-Ò»°ãcpuµÄÄÚºËÅäÖÃÎÄ¼şÊÇ
+ä¸€èˆ¬cpuçš„å†…æ ¸é…ç½®æ–‡ä»¶æ˜¯
 kernel/arch/xxxx/configs/xxx_defconfig
 //kernel/arch/arm64/configs/sprd_sharkle_defconfig
 
-±àÒëÉú³ÉºóµÄÅäÖÃÎÄ¼ş
+ç¼–è¯‘ç”Ÿæˆåçš„é…ç½®æ–‡ä»¶
 out/target/product/xxxxx/obj/KERNEL_OBJ/.config
 //out/target/product/sp9820e_1h10/obj/u-boot15/.config
 out/target/product/sp9820e_1h10/obj/KERNEL/.config
 
 
-¶Ô±ÈÁ½·İÎÄ¼şÓĞ½Ï´óµÄ²îÒì,Ô­À´»¹ÓĞÒ»²¿·ÖÅäÖÃÀ´×ÔKconfigÎÄ¼ş£¬
-ÄÚºË»á½«KconfigÎÄ¼şµÄÅäÖÃ¼ÓÉÏÉÏÈ¥,Èçconfig USELIB,ÅäÖÃ³ÉCONFIG_USELIB¡£
-ËùÒÔ¿´´úÂëµÄÊ±ºò£¬¿´Ä³¸öCONFIG_XXX_XXXXµÄÖµ£¬Òª¿´×îÖÕµÄÅäÖÃÎÄ¼şout/target/product/xxxxx/obj/KERNEL_OBJ/.config
+å¯¹æ¯”ä¸¤ä»½æ–‡ä»¶æœ‰è¾ƒå¤§çš„å·®å¼‚,åŸæ¥è¿˜æœ‰ä¸€éƒ¨åˆ†é…ç½®æ¥è‡ªKconfigæ–‡ä»¶ï¼Œ
+å†…æ ¸ä¼šå°†Kconfigæ–‡ä»¶çš„é…ç½®åŠ ä¸Šä¸Šå»,å¦‚config USELIB,é…ç½®æˆCONFIG_USELIBã€‚
+æ‰€ä»¥çœ‹ä»£ç çš„æ—¶å€™ï¼Œçœ‹æŸä¸ªCONFIG_XXX_XXXXçš„å€¼ï¼Œè¦çœ‹æœ€ç»ˆçš„é…ç½®æ–‡ä»¶out/target/product/xxxxx/obj/KERNEL_OBJ/.config
 
-ÔÚAndoird7.0ÉÏ,Ê¹ÓÃmake menuconfig»áÒ»Ö±¿¨ËÀ£¬ÒªÏÈÔÚÖÕ¶ËÇÃÈëexport USE_NINJA=false£¬È»ºóÔÙmake menuconfig
+åœ¨Andoird7.0ä¸Š,ä½¿ç”¨make menuconfigä¼šä¸€ç›´å¡æ­»ï¼Œè¦å…ˆåœ¨ç»ˆç«¯æ•²å…¥export USE_NINJA=falseï¼Œç„¶åå†make menuconfig
 
 
 
 
 /***********************************************************************/
-/*************************** ²Î¿¼±Ê¼Ç¡¢ÍøÉÏÕÒµÄ£¬ºÜÂÒ. *****************/
+/*************************** å‚è€ƒç¬”è®°ã€ç½‘ä¸Šæ‰¾çš„ï¼Œå¾ˆä¹±. *****************/
 /***********************************************************************/
 
 

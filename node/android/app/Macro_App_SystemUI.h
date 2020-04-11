@@ -1,38 +1,38 @@
-
-»ù´¡Â·¾¶ÉèÖÃ: 
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®: 
 //basePath = F:\9820e
 //basePath = \\192.168.2.115\xiaoj\9820e\idh.code
 
 /***********************************************************************/
 
-//Ä¿Â¼[Num][Ca]:
-// Android4.4 systemui Æô¶¯Á÷³Ì
+//ç›®å½•[Num][Ca]:
+// Android4.4 systemui å¯åŠ¨æµç¨‹
 Save:node\android\app\Macro_App_SystemUI.h \[1.1\] SystemServer.startSystemUi()
 Save:node\android\app\Macro_App_SystemUI.h \[1.2\] SystemBars.start() 
 Save:node\android\app\Macro_App_SystemUI.h \[1.3\] SystemBars.onNoService()
-Save:node\android\app\Macro_App_SystemUI.h \[1.4\] configÊÖ»ú»¹ÊÇÆ½°å
+Save:node\android\app\Macro_App_SystemUI.h \[1.4\] configæ‰‹æœºè¿˜æ˜¯å¹³æ¿
 Save:node\android\app\Macro_App_SystemUI.h \[1.5\] PhoneStatusBar.start() 
 Save:node\android\app\Macro_App_SystemUI.h \[1.6\] PhoneStatusBar.createAndAddWindows()
 Save:node\android\app\Macro_App_SystemUI.h \[1.7\] PhoneStatusBar.makeStatusBarView()
-// SystemUIµÄÍ¼±ê¸üĞÂÁ÷³Ì
-Save:node\android\app\Macro_App_SystemUI.h \[2.1\] PhoneStatusBarPolicy ×¢²á·şÎñ--½ÓÊÕÏûÏ¢
-Save:node\android\app\Macro_App_SystemUI.h \[2.2\] Í¼±ê
+// SystemUIçš„å›¾æ ‡æ›´æ–°æµç¨‹
+Save:node\android\app\Macro_App_SystemUI.h \[2.1\] PhoneStatusBarPolicy æ³¨å†ŒæœåŠ¡--æ¥æ”¶æ¶ˆæ¯
+Save:node\android\app\Macro_App_SystemUI.h \[2.2\] å›¾æ ‡
 Save:node\android\app\Macro_App_SystemUI.h \[2.3\] StatusBarManager 
-Save:node\android\app\Macro_App_SystemUI.h \[2.4\] ½»»¥ StatusBarManagerService
-Save:node\android\app\Macro_App_SystemUI.h \[2.5\] ×Ö·û´®
-Save:node\android\app\Macro_App_SystemUI.h \[2.6\] CommandQueue ÉèÖÃ·şÎñmBar
+Save:node\android\app\Macro_App_SystemUI.h \[2.4\] äº¤äº’ StatusBarManagerService
+Save:node\android\app\Macro_App_SystemUI.h \[2.5\] å­—ç¬¦ä¸²
+Save:node\android\app\Macro_App_SystemUI.h \[2.6\] CommandQueue è®¾ç½®æœåŠ¡mBar
 Save:node\android\app\Macro_App_SystemUI.h \[2.7\] CommandQueue.setIcon
 Save:node\android\app\Macro_App_SystemUI.h \[2.7\] addIcon
-//	SystemUIµÄ²¼¾Ö
-Save:node\android\app\Macro_App_SystemUI.h \[3.1\] SystemUIµÄ²¼¾Ö£¨status_bar.xml£©
-Save:node\android\app\Macro_App_SystemUI.h \[3.2\] ¸ü¸Ä×´Ì¬À¸µÄ¸ß¶È£¬ÏÔÊ¾Í¼±êµÈ¡£
-Save:node\android\app\Macro_App_SystemUI.h \[3.3\] Ìí¼ÓUSB£¬SD£¬AUX£¬DISCÍ¼±êµÄÏÔÊ¾ºÍË¢ĞÂ¡£
+//	SystemUIçš„å¸ƒå±€
+Save:node\android\app\Macro_App_SystemUI.h \[3.1\] SystemUIçš„å¸ƒå±€ï¼ˆstatus_bar.xmlï¼‰
+Save:node\android\app\Macro_App_SystemUI.h \[3.2\] æ›´æ”¹çŠ¶æ€æ çš„é«˜åº¦ï¼Œæ˜¾ç¤ºå›¾æ ‡ç­‰ã€‚
+Save:node\android\app\Macro_App_SystemUI.h \[3.3\] æ·»åŠ USBï¼ŒSDï¼ŒAUXï¼ŒDISCå›¾æ ‡çš„æ˜¾ç¤ºå’Œåˆ·æ–°ã€‚
 	
 
 
 
 
-// Android4.4 systemui Æô¶¯Á÷³Ì
+// Android4.4 systemui å¯åŠ¨æµç¨‹
 [1.1] SystemServer.startSystemUi()
 frameworks\base\services\java\com\android\server\SystemServer.java SystemUIService
 //    static final void startSystemUi(Context context) {
@@ -116,7 +116,7 @@ frameworks\base\packages\SystemUI\src\com\android\systemui\statusbar\SystemBars.
 //		}
 //	}
 
-[1.4] configÊÖ»ú»¹ÊÇÆ½°å
+[1.4] configæ‰‹æœºè¿˜æ˜¯å¹³æ¿
 frameworks/base/packages/SystemUI/res/values/config.xml config_statusBarComponent
 //	<string name="config_statusBarComponent" translatable="false">
 //		com.android.systemui.statusbar.phone.PhoneStatusBar
@@ -164,14 +164,14 @@ frameworks\base\packages\SystemUI\src\com\android\systemui\statusbar\phone\Phone
 [1.7] PhoneStatusBar.makeStatusBarView()
 frameworks\base\packages\SystemUI\src\com\android\systemui\statusbar\phone\PhoneStatusBar.java makeStatusBarView()
 //    protected PhoneStatusBarView makeStatusBarView() {
-//	´Ë´¦Ö÷ÒªÊÇSystemUIµÄLAYOUT³õÊ¼»¯,Ò²ÊÇÖ÷Òª²Ù×÷µÄµØ·½
+//	æ­¤å¤„ä¸»è¦æ˜¯SystemUIçš„LAYOUTåˆå§‹åŒ–,ä¹Ÿæ˜¯ä¸»è¦æ“ä½œçš„åœ°æ–¹
 //	}
 
 
 
-// SystemUIµÄÍ¼±ê¸üĞÂÁ÷³Ì
+// SystemUIçš„å›¾æ ‡æ›´æ–°æµç¨‹
 	
-[2.1] PhoneStatusBarPolicy ×¢²á·şÎñ--½ÓÊÕÏûÏ¢
+[2.1] PhoneStatusBarPolicy æ³¨å†ŒæœåŠ¡--æ¥æ”¶æ¶ˆæ¯
 frameworks\base\packages\SystemUI\src\com\android\systemui\statusbar\phone\PhoneStatusBarPolicy.java
 //    private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
 //        @Override
@@ -204,7 +204,7 @@ frameworks\base\packages\SystemUI\src\com\android\systemui\statusbar\phone\Phone
 			//StatusBarManager mService;
 //	}
 
-[2.2] Í¼±ê
+[2.2] å›¾æ ‡
 //	R.drawable.stat_sys_headset
 frameworks\base\packages\SystemUI\res\drawable-ldpi\stat_sys_headset.png
 
@@ -226,7 +226,7 @@ frameworks\base\services\java\com\android\server\SystemServer.java Context.STATU
 //	}
 
 
-[2.4] ½»»¥ StatusBarManagerService
+[2.4] äº¤äº’ StatusBarManagerService
 frameworks\base\services\java\com\android\server\StatusBarManagerService.java void^setIcon( )
 //    public void setIcon(String slot, String iconPackage, int iconId, int iconLevel,
 //            String contentDescription) {
@@ -249,12 +249,12 @@ frameworks\base\services\java\com\android\server\StatusBarManagerService.java vo
 frameworks\base\services\java\com\android\server\StatusBarManagerService.java StatusBarManagerService( )
 //    public StatusBarManagerService(Context context, WindowManagerService windowManager) {
 //        final Resources res = context.getResources();
-			//ÕâÀïÉè¶¨ÁËÏµÍ³Í¼±ê¶ÔÓ¦µÄ×Ö·û´®
+			//è¿™é‡Œè®¾å®šäº†ç³»ç»Ÿå›¾æ ‡å¯¹åº”çš„å­—ç¬¦ä¸²
 //        mIcons.defineSlots(res.getStringArray(com.android.internal.R.array.config_statusBarIcons));
 //    }
 
 
-[2.5] ×Ö·û´®
+[2.5] å­—ç¬¦ä¸²
 //	R.array.config_statusBarIcons
 frameworks\base\core\res\res\values\config.xml config_statusBarIcons
 //	<string-array name="config_statusBarIcons">
@@ -266,7 +266,7 @@ frameworks\base\core\res\res\values\config.xml config_statusBarIcons
 //		</string-array>
 
 
-[2.6] CommandQueue ÉèÖÃ·şÎñmBar
+[2.6] CommandQueue è®¾ç½®æœåŠ¡mBar
 frameworks\base\packages\SystemUI\src\com\android\systemui\statusbar\phone\PhoneStatusBar.java void^start( )
 frameworks\base\packages\SystemUI\src\com\android\systemui\statusbar\BaseStatusBar.java start()
 //    public void start() {
@@ -324,27 +324,27 @@ frameworks\base\packages\SystemUI\src\com\android\systemui\statusbar\phone\Phone
 
 
 /***********************************************************************/
-/*************************** ²Î¿¼±Ê¼Ç¡¢ÍøÉÏÕÒµÄ£¬ºÜÂÒ. *****************/
+/*************************** å‚è€ƒç¬”è®°ã€ç½‘ä¸Šæ‰¾çš„ï¼Œå¾ˆä¹±. *****************/
 /***********************************************************************/
 
-//	SystemUIµÄ²¼¾Ö
-[3.1] SystemUIµÄ²¼¾Ö£¨status_bar.xml£©
-//¸ü¸ÄµÄµØ·½£º½«Ô­À´µÄ²¼¾ÖÉèÖÃÎªÒş²Ø£¬Ìí¼ÓÏÖÔÚĞèÒªÏÔÊ¾µÄ²¼¾Ö¡£¾ßÌå²é¿´´úÂë²¿·Ö¡£
+//	SystemUIçš„å¸ƒå±€
+[3.1] SystemUIçš„å¸ƒå±€ï¼ˆstatus_bar.xmlï¼‰
+//æ›´æ”¹çš„åœ°æ–¹ï¼šå°†åŸæ¥çš„å¸ƒå±€è®¾ç½®ä¸ºéšè—ï¼Œæ·»åŠ ç°åœ¨éœ€è¦æ˜¾ç¤ºçš„å¸ƒå±€ã€‚å…·ä½“æŸ¥çœ‹ä»£ç éƒ¨åˆ†ã€‚
 
-[3.2] ¸ü¸Ä×´Ì¬À¸µÄ¸ß¶È£¬ÏÔÊ¾Í¼±êµÈ¡£
-//½«Ô­À´µÄ£º@*android:dimen/status_bar_height
-//Ìæ»»Îª£º@dimen/add_statusbar_hieght?? ?//¸ü¸Ä×´Ì¬À¸µÄ¸ß¶È <È«²¿Ìæ»»>
+[3.2] æ›´æ”¹çŠ¶æ€æ çš„é«˜åº¦ï¼Œæ˜¾ç¤ºå›¾æ ‡ç­‰ã€‚
+//å°†åŸæ¥çš„ï¼š@*android:dimen/status_bar_height
+//æ›¿æ¢ä¸ºï¼š@dimen/add_statusbar_hieght?? ?//æ›´æ”¹çŠ¶æ€æ çš„é«˜åº¦ <å…¨éƒ¨æ›¿æ¢>
 
-//ÔÚPhoneStatusBarView.makeStatusBarView()º¯ÊıÖĞ£º
-//½«Ô­À´µÄ£ºmIconSize = res.getDimensionPixelSize(com.android.internal.R.dimen.status_bar_icon_size); 
-//Ìæ»»Îª£ºmIconSize = res.getDimensionPixelSize(R.dimen.status_bar_icon_size);?? ??? ?//Ìæ»»ICon³ß´ç
+//åœ¨PhoneStatusBarView.makeStatusBarView()å‡½æ•°ä¸­ï¼š
+//å°†åŸæ¥çš„ï¼šmIconSize = res.getDimensionPixelSize(com.android.internal.R.dimen.status_bar_icon_size); 
+//æ›¿æ¢ä¸ºï¼šmIconSize = res.getDimensionPixelSize(R.dimen.status_bar_icon_size);?? ??? ?//æ›¿æ¢IConå°ºå¯¸
 
-//dimensÎÄ¼şÖĞ£º
-//½«<dimen name="status_bar_icon_size">@*android:dimen/status_bar_icon_size</dimen>
-//Ìæ»»Îª£º
+//dimensæ–‡ä»¶ä¸­ï¼š
+//å°†<dimen name="status_bar_icon_size">@*android:dimen/status_bar_icon_size</dimen>
+//æ›¿æ¢ä¸ºï¼š
 //<dimen name="status_bar_icon_size">26px</dimen>
 
-[3.3] Ìí¼ÓUSB£¬SD£¬AUX£¬DISCÍ¼±êµÄÏÔÊ¾ºÍË¢ĞÂ¡£
+[3.3] æ·»åŠ USBï¼ŒSDï¼ŒAUXï¼ŒDISCå›¾æ ‡çš„æ˜¾ç¤ºå’Œåˆ·æ–°ã€‚
 
 
 

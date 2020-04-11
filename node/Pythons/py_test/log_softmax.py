@@ -1,4 +1,4 @@
-import tensorflow as tf
+ï»¿import tensorflow as tf
 import numpy as np
 
 
@@ -12,43 +12,43 @@ print(sess.run(y_hat))
 #        [ 2.2,  1.3,  1.7]])
 
 
-# ½øĞĞ¹éÒ»»¯
+# è¿›è¡Œå½’ä¸€åŒ–
 y_hat_softmax = tf.nn.softmax(y_hat)
-print("½øĞĞ¹éÒ»»¯:")
+print("è¿›è¡Œå½’ä¸€åŒ–:")
 print(sess.run(y_hat_softmax))
 # array([[ 0.227863  ,  0.61939586,  0.15274114],
 #        [ 0.49674623,  0.20196195,  0.30129182]])
 
 y_log_softmax = tf.nn.log_softmax(y_hat, axis=-1)
-print("½øĞĞ¹éÒ»»¯ log:")
+print("è¿›è¡Œå½’ä¸€åŒ– log:")
 print(sess.run(y_log_softmax))
 #    [[-1.4790107  -0.4790107  -1.8790107 ]
 #     [-0.69967598 -1.59967598 -1.19967598]]
 
 
-# ²âÁ¿±êÇ©
+# æµ‹é‡æ ‡ç­¾
 y_true = tf.convert_to_tensor(np.array([[0.0, 1.0, 0.0],[0.0, 0.0, 1.0]]))
-print("²âÁ¿±êÇ©:")
+print("æµ‹é‡æ ‡ç­¾:")
 print(sess.run(y_true))
 # array([[ 0.,  1.,  0.],
 #        [ 0.,  0.,  1.]])
 
 
-# Ê¹ÓÃ½»²æìØËğÊ§À´²âÁ¿Îó²î
+# ä½¿ç”¨äº¤å‰ç†µæŸå¤±æ¥æµ‹é‡è¯¯å·®
 loss_per_instance_1 = -tf.reduce_sum(y_true * tf.log(y_hat_softmax), reduction_indices=[1])
-print("Ê¹ÓÃ½»²æìØËğÊ§À´²âÁ¿Îó²î:")
+print("ä½¿ç”¨äº¤å‰ç†µæŸå¤±æ¥æµ‹é‡è¯¯å·®:")
 print(sess.run(loss_per_instance_1))
 # array([ 0.4790107 ,  1.19967598])
 
 
-# È«²¿ËğÊ§
+# å…¨éƒ¨æŸå¤±
 total_loss_1 = tf.reduce_mean(-tf.reduce_sum(y_true * tf.log(y_hat_softmax), reduction_indices=[1]))
-print("È«²¿ËğÊ§:")
+print("å…¨éƒ¨æŸå¤±:")
 print(sess.run(total_loss_1))
 
 #
-## »òÕß(´úÂë¸üÉÙ?)
-## Ê¹ÓÃtf.nn.softmax_cross_entropy_with_logits()º¯Êı¼ÆËã×Ü½»²æìØËğÊ§
+## æˆ–è€…(ä»£ç æ›´å°‘?)
+## ä½¿ç”¨tf.nn.softmax_cross_entropy_with_logits()å‡½æ•°è®¡ç®—æ€»äº¤å‰ç†µæŸå¤±
 #loss_per_instance_2 = tf.nn.softmax_cross_entropy_with_logits(y_hat, y_true)
 #sess.run(loss_per_instance_2)
 ## array([ 0.4790107 ,  1.19967598])

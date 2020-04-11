@@ -1,4 +1,4 @@
-#!/usr/bin/python
+﻿#!/usr/bin/python
 import cmath
 s = dir(cmath)
 print(s);

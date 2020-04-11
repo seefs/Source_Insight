@@ -3,12 +3,16 @@
 //basePath = 
 Save:Help\
 
-// 显示多数log:
+
+// 打开msg log(testParam)
+//   显示多数log:
 //testParam = 2
-// 显示少量log:
+//   显示少量log:
 testParam = 1
 
+
 /***********************************************************************/
+
 
 //目录[Num][Ca]:
 // 1.基础功能测试
@@ -510,16 +514,21 @@ basePath = F:\6261D_11C_V33
 //basePath = D:\SVN
 
 //跳转到行号:
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Verno_M107_XYZN_S2_4A_WESTERN_F2.bld 30
+projects\....bld 30
 
 //通配符搜索:
 //	2002/06/07 --> [0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9]
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Verno_M107_XYZN_S2_4A_WESTERN_F2.bld [0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9]
+projects\....bld [0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9]
 
-//test file
-Save:Help\Test\Macro_Tmp_...
+//搜索文件
+Save:Help\Test\Macro_...
 Save:Help\Test\...
 Save:Help\Test\Tmp_Test.h
+
+//搜索文件，并直接打开保存文件
+FileSame:Save:Help\Test\Macro_
+
+
 
 
 [3.25] path--Set
@@ -574,12 +583,16 @@ Data:py_test\file_read_a.txt
 Data2:py_test\file_read_b.txt
 
 
-//4) TSTS路径--Test
-TSTSPath = Save:node\Pythons
+//4) XXX路径--Test
+XXXPath = Save:node\Pythons\
 // ok
-TSTS:py_test\file_read_a.txt
+XXX:install\hello.py
 // err
-TSTSS:py_test\file_read_b.txt
+YYY:install\hello.py
+
+//5) 搜索路径下文件
+//搜索路径
+AsFile:Save:Help\
 
 
 [3.27] 空格

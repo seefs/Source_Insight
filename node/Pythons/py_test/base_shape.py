@@ -1,4 +1,4 @@
-
+ï»¿
  
 import tensorflow as tf
 import numpy as np
@@ -19,7 +19,7 @@ print ("a.size: ", mylist.size)
 
 
 mylist = tf.constant(2)
-mylist = np.array(mylist)  # ³£Á¿×ªÊı×é, ndim+shape ²»¸Ä±ä, val+size ¸Ä±ä
+mylist = np.array(mylist)  # å¸¸é‡è½¬æ•°ç»„, ndim+shape ä¸æ”¹å˜, val+size æ”¹å˜
 print ("\na.array: ", mylist)
 print ("a.ndim: ", mylist.ndim)
 print ("a.shape: ", mylist.shape)

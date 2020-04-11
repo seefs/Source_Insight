@@ -1,12 +1,12 @@
-
+ï»¿
 aaa_list = ['A', 'B', 'C']
 
 
-#Ìõ¼ş
+#æ¡ä»¶
 bbb = ['D' if i =='A' else i for i in aaa_list]
-print("Ìõ¼ş: ", bbb)
+print("æ¡ä»¶: ", bbb)
 
-#ÁĞ±íÍÆµ¼Ê½
+#åˆ—è¡¨æ¨å¯¼å¼
 bbb = [i for i in range(30) if i % 3 is 0]
 print("\nrange(30): ", bbb)
 print("")
@@ -30,23 +30,23 @@ for x in generator:
 print("")
 # 0 1 2 3 4 5 6 7 8 9
 
-#×ÖµäÍÆµ¼Ê½
+#å­—å…¸æ¨å¯¼å¼
 mcase = {'a': 10, 'b': 34}
 bbb   = {v: k for k, v in mcase.items()}
-print("\n×Öµä: ", bbb)
+print("\nå­—å…¸: ", bbb)
 #    {10: 'a', 34: 'b'}
 
-#¼¯ºÏÍÆµ¼Ê½
+#é›†åˆæ¨å¯¼å¼
 bbb = {x**2 for x in [1, 1, 2]}
-print("\n¼¯ºÏ: ", bbb)
+print("\né›†åˆ: ", bbb)
 #    set([1, 4])
 
 
 aaa_list = [['A', 1, 2],['B', 1, 2],['C', 1, 2]]
-print("\n¶à´Îfor: ", [i for item in aaa_list for i in item])
+print("\nå¤šæ¬¡for: ", [i for item in aaa_list for i in item])
 
 ab = [[1,2,3], [5,8], [7,8,9]]
-print("\n¶à´Îfor: ", [i for item in ab for i in item])
+print("\nå¤šæ¬¡for: ", [i for item in ab for i in item])
 #    [1, 2, 3, 5, 8, 7, 8, 9]
 
 aaa_list = [[['AA', 1, 1],['B', 1, 2],['C', 1, 2]],
@@ -54,7 +54,7 @@ aaa_list = [[['AA', 1, 1],['B', 1, 2],['C', 1, 2]],
             [['AC', 3, 3],['B', 1, 2],['C', 1, 2]]
             ]
 bbb	= [[mode for i in item for mode in i[1:]] for item in aaa_list]
-print("\n¶à´Îfor: ", bbb)
+print("\nå¤šæ¬¡for: ", bbb)
 
 
 

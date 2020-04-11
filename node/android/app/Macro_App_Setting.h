@@ -1,22 +1,22 @@
-
-»ù´¡Â·¾¶ÉèÖÃ: 
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®: 
 //basePath = F:\9820e
 //basePath = \\192.168.2.115\xiaoj\9820e\idh.code
 
 /***********************************************************************/
 
-//Ä¿Â¼[Num][Ca]:
+//ç›®å½•[Num][Ca]:
 // Settings
 Save:node\android\app\Macro_App_Setting.h \[1.1\] AndroidManifest.xml
 Save:node\android\app\Macro_App_Setting.h \[1.2\] Settings
 Save:node\android\app\Macro_App_Setting.h \[1.3\] settings_headers.xml
-Save:node\android\app\Macro_App_Setting.h \[1.4\] ÒÆ³ı²»ÓÃµÄÏî
+Save:node\android\app\Macro_App_Setting.h \[1.4\] ç§»é™¤ä¸ç”¨çš„é¡¹
 Save:node\android\app\Macro_App_Setting.h \[1.5\] onHeaderClick
 Save:node\android\app\Macro_App_Setting.h \[1.6\] DevelopmentSettings
 // Settings
-Save:node\android\app\Macro_App_Setting.h \[2.1\] DDR´Ó512¸Ä³É¼ÙµÄ1G
-Save:node\android\app\Macro_App_Setting.h \[2.2\] ÈçºÎ¹Ø±ÕÕËºÅ×Ô¶¯Í¬²½£¿
-Save:node\android\app\Macro_App_Setting.h \[2.3\] ²é¿´androidµÄ°æ±¾
+Save:node\android\app\Macro_App_Setting.h \[2.1\] DDRä»512æ”¹æˆå‡çš„1G
+Save:node\android\app\Macro_App_Setting.h \[2.2\] å¦‚ä½•å…³é—­è´¦å·è‡ªåŠ¨åŒæ­¥ï¼Ÿ
+Save:node\android\app\Macro_App_Setting.h \[2.3\] æŸ¥çœ‹androidçš„ç‰ˆæœ¬
 
 
 
@@ -60,7 +60,7 @@ packages\apps\Settings\res\xml\settings_headers.xml
 //        android:title="@string/development_settings_title" />
 
 
-[1.4] ÒÆ³ı²»ÓÃµÄÏî
+[1.4] ç§»é™¤ä¸ç”¨çš„é¡¹
 packages\apps\Settings\src\com\android\settings\Settings.java void^updateHeaderList( )
 //	if (!showDev) {
 //		target.remove(i);
@@ -107,11 +107,11 @@ packages\apps\Settings\res\xml\development_prefs.xml
 
 
 /***********************************************************************/
-/****************************** Î´ÕûÀí *********************************/
+/****************************** æœªæ•´ç† *********************************/
 /***********************************************************************/
 
 
-[2.1] DDR´Ó512¸Ä³É¼ÙµÄ1G
+[2.1] DDRä»512æ”¹æˆå‡çš„1G
 packages\apps\Settings\src\com\android\settings\applications\RunningProcessesView.java Formatter.formatShortFileSize
 //	long freeMem = mLastAvailMemory + mLastBackgroundProcessMemory;
 //	/***add by xiangxiang***/
@@ -123,11 +123,11 @@ packages\apps\Settings\src\com\android\settings\applications\RunningProcessesVie
 //	/****end***/
 
 
-[2.2] ÈçºÎ¹Ø±ÕÕËºÅ×Ô¶¯Í¬²½£¿
-1.ĞŞ¸Äframeworks/base/core/res/res/values/config.xmlÖĞµÄ
-	config_syncstorageengine_masterSyncAutomatically±äÁ¿£¬½«Ä¬ÈÏÖµ¸ÄÎªfalse¡£
+[2.2] å¦‚ä½•å…³é—­è´¦å·è‡ªåŠ¨åŒæ­¥ï¼Ÿ
+1.ä¿®æ”¹frameworks/base/core/res/res/values/config.xmlä¸­çš„
+	config_syncstorageengine_masterSyncAutomaticallyå˜é‡ï¼Œå°†é»˜è®¤å€¼æ”¹ä¸ºfalseã€‚
  
-2.ĞŞ¸Äframeworks/base/services/core/java/com/android/server/content/SyncStorageEngine.javaÖĞ
+2.ä¿®æ”¹frameworks/base/services/core/java/com/android/server/content/SyncStorageEngine.javaä¸­
  
 -	  mMasterSyncAutomatically.put(0, listen == null || Boolean.parseBoolean(listen));
 +	  //mMasterSyncAutomatically.put(0, listen == null || Boolean.parseBoolean(listen));
@@ -135,7 +135,7 @@ packages\apps\Settings\src\com\android\settings\applications\RunningProcessesVie
 	  AuthorityInfo authority = null;
 
 
-[2.3] ²é¿´androidµÄ°æ±¾
+[2.3] æŸ¥çœ‹androidçš„ç‰ˆæœ¬
 out\target\product\sp9820e_1h10\system\build.prop build.version
 out\target\product\sp9820e_2h10\system\build.prop build.version
 //	ro.build.version.sdk=19
@@ -146,94 +146,94 @@ build/core/version_defaults.mk  PLATFORM_SDK_VERSION^:=
 //  PLATFORM_SDK_VERSION := 19
 
 
-//adb»ñÈ¡ÏµÍ³°æ±¾£º
+//adbè·å–ç³»ç»Ÿç‰ˆæœ¬ï¼š
 adb shell getprop ro.build.version.release
 
-//adb»ñÈ¡ÏµÍ³api°æ±¾£º
+//adbè·å–ç³»ç»Ÿapiç‰ˆæœ¬ï¼š
 adb shell getprop ro.build.version.sdk
 
 
 
 
 /***********************************************************************/
-/****************************** Î´ÕûÀí *********************************/
+/****************************** æœªæ•´ç† *********************************/
 /***********************************************************************/
 
 
 
-	ÏêÇé£º 
-//	bluetooth.BluetoothSettings    ¡¾ÎŞÏß-2¡¿-->WirelessSettings
-//	WirelessSettings    ¡¾ÎŞÏß-6¡¿-->AdvancedWifiSettings
-//	sim.SimSettings    ¡¾ÎŞÏß-3*¡¿-->SavedAccessPointsSettings
+	è¯¦æƒ…ï¼š 
+//	bluetooth.BluetoothSettings    ã€æ— çº¿-2ã€‘-->WirelessSettings
+//	WirelessSettings    ã€æ— çº¿-6ã€‘-->AdvancedWifiSettings
+//	sim.SimSettings    ã€æ— çº¿-3*ã€‘-->SavedAccessPointsSettings
 //	TetherSettings-->ApnSettings
 //	VpnSettings-->WifiP2pSettings
-//	DateTimeSettings    ¡¾ÏµÍ³-22¡¿-->LocalePicker
-//	deviceinfo.StorageSettings    ¡¾Éè±¸-11-5´æ´¢¡¿-->InputMethodAndLanguageSettings    
+//	DateTimeSettings    ã€ç³»ç»Ÿ-22ã€‘-->LocalePicker
+//	deviceinfo.StorageSettings    ã€è®¾å¤‡-11-5å­˜å‚¨ã€‘-->InputMethodAndLanguageSettings    
 //	PrivateVolumeForget-->ManageAssist
 //	PrivateVolumeSettings-->SpellCheckersSettings
 //	PublicVolumeSettings-->UserDictionarySettings
-//	wifi.WifiSettings    ¡¾ÎŞÏß-1¡¿-->DeviceInfoSettings
+//	wifi.WifiSettings    ã€æ— çº¿-1ã€‘-->DeviceInfoSettings
 //	WifiP2pSettings-->RunningServices
-//	inputmethod.InputMethodAndLanguageSettings    ¡¾¸öÈË-20ÓïÑÔ¡¿-->StorageUse
+//	inputmethod.InputMethodAndLanguageSettings    ã€ä¸ªäºº-20è¯­è¨€ã€‘-->StorageUse
 //	KeyboardLayoutPicker-->SecuritySettings
 //	InputMethodAndSubtypeEnabler-->PrivacySettings
 //	SpellCheckersSettings-->DeviceAdminSettings
 //	LocalePicker-->UsageAccessSettings
 //	UserDictionarySettings-->AccessibilityDaltonizerSettings
-//	HomeSettings    ¡¾Éè±¸-7-1Ñ¡ÔñLaunch¡¿-->CaptioningSettings    
-//	DisplaySettings    ¡¾Éè±¸-8-2¡¿-->TextToSpeechSettings
-//	DeviceInfoSettings    ¡¾ÏµÍ³-26-¹ØÓÚ¡¿-->StorageSettings
-//	ApplicationSettings-->PrivateVolumeSettings    ¡¾¹ıÊ±¡¿
-//	applications.ManageApplications    ¡¾Éè±¸-10-4¡¿//Í¨Öª--->PublicVolumeSettings
+//	HomeSettings    ã€è®¾å¤‡-7-1é€‰æ‹©Launchã€‘-->CaptioningSettings    
+//	DisplaySettings    ã€è®¾å¤‡-8-2ã€‘-->TextToSpeechSettings
+//	DeviceInfoSettings    ã€ç³»ç»Ÿ-26-å…³äºã€‘-->StorageSettings
+//	ApplicationSettings-->PrivateVolumeSettings    ã€è¿‡æ—¶ã€‘
+//	applications.ManageApplications    ã€è®¾å¤‡-10-4ã€‘//é€šçŸ¥--->PublicVolumeSettings
 //	ManageAssist-->PrivateVolumeForget
 //	AllApplications-->DevelopmentSettings
 //	HighPowerApplications-->PrintSettings
 //	AppOpsSummary-->PrintJobSettings
 //	StorageUse-->AndroidBeamSettings
-//	DevelopmentSettings    ¡¾ÏµÍ³-25¿ª·¢Õß¡¿-->AccountSettings
-//	accessibility.AccessibilitySettings    ¡¾ÏµÍ³-23¡¿-->AccountSyncSettings
+//	DevelopmentSettings    ã€ç³»ç»Ÿ-25å¼€å‘è€…ã€‘-->AccountSettings
+//	accessibility.AccessibilitySettings    ã€ç³»ç»Ÿ-23ã€‘-->AccountSyncSettings
 //	CaptioningSettings
 //	AccessibilityInversionSettings
 //	AccessibilityContrastSettings
 //	AccessibilityDaltonizerSettings
-//	SecuritySettings    ¡¾¸öÈË-18°²È«¡¿
+//	SecuritySettings    ã€ä¸ªäºº-18å®‰å…¨ã€‘
 //	UsageAccessSettings
-//	location.LocationSettings    ¡¾¸öÈË-17Î»ÖÃ¡¿
-//	PrivacySettings    ¡¾¸öÈË-21±¸·İ¡¿
+//	location.LocationSettings    ã€ä¸ªäºº-17ä½ç½®ã€‘
+//	PrivacySettings    ã€ä¸ªäºº-21å¤‡ä»½ã€‘
 //	RunningServices
 //	ManageAccountsSettings
-//	fuelgauge.PowerUsageSummary    ¡¾Éè±¸-12-6¡¿
+//	fuelgauge.PowerUsageSummary    ã€è®¾å¤‡-12-6ã€‘
 //	BatterySaverSettings
-//	applications.ProcessStatsSummary    ¡¾Éè±¸-13-7ÄÚ´æ¡¿ĞŞ¸ÄÄÚ´æ8G
+//	applications.ProcessStatsSummary    ã€è®¾å¤‡-13-7å†…å­˜ã€‘ä¿®æ”¹å†…å­˜8G
 //	AccountSyncSettings
-//	accounts.AccountSettings    ¡¾¸öÈË-19ÕËºÅ¡¿
+//	accounts.AccountSettings    ã€ä¸ªäºº-19è´¦å·ã€‘
 //	AccountSyncSettingsInAddAccount
 //	CryptKeeperSettings
 //	DeviceAdminSettings
-//	DataUsageSummary    ¡¾ÎŞÏß-4¡¿
+//	DataUsageSummary    ã€æ— çº¿-4ã€‘
 //	AdvancedWifiSettings
 //	SavedAccessPointsSettings
 //	TextToSpeechSettings
 //	AndroidBeamSettings
-//	wfd.WifiDisplaySettings    Í¨Öª-
+//	wfd.WifiDisplaySettings    é€šçŸ¥-
 //	DreamSettings
 //	NotificationStation    //server
-//	users.UserSettings    ¡¾Éè±¸-14-8¡¿
-//	notification.NotificationAccessSettings    Í¨Öª-
-//	notification.ZenAccessSettings    Í¨Öª-
+//	users.UserSettings    ã€è®¾å¤‡-14-8ã€‘
+//	notification.NotificationAccessSettings    é€šçŸ¥-
+//	notification.ZenAccessSettings    é€šçŸ¥-
 //	ConditionProviderSettings
 //	UsbSettings
 //	TrustedCredentialsSettings
-//	nfc.PaymentSettings    ¡¾Éè±¸-15-9¡¿
+//	nfc.PaymentSettings    ã€è®¾å¤‡-15-9ã€‘
 //	PrintSettings
 //	PrintJobSettings
-//	notification.ZenModeSettings    Í¨Öª-ÎğÈÅ
+//	notification.ZenModeSettings    é€šçŸ¥-å‹¿æ‰°
 //	notification.ZenModePrioritySettings
 //	notification.ZenModeAutomationSettings
 //	notification.ZenModeScheduleRuleSettings
 //	notification.ZenModeEventRuleSettings
 //	notification.ZenModeExternalRuleSettings
-//	notification.NotificationSettings     ¡¾Éè±¸-9-Í¨Öª¡¿
+//	notification.NotificationSettings     ã€è®¾å¤‡-9-é€šçŸ¥ã€‘
 //	NotificationAppList
 //	AppNotificationSettings
 //	OtherSoundSettings
@@ -255,25 +255,25 @@ adb shell getprop ro.build.version.sdk
 
 
 
-Éè±¸-ÄÚ´æ¡¢´æ´¢
+è®¾å¤‡-å†…å­˜ã€å­˜å‚¨
 applications.ProcessStatsBase  
 
-applications.ProcessStatsSummaryÄÚ´æ
-applications.ProcessStatsUi  apkÄÚ´æ
-applications.ProcessStatsDetail  apkÄÚ´æDetail
+applications.ProcessStatsSummaryå†…å­˜
+applications.ProcessStatsUi  apkå†…å­˜
+applications.ProcessStatsDetail  apkå†…å­˜Detail
 
-applications.ProcStatsData      ¿´²»Çå
-
-
-applications.StorageSettings´æ´¢
-applications.ManageApplications  Ó¦ÓÃ
+applications.ProcStatsData      çœ‹ä¸æ¸…
 
 
-ApplicationSettings£¨Ó¦ÓÃ£©    ¹ıÊ±
-applications.RunningProcessesView    ¹ıÊ±
-applications.RunningServiceDetails    ¹ıÊ±
-applications.RunningServices    ¹ıÊ±
-applications.RunningState    ¹ıÊ±
+applications.StorageSettingså­˜å‚¨
+applications.ManageApplications  åº”ç”¨
+
+
+ApplicationSettingsï¼ˆåº”ç”¨ï¼‰    è¿‡æ—¶
+applications.RunningProcessesView    è¿‡æ—¶
+applications.RunningServiceDetails    è¿‡æ—¶
+applications.RunningServices    è¿‡æ—¶
+applications.RunningState    è¿‡æ—¶
 
 
 

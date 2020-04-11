@@ -1,10 +1,10 @@
-//Ä¿Â¼[Num][Ca]:
+ï»¿//ç›®å½•[Num][Ca]:
 
 /***********************************************************************/
 /****************************** base ***********************************/
 /***********************************************************************/
 	
-»ù´¡Â·¾¶ÉèÖÃ: [s][Cs]
+åŸºç¡€è·¯å¾„è®¾ç½®: [s][Cs]
 basePath = F:\9820e
 //basePath = \\192.168.2.115\xiaoj\9820e\idh.code
 
@@ -13,18 +13,18 @@ basePath = F:\9820e
 /******************************* code **********************************/
 /***********************************************************************/
 
-//¼ò½é
-//±¾ÎÄÕë¶Ôandroid ÖĞIntentServiceÒì²½Á÷³ÌÑ§Ï°¡£
-//¸ÅÊö
-//Í¨¹ı·ÖÎöÔ´ÂëÎÒÃÇ·¢ÏÖ£¬ÔÚIntentServiceµÄ¹¹Ôìº¯ÊıÖĞĞèÒªÎÒÃÇÌá¹©Ò»¸öString ÓÃÀ´´´½¨HandlerThread
+//ç®€ä»‹
+//æœ¬æ–‡é’ˆå¯¹android ä¸­IntentServiceå¼‚æ­¥æµç¨‹å­¦ä¹ ã€‚
+//æ¦‚è¿°
+//é€šè¿‡åˆ†ææºç æˆ‘ä»¬å‘ç°ï¼Œåœ¨IntentServiceçš„æ„é€ å‡½æ•°ä¸­éœ€è¦æˆ‘ä»¬æä¾›ä¸€ä¸ªString ç”¨æ¥åˆ›å»ºHandlerThread
 frameworks\base\core\java\android\app\IntentService.java IntentService(String^name)
 //	public IntentService(String name) {
 //	    super();
 //	    mName = name;
 //	}
 
-ÄÇÃ´Õâ¸öHanderThread ÔÚÊ²Ã´Ê±ºò±»´´½¨µÄÄØ£¿ 
-Í¨¹ıÔ´Âë·¢ÏÖÔÚonCreate·½·¨ÖĞ¡£ 
+é‚£ä¹ˆè¿™ä¸ªHanderThread åœ¨ä»€ä¹ˆæ—¶å€™è¢«åˆ›å»ºçš„å‘¢ï¼Ÿ 
+é€šè¿‡æºç å‘ç°åœ¨onCreateæ–¹æ³•ä¸­ã€‚ 
 frameworks\base\core\java\android\app\IntentService.java void^onCreate()
 //	@Override 
 //	public void onCreate() { 
@@ -39,11 +39,11 @@ frameworks\base\core\java\android\app\IntentService.java void^onCreate()
 //	    mServiceLooper = thread.getLooper();
 //	    mServiceHandler = new ServiceHandler(mServiceLooper);
 //	}
-´ÓÉÏÃæ¿´³ö
+ä»ä¸Šé¢çœ‹å‡º
 
-HandlerThread thread = new HandlerThread(¡°IntentService[¡± + mName + ¡°]¡±); 
-ÊÇÍ¨¹ınew HandlerThread ´´½¨ÃûÎªmNameµÄÏß³Ì¡£ 
-´ËÏß³ÌµÄ×÷ÓÃÊÇ´¦ÀíhandlerMessage ÊÂÎñ´¦Àí¡£ 
+HandlerThread thread = new HandlerThread(â€œIntentService[â€ + mName + â€œ]â€); 
+æ˜¯é€šè¿‡new HandlerThread åˆ›å»ºåä¸ºmNameçš„çº¿ç¨‹ã€‚ 
+æ­¤çº¿ç¨‹çš„ä½œç”¨æ˜¯å¤„ç†handlerMessage äº‹åŠ¡å¤„ç†ã€‚ 
 //	private final class ServiceHandler extends Handler { 
 //		public ServiceHandler(Looper looper) { 
 //			super(looper); 
@@ -73,7 +73,7 @@ frameworks\base\core\java\android\app\IntentService.java void^onStart( )
 
 
 /***********************************************************************/
-/*************************** ²Î¿¼±Ê¼Ç¡¢ÍøÉÏÕÒµÄ£¬ºÜÂÒ. *****************/
+/*************************** å‚è€ƒç¬”è®°ã€ç½‘ä¸Šæ‰¾çš„ï¼Œå¾ˆä¹±. *****************/
 /***********************************************************************/
 
 

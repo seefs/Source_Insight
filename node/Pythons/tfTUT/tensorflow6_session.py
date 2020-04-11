@@ -1,25 +1,25 @@
- 
+ï»¿ 
 
 """
 Please note, this code is only for python 3+. If you are using python 2+, please modify the code accordingly.
 """
 import tensorflow as tf
 
-# ´´½¨³£Á¿
+# åˆ›å»ºå¸¸é‡
 matrix1 = tf.constant([[3, 3]])
 matrix2 = tf.constant([[2],
                        [2]])
 
-#1.tf.multiply£¨£©Á½¸ö¾ØÕóÖĞ¶ÔÓ¦ÔªËØ¸÷×ÔÏà³Ë
-#    ¸ñÊ½: tf.multiply(x, y, name=None) 
-#    ²ÎÊı: 
-#    x: Ò»¸öÀàĞÍÎª:half, float32, float64, uint8, int8, uint16, int16, int32, int64, complex64, complex128µÄÕÅÁ¿¡£ 
-#    y: Ò»¸öÀàĞÍ¸úÕÅÁ¿xÏàÍ¬µÄÕÅÁ¿¡£  
-#    ·µ»ØÖµ£º x * y element-wise.  
-#    ×¢Òâ£º 
-#    £¨1£©multiplyÕâ¸öº¯ÊıÊµÏÖµÄÊÇÔªËØ¼¶±ğµÄÏà³Ë£¬Ò²¾ÍÊÇÁ½¸öÏà³ËµÄÊıÔªËØ¸÷×ÔÏà³Ë£¬¶ø²»ÊÇ¾ØÕó³Ë·¨£¬×¢ÒâºÍtf.matmulÇø±ğ¡£ 
-#    £¨2£©Á½¸öÏà³ËµÄÊı±ØĞëÓĞÏàÍ¬µÄÊı¾İÀàĞÍ£¬²»È»¾Í»á±¨´í¡£
-#2.tf.matmul£¨£©½«¾ØÕóa³ËÒÔ¾ØÕób£¬Éú³Éa * b¡£
+#1.tf.multiplyï¼ˆï¼‰ä¸¤ä¸ªçŸ©é˜µä¸­å¯¹åº”å…ƒç´ å„è‡ªç›¸ä¹˜
+#    æ ¼å¼: tf.multiply(x, y, name=None) 
+#    å‚æ•°: 
+#    x: ä¸€ä¸ªç±»å‹ä¸º:half, float32, float64, uint8, int8, uint16, int16, int32, int64, complex64, complex128çš„å¼ é‡ã€‚ 
+#    y: ä¸€ä¸ªç±»å‹è·Ÿå¼ é‡xç›¸åŒçš„å¼ é‡ã€‚  
+#    è¿”å›å€¼ï¼š x * y element-wise.  
+#    æ³¨æ„ï¼š 
+#    ï¼ˆ1ï¼‰multiplyè¿™ä¸ªå‡½æ•°å®ç°çš„æ˜¯å…ƒç´ çº§åˆ«çš„ç›¸ä¹˜ï¼Œä¹Ÿå°±æ˜¯ä¸¤ä¸ªç›¸ä¹˜çš„æ•°å…ƒç´ å„è‡ªç›¸ä¹˜ï¼Œè€Œä¸æ˜¯çŸ©é˜µä¹˜æ³•ï¼Œæ³¨æ„å’Œtf.matmulåŒºåˆ«ã€‚ 
+#    ï¼ˆ2ï¼‰ä¸¤ä¸ªç›¸ä¹˜çš„æ•°å¿…é¡»æœ‰ç›¸åŒçš„æ•°æ®ç±»å‹ï¼Œä¸ç„¶å°±ä¼šæŠ¥é”™ã€‚
+#2.tf.matmulï¼ˆï¼‰å°†çŸ©é˜µaä¹˜ä»¥çŸ©é˜µbï¼Œç”Ÿæˆa * bã€‚
 product = tf.matmul(matrix1, matrix2)  # matrix multiply np.dot(m1, m2)
 
 # method 1

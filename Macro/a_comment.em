@@ -1,4 +1,4 @@
-//
+﻿//
 // Comment the selected block of text using single line comments and indent it
 //
 macro CommentBlock(thbuf)

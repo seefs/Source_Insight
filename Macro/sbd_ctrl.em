@@ -1,4 +1,4 @@
-
+ï»¿
 /***********************************************************************/
 /****************************    Mathod   ******************************/
 /***********************************************************************/
@@ -10,8 +10,8 @@ macro CtrlD()
 	if (hwnd == 0)
 		stop
 
-	//1.1 ÔÚSRÖĞ,ÏòÉÏÏòÏÂÑ¡ÔñÍ¬ÃûĞĞÊı
-	//1.2 ËÑË÷½á¹ûÖĞ, É¾³ıÑ¡ÖĞĞĞ
+	//1.1 åœ¨SRä¸­,å‘ä¸Šå‘ä¸‹é€‰æ‹©åŒåè¡Œæ•°
+	//1.2 æœç´¢ç»“æœä¸­, åˆ é™¤é€‰ä¸­è¡Œ
 	if(IsSRFile(hbuf))
 	{
 		sel = MGetWndSel(hbuf)
@@ -21,7 +21,7 @@ macro CtrlD()
 		}
 		else
 		{
-			//Ö»ÄÜÔÚSRÖĞÉ¾³ıĞĞ
+			//åªèƒ½åœ¨SRä¸­åˆ é™¤è¡Œ
 			lnMax = sel.lnLast
 			while (lnMax >= sel.lnFirst)
 			{
@@ -32,7 +32,7 @@ macro CtrlD()
 			ScrollCurWnd(hbuf, 3, curSel, curSel.lnFirst) //down
 		}
 	}
-	//2. ÔÚref_listÖĞ,ÏÂÒ»Ìõ·­Òë
+	//2. åœ¨ref_listä¸­,ä¸‹ä¸€æ¡ç¿»è¯‘
 	else if(IsFileName(hbuf, "ref_list"))
 	{
 		sel = MGetWndSel(hbuf)
@@ -59,31 +59,31 @@ macro CtrlD()
 			ich =  ich + 1
 		}
 	}
-	//6. other file¡¢Simple_CTRL_xxxÖĞ ¿Õ¸ñ¶ÔÆë
+	//6. other fileã€Simple_CTRL_xxxä¸­ ç©ºæ ¼å¯¹é½
 	else if(IsFileName(hbuf, "Simple_CTRL_B"))
 	{
 		CodeAlign(hbuf)
 		stop
 	}
-	//3. Macro_xxx ÖĞ Í¬F10
+	//3. Macro_xxx ä¸­ åŒF10
 	else if(IsFileName(hbuf, "Macro_")||IsFileName(hbuf, "Simple_CTRL_")||IsFileName(hbuf, "Log_"))
 	{
 		NoteGroup(hbuf)
 		stop
 	}
-	//4. .mk .def .makÖĞ Í¬F10
+	//4. .mk .def .makä¸­ åŒF10
 	else if(IsMakeFile(hbuf))
 	{
 		MakeGroup(hbuf)
 		stop
 	}
-	//5. *.em ÖĞ Í¬F10
+	//5. *.em ä¸­ åŒF10
 	else if(IsMacroFile(hbuf)||IsScriptFile(hbuf))
 	{
 		ShowMacroGroup(hbuf)
 		stop
 	}
-	//6. other file¡¢Simple_CTRL_xxxÖĞ ¿Õ¸ñ¶ÔÆë
+	//6. other fileã€Simple_CTRL_xxxä¸­ ç©ºæ ¼å¯¹é½
 	else
 	{
 		CodeAlign(hbuf)
@@ -159,7 +159,7 @@ macro CtrlE()
 }
 macro CtrlT()
 {
-    //½»»»true/false
+    //äº¤æ¢true/false
 	hwnd = GetCurrentWnd()
 	hbuf = GetCurrentBuf()
 	if (hwnd == 0)
@@ -213,14 +213,14 @@ macro CtrlT()
 				reVal = GetClipString(hbuf)
 				if(clipStr=="")
 					stop
-				//±£´æ¾ÉÖµµ½¼ôÇĞ°å 
+				//ä¿å­˜æ—§å€¼åˆ°å‰ªåˆ‡æ¿ 
 				SetClipString(val)
 				strNew = strmid(cur_line,0,index) # reVal # strmid(cur_line, index+strlen(val), strlen(cur_line))
 				PutBufLine(hbuf, sel.lnFirst, strNew);
 			}
 			else
 			{
-				//ÔÚÄ©Î²¼Ó = TRUE
+				//åœ¨æœ«å°¾åŠ  = TRUE
 				strNew = cur_line # "    = TRUE"
 				PutBufLine(hbuf, sel.lnFirst, strNew);
 			}
@@ -241,6 +241,18 @@ macro CtrlT()
 		else
 		{
 			CommentScript(hbuf)
+		}
+	}
+	else if(IsExeFile(hbuf))
+	{
+		fstr = GetFirstChar(hbuf, 2)
+		if(fstr == "::")
+		{
+			UncommentBlockMark(hbuf, ":")
+		}
+		else
+		{
+			CommentBlockMark(hbuf, ":")
 		}
 	}
 	else 
@@ -280,6 +292,11 @@ macro CtrlT()
 		}
 	}
 }
+macro Ctrl_Shift_R()
+{
+	hbuf = GetCurrentBuf()
+	NoteHander(hbuf, 6)
+}
 macro CtrlR()
 {
 	//_TempHeadCTRL()
@@ -288,7 +305,7 @@ macro CtrlR()
 	//add file type
 	if(IsFileName(hbuf, "Macro_")||IsFileName(hbuf, "Simple_CTRL_")||IsFileName(hbuf, "bak_")||IsFileName(hbuf, "Log_"))
 	{
-		//1. ÎÄ¼şÄÚË÷ÒıÌø×ª
+		//1. æ–‡ä»¶å†…ç´¢å¼•è·³è½¬
 		sel = MGetWndSel(hbuf)
 		searchStr = ""
 		cur_line = GetBufLine(hbuf, sel.lnFirst )	
@@ -300,21 +317,21 @@ macro CtrlR()
 		if(cur_sel_left != "X" && cur_sel_right != "X")
 		{
 			cur_sel_right_pre = strmid(cur_line, cur_sel_right - 1, cur_sel_right)
-			// ±êºÅ("[...]")Ìø»ØÄ¿Â¼("\[...\]")
+			// æ ‡å·("[...]")è·³å›ç›®å½•("\[...\]")
 			if(cur_sel_right_pre != "\\" )
 			{
 				searchStr = "\\\[" # strmid(cur_line, cur_sel_left + 1, cur_sel_right) # "\\\]"
 				sel2 = SearchInBuf(hbuf, searchStr, 0, 0, FALSE, FALSE, FALSE)
 				if (sel2 != "")
 				{
-					TestMsg("Ìø×ªµ½Ä¿Â¼: " # searchStr, 2)
+					TestMsg("è·³è½¬åˆ°ç›®å½•: " # searchStr, 2)
 					ScrollCursor(sel2)
 					stop
 				}
 			}
 		}
-		//2. ÎÄ¼şÃû("...\...")Ìø×ªÁíÒ»¸öÎÄ¼ş
-		//3. Ä¿Â¼("\[...\]")Ìøµ½±êºÅ("[...]")
+		//2. æ–‡ä»¶å("...\...")è·³è½¬å¦ä¸€ä¸ªæ–‡ä»¶
+		//3. ç›®å½•("\[...\]")è·³åˆ°æ ‡å·("[...]")
 		NoteHander(hbuf, 5)
 	}
 	else
@@ -336,7 +353,7 @@ macro CtrlW()
 			bft = getBft(1)
 			if(bft == "9820e")
 			{
-				//msg("ÎŞ·¨¹Ø±Õ, °´¿Õ¸ñ¼üÈ¡Ïû")
+				//msg("æ— æ³•å…³é—­, æŒ‰ç©ºæ ¼é”®å–æ¶ˆ")
 			}
 			else
 			{
@@ -353,7 +370,7 @@ macro CtrlW()
 	/*
 	else
 	{
-		//-->¿ÉÒÔ¸Ä³ÉÑ¡ÖĞ
+		//-->å¯ä»¥æ”¹æˆé€‰ä¸­
 		count = GetBufLineCount(hbuf)
 		if(count>40)
 		{
@@ -373,7 +390,7 @@ macro CtrlW()
 macro CtrlQ()
 {
 	//_TempHeadCTRL()
-	//´ò¿ªÏÂÒ»¸ö´°¿Ú
+	//æ‰“å¼€ä¸‹ä¸€ä¸ªçª—å£
 	hwnd = GetCurrentWnd()
 	if (hwnd == 0)
 		stop
@@ -386,19 +403,19 @@ macro CtrlQ()
 macro CtrlU()
 {
 	hbuf = GetCurrentBuf()
-	//»ñÈ¡ĞĞÊı, ²»ÄÜ´«-1, Ö»ÄÜ´«¿Õ
+	//è·å–è¡Œæ•°, ä¸èƒ½ä¼ -1, åªèƒ½ä¼ ç©º
 	rowMax = GetClipStringI(hbuf, "")
 	if(rowMax==0)
 		stop
 
 	sel = MGetWndSel(hbuf)
 	row = sel.lnFirst
-	//Ä£Ê½1: ¶àĞĞÑ¡Ôñ: str              +Ã¿ĞĞ
-	//Ä£Ê½2: ²»     Ñ¡   : str[i]+¿Õ¸ñ+Ã¿ĞĞ
+	//æ¨¡å¼1: å¤šè¡Œé€‰æ‹©: str              +æ¯è¡Œ
+	//æ¨¡å¼2: ä¸     é€‰   : str[i]+ç©ºæ ¼+æ¯è¡Œ
 	if(IsMoreSelect(sel))
 	{
 		clipStr = GetClipStringI(hbuf, 0)
-		//Ä£Ê½3: ¶àĞĞÑ¡Ôñ: Êı×ÖµİÔö              +Ã¿ĞĞ
+		//æ¨¡å¼3: å¤šè¡Œé€‰æ‹©: æ•°å­—é€’å¢              +æ¯è¡Œ
 		//rowMax == sel.lnLast - sel.lnFirst + 1 && 
 		if(IsNumber (clipStr))
 		{
@@ -484,7 +501,7 @@ macro CtrlU()
 	}
 	else if(rowMax == 1)
 	{
-		//Í¬ÉÏ
+		//åŒä¸Š
 		clipStr = GetClipStringI(hbuf, 0)
 		while (row < sel.lnLast + 1)
 		{
@@ -519,7 +536,7 @@ macro CtrlI()
 	cur_line = GetBufLine(hbuf, row)
 	len = strlen(cur_line)
 	
-	//×ª¸ñÊ½:
+	//è½¬æ ¼å¼:
 	//  sprd_apps.mk (customize/customer_cfg/sp6820a/res)
 	//->customize/customer_cfg/sp6820a/res/sprd_apps.mk
 	iKl = FindString( cur_line, "(" )
@@ -547,10 +564,10 @@ macro CtrlI()
 		SaveBuf(hbuf)
 		stop
 	}
-	//×ª¸ñÊ½:
+	//è½¬æ ¼å¼:
 	//  4.7.22
 	//->[4.7.22]
-	//¹¦ÄÜÓĞµãÎÊÌâ: -»á×÷Îª.Æ¥Åä; ´íÎóÆ¥Åä¿ÉÄÜÒªÊÖ¶¯Ñ¡ÔñÏÂÒ»¸ö±êºÅ
+	//åŠŸèƒ½æœ‰ç‚¹é—®é¢˜: -ä¼šä½œä¸º.åŒ¹é…; é”™è¯¯åŒ¹é…å¯èƒ½è¦æ‰‹åŠ¨é€‰æ‹©ä¸‹ä¸€ä¸ªæ ‡å·
 	iKl = FindString( cur_line, "." )
 	if(iKl != "X")
 	{
@@ -577,11 +594,11 @@ macro CtrlI()
 				//SetWndSel(hwnd, sel)
 			}
 			
-			//²éÕÒÏÂÒ»¸ö±êºÅ
+			//æŸ¥æ‰¾ä¸‹ä¸€ä¸ªæ ‡å·
 			sel.lnFirst = sel.lnFirst + 1
 		}
 		{
-			//²éÕÒÏÂÒ»¸ö±êºÅ
+			//æŸ¥æ‰¾ä¸‹ä¸€ä¸ªæ ‡å·
 			//searchStr = "\\[[0-9.]+\\]"
 			searchStr = "[0-9]+\.[0-9\.]+"
 			sel2 = SearchInBuf(hbuf, searchStr, sel.lnFirst, 0, TRUE, TRUE, FALSE)
@@ -600,7 +617,7 @@ macro CtrlI()
 }
 macro CtrlN()
 {
-	//Ìí¼Ó¿ÕĞĞ
+	//æ·»åŠ ç©ºè¡Œ
 	hbuf = GetCurrentBuf()
 	
 	sel = MGetWndSel(hbuf)
@@ -636,39 +653,39 @@ macro CtrlC()
 	}
 	else
 	{
-		//µ±Ç°ĞĞ
+		//å½“å‰è¡Œ
 		cur_line = GetBufLine(hbuf, row)
 		
-		//ĞÂÏîÄ¿Ãû³Æ (ÎÄ¼şÖĞÉèÖÃ)
+		//æ–°é¡¹ç›®åç§° (æ–‡ä»¶ä¸­è®¾ç½®)
 		mKey = "newPro"
 		newPro = getMacroValue(hbuf, mKey, 1)
 		
-		//¾ÉÏîÄ¿Ãû³Æ (¶ÁÉèÖÃ)
+		//æ—§é¡¹ç›®åç§° (è¯»è®¾ç½®)
 		baseDir = getBasePath(hbuf)
 		//baseDir = "F:\\11CW1352MP_BLEPHONE61D_11C_V33"
 		setProPath = ReadMode(getNoteHanderSet(0))
 		len = strlen(setProPath)
-		//ÃüÁîÃû×ª»¯: É¾³ı¿Õ¸ñ
+		//å‘½ä»¤åè½¬åŒ–: åˆ é™¤ç©ºæ ¼
 		start = GetTransCmdS(setProPath, 0, len)
 		next  = GetTransCmdE(setProPath, start,     len)
 		oldPro = strmid(setProPath, start, next)
 		
-		//×éºÏÃüÁî
-		//ÎÄ¼şÃû×ª»¯:
-		//×ª»¯"Save:"¡¢Çø·Ö¸ùÄ¿Â¼¡¢Ìí¼ÓÏîÄ¿Ä¿Â¼¡¢Ìæ»»"^"Îª¿Õ¸ñ
+		//ç»„åˆå‘½ä»¤
+		//æ–‡ä»¶åè½¬åŒ–:
+		//è½¬åŒ–"Save:"ã€åŒºåˆ†æ ¹ç›®å½•ã€æ·»åŠ é¡¹ç›®ç›®å½•ã€æ›¿æ¢"^"ä¸ºç©ºæ ¼
 		cmdPath1 = GetTransFileName(hbuf, cur_line, 0)
 		cmdPath2 = ReplaceWord(cmdPath1, oldPro, newPro)
 		if(cmdPath1 == cmdPath2)
 			stop
 		cmdStr = "copy " # cmdPath1 # " " # cmdPath2
 
-		//±ÜÃâÎó²Ù×÷, µ¯´°ÌáÊ¾, È¡Ïû¼´¿É
+		//é¿å…è¯¯æ“ä½œ, å¼¹çª—æç¤º, å–æ¶ˆå³å¯
 		msg(cmdStr)
 		
-		//Ö´ĞĞÃüÁî
+		//æ‰§è¡Œå‘½ä»¤
 		ShellOpenCustomCmd(cmdStr)
 
-		//²åÈëĞÂÎÄ¼şÃû³Æ
+		//æ’å…¥æ–°æ–‡ä»¶åç§°
 		insStr = ReplaceWord(cur_line, oldPro, newPro)
 		InsBufLine(hbuf, row + 1, insStr)
 		SaveBuf(hbuf)
@@ -706,7 +723,7 @@ macro CtrlUp()
 	}
 	else
 	{
-		//²»Ñ¡ÕûĞĞ
+		//ä¸é€‰æ•´è¡Œ
 		sel = MGetWndSel(hbuf)
 		if(IsNoRowSelect(sel))
 		{
@@ -775,7 +792,7 @@ macro ChangeSel(hbuf, direct)
 	if (hwnd == 0)
 		stop
 	
-	//ÉèÖÃ±éÀú·¶Î§
+	//è®¾ç½®éå†èŒƒå›´
 	sel = MGetWndSel(hbuf)
 	if(direct==1 || direct==4)//top
 	{
@@ -806,21 +823,21 @@ macro ChangeSel(hbuf, direct)
 	{
 		if(direct==4||direct==5)//Up And Down
 		{
-			//Ñ¡ÔñÒ»ĞĞ£¬Ìí¼Ó²ÎÊı
+			//é€‰æ‹©ä¸€è¡Œï¼Œæ·»åŠ å‚æ•°
 			cur_line = GetBufLine(hbuf, lnMin - diff)
 		}
 		else
 		{
-			//Ñ¡ÔñÒ»ĞĞ£¬Ìí¼Ó²ÎÊı
+			//é€‰æ‹©ä¸€è¡Œï¼Œæ·»åŠ å‚æ•°
 			cur_line = GetBufLine(hbuf, lnMin)
 		}
 		
-		//»ñÈ¡ĞĞÊ×µ¥´Ê
+		//è·å–è¡Œé¦–å•è¯
 		mode = GetLineMacro(cur_line)
 		mode_len = strlen(mode)
 		if(mode_len > sel.ichLim)
 		{
-			//ÉèÖÃµ±Ç°Ñ¡Ôñ£¬¸ü¶Ì
+			//è®¾ç½®å½“å‰é€‰æ‹©ï¼Œæ›´çŸ­
 			mode = strmid(cur_line, sel.ichFirst, sel.ichLim)
 			mode_len = strlen(mode)
 		}
@@ -832,7 +849,7 @@ macro ChangeSel(hbuf, direct)
 		{
 			stop
 		}
-		//Ñ¡Ôñ¶àĞĞ£¬»ñÈ¡²ÎÊı
+		//é€‰æ‹©å¤šè¡Œï¼Œè·å–å‚æ•°
 		mode = ReadMode(getSRTmpRow(0))
 		mode_len = strlen(mode)
 		
@@ -845,7 +862,7 @@ macro ChangeSel(hbuf, direct)
 			{
 				stop
 			}
-			//»ñÈ¡ĞĞÊ×µ¥´Ê
+			//è·å–è¡Œé¦–å•è¯
 			mode = GetLineMacro(cur_line)
 			mode_len = strlen(mode)
 			SaveMode(getSRTmpRow(0), "@mode@")
@@ -853,7 +870,7 @@ macro ChangeSel(hbuf, direct)
 	}
 	else
 	{
-		//²»Ñ¡Ôñ¶àĞĞ£¬»ñÈ¡Ê×µ¥´Ê
+		//ä¸é€‰æ‹©å¤šè¡Œï¼Œè·å–é¦–å•è¯
 		cur_line = GetBufLine(hbuf, sel.lnFirst)
 		mode = GetLineMacro(cur_line)
 		mode_len = strlen(mode)
@@ -869,7 +886,7 @@ macro ChangeSel(hbuf, direct)
 	
 	cur_line = ""
 	ln =  lnMin
-	//¸Ä±äÑ¡ÔñÇøÓò
+	//æ”¹å˜é€‰æ‹©åŒºåŸŸ
 	while (ln != lnMax)
 	{
 		cur_line = GetBufLine(hbuf, ln)
@@ -884,14 +901,14 @@ macro ChangeSel(hbuf, direct)
 	ln =  ln - diff
 
 
-	//¶àĞĞÑ¡ÖĞ£¬ÆÁÄ»¾ÓÖĞ£¬ĞĞÌø×ª
+	//å¤šè¡Œé€‰ä¸­ï¼Œå±å¹•å±…ä¸­ï¼Œè¡Œè·³è½¬
 	ScrollCurWnd(hbuf, direct, sel, ln)
 }
 
 //direct = 0 left; 1 top; 2 right; 3 down;
 macro ScrollCurWnd(hbuf, direct, sel, ln)
 {
-	//¶àĞĞÑ¡ÖĞ£¬ÆÁÄ»¾ÓÖĞ£¬ĞĞÌø×ª
+	//å¤šè¡Œé€‰ä¸­ï¼Œå±å¹•å±…ä¸­ï¼Œè¡Œè·³è½¬
 	hwnd = GetCurrentWnd()
 	if (hwnd == 0)
 		stop

@@ -17,7 +17,7 @@ Save:node\android\install\Macro_android_studio.h \[1.5\]
 Save:node\android\install\Macro_android_studio.h \[1.6\] //groovy
 Save:node\android\install\Macro_android_studio.h \[1.7\] gradlew cmd
 Save:node\android\install\Macro_android_studio.h \[1.8\] Git
-Save:node\android\install\Macro_android_studio.h \[1.9\] adb
+Save:node\android\install\Macro_android_studio.h \[1.9\] adb-------------环境变量
 Save:node\android\install\Macro_android_studio.h \[1.10\] usb
 Save:node\android\install\Macro_android_studio.h \[1.11\] Terminal
 Save:node\android\install\Macro_android_studio.h \[1.12\] menu info
@@ -88,7 +88,7 @@ C:\Users\Administrator\.AndroidStudio3.5
 C:\Users\Administrator\.gradle
 
 //ip:
-cmd_w: ping dl.google.com
+cmd_s: ping dl.google.com
 //	203.208.41.46
 
 //hosts:
@@ -109,7 +109,7 @@ C:\Program^Files\Java\jdk1.8.0_05\lib
 //CLASSPATH = .;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar
 	
 //ver:
-cmd_w: java -version
+cmd_s: java -version
 //	java version "1.8.0_131"
 //	Java(TM) SE Runtime Environment (build 1.8.0_131-b11)
 //	Java HotSpot(TM) 64-Bit Server VM (build 25.131-b11, mixed mode)
@@ -158,7 +158,7 @@ C:\Users\Administrator\.gradle\wrapper\dists\gradle-4.6-all\bcst21l2brirad8k2ben
 #  配置完成后如果仍有问题，重启AS
 
 #查看版本号:
-cmd_w: gradlew -v
+cmd_s: gradlew -v
 //	2.14.1
 //	5.4.1
 gradlew -v
@@ -230,7 +230,6 @@ git - -version
 
 [1.9] adb
 //
-cmd_w: path
 cmd_s: path
 //系统变量的Path里添加
 D:\android\sdk\platform-tools
@@ -241,12 +240,12 @@ configure-->Project Default Structure,
 //	D:\android\as_SDK\platform-tools
 
 //adb:
-cmd_w: adb
+cmd_s: adb
 //	203.208.41.46
 
 //更新path:
-cmd_w: set p path
-cmd_w: setx ..
+cmd_s: set p path
+cmd_s: setx ..
 
 
 [1.10] usb
@@ -257,11 +256,18 @@ D:\android\sdk\extras\google\usb_driver
 // 安装 adb interface
 https://blog.csdn.net/riyuexingchen1204/article/details/84594061
 
+// usb驱动正常显示位置:
+设备管理器----android phone----Android ADB Interface
+
 
 //mtp usb设备是啥?
 //   移动盘联络接口
 
-//ADB Interface找不到?
+
+// 华为手机设置:
+Hisuite通过HDB连接设备-------
+选择USB配置-------多媒体传输
+
 
 
 [1.11] Terminal

@@ -1,14 +1,14 @@
-
+ï»¿
 
 In [5]: from sklearn import preprocessing  
    ...: le =preprocessing.LabelEncoder()  
    ...: le.fit(["paris", "paris", "tokyo", "amsterdam"])  
-   ...: print('±êÇ©¸öÊı:%s'% le.classes_)  
-   ...: print('±êÇ©Öµ±ê×¼»¯:%s' % le.transform(["tokyo", "tokyo", "paris"]))  
-   ...: print('±ê×¼»¯±êÇ©Öµ·´×ª:%s' % le.inverse_transform([2, 2, 1]))  
+   ...: print('æ ‡ç­¾ä¸ªæ•°:%s'% le.classes_)  
+   ...: print('æ ‡ç­¾å€¼æ ‡å‡†åŒ–:%s' % le.transform(["tokyo", "tokyo", "paris"]))  
+   ...: print('æ ‡å‡†åŒ–æ ‡ç­¾å€¼åè½¬:%s' % le.inverse_transform([2, 2, 1]))  
    ...:  
-±êÇ©¸öÊı:['amsterdam' 'paris' 'tokyo']  
-±êÇ©Öµ±ê×¼»¯:[2 2 1]  
-±ê×¼»¯±êÇ©Öµ·´×ª:['tokyo' 'tokyo' 'paris']  
+æ ‡ç­¾ä¸ªæ•°:['amsterdam' 'paris' 'tokyo']  
+æ ‡ç­¾å€¼æ ‡å‡†åŒ–:[2 2 1]  
+æ ‡å‡†åŒ–æ ‡ç­¾å€¼åè½¬:['tokyo' 'tokyo' 'paris']  
 
 

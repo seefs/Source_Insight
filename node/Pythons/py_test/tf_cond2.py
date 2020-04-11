@@ -1,9 +1,9 @@
-
+ï»¿
 import tensorflow as tf
 
 
 
-#Ç¶Ì×:
+#åµŒå¥—:
 c=2
 d=2
 tf.cond(c==2, 
@@ -15,15 +15,15 @@ lambda:(
 lambda:0)
 
 
-#¶à¾äÓÃ(,):
-#¿Õ¾äÓÃlambda:0:
+#å¤šå¥ç”¨(,):
+#ç©ºå¥ç”¨lambda:0:
 c=2
 tf.cond(c==2, 
         lambda:(print('c==2,1'),print('c==2,2')), 
         lambda:0)
 
 
-#ÍË³ö
+#é€€å‡º
 step = tf.constant(0)
 #step = 0
 
@@ -44,7 +44,7 @@ while step<10:
         print('---', c)
 
 
-# º¯ÊıÓÃdef:
+# å‡½æ•°ç”¨def:
 #    x = tf.constant(2)
 #    y = tf.constant(5)
 #    def f1(): return tf.multiply(x, 17)

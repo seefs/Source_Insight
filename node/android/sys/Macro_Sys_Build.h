@@ -1,28 +1,28 @@
-
-»ù´¡Â·¾¶ÉèÖÃ:
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®:
 //basePath = F:\9820e
 //basePath = \\192.168.2.115\xiaoj\9820\idh.code
 
 /***********************************************************************/
 
-//Ä¿Â¼[Num][Ca]:
-// 1. ±àÒëÃüÁî
-Save:node\android\sys\Macro_Sys_Build.h \[1.1\] envsetup.sh---¼ÓÔØ»·¾³±äÁ¿
-Save:node\android\sys\Macro_Sys_Build.h \[1.2\] lunch---------Ñ¡Ôñ±àÒëÆ½Ì¨
-Save:node\android\sys\Macro_Sys_Build.h \[1.3\] make----------Ö´ĞĞ±àÒë
-Save:node\android\sys\Macro_Sys_Build.h \[1.4\] java----------Ç©Ãû
-Save:node\android\sys\Macro_Sys_Build.h \[1.5\] make idegen---±àÒëidegen
-Save:node\android\sys\Macro_Sys_Build.h \[1.6\] make snod-----±àÒëimg
-Save:node\android\sys\Macro_Sys_Build.h \[1.7\] emulator------Ä£ÄâÆ÷
-Save:node\android\sys\Macro_Sys_Build.h \[1.8\] make sdk------±àÒësdk
+//ç›®å½•[Num][Ca]:
+// 1. ç¼–è¯‘å‘½ä»¤
+Save:node\android\sys\Macro_Sys_Build.h \[1.1\] envsetup.sh---åŠ è½½ç¯å¢ƒå˜é‡
+Save:node\android\sys\Macro_Sys_Build.h \[1.2\] lunch---------é€‰æ‹©ç¼–è¯‘å¹³å°
+Save:node\android\sys\Macro_Sys_Build.h \[1.3\] make----------æ‰§è¡Œç¼–è¯‘
+Save:node\android\sys\Macro_Sys_Build.h \[1.4\] java----------ç­¾å
+Save:node\android\sys\Macro_Sys_Build.h \[1.5\] make idegen---ç¼–è¯‘idegen
+Save:node\android\sys\Macro_Sys_Build.h \[1.6\] make snod-----ç¼–è¯‘img
+Save:node\android\sys\Macro_Sys_Build.h \[1.7\] emulator------æ¨¡æ‹Ÿå™¨
+Save:node\android\sys\Macro_Sys_Build.h \[1.8\] make sdk------ç¼–è¯‘sdk
 Save:node\android\sys\Macro_Sys_Build.h \[1.9\] 
 Save:node\android\sys\Macro_Sys_Build.h \[1.10\] 
-// 2. ÏÂÔØ
-Save:node\android\sys\Macro_Sys_Build.h \[2.1\] ÏÂÔØ
-Save:node\android\sys\Macro_Sys_Build.h \[2.2\] ±àÒë°æ±¾ËµÃ÷
-Save:node\android\sys\Macro_Sys_Build.h \[2.3\] ·´±àÒë
+// 2. ä¸‹è½½
+Save:node\android\sys\Macro_Sys_Build.h \[2.1\] ä¸‹è½½
+Save:node\android\sys\Macro_Sys_Build.h \[2.2\] ç¼–è¯‘ç‰ˆæœ¬è¯´æ˜
+Save:node\android\sys\Macro_Sys_Build.h \[2.3\] åç¼–è¯‘
 Save:node\android\sys\Macro_Sys_Build.h \[2.4\] 
-// 3. adb Ä£¿é
+// 3. adb æ¨¡å—
 Save:node\android\sys\Macro_Sys_Build.h \[3.1\] adb shell
 Save:node\android\sys\Macro_Sys_Build.h \[3.2\] adb -- Launcher3
 Save:node\android\sys\Macro_Sys_Build.h \[3.3\] adb -- Settings
@@ -38,15 +38,15 @@ Save:node\android\sys\Macro_Sys_Build.h \[3.12\]
 Save:node\android\sys\Macro_Sys_Build.h \[3.13\] 
 // 4. adb
 Save:node\android\sys\Macro_Sys_Build.h \[4.1\] adb -- version
-Save:node\android\sys\Macro_Sys_Build.h \[4.2\] adb -- Õ¹Ñ¶pac´ò°ü
-Save:node\android\sys\Macro_Sys_Build.h \[4.3\] ÈçºÎ±àÒëÄ£¿é 
-Save:node\android\sys\Macro_Sys_Build.h \[4.4\] ÈçºÎ±àÒë 	  3rdparty	 ÏÂµÄ    ko 
-Save:node\android\sys\Macro_Sys_Build.h \[4.5\] ÓÃÀ´²é¿´µ±Ç°ÔËĞĞÊ±£¬activityµÄ×´Ì¬ĞÅÏ¢¡£
-Save:node\android\sys\Macro_Sys_Build.h \[4.6\] getevent»ñÈ¡inputÉÏ±¨ÊÂ¼ş
-Save:node\android\sys\Macro_Sys_Build.h \[4.7\] android adb shell am pm ÁĞ³öËµÒª°²×°µÄpackages
-Save:node\android\sys\Macro_Sys_Build.h \[4.8\] Android Í¨¹ıadb µ±Ç°ÊäÈë·¨ĞÅÏ¢
+Save:node\android\sys\Macro_Sys_Build.h \[4.2\] adb -- å±•è®¯pacæ‰“åŒ…
+Save:node\android\sys\Macro_Sys_Build.h \[4.3\] å¦‚ä½•ç¼–è¯‘æ¨¡å— 
+Save:node\android\sys\Macro_Sys_Build.h \[4.4\] å¦‚ä½•ç¼–è¯‘ 	  3rdparty	 ä¸‹çš„    ko 
+Save:node\android\sys\Macro_Sys_Build.h \[4.5\] ç”¨æ¥æŸ¥çœ‹å½“å‰è¿è¡Œæ—¶ï¼Œactivityçš„çŠ¶æ€ä¿¡æ¯ã€‚
+Save:node\android\sys\Macro_Sys_Build.h \[4.6\] geteventè·å–inputä¸ŠæŠ¥äº‹ä»¶
+Save:node\android\sys\Macro_Sys_Build.h \[4.7\] android adb shell am pm åˆ—å‡ºè¯´è¦å®‰è£…çš„packages
+Save:node\android\sys\Macro_Sys_Build.h \[4.8\] Android é€šè¿‡adb å½“å‰è¾“å…¥æ³•ä¿¡æ¯
 Save:node\android\sys\Macro_Sys_Build.h \[4.9\] 
-Save:node\android\sys\Macro_Sys_Build.h \[4.10\] 
+Save:node\android\sys\Macro_Sys_Build.h \[4.10\] adb-----æŸ¥çœ‹è®¾å¤‡ä¿¡æ¯
 Save:node\android\sys\Macro_Sys_Build.h \[4.11\] 
 Save:node\android\sys\Macro_Sys_Build.h \[4.12\] 
 Save:node\android\sys\Macro_Sys_Build.h \[4.13\] 
@@ -54,15 +54,15 @@ Save:node\android\sys\Macro_Sys_Build.h \[4.13\]
 
 
 
-[1.1] envsetup.sh---¼ÓÔØ»·¾³±äÁ¿
+[1.1] envsetup.sh---åŠ è½½ç¯å¢ƒå˜é‡
 cd 9820e/idh.code/
 source build/envsetup.sh 
 
-//	Õâ¾ä¿É¼Óµ½envsetup.sh×îºó
+//	è¿™å¥å¯åŠ åˆ°envsetup.shæœ€å
 //export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
 
 
-[1.2] lunch---------Ñ¡Ôñ±àÒëÆ½Ì¨
+[1.2] lunch---------é€‰æ‹©ç¼–è¯‘å¹³å°
 lunch
 // ----> 9
 //	1. aosp_arm-eng
@@ -76,13 +76,13 @@ lunch
 //	9. sp9820e_2h10_oversea-userdebug
 
 
-[1.3] make----------Ö´ĞĞ±àÒë
+[1.3] make----------æ‰§è¡Œç¼–è¯‘
 make -j12 2>&1 | tee log.txt
 //make -j36 2>&1 | tee build.log
 
-//±àÒë image
+//ç¼–è¯‘ image
 gedit device/rockchip/rk29sdk/BoardConfig.mk
-//ÅäÖÃÄÚºËkernel.imgµÄÂ·¾¶:TARGET_PREBUILT_KERNEL := ./Image  
+//é…ç½®å†…æ ¸kernel.imgçš„è·¯å¾„:TARGET_PREBUILT_KERNEL := ./Image  
 
 make prebuild
 cd kernel/
@@ -90,48 +90,48 @@ make kernel.img -j4
 cd ..
 make
 make -j8
-./mkimage.sh ota        ÔÙÓÃWINDOWS¹¤¾ß´ò°ü³Éupdate.img ÖØĞÂ±àÒëframeworks/base¡¢frameworks/ex
-./mkimage        °ÑÒ»Ğ©apk¡¢Çı¶¯¡¢×ÊÔ´µÈµÈ´ò°üÉú³ÉimageÎÄ¼ş
+./mkimage.sh ota        å†ç”¨WINDOWSå·¥å…·æ‰“åŒ…æˆupdate.img é‡æ–°ç¼–è¯‘frameworks/baseã€frameworks/ex
+./mkimage        æŠŠä¸€äº›apkã€é©±åŠ¨ã€èµ„æºç­‰ç­‰æ‰“åŒ…ç”Ÿæˆimageæ–‡ä»¶
 out/target/product/rk3188
 rockdev/Image-rk3188/
 
 
-[1.4] java----------Ç©Ãû
+[1.4] java----------ç­¾å
 java -version
 
-//Ç©Ãûapk
+//ç­¾åapk
 java -jar out/host/linux-x86/framework/signapk.jar	build/target/product/security/platform.x509.pem build/target/product/security/platform.pk8 ~/Settings.apk ~/output.apk
 
 
 [1.5] make idegen
 make snod
-make idegen    ¸ùÄ¿Â¼
+make idegen    æ ¹ç›®å½•
 mm development/tools/idegen/
 sh ./development/tools/idegen/idegen.sh
 out/host/linux-x86/framework        --idegen.jar
 
 
 [1.6] img
-//Éú³ÉĞÂµÄsystem.img
+//ç”Ÿæˆæ–°çš„system.img
 make snod
 
-//±àÒëservices 
+//ç¼–è¯‘services 
 make services
 
 
-[1.7] emulatorÄ£ÄâÆ÷
-//	ÔËĞĞÄ£ÄâÆ÷
+[1.7] emulatoræ¨¡æ‹Ÿå™¨
+//	è¿è¡Œæ¨¡æ‹Ÿå™¨
 export ANDROID_PRODUCT_OUT=out/target/product/angler/
 cd ./out/host/linux-x86/bin 
 ./emulator
 
-//	Æô¶¯AndroidÄ£ÄâÆ÷
+//	å¯åŠ¨Androidæ¨¡æ‹Ÿå™¨
 ./run_emulator.sh
 
 
-[1.8] make sdk±àÒësdk
+[1.8] make sdkç¼–è¯‘sdk
 export MTK_PROJECT_CONFIGS=/home/work/xj/alps/device/bror/br6737m_35g_s_m0/ProjectConfig.mk
-make update-api        ÒªÓĞgit/repo
+make update-api        è¦æœ‰git/repo
 make PRODUCT-sdk-sdk -j8
 lunch sdk-eng 
 make sdk 
@@ -145,50 +145,50 @@ vendor/widevine
 [1.10] 
 
 
-[2.1] ÏÂÔØ
+[2.1] ä¸‹è½½
 
 Open E:\desktop\9820E\RESEARCHDOWNLOAD_R20.0.0001\Bin\ResearchDownload.exe
 E:\desktop\9820E\RESEARCHDOWNLOAD_R20.0.0001\Bin\ResearchDownload.exe
 
 
-2£¬½«Ä¿Â¼
+2ï¼Œå°†ç›®å½•
 out\target\product\sp9820e_2h10
-ÏÂÃæµÄÎÄ¼ş¿½±´µ½¹¤¾ßÄ¿Â¼
-RESEARCHDOWNLOAD_R20.0.0001\Bin\ImageFiles\_DownloadFiles8652673£»
+ä¸‹é¢çš„æ–‡ä»¶æ‹·è´åˆ°å·¥å…·ç›®å½•
+RESEARCHDOWNLOAD_R20.0.0001\Bin\ImageFiles\_DownloadFiles8652673ï¼›
 E:\desktop\9820E\RESEARCHDOWNLOAD_R20.0.0001\Bin\ImageFiles\_DownloadFiles8652673
 
 
-3£¬ÔÚ¹¤¾ßÉèÖÃÀïÃæÑ¡ÔñPacket´ò°ü¡£
+3ï¼Œåœ¨å·¥å…·è®¾ç½®é‡Œé¢é€‰æ‹©Packetæ‰“åŒ…ã€‚
 
 
-[2.2] ±àÒë°æ±¾ËµÃ÷
+[2.2] ç¼–è¯‘ç‰ˆæœ¬è¯´æ˜
 //adb install ~
 Failure [INSTALL_FAILED_UPDATE_INCOMPATIBLE]
-¼ì²éÓĞÃ»root£¬
+æ£€æŸ¥æœ‰æ²¡rootï¼Œ
 
-///////2   adb ²»ÄÜÖ±½Ó push
- ±àÒëµÄÊ±ºò ÓĞÈı¸ö°æ±¾
+///////2   adb ä¸èƒ½ç›´æ¥ push
+ ç¼–è¯‘çš„æ—¶å€™ æœ‰ä¸‰ä¸ªç‰ˆæœ¬
 userdebug
 user
-eng£¨È¨ÏŞ×î¸ß£©
+engï¼ˆæƒé™æœ€é«˜ï¼‰
 
-Ö»ÓĞeng°æ±¾µÄ²Å¾ßÓĞµ÷ÊÔµÄÈ«²¿¹¦ÄÜ 
+åªæœ‰engç‰ˆæœ¬çš„æ‰å…·æœ‰è°ƒè¯•çš„å…¨éƒ¨åŠŸèƒ½ 
 
 
-[2.3] ·´±àÒë
-·´±àÒëÖ÷Òª¹ı³Ì
-£¨1£©½«apk½âÑ¹£¨¿ÉÒÔ±ä³ÉzipÑ¹ËõÎÄ¼şÔÙ½âÑ¹£©
-£¨2£©ÕÒµ½classes.dexÎÄ¼ş£¬ÓÃ dex2jar¹¤¾ß £¬½«dexÎÄ¼ş×ª»»³ÉjarÎÄ¼ş£¬ÃüÁî d2j-dex2jar classes.dex
-£¨3£©ÓÃ jd-gui ¹¤¾ß£¬½«jarÎÄ¼ş×ª»»³Éjava´úÂë
-£¨4£©ÓÃ apktool Õâ¸ö¹¤¾ßÓÃÓÚ×î´ó·ù¶ÈµØ»¹Ô­APKÎÄ¼şÖĞµÄ9-patchÍ¼Æ¬¡¢²¼¾Ö¡¢×Ö·û´®µÈµÈÒ»ÏµÁĞµÄ×ÊÔ´¡£ÃüÁî apktool d Demo.apk
+[2.3] åç¼–è¯‘
+åç¼–è¯‘ä¸»è¦è¿‡ç¨‹
+ï¼ˆ1ï¼‰å°†apkè§£å‹ï¼ˆå¯ä»¥å˜æˆzipå‹ç¼©æ–‡ä»¶å†è§£å‹ï¼‰
+ï¼ˆ2ï¼‰æ‰¾åˆ°classes.dexæ–‡ä»¶ï¼Œç”¨ dex2jarå·¥å…· ï¼Œå°†dexæ–‡ä»¶è½¬æ¢æˆjaræ–‡ä»¶ï¼Œå‘½ä»¤ d2j-dex2jar classes.dex
+ï¼ˆ3ï¼‰ç”¨ jd-gui å·¥å…·ï¼Œå°†jaræ–‡ä»¶è½¬æ¢æˆjavaä»£ç 
+ï¼ˆ4ï¼‰ç”¨ apktool è¿™ä¸ªå·¥å…·ç”¨äºæœ€å¤§å¹…åº¦åœ°è¿˜åŸAPKæ–‡ä»¶ä¸­çš„9-patchå›¾ç‰‡ã€å¸ƒå±€ã€å­—ç¬¦ä¸²ç­‰ç­‰ä¸€ç³»åˆ—çš„èµ„æºã€‚å‘½ä»¤ apktool d Demo.apk
 
-[2.4] ²Î¿¼sh: 
-//1.svn export android ´úÂë
-//2.×Ô¶¯±àÒëdebug user°æ±¾
-//3.×Ô¶¯check fotaÉı¼¶ĞèÒªÓÃµ½µÄÊ£Óà¿Õ¼ä´óĞ¡
+[2.4] å‚è€ƒsh: 
+//1.svn export android ä»£ç 
+//2.è‡ªåŠ¨ç¼–è¯‘debug userç‰ˆæœ¬
+//3.è‡ªåŠ¨check fotaå‡çº§éœ€è¦ç”¨åˆ°çš„å‰©ä½™ç©ºé—´å¤§å°
 Save:node\9820e\sh\Macro_custom.sh
 Save:node\9820e\sh\Macro_svn_function.sh
-//4.¶à¸öÏîÄ¿ÅÅĞò±àÒë
+//4.å¤šä¸ªé¡¹ç›®æ’åºç¼–è¯‘
 Save:node\9820e\sh\Macro_make.sh
 
 
@@ -234,7 +234,7 @@ adb uninstall  com.android.launcher3
 
 
 [3.2] adb -- Launcher3
-adb install   E:\×ÀÃæ\Launcher3.apk
+adb install   E:\æ¡Œé¢\Launcher3.apk
 
 
 [3.3] adb -- Settings
@@ -251,14 +251,14 @@ adb install   E:\android\apk_mt6572\SystemUI.apk
 adb push	 E:\android\apk_mt6572\SystemUI.apk   /mnt/sdcard/
 adb push	 E:\android\apk_mt6572\SystemUI.apk   /mnt/sdcard/
 SystemUI_bak.apk
-//Òª±¸·İ£¬ÃâµÃÆô¶¯²»ÁË£º
+//è¦å¤‡ä»½ï¼Œå…å¾—å¯åŠ¨ä¸äº†ï¼š
 adb push E:\apk\sys_bak\Launcher3.apk  /system/app
 
 
 [3.5] adb -- FMRadio
-adb push	 E:\×ÀÃæ\FMRadio.apk	 /system/priv-app/FMRadio
-adb push	 E:\×ÀÃæ\lib\libfmjni.so	 /system/lib/
-adb push	 E:\×ÀÃæ\lib64\libfmjni.so   /system/lib64/
+adb push	 E:\æ¡Œé¢\FMRadio.apk	 /system/priv-app/FMRadio
+adb push	 E:\æ¡Œé¢\lib\libfmjni.so	 /system/lib/
+adb push	 E:\æ¡Œé¢\lib64\libfmjni.so   /system/lib64/
 adb uninstall    FmRadio.apk
 
 
@@ -288,8 +288,8 @@ cp default_thumb.jpg com.litai.launcher/files/
 ls default_thumb.jpg com.litai.launcher/files/
 cp default_thumb.jpg com.android.launcher3/files/
 
-adb push  E:\×ÊÔ´\±ÚÖ½\default_thumb\default_thumb.jpg /data/data/com.android.launcher3/files/
-adb pull   /data/data/com.android.launcher3/files/default_thumb.jpg E:\×ÊÔ´\±ÚÖ½\default_thumb_new.jpg
+adb push  E:\èµ„æº\å£çº¸\default_thumb\default_thumb.jpg /data/data/com.android.launcher3/files/
+adb pull   /data/data/com.android.launcher3/files/default_thumb.jpg E:\èµ„æº\å£çº¸\default_thumb_new.jpg
 
 
 [3.10] adb -- other apk
@@ -312,20 +312,20 @@ cmd_w: ping dl.google.com
 
 
 [4.1] adb -- version
-//ÈçºÎÍ¨¹ıadb »ñÈ¡Ó¦ÓÃµÄ°æ±¾ºÅ
-windows£º 
-adb shell pm dump com.android.dialer | findstr ¡°versionName¡± 
-linux£º 
-adb shell pm dump com.android.dialer | grep ¡°versionName¡±
+//å¦‚ä½•é€šè¿‡adb è·å–åº”ç”¨çš„ç‰ˆæœ¬å·
+windowsï¼š 
+adb shell pm dump com.android.dialer | findstr â€œversionNameâ€ 
+linuxï¼š 
+adb shell pm dump com.android.dialer | grep â€œversionNameâ€
 
 
 
 
 
-[4.2] adb -- Õ¹Ñ¶pac´ò°ü
-androidÏµÍ³±àÒëÍê³Éºó£¬Éú³ÉµÄ¶¼ÊÇÏµÍ³µÄÎÄ¼ş£¬Èç¹ûÓÃÕ¹Ñ¶µÄÉÕÂ¼¹¤¾ßÒ»¸öÒ»¸öµÄÑ¡ÖĞÔò·Ç³£Âé·³£¬
-ÏÂÃæ½éÉÜÁËÒ»ÖÖ°ÑÕâĞ©ÎÄ¼ş´ò°ü³Épac°üµÄĞÎÊ½µÄ·½·¨£¬Ï¸¿´ÃüÁî±È½Ï³¤£¬Ô­ÒòÊÇÏµÍ³ÎÄ¼ş±È½Ï¶à£¬
-ÎÒÊ¹ÓÃµÄ¶¼ÊÇ¾ø¶ÔÂ·¾¶£¬¿ÉÒÔ¶ÔÒ»¸öÂ·¾¶ÉèÖÃÒ»¸ö±äÁ¿£¬ÕâÑù¾Í¿ÉÒÔËõ¶ÌÃüÁîĞĞµÄ³¤¶ÈÁË¡£?
+[4.2] adb -- å±•è®¯pacæ‰“åŒ…
+androidç³»ç»Ÿç¼–è¯‘å®Œæˆåï¼Œç”Ÿæˆçš„éƒ½æ˜¯ç³»ç»Ÿçš„æ–‡ä»¶ï¼Œå¦‚æœç”¨å±•è®¯çš„çƒ§å½•å·¥å…·ä¸€ä¸ªä¸€ä¸ªçš„é€‰ä¸­åˆ™éå¸¸éº»çƒ¦ï¼Œ
+ä¸‹é¢ä»‹ç»äº†ä¸€ç§æŠŠè¿™äº›æ–‡ä»¶æ‰“åŒ…æˆpacåŒ…çš„å½¢å¼çš„æ–¹æ³•ï¼Œç»†çœ‹å‘½ä»¤æ¯”è¾ƒé•¿ï¼ŒåŸå› æ˜¯ç³»ç»Ÿæ–‡ä»¶æ¯”è¾ƒå¤šï¼Œ
+æˆ‘ä½¿ç”¨çš„éƒ½æ˜¯ç»å¯¹è·¯å¾„ï¼Œå¯ä»¥å¯¹ä¸€ä¸ªè·¯å¾„è®¾ç½®ä¸€ä¸ªå˜é‡ï¼Œè¿™æ ·å°±å¯ä»¥ç¼©çŸ­å‘½ä»¤è¡Œçš„é•¿åº¦äº†ã€‚?
 
 //	perl customize/pac_8810/pac_8810.pl "mytest.pac" "VERSION_1.0" 
 //	"customize/pac_8810/SC8810.xml" "sc8810_sp8810ga/fdl1.bin" 
@@ -341,20 +341,20 @@ androidÏµÍ³±àÒëÍê³Éºó£¬Éú³ÉµÄ¶¼ÊÇÏµÍ³µÄÎÄ¼ş£¬Èç¹ûÓÃÕ¹Ñ¶µÄÉÕÂ¼¹¤¾ßÒ»¸öÒ»¸öµÄÑ¡ÖĞÔ
 //	"out/target/product/hsdroid/sps.images_eng/system.img" 
 //	"out/target/product/hsdroid/sps.images_eng/userdata.img" 
 //	"sc8810_sp8810ga/HVGA_logo_256.bmp" ""
-?ÎÒÃÇÔÚ·¢²¼Ò»¸ö°æ±¾µÄÊ±ºò£¬¾­³£»áÓö¼û°æ±¾¸üĞÂµÄ·Ç³£Ğ¡£¬±ÈÈçÖ»¸ü»»»òÉ¾³ıÄ³¸öapk£¬
-ÕâÊ±Èç¹û¶ÔÕû¸öandroid´úÂë½øĞĞ±àÒëµÄ»°£¬»á·Ç³£ÀË·ÑÊ±¼ä£¬ÑÏÖØÓ°Ïì¹¤×÷Ğ§ÂÊ£¬
-ÎÒÃÇ¿ÉÒÔÊÖ¶¯Ìæ»»Ä³¸öapk£¬ÔÙÓÃÏÂÃæµÄ·½·¨Ê¹ÓÃmkyaffs2imageÉú³ÉÒ»¸öimgÎÄ¼ş£¬
-ÔÙÊ¹ÓÃÉÏÃæÄÇ¸öÃüÁî¶Ô¾µÏñÎÄ¼ş½øĞĞ´ò°ü£¬ÕâÑù·Ç³£½ÚÊ¡Ê±¼ä¡£
+?æˆ‘ä»¬åœ¨å‘å¸ƒä¸€ä¸ªç‰ˆæœ¬çš„æ—¶å€™ï¼Œç»å¸¸ä¼šé‡è§ç‰ˆæœ¬æ›´æ–°çš„éå¸¸å°ï¼Œæ¯”å¦‚åªæ›´æ¢æˆ–åˆ é™¤æŸä¸ªapkï¼Œ
+è¿™æ—¶å¦‚æœå¯¹æ•´ä¸ªandroidä»£ç è¿›è¡Œç¼–è¯‘çš„è¯ï¼Œä¼šéå¸¸æµªè´¹æ—¶é—´ï¼Œä¸¥é‡å½±å“å·¥ä½œæ•ˆç‡ï¼Œ
+æˆ‘ä»¬å¯ä»¥æ‰‹åŠ¨æ›¿æ¢æŸä¸ªapkï¼Œå†ç”¨ä¸‹é¢çš„æ–¹æ³•ä½¿ç”¨mkyaffs2imageç”Ÿæˆä¸€ä¸ªimgæ–‡ä»¶ï¼Œ
+å†ä½¿ç”¨ä¸Šé¢é‚£ä¸ªå‘½ä»¤å¯¹é•œåƒæ–‡ä»¶è¿›è¡Œæ‰“åŒ…ï¼Œè¿™æ ·éå¸¸èŠ‚çœæ—¶é—´ã€‚
 
 out/host/linux-x86/bin/mkyaffs2image -f out/target/product/hsdroid/sps.images_eng/system mysystem.img
 out/host/linux-x86/bin/mkyaffs2image -f out/target/product/hsdroid/sps.images_eng/data myuserdata.img
-ÔÚÊµ¼Ê¿ª·¢ÖĞ£¬ÎÒÃÇĞèÒª´óÁ¿µÄÔÄ¶ÁÔ´Âë£¬´ÓÔ´ÂëÖĞÑ°ÕÒ·½·¨ºÍÁé¸Ğ£¬ÕâÑù¶ÔÎÒÃÇ×ÔÉíÌá¸ßÊÇ·Ç³£ÓĞÓÃµÄ¡£
+åœ¨å®é™…å¼€å‘ä¸­ï¼Œæˆ‘ä»¬éœ€è¦å¤§é‡çš„é˜…è¯»æºç ï¼Œä»æºç ä¸­å¯»æ‰¾æ–¹æ³•å’Œçµæ„Ÿï¼Œè¿™æ ·å¯¹æˆ‘ä»¬è‡ªèº«æé«˜æ˜¯éå¸¸æœ‰ç”¨çš„ã€‚
 
 	
 
-[4.3] ÈçºÎ±àÒëÄ£¿é 
+[4.3] å¦‚ä½•ç¼–è¯‘æ¨¡å— 
 
-     ÒÔ engtest Ä£¿éÎªÀı£¬±àÒë¹ı³Ì£º 
+ä»¥ engtest æ¨¡å—ä¸ºä¾‹ï¼Œç¼–è¯‘è¿‡ç¨‹ï¼š 
 
 cd idh.code 
 ./mk sp6820a u adr external/sprd/engineeringmodel/engtest
@@ -362,37 +362,37 @@ cd idh.code
 
 
 
-      
 
-     ×¢Òâ£º 
 
-     ±àÒëµ¥¶ÀÄ£¿éÖ®Ç°£¬È·±£½øĞĞ¹ı             new »ò pb£¬Èç¹ûÒª±àÒëµÄÄ£¿éĞèÒªÒıÓÃÆäËûÄ£¿éµÄ±àÒë½á¹û£¬
-     Ôò±ØĞëÒªÏÈ½øĞĞ       new ±àÒë¡£     
+æ³¨æ„ï¼š 
 
-     ±àÒëµ¥¶ÀÄ£¿é¹ı³ÌÖĞ£¬Í¬ÑùÒ²»á½øĞĞÏàÓ¦µÄ                  ln ºÏ²¢¹ı³Ì£¬Ä¬ÈÏ±àÒëÍê³Éºó»á¶Ï¿ªÖ®Ç°½¨Á¢µÄ
-     Á´½Ó£¬¿ÉÒÔÊ¹ÓÃ-o=nsc       Ñ¡ÏîÀ´±£³ÖÁ´½ÓÏÖ³¡£¬ÃüÁîÈçÏÂ£º 
+ç¼–è¯‘å•ç‹¬æ¨¡å—ä¹‹å‰ï¼Œç¡®ä¿è¿›è¡Œè¿‡             new æˆ– pbï¼Œå¦‚æœè¦ç¼–è¯‘çš„æ¨¡å—éœ€è¦å¼•ç”¨å…¶ä»–æ¨¡å—çš„ç¼–è¯‘ç»“æœï¼Œ
+åˆ™å¿…é¡»è¦å…ˆè¿›è¡Œ       new ç¼–è¯‘ã€‚     
 
-              $ ./mk -o=nsc sp6820a u adr external/sprd/engineeringmodel/engtest 
+ç¼–è¯‘å•ç‹¬æ¨¡å—è¿‡ç¨‹ä¸­ï¼ŒåŒæ ·ä¹Ÿä¼šè¿›è¡Œç›¸åº”çš„                  ln åˆå¹¶è¿‡ç¨‹ï¼Œé»˜è®¤ç¼–è¯‘å®Œæˆåä¼šæ–­å¼€ä¹‹å‰å»ºç«‹çš„
+é“¾æ¥ï¼Œå¯ä»¥ä½¿ç”¨-o=nsc       é€‰é¡¹æ¥ä¿æŒé“¾æ¥ç°åœºï¼Œå‘½ä»¤å¦‚ä¸‹ï¼š 
 
-      
+$ ./mk -o=nsc sp6820a u adr external/sprd/engineeringmodel/engtest 
 
-[4.4] ÈçºÎ±àÒë       3rdparty   ÏÂµÄ    ko 
 
-     ÒÔ tp ÎªÀı 
 
-         $ cd idh.code 
+[4.4] å¦‚ä½•ç¼–è¯‘       3rdparty   ä¸‹çš„    ko 
 
-         $ ./mk sp6820a u ko 3rdparty/tp/pixcir/ 
+ä»¥ tp ä¸ºä¾‹ 
 
-     ĞèÒªÈ·±£    3rdparty/tp/pixcir/build.sh µÄ¿ÉÖ´ĞĞÈ¨ÏŞ 
+$ cd idh.code 
 
-[4.5] ÓÃÀ´²é¿´µ±Ç°ÔËĞĞÊ±£¬activityµÄ×´Ì¬ĞÅÏ¢¡£
+$ ./mk sp6820a u ko 3rdparty/tp/pixcir/ 
 
-adb shell dumpsys activity °üº¬ĞÅÏ¢Ïî
-Í¨¹ıadb shell dumpsys activity | findstr ¡°ACTIVITY MANAGER¡± £¬´òÓ¡µÄĞÅÏ¢ÈçÏÂ£º
+éœ€è¦ç¡®ä¿    3rdparty/tp/pixcir/build.sh çš„å¯æ‰§è¡Œæƒé™ 
 
-[4.6] getevent»ñÈ¡inputÉÏ±¨ÊÂ¼ş
-1.Ö¸¶¨Ä³¸öÉè±¸£ºadb shell getevent -v /dev/input/event0 
+[4.5] ç”¨æ¥æŸ¥çœ‹å½“å‰è¿è¡Œæ—¶ï¼Œactivityçš„çŠ¶æ€ä¿¡æ¯ã€‚
+
+adb shell dumpsys activity åŒ…å«ä¿¡æ¯é¡¹
+é€šè¿‡adb shell dumpsys activity | findstr â€œACTIVITY MANAGERâ€ ï¼Œæ‰“å°çš„ä¿¡æ¯å¦‚ä¸‹ï¼š
+
+[4.6] geteventè·å–inputä¸ŠæŠ¥äº‹ä»¶
+1.æŒ‡å®šæŸä¸ªè®¾å¤‡ï¼šadb shell getevent -v /dev/input/event0 
 eg: 
 D:\Program Files (x86)\PowerCmd>adb shell getevent -v /dev/input/event1
 
@@ -400,32 +400,32 @@ bus: 0018
 vendor 0001 
 product 0001 
 version 0100 
-name: ¡°proximity¡± 
-location: ¡°proximity¡± 
-id: ¡°¡± 
+name: â€œproximityâ€ 
+location: â€œproximityâ€ 
+id: â€œâ€ 
 version: 1.0.1 
 0003 0019 00000000 
 0000 0000 00000000 
 0003 0019 00000001 
 0000 0000 00000000
 
-2.listÉÏ±¨ÊÂ¼ş£ºadb shell getevent -l
+2.listä¸ŠæŠ¥äº‹ä»¶ï¼šadb shell getevent -l
 
 D:\Program Files (x86)\PowerCmd>adb shell getevent -l 
 add device 1: /dev/input/event6 
-name: ¡°mtk-tpd-kpd¡± 
+name: â€œmtk-tpd-kpdâ€ 
 add device 2: /dev/input/event5 
-name: ¡°mtk-tpd¡± 
+name: â€œmtk-tpdâ€ 
 add device 3: /dev/input/event4 
-name: ¡°m_acc_input¡± 
+name: â€œm_acc_inputâ€ 
 add device 4: /dev/input/event3 
-name: ¡°m_alsps_input¡± 
+name: â€œm_alsps_inputâ€ 
 add device 5: /dev/input/event2 
-name: ¡°hwmdata¡± 
+name: â€œhwmdataâ€ 
 add device 6: /dev/input/event0 
-name: ¡°ACCDET¡± 
+name: â€œACCDETâ€ 
 add device 7: /dev/input/event1 
-name: ¡°mtk-kpd¡± 
+name: â€œmtk-kpdâ€ 
 /dev/input/event5: EV_ABS ABS_MT_TRACKING_ID 00000000 
 /dev/input/event5: EV_KEY BTN_TOUCH DOWN 
 /dev/input/event5: EV_ABS ABS_MT_TOUCH_MAJOR 00000001 
@@ -442,8 +442,8 @@ name: ¡°mtk-kpd¡±
 /dev/input/event5: EV_ABS ABS_MT_TRACKING_ID 00000000
 
 
-[4.7] android adb shell am pm ÁĞ³öËµÒª°²×°µÄpackages
-adb shell pm list packages //ÁĞ³öËµÒª°²×°µÄpackages
+[4.7] android adb shell am pm åˆ—å‡ºè¯´è¦å®‰è£…çš„packages
+adb shell pm list packages //åˆ—å‡ºè¯´è¦å®‰è£…çš„packages
 
 pm list packages: prints all packages, optionally only
 
@@ -463,19 +463,19 @@ those whose package name contains the text in FILTER. Options:
 
 -u: also include uninstalled packages.
 
-adb shell pm list packages -f //ÁĞ³ö°²×°µÄpackages ²¢ÏÔÊ¾³öapk°üËùÔÚµÄÎ»ÖÃ 
-eg£ºpackage:/system/priv-app/FMRadio/FMRadio.apk=com.android.fmradio 
-eg: adb shell pm list packages -f ¡°qiku¡±
+adb shell pm list packages -f //åˆ—å‡ºå®‰è£…çš„packages å¹¶æ˜¾ç¤ºå‡ºapkåŒ…æ‰€åœ¨çš„ä½ç½® 
+egï¼špackage:/system/priv-app/FMRadio/FMRadio.apk=com.android.fmradio 
+eg: adb shell pm list packages -f â€œqikuâ€
 
-adb shell pm list packages -d //ÁĞ³ö±»Í£ÓÃµÄÓ¦ÓÃ 
-eg£ºC:\Users\Administrator>adb shell pm list packages -d 
+adb shell pm list packages -d //åˆ—å‡ºè¢«åœç”¨çš„åº”ç”¨ 
+egï¼šC:\Users\Administrator>adb shell pm list packages -d 
 package:com.qiku.android.sos
 
-adb shell pm list packages -e //ÁĞ³öÆôÓÃµÄÓ¦ÓÃ 
-adb shell pm list packages -3 //ÁĞ³ö°²×°µÄµÚÈı·½Ó¦ÓÃ£¬¿ÉÒÔ½áºÏ-3 -f²é¿´¾ßÌåapkµÄÂ·¾¶ 
-adb shell pm list packages -i //ÁĞ³öÓ¦ÓÃ¼°°ü£¬²¢ÏÔÊ¾ËûµÄ°²×°À´Ô´£¬null±íÊ¾ÏµÍ³¡£ 
+adb shell pm list packages -e //åˆ—å‡ºå¯ç”¨çš„åº”ç”¨ 
+adb shell pm list packages -3 //åˆ—å‡ºå®‰è£…çš„ç¬¬ä¸‰æ–¹åº”ç”¨ï¼Œå¯ä»¥ç»“åˆ-3 -fæŸ¥çœ‹å…·ä½“apkçš„è·¯å¾„ 
+adb shell pm list packages -i //åˆ—å‡ºåº”ç”¨åŠåŒ…ï¼Œå¹¶æ˜¾ç¤ºä»–çš„å®‰è£…æ¥æºï¼Œnullè¡¨ç¤ºç³»ç»Ÿã€‚ 
 eg:package:com.tencent.mobileqq installer=com.tencent.mobileqq 
-adb shell pm list packages -u //ÁĞ³öÎª°²×°°üÓ¦ÓÃĞÅÏ¢
+adb shell pm list packages -u //åˆ—å‡ºä¸ºå®‰è£…åŒ…åº”ç”¨ä¿¡æ¯
 
 pm list permission-groups: prints all known permission groups.
 
@@ -493,7 +493,7 @@ those in GROUP. Options:
 
 -u: list only the permissions users will see.
 
-adb shell pm list permission-groups //ÁĞ³öÒÑÖªµÄÈ¨ÏŞ×é 
+adb shell pm list permission-groups //åˆ—å‡ºå·²çŸ¥çš„æƒé™ç»„ 
 shell@sp9832a_3h10_volte:/ $ pm list permission-groups
 
 permission group:com.android.qiku.permission-group.CONTACTS
@@ -530,36 +530,36 @@ pm list users:
 eg: 
 C:\Users\Administrator>adb shell pm list users 
 Users: 
-UserInfo{0:»úÖ÷:13} running
+UserInfo{0:æœºä¸»:13} running
 
-pm path: print the path to the .apk of the given PACKAGE.//ÁĞ³öÖ¸¶¨°üÃûµÄapkµÄÂ·¾¶ ¸Ğ¾õºÍpm list packages -f ¡°pkgname¡±²î²»¶à 
-eg£º 
+pm path: print the path to the .apk of the given PACKAGE.//åˆ—å‡ºæŒ‡å®šåŒ…åçš„apkçš„è·¯å¾„ æ„Ÿè§‰å’Œpm list packages -f â€œpkgnameâ€å·®ä¸å¤š 
+egï¼š 
 C:\Users\Administrator>adb shell pm path com.qiku.music 
 package:/system/priv-app/QK_Music/QK_Music.apk
 
-pm dump: print system state associated with the given PACKAGE //dump Ö¸¶¨Ó¦ÓÃµÄĞÅÏ¢ °üÀ¨°æ±¾ºÅ£¬°²×°Ê±¼ä£¬¸üĞÂÊ±¼ä£¬È¨ÏŞµÈµÈ¡£ 
-eg£ºC:\Users\Administrator>adb shell pm dump com.qiku.music >d:\music.log
+pm dump: print system state associated with the given PACKAGE //dump æŒ‡å®šåº”ç”¨çš„ä¿¡æ¯ åŒ…æ‹¬ç‰ˆæœ¬å·ï¼Œå®‰è£…æ—¶é—´ï¼Œæ›´æ–°æ—¶é—´ï¼Œæƒé™ç­‰ç­‰ã€‚ 
+egï¼šC:\Users\Administrator>adb shell pm dump com.qiku.music >d:\music.log
 
-pm install [-l] [-r] [-t] [-i INSTALLER_PACKAGE_NAME] [-s] [-f] PATH //°²×°Ö¸¶¨Ä¿Â¼µÄapk 
-eg£º 
+pm install [-l] [-r] [-t] [-i INSTALLER_PACKAGE_NAME] [-s] [-f] PATH //å®‰è£…æŒ‡å®šç›®å½•çš„apk 
+egï¼š 
 pm install /data/3dijoy_fane.apk
 
-pm get-install-location¡¡¡¡·µ»Øµ±Ç°Ä¬ÈÏ°²×°Î»ÖÃ
+pm get-install-locationã€€ã€€è¿”å›å½“å‰é»˜è®¤å®‰è£…ä½ç½®
 
-¡¡¡¡·µ»ØÖµ£º
+ã€€ã€€è¿”å›å€¼ï¼š
 
-¡¡¡¡¡¡¡¡0¡¡¡¡auto
+ã€€ã€€ã€€ã€€0ã€€ã€€auto
 
-¡¡¡¡¡¡¡¡1¡¡¡¡ÄÚ²¿´æ´¢
+ã€€ã€€ã€€ã€€1ã€€ã€€å†…éƒ¨å­˜å‚¨
 
-¡¡¡¡¡¡¡¡2¡¡¡¡Íâ²¿´æ´¢
+ã€€ã€€ã€€ã€€2ã€€ã€€å¤–éƒ¨å­˜å‚¨
 
-pm set-install-location¡¡0|1|2¡¡ĞŞ¸ÄÄ¬ÈÏ°²×°Î»ÖÃ
+pm set-install-locationã€€0|1|2ã€€ä¿®æ”¹é»˜è®¤å®‰è£…ä½ç½®
 
-pm clear ¡°pkgname¡±//Çå³ıÖ¸¶¨Ó¦ÓÃµÄÊı¾İ£¬¿ÉÒÔÓÃÓÚfotaÉı¼¶ºó£¬Çå¿ÕÊı¾İ½áºÏRunningtime
+pm clear â€œpkgnameâ€//æ¸…é™¤æŒ‡å®šåº”ç”¨çš„æ•°æ®ï¼Œå¯ä»¥ç”¨äºfotaå‡çº§åï¼Œæ¸…ç©ºæ•°æ®ç»“åˆRunningtime
 
 
-[4.8] Android Í¨¹ıadb µ±Ç°ÊäÈë·¨ĞÅÏ¢
+[4.8] Android é€šè¿‡adb å½“å‰è¾“å…¥æ³•ä¿¡æ¯
 adb shell ime list -s 
 com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME 
 com.google.android.apps.speechservices/com.google.android.voicesearch.ime.VoiceI 
@@ -572,9 +572,102 @@ nputMethodService
 
 
 
-[4.10] 
+[4.10] adb-----æŸ¥çœ‹è®¾å¤‡ä¿¡æ¯
+//æŸ¥çœ‹æ‰‹æœºå‹å·
+adb shell getprop ro.product.model
+//	COL-AL10
 
 
+//æŸ¥çœ‹ç”µæ± çŠ¶å†µ
+adb shell dumpsys battery
+//	level: 34
+//	scale: 100
+
+
+//æŸ¥çœ‹åˆ†è¾¨ç‡
+adb shell wm size
+//	Physical size: 1080x2280
+
+
+//æŸ¥çœ‹å±å¹•å¯†åº¦
+adb shell wm density
+//	Physical density: 480
+
+
+//æŸ¥çœ‹æ˜¾ç¤ºå±å‚æ•°
+adb shell dumpsys window displays
+//  ...
+
+
+//æŸ¥çœ‹android_id
+adb shell settings get secure android_id
+//	2773944cc23d1bd7
+ 
+
+//æŸ¥çœ‹IMEI
+//  Android 4.4
+adb shell dumpsys iphonesubinfo
+//  Android 5.0
+adb shell
+su
+service call iphonesubinfo 1
+//	Result: Parcel(
+//	  0x00000000: 00000000 0000000f 00360038 00310039 '........8.6.9.1.'
+//	  0x00000010: 00310037 00330030 00330032 00330038 '7.1.0.3.2.3.8.3.'
+//	  0x00000020: 00350038 00000032 				  '8.5.2... 	   ')
+//	IMEI æ˜¯ 86..ã€‚
+
+
+//æŸ¥çœ‹ Android ç³»ç»Ÿç‰ˆæœ¬
+adb shell getprop ro.build.version.release
+//	9
+
+
+//æŸ¥çœ‹IPåœ°å€
+//	å¯ä»æ‰‹æœºçš„ã€Œè®¾ç½®ã€-ã€Œå…³äºæ‰‹æœºã€-ã€ŒçŠ¶æ€ä¿¡æ¯ã€-ã€ŒIPåœ°å€ã€æŸ¥çœ‹
+adb shell ifconfig | grep Mask
+// 
+adb shell ifconfig wlan0
+//	error: no devices/emulators found
+// 
+adb shell netcfg
+//	error: no devices/emulators found
+
+
+//æŸ¥çœ‹Macåœ°å€
+adb shell cat /sys/class/net/wlan0/address
+//	error: no devices/emulators found
+//	f8:a9:d0:17:42:4d
+ 
+
+//æŸ¥çœ‹CPUä¿¡æ¯
+adb shell cat /proc/cpuinfo
+ 
+
+//æŸ¥çœ‹å†…å­˜ä¿¡æ¯
+adb shell cat /proc/meminfo
+ 
+
+//æŸ¥çœ‹ç¡¬ä»¶ä¸ç³»ç»Ÿå±æ€§
+adb shell cat /system/build.prop
+ 
+
+//å•ç‹¬æŸ¥çœ‹å±æ€§
+adb shell getprop <å±æ€§å>
+//å±æ€§å	å«ä¹‰
+ro.build.version.sdk	SDK ç‰ˆæœ¬
+ro.build.version.release	Android ç³»ç»Ÿç‰ˆæœ¬
+ro.build.version.security_patch	Android å®‰å…¨è¡¥ä¸ç¨‹åºçº§åˆ«
+ro.product.model	å‹å·
+ro.product.brand	å“ç‰Œ
+ro.product.name	è®¾å¤‡å
+ro.product.board	å¤„ç†å™¨å‹å·
+ro.product.cpu.abilist	CPU æ”¯æŒçš„ abi åˆ—è¡¨[èŠ‚æ³¨ä¸€]
+persist.sys.isUsbOtgEnabled	æ˜¯å¦æ”¯æŒ OTG
+dalvik.vm.heapsize	æ¯ä¸ªåº”ç”¨ç¨‹åºçš„å†…å­˜ä¸Šé™
+ro.sf.lcd_density	å±å¹•å¯†åº¦
+//
+adb shell getprop ro.build.version.sdk
 
 
 [4.11] 

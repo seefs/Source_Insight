@@ -1,29 +1,29 @@
+ï»¿
 
-
-//Ä¿Â¼[Num][Ca]:
+//ç›®å½•[Num][Ca]:
 // 1. numpy
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.1\] numpyÄ£¿é
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.1\] numpyæ¨¡å—
 Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.2\] np.array()
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.3\] arr.shape--------------ĞÎ×´
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.4\] np.ones----------------´´½¨Êı×é
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.5\] np.random.randint------Ëæ»úÊı
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.6\] np.eye-----------------¶Ô½ÇÏß¾ØÕó
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.7\] ndarrayµÄÊôĞÔ
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.8\] arr[1][2]--------------Ë÷Òı
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.9\] arr[0:2]---------------ÇĞÆ¬
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.10\] ::--------------------Êı¾İ·´×ª
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.11\] arr.reshape()---------±äĞÎ
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.12\] np.concatenate()------¼¶Áª
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.13\] np.split()------------ÇĞ·Ö
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.14\] a.copy()--------------¸±±¾
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.15\] arr1.ravel------------Êı×é±âÆ½»¯
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.16\] np.c_[arr1,arr2,¡­]----Êı×éºÏ²¢
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.17\] np.unique-------------»ñÈ¡Êı×é²»ÖØ¸´µÄÖµ
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.18\] np.sum----------------ÇóºÍ
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.19\] np.max/ np.min--------×î´ó×îĞ¡Öµ
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.20\] ÆäËû¾ÛºÏ²Ù×÷
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.21\] np.dot()--------------¾ØÕó»ı
-Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.22\] np.sort()-------------ÅÅĞò
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.3\] arr.shape--------------å½¢çŠ¶
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.4\] np.ones----------------åˆ›å»ºæ•°ç»„
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.5\] np.random.randint------éšæœºæ•°
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.6\] np.eye-----------------å¯¹è§’çº¿çŸ©é˜µ
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.7\] ndarrayçš„å±æ€§
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.8\] arr[1][2]--------------ç´¢å¼•
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.9\] arr[0:2]---------------åˆ‡ç‰‡
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.10\] ::--------------------æ•°æ®åè½¬
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.11\] arr.reshape()---------å˜å½¢
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.12\] np.concatenate()------çº§è”
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.13\] np.split()------------åˆ‡åˆ†
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.14\] a.copy()--------------å‰¯æœ¬
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.15\] arr1.ravel------------æ•°ç»„æ‰å¹³åŒ–
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.16\] np.c_[arr1,arr2,â€¦]----æ•°ç»„åˆå¹¶
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.17\] np.unique-------------è·å–æ•°ç»„ä¸é‡å¤çš„å€¼
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.18\] np.sum----------------æ±‚å’Œ
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.19\] np.max/ np.min--------æœ€å¤§æœ€å°å€¼
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.20\] å…¶ä»–èšåˆæ“ä½œ
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.21\] np.dot()--------------çŸ©é˜µç§¯
+Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.22\] np.sort()-------------æ’åº
 Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.23\] 
 Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.24\] 
 Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.25\] 
@@ -31,10 +31,10 @@ Save:node\Pythons\study\Macro_Pythons_numpy.h \[1.26\]
 
 
 
-[1.1] numpyÄ£¿é
-//µ¼ÈëÄ£¿é
+[1.1] numpyæ¨¡å—
+//å¯¼å…¥æ¨¡å—
 import numpy as np
-//²é¿´numpy°æ±¾
+//æŸ¥çœ‹numpyç‰ˆæœ¬
 np.__version__
 
 
@@ -42,92 +42,92 @@ np.__version__
 
 [1.2] np.array()
 arr1=np.array([1,2,3,4])
-//²é¿´±äÁ¿µÄÊı¾İÀàĞÍ
+//æŸ¥çœ‹å˜é‡çš„æ•°æ®ç±»å‹
 type(arr1)
-Êä³ö£ºnumpy.ndarray
+è¾“å‡ºï¼šnumpy.ndarray
 1
 2
-//´´½¨¶şÎ¬Êı×é
+//åˆ›å»ºäºŒç»´æ•°ç»„
 arr2= np.array([[1,2,3],[4,5,6],[7,8,9]])
-//´´½¨¶àÎ¬Êı×é
+//åˆ›å»ºå¤šç»´æ•°ç»„
 arry3=np.array([[[1,2,3],[4,5,6],[7,8,9]]])
-//numpyÄ¬ÈÏndarrayµÄËùÓĞÔªËØµÄÀàĞÍÊÇÏàÍ¬µÄ
-Í³Ò»ÀàĞÍÓÅÏÈ¼¶£ºstr>float>int
+//numpyé»˜è®¤ndarrayçš„æ‰€æœ‰å…ƒç´ çš„ç±»å‹æ˜¯ç›¸åŒçš„
+ç»Ÿä¸€ç±»å‹ä¼˜å…ˆçº§ï¼šstr>float>int
 
 
 
 
-[1.3] arr.shape----------ĞÎ×´
-//shape·µ»ØµÄÊÇndarrayµÄÊı×éĞÎ×´(·µ»ØÀàĞÍÊÇÔª×é)¡£·µ
-Êä³ö£º(3, 3)
+[1.3] arr.shape----------å½¢çŠ¶
+//shapeè¿”å›çš„æ˜¯ndarrayçš„æ•°ç»„å½¢çŠ¶(è¿”å›ç±»å‹æ˜¯å…ƒç»„)ã€‚è¿”
+è¾“å‡ºï¼š(3, 3)
 
 
 
 
-[1.4] np.one----------------´´½¨Êı×é
-//np.ones(shape, dtype=None, order=¡¯C¡¯)
+[1.4] np.one----------------åˆ›å»ºæ•°ç»„
+//np.ones(shape, dtype=None, order=â€™Câ€™)
 arr= np.ones(shape=(2,2),dtype=int) 
 
 np.zeros
-//np.zeros(shape, dtype=None, order=¡¯C¡¯)
+//np.zeros(shape, dtype=None, order=â€™Câ€™)
 arr=np.zeros([2,3])
 
 np.full
-//np.full(shape, fill_value, dtype=None, order=¡¯C¡¯)
-//  ´´½¨2ĞĞ3ÁĞµÄÈ«²¿ÊıÖµ¶¼Îª10µÄ¶şÎ¬Êı×é
+//np.full(shape, fill_value, dtype=None, order=â€™Câ€™)
+//  åˆ›å»º2è¡Œ3åˆ—çš„å…¨éƒ¨æ•°å€¼éƒ½ä¸º10çš„äºŒç»´æ•°ç»„
 arr=np.full(shape=(2,4),fill_value=10,dtype=int)
 
-np.linspace----------µÈ²îÊıÁĞ
+np.linspace----------ç­‰å·®æ•°åˆ—
 //np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None) 
-//  Êı×é³õÖµÎª0£¬ÓĞ10¸öÖµ£¬ÖÕÖµÎª9
+//  æ•°ç»„åˆå€¼ä¸º0ï¼Œæœ‰10ä¸ªå€¼ï¼Œç»ˆå€¼ä¸º9
 arr_linspace=np.linspace(start=0,stop=10,num=10,endpoint=False)
 arr_linspace
-//Êä³ö£ºarray([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9.])
+//è¾“å‡ºï¼šarray([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9.])
 
 
-np.arange----------Ò»Î¬Êı×é
+np.arange----------ä¸€ç»´æ•°ç»„
 //np.arange([start, ]stop, [step, ]dtype=None)
-##Êı×é³õÖµÎª0£¬ÓĞ5(10³ıÒÔ2)¸öÖµ£¬ÖÕÖµÎª8£¬Ö»ÄÜ´´½¨Ò»Î¬Êı×é
+##æ•°ç»„åˆå€¼ä¸º0ï¼Œæœ‰5(10é™¤ä»¥2)ä¸ªå€¼ï¼Œç»ˆå€¼ä¸º8ï¼Œåªèƒ½åˆ›å»ºä¸€ç»´æ•°ç»„
 arr_arange=np.arange(0,10,2)
 arr_arange
-//Êä³ö£ºarray([0, 2, 4, 6, 8])
+//è¾“å‡ºï¼šarray([0, 2, 4, 6, 8])
 
 
 
 
-[1.5] np.random.randint----------Ëæ»úÊı
-//np.random.randint(low, high=None, size=None, dtype=¡¯l¡¯)
-#´´½¨Ò»¸öËæ»úÊıÔÚ[10,90)µÄ3ĞĞ4ÁĞ¶şÎ¬Êı×é
-#size=[3]ÔòÊÇÒ»¸öÒ»Î¬Êı×é£¬size=[3,4,5]ÔòÊÇÈıÎ¬Êı×é
-#Ëæ»úÔ­Àí£º¸ù¾İµ±Ç°ÏµÍ³µÄÊ±¼ä²úÉúËæ»úÊı
-#¿ÉÒÔ¹Ì¶¨ÖÖ×Ó£¬Ê¹ÓÃseed(ÖÖ×Ó)º¯Êı
+[1.5] np.random.randint----------éšæœºæ•°
+//np.random.randint(low, high=None, size=None, dtype=â€™lâ€™)
+#åˆ›å»ºä¸€ä¸ªéšæœºæ•°åœ¨[10,90)çš„3è¡Œ4åˆ—äºŒç»´æ•°ç»„
+#size=[3]åˆ™æ˜¯ä¸€ä¸ªä¸€ç»´æ•°ç»„ï¼Œsize=[3,4,5]åˆ™æ˜¯ä¸‰ç»´æ•°ç»„
+#éšæœºåŸç†ï¼šæ ¹æ®å½“å‰ç³»ç»Ÿçš„æ—¶é—´äº§ç”Ÿéšæœºæ•°
+#å¯ä»¥å›ºå®šç§å­ï¼Œä½¿ç”¨seed(ç§å­)å‡½æ•°
 #np.random.seed(1) 
 np.random.randint(10,90,size=[3,4])
 
 
 np.random.randn
-//np.random.randn(d0, d1, ¡­, dn) ±ê×¼ÕıÌ«·Ö²¼
-#´´½¨Ò»¸ö10¸öÔªËØµÄÒ»Î¬Êı×é
+//np.random.randn(d0, d1, â€¦, dn) æ ‡å‡†æ­£å¤ªåˆ†å¸ƒ
+#åˆ›å»ºä¸€ä¸ª10ä¸ªå…ƒç´ çš„ä¸€ç»´æ•°ç»„
 np.random.randn(10)
 
 
-np.random.randn----------¶àÎ¬Êı×é
-#Èç´´½¨10ĞĞ£¬10ÁĞµÄÊı×é
+np.random.randn----------å¤šç»´æ•°ç»„
+#å¦‚åˆ›å»º10è¡Œï¼Œ10åˆ—çš„æ•°ç»„
 np.random.randn((10,10))
 
 
 np.random.random
 //np.random.random(size=None)
-Éú³É[0,1)µÄËæ»úÊı
+ç”Ÿæˆ[0,1)çš„éšæœºæ•°
 
 
 //np.random.random(size=[2,2])
-#´´½¨Ò»¸ö2ĞĞ2ÁĞµÄÊıÖµÔÚ[0,1)µÄ¶şÎ¬Êı×é
+#åˆ›å»ºä¸€ä¸ª2è¡Œ2åˆ—çš„æ•°å€¼åœ¨[0,1)çš„äºŒç»´æ•°ç»„
 
 
 np.random.rand
-//np.random.rand(d0,d1,¡­dn )
-ÒÔ¸ø¶¨µÄĞÎ×´´´½¨Ò»¸öÊı×é£¬²¢ÔÚÊı×éÖĞ¼ÓÈëÔÚ[0,1)Ö®¼ä¾ùÔÈ·Ö²¼µÄËæ»úÑù±¾¡£
+//np.random.rand(d0,d1,â€¦dn )
+ä»¥ç»™å®šçš„å½¢çŠ¶åˆ›å»ºä¸€ä¸ªæ•°ç»„ï¼Œå¹¶åœ¨æ•°ç»„ä¸­åŠ å…¥åœ¨[0,1)ä¹‹é—´å‡åŒ€åˆ†å¸ƒçš„éšæœºæ ·æœ¬ã€‚
 np.random.rand(10)
 //1
 
@@ -137,13 +137,13 @@ np.random.rand(2,2)
 
 
 
-[1.6] np.eye----------¶Ô½ÇÏß¾ØÕó
+[1.6] np.eye----------å¯¹è§’çº¿çŸ©é˜µ
 //np.eye(N, M=None, k=0, dtype=float)
 
-#´´½¨Ò»¸ö¶Ô½ÇÏßÎª1µÄ¾ØÕó£¨¶şÎ¬Êı×é£©
+#åˆ›å»ºä¸€ä¸ªå¯¹è§’çº¿ä¸º1çš„çŸ©é˜µï¼ˆäºŒç»´æ•°ç»„ï¼‰
 arr_eys=np.eye(4)
 arr_eys
-Êä³ö£º
+è¾“å‡ºï¼š
 array([[ 1.,  0.,  0.,  0.],
        [ 0.,  1.,  0.,  0.],
        [ 0.,  0.,  1.,  0.],
@@ -151,46 +151,46 @@ array([[ 1.,  0.,  0.,  0.],
 
 
 
-[1.7] ndarrayµÄÊôĞÔ
-4¸ö±Ø¼Ç²ÎÊı£º
-//ndim£ºÎ¬¶È
-//shape£ºĞÎ×´£¨¸÷Î¬¶ÈµÄ³¤¶È£©
-//size£º×Ü³¤¶È
-//dtype£ºÔªËØÀàĞÍ
+[1.7] ndarrayçš„å±æ€§
+4ä¸ªå¿…è®°å‚æ•°ï¼š
+//ndimï¼šç»´åº¦
+//shapeï¼šå½¢çŠ¶ï¼ˆå„ç»´åº¦çš„é•¿åº¦ï¼‰
+//sizeï¼šæ€»é•¿åº¦
+//dtypeï¼šå…ƒç´ ç±»å‹
 
 
 
 
-[1.8] arr[1][2]----------Ë÷Òı
+[1.8] arr[1][2]----------ç´¢å¼•
 np.random.seed(10)
 arr=np.random.randint(10,50,size=(3,4))
 arr
-//Êä³ö£º
+//è¾“å‡ºï¼š
 array([[19, 46, 25, 10],
        [38, 35, 39, 39],
        [18, 19, 10, 46]])
-#Ë÷Òı
+#ç´¢å¼•
 arr[1][2]
 
 
 
-[1.9] arr[0:2]----------ÇĞÆ¬
-//»ñÈ¡Ç°Á½ĞĞÊı¾İ
+[1.9] arr[0:2]----------åˆ‡ç‰‡
+//è·å–å‰ä¸¤è¡Œæ•°æ®
 arr[0:2]
-//Êä³ö£º
+//è¾“å‡ºï¼š
 array([[19, 46, 25, 10],
        [38, 35, 39, 39]])
        
-//»ñÈ¡Ç°Á½ĞĞµÄÇ°Á½ÁĞÊı¾İ
+//è·å–å‰ä¸¤è¡Œçš„å‰ä¸¤åˆ—æ•°æ®
 arr[0:2,0:2]
-//Êä³ö£º
+//è¾“å‡ºï¼š
 array([[19, 46],
        [38, 35]])
 
 
-//»ñÈ¡¶şÎ¬Êı×éÇ°Á½ÁĞÊı¾İ
+//è·å–äºŒç»´æ•°ç»„å‰ä¸¤åˆ—æ•°æ®
 arr[:,0:2]
-//Êä³ö£º
+//è¾“å‡ºï¼š
 array([[19, 46],
        [38, 35],
        [18, 19]])
@@ -198,10 +198,10 @@ array([[19, 46],
 
 
 
-[1.10] ::----------Êı¾İ·´×ª
+[1.10] ::----------æ•°æ®åè½¬
 array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 arr[::-1]
-//Êä³ö£º
+//è¾“å‡ºï¼š
 array([9, 8, 7, 6, 5, 4, 3, 2, 1, 0])
 
 
@@ -209,72 +209,72 @@ array([[ 0.,  1.,  2.],
        [ 3.,  4.,  5.],
        [ 6.,  7.,  8.]])
        
-//½«Êı×éµÄĞĞµ¹Ğò
+//å°†æ•°ç»„çš„è¡Œå€’åº
 arr[::-1]
-Êä³ö£º
+è¾“å‡ºï¼š
 array([[ 6.,  7.,  8.],
        [ 3.,  4.,  5.],
        [ 0.,  1.,  2.]])
        
-//½«Êı×éµÄÁĞµ¹Ğò
+//å°†æ•°ç»„çš„åˆ—å€’åº
 arr[:,::-1]
-//Êä³ö£º
+//è¾“å‡ºï¼š
 array([[ 2.,  1.,  0.],
        [ 5.,  4.,  3.],
        [ 8.,  7.,  6.]])
        
-//È«µ¹ÖÃ
+//å…¨å€’ç½®
 arr[::-1,::-1]
-Êä³ö£º
+è¾“å‡ºï¼š
 array([[ 8.,  7.,  6.],
        [ 5.,  4.,  3.],
        [ 2.,  1.,  0.]])
 
 
 
-[1.11] arr.reshape()--------±äĞÎ
-//Ê¹ÓÃarr.reshape()º¯Êı£¬×¢Òâ²ÎÊıÊÇÒ»¸ötuple(Ôª×é)£¡
+[1.11] arr.reshape()--------å˜å½¢
+//ä½¿ç”¨arr.reshape()å‡½æ•°ï¼Œæ³¨æ„å‚æ•°æ˜¯ä¸€ä¸ªtuple(å…ƒç»„)ï¼
 arr2=arr.reshape((2,5))
 arr2.shape
-//Êä³ö£º
+//è¾“å‡ºï¼š
 (2, 5)
 
-//Ê¹ÓÃ-1×Ô¶¯¼ÆËãĞĞÊı(»òÁĞÊı)
+//ä½¿ç”¨-1è‡ªåŠ¨è®¡ç®—è¡Œæ•°(æˆ–åˆ—æ•°)
 arr2=arr.reshape((-1,5))
 arr2.shape
-//Êä³ö£º
+//è¾“å‡ºï¼š
 (2, 5)
 
-//½«¶àÎ¬Êı×é±äĞÎ³ÉÒ»Î¬Êı×é
+//å°†å¤šç»´æ•°ç»„å˜å½¢æˆä¸€ç»´æ•°ç»„
 arr3=arr2.reshape(10)
 arr3.shape
-//Êä³ö£º
+//è¾“å‡ºï¼š
 (10,)
 
 
 
 
-[1.12] np.concatenate()--------¼¶Áª
+[1.12] np.concatenate()--------çº§è”
 a1=np.array([1,2,3])
 np.concatenate([a1,a1])
-//Êä³ö£º
+//è¾“å‡ºï¼š
 array([1, 2, 3, 1, 2, 3])
 
 np.concatenate([a1,a2],axis=0) 
 np.concatenate([a1,a2],axis=1) 
 
 
-np.hstackÓënp.vstack
-Ë®Æ½¼¶ÁªÓë´¹Ö±¼¶Áª£¬´úÌæaxis²ÎÊı¡£
+np.hstackä¸np.vstack
+æ°´å¹³çº§è”ä¸å‚ç›´çº§è”ï¼Œä»£æ›¿axiså‚æ•°ã€‚
 
 np.hstack((a1,a2))
-//Êä³ö£º
+//è¾“å‡ºï¼š
 array([[18, 53, 32, 84, 14, 35, 15, 73],
        [93, 28, 41, 26, 90, 16, 58, 51],
        [30, 20, 47,  6, 69, 41,  4, 60]])
 
 np.vstack((a1,a2))
-//Êä³ö£º
+//è¾“å‡ºï¼š
 array([[18, 53, 32, 84],
        [93, 28, 41, 26],
        [30, 20, 47,  6],
@@ -285,15 +285,15 @@ array([[18, 53, 32, 84],
 
 
 
-[1.13] np.split()--------ÇĞ·Ö
-//np.split(arr,ĞĞ£¯ÁĞºÅ£¬Öá):²ÎÊı2ÊÇÒ»¸öÁĞ±íÀàĞÍ
-//np.vsplit(arr,ĞĞ£¯ÁĞºÅ) Ë®Æ½ÇĞ
-//np.hsplit(arr,ĞĞ£¯ÁĞºÅ) ´¹Ö±ÇĞ
-//  ·µ»ØÖµÊÇÒ»¸öÁĞ±í
+[1.13] np.split()--------åˆ‡åˆ†
+//np.split(arr,è¡Œï¼åˆ—å·ï¼Œè½´):å‚æ•°2æ˜¯ä¸€ä¸ªåˆ—è¡¨ç±»å‹
+//np.vsplit(arr,è¡Œï¼åˆ—å·) æ°´å¹³åˆ‡
+//np.hsplit(arr,è¡Œï¼åˆ—å·) å‚ç›´åˆ‡
+//  è¿”å›å€¼æ˜¯ä¸€ä¸ªåˆ—è¡¨
 arr=np.array([[3,2,4],[9,5,8],[2,7,1]])
 
 np.split(arr,[1,2],axis=1)   
-//Êä³ö£º
+//è¾“å‡ºï¼š
 [array([[3],
         [9],
         [2]]), array([[2],
@@ -305,27 +305,27 @@ np.split(arr,[1,2],axis=1)
 
 
 
-[1.14] a.copy()--------¸±±¾
-//ËùÓĞ¸³ÖµÔËËã²»»áÎªndarrayµÄÈÎºÎÔªËØ´´½¨¸±±¾¡£¶Ô¸³ÖµºóµÄ¶ÔÏóµÄ²Ù×÷Ò²¶ÔÔ­À´µÄ¶ÔÏóÉúĞ§¡£
+[1.14] a.copy()--------å‰¯æœ¬
+//æ‰€æœ‰èµ‹å€¼è¿ç®—ä¸ä¼šä¸ºndarrayçš„ä»»ä½•å…ƒç´ åˆ›å»ºå‰¯æœ¬ã€‚å¯¹èµ‹å€¼åçš„å¯¹è±¡çš„æ“ä½œä¹Ÿå¯¹åŸæ¥çš„å¯¹è±¡ç”Ÿæ•ˆã€‚
 a1=a
 
 
 
 
-[1.15] arr1.ravel--------Êı×é±âÆ½»¯
-// ¡¯C¡¯±íÊ¾°´ĞĞ½øĞĞ±âÆ½
-np.ravel(arr£¬order=¡¯C¡¯)
-// ¡¯F¡¯±íÊ¾°´ÁĞ½øĞĞ±âÆ½
-arr.racel(order=¡¯F¡¯)
-// ²»»áÓ°ÏìÔ­Ê¼¾ØÕó
+[1.15] arr1.ravel--------æ•°ç»„æ‰å¹³åŒ–
+// â€™Câ€™è¡¨ç¤ºæŒ‰è¡Œè¿›è¡Œæ‰å¹³
+np.ravel(arrï¼Œorder=â€™Câ€™)
+// â€™Fâ€™è¡¨ç¤ºæŒ‰åˆ—è¿›è¡Œæ‰å¹³
+arr.racel(order=â€™Fâ€™)
+// ä¸ä¼šå½±å“åŸå§‹çŸ©é˜µ
 b = a.flatten()
 
 
 
-[1.16] np.c_[arr1,arr2,¡­]--------Êı×éºÏ²¢
+[1.16] np.c_[arr1,arr2,â€¦]--------æ•°ç»„åˆå¹¶
 arr1=np.array([1,2,3,4])
 np.c_[arr1,arr1]
-//½á¹ûÎª£º
+//ç»“æœä¸ºï¼š
 array([[1, 1],
        [2, 2],
        [3, 3],
@@ -334,7 +334,7 @@ array([[1, 1],
 
 arr2=np.array([[[1,2,3],[4,5,6],[7,8,9]]])
 np.c_[arr2,arr2,arr2]
-//½á¹ûÎª£º
+//ç»“æœä¸ºï¼š
 array([[[1, 2, 3, 1, 2, 3, 1, 2, 3],
         [4, 5, 6, 4, 5, 6, 4, 5, 6],
         [7, 8, 9, 7, 8, 9, 7, 8, 9]]])
@@ -342,7 +342,7 @@ array([[[1, 2, 3, 1, 2, 3, 1, 2, 3],
 
 
 
-[1.17] np.unique-------------»ñÈ¡Êı×é²»ÖØ¸´µÄÖµ
+[1.17] np.unique-------------è·å–æ•°ç»„ä¸é‡å¤çš„å€¼
 //np.unique(ar,return_counts=False)
 
 arr=np.array([11,1,2,3,4,11,3,5])
@@ -352,13 +352,13 @@ np.unique(arr,return_counts=True)
 
 
 
-[1.18] np.sum--------ÇóºÍ
+[1.18] np.sum--------æ±‚å’Œ
 
 arr=np.linspace(0,10,10,endpoint=False)
-//Êä³ö£º
+//è¾“å‡ºï¼š
 array([ 0.,  1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9.])
 np.sum(arr,axis=0)
-//Êä³ö£º
+//è¾“å‡ºï¼š
 45.0
 
 
@@ -368,19 +368,19 @@ np.sum(arr2,axis=1)
 
 
 
-[1.19] np.max/ np.min--------×î´ó×îĞ¡Öµ
+[1.19] np.max/ np.min--------æœ€å¤§æœ€å°å€¼
 np.min(arr2,axis=0)
 np.min(arr2,axis=1)
 
 
-np.mean()--------Æ½¾ùÖµ
+np.mean()--------å¹³å‡å€¼
 np.mean(arr2,axis=0)
 np.mean(arr2,axis=1)
 
 
 
 
-[1.20] ÆäËû¾ÛºÏ²Ù×÷
+[1.20] å…¶ä»–èšåˆæ“ä½œ
 Function Name    NaN-safe Version    Description
 np.sum    np.nansum    Compute sum of elements
 np.prod    np.nanprod    Compute product of elements
@@ -395,25 +395,25 @@ np.median    np.nanmedian    Compute median of elements
 np.percentile    np.nanpercentile    Compute rank-based statistics of elements
 np.any    N/A    Evaluate whether any elements are true
 np.all    N/A    Evaluate whether all elements are true
-np.power ÃİÔËËã
+np.power å¹‚è¿ç®—
 
 
 
 
-[1.21] np.dot()--------¾ØÕó»ı
-x1+x2--------¾ØÕó¼Ó
-np.linalg.inv()--------Äæ¾ØÕó
+[1.21] np.dot()--------çŸ©é˜µç§¯
+x1+x2--------çŸ©é˜µåŠ 
+np.linalg.inv()--------é€†çŸ©é˜µ
 
 
 
 
-[1.22] np.sort()--------ÅÅĞò
+[1.22] np.sort()--------æ’åº
 np.sort(arr) 
 np.sort(arr,axis=0)
 np.sort(arr,axis=1)
 
 
-np.partition(a,k)--------²¿·ÖÅÅĞò
+np.partition(a,k)--------éƒ¨åˆ†æ’åº
 
 
 

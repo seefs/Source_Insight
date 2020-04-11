@@ -1,17 +1,17 @@
-//Ä¿Â¼[Num][Ca]:
-// 1. androidÄ¿Â¼
-Save:node\android\sys\Macro_Sys_File.h \[1.1\] androidÄ¿Â¼
+ï»¿//ç›®å½•[Num][Ca]:
+// 1. androidç›®å½•
+Save:node\android\sys\Macro_Sys_File.h \[1.1\] androidç›®å½•
 // 2. system.img
-Save:node\android\sys\Macro_Sys_File.h \[2.1\] Android½âÑ¹system.img
-Save:node\android\sys\Macro_Sys_File.h \[2.2\] oem persist sysinfoÈı¸ö·ÖÇøµÄ×÷ÓÃÊÇÊ²Ã´£¿
-// 3. androidÄ¿Â¼
-Save:node\android\sys\Macro_Sys_File.h \[3.1\] AndroidÔ´ÂëÄ¿Â¼½á¹¹ÈçÏÂ£º
+Save:node\android\sys\Macro_Sys_File.h \[2.1\] Androidè§£å‹system.img
+Save:node\android\sys\Macro_Sys_File.h \[2.2\] oem persist sysinfoä¸‰ä¸ªåˆ†åŒºçš„ä½œç”¨æ˜¯ä»€ä¹ˆï¼Ÿ
+// 3. androidç›®å½•
+Save:node\android\sys\Macro_Sys_File.h \[3.1\] Androidæºç ç›®å½•ç»“æ„å¦‚ä¸‹ï¼š
 
 
 
 /***********************************************************************/
 
-[1.1] androidÄ¿Â¼
+[1.1] androidç›®å½•
 out\target\product\sp9820e_1h10\system\app
 vendor\sprd\overlay\apn\apns-conf_8.xml
 vendor\sprd\UniverseUI\SprdLauncher2
@@ -25,63 +25,63 @@ packages\apps\Settings
 
 
 
-[2.1] Android½âÑ¹system.img
-android4.0Ö®ºó£¬system.imgÎÄ¼ş¸ñÊ½Îªext4£¬Èç¹ûĞèÒªĞŞ¸Äsystem.imgÎÄ¼ş£¬¸ÃÈçºÎ×ö£º 
-1.ubuntuÏµÍ³£¬×¼±¸¹¤¾ßmake_ext4fs¡¢simg2img¡¢mkusering.sh¡£ 
-make_ext4fs¡¢simg2img¡¢mkusering.shÕâÈı¸ö¹¤¾ß¿ÉÒÔÔÚÔ´Âë±àÒëÖ®ºóµÄ out/host/linux_x86/binÄ¿Â¼ÏÂ»ñÈ¡£¬²¢½«ÕâÈı¸öÃüÁî¸´ÖÆµ½ubuntuÏµÍ³/usr/binÄ¿Â¼¡£ 
-2.½âÑ¹system.imgÎªsystem.img.ext4 
-ÃüÁî£ºsimg2img system.img system.img.ext4 
-3.´´½¨system.img.ext4¹ÒÔØÄ¿Â¼tmp 
-ÃüÁî£ºmkdir tmp 
-4.¹ÒÔØsystem.img.ext4µ½tmpÄ¿Â¼ 
-ÃüÁî£ºmount -t ext4 -o loop system.img.ext4 tmp 
-5.½øÈëtmpÄ¿Â¼£¬¸ù¾İĞèÇóĞŞ¸ÄtmpÖĞµÄÄ¿Â¼ 
-6.½«tmpÄ¿Â¼´ò°üÎªĞÂµÄsystem.img 
-ÃüÁî£ºmake_ext4fs -s -l 239M -a system system.img tmp 
-¹ØÓÚmake_ext4fs¡¢simg2img¡¢mkusering.shµÄ²ÎÊıº¬Òå¿ÉÒÔÔÚÖÕ¶ËÖĞÖ±½ÓÊäÈëÃüÁî£¬²¢»Ø³µ²é¿´¡£
+[2.1] Androidè§£å‹system.img
+android4.0ä¹‹åï¼Œsystem.imgæ–‡ä»¶æ ¼å¼ä¸ºext4ï¼Œå¦‚æœéœ€è¦ä¿®æ”¹system.imgæ–‡ä»¶ï¼Œè¯¥å¦‚ä½•åšï¼š 
+1.ubuntuç³»ç»Ÿï¼Œå‡†å¤‡å·¥å…·make_ext4fsã€simg2imgã€mkusering.shã€‚ 
+make_ext4fsã€simg2imgã€mkusering.shè¿™ä¸‰ä¸ªå·¥å…·å¯ä»¥åœ¨æºç ç¼–è¯‘ä¹‹åçš„ out/host/linux_x86/binç›®å½•ä¸‹è·å–ï¼Œå¹¶å°†è¿™ä¸‰ä¸ªå‘½ä»¤å¤åˆ¶åˆ°ubuntuç³»ç»Ÿ/usr/binç›®å½•ã€‚ 
+2.è§£å‹system.imgä¸ºsystem.img.ext4 
+å‘½ä»¤ï¼šsimg2img system.img system.img.ext4 
+3.åˆ›å»ºsystem.img.ext4æŒ‚è½½ç›®å½•tmp 
+å‘½ä»¤ï¼šmkdir tmp 
+4.æŒ‚è½½system.img.ext4åˆ°tmpç›®å½• 
+å‘½ä»¤ï¼šmount -t ext4 -o loop system.img.ext4 tmp 
+5.è¿›å…¥tmpç›®å½•ï¼Œæ ¹æ®éœ€æ±‚ä¿®æ”¹tmpä¸­çš„ç›®å½• 
+6.å°†tmpç›®å½•æ‰“åŒ…ä¸ºæ–°çš„system.img 
+å‘½ä»¤ï¼šmake_ext4fs -s -l 239M -a system system.img tmp 
+å…³äºmake_ext4fsã€simg2imgã€mkusering.shçš„å‚æ•°å«ä¹‰å¯ä»¥åœ¨ç»ˆç«¯ä¸­ç›´æ¥è¾“å…¥å‘½ä»¤ï¼Œå¹¶å›è½¦æŸ¥çœ‹ã€‚
 
 
-[2.2] oem persist sysinfoÈı¸ö·ÖÇøµÄ×÷ÓÃÊÇÊ²Ã´£¿
+[2.2] oem persist sysinfoä¸‰ä¸ªåˆ†åŒºçš„ä½œç”¨æ˜¯ä»€ä¹ˆï¼Ÿ
 
 [ANSWER]
-1. oem·ÖÇøÊÇÎªÈ«Çò¶¨ÖÆ¹¦ÄÜ¶øÔöÉèµÄÒ»¸ö·ÖÇø£¬ÀïÃæÔö¼ÓÁË¶ÔÓ¦²»Í¬¹ú¼ÒµÄ¸÷ÖÖÅäÖÃ²ÎÊı£¬ÈçÄ³Ğ©¹¦ÄÜ¿ª¹Ø£¬ÓĞĞ©ÇøÓòÒªÇó´ò¿ª£¬ÆäËüµÄÔòÒªÇó¹Ø±Õ£¬´ËÊ±¾ÍĞèÒªÓÃµ½oem.img£¬·ñÔò¾ÍĞèÒª³öÁ½¸ö°æ±¾£»?
-2. systeminfoÊÇ×¨ÃÅÎªÁËÌí¼Ósystem·ÖÇø¼ì²é¶øÉèÁ¢µÄ·ÖÇø£¬system·ÖÇø¼ì²éÊÇÖ¸¼ì²ésystem·ÖÇøµÄ×ÊÔ´ÊÇ·ñ±»¸ü¸Ä£¬±ÈÈçapk±»É¾¼õ»òÕßÄ³Ğ©È¨ÏŞ±»¸ü¸Ä£¬Ä¿µÄÊÇÎªÁË·ÀÖ¹system±»¸ü¸Äµ¼ÖÂÊÖ»ú±»¼à¿Ø¡£¶øsysteminfo·ÖÇø´æ·ÅÒ»¸öcheck.binÎÄ¼ş£¬´ËÎÄ¼şÀïÃæ´æ´¢ËùÓĞsystemÎÄ¼şºÍÆä¶ÔÓ¦µÄsha1Öµ¡£?
-3. persist·ÖÇøÊÇÓÃÓÚ±£´æFRP(factory reset protcect)¹¦ÄÜÓÃµ½ÕÊºÅ¡¢ÃÜÂëµÈÊÜ±£»¤µÄĞÅÏ¢£¬±ÜÃâÔÚ»Ö¸´³ö³§ÉèÖÃºó±»Çå¿Õ¡£?
+1. oemåˆ†åŒºæ˜¯ä¸ºå…¨çƒå®šåˆ¶åŠŸèƒ½è€Œå¢è®¾çš„ä¸€ä¸ªåˆ†åŒºï¼Œé‡Œé¢å¢åŠ äº†å¯¹åº”ä¸åŒå›½å®¶çš„å„ç§é…ç½®å‚æ•°ï¼Œå¦‚æŸäº›åŠŸèƒ½å¼€å…³ï¼Œæœ‰äº›åŒºåŸŸè¦æ±‚æ‰“å¼€ï¼Œå…¶å®ƒçš„åˆ™è¦æ±‚å…³é—­ï¼Œæ­¤æ—¶å°±éœ€è¦ç”¨åˆ°oem.imgï¼Œå¦åˆ™å°±éœ€è¦å‡ºä¸¤ä¸ªç‰ˆæœ¬ï¼›?
+2. systeminfoæ˜¯ä¸“é—¨ä¸ºäº†æ·»åŠ systemåˆ†åŒºæ£€æŸ¥è€Œè®¾ç«‹çš„åˆ†åŒºï¼Œsystemåˆ†åŒºæ£€æŸ¥æ˜¯æŒ‡æ£€æŸ¥systemåˆ†åŒºçš„èµ„æºæ˜¯å¦è¢«æ›´æ”¹ï¼Œæ¯”å¦‚apkè¢«åˆ å‡æˆ–è€…æŸäº›æƒé™è¢«æ›´æ”¹ï¼Œç›®çš„æ˜¯ä¸ºäº†é˜²æ­¢systemè¢«æ›´æ”¹å¯¼è‡´æ‰‹æœºè¢«ç›‘æ§ã€‚è€Œsysteminfoåˆ†åŒºå­˜æ”¾ä¸€ä¸ªcheck.binæ–‡ä»¶ï¼Œæ­¤æ–‡ä»¶é‡Œé¢å­˜å‚¨æ‰€æœ‰systemæ–‡ä»¶å’Œå…¶å¯¹åº”çš„sha1å€¼ã€‚?
+3. persiståˆ†åŒºæ˜¯ç”¨äºä¿å­˜FRP(factory reset protcect)åŠŸèƒ½ç”¨åˆ°å¸å·ã€å¯†ç ç­‰å—ä¿æŠ¤çš„ä¿¡æ¯ï¼Œé¿å…åœ¨æ¢å¤å‡ºå‚è®¾ç½®åè¢«æ¸…ç©ºã€‚?
 
-ÕâÈı¸ö·ÖÇø²»½¨ÒéÉ¾³ı.
+è¿™ä¸‰ä¸ªåˆ†åŒºä¸å»ºè®®åˆ é™¤.
 
 
 /***********************************************************************/
 
-[3.1] AndroidÔ´ÂëÄ¿Â¼½á¹¹ÈçÏÂ£º
+[3.1] Androidæºç ç›®å½•ç»“æ„å¦‚ä¸‹ï¼š
 
 |-- Makefile
-|-- abi £¨applicationbinary interface£¬Ó¦ÓÃ³ÌĞò¶ş½øÖÆ½Ó¿Ú£¬Éú³Élibgabi++.soÏà¹Ø¿âÎÄ¼ş£©
-|-- art £¨googleÔÚ4.4ºó¼ÓÈëÓÃÀ´´úÌæDalvikµÄÔËĞĞÊ±£©
-|-- bionic (AndroidµÄC library£¬¼´C¿âÎÄ¼ş)
-|-- bootable £¨Æô¶¯Òıµ¼Ïà¹Ø´úÂë£©
-|-- build £¨´æ·ÅÏµÍ³±àÒë¹æÔò¼°genericµÈ»ù´¡¿ª·¢ÅäÖÃ°ü£©
-|-- cts £¨Android¼æÈİĞÔ²âÊÔÌ×¼ş±ê×¼£©
-|-- dalvik £¨dalvik JAVAĞéÄâ»ú£©
-|-- developers (¿ª·¢ÕßÓÃ£¬´æ·Å¼¸¸öÀı×Ó)
-|-- development £¨¿ª·¢ÕßĞèÒªµÄÒ»Ğ©Àı³Ì¼°¹¤¾ß£©
-|-- device (Éè±¸Ïà¹Ø´úÂë£¬ÕâÊÇ¸÷³§ÉÌĞèÒªÅäÖÃºÍĞŞ¸ÄµÄ´úÂë)
-|-- docs (½éÉÜ¿ªÔ´Ïà¹ØÎÄµµ)
-|-- external £¨androidÊ¹ÓÃµÄÒ»Ğ©¿ªÔ´µÄÄ£×é£©
-|-- frameworks £¨ºËĞÄ¿ò¼Ü¡ª¡ªjava¼°C++ÓïÑÔ£©
-|-- hardware £¨²¿·Ö³§¼Ò¿ªÔ´µÄÓ²½âÊÊÅä²ãHAL´úÂë£©
-|-- kernel (Çı¶¯ÄÚºËÏà¹Ø´úÂë)
-|-- libcore (ºËĞÄ¿âÏà¹Ø)
-|-- libnativehelper (JNIÓÃµ½µÄ¿â)
-|-- ndk (ndkÏà¹Ø)
-|-- out £¨±àÒëÍê³ÉºóµÄ´úÂëÊä³öÄ¿Â¼£©
-|-- packages £¨Ó¦ÓÃ³ÌĞò°ü£©
-|-- pdk (googleÓÃÀ´¼õÉÙËéÆ¬»¯µÄ¶«Î÷)
-|-- prebuilt £¨x86ºÍarm¼Ü¹¹ÏÂÔ¤±àÒëµÄÒ»Ğ©×ÊÔ´£©
-|-- sdk £¨sdk¼°Ä£ÄâÆ÷£©
-|-- tools £¨¹¤¾ß£©
-|-- system £¨µ×²ãÎÄ¼şÏµÍ³¿â¡¢Ó¦ÓÃ¼°×é¼ş¡ª¡ªCÓïÑÔ£©
-|-- vendor £¨³§ÉÌ¶¨ÖÆ´úÂë£©
+|-- abi ï¼ˆapplicationbinary interfaceï¼Œåº”ç”¨ç¨‹åºäºŒè¿›åˆ¶æ¥å£ï¼Œç”Ÿæˆlibgabi++.soç›¸å…³åº“æ–‡ä»¶ï¼‰
+|-- art ï¼ˆgoogleåœ¨4.4ååŠ å…¥ç”¨æ¥ä»£æ›¿Dalvikçš„è¿è¡Œæ—¶ï¼‰
+|-- bionic (Androidçš„C libraryï¼Œå³Cåº“æ–‡ä»¶)
+|-- bootable ï¼ˆå¯åŠ¨å¼•å¯¼ç›¸å…³ä»£ç ï¼‰
+|-- build ï¼ˆå­˜æ”¾ç³»ç»Ÿç¼–è¯‘è§„åˆ™åŠgenericç­‰åŸºç¡€å¼€å‘é…ç½®åŒ…ï¼‰
+|-- cts ï¼ˆAndroidå…¼å®¹æ€§æµ‹è¯•å¥—ä»¶æ ‡å‡†ï¼‰
+|-- dalvik ï¼ˆdalvik JAVAè™šæ‹Ÿæœºï¼‰
+|-- developers (å¼€å‘è€…ç”¨ï¼Œå­˜æ”¾å‡ ä¸ªä¾‹å­)
+|-- development ï¼ˆå¼€å‘è€…éœ€è¦çš„ä¸€äº›ä¾‹ç¨‹åŠå·¥å…·ï¼‰
+|-- device (è®¾å¤‡ç›¸å…³ä»£ç ï¼Œè¿™æ˜¯å„å‚å•†éœ€è¦é…ç½®å’Œä¿®æ”¹çš„ä»£ç )
+|-- docs (ä»‹ç»å¼€æºç›¸å…³æ–‡æ¡£)
+|-- external ï¼ˆandroidä½¿ç”¨çš„ä¸€äº›å¼€æºçš„æ¨¡ç»„ï¼‰
+|-- frameworks ï¼ˆæ ¸å¿ƒæ¡†æ¶â€”â€”javaåŠC++è¯­è¨€ï¼‰
+|-- hardware ï¼ˆéƒ¨åˆ†å‚å®¶å¼€æºçš„ç¡¬è§£é€‚é…å±‚HALä»£ç ï¼‰
+|-- kernel (é©±åŠ¨å†…æ ¸ç›¸å…³ä»£ç )
+|-- libcore (æ ¸å¿ƒåº“ç›¸å…³)
+|-- libnativehelper (JNIç”¨åˆ°çš„åº“)
+|-- ndk (ndkç›¸å…³)
+|-- out ï¼ˆç¼–è¯‘å®Œæˆåçš„ä»£ç è¾“å‡ºç›®å½•ï¼‰
+|-- packages ï¼ˆåº”ç”¨ç¨‹åºåŒ…ï¼‰
+|-- pdk (googleç”¨æ¥å‡å°‘ç¢ç‰‡åŒ–çš„ä¸œè¥¿)
+|-- prebuilt ï¼ˆx86å’Œarmæ¶æ„ä¸‹é¢„ç¼–è¯‘çš„ä¸€äº›èµ„æºï¼‰
+|-- sdk ï¼ˆsdkåŠæ¨¡æ‹Ÿå™¨ï¼‰
+|-- tools ï¼ˆå·¥å…·ï¼‰
+|-- system ï¼ˆåº•å±‚æ–‡ä»¶ç³»ç»Ÿåº“ã€åº”ç”¨åŠç»„ä»¶â€”â€”Cè¯­è¨€ï¼‰
+|-- vendor ï¼ˆå‚å•†å®šåˆ¶ä»£ç ï¼‰
 
 
 

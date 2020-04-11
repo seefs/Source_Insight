@@ -1,4 +1,4 @@
-
+ï»¿
 macro MyHelp()
 {
 	CtrlK()
@@ -57,31 +57,31 @@ macro TestAPIStruct(hbuf)
 {
 	//_TempHeadTest(hbuf)
 	sel.fExtended  //(sel.fRect || sel.lnFirst != sel.lnLast || sel.ichFirst != sel.ichLim)
-	sel.fRect //Èç¹ûÑ¡ÔñÊÇ¾ØĞÎ£¨¿éÑùÊ½£©ÔòÎªTRUE¡£
+	sel.fRect //å¦‚æœé€‰æ‹©æ˜¯çŸ©å½¢ï¼ˆå—æ ·å¼ï¼‰åˆ™ä¸ºTRUEã€‚
 	SetBufIns(hbuf, sel.lnFirst, sel.ichFirst)
 }
 
 macro TestChar(key)
 {
-	//ÕıÔò±í´ïÊ½£º
-	//[abc]    ÈÎºÎÔÚ[]Ö®ÄÚµÄ×Ö·û
-	//[^abc]   ÈÎºÎ²»ÔÚ[]Ö®ÄÚµÄ×Ö·û£¬^±íÊ¾²»ÔÚ[]Ö®ÄÚ
-	//×ªÒå×Ö·û \t(tab), \s(space), \w(tab or space)
+	//æ­£åˆ™è¡¨è¾¾å¼ï¼š
+	//[abc]    ä»»ä½•åœ¨[]ä¹‹å†…çš„å­—ç¬¦
+	//[^abc]   ä»»ä½•ä¸åœ¨[]ä¹‹å†…çš„å­—ç¬¦ï¼Œ^è¡¨ç¤ºä¸åœ¨[]ä¹‹å†…
+	//è½¬ä¹‰å­—ç¬¦ \t(tab), \s(space), \w(tab or space)
 
-	//±íÊıÁ¿µÄÈç£º
-	//* ´óÓÚµÈÓÚ0¸ö
-	//+ ´óÓÚ0¸ö£¬Ò²¾ÍÊÇÖÁÉÙÓĞ1¸ö
+	//è¡¨æ•°é‡çš„å¦‚ï¼š
+	//* å¤§äºç­‰äº0ä¸ª
+	//+ å¤§äº0ä¸ªï¼Œä¹Ÿå°±æ˜¯è‡³å°‘æœ‰1ä¸ª
 	
-	//^    ±íÊ¾ĞĞÆğÊ¼£¬×¢Òâ²»Òª°ÑÕâ¸ö^ºÍ[]ÀïµÄ^¸ã»ìÁË¡£
-	//$    ±íÊ¾ĞĞ½áÊø
+	//^    è¡¨ç¤ºè¡Œèµ·å§‹ï¼Œæ³¨æ„ä¸è¦æŠŠè¿™ä¸ª^å’Œ[]é‡Œçš„^ææ··äº†ã€‚
+	//$    è¡¨ç¤ºè¡Œç»“æŸ
 
-	//·Ö×éÊ¹ÓÃ\1, \2, \3, ...
+	//åˆ†ç»„ä½¿ç”¨\1, \2, \3, ...
 	//old:void func(int var1, int var2)
-    //new:void func(int var2, int var1)£¬
+    //new:void func(int var2, int var1)ï¼Œ
 	//old:func(.*, .*)
 	//new:func(\2, \1)
 	
-	//Ìæ»»Õû¸ö¹¤³Ì£¬¿ì½İ¼üctrl+shift+H
+	//æ›¿æ¢æ•´ä¸ªå·¥ç¨‹ï¼Œå¿«æ·é”®ctrl+shift+H
 }
 
 macro TestAPI(key)
@@ -98,7 +98,7 @@ macro TestAPI(key)
 
 	
 	/* Str */
-	//Ìæ»»
+	//æ›¿æ¢
 	//ReplaceInBuf(hbuf, oldPattern, newPattern, lnStart, lnLim, fMatchCase, fRegExp, fWholeWordsOnly, fConfirm)
 	ReplaceInBuf(hbuf, "^\\(\\t*\\)    ", "\\1\\t", 0, GetBufLineCount(hbuf) + 1, 1, 1, 0, 0)
 	cchLine = strlen(szLine)
@@ -114,7 +114,7 @@ macro TestAPI(key)
 	Paste
 	
 	/* Buf */
-	//»ñÈ¡µ±Ç°ÊäÈëµÄ¾ä±ú
+	//è·å–å½“å‰è¾“å…¥çš„å¥æŸ„
 	//hBuf = 0(none), 1(cur), ...
 	 hBuf = GetCurrentBuf()
 	 
@@ -166,7 +166,7 @@ macro OtherAPI(key)
 	isupper (ch)
 	strlen (s)
 	strmid (s, ichFirst, ichLim)
-	strtrunc (s, cch)  ×Ö·û´®½Ø¶Ï
+	strtrunc (s, cch)  å­—ç¬¦ä¸²æˆªæ–­
 	tolower (s)
 	toupper (s)
 
@@ -183,20 +183,20 @@ macro OtherAPI(key)
 	//SYSTIME Record
 
 	//Special Constants :
-	//True		¡°1¡±
-	//False		¡°0¡±
-	//Nil		¡°¡± ¨C the empty string.
-	//hNil		¡°0¡± ¨C an invalid handle value.
-	//invalid		"-1" ¨C an invalid index value.
+	//True		â€œ1â€
+	//False		â€œ0â€
+	//Nil		â€œâ€ â€“ the empty string.
+	//hNil		â€œ0â€ â€“ an invalid handle value.
+	//invalid		"-1" â€“ an invalid index value.
 
 	//Searching Functions :
 	GetSourceLink (hbufSource, lnSource)
 	LoadSearchPattern(pattern, fMatchCase, fRegExp, fWholeWordsOnly)
 	ReplaceInBuf(hbuf, oldPattern, newPattern, lnStart, lnLim, fMatchCase, fRegExp, fWholeWordsOnly, fConfirm)
 	SearchForRefs (hbuf, word, fTouchFiles)
-	//ÎÄ¼şÄÚËÑË÷
+	//æ–‡ä»¶å†…æœç´¢
 	SearchInBuf (hbuf, pattern, lnStart, ichStart, fMatchCase, fRegExp, fWholeWordsOnly)
-	//´´½¨Ò»¸öĞÂµÄÔ´Á´½Ó
+	//åˆ›å»ºä¸€ä¸ªæ–°çš„æºé“¾æ¥
 	SetSourceLink (hbufSource, lnSource, target_file, lnTarget)
 
 	//Window Functions :
@@ -291,7 +291,7 @@ macro OtherAPI(key)
 	info = GetProgramInfo ()
 	//msg ("Proj info @info@")
 	
-	//¹¦ÄÜ²»Çå³ş
+	//åŠŸèƒ½ä¸æ¸…æ¥š
 	AddConditionVariable(hprj, "sbd*", "s")
 	AddConditionVariable(0, "sbd_tmp.em", "s")
 	
@@ -620,7 +620,7 @@ macro TestNodeMsg(msgStr)
 	}
 	else if(msgStr == "SiMro")
 	{
-		//&&×óÓÒÁ½±ß¶¼Ö´ĞĞ
+		//&&å·¦å³ä¸¤è¾¹éƒ½æ‰§è¡Œ
 		if(TestSiMro1()>0 && TestSiMro2()>0)
 			msg("a && b")
 
@@ -632,7 +632,7 @@ macro TestNodeMsg(msgStr)
 	}
 	else
 	{
-		//ÁÙÊ±
+		//ä¸´æ—¶
 		msg(msgStr # " no found")
 	}
 }
@@ -641,10 +641,10 @@ macro TestMsg(msgStr, num)
 {
 	global counter
 
-	//num²»´«²ÎÊı»á±ä³É")"
+	//numä¸ä¼ å‚æ•°ä¼šå˜æˆ")"
 	if(num == "X")
 	{
-		//counter µÚ2´ÎÖ´ĞĞºêÎ´ÇåÁã, Òò´ËÒªÊÖ¶¯ÇåÁã
+		//counter ç¬¬2æ¬¡æ‰§è¡Œå®æœªæ¸…é›¶, å› æ­¤è¦æ‰‹åŠ¨æ¸…é›¶
 		counter = nil
 		return
 	}
@@ -660,9 +660,9 @@ macro TestMsg(msgStr, num)
 	}
 	if(num < counter)
 	{
-		//testParam=0: Ö»´òÓ¡num=0, Ä¬ÈÏ------
-		//testParam=1: ´òÓ¡num=0, 1-----------
-		//testParam=2: ´òÓ¡num=0, 1, 2--------
+		//testParam=0: num=0------æ—¶æ‰“å°, é»˜è®¤
+		//testParam=1: num=0/1----æ—¶æ‰“å°
+		//testParam=2: num=0/1/2--æ—¶æ‰“å°
 		msg(msgStr)
 	}
 }

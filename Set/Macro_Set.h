@@ -1,35 +1,35 @@
-###
+ï»¿###
 ### setting
 ### 
-### ÉèÖÃ¹Ì¶¨ĞĞºÅ
+### è®¾ç½®å›ºå®šè¡Œå·
 ###
 
 
 
-### ²Î¿¼ĞĞºÅ¹Ì¶¨ÔÚ£º12¡¢15¡¢18¡¢21¡¢...
-### ±¸×¢ĞÅÏ¢ÇëÊÖ¶¯Ìí¼ÓÔÚÕâ¸öÎÄ¼ş.
-### 12.Tools Mode: G(Ìø×ª) S(ËÑË÷) B(¶Ô±È)
+### å‚è€ƒè¡Œå·å›ºå®šåœ¨ï¼š12ã€15ã€18ã€21ã€...
+### å¤‡æ³¨ä¿¡æ¯è¯·æ‰‹åŠ¨æ·»åŠ åœ¨è¿™ä¸ªæ–‡ä»¶.
+### 12.Tools Mode: G(è·³è½¬) S(æœç´¢) B(å¯¹æ¯”)
 b
 
 ### 15.Cur Make: 
 SE039_SXJY_D700_VORTEX_F3
 
-### 18.BCompare target(304±íÊ¾3Óë4±È½Ï£¬µ±Ç°3ÄÇÃ´±È½Ï4£¬µ±Ç°4ÄÇÃ´±È½Ï3)
+### 18.BCompare target(304è¡¨ç¤º3ä¸4æ¯”è¾ƒï¼Œå½“å‰3é‚£ä¹ˆæ¯”è¾ƒ4ï¼Œå½“å‰4é‚£ä¹ˆæ¯”è¾ƒ3)
 8002
 
-### 21.tree  (Î´Ê¹ÓÃ)
+### 21.tree  (æœªä½¿ç”¨)
 project
 
-### 24.SR Mode  (CTRL + D : search head É¾³ıÏàÍ¬Í·²¿µÄĞĞ)
+### 24.SR Mode  (CTRL + D : search head åˆ é™¤ç›¸åŒå¤´éƒ¨çš„è¡Œ)
 Macro_Pythons_Mysql
 
-### 27.last command (Î´Ê¹ÓÃ)
+### 27.last command (æœªä½¿ç”¨)
 CtrlW
 
-### 30.search row (Î´Ê¹ÓÃ)
+### 30.search row (æœªä½¿ç”¨)
 7
 
-### 33.search column (Î´Ê¹ÓÃ)
+### 33.search column (æœªä½¿ç”¨)
 m20
 
 ### 36.Cur search macro (F10)
@@ -44,22 +44,22 @@ IM
 ### 45.Cur search max (F10)
 932
 
-### 48.bmp one/two (F7 + v: 2´ÎÑ¡Ôñ¶Ô±È)
+### 48.bmp one/two (F7 + v: 2æ¬¡é€‰æ‹©å¯¹æ¯”)
 2
 
-### 51.path+file (tmpÍ¬file name, F11¹Ø±Õnote»áĞŞ¸ÄÕâÀï)
+### 51.path+file (tmpåŒfile name, F11å…³é—­noteä¼šä¿®æ”¹è¿™é‡Œ)
 E:\6531E_20180113\tmp
 
-### 54.note row(µÚ2´Î´ò¿ªÍ¬Ò»ĞĞ, F11¹Ø±Õnote»áĞŞ¸ÄÕâÀï)
+### 54.note row(ç¬¬2æ¬¡æ‰“å¼€åŒä¸€è¡Œ, F11å…³é—­noteä¼šä¿®æ”¹è¿™é‡Œ)
 0
 
-### 57.Note Hander Set(±Ê¼ÇÂ·¾¶, Ìæ»»µ±Ç°path, MTK)
+### 57.Note Hander Set(ç¬”è®°è·¯å¾„, æ›¿æ¢å½“å‰path, MTK)
 M610_KM_V2411_SP6000_F2 M610 gprs
 	
-### 60.Note Hander Set(±Ê¼ÇÂ·¾¶, Ìæ»»µ±Ç°path, MTK)--bak
+### 60.Note Hander Set(ç¬”è®°è·¯å¾„, æ›¿æ¢å½“å‰path, MTK)--bak
 XG05_KM_Q2407_SP5000_F2 M103_KEMAN gprs
 
-### 63.Note Save Base(±Ê¼ÇÂ·¾¶, Ìæ»»µ±Ç°path, android)
+### 63.Note Save Base(ç¬”è®°è·¯å¾„, æ›¿æ¢å½“å‰path, android)
 D:\project\NLP\game\
 	
 ### 66.Num bits(F10)
@@ -77,7 +77,7 @@ D:\Save\SI\node\Pythons\Macro_Pythons_Game.h
 ### 78.show android info(0 or 1)
 69
 
-### 81.show xx info(±£Áô)
+### 81.show xx info(ä¿ç•™)
 69
 
 

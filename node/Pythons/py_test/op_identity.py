@@ -1,10 +1,10 @@
-import tensorflow as tf
+ï»¿import tensorflow as tf
 
 x = tf.Variable(0.0)
 x_plus_1 = tf.assign_add(x, 1)
 
 with tf.control_dependencies([x_plus_1]):
-    y = tf.identity(x)#ÐÞ¸Ä²¿·Ö
+    y = tf.identity(x)#ä¿®æ”¹éƒ¨åˆ†
 init = tf.initialize_all_variables()
 
 with tf.Session() as session:

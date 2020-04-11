@@ -1,4 +1,4 @@
-# coding=utf-8
+ï»¿# coding=utf-8
 """Tokenization classes."""
 
 from __future__ import absolute_import
@@ -13,7 +13,7 @@ import re
 #
 
 def get_category_from_db(unique_list, db_path=None):
-# ´ÓÊı¾İ¿â»ñÈ¡´ÊĞÔ
+# ä»æ•°æ®åº“è·å–è¯æ€§
     number_list = []
     
     sqlite3_conn = sqlite3.connect(db_path)
@@ -40,8 +40,8 @@ def get_category_from_db(unique_list, db_path=None):
     return number_list
     
 def connect_content_from_db(concat_list, db_path=None):
-# ´ÓÊı¾İ¿â»ñÈ¡´ÊĞÔ
-# Î¢µ÷:¶àÒå´Ê+Á½len(1)Á¬½Ó+Ãû´Êlen(1)ÏòÇ°Á¬½Ó
+# ä»æ•°æ®åº“è·å–è¯æ€§
+# å¾®è°ƒ:å¤šä¹‰è¯+ä¸¤len(1)è¿æ¥+åè¯len(1)å‘å‰è¿æ¥
     out_list = concat_list.copy()
     cate17_list = []
     sqlite3_conn = sqlite3.connect(db_path)
@@ -55,7 +55,7 @@ def connect_content_from_db(concat_list, db_path=None):
             if len(unique_str)>1:
                 continue
             is_valid = 1
-            ### ½«len(1)Óëlen(1), Á¬Ğø2ÏîÒÔÉÏºÏ²¢ÆğÀ´
+            ### å°†len(1)ä¸len(1), è¿ç»­2é¡¹ä»¥ä¸Šåˆå¹¶èµ·æ¥
             for j in range(i+1, len(concat_list)):
                 if len(concat_list[j][0])>1:
                     break
@@ -64,18 +64,18 @@ def connect_content_from_db(concat_list, db_path=None):
                 results = sqlite3_cursor.fetchall()
                 for row in results:
                     dcxn = row[0]
-                    ### ºÏ²¢Ê±ÀÛ¼Æ³¤¶È±ä»¯
+                    ### åˆå¹¶æ—¶ç´¯è®¡é•¿åº¦å˜åŒ–
                     out_list[i-merge_cnt:j+1-merge_cnt]=[[unique_str, dcxn]]
                     is_valid = 0
                     merge_cnt = merge_cnt + 1
                     break
                 if is_valid == 0:
                     break
-        ### ·´Ïò¼òµ¥È¡Ò»´Î, ´ÊÀà¸Ä´í
-        ###   ÖØĞÂÁ¬½Ó±»²ğ¿ªµÄlen(1)Ãû´Ê
+        ### åå‘ç®€å•å–ä¸€æ¬¡, è¯ç±»æ”¹é”™
+        ###   é‡æ–°è¿æ¥è¢«æ‹†å¼€çš„len(1)åè¯
         concat_list = out_list.copy()
         for i in range(len(concat_list)-1,0,-1):
-            # i=len-1~1, ²»°üÀ¨0
+            # i=len-1~1, ä¸åŒ…æ‹¬0
             unique_str = concat_list[i][0]
             if len(unique_str)>1:
                 continue
@@ -109,7 +109,7 @@ def connect_content_from_db(concat_list, db_path=None):
             if is_valid == 1:
                 dcxn = out_list[i-1][1]
                 out_list[i-1:i]=[[pre_str, dcxn]]
-        ### »ñÈ¡¶àÒå´ÊÁĞ±í
+        ### è·å–å¤šä¹‰è¯åˆ—è¡¨
         for i in range(len(out_list)):
             unique_str = out_list[i][0]
             sqlite3_cursor.execute(sql_cx % (str(unique_str)))
@@ -133,10 +133,10 @@ def connect_content_from_db(concat_list, db_path=None):
     return out_list
     
 def get_cate17_best_category(in_list, cate17_str_list):
-# ¶àÒå--Ñ¡Ôñ´ÊĞÔ:
-#   cx=17: ±íÊ¾¶àÒå
-#   Îª·½±ã´¦Àí, Ö»´¦Àíµ¥¸ö´ÊÇé¿ö
-#   Á¬Ğø¶àÒåÇé¿öÎ´¿¼ÂÇ
+# å¤šä¹‰--é€‰æ‹©è¯æ€§:
+#   cx=17: è¡¨ç¤ºå¤šä¹‰
+#   ä¸ºæ–¹ä¾¿å¤„ç†, åªå¤„ç†å•ä¸ªè¯æƒ…å†µ
+#   è¿ç»­å¤šä¹‰æƒ…å†µæœªè€ƒè™‘
     cate17_list = [get_cate17_list(i) for i in cate17_str_list]
     cate17_i = 0
         
@@ -163,9 +163,9 @@ def get_cate17_best_category(in_list, cate17_str_list):
 
 
 def get_cate17_pipei(a, b):
-# ¶àÒå--ÅĞ¶ÏÄÄ¸ö´ÊĞÔ¸üºÏÊÊ:
-#   ÓëÇ°ºóÆ¥Åä, ÎªÁË·½±ã, Ö»ÉèÖÃÉÙÁ¿Öµ
-#   Ä¬ÈÏ0.5, Æ¾¸Ğ¾õÉèÖÃ±È0.5´ó»òĞ¡
+# å¤šä¹‰--åˆ¤æ–­å“ªä¸ªè¯æ€§æ›´åˆé€‚:
+#   ä¸å‰ååŒ¹é…, ä¸ºäº†æ–¹ä¾¿, åªè®¾ç½®å°‘é‡å€¼
+#   é»˜è®¤0.5, å‡­æ„Ÿè§‰è®¾ç½®æ¯”0.5å¤§æˆ–å°
     code_dict = {
                   '1_3':0.8,
                   '1_6':0.2,
@@ -190,8 +190,8 @@ def get_cate17_pipei(a, b):
     return code_dict.get(cate17_key, 0.5)
 
 def get_cate17_list(cate17_str):
-# ¶àÒå--´ÊĞÔÁĞ±í--²ğ·Ö×Ö·û´®:
-#   ¸ñÊ½("cx:4,5")
+# å¤šä¹‰--è¯æ€§åˆ—è¡¨--æ‹†åˆ†å­—ç¬¦ä¸²:
+#   æ ¼å¼("cx:4,5")
     searchObj = re.search( r'cx:([0-9,]{1,})', cate17_str)
     cate17_list = []
     if searchObj:
@@ -201,10 +201,10 @@ def get_cate17_list(cate17_str):
 
 
 def get_cate17_best_cx(in_list, cate17_str_list):
-# ¶àÒå--Ñ¡Ôñ´ÊĞÔ:
-#   cx=17: ±íÊ¾¶àÒå
-#   Îª·½±ã´¦Àí, Ö»´¦Àíµ¥¸ö´ÊÇé¿ö
-#   Á¬Ğø¶àÒåÇé¿öÎ´¿¼ÂÇ
+# å¤šä¹‰--é€‰æ‹©è¯æ€§:
+#   cx=17: è¡¨ç¤ºå¤šä¹‰
+#   ä¸ºæ–¹ä¾¿å¤„ç†, åªå¤„ç†å•ä¸ªè¯æƒ…å†µ
+#   è¿ç»­å¤šä¹‰æƒ…å†µæœªè€ƒè™‘
     cate17_list = [get_cate17_list(i) for i in cate17_str_list]
     cate17_i = 0
     cate17_len = len(cate17_list)
@@ -246,9 +246,9 @@ def get_cate17_best_cx(in_list, cate17_str_list):
 
 
 def get_single_code_from_db(unique_list, db_path=None):
-# µ¥×ÖÄ£Ê½:
-#   °´ÏÂ±êË³Ğò·Ö¸ô
-#   Îª´úÂë¼òµ¥, Ö»´¦Àí³£ÓÃ
+# å•å­—æ¨¡å¼:
+#   æŒ‰ä¸‹æ ‡é¡ºåºåˆ†éš”
+#   ä¸ºä»£ç ç®€å•, åªå¤„ç†å¸¸ç”¨
     index_dict = { 1:[[1]],
                    2:[[1,1]], 
                    3:[[2,1],[1,2],[1,1,1]],
@@ -268,27 +268,27 @@ def get_single_code_from_db(unique_list, db_path=None):
     
     try:
         for tmp_str in unique_list:
-            # »ñÈ¡×ÖÊı, °´ÏÂ±êË³Ğò·Ö¸ô
+            # è·å–å­—æ•°, æŒ‰ä¸‹æ ‡é¡ºåºåˆ†éš”
             str_len = len(tmp_str)
             index_list = index_dict.get(str_len, 0)
             if 0 == index_list:
-                # 7×ÖÒÔÉÏÎª¿Õ, ¼´²»Ìæ»»
+                # 7å­—ä»¥ä¸Šä¸ºç©º, å³ä¸æ›¿æ¢
                 out_code_list.append([])
                 out_unique_list.append([tmp_str])
                 continue
             
-            # ËùÓĞÁĞ±í¶¼²»ºÏÊÊ, Í¬ÑùÎª¿Õ
+            # æ‰€æœ‰åˆ—è¡¨éƒ½ä¸åˆé€‚, åŒæ ·ä¸ºç©º
             is_all_valid = 0
             for tmp_index_list in index_list:
                 # Number of subscripts --> determine whether it is a single word
                 index_len = len(tmp_index_list)
                 cx_list,str_list = [],[]
-                # ×ÓÁĞ±íÈÎÒâºÏÊÊ¼´¿É
+                # å­åˆ—è¡¨ä»»æ„åˆé€‚å³å¯
                 is_valid = 1
                 index_start = 0
                 for tmp_index in tmp_index_list:
                     word_str = tmp_str[index_start:index_start+tmp_index]
-                    # ²éÕÒ´ÊĞÔ+±¸×¢, ±¸×¢Èç:¶àÒå´Ê´ÊĞÔÁĞ±í
+                    # æŸ¥æ‰¾è¯æ€§+å¤‡æ³¨, å¤‡æ³¨å¦‚:å¤šä¹‰è¯è¯æ€§åˆ—è¡¨
                     sqlite3_cursor.execute(sql_cx % (str(word_str)))
                     dcxn = 27
 
@@ -301,7 +301,7 @@ def get_single_code_from_db(unique_list, db_path=None):
                         cx_list.append(dcxn)
                         str_list.append(word_str)
                     elif dcxn == 17:
-                        # cx=17:¶àÒå, Ö»´¦ÀíÇ°ºó2¸ö´ÊÇé¿ö
+                        # cx=17:å¤šä¹‰, åªå¤„ç†å‰å2ä¸ªè¯æƒ…å†µ
                         if index_len <= 2:
                             cx_list.append(dcxn)
                             str_list.append(word_str)
@@ -321,7 +321,7 @@ def get_single_code_from_db(unique_list, db_path=None):
             if 0 == is_all_valid:
                 out_code_list.append([0])
                 out_unique_list.append([tmp_str])
-        # 17:¶àÒå, Ñ¡ÔñºÏÊÊ´ÊĞÔ
+        # 17:å¤šä¹‰, é€‰æ‹©åˆé€‚è¯æ€§
         if len(cate17_list)>0:
             out_code_list = get_cate17_best_cx(out_code_list, cate17_list)
     except:
@@ -334,9 +334,9 @@ def get_single_code_from_db(unique_list, db_path=None):
 
     
 def merge_single_code(unique_list, detail_word_list, number_list, cx_list):
-# µ¥×ÖÄ£Ê½:
-#   ´ÊĞÔÑ¡Ôñ, Ö»Ñ¡Ôñ³£ÓÃµÄÌæ»», ¶àÒåµÈ
-#   0=0, ¿ÉÄÜÊÇ´íÎó×Ö, ²»¿¼ÂÇ
+# å•å­—æ¨¡å¼:
+#   è¯æ€§é€‰æ‹©, åªé€‰æ‹©å¸¸ç”¨çš„æ›¿æ¢, å¤šä¹‰ç­‰
+#   0=0, å¯èƒ½æ˜¯é”™è¯¯å­—, ä¸è€ƒè™‘
     split_set = { 
                   #'3=3+12',
                   '3=3+16',
@@ -366,17 +366,17 @@ def merge_single_code(unique_list, detail_word_list, number_list, cx_list):
     out_word_list = []
     for (old_word, new_word_list, tmp_number, tmp_cx_list) in zip(unique_list, detail_word_list, number_list, cx_list):
         #print ("--for  %s, %s" % (tmp_number, tmp_cx_list) )
-# ÀàĞÍnum»»³ÉÀàĞÍlist:
-#   ÓÃ¸ß²ãcxÌæ»»µÍ²ãcxÖĞµÄ0
+# ç±»å‹numæ¢æˆç±»å‹list:
+#   ç”¨é«˜å±‚cxæ›¿æ¢ä½å±‚cxä¸­çš„0
         if int(tmp_number)<17:
             tmp_cx_list = [i if i!=0 else tmp_number for i in tmp_cx_list]
         tmp_cx_list = [str(i) for i in tmp_cx_list]
         split_key = str(tmp_number) + "=" + '+'.join(tmp_cx_list)
         replace_key = '+'.join(tmp_cx_list)
         #print ("  --split_key  %s" % (split_key) )
-# ÔÚset¼¯ºÏÖĞ, Ìæ»»
-# ¶àÒå, Ìæ»»
-# Î´Öª0Àà, Ìæ»»
+# åœ¨seté›†åˆä¸­, æ›¿æ¢
+# å¤šä¹‰, æ›¿æ¢
+# æœªçŸ¥0ç±», æ›¿æ¢
         if split_key in split_set:
             out_code_list.append(tmp_cx_list)
             out_word_list.append(old_word)
@@ -385,41 +385,41 @@ def merge_single_code(unique_list, detail_word_list, number_list, cx_list):
             out_word_list.append(old_word)
         elif (int(tmp_number) == 0 or int(tmp_number) == 26) and len(tmp_cx_list)>0:
             if len(old_word)>2 or replace_key not in replace_set:
-                # ²ğ·ÖÎ´ÖªÀà
+                # æ‹†åˆ†æœªçŸ¥ç±»
                 out_code_list.extend([[i] for i in tmp_cx_list])
                 out_word_list.extend(new_word_list)
             else:
-                # ÉÙÊı³£ÓÃÓï²»²ğ¿ª
+                # å°‘æ•°å¸¸ç”¨è¯­ä¸æ‹†å¼€
                 out_code_list.append(tmp_cx_list)
                 out_word_list.append(old_word)
         else:
             out_code_list.append([tmp_number])
             out_word_list.append(old_word)
 ##############################################################
-# ²âÊÔÊ±´ò¿ª×¢ÊÍ: ÏÔÊ¾Î´Ìí¼ÓµÄÌæ»», È»ºóÊÖ¶¯Ìí¼Ó³£ÓÃµÄµ½set¼¯ºÏÖĞ
+# æµ‹è¯•æ—¶æ‰“å¼€æ³¨é‡Š: æ˜¾ç¤ºæœªæ·»åŠ çš„æ›¿æ¢, ç„¶åæ‰‹åŠ¨æ·»åŠ å¸¸ç”¨çš„åˆ°seté›†åˆä¸­
 #            if len(tmp_cx_list) > 0:
 #                print ("split_key", split_key)
     return out_word_list,out_code_list
     
     
-# Á¬½ÓË³Ğò:
-#flag_0 = 0  # ²»Á¬
-flag_1 = 1  # ½üÒåÁ¬½Ó(Èç'123','¶«Î÷')
+# è¿æ¥é¡ºåº:
+#flag_0 = 0  # ä¸è¿
+flag_1 = 1  # è¿‘ä¹‰è¿æ¥(å¦‚'123','ä¸œè¥¿')
 #           # 
-flag_2 = 2  # Ö÷´ÓÁ¬½Ó(Èç'ÎÒ¶ù','Ò»¸ö'), ÃûÎ»Á¬½Ó(Èç'Ë®ÖĞ')------ÀàĞÍ2/3Ã»Çø±ğ
+flag_2 = 2  # ä¸»ä»è¿æ¥(å¦‚'æˆ‘å„¿','ä¸€ä¸ª'), åä½è¿æ¥(å¦‚'æ°´ä¸­')------ç±»å‹2/3æ²¡åŒºåˆ«
 flag_3 = 3  # 
-flag_4 = 4  # ¶¯¶¯Á¬½Ó(Èç'Âú×ã¿ªÍ¨'), ÃûÃûÁ¬½Ó(Èç'Àî´å'), ¶¯²¹Á¬½Ó(Èç'ÅçÍê','Åç³ö')---------±È½Ï³¤µÄ´Ê²»Á¬½Ó
+flag_4 = 4  # åŠ¨åŠ¨è¿æ¥(å¦‚'æ»¡è¶³å¼€é€š'), ååè¿æ¥(å¦‚'ææ‘'), åŠ¨è¡¥è¿æ¥(å¦‚'å–·å®Œ','å–·å‡º')---------æ¯”è¾ƒé•¿çš„è¯ä¸è¿æ¥
 #           # 
-flag_5 = 5  # Âß¼­Á¬½Ó(Èç'µÄ','ÓÃ','Èç¹û'), ²¹¶¯Á¬½Ó(Èç'Ã¿Ìì×ö'), ¸±ÃûÁ¬½Ó(Èç'Ã»ÈË')
+flag_5 = 5  # é€»è¾‘è¿æ¥(å¦‚'çš„','ç”¨','å¦‚æœ'), è¡¥åŠ¨è¿æ¥(å¦‚'æ¯å¤©åš'), å‰¯åè¿æ¥(å¦‚'æ²¡äºº')
 #           # 
-flag_6 = 6  # Ç³ÖªÁ¬½Ó, Ä£¿é¼äÁ¬½Ó, (Èç'Ïä'), ¶¯ÃûÁ¬½Ó(Èç'ºÈË®')
+flag_6 = 6  # æµ…çŸ¥è¿æ¥, æ¨¡å—é—´è¿æ¥, (å¦‚'ç®±'), åŠ¨åè¿æ¥(å¦‚'å–æ°´')
 #           # 
-flag_7 = 7  # Êı¾İÁ¬½Ó, Ãû¶¯Á¬½Ó(Èç'ÄãÈ¥')
+flag_7 = 7  # æ•°æ®è¿æ¥, ååŠ¨è¿æ¥(å¦‚'ä½ å»')
 #           # 
 flag_8 = 8  # 
 #           # 
 
-# Á¬½ÓË³Ğò:
+# è¿æ¥é¡ºåº:
 #--block:---- -----1-1- ----------- --------1-- --1--------
 #--block:---- -----2--- ----------- ----2-2-2-- -----------
 #--block:---- ---3-3--- ----------- --3-3------ -----------
@@ -452,10 +452,10 @@ flag_list = [ [1,4,7,0,   0,0,0,4,    4,5,5,0,    0,0,0,4],   #1,
 			]
 
 def choose_connect_flag(code_list):
-# µ¥×Ö/³¤´Ê/Âß¼­/Ç³ÖªÄ£Ê½:
-#   ´ÊĞÔ-->´ÊÊÇ·ñÁ¬½Ó
-#   °´Ë³Ğò´ÓÇ³µ½Éî
-#   ´ÊÁ¬½Óºó, code±ä¶Ì, ĞèÒª¸üĞÂÁ¬½ÓÁĞ±í
+# å•å­—/é•¿è¯/é€»è¾‘/æµ…çŸ¥æ¨¡å¼:
+#   è¯æ€§-->è¯æ˜¯å¦è¿æ¥
+#   æŒ‰é¡ºåºä»æµ…åˆ°æ·±
+#   è¯è¿æ¥å, codeå˜çŸ­, éœ€è¦æ›´æ–°è¿æ¥åˆ—è¡¨
 
 # rank2->rank1
     c_list = []
@@ -475,9 +475,9 @@ def choose_connect_flag(code_list):
             flag = 1
             tmp_list.append(flag)
         else:
-            # ±êµãÎª0
+            # æ ‡ç‚¹ä¸º0
             tmp_list.append(0)
-    # Ä©Î²²¹0(Á½Á½Á¬½Ó, ÉÙÒ»Î»)
+    # æœ«å°¾è¡¥0(ä¸¤ä¸¤è¿æ¥, å°‘ä¸€ä½)
     tmp_list.append(0)
     
 # rank1->rank2
@@ -491,8 +491,8 @@ def choose_connect_flag(code_list):
     return out_list
 
 def connect_content_from_flag(concat_list, code_list, level):
-# µ¥×Ö/³¤´Ê/Âß¼­/Ç³ÖªÄ£Ê½:
-#   ´¦ÀíÁ¬½Ó
+# å•å­—/é•¿è¯/é€»è¾‘/æµ…çŸ¥æ¨¡å¼:
+#   å¤„ç†è¿æ¥
     out_list = []
     sub_out_list = []
     for i,(tmp_mode_list, codes) in enumerate(zip(concat_list, code_list)):
@@ -510,38 +510,38 @@ def connect_content_from_flag(concat_list, code_list, level):
 
         flag = new_flag[-1]
         if level == 1:
-            # µ¥×ÖÄ£Ê½
+            # å•å­—æ¨¡å¼
             sub_out_list.extend(new_codes)
             if flag != flag_1:
                 out_list.append(sub_out_list)
                 sub_out_list = []
         elif level == 2:
-            # ³¤´ÊÄ£Ê½
+            # é•¿è¯æ¨¡å¼
             sub_out_list.extend(new_codes)
             if flag != flag_2 and flag != flag_3 and flag != flag_4:
                 out_list.append(sub_out_list)
                 sub_out_list = []
             elif flag == flag_4 and i<len(concat_list)-1:
-                # ×îºóÒ»¸ö´ÊÃ»ÓĞÅä¶Ô
+                # æœ€åä¸€ä¸ªè¯æ²¡æœ‰é…å¯¹
                 next_str = concat_list[i+1][0]
-                # Î¢µ÷--±È½Ï³¤µÄ´Ê²»Á¬½Ó--len(1)Óëlen(2)²»Á¬½Ó
+                # å¾®è°ƒ--æ¯”è¾ƒé•¿çš„è¯ä¸è¿æ¥--len(1)ä¸len(2)ä¸è¿æ¥
                 if len(tmp_str)>=2 or len(next_str)>=2:
                     out_list.append(sub_out_list)
                     sub_out_list = []
         elif level == 3:
-            # Âß¼­Ä£Ê½
+            # é€»è¾‘æ¨¡å¼
             sub_out_list.extend(new_codes)
             if flag < flag_1 or flag > flag_5:
                 out_list.append(sub_out_list)
                 sub_out_list = []
         elif level == 4:
-            # Ç³ÖªÄ£Ê½
+            # æµ…çŸ¥æ¨¡å¼
             sub_out_list.extend(new_codes)
             if flag < flag_1 or flag > flag_6:
                 out_list.append(sub_out_list)
                 sub_out_list = []
         elif level == 5:
-            # Êı¾İÄ£Ê½
+            # æ•°æ®æ¨¡å¼
             sub_out_list.extend(new_codes)
             if flag < flag_1 or flag > flag_7:
                 out_list.append(sub_out_list)
@@ -564,97 +564,97 @@ class TokenizerChg(object):
         self.debug_log = debug_log
 
     def get_jieba_cut_list(self, pstr):
-        ### jieba·Ö´Ê: ±£Áô·Ö¸î·û(±êµã·ûºÅ)
+        ### jiebaåˆ†è¯: ä¿ç•™åˆ†å‰²ç¬¦(æ ‡ç‚¹ç¬¦å·)
 #       outlist = jieba.lcut(text,HMM=False)
         outlist = list(jieba.cut(pstr, cut_all=False))
         return outlist
 
     def tokens_parsing_category_from_db(self, unique_list):
-        ### »ñÈ¡ÀàĞÍ
+        ### è·å–ç±»å‹
         number_list = get_category_from_db(unique_list, db_path=self.db_path)
         return number_list
 
     def _tokens_parsing(self, input_list, mode_num=0):
         ### mode 2~5: 
-        name_dick = {1:"µ¥×Ö",2:"³¤´Ê",3:"Âß¼­",4:"Ç³Öª",5:"Êı¾İ",6:""}
+        name_dick = {1:"å•å­—",2:"é•¿è¯",3:"é€»è¾‘",4:"æµ…çŸ¥",5:"æ•°æ®",6:""}
         mode_name = name_dick.get(mode_num, "None")
         
         unique_list = [i[0] for i in input_list]
         code_list = [i[1:] for i in input_list]
         if self.debug_log:
-            print ("\n%d%s´ÊĞÔ  %s" % (mode_num, mode_name, str(code_list)) )
+            print ("\n%d%sè¯æ€§  %s" % (mode_num, mode_name, str(code_list)) )
         flag_list = choose_connect_flag(code_list)
         concat_list = list(zip(unique_list, flag_list))
         concat_list = [[i[0]] + i[1] for i in concat_list]
         if self.debug_log:
-            print ("%dÊÇ·ñÁ¬½Ó  %s" % (mode_num, str(concat_list)) )
+            print ("%dæ˜¯å¦è¿æ¥  %s" % (mode_num, str(concat_list)) )
         output_list = connect_content_from_flag(concat_list, code_list, mode_num)   # min=level
         if self.debug_log:
-            print ("%d%sÄ£Ê½  %s" % (mode_num, mode_name, str(output_list)) )
+            print ("%d%sæ¨¡å¼  %s" % (mode_num, mode_name, str(output_list)) )
         
         return output_list
 
     def tokens_mode0(self, unique_list=None, text=None):
-        ### ·Ö´Ê+Ìí¼Ó´ÊĞÔ+¶àÒå´Ê+Á½len(1)Á¬½Ó+Ãû´Êlen(1)ÏòÇ°Á¬½Ó
+        ### åˆ†è¯+æ·»åŠ è¯æ€§+å¤šä¹‰è¯+ä¸¤len(1)è¿æ¥+åè¯len(1)å‘å‰è¿æ¥
         if text is not None:
             unique_list = self.get_jieba_cut_list(text)
-        ### Ô­´ÊĞÔÁĞ±í
+        ### åŸè¯æ€§åˆ—è¡¨
         number_list = self.tokens_parsing_category_from_db(unique_list)
         concat_list = list(zip(unique_list, number_list))
         concat_list = [list(i) for i in concat_list]
         mode0_list = connect_content_from_db(concat_list, db_path=self.db_path)
         if self.debug_log:
             print ("----------------------------------")
-            print ("0³õÊ¼´ÊĞÔ  %s" % (str(mode0_list)) )
+            print ("0åˆå§‹è¯æ€§  %s" % (str(mode0_list)) )
         return mode0_list
 
     def tokens_mode1(self, mode0_list=None, text=None):
-        ### mode1: µ¥×ÖÄ£Ê½
+        ### mode1: å•å­—æ¨¡å¼
         if text is not None:
             mode0_list  = self.tokens_mode0(text=text)
         unique_list = [i[0] for i in mode0_list]
         number_list = [i[1] for i in mode0_list]
-        ### Öğ×Ö²éÕÒ´ÊĞÔ
-        ###   detail_word ×÷ÓÃÊÇ²ğ·ÖÎ´ÖªÀà(0,26)
+        ### é€å­—æŸ¥æ‰¾è¯æ€§
+        ###   detail_word ä½œç”¨æ˜¯æ‹†åˆ†æœªçŸ¥ç±»(0,26)
         detail_word_list,code_list = get_single_code_from_db(unique_list, db_path=self.db_path)
         if self.debug_log:
-            print ("\n1µ¥×Ö´ÊĞÔ  %s" % (str(code_list)) )
-        ### ³£ÓÃ´ÊĞÔÌæ»»+¶àÒåÌæ»»+Î´ÖªÀà(0,26)Ìæ»»+²ğ·ÖÎ´ÖªÀà
+            print ("\n1å•å­—è¯æ€§  %s" % (str(code_list)) )
+        ### å¸¸ç”¨è¯æ€§æ›¿æ¢+å¤šä¹‰æ›¿æ¢+æœªçŸ¥ç±»(0,26)æ›¿æ¢+æ‹†åˆ†æœªçŸ¥ç±»
         unique_list,code_list = merge_single_code(unique_list, detail_word_list, number_list, code_list)
-        #print ("1µ¥×ÖºÏ²¢  %s" % (str(code_list)) )
+        #print ("1å•å­—åˆå¹¶  %s" % (str(code_list)) )
         flag_list = choose_connect_flag(code_list)
         concat_list = list(zip(unique_list, flag_list))
         concat_list = [[i[0]] + i[1] for i in concat_list]
         if self.debug_log:
-            print ("1ÊÇ·ñÁ¬½Ó  %s" % (str(concat_list)) )
+            print ("1æ˜¯å¦è¿æ¥  %s" % (str(concat_list)) )
         mode1_list = connect_content_from_flag(concat_list, code_list, 1)
         if self.debug_log:
-            print ("1µ¥×ÖÄ£Ê½  %s" % (str(mode1_list)) )
+            print ("1å•å­—æ¨¡å¼  %s" % (str(mode1_list)) )
         return mode1_list
 
     def tokens_mode2(self, mode1_list=None, text=None):
-        ### mode2: ³¤´ÊÄ£Ê½
+        ### mode2: é•¿è¯æ¨¡å¼
         if text is not None:
             mode1_list = self.tokens_mode1(text=text)
         output_list = self._tokens_parsing(mode1_list, mode_num=2)
         return output_list
 
     def tokens_mode3(self, mode2_list=None, text=None):
-        # mode3: Âß¼­Ä£Ê½
+        # mode3: é€»è¾‘æ¨¡å¼
         if text is not None:
             mode2_list = self.tokens_mode2(text=text)
         output_list = self._tokens_parsing(mode2_list, mode_num=3)
         return output_list
 
     def tokens_mode4(self, mode3_list=None, text=None):
-        ### mode4: Ç³ÖªÄ£Ê½
+        ### mode4: æµ…çŸ¥æ¨¡å¼
         if text is not None:
             mode3_list = self.tokens_mode3(text=text)
         output_list = self._tokens_parsing(mode3_list, mode_num=4)
         return output_list
         
     def tokens_mode5(self, mode4_list=None, text=None):
-        ### mode5: Êı¾İÁ¬½Ó
+        ### mode5: æ•°æ®è¿æ¥
         if text is not None:
             mode4_list = self.tokens_mode4(text=text)
         output_list = self._tokens_parsing(mode4_list, mode_num=5)
@@ -662,25 +662,25 @@ class TokenizerChg(object):
         
     def tokens_parsing_test(self, text=None):
         ### test:
-        ### ¾ä×Ó²ğ·Ö
+        ### å¥å­æ‹†åˆ†
         unique_list = self.get_jieba_cut_list(text)
-        # ÏÔÊ¾pstr ·ÅÔÚjiebaµ÷ÊÔĞÅÏ¢ºóÃæ
+        # æ˜¾ç¤ºpstr æ”¾åœ¨jiebaè°ƒè¯•ä¿¡æ¯åé¢
         if self.debug_log:
-            print ("¾ä×Ó   : ", text)
+            print ("å¥å­   : ", text)
             print ("jieba  : ", unique_list)
         # mode0:
         mode0_list = self.tokens_mode0(unique_list)
-        # mode1:µ¥×ÖÄ£Ê½
-        #   Ï¸»¯cx(Èç'700ml')
-        #   ½â¾ö¶àÒåÎÊÌâ(Èç'Ïä', 'cx:6,14')
+        # mode1:å•å­—æ¨¡å¼
+        #   ç»†åŒ–cx(å¦‚'700ml')
+        #   è§£å†³å¤šä¹‰é—®é¢˜(å¦‚'ç®±', 'cx:6,14')
         mode1_list = self.tokens_mode1(mode0_list)
-        # mode2:³¤´ÊÄ£Ê½
+        # mode2:é•¿è¯æ¨¡å¼
         mode2_list = self.tokens_mode2(mode1_list)
-        # mode3:Âß¼­Ä£Ê½
+        # mode3:é€»è¾‘æ¨¡å¼
         mode3_list = self.tokens_mode3(mode2_list)
-        # mode4:Ç³ÖªÄ£Ê½
+        # mode4:æµ…çŸ¥æ¨¡å¼
         mode4_list = self.tokens_mode4(mode3_list)
-        # mode5:Êı¾İÁ¬½Ó
+        # mode5:æ•°æ®è¿æ¥
         mode5_list = self.tokens_mode5(mode4_list)
         return
         

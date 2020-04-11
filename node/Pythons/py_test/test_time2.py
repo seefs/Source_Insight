@@ -1,16 +1,16 @@
-#!/usr/bin/python3
+ï»¿#!/usr/bin/python3
 #coding=utf-8
 
-import time;  # ÒıÈëtimeÄ£¿é
+import time;  # å¼•å…¥timeæ¨¡å—
 #import timeit
 #import datetime
 
 
 ticks = time.time()
-print ("µ±Ç°Ê±¼ä´ÁÎª:", ticks)
+print ("å½“å‰æ—¶é—´æˆ³ä¸º:", ticks)
 
 #Jupyter
-#RÓïÑÔ£¬²»Ö§³Ö
+#Rè¯­è¨€ï¼Œä¸æ”¯æŒ
 
 %%time
 

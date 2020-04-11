@@ -1,4 +1,4 @@
-#!/usr/bin/python
+ï»¿#!/usr/bin/python
 # -*- coding: UTF-8 -*-
 import tensorflow as tf
 import numpy as np
@@ -23,40 +23,40 @@ sess=tf.Session()
 sess.run(tf.global_variables_initializer())
 
 
-print("add_ab £º")
+print("add_ab ï¼š")
 print("  ", list(map(lambda x:round(x,2), add_ab.eval(session=sess))))
 
-print("probs_ab £º")
+print("probs_ab ï¼š")
 print("  ", list(map(lambda x:round(x,2), probs_ab.eval(session=sess))))
 
 
-print("add_1 £º")
+print("add_1 ï¼š")
 print("  ", list(map(lambda x:round(x,2), add_1.eval(session=sess))))
 
-print("probs_1 £º")
+print("probs_1 ï¼š")
 print("  ", list(map(lambda x:round(x,2), probs_1.eval(session=sess))))
 
 
-print("add_2 £º")
+print("add_2 ï¼š")
 print("  ", list(map(lambda x:round(x,2), add_2.eval(session=sess))))
 
-print("probs_2 £º")
+print("probs_2 ï¼š")
 print("  ", list(map(lambda x:round(x,2), probs_2.eval(session=sess))))
 
 
 ###############################################
-print("map_3 £º")
+print("map_3 ï¼š")
 map_3 = map(lambda x_arr:list(map(lambda x:round(x,2),
                                    x_arr)), 
              add_3.eval(session=sess))
 print("  ", type(map_3))
 
 map_list = list(map_3)
-print("map_list £º")
+print("map_list ï¼š")
 print("  ", map_list)
 
 ###############################################
-print("probs_3 £º")
+print("probs_3 ï¼š")
 map_3 = map(lambda x_arr:list(map(lambda x:round(x,2),
                                    x_arr)), 
              probs_3.eval(session=sess))

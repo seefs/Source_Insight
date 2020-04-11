@@ -1,4 +1,4 @@
-#!/usr/bin/python
+ï»¿#!/usr/bin/python
 # -*- coding: UTF-8 -*-
 import tensorflow as tf
 import numpy as np
@@ -27,14 +27,14 @@ sess=tf.Session()
 #sess.run(tf.initialize_all_variables())
 sess.run(tf.global_variables_initializer())
 
-#   tensor×ªarray£º
+#   tensorè½¬arrayï¼š
 print ("eval: ", a.eval(session=sess))
-#   array×ªtensor£º
+#   arrayè½¬tensorï¼š
 print ("tensor: ", tf.convert_to_tensor(b))
 print ("")
 
 
-#  reshape£º
+#  reshapeï¼š
 width = a.shape[-1]
 print ("width: ", width)
 a_reshape = tf.reshape(a, [-1, width])

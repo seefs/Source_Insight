@@ -1,11 +1,11 @@
-
+ï»¿
 import numpy as np
 
 def str_print(x,y) : 
     print("x,y ", x,y)
     return 0
 
-#¶àÓàµÄ's'²»Êä³ö
+#å¤šä½™çš„'s'ä¸è¾“å‡º
 sentences1 = ['a', 'b', 'c']
 sentences2 = ['d', 'e', 'f', 's']
 list(map(lambda x,y:str_print(x,y), sentences1, sentences2))

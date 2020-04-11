@@ -1,54 +1,54 @@
-
-»ù´¡Â·¾¶ÉèÖÃ:
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®:
 basePath = Save:node\Pythons
 dataPath = D:\project\S_name\3^sql^data
 
 
 /***********************************************************************/
 
-// 1. Pythons ÖĞÎÄ
+// 1. Pythons ä¸­æ–‡
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.1\] BISIC
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.2\] RNN Ã»ÓĞ²¢ĞĞ»¯
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.2\] RNN æ²¡æœ‰å¹¶è¡ŒåŒ–
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.3\] LSTM
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.4\] biLM Ë«ÏòLSTM
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.5\] ELMo ÑµÁ·ÓïÑÔÄ£ĞÍ
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.6\] BERT ĞÂÓïÑÔ±íÊ¾Ä£ĞÍ
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.4\] biLM åŒå‘LSTM
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.5\] ELMo è®­ç»ƒè¯­è¨€æ¨¡å‹
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.6\] BERT æ–°è¯­è¨€è¡¨ç¤ºæ¨¡å‹
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.7\] ESIM
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.8\] Transformer ÌáÈ¡ÌØÕ÷
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.8\] Transformer æå–ç‰¹å¾
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.9\] GPT 
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.10\] CNN ¾í»ı 
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.11\] ÔÆ¼ÆËã
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.10\] CNN å·ç§¯ 
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.11\] äº‘è®¡ç®—
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.12\] 
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.13\]
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[1.14\]
 // 2. lib
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.1\] keras
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.2\] Keras Transformer------test
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.3\] Activation-------------¼¤»îº¯Êı
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.4\] Ö¸±ê
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.5\] NLP ÈÎÎñ
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.3\] Activation-------------æ¿€æ´»å‡½æ•°
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.4\] æŒ‡æ ‡
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.5\] NLP ä»»åŠ¡
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.6\] keras.Lambda
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.7\] ·ÖÄ£¿é
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.7\] åˆ†æ¨¡å—
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.8\] load_model--h5
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.9\] Keras ÖĞÎÄ
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.9\] Keras ä¸­æ–‡
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.10\] 
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.11\] keras weight----------¿ÉÑµÁ·µÄ/²»¿ÉÑµÁ·
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.12\] GradientTape----------ĞŞ¸ÄÌİ¶È
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.13\] tf.function-----------¾²Ì¬Í¼
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.14\] ²»ÎÈ¶¨²ã
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.11\] keras weight----------å¯è®­ç»ƒçš„/ä¸å¯è®­ç»ƒ
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.12\] GradientTape----------ä¿®æ”¹æ¢¯åº¦
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.13\] tf.function-----------é™æ€å›¾
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.14\] ä¸ç¨³å®šå±‚
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.15\] 
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.16\] 
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.16\] tf.compat.v1.flags.FLAGS
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.17\] 
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[2.18\] 
 // 3. project
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[3.1\] Demo ------------------(ÎŞÓÃµÄdemo)
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[3.2\] Demo ------------------(ÓĞÓÃµÄdemo)
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[3.3\] Demo ------------------ÁÙÊ±
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[3.1\] Demo ------------------(æ— ç”¨çš„demo)
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[3.2\] Demo ------------------(æœ‰ç”¨çš„demo)
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[3.3\] Demo ------------------ä¸´æ—¶
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[3.4\] tf1_bert
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[3.5\] tf2_bert
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[3.6\] game
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[3.7\] ¶ş·ÖÀà-----------------·Ö´Ê++
-Save:node\Pythons\study\Macro_Pythons_tf2.h \[3.8\] layers-----------------¼òµ¥²ãÀı×Ó
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[3.7\] äºŒåˆ†ç±»-----------------åˆ†è¯++
+Save:node\Pythons\study\Macro_Pythons_tf2.h \[3.8\] layers-----------------ç®€å•å±‚ä¾‹å­
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[3.9\] 
 Save:node\Pythons\study\Macro_Pythons_tf2.h \[3.10\] 
 
@@ -57,13 +57,13 @@ Save:node\Pythons\study\Macro_Pythons_tf2.h \[3.10\]
 [1.1] BISIC
 
 Blockchain/AI/Security/IoT/Computer
-¿éÁ´/ AI /°²È«ĞÔ/ÎïÁªÍø/¼ÆËã»ú
+å—é“¾/ AI /å®‰å…¨æ€§/ç‰©è”ç½‘/è®¡ç®—æœº
 
 
 
 
 [1.2] RNN
-RNN£¨Recurrent neural networks£©Ñ­»·Éñ¾­ÍøÂç
+RNNï¼ˆRecurrent neural networksï¼‰å¾ªç¯ç¥ç»ç½‘ç»œ
 
 
 
@@ -75,20 +75,20 @@ LSTM (Long Short Term Memory)
 
 
 
-[1.4] BiLM Ë«ÏòLSTM
-Ë«ÏòÓïÑÔÄ£ĞÍ£¨BiLM£©Bi-LSTM
+[1.4] BiLM åŒå‘LSTM
+åŒå‘è¯­è¨€æ¨¡å‹ï¼ˆBiLMï¼‰Bi-LSTM
 
 
 
 
-[1.5] ELMo ÑµÁ·ÓïÑÔÄ£ĞÍ
-ELMO ÊÇ¡°Embedding from Language Models¡±µÄ¼ò³Æ
-ELMo×îÖØÒªµÄÒ»µãÊÇ¾ÍÊÇÑµÁ·ÓïÑÔÄ£ĞÍ
+[1.5] ELMo è®­ç»ƒè¯­è¨€æ¨¡å‹
+ELMO æ˜¯â€œEmbedding from Language Modelsâ€çš„ç®€ç§°
+ELMoæœ€é‡è¦çš„ä¸€ç‚¹æ˜¯å°±æ˜¯è®­ç»ƒè¯­è¨€æ¨¡å‹
 
 
 
 
-[1.6] BERT ĞÂÓïÑÔ±íÊ¾Ä£ĞÍ
+[1.6] BERT æ–°è¯­è¨€è¡¨ç¤ºæ¨¡å‹
 (Bidirectional Encoder Representations from Transformers)
 
 
@@ -99,28 +99,28 @@ ELMo×îÖØÒªµÄÒ»µãÊÇ¾ÍÊÇÑµÁ·ÓïÑÔÄ£ĞÍ
 
 
 
-[1.8] Transformer ÌáÈ¡ÌØÕ÷
-Transformer ÊÇ¸öµş¼ÓµÄ¡°×Ô×¢ÒâÁ¦»úÖÆ£¨Self Attention£©¡±¹¹³ÉµÄÉî¶ÈÍøÂç£¬ÊÇÄ¿Ç° NLP Àï×îÇ¿µÄÌØÕ÷ÌáÈ¡Æ÷
+[1.8] Transformer æå–ç‰¹å¾
+Transformer æ˜¯ä¸ªå åŠ çš„â€œè‡ªæ³¨æ„åŠ›æœºåˆ¶ï¼ˆSelf Attentionï¼‰â€æ„æˆçš„æ·±åº¦ç½‘ç»œï¼Œæ˜¯ç›®å‰ NLP é‡Œæœ€å¼ºçš„ç‰¹å¾æå–å™¨
 
-Éî¶ÈÑ§Ï°ÖĞµÄ×¢ÒâÁ¦Ä£ĞÍ
+æ·±åº¦å­¦ä¹ ä¸­çš„æ³¨æ„åŠ›æ¨¡å‹
 
 
 
 
 [1.9] GPT 
-GPT »ùÓÚ Fine-tuning µÄÄ£Ê½
+GPT åŸºäº Fine-tuning çš„æ¨¡å¼
 
 
 
 
 [1.10] CNN
-ÊÇÆäÏÈÌìµÄ¾í»ı²Ù×÷²»ºÜÊÊºÏĞòÁĞ»¯µÄÎÄ±¾
+æ˜¯å…¶å…ˆå¤©çš„å·ç§¯æ“ä½œä¸å¾ˆé€‚åˆåºåˆ—åŒ–çš„æ–‡æœ¬
 
 
 
-[1.11] ÔÆ¼ÆËã
+[1.11] äº‘è®¡ç®—
 //ngc.nvidia.com
-//Ãâ·Ñ»úÊ±¿ÉÄÜÓÃ
+//å…è´¹æœºæ—¶å¯èƒ½ç”¨
 
 
 [1.12] 
@@ -165,16 +165,16 @@ py_tf2\keras_LSTM.py
 python_w py_tf2\keras_LSTM.py
 //	name 'max_features' is not defined
 
-// keras_Conv1D--------1D¾í»ı
+// keras_Conv1D--------1Då·ç§¯
 py_tf2\keras_Conv1D.py
 python_w py_tf2\keras_Conv1D.py
 //	name 'seq_length' is not defined
 
-// keras_Sequential--------ÓÃÓÚĞòÁĞ·ÖÀàµÄÕ»Ê½LSTM
+// keras_Sequential--------ç”¨äºåºåˆ—åˆ†ç±»çš„æ ˆå¼LSTM
 py_tf2\keras_Sequential.py
 python_w py_tf2\keras_Sequential.py
 
-//keras_stateful--------²ÉÓÃstateful LSTMµÄÏàÍ¬Ä£ĞÍ
+//keras_stateful--------é‡‡ç”¨stateful LSTMçš„ç›¸åŒæ¨¡å‹
 py_tf2\keras_stateful.py
 python_w py_tf2\keras_stateful.py
 
@@ -202,8 +202,8 @@ python_w py_tf2\transformer_beam_Search.py
 
 
 
-[2.3] Activation---¼¤»îº¯Êı
-softmax:           [0__1]                         ¶à·ÖÀà, ¼ÆËãÁ¿´ó
+[2.3] Activation---æ¿€æ´»å‡½æ•°
+softmax:           [0__1]                         å¤šåˆ†ç±», è®¡ç®—é‡å¤§
 elu:               [-1__-0.8__0__10]
 selu:              [-1__-1__0__10]
 softplus:          [0__0.6__10]
@@ -213,7 +213,7 @@ relu:              [0__0__10]
 //PReLU:           [-1__0__10]
 //CReLU:           [, ]
 tanh:              [-1__-0.7__0__0.7__1]
-sigmoid:           [-1__-0.7__0__0.7__1]          ¶ş·ÖÀà, ¼ÆËãÁ¿Ïà¶Ô´ó;Ìİ¶ÈÏûÊ§
+sigmoid:           [-1__-0.7__0__0.7__1]          äºŒåˆ†ç±», è®¡ç®—é‡ç›¸å¯¹å¤§;æ¢¯åº¦æ¶ˆå¤±
 hard_sigmoid:      [, ]
 linear:            [0__0__1__1]
 //LeakyReLU:
@@ -221,33 +221,33 @@ linear:            [0__0__1__1]
 //ThresholdedReLU: [0__0__0__10]
 
 
-[2.4] Ö¸±ê
-// Ö¸±ê
-//	¾«×¼ÂÊ: precision rate = TP / (TP + FP)
-//	ÕÙ»ØÂÊ: recall rate = TP / (TP + FN)
-//	×¼È·ÂÊ: accuracy = (TP + TN) / (TP + FP + TN + FN)
+[2.4] æŒ‡æ ‡
+// æŒ‡æ ‡
+//	ç²¾å‡†ç‡: precision rate = TP / (TP + FP)
+//	å¬å›ç‡: recall rate = TP / (TP + FN)
+//	å‡†ç¡®ç‡: accuracy = (TP + TN) / (TP + FP + TN + FN)
 //	F1-score = 2 * precision rate * recall rate / (precision rate + recall rate)
-//	F1-score = 2 * ¾« * ÕÙ / (¾« + ÕÙ)
+//	F1-score = 2 * ç²¾ * å¬ / (ç²¾ + å¬)
 
-//	¾«×¼ÂÊ: __FP TP__>>0000 1111, ÍÆ¼öÏµÍ³-----ÖØĞÄ--ÕıÑù>¸ºÑù---µ÷¶à=µ÷ÉÙ
-//	¾«×¼ÂÊ: __11 11__>>0000 1111, 
-//	ÕÙ»ØÂÊ: ____ TPFN>>0000 1111, ÌÓ·¸¼ìË÷-----Ö±¾¶--½öÕıÑùÓ°Ïì
-//	ÕÙ»ØÂÊ: ____ 1100>>0000 1111,
-//	×¼È·ÂÊ: TNFP TPFN>>0000 1111, XXXXÏµÍ³-----±ß½ç--ÕıÑù=¸ºÑù---µ÷¶à>µ÷ÉÙ
-//	×¼È·ÂÊ: 0011 1100>>0000 1111,
-//	F1-scr: __11 1100>>0000 1111, XXXXÏµÍ³-----XX½ç--ÕıÑù>¸ºÑù---Õı¶à>ÕıÉÙ---¸ºÉÙ>Õı¶à
-//ÕæÑôĞÔÂÊ: ____ TPFN>>0000 1111, TPR=ÕÙ»ØÂÊ
-//¼ÙÒõĞÔÂÊ: TNFP ____>>0000 1111, FPR
-
-
+//	ç²¾å‡†ç‡: __FP TP__>>0000 1111, æ¨èç³»ç»Ÿ-----é‡å¿ƒ--æ­£æ ·>è´Ÿæ ·---è°ƒå¤š=è°ƒå°‘
+//	ç²¾å‡†ç‡: __11 11__>>0000 1111, 
+//	å¬å›ç‡: ____ TPFN>>0000 1111, é€ƒçŠ¯æ£€ç´¢-----ç›´å¾„--ä»…æ­£æ ·å½±å“
+//	å¬å›ç‡: ____ 1100>>0000 1111,
+//	å‡†ç¡®ç‡: TNFP TPFN>>0000 1111, XXXXç³»ç»Ÿ-----è¾¹ç•Œ--æ­£æ ·=è´Ÿæ ·---è°ƒå¤š>è°ƒå°‘
+//	å‡†ç¡®ç‡: 0011 1100>>0000 1111,
+//	F1-scr: __11 1100>>0000 1111, XXXXç³»ç»Ÿ-----XXç•Œ--æ­£æ ·>è´Ÿæ ·---æ­£å¤š>æ­£å°‘---è´Ÿå°‘>æ­£å¤š
+//çœŸé˜³æ€§ç‡: ____ TPFN>>0000 1111, TPR=å¬å›ç‡
+//å‡é˜´æ€§ç‡: TNFP ____>>0000 1111, FPR
 
 
-[2.5] NLP ÈÎÎñ
-// NLP_task ÈÎÎñ
+
+
+[2.5] NLP ä»»åŠ¡
+// NLP_task ä»»åŠ¡
 Save:node\Pythons\project\Macro_Pythons_explain_nlp.h  NLP_task
-// NLP_lib 6¸ö¶¥¼¶Python NLP¿âµÄ±È½Ï
+// NLP_lib 6ä¸ªé¡¶çº§Python NLPåº“çš„æ¯”è¾ƒ
 Save:node\Pythons\project\Macro_Pythons_explain_nlp.h  NLP_lib
-// NLP_fc Áù¿îÖĞÎÄ·Ö´ÊÄ£¿é
+// NLP_fc å…­æ¬¾ä¸­æ–‡åˆ†è¯æ¨¡å—
 Save:node\Pythons\project\Macro_Pythons_explain_nlp.h  NLP_fc
 
 
@@ -261,24 +261,24 @@ py_tf2\Keras_ly_mylayer.py
 python_w py_tf2\Keras_ly_mylayer.py
 
 
-//Lambda--¶àÊäÈë
+//Lambda--å¤šè¾“å…¥
 py_tf2\Keras_ly_input.py
 python_w py_tf2\Keras_ly_input.py
 
 
-[2.7] ·ÖÄ£¿é
-// loss²Î¿¼
+[2.7] åˆ†æ¨¡å—
+// losså‚è€ƒ
 https://github.com/kundajelab/keras-genomics/blob/master/keras_genomics/losses.py
 
 
 [2.8] load_model--h5
-//ÔÚKerasÖĞ£¬Èç¹û´æÔÚ×Ô¶¨Òålayer»òÕßloss£¬ĞèÒªÔÚload_model()ÖĞÒÔ×ÖµäĞÎÊ½Ö¸¶¨layer»òloss¡£
-model = load_model(¡®My_model.h5¡¯, custom_objects={¡®NEW_loss¡¯:NEW_loss,¡®NEW_LAYER¡¯: NEW_LAYER})
+//åœ¨Kerasä¸­ï¼Œå¦‚æœå­˜åœ¨è‡ªå®šä¹‰layeræˆ–è€…lossï¼Œéœ€è¦åœ¨load_model()ä¸­ä»¥å­—å…¸å½¢å¼æŒ‡å®šlayeræˆ–lossã€‚
+model = load_model(â€˜My_model.h5â€™, custom_objects={â€˜NEW_lossâ€™:NEW_loss,â€˜NEW_LAYERâ€™: NEW_LAYER})
 
 
-[2.9] Keras ÖĞÎÄ
+[2.9] Keras ä¸­æ–‡
 
-// Keras ÖĞÎÄ
+// Keras ä¸­æ–‡
 py_tf2\Keras_text_cn.py
 python_w py_tf2\Keras_text_cn.py
 
@@ -288,30 +288,36 @@ python_w py_tf2\Keras_text_cn.py
 
 
 
-[2.11] keras layer-----------¿ÉÑµÁ·µÄ/²»¿ÉÑµÁ·
-ÓÉ layers ´´½¨µÄÈ¨ÖØ¿ÉÒÔÊÇ¿ÉÑµÁ·µÄ£¬Ò²¿ÉÒÔÊÇ²»¿ÉÑµÁ·µÄ¡£
-ÊÇ·ñ¿ÉÑµÁ·¿ÉÒÔÔÚ layer µÄÊôĞÔ ¡°trainable_weights¡± ºÍ ¡°non_trainable_weights¡± ÖĞ¿´µ½¡£
-±ÈÈç£¬ÕâÊÇÒ»¸ö¾ßÓĞ²»¿ÉÑµÁ·È¨ÖØµÄ²ã£º
+[2.11] keras layer-----------å¯è®­ç»ƒçš„/ä¸å¯è®­ç»ƒ
+ç”± layers åˆ›å»ºçš„æƒé‡å¯ä»¥æ˜¯å¯è®­ç»ƒçš„ï¼Œä¹Ÿå¯ä»¥æ˜¯ä¸å¯è®­ç»ƒçš„ã€‚
+æ˜¯å¦å¯è®­ç»ƒå¯ä»¥åœ¨ layer çš„å±æ€§ â€œtrainable_weightsâ€ å’Œ â€œnon_trainable_weightsâ€ ä¸­çœ‹åˆ°ã€‚
+æ¯”å¦‚ï¼Œè¿™æ˜¯ä¸€ä¸ªå…·æœ‰ä¸å¯è®­ç»ƒæƒé‡çš„å±‚ï¼š
 
 
-[2.12] GradientTape----------ĞŞ¸ÄÌİ¶È
-Äã¿ÉÒÔÍ¨¹ıÔÚ GradientTape ÖĞµ÷ÓÃ layer À´×Ô¶¯¼ìË÷¸Ã²ãÈ¨ÖØµÄÌİ¶È¡£
-Ê¹ÓÃÕâĞ©Ìİ¶È£¬Äã¿ÉÒÔÊÖ¶¯»òÊ¹ÓÃÓÅ»¯Æ÷¶ÔÏóÀ´¸üĞÂ layer µÄÈ¨ÖØ¡£
-µ±È»£¬ÄãÒ²¿ÉÒÔÔÚÊ¹ÓÃÌİ¶ÈÖ®Ç°ĞŞ¸ÄËüÃÇ¡£
+[2.12] GradientTape----------ä¿®æ”¹æ¢¯åº¦
+ä½ å¯ä»¥é€šè¿‡åœ¨ GradientTape ä¸­è°ƒç”¨ layer æ¥è‡ªåŠ¨æ£€ç´¢è¯¥å±‚æƒé‡çš„æ¢¯åº¦ã€‚
+ä½¿ç”¨è¿™äº›æ¢¯åº¦ï¼Œä½ å¯ä»¥æ‰‹åŠ¨æˆ–ä½¿ç”¨ä¼˜åŒ–å™¨å¯¹è±¡æ¥æ›´æ–° layer çš„æƒé‡ã€‚
+å½“ç„¶ï¼Œä½ ä¹Ÿå¯ä»¥åœ¨ä½¿ç”¨æ¢¯åº¦ä¹‹å‰ä¿®æ”¹å®ƒä»¬ã€‚
 
 
-[2.13] tf.function-----------¾²Ì¬Í¼
+[2.13] tf.function-----------é™æ€å›¾
 
 
-[2.14] ²»ÎÈ¶¨²ã
-ÓĞĞ©²ã£¬ÌØ±ğÊÇ ¡°BatchNormalization¡± ²ãºÍ ¡°ÍË Dropout¡± ²ã£¬ÔÚÑµÁ·ºÍÍÆÀí¹ı³ÌÖĞ»á±íÏÖ³ö²»Í¬µÄĞĞÎª¡£
-¶ÔÓÚÕâÑùµÄ²ã£¬±ê×¼×ö·¨ÊÇÔÚ ¡°call¡± ·½·¨ÖĞ¼ÓÈëÒ»¸ö ¡°training¡±(boolean) ²ÎÊı¡£
+[2.14] ä¸ç¨³å®šå±‚
+æœ‰äº›å±‚ï¼Œç‰¹åˆ«æ˜¯ â€œBatchNormalizationâ€ å±‚å’Œ â€œé€€ Dropoutâ€ å±‚ï¼Œåœ¨è®­ç»ƒå’Œæ¨ç†è¿‡ç¨‹ä¸­ä¼šè¡¨ç°å‡ºä¸åŒçš„è¡Œä¸ºã€‚
+å¯¹äºè¿™æ ·çš„å±‚ï¼Œæ ‡å‡†åšæ³•æ˜¯åœ¨ â€œcallâ€ æ–¹æ³•ä¸­åŠ å…¥ä¸€ä¸ª â€œtrainingâ€(boolean) å‚æ•°ã€‚
 
 
 [2.15] 
 
 
-[2.16] 
+[2.16] tf.compat.v1.flags.FLAGS
+//	 å‚æ•°æµ‹è¯•
+py_test\tf2_param.py
+python_w py_test\tf2_param.py --main_a=a --second_b=true --second_c=23
+python_w py_test\tf2_param.py --main_a=a
+python_w py_test\tf2_param.py --second_c=23
+	
 
 
 [2.17] 
@@ -349,31 +355,31 @@ python_w py_tf2\Keras_text_cn.py
 
 
 
-[3.1] Demo ------------------(ÎŞÓÃµÄdemo)
+[3.1] Demo ------------------(æ— ç”¨çš„demo)
 //Demo
-// Çé¸Ğ·ÖÎö£¨sentiment analysis£©
+// æƒ…æ„Ÿåˆ†æï¼ˆsentiment analysisï¼‰
 https://blog.csdn.net/weixin_34351321/article/details/89627713
 
 
-// KerasÎÄ±¾±êÇ©2(ÒªÏÂÔØÊı¾İ, ºÜ´ó)
+// Kerasæ–‡æœ¬æ ‡ç­¾2(è¦ä¸‹è½½æ•°æ®, å¾ˆå¤§)
 py_tf2\Keras_text_type.py
 python_w py_tf2\Keras_text_type.py
 
 
 
-// BERTÎÄ±¾·ÖÀà2(tf?)
+// BERTæ–‡æœ¬åˆ†ç±»2(tf?)
 https://github.com/yongzhuo/Keras-TextClassification
 
 
-// BERTÎÄ±¾·ÖÀà3(tf1.9)
+// BERTæ–‡æœ¬åˆ†ç±»3(tf1.9)
 //https://blog.csdn.net/rensihui/article/details/90648291
 https://github.com/yongzhuo/nlp_xiaojiang
 // project + setup.py:
 project\Macro_nlp_xiaojiang.h
 
 
-// TransfromerÄ£ĞÍ
-//   TransfromerÄ£ĞÍ´úÂëÊµÏÖ£¨»ùÓÚKeras£©
+// Transfromeræ¨¡å‹
+//   Transfromeræ¨¡å‹ä»£ç å®ç°ï¼ˆåŸºäºKerasï¼‰
 https://github.com/xiaosongshine/transfromer_keras
 // project:
 project\Macro_nlp_transfromer_keras.h
@@ -382,25 +388,25 @@ project\Macro_nlp_transfromer_keras.h
 
 
 
-[3.2] Demo ------------------(ÓĞÓÃµÄdemo)
-//tf2_Demo---------------µÄÑùÀı
+[3.2] Demo ------------------(æœ‰ç”¨çš„demo)
+//tf2_Demo---------------çš„æ ·ä¾‹
 //tf2_Examples
 project\Macro_api_demo.h
 
 tf2_chinese
-// BERT µÄÈ«³ÆÊÇ»ùÓÚ Transformer µÄË«Ïò±àÂëÆ÷±íÕ÷
+// BERT çš„å…¨ç§°æ˜¯åŸºäº Transformer çš„åŒå‘ç¼–ç å™¨è¡¨å¾
 //     log\Log_...
-//     ipynb×ªpy
+//     ipynbè½¬py
 // project:
 project\Macro_nlp_tf2_chinese.h
 
 
 
 
-[3.3] Demo ------------------ÁÙÊ±
+[3.3] Demo ------------------ä¸´æ—¶
 demoPath = D:\project\Demo
 
-// ÆÀ¹À--cb_metrics------f1_score, Í¼Ò²³ö²»À´
+// è¯„ä¼°--cb_metrics------f1_score, å›¾ä¹Ÿå‡ºä¸æ¥
 demo:tf2_tensorboard\example_cb_metrics.py
 python_w demo:tf2_tensorboard\example_cb_metrics.py
 
@@ -412,7 +418,7 @@ python_w demo:tf2_tensorboard\example_cb_metrics.py
 https://github.com/google-research/bert
 project\Macro_nlp_bert_google.h
 
-// keras-bert:----¿ÉÒÔ²ÎÊıµ¼ÈëÆÕÍ¨ÎÄ±¾ÑµÁ·´Ê¼ä¹ØÏµ
+// keras-bert:----å¯ä»¥å‚æ•°å¯¼å…¥æ™®é€šæ–‡æœ¬è®­ç»ƒè¯é—´å…³ç³»
 //https://github.com/strongio/keras-bert
 
 // BERT_chinese:
@@ -441,26 +447,26 @@ project\Macro_nlp_keras_bert.h
 //game_nlp
 Save:node\Pythons\project\Macro_Pythons_game_nlp.h
 
-//ÖĞ¹ú·¨ÑĞ±­
+//ä¸­å›½æ³•ç ”æ¯
 
 
 
-[3.7] ¶ş·ÖÀà-----------------·Ö´Ê++
-//¶ş·ÖÀà--·Ö´Ê++
+[3.7] äºŒåˆ†ç±»-----------------åˆ†è¯++
+//äºŒåˆ†ç±»--åˆ†è¯++
 https://github.com/elephantnose/Text-classification
 https://www.jianshu.com/p/e091dba8eaaf
 project\Macro_nlp_classier.h
 
 
-//¶ş·ÖÀà
+//äºŒåˆ†ç±»
 categorical_crossentropy
-keras.utils.to_categorical£¬¼´±ãnum_classes=2
+keras.utils.to_categoricalï¼Œå³ä¾¿num_classes=2
 
 
 [3.8] layers
 
 // layers_SCALER
-//   ÑµÁ·ÏµÊı£¬Ê¹Êä³öÊÇÊäÈëµÄ0.1
+//   è®­ç»ƒç³»æ•°ï¼Œä½¿è¾“å‡ºæ˜¯è¾“å…¥çš„0.1
 py_test\tf2_layers_SCALER.py
 python_w py_test\tf2_layers_SCALER.py
 

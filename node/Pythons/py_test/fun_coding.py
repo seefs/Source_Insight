@@ -1,4 +1,4 @@
-
+ï»¿
 
         adchar=chardet.detect(_t1)
         print("  adchar", adchar)
@@ -11,15 +11,15 @@
 
 
 
-#´úÂë²»È«...
+#ä»£ç ä¸å…¨...
 import requests
  
 import coding
  
-# ¼ì²âÎÄ¼ş±àÂë
+# æ£€æµ‹æ–‡ä»¶ç¼–ç 
 print(coding.file_encoding('test1.txt'))
 print(coding.file_encoding('test2.txt'))
-# ¼ì²â×Ö·û´®±àÂë
+# æ£€æµ‹å­—ç¬¦ä¸²ç¼–ç 
 print(coding.string_encoding(requests.get('https://www.baidu.com').content))
 
 

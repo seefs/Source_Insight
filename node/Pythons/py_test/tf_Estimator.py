@@ -1,5 +1,5 @@
-
-//Estimator£¨ÆÀ¹ÀÆ÷£©Àà´ú±íÒ»¸öÄ£ĞÍ£¬ÒÔ¼°ÕâĞ©Ä£ĞÍ±»ÑµÁ·ºÍÆÀ¹ÀµÄ·½Ê½¡£
+ï»¿
+//Estimatorï¼ˆè¯„ä¼°å™¨ï¼‰ç±»ä»£è¡¨ä¸€ä¸ªæ¨¡å‹ï¼Œä»¥åŠè¿™äº›æ¨¡å‹è¢«è®­ç»ƒå’Œè¯„ä¼°çš„æ–¹å¼ã€‚
 
 
 //	def input_fn():
@@ -9,7 +9,7 @@
 //					'PetalWidth':  np.array([2.2, 1.0])}
 //		labels = np.array([2, 1])
 //		return features, labels
-//»ò
+//æˆ–
 //		dataset
 //			dataset.shuffle(1000).repeat().batch(batch_size)
 

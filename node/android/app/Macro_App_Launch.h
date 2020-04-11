@@ -1,96 +1,96 @@
-
-»ù´¡Â·¾¶ÉèÖÃ: 
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®: 
 //basePath = F:\9820e
 //basePath = \\192.168.2.115\xiaoj\9820e\idh.code
 
 /***********************************************************************/
 
-//Ä¿Â¼[Num][Ca]:
-//MTK-Õ¹Ñ¶ĞŞ¸Ä±Ê¼Ç
-Save:node\android\app\Macro_App_Launch.h \[1.0\]  °²×°Í¼ĞÎ»¯½çÃæ£º
-Save:node\android\app\Macro_App_Launch.h \[1.1\] .ÈçºÎÉèÖÃLauncher2¡¢Launcher3µÄ±ÚÖ½Í¬²½
-Save:node\android\app\Macro_App_Launch.h \[1.2\] .ÈçºÎĞŞ¸ÄÊ¹Launcher2ÖĞÎÄ¼ş¼ĞÍ¼±êÃû³ÆÓëÓ¦ÓÃÃû³Æ±£³ÖË®Æ½
-Save:node\android\app\Macro_App_Launch.h \[1.3\] android4.4 LauncherÖĞÈçºÎÒş²ØÖ÷½çÃæÓ¦ÓÃÍ¼±êµÄÓ¦ÓÃÃû³Æ£¿
-Save:node\android\app\Macro_App_Launch.h \[1.4\] ÈçºÎÔÚsprdLauncher2ÖĞÒş²ØÒ»¸öÓ¦ÓÃÍ¼±ê£¿
-Save:node\android\app\Macro_App_Launch.h \[1.5\] Èç¹ûÊµÏÖLauncher2ÖĞ²Ëµ¥ÁĞ±í±³¾°°ëÍ¸Ã÷Ğ§¹û£¿
-Save:node\android\app\Macro_App_Launch.h \[1.6\] ÈçºÎÈÃlauncher²»±»Ò»¼üÇåÀí£¿
-Save:node\android\app\Macro_App_Launch.h \[1.7\] .0LOCAL_OVERRIDES_PACKAGESµÄ×÷ÓÃ
-Save:node\android\app\Macro_App_Launch.h \[1.8\] ÈçºÎÌáÉıLauncherÖĞºĞ×ÓµÈ»¬¶¯ÌØĞ§µÄÁ÷³©¶È
-Save:node\android\app\Macro_App_Launch.h \[1.9\] .ÈçºÎ°ÑSprdLaucher2µÄhotseatÍ¼±êµ×ÏÂ°Ñ¶ÔÓ¦µÄÓ¦ÓÃÃû³ÆitemÏÔÊ¾³öÀ´£¿
-Save:node\android\app\Macro_App_Launch.h \[1.10\] //ÈçºÎĞŞ¸ÄlauncherÖĞÓ¦ÓÃÍ¼±êµÄĞĞÊıºÍÁĞÊı£¿
-Save:node\android\app\Macro_App_Launch.h \[1.11\] ÈçºÎĞŞ¸ÄlauncherµÄÆÁÄ»Êı
-Save:node\android\app\Macro_App_Launch.h \[1.12\] ÈçºÎÌí¼Ó±ÚÖ½×ÊÔ´µ½±ÚÖ½ÁĞ±í?
-Save:node\android\app\Macro_App_Launch.h \[1.13\] ÈçºÎ¸ü»»launcherÖĞµã»÷Ó¦ÓÃµÄ¸ßÁÁ±³¾°
-Save:node\android\app\Macro_App_Launch.h \[1.14\] ÈçºÎÅäÖÃlauncherÊ¹ÓÃ´óÄÚ´æ£¿
-Save:node\android\app\Macro_App_Launch.h \[1.15\] .ÈçºÎ¸ü¸ÄÏµÍ³Ä¬ÈÏÇ½Ö½
-//MTK-Õ¹Ñ¶ĞŞ¸Ä±Ê¼Ç
-Save:node\android\app\Macro_App_Launch.h \[2.1\] .ÈçºÎÉèÖÃÄ¬ÈÏÒ³
-Save:node\android\app\Macro_App_Launch.h \[2.2\] ÈçºÎÒş²Ølauncher3ÖĞµÄËÑË÷¿ò
-Save:node\android\app\Macro_App_Launch.h \[2.3\] ÈçºÎµ÷ÕûÔ­ÉúLauncher3Ö÷½çÃæµÄsearch¿òµÄ´óĞ¡£¿
-Save:node\android\app\Macro_App_Launch.h \[2.4\] ÈÃÖ÷²Ëµ¥²¿·ÖÓ¦ÓÃ°´Ö¸¶¨Ë³ĞòÅÅÔÚÇ°Ãæ£¿
-Save:node\android\app\Macro_App_Launch.h \[2.5\] ÈçºÎÈ·¶¨´ı»úHOME½çÃæ²¼¾ÖÊ¹ÓÃµÄÊÇÄÄ¸ödefault_workspaceÎÄ¼ş£¿
-Save:node\android\app\Macro_App_Launch.h \[2.6\] ÈçºÎÌæ»»µÚÈı·½Ó¦ÓÃÔÚlauncherÉÏÏÔÊ¾µÄÍ¼±ê£¿
-Save:node\android\app\Macro_App_Launch.h \[2.7\] //ÈçºÎÈ¥µôLauncher3µÄ¿ª»úÒıµ¼Ò³Ãæ£¿
-Save:node\android\app\Macro_App_Launch.h \[2.8\] ÎªºÎLauncher3ÉèÖÃÒ»Ğ©±ÚÖ½ºó£¬±ÚÖ½ÏÔÊ¾±ÈÔ¤ÀÀÍ¼Ä£ºı£¿
-Save:node\android\app\Macro_App_Launch.h \[2.9\] 6.0Æ½Ì¨ÉÏLauncher3×Ô´øµÄ±ÚÖ½Â·¾¶ÊÇÊ²Ã´£¿
+//ç›®å½•[Num][Ca]:
+//MTK-å±•è®¯ä¿®æ”¹ç¬”è®°
+Save:node\android\app\Macro_App_Launch.h \[1.0\]  å®‰è£…å›¾å½¢åŒ–ç•Œé¢ï¼š
+Save:node\android\app\Macro_App_Launch.h \[1.1\] .å¦‚ä½•è®¾ç½®Launcher2ã€Launcher3çš„å£çº¸åŒæ­¥
+Save:node\android\app\Macro_App_Launch.h \[1.2\] .å¦‚ä½•ä¿®æ”¹ä½¿Launcher2ä¸­æ–‡ä»¶å¤¹å›¾æ ‡åç§°ä¸åº”ç”¨åç§°ä¿æŒæ°´å¹³
+Save:node\android\app\Macro_App_Launch.h \[1.3\] android4.4 Launcherä¸­å¦‚ä½•éšè—ä¸»ç•Œé¢åº”ç”¨å›¾æ ‡çš„åº”ç”¨åç§°ï¼Ÿ
+Save:node\android\app\Macro_App_Launch.h \[1.4\] å¦‚ä½•åœ¨sprdLauncher2ä¸­éšè—ä¸€ä¸ªåº”ç”¨å›¾æ ‡ï¼Ÿ
+Save:node\android\app\Macro_App_Launch.h \[1.5\] å¦‚æœå®ç°Launcher2ä¸­èœå•åˆ—è¡¨èƒŒæ™¯åŠé€æ˜æ•ˆæœï¼Ÿ
+Save:node\android\app\Macro_App_Launch.h \[1.6\] å¦‚ä½•è®©launcherä¸è¢«ä¸€é”®æ¸…ç†ï¼Ÿ
+Save:node\android\app\Macro_App_Launch.h \[1.7\] .0LOCAL_OVERRIDES_PACKAGESçš„ä½œç”¨
+Save:node\android\app\Macro_App_Launch.h \[1.8\] å¦‚ä½•æå‡Launcherä¸­ç›’å­ç­‰æ»‘åŠ¨ç‰¹æ•ˆçš„æµç•…åº¦
+Save:node\android\app\Macro_App_Launch.h \[1.9\] .å¦‚ä½•æŠŠSprdLaucher2çš„hotseatå›¾æ ‡åº•ä¸‹æŠŠå¯¹åº”çš„åº”ç”¨åç§°itemæ˜¾ç¤ºå‡ºæ¥ï¼Ÿ
+Save:node\android\app\Macro_App_Launch.h \[1.10\] //å¦‚ä½•ä¿®æ”¹launcherä¸­åº”ç”¨å›¾æ ‡çš„è¡Œæ•°å’Œåˆ—æ•°ï¼Ÿ
+Save:node\android\app\Macro_App_Launch.h \[1.11\] å¦‚ä½•ä¿®æ”¹launcherçš„å±å¹•æ•°
+Save:node\android\app\Macro_App_Launch.h \[1.12\] å¦‚ä½•æ·»åŠ å£çº¸èµ„æºåˆ°å£çº¸åˆ—è¡¨?
+Save:node\android\app\Macro_App_Launch.h \[1.13\] å¦‚ä½•æ›´æ¢launcherä¸­ç‚¹å‡»åº”ç”¨çš„é«˜äº®èƒŒæ™¯
+Save:node\android\app\Macro_App_Launch.h \[1.14\] å¦‚ä½•é…ç½®launcherä½¿ç”¨å¤§å†…å­˜ï¼Ÿ
+Save:node\android\app\Macro_App_Launch.h \[1.15\] .å¦‚ä½•æ›´æ”¹ç³»ç»Ÿé»˜è®¤å¢™çº¸
+//MTK-å±•è®¯ä¿®æ”¹ç¬”è®°
+Save:node\android\app\Macro_App_Launch.h \[2.1\] .å¦‚ä½•è®¾ç½®é»˜è®¤é¡µ
+Save:node\android\app\Macro_App_Launch.h \[2.2\] å¦‚ä½•éšè—launcher3ä¸­çš„æœç´¢æ¡†
+Save:node\android\app\Macro_App_Launch.h \[2.3\] å¦‚ä½•è°ƒæ•´åŸç”ŸLauncher3ä¸»ç•Œé¢çš„searchæ¡†çš„å¤§å°ï¼Ÿ
+Save:node\android\app\Macro_App_Launch.h \[2.4\] è®©ä¸»èœå•éƒ¨åˆ†åº”ç”¨æŒ‰æŒ‡å®šé¡ºåºæ’åœ¨å‰é¢ï¼Ÿ
+Save:node\android\app\Macro_App_Launch.h \[2.5\] å¦‚ä½•ç¡®å®šå¾…æœºHOMEç•Œé¢å¸ƒå±€ä½¿ç”¨çš„æ˜¯å“ªä¸ªdefault_workspaceæ–‡ä»¶ï¼Ÿ
+Save:node\android\app\Macro_App_Launch.h \[2.6\] å¦‚ä½•æ›¿æ¢ç¬¬ä¸‰æ–¹åº”ç”¨åœ¨launcherä¸Šæ˜¾ç¤ºçš„å›¾æ ‡ï¼Ÿ
+Save:node\android\app\Macro_App_Launch.h \[2.7\] //å¦‚ä½•å»æ‰Launcher3çš„å¼€æœºå¼•å¯¼é¡µé¢ï¼Ÿ
+Save:node\android\app\Macro_App_Launch.h \[2.8\] ä¸ºä½•Launcher3è®¾ç½®ä¸€äº›å£çº¸åï¼Œå£çº¸æ˜¾ç¤ºæ¯”é¢„è§ˆå›¾æ¨¡ç³Šï¼Ÿ
+Save:node\android\app\Macro_App_Launch.h \[2.9\] 6.0å¹³å°ä¸ŠLauncher3è‡ªå¸¦çš„å£çº¸è·¯å¾„æ˜¯ä»€ä¹ˆï¼Ÿ
 
 
 
 
-MTK-Õ¹Ñ¶ĞŞ¸Ä±Ê¼Ç
-[1.0]  °²×°Í¼ĞÎ»¯½çÃæ£º
+MTK-å±•è®¯ä¿®æ”¹ç¬”è®°
+[1.0]  å®‰è£…å›¾å½¢åŒ–ç•Œé¢ï¼š
 sudo apt-get install git-core git-gui
 
 
 
-[1.1] .ÈçºÎÉèÖÃLauncher2¡¢Launcher3µÄ±ÚÖ½Í¬²½
-//ÓÉÓÚSprdLauncher1ºÍSprdLauncher2ÖĞÖ§³Ö·Ö¿ªÉèÖÃÖ÷ÆÁ±ÚÖ½ºÍËøÆÁ±ÚÖ½£¬
-//ËùÒÔËøÆÁÔÚ»ñÈ¡±ÚÖ½µÄÊ±ºò£¬»á»ñÈ¡¶ÔÆëµÄËøÆÁ±ÚÖ½ÀàĞÍ¡£
-//Ä¿Ç°Ô­ÉúLauncher2ºÍÔ­ÉúLauncher3²»Ö§³Ö·Ö¿ªÉèÖÃ£¬
-//ËùÒÔÒª±£Ö¤Ô­ÉúLauncher2ºÍÔ­ÉúLauncher3ÉèÖÃ±ÚÖ½µÄÊ±ºò£¬ËøÆÁ¸úÖ÷ÆÁ±£³ÖÒ»ÖÂ£¬
-//Ö»ĞèÒªËøÆÁÔÚ»ñÈ¡±ÚÖ½µÄÊ±ºò£¬»ñÈ¡µÄ±ÚÖ½ÀàĞÍÒ²ÊÇÖ÷ÆÁ±ÚÖ½ÀàĞÍ¡£
+[1.1] .å¦‚ä½•è®¾ç½®Launcher2ã€Launcher3çš„å£çº¸åŒæ­¥
+//ç”±äºSprdLauncher1å’ŒSprdLauncher2ä¸­æ”¯æŒåˆ†å¼€è®¾ç½®ä¸»å±å£çº¸å’Œé”å±å£çº¸ï¼Œ
+//æ‰€ä»¥é”å±åœ¨è·å–å£çº¸çš„æ—¶å€™ï¼Œä¼šè·å–å¯¹é½çš„é”å±å£çº¸ç±»å‹ã€‚
+//ç›®å‰åŸç”ŸLauncher2å’ŒåŸç”ŸLauncher3ä¸æ”¯æŒåˆ†å¼€è®¾ç½®ï¼Œ
+//æ‰€ä»¥è¦ä¿è¯åŸç”ŸLauncher2å’ŒåŸç”ŸLauncher3è®¾ç½®å£çº¸çš„æ—¶å€™ï¼Œé”å±è·Ÿä¸»å±ä¿æŒä¸€è‡´ï¼Œ
+//åªéœ€è¦é”å±åœ¨è·å–å£çº¸çš„æ—¶å€™ï¼Œè·å–çš„å£çº¸ç±»å‹ä¹Ÿæ˜¯ä¸»å±å£çº¸ç±»å‹ã€‚
 
-//ĞŞ¸ÄÈçÏÂ£º
-//Çë¶¨Î»µ½KeyguardViewManager.javaÖĞµÄmaybeCreateKeyguardLocked·½·¨£º
+//ä¿®æ”¹å¦‚ä¸‹ï¼š
+//è¯·å®šä½åˆ°KeyguardViewManager.javaä¸­çš„maybeCreateKeyguardLockedæ–¹æ³•ï¼š
 frameworks\base\packages\Keyguard\src\com\android\keyguard\KeyguardViewManager.java WALLPAPER_LOCKSCREEN_TYPE
 //	Drawable drawable = wm.getDrawable(WallpaperInfo.WALLPAPER_LOCKSCREEN_TYPE);
 //	mCustomWallPaper = drawable;
-°ÑDrawable drawable = wm.getDrawable(WallpaperInfo.WALLPAPER_LOCKSCREEN_TYPE);
-ĞŞ¸ÄÎªDrawable drawable = wm.getDrawable(WallpaperInfo.WALLPAPER_MAINMENU_TYPE); 
+æŠŠDrawable drawable = wm.getDrawable(WallpaperInfo.WALLPAPER_LOCKSCREEN_TYPE);
+ä¿®æ”¹ä¸ºDrawable drawable = wm.getDrawable(WallpaperInfo.WALLPAPER_MAINMENU_TYPE); 
 
 
-[1.2] .ÈçºÎĞŞ¸ÄÊ¹Launcher2ÖĞÎÄ¼ş¼ĞÍ¼±êÃû³ÆÓëÓ¦ÓÃÃû³Æ±£³ÖË®Æ½
-Çë¶¨Îªµ½/packages/apps/Launcher2/res/values/dimens.xmlÎÄ¼şÖĞ
+[1.2] .å¦‚ä½•ä¿®æ”¹ä½¿Launcher2ä¸­æ–‡ä»¶å¤¹å›¾æ ‡åç§°ä¸åº”ç”¨åç§°ä¿æŒæ°´å¹³
+è¯·å®šä¸ºåˆ°/packages/apps/Launcher2/res/values/dimens.xmlæ–‡ä»¶ä¸­
 packages/apps/Launcher2/res/values/dimens.xml folder_icon_padding_top
-µ÷ÕûÏÂÃæµÄÖµ¼´¿É£º
+è°ƒæ•´ä¸‹é¢çš„å€¼å³å¯ï¼š
 //  <dimen name="folder_icon_padding_top">2dp</dimen>
 
 
-[1.3] android4.4 LauncherÖĞÈçºÎÒş²ØÖ÷½çÃæÓ¦ÓÃÍ¼±êµÄÓ¦ÓÃÃû³Æ£¿
-ÒÔsprdLauncher2¾ÙÀı£º
-Çë¶¨Î»µ½vendor/sprd/UniverseUI/SprdLauncher2/src/com/android/sprdlauncher2/CellLayout.javaÎÄ¼ş:
+[1.3] android4.4 Launcherä¸­å¦‚ä½•éšè—ä¸»ç•Œé¢åº”ç”¨å›¾æ ‡çš„åº”ç”¨åç§°ï¼Ÿ
+ä»¥sprdLauncher2ä¸¾ä¾‹ï¼š
+è¯·å®šä½åˆ°vendor/sprd/UniverseUI/SprdLauncher2/src/com/android/sprdlauncher2/CellLayout.javaæ–‡ä»¶:
 vendor/sprd/UniverseUI/SprdLauncher2/src/com/android/sprdlauncher2/CellLayout.java addViewToCellLayout
-È»ºó¶¨Î»µ½addViewToCellLayout·½·¨£º
+ç„¶åå®šä½åˆ°addViewToCellLayoutæ–¹æ³•ï¼š
 //        if (child instanceof BubbleTextView) {
 //            BubbleTextView bubbleChild = (BubbleTextView) child;
 //            bubbleChild.setTextVisibility(!mIsHotseat);
 //        }
-ĞŞ¸ÄÎª£º
+ä¿®æ”¹ä¸ºï¼š
 //        if (child instanceof BubbleTextView) {
 //            BubbleTextView bubbleChild = (BubbleTextView) child;
 //            bubbleChild.setTextVisibility(false);
 //        }
 
 		
-[1.4] ÈçºÎÔÚsprdLauncher2ÖĞÒş²ØÒ»¸öÓ¦ÓÃÍ¼±ê£¿
-//ÒÔÒş²Ø°Ù¶ÈµØÍ¼ÎªÀı£¬ĞŞ¸ÄÈçÏÂ£º
-//Çë¶¨Î»µ½/vendor/sprd/UniverseUI/SprdLauncher2/src/com/android/sprdlauncher2/LauncherModel.javaÎÄ¼ş£¬
-//	²éÕÒverifyApplications·½·¨£º
+[1.4] å¦‚ä½•åœ¨sprdLauncher2ä¸­éšè—ä¸€ä¸ªåº”ç”¨å›¾æ ‡ï¼Ÿ
+//ä»¥éšè—ç™¾åº¦åœ°å›¾ä¸ºä¾‹ï¼Œä¿®æ”¹å¦‚ä¸‹ï¼š
+//è¯·å®šä½åˆ°/vendor/sprd/UniverseUI/SprdLauncher2/src/com/android/sprdlauncher2/LauncherModel.javaæ–‡ä»¶ï¼Œ
+//	æŸ¥æ‰¾verifyApplicationsæ–¹æ³•ï¼š
 vendor/sprd/UniverseUI/SprdLauncher2/src/com/android/sprdlauncher2/LauncherModel.java void verifyApplications()
 //    if (tmpInfos.isEmpty()) {
 //        added.add(app);
 //         }
-ĞŞ¸ÄÎª£º
+ä¿®æ”¹ä¸ºï¼š
 //    if (tmpInfos.isEmpty()) {
 //        ComponentName cn = app.componentName;
 //	     Log.e(TAG,"cn = "+cn);
@@ -103,8 +103,8 @@ vendor/sprd/UniverseUI/SprdLauncher2/src/com/android/sprdlauncher2/LauncherModel
 //     }
 
 
-[1.5] Èç¹ûÊµÏÖLauncher2ÖĞ²Ëµ¥ÁĞ±í±³¾°°ëÍ¸Ã÷Ğ§¹û£¿
-//Android4.4ÖĞµÄLauncher2Ä¬ÈÏÃ»ÓĞ¿ªÆô²Ëµ¥ÁĞ±í±³¾°Í¸Ã÷Ğ§¹û£¬´¿ºÚÉ«±³¾°Ğ§¹û²»ÊÇÌ«ºÃ£¬Èç¹ûĞèÒª¿ªÆô²Ëµ¥±³¾°Í¸Ã÷Ğ§¹û£¬¿ÉÒÔ²Î¿¼ÈçÏÂĞŞ¸ÄÀ´ÊµÏÖ£º
+[1.5] å¦‚æœå®ç°Launcher2ä¸­èœå•åˆ—è¡¨èƒŒæ™¯åŠé€æ˜æ•ˆæœï¼Ÿ
+//Android4.4ä¸­çš„Launcher2é»˜è®¤æ²¡æœ‰å¼€å¯èœå•åˆ—è¡¨èƒŒæ™¯é€æ˜æ•ˆæœï¼Œçº¯é»‘è‰²èƒŒæ™¯æ•ˆæœä¸æ˜¯å¤ªå¥½ï¼Œå¦‚æœéœ€è¦å¼€å¯èœå•èƒŒæ™¯é€æ˜æ•ˆæœï¼Œå¯ä»¥å‚è€ƒå¦‚ä¸‹ä¿®æ”¹æ¥å®ç°ï¼š
 packages/apps/Launcher2/res/layout/apps_customize_pane.xml AppsCustomizeTabHost
 
 diff --git a/packages/apps/Launcher2/res/layout/apps_customize_pane.xml b/packages/apps/Launcher2/res/layout/apps_customize_pane.xml
@@ -199,9 +199,9 @@ index 56aa73b..51024f9 100644
      }
 
 	 
-[1.6] ÈçºÎÈÃlauncher²»±»Ò»¼üÇåÀí£¿
-Ò»¼üÇåÀíÓ¦ÓÃµÄÄ¿Â¼£º
-ÔÚpackages\apps\RamOptimizer\res\values\arrays.xmlÎÄ¼şÀïÓĞ¶Ô²»ĞèÒªÇåÀíµÄÓ¦ÓÃ½øĞĞÅäÖÃ£º
+[1.6] å¦‚ä½•è®©launcherä¸è¢«ä¸€é”®æ¸…ç†ï¼Ÿ
+ä¸€é”®æ¸…ç†åº”ç”¨çš„ç›®å½•ï¼š
+åœ¨packages\apps\RamOptimizer\res\values\arrays.xmlæ–‡ä»¶é‡Œæœ‰å¯¹ä¸éœ€è¦æ¸…ç†çš„åº”ç”¨è¿›è¡Œé…ç½®ï¼š
 packages\apps\RamOptimizer\res\values\arrays.xml recent_keep_app
 //    <!-- the name of app that we want to kill -->
 //    <string-array name="recent_keep_app" translatable="false">
@@ -219,14 +219,14 @@ packages\apps\RamOptimizer\res\values\arrays.xml recent_keep_service
 //        <item>com.sprd.videoswallpapers</item>
 //    </string-array>
 
-Èç¹ûÏëÈÃ×Ô¼ºµÄÓ¦ÓÃ²»±»ÇåÀí£¬°Ñ°üÃûÌí¼Óµ½recent_keep_appÊı×é¼´¿É¡£
+å¦‚æœæƒ³è®©è‡ªå·±çš„åº”ç”¨ä¸è¢«æ¸…ç†ï¼ŒæŠŠåŒ…åæ·»åŠ åˆ°recent_keep_appæ•°ç»„å³å¯ã€‚
 
 
-[1.7] .0LOCAL_OVERRIDES_PACKAGESµÄ×÷ÓÃ
-¹ØÓÚandroid.mkÖĞµÄLOCAL_OVERRIDES_PACKAGES£¬´Ë±äÁ¿¿ÉÒÔÊ¹¶¨ÒåµÄÆäËüÄ£¿éÎŞ·¨±àÒëÉú³Éµ½ÏµÍ³ÖĞ,Ê¹ÓÃ±¾Ä£¿é×÷ÎªÌæ»»¡£
-±ÈÈçÔÚSprdLauncher2µÄandroid.mkÀï
-¶¨ÒåÁË LOCAL_OVERRIDES_PACKAGES := Launcher3
-ÔÚÊ¹ÓÃÁËSprdLauncher2µÄ¹¤³ÌÀï¾ÍÎŞ·¨¼¯³ÉÔ­ÉúµÄ Launcher3¡£
+[1.7] .0LOCAL_OVERRIDES_PACKAGESçš„ä½œç”¨
+å…³äºandroid.mkä¸­çš„LOCAL_OVERRIDES_PACKAGESï¼Œæ­¤å˜é‡å¯ä»¥ä½¿å®šä¹‰çš„å…¶å®ƒæ¨¡å—æ— æ³•ç¼–è¯‘ç”Ÿæˆåˆ°ç³»ç»Ÿä¸­,ä½¿ç”¨æœ¬æ¨¡å—ä½œä¸ºæ›¿æ¢ã€‚
+æ¯”å¦‚åœ¨SprdLauncher2çš„android.mké‡Œ
+å®šä¹‰äº† LOCAL_OVERRIDES_PACKAGES := Launcher3
+åœ¨ä½¿ç”¨äº†SprdLauncher2çš„å·¥ç¨‹é‡Œå°±æ— æ³•é›†æˆåŸç”Ÿçš„ Launcher3ã€‚
 vendor\sprd\UniverseUI\SprdLauncher2\android.mk LOCAL_OVERRIDES_PACKAGES
 //		LOCAL_PACKAGE_NAME := SprdLauncher2
 //		#LOCAL_CERTIFICATE := shared
@@ -234,91 +234,91 @@ vendor\sprd\UniverseUI\SprdLauncher2\android.mk LOCAL_OVERRIDES_PACKAGES
 //		LOCAL_OVERRIDES_PACKAGES := Launcher3
 
 
-[1.8] ÈçºÎÌáÉıLauncherÖĞºĞ×ÓµÈ»¬¶¯ÌØĞ§µÄÁ÷³©¶È
-LauncherÖĞ»¬¶¯ÌØĞ§µÄÎÄ¼şÔÚ£º
+[1.8] å¦‚ä½•æå‡Launcherä¸­ç›’å­ç­‰æ»‘åŠ¨ç‰¹æ•ˆçš„æµç•…åº¦
+Launcherä¸­æ»‘åŠ¨ç‰¹æ•ˆçš„æ–‡ä»¶åœ¨ï¼š
 vendor\sprd\UniverseUI\SprdLauncher1\src\com\sprd\sprdlauncher1\effect\CrossEffect.java setAlpha
 vendor\sprd\UniverseUI\SprdLauncher2\src\com\sprd\sprdlauncher2\effect\CrossEffect.java setAlpha
 //	float mAlpha = 1.0F - Math.abs(offset);
 //	transformation.setAlpha(mAlpha);
 //	// viewiew.setAlpha(mAlpha);
 
-ºĞ×ÓµÈÌØĞ§Ïà±ÈÓÚpageÌØĞ§Ö÷ÒªÂıÔÚALPHA»æÖÆÉÏ£¬ÒòÎªALPHA»æÖÆ±¾ÉíºÄÊ±¾Í±È½Ï³¤£¬ËùÒÔ£º
-Èç¹ûÏëÌáÉı»¬¶¯ÌØĞ§Á÷³©¶È£¬ÇëÉ¾³ıÌØĞ§ÖĞgetTransformationMatrixº¯ÊıÖĞ¹ØÓÚALPHA±ä»¯µÄ´úÂë£º
-Èç£º
-CrossEffect.javaÖĞ£º
+ç›’å­ç­‰ç‰¹æ•ˆç›¸æ¯”äºpageç‰¹æ•ˆä¸»è¦æ…¢åœ¨ALPHAç»˜åˆ¶ä¸Šï¼Œå› ä¸ºALPHAç»˜åˆ¶æœ¬èº«è€—æ—¶å°±æ¯”è¾ƒé•¿ï¼Œæ‰€ä»¥ï¼š
+å¦‚æœæƒ³æå‡æ»‘åŠ¨ç‰¹æ•ˆæµç•…åº¦ï¼Œè¯·åˆ é™¤ç‰¹æ•ˆä¸­getTransformationMatrixå‡½æ•°ä¸­å…³äºALPHAå˜åŒ–çš„ä»£ç ï¼š
+å¦‚ï¼š
+CrossEffect.javaä¸­ï¼š
 
-È¥µôÒÔÏÂ´úÂë£º
+å»æ‰ä»¥ä¸‹ä»£ç ï¼š
         float absOffset = Math.abs(offset);
         float mAlpha = 1.0F - absOffset * 0.4f;
         view.setAlpha(mAlpha);
 
 		
-[1.9] .ÈçºÎ°ÑSprdLaucher2µÄhotseatÍ¼±êµ×ÏÂ°Ñ¶ÔÓ¦µÄÓ¦ÓÃÃû³ÆitemÏÔÊ¾³öÀ´£¿
-//1.´úÂëµ÷Õû£º
+[1.9] .å¦‚ä½•æŠŠSprdLaucher2çš„hotseatå›¾æ ‡åº•ä¸‹æŠŠå¯¹åº”çš„åº”ç”¨åç§°itemæ˜¾ç¤ºå‡ºæ¥ï¼Ÿ
+//1.ä»£ç è°ƒæ•´ï¼š
 vendor\sprd\UniverseUI\SprdLauncher2\src\com\android\sprdlauncher2\CellLayout.java bubbleChild
 //	BubbleTextView bubbleChild = (BubbleTextView) child;
 //	bubbleChild.setTextVisibility(!mIsHotseat);
-//			¸ÄÎª bubbleChild.setTextVisibility(true);
+//			æ”¹ä¸º bubbleChild.setTextVisibility(true);
 
 vendor\sprd\UniverseUI\SprdLauncher2\src\com\android\sprdlauncher2\Workspace.java (FolderIcon)^child
 //	 //Hide folder title in the hotseat
 //	if (child instanceof FolderIcon) {
 //		((FolderIcon) child).setTextVisible(false);
 //	}
-//	¸ÄÎª ((FolderIcon)child).setTextVisible(true);
+//	æ”¹ä¸º ((FolderIcon)child).setTextVisible(true);
 
 
 
-//2.ĞŞ¸Ähotseat.xml²¼¾ÖÎÄ¼ş£º
+//2.ä¿®æ”¹hotseat.xmlå¸ƒå±€æ–‡ä»¶ï¼š
 packages\apps\Launcher2\res\layout-port\hotseat.xml
 packages\apps\Launcher3\res\layout\hotseat.xml
 vendor\sprd\UniverseUI\SprdLauncher1\res\layout\hotseat.xml
 vendor\sprd\UniverseUI\SprdLauncher2\res\layout\hotseat.xml
-//	  ¸ù¾İĞèÒªµ÷Õû£¬ÀıÈç£º
+//	  æ ¹æ®éœ€è¦è°ƒæ•´ï¼Œä¾‹å¦‚ï¼š
 //
-//	ĞŞ¸ÄÎª
+//	ä¿®æ”¹ä¸º
 //	<com.android.sprdlauncher2.Hotseat
 //	    xmlns:android="http://schemas.android.com/apk/res/android"
 //	    xmlns:launcher="http://schemas.android.com/apk/res-auto/com.android.sprdlauncher2">
 //	    <com.android.sprdlauncher2.CellLayout
 //	        android:id="@+id/layout"
-//	        android:layout_marginBottom="XXXdp"    //ĞŞ¸Ähotseat¾àÀëµ×²¿µÄÎ»ÖÃ
+//	        android:layout_marginBottom="XXXdp"    //ä¿®æ”¹hotseatè·ç¦»åº•éƒ¨çš„ä½ç½®
 //	        android:layout_width="wrap_content"
-//	        android:layout_height="XXXdp"  // hotseat¸ß¶È
+//	        android:layout_height="XXXdp"  // hotseaté«˜åº¦
 //	        android:layout_gravity="center" />
 //	</com.android.sprdlauncher2.Hotseat>
 
 
-[1.10] //ÈçºÎĞŞ¸ÄlauncherÖĞÓ¦ÓÃÍ¼±êµÄĞĞÊıºÍÁĞÊı£¿
-//ºáÆÁ£º
+[1.10] //å¦‚ä½•ä¿®æ”¹launcherä¸­åº”ç”¨å›¾æ ‡çš„è¡Œæ•°å’Œåˆ—æ•°ï¼Ÿ
+//æ¨ªå±ï¼š
 //packages\apps\Launcher2\res\layout-land\workspace_screen.xml
 //
-//ÊúÆÁ
+//ç«–å±
 //packages\apps\Launcher2\res\layout-port\workspace_screen.xml
 
 //packages\apps\Launcher2\res\layout\workspace_screen.xml
 //packages\apps\Launcher3\res\layout\workspace_screen.xml
 //vendor\sprd\UniverseUI\SprdLauncher2\res\layout\workspace_screen.xml
 //
-//ĞŞ¸ÄÀïÃæ¸ñ×ÓµÄÊıÁ¿
-//    launcher:shortAxisCells=¡±4¡å
-//    launcher:longAxisCells=¡±4¡å
+//ä¿®æ”¹é‡Œé¢æ ¼å­çš„æ•°é‡
+//    launcher:shortAxisCells=â€4â€³
+//    launcher:longAxisCells=â€4â€³
 //
-//»¹¿ÉÒÔµ÷ÕûÒ»ÏÂ¸ñ×ÓÃÇÓë×óÓÒºÍÉÏÏÂµÄ±ß¾à
-//    launcher:longAxisStartPadding=¡±65dip¡±
-//    launcher:longAxisEndPadding=¡±65dip¡±
-//    launcher:shortAxisStartPadding=¡±0dip¡±
-//    launcher:shortAxisEndPadding=¡±0dip¡±
+//è¿˜å¯ä»¥è°ƒæ•´ä¸€ä¸‹æ ¼å­ä»¬ä¸å·¦å³å’Œä¸Šä¸‹çš„è¾¹è·
+//    launcher:longAxisStartPadding=â€65dipâ€
+//    launcher:longAxisEndPadding=â€65dipâ€
+//    launcher:shortAxisStartPadding=â€0dipâ€
+//    launcher:shortAxisEndPadding=â€0dipâ€
 
 
-[1.11] ÈçºÎĞŞ¸ÄlauncherµÄÆÁÄ»Êı
-Ê×ÏÈ£¬ÔÚLauncher.java´úÂëÖĞĞŞ¸Ä×ÜµÄÒ³ÊıºÍÄ¬ÈÏÏÔÊ¾Ò³£º
+[1.11] å¦‚ä½•ä¿®æ”¹launcherçš„å±å¹•æ•°
+é¦–å…ˆï¼Œåœ¨Launcher.javaä»£ç ä¸­ä¿®æ”¹æ€»çš„é¡µæ•°å’Œé»˜è®¤æ˜¾ç¤ºé¡µï¼š
 packages\apps\Launcher3\src\com\android\launcher3\Launcher.java SCREEN_COUNT
 //    static final int SCREEN_COUNT = 5;
-//    static final int DEFAULT_SCREEN = 2;//µÚÒ»Ò³ÊÇ´Ó0¿ªÊ¼¼ÆÊı£¬ÕâÀïÊÇ°ÑµÚÈı¸öÒ³Ãæ×÷ÎªÄ¬ÈÏÊ×Ò³  
-µÚÒ»¸öÊÇ¶¨ÒåÆÁÄ»¸öÊı£¬µÚÒ»¸ö²ÎÊıÊÇÄ¬ÈÏµÄÊ×Ò³¡£
+//    static final int DEFAULT_SCREEN = 2;//ç¬¬ä¸€é¡µæ˜¯ä»0å¼€å§‹è®¡æ•°ï¼Œè¿™é‡Œæ˜¯æŠŠç¬¬ä¸‰ä¸ªé¡µé¢ä½œä¸ºé»˜è®¤é¦–é¡µ  
+ç¬¬ä¸€ä¸ªæ˜¯å®šä¹‰å±å¹•ä¸ªæ•°ï¼Œç¬¬ä¸€ä¸ªå‚æ•°æ˜¯é»˜è®¤çš„é¦–é¡µã€‚
 
-Æä´Î£º»¹ĞèÒªĞŞ¸Ä launcher.xml
+å…¶æ¬¡ï¼šè¿˜éœ€è¦ä¿®æ”¹ launcher.xml
 packages\apps\Launcher2\res\layout-port\launcher.xml
 //    <!-- The workspace contains 5 screens of cells -->
 //    <com.android.launcher2.Workspace
@@ -335,15 +335,15 @@ packages\apps\Launcher2\res\layout-port\launcher.xml
 //        <include android:id="@+id/cell5" layout="@layout/workspace_screen" />
 //    </com.android.launcher2.Workspace>
 
-µ¼ÈëÁËÎå¸öworkspace_screen£¬ÔÚÕâÀï£¬²ÎÕÕÉÏÃæĞŞ¸ÄµÄ²ÎÊı£¬Ìí¼Ó»òÕßÉ¾³ıworkspace_screen¡£
-²¢ÇÒ launcher:defaultScreen="2">  ¶¨ÒåµÄdefaultScreen.ÒªĞŞ¸Ä³É¶ÔÓ¦µÄÖµ¡£
+å¯¼å…¥äº†äº”ä¸ªworkspace_screenï¼Œåœ¨è¿™é‡Œï¼Œå‚ç…§ä¸Šé¢ä¿®æ”¹çš„å‚æ•°ï¼Œæ·»åŠ æˆ–è€…åˆ é™¤workspace_screenã€‚
+å¹¶ä¸” launcher:defaultScreen="2">  å®šä¹‰çš„defaultScreen.è¦ä¿®æ”¹æˆå¯¹åº”çš„å€¼ã€‚
 
-ÁíÍâ£¬ĞŞ¸ÄWorkspace.javaÖĞ»ñÈ¡²»µ½ÖµÊ±µÄÄ¬ÈÏÊ×Ò³£¬È·±£Òì³£Çé¿öÏÂÄ¬ÈÏÊ×Ò³Ò»ÖÂ 
+å¦å¤–ï¼Œä¿®æ”¹Workspace.javaä¸­è·å–ä¸åˆ°å€¼æ—¶çš„é»˜è®¤é¦–é¡µï¼Œç¡®ä¿å¼‚å¸¸æƒ…å†µä¸‹é»˜è®¤é¦–é¡µä¸€è‡´ 
 packages\apps\Launcher3\src\com\android\launcher3\Workspace.java  R.styleable.Workspace_defaultScreen
 //        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.Workspace, defStyle, 0);
 //        mDefaultScreen = a.getInt(R.styleable.Workspace_defaultScreen, 1);
 
-×îºó£¬¶Ô res/xmlÎÄ¼şÖĞdefault_workspace.xml×ö³öÏàÓ¦µÄĞŞ¸Ä¡£ÕâÀïÃæÊÇworkspace³õÊ¼ÏÔÊ¾µÄiconºÍwidget¡£
+æœ€åï¼Œå¯¹ res/xmlæ–‡ä»¶ä¸­default_workspace.xmlåšå‡ºç›¸åº”çš„ä¿®æ”¹ã€‚è¿™é‡Œé¢æ˜¯workspaceåˆå§‹æ˜¾ç¤ºçš„iconå’Œwidgetã€‚
 packages\apps\Launcher2\res\xml\default_workspace.xml
 packages\apps\Launcher3\res\xml\default_workspace.xml
 vendor\sprd\operator\cmcc\nowcn\overlay\vendor\sprd\UniverseUI\SprdLauncher1\res\xml\default_workspace.xml
@@ -355,39 +355,39 @@ vendor\sprd\UniverseUI\SprdLauncher2\res\xml\default_workspace.xml
 
 
 
-[1.12] ÈçºÎÌí¼Ó±ÚÖ½×ÊÔ´µ½±ÚÖ½ÁĞ±í?
-½â¾ö£º ÒÔwallpaper_lake.jpgÎªÀı
+[1.12] å¦‚ä½•æ·»åŠ å£çº¸èµ„æºåˆ°å£çº¸åˆ—è¡¨?
+è§£å†³ï¼š ä»¥wallpaper_lake.jpgä¸ºä¾‹
 
-//1.¿½±´±ÚÖ½Í¼Æ¬ wallpaper_lake.jpgºÍwallpaper_lake_small.jpg µ½ÏàÓ¦Ä¿Â¼
-packages/apps/Launcher2/res/drawable-¶ÔÓ¦ÏñËØ/wallpaper_lake.jpg
-packages/apps/Launcher2/res/drawable-¶ÔÓ¦ÏñËØ/wallpaper_lake_small.jpg
+//1.æ‹·è´å£çº¸å›¾ç‰‡ wallpaper_lake.jpgå’Œwallpaper_lake_small.jpg åˆ°ç›¸åº”ç›®å½•
+packages/apps/Launcher2/res/drawable-å¯¹åº”åƒç´ /wallpaper_lake.jpg
+packages/apps/Launcher2/res/drawable-å¯¹åº”åƒç´ /wallpaper_lake_small.jpg
 
-//2.ÔÚ res/values-hdpi/wallpapers.xml ÖĞÌí¼Ówallpaper_lakeÌõÄ¿
+//2.åœ¨ res/values-hdpi/wallpapers.xml ä¸­æ·»åŠ wallpaper_lakeæ¡ç›®
 packages\apps\Launcher2\res\values\wallpapers.xml
 packages\apps\Launcher3\res\values-nodpi\wallpapers.xml
 //     <string-array name="wallpapers" translatable="false">
 //+        <item>wallpaper_lake</item>
 //          ..
 
-´ËÊ±£¬³¤°´×ÀÃæ£¬Ñ¡Ôñ±ÚÖ½Ñ¡Ïî£¬¾Í»áÔÚ±ÚÖ½ÁĞ±í¿´µ½Ò»¸öĞÂµÄ±ÚÖ½¡£
+æ­¤æ—¶ï¼Œé•¿æŒ‰æ¡Œé¢ï¼Œé€‰æ‹©å£çº¸é€‰é¡¹ï¼Œå°±ä¼šåœ¨å£çº¸åˆ—è¡¨çœ‹åˆ°ä¸€ä¸ªæ–°çš„å£çº¸ã€‚
 
 
-[1.13] ÈçºÎ¸ü»»launcherÖĞµã»÷Ó¦ÓÃµÄ¸ßÁÁ±³¾°
-//workspace£¨idle£©µã»÷¿ì½İÍ¼±êµÄ¸ßÁÁ±³¾°Îª£º
+[1.13] å¦‚ä½•æ›´æ¢launcherä¸­ç‚¹å‡»åº”ç”¨çš„é«˜äº®èƒŒæ™¯
+//workspaceï¼ˆidleï¼‰ç‚¹å‡»å¿«æ·å›¾æ ‡çš„é«˜äº®èƒŒæ™¯ä¸ºï¼š
 packages/apps/Launcher2/res/drawable/pressed_application_background.9.png
 
-//workspace£¨idle£©·½Ïò¼üÑ¡ÖĞµÄ¸ßÁÁ±³¾°£º
+//workspaceï¼ˆidleï¼‰æ–¹å‘é”®é€‰ä¸­çš„é«˜äº®èƒŒæ™¯ï¼š
 packages/apps/Launcher2/res/drawable-hdpi/focused_application_background.9.png
 
-//Mainmenu£¨Ö÷²Ëµ¥£©µã»÷Ó¦ÓÃµÄ¸ßÁÁ±³¾°Îª£º
+//Mainmenuï¼ˆä¸»èœå•ï¼‰ç‚¹å‡»åº”ç”¨çš„é«˜äº®èƒŒæ™¯ä¸ºï¼š
 packages/apps/Launcher2/res/drawable-hdpi/background_icon.9.png
 
-Ä¬ÈÏµÄ¸ßÁÁ±³¾°ÊÇµã¾Å¸ñÊ½µÄpngÎÄ¼ş£¬ÕâÑù¿ÉÒÔÊÊÓ¦²»Í¬µÄ²¼¾Ö´óĞ¡£¬Ò²¿ÉÒÔÉèÖÃ²»ÊÇµã¾ÅµÄÍ¼Æ¬£¡
-¸ü»»ÉÏÃæµÄÍ¼Æ¬ÊµÏÖ×Ô¶¨ÒåµÄ±³¾°
+é»˜è®¤çš„é«˜äº®èƒŒæ™¯æ˜¯ç‚¹ä¹æ ¼å¼çš„pngæ–‡ä»¶ï¼Œè¿™æ ·å¯ä»¥é€‚åº”ä¸åŒçš„å¸ƒå±€å¤§å°ï¼Œä¹Ÿå¯ä»¥è®¾ç½®ä¸æ˜¯ç‚¹ä¹çš„å›¾ç‰‡ï¼
+æ›´æ¢ä¸Šé¢çš„å›¾ç‰‡å®ç°è‡ªå®šä¹‰çš„èƒŒæ™¯
 
 
-[1.14] ÈçºÎÅäÖÃlauncherÊ¹ÓÃ´óÄÚ´æ£¿
-ÔÚlauncherµÄAndroidManifest.xmlÖĞ¿ÉÒÔÅäÖÃlauncherÊ¹ÓÃ´óµÄ¶ÑÄÚ´æ£¬ÕâÑù¿ÉÒÔÔÚÒ»¶¨³Ì¶ÈÉÏ±ÜÃâÄÚ´æ²»×ã³öÏÖµÄout of memory´íÎó¡£ÅäÖÃlauncherÊ¹ÓÃ´óÄÚ´æĞèÒª¸ü¸ÄµÄÊôĞÔÃû³ÆÎªandroid:largeHeap¡£ÈçÏÂËùÊ¾£º
+[1.14] å¦‚ä½•é…ç½®launcherä½¿ç”¨å¤§å†…å­˜ï¼Ÿ
+åœ¨launcherçš„AndroidManifest.xmlä¸­å¯ä»¥é…ç½®launcherä½¿ç”¨å¤§çš„å †å†…å­˜ï¼Œè¿™æ ·å¯ä»¥åœ¨ä¸€å®šç¨‹åº¦ä¸Šé¿å…å†…å­˜ä¸è¶³å‡ºç°çš„out of memoryé”™è¯¯ã€‚é…ç½®launcherä½¿ç”¨å¤§å†…å­˜éœ€è¦æ›´æ”¹çš„å±æ€§åç§°ä¸ºandroid:largeHeapã€‚å¦‚ä¸‹æ‰€ç¤ºï¼š
 packages\apps\Launcher2\AndroidManifest.xml android:largeHeap
 packages\apps\Launcher3\AndroidManifest.xml android:largeHeap
 //    <application
@@ -397,20 +397,20 @@ packages\apps\Launcher3\AndroidManifest.xml android:largeHeap
 //        android:hardwareAccelerated="@bool/config_hardwareAccelerated"
 //        android:largeHeap="@bool/config_largeHeap">
         
-¿ÉÒÔÔÚvaluesÎÄ¼ş¼ĞµÄconfig.xmlÖĞĞŞ¸ÄlargeHeapµÄÊôĞÔÖµ¡£ÈçÏÂËùÊ¾£º
+å¯ä»¥åœ¨valuesæ–‡ä»¶å¤¹çš„config.xmlä¸­ä¿®æ”¹largeHeapçš„å±æ€§å€¼ã€‚å¦‚ä¸‹æ‰€ç¤ºï¼š
 packages\apps\Launcher3\res\values\config.xml config_largeHeap
 //	<bool name="config_largeHeap">false</bool>
 
 
-[1.15] .ÈçºÎ¸ü¸ÄÏµÍ³Ä¬ÈÏÇ½Ö½
-Ä¬ÈÏÇ½Ö½Î»ÖÃÔÚ
+[1.15] .å¦‚ä½•æ›´æ”¹ç³»ç»Ÿé»˜è®¤å¢™çº¸
+é»˜è®¤å¢™çº¸ä½ç½®åœ¨
 frameworks/base/core/res/res/drawable-nodpi/default_wallpaper.jpg
 
-²»Í¬·Ö±æÂÊµÄÏîÄ¿ÔÚ¶ÔÓ¦µÄdrawableÄ¿Â¼ÏÂ¡£ 
+ä¸åŒåˆ†è¾¨ç‡çš„é¡¹ç›®åœ¨å¯¹åº”çš„drawableç›®å½•ä¸‹ã€‚ 
 
-¸ü¸ÄÁËÄ¬ÈÏÇ½Ö½ºó£¬ÎªÁËÓëÇ½Ö½ÉèÖÃÀïÃæ´ıÑ¡µÄÇ½Ö½±£³ÖÒ»ÖÂ£¬×îºÃÍ¬²½ĞŞ¸Ä¶ÔÓ¦launcherÏÂµÄÇ½Ö½¡£ 
+æ›´æ”¹äº†é»˜è®¤å¢™çº¸åï¼Œä¸ºäº†ä¸å¢™çº¸è®¾ç½®é‡Œé¢å¾…é€‰çš„å¢™çº¸ä¿æŒä¸€è‡´ï¼Œæœ€å¥½åŒæ­¥ä¿®æ”¹å¯¹åº”launcherä¸‹çš„å¢™çº¸ã€‚ 
 
-launcherÏÂÇ½Ö½Î»ÖÃ£º
+launcherä¸‹å¢™çº¸ä½ç½®ï¼š
 packages/apps/Launcher2/res/drawable-nodpi/  
 
 
@@ -419,18 +419,18 @@ packages/apps/Launcher2/res/drawable-nodpi/
 /****************************** code2 **********************************/
 /***********************************************************************/
 
-[2.1] .ÈçºÎÉèÖÃÄ¬ÈÏÒ³
+[2.1] .å¦‚ä½•è®¾ç½®é»˜è®¤é¡µ
 res/values/config.xml
 packages\apps\Launcher3\res\values\config.xml config_workspaceDefaultScreen
 // 	<integer name="config_workspaceDefaultScreen">0</integer>
 
-ÔÚLauncher3 ×ÀÃæ£¬²»¹ÜÔÚÄÄÒ»Ò³£¬°´HOME ¼ü£¬»á»Øµ½Ä¬ÈÏÒ³¡£
+åœ¨Launcher3 æ¡Œé¢ï¼Œä¸ç®¡åœ¨å“ªä¸€é¡µï¼ŒæŒ‰HOME é”®ï¼Œä¼šå›åˆ°é»˜è®¤é¡µã€‚
 
 
-[2.2] ÈçºÎÒş²Ølauncher3ÖĞµÄËÑË÷¿ò
-1. ÔÚLauncher3/src/com/android/launcher3/Launcher.javaÖĞ
+[2.2] å¦‚ä½•éšè—launcher3ä¸­çš„æœç´¢æ¡†
+1. åœ¨Launcher3/src/com/android/launcher3/Launcher.javaä¸­
 packages\apps\Launcher3\src\com\android\launcher3\Launcher.java updateGlobalIcons()
-×¢ÊÍupdateGlobalIcons()·½·¨µ÷ÓÃ£¬¹²Á½´¦¡£
+æ³¨é‡ŠupdateGlobalIcons()æ–¹æ³•è°ƒç”¨ï¼Œå…±ä¸¤å¤„ã€‚
 packages\apps\Launcher3\src\com\android\launcher3\Launcher.java View^getQsbBar()
 //	public View getQsbBar() {
 //	    if (mQsbBar == null) {
@@ -442,7 +442,7 @@ packages\apps\Launcher3\src\com\android\launcher3\Launcher.java View^getQsbBar()
 //	}
 
 //	@Override
-//	public void bindSearchablesChanged() { //×¢ÊÍ¸Ã·½·¨ÄÚÈİ
+//	public void bindSearchablesChanged() { //æ³¨é‡Šè¯¥æ–¹æ³•å†…å®¹
 //	/*        boolean searchVisible = updateGlobalSearchIcon();
 //	    boolean voiceVisible = updateVoiceSearchIcon(searchVisible);
 //	    if (mSearchDropTargetBar != null) {
@@ -451,11 +451,11 @@ packages\apps\Launcher3\src\com\android\launcher3\Launcher.java View^getQsbBar()
 //	*/
 //	}
 
-2. ÔÚLauncher3/src/com/android/launcher3/DynamicGrid.javaÖĞ   
+2. åœ¨Launcher3/src/com/android/launcher3/DynamicGrid.javaä¸­   
 packages\apps\Launcher3\src\com\android\launcher3\DynamicGrid.java launcher.getQsbBar()
 
     // Layout the search bar
-    //×¢ÊÍÈçÏÂÄÚÈİ
+    //æ³¨é‡Šå¦‚ä¸‹å†…å®¹
 /*        View qsbBar = launcher.getQsbBar();
     LayoutParams vglp = qsbBar.getLayoutParams();
     vglp.width = LayoutParams.MATCH_PARENT;
@@ -463,25 +463,25 @@ packages\apps\Launcher3\src\com\android\launcher3\DynamicGrid.java launcher.getQ
     qsbBar.setLayoutParams(vglp);
 */
 
-3. ÔÚLauncher3/res/values/dimens.xmlÖĞ
+3. åœ¨Launcher3/res/values/dimens.xmlä¸­
 packages\apps\Launcher3\res\values\dimens.xml dynamic_grid_search_bar_height
 //    -    <dimen name="dynamic_grid_search_bar_height">48dp</dimen>
 //    +    <dimen name="dynamic_grid_search_bar_height">18dp</dimen>
 
-ÖØĞÂ±àÒëºó¼´¿É¿´µ½Ğ§¹û¡£
+é‡æ–°ç¼–è¯‘åå³å¯çœ‹åˆ°æ•ˆæœã€‚
 
 
-[2.3] ÈçºÎµ÷ÕûÔ­ÉúLauncher3Ö÷½çÃæµÄsearch¿òµÄ´óĞ¡£¿
-ĞŞ¸ÄÈçÏÂ£º
-¶¨Î»´ò/packages/apps/Launcher3/res/values/dimens.xml¡£
+[2.3] å¦‚ä½•è°ƒæ•´åŸç”ŸLauncher3ä¸»ç•Œé¢çš„searchæ¡†çš„å¤§å°ï¼Ÿ
+ä¿®æ”¹å¦‚ä¸‹ï¼š
+å®šä½æ‰“/packages/apps/Launcher3/res/values/dimens.xmlã€‚
 packages\apps\Launcher3\res\values\dimens.xml dynamic_grid_edge_margin
-//	<dimen name="dynamic_grid_edge_margin">3dp</dimen>//ĞŞ¸ÄÕâ¸ö¿ÉÒÔµ÷Õûsearch¿ò¾àÀë¶¥²¿¾àÀë¡£
-//	<dimen name="dynamic_grid_search_bar_max_width">500dp</dimen>//search¿òµÄ¿í¶È£¬Ò»°ã²»ĞèÒªµ÷Õû¡£
-//	<dimen name="dynamic_grid_search_bar_height">48dp</dimen>//search¿òµÄ¸ß¶È£¬²»Òªµ÷ÕûÎª0£¬É¾³ı°´Å¥ĞèÒªÕ¼ÓÃÒ»²¿·Ö¿Õ¼ä¡£
+//	<dimen name="dynamic_grid_edge_margin">3dp</dimen>//ä¿®æ”¹è¿™ä¸ªå¯ä»¥è°ƒæ•´searchæ¡†è·ç¦»é¡¶éƒ¨è·ç¦»ã€‚
+//	<dimen name="dynamic_grid_search_bar_max_width">500dp</dimen>//searchæ¡†çš„å®½åº¦ï¼Œä¸€èˆ¬ä¸éœ€è¦è°ƒæ•´ã€‚
+//	<dimen name="dynamic_grid_search_bar_height">48dp</dimen>//searchæ¡†çš„é«˜åº¦ï¼Œä¸è¦è°ƒæ•´ä¸º0ï¼Œåˆ é™¤æŒ‰é’®éœ€è¦å ç”¨ä¸€éƒ¨åˆ†ç©ºé—´ã€‚
 
 
-[2.4] ÈÃÖ÷²Ëµ¥²¿·ÖÓ¦ÓÃ°´Ö¸¶¨Ë³ĞòÅÅÔÚÇ°Ãæ£¿
-Ìí¼Óres/values/arrays.xml£ºĞèÒªÅÅĞòµÄÓ¦ÓÃ£ºÕâÀïµÄitem ÄÚÈİÒ»¶¨ÒªÌîĞ´ÕıÈ·£¬·ñÔò»áÆ¥Åä²»ÉÏ£¬ÎŞ·¨²ÎÓëÅÅĞò¡£
+[2.4] è®©ä¸»èœå•éƒ¨åˆ†åº”ç”¨æŒ‰æŒ‡å®šé¡ºåºæ’åœ¨å‰é¢ï¼Ÿ
+æ·»åŠ res/values/arrays.xmlï¼šéœ€è¦æ’åºçš„åº”ç”¨ï¼šè¿™é‡Œçš„item å†…å®¹ä¸€å®šè¦å¡«å†™æ­£ç¡®ï¼Œå¦åˆ™ä¼šåŒ¹é…ä¸ä¸Šï¼Œæ— æ³•å‚ä¸æ’åºã€‚
 packages\apps\Launcher3\res\values\arrays.xml
 
 //	<?xml version="1.0" encoding="utf-8"?>
@@ -514,7 +514,7 @@ src/com/android/launcher3/LauncherModel.java
 //	+       appArray = Utilities.getAppsComponentName(context);
 //
 //	    }
-Ìí¼ÓÈçÏÂsortApps ·½·¨£ºapps °´arrays.xml ÅÅĞò£¬ÔÚÔ­À´µÄÅÅĞò»ù´¡ÉÏ£¬½«arrays.xml ÅäÖÃµÄÓ¦ÓÃ°´Ë³ĞòÅÅÔÚÇ°Ãæ¡£arrays.xmlÖĞÃ»ÓĞÉæ¼°µ½µÄÓ¦ÓÃ£¬»¹ÊÇÔ­À´µÄË³Ğò¡£
+æ·»åŠ å¦‚ä¸‹sortApps æ–¹æ³•ï¼šapps æŒ‰arrays.xml æ’åºï¼Œåœ¨åŸæ¥çš„æ’åºåŸºç¡€ä¸Šï¼Œå°†arrays.xml é…ç½®çš„åº”ç”¨æŒ‰é¡ºåºæ’åœ¨å‰é¢ã€‚arrays.xmlä¸­æ²¡æœ‰æ¶‰åŠåˆ°çš„åº”ç”¨ï¼Œè¿˜æ˜¯åŸæ¥çš„é¡ºåºã€‚
 public static final void sortApps(ArrayList<AppInfo> apps) {
     int length = appArray.size();
     List<AppInfo> assignApps = new ArrayList<AppInfo>();
@@ -546,7 +546,7 @@ src/com/android/launcher3/AppsCustomizePagedView.java
 //	        if (!LauncherAppState.isDisableAllApps()) {
 //	            ......
 //	            SprdAppSortAddonStub.getInstance().sortApps(mApps);
-//	+           LauncherModel.sortApps(mApps);//ÔÚÔ­À´ÅÅĞòµÄ»ù´¡ÉÏ£¬ÔÙ½«arrays.xmlÖĞÅäÖÃµÄÓ¦ÓÃ°´Ë³ĞòÅÅÔÚÇ°Ãæ¡£
+//	+           LauncherModel.sortApps(mApps);//åœ¨åŸæ¥æ’åºçš„åŸºç¡€ä¸Šï¼Œå†å°†arrays.xmlä¸­é…ç½®çš„åº”ç”¨æŒ‰é¡ºåºæ’åœ¨å‰é¢ã€‚
 //	            updatePageCountsAndInvalidateData();
 //	        }
 //	    }
@@ -554,22 +554,22 @@ src/com/android/launcher3/AppsCustomizePagedView.java
 //	        ......
 	        // SPRD: bug375932 2014-12-02 Feature customize app icon sort.
 //	        SprdAppSortAddonStub.getInstance().sortApps(mApps);
-//	+       LauncherModel.sortApps(mApps);//ÔÚÔ­À´ÅÅĞòµÄ»ù´¡ÉÏ£¬ÔÙ½«arrays.xmlÖĞÅäÖÃµÄÓ¦ÓÃ°´Ë³ĞòÅÅÔÚÇ°Ãæ¡£
+//	+       LauncherModel.sortApps(mApps);//åœ¨åŸæ¥æ’åºçš„åŸºç¡€ä¸Šï¼Œå†å°†arrays.xmlä¸­é…ç½®çš„åº”ç”¨æŒ‰é¡ºåºæ’åœ¨å‰é¢ã€‚
 //	    }
 
 
-[2.5] ÈçºÎÈ·¶¨´ı»úHOME½çÃæ²¼¾ÖÊ¹ÓÃµÄÊÇÄÄ¸ödefault_workspaceÎÄ¼ş£¿
+[2.5] å¦‚ä½•ç¡®å®šå¾…æœºHOMEç•Œé¢å¸ƒå±€ä½¿ç”¨çš„æ˜¯å“ªä¸ªdefault_workspaceæ–‡ä»¶ï¼Ÿ
  src/com/android/launcher3/DynamicGrid.java
 packages\apps\Launcher3\src\com\android\launcher3\DynamicGrid.java
 
-//Ñ¡ÔñÄÄ¸ödefault_workspace ºÍpublic DynamicGrid(Context context, Resources resources,int minWidthPx, int minHeightPx, int widthPx, int heightPx, int awPx, int ahPx)ÖĞµÄminWidthPx ºÍminHeightPx ÒÔ¼°¸Ã·½·¨ÖĞ´´½¨µÄdeviceProfiles ÁĞ±í¹Ø¡£               
-//minWidthPx ¡¢minHeightPx Öµ×ª»»ÎªdpiÖ®ºó £¬deviceProfiles ÁĞ±íÓëÆä½øĞĞ±È½Ï£¬Ñ¡ÔñÓëµ±Ç°ÆÁÄ»´óĞ¡×î½Ó½üµÄdeviceProfiles µÄdefault_workSpace×÷Îª×îÖÕHome½çÃæÊ¹ÓÃµÄdefault_workspace¡£
+//é€‰æ‹©å“ªä¸ªdefault_workspace å’Œpublic DynamicGrid(Context context, Resources resources,int minWidthPx, int minHeightPx, int widthPx, int heightPx, int awPx, int ahPx)ä¸­çš„minWidthPx å’ŒminHeightPx ä»¥åŠè¯¥æ–¹æ³•ä¸­åˆ›å»ºçš„deviceProfiles åˆ—è¡¨å…³ã€‚               
+//minWidthPx ã€minHeightPx å€¼è½¬æ¢ä¸ºdpiä¹‹å ï¼ŒdeviceProfiles åˆ—è¡¨ä¸å…¶è¿›è¡Œæ¯”è¾ƒï¼Œé€‰æ‹©ä¸å½“å‰å±å¹•å¤§å°æœ€æ¥è¿‘çš„deviceProfiles çš„default_workSpaceä½œä¸ºæœ€ç»ˆHomeç•Œé¢ä½¿ç”¨çš„default_workspaceã€‚
 //
 //
-//ÏêÏ¸½âÊÍÈçÏÂ£º
-//src/com/android/launcher3/DynamicGrid.javaÖĞ
+//è¯¦ç»†è§£é‡Šå¦‚ä¸‹ï¼š
+//src/com/android/launcher3/DynamicGrid.javaä¸­
 
-        1.deviceProfiles ÁĞ±íÈçÏÂ£º
+        1.deviceProfiles åˆ—è¡¨å¦‚ä¸‹ï¼š
         deviceProfiles.add(new DeviceProfile("Super Short Stubby",
                 255, 300,  2, 3,  48, 13, (hasAA ? 3 : 5), 48, R.xml.default_workspace_4x4));
         deviceProfiles.add(new DeviceProfile("Shorter Stubby",
@@ -596,11 +596,11 @@ packages\apps\Launcher3\src\com\android\launcher3\DynamicGrid.java
         deviceProfiles.add(new DeviceProfile("20-inch Tablet",
                 1527, 2527,  7, 7,  100, 20,  7, 72, R.xml.default_workspace_4x4));
 
-       2.ÖØĞÂ¼ÆËãMinWidth ºÍMinHeigh  µ¥Î»ÊÇdpi¡£
+       2.é‡æ–°è®¡ç®—MinWidth å’ŒMinHeigh  å•ä½æ˜¯dpiã€‚
         mMinWidth = dpiFromPx(minWidthPx, dm);
         mMinHeight = dpiFromPx(minHeightPx, dm);
-      3.´´½¨mProfile£¬mProfile.defaultLayoutId ¾ÍÊÇ×îÖÕHome½çÃæÊ¹ÓÃµÄdefault_workspace µÄid¡£
-        mProfileÖĞµÄdefaultLayoutId ÊÇÄÄ¸ödefault_workspace ¼ûDeviceProfile.java¡£
+      3.åˆ›å»ºmProfileï¼ŒmProfile.defaultLayoutId å°±æ˜¯æœ€ç»ˆHomeç•Œé¢ä½¿ç”¨çš„default_workspace çš„idã€‚
+        mProfileä¸­çš„defaultLayoutId æ˜¯å“ªä¸ªdefault_workspace è§DeviceProfile.javaã€‚
 
         mProfile = new DeviceProfile(context, deviceProfiles,
                 mMinWidth, mMinHeight,
@@ -617,18 +617,18 @@ src/com/android/launcher3/DeviceProfile.java
 //	                  float minWidth, float minHeight,
 //	                  int wPx, int hPx,
 //	                  int awPx, int ahPx,
-//	                  Resources res) { ·½·¨ÖĞ£º
-       4.ÓÃÆÁÄ»¿í¸ß´´½¨µÄµã£¨PointF xy = new PointF(width, height)£©Óë deviceProfilesÖĞµÄw ºÍ h ´´½¨µÄµã£¨dimens = new PointF(widthDps, heightDps)£©½øĞĞ±È½Ï£¬Ò²¾ÍÊÇ´ÓdeviceProfiles ÁĞ±íÖĞÕÒ³öºÍµ±Ç°ÆÁÄ»´óĞ¡×î½Ó½üµÄdeviceProfiles¡£
+//	                  Resources res) { æ–¹æ³•ä¸­ï¼š
+       4.ç”¨å±å¹•å®½é«˜åˆ›å»ºçš„ç‚¹ï¼ˆPointF xy = new PointF(width, height)ï¼‰ä¸ deviceProfilesä¸­çš„w å’Œ h åˆ›å»ºçš„ç‚¹ï¼ˆdimens = new PointF(widthDps, heightDps)ï¼‰è¿›è¡Œæ¯”è¾ƒï¼Œä¹Ÿå°±æ˜¯ä»deviceProfiles åˆ—è¡¨ä¸­æ‰¾å‡ºå’Œå½“å‰å±å¹•å¤§å°æœ€æ¥è¿‘çš„deviceProfilesã€‚
             DeviceProfile closestProfile = findClosestDeviceProfile(minWidth, minHeight, points);
          ......
 
-       5.²ÉÓÃºÍµ±Ç°ÆÁÄ»´óĞ¡×î½Ó½üµÄdeviceProfilesµÄdefault_workspace
+       5.é‡‡ç”¨å’Œå½“å‰å±å¹•å¤§å°æœ€æ¥è¿‘çš„deviceProfilesçš„default_workspace
 
                defaultLayoutId = closestProfile.defaultLayoutId; 
 
 
-[2.6] ÈçºÎÌæ»»µÚÈı·½Ó¦ÓÃÔÚlauncherÉÏÏÔÊ¾µÄÍ¼±ê£¿
-ÔÚlauncher/src/com/android/launcher3/IconCache.javaÖĞĞŞ¸Ä£¬
+[2.6] å¦‚ä½•æ›¿æ¢ç¬¬ä¸‰æ–¹åº”ç”¨åœ¨launcherä¸Šæ˜¾ç¤ºçš„å›¾æ ‡ï¼Ÿ
+åœ¨launcher/src/com/android/launcher3/IconCache.javaä¸­ä¿®æ”¹ï¼Œ
 packages\apps\Launcher3\src\com\android\launcher3\IconCache.java CacheEntry^cacheLocked
 private CacheEntry cacheLocked(ComponentName componentName, ResolveInfo info,    private CacheEntry cacheLocked(ComponentName componentName, ResolveInfo info,
         HashMap<Object, CharSequence> labelCache) {
@@ -660,8 +660,8 @@ private CacheEntry cacheLocked(ComponentName componentName, ResolveInfo info,   
                     // getFullResIcon(info), mContext);
                     icon, mContext, true);
         }
-        /* ´Ë´¦¼´ÎªÌæ»»Í¼±ê´úÂë  {@*/
-        if("µÚÈı·½Ó¦ÓÃµÄcomponentName".equals(componentName.toString())){
+        /* æ­¤å¤„å³ä¸ºæ›¿æ¢å›¾æ ‡ä»£ç   {@*/
+        if("ç¬¬ä¸‰æ–¹åº”ç”¨çš„componentName".equals(componentName.toString())){
             entry.icon = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.xxx);
         }
 
@@ -672,9 +672,9 @@ private CacheEntry cacheLocked(ComponentName componentName, ResolveInfo info,   
 }   
 
 
-[2.7] //ÈçºÎÈ¥µôLauncher3µÄ¿ª»úÒıµ¼Ò³Ãæ£¿
-//ĞŞ¸Ä·½°¸ÈçÏÂ£º
-//Çë¶¨Î»µ½src/com/android/launcher3/LauncherClings.javaÎÄ¼ş£º
+[2.7] //å¦‚ä½•å»æ‰Launcher3çš„å¼€æœºå¼•å¯¼é¡µé¢ï¼Ÿ
+//ä¿®æ”¹æ–¹æ¡ˆå¦‚ä¸‹ï¼š
+//è¯·å®šä½åˆ°src/com/android/launcher3/LauncherClings.javaæ–‡ä»¶ï¼š
 //    class LauncherClings implements OnClickListener {
 //         ......
 //         private static final String TAG_CROP_TOP_AND_SIDES = "crop_bg_top_and_sides"
@@ -683,20 +683,20 @@ private CacheEntry cacheLocked(ComponentName componentName, ResolveInfo info,   
 //+       private static final boolean DISABLE_CLINGS = true;
 
 
-[2.8] ÎªºÎLauncher3ÉèÖÃÒ»Ğ©±ÚÖ½ºó£¬±ÚÖ½ÏÔÊ¾±ÈÔ¤ÀÀÍ¼Ä£ºı£¿
-Ô¤ÀÀµÄÊ±ºò£¬Ã»ÓĞ×ö¸ñÊ½×ª»¯£¬ËùÒÔÏÔÊ¾Õı³££¡
-ÔÚÉèÖÃ±ÚÖ½µÄÊ±ºò£¬Ä¬ÈÏÊÇ²ÉÓÃjpeg¸ñÊ½×ª»»µÄ£¬µ¼ÖÂ×ª»»ºóËğºÄÁËÒ»Ğ©£¬ÉèÖÃ±ÚÖ½ºó£¬Ä³Ğ©¶Ô±È¶È±È½Ï¸ßµÄ±ÚÖ½¾ÍÏÔÊ¾µÄÄ£ºı£¡
+[2.8] ä¸ºä½•Launcher3è®¾ç½®ä¸€äº›å£çº¸åï¼Œå£çº¸æ˜¾ç¤ºæ¯”é¢„è§ˆå›¾æ¨¡ç³Šï¼Ÿ
+é¢„è§ˆçš„æ—¶å€™ï¼Œæ²¡æœ‰åšæ ¼å¼è½¬åŒ–ï¼Œæ‰€ä»¥æ˜¾ç¤ºæ­£å¸¸ï¼
+åœ¨è®¾ç½®å£çº¸çš„æ—¶å€™ï¼Œé»˜è®¤æ˜¯é‡‡ç”¨jpegæ ¼å¼è½¬æ¢çš„ï¼Œå¯¼è‡´è½¬æ¢åæŸè€—äº†ä¸€äº›ï¼Œè®¾ç½®å£çº¸åï¼ŒæŸäº›å¯¹æ¯”åº¦æ¯”è¾ƒé«˜çš„å£çº¸å°±æ˜¾ç¤ºçš„æ¨¡ç³Šï¼
 
-ĞŞ¸Ä·½°¸£º
-Ä¬ÈÏĞŞ¸ÄÎª²ÉÓÃpng¸ñÊ½×ª»»£¡
+ä¿®æ”¹æ–¹æ¡ˆï¼š
+é»˜è®¤ä¿®æ”¹ä¸ºé‡‡ç”¨pngæ ¼å¼è½¬æ¢ï¼
 
-android6.0Ö®Ç°µÄ°æ±¾£¬Çë×öÈçÏÂĞŞ¸Ä£º
-¶¨Î»µ½/packages/apps/Launcher3/µÄWallpaperCropActivity.javaÎÄ¼ş
-1¡¢String mOutputFormat = "jpg";//ĞŞ¸ÄÎª"png"
-2¡¢
+android6.0ä¹‹å‰çš„ç‰ˆæœ¬ï¼Œè¯·åšå¦‚ä¸‹ä¿®æ”¹ï¼š
+å®šä½åˆ°/packages/apps/Launcher3/çš„WallpaperCropActivity.javaæ–‡ä»¶
+1ã€String mOutputFormat = "jpg";//ä¿®æ”¹ä¸º"png"
+2ã€
   protected static String getFileExtension(String requestFormat) {
         String outputFormat = (requestFormat == null)
-                ? "jpg"//ĞŞ¸ÄÎª"png"
+                ? "jpg"//ä¿®æ”¹ä¸º"png"
                 : requestFormat;
         outputFormat = outputFormat.toLowerCase();
         return (outputFormat.equals("png") || outputFormat.equals("gif"))
@@ -704,18 +704,18 @@ android6.0Ö®Ç°µÄ°æ±¾£¬Çë×öÈçÏÂĞŞ¸Ä£º
                 : "jpg";
    }
 
-android6.0µÄ°æ±¾£¬Çë×öÈçÏÂĞŞ¸Ä£º
-¶¨Î»µ½/packages/apps/Launcher3/WallpaperPicker/src/com/android/gallery3d/common/BitmapCropTask.javaÎÄ¼ş
-if (crop.compress(CompressFormat.JPEG, DEFAULT_COMPRESS_QUALITY, tmpOut)) ĞŞ¸ÄÎª£º
+android6.0çš„ç‰ˆæœ¬ï¼Œè¯·åšå¦‚ä¸‹ä¿®æ”¹ï¼š
+å®šä½åˆ°/packages/apps/Launcher3/WallpaperPicker/src/com/android/gallery3d/common/BitmapCropTask.javaæ–‡ä»¶
+if (crop.compress(CompressFormat.JPEG, DEFAULT_COMPRESS_QUALITY, tmpOut)) ä¿®æ”¹ä¸ºï¼š
 if (crop.compress(CompressFormat.PNG, DEFAULT_COMPRESS_QUALITY, tmpOut))
 
 
-[2.9] 6.0Æ½Ì¨ÉÏLauncher3×Ô´øµÄ±ÚÖ½Â·¾¶ÊÇÊ²Ã´£¿
-ÔÚ6.0ÖĞ£¬Æ½Ì¨°æ±¾Ô¤ÖÃÁËÒ»Ğ©±ÚÖ½×ÊÔ´£¬Ïà¹ØÂ·¾¶ÈçÏÂ£º
-×ÊÔ´ÎÄ¼şÔÚ£º
+[2.9] 6.0å¹³å°ä¸ŠLauncher3è‡ªå¸¦çš„å£çº¸è·¯å¾„æ˜¯ä»€ä¹ˆï¼Ÿ
+åœ¨6.0ä¸­ï¼Œå¹³å°ç‰ˆæœ¬é¢„ç½®äº†ä¸€äº›å£çº¸èµ„æºï¼Œç›¸å…³è·¯å¾„å¦‚ä¸‹ï¼š
+èµ„æºæ–‡ä»¶åœ¨ï¼š
 packages/apps/Launcher3/WallpaperPicker/res/drawable-xhdpi/
 
-×Ö´®ÎÄ¼şÔÚ£º
+å­—ä¸²æ–‡ä»¶åœ¨ï¼š
 packages/apps/Launcher3/WallpaperPicker/res/values-nodpi/wallpapers.xml 
 
 

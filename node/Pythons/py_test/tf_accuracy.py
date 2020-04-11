@@ -1,4 +1,4 @@
-import numpy as np
+ï»¿import numpy as np
 import tensorflow as tf
  
 x = tf.placeholder(tf.int32, [5])
@@ -11,40 +11,40 @@ sess.run(tf.local_variables_initializer())
  
 v = sess.run([acc, acc_op], feed_dict={x: [1, 0, 0, 0, 0],
                                        y: [1, 0, 0, 0, 1]})
-#×ÜµÄ5¸ö(ÕıÈ·4)
+#æ€»çš„5ä¸ª(æ­£ç¡®4)
 print(v)   #[0.0, 0.8]
  
  
 v = sess.run([acc, acc_op], feed_dict={x: [1, 1, 1, 1, 0],
                                        y: [0, 0, 0, 0, 1]})
-#×ÜµÄ10¸ö(ÕıÈ·4)                                   
+#æ€»çš„10ä¸ª(æ­£ç¡®4)                                   
 print(v)    #[0.8, 0.4]
  
 v = sess.run([acc, acc_op], feed_dict={x: [1, 1, 1, 1, 0],
                                        y: [0, 0, 0, 0, 1]})
-#×ÜµÄ15¸ö(ÕıÈ·4)           
+#æ€»çš„15ä¸ª(æ­£ç¡®4)           
 print(v)    #[0.4, 0.26666668]
  
 v = sess.run([acc, acc_op], feed_dict={x: [0, 1, 1, 0, 1],
                                        y: [0, 0, 0, 1, 1]})
-#×ÜµÄ20¸ö(ÕıÈ·4)           
+#æ€»çš„20ä¸ª(æ­£ç¡®4)           
 print(v)    #[0.26666668, 0.2]
 
 
-#   { x: [ 0,  1,  1,  0,  1 ], -----Êµ¼Ê
-#     y: [ 0,  0,  0,  1,  1 ] })----Ô¤²â
+#   { x: [ 0,  1,  1,  0,  1 ], -----å®é™…
+#     y: [ 0,  0,  0,  1,  1 ] })----é¢„æµ‹
 #          TN  FN  FN  FP  TP  
 # 
-#  ¾«×¼ÂÊ: precision rate = TP / (TP + FP)
-#  ÕÙ»ØÂÊ: recall rate = TP / (TP + FN)
-#  ×¼È·ÂÊ: accuracy = (TP + TN) / (TP + FP + TN + FN)
+#  ç²¾å‡†ç‡: precision rate = TP / (TP + FP)
+#  å¬å›ç‡: recall rate = TP / (TP + FN)
+#  å‡†ç¡®ç‡: accuracy = (TP + TN) / (TP + FP + TN + FN)
 #  F1-score = 2 * precision rate * recall rate / (precision rate + recall rate)
 #  F1-score = 2 * TP / (2TP + FN + FP)
 #  F1-score = 2/(2 + 2 + 1 )
 #        1/accuracy-1 =( FP + FN)/ (TP + TN) 
 #        1/F1-1 =( FP + FN)/ 2 * TP
 
-#  ¾«×¼ÂÊ: 11110000<<11__11__ ÍÆ¼öÏµÍ³
-#  ÕÙ»ØÂÊ: 11110000<<1100____ ÌÓ·¸¼ìË÷
-#  ×¼È·ÂÊ: 11110000<<11001100 
+#  ç²¾å‡†ç‡: 11110000<<11__11__ æ¨èç³»ç»Ÿ
+#  å¬å›ç‡: 11110000<<1100____ é€ƒçŠ¯æ£€ç´¢
+#  å‡†ç¡®ç‡: 11110000<<11001100 
 #  F1-scr: 11110000<<110011__ 

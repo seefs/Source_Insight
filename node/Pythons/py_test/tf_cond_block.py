@@ -1,4 +1,4 @@
-
+ï»¿
 
 import tensorflow as tf
 import numpy as np
@@ -10,7 +10,7 @@ def gen_m2b(inputs, outputs):
     m1, m2, l1, l2 = inputs
 #    l1, l2 = np.array(l1), np.array(l2)
     
-# 4x9Ä£Ê½; Ôö¼Óm=2/4/6/8¼æÈİ; ×îºó1×éÈ¥µôm=5(Í¬Ê±ÎªÁË¶ÔÆëÖØ¸´8)
+# 4x9æ¨¡å¼; å¢åŠ m=2/4/6/8å…¼å®¹; æœ€å1ç»„å»æ‰m=5(åŒæ—¶ä¸ºäº†å¯¹é½é‡å¤8)
     block_to_category = np.array([
                          [15,16,8,1,2,10,11,3,7,4,6],
                          [15,14,6,5,4,12,11,3,7,2,8],
@@ -31,7 +31,7 @@ def gen_m2b(inputs, outputs):
 #        np.array(a) in np.array(arr)
         _s = tf.cond(_i<_len, lambda:sum([1 for b in block_list if _item in b]), lambda:0)
         ret = tf.cond(_s>0, lambda:update_block(_item), lambda:1)
-        ret = tf.cond(tf.logical_and(_i<_len, tf.equal(_item,0)), lambda:0, lambda:ret)         #Ä£Ê½0²»·Ö¿é
+        ret = tf.cond(tf.logical_and(_i<_len, tf.equal(_item,0)), lambda:0, lambda:ret)         #æ¨¡å¼0ä¸åˆ†å—
         #print("--_i%s _len=%s  _item=%s  _s=%s  ret=%s  b=%s" % (_i, _len, _item, _s, ret, len(block_list)))
         return ret
     def update_state(_n, _l, _r):
@@ -61,31 +61,31 @@ def gen_m2b(inputs, outputs):
     while step<200: 
         step += 1
         
-        # ret=0,1,2,3;4,5: ×ó,ÓÒ,µ¥×óÈ¡¿é,µ¥ÓÒÈ¡¿é;ÓĞÊ£Óà¿é,³¬·¶Î§
+        # ret=0,1,2,3;4,5: å·¦,å³,å•å·¦å–å—,å•å³å–å—;æœ‰å‰©ä½™å—,è¶…èŒƒå›´
         ret = tf.cond(tf.logical_and(tf.greater_equal(l,l1), tf.greater_equal(r,l2)), lambda:update_state(5, l, r), lambda:ret)
-        # ret=4,5: ÓĞÊ£Óà¿é,³¬·¶Î§
+        # ret=4,5: æœ‰å‰©ä½™å—,è¶…èŒƒå›´
         ret = tf.cond(tf.logical_and(ret==5,tf.logical_or(tf.greater(l,fl), tf.greater(r,fr))), lambda:set_exit_range(4, l, r), lambda:ret)
 
-        # s_left=0,1,2:  ×ó¿éÔÚ¿é,²»ÔÚ¿é,³¬·¶Î§
-        # s_right=0,1,2: ÓÒ¿éÔÚ¿é,²»ÔÚ¿é,³¬·¶Î§
+        # s_left=0,1,2:  å·¦å—åœ¨å—,ä¸åœ¨å—,è¶…èŒƒå›´
+        # s_right=0,1,2: å³å—åœ¨å—,ä¸åœ¨å—,è¶…èŒƒå›´
         s_left  = tf.cond(check_in_block(m1, l, l1), lambda:1, lambda:0)
         s_right = tf.cond(check_in_block(m2, r, l2), lambda:1, lambda:0)
         s_left  = tf.cond(tf.greater_equal(l,l1), lambda:2, lambda:s_left)
         s_right = tf.cond(tf.greater_equal(r,l2), lambda:2, lambda:s_right)
         #print("--step%s--ret=%s  s_left=%s  s_right=%s  l=%s  r=%s-" % (step, ret, s_left, s_right, l, r))
         
-        # s_left=3:  ³¬·¶Î§
-        # s_right=3: ³¬·¶Î§
+        # s_left=3:  è¶…èŒƒå›´
+        # s_right=3: è¶…èŒƒå›´
         ret = tf.cond(tf.logical_and(ret==0, s_left==2),  lambda:update_state(3, l, r), lambda:ret)
         ret = tf.cond(tf.logical_and(ret==1, s_right==2), lambda:update_state(2, l, r), lambda:ret)
 
-        # ret=0,1,2,3;4,5,6: ×ó,ÓÒ,µ¥×óÈ¡¿é,µ¥ÓÒÈ¡¿é;ÎŞÊ£Óà¿é,ÓĞÊ£Óà¿é,³¬·¶Î§
+        # ret=0,1,2,3;4,5,6: å·¦,å³,å•å·¦å–å—,å•å³å–å—;æ— å‰©ä½™å—,æœ‰å‰©ä½™å—,è¶…èŒƒå›´
         ret = tf.cond(tf.logical_and(ret==0, s_left==0), lambda:update_state(1, l+1, r), lambda:ret)
         ret = tf.cond(tf.logical_and(ret==0, s_left==1), lambda:update_state(3, l, r),   lambda:ret)
         ret = tf.cond(tf.logical_and(ret==2, s_left==0), lambda:update_state(2, l+1, r), lambda:ret)
         ret = tf.cond(tf.logical_and(ret==2, s_left==1), lambda:set_out_list(0, l, r),   lambda:ret)
 
-        # ret=0,1,2,3;4,5,6: ×ó,ÓÒ,µ¥×óÈ¡¿é,µ¥ÓÒÈ¡¿é;ÎŞÊ£Óà¿é,ÓĞÊ£Óà¿é,³¬·¶Î§
+        # ret=0,1,2,3;4,5,6: å·¦,å³,å•å·¦å–å—,å•å³å–å—;æ— å‰©ä½™å—,æœ‰å‰©ä½™å—,è¶…èŒƒå›´
         ret = tf.cond(tf.logical_and(ret==1, s_right==0), lambda:update_state(0, l, r+1),lambda:ret)
         ret = tf.cond(tf.logical_and(ret==1, s_right==1), lambda:update_state(2, l, r),  lambda:ret)
         ret = tf.cond(tf.logical_and(ret==3, s_right==0), lambda:update_state(3, l, r+1),lambda:ret)
@@ -132,7 +132,7 @@ gen_m2b([a_pad, b_pad, l1, l2], output)
 print('mbb--', np.array(output))
 
 
-# ÑéÖ¤:
+# éªŒè¯:
 
 
 

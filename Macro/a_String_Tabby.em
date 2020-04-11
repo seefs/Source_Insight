@@ -1,11 +1,11 @@
-/*
-	¹¦ÄÜ:string
+ï»¿/*
+	åŠŸèƒ½:string
 	
 
 Fun list:
 	macro _TempHeadEvent(hbuf){}
 
-TrimSpaces(thbuf) //Çå³ıÓÒ±ß¿Õ¸ñ
+TrimSpaces(thbuf) //æ¸…é™¤å³è¾¹ç©ºæ ¼
 StrTrimSpaces(s)  //
 
 tsSpaceToTab(thbuf)  //

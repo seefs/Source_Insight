@@ -1,4 +1,4 @@
-
+ï»¿
 import tensorflow as tf
 from tensorflow.python.keras.layers import InputSpec, Layer
 from tensorflow.python.keras.layers import Conv1D, Conv2D, Conv3D
@@ -9,23 +9,23 @@ from typing import List, Optional
 from keras import backend as K
 
 
-# ¼Ì³Ğ¸¸ÀàLayer
+# ç»§æ‰¿çˆ¶ç±»Layer
 class Scale(Layer):
     '''
-    ¸Ã²ã¹¦ÄÜ£º
-        Í¨¹ıÏòÁ¿ÔªËØÒÀ´ÎÏà³Ë£¨Element wise multiplication£©µ÷ÕûÉÏ²ãÊä³öµÄĞÎ×´¡£
+    è¯¥å±‚åŠŸèƒ½ï¼š
+        é€šè¿‡å‘é‡å…ƒç´ ä¾æ¬¡ç›¸ä¹˜ï¼ˆElement wise multiplicationï¼‰è°ƒæ•´ä¸Šå±‚è¾“å‡ºçš„å½¢çŠ¶ã€‚
         out = in * gamma + beta,
-        gamma´ú±íÈ¨ÖØweights£¬beta´ú±íÆ«ÖÃbias
-    ²ÎÊıÁĞ±í£º
-        axis: intĞÍ£¬´ú±íĞèÒª×öscaleµÄÖá·½Ïò£¬axis=-1 ´ú±íÑ¡È¡Ä¬ÈÏ·½Ïò£¨ºáĞĞ£©¡£
-        momentum: ¶ÔÊı¾İ·½²îºÍ±ê×¼²î×öÖ¸ÊıÆ½¾ùÊ±µÄ¶¯Á¿.
-        weights: ³õÊ¼È¨ÖØ£¬ÊÇÒ»¸ö°üº¬Á½¸önumpy arrayµÄlist, shapes:[(input_shape,), (input_shape,)]
-        beta_init: Æ«ÖÃÁ¿µÄ³õÊ¼»¯·½·¨Ãû¡£(²Î¿¼Keras.initializers.Ö»ÓĞweightsÎ´´«²ÎÊ±²Å»áÊ¹ÓÃ.
-        gamma_init: È¨ÖØÁ¿µÄ³õÊ¼»¯·½·¨Ãû¡£(²Î¿¼Keras.initializers.Ö»ÓĞweightsÎ´´«²ÎÊ±²Å»áÊ¹ÓÃ.
+        gammaä»£è¡¨æƒé‡weightsï¼Œbetaä»£è¡¨åç½®bias
+    å‚æ•°åˆ—è¡¨ï¼š
+        axis: intå‹ï¼Œä»£è¡¨éœ€è¦åšscaleçš„è½´æ–¹å‘ï¼Œaxis=-1 ä»£è¡¨é€‰å–é»˜è®¤æ–¹å‘ï¼ˆæ¨ªè¡Œï¼‰ã€‚
+        momentum: å¯¹æ•°æ®æ–¹å·®å’Œæ ‡å‡†å·®åšæŒ‡æ•°å¹³å‡æ—¶çš„åŠ¨é‡.
+        weights: åˆå§‹æƒé‡ï¼Œæ˜¯ä¸€ä¸ªåŒ…å«ä¸¤ä¸ªnumpy arrayçš„list, shapes:[(input_shape,), (input_shape,)]
+        beta_init: åç½®é‡çš„åˆå§‹åŒ–æ–¹æ³•åã€‚(å‚è€ƒKeras.initializers.åªæœ‰weightsæœªä¼ å‚æ—¶æ‰ä¼šä½¿ç”¨.
+        gamma_init: æƒé‡é‡çš„åˆå§‹åŒ–æ–¹æ³•åã€‚(å‚è€ƒKeras.initializers.åªæœ‰weightsæœªä¼ å‚æ—¶æ‰ä¼šä½¿ç”¨.
     '''
     def __init__(self, weights=None, axis=-1, beta_init = 'zero', gamma_init = 'one', momentum = 0.9, **kwargs):
         print("--Scale--init", axis)
-        # ²ÎÊı**kwargs´ú±í°´×Öµä·½Ê½¼Ì³Ğ¸¸Àà
+        # å‚æ•°**kwargsä»£è¡¨æŒ‰å­—å…¸æ–¹å¼ç»§æ‰¿çˆ¶ç±»
         self.momentum = momentum
         self.axis = axis
         self.beta_init = initializers.Zeros()
@@ -36,7 +36,7 @@ class Scale(Layer):
     def build(self, input_shape):
         print("--Scale--build", input_shape)
         self.input_spec = [InputSpec(shape=input_shape)]
-        # 1£ºInputSpec(dtype=None, shape=None, ndim=None, max_ndim=None, min_ndim=None, axes=None)
+        # 1ï¼šInputSpec(dtype=None, shape=None, ndim=None, max_ndim=None, min_ndim=None, axes=None)
         #Docstring:     
         #Specifies the ndim, dtype and shape of every input to a layer.
         #Every layer should expose (if appropriate) an `input_spec` attribute:a list of instances of InputSpec (one per input tensor).

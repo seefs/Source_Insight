@@ -1,12 +1,12 @@
-
-»ù´¡Â·¾¶ÉèÖÃ:
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®:
 basePath = Save:node\Pythons
 
 /***********************************************************************/
 
-//Ä¿Â¼[Num][Ca]:
+//ç›®å½•[Num][Ca]:
 // 1. 
-Save:node\Pythons\study\Macro_Pythons_requests.h \[1.1\] °²×°
+Save:node\Pythons\study\Macro_Pythons_requests.h \[1.1\] å®‰è£…
 Save:node\Pythons\study\Macro_Pythons_requests.h \[1.2\] req_cntour
 Save:node\Pythons\study\Macro_Pythons_requests.h \[1.3\] 
 Save:node\Pythons\study\Macro_Pythons_requests.h \[1.4\] 
@@ -32,21 +32,21 @@ Save:node\Pythons\study\Macro_Pythons_requests.h \[4.3\]
 Save:node\Pythons\study\Macro_Pythons_requests.h \[5.1\] 
 Save:node\Pythons\study\Macro_Pythons_requests.h \[5.2\] 
 Save:node\Pythons\study\Macro_Pythons_requests.h \[5.3\] 
-// ÆäËû±êºÅ
+// å…¶ä»–æ ‡å·
 Save:Help\Test\Macro_Test_Node_Num.h \[1.1\] 
 
 
 
 
-[1.1] °²×°
-//°²×°
+[1.1] å®‰è£…
+//å®‰è£…
 Save:node\Pythons\install\Macro_Pythons_Install.h \[2.12\] requests
 
 
-//ºÏ·¨ĞÔ
-//  ÌÔ±¦Íø
+//åˆæ³•æ€§
+//  æ·˜å®ç½‘
 https://www.taobao.com/robots.txt
-//  ÌÔ±¦Íø
+//  æ·˜å®ç½‘
 http://www.iqiwx.com/robots.txt
 
 

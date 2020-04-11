@@ -1,4 +1,4 @@
-import tensorflow as tf
+﻿import tensorflow as tf
 
 with tf.Graph().as_default():
     x = tf.Variable(initial_value=3., dtype='float32')

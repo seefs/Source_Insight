@@ -1,4 +1,4 @@
-
+ï»¿
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Layer
 
@@ -173,7 +173,7 @@ class EmbeddingsLayer(Layer):
 def detail_slice(inputs):
     mark, cnt  = inputs
     shape_list = tf.shape(mark)
-    max_len    = shape_list[0] #Ô¤´¦Àí²ÅÄÜÈ¡µ½Öµ
+    max_len    = shape_list[0] #é¢„å¤„ç†æ‰èƒ½å–åˆ°å€¼
     max_cnt    = shape_list[1]
     if EmbeddingsLayer.debug:
         logging.getLogger().info("\n--max_len\n  %s" % (max_len))
@@ -281,7 +281,7 @@ def add_mark_block_relation(inputs):
         logging.getLogger().info("\n--add_block\n  %s" % (tf.shape(output)))      #shape(10, 14, 2, 18)
         #logging.getLogger().info("\n--  %s" % output)
     # add relation:
-    output = add_relation(output) #¸Ä³ÉÆ½¾ùÊıÊÔÊÔ
+    output = add_relation(output) #æ”¹æˆå¹³å‡æ•°è¯•è¯•
     if EmbeddingsLayer.debug:
         logging.getLogger().info("\n--add_relation\n  %s" % (tf.shape(output)))      #shape(10, 14, 2, 18)
         #logging.getLogger().info("\n--  %s" % output)
@@ -298,7 +298,7 @@ def add_merge_scale(inputs):
     scale_SN = tf.cast(scale_SN, dtype=tf.float32)
     
     # add merge:
-    #shape_list  = tf.shape(mbr_SN217)      #È¡²»µ½Öµ
+    #shape_list  = tf.shape(mbr_SN217)      #å–ä¸åˆ°å€¼
     shape_list  = mbr_SN217.shape.as_list()
     shape_list  = [-1] + shape_list[1:2] + shape_list[3:]
     mbr_SN217_0 = tf.slice(mbr_SN217, [0,0,0,0], [-1,-1,1,-1])
@@ -318,11 +318,11 @@ def add_merge_scale(inputs):
     # add sum:
     ms_S17   = K.sum(ms_SN17, axis=1)
     avg_S    = K.mean(ms_S17, axis=-1)
-    # mean_S¼ÆËã¾ùÖµºÍ·½²î, Öµ²î²»¶à
+    # mean_Sè®¡ç®—å‡å€¼å’Œæ–¹å·®, å€¼å·®ä¸å¤š
     #mean_S, variance_S = tf.nn.moments(ms_S17, axes=-1)
-    # avg_S²»¼ÓÎ¬¶ÈÑµÁ·Ê±±¨´í(¼òµ¥²âÊÔÎ´±¨´í)
+    # avg_Sä¸åŠ ç»´åº¦è®­ç»ƒæ—¶æŠ¥é”™(ç®€å•æµ‹è¯•æœªæŠ¥é”™)
     avg_S1   = tf.expand_dims(avg_S, -1)
-    ms_S17   = tf.divide(ms_S17, avg_S1)*0.45 #ÓÃ0.2~0.5
+    ms_S17   = tf.divide(ms_S17, avg_S1)*0.45 #ç”¨0.2~0.5
     return ms_S17
     
 def add_score(inputs):

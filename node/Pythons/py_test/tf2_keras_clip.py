@@ -1,8 +1,8 @@
-
+ï»¿
 import tensorflow as tf
 from keras import backend
 
-a = tf.constant(2.1) #¶¨Òåtensor³£Á¿
+a = tf.constant(2.1) #å®šä¹‰tensorå¸¸é‡
 b = backend.clip(a, 0, 1)
 
 print (b)

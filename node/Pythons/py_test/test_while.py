@@ -1,4 +1,4 @@
-#!/usr/bin/python
+﻿#!/usr/bin/python
  
 count = 0
 while (count < 9):

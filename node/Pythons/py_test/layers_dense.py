@@ -1,4 +1,4 @@
-import tensorflow as tf
+ï»¿import tensorflow as tf
 import numpy as np
 
 
@@ -28,7 +28,7 @@ print(ly)
 sess=tf.Session()
 sess.run(tf.global_variables_initializer())
 
-#Ã¿´Î±àÒëÖµ²»Ò»Ñù
+#æ¯æ¬¡ç¼–è¯‘å€¼ä¸ä¸€æ ·
 print(ly.eval(session=sess))
 
 

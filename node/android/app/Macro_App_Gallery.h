@@ -1,10 +1,10 @@
-//Ä¿Â¼[Num][Ca]:
+ï»¿//ç›®å½•[Num][Ca]:
 
 /***********************************************************************/
 /****************************** base ***********************************/
 /***********************************************************************/
 	
-»ù´¡Â·¾¶ÉèÖÃ: [s][Cs]
+åŸºç¡€è·¯å¾„è®¾ç½®: [s][Cs]
 //basePath = F:\9820e
 //basePath = \\192.168.2.115\xiaoj\9820e\idh.code
 
@@ -13,14 +13,14 @@
 
 
 
-Ä¿Â¼ÁĞ±í£º
+ç›®å½•åˆ—è¡¨ï¼š
 open: E:\Save\SI\node\9820e\9820E_file\java_38179.txt
 open: E:\Save\SI\node\9820e\9820E_file\Makefile_7346.txt
 open: E:\Save\SI\node\9820e\9820E_file\mk_5373.txt
 open: E:\Save\SI\node\9820e\9820E_file\xml_29478.txt
 
 
-Â·¾¶: 
+è·¯å¾„: 
 packages\apps\Gallery2\src\com\android\gallery3d\app\AbstractGalleryActivity.java
 packages\apps\Gallery2\src\com\android\gallery3d\app\ActivityState.java
 packages\apps\Gallery2\src\com\android\gallery3d\app\AlbumDataLoader.java
@@ -76,7 +76,7 @@ packages\apps\Gallery2\src\com\android\gallery3d\app\VideoUtils.java
 packages\apps\Gallery2\src\com\android\gallery3d\app\Wallpaper.java
 
 
-×ÊÔ´: Calculator
+èµ„æº: Calculator
 packages\apps\Gallery\AndroidManifest.xml
 packages\apps\Gallery\res\layout\activity_main.xml
 
@@ -92,7 +92,7 @@ Main:
 
 
 /***********************************************************************/
-/*************************** ²Î¿¼±Ê¼Ç¡¢ÍøÉÏÕÒµÄ£¬ºÜÂÒ. *****************/
+/*************************** å‚è€ƒç¬”è®°ã€ç½‘ä¸Šæ‰¾çš„ï¼Œå¾ˆä¹±. *****************/
 /***********************************************************************/
 
 

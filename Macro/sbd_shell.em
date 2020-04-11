@@ -1,4 +1,4 @@
-
+ï»¿
 /***********************************************************************/
 /****************************    Shell  *********************************/
 /***********************************************************************/
@@ -11,7 +11,7 @@ macro ShellAddLink(path1, path2)
 
 macro ShellAddLinkCygwin(path1, path2)
 {
-	//cygwinÓëmtk³åÍ», ÔİÊ±ÔÚbatÖĞÊÖ¶¯Ìí¼Ó
+	//cygwinä¸mtkå†²çª, æš‚æ—¶åœ¨batä¸­æ‰‹åŠ¨æ·»åŠ 
 	ShellExecute("open", "cmd_base_cygwin.bat", "ln -s @path1@ @path2@", getCmdPath(0), 1)
 }
 
@@ -32,9 +32,14 @@ macro ShellOpenCustomCmd(cmdStr)
 	ShellExecute("open", "cmd_base.bat", cmdStr, getCmdPath(0), 1)
 }
 
-macro ShellGetFileList(cmdStr)
+macro ShellGetLikeFile(cmdStr)
 {
-	ShellExecute("open", "cmd_getFileList.bat", cmdStr, getCmdPath(0), 1)
+	ShellExecute("open", "cmd_getLikeFile.bat", cmdStr, getCmdPath(0), 1)
+}
+
+macro ShellGetAsFileList(cmdStr)
+{
+	ShellExecute("open", "cmd_getAsFileList.bat", cmdStr, getCmdPath(0), 1)
 }
 
 macro ShellOpenCmd(path, file)
@@ -61,7 +66,7 @@ macro ShellOpenCmd(path, file)
 macro ShellAddParam(param)
 {
 	//_TempHeadShell()
-	//batÃüÁîÖĞ²ÅÓÃÏà¶ÔÄ¿Â¼
+	//batå‘½ä»¤ä¸­æ‰ç”¨ç›¸å¯¹ç›®å½•
 	pFile = "..\\Cmd_TXT\\si_param.h"
 	ShellExecute("open", "cmd_base.bat", "echo @param@>> @pFile@", getCmdPath(0), 1)
 }
@@ -128,7 +133,7 @@ macro OpenShellTest(hbuf)
 {
 	//_TempHeadShell()
 	var v
-	v = "cmd" //²ÎÊı¸öÊı×î¶à7¸ö£¬¼û cmd_base.bat
+	v = "cmd" //å‚æ•°ä¸ªæ•°æœ€å¤š7ä¸ªï¼Œè§ cmd_base.bat
 
 	 
 	if(v == "cmd")

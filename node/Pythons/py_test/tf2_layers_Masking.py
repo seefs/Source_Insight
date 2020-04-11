@@ -1,4 +1,4 @@
-
+﻿
 
 def test_sequences(self):
     """Test masking sequences with zeroes as padding"""

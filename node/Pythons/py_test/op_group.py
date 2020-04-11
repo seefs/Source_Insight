@@ -1,11 +1,11 @@
-import tensorflow as tf  
+ï»¿import tensorflow as tf  
 
 x = tf.Variable(0.0)  
 x_plus = tf.assign_add(x, 1)  
-with tf.control_dependencies([x_plus]):#Ö»ÓĞµ±ÄÚ²¿Îª²Ù×÷Ê±ÒÔÀ´²Å»áÉúĞ§  
-    #y = tf.identity(x)#½«¸ÃÓï¾ä±äÎª²Ù×÷  
+with tf.control_dependencies([x_plus]):#åªæœ‰å½“å†…éƒ¨ä¸ºæ“ä½œæ—¶ä»¥æ¥æ‰ä¼šç”Ÿæ•ˆ  
+    #y = tf.identity(x)#å°†è¯¥è¯­å¥å˜ä¸ºæ“ä½œ  
     y = x  
-    update = tf.group(y)#½«¸ÃÓï¾ä±äÎª²Ù×÷  
+    update = tf.group(y)#å°†è¯¥è¯­å¥å˜ä¸ºæ“ä½œ  
 init = tf.global_variables_initializer()  
 with tf.Session() as session:  
     init.run()  

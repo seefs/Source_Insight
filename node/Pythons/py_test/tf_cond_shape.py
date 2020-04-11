@@ -1,9 +1,9 @@
-
+ï»¿
 
 import tensorflow as tf
 
 
-# Ìõ¼ş
+# æ¡ä»¶
 x = tf.cond(1, lambda: [[1],[2]], lambda: [])
 print('\n', x)
 print(tf.shape(x))

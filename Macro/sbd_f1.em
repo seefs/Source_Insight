@@ -1,4 +1,4 @@
-
+ï»¿
 macro Tree()
 {
 	//_TempHeadF1()
@@ -14,11 +14,11 @@ macro Tree()
 	CommonTest(hbuf)
     
 	key = GetKey()
-	if (key >= 48 && key <= 57 )                     // Êı×Ö0~9
+	if (key >= 48 && key <= 57 )                     // æ•°å­—0~9
 	{
 		TreeNum(hbuf, key)
 	}
-	else if (key >= 97 && key <= 122 )               // ×ÖÄ¸a~z
+	else if (key >= 97 && key <= 122 )               // å­—æ¯a~z
 	{
 		TreeChar(hbuf, key)
 	}
@@ -26,11 +26,11 @@ macro Tree()
 	{
 		TreeCtrlChar(hbuf, key)
 	}
-	else if (key >= 4208 && key <= 4219)             // F1~F12  ÏÔÊ¾f1~f12 ¹¦ÄÜËµÃ÷(SI3.5±àÂë)
+	else if (key >= 4208 && key <= 4219)             // F1~F12  æ˜¾ç¤ºf1~f12 åŠŸèƒ½è¯´æ˜(SI3.5ç¼–ç )
 	{
 		if(key == 1048688)      //F1
 		{
-			//´ò¿ª»òÉèÖÃÄ¬ÈÏÏîÄ¿
+			//æ‰“å¼€æˆ–è®¾ç½®é»˜è®¤é¡¹ç›®
 			OpenDefaultProject(hbuf)
 		}
 		else if(key == 4209) //F2
@@ -54,11 +54,11 @@ macro Tree()
 			//TreeFNum(hbuf, key-4207)
 		}
 	}
-	else if (key >= 1048688 && key <= 1048699 )      // F1~F12  ÏÔÊ¾f1~f12 ¹¦ÄÜËµÃ÷(SI4.0±àÂë)
+	else if (key >= 1048688 && key <= 1048699 )      // F1~F12  æ˜¾ç¤ºf1~f12 åŠŸèƒ½è¯´æ˜(SI4.0ç¼–ç )
 	{
 		if(key == 1048688)      //F1
 		{
-			//´ò¿ª»òÉèÖÃÄ¬ÈÏÏîÄ¿
+			//æ‰“å¼€æˆ–è®¾ç½®é»˜è®¤é¡¹ç›®
 			OpenDefaultProject(hbuf)
 		}
 		else if(key == 1048689) //F2
@@ -82,7 +82,7 @@ macro Tree()
 			//TreeFNum(hbuf, key-1048687)
 		}
 	}
-	else                                             //Other: -,+,back,del,·½Ïò¼ü
+	else                                             //Other: -,+,back,del,æ–¹å‘é”®
 	{
 		TreeOther(hbuf, key)
 	}
@@ -91,63 +91,63 @@ macro Tree()
 macro TreeNum(hbuf, key)
 {
 	//_TempHeadF1()
-	//Ö¸¶¨Ä¬ÈÏÎÄ¼ş¿ÉÄÜÎªÈÎÒâÄ¿Â¼
+	//æŒ‡å®šé»˜è®¤æ–‡ä»¶å¯èƒ½ä¸ºä»»æ„ç›®å½•
 	if (key != 49)
 	{
 		bft = getBft(2)
 	}
 	
-	if (key == 49) //Êı×Ö1
+	if (key == 49) //æ•°å­—1
 	{
-		//Ìøµ½Ä¬ÈÏfile
+		//è·³åˆ°é»˜è®¤file
 		SetDefaultProject(hbuf)
 //		file = GetGroupItem(bft, 1, "Project", "File")
 	}
-	else if (key == 50) //Êı×Ö2
+	else if (key == 50) //æ•°å­—2
 	{
 		file = GetGroupItem(bft, 1, "Project", "File")
 		OpenProjectFile(hbuf, file, "", "")
 	}
-	else if (key == 51) //Êı×Ö3
+	else if (key == 51) //æ•°å­—3
 	{
 		file = GetGroupItem(bft, 2, "Project", "File")
 		OpenProjectFile(hbuf, file, "", "")
 	}
-	else if (key == 52) //Êı×Ö4
+	else if (key == 52) //æ•°å­—4
 	{
 		file = GetGroupItem(bft, 3, "Project", "File")
 		word = "MMISET_EDEFAULT_LANGUAGE"
 		OpenProjectFile(hbuf, file, "", word)
 	}
-	else if (key == 53) //Êı×Ö5
+	else if (key == 53) //æ•°å­—5
 	{
 		file1 = GetGroupItem(bft, 4, "Project", "File")
 		file2 = GetGroupItem(bft, 5, "Project", "File")
 		word = "menu_mainmenu_icon"
 		OpenProjectFile(hbuf, file1, file2, word)
 	}
-	else if (key == 54) //Êı×Ö6
+	else if (key == 54) //æ•°å­—6
 	{
 		file = GetGroupItem(bft, 6, "Project", "File")
 		OpenProjectFile(hbuf, file, "", "")
 	}
-	else if (key == 55) //Êı×Ö7
+	else if (key == 55) //æ•°å­—7
 	{
 		file = GetGroupItem(bft, 7, "Project", "File")
 		OpenProjectFile(hbuf, file, "", "")
 	}
-	else if (key == 56) //Êı×Ö8
+	else if (key == 56) //æ•°å­—8
 	{
 		OpenBuildDir(hbuf)
 	}
-	else if (key == 57) //Êı×Ö9
+	else if (key == 57) //æ•°å­—9
 	{
-		//ÉèÖÃÄ¬ÈÏmk
+		//è®¾ç½®é»˜è®¤mk
 		SetDefaultMake(hbuf)
 	}
-	else if (key == 48) //Êı×Ö0
+	else if (key == 48) //æ•°å­—0
 	{
-		//Ìøµ½Ä¬ÈÏmk
+		//è·³åˆ°é»˜è®¤mk
 		OpenDefaultMake(hbuf)
 	}
 }
@@ -155,26 +155,26 @@ macro TreeNum(hbuf, key)
 macro TreeChar(hbuf, key)
 {
 	//_TempHeadF1()
-	if (key == 97) //×ÖÄ¸A
+	if (key == 97) //å­—æ¯A
 	{
 		ShowFHelp(hbuf, "F1A")
 	}
-	else if (key == 98) //×ÖÄ¸B
+	else if (key == 98) //å­—æ¯B
 	{
 		path1 = getSavePath(0) # "\\SI"
 		path2 = getSavePath(0) # "\\SI_bak"
 		ShellBCompare(path1, path2)
 	}
-	else if (key == 99) //×ÖÄ¸C
+	else if (key == 99) //å­—æ¯C
 	{
 		OpenCmdFile(hbuf)
 	}
-	else if (key == 100) //×ÖÄ¸D
+	else if (key == 100) //å­—æ¯D
 	{
 		newkey = GetKey()
 		msg ("key @newkey@")
 	}
-	else if (key == 101) //×ÖÄ¸E
+	else if (key == 101) //å­—æ¯E
 	{
 		sel = MGetWndSel(hbuf)
 		if (IsSingleSelect(sel))
@@ -184,7 +184,7 @@ macro TreeChar(hbuf, key)
 			msg(cch1)
 		}
 	}
-	else if (key == 102) //×ÖÄ¸F
+	else if (key == 102) //å­—æ¯F
 	{
 		hprj = GetCurrentProj ()
 		if(hprj>0)
@@ -192,69 +192,69 @@ macro TreeChar(hbuf, key)
 			msg ("ProjDir:" # GetProjDir (hprj))
 		}
 	}
-	else if (key == 103) //×ÖÄ¸G
+	else if (key == 103) //å­—æ¯G
 	{
 		FunTotal(hbuf)
 	}
-	else if (key == 105) //×ÖÄ¸I
+	else if (key == 105) //å­—æ¯I
 	{
 		ShowSelAscii(hbuf)
 	}
-	else if (key == 107) //×ÖÄ¸K
+	else if (key == 107) //å­—æ¯K
 	{
 	}
-	else if (key == 108) //×ÖÄ¸L  add link
+	else if (key == 108) //å­—æ¯L  add link
 	{
 		AddLinkProjectName(hbuf)
 	}
-	else if (key == 109) //×ÖÄ¸M  open mk
+	else if (key == 109) //å­—æ¯M  open mk
 	{
 		OpenSelMakeFile(hbuf)
 	}
-	else if (key == 110) //×ÖÄ¸N  show filename
+	else if (key == 110) //å­—æ¯N  show filename
 	{
 		ShowFileName(hbuf, true)
 	}
-	else if (key == 111) //×ÖÄ¸O open file dir
+	else if (key == 111) //å­—æ¯O open file dir
 	{
 		OpenProjectBase(hbuf)
 	}
-	else if (key == 112) //×ÖÄ¸P open project
+	else if (key == 112) //å­—æ¯P open project
 	{
 		open_project
 	}
-	else if (key == 113) //×ÖÄ¸Q clear clip
+	else if (key == 113) //å­—æ¯Q clear clip
 	{
 		hbufClip = GetBufHandle("Clipboard")
 		EmptyBuf(hbufClip)
 	}
-	else if (key == 114) //×ÖÄ¸R  ¼ì²éÖØ¸´ 48S ºÜ¾Ã
+	else if (key == 114) //å­—æ¯R  æ£€æŸ¥é‡å¤ 48S å¾ˆä¹…
 	{
 		ChkRepeat(hbuf)
 	}
-	else if (key == 115) //×ÖÄ¸S
+	else if (key == 115) //å­—æ¯S
 	{
 		sel = MGetWndSel(hbuf)
 		msg(sel)
-		SetClipString(sel) // µ÷ÊÔsel½á¹¹Ìå
+		SetClipString(sel) // è°ƒè¯•selç»“æ„ä½“
 	}
-	else if (key == 116) //×ÖÄ¸T
+	else if (key == 116) //å­—æ¯T
 	{
 		OpenF1Test(hbuf)
 	}
-	else if (key == 118) //×ÖÄ¸V  search version
+	else if (key == 118) //å­—æ¯V  search version
 	{
 		SearchVersion(hbuf)
 	}
-	else if (key == 119) //×ÖÄ¸W  close windows
+	else if (key == 119) //å­—æ¯W  close windows
 	{
 		WindowsCloseStyleOne(hbuf)
 	}
-	else if (key == 120) //×ÖÄ¸X  Çå³ı.mkÓÒ²àÄÚÈİ£¬ÓÃÓÚ¶Ô±È
+	else if (key == 120) //å­—æ¯X  æ¸…é™¤.mkå³ä¾§å†…å®¹ï¼Œç”¨äºå¯¹æ¯”
 	{
 		DeleteTxtRightMk(hbuf)
 	}
-	else if (key == 122) //×ÖÄ¸Z
+	else if (key == 122) //å­—æ¯Z
 	{
 		pick_window
 	}
@@ -267,11 +267,11 @@ macro TreeChar(hbuf, key)
 macro TreeCtrlChar(hbuf, key)
 {
 	//_TempHeadF1()
-	if (key == 262209) //×ÖÄ¸A
+	if (key == 262209) //å­—æ¯A
 	{
 		ShowFHelp(hbuf, "F1A")
 	}
-	else if (key == 262212) //×ÖÄ¸D
+	else if (key == 262212) //å­—æ¯D
 	{
 		if(IsFileName(hbuf, "Macro_") || IsFileName(hbuf, "Simple_CTRL_"))
 		{
@@ -315,17 +315,17 @@ macro TreeOther(hbuf, key)
 	//_TempHeadF1()
 	if (key == 45) //-
 	{
-		// ÏÂÔØ
+		// ä¸‹è½½
 		OpenToolsDownload(hbuf, False)
 	}
 	else if (key == 61) //+
 	{
-		// ÏÂÔØ²¢³õÊ¼»¯Â·¾¶
+		// ä¸‹è½½å¹¶åˆå§‹åŒ–è·¯å¾„
 		OpenToolsDownload(hbuf, TRUE)
 	}
 	else if (key == 8) //back
 	{
-		// ´ò¿ªSR
+		// æ‰“å¼€SR
     	OpenDefaultSR(hbuf)
 	}
 	else
@@ -339,7 +339,7 @@ macro ShowHelpLoop(hbuf)
 { 
 	//_TempHeadF1()
 	
-	//²»ÓÃÌáÊ¾
+	//ä¸ç”¨æç¤º
 	//ShowFHelp(hbuf, "help")
 	
 	baseStr = ""
@@ -357,7 +357,7 @@ macro ShowHelpLoop(hbuf)
 	{
 		ShowSimpleHelp(hbuf, "F1 -> " # CharFromAscii (key-262209 + 96))
 	}
-	else if (key >= 4208 && key <= 4219)      		// F12->F1~F12  ÏÔÊ¾f1~f12 ¹¦ÄÜËµÃ÷
+	else if (key >= 4208 && key <= 4219)      		// F12->F1~F12  æ˜¾ç¤ºf1~f12 åŠŸèƒ½è¯´æ˜
 	{
 		if(key - 4208>=9)
 		{
@@ -369,7 +369,7 @@ macro ShowHelpLoop(hbuf)
 		}
 		ShowFHelp(hbuf, "F@chr@")
 	}
-	else if (key >= 1048688 && key <= 1048699)      // F12->F1~F12  SI3.5, 4.0 code²»Ò»Ñù
+	else if (key >= 1048688 && key <= 1048699)      // F12->F1~F12  SI3.5, 4.0 codeä¸ä¸€æ ·
 	{
 		if(key - 1048688>=9)
 		{
@@ -412,7 +412,7 @@ macro ShowHelp(hbuf, key)
 macro ShowMoreHelp(hbuf, spit, key)
 {
 	//_TempHeadF1(hbuf)
-	//ÏÔÊ¾¶àĞĞÌáÊ¾»òÓïÑÔ°ïÖú
+	//æ˜¾ç¤ºå¤šè¡Œæç¤ºæˆ–è¯­è¨€å¸®åŠ©
 	key = key # spit
 	mSelStart = SearchInBuf(hbuf, key, 0, 0, FALSE, FALSE, FALSE)
 	helpTxt = key # ":" # CharFromKey(13)
@@ -466,8 +466,8 @@ macro ShowSimpleHelp(hbuf, key)
 
 macro CommonTest(hbuf)
 {
-	//F1×÷Îª(ÆäËûºê)Í¨ÓÃºê²âÊÔ; 
-	//F1->T²âÊÔF1µÄ¹¦ÄÜ[OpenF1Test()]
+	//F1ä½œä¸º(å…¶ä»–å®)é€šç”¨å®æµ‹è¯•; 
+	//F1->Tæµ‹è¯•F1çš„åŠŸèƒ½[OpenF1Test()]
 	if(IsMacroFile(hbuf))
 	{
 		if(IsFileName(hbuf, "sbd_f1.em")) // no use, use F1->T test

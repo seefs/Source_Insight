@@ -1,4 +1,4 @@
-
+ï»¿
 from keras.models import Sequential
 import numpy as np
 from keras.engine.topology import Layer
@@ -12,7 +12,7 @@ class MyLayer(Layer):
         super(MyLayer, self).__init__(**kw)  
     def build(self, input_shape):  
         input_dim = input_shape[1] 
-        self.SCALER=self.add_weight(shape=(input_dim,), initializer='uniform', trainable=True)#×¢ÒâshapeĞ´·¨
+        self.SCALER=self.add_weight(shape=(input_dim,), initializer='uniform', trainable=True)#æ³¨æ„shapeå†™æ³•
         super(MyLayer, self).build(input_shape)  
     def call(self, x):  
         x *= self.SCALER

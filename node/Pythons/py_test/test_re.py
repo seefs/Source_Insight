@@ -1,9 +1,9 @@
-#!/usr/bin/python
+ï»¿#!/usr/bin/python
 # -*- coding: UTF-8 -*-
  
 import re
  
-# ½«Æ¥ÅäµÄÊı×Ö³ËÒÔ 2
+# å°†åŒ¹é…çš„æ•°å­—ä¹˜ä»¥ 2
 def double(matched):
     value = int(matched.group('value'))
     return str(value * 2)

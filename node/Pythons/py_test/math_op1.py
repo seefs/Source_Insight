@@ -1,4 +1,4 @@
-#!/usr/bin/python
+ï»¿#!/usr/bin/python
 # -*- coding: UTF-8 -*-
 import tensorflow as tf
 import numpy as np
@@ -13,7 +13,7 @@ Y1 = [[1,1,1]]
 Y2 = [[1,1,1]]
 
 
-# listÏà¼Ó:
+# listç›¸åŠ :
 print('')
 print(X + Y1)
 #    [[12, 7, 3], [4, 5, 6], [7, 8, 9], [1, 1, 1]]
@@ -34,7 +34,7 @@ aa3 = tf.constant([1,1,1],
                     dtype=tf.float32)
 
 
-# tensorÏà¼Ó: Ã¿¸öÔªËØÏà¼Ó
+# tensorç›¸åŠ : æ¯ä¸ªå…ƒç´ ç›¸åŠ 
 print('')
 print((aa2 + aa1).numpy())
 #    [[13.  8.  4.]
@@ -48,7 +48,7 @@ print((aa3 + aa1).numpy())
 #     [ 8.  9. 10.]]
 
 
-# tensorÏà³Ë: 
+# tensorç›¸ä¹˜: 
 a = tf.constant([[1, 2],
                    [3, 4],
                    [5, 6]],

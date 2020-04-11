@@ -1,4 +1,4 @@
-
+ï»¿
 
 import numpy as np
 import tensorflow as tf
@@ -50,7 +50,7 @@ scr_dict_y = [1, 0, 0, 0, 1]
 
 
 
-#×ÜµÄ5¸ö(ÕýÈ·4)
+#æ€»çš„5ä¸ª(æ­£ç¡®4)
 print(get_metrics(scr_dict_x, scr_dict_y))
 
 

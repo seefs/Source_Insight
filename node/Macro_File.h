@@ -1,6 +1,6 @@
-
+ï»¿
 // File List [Num][Ca]:
-// 1. ³£ÓÃ±Ê¼Ç
+// 1. å¸¸ç”¨ç¬”è®°
 Save:node\Macro_File.h \[1.1\] work file
 Save:node\Macro_File.h \[1.2\] bak file
 Save:node\Macro_File.h \[1.3\] help--Node Num
@@ -56,29 +56,32 @@ Save:node\Project\Macro_A_Nav.h
 
 
 [1.2] bak file
-//	bak(Î´ÕûÀí, Î´¸Ä)
+//	bak(æœªæ•´ç†, æœªæ”¹)
 Save:Help\bak\Macro_tmp.h
 
 
 [1.3] help--Node Num
-//²Î¿¼±êºÅ:
-Save:Help\Test\Macro_Test_Node_Num.h
+//å‚è€ƒæ ‡å·:
+//  2ä¸ª\\æ˜¯ä¸ºäº†ä¸è¢«æ›¿æ¢
+Save:Help\\Test\\Macro_Test_Node_Num.h
 
 
 [1.4] help--DefaultFile
-//Ñù°åÎÄ¼ş:
+//æ ·æ¿æ–‡ä»¶:
 Save:Help\DefaultFile\Macro_z_null.h
 Save:Help\DefaultFile\Macro_z_null.py
-//Ñù°åÎÄ¼ş-(¸ü¶àĞòºÅ+):
+//æ ·æ¿æ–‡ä»¶-(æ›´å¤šåºå·+):
 Save:Help\DefaultFile\Macro_z_null_2.h
 
 
 [1.5] CQ
-//ìøµÀ Õ¹Ñ¶ MTK
-//1) ìøµÀ:
+//ç¦…é“ å±•è®¯ MTK
+//1) ç¦…é“:
 http://192.168.2.252/zentao/my/
-//2) Õ¹Ñ¶:
+//2) å±•è®¯:
 http://222.66.158.139:2008/cqweb/#
+//   9820e:
+https://isupport.spreadtrum.com/iSupport/apply/faq_list#tab-
 //3) MTK:
 https://online.mediatek.com
 
@@ -110,44 +113,39 @@ Save:Macro\a_String.em
 
 
 [2.2] marco test...
-// test:
-// ´ò¿ªmsg log
-Save:Help\Macro_Note_Test.h  testParam
-//  testParam = 1
-
-// ¹¦ÄÜ²âÊÔ
+// åŠŸèƒ½æµ‹è¯•
 Save:Help\Macro_Note_Test.h
 
 
 [2.3] set marco path
-// 1) ¸Ä±äSaveÂ·¾¶, ºêÃüÁî²ÅÄÜÕı³£Ê¹ÓÃ:
+// 1) æ”¹å˜Saveè·¯å¾„, å®å‘½ä»¤æ‰èƒ½æ­£å¸¸ä½¿ç”¨:
 Save:Macro\sbd_base.em	getSavePath(0)
 Save:Macro\sbd_root_path.em  getRootPath(0)
 
-// 2) ÉèÖÃÂ·¾¶²½Öè:
+// 2) è®¾ç½®è·¯å¾„æ­¥éª¤:
 Save:Help\Other\Macro_Help_SI.h
 
 
 [2.4] set work path
-//1) ¹¤³ÌÂ·¾¶
+//1) å·¥ç¨‹è·¯å¾„
 Save:set\Macro_Set_Base.h
 
-//2) ÏîÄ¿Â·¾¶
+//2) é¡¹ç›®è·¯å¾„
 Save:set\Macro_Set_Note.h
 
 
 [2.5] set file code
-//1) ĞÂ¹¦ÄÜ
+//1) æ–°åŠŸèƒ½
 Save:Cmd_other\conv_cur_charset\
-//Ìí¼Ó×ª»»Ä¿Â¼:
-//    ÓÃue´ò¿ª,»òSI´ò¿ª(ansi)
+//æ·»åŠ è½¬æ¢ç›®å½•:
+//    ç”¨ueæ‰“å¼€,æˆ–SIæ‰“å¼€(ansi)
 Save:Cmd_other\conv_cur_charset\conv_cur_ansi_to_utf8.vbs
 
-//2) ¾É¹¦ÄÜ
-//   set--utf8: (ÏÖÔÚÓÃ²»ÉÏ, ¸Ä±àÂëÓÃÅú´¦Àí)
+//2) æ—§åŠŸèƒ½
+//   set--utf8: (ç°åœ¨ç”¨ä¸ä¸Š, æ”¹ç¼–ç ç”¨æ‰¹å¤„ç†)
 Save:set\Macro_Set.h 63
 
-//3) ÆäËû¹«¹²set
+//3) å…¶ä»–å…¬å…±set
 Save:set\Macro_Set.h
 	
 
@@ -184,7 +182,7 @@ Save:node\ToolsMsg\Macro_Cmd.h
 
 
 [4.4] SVN
-Save:node\ToolsMsg\Macro_win.h \[2.4\] SVN ÅäÖÃ
+Save:node\ToolsMsg\Macro_win.h \[2.4\] SVN é…ç½®
 
 
 [4.5] Beyond Compare
@@ -199,6 +197,7 @@ Save:node\ToolsMsg\Macro_SecureCRT.h
 
 [4.7] git
 Save:node\ToolsMsg\Macro_git.h
+Save:node\ToolsMsg\Macro_git_md.h
 Save:node\ToolsMsg\Macro_git_app.h
 
 

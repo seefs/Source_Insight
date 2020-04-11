@@ -1,19 +1,19 @@
-/*
-	����:string
+﻿/*
+	功能:string
 	
 
 Fun list:
 	macro _TempHeadEvent(hbuf){}
 
-TrimSpaces(thbuf) //����ұ߿ո�
+TrimSpaces(thbuf) //清除右边空格
 StrTrimSpaces(s)  //
 
-TabOrIndent(thbuf)  //ûʲô��
+TabOrIndent(thbuf)  //没什么用
 
 
 InsertAsterisk(thbuf)
 
-PrintSelection(thbuf)  //ûʲô��
+PrintSelection(thbuf)  //没什么用
 
 
 */

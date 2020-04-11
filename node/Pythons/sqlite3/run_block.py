@@ -1,4 +1,4 @@
-
+ï»¿
 
 from __future__ import absolute_import, division, print_function
 
@@ -88,7 +88,7 @@ block_model.save_weights(h5_file.format(data.max_vocab_len), overwrite=True)
 # In[4]:
 
 
-# ÑéÖ¤(ÑµÁ·okºóÔÙ´ò¿ª)
+# éªŒè¯(è®­ç»ƒokåå†æ‰“å¼€)
 #if data.train_enable:
 #    _, train_acc, train_f1 = block_model.evaluate(data.get_train_data(), data.train_y)
 #    print(" eval--train acc", train_acc)
@@ -103,7 +103,7 @@ block_model.save_weights(h5_file.format(data.max_vocab_len), overwrite=True)
 
 # In[5]:
 
-# ¼ÓÔØweightsÔÙ´ÎÑéÖ¤(²»ÓÃ)
+# åŠ è½½weightså†æ¬¡éªŒè¯(ä¸ç”¨)
 #new_model = create_model(data.max_vocab_len, data.max_seq_len, h5_file=h5_file, debug=False, mean='mean', save_data=False)
 #new_model.load_weights(h5_file.format(data.max_vocab_len))
 #if data.train_enable:

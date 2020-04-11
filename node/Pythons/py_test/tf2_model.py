@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+ï»¿#!/usr/bin/env python
 # coding: utf-8
 
 
@@ -37,7 +37,7 @@ training_steps = 1000
 batch_size = 100
 display_step = 50
 
-# ×Ü¹²È¡³öÊı¾İ(´ÎÊı): 
+# æ€»å…±å–å‡ºæ•°æ®(æ¬¡æ•°): 
 #     shuffle_cnt(1000) + prefetch_cnt(1) + batch_size*steps( 1*(1+1)-2)=1001
 #     shuffle_cnt(1000) + prefetch_cnt(1) + batch_size*steps(20*(1+1)-2)=1039
 #     shuffle_cnt(1000) + prefetch_cnt(1) + batch_size*steps(20*(2+1)-2)=1059
@@ -93,7 +93,7 @@ class TEST(Model):
         self.v1 = tf.Variable(tf.constant(1.0),name='v1', dtype=np.float32)
         self.v2 = tf.Variable(tf.constant(1.0),name='v2', dtype=np.float32)
         self.alpha = tf.Variable(tf.constant(1.0),name='v3', dtype=np.float32)
-# ×î¼Ñ£º
+# æœ€ä½³ï¼š
 # center[12, 18], alpha=25
 
     # Set forward pass.

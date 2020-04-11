@@ -1,11 +1,11 @@
-
-»ù´¡Â·¾¶ÉèÖÃ: 
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®: 
 //basePath = F:\9820e
 //basePath = \\192.168.2.115\xiaoj\9820e\idh.code
 
 /***********************************************************************/
 
-//Ä¿Â¼[Num][Ca]:
+//ç›®å½•[Num][Ca]:
 Save:node\android\sys\Macro_Sys_Drivers.h
 
 
@@ -21,49 +21,49 @@ u-boot15/drivers/video/sprdfb/sprdfb_panel.c
 u-boot15/drivers/video/sprdfb/lcd/lcd_st7789v2_spi.c
 	
 u-boot15/drivers/video/sprdfb/sprdfb_spi.c
-(spiµÄ¿ÉÄÜÐèÒªÐÞ¸ÄÕâÀïµÄSPI_RS(Ñ¡Ôñ·¢Êý¾Ý»¹ÊÇÃüÁî)½Å)
+(spiçš„å¯èƒ½éœ€è¦ä¿®æ”¹è¿™é‡Œçš„SPI_RS(é€‰æ‹©å‘æ•°æ®è¿˜æ˜¯å‘½ä»¤)è„š)
 
 u-boot15/include/configs/sp9820e_2c10.h
-Èç¹û¿ªÆôÁËte½Å¼ì²âspi_te_gpio£¬ÆÁÒ²Òª¿ªÆôte,·ñÔò»á³öÏÖ¿¨¶ÙµÄÇé¿ö
+å¦‚æžœå¼€å¯äº†teè„šæ£€æµ‹spi_te_gpioï¼Œå±ä¹Ÿè¦å¼€å¯te,å¦åˆ™ä¼šå‡ºçŽ°å¡é¡¿çš„æƒ…å†µ
 
 
-//IOÅäÖÃ:
+//IOé…ç½®:
 u-boot15/board/spreadtrum/sp9820e_2c10/pinmap-sp9820e.c
-//BITS_PIN_AF(n) n=0,1,2,3¹¦ÄÜ¡¡¡¡¾ßÌå¹¦ÄÜ¿É²Î¿¼SCxxxx_GPIO_Spec_Vxxx.xlsx
-//BITS_PIN_DS¡¡¡¡¡¡¡¡¡¡¡¡Çý¶¯ÄÜÁ¦
-//BIT_PIN_WPUS¡¡¡¡¡¡¡¡¡¡Ç¿ÉÏÀ­£¨Ç¿ÊÇÖ¸µçÁ÷£¬Ñ¡Ôñ×èÖµ½ÏÐ¡µÄµç×è£©
-//BIT_PIN_NULL¡¡¡¡¡¡¡¡¡¡ ?Ã»Ç¿ÉÏÀ­
-//BIT_PIN_WPU¡¡¡¡¡¡¡¡¡¡ ?ÉÏÀ­(³õÊ¼µçÆ½Îª¸ß)
-//BIT_PIN_WPD¡¡¡¡¡¡¡¡¡¡ ÏÂÀ­³õÊ¼µçÆ½ÎªµÍ)
-//BIT_PIN_NUL¡¡¡¡¡¡¡¡¡¡¡¡²»ÉÏÀ­Ò²²»ÏÂÀ­
-//BIT_PIN_SLP_AP¡¡ ? ? ? ? ? ?ÐÝÃßÊ±ÊôÓÚAP²à
-//BIT_PIN_SLP_NUL¡¡¡¡ ? ? ?ÐÝÃßÊ±ÎÞ²»ÉÏÀ­Ò²²»ÏÂÀ­
-//BIT_PIN_SLP_WPU¡¡¡¡ ? ? ÐÝÃßÊ±ÏÂÀ­
-//BIT_PIN_SLP_WPU¡¡¡¡ ? ? ÐÝÃßÊ±ÉÏÀ­
-//BIT_PIN_SLP_OE¡¡¡¡¡¡ ? ?ÐÝÃßÊ±Êä³ö
-//BIT_PIN_SLP_IE¡¡¡¡¡¡ ? ? ?ÐÝÃßÊ±ÊäÈë
-//BIT_PIN_SLP_Z¡¡¡¡¡¡ ? ? ?ÐÝÃßÊ±¸ß×è
+//BITS_PIN_AF(n) n=0,1,2,3åŠŸèƒ½ã€€ã€€å…·ä½“åŠŸèƒ½å¯å‚è€ƒSCxxxx_GPIO_Spec_Vxxx.xlsx
+//BITS_PIN_DSã€€ã€€ã€€ã€€ã€€ã€€é©±åŠ¨èƒ½åŠ›
+//BIT_PIN_WPUSã€€ã€€ã€€ã€€ã€€å¼ºä¸Šæ‹‰ï¼ˆå¼ºæ˜¯æŒ‡ç”µæµï¼Œé€‰æ‹©é˜»å€¼è¾ƒå°çš„ç”µé˜»ï¼‰
+//BIT_PIN_NULLã€€ã€€ã€€ã€€ã€€ ?æ²¡å¼ºä¸Šæ‹‰
+//BIT_PIN_WPUã€€ã€€ã€€ã€€ã€€ ?ä¸Šæ‹‰(åˆå§‹ç”µå¹³ä¸ºé«˜)
+//BIT_PIN_WPDã€€ã€€ã€€ã€€ã€€ ä¸‹æ‹‰åˆå§‹ç”µå¹³ä¸ºä½Ž)
+//BIT_PIN_NULã€€ã€€ã€€ã€€ã€€ã€€ä¸ä¸Šæ‹‰ä¹Ÿä¸ä¸‹æ‹‰
+//BIT_PIN_SLP_APã€€ ? ? ? ? ? ?ä¼‘çœ æ—¶å±žäºŽAPä¾§
+//BIT_PIN_SLP_NULã€€ã€€ ? ? ?ä¼‘çœ æ—¶æ— ä¸ä¸Šæ‹‰ä¹Ÿä¸ä¸‹æ‹‰
+//BIT_PIN_SLP_WPUã€€ã€€ ? ? ä¼‘çœ æ—¶ä¸‹æ‹‰
+//BIT_PIN_SLP_WPUã€€ã€€ ? ? ä¼‘çœ æ—¶ä¸Šæ‹‰
+//BIT_PIN_SLP_OEã€€ã€€ã€€ ? ?ä¼‘çœ æ—¶è¾“å‡º
+//BIT_PIN_SLP_IEã€€ã€€ã€€ ? ? ?ä¼‘çœ æ—¶è¾“å…¥
+//BIT_PIN_SLP_Zã€€ã€€ã€€ ? ? ?ä¼‘çœ æ—¶é«˜é˜»
 
 
-//°´¼ü
-gpio×÷Îª°´¼ü
-ÅäÖÃÎªBITS_PIN_DS(1)|BIT_PIN_NULL|BIT_PIN_WPU|BIT_PIN_SLP_AP|BIT_PIN_SLP_WPU|BIT_PIN_SLP_IE},Õâ¸öÅäÖÃ³ö´í¿ÉÄÜµ¼ÖÂµÍµçÁ÷´ó
-//keypadÄ£¿éµÄ°´¼ü
-//KEYIN×÷ÎªÎªÁÐ
-//KEYOUT×÷ÎªÐÐ
-//ÈçKEYOUT0,KEYIN2,ÄÇÃ´
+//æŒ‰é”®
+gpioä½œä¸ºæŒ‰é”®
+é…ç½®ä¸ºBITS_PIN_DS(1)|BIT_PIN_NULL|BIT_PIN_WPU|BIT_PIN_SLP_AP|BIT_PIN_SLP_WPU|BIT_PIN_SLP_IE},è¿™ä¸ªé…ç½®å‡ºé”™å¯èƒ½å¯¼è‡´ä½Žç”µæµå¤§
+//keypadæ¨¡å—çš„æŒ‰é”®
+//KEYINä½œä¸ºä¸ºåˆ—
+//KEYOUTä½œä¸ºè¡Œ
+//å¦‚KEYOUT0,KEYIN2,é‚£ä¹ˆ
 //sprd,row = <0>;
 //sprd,column = <2>;
 
 
-4.Ôö´óÒôÁ¿£¬¹¤¾ßAudiotester,¿É²Î¿¼
+4.å¢žå¤§éŸ³é‡ï¼Œå·¥å…·Audiotester,å¯å‚è€ƒ
 https://wenku.baidu.com/view/e454011a580216fc700afdf3.html
 
-5.µ±°´¼ü²»ºÃÓÃÊ±£¬¿É°²×°Ó¦ÓÃVysorÀ´¿ØÖÆÆÁÄ»(ubuntuÏµÍ³¿ÉÒÔÔÚ¹È¸èä¯ÀÀÆ÷°²×°Vysor²å¼þ)
+5.å½“æŒ‰é”®ä¸å¥½ç”¨æ—¶ï¼Œå¯å®‰è£…åº”ç”¨Vysoræ¥æŽ§åˆ¶å±å¹•(ubuntuç³»ç»Ÿå¯ä»¥åœ¨è°·æ­Œæµè§ˆå™¨å®‰è£…Vysoræ’ä»¶)
 
 
-6.·ÖÇø´óÐ¡¸ü¸Ä
-Ö±½ÓÐÞ¸Ädevice/sprd/sharkle/xxx/xxx.xmlÖÐsizeµÄ´óÐ¡(ÕâÀïµ¥Î»ÊÇM)
+6.åˆ†åŒºå¤§å°æ›´æ”¹
+ç›´æŽ¥ä¿®æ”¹device/sprd/sharkle/xxx/xxx.xmlä¸­sizeçš„å¤§å°(è¿™é‡Œå•ä½æ˜¯M)
 device/sprd/sharkle/sp9820e_2h10/sp9820e_2h10.xml name="sp9820e_2h10"
 // example:
 //	<Block id="miscdata">
@@ -72,48 +72,48 @@ device/sprd/sharkle/sp9820e_2h10/sp9820e_2h10.xml name="sp9820e_2h10"
 //	</Block>
 
 
-7.±àÒëÓëÉÕÐ´
-±àÒëuboot? make bootloader
-ÉÕÐ´uboot fastboot flash uboot u-boot-sign.bin
+7.ç¼–è¯‘ä¸Žçƒ§å†™
+ç¼–è¯‘uboot? make bootloader
+çƒ§å†™uboot fastboot flash uboot u-boot-sign.bin
 
 sudo fastboot -S 100M flash system system.img
 
-8gpioºÍldoµ÷ÊÔ
-cat /d/gpio¿ÉÒÔ²é¿´Òý½Å×´Ì¬£¬°üÀ¨gpio_requestÓÐÃ»ÓÐÉêÇë³É¹¦£¬Òý½ÅÏÖÔÚµÄ×´Ì¬(ÊäÈë»òÊä³ö£¬¸ßµçÆ½»òµÍµçÆ½)
-???? gpio-49 ?(? ? ? ? ? ? ? ? ? ?|xxxx1 ? ? ? ? ? ? ? ?)in(ÊäÈë)? hi(¸ßµçÆ½)
-¡¡ gpio-138 (?????????????????? |xxxx2 ? ? ? ? ? ? ? ? )out(Êä³ö) lo(µÍµçÆ½)
-/d/regulator¿É²é¿´ldoµÄÊ¹ÓÃÇé¿ö£¬ÒÔ¼°ÅäÖÃµÄ×î´óºÍ×îÐ¡µçÑ¹
+8gpioå’Œldoè°ƒè¯•
+cat /d/gpioå¯ä»¥æŸ¥çœ‹å¼•è„šçŠ¶æ€ï¼ŒåŒ…æ‹¬gpio_requestæœ‰æ²¡æœ‰ç”³è¯·æˆåŠŸï¼Œå¼•è„šçŽ°åœ¨çš„çŠ¶æ€(è¾“å…¥æˆ–è¾“å‡ºï¼Œé«˜ç”µå¹³æˆ–ä½Žç”µå¹³)
+???? gpio-49 ?(? ? ? ? ? ? ? ? ? ?|xxxx1 ? ? ? ? ? ? ? ?)in(è¾“å…¥)? hi(é«˜ç”µå¹³)
+ã€€ gpio-138 (?????????????????? |xxxx2 ? ? ? ? ? ? ? ? )out(è¾“å‡º) lo(ä½Žç”µå¹³)
+/d/regulatorå¯æŸ¥çœ‹ldoçš„ä½¿ç”¨æƒ…å†µï¼Œä»¥åŠé…ç½®çš„æœ€å¤§å’Œæœ€å°ç”µåŽ‹
 
 
-9.°µÂë
+9.æš—ç 
 
-*#*#83781#*#*,½øÈë¹¤³ÌÄ£Ê½(EngineerMode.apk)
+*#*#83781#*#*,è¿›å…¥å·¥ç¨‹æ¨¡å¼(EngineerMode.apk)
 
-*#*#83789#*#*,²âÊÔÄ£Ê½
+*#*#83789#*#*,æµ‹è¯•æ¨¡å¼
 
-*#*#2266#*#*,½øÈësgps²âÊÔ
-
-
-10.cat /proc/meminfoÖ»ÄÜ¿´µ½²¿·ÖÄÚ´æÈÝÁ¿(ÓÐ²¿·ÖÃ»ËãÔÚÕâ)
+*#*#2266#*#*,è¿›å…¥sgpsæµ‹è¯•
 
 
-11.Õ¹Ñ¶ÍøÕ¾
-ÌáÎÊÌâ http://222.66.158.139:2008/cqweb/#
-×ÊÁÏ https://isupport.spreadtrum.com/iSupport/apply/faq_list#tab-
+10.cat /proc/meminfoåªèƒ½çœ‹åˆ°éƒ¨åˆ†å†…å­˜å®¹é‡(æœ‰éƒ¨åˆ†æ²¡ç®—åœ¨è¿™)
 
 
-12.EXINTµÄ¹Ü½ÅÓÐÓ²¼þÈ¥¶¶µÄ¹¦ÄÜ
+11.å±•è®¯ç½‘ç«™
+æé—®é¢˜ http://222.66.158.139:2008/cqweb/#
+èµ„æ–™ https://isupport.spreadtrum.com/iSupport/apply/faq_list#tab-
 
 
-13.¸Õ¿ª»ú,´®¿Ú´òÓ¡Ò»µã¾ÍÍ£Ö¹Êä³öÁË,ÕÒµ½¶ÔÓ¦µÄdtsÎÄ¼þ,½«loglevel=1¸Ä³Éloglevel=8»òÕßadb shell,
+12.EXINTçš„ç®¡è„šæœ‰ç¡¬ä»¶åŽ»æŠ–çš„åŠŸèƒ½
+
+
+13.åˆšå¼€æœº,ä¸²å£æ‰“å°ä¸€ç‚¹å°±åœæ­¢è¾“å‡ºäº†,æ‰¾åˆ°å¯¹åº”çš„dtsæ–‡ä»¶,å°†loglevel=1æ”¹æˆloglevel=8æˆ–è€…adb shell,
 
 echo 8 >/proc/sys/kernel/printk
 
 
-14.²âÊÔÐÝÃßµÍµçÁ÷µÄÊ±ºò£¬userdebug°æ±¾Òª¹Ø±Õmodem log,·ñÔòÎÞ·¨Õý³£ÐÝÃß¡£
+14.æµ‹è¯•ä¼‘çœ ä½Žç”µæµçš„æ—¶å€™ï¼Œuserdebugç‰ˆæœ¬è¦å…³é—­modem log,å¦åˆ™æ— æ³•æ­£å¸¸ä¼‘çœ ã€‚
 
 
-15.Õ¹Ñ¶Æ½Ì¨sysdump https://blog.csdn.net/wjky2014/article/details/84674813
+15.å±•è®¯å¹³å°sysdump https://blog.csdn.net/wjky2014/article/details/84674813
 
 
 
@@ -121,7 +121,7 @@ echo 8 >/proc/sys/kernel/printk
 
 
 /***********************************************************************/
-/*************************** ²Î¿¼±Ê¼Ç¡¢ÍøÉÏÕÒµÄ£¬ºÜÂÒ. *****************/
+/*************************** å‚è€ƒç¬”è®°ã€ç½‘ä¸Šæ‰¾çš„ï¼Œå¾ˆä¹±. *****************/
 /***********************************************************************/
 
 

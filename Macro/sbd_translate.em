@@ -1,4 +1,4 @@
-
+ï»¿
 //F1->sbd_test.em / other
 macro StrTranslate(hbuf)
 {
@@ -15,7 +15,7 @@ macro StrTranslate(hbuf)
 	listfile = "z_translate_list.txt"
 	hbuflist = OpenCache(path # "\\" # listfile)
 
-	//²»±ØÒª·ÖºÜ¶àÎÄ¼ş; ¹À¼ÆÓĞÌØÊâ×Ö·ûSiÎŞ·¨±£´æ
+	//ä¸å¿…è¦åˆ†å¾ˆå¤šæ–‡ä»¶; ä¼°è®¡æœ‰ç‰¹æ®Šå­—ç¬¦Siæ— æ³•ä¿å­˜
 	
 //	TranslateDir(path # "\\sub_1.txt", hbuflist)
 //	TranslateDir(path # "\\sub_2.txt", hbuflist)
@@ -47,7 +47,7 @@ macro TranslateDir(file, hbuflist)
 		wr2 = GetBufLine(hbuflist, row+1)
 
 //		msg(wr1 # "~" # wr2)
-//		5 Ó¢ÎÄ; 37 ²¨Ë¹
+//		5 è‹±æ–‡; 37 æ³¢æ–¯
 		TranslateFile(hbufsub, 5, wr1, 37, wr2, hbufLog)
 		
 //		TranslateFile(hbufsub, 1, "STR_GLOBAL_YES", 37, "?????", hbufLog)

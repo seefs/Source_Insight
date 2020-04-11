@@ -1,14 +1,14 @@
-
-»ù´¡Â·¾¶ÉèÖÃ:
+ï»¿
+åŸºç¡€è·¯å¾„è®¾ç½®:
 //basePath = 
 
 /***********************************************************************/
 
-//Ä¿Â¼[Num][Ca]:
-// 1.Linux ÅäÖÃ
-Save:node\android\sys\Macro_Sys_Linux.h \[1.1\] Ìí¼ÓÓÃ»§¡¢È¨ÏŞ
-Save:node\android\sys\Macro_Sys_Linux.h \[1.2\] samba¹²ÏíÉèÖÃ ...
-Save:node\android\sys\Macro_Sys_Linux.h \[1.3\] °²×°VMWare Tools
+//ç›®å½•[Num][Ca]:
+// 1.Linux é…ç½®
+Save:node\android\sys\Macro_Sys_Linux.h \[1.1\] æ·»åŠ ç”¨æˆ·ã€æƒé™
+Save:node\android\sys\Macro_Sys_Linux.h \[1.2\] sambaå…±äº«è®¾ç½® ...
+Save:node\android\sys\Macro_Sys_Linux.h \[1.3\] å®‰è£…VMWare Tools
 Save:node\android\sys\Macro_Sys_Linux.h \[1.4\] 
 Save:node\android\sys\Macro_Sys_Linux.h \[1.5\] 
 Save:node\android\sys\Macro_Sys_Linux.h \[1.6\] 
@@ -16,31 +16,31 @@ Save:node\android\sys\Macro_Sys_Linux.h \[1.7\]
 Save:node\android\sys\Macro_Sys_Linux.h \[1.8\] 
 Save:node\android\sys\Macro_Sys_Linux.h \[1.9\] 
 Save:node\android\sys\Macro_Sys_Linux.h \[1.10\] 
-// 2.²é¿´ÏµÍ³ÅäÖÃ
-Save:node\android\sys\Macro_Sys_Linux.h \[2.1\] lscpu:ÏÔÊ¾cpu¼Ü¹¹ĞÅÏ¢
-Save:node\android\sys\Macro_Sys_Linux.h \[2.2\] cat /proc/cpuinfo:²é¿´CPUÏêÏ¸ĞÅÏ¢
-Save:node\android\sys\Macro_Sys_Linux.h \[2.3\] cat /proc/cpuinfo:²é¿´CPUÏêÏ¸ĞÅÏ¢
-Save:node\android\sys\Macro_Sys_Linux.h \[2.4\] free -m: ÄÚ´æ
-Save:node\android\sys\Macro_Sys_Linux.h \[2.5\] df:²é¿´Ó²ÅÌÊ¹ÓÃÇé¿ö
+// 2.æŸ¥çœ‹ç³»ç»Ÿé…ç½®
+Save:node\android\sys\Macro_Sys_Linux.h \[2.1\] lscpu:æ˜¾ç¤ºcpuæ¶æ„ä¿¡æ¯
+Save:node\android\sys\Macro_Sys_Linux.h \[2.2\] cat /proc/cpuinfo:æŸ¥çœ‹CPUè¯¦ç»†ä¿¡æ¯
+Save:node\android\sys\Macro_Sys_Linux.h \[2.3\] cat /proc/cpuinfo:æŸ¥çœ‹CPUè¯¦ç»†ä¿¡æ¯
+Save:node\android\sys\Macro_Sys_Linux.h \[2.4\] free -m: å†…å­˜
+Save:node\android\sys\Macro_Sys_Linux.h \[2.5\] df:æŸ¥çœ‹ç¡¬ç›˜ä½¿ç”¨æƒ…å†µ
 Save:node\android\sys\Macro_Sys_Linux.h \[2.6\] proc
 Save:node\android\sys\Macro_Sys_Linux.h \[2.7\] 
 Save:node\android\sys\Macro_Sys_Linux.h \[2.8\] 
 Save:node\android\sys\Macro_Sys_Linux.h \[2.9\] 
 Save:node\android\sys\Macro_Sys_Linux.h \[2.10\] 
-// ÆäËû±êºÅ
+// å…¶ä»–æ ‡å·
 Save:Help\Test\Macro_Test_Node_Num.h \[1.1\] 
 
 
 
 
-[1.1] Ìí¼ÓÓÃ»§¡¢È¨ÏŞ
-# useradd ¨Cd /usr/sam -m sam
+[1.1] æ·»åŠ ç”¨æˆ·ã€æƒé™
+# useradd â€“d /usr/sam -m sam
 
-´ËÃüÁî´´½¨ÁËÒ»¸öÓÃ»§sam£¬ÆäÖĞ-dºÍ-mÑ¡ÏîÓÃÀ´ÎªµÇÂ¼Ãûsam²úÉúÒ»¸öÖ÷Ä¿Â¼/usr/sam£¨/usrÎªÄ¬ÈÏµÄÓÃ»§Ö÷Ä¿Â¼ËùÔÚµÄ¸¸Ä¿Â¼£©¡£
+æ­¤å‘½ä»¤åˆ›å»ºäº†ä¸€ä¸ªç”¨æˆ·samï¼Œå…¶ä¸­-då’Œ-mé€‰é¡¹ç”¨æ¥ä¸ºç™»å½•åsamäº§ç”Ÿä¸€ä¸ªä¸»ç›®å½•/usr/samï¼ˆ/usrä¸ºé»˜è®¤çš„ç”¨æˆ·ä¸»ç›®å½•æ‰€åœ¨çš„çˆ¶ç›®å½•ï¼‰ã€‚
 
  
 
-¼ÙÉèµ±Ç°ÓÃ»§ÊÇsam£¬ÔòÏÂÃæµÄÃüÁîĞŞ¸Ä¸ÃÓÃ»§×Ô¼ºµÄ¿ÚÁî£º
+å‡è®¾å½“å‰ç”¨æˆ·æ˜¯samï¼Œåˆ™ä¸‹é¢çš„å‘½ä»¤ä¿®æ”¹è¯¥ç”¨æˆ·è‡ªå·±çš„å£ä»¤ï¼š
 
 # passwd
 
@@ -52,7 +52,7 @@ Re-enter new password:*******
 
  
 
-Èç¹ûÊÇ³¬¼¶ÓÃ»§£¬¿ÉÒÔÓÃÏÂÁĞĞÎÊ½Ö¸¶¨ÈÎºÎÓÃ»§µÄ¿ÚÁî£º
+å¦‚æœæ˜¯è¶…çº§ç”¨æˆ·ï¼Œå¯ä»¥ç”¨ä¸‹åˆ—å½¢å¼æŒ‡å®šä»»ä½•ç”¨æˆ·çš„å£ä»¤ï¼š
 
 # passwd sam
 
@@ -62,168 +62,168 @@ Re-enter new password:*******
 
  
 
->>²Î¿¼1====================================
+>>å‚è€ƒ1====================================
 
-1¡¢Ìí¼ÓÓÃ»§
+1ã€æ·»åŠ ç”¨æˆ·
 
-Ê×ÏÈÓÃadduserÃüÁîÌí¼ÓÒ»¸öÆÕÍ¨ÓÃ»§£¬ÃüÁîÈçÏÂ£º
-#adduser tommy  //Ìí¼ÓÒ»¸öÃûÎªtommyµÄÓÃ»§
-#passwd tommy   //ĞŞ¸ÄÃÜÂë
+é¦–å…ˆç”¨adduserå‘½ä»¤æ·»åŠ ä¸€ä¸ªæ™®é€šç”¨æˆ·ï¼Œå‘½ä»¤å¦‚ä¸‹ï¼š
+#adduser tommy  //æ·»åŠ ä¸€ä¸ªåä¸ºtommyçš„ç”¨æˆ·
+#passwd tommy   //ä¿®æ”¹å¯†ç 
 Changing password for user tommy.
-New UNIX password:	   //ÔÚÕâÀïÊäÈëĞÂÃÜÂë
-Retype new UNIX password:  //ÔÙ´ÎÊäÈëĞÂÃÜÂë
+New UNIX password:	   //åœ¨è¿™é‡Œè¾“å…¥æ–°å¯†ç 
+Retype new UNIX password:  //å†æ¬¡è¾“å…¥æ–°å¯†ç 
 passwd: all authentication tokens updated successfully.
-2¡¢¸³ÓèrootÈ¨ÏŞ
-·½·¨Ò»£ºĞŞ¸Ä /etc/sudoers ÎÄ¼ş£¬ÕÒµ½ÏÂÃæÒ»ĞĞ£¬°ÑÇ°ÃæµÄ×¢ÊÍ£¨#£©È¥µô
+2ã€èµ‹äºˆrootæƒé™
+æ–¹æ³•ä¸€ï¼šä¿®æ”¹ /etc/sudoers æ–‡ä»¶ï¼Œæ‰¾åˆ°ä¸‹é¢ä¸€è¡Œï¼ŒæŠŠå‰é¢çš„æ³¨é‡Šï¼ˆ#ï¼‰å»æ‰
 ## Allows people in group wheel to run all commands
 %wheel	  ALL=(ALL)    ALL
-È»ºóĞŞ¸ÄÓÃ»§£¬Ê¹ÆäÊôÓÚroot×é£¨wheel£©£¬ÃüÁîÈçÏÂ£º
+ç„¶åä¿®æ”¹ç”¨æˆ·ï¼Œä½¿å…¶å±äºrootç»„ï¼ˆwheelï¼‰ï¼Œå‘½ä»¤å¦‚ä¸‹ï¼š
 #usermod -g root tommy
-ĞŞ¸ÄÍê±Ï£¬ÏÖÔÚ¿ÉÒÔÓÃtommyÕÊºÅµÇÂ¼£¬È»ºóÓÃÃüÁî su - £¬¼´¿É»ñµÃrootÈ¨ÏŞ½øĞĞ²Ù×÷¡£
-·½·¨¶ş£ºĞŞ¸Ä /etc/sudoers ÎÄ¼ş£¬ÕÒµ½ÏÂÃæÒ»ĞĞ£¬ÔÚrootÏÂÃæÌí¼ÓÒ»ĞĞ£¬ÈçÏÂËùÊ¾£º
+ä¿®æ”¹å®Œæ¯•ï¼Œç°åœ¨å¯ä»¥ç”¨tommyå¸å·ç™»å½•ï¼Œç„¶åç”¨å‘½ä»¤ su - ï¼Œå³å¯è·å¾—rootæƒé™è¿›è¡Œæ“ä½œã€‚
+æ–¹æ³•äºŒï¼šä¿®æ”¹ /etc/sudoers æ–‡ä»¶ï¼Œæ‰¾åˆ°ä¸‹é¢ä¸€è¡Œï¼Œåœ¨rootä¸‹é¢æ·»åŠ ä¸€è¡Œï¼Œå¦‚ä¸‹æ‰€ç¤ºï¼š
 ## Allow root to run any commands anywhere
 root	ALL=(ALL)	  ALL
 tommy	ALL=(ALL)	  ALL
-ĞŞ¸ÄÍê±Ï£¬ÏÖÔÚ¿ÉÒÔÓÃtommyÕÊºÅµÇÂ¼£¬È»ºóÓÃÃüÁî su - £¬¼´¿É»ñµÃrootÈ¨ÏŞ½øĞĞ²Ù×÷¡£
+ä¿®æ”¹å®Œæ¯•ï¼Œç°åœ¨å¯ä»¥ç”¨tommyå¸å·ç™»å½•ï¼Œç„¶åç”¨å‘½ä»¤ su - ï¼Œå³å¯è·å¾—rootæƒé™è¿›è¡Œæ“ä½œã€‚
 
  
 
 
  
 
->>²Î¿¼2====================================
+>>å‚è€ƒ2====================================
 
-ÓÃuseraddĞÂÔöµÄÓÃ»§²»ÄÜÖ±½ÓÓÃsshÔ¶³Ì·ÃÎÊ£¬ĞèÒªĞŞ¸ÄsshÏà¹ØÅäÖÃ
-ÈçÏÂ£º
+ç”¨useraddæ–°å¢çš„ç”¨æˆ·ä¸èƒ½ç›´æ¥ç”¨sshè¿œç¨‹è®¿é—®ï¼Œéœ€è¦ä¿®æ”¹sshç›¸å…³é…ç½®
+å¦‚ä¸‹ï¼š
 vi /etc/ssh/sshd_config 
-Ìí¼Ó
+æ·»åŠ 
 
 AllowUsers root@192.168.1.32 admin
-¶à¸öÓÃ»§ÓÃ¿Õ¸ñ¸ô¿ª
->>²Î¿¼3====================================
-ÈçºÎÈÃÆÕÍ¨ÓÃ»§»ñµÃrootÓÃ»§µÄÈ¨ÏŞÖ´ĞĞ²Ù×÷¶ø²»ĞèÒªÖªµÀrootÓÃ»§µÄÃÜÂë»òÏòrootÓÃ»§½øĞĞÇĞ»»ÄØ£¿ÓĞÒ»¸öÃüÁîsudo¿ÉÒÔÊµÏÖÕâ¸ö¹¦ÄÜ.
-SudoµÄ¹¤×÷Á÷³Ì£º
-£¨1£©rootÓÃ»§±à¼­/etc/sudoersÎÄ¼ş,Ìí¼ÓÒª·ÖÅäµÄÆÕÍ¨ÓÃ»§¼ÇÂ¼,ÆäÖĞÓĞÕâÃ´Ò»ĞĞ¼ÇÂ¼£ºroot ALL=(ALL) ALL,ÔÚÕâĞĞºóÃæÌí¼Ó£ºSam ALL=(ALL) ALL
-(2) ÄÇÃ´samÓÃ»§ÔÚÖ´ĞĞ²Ù×÷Ê±,Èç¹ûËùÖ´ĞĞµÄ²Ù×÷×Ô¼ºÃ»ÓĞÈ¨ÏŞ,Ôò»áÈ¥/etc/sudoersÎÄ¼şÖĞ²éÕÒÊÇ·ñÓĞ¶ÔÓ¦µÄ¼ÇÂ¼,Èç¹ûÓĞµÄ»°ÔòÁÙÊ±»ñµÃrootÈ¨ÏŞ,Ö´ĞĞÖ»ÓĞroot²ÅÄÜÖ´ĞĞµÄ²Ù×÷.
-×¢Òâ£ºÕâÀï»áÌáÊ¾ÊäÈëÃÜÂë,µ«ÊÇÊäÈëµÄÊÇsamÓÃ»§µÄÃÜÂë,¶ø²»ÊÇrootÓÃ»§µÄÃÜÂë.ÀıÈç£º
-Shell> sudo mkdir ¨Cp a/b/c/d
+å¤šä¸ªç”¨æˆ·ç”¨ç©ºæ ¼éš”å¼€
+>>å‚è€ƒ3====================================
+å¦‚ä½•è®©æ™®é€šç”¨æˆ·è·å¾—rootç”¨æˆ·çš„æƒé™æ‰§è¡Œæ“ä½œè€Œä¸éœ€è¦çŸ¥é“rootç”¨æˆ·çš„å¯†ç æˆ–å‘rootç”¨æˆ·è¿›è¡Œåˆ‡æ¢å‘¢ï¼Ÿæœ‰ä¸€ä¸ªå‘½ä»¤sudoå¯ä»¥å®ç°è¿™ä¸ªåŠŸèƒ½.
+Sudoçš„å·¥ä½œæµç¨‹ï¼š
+ï¼ˆ1ï¼‰rootç”¨æˆ·ç¼–è¾‘/etc/sudoersæ–‡ä»¶,æ·»åŠ è¦åˆ†é…çš„æ™®é€šç”¨æˆ·è®°å½•,å…¶ä¸­æœ‰è¿™ä¹ˆä¸€è¡Œè®°å½•ï¼šroot ALL=(ALL) ALL,åœ¨è¿™è¡Œåé¢æ·»åŠ ï¼šSam ALL=(ALL) ALL
+(2) é‚£ä¹ˆsamç”¨æˆ·åœ¨æ‰§è¡Œæ“ä½œæ—¶,å¦‚æœæ‰€æ‰§è¡Œçš„æ“ä½œè‡ªå·±æ²¡æœ‰æƒé™,åˆ™ä¼šå»/etc/sudoersæ–‡ä»¶ä¸­æŸ¥æ‰¾æ˜¯å¦æœ‰å¯¹åº”çš„è®°å½•,å¦‚æœæœ‰çš„è¯åˆ™ä¸´æ—¶è·å¾—rootæƒé™,æ‰§è¡Œåªæœ‰rootæ‰èƒ½æ‰§è¡Œçš„æ“ä½œ.
+æ³¨æ„ï¼šè¿™é‡Œä¼šæç¤ºè¾“å…¥å¯†ç ,ä½†æ˜¯è¾“å…¥çš„æ˜¯samç”¨æˆ·çš„å¯†ç ,è€Œä¸æ˜¯rootç”¨æˆ·çš„å¯†ç .ä¾‹å¦‚ï¼š
+Shell> sudo mkdir â€“p a/b/c/d
 We trust you have received the usual lecture from the local System
 Administrator. It usually boils down to these three things:
 #1) Respect the privacy of others.
 #2) Think before you type.
 #3) With great power comes great responsibility.
-Password: #ÕâÀïµÄÃÜÂëÊÇsamÓÃ»§×Ô¼ºµÄÃÜÂë,¶ø²»ÊÇrootµÄÃÜÂë
-¼¸¸ö²Ù×÷£º
-1) ±à¼­/etc/sudoersÎÄ¼ş,Ê¹ÓÃvisudoÃüÁî,
+Password: #è¿™é‡Œçš„å¯†ç æ˜¯samç”¨æˆ·è‡ªå·±çš„å¯†ç ,è€Œä¸æ˜¯rootçš„å¯†ç 
+å‡ ä¸ªæ“ä½œï¼š
+1) ç¼–è¾‘/etc/sudoersæ–‡ä»¶,ä½¿ç”¨visudoå‘½ä»¤,
 Shell> visudo
-ÆäÊµvisudoÃüÁîÒ²ÊÇµ÷ÓÃviÈ¥±à¼­sudoerÎÄ¼şµÄ,µ«ÊÇÔÚ±£´æÊ±»áÈ¥¼ì²éÄãĞŞ¸ÄºóÎÄ¼şµÄÓï·¨,Èç¹û´íÎóÊÇ²»ÄÜ±£´æµÄ,µ«ÊÇÈç¹ûÖ±½ÓÓÃviÀ´±à¼­¸ÃÎÄ¼ş,Ç¿ÖÆ±£´æËäÈ»³É¹¦,µ«ÊÇÈç¹ûÓĞÓï
-·¨´íÎóÕâÀï²¢²»ÄÜ¸ø³öÌáÊ¾,Ò²¾Íµ¼ÖÂÁËºóÃæsudoÃüÁîµÄ²»¿ÉÓÃ.
-2) ¼ÇÂ¼½âÎö£º
+å…¶å®visudoå‘½ä»¤ä¹Ÿæ˜¯è°ƒç”¨viå»ç¼–è¾‘sudoeræ–‡ä»¶çš„,ä½†æ˜¯åœ¨ä¿å­˜æ—¶ä¼šå»æ£€æŸ¥ä½ ä¿®æ”¹åæ–‡ä»¶çš„è¯­æ³•,å¦‚æœé”™è¯¯æ˜¯ä¸èƒ½ä¿å­˜çš„,ä½†æ˜¯å¦‚æœç›´æ¥ç”¨viæ¥ç¼–è¾‘è¯¥æ–‡ä»¶,å¼ºåˆ¶ä¿å­˜è™½ç„¶æˆåŠŸ,ä½†æ˜¯å¦‚æœæœ‰è¯­
+æ³•é”™è¯¯è¿™é‡Œå¹¶ä¸èƒ½ç»™å‡ºæç¤º,ä¹Ÿå°±å¯¼è‡´äº†åé¢sudoå‘½ä»¤çš„ä¸å¯ç”¨.
+2) è®°å½•è§£æï¼š
 Sam ALL=(ALL) ALL
-Ê¹ÓÃÕßÕÊ»§ µÇÈëµÄÖ÷»ú=£¨¿ÉÒÔ±ä»»µÄÉí·İ£© ¿ÉÒÔÏÂ´ïµÄÃüÁî
-ÉÏÊöÓï¾äµÄÒâË¼ÊÇ samÓÃ»§¿ÉÒÔÔÚÈÎºÎµØ·½µÇÂ¼,²¢¿ÉÇĞ»»³ÉÈÎºÎÓÃ»§½øĞĞÈÎºÎ²Ù×÷.ÕâÀïÈç¹û£¨ALL£©²»Ğ´,Ö»Ğ´Îª sam ALL=ALL,ËûÄ¬ÈÏÖ»ÄÜÇĞ»»ÎªrootÓÃ»§.
+ä½¿ç”¨è€…å¸æˆ· ç™»å…¥çš„ä¸»æœº=ï¼ˆå¯ä»¥å˜æ¢çš„èº«ä»½ï¼‰ å¯ä»¥ä¸‹è¾¾çš„å‘½ä»¤
+ä¸Šè¿°è¯­å¥çš„æ„æ€æ˜¯ samç”¨æˆ·å¯ä»¥åœ¨ä»»ä½•åœ°æ–¹ç™»å½•,å¹¶å¯åˆ‡æ¢æˆä»»ä½•ç”¨æˆ·è¿›è¡Œä»»ä½•æ“ä½œ.è¿™é‡Œå¦‚æœï¼ˆALLï¼‰ä¸å†™,åªå†™ä¸º sam ALL=ALL,ä»–é»˜è®¤åªèƒ½åˆ‡æ¢ä¸ºrootç”¨æˆ·.
 
  
 
->>²Î¿¼4====================================
+>>å‚è€ƒ4====================================
 
-linux chownÃüÁî²ÎÊı¼°ÓÃ·¨Ïê½â--¸Ä±äµµ°¸µÄËùÓĞÕß:
+linux chownå‘½ä»¤å‚æ•°åŠç”¨æ³•è¯¦è§£--æ”¹å˜æ¡£æ¡ˆçš„æ‰€æœ‰è€…:
 
-Òª¸ü¸ÄÎÄ¼ş program.c µÄËùÓĞÕß£º chown jim program.c
-program.c µÄÓÃ»§·ÃÎÊÈ¨ÏŞÏÖÔÚÓ¦ÓÃµ½ jim¡£×÷ÎªËùÓĞÕß£¬jim ¿ÉÒÔÊ¹ÓÃ chmod ÃüÁîÔÊĞí»ò¾Ü¾øÆäËûÓÃ»§·ÃÎÊ program.c¡£
+è¦æ›´æ”¹æ–‡ä»¶ program.c çš„æ‰€æœ‰è€…ï¼š chown jim program.c
+program.c çš„ç”¨æˆ·è®¿é—®æƒé™ç°åœ¨åº”ç”¨åˆ° jimã€‚ä½œä¸ºæ‰€æœ‰è€…ï¼Œjim å¯ä»¥ä½¿ç”¨ chmod å‘½ä»¤å…è®¸æˆ–æ‹’ç»å…¶ä»–ç”¨æˆ·è®¿é—® program.cã€‚
 
-Òª½«Ä¿Â¼ /tmp/src ÖĞËùÓĞÎÄ¼şµÄËùÓĞÕßºÍ×é¸ü¸ÄÎªÓÃ»§ john ºÍ×é build£ºchown -R john:build /tmp/src
+è¦å°†ç›®å½• /tmp/src ä¸­æ‰€æœ‰æ–‡ä»¶çš„æ‰€æœ‰è€…å’Œç»„æ›´æ”¹ä¸ºç”¨æˆ· john å’Œç»„ buildï¼šchown -R john:build /tmp/src
 
-Èç: tomcatµÄ°²×°Ä¿Â¼µÄËùÓĞÕßĞŞ¸Ä(#chown -R user:group /usr/java/tomcat5.5) 
-
-
+å¦‚: tomcatçš„å®‰è£…ç›®å½•çš„æ‰€æœ‰è€…ä¿®æ”¹(#chown -R user:group /usr/java/tomcat5.5) 
 
 
->>²Î¿¼5====================================
 
-linuxÏÂÌí¼Ó£¬É¾³ı£¬ĞŞ¸Ä£¬²é¿´ÓÃ»§ºÍÓÃ»§×é
 
-1£¬´´½¨×é
+>>å‚è€ƒ5====================================
+
+linuxä¸‹æ·»åŠ ï¼Œåˆ é™¤ï¼Œä¿®æ”¹ï¼ŒæŸ¥çœ‹ç”¨æˆ·å’Œç”¨æˆ·ç»„
+
+1ï¼Œåˆ›å»ºç»„
 
 groupadd test
 
-Ôö¼ÓÒ»¸ötest×é
+å¢åŠ ä¸€ä¸ªtestç»„
 
-2£¬ĞŞ¸Ä×é
+2ï¼Œä¿®æ”¹ç»„
 
 groupmod -n test2 test
 
-½«test×éµÄÃû×Ó¸Ä³Étest2
+å°†testç»„çš„åå­æ”¹æˆtest2
 
-3£¬É¾³ı×é
+3ï¼Œåˆ é™¤ç»„
 
 groupdel test2
 
-É¾³ı ×étest2
+åˆ é™¤ ç»„test2
 
-4£¬²é¿´×é
+4ï¼ŒæŸ¥çœ‹ç»„
 
-a£©£¬²é¿´µ±Ç°µÇÂ¼ÓÃ»§ËùÔÚµÄ×é groups£¬²é¿´apacheuserËùÔÚ×égroups apacheuser
+aï¼‰ï¼ŒæŸ¥çœ‹å½“å‰ç™»å½•ç”¨æˆ·æ‰€åœ¨çš„ç»„ groupsï¼ŒæŸ¥çœ‹apacheuseræ‰€åœ¨ç»„groups apacheuser
 
-b£©£¬²é¿´ËùÓĞ×é cat /etc/group
+bï¼‰ï¼ŒæŸ¥çœ‹æ‰€æœ‰ç»„ cat /etc/group
 
-c£©£¬ÓĞµÄlinuxÏµÍ³Ã»ÓĞ/etc/groupÎÄ¼şµÄ£¬Õâ¸öÊ±ºò¿´ÏÂÃæµÄÕâ¸ö·½·¨
+cï¼‰ï¼Œæœ‰çš„linuxç³»ç»Ÿæ²¡æœ‰/etc/groupæ–‡ä»¶çš„ï¼Œè¿™ä¸ªæ—¶å€™çœ‹ä¸‹é¢çš„è¿™ä¸ªæ–¹æ³•
 
-cat /etc/passwd |awk -F [:] ¡®{print $4}¡¯ |sort|uniq | getent group |awk -F [:] ¡®{print $1}¡¯
+cat /etc/passwd |awk -F [:] â€˜{print $4}â€™ |sort|uniq | getent group |awk -F [:] â€˜{print $1}â€™
 
-ÕâÀïÓÃµ½Ò»¸öÃüÁîÊÇgetent,¿ÉÒÔÍ¨¹ı×éIDÀ´²éÕÒ×éĞÅÏ¢,Èç¹ûÕâ¸öÃüÁîÃ»ÓĞµÄ»°,ÄÇ¾ÍºÜÄÑ²éÕÒ,ÏµÍ³ÖĞËùÓĞµÄ×éÁË.
+è¿™é‡Œç”¨åˆ°ä¸€ä¸ªå‘½ä»¤æ˜¯getent,å¯ä»¥é€šè¿‡ç»„IDæ¥æŸ¥æ‰¾ç»„ä¿¡æ¯,å¦‚æœè¿™ä¸ªå‘½ä»¤æ²¡æœ‰çš„è¯,é‚£å°±å¾ˆéš¾æŸ¥æ‰¾,ç³»ç»Ÿä¸­æ‰€æœ‰çš„ç»„äº†.
 
-¶ş£¬ÓÃ»§²Ù×÷
+äºŒï¼Œç”¨æˆ·æ“ä½œ
 
-1£¬Ôö¼ÓÓÃ»§
+1ï¼Œå¢åŠ ç”¨æˆ·
 
-²é¿´¸´ÖÆ´òÓ¡?
+æŸ¥çœ‹å¤åˆ¶æ‰“å°?
 
-[root@krlcgcms01 mytest]# useradd ¨Chelp
+[root@krlcgcms01 mytest]# useradd â€“help
 
 Usage: useradd [options] LOGIN
 
 Options:
 
--b, ¨Cbase-dir BASE_DIR	   ÉèÖÃ»ù±¾Â·¾¶×÷ÎªÓÃ»§µÄµÇÂ¼Ä¿Â¼
+-b, â€“base-dir BASE_DIR	   è®¾ç½®åŸºæœ¬è·¯å¾„ä½œä¸ºç”¨æˆ·çš„ç™»å½•ç›®å½•
 
--c, ¨Ccomment COMMENT		   ¶ÔÓÃ»§µÄ×¢ÊÍ
+-c, â€“comment COMMENT		   å¯¹ç”¨æˆ·çš„æ³¨é‡Š
 
--d, ¨Chome-dir HOME_DIR	   ÉèÖÃÓÃ»§µÄµÇÂ¼Ä¿Â¼
+-d, â€“home-dir HOME_DIR	   è®¾ç½®ç”¨æˆ·çš„ç™»å½•ç›®å½•
 
--D, ¨Cdefaults 			   ¸Ä±äÉèÖÃ
+-D, â€“defaults 			   æ”¹å˜è®¾ç½®
 
--e, ¨Cexpiredate EXPIRE_DATE ÉèÖÃÓÃ»§µÄÓĞĞ§ÆÚ
+-e, â€“expiredate EXPIRE_DATE è®¾ç½®ç”¨æˆ·çš„æœ‰æ•ˆæœŸ
 
--f, ¨Cinactive INACTIVE	   ÓÃ»§¹ıÆÚºó£¬ÈÃÃÜÂëÎŞĞ§
+-f, â€“inactive INACTIVE	   ç”¨æˆ·è¿‡æœŸåï¼Œè®©å¯†ç æ— æ•ˆ
 
--g, ¨Cgid GROUP			   Ê¹ÓÃ»§Ö»ÊôÓÚÄ³¸ö×é
+-g, â€“gid GROUP			   ä½¿ç”¨æˆ·åªå±äºæŸä¸ªç»„
 
--G, ¨Cgroups GROUPS		   Ê¹ÓÃ»§¼ÓÈëÄ³¸ö×é
+-G, â€“groups GROUPS		   ä½¿ç”¨æˆ·åŠ å…¥æŸä¸ªç»„
 
--h, ¨Chelp 				   °ïÖú
+-h, â€“help 				   å¸®åŠ©
 
--k, ¨Cskel SKEL_DIR		   Ö¸¶¨ÆäËûµÄskelÄ¿Â¼
+-k, â€“skel SKEL_DIR		   æŒ‡å®šå…¶ä»–çš„skelç›®å½•
 
--K, ¨Ckey KEY=VALUE		   ¸²¸Ç /etc/login.defs ÅäÖÃÎÄ¼ş
+-K, â€“key KEY=VALUE		   è¦†ç›– /etc/login.defs é…ç½®æ–‡ä»¶
 
--m, ¨Ccreate-home			   ×Ô¶¯´´½¨µÇÂ¼Ä¿Â¼
+-m, â€“create-home			   è‡ªåŠ¨åˆ›å»ºç™»å½•ç›®å½•
 
--l, 						  ²»°ÑÓÃ»§¼ÓÈëµ½lastlogÎÄ¼şÖĞ
+-l, 						  ä¸æŠŠç”¨æˆ·åŠ å…¥åˆ°lastlogæ–‡ä»¶ä¸­
 
--M, 						  ²»×Ô¶¯´´½¨µÇÂ¼Ä¿Â¼
+-M, 						  ä¸è‡ªåŠ¨åˆ›å»ºç™»å½•ç›®å½•
 
--r, 						  ½¨Á¢ÏµÍ³ÕËºÅ
+-r, 						  å»ºç«‹ç³»ç»Ÿè´¦å·
 
--o, ¨Cnon-unique			   ÔÊĞíÓÃ»§ÓµÓĞÏàÍ¬µÄUID
+-o, â€“non-unique			   å…è®¸ç”¨æˆ·æ‹¥æœ‰ç›¸åŒçš„UID
 
--p, ¨Cpassword PASSWORD	   ÎªĞÂÓÃ»§Ê¹ÓÃ¼ÓÃÜÃÜÂë
+-p, â€“password PASSWORD	   ä¸ºæ–°ç”¨æˆ·ä½¿ç”¨åŠ å¯†å¯†ç 
 
--s, ¨Cshell SHELL			   µÇÂ¼Ê±ºòµÄshell
+-s, â€“shell SHELL			   ç™»å½•æ—¶å€™çš„shell
 
--u, ¨Cuid UID				   ÎªĞÂÓÃ»§Ö¸¶¨Ò»¸öUID
+-u, â€“uid UID				   ä¸ºæ–°ç”¨æˆ·æŒ‡å®šä¸€ä¸ªUID
 
--Z, ¨Cselinux-user SEUSER	   use a specific SEUSER for the SELinux user mapping
+-Z, â€“selinux-user SEUSER	   use a specific SEUSER for the SELinux user mapping
 
 [root@krlcgcms01 mytest]# useradd --help
 
@@ -233,43 +233,43 @@ Usage: useradd [options] LOGIN
 
 Options:
 
- -b, --base-dir BASE_DIR	   ÉèÖÃ»ù±¾Â·¾¶×÷ÎªÓÃ»§µÄµÇÂ¼Ä¿Â¼
+ -b, --base-dir BASE_DIR	   è®¾ç½®åŸºæœ¬è·¯å¾„ä½œä¸ºç”¨æˆ·çš„ç™»å½•ç›®å½•
 
- -c, --comment COMMENT		   ¶ÔÓÃ»§µÄ×¢ÊÍ
+ -c, --comment COMMENT		   å¯¹ç”¨æˆ·çš„æ³¨é‡Š
 
- -d, --home-dir HOME_DIR	   ÉèÖÃÓÃ»§µÄµÇÂ¼Ä¿Â¼
+ -d, --home-dir HOME_DIR	   è®¾ç½®ç”¨æˆ·çš„ç™»å½•ç›®å½•
 
- -D, --defaults 			   ¸Ä±äÉèÖÃ
+ -D, --defaults 			   æ”¹å˜è®¾ç½®
 
- -e, --expiredate EXPIRE_DATE ÉèÖÃÓÃ»§µÄÓĞĞ§ÆÚ
+ -e, --expiredate EXPIRE_DATE è®¾ç½®ç”¨æˆ·çš„æœ‰æ•ˆæœŸ
 
- -f, --inactive INACTIVE	   ÓÃ»§¹ıÆÚºó£¬ÈÃÃÜÂëÎŞĞ§
+ -f, --inactive INACTIVE	   ç”¨æˆ·è¿‡æœŸåï¼Œè®©å¯†ç æ— æ•ˆ
 
- -g, --gid GROUP			   Ê¹ÓÃ»§Ö»ÊôÓÚÄ³¸ö×é
+ -g, --gid GROUP			   ä½¿ç”¨æˆ·åªå±äºæŸä¸ªç»„
 
- -G, --groups GROUPS		   Ê¹ÓÃ»§¼ÓÈëÄ³¸ö×é
+ -G, --groups GROUPS		   ä½¿ç”¨æˆ·åŠ å…¥æŸä¸ªç»„
 
- -h, --help 				   °ïÖú
+ -h, --help 				   å¸®åŠ©
 
- -k, --skel SKEL_DIR		   Ö¸¶¨ÆäËûµÄskelÄ¿Â¼
+ -k, --skel SKEL_DIR		   æŒ‡å®šå…¶ä»–çš„skelç›®å½•
 
- -K, --key KEY=VALUE		   ¸²¸Ç /etc/login.defs ÅäÖÃÎÄ¼ş
+ -K, --key KEY=VALUE		   è¦†ç›– /etc/login.defs é…ç½®æ–‡ä»¶
 
- -m, --create-home			   ×Ô¶¯´´½¨µÇÂ¼Ä¿Â¼
+ -m, --create-home			   è‡ªåŠ¨åˆ›å»ºç™»å½•ç›®å½•
 
- -l,						   ²»°ÑÓÃ»§¼ÓÈëµ½lastlogÎÄ¼şÖĞ
+ -l,						   ä¸æŠŠç”¨æˆ·åŠ å…¥åˆ°lastlogæ–‡ä»¶ä¸­
 
- -M,						   ²»×Ô¶¯´´½¨µÇÂ¼Ä¿Â¼
+ -M,						   ä¸è‡ªåŠ¨åˆ›å»ºç™»å½•ç›®å½•
 
- -r,						   ½¨Á¢ÏµÍ³ÕËºÅ
+ -r,						   å»ºç«‹ç³»ç»Ÿè´¦å·
 
- -o, --non-unique			   ÔÊĞíÓÃ»§ÓµÓĞÏàÍ¬µÄUID
+ -o, --non-unique			   å…è®¸ç”¨æˆ·æ‹¥æœ‰ç›¸åŒçš„UID
 
- -p, --password PASSWORD	   ÎªĞÂÓÃ»§Ê¹ÓÃ¼ÓÃÜÃÜÂë
+ -p, --password PASSWORD	   ä¸ºæ–°ç”¨æˆ·ä½¿ç”¨åŠ å¯†å¯†ç 
 
- -s, --shell SHELL			   µÇÂ¼Ê±ºòµÄshell
+ -s, --shell SHELL			   ç™»å½•æ—¶å€™çš„shell
 
- -u, --uid UID				   ÎªĞÂÓÃ»§Ö¸¶¨Ò»¸öUID
+ -u, --uid UID				   ä¸ºæ–°ç”¨æˆ·æŒ‡å®šä¸€ä¸ªUID
 
  -Z, --selinux-user SEUSER	   use a specific SEUSER for the SELinux user mappinguseradd test
 
@@ -277,33 +277,33 @@ Options:
 
 passwd test
 
-Ôö¼ÓÓÃ»§test£¬ÓĞÒ»µãÒª×¢ÒâµÄ£¬useraddÔö¼ÓÒ»¸öÓÃ»§ºó£¬²»ÒªÍüÁË¸øËûÉèÖÃÃÜÂë£¬²»È»²»ÄÜµÇÂ¼µÄ¡£
+å¢åŠ ç”¨æˆ·testï¼Œæœ‰ä¸€ç‚¹è¦æ³¨æ„çš„ï¼Œuseraddå¢åŠ ä¸€ä¸ªç”¨æˆ·åï¼Œä¸è¦å¿˜äº†ç»™ä»–è®¾ç½®å¯†ç ï¼Œä¸ç„¶ä¸èƒ½ç™»å½•çš„ã€‚
 
  
 
-2£¬ĞŞ¸ÄÓÃ»§
+2ï¼Œä¿®æ”¹ç”¨æˆ·
 
 usermod -d /home/test -G test2 test
 
-½«testÓÃ»§µÄµÇÂ¼Ä¿Â¼¸Ä³É/home/test£¬²¢¼ÓÈëtest2×é£¬×¢ÒâÕâÀïÊÇ´óG¡£
+å°†testç”¨æˆ·çš„ç™»å½•ç›®å½•æ”¹æˆ/home/testï¼Œå¹¶åŠ å…¥test2ç»„ï¼Œæ³¨æ„è¿™é‡Œæ˜¯å¤§Gã€‚
 
-gpasswd -a test test2 ½«ÓÃ»§test¼ÓÈëµ½test2×é
+gpasswd -a test test2 å°†ç”¨æˆ·teståŠ å…¥åˆ°test2ç»„
 
-gpasswd -d test test2 ½«ÓÃ»§test´Ótest2×éÖĞÒÆ³ö
+gpasswd -d test test2 å°†ç”¨æˆ·testä»test2ç»„ä¸­ç§»å‡º
 
  
 
-3£¬É¾³ıÓÃ»§
+3ï¼Œåˆ é™¤ç”¨æˆ·
 
 userdel test
 
-½«testÓÃ»§É¾³ı
+å°†testç”¨æˆ·åˆ é™¤
 
  
 
-4£¬²é¿´ÓÃ»§
+4ï¼ŒæŸ¥çœ‹ç”¨æˆ·
 
-a£©£¬²é¿´µ±Ç°µÇÂ¼ÓÃ»§
+aï¼‰ï¼ŒæŸ¥çœ‹å½“å‰ç™»å½•ç”¨æˆ·
 
 [root@krlcgcms01 ~]# w
 
@@ -311,13 +311,13 @@ a£©£¬²é¿´µ±Ç°µÇÂ¼ÓÃ»§
 
  
 
-b£©£¬²é¿´×Ô¼ºµÄÓÃ»§Ãû
+bï¼‰ï¼ŒæŸ¥çœ‹è‡ªå·±çš„ç”¨æˆ·å
 
 [root@krlcgcms01 ~]# whoami
 
  
 
-c£©£¬²é¿´µ¥¸öÓÃ»§ĞÅÏ¢
+cï¼‰ï¼ŒæŸ¥çœ‹å•ä¸ªç”¨æˆ·ä¿¡æ¯
 
 [root@krlcgcms01 ~]# finger apacheuser
 
@@ -325,29 +325,29 @@ c£©£¬²é¿´µ¥¸öÓÃ»§ĞÅÏ¢
 
  
 
-d£©£¬²é¿´ÓÃ»§µÇÂ¼¼ÇÂ¼
+dï¼‰ï¼ŒæŸ¥çœ‹ç”¨æˆ·ç™»å½•è®°å½•
 
-[root@krlcgcms01 ~]# last ²é¿´µÇÂ¼³É¹¦µÄÓÃ»§¼ÇÂ¼
+[root@krlcgcms01 ~]# last æŸ¥çœ‹ç™»å½•æˆåŠŸçš„ç”¨æˆ·è®°å½•
 
-[root@krlcgcms01 ~]# lastb ²é¿´µÇÂ¼²»³É¹¦µÄÓÃ»§¼ÇÂ¼
+[root@krlcgcms01 ~]# lastb æŸ¥çœ‹ç™»å½•ä¸æˆåŠŸçš„ç”¨æˆ·è®°å½•
 
  
 
-e£©£¬²é¿´ËùÓĞÓÃ»§
+eï¼‰ï¼ŒæŸ¥çœ‹æ‰€æœ‰ç”¨æˆ·
 
 [root@krlcgcms01 ~]# cut -d : -f 1 /etc/passwd
 
-[root@krlcgcms01 ~]# cat /etc/passwd |awk -F \: ¡®{print $1}¡¯
+[root@krlcgcms01 ~]# cat /etc/passwd |awk -F \: â€˜{print $1}â€™
 
 
 
 
-[1.2] samba¹²ÏíÉèÖÃ ...
+[1.2] sambaå…±äº«è®¾ç½® ...
 
 
 
 
-[1.3] °²×°VMWare Tools
+[1.3] å®‰è£…VMWare Tools
 Virtualbox
 
 
@@ -388,18 +388,18 @@ Virtualbox
 
 
 
-[2.1] lscpu:ÏÔÊ¾cpu¼Ü¹¹ĞÅÏ¢
+[2.1] lscpu:æ˜¾ç¤ºcpuæ¶æ„ä¿¡æ¯
 
-¸´ÖÆ´úÂë
+å¤åˆ¶ä»£ç 
 [xxx@localhost ~]$ lscpu
 //  Architecture:			x86_64
 //  CPU op-mode(s):		32-bit, 64-bit
 //  Byte Order:			Little Endian
-//  CPU(s):				12¡¡¡¡¡¡¡¡¡¡¡¡#×Ü´¦ÀíÆ÷ºËĞÄÊıÁ¿
+//  CPU(s):				12ã€€ã€€ã€€ã€€ã€€ã€€#æ€»å¤„ç†å™¨æ ¸å¿ƒæ•°é‡
 //  On-line CPU(s) list:	0-11
-//  Thread(s) per core:	1 ¡¡¡¡¡¡¡¡¡¡¡¡#Ã¿¸öºËĞÄÖ§³ÖµÄÏß³ÌÊıÁ¿¡£1±íÊ¾Ö»Ö§³ÖÒ»¸öÏß³Ì£¬¼´²»Ö§³Ö³¬Ïß³Ì
-//  Core(s) per socket:	6 ¡¡¡¡¡¡¡¡¡¡¡¡#Ã¿¸ö´¦ÀíÆ÷µÄºËĞÄÊıÁ¿
-//  Socket(s): 			2 ¡¡¡¡¡¡¡¡¡¡¡¡#´¦ÀíÆ÷ÊıÁ¿
+//  Thread(s) per core:	1 ã€€ã€€ã€€ã€€ã€€ã€€#æ¯ä¸ªæ ¸å¿ƒæ”¯æŒçš„çº¿ç¨‹æ•°é‡ã€‚1è¡¨ç¤ºåªæ”¯æŒä¸€ä¸ªçº¿ç¨‹ï¼Œå³ä¸æ”¯æŒè¶…çº¿ç¨‹
+//  Core(s) per socket:	6 ã€€ã€€ã€€ã€€ã€€ã€€#æ¯ä¸ªå¤„ç†å™¨çš„æ ¸å¿ƒæ•°é‡
+//  Socket(s): 			2 ã€€ã€€ã€€ã€€ã€€ã€€#å¤„ç†å™¨æ•°é‡
 //  NUMA node(s):			1
 //  Vendor ID: 			GenuineIntel
 //  CPU family:			6
@@ -415,13 +415,13 @@ Virtualbox
 //  NUMA node0 CPU(s): 	0-11
 
 
-//¸´ÖÆ´úÂë
-//×Ü´¦ÀíÆ÷ºËĞÄÊıÁ¿=´¦ÀíÆ÷ÊıÁ¿*Ã¿¸ö´¦ÀíÆ÷µÄºËĞÄÊıÁ¿*Ã¿¸öºËĞÄÖ§³ÖµÄÏß³ÌÊıÁ¿¡£
-//¼´:CPU(s) = Socket(s) * Core(s) * Thread(s)¡£
+//å¤åˆ¶ä»£ç 
+//æ€»å¤„ç†å™¨æ ¸å¿ƒæ•°é‡=å¤„ç†å™¨æ•°é‡*æ¯ä¸ªå¤„ç†å™¨çš„æ ¸å¿ƒæ•°é‡*æ¯ä¸ªæ ¸å¿ƒæ”¯æŒçš„çº¿ç¨‹æ•°é‡ã€‚
+//å³:CPU(s) = Socket(s) * Core(s) * Thread(s)ã€‚
 
 
 
-[2.2] cat /proc/cpuinfo:²é¿´CPUÏêÏ¸ĞÅÏ¢
+[2.2] cat /proc/cpuinfo:æŸ¥çœ‹CPUè¯¦ç»†ä¿¡æ¯
 //  processor		 : 0
 //  vendor_id		 : GenuineIntel
 //  cpu family 	 : 6
@@ -449,20 +449,20 @@ Virtualbox
 //  power management:
 ...
 
-# ²é¿´ÎïÀíCPU¸öÊı
+# æŸ¥çœ‹ç‰©ç†CPUä¸ªæ•°
 cat /proc/cpuinfo | grep "physical id" | sort | uniq
 //  physical id	 : 0
 //  physical id	 : 1
 
-# ²é¿´Ã¿¸öÎïÀíCPUÖĞcoreµÄ¸öÊı(¼´ºËÊı)
+# æŸ¥çœ‹æ¯ä¸ªç‰©ç†CPUä¸­coreçš„ä¸ªæ•°(å³æ ¸æ•°)
 cat /proc/cpuinfo | grep "cpu cores" | uniq
 //  cpu cores		 : 6
 
-# ²é¿´Ã¿¸öÎïÀíCPUÖĞÏß³ÌµÄ¸öÊı
+# æŸ¥çœ‹æ¯ä¸ªç‰©ç†CPUä¸­çº¿ç¨‹çš„ä¸ªæ•°
 cat /proc/cpuinfo | grep "siblings" | uniq
 //  siblings		 : 6
 
-# ²é¿´Âß¼­CPUµÄ¸öÊı
+# æŸ¥çœ‹é€»è¾‘CPUçš„ä¸ªæ•°
 cat /proc/cpuinfo| grep "processor"
 //  processor		 : 0
 //  processor		 : 1
@@ -477,35 +477,35 @@ cat /proc/cpuinfo| grep "processor"
 //  processor		 : 10
 //  processor		 : 11
 
-# ²é¿´CPUĞÍºÅ
+# æŸ¥çœ‹CPUå‹å·
 cat /proc/cpuinfo | grep "model name" | uniq
 //  model name 	 : Intel(R) Xeon(R) CPU 		  X5650  @ 2.67GHz
 
 
-[2.3] free -m: ÄÚ´æ
-²é¿´/proc/meminfo»òÕßÊ¹ÓÃfreeÃüÁî¡£freeÃüÁî¾ÍÊÇ´ÓmeminfoÖĞ»ñÈ¡µÄĞÅÏ¢¡£Ò»°ãÇé¿öÏÂ£¬Ê¹ÓÃfree¾ÍÄÜµÃµ½ÎÒÃÇÏëÖªµÀµÄĞÅÏ¢:
+[2.3] free -m: å†…å­˜
+æŸ¥çœ‹/proc/meminfoæˆ–è€…ä½¿ç”¨freeå‘½ä»¤ã€‚freeå‘½ä»¤å°±æ˜¯ä»meminfoä¸­è·å–çš„ä¿¡æ¯ã€‚ä¸€èˆ¬æƒ…å†µä¸‹ï¼Œä½¿ç”¨freeå°±èƒ½å¾—åˆ°æˆ‘ä»¬æƒ³çŸ¥é“çš„ä¿¡æ¯:
 // 			   total	   used 	  free	   shared	 buffers	 cached
 //  Mem:		  32163 	 30946		 1217		   0	   1715 	 26156
 //  -/+ buffers/cache: 	  3074		29089
 //  Swap:		  32757 		66		32691
 
-//¿ÉÒÔ¿´³ö£¬ÄÚ´æ´óĞ¡ÊÇ32G¡£
+//å¯ä»¥çœ‹å‡ºï¼Œå†…å­˜å¤§å°æ˜¯32Gã€‚
 
 
 
-[2.4] lsblk:Ó²ÅÌ
-1. lsblk:blkÊÇblockµÄËõĞ´¡£ÁĞ³ö¿éÉè±¸
+[2.4] lsblk:ç¡¬ç›˜
+1. lsblk:blkæ˜¯blockçš„ç¼©å†™ã€‚åˆ—å‡ºå—è®¾å¤‡
 //  NAME	MAJ:MIN RM	 SIZE RO TYPE MOUNTPOINT
 //  sda	  8:0	 0	 1.8T  0 disk 
-//  ©À©¤sda1   8:1	 0	 1.8T  0 part /
-//  ©À©¤sda2   8:2	 0	   1K  0 part 
-//  ©¸©¤sda5   8:5	 0	  32G  0 part [SWAP]
+//  â”œâ”€sda1   8:1	 0	 1.8T  0 part /
+//  â”œâ”€sda2   8:2	 0	   1K  0 part 
+//  â””â”€sda5   8:5	 0	  32G  0 part [SWAP]
 
-ÆäÖĞ£¬TYPE=disk±íÊ¾Ó²ÅÌ¡£¿ÉÒÔ¿´³ö£¬Ó²ÅÌ·ÖÎªsda(ºÍsdb)£¬Ò»¹²1.8T¡£
+å…¶ä¸­ï¼ŒTYPE=diskè¡¨ç¤ºç¡¬ç›˜ã€‚å¯ä»¥çœ‹å‡ºï¼Œç¡¬ç›˜åˆ†ä¸ºsda(å’Œsdb)ï¼Œä¸€å…±1.8Tã€‚
 
 
 
-[2.5] df:²é¿´Ó²ÅÌÊ¹ÓÃÇé¿ö
+[2.5] df:æŸ¥çœ‹ç¡¬ç›˜ä½¿ç”¨æƒ…å†µ
 //  df: `/var/lib/lightdm/.gvfs'': Permission denied
 //  Filesystem 	 1K-blocks		Used  Available Use% Mounted on
 //  /dev/sda1		1889710024 197131016 1596564212  11% /
@@ -515,7 +515,7 @@ cat /proc/cpuinfo | grep "model name" | uniq
 //  none			  16467904		 144   16467760   1% /run/shm
 
 
-ËùÓĞĞĞµÄSizeÈ«¼ÓÆğÀ´£¬Ò²ÄÜ´ó¸ÅËã³öÓ²ÅÌ´óĞ¡¡£
+æ‰€æœ‰è¡Œçš„Sizeå…¨åŠ èµ·æ¥ï¼Œä¹Ÿèƒ½å¤§æ¦‚ç®—å‡ºç¡¬ç›˜å¤§å°ã€‚
 
 
 [2.6] proc

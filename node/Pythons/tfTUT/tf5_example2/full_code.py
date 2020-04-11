@@ -1,4 +1,4 @@
- 
+ï»¿ 
 
 """
 Please note, this code is only for python 3+. If you are using python 2+, please modify the code accordingly.
@@ -16,34 +16,34 @@ y_data = x_data*0.1 + 0.3
 
 ### create tensorflow structure start ###
 #   tf.random_uniform:
-#     ´Ó¾ùÔÈ·Ö²¼ÖĞÊä³öËæ»úÖµ----Ò»Î¬ÕûÊı£¬ËüÔÚ [x,y] ·¶Î§ÄÚ
-#     Êä³öµÄÀàĞÍ£ºdtype=tf.float16¡¢float32¡¢float64¡¢int32¡¢orint64.
+#     ä»å‡åŒ€åˆ†å¸ƒä¸­è¾“å‡ºéšæœºå€¼----ä¸€ç»´æ•´æ•°ï¼Œå®ƒåœ¨ [x,y] èŒƒå›´å†…
+#     è¾“å‡ºçš„ç±»å‹ï¼šdtype=tf.float16ã€float32ã€float64ã€int32ã€orint64.
 Weights = tf.Variable(tf.random_uniform([1], -1.0, 1.0))
-# Æ«²î
+# åå·®
 #   tf.zeros:
-#     Ò»Î¬Êı×éÀï·ÅÒ»¸öÖµ
+#     ä¸€ç»´æ•°ç»„é‡Œæ”¾ä¸€ä¸ªå€¼
 biases = tf.Variable(tf.zeros([1]))
 
 y = Weights*x_data + biases
 
-# ½µµÍ--ÒâÍ¼
+# é™ä½--æ„å›¾
 #   tf.reduce_mean
-#     ÓÃÓÚ¼ÆËãÕÅÁ¿tensorÑØ×ÅÖ¸¶¨µÄÊıÖá£¨tensorµÄÄ³Ò»Î¬¶È£©ÉÏµÄµÄÆ½¾ùÖµ
+#     ç”¨äºè®¡ç®—å¼ é‡tensoræ²¿ç€æŒ‡å®šçš„æ•°è½´ï¼ˆtensorçš„æŸä¸€ç»´åº¦ï¼‰ä¸Šçš„çš„å¹³å‡å€¼
 loss = tf.reduce_mean(tf.square(y-y_data))
 #
-#    ÀàËÆº¯Êı»¹ÓĞ:
-#    tf.reduce_sum £º¼ÆËãtensorÖ¸¶¨Öá·½ÏòÉÏµÄËùÓĞÔªËØµÄÀÛ¼ÓºÍ;
-#    tf.reduce_max? :? ¼ÆËãtensorÖ¸¶¨Öá·½ÏòÉÏµÄ¸÷¸öÔªËØµÄ×î´óÖµ;
-#    tf.reduce_all :? ¼ÆËãtensorÖ¸¶¨Öá·½ÏòÉÏµÄ¸÷¸öÔªËØµÄÂß¼­ºÍ£¨andÔËËã£©;
-#    tf.reduce_any:? ¼ÆËãtensorÖ¸¶¨Öá·½ÏòÉÏµÄ¸÷¸öÔªËØµÄÂß¼­»ò£¨orÔËËã£©;
+#    ç±»ä¼¼å‡½æ•°è¿˜æœ‰:
+#    tf.reduce_sum ï¼šè®¡ç®—tensoræŒ‡å®šè½´æ–¹å‘ä¸Šçš„æ‰€æœ‰å…ƒç´ çš„ç´¯åŠ å’Œ;
+#    tf.reduce_max? :? è®¡ç®—tensoræŒ‡å®šè½´æ–¹å‘ä¸Šçš„å„ä¸ªå…ƒç´ çš„æœ€å¤§å€¼;
+#    tf.reduce_all :? è®¡ç®—tensoræŒ‡å®šè½´æ–¹å‘ä¸Šçš„å„ä¸ªå…ƒç´ çš„é€»è¾‘å’Œï¼ˆandè¿ç®—ï¼‰;
+#    tf.reduce_any:? è®¡ç®—tensoræŒ‡å®šè½´æ–¹å‘ä¸Šçš„å„ä¸ªå…ƒç´ çš„é€»è¾‘æˆ–ï¼ˆorè¿ç®—ï¼‰;
 
 
 #   tf.train.GradientDescentOptimizer
-#     Ëæ»úÌİ¶ÈÏÂ½µËã·¨
+#     éšæœºæ¢¯åº¦ä¸‹é™ç®—æ³•
 #
 optimizer = tf.train.GradientDescentOptimizer(0.5)
 
-#  ¼ÆËãÌİ¶È£¬¸üĞÂvariable
+#  è®¡ç®—æ¢¯åº¦ï¼Œæ›´æ–°variable
 train = optimizer.minimize(loss)
 
 init = tf.initialize_all_variables()

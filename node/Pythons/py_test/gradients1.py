@@ -1,4 +1,4 @@
-import tensorflow as tf
+﻿import tensorflow as tf
  
 x1 = tf.get_variable('w1', shape=[3])
 x2 = tf.get_variable('w2', shape=[3])

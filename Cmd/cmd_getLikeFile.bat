@@ -4,10 +4,13 @@ set saveFile=..\Cmd_TXT\si_filelist.h
 set logFile=..\Cmd_TXT\si_log.h
 
 set schDir=%1
+
 ::替换, #替换为空格
 set schDir=%schDir:#= %
+
 ::类型: F5查找, F6清空
 set cmdType=%2
+
 ::字符串长度
 set fileLen=%3
 set fileHead=%schdir%\%4
@@ -45,4 +48,8 @@ for /f "delims=" %%i   in ('dir  /b/a-d/s  %schDir%')  do (
 		echo %%i
 	)
 )>>%saveFile%
+
+if "%cmdType%"=="7" (
+	start %saveFile%
+)
 ::pause
