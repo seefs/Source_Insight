@@ -1,41 +1,4 @@
 ﻿
-//F1->sbd_test.em / other
-macro StrTranslate(hbuf)
-{
-
-	//path = "F:\\11CW1352MP_BLEPHONE61D_11C_V33\\projects\\M107\\M107_XYZN_S2_4A_NEDADJ_F6\\Resource"
-	path = "E:\\desktop\\test"
-	
-	file = "sub_1.txt"
-	
-//	logfile = "z_translate_log.txt"
-//	hbufLog = OpenCache(path # "\\" # logfile)
-//	EmptyCache(hbufLog)
-
-	listfile = "z_translate_list.txt"
-	hbuflist = OpenCache(path # "\\" # listfile)
-
-	//不必要分很多文件; 估计有特殊字符Si无法保存
-	
-//	TranslateDir(path # "\\sub_1.txt", hbuflist)
-//	TranslateDir(path # "\\sub_2.txt", hbuflist)
-//	TranslateDir(path # "\\sub_3.txt", hbuflist) //error
-//	TranslateDir(path # "\\sub_4.txt", hbuflist) //error
-//	TranslateDir(path # "\\sub_5.txt", hbuflist)
-//	TranslateDir(path # "\\sub_6.txt", hbuflist)
-	TranslateDir(path # "\\sub_7.txt", hbuflist)
-//	TranslateDir(path # "\\sub_8.txt", hbuflist)
-//	TranslateDir(path # "\\sub_9.txt", hbuflist)
-//	TranslateDir(path # "\\sub_10.txt", hbuflist)
-//	TranslateDir(path # "\\sub_11.txt", hbuflist)
-//	TranslateDir(path # "\\sub_12.txt", hbuflist)
-//	TranslateDir(path # "\\sub_13.txt", hbuflist)
-//	TranslateDir(path # "\\sub_14.txt", hbuflist)
-
-
-	CloseBuf(hbuflist)
-}
-
 macro TranslateDir(file, hbuflist)
 {
 	hbufsub = OpenCache(file)

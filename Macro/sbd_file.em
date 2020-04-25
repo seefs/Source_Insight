@@ -51,6 +51,7 @@ macro getCustRow(0)			{	return 72	}
 macro getPyInfo(0)			{	return 75	}
 macro getAndroidInfo(0)			{	return 78	}
 //macro getXXInfo(0)			{	return 81	}
+macro getCommentRow(0)			{	return 84	}
 
 
 
@@ -156,7 +157,13 @@ macro IsScriptFile(hbuf)
 {
 	//# as Comment
 	fName = GetFileName(GetBufName(hbuf))
-	return IsFileType(fName, ".py") || IsFileType(fName, ".make")
+	return IsFileType(fName, ".py") || IsFileType(fName, ".make") || IsFileType(fName, ".properties")
+}
+
+macro IsNoteFile(hbuf)
+{
+	return (IsFileName(hbuf, "Macro_")||IsFileName(hbuf, "Simple_CTRL_")||IsFileName(hbuf, "bak_")
+		||IsFileName(hbuf, "Log_"))||IsFileName(hbuf, "si_modis_"))
 }
 
 //从右边匹配
@@ -806,6 +813,8 @@ macro GetTransFileName(hbuf, fName, cNum)
 	fName = ReplaceWord(fName, "Save:", getSavePath(0) # "\\")
 	//use "^" as space
 	fName = ReplaceWord(fName, "^", " ")
+	//resolve SI Cache bug.
+	fName = ReplaceWord(fName, "\\\\", "\\")
 //	msg(fName)
 	
 	return fName
@@ -840,6 +849,15 @@ macro ReTransHead(hbuf, fHead, curPath)
 		headPath = getMacroValue(hbuf, fHead # "Path", 1)
 		if(headPath != ""){
 			curPath = ReplaceWord(curPath, fHead # ":", headPath # "\\")
+			
+			//for each
+			next = GetHeadIndex(hbuf, curPath)
+			if (next != "X")
+			{
+				nextHead = strmid(curPath, 0, next)
+				if(IsTransHead(hbuf, nextHead)==1)
+					curPath = ReTransHead(hbuf, nextHead, curPath)
+			}
 		}
 	}
 	return curPath
@@ -871,8 +889,8 @@ macro GetTransWord(hbuf, curPath, noteWord)
 
 macro GetTransCmdS(cur_line, index, len)
 {
-	//命令名转化: 删除空格
 	//下一个非空
+	//  选择空行时(如只有一个换行符), stop
 	start = StartWS(cur_line, index)
 	if (start == "X")
 	{
@@ -882,7 +900,6 @@ macro GetTransCmdS(cur_line, index, len)
 }
 macro GetTransCmdS2(cur_line, index, len)
 {
-	//命令名转化: 删除空格
 	//下一个非空
 	start = StartWS(cur_line, index)
 	if (start == "X")
@@ -893,7 +910,6 @@ macro GetTransCmdS2(cur_line, index, len)
 }
 macro GetTransCmdE(cur_line, start, len)
 {
-	//命令名转化: 删除空格
 	//下一个空格
 	next = NextWS(cur_line, start)
 	if (next == "X")
@@ -1067,7 +1083,26 @@ macro IsMoreSelect(sel)
 {
 	return (sel.lnFirst != sel.lnLast)
 }
-
+// return "No","Yes","Macro"
+macro GetSingleSelectState(cur_line, sel, mar)
+{
+	if(sel.ichFirst != sel.ichLim)
+	{	
+		 //选中最后一行，带换行符会出错
+		if(strlen(cur_line) < sel.ichLim)			sel.ichLim = sel.ichLim - 1
+			
+		selStr = strmid(cur_line, sel.ichFirst, sel.ichLim)
+		
+		if(selStr == mar)
+			return "Macro"
+			
+		return "Yes"
+	}
+	else
+	{
+		return "No"
+	}
+}
 macro ScrollCursor(mSel)
 {
 	hwnd = GetCurrentWnd()

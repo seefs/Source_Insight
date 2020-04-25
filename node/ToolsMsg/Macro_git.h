@@ -21,17 +21,17 @@ Save:node\ToolsMsg\Macro_git.h \[1.6\] git rm --------------git删除文件（�
 Save:node\ToolsMsg\Macro_git.h \[1.7\] git mv --------------git文件重命名
 Save:node\ToolsMsg\Macro_git.h \[1.8\] git commit ----------git提交文件
 Save:node\ToolsMsg\Macro_git.h \[1.9\] git pull ------------拉取
-Save:node\ToolsMsg\Macro_git.h \[1.10\] git push ------------上传
-Save:node\ToolsMsg\Macro_git.h \[1.11\] git help
-Save:node\ToolsMsg\Macro_git.h \[1.12\] 
+Save:node\ToolsMsg\Macro_git.h \[1.10\] git push -----------上传
+Save:node\ToolsMsg\Macro_git.h \[1.11\] pull request
+Save:node\ToolsMsg\Macro_git.h \[1.12\] git help
 Save:node\ToolsMsg\Macro_git.h \[1.13\] 
 Save:node\ToolsMsg\Macro_git.h \[1.14\] 
 // 2. git 日志
 Save:node\ToolsMsg\Macro_git.h \[2.1\] git log -------------git操作日志
 Save:node\ToolsMsg\Macro_git.h \[2.2\] git reset -----------版本回退
-Save:node\ToolsMsg\Macro_git.h \[2.3\] git checkout --------git还原修改----临时
-Save:node\ToolsMsg\Macro_git.h \[2.4\] git reset -----------git还原修改----标记
-Save:node\ToolsMsg\Macro_git.h \[2.5\] git fetch -----------git还原修改----本地
+Save:node\ToolsMsg\Macro_git.h \[2.3\] git checkout --------git还原----当前修改
+Save:node\ToolsMsg\Macro_git.h \[2.4\] git reset -----------git还原----暂存(add)
+Save:node\ToolsMsg\Macro_git.h \[2.5\] git fetch -----------git还原----版本区(commit)
 Save:node\ToolsMsg\Macro_git.h \[2.6\] git diff ------------对比
 Save:node\ToolsMsg\Macro_git.h \[2.7\] .gitconfig ----------设置对比/合并工具
 Save:node\ToolsMsg\Macro_git.h \[2.8\] git difftool --------对比工具
@@ -172,13 +172,11 @@ git push -u origin master -f
 
 
 
-[1.11] git help
+[1.11] pull request
+github-->create pull request-->send pull request
 
 
-[1.11] 
-
-
-[1.12] 
+[1.12] git help
 
 
 [1.13] 
@@ -240,18 +238,19 @@ git reset --hard e9efa77  回退到 e9efa77  版本
 
 
 
-[2.3] git checkout --------git还原修改----临时
+[2.3] git checkout --------git还原----当前修改
 //
 //------------>修改-------->add-------->commit----->push-------
 //[工作区修改]<====[工作区]-----[暂存区]-----[版本区]-----[服务器]
 //
 git checkout -- readme.txt
-// 还原修改, 删除, 不能还原新加文件
+// 还原修改, 删除文件
+//   不能还原新加文件
 git checkout ./
 
 
 
-[2.4] git reset -----------git还原修改----标记
+[2.4] git reset -----------git还原----暂存(add)
 //
 //------------>修改-------->add-------->commit----->push-------
 //[工作区修改]<====[工作区]<====[暂存区]-----[版本区]-----[服务器]
@@ -263,12 +262,17 @@ git reset HEAD readme.txt
 git reset --hard origin/master
 
 
+// 或者 git restore
+//   不能还原新加文件
+git restore ./
 
-[2.5] git fetch ----------git还原修改----本地
+
+[2.5] git fetch ----------git还原----版本区(commit)
 //
 //------------>修改-------->add-------->commit----->push-------
 //[工作区修改]<====[工作区]<====[暂存区]<====[版本区]-----[服务器]
 //
+//   不能还原新加文件
 git fetch --all
 
 

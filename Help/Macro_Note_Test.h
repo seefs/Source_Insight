@@ -1,42 +1,51 @@
 ﻿
 基础路径设置:
-//basePath = 
-Save:Help\
+basePath = Save:Macro\
+base:sbd_test.em  OpenMiniTest
 
 
-// 打开msg log(testParam)
-//   显示多数log:
-//testParam = 2
-//   显示少量log:
+// 显示log级别(testParam)
+//   1: 显示少量log
+//   2: 显示多数log
 testParam = 1
+//testParam = 2
+
+
+//  当前文件作为测试文件:
+MiniTest = True
 
 
 /***********************************************************************/
 
 
 //目录[Num][Ca]:
-// 1.基础功能测试
-Save:Help\Macro_Note_Test.h \[1.1\] Note快捷键--
-Save:Help\Macro_Note_Test.h \[1.2\] 索引
-Save:Help\Macro_Note_Test.h \[1.3\] 索引换行, 显示分页
-Save:Help\Macro_Note_Test.h \[1.4\] 
-Save:Help\Macro_Note_Test.h \[1.5\] 
-Save:Help\Macro_Note_Test.h \[1.6\] 
-Save:Help\Macro_Note_Test.h \[1.7\] 
-Save:Help\Macro_Note_Test.h \[1.8\] 
-Save:Help\Macro_Note_Test.h \[1.9\] 
-Save:Help\Macro_Note_Test.h \[1.10\] 
-Save:Help\Macro_Note_Test.h \[1.11\] SVN--Test
-Save:Help\Macro_Note_Test.h \[1.12\] cmd--Test
-Save:Help\Macro_Note_Test.h \[1.13\] 
-Save:Help\Macro_Note_Test.h \[1.14\] 
-Save:Help\Macro_Note_Test.h \[1.15\] 
-Save:Help\Macro_Note_Test.h \[1.16\] 
-//2.c语言测试(SprNote,MtkNote)
-Save:Help\Macro_Note_Test.h \[2.1\] group 分组
-Save:Help\Macro_Note_Test.h \[2.2\] project 项目
-Save:Help\Macro_Note_Test.h \[2.3\] rule
-Save:Help\Macro_Note_Test.h \[2.4\] search
+// 1.FN
+Save:Help\Macro_Note_Test.h \[1.1\] F1----------------
+Save:Help\Macro_Note_Test.h \[1.2\] F2----------------
+Save:Help\Macro_Note_Test.h \[1.3\] F3----------------
+Save:Help\Macro_Note_Test.h \[1.4\] F4----------------
+Save:Help\Macro_Note_Test.h \[1.5\] F5----------------rule goto
+Save:Help\Macro_Note_Test.h \[1.6\] F6----------------rule soft
+Save:Help\Macro_Note_Test.h \[1.7\] F7----------------SVN--Test
+Save:Help\Macro_Note_Test.h \[1.8\] F8----------------
+Save:Help\Macro_Note_Test.h \[1.9\] F9----------------search
+Save:Help\Macro_Note_Test.h \[1.10\] F10--------------group
+Save:Help\Macro_Note_Test.h \[1.11\] F11--------------Note快捷键
+Save:Help\Macro_Note_Test.h \[1.12\] F12--------------
+Save:Help\Macro_Note_Test.h \[1.13\] 语法测试---------后面删除掉...
+Save:Help\Macro_Note_Test.h \[1.14\] project
+Save:Help\Macro_Note_Test.h \[1.15\] project path Set
+Save:Help\Macro_Note_Test.h \[1.16\] file list
+Save:Help\Macro_Note_Test.h \[1.17\] mode
+Save:Help\Macro_Note_Test.h \[1.18\] String
+Save:Help\Macro_Note_Test.h \[1.19\] Shell
+Save:Help\Macro_Note_Test.h \[1.20\] API
+Save:Help\Macro_Note_Test.h \[1.21\] 
+//2.ctrl
+Save:Help\Macro_Note_Test.h \[2.1\] ctrl+B
+Save:Help\Macro_Note_Test.h \[2.2\] ctrl+T
+Save:Help\Macro_Note_Test.h \[2.3\] ctrl+D------------索引
+Save:Help\Macro_Note_Test.h \[2.4\] 
 Save:Help\Macro_Note_Test.h \[2.5\] 
 Save:Help\Macro_Note_Test.h \[2.6\] 
 Save:Help\Macro_Note_Test.h \[2.7\] 
@@ -68,32 +77,218 @@ Save:Help\Macro_Note_Test.h \[3.21\] python_w
 Save:Help\Macro_Note_Test.h \[3.22\] Save
 Save:Help\Macro_Note_Test.h \[3.23\] ...--------------5类
 Save:Help\Macro_Note_Test.h \[3.24\] file
-Save:Help\Macro_Note_Test.h \[3.25\] path--Set
-Save:Help\Macro_Note_Test.h \[3.26\] path
+Save:Help\Macro_Note_Test.h \[3.25\] path
+Save:Help\Macro_Note_Test.h \[3.26\] 
 Save:Help\Macro_Note_Test.h \[3.27\] 空格
 Save:Help\Macro_Note_Test.h \[3.28\] 
 Save:Help\Macro_Note_Test.h \[3.29\] 
 Save:Help\Macro_Note_Test.h \[3.30\] 
-//4.f1~f12--Test 
-Save:Help\Macro_Note_Test.h \[4.1\] f1--Test
-Save:Help\Macro_Note_Test.h \[4.2\] 
-Save:Help\Macro_Note_Test.h \[4.3\] 
-Save:Help\Macro_Note_Test.h \[4.4\] 
-Save:Help\Macro_Note_Test.h \[4.5\] f12--Test
-Save:Help\Macro_Note_Test.h \[4.6\] 
-Save:Help\Macro_Note_Test.h \[4.7\] 
-Save:Help\Macro_Note_Test.h \[4.8\] ctrl+B
-Save:Help\Macro_Note_Test.h \[4.9\] 
-Save:Help\Macro_Note_Test.h \[4.10\] 
-//5.SI语法测试
-Save:Help\Macro_Note_Test.h \[5.1\] 语法测试
-Save:Help\Macro_Note_Test.h \[5.2\] 
-Save:Help\Macro_Note_Test.h \[5.3\] 
 
 
 
 
-[4.2] file list Test:
+
+[1.1] 
+
+
+
+[1.2] 
+
+
+
+
+[1.3] 
+
+
+
+[1.4] 
+
+
+[1.5] rule goto
+base:sbd_test.em  goto_copy
+	
+//1) 选中(goto_copy), 再ctrl+E
+//  复制--中文跳转:
+goto_copy  越
+goto_copy  越南
+goto_copy  阿
+goto_copy  泰
+//  to:
+//		VIETNAMESE
+//		ARABIC
+//		THAI
+
+//2) 选中(goto_select), 再ctrl+E
+//  选中--英文跳转:
+goto_select  GC6133 (file)
+goto_select  USB
+goto_select  PRODUCT_CONFIG (path)
+goto_select  CUSTOMER
+
+//3) 选中(rule_cn_soft), 再ctrl+E
+//  批量测试中文排序的准确性
+//		(略)
+
+//4) 选中(rule_en_soft), 再ctrl+E
+//  批量测试英文排序的准确性
+//		(略)
+
+//5) 选中(rule_cn_find), 再ctrl+E
+//  查找中文跳转
+//		(略)
+
+//6) 选中(rule_en_find), 再ctrl+E
+//  查找英文跳转
+//		(略)
+
+
+[1.6] rule soft
+//1) 选中(key_cn_soft), 再ctrl+E
+//  英文排序测试
+//		(略)
+
+//2) 选中(key_en_soft), 再ctrl+E
+//  中文排序测试
+//		(略)
+
+//3) 选中(add_rule), 再ctrl+E
+//  选中后添加规则
+//		(略)
+
+
+
+
+[1.7] 
+SVN--Test
+//SVN--Test
+TortoiseProc.exe /command:commit /path:"c:\svn_wc\file1.txt*c:\svn_wc\file2.txt" /logmsg:"test log message" 
+F:\11CW1352MP_MT6261DM\custom\codegen\FARSIGHTED61M_CN_11C_BB\codegen_M610_KM_I710_F2.dws
+
+
+//openCmd 
+//cmd	   运行cmd命令 不包含cmd
+cmd: cmd
+
+
+
+
+[1.8] 
+
+
+
+
+
+[1.9] search
+base:sbd_test.em  search_bft
+
+//1) 选中(search_version), 再ctrl+E
+//  英文排序测试
+//		(略)
+
+//2) 选中(search_bft), 再ctrl+E
+//  打开参数(bftParam)
+//bftParam = 6531E
+//  命令:
+search_bft  MAINMENU
+search_bft  EXTRA
+
+//3) 选中(search_bft), 再ctrl+E
+//  打开参数(bftParam)
+//bftParam = 9820e
+//  命令:
+search_bft  lcd/lcd_st7789v2_spi.c
+search_bft  values\config.xml
+search_bft  statusbar\BaseStatusBar.java 
+search_bft  statusbar\BaseStatusBar.java 
+
+
+
+[1.10] group 分组
+base:sbd_test.em  sr_group
+
+//1) 选中(sr_group), 再ctrl+E
+//  
+sr_group
+
+//2) 选中(show_menu), 再ctrl+E
+//  
+show_menu
+	
+//3) 选中(group), 再ctrl+E
+//	 1) mk文件中: 快捷键跳转到宏 (略)
+//	 2) em文件中: 显示列表 (略)
+//	 3) sr文件中: 快捷键打开文件/文件互关 (略)
+//	 4) 其他:
+// 打开参数(bftParam)
+bftParam = 6531E
+命令:
+group  mmiidle_cstyle.c
+group  mmialarm.c
+
+
+
+[1.11] Note快捷键--
+快捷键[Ca]:
+F11:打开/关闭笔记
+F2: 打开选择的路径/文件; 文件名+扩展名
+F5: 打开sln文件/cmd命令+右键粘贴; 当前行以set、cmd、make/ctmake/xmake、open、vc、vs08开头; 默认打开文件+关键字(行)
+
+
+[1.12] 
+
+
+
+//f12--Test
+//test:
+//F12->F12
+//F12->F1
+
+
+//test:
+//F12->F2~F11
+
+
+
+[1.13] 语法测试
+//1.运行语法测试
+// --Test格式
+test:SiMro
+//	代码位置
+Save:Macro\sbd_test.em	TestNodeMsg
+
+
+
+
+[1.14] project
+//
+//MiniTest = project
+//bftParam = 6531E
+//bftParam = 9820e
+
+//1) 打开项目文件:
+pls_press_ctrl_e
+
+
+
+
+[1.15] path--Set
+//sbd_base 路径设置
+Save:Macro\sbd_base.em
+
+//Macro_Set_Base 路径设置
+Save:set\Macro_Set_Base.h
+
+//定制路径设置: (新加的话参考已有路径)
+// Save:
+Save:Macro\sbd_base.em	getSavePath(0)
+Save:Macro\sbd_file.em	"Save:"
+Save:Macro\sbd_f11.em	"Save"
+
+
+
+
+[1.16] file list
+//file list Test:
 Save:Cmd\file___no_use\...
 Save:Cmd\file___no_use\dir_getFile...
 Save:Cmd\file___no_use\dir_getFile time.bat
@@ -103,14 +298,119 @@ Save:Cmd_TXT\si_filelist.h
 
 
 
-[1.1] Note快捷键--
-快捷键[Ca]:
-F11:打开/关闭笔记
-F2: 打开选择的路径/文件; 文件名+扩展名
-F5: 打开sln文件/cmd命令+右键粘贴; 当前行以set、cmd、make/ctmake/xmake、open、vc、vs08开头; 默认打开文件+关键字(行)
 
 
-[1.2] 索引
+[1.17] mode
+base:sbd_test.em  mode_save
+
+//1) 选中(mode_save), 再ctrl+E
+//  
+//		(略)
+
+//2) 选中(mode_read), 再ctrl+E
+//  
+//		(略)
+
+
+
+
+
+[1.18] String
+base:sbd_test.em  line_value
+
+//1) 选中(line_value), 再ctrl+E
+//  
+//		(略)
+
+//2) 选中(string_translate), 再ctrl+E
+//  
+//		(略)
+	
+
+[1.19] Shell
+base:sbd_test.em  shell_cmd
+
+//1) 选中(shell_cmd), 再ctrl+E
+//  
+//		(略)
+
+//2) 选中(shell_SvnLog), 再ctrl+E
+//  
+//		(略)
+	
+//3) 选中(shell_SvnDiff), 再ctrl+E
+//	打开参数(bftParam, fileParam), 
+//bftParam = 6531E
+//fileParam = mmiidle_cstyle.c
+//fileParam = mmialarm.c
+
+
+
+[1.20] API
+base:sbd_test.em  API_log
+
+//1) 选中(API_log), 再ctrl+E
+//  
+//		(略)
+
+//2) 选中(API_struct), 再ctrl+E
+//  
+//		(略)
+
+//3) 选中(API_val), 再ctrl+E
+//  
+//		(略)
+
+
+[1.21] 
+
+
+
+[2.1] ctrl+B
+//  代码位置
+Save:Macro\sbd_ctrl.em  CtrlB
+Save:Macro\sbd_f12.em  ShowNoteHelp
+
+//1) 显示提示信息--py/android语法
+// --Test--Python
+range		(选中后->ctrlB->提示)
+reduce_sum	(选中后->ctrlB->提示)
+reduce_0	(选中后->ctrlB->不存在, 打开临时文件)
+// --Test--Android
+implement	(选中后->ctrlB->提示)
+
+
+//2) py和android说明均有, 可设置为只显示android:
+// --Test
+compile
+// --set py info(0 or 1):
+Save:set\Macro_Set.h 75
+// --set android info(0 or 1):
+Save:set\Macro_Set.h 78
+
+
+//3) Lib对照表, (特殊格式, 带'.'时不搜索'::')
+Save:Help\LangInfo\Macro_Info_Android_Lib.h
+// --Test
+implementation 'com.android.support:appcompat-v7:25.+'
+implementation 'com.android.support:support-v4:25.+'
+
+
+//4) Info位置
+//   搜索关键字:
+Save:Help\LangInfo\Macro_Info_Android.h  classpath::
+Save:Help\LangInfo\Macro_Info_Python.h
+
+
+
+[2.2] ctrl+T
+//
+Save:Help\Tmp\sbd_Tmp_Show.em
+//
+Save:Help\Tmp\Tmp_Test.h
+
+
+[2.3] ctrl+D索引
 MtkNote
 
 //主要索引:
@@ -133,178 +433,21 @@ ctrl+D->S:
 ctrl+D->...:
 
 
-
-
-[1.3] 索引换行, 显示分页
 //显示分页
-Save:Help\Test\Macro_Test_Node.h
-//索引换行
-Save:Help\Test\Macro_Test_Replace.h
+//  ctrlDD后, 多次ctrlD, 不过没有显示总页数，或者:
+//  ctrlD3, 显示第1页
+//  ctrlD4, 显示第2页
+//  ctrlD5, 显示第3页
+//  ctrlD6, 显示第4页
+Save:Help\DefaultFile\Macro_Node_Num.h
 
+//手动制作索引
+//  ctrlU, 添加编号
+//  ctrlU, 复制^p^p^p, 添加换行
 
 
-[1.4] 
 
-
-[1.5] 
-
-
-
-
-[1.6] 
-
-
-
-[1.7] 
-
-
-//openCmd 
-
-
-//cmd	   运行cmd命令 不包含cmd
-cmd: cmd
-
-
-
-
-[1.8] 
-
-
-
-
-
-[1.9] 
-
-
-
-
-[1.10] 
-
-
-
-
-
-[1.11] SVN--Test
-//SVN--Test
-TortoiseProc.exe /command:commit /path:"c:\svn_wc\file1.txt*c:\svn_wc\file2.txt" /logmsg:"test log message" 
-F:\11CW1352MP_MT6261DM\custom\codegen\FARSIGHTED61M_CN_11C_BB\codegen_M610_KM_I710_F2.dws
-
-
-
-
-[1.12] cmd--Test
-//1.运行cmd命令
-// --Test格式
-test:CustomCmd
-//	代码位置
-Save:Macro\sbd_test.em	TestNodeMsg
-//	正常格式
-cmd_w: ping dl.google.com
-
-
-
-
-[1.13] 
-
-
-
-
-[1.14] 
-
-
-
-
-[1.15] 
-
-
-
-
-[1.16] 
-
-
-
-
-[1.17] 
-
-
-
-
-[1.18] 
-
-
-
-
-[1.19] 
-
-
-
-
-[1.20] 
-
-
-
-
-[2.1] group 分组
-//
-//MiniTest = group
-//bftParam = 6531E
-//fileParam = mmiidle_cstyle.c
-//fileParam = mmialarm.c
-
-//1) mk文件中: 快捷键跳转到宏 (略)
-//2) em文件中: 显示列表 (略)
-//3) sr文件中: 快捷键打开文件/文件互关 (略)
-//4) 其他:
-pls_press_ctrl_e
-
-
-
-[2.2] project
-//
-//MiniTest = project
-//bftParam = 6531E
-//bftParam = 9820e
-
-//1) 打开项目文件:
-pls_press_ctrl_e
-
-
-[2.3] rule
-//
-//MiniTest = rule
-
-//1) 复制--中文跳转:
-//	越
-//	越南
-//	阿
-//	泰
-pls_press_ctrl_e
-// VIETNAMESE
-// ARABIC
-// THAI
-
-//2) 选中--英文跳转:
-//	GC6133 (file)
-//	USB
-//	PRODUCT_CONFIG (path)
-//	CUSTOMER
-pls_press_ctrl_e
-
-
-[2.4] search
-//
-MiniTest = search
-//bftParam = 6531E
-bftParam = 9820e
-
-//1) 搜索:
-//	MAINMENU (c)
-//	EXTRA
-//	... (android)
-// lcd/lcd_st7789v2_spi.c
-// values\config.xml
-// statusbar\BaseStatusBar.java
-pls_press_ctrl_e
+[2.4] 
 
 
 
@@ -336,6 +479,17 @@ Save:Macro\sbd_f11.em	"cmd"
 cmd:F:\11CW1352MP\11CW1352MP\cmd
 
 //call	   不运行cmd命令, 只复制
+
+
+cmd--Test
+//1.运行cmd命令
+// --Test格式
+test:CustomCmd
+//	代码位置
+Save:Macro\sbd_test.em	TestNodeMsg
+//	正常格式
+cmd_w: ping dl.google.com
+
 
 
 [3.2] open
@@ -531,21 +685,7 @@ FileSame:Save:Help\Test\Macro_
 
 
 
-[3.25] path--Set
-//sbd_base 路径设置
-Save:Macro\sbd_base.em
-
-//Macro_Set_Base 路径设置
-Save:set\Macro_Set_Base.h
-
-//定制路径设置: (新加的话参考已有路径)
-// Save:
-Save:Macro\sbd_base.em	getSavePath(0)
-Save:Macro\sbd_file.em	"Save:"
-Save:Macro\sbd_f11.em	"Save"
-
-
-[3.26] path
+[3.25] path
 
 //1) 基础路径设置:
 //basePath = Save:node\Pythons
@@ -593,6 +733,10 @@ YYY:install\hello.py
 //5) 搜索路径下文件
 //搜索路径
 AsFile:Save:Help\
+	
+
+
+[3.26] 
 
 
 [3.27] 空格
@@ -629,219 +773,6 @@ python_w help:DefaultFile\Macro_z_null.py SLIM FULL
 
 
 [3.30] 
-
-
-[4.1] f1--Test
-
-//f1->f1, f1->1
-Save:node\Pythons\Macro_Pythons_Game.h 355
-
-//f1->f1, f1->1
-cur file.
-
-
-
-
-
-[4.2] 
-
-
-
-
-[4.3] 
-
-
-
-
-[4.4] 
-
-
-[4.5] f12--Test
-
-//test:
-//F12->F12
-//F12->F1
-
-
-//test:
-//F12->F2~F11
-
-
-
-
-
-[4.6] 
-
-
-
-
-[4.7] ctrl+T
-//
-Save:Help\Tmp\sbd_Tmp_Show.em
-//
-Save:Help\Tmp\Tmp_Test.h
-
-
-
-[4.8] ctrl+B
-//1) 显示提示信息--py/android语法
-// --Test--Python
-range		(选中后->ctrlB->提示)
-reduce_sum	(选中后->ctrlB->提示)
-reduce_0	(选中后->ctrlB->不存在, 打开临时文件)
-// --Test--Android
-implement		(选中后->ctrlB->提示)
-
-//  代码位置
-Save:Macro\sbd_ctrl.em  CtrlB
-Save:Macro\sbd_f12.em  ShowNoteHelp
-//  Info位置
-Save:Help\LangInfo\Macro_Info_Android.h
-Save:Help\LangInfo\Macro_Info_Python.h
-
-
-//2) py和android说明均有, 可设置为只显示android:
-// --Test
-compile
-// --set py info(0 or 1):
-Save:set\Macro_Set.h 75
-// --set android info(0 or 1):
-Save:set\Macro_Set.h 78
-
-
-//3) Lib对照表, (特殊格式, 带'.'时不搜索'::')
-Save:Help\LangInfo\Macro_Info_Android_Lib.h
-// --Test
-implementation 'com.android.support:appcompat-v7:25.+'
-implementation 'com.android.support:support-v4:25.+'
-
-//  代码位置
-Save:Macro\sbd_f12.em  ShowNoteHelp
-
-
-[4.9] 
-
-
-
-
-
-[4.10] 
-
-
-
-
-[4.11] 
-
-
-
-
-[4.12] 
-	
-	
-[4.13] 
-	
-	
-[4.14] 
-	
-	
-[4.15] 
-
-
-
-[4.16] 
-	
-	
-[4.17] 
-	
-	
-[4.18] 
-	
-	
-[4.19] 
-	
-	
-[4.20] 
-	
-
-Save:Help\Macro_Note_Test.h \[4.11\] 
-Save:Help\Macro_Note_Test.h \[4.12\] 
-Save:Help\Macro_Note_Test.h \[4.13\] 
-Save:Help\Macro_Note_Test.h \[4.14\] 
-Save:Help\Macro_Note_Test.h \[4.15\] 
-Save:Help\Macro_Note_Test.h \[4.16\] 
-Save:Help\Macro_Note_Test.h \[4.17\] 
-Save:Help\Macro_Note_Test.h \[4.18\] 
-Save:Help\Macro_Note_Test.h \[4.19\] 
-Save:Help\Macro_Note_Test.h \[4.20\] 
-
-
-
-
-
-[5.1] 语法测试
-//1.运行语法测试
-// --Test格式
-test:SiMro
-//	代码位置
-Save:Macro\sbd_test.em	TestNodeMsg
-
-
-
-
-[5.2] 
-
-
-
-
-[5.3] 
-
-
-
-
-[5.4] 
-
-
-
-
-[5.5] 
-
-
-
-
-[5.6] 
-
-
-
-
-[5.7] 
-
-
-
-
-[5.8] 
-
-
-
-
-[5.9] 
-
-
-
-
-[5.10] 
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

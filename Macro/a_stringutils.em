@@ -104,9 +104,9 @@ macro LFindStringExt( source, target, target_len)
 
 	match = 0
 	cp = 0
-	if(source_len >= target_len)
+	if(target_len <= source_len)
 	{
-		while( cp <= target_len )
+		while( cp < target_len )
 		{
 			if( source[cp] == target[cp] )
 				cp = cp + 1
@@ -118,7 +118,6 @@ macro LFindStringExt( source, target, target_len)
 		{
 			match = 1
 		}
-
 	}
 	
 	if( match )
@@ -174,3 +173,26 @@ macro NextWS( string, first )
  	else
 		return i
 }
+
+macro EndWS( string, last )
+{
+	// len[1,3] returns [X,1,3]
+    len = strlen( string )
+    if(4095 < last)
+    	last = len
+    i = last
+    
+    while( i > 0 )
+    {
+        if( string[i-1] == " " || string[i-1] == "	" )
+    		i = i - 1
+		else
+		    break
+    }
+
+	if( i == 0 )
+		return "X"
+	else
+	    return i
+}
+

@@ -21,7 +21,7 @@ SE039_SXJY_D700_VORTEX_F3
 project
 
 ### 24.SR Mode  (CTRL + D : search head 删除相同头部的行)
-Macro_Pythons_Mysql
+W
 
 ### 27.last command (未使用)
 CtrlW
@@ -60,25 +60,29 @@ M610_KM_V2411_SP6000_F2 M610 gprs
 XG05_KM_Q2407_SP5000_F2 M103_KEMAN gprs
 
 ### 63.Note Save Base(笔记路径, 替换当前path, android)
-D:\project\NLP\game\
-	
+E:\Desktop\SGIT\Git_NB
+
 ### 66.Num bits(F10)
-1
-	
+2
+
 ### 69.default project path
-D:\Save\SI\node\Pythons\Macro_Pythons_Game.h
-	
+D:\Save\SI\node\Simple_CTRL_B.h
+
 ### 72.default project path
-317
+0
 
-### 75.show py info(0 or 1)
+### 75.show python help(0 or 1)
+0
+
+### 78.show android help(0 or 1)
 1
-
-### 78.show android info(0 or 1)
-69
 
 ### 81.show xx info(保留)
-69
+0
+
+### 84.Comment row (右边注释间隔字符数)
+0
+
 
 
 

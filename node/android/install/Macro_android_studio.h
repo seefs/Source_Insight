@@ -1,9 +1,20 @@
 ﻿
 基础路径设置:
-//basePath = E:\Desktop\SGIT\ApiDemos
-//basePath = E:\Desktop\SGIT\test
-//basePath = E:\Desktop\SGIT\GitClub
-basePath = E:\Desktop\SGIT\API_TEST
+basePath = Save:node\android
+base:\\
+
+sdkPath = D:android\\as_SDK
+sdk:\\
+
+asPath = C:\Program^Files\Android\Android^Studio\
+as:\\
+
+kotlinPath = as:plugins\Kotlin
+kotlin:\\
+
+demoPath = D:\project\Android\Demo\android_base
+demo:\\
+
 
 /***********************************************************************/
 
@@ -13,17 +24,22 @@ Save:node\android\install\Macro_android_studio.h \[1.1\] as ide
 Save:node\android\install\Macro_android_studio.h \[1.2\] jdk
 Save:node\android\install\Macro_android_studio.h \[1.3\] sdk
 Save:node\android\install\Macro_android_studio.h \[1.4\] gradle
-Save:node\android\install\Macro_android_studio.h \[1.5\] 
-Save:node\android\install\Macro_android_studio.h \[1.6\] //groovy
+Save:node\android\install\Macro_android_studio.h \[1.5\] Keymap
+Save:node\android\install\Macro_android_studio.h \[1.6\] groovy ---------
 Save:node\android\install\Macro_android_studio.h \[1.7\] gradlew cmd
 Save:node\android\install\Macro_android_studio.h \[1.8\] Git
-Save:node\android\install\Macro_android_studio.h \[1.9\] adb-------------环境变量
+Save:node\android\install\Macro_android_studio.h \[1.9\] adb ----------------环境变量
 Save:node\android\install\Macro_android_studio.h \[1.10\] usb
 Save:node\android\install\Macro_android_studio.h \[1.11\] Terminal
 Save:node\android\install\Macro_android_studio.h \[1.12\] menu info
-Save:node\android\install\Macro_android_studio.h \[1.13\] 
+Save:node\android\install\Macro_android_studio.h \[1.13\] kotlin
 Save:node\android\install\Macro_android_studio.h \[1.14\] 
 Save:node\android\install\Macro_android_studio.h \[1.15\] 
+Save:node\android\install\Macro_android_studio.h \[1.16\] 
+Save:node\android\install\Macro_android_studio.h \[1.17\] 
+Save:node\android\install\Macro_android_studio.h \[1.18\] 
+Save:node\android\install\Macro_android_studio.h \[1.19\] 
+Save:node\android\install\Macro_android_studio.h \[1.20\] 
 //2.配置
 Save:node\android\install\Macro_android_studio.h \[2.1\] gradle version
 Save:node\android\install\Macro_android_studio.h \[2.2\] source code import--build cfg
@@ -33,46 +49,18 @@ Save:node\android\install\Macro_android_studio.h \[2.5\] as汉化包
 Save:node\android\install\Macro_android_studio.h \[2.6\] android studio改变配色方案
 Save:node\android\install\Macro_android_studio.h \[2.7\] toolbar
 Save:node\android\install\Macro_android_studio.h \[2.8\] 
-Save:node\android\install\Macro_android_studio.h \[2.9\] as menu info
-Save:node\android\install\Macro_android_studio.h \[2.10\] set si file type
-Save:node\android\install\Macro_android_studio.h \[2.11\] set memory
-Save:node\android\install\Macro_android_studio.h \[2.12\] 
+Save:node\android\install\Macro_android_studio.h \[2.9\] 
+Save:node\android\install\Macro_android_studio.h \[2.10\] add si file type
+Save:node\android\install\Macro_android_studio.h \[2.11\] set memory -----------as 内存
+Save:node\android\install\Macro_android_studio.h \[2.12\] gradle ---------------降版本
 Save:node\android\install\Macro_android_studio.h \[2.13\] 
 Save:node\android\install\Macro_android_studio.h \[2.14\] 
 Save:node\android\install\Macro_android_studio.h \[2.15\] 
-//3.first app
-Save:node\android\install\Macro_android_studio.h \[3.1\] AVD
-Save:node\android\install\Macro_android_studio.h \[3.2\] Project--build.gradle
-Save:node\android\install\Macro_android_studio.h \[3.3\] Module--build.gradle
-Save:node\android\install\Macro_android_studio.h \[3.4\] gradle.properties
-Save:node\android\install\Macro_android_studio.h \[3.5\] run cfg
-Save:node\android\install\Macro_android_studio.h \[3.6\] 
-Save:node\android\install\Macro_android_studio.h \[3.7\] 
-Save:node\android\install\Macro_android_studio.h \[3.8\] 
-Save:node\android\install\Macro_android_studio.h \[3.9\] 
-Save:node\android\install\Macro_android_studio.h \[3.10\] 
-//4.move to as
-Save:node\android\install\Macro_android_studio.h \[4.1\] Project--version
-Save:node\android\install\Macro_android_studio.h \[4.2\] Module--version
-Save:node\android\install\Macro_android_studio.h \[4.3\] androidx
-Save:node\android\install\Macro_android_studio.h \[4.4\] 
-Save:node\android\install\Macro_android_studio.h \[4.5\] 
-Save:node\android\install\Macro_android_studio.h \[4.6\] 
-Save:node\android\install\Macro_android_studio.h \[4.7\] 
-Save:node\android\install\Macro_android_studio.h \[4.8\] debug
-Save:node\android\install\Macro_android_studio.h \[4.9\] 
-Save:node\android\install\Macro_android_studio.h \[4.10\] 
-//5.签名打包
-Save:node\android\install\Macro_android_studio.h \[5.1\] AppTest 签名
-Save:node\android\install\Macro_android_studio.h \[5.2\] 如何更改项目名称
-Save:node\android\install\Macro_android_studio.h \[5.3\] 导入 eclipse project
-Save:node\android\install\Macro_android_studio.h \[5.4\] 
-Save:node\android\install\Macro_android_studio.h \[5.5\] 一个app打包多个APK
-Save:node\android\install\Macro_android_studio.h \[5.6\] 
-Save:node\android\install\Macro_android_studio.h \[5.7\] 
-Save:node\android\install\Macro_android_studio.h \[5.8\] 
-Save:node\android\install\Macro_android_studio.h \[5.9\] 
-Save:node\android\install\Macro_android_studio.h \[5.10\] 
+Save:node\android\install\Macro_android_studio.h \[2.16\] 
+Save:node\android\install\Macro_android_studio.h \[2.17\] 
+Save:node\android\install\Macro_android_studio.h \[2.18\] 
+Save:node\android\install\Macro_android_studio.h \[2.19\] 
+Save:node\android\install\Macro_android_studio.h \[2.20\] 
 
 
 
@@ -133,57 +121,93 @@ C:\Users\Administrator\AppData\Local\Android\Sdk
 D:\android\as_SDK
 
 
+名称                    版本号            API等级        发布时间           BuildVersion
+Froyo                 2.2.x          8            2010/6/1       BuildVersionCodes.Froyo
+Gingerbread           2.3-2.3.2      9            2010/11/1      BuildVersionCodes.GingerBread
+Gingerbread           2.3.3-2.3.4    10           2011/2/1       BuildVersionCodes.GingerBreadMr1
+Honeycomb             3.0.x          11           2011/2/1       BuildVersionCodes.HoneyComb
+Honeycomb             3.1.x          12           2011/5/1       BuildVersionCodes.HoneyCombMr1
+Honeycomb             3.2            13           2011/6/1       BuildVersionCodes.HoneyCombMr2
+Ice Cream Sandwich    4.0-4.0.2      14           2011/10/1      BuildVersionCodes.IceCreamSandwich
+Ice Cream Sandwich    4.0.3-4.0.4    15           2011/12/1      BuildVersionCodes.IceCreamSandwichMr1
+Jelly Bean            4.1-4.1.1      16           2012/6/1       BuildVersionCodes.JellyBean
+Jelly Bean            4.2-4.2.2      17           2012/11/1      BuildVersionCodes.JellyBeanMr1
+Jelly Bean            4.3            18           2013/7/1       BuildVersionCodes.JellyBeanMr2
+Kitkat                4.4            19           2013/10/1      BuildVersionCodes.KitKat
+Kitkat Watch          4.4W           20           2014/6/1       BuildVersionCodes.KitKatWatch
+Lollipop              5              21           2014/11/1      BuildVersionCodes.Lollipop
+Lollipop              5.1            22           2015/3/1       BuildVersionCodes.LollipopMr1
+Marshmallow           6              23           2015/8/1       BuildVersionCodes.M
+Nougat                7              24           2016/8/1       BuildVersionCodes.N
+Nougat                7.1            25           2016/12/1      BuildVersionCodes.NMr1
+Oreo                  8              26           2017/8/1       BuildVersionCodes.O
+Oreo                  8.1            27           2017/12/1      BuildVersionCodes.OMr1
+Pie                   9              28           2018/8/1       BuildVersionCodes.P
+Q                     10             29
+
+
 
 
 [1.4] gradle
-#path移出C盘, 很占空间, 600+300*N(M):
-#  setting-->build->build tool->Gradle
-#  path:
-C:/Users/Administrator/.gradle
-D:\android\.gradle
+// path移出C盘, 很占空间, 600+300*N(M):
+//    setting-->build->build tool->Gradle
+C:/Users/Administrator/.gradle        // 旧path
+D:\android\.gradle                    // 新path
 	
-#下载:
-#  第1次编译apk自动下载, 下载路径:
-#    换个项目下载新版本gradle
+// 下载:
+//    第1次编译apk自动下载, 下载路径:
+//    换个项目下载新版本gradle
 C:\Users\Administrator\.gradle\wrapper\dists\gradle-4.6-all\bcst21l2brirad8k2ben1letg
+//
+// 手动下载gradle
+https://gradle.org/releases/
 
-#手动下载gradle
-	https://gradle.org/releases/
-	
-#env:
-#  配置环境变量，新建 GRADLE_HOME 为
+// env:
+//    配置环境变量，新建 GRADLE_HOME 为
 C:\Users\Administrator\.gradle\wrapper\dists\gradle-4.6-all\bcst21l2brirad8k2ben1letg\gradle-4.6
-#  然后在系统变量的Path里添加
+//    然后在系统变量的Path里添加
 %GRADLE_HOME%\bin
-#  配置完成后如果仍有问题，重启AS
+//    配置完成后如果仍有问题，重启AS
 
-#查看版本号:
+
+// 查看版本号:
 cmd_s: gradlew -v
 //	2.14.1
 //	5.4.1
 gradlew -v
 //	Gradle 4.6
 
-#Gradle内存:
-#  新建文件
+// Gradle内存:
+//    新建文件
 C:\Users\Administrator\.gradle\gradle.properties
 C:\Users\Administrator\.gradle\wrapper\dists\gradle-2.14.1-all\8bnwg5hd3w55iofp58khbp6yv\gradle-2.14.1
-#	内容为:
+//    内容为:
 //	org.gradle.daemon=true
 //	org.gradle.jvmargs=-Xmx1536M
 
-#Gradle加速器:
-#  离线使用gradle
+// Gradle加速器:
+//    离线使用gradle
 File->Setting->Build->gradle->Offline work
 
 
 
 
-[1.5] 
+[1.5] Keymap
+//Keymap
+//  修改快捷键习惯
+File->Settings->Keymap，下拉选择Eclipse，按Ok。
+
+//AndroidX
+//	老工程迁移到 AndroidX
+Refactor > Migrate to AndroidX。然后手工修改代码，参照
+https://developer.android.google.cn/jetpack/androidx/migrate#additional_resources
 
 
 
-[1.6] //groovy
+
+
+[1.6] groovy
+//groovy
 //系统变量的Path里添加
 D:\groovy-2.4.12\bin
 //查看版本号:
@@ -191,6 +215,12 @@ groovy -version
 
 
 [1.7] gradlew cmd
+//gradlew -v :  
+//  第一次运行这个命令，系统会帮我们下载gradle到本地，下载到的路径是：
+//  D:\android\android_studio\gradle\gradle-2.8
+//
+//gradlew assembleReleasF: 
+//gradle build
 
 1) 检查依赖并编译打包,即使你采用了多渠道打包,依然可以,可以生成所有的 apk。(涵盖 release 和 dubug)
 gradlew build
@@ -213,11 +243,11 @@ gradlew -q app:dependencies
 7) 查看详细的依赖信息
 gradlew dependencies --info
 
+8) 常用查错命令：
+//查看build 的info  
+gradlew compileDebugSources --stacktrace -debug --scan
+gradlew compileDebugSources --stacktrace -info
 
-//gradlew -v :  第一次运行这个命令，系统会帮我们下载gradle到本地，下载到的路径是：
-//D:\android\android_studio\gradle\gradle-2.8
-//gradlew assembleReleasF: 
-//gradle build
 
 
 [1.8] Git
@@ -292,12 +322,47 @@ Tools
 VCS
 Window
 Help
+as menu info
+//build:
+//	sync
+//	make
+//	make selected
+//	clean
+//	rebuild
+//	build APK
+//	gnerate signed APK
 
 
 
-[1.13] 
+[1.13] kotlin
+// kotlin version (不准确)
+kotlin:kotlinc\build.txt
+//	1.3.50
+//	1.3.72
+
+// 改为和IDE plugin版本匹配
+demo:build.gradle
+//  ext.kotlin_version = '1.3.31'
+//	dependencies {
+//		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+//	}
 
 
+// 修改
+demo:app\build.gradle
+//	apply plugin: 'kotlin-android'//
+//	apply plugin: 'kotlin-android-extensions' //
+//	apply plugin: 'kotlin-kapt'
+//	apply plugin: "androidx.navigation.safeargs.kotlin"
+//	
+//	dependencies {
+//		//kotlin 支持库
+//		implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+//	}
+
+
+//升级Kotlin插件版本？
+工具-> Kotlin->配置Kotlin插件更新
 
 
 [1.14] 
@@ -333,11 +398,6 @@ Help
 [1.20] 
 
 
-Save:node\android\install\Macro_android_studio.h \[1.16\] 
-Save:node\android\install\Macro_android_studio.h \[1.17\] 
-Save:node\android\install\Macro_android_studio.h \[1.18\] 
-Save:node\android\install\Macro_android_studio.h \[1.19\] 
-Save:node\android\install\Macro_android_studio.h \[1.20\] 
 
 
 
@@ -472,18 +532,10 @@ D:\SVN\app\CS_Home_JXJ1\app\src\main\res\drawable-hdpi\mediaplay_loop.png.png
 [2.8] 
 
 
-[2.9] as menu info
-//build:
-//	sync
-//	make
-//	make selected
-//	clean
-//	rebuild
-//	build APK
-//	gnerate signed APK
+[2.9] 
 
 
-[2.10] set si file type
+[2.10] add si file type
 //add type:
 as_cfg:	*.gradle
 
@@ -500,12 +552,26 @@ C:\Program^Files\Android\Android^Studio\bin\studio64.exe.vmoptions
 //	-Xms1024m
 //	-Xmx2048m
 
-#
+# 和这个有什么区别？
 gradle.properties
 //  org.gradle.jvmargs=-Xmx1024m
 
 
-[2.12] 
+[2.12] gradle ---------------降版本
+// gradle版本(参考)
+demo:build.gradle
+//	classpath 'com.android.tools.build:gradle:3.5.3'
+demo:gradle\wrapper\gradle-wrapper.properties
+//	distributionUrl=https\://services.gradle.org/distributions/gradle-5.4.1-all.zip
+
+// gradle版本(修改)
+apkPath = D:\project\Android\Demo\MaterialDrawer
+apk:\\
+apk:build.gradle
+//	classpath 'com.android.tools.build:gradle:3.6.1'
+apk:gradle\wrapper\gradle-wrapper.properties
+//	distributionUrl=https\://services.gradle.org/distributions/gradle-6.3-bin.zip
+
 
 
 [2.13] 
@@ -531,503 +597,6 @@ gradle.properties
 
 [2.20] 
 
-
-Save:node\android\install\Macro_android_studio.h \[2.16\] 
-Save:node\android\install\Macro_android_studio.h \[2.17\] 
-Save:node\android\install\Macro_android_studio.h \[2.18\] 
-Save:node\android\install\Macro_android_studio.h \[2.19\] 
-Save:node\android\install\Macro_android_studio.h \[2.20\] 
-
-
-[3.1] AVD
-
-
-[3.2] Project--build.gradle
-# Project--gradle
-build.gradle
-
-# buildscript--repositories
-#   +++:
-//	maven { url'http://maven.aliyun.com/nexus/content/groups/public/'}
-//	mavenCentral()
-
-# allprojects--repositories
-#   +++:
-//	maven { url "https://jitpack.io" }
-//	mavenCentral()
-
-
-[3.3] Module--build.gradle
-# Module--gradle
-app\build.gradle
-
-#   +++:
-//	def AAVersion = '4.6.0'
-//	def releaseTime() {
-//	    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
-//	}
-
-
-[3.4] gradle.properties
-//	org.gradle.jvmargs=-Xmx512m
-//#表示使用 androidx
-//	android.useAndroidX=true
-//#表示将第三方的依赖库也迁移到 androidx，如果你的项目中没有依赖库可以设置为false
-//	android.enableJetifier=true
-//
-//	gradle-wrapper.properties全部内容，请参考:
-//
-//	distributionBase=GRADLE_USER_HOME
-//	distributionPath=wrapper/dists
-//	zipStoreBase=GRADLE_USER_HOME
-//	zipStorePath=wrapper/dists
-//	distributionUrl=https\://services.gradle.org/distributions/gradle-5.6-all.zip
-//
-//	gradle.properties(Project)全部内容，请参考:
-//
-//	android.enableJetifier=true
-//	android.useAndroidX=true
-//	org.gradle.jvmargs=-Xmx1536m
-//
-//	settings.gradle全部内容，请参考
-//
-//	include ':app'
-//
-//	local.properties全部内容，请参考
-//
-//	sdk.dir=C\:\\Users\\Administrator\\AppData\\Local\\Android\\Sdk
-
-
-[3.5] run cfg
-
-
-[3.6] 
-
-
-[3.7] 
-
-
-[3.8] 
-//	8.其它：
-//
-//	8.1修改快捷键习惯：File->Settings->Keymap，下拉选择Eclipse，按Ok。
-//
-//	8.2老工程迁移到 AndroidX，菜单栏中依次选择 Refactor > Migrate to AndroidX，快速迁移现有项目以使用 AndroidX。然后手工修改代码，参照https://developer.android.google.cn/jetpack/androidx/migrate#additional_resources
-//
-//	8.3:常用查错命令：
-//
-//	在Android Studio 的Terminal 中查看build 的info  
-//
-//	gradlew compileDebugSources --stacktrace -debug --scan
-//
-//	gradlew compileDebugSources --stacktrace -info
-
-
-[3.9] 
-
-
-[3.10] 
-
-
-[3.11] 
-
-
-[3.12] 
-
-
-[3.13] 
-
-
-[3.14] 
-
-
-[3.15] 
-
-
-[3.16] 
-
-
-[3.17] 
-
-
-[3.18] 
-
-
-[3.19] 
-
-
-[3.20] 
-
-
-Save:node\android\install\Macro_android_studio.h \[3.11\] 
-Save:node\android\install\Macro_android_studio.h \[3.12\] 
-Save:node\android\install\Macro_android_studio.h \[3.13\] 
-Save:node\android\install\Macro_android_studio.h \[3.14\] 
-Save:node\android\install\Macro_android_studio.h \[3.15\] 
-Save:node\android\install\Macro_android_studio.h \[3.16\] 
-Save:node\android\install\Macro_android_studio.h \[3.17\] 
-Save:node\android\install\Macro_android_studio.h \[3.18\] 
-Save:node\android\install\Macro_android_studio.h \[3.19\] 
-Save:node\android\install\Macro_android_studio.h \[3.20\] 
-
-
-[4.1] Project--version
-# Project--gradle
-build.gradle
-
-# gradle
-#   ++--:
-classpath 'com.android.tools.build:gradle:3.5.2'
-
-
-supportVersion = "25.1.0"
-
-retrofitVersion = "2.1.0"
-
-okhttpVersion = "3.4.1"
-
-leakcanaryVersion = "1.4-beta2"
-
-daggerVersion = "2.6"
-
-
-
-[4.2] Module--version
-# Module--gradle
-app\build.gradle
-
-# Sdk
-#   ++--:
-//    compileSdkVersion 29
-//    buildToolsVersion "29.0.2"
-#   ++--:
-//        targetSdkVersion 29
-
-
-
-[4.3] androidx
-
-
-
-
-[4.4] mavenCentral->google
-
-
-
-
-[4.5] 
-classpath在2019年过后就不能用了要用implement
-
-
-
-
-[4.6] 
-
-
-
-
-[4.7] 
-
-
-
-
-[4.8] debug
-//log
-C:\Users\Administrator\.AndroidStudio3.5\system\log
-
-
-
-
-[4.9] 
-
-
-
-
-[4.10] 
-
-
-
-[4.11] 
-
-
-
-
-[4.12] 
-	
-	
-[4.13] 
-	
-	
-[4.14] 
-	
-	
-[4.15] 
-	
-	
-[4.16] 
-	
-	
-[4.17] 
-	
-	
-[4.18] 
-	
-	
-[4.19] 
-	
-	
-[4.20] 
-	
-Save:node\android\install\Macro_android_studio.h \[4.11\] 
-Save:node\android\install\Macro_android_studio.h \[4.12\] 
-Save:node\android\install\Macro_android_studio.h \[4.13\] 
-Save:node\android\install\Macro_android_studio.h \[4.14\] 
-Save:node\android\install\Macro_android_studio.h \[4.15\] 
-Save:node\android\install\Macro_android_studio.h \[4.16\] 
-Save:node\android\install\Macro_android_studio.h \[4.17\] 
-Save:node\android\install\Macro_android_studio.h \[4.18\] 
-Save:node\android\install\Macro_android_studio.h \[4.19\] 
-Save:node\android\install\Macro_android_studio.h \[4.20\]
-
-
-[5.1] AppTest 签名
-D:\SVN\app\APPTest1
-
-//gradle版本: gradle-4.6-all
-D:\SVN\app\APPTest1\gradle\wrapper\gradle-wrapper.properties
-//	distributionPath=wrapper/dists
-//	distributionUrl=https\://services.gradle.org/distributions/gradle-4.6-all.zip
-//	zipStoreBase=GRADLE_USER_HOME
-
-//导入jar包: 
-D:\SVN\app\APPTest1\app\build.gradle
-//	dependencies {
-//		testImplementation 'junit:junit:4.12'
-//		androidTestImplementation 'com.android.support.test:runner:1.0.2'
-//		androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-//		implementation 'com.google.code.gson:gson:2.8.5'
-//	}
-
-//签名jks:
-//1、方式1：通过Android Studio进行签名：
-E:\save\android\ApkSigned\test.jks
-//2、方式2：通过命令行的方式进行签名：
-gradlew assembleRelease
-
-
-//生成apk:
-D:\SVN\app\APPTest1\app\release\app-release.apk
-
-
-[5.2] 如何更改项目名称
-右键->重构->rename
-//	1. 关闭Android Studio 
-//	2. 修改project所在路径的文件夹名字为[NewName]
-//	3. 打开Android Stuido，import新的[NewName]路径工程(很重要,重新import工程，Android Studio会自动修改部分相关的project名字引用)
-//	4. 修改根目录下的.iml文件名为[NewName].iml，及该文件中的external.linked.project.id=[NewName]
-//	5. 修改.idea/modules.xml里面的
-//	<module fileurl="file://$PROJECT_DIR$/[NewName].iml" filepath="$PROJECT_DIR$/[NewName].iml" />
-
-
-[5.3] 导入 eclipse project
-//File----new---import—选择一个eclipseproject（必须是这个project最顶层的文件夹）
-//然后会报错：
-//"There are unrecoverable errors which must be corrected first"
-//然后这么改：把eclipse的project里面的the?project.properties
-D:\SVN\app\CS_Home_JXJ\project.properties
-//	target=android-21
-//	android.library=false
-//	android.library.reference.1=../library_new
-删掉 android.library.reference.1=../appcompat_v7
-
-然后引入到Android Studio里面
-之后把这句话加入到app/build.gradle:
-D:\SVN\app\CS_Home_JXJ1\cS_Home\build.gradle
-//	dependencies{
-//		compile project(':library_new')
-//		compile files('libs/juhe_sdk_v_2_7.jar')
-//		compile files('libs/org.json.jar')
-//		compile files('libs/sun.misc.BASE64Decoder.jar')
-//		compile files('libs/zxing.jar')
-//		compile fileTree(include: ['*.jar'], dir: 'libs')
-
-//	}
-
-有可能导入之后，说SDK不支持你的版本。这个时候你可以安装相应的平台，
-也可以修改app/build.gradle文件里面的额targetSDK版本，修改dependicies的版本
-
-
-D:\SVN\app\CS_Home_JXJ1\cS_Home\build.gradle
-//    compileSdkVersion 28
-//    minSdkVersion 19
-//    targetSdkVersion 28
-
-
-//对比其他项目修改:
-D:\SVN\app\CS_Home_JXJ1\.idea\gradle.xml
-//	<option name="modules">
-//	  <set>
-//		<option value="$PROJECT_DIR$" />
-//		<option value="$PROJECT_DIR$/cS_Home" />
-//	  </set>
-//	</option>
-修改："$PROJECT_DIR$/cS_Home"
-
-D:\SVN\app\CS_Home_JXJ1\.idea\modules.xml
-//    <modules>
-//      <module fileurl="file://$PROJECT_DIR$/CS_Home_JXJ1.iml" filepath="$PROJECT_DIR$/CS_Home_JXJ1.iml" />
-//    </modules>
-
-//对比其他项目修改:
-
-
-
-
-[5.4] 
-
-
-
-
-[5.5] 一个app打包多个APK
-#1.修改app\build.gradle
-app\build.gradle
-//	假设我们同一套代码编译2个app：demo1和demo2
-android {
-	...
-	productFlavors {
-		// demo1
-		demo1 {
-			 //不同Id
-			applicationId "com.glorystudent.buglydemo1"
-			 //自动生成@string/app_name为demo
-			resValue "string","app_name","demo1"
-			 //定义app_icon字段，在AndroidManifest.xml文件中用到
-			manifestPlaceholders = [UMENG_CHANNEL_VALUE: "demo1",app_icon : "@mipmap/ic_launcher"]
-		}
-		// demo2
-		demo2 {
-			applicationId "com.glorystudent.buglydemo2"
-			resValue "string","app_name","demo2"
-			manifestPlaceholders = [UMENG_CHANNEL_VALUE: "demo2",app_icon : "@mipmap/ic_launcher1"]
-		}
-	}
-//	这里的作用就是即使项目中报错也不会停止打包 。
-	lintOptions {
-		checkReleaseBuilds false
-		abortOnError false
-	}
-}
-
-#2.res重复, 从strings.xml删除string-app_name
-	resValue "string","app_name","demo"
-//	运行之后，AS会自动生成@string/app_name，内容是这样的
-	<item type="string" name="app_name">demo</item>
-
-#3.修改AndroidManifest.xml文件
-	<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-		package="com.glorystudent.buglydemo1">
-	
-		<application
-			android:allowBackup="true"
-			android:icon="${app_icon}"
-			android:label="@string/app_name"
-			android:supportsRtl="true"
-			android:theme="@style/AppTheme">
-		   <meta-data
-			  android:name="UMENG_CHANNEL"
-				android:value="${UMENG_CHANNEL_VALUE}"/>
-			<activity android:name=".ui.MainActivity">
-				<intent-filter>
-					<action android:name="android.intent.action.MAIN" />
-					<category android:name="android.intent.category.LAUNCHER" />
-				</intent-filter>
-			</activity>
-		</application>
-	
-	</manifest>
-
-#4.打包并签名APK
-//	我们打包时，就会出现2个app：
-//	我们选择2个app，AS就会帮我们打包2个不同的APK了
-
-
-[5.6] 
-
-
-
-
-[5.7] 
-
-
-
-
-[5.8] 
-
-
-
-
-[5.9] 
-
-
-
-
-[5.10] 
-
-
-
-
-[5.11] 
-
-
-
-
-[5.12] 
-
-
-
-
-
-[5.13] 
-
-
-
-[5.14] 
-
-
-
-[5.15] 
-
-
-
-[5.16] 
-
-
-
-[5.17] 
-
-
-
-[5.18] 
-
-
-
-[5.19] 
-
-
-
-[5.20] 
-
-
-Save:node\android\install\Macro_android_studio.h \[5.11\] 
-Save:node\android\install\Macro_android_studio.h \[5.12\] 
-Save:node\android\install\Macro_android_studio.h \[5.13\] 
-Save:node\android\install\Macro_android_studio.h \[5.14\] 
-Save:node\android\install\Macro_android_studio.h \[5.15\] 
-Save:node\android\install\Macro_android_studio.h \[5.16\] 
-Save:node\android\install\Macro_android_studio.h \[5.17\] 
-Save:node\android\install\Macro_android_studio.h \[5.18\] 
-Save:node\android\install\Macro_android_studio.h \[5.19\] 
-Save:node\android\install\Macro_android_studio.h \[5.20\] 
 
 
 

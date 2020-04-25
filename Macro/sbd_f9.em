@@ -19,12 +19,13 @@ macro SearchFile()
 //	if(bft == "")
 //		stop
 	//bft = "9820e" //test
-	StartF9Search(hbuf, bft)
+	StartF9Search(hbuf, bft, "")
 }
 
-macro StartF9Search(hbuf, bft)
+macro StartF9Search(hbuf, bft, filename_key)
 {
 	file = "\\Macro_ALL_@bft@.h"
+	next = 0
 	
 	if(IsFileName(hbuf, "Macro_ALL_"))
 	{
@@ -33,69 +34,79 @@ macro StartF9Search(hbuf, bft)
 	else if(bft == "9820e")
 	{
 		sel = MGetWndSel(hbuf)
-		if (IsSingleSelect(sel))
+		if(filename_key == "")
 		{
-			cur_line = GetBufLine(hbuf, sel.lnFirst )		
-			 //选中最后一行，带换行符会出错
-			if(strlen(cur_line) < sel.ichLim)
-				sel.ichLim = sel.ichLim - 1
-			if(sel.ichFirst == sel.ichLim || 4095 == sel.ichLim)
-				stop
-			cur_sel = strmid(cur_line, sel.ichFirst, sel.ichLim)
-
-			fI = FindString(cur_sel, ".")
-			if(fI != "X")
+			if (IsSingleSelect(sel))
 			{
-				strEx = strmid(cur_sel, fI + 1, strlen(cur_sel))
-				if(strEx == "c" || strEx == "h" || strEx == "java" || strEx == "mk" || strEx == "xml" || strEx == "xml" )
-					file = "\\Macro_ALL_@bft@_" # toupper (strEx) # ".h"
-				else if(strEx == "jpg" || strEx == "png" || strEx == "bmp" || strEx == "jif")
-					file = "\\Macro_ALL_@bft@_" # "JPG_PNG" # ".h"
-				else
-					file = "\\Macro_ALL_@bft@_OTHER.h"
+				cur_line = GetBufLine(hbuf, sel.lnFirst )
+				len    = strlen(cur_line)
+				//删除前后空格，换行符
+				start  = GetTransCmdS(cur_line,  sel.ichFirst,  len)
+				next   = EndWS( cur_line, sel.ichLim )
+				filename_key = GetTransStr(cur_line, start, next)
 			}
 			else
 			{
-				file = "\\Macro_ALL_@bft@_OTHER.h"
+				hbuf = OpenExistFile(getSearchAndroid(0) # file)
+				stop
 			}
-			//msg(file)  //test
-			
-			hSbuf = OpenCache(getSearchAndroid(0) # file)
-			if(hSbuf != hNil)
+		}
+		
+		fI = FindString(filename_key, ".")
+		if(fI != "X")
+		{
+			strEx = strmid(filename_key, fI + 1, strlen(filename_key))
+			if(strEx == "c" || strEx == "h" || strEx == "java" || strEx == "mk" || strEx == "xml" || strEx == "xml" )
+				file = "\\Macro_ALL_@bft@_" # toupper (strEx) # ".h"
+			else if(strEx == "jpg" || strEx == "png" || strEx == "bmp" || strEx == "jif")
+				file = "\\Macro_ALL_@bft@_" # "JPG_PNG" # ".h"
+			else
+				file = "\\Macro_ALL_@bft@_OTHER.h"
+		}
+		else
+		{
+			file = "\\Macro_ALL_@bft@_OTHER.h"
+		}
+		
+		hSbuf = OpenCache(getSearchAndroid(0) # file)
+		if(hSbuf != hNil)
+		{
+			//只能查文件名, 且不使用通配符
+			filename_key = ReplaceWord(filename_key, "\\", "\\\\")
+			filename_key = ReplaceWord(filename_key, "/", "\\\\")
+			reTxt = ShowSearchMar(hSbuf, "\\\\" # filename_key # "$")
+			if(reTxt == "")
 			{
-				//只能查文件名, 且不使用通配符
-				cur_sel = ReplaceWord(cur_sel, "\\", "\\\\")
-				cur_sel = ReplaceWord(cur_sel, "/", "\\\\")
-				reTxt = ShowSearchMar(hSbuf, "\\\\" # cur_sel # "$")
-				if(reTxt == "")
+				//首字母大写, 重查一次(abc->Abc)
+				ch = strmid(filename_key, 0, 1)
+				dCh = AsciiFromChar (ch)
+				if(dCh>=97 && dCh<=97+26)
 				{
-					//首字母大写, 重查一次
-					ch = strmid(cur_sel, 0, 1)
-					dCh = AsciiFromChar (ch)
-					if(dCh>=97 && dCh<=97+26)
-					{
-						cur_sel = toupper (strmid(cur_sel, 0, 1)) # strmid(cur_sel, 1, strlen(cur_sel))
-						reTxt = ShowSearchMar(hSbuf, "\\\\" # cur_sel # "$")
-					}
+					filename_key = toupper (strmid(filename_key, 0, 1)) # strmid(filename_key, 1, strlen(filename_key))
+					reTxt = ShowSearchMar(hSbuf, "\\\\" # filename_key # "$")
 				}
-				
-				//查询结果
-				if(reTxt == "")
+			}
+			
+			//查询结果
+			if(reTxt == "")
+			{
+				msg("无")
+			}
+			else if(reTxt == "All")
+			{
+				msg("添加全部文件名?")
+				AddAllFile(hbuf, hSbuf, sel.lnFirst + 1, filename_key)
+				SaveBuf(hbuf)
+			}
+			else
+			{
+				if(next > 0)
 				{
-					msg("无")
-				}
-				else if(reTxt == "All")
-				{
-					msg("添加全部文件名?")
-					AddAllFile(hbuf, hSbuf, sel.lnFirst + 1, cur_sel)
-					SaveBuf(hbuf)
-				}
-				else
-				{
-					iS = sel.ichLim - strlen(reTxt)
+					iS = next - strlen(reTxt)
+					//只有一条结果，并且相同
 					if(iS >= 0)
 					{
-						oldTxt = strmid(cur_line, iS, sel.ichLim)
+						oldTxt = strmid(cur_line, iS, next)
 						oldTxt = ReplaceWord(oldTxt, "/", "\\")
 						if(oldTxt == reTxt)
 						{
@@ -103,16 +114,12 @@ macro StartF9Search(hbuf, bft)
 							stop
 						}
 					}
-					//不相同
-					msg(reTxt)
-					InsBufLine(hbuf, sel.lnFirst + 1, "@reTxt@")
-					SaveBuf(hbuf)
 				}
+				//不相同
+				msg(reTxt)
+				InsBufLine(hbuf, sel.lnFirst + 1, "@reTxt@")
+				SaveBuf(hbuf)
 			}
-		}
-		else
-		{
-			hbuf = OpenExistFile(getSearchAndroid(0) # file)
 		}
 	}
 	else
@@ -431,11 +438,4 @@ macro FunTotalCalc(hbuf, type)
 	}
 	return ffCount
 }
-
-//测试
-macro SearchTest(hbuf)
-{
-	//SearchVersion(hbuf)
-}
-
 

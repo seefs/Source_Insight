@@ -1,6 +1,10 @@
 ﻿
 基础路径设置:
-basePath = Save:node\Pythons
+//base
+basePath = Save:node\Pythons\
+//keras
+kerasPath = base:py_test\keras
+//data
 dataPath = D:\project\S_name\3^sql^data
 
 
@@ -144,61 +148,61 @@ GPT 基于 Fine-tuning 的模式
 
 [2.1] keras
 // keras_docs
-py_tf2\keras_docs.py
-python_w py_tf2\keras_docs.py
+keras:keras_docs.py
+python_w keras:keras_docs.py
 
 // keras_softmax
-py_tf2\keras_softmax.py
-python_w py_tf2\keras_softmax.py
+keras:keras_softmax.py
+python_w keras:keras_softmax.py
 //	name 'keras' is not defined
 
 // keras_MLP
-py_tf2\keras_MLP.py
-python_w py_tf2\keras_MLP.py
+keras:keras_MLP.py
+python_w keras:keras_MLP.py
 
 // keras_VGG
-py_tf2\keras_VGG.py
-python_w py_tf2\keras_VGG.py
+keras:keras_VGG.py
+python_w keras:keras_VGG.py
 
 // keras_LSTM
-py_tf2\keras_LSTM.py
-python_w py_tf2\keras_LSTM.py
+keras:keras_LSTM.py
+python_w keras:keras_LSTM.py
 //	name 'max_features' is not defined
 
 // keras_Conv1D--------1D卷积
-py_tf2\keras_Conv1D.py
-python_w py_tf2\keras_Conv1D.py
+keras:keras_Conv1D.py
+python_w keras:keras_Conv1D.py
 //	name 'seq_length' is not defined
 
 // keras_Sequential--------用于序列分类的栈式LSTM
-py_tf2\keras_Sequential.py
-python_w py_tf2\keras_Sequential.py
+keras:keras_Sequential.py
+python_w keras:keras_Sequential.py
 
 //keras_stateful--------采用stateful LSTM的相同模型
-py_tf2\keras_stateful.py
-python_w py_tf2\keras_stateful.py
+keras:keras_stateful.py
+python_w keras:keras_stateful.py
 
 
 
 [2.2] Keras Transformer
 //train
-py_tf2\transformer_train.py
-python_w py_tf2\transformer_train.py
+keras:transformer_train.py
+python_w keras:transformer_train.py
 
 
 //predict
-py_tf2\transformer_predict.py
-python_w py_tf2\transformer_predict.py
+keras:transformer_predict.py
+python_w keras:transformer_predict.py
 
 
 //translation
-py_tf2\transformer_translation.py
-python_w py_tf2\transformer_translation.py
+keras:transformer_translation.py
+python_w keras:transformer_translation.py
 
 
 //beam_Search
-py_tf2\transformer_beam_Search.py
-python_w py_tf2\transformer_beam_Search.py
+keras:transformer_beam_Search.py
+python_w keras:transformer_beam_Search.py
 
 
 
@@ -253,17 +257,17 @@ Save:node\Pythons\project\Macro_Pythons_explain_nlp.h  NLP_fc
 
 [2.6] keras.Lambda
 //Lambda--Sequential
-py_tf2\Keras_ly_Lambda.py
-python_w py_tf2\Keras_ly_Lambda.py
+keras:Keras_ly_Lambda.py
+python_w keras:Keras_ly_Lambda.py
 
 //mylayer--Sequential
-py_tf2\Keras_ly_mylayer.py
-python_w py_tf2\Keras_ly_mylayer.py
+keras:Keras_ly_mylayer.py
+python_w keras:Keras_ly_mylayer.py
 
 
 //Lambda--多输入
-py_tf2\Keras_ly_input.py
-python_w py_tf2\Keras_ly_input.py
+keras:Keras_ly_input.py
+python_w keras:Keras_ly_input.py
 
 
 [2.7] 分模块
@@ -279,8 +283,8 @@ model = load_model(‘My_model.h5’, custom_objects={‘NEW_loss’:NEW_loss,�
 [2.9] Keras 中文
 
 // Keras 中文
-py_tf2\Keras_text_cn.py
-python_w py_tf2\Keras_text_cn.py
+keras:Keras_text_cn.py
+python_w keras:Keras_text_cn.py
 
 
 
@@ -362,8 +366,8 @@ https://blog.csdn.net/weixin_34351321/article/details/89627713
 
 
 // Keras文本标签2(要下载数据, 很大)
-py_tf2\Keras_text_type.py
-python_w py_tf2\Keras_text_type.py
+keras:Keras_text_type.py
+python_w keras:Keras_text_type.py
 
 
 

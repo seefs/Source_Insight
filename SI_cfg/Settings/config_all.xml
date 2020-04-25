@@ -431,15 +431,26 @@
 			<item Command="Rule" Allocated="1" />
 			<item Command="Tools" Allocated="1" />
 			<item Command="HLight" Allocated="1" />
-			<item Command="Search" Allocated="1" />
+			<item Command="SearchFile" Allocated="1" />
 			<item Command="Group" Allocated="1" />
 			<item Command="Note" Allocated="1" />
 			<item Command="ShowMacro" Allocated="1" />
 			<item Command="MyHelp" Allocated="1" />
+			<item Command="Item_1" Allocated="1" />
+			<item Command="Item_2" Allocated="1" />
+			<item Command="Item_3" Allocated="1" />
+			<item Command="Item_4" Allocated="1" />
+			<item Command="Item_5" Allocated="1" />
+			<item Command="Item_6" Allocated="1" />
+			<item Command="Item_7" Allocated="1" />
+			<item Command="Item_8" Allocated="1" />
+			<item Command="Item_9" Allocated="1" />
+			<item Command="Item_10" Allocated="1" />
 		</Menu>
 	</Menus>
 	<Keymaps>
 		<Main>
+			<item Command="Ctrl_Shift_R" Keycode="(CS)R" Allocated="1" />
 			<item Command="ShowMacro" Keycode="F12" Allocated="1" />
 			<item Command="SearchForward" Keycode="F4" Allocated="1" />
 			<item Command="SearchBackward" Keycode="F3" Allocated="1" />
@@ -461,7 +472,6 @@
 			<item Command="CtrlD" Keycode="(C)D" Allocated="1" />
 			<item Command="CtrlBack" Keycode="(C)BackSpace" Allocated="1" />
 			<item Command="CtrlB" Keycode="(C)B" Allocated="1" />
-			<item Command="Search" Keycode="F9" Allocated="1" />
 			<item Command="Tools" Keycode="F7" Allocated="1" />
 			<item Command="Goto" Keycode="F5" Allocated="1" />
 			<item Command="Simple Tab" Keycode="(CA)Tab" />
@@ -648,6 +658,7 @@
 			<item Command="CtrlN" Keycode="(C)N" Allocated="1" />
 			<item Command="CtrlU" Keycode="(C)U" Allocated="1" />
 			<item Command="Symbol Info..." Keycode="(C)mouse(R+SEL)" />
+			<item Command="SearchFile" Keycode="F9" Allocated="1" />
 		</Main>
 	</Keymaps>
 	<CustomCommands>
@@ -1017,7 +1028,7 @@
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="120"
-			IndentWidth="4"
+			IndentWidth="1"
 			AutoInsertPairs="0"
 			ParsePatternSymbolType=""
 			AutoIndentMode="1"
@@ -1082,7 +1093,7 @@
 			UseSymbolPane="1"
 			UseOverview="1"
 			AllowAutocomplete="1"
-			AllowSmartPaste="1"
+			AllowSmartPaste="0"
 			AllowSnippets="1"
 			ShowRefHighlights="0"
 			TabWidth="4"
@@ -1309,11 +1320,11 @@
 		</Type>
 		<Type
 			Name="Java Source File"
-			FileFilter="*.java;*.jav"
+			FileFilter="*.java;*.jav;*.kt"
 			Language="Java Language"
 			ParsePattern=""
 			WordWrap="0"
-			ExpandTabs="0"
+			ExpandTabs="1"
 			EnterKeyIsEOL="1"
 			StatusbarMode="0"
 			AddToProject="1"
@@ -1332,7 +1343,7 @@
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="120"
-			IndentWidth="4"
+			IndentWidth="1"
 			AutoInsertPairs="1"
 			ParsePatternSymbolType=""
 			AutoIndentMode="2"
@@ -7620,10 +7631,10 @@
 				LinesOfContext="1"
 				ResultFileName="1"
 				ResultLineNumber="0"
-				ResultLineText="1"
+				ResultLineText="0"
 				ResultContainer="0"
 				ResultSourceLinks="1"
-				ResultNormalizeFileNames="1"
+				ResultNormalizeFileNames="0"
 				/>
 			<SearchProject
 				SearchMethod="Keyword Expression"
@@ -7805,7 +7816,7 @@
 		<SymbolTypes All="1" />
 	</ProjectReport>
 	<SymbolPane
-		Width="217"
+		Width="219"
 		TextColor="#000000"
 		BackColor="#c5d2de"
 		ShowChanges="1"

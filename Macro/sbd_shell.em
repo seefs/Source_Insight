@@ -126,31 +126,4 @@ macro ShellSvnDiff(path1, path2)
 	}
 }
 	
-/***********************************************************************/
-/****************************    Test  *********************************/
-/***********************************************************************/
-macro OpenShellTest(hbuf)
-{
-	//_TempHeadShell()
-	var v
-	v = "cmd" //参数个数最多7个，见 cmd_base.bat
-
-	 
-	if(v == "cmd")
-	{
-		path = "F:\\6531E_16A\\build"
-		//ShellExecute("open", "cmd.exe", "F:;cd @path@;", "C:\\Windows\\System32", 1)
-	}
-	else if(v == "ShellSvnLog")
-	{
-		path = "F:\\6531E_16A\\project\\SE039_YST_T18_LINNEX_LE01_F2"
-		ShellSvnLog(path) 
-	}
-	else if(v == "SvnDiff")
-	{
-		path1 = "F:\\6531E_16A\\project\\SE039_YST_T18_LINNEX_LE01_F2"
-		//path2 = "F:\\6531DA_Btdialer\\version"
-		ShellSvnDiff(path1, path2)
-	}
-}
 

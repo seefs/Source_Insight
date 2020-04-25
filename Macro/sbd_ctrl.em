@@ -59,14 +59,14 @@ macro CtrlD()
 			ich =  ich + 1
 		}
 	}
-	//6. other file、Simple_CTRL_xxx中 空格对齐
+	//6. other file、Simple_CTRL_xxx中 空格对齐(下一条判断条件包含这个)
 	else if(IsFileName(hbuf, "Simple_CTRL_B"))
 	{
 		CodeAlign(hbuf)
 		stop
 	}
 	//3. Macro_xxx 中 同F10
-	else if(IsFileName(hbuf, "Macro_")||IsFileName(hbuf, "Simple_CTRL_")||IsFileName(hbuf, "Log_"))
+	else if(IsNoteFile(hbuf))
 	{
 		NoteGroup(hbuf)
 		stop
@@ -97,8 +97,9 @@ macro CtrlB()
 	hwnd = GetCurrentWnd()
 	if (hwnd == 0)
 		stop
-		
-	if(ShowWholeMacro(hbuf))
+
+	ret = ShowWholeMacro(hbuf)
+	if(ret)
 		stop
 		
 	fName = "Simple_CTRL_B.h"
@@ -131,6 +132,18 @@ macro CtrlK()
 macro CtrlE()
 {
 	//_TempHeadCTRL()
+	hbuf = GetCurrentBuf()
+	
+	if(IsNoteFile(hbuf))
+	{
+		//内向模式
+		mode = getMacroValue(hbuf, "Inward", 1)
+		if(mode == "True" || mode == "TRUE"){
+			//从文件名("...\...")跳转另一个文件
+			NoteHander(hbuf, 6)
+			stop
+		}
+	}
 	ret = OpenMiniTest(hbuf)
 	if(ret == 0)
 	{
@@ -171,27 +184,21 @@ macro CtrlT()
 	var cur_line
 	var mar
 	var val
-	if(IsMakeFile(hbuf))
+	isNote = IsNoteFile(hbuf)
+	if(IsMakeFile(hbuf) || isNote)
 	{
-		isMkT = 0
+		//选择宏，或没有选择:
+		//  替换或复制，或加=True
+		sSelState = "More"
 		sel = MGetWndSel(hbuf)
 		if(sel.lnFirst == sel.lnLast)
 		{
 			cur_line = GetBufLine(hbuf, sel.lnFirst )
 			mar = GetLineMacro(cur_line)
 			val = GetLineValue(cur_line)
-			if(sel.ichFirst != sel.ichLim)
-			{
-				selStr = strmid(cur_line, sel.ichFirst, sel.ichLim)
-				if(selStr == mar)
-					isMkT = 1
-			}
-			else
-			{
-				isMkT = 1
-			}
+			sSelState = GetSingleSelectState(cur_line, sel, mar)
 		}
-		if(isMkT == 1)
+		if(sSelState == "No" || sSelState == "Macro")
 		{
 			index = FindString( cur_line, val )
 			len = strlen(cur_line)
@@ -206,6 +213,38 @@ macro CtrlT()
 				reVal = "TRUE"
 				strNew = strmid(cur_line,0,index) # reVal # strmid(cur_line, index+strlen(val), strlen(cur_line))
 				PutBufLine(hbuf, sel.lnFirst, strNew);
+			}
+			else if(val == "True")
+			{
+				reVal = "False"
+				strNew = strmid(cur_line,0,index) # reVal # strmid(cur_line, index+strlen(val), strlen(cur_line))
+				PutBufLine(hbuf, sel.lnFirst, strNew);
+			}
+			else if(val == "False")
+			{
+				reVal = "True"
+				strNew = strmid(cur_line,0,index) # reVal # strmid(cur_line, index+strlen(val), strlen(cur_line))
+				PutBufLine(hbuf, sel.lnFirst, strNew);
+			}
+			else if(IsNumber (val))
+			{
+				reVal = ReadMode(getCommentRow(0))
+				if(reVal != 0 && val != 0)
+					reVal = 0;
+				else if(reVal == 0 && val == 0)
+					reVal = 44;
+					
+				if(reVal != val)
+				{
+					strNew = strmid(cur_line,0,index) # reVal # strmid(cur_line, index+strlen(val), strlen(cur_line))
+					PutBufLine(hbuf, sel.lnFirst, strNew);
+					
+					SaveMode(getCommentRow(0), val)
+				}
+			}
+			else if(isNote)
+			{
+				sSelState = "More";
 			}
 			else if(val != "")
 			{
@@ -224,14 +263,67 @@ macro CtrlT()
 				strNew = cur_line # "    = TRUE"
 				PutBufLine(hbuf, sel.lnFirst, strNew);
 			}
-			SaveBuf(hbuf)
+			if(sSelState == "No" || sSelState == "Macro")
+			{
+				//除了笔记中的注释功能，都stop
+				SaveBuf(hbuf)
+				stop
+			}
 		}
-		else
+		else if(isNote == 0)
 		{
-			///###
+			//mk中不多选
+			stop
 		}
 	}
-	else if(IsScriptFile(hbuf))
+
+	//向右注释功能
+	//isNote = IsNoteFile(hbuf)
+	if(isNote)
+	{
+		//单选-有右注释-非空注释------>设置偏移N>0
+		//单选----------空注释-------->取消注释
+		//单选--------------N>0--->右注释
+		//单选-------------------->左注释
+		//多选--------------N>0--->右注释
+		//多选-------------------->左注释
+		cur_line = GetBufLine(hbuf, sel.lnFirst )
+		len = strlen( cur_line )
+		columns = getMacroValue(hbuf, "Backward", 1)
+		// N为空是普通notes
+		// -1的值只能手动修改，表示关闭右注释，保持默认状态
+		if(columns != "" && isnumber(columns) && columns != -1)
+		{
+			findex = FindString( cur_line, "//" )
+			sel = MGetWndSel(hbuf)
+			if(sel.lnFirst == sel.lnLast)
+			{
+				if(findex != "X")
+				{
+					index = StartWS( cur_line, findex + strlen("//") )
+					if(index != "X")
+					{
+						//单选，有右注释，非空------>设置偏移N>0
+						setMacroValue(hbuf, "Backward", 1, findex)
+						if(columns != 0 || findex != 0 || index < columns)
+						{
+							stop
+						}
+					}
+				}
+			}
+			if(columns > 0)
+			{
+				//右注释
+				//  添加或删除注释, 条件: findex != "X"
+				//  只删除注释，非空的不删
+				CommentRightBlock(hbuf, columns, findex, 20)
+				stop
+			}
+		}
+	}
+	
+	if(IsScriptFile(hbuf))
 	{
 		fstr = GetFirstChar(hbuf, 1)
 		if(fstr == "#")
@@ -282,12 +374,10 @@ macro CtrlT()
 		fstr = GetFirstChar(hbuf, 2)
 		if(fstr == "//")
 		{
-			//UncommentBlock(hbuf)
 			UncommentBlock2(hbuf)
 		}
 		else
 		{
-			//CommentBlock(hbuf)
 			CommentBlock2(hbuf)
 		}
 	}
@@ -303,7 +393,7 @@ macro CtrlR()
 	hbuf = GetCurrentBuf()
 	
 	//add file type
-	if(IsFileName(hbuf, "Macro_")||IsFileName(hbuf, "Simple_CTRL_")||IsFileName(hbuf, "bak_")||IsFileName(hbuf, "Log_"))
+	if(IsNoteFile(hbuf))
 	{
 		//1. 文件内索引跳转
 		sel = MGetWndSel(hbuf)
@@ -963,27 +1053,3 @@ macro ScrollCurWnd(hbuf, direct, sel, ln)
 	
 }
 
-/***********************************************************************/
-/****************************    test   ******************************/
-/***********************************************************************/
-macro CtrlTest(hbuf)
-{
-	msg ("CtrlTest")
-	
-    hbuf = GetCurrentBuf()
-	ChangeSel(hbuf, 3)
-
-	//SaveMode(getSRTmpRow(0), "@mode@")
-	//mode = "m15"
-	//SaveMode(15, "@mode@")
-	//mode = ReadMode(getSRTmpRow(0))
-	//msg ("mode15 @mode@ ")
-	
-	
-	//msg ("CtrlTest")
-	//Tree()
-	//Drag_Line_Up
-	//Drag_Line_Down
-	//Word_Left
-	
-}

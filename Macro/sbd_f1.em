@@ -9,9 +9,11 @@ macro Tree()
     	hbuf = OpenDefaultSR(hbuf)
     	stop
 	}
-
-	//F1 as common test
-	CommonTest(hbuf)
+	
+	if(IsNoteFile(hbuf) || IsMacroFile(hbuf))
+	{
+		Item_Tree(0)
+		stop	}
     
 	key = GetKey()
 	if (key >= 48 && key <= 57 )                     // 数字0~9
@@ -85,6 +87,110 @@ macro Tree()
 	else                                             //Other: -,+,back,del,方向键
 	{
 		TreeOther(hbuf, key)
+	}
+}
+
+macro Item_1()		{		Item_Tree(1)	}
+macro Item_2()		{		Item_Tree(2)	}
+macro Item_3()		{		Item_Tree(3)	}
+macro Item_4()		{		Item_Tree(4)	}
+macro Item_5()		{		Item_Tree(5)	}
+macro Item_6()		{		Item_Tree(6)	}
+macro Item_7()		{		Item_Tree(7)	}
+macro Item_8()		{		Item_Tree(8)	}
+macro Item_9()		{		Item_Tree(9)	}
+macro Item_10()		{		Item_Tree(10)	}
+
+macro Item_Tree(num)
+{
+    hbuf = GetCurrentBuf()
+
+	global g_sel
+	global g_ok
+
+	if(num == 0)
+	{
+		g_sel = 0
+		ShowFHelp(hbuf, "Base")
+		stop
+	}
+	else if(g_sel == 0 && num == 8)
+	{
+		//数字提示
+		ShowFHelp(hbuf, "F1")
+		stop
+	}
+	else if(g_sel == 0 && num == 9)
+	{
+		//字母提示(最常用)
+		ShowFHelp(hbuf, "F1A")
+		stop
+	}
+	else if(g_sel == 0 || g_sel > 100)
+	{
+		g_sel = num*10
+		//显示11~19，或61~69
+		msg(g_sel)
+		stop
+	}
+	else
+	{
+		g_ok = g_sel + num
+	}
+	Code_Tree(g_ok)
+}
+
+macro Code_Tree(g_ok)
+{
+    hbuf = GetCurrentBuf()
+    
+	if(g_ok > 10 && g_ok <= 20)
+	{
+		if (g_ok == 20)
+			key = g_ok - 20 + 48
+		else
+			key = g_ok - 10 + 48
+		
+		msg("TreeNum " # key)
+		//数字0~9,10个
+//		TreeNum(hbuf, key)
+	}
+	else if(g_ok > 20 && g_ok <= 46)
+	{
+		//a-j, k-t, u-z,
+		upper_key = g_ok - 20 + 64
+		lower_key = upper_key + 32
+		
+		mBuf = OpenCache(getNodePath(0) # "\\Simple_CTRL_K.h")
+		ShowSimpleHelp(mBuf, "F1 -> " # CharFromAscii (upper_key), "(@lower_key@)")
+		CloseBuf(mBuf)
+		
+		TreeChar(hbuf, lower_key)
+	}
+	else if(g_ok > 50 && g_ok <= 60)
+	{
+		//f1-f10,6个
+		key = g_ok - 20 + 96
+		msg("f1-f10, " # key)
+//		TreeChar(hbuf, key)
+	}
+	else if(g_ok > 60 && g_ok <= 70)
+	{
+		//f11-f12, Other
+		key = g_ok - 20 + 96
+		msg("f1-f10, " # key)
+//		TreeChar(hbuf, key)
+	}
+	else if(g_ok > 70 && g_ok <= 80)
+	{
+		//ctrl+a~D
+		key = g_ok - 20 + 96
+		msg("f1-f10, " # key)
+//		TreeOther(hbuf, key)
+	}
+	else
+	{
+		msg("g_ok, " # g_ok)
 	}
 }
 
@@ -180,8 +286,20 @@ macro TreeChar(hbuf, key)
 		if (IsSingleSelect(sel))
 		{
 			cur_line = GetBufLine(hbuf, sel.lnFirst )	
-			cch1 = AsciiFromChar(cur_line[sel.ichFirst])
-			msg(cch1)
+			
+			chars = sel.ichLim - sel.ichFirst
+			if(chars > 25)
+				chars = 25
+			i = 0
+			clist = ""
+			while (i < chars)
+			{
+				ch = cur_line[sel.ichFirst + i]
+				cch = AsciiFromChar(ch)
+				clist = clist #  (i+1) # " ---- "  # ch # " ---- " # cch # CharFromKey(13)
+				i = i + 1
+			}
+			msg(clist)
 		}
 	}
 	else if (key == 102) //字母F
@@ -240,7 +358,7 @@ macro TreeChar(hbuf, key)
 	}
 	else if (key == 116) //字母T
 	{
-		OpenF1Test(hbuf)
+		//
 	}
 	else if (key == 118) //字母V  search version
 	{
@@ -273,7 +391,7 @@ macro TreeCtrlChar(hbuf, key)
 	}
 	else if (key == 262212) //字母D
 	{
-		if(IsFileName(hbuf, "Macro_") || IsFileName(hbuf, "Simple_CTRL_"))
+		if(IsNoteFile(hbuf))
 		{
 			NoteGroupPreview(hbuf, 0)
 		}
@@ -309,7 +427,6 @@ macro TreeFNum(hbuf, key)
 	}
 }
 
-
 macro TreeOther(hbuf, key)
 {
 	//_TempHeadF1()
@@ -332,231 +449,5 @@ macro TreeOther(hbuf, key)
 	{
 		msg ("key @key@")
 	}
-}
-
-
-macro ShowHelpLoop(hbuf)
-{ 
-	//_TempHeadF1()
-	
-	//不用提示
-	//ShowFHelp(hbuf, "help")
-	
-	baseStr = ""
-	ret = 0
-	key = GetKey()
-	if (key >= 48 && key <= 58)						// F12->0-9
-	{
-		ShowSimpleHelp(hbuf, "F1 -> " # CharFromAscii (key))
-	}
-	else if (key >= 96 && key <= 96+26)     		//F12->A,Z
-	{
-		ShowSimpleHelp(hbuf, "F1 -> " # CharFromAscii (key))
-	}
-	else if (key >= 262209 && key <= 262209+26)     //F12->Ctrl+A,Z
-	{
-		ShowSimpleHelp(hbuf, "F1 -> " # CharFromAscii (key-262209 + 96))
-	}
-	else if (key >= 4208 && key <= 4219)      		// F12->F1~F12  显示f1~f12 功能说明
-	{
-		if(key - 4208>=9)
-		{
-			chr = "1" # CharFromKey(key - 4208 + 49 -10)
-		}
-		else
-		{
-			chr = CharFromKey(key - 4208 + 49)
-		}
-		ShowFHelp(hbuf, "F@chr@")
-	}
-	else if (key >= 1048688 && key <= 1048699)      // F12->F1~F12  SI3.5, 4.0 code不一样
-	{
-		if(key - 1048688>=9)
-		{
-			chr = "1" # CharFromKey(key - 1048688 + 49 -10)
-		}
-		else
-		{
-			chr = CharFromKey(key - 1048688 + 49)
-		}
-		ShowFHelp(hbuf, "F@chr@")
-	}
-	else
-	{
-		msg ("key @key@")
-	}
-}
-
-macro ShowFHelp(hbuf, key)
-{
-	ShowHelp(hbuf, "[@key@]")
-}
-
-macro ShowHelp(hbuf, key)
-{
-	isHelp = FALSE
-	if (!IsFileName(hbuf, "Simple_CTRL_K.h"))
-	{
-		mFile = getNodePath(0) # "\\Simple_CTRL_K.h"
-		hbuf = OpenCache(mFile)
-		isHelp = TRUE
-	}
-	
-	ShowMoreHelp(hbuf, "",  key)
-	
-	if(isHelp)
-	{
-		CloseBuf(hbuf)
-	}
-}
-macro ShowMoreHelp(hbuf, spit, key)
-{
-	//_TempHeadF1(hbuf)
-	//显示多行提示或语言帮助
-	key = key # spit
-	mSelStart = SearchInBuf(hbuf, key, 0, 0, FALSE, FALSE, FALSE)
-	helpTxt = key # ":" # CharFromKey(13)
-
-	if (mSelStart != "")
-	{
-		keyEnd = "*****"
-		mSelEnd = SearchInBuf(hbuf, keyEnd, mSelStart.lnFirst, 0, FALSE, FALSE, FALSE)
-		if (mSelEnd != "")
-		{
-			lastLn = mSelEnd.lnFirst
-		}
-		else
-		{
-			lastLn =  mSelStart.lnFirst + 10
-		}
-		ln = mSelStart.lnFirst + 1
-		while (ln <  lastLn)
-		{
-			line = GetBufLine(hbuf, ln)
-			helpTxt = helpTxt # line # CharFromKey(13)
-			ln = ln + 1
-		}
-		if(helpTxt != "")
-		{
-			msg ("@helpTxt@")
-			return 1;
-		}
-	}
-	return 0;
-}
-
-macro ShowSimpleHelp(hbuf, key)
-{
-	//_TempHeadF1(hbuf)
-	key = key # ":"
-	mSelStart = SearchInBuf(hbuf, key, 0, 0, FALSE, FALSE, FALSE)
-	helpTxt = key  # CharFromKey(13)
-	
-	if (mSelStart != "")
-	{
-		line = GetBufLine(hbuf, mSelStart.lnFirst)
-		helpTxt = helpTxt # StrTrimSpaces(strmid(line, strlen(key), strlen(line)))
-		if(helpTxt != "")
-		{
-			msg ("@helpTxt@")
-		}
-	}
-}
-
-
-macro CommonTest(hbuf)
-{
-	//F1作为(其他宏)通用宏测试; 
-	//F1->T测试F1的功能[OpenF1Test()]
-	if(IsMacroFile(hbuf))
-	{
-		if(IsFileName(hbuf, "sbd_f1.em")) // no use, use F1->T test
-		{
-			//OpenF1Test(hbuf)
-			return
-		}
-		else if (IsFileName(hbuf, "sbd_base.em"))
-		{
-			OpenBaseTest(hbuf)
-		}
-		else if (IsFileName(hbuf, "sbd_f2.em"))
-		{
-			OpenPathTest(hbuf)
-		}
-		else if (IsFileName(hbuf, "sbd_f5.em"))
-		{
-			OpenF5Test(hbuf)
-		}
-		else if (IsFileName(hbuf, "sbd_f6.em"))
-		{
-			OpenF6Test(hbuf)
-		}
-		else if(IsFileName(hbuf, "sbd_f9.em"))
-		{
-			SearchTest(hbuf)
-		}
-		else if(IsFileName(hbuf, "sbd_f10.em"))
-		{
-			OpenF10Test(hbuf)
-		}
-		else if(IsFileName(hbuf, "sbd_f11.em"))
-		{
-			OpenF11Test(hbuf)
-		}
-		else if(IsFileName(hbuf, "sbd_f12.em"))
-		{
-			OpenF12Test(hbuf)
-		}
-		else if (IsFileName(hbuf, "sbd_ctrl.em"))
-		{
-			CtrlTest(hbuf)
-		}
-		else if (IsFileName(hbuf, "sbd_string.em"))
-		{
-			OpenStringTest(hbuf)
-		}
-		else if (IsFileName(hbuf, "sbd_shell.em"))
-		{
-			OpenShellTest(hbuf)
-		}
-		else if (IsFileName(hbuf, "sbd_translate.em"))
-		{
-			StrTranslate(hbuf)
-		}
-		else if (IsFileName(hbuf, "sbd_test.em"))
-		{
-			OpenAPITest(hbuf)
-		}
-		else
-		{
-			OpenAPITest(hbuf)
-		}
-		stop
-	}
-}
-
-macro OpenF1Test(hbuf)
-{
-	//Tree()
-	var ret
-	var source
-	var target
-	source = "Search Results"
-	
-	target = "ch"
-	ret = LFindString( source, target )
-	msg ("ret " # "@ret@" # " @target@")
-	
-	target = "Se"
-	ret = LFindString( source, target )
-	msg ("ret " # "@ret@" # " @target@")
-	
-	target = "ch"
-	ret = FindString( source, target )
-	msg ("ret " # "@ret@" # " @target@")
-	
-	target = "CH"
-	ret = FindString( source, target )
-	msg ("ret " # "@ret@" # " @target@")
 }
 

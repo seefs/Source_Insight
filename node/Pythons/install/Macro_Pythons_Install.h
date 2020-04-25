@@ -1,6 +1,12 @@
 ﻿
 基础路径设置: 
+//base
 basePath = C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\
+//test
+testPath = Save:node\Pythons\py_test\
+//py
+pyPath = Save:node\Pythons
+
 
 /***********************************************************************/
 
@@ -134,12 +140,16 @@ cmd_w: path
 
 //验证 Python
 // 验证 Python 安装:
-python_w install\hello.py
+python_w py:install\hello.py
 //如果能正常输出hello字符串，则安装成功。Hello, TensorFlow!
 
 // 验证 TensorFlow 安装:
-python_w install\hello_tf.py
-python_w tf_day1_line1.py
+//
+py:install\hello_tf.py
+python_w py:install\hello_tf.py
+//
+py:tfTUT\tf_day1_line1.py
+python_w py:tfTUT\tf_day1_line1.py
 
 
 // 查询tensorflow 版本, 安装路径:
@@ -388,10 +398,14 @@ cmd_w: pip list --outdated
 cmd_w: pip install --upgrade tensorboard
 
 //批量更新
-basePath = Save:node\Pythons
+pyPath = Save:node\Pythons
 //text_type
-install\upgrade_all.py
-python_w py_tf2\Keras_text_type.py
+py:install\upgrade_all.py
+//
+test:keras\Keras_text_type.py
+python_w test:keras\Keras_text_type.py
+	
+
 
 //	import pip
 //	from subprocess import call

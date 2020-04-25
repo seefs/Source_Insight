@@ -66,7 +66,7 @@ macro getCurPath(hbuf)
 			return GetProjDir (hprj)
 		}
 	}
-	else if(IsFileName(hbuf, "Macro_")||IsFileName(hbuf, "Simple_CTRL_"))
+	else if(IsNoteFile(hbuf))
 	{
 		hprj = GetCurrentProj ()
 		if(hprj>0)
@@ -416,11 +416,4 @@ macro getBaseDirNum(pathName)
 	}
 	return 0
 }
-
-
-macro OpenBaseTest(hbuf)
-{
-	
-}
-
 

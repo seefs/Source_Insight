@@ -13,7 +13,7 @@ Save:node\Macro_Future.h \[1.4\] C++
 Save:node\Macro_Future.h \[1.5\] 
 Save:node\Macro_Future.h \[1.6\] 
 Save:node\Macro_Future.h \[1.7\] 
-Save:node\Macro_Future.h \[1.8\] 
+Save:node\Macro_Future.h \[1.8\] PHP
 Save:node\Macro_Future.h \[1.9\] 
 Save:node\Macro_Future.h \[1.10\] 
 // 2. 
@@ -64,7 +64,7 @@ Save:node\C++\Macro_Note_C++.h
 
 
 [1.8] PHP
-//Save:node\PHP\Macro_Note_PHP.h
+Save:node\PHP\Macro_Note_PHP.h
 
 
 [1.9] SQL

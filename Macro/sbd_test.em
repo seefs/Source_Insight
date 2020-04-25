@@ -1,64 +1,279 @@
 ﻿
-macro MyHelp()
-{
-	CtrlK()
-}
-
-//ctrl+k, F12->open help, show pop
-macro ShowMyHelp(hbuf)
-{
-    hwnd = GetCurrentWnd()
-    hbuf = GetCurrentBuf()
-	if (hwnd == 0)
-	{
-    	hbuf = OpenDefaultSR(hbuf)
-    	stop
-	}
-	ShowHelpLoop(hbuf)
-}
-
 macro OpenMiniTest(hbuf)
 {
-    hbuf = GetCurrentBuf()
 	isTest = getMacroValue(hbuf, "MiniTest", 1)
 	if(isTest != ""){
-		if(isTest == "group"){
-			bft = getMacroValue(hbuf, "bftParam", 1)
-			filename = getMacroValue(hbuf, "fileParam", 1)
-			DefaultGroup(filename, bft)
-		}
-		else if(isTest == "project"){
+		sel = MGetWndSel(hbuf)
+		cur_line = GetBufLine(hbuf, sel.lnFirst )
+		len = strlen(cur_line)
+
+		start  = GetTransCmdS(cur_line,  0,         len)
+		next   = GetTransCmdE(cur_line,  start,     len)
+		start2 = GetTransCmdS2(cur_line, next + 1,  len)
+		next2  = GetTransCmdE(cur_line,  start2,    len)
+		start3 = GetTransCmdS2(cur_line, next2 + 1, len)
+		next3  = GetTransCmdE(cur_line,  start3,    len)
+		//
+		word_1 = GetTransStr(cur_line, start, next)
+		word_2 = GetTransStr(cur_line, start2, next2)
+		word_3 = GetTransStr(cur_line, start3, next3)
+		TestMsg("word_1 " # word_1 # CharFromKey(13) # "word_2 " # word_2 # CharFromKey(13) # "word_3 " # word_3 # CharFromKey(13), 1)
+		
+		if(word_1 == "project")
+		{
 			bft = getMacroValue(hbuf, "bftParam", 1)
 			isSaveRow = 1
 			openNoteFile(hbuf, bft, isSaveRow)
 		}
-		else if(isTest == "rule"){
-			startF5MiniTest(hbuf)
+		else if(word_1 == "goto_copy")
+		{
+ 			//F5
+ 			//  1.跳转到复制对应的语言/宏
+ 			//  2.跳转到选中的宏
+			if(strlen(word_2) > 0)
+			{
+				GotoHan(word_2)
+			}
+			else
+			{
+				word_2 = GetClipString(hbuf)
+				if(strlen(word_2) > 0)
+				{
+					GotoHan(word_2)
+				}
+			}
 		}
-		else if(isTest == "search"){
+		else if(word_1 == "goto_select")
+		{
+ 			//F5
+ 			//  选中宏，mk文件中,          打开/跳转到对应的文件/宏
+			cur_line = GetBufLine(hbuf, sel.lnFirst )
+			if(strlen(cur_line) < sel.ichLim)
+				sel.ichLim = sel.ichLim - 1
+			if(sel.ichFirst == sel.ichLim || 4095 == sel.ichLim)
+				stop
+			cur_sel = strmid(cur_line, sel.ichFirst, sel.ichLim)
+			
+			bft = "6531E"
+			GotoKey(hbuf, bft, cur_sel)
+		}
+		else if(word_1 == "rule_cn_soft")
+		{
+ 			//F5
+ 			//  批量测试中文排序的准确性
+			hbufRule = OpenCache(getRulePath(0) # "\\Macro_Rule_Han.h")
+			lnMax = GetBufLineCount(hbufRule)
+			TestFindCacheAll(hbufRule, 0, lnMax)
+		}
+		else if(word_1 == "rule_en_soft")
+		{
+ 			//F5
+ 			//  批量测试英文排序的准确性
+			hbufRule = OpenCache(getRulePath(0) # "\\Macro_Rule_Key.h")
+			lnMax = GetBufLineCount(hbufRule)
+			TestFindCacheAll(hbufRule, 0, 3)  //lnMax
+		}
+		else if(word_1 == "rule_cn_find")
+		{
+ 			//F5
+			//  查找中文跳转
+			hbufRule = OpenCache(getRulePath(0) # "\\Macro_Rule_Han_file.h")
+			lnMax = GetBufLineCount(hbufRule)
+			
+			TestFindCache(hbufRule, "越", lnMax)
+			TestFindCache(hbufRule, "越南", lnMax)
+			TestFindCache(hbufRule, "阿", lnMax) // 找不到
+			TestFindCache(hbufRule, "匈牙", lnMax)
+			TestFindCache(hbufRule, "俄", lnMax)
+			TestFindCache(hbufRule, "乌", lnMax)
+			TestFindCache(hbufRule, "法", lnMax)
+			TestFindCache(hbufRule, "泰", lnMax) // 错
+		}
+		else if(word_1 == "rule_en_find")
+		{
+ 			//F5
+			//  查找英文跳转
+			hbufRule = OpenCache(getRulePath(0) # "\\Macro_Rule_Key.h")
+			lnMax = GetBufLineCount(hbufRule)
+			
+			TestFindCache(hbufRule, "TEST", lnMax) // 找不到
+			TestFindCache(hbufRule, "CHIP", lnMax) // 找不到
+			TestFindCache(hbufRule, "NV3029G", lnMax)
+			TestFindCache(hbufRule, "NV3029H", lnMax)
+		}
+		else if(word_1 == "key_cn_soft")
+		{
+ 			//F6
+ 			//  英文排序测试
+			msg ("test Key file")
+			hbufRule = OpenCache(getRulePath(0) # "\\Macro_Rule_Key_file.h")
+			QuickSoftCacheTest(hbufRule, 0, GetBufLineCount(hbufRule) - 1)
+		}
+		else if(word_1 == "key_en_soft")
+		{
+ 			//F6
+ 			//  中文排序测试
+			msg ("test Han file")
+			hbufRule = OpenCache(getRulePath(0) # "\\Macro_Rule_Han_file.h")
+			QuickSoftCacheTest(hbufRule, 0, GetBufLineCount(hbufRule) - 1)
+		}
+		else if(word_1 == "add_rule")
+		{
+ 			//F6
+ 			//  选中后添加规则
+			msg ("test AddRule")
+			AddRule(hbuf)
+		}
+		else if(word_1 == "search_version")
+		{
+ 			//F9
+ 			//  搜索版本号
+			SearchVersion(hbuf)
+		}
+		else if(word_1 == "search_bft")
+		{
+ 			//F9
+ 			//  
 			bft = getMacroValue(hbuf, "bftParam", 1)
-			StartF9Search(hbuf, bft)
+			//StartF9Search(hbuf, bft, "")
+			StartF9Search(hbuf, bft, word_2)
+		}
+		else if(word_1 == "sr_group")
+		{
+ 			//F10
+ 			//  
+			SrGroup(hbuf)
+			bft = getMacroValue(hbuf, "bftParam", 1)
+			MakeSelGroup(hbuf, bft)
+		}
+		else if(word_1 == "show_menu")
+		{
+ 			//F10
+ 			//  
+			curItem = GetGroupItem("menu3:tool-a2", 1, "Menu", bft)
+			msg(curItem)
+			iFcurItemile = GetGroupItem("menu3:tool-a2", 2, "Menu", bft)
+			msg(curItem)
+		}
+		else if(word_1 == "group")
+		{
+			//F10
+			bft = getMacroValue(hbuf, "bftParam", 1)
+			//filename = getMacroValue(hbuf, "fileParam", 1)
+			filename = word_2
+			DefaultGroup(filename, bft)
+		}
+		else if(word_1 == "mode_save")
+		{
+			//mode
+ 			//  
+//			SaveMode(getSRTmpRow(0), "@mode@")
+			mode = "m15"
+			SaveMode(15, "@mode@")
+		}
+		else if(word_1 == "mode_read")
+		{
+			//mode
+ 			//  
+			mode = ReadMode(getSRTmpRow(0))
+			msg ("mode15 @mode@ ")
+		}
+		else if(word_1 == "line_value")
+		{
+			//String
+ 			//  
+			v = "CUSTOMER = SE039_YST				"
+			val = GetLineValue(v)
+			val_f = strmid(val, 0, 5)
+			basePro = "...\\common\\nv_parameters"
+			//...\common\nv_parameters\SE039_MB\SE039_ANSD_2IN1
+			val = cat(basePro, "\\@val_f@_MB\\@val@")
+			msg ("val:  ~ [@val@]  " )
+		}
+		else if(word_1 == "string_translate")
+		{
+			//String
+ 			//  
+			//path = "F:\\11CW1352MP_BLEPHONE61D_11C_V33\\projects\\M107\\M107_XYZN_S2_4A_NEDADJ_F6\\Resource"
+			path = "E:\\desktop\\test"
+			
+			file = "sub_1.txt"
+			
+		//	logfile = "z_translate_log.txt"
+		//	hbufLog = OpenCache(path # "\\" # logfile)
+		//	EmptyCache(hbufLog)
+
+			listfile = "z_translate_list.txt"
+			hbuflist = OpenCache(path # "\\" # listfile)
+
+			//不必要分很多文件; 估计有特殊字符Si无法保存
+			
+		//	TranslateDir(path # "\\sub_1.txt", hbuflist)
+		//	TranslateDir(path # "\\sub_2.txt", hbuflist)
+		//	TranslateDir(path # "\\sub_3.txt", hbuflist) //error
+		//	TranslateDir(path # "\\sub_4.txt", hbuflist) //error
+		//	TranslateDir(path # "\\sub_5.txt", hbuflist)
+		//	TranslateDir(path # "\\sub_6.txt", hbuflist)
+			TranslateDir(path # "\\sub_7.txt", hbuflist)
+		//	TranslateDir(path # "\\sub_8.txt", hbuflist)
+		//	TranslateDir(path # "\\sub_9.txt", hbuflist)
+		//	TranslateDir(path # "\\sub_10.txt", hbuflist)
+		//	TranslateDir(path # "\\sub_11.txt", hbuflist)
+		//	TranslateDir(path # "\\sub_12.txt", hbuflist)
+		//	TranslateDir(path # "\\sub_13.txt", hbuflist)
+		//	TranslateDir(path # "\\sub_14.txt", hbuflist)
+
+			CloseBuf(hbuflist)
+		}
+		else if(word_1 == "shell_cmd")
+		{
+			//Shell
+ 			//  
+			path = "F:\\6531E_16A\\build"
+			//ShellExecute("open", "cmd.exe", "F:;cd @path@;", "C:\\Windows\\System32", 1)
+		}
+		else if(word_1 == "shell_SvnLog")
+		{
+			//Shell
+ 			//  
+			path = "F:\\6531E_16A\\project\\SE039_YST_T18_LINNEX_LE01_F2"
+			ShellSvnLog(path) 
+		}
+		else if(word_1 == "shell_SvnDiff")
+		{
+			//Shell
+ 			//  
+			path1 = "F:\\6531E_16A\\project\\SE039_YST_T18_LINNEX_LE01_F2"
+			//path2 = "F:\\6531DA_Btdialer\\version"
+			ShellSvnDiff(path1, path2)
+		}
+		else if(word_1 == "API_log")
+		{
+			//API
+ 			//  
+			s="asdf"
+			//AppendToLog(s)
+		}
+		else if(word_1 == "API_struct")
+		{
+			//API
+ 			//  
+			sel.fExtended  //(sel.fRect || sel.lnFirst != sel.lnLast || sel.ichFirst != sel.ichLim)
+			sel.fRect      //如果选择是矩形（块样式）则为TRUE。
+			SetBufIns(hbuf, sel.lnFirst, sel.ichFirst)
+		}
+		else if(word_1 == "API_val")
+		{
+			//API
+ 			//  
+			val = nil
+			msg(val)
+			val = hNil
+			msg(val)
 		}
 		return 1
 	}
 	return 0
-}
-
-//F1->sbd_test.em / other
-macro OpenAPITest(hbuf)
-{
-	//_TempHeadTest(hbuf)
-	s="asdf"
-	//AppendToLog(s)
-
-}
-
-macro TestAPIStruct(hbuf)
-{
-	//_TempHeadTest(hbuf)
-	sel.fExtended  //(sel.fRect || sel.lnFirst != sel.lnLast || sel.ichFirst != sel.ichLim)
-	sel.fRect //如果选择是矩形（块样式）则为TRUE。
-	SetBufIns(hbuf, sel.lnFirst, sel.ichFirst)
 }
 
 macro TestChar(key)
@@ -296,13 +511,6 @@ macro OtherAPI(key)
 	AddConditionVariable(0, "sbd_tmp.em", "s")
 	
 	AddFileToProj(hprj, "E:\\save\\SI\\MacroSBD\\sbd_tmp.em")
-
-}
-macro OpenValTest(hbuf)
-{
-	//null
-	val = nil
-	val = hNil
 
 }
 

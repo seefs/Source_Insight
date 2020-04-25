@@ -11,7 +11,7 @@ macro Group()
     	stop
 	}
 	//日志功能
-	if(IsFileName(hbuf, "Macro_") || IsFileName(hbuf, "Simple_CTRL_"))
+	if(IsNoteFile(hbuf))
 	{
 		NoteGroup(hbuf)
 		stop
@@ -1278,36 +1278,4 @@ macro ShowMacroGroup(mBuf)
 	}
 	return index
 }
-macro OpenF10Test(hbuf, v)
-{
-	//_TempHeadF10(hbuf)
-	//Tree()
-	bft = getBft(2)
-	if(v == ")") //from F1, no param, param is ")"
-	{
-		v = "F101"
-	}
-	else if(v == "F10") //from F10
-	{
-		v = "F102"
-	}
-	
-	if(v == "F101")
-	{
-	}
-	else if(v == "F102")
-	{
-		SrGroup(hbuf)
-		MakeSelGroup(hbuf, bft)
-	}
-	else if(v == "F104")
-	{
-		curItem = GetGroupItem("menu3:tool-a2", 1, "Menu", bft)
-		msg(curItem)
-		iFcurItemile = GetGroupItem("menu3:tool-a2", 2, "Menu", bft)
-		msg(curItem)
-	}
-
-}
-
 

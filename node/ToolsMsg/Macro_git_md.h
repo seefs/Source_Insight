@@ -30,7 +30,7 @@ Save:node\ToolsMsg\Macro_git_md.h \[1.21\]
 Save:node\ToolsMsg\Macro_git_md.h \[1.22\] 
 Save:node\ToolsMsg\Macro_git_md.h \[1.23\] 
 Save:node\ToolsMsg\Macro_git_md.h \[1.24\] 
-Save:node\ToolsMsg\Macro_git_md.h \[1.25\] 
+Save:node\ToolsMsg\Macro_git_md.h \[1.25\] 参考项目
 Save:node\ToolsMsg\Macro_git_md.h \[1.26\] 其他
 
 
@@ -390,7 +390,11 @@ Save:node\ToolsMsg\Macro_git_md.h \[1.26\] 其他
 
 
 
-[1.25] 
+[1.25] 参考项目
+//参考项目
+Save:node\S\project\Macro_S_Personality.h
+//参考项目
+Save:node\Pythons\project\Macro_nlp_block.h
 
 
 

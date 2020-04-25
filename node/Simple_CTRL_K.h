@@ -15,6 +15,8 @@ Save:node\Simple_CTRL_K.h \[2.11\] key:[F11] 宏注释 项目笔记
 Save:node\Simple_CTRL_K.h \[2.12\] key:[F12] 显示配置 是否定义
 Save:node\Simple_CTRL_K.h \[2.13\] key:CTRL组合 [Cf]
 Save:node\Simple_CTRL_K.h \[3.1\] 当前文件快捷键
+Save:node\Simple_CTRL_K.h \[3.2\] 特殊标记
+
 //新功能(未完成):
 Save:node\Simple_CTRL_K.h unfinished:
 
@@ -22,17 +24,14 @@ Save:node\Simple_CTRL_K.h unfinished:
 /************************** 新功能和BUG说明 ****************************/
 /***********************************************************************/
 
-宏功能备注: 
-//Save:bak\bak_20181123_mar_msg.h
 
-	
+
 
 ctrl+d, 空文件, 导入模板
+ctrl+R, 空行目录, 或者从空行导入模板
+ctrl+R, _foreach, 关键字，循环跳转目录，或者加一行
+	
 
-ctrl+w, 下一个result, 自动再下一个
-
-
-ctrl+t, 重新编号：[]与1)都换成##某个符号
 
 
 
@@ -42,7 +41,20 @@ ctrl+t, 重新编号：[]与1)都换成##某个符号
 /***********************************************************************/
 
 [1.1] 宏说明:
-Save:MacroSBD\sbd_f1.em
+Save:Macro\sbd_f1.em
+[Base]
+F1宏子功能:
+1:  数字0~9
+2:  字母a-j
+3:  字母k-t
+4:  字母u-z
+5:  f1-f10
+6:  f11-f12, Other -,+,back,del,方向键 
+7:  ctrl+a~D
+8:  数字提示
+9:  字母提示(最常用)
+
+***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 
 [2.1] key:[F1] (按F1后再按0~9、A~Z、F2~F12)
 快捷键：
@@ -89,7 +101,7 @@ F1 -> P: 项目切换
 F1 -> Q: 清空剪切板
 F1 -> R: 检查mk文件宏重复                               
 F1 -> S: 显示当前选择Selection(调试)
-F1 -> T: 宏F1调试
+F1 -> T: 
 F1 -> U: 
 F1 -> V: 搜索版本号 
 F1 -> W 关闭多余win
@@ -334,6 +346,9 @@ Save:MacroSBD\sbd_f11.em
 	//setProPath:  
 	//sethistory:  mtk笔记 显示历史path list-->ok, 输编号, 插入path行
 	//cp:      复制文件
+	//AsFile:base: 略
+	//cd:tmp: git ...
+	//cd_i:tmp: git ...
 	//默认:      打开文件, 搜索关键字并跳转行; 关键字说明:
 	//             关键字只有一个, 空格用作区分文件名, 用^表示空格;
 	//             默认优先查找行首(不加^);
@@ -499,7 +514,6 @@ ctrl + U: 1.添加复制内容(配合svn--bcomp查看修改记录使用)
       			//->: 
       			//		aaa_xxx
       			//		aaa_yyy
-      			//复制^p^p^p: 间隔添加空行(3行)
           //模式1-2: (用的少)
       			//第1行相同, str从后面添加
           //模式2: 多行选择: 数字递增             +每行
@@ -523,6 +537,7 @@ ctrl + U: 1.添加复制内容(配合svn--bcomp查看修改记录使用)
 				//	  	xy ab
 				//	  	xz ac
           //模式4: 添加通配符		    【未实现】
+		  2. 添加空行, 复制^p^p^p(添加3行)
           
 Ctrl + I: //转格式:
           //	  sprd_apps.mk (customize/customer_cfg/sp6820a/res)
@@ -608,6 +623,50 @@ ctrl + F12: 事件测试, 或者其他测试, 详细说明在 aEvent.em中
   F12->F1~F12
   
 5) 加这个, 弹窗默认显示数字, 如[ 1.2 ];
+
+
+[3.2] 特殊标记: 
+//1)内向标记:
+//  开启内向标记:
+//    ctrl+E:  外向是打开项目列表，内向是打开Demo文件，类似ctrl+R
+//	            或者从近似列表中打开文档，太复杂(未实现)
+//
+//	  ctrl+D:  外向是索引，内向是删除*** (未实现)
+Inward = True
+	
+//  向后注释:
+//	  ctrl+T:  外向是向前注释，内向是向后注释；
+//	           从demo导入注释; (未实现)
+//	  ctrl+t,  重新编号：[]与1)都换成##某个符号，太复杂(未实现)
+Backward = 32
+
+
+//  重新编号:
+//	  ctrl+T:  (未实现)
+Number = True
+
+//	重复:
+//	  ctrl+w:  (未实现)
+Foreach = True
+
+
+//2)其他标记:
+//  项目:
+newPro = XXX
+CurProPath = XXX
+newPro = XXX
+
+//  Test:
+MiniTest  = True
+bftParam  = 1
+fileParam = 1
+testParam = 1
+
+//  Path:
+basePath = XXX
+demoPath = XXX
+xxxPath  = XXX
+
 
 
 end :[Cg]

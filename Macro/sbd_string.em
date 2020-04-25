@@ -107,7 +107,7 @@ macro GetLineMacro(lnStr)
 	len = strlen (lnStr)
 	n = 0
 	start = 0
-	// do for each line....
+	// do for one line....
 	while (n < len )
 	{
 		if(start==0)
@@ -456,24 +456,5 @@ macro ReplaceWord(noteWord, search_str, replace_str)
 		ret = ret # strmid(noteWord, cp, len)
 	}
 	return ret
-}
-
-macro OpenStringTest(hbuf)
-{
-	//_TempString(hbuf)
-	v = "s1"
-	if(v == "s1")
-	{
-		v = "CUSTOMER = SE039_YST_2IN1_SIM2							"
-		val = GetLineValue(v)
-		val_f = strmid(val, 0, 5)
-		basePro = "...\\common\\nv_parameters"
-		//...\common\nv_parameters\SE039_MB\SE039_ANSD_2IN1
-		val = cat(basePro, "\\@val_f@_MB\\@val@")
-		msg ("val:  ~ [@val@]  " )
-	}
-	else if(v == "s2")
-	{
-	}
 }
 

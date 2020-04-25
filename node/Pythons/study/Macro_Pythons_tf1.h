@@ -1,7 +1,11 @@
 ﻿
 基础路径设置: 
-//basePath = D:\project\GitHub\myPython
+//base
 basePath = Save:node\Pythons\
+//classify
+classifyPath = base:py_test\classify
+	
+
 
 /***********************************************************************/
 
@@ -1639,15 +1643,15 @@ tf.nn.sampled_softmax_loss
 [6.14] tf2_classify_bys
 
 // tf2_classify_bys
-py_classify\tf2_classify_bys.py
-python_w py_classify\tf2_classify_bys.py
+classify:tf2_classify_bys.py
+python_w classify:tf2_classify_bys.py
 
 
 // tf2_classify_sg
 //   身高+体重->肥瘦
-py_classify\tf2_classify_sg.h
-py_classify\tf2_classify_sg.py
-python_w py_classify\tf2_classify_sg.py
+classify:tf2_classify_sg.h
+classify:tf2_classify_sg.py
+python_w classify:tf2_classify_sg.py
 
 
 // tf2_classify_sg
@@ -1656,38 +1660,38 @@ python_w py_classify\tf2_classify_sg.py
 //	 iris的每个样本都包含了品种信息，即目标属性（第5列，也叫target或label），
 //	 其中有5个key键，data记录每个样本四个特征数值，target记录品种数(用0,1,2表示),
 //	 target_names是具体品种名称，feature_names是具体的特征名称。
-py_classify\tf2_classify_iris.py
-python_w py_classify\tf2_classify_iris.py
+classify:tf2_classify_iris.py
+python_w classify:tf2_classify_iris.py
 
 
 // tf2_classify_num
 //   1维数组--决策树
-py_classify\tf2_classify_num.h
-py_classify\tf2_classify_num.py
-python_w py_classify\tf2_classify_num.py
+classify:tf2_classify_num.h
+classify:tf2_classify_num.py
+python_w classify:tf2_classify_num.py
 
 
 // Keras
 //	KerasClassifier  分类器----err
 //	KerasRegressor  回归器
 //	np_utils.to_categorical
-py_classify\tf2_classify_ks.csv
-py_classify\tf2_classify_ks.py
-python_w py_classify\tf2_classify_ks.py
+classify:tf2_classify_ks.csv
+classify:tf2_classify_ks.py
+python_w classify:tf2_classify_ks.py
 
 
 [6.15] tf2_Dense----------二分类
 // tf2_Dense
-py_classify\tf2_classify_num.h
-//py_classify\tf2_classify_Dense.py
-//python_w py_classify\tf2_classify_Dense.py
+classify:tf2_classify_num.h
+//classify:tf2_classify_Dense.py
+//python_w classify:tf2_classify_Dense.py
 
 
 
 [6.16] LogisticRegression
 // 逻辑回归----err
-py_classify\tf2_Logistic_Regression.py
-python_w py_classify\tf2_Logistic_Regression.py
+classify:tf2_Logistic_Regression.py
+python_w classify:tf2_Logistic_Regression.py
 
 
 
