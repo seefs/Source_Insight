@@ -188,6 +188,10 @@ Save:node\ToolsMsg\Macro_git_md.h \[1.26\] 其他
 //	![GitHub Logo](/images/logo.png)
 //	![GitHub Logo](./example)
 
+// 引用其他仓库图片
+![shot1](https://github.com/seefs/MyImage/raw/master/ctImage/shot1.jpg)
+
+
 2) 图片超链接
 //
 //	[![baidu]](http://baidu.com)  

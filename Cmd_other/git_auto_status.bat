@@ -1,0 +1,6 @@
+
+cd ./../
+
+git status
+
+pause

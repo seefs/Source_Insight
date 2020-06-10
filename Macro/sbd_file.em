@@ -811,6 +811,7 @@ macro GetTransFileName(hbuf, fName, cNum)
 
 	//replace
 	fName = ReplaceWord(fName, "Save:", getSavePath(0) # "\\")
+	fName = ReplaceWord(fName, "App:", getUserPath(0) # "\\")
 	//use "^" as space
 	fName = ReplaceWord(fName, "^", " ")
 	//resolve SI Cache bug.

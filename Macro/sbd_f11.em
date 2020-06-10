@@ -331,7 +331,8 @@ macro NoteHander(hbuf, cNum)
 			isCmd = 3
 			
 		//type4: -, [1, 2, 3]
-		else if(noteCmd == "python" || noteCmd == "python_w" || noteCmd == "FileSame" || noteCmd == "AsFile" || noteCmd == "cd" || noteCmd == "cd_i")
+		else if(noteCmd == "python" || noteCmd == "python_w" || noteCmd == "FileSame" || noteCmd == "AsFile"  || noteCmd == "EcFile" || 
+			 noteCmd == "cd" || noteCmd == "cd_i")
 			isCmd = 4
 			
 		//type5: [0, 1], -, -
@@ -602,6 +603,11 @@ macro NoteHander(hbuf, cNum)
 		curPath = GetTransFileName(hbuf, rootPath, cNum)
 		ShellGetAsFileList(curPath # " "  # cNum)
 	}
+	else if(noteCmd == "EcFile")
+	{
+		curPath = GetTransFileName(hbuf, rootPath, cNum)
+		ShellGetEcFileList(curPath # " "  # cNum)
+	}
 	else
 	{
 		//打开文件或目录
@@ -681,7 +687,8 @@ macro OpenFileHander(hbuf, curPath, cur_row, noteWord, cNum)
 				{
 					strDefFile = getCopyPath(0) # "\\default_file.kt"
 				}
-				cmdStr = "copy " # strDefFile # " " # curPath
+				// 演示用，间隔1行
+				cmdStr = "文件不存在： " # CharFromKey(13)        # CharFromKey(13)  # "copy " # strDefFile # CharFromKey(13) #  CharFromKey(13) # curPath
 				msg(cmdStr)
 				TestMsg("从模板copy文件: " # CharFromKey(13) # cmdStr, 2)
 				ShellOpenCustomCmd(cmdStr)

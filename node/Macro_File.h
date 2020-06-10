@@ -122,6 +122,8 @@ Save:Macro\sbd_file.em  IsTxtFile( )
 [2.2] marco test...
 // 功能测试
 Save:Help\Macro_Note_Test.h
+// 开启测试
+Save:Macro\sbd_test.em  macro^TestMsg
 
 
 [2.3] set save path

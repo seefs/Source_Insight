@@ -30,7 +30,7 @@ Save:node\ToolsMsg\Macro_win.h \[3.4\] mv
 Save:node\ToolsMsg\Macro_win.h \[3.5\] 
 Save:node\ToolsMsg\Macro_win.h \[3.6\] 
 Save:node\ToolsMsg\Macro_win.h \[3.7\] Game
-Save:node\ToolsMsg\Macro_win.h \[3.8\] 
+Save:node\ToolsMsg\Macro_win.h \[3.8\] InputMethod 输入法
 Save:node\ToolsMsg\Macro_win.h \[3.9\] 
 Save:node\ToolsMsg\Macro_win.h \[3.10\] 
 // 
@@ -303,10 +303,25 @@ HEY_CURRENT_USER
 
 
 
-[3.8] 
+[3.8] InputMethod
+// InputMethod 去广告
+// 1) 首先从官网下载并安装最新的万能五笔软件
+// 2) 打开
+C:\Users\Administrator\AppData\LocalLow
+//  删除两个文件目录:
+C:\Users\Administrator\AppData\LocalLow\BubblesPop
+C:\Users\Administrator\AppData\LocalLow\WindowPop
+// 3) 安装目录
+C:\Program^Files^(x86)\WanNengWBInput\
+C:\Program^Files^(x86)\WanNengWBInput\10.0.4.10418
+// 寻找 WnMoniter.exe，进行改名或者删除
+新建一个文本文件并改名为WnMoniter.exe，设置道只读属性。
+
 
 
 [3.9] 
+
+
 
 
 [3.10] 

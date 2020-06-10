@@ -6,6 +6,7 @@
 
 //1) Save目录
 macro getSavePath(0)		{	return getRootPath(0)						    }
+macro getUserPath(0)		{	return "D:\\Save\\_SI_Cloud"					}
 
 //ShellExecute命令目录
 macro getCmdPath(0)			{	return getSavePath(0) # "\\Cmd"			}

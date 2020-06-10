@@ -53,7 +53,7 @@ Save:node\android\install\Macro_android_studio.h \[2.9\]
 Save:node\android\install\Macro_android_studio.h \[2.10\] add si file type
 Save:node\android\install\Macro_android_studio.h \[2.11\] set memory -----------as 内存
 Save:node\android\install\Macro_android_studio.h \[2.12\] gradle ---------------降版本
-Save:node\android\install\Macro_android_studio.h \[2.13\] 
+Save:node\android\install\Macro_android_studio.h \[2.13\] debug log
 Save:node\android\install\Macro_android_studio.h \[2.14\] 
 Save:node\android\install\Macro_android_studio.h \[2.15\] 
 Save:node\android\install\Macro_android_studio.h \[2.16\] 
@@ -153,14 +153,14 @@ Q                     10             29
 //    setting-->build->build tool->Gradle
 C:/Users/Administrator/.gradle        // 旧path
 D:\android\.gradle                    // 新path
-	
+
+
 // 下载:
 //    第1次编译apk自动下载, 下载路径:
 //    换个项目下载新版本gradle
 C:\Users\Administrator\.gradle\wrapper\dists\gradle-4.6-all\bcst21l2brirad8k2ben1letg
 //
-// 手动下载gradle
-https://gradle.org/releases/
+
 
 // env:
 //    配置环境变量，新建 GRADLE_HOME 为
@@ -177,6 +177,7 @@ cmd_s: gradlew -v
 gradlew -v
 //	Gradle 4.6
 
+
 // Gradle内存:
 //    新建文件
 C:\Users\Administrator\.gradle\gradle.properties
@@ -185,8 +186,10 @@ C:\Users\Administrator\.gradle\wrapper\dists\gradle-2.14.1-all\8bnwg5hd3w55iofp5
 //	org.gradle.daemon=true
 //	org.gradle.jvmargs=-Xmx1536M
 
+
 // Gradle加速器:
 //    离线使用gradle
+//    勾选offline work,就没有办法下载依赖
 File->Setting->Build->gradle->Offline work
 
 
@@ -307,30 +310,7 @@ Setting—->Tools—–>Terminal—–>Shell Path:cmd.exe
 
 
 
-[1.12] menu info
-File
-Edit
-View
-Navigate    导航
-Code
-Analyze    分析
-Refactor   重构
-    ->Migrate to AndroidX    迁移到AndroidX
-Build
-Run
-Tools
-VCS
-Window
-Help
-as menu info
-//build:
-//	sync
-//	make
-//	make selected
-//	clean
-//	rebuild
-//	build APK
-//	gnerate signed APK
+[1.12] 
 
 
 
@@ -410,13 +390,16 @@ build.gradle
 gradle\wrapper\gradle-wrapper.properties
 // distributionUrl=https\://services.gradle.org/distributions/gradle-5.4.1-all.zip
 
-#
-jcenter()
-jcenter{ url "http://jcenter.bintray.com/"}
+# 本地
+#   最新: gradle-6.3-bin
+D:\android\.gradle\wrapper\dists
+
+# 官网
+#   手动下载gradle
+#   最新: v6.3
+https://gradle.org/releases/
 
 
-#
-file->sync project
 
 
 [2.2] source code import--build cfg
@@ -574,8 +557,9 @@ apk:gradle\wrapper\gradle-wrapper.properties
 
 
 
-[2.13] 
-
+[2.13] debug log
+//debug log
+C:\Users\Administrator\.AndroidStudio3.5\system\log
 
 [2.14] 
 

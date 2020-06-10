@@ -42,6 +42,11 @@ macro ShellGetAsFileList(cmdStr)
 	ShellExecute("open", "cmd_getAsFileList.bat", cmdStr, getCmdPath(0), 1)
 }
 
+macro ShellGetEcFileList(cmdStr)
+{
+	ShellExecute("open", "cmd_getEcFileList.bat", cmdStr, getCmdPath(0), 1)
+}
+
 macro ShellOpenCmd(path, file)
 {
 	if(file == "")

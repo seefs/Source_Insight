@@ -40,7 +40,7 @@ $ git clone https://github.com/seefs/Source_Insight
 #    >> 更新/上传 笔记
 #    
 #    >> git 常用命令说明:
-https://github.com/seefs/si_base/blob/master/Help/Macro_Help_Git.h
+https://github.com/seefs/si_base/blob/master/Help/Other/Macro_Help_Git.h
 
 
 # 2) Source_Insight4.0及配置：
@@ -54,7 +54,7 @@ https://github.com/seefs/tool/tree/master/3%20%20%E5%B7%A5%E5%85%B7/5%20%20%E6%9
 #       目录: .\SI\Macro\...
 
 #    >> SI配置步骤:
-https://github.com/seefs/si_base/blob/master/Help/Macro_Help_SI.h
+https://github.com/seefs/si_base/blob/master/Help/Other/Macro_Help_SI.h
 #       或者用这个配置:
 https://github.com/seefs/Source_Insight_4_0_cfg
 

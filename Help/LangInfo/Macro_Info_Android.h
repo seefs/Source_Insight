@@ -26,7 +26,8 @@ apk::
 testCompile::
 debugCompile::
 releaseCompile::
-
+androidTestCompile::
+	
 classpath      ---> implement
 ...            ---> implement
 compile        ---> api
@@ -35,6 +36,7 @@ apk            ---> runtimeOnly
 testCompile    ---> testImplementation
 debugCompile   ---> debugImplementation
 releaseCompile ---> releaseImplementation
+androidTestCompile ---> androidTestImplementation
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 gradle::
@@ -160,6 +162,61 @@ android:layout_height="wrap_height"
 android:layout_weight="1"
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
+ConstraintLayout::
+layout_constraintTop_toTopOf::
+layout_constraintBottom_toBottomOf::
+layout_constraintStart_toStartOf::
+layout_constraintStart_toEndOf::
+
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+app:layout_constraintStart_toEndOf="@+id/iv_file"
+
+***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
+layout_constraintTop_toTopOf::
+
+layout_constraintTop_toTopOf       // 将所需视图的顶部与另一个视图的顶部对齐。 
+layout_constraintTop_toBottomOf    // 将所需视图的顶部与另一个视图的底部对齐。 
+layout_constraintBottom_toTopOf    // 将所需视图的底部与另一个视图的顶部对齐。 
+layout_constraintBottom_toBottomOf // 将所需视图的底部与另一个视图的底部对齐。 
+layout_constraintLeft_toLeftOf     // 将所需视图的左边与另一个视图的左边对齐。 
+layout_constraintLeft_toRightOf    // 将所需视图的左边与另一个视图的右边对齐。 
+layout_constraintRight_toLeftOf    // 将所需视图的右边与另一个视图的左边对齐。
+layout_constraintRight_toRightOf   // 将所需视图的右边与另一个视图的右边对齐。
+
+layout_constraintDimensionRatio="4:3"  //宽高比
+layout_constraintHorizontal_bias="0"  //控件的水平偏移比例
+layout_constraintVertical_bias="0.5"   //控件的垂直偏移比例
+layout_constraintBaseline_toBaselineOf  //基线
+layout_editor_absoluteX    // 表示此控件在布局中X轴的绝对坐标点
+layout_editor_absoluteY     // 表示此控件在布局中Y轴的绝对坐标点
+layout_constraintGuide_begin    // 表示在布局中引导线距顶部或左边框的距离
+layout_constraintGuide_end    // 表示在布局中引导线距底部的距离
+layout_constraintGuide_percent
+
+layout_goneMarginLeft
+layout_goneMarginTop
+layout_goneMarginRight
+layout_goneMarginBottom
+layout_goneMarginStart
+layout_goneMarginEnd
+layout_constraintLeft_creator="12"  // 无作用
+
+***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
+ConstraintLayout::
+layout_marginStart::
+layout_marginLeft::
+layout_marginTop::
+layout_marginBottom::
+
+android:layout_marginStart="8dp"
+android:layout_marginLeft="8dp"
+android:layout_marginTop="8dp"
+android:layout_marginBottom="8dp"
+
+***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
+
 orientation::
 horizontal::
 vertical::
@@ -167,14 +224,57 @@ vertical::
 android:orientation="horizontal"
 android:orientation="vertical"
 
+***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
+visibility::
+visible::
+invisible::
+gone::
+
+//可见
+android:visibility="visible"
+view.setVisibility(View.VISIBLE);
+
+//不可见 界面保留了view控件所占有的空间
+android:visibility="invisible" 
+view.setVisibility(View.INVISIBLE);
+
+//隐藏
+android:visibility="gone"
+view.setVisibility(View.GONE);
+
+***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
+CardView::
+cardBackgroundColor::
+cardElevation::
+cardMaxElevation::
+cardMaxElevation::
+cardUseCompatPadding::
+cardPreventCornerOverlap::
+	
+//
+androidx.cardview.widget.CardView
+// 基本属性：
+app:cardBackgroundColor       这是设置背景颜色
+app:cardCornerRadius          这是设置圆角大小
+app:cardElevation             这是设置z轴的阴影
+app:cardMaxElevation          这是设置z轴的最大高度值
+app:cardUseCompatPadding      是否使用CompatPadding
+app:cardPreventCornerOverlap  是否使用PreventCornerOverlap
+app:contentPadding            设置内容的padding
+app:contentPaddingLeft        设置内容的左padding
+app:contentPaddingTop         设置内容的上padding
+app:contentPaddingRight       设置内容的右padding
+app:contentPaddingBottom      设置内容的底padding
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 
 
-
-
-
 last_node::
+
+
+
+
+
 
 
 

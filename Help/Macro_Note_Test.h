@@ -56,7 +56,7 @@ Save:Help\Macro_Note_Test.h \[2.10\]
 Save:Help\Macro_Note_Test.h \[3.1\] cmd---------------1类
 Save:Help\Macro_Note_Test.h \[3.2\] open
 Save:Help\Macro_Note_Test.h \[3.3\] openCmd
-Save:Help\Macro_Note_Test.h \[3.4\] test
+Save:Help\Macro_Note_Test.h \[3.4\] 
 Save:Help\Macro_Note_Test.h \[3.5\] setPath
 Save:Help\Macro_Note_Test.h \[3.6\] setProPath
 Save:Help\Macro_Note_Test.h \[3.7\] sethistory
@@ -472,15 +472,6 @@ Save:Help\DefaultFile\Macro_Node_Num.h
 
 
 [3.1] cmd
-//
-Save:Macro\sbd_f11.em	"cmd"
-
-//
-cmd:F:\11CW1352MP\11CW1352MP\cmd
-
-//call	   不运行cmd命令, 只复制
-
-
 cmd--Test
 //1.运行cmd命令
 // --Test格式
@@ -491,8 +482,19 @@ Save:Macro\sbd_test.em	TestNodeMsg
 cmd_w: ping dl.google.com
 
 
+//
+Save:Macro\sbd_f11.em	"cmd"
+
+
+//call	不运行cmd命令, 只复制
+
+
 
 [3.2] open
+//打开
+open: C:\Program^Files^(x86)\Tencent\QQ\Bin\QQScLauncher.exe
+
+
 //open	   创建笔记; 打开exe; 打开文件+关键字; 非Macro_开头文件中只能用这个打开文件
 open:plutommi\Customer\STMTView.exe
 
@@ -551,10 +553,11 @@ Save:Macro\sbd_ctrl.em  "newPro"
 
 
 //1) cp: 复制左到右
-cp Save:Help\Tmp\Tmp_Test.h Save:Help\Tmp\Tmp_Test_new.h
-cp Save:Help\Tmp\Tmp_Test.h Save:Help\
+cp Save:Help\Tmp\Tmp_Test.h Save:Help\Tmp\target\Tmp_Test_new.h
+cp Save:Help\Tmp\Tmp_Test.h Save:Help\Tmp\target\
+
 // 查看结果
-Save:Help\Tmp\
+Save:Help\Tmp\target\
 
 
 //2) ctrl+C: 复制旧项目到新项目(略)

@@ -856,6 +856,7 @@ macro TestMsg(msgStr, num)
 		counter = nil
 		return
 	}
+//	msg(counter)
 
 	if(counter == nil)
 	{
@@ -863,6 +864,7 @@ macro TestMsg(msgStr, num)
 		test = getMacroValue(hbuf, "testParam", 1)
 		if(test == "")
 			counter = 1
+//			counter = 3
 		else
 			counter = test + 1
 	}
