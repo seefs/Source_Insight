@@ -13,7 +13,7 @@ $ git clone https://github.com/seefs/Source_Insight
 
 ### 1) 快速修改代码和配置文件
 * 快速修改SystemUI  <br>
-![shot1](https://github.com/seefs/MyImage/raw/master/ctVideo/1.video.mp4)
+<video src="https://github.com/seefs/MyImage/raw/master/ctVideo/1.video.mp4" controls="controls" width="100%" height="auto"/>
 
 ### 2) 通用性，不分开发语言
 * 快速修改多个APK项目  <br>
