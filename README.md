@@ -1,8 +1,8 @@
 
 ### 查看当前地址:
-$ git remote -v
-origin  https://github.com/seefs/Source_Insight (fetch)
-origin  https://github.com/seefs/Source_Insight (push)
+$ git remote -v  <br>
+origin  https://github.com/seefs/Source_Insight (fetch)  <br>
+origin  https://github.com/seefs/Source_Insight (push)  <br>
 
 ### 下载命令:
 $ git clone https://github.com/seefs/Source_Insight
@@ -40,20 +40,20 @@ $ git clone https://github.com/seefs/Source_Insight
 ### 1) git windows版本下载：
 * https://gitforwindows.org/
 
-* git 常用命令说明:
+* git 常用命令说明:  <br>
 https://github.com/seefs/si_base/blob/master/Help/Other/Macro_Help_Git.h
 
-* 使用脚本上传下载:
-https://github.com/seefs/si_base/blob/master/Cmd_other/git_auto_pull.bat
-https://github.com/seefs/si_base/blob/master/Cmd_other/git_auto_push.bat
+* 使用脚本上传下载:  <br>
+https://github.com/seefs/si_base/blob/master/Cmd_other/git_auto_pull.bat   <br>
+https://github.com/seefs/si_base/blob/master/Cmd_other/git_auto_push.bat   <br>
 
 
 ### 2) Source_Insight4.0配置：
 
-* SI配置步骤:
+* SI配置步骤:  <br>
 https://github.com/seefs/Source_Insight/blob/master/Help/Other/Macro_Help_SI.h
 
-* 或者用这个配置: 
+* 或者用这个配置:   <br>
 https://github.com/seefs/Source_Insight/blob/master/SI_cfg/Settings
 
 
