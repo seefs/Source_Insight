@@ -1,13 +1,4 @@
 
-### 查看当前地址:
-$ git remote -v  <br>
-origin  https://github.com/seefs/Source_Insight (fetch)  <br>
-origin  https://github.com/seefs/Source_Insight (push)  <br>
-
-### 下载命令:
-$ git clone https://github.com/seefs/Source_Insight
-
-------------
 ### 功能:
 * 通用的 **笔记** + **宏命令** 工具
 
@@ -36,17 +27,27 @@ https://github.com/seefs/MyImage/raw/master/ctVideo/4.video.mp4
 
 
 ------------
+### 查看当前地址:
+$ git remote -v  <br>
+origin  https://github.com/seefs/Source_Insight (fetch)  <br>
+origin  https://github.com/seefs/Source_Insight (push)  <br>
+
+### 下载命令:
+$ git clone https://github.com/seefs/Source_Insight
+
+
+------------
 ### 相关工具下载及配置:
     
 ### 1) git windows版本下载：
 * https://gitforwindows.org/
 
 * git 常用命令说明:  <br>
-https://github.com/seefs/si_base/blob/master/Help/Other/Macro_Help_Git.h
+https://github.com/seefs/Source_Insight/blob/master/Help/Other/Macro_Help_Git.h
 
 * 使用脚本上传下载:  <br>
-https://github.com/seefs/si_base/blob/master/Cmd_other/git_auto_pull.bat   <br>
-https://github.com/seefs/si_base/blob/master/Cmd_other/git_auto_push.bat   <br>
+https://github.com/seefs/Source_Insight/blob/master/Cmd_other/git_auto_pull.bat   <br>
+https://github.com/seefs/Source_Insight/blob/master/Cmd_other/git_auto_push.bat   <br>
 
 
 ### 2) Source_Insight4.0配置：
