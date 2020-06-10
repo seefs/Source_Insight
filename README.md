@@ -13,18 +13,19 @@ $ git clone https://github.com/seefs/Source_Insight
 
 ### 1) 快速修改代码和配置文件
 * 快速修改SystemUI  <br>
-<video src="https://github.com/seefs/MyImage/raw/master/ctVideo/1.video.mp4" controls="controls" width="100%" height="auto"/>
+* (这里4个视频不支持播放)  <br>
+https://github.com/seefs/MyImage/raw/master/ctVideo/1.video.mp4
 
 ### 2) 通用性，不分开发语言
 * 快速修改多个APK项目  <br>
-![shot1](https://github.com/seefs/MyImage/raw/master/ctVideo/2.video.mp4)
+https://github.com/seefs/MyImage/raw/master/ctVideo/2.video.mp4
 
 * 快速修改多个python项目  <br>
-![shot1](https://github.com/seefs/MyImage/raw/master/ctVideo/3.video.mp4)
+https://github.com/seefs/MyImage/raw/master/ctVideo/3.video.mp4
 
 ### 3) 已添加宏命令有10~20种
 * 笔记中调用ping,cp命令  <br>
-![shot1](https://github.com/seefs/MyImage/raw/master/ctVideo/4.video.mp4)
+https://github.com/seefs/MyImage/raw/master/ctVideo/4.video.mp4
 
 
 ------------
