@@ -268,10 +268,28 @@ app:contentPaddingBottom      设置内容的底padding
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 
+configChanges::
+
+android:configChanges="orientation"                              # 屏幕方向
+android:configChanges="orientation|keyboardHidden"               # 横竖屏切换 onConfigurationChanged
+android:configChanges="orientation|keyboardHidden|screenSize"    # Sdk >= 13??
+android:configChanges="screenSize"                               # 屏幕大小
+android:configChanges="keyboardHidden"                           # 键盘的可用性发生了改变
+android:configChanges="smallestScreenSize"                       # 屏幕的物理大小改变了，如：连接到一个外部的屏幕上
+android:configChanges="screenLayout"                             # 屏幕的显示发生了变化------不同的显示被激活
+android:configChanges="mcc|mnc|locale|touchscreen|keyboard|navigation"
+android:configChanges="fontScale|uiMode"
+
+***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
+
+showAsAction::
+
+app:showAsAction="ifRoom"                              # 
+app:showAsAction="withText"                            # 
+
+***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 
 last_node::
-
-
 
 
 

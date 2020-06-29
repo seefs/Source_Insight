@@ -1,5 +1,5 @@
-
-# git ³£ÓÃÏÂÔØ/ÉÏ´«ÃüÁî, ËµÃ÷:
+ï»¿
+# git å¸¸ç”¨ä¸‹è½½/ä¸Šä¼ å‘½ä»¤, è¯´æ˜:
 # 1) clone:
 git clone https://github.com/seefs/SI_BASE.git
 
@@ -11,23 +11,23 @@ git config --global user.email seefs@163.com
 git config --list
 
 
-# 3) ¸üĞÂ:
+# 3) æ›´æ–°:
 git pull
-»òÕß
+æˆ–è€…
 git pull origin dev
-»òÕß
+æˆ–è€…
 git pull origin master:dev
 
 
-# 4) ĞŞ¸ÄºóÌá½»±¾µØ:
+# 4) ä¿®æ”¹åæäº¤æœ¬åœ°:
 git add .
 git commit -m "msg"
 
 
-# 5) Ìá½»±¾µØµ½·şÎñÆ÷:
+# 5) æäº¤æœ¬åœ°åˆ°æœåŠ¡å™¨:
 git push
 
 
 
-#    git ÆäËûÃüÁîËµÃ÷:
+#    git å…¶ä»–å‘½ä»¤è¯´æ˜:
 https://github.com/seefs/Source_Insight/blob/master/node/ToolsMsg/Macro_git.h

@@ -21,21 +21,28 @@ Save:node\android\project\Macro_as_list.h  \[2.2\] Contents
 Save:node\android\project\
 Save:node\android\project\Macro_file_Contents.h
 Save:node\android\project\Macro_as_Contents.h
-//数据通信
-Save:node\android\study\Macro_android_Data.h
-Save:node\android\study\Macro_android_ui.h
-Save:node\android\study\Macro_android_view.h
-Save:node\android\study\Macro_android_property.h
 //kotlin
 Save:node\android\study\Macro_android_kotlin.h
+// Name 姓名
+Save:node\SQL\project\Macro_file_Name.h
 
 
 /***********************************************************************/
 /********************************临时文件*******************************/
 /***********************************************************************/
 
-// 功能测试
-Save:Help\Macro_Note_Test.h
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -14,7 +14,7 @@ Save:node\Macro_Future.h \[1.5\]
 Save:node\Macro_Future.h \[1.6\] 
 Save:node\Macro_Future.h \[1.7\] 
 Save:node\Macro_Future.h \[1.8\] PHP
-Save:node\Macro_Future.h \[1.9\] 
+Save:node\Macro_Future.h \[1.9\] SQL
 Save:node\Macro_Future.h \[1.10\] 
 // 2. 
 Save:node\Macro_Future.h \[2.1\] 其他语言
@@ -68,7 +68,9 @@ Save:node\PHP\Macro_Note_PHP.h
 
 
 [1.9] SQL
-//Save:node\SQL\Macro_Note_SQL.h
+// 集中存放sql文档
+//   部分存放其他目录
+Save:node\SQL\Macro_Note_SQL.h
 
 
 [1.10] Swift

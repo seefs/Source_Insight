@@ -688,7 +688,7 @@ macro OpenFileHander(hbuf, curPath, cur_row, noteWord, cNum)
 					strDefFile = getCopyPath(0) # "\\default_file.kt"
 				}
 				// 演示用，间隔1行
-				cmdStr = "文件不存在： " # CharFromKey(13)        # CharFromKey(13)  # "copy " # strDefFile # CharFromKey(13) #  CharFromKey(13) # curPath
+				cmdStr = "文件不存在： " # CharFromKey(13)   # CharFromKey(13)  # "copy " # strDefFile # CharFromKey(13) #  CharFromKey(13) # curPath
 				msg(cmdStr)
 				TestMsg("从模板copy文件: " # CharFromKey(13) # cmdStr, 2)
 				ShellOpenCustomCmd(cmdStr)
