@@ -21,7 +21,7 @@ SE039_SXJY_D700_VORTEX_F3
 project
 
 ### 24.SR Mode  (CTRL + D : search head 删除相同头部的行)
-W
+HTextPresenter
 
 ### 27.last command (未使用)
 CtrlW
@@ -51,7 +51,7 @@ IM
 E:\6531E_20180113\tmp
 
 ### 54.note row(第2次打开同一行, F11关闭note会修改这里)
-0
+135
 
 ### 57.Note Hander Set(笔记路径, 替换当前path, MTK)
 M610_KM_V2411_SP6000_F2 M610 gprs
@@ -66,10 +66,10 @@ E:\Desktop\SGIT\Git_NB
 2
 
 ### 69.default project path
-D:\Save\SI\node\Simple_CTRL_B.h
+D:\project\Android\View\CustomerView\app\src\main\java\com\example\rico\customerview\view\RegionStarView.java
 
 ### 72.default project path
-0
+343
 
 ### 75.show python help(0 or 1)
 0
@@ -82,6 +82,9 @@ D:\Save\SI\node\Simple_CTRL_B.h
 
 ### 84.Comment row (右边注释间隔字符数)
 0
+
+### 87.Contents row (是否打开普通文本宏功能，如ctrl+R)
+1
 
 
 

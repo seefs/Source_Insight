@@ -15,7 +15,7 @@ Save:node\ToolsMsg\Macro_Cmd.h \[1.10\] string ------------截取、替换、合
 Save:node\ToolsMsg\Macro_Cmd.h \[1.11\] if...else...
 Save:node\ToolsMsg\Macro_Cmd.h \[1.12\] setlocal ----------变量延迟
 Save:node\ToolsMsg\Macro_Cmd.h \[1.13\] set /a, set /p
-Save:node\ToolsMsg\Macro_Cmd.h \[1.14\] 
+Save:node\ToolsMsg\Macro_Cmd.h \[1.14\] rename
 Save:node\ToolsMsg\Macro_Cmd.h \[1.15\] 
 // 2. dir
 Save:node\ToolsMsg\Macro_Cmd.h \[2.1\] dir ----------------参数
@@ -327,7 +327,8 @@ set /p 提示用户输入
 //	set /p POP=请输入ping的次数：
 
 
-[1.14] 
+[1.14] rename
+ren K:歌曲\北国之春.mp4 北国之春.mp3
 
 
 [1.15] 

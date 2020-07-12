@@ -136,11 +136,11 @@ macro CtrlE()
 	
 	if(IsNoteFile(hbuf))
 	{
-		//内向模式
+		//内向模式, 跳转到模板项目
 		mode = getMacroValue(hbuf, "Inward", 1)
 		if(mode == "True" || mode == "TRUE"){
 			//从文件名("...\...")跳转另一个文件
-			NoteHander(hbuf, 6)
+			NoteHander(hbuf, 6, 0)
 			stop
 		}
 	}
@@ -385,49 +385,71 @@ macro CtrlT()
 macro Ctrl_Shift_R()
 {
 	hbuf = GetCurrentBuf()
-	NoteHander(hbuf, 6)
+	NoteHander(hbuf, 6, 0)
 }
 macro CtrlR()
 {
 	//_TempHeadCTRL()
+	hwnd = GetCurrentWnd()
 	hbuf = GetCurrentBuf()
 	
 	//add file type
+	prompt = 100
 	if(IsNoteFile(hbuf))
+		prompt = 0
+	else if(ReadMode(getContentsRow(0))>0)
+		prompt = 1
+	if(prompt != 100)
 	{
-		//1. 文件内索引跳转
+		//1. 多行命令
 		sel = MGetWndSel(hbuf)
-		searchStr = ""
-		cur_line = GetBufLine(hbuf, sel.lnFirst )	
-		if(strlen(cur_line) <= 2)
-			stop
-		
-		cur_sel_left  = FindString( cur_line, "\[" )
-		cur_sel_right = FindString( cur_line, "\]" )
-		if(cur_sel_left != "X" && cur_sel_right != "X")
-		{
-			cur_sel_right_pre = strmid(cur_line, cur_sel_right - 1, cur_sel_right)
-			// 标号("[...]")跳回目录("\[...\]")
-			if(cur_sel_right_pre != "\\" )
+		if(IsMoreSelect(sel)) {
+			iS = sel.lnFirst
+			iE = sel.lnLast
+			while(iS <= iE)
 			{
-				searchStr = "\\\[" # strmid(cur_line, cur_sel_left + 1, cur_sel_right) # "\\\]"
-				sel2 = SearchInBuf(hbuf, searchStr, 0, 0, FALSE, FALSE, FALSE)
-				if (sel2 != "")
+				SetWndSel(hwnd, sel)
+				NoteHander(hbuf, 5, 0)
+				iS = iS + 1
+				sel.lnFirst = iS
+			}
+			return
+		}
+		
+		cur_line = GetBufLine(hbuf, sel.lnFirst )	
+		if(strlen(cur_line) > 2) {
+			//2. 文件内索引跳转
+			searchStr = ""
+			cur_sel_left  = FindString( cur_line, "\[" )
+			cur_sel_right = FindString( cur_line, "\]" )
+			if(cur_sel_left != "X" && cur_sel_right != "X")
+			{
+				cur_sel_right_pre = strmid(cur_line, cur_sel_right - 1, cur_sel_right)
+				// 标号("[...]")跳回目录("\[...\]")
+				if(cur_sel_right_pre != "\\" )
 				{
-					TestMsg("跳转到目录: " # searchStr, 2)
-					ScrollCursor(sel2)
-					stop
+					searchStr = "\\\[" # strmid(cur_line, cur_sel_left + 1, cur_sel_right) # "\\\]"
+					sel2 = SearchInBuf(hbuf, searchStr, 0, 0, FALSE, FALSE, FALSE)
+					if (sel2 != "")
+					{
+						TestMsg("跳转到目录: " # searchStr, 2)
+						ScrollCursor(sel2)
+						stop
+					}
 				}
 			}
+			//3. 文件名("...\...")跳转另一个文件
+			//4. 目录("\[...\]")跳到标号("[...]")
+			ret = NoteHander(hbuf, 5, prompt)
+			if(ret == 0)
+				return
 		}
-		//2. 文件名("...\...")跳转另一个文件
-		//3. 目录("\[...\]")跳到标号("[...]")
-		NoteHander(hbuf, 5)
 	}
-	else
-	{
-		go_to_next_link
-	}
+
+	// 非多选、非空行
+	go_to_next_link
+	// 不返回会出错(胡乱复制粘贴)，很奇怪！
+	return
 }
 macro CtrlW()
 {

@@ -188,7 +188,7 @@ macro SwtichTools(cmd)
 		else if(val == "n")		//Goto -- Goto Service
 		{
 			hbuf = GetCurrentBuf()
-			NoteHander(hbuf, 6)
+			NoteHander(hbuf, 6, 0)
 			return 0
 		}
 		else

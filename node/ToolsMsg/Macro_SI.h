@@ -9,7 +9,7 @@ Save:node\ToolsMsg\Macro_SI.h \[1.4\] 通配符替换
 Save:node\ToolsMsg\Macro_SI.h \[1.5\] SI崩溃问题---------
 Save:node\ToolsMsg\Macro_SI.h \[1.6\] 
 Save:node\ToolsMsg\Macro_SI.h \[1.7\] 安装
-Save:node\ToolsMsg\Macro_SI.h \[1.8\] 
+Save:node\ToolsMsg\Macro_SI.h \[1.8\] 有趣的格式
 Save:node\ToolsMsg\Macro_SI.h \[1.9\] 
 // 2. 
 Save:node\ToolsMsg\Macro_SI.h \[2.1\] ShellExecute
@@ -95,9 +95,9 @@ C:\Users\Administrator\AppData\Local\Temp
 //	用.h, .txt颜色单一
 
 
-[1.8] 
+[1.8] 有趣的格式
 
-
+$time$
 
 
 [1.9] 

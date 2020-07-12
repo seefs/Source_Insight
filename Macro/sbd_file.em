@@ -52,6 +52,7 @@ macro getPyInfo(0)			{	return 75	}
 macro getAndroidInfo(0)			{	return 78	}
 //macro getXXInfo(0)			{	return 81	}
 macro getCommentRow(0)			{	return 84	}
+macro getContentsRow(0)			{	return 87	}
 
 
 
@@ -782,7 +783,8 @@ macro GetTransFileName(hbuf, fName, cNum)
 		bPath = getBasePath(hbuf)
 	}
 
-	//区分根目录
+	//补全目录
+	//  带":"号的是完整目录、或根目录
 	re = FindString(fName, ":")
 	if(re == "X")
 	{
@@ -807,8 +809,17 @@ macro GetTransFileName(hbuf, fName, cNum)
 			fName = bPath
 		}
 	}
-//	msg(cNum # " ~ " # fName)
 
+	//replace test:
+	//xxxx = ReplaceWord("^^^sss^^^ddd^eee^^^", "^", "-")
+	//输出: "---sss---ddd-eee---"
+	//msg(xxxx)
+	
+	//replace test:
+	//xxxx = ReplaceWord("a\\\\bb\\cc\\dd\\\\", "\\\\", "\\")
+	//输出: "a\bb\cc\dd\"
+	//msg(xxxx)
+	
 	//replace
 	fName = ReplaceWord(fName, "Save:", getSavePath(0) # "\\")
 	fName = ReplaceWord(fName, "App:", getUserPath(0) # "\\")
@@ -828,16 +839,31 @@ macro GetHeadIndex(hbuf, cur_line)
 	if (index != "X"){
 		cur_line = strmid(cur_line, 0, index)
 	}
+	
 	//从左开始找
 	index_colon = FindString(cur_line, ":")
 	if (index_colon != "X"){
-		cur_line = strmid(cur_line, 0, index_colon)
+		//cur_line = strmid(cur_line, 0, index_colon)
 		index = index_colon
 	}
+	else if (index != "X"){
+		if (index == 1){
+			//单个字符，也没有":"号，作为异常情况处理
+			return "X"
+		}
+	}
+	
+	// 返回第1个空格或冒号的位置
 	return index
 }
 macro IsTransHead(hbuf, fHead)
 {
+	//不能带有*号，否则会无限替换下去
+	index = FindString(fHead, "*")
+	if(index != "X"){
+		return 0
+	}
+	
 	headPath = getMacroValue(hbuf, fHead # "Path", 1)
 	if(headPath != ""){
 		return 1
@@ -859,6 +885,33 @@ macro ReTransHead(hbuf, fHead, curPath)
 				if(IsTransHead(hbuf, nextHead)==1)
 					curPath = ReTransHead(hbuf, nextHead, curPath)
 			}
+		}
+	}
+	return curPath
+}
+macro ReAllTransHead(hbuf, curPath)
+{
+	len = strlen(curPath)
+	// 第1个空格或冒号的位置
+	firstS = 0
+	firstE = GetHeadIndex(hbuf, curPath)
+	if (firstE != "X")
+	{
+		noteCmd = strmid(curPath, 0, firstE)
+		if(IsTransHead(hbuf, noteCmd)==1)
+		{
+			nextS     = GetTransCmdS2(curPath, firstE + 1, len)
+			firstPath = strmid(curPath, 0, nextS)
+			nextPath  = strmid(curPath, nextS, len)
+			// 反复替换路径
+			firstPath = ReTransHead(hbuf, noteCmd, firstPath)
+			return firstPath # ReAllTransHead(hbuf, nextPath)
+		}
+		else {
+			nextS     = GetTransCmdS2(curPath, firstE + 1, len)
+			firstPath = strmid(curPath, 0, nextS)
+			nextPath  = strmid(curPath, nextS, len)
+			return firstPath # ReAllTransHead(hbuf, nextPath)
 		}
 	}
 	return curPath

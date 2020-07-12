@@ -70,10 +70,11 @@ Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 [1.4] help--DefaultFile
 //样板文件:
+Save:Help\DefaultFile\Macro_z_index.h
 Save:Help\DefaultFile\Macro_z_null.h
 Save:Help\DefaultFile\Macro_z_null.py
 //样板文件-(更多序号+):
-Save:Help\DefaultFile\Macro_z_null_2.h
+Save:Help\DefaultFile\Macro_z_index_2.h
 //Info文件:
 Save:Help\LangInfo\Macro_Info_Android.h
 Save:Help\LangInfo\Macro_Info_Python.h

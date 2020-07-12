@@ -284,6 +284,8 @@ Save:node\ToolsMsg\Macro_Office.h  \[4.3\]
 //	=INDEX($A$31:$A$38,SMALL(IF(ROW($A$31:$A$38)-30'=MATCH($A$31:$A$38,$A$31:$A$38,0),ROW($A$31:$A$38)-30,""),ROW()-30))
 //	=INDEX($A$31:$A$38,SMALL(IF(ROW($A$31:$A$38)-30'=MATCH($A$31:$A$38,$A$31:$A$38,0),ROW($A$31:$A$38)-30,""),ROW()-30))
 
+=+INDEX($B$2:$B$33,SMALL(IF(ROW($B$2:$B$33)-1=MATCH($B$2:$B$33,$B$2:$B$33,0),ROW($B$2:$B$33)-1,""),ROW()-1))
+
 //人数
 //	=COUNTIF($A$31:$A$38,B31)
 //	=COUNTIF($A$31:$A$38,B32)

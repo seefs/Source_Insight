@@ -1,8 +1,11 @@
 ﻿
 基础路径设置:
 basePath = Save:Macro\
+base:\\
 base:sbd_test.em  OpenMiniTest
 
+bakPath = Save:Help\Tmp\target
+bak:\\
 
 // 显示log级别(testParam)
 //   1: 显示少量log
@@ -53,9 +56,9 @@ Save:Help\Macro_Note_Test.h \[2.8\]
 Save:Help\Macro_Note_Test.h \[2.9\] 
 Save:Help\Macro_Note_Test.h \[2.10\] 
 //3.f11--Test
-Save:Help\Macro_Note_Test.h \[3.1\] cmd---------------1类
-Save:Help\Macro_Note_Test.h \[3.2\] open
-Save:Help\Macro_Note_Test.h \[3.3\] openCmd
+Save:Help\Macro_Note_Test.h \[3.1\] cmd系列-----------1类
+Save:Help\Macro_Note_Test.h \[3.2\] open(exe)
+Save:Help\Macro_Note_Test.h \[3.3\] 
 Save:Help\Macro_Note_Test.h \[3.4\] 
 Save:Help\Macro_Note_Test.h \[3.5\] setPath
 Save:Help\Macro_Note_Test.h \[3.6\] setProPath
@@ -68,9 +71,9 @@ Save:Help\Macro_Note_Test.h \[3.12\] set--------------3类
 Save:Help\Macro_Note_Test.h \[3.13\] vc
 Save:Help\Macro_Note_Test.h \[3.14\] vs08
 Save:Help\Macro_Note_Test.h \[3.15\] call
-Save:Help\Macro_Note_Test.h \[3.16\] cmd_w
-Save:Help\Macro_Note_Test.h \[3.17\] cmd_s
-Save:Help\Macro_Note_Test.h \[3.18\] cmd_w
+Save:Help\Macro_Note_Test.h \[3.16\] 
+Save:Help\Macro_Note_Test.h \[3.17\] 
+Save:Help\Macro_Note_Test.h \[3.18\] 
 Save:Help\Macro_Note_Test.h \[3.19\] git
 Save:Help\Macro_Note_Test.h \[3.20\] python-----------4类
 Save:Help\Macro_Note_Test.h \[3.21\] python_w
@@ -471,26 +474,66 @@ Save:Help\DefaultFile\Macro_Node_Num.h
 
 
 
-[3.1] cmd
-cmd--Test
-//1.运行cmd命令
-// --Test格式
+[3.1] cmd系列
+# 1) test
+// 显示cmd命令
 test:CustomCmd
+
 //	代码位置
 Save:Macro\sbd_test.em	TestNodeMsg
-//	正常格式
+
+
+# 2) cmd_w
+//	弹窗 + 粘贴 (base路径)
+// 格式: 去掉一个head(路径在右)
 cmd_w: ping dl.google.com
 
-
-//
+//	代码位置
 Save:Macro\sbd_f11.em	"cmd"
 
 
-//call	不运行cmd命令, 只复制
+# 3) cmd_s
+//	弹窗 + 粘贴 (project路径)
+// 格式: 去掉一个head(路径在右)
+cmd_s: ping dl.google.com
+
+//	代码位置
+Save:Macro\sbd_f11.em	macro^NoteCurCmd
+
+
+# 4) cmd_f
+//	原目录
+cmd_f: ren Tmp_Test.h Tmp_Test5.0.h
+cmd_f: ren Tmp_Test5.0.h Tmp_Test.h
+//	上级目录
+cmd_f: ren target\Tmp_Test.h Tmp_Test5.0.h
+cmd_f: ren target\Tmp_Test5.0.h Tmp_Test.h
+//	全目录
+cmd_w: ren D:\Save\SI\Help\Tmp\target\Tmp_Test.h Tmp_Test5.0.h
+
+//	测试
+// 格式: 去掉一个head(路径在右边中间)
+cmd_f: ren bak:Tmp_Test.h Tmp_Test5.0.h
+cmd_f: ren bak:Tmp_Test5.0.h Tmp_Test6.0.h
+cmd_f: ren bak:Tmp_Test6.0.h Tmp_Test.h
+cmd_f: ren L:常用图片\* *.jpg
+
+//	代码位置
+Save:Macro\sbd_f11.em	macro^NoteInCmd
+//  结果
+bakPath = Save:Help\Tmp\target
+bak:\\
+
+cmd_w: D:&&cd D:\Save\SI\Macro\
+
+# 5) cmd
+//	打开基础路径的弹窗 + 粘贴(不通用)
+cmd: ping dl.google.com
 
 
 
-[3.2] open
+
+[3.2] open(exe)
 //打开
 open: C:\Program^Files^(x86)\Tencent\QQ\Bin\QQScLauncher.exe
 
@@ -558,6 +601,9 @@ cp Save:Help\Tmp\Tmp_Test.h Save:Help\Tmp\target\
 
 // 查看结果
 Save:Help\Tmp\target\
+
+//	代码位置
+Save:Macro\sbd_f11.em	macro^NoteCopyFile
 
 
 //2) ctrl+C: 复制旧项目到新项目(略)
@@ -644,6 +690,9 @@ python_w nlp_block\_layer.py
 
 //4) 第2个路径(tool + filename)
 python_w tool:xiaoshuo\test_split.py
+
+//5) 同上
+python_w:tool xiaoshuo\test_split.py
 
 
 

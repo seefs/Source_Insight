@@ -425,7 +425,9 @@ macro DeleteMkComment(key)
 
 macro ReplaceWord(noteWord, search_str, replace_str)
 {
-	var ret
+	var retS
+	var retE
+	var retM
 	ret = ""
 	
 	len = strlen( noteWord )
@@ -434,27 +436,39 @@ macro ReplaceWord(noteWord, search_str, replace_str)
 	//test1:  "^^^sss^^^ddd^eee^^^"
 	//test2:  "a\\\\bb\\cc\\dd\\\\"
 	cp = 0
+	last_s = 0
+	
+	//总是更新前中后的结果，这样逻辑简单.
+	retS = ""
+	retM = ""
+	retE = ""
+	//
+	//msg("len-" # strlen( noteWord ) # "--" # strlen( search_str ) # "--" # strlen( replace_str ))
 	while( cp < len - lenStep + 1)
 	{
 		//msg(strmid(noteWord, cp, cp + lenStep) # "==" # search_str)
 		//msg(cp # "x" # lenStep)
 		if(strmid(noteWord, cp, cp + lenStep) == search_str)
 		{
-			ret = ret # replace_str
+			retE = retS # replace_str
+			retS = retE
+			retM = retE
 			last_s = cp + lenStep
 			cp = cp + lenStep
+			//msg("1- " # retS # "--" # retE)
 		}
 		else
 		{
-			ret = ret # noteWord[cp]
-			last_w = cp + 1
+			// 取单个字符
+			//   ret = ret # noteWord[cp]
+			//     Bug.会有中文编码问题
+			retS = retM # strmid(noteWord, last_s, cp + 1)
+			retE = retM # strmid(noteWord, last_s, cp + lenStep)
+			//last_w = cp + 1
 			cp = cp + 1
+			//msg("2- " # retS # "--" # retE)
 		}
 	}
-	if(cp < len)
-	{
-		ret = ret # strmid(noteWord, cp, len)
-	}
-	return ret
+	return retE
 }
 

@@ -27,10 +27,7 @@ project:F:\_SI4.0\6531E.si4project,
 project:F:\6531G_16A_MP_W17.43.4,
 33
 project:F:\_SI4.0\6531G.si4project,
-34
-project:F:\6531G_SX,
-35
-project:F:\_SI4.0\6531G_SX.si4project,
+
 
 
 //(4) soft 项目路径
@@ -69,17 +66,11 @@ project:F:\6261D_11C_V33,
 //奇数项, 解决源码+SI目录分开问题, 源码目录单独设置在前一项
 75
 project:F:\_SI4.0\6261D_11C_V33.si4project,
-	
-76
-project:F:\6261D_11C_V33_AI,
-//奇数项, 解决源码+SI目录分开问题, 源码目录单独设置在前一项
-77
-project:F:\_SI4.0\6261D_11C_V33.si4project,
 
 
 //(8) base -> save
 80
-project:E:\Save,
+project:D:\Save,
 
 
 //(9) tmp
