@@ -87,6 +87,10 @@ C:\Windows\System32\drivers\etc\hosts
 
 
 [1.2] jdk
+//下载:
+http://jdk.android-studio.org/
+http://www.downza.cn/soft/219583.html
+
 //path:
 C:\Program^Files\Java\
 C:\Program^Files\Java\jdk1.8.0_05\lib
@@ -154,16 +158,22 @@ Q                     10             29
 C:/Users/Administrator/.gradle        // 旧path
 D:\android\.gradle                    // 新path
 
+//或者
+%GRADLE_USER_HOME%
+D:\install\.gradle
+
 
 // 下载:
 //    第1次编译apk自动下载, 下载路径:
 //    换个项目下载新版本gradle
+C:\Users\ASUS\.gradle\wrapper\dists\gradle-5.4.1-all\3221gyojl5jsh0helicew7rwx
 C:\Users\Administrator\.gradle\wrapper\dists\gradle-4.6-all\bcst21l2brirad8k2ben1letg
 //
 
 
 // env:
 //    配置环境变量，新建 GRADLE_HOME 为
+C:\Users\ASUS\.gradle\wrapper\dists\gradle-5.4.1-all\3221gyojl5jsh0helicew7rwx\gradle-5.4.1
 C:\Users\Administrator\.gradle\wrapper\dists\gradle-4.6-all\bcst21l2brirad8k2ben1letg\gradle-4.6
 //    然后在系统变量的Path里添加
 %GRADLE_HOME%\bin
@@ -500,6 +510,13 @@ C:\Program^Files\Android\Android^Studio\lib\resources_zh_CN_AndroidStudio_3.2.1_
 //	重启Android studio.
 //	重启后再 settings下选择 editor  ,选择 colors& Fonts,  "theme"右边菜单选择 Monkai-Sublime
 //	点击Apply 后 ，ok,可以看到修改之后的效果了。
+
+
+//4)下载安装方式：
+//	打开Setting/Preferences窗口（快捷键MacComman+,WindowsCtrl+Alt+S）
+//	选择Plugins选项
+//	点击Browse repositories，搜索Material Theme UI
+//	安装、重启Android Studio
 
 
 [2.7] toolbar
