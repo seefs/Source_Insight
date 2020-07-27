@@ -11,13 +11,15 @@ Save:node\Macro_Inward.h
 // 功能测试
 Save:Help\Macro_Note_Test.h
 
+
+Save:Help\Tmp
+
+Save:node\android\study\Macro_android_debug.h
+
+
 /***********************************************************************/
 
 
-不自动导包:
-import android.util.Log;
 
 
-
-/***********************************************************************/
 

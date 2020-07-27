@@ -78,7 +78,6 @@ git config [--local|--global|--system] --list/-l　　　　　　　　　　
 git config [--local|--global|--system] --unset[-all] user.name
 
 
-
 [1.2] git config --list ---查看设置
 git config --list
 //user.name=xiaoj
@@ -88,6 +87,10 @@ git config --list
 //core.bare=false
 //core.logallrefupdates=true
 
+
+// 凭证问题请参考
+https://github.com/Microsoft/Git-Credential-Manager-for-Windows
+https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases/tag/1.20.0
 
 
 [1.3] git init ------------创建git本地仓库

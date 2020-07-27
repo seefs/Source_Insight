@@ -173,9 +173,6 @@ app:layout_constraintStart_toStartOf="parent"
 app:layout_constraintTop_toTopOf="parent" />
 app:layout_constraintStart_toEndOf="@+id/iv_file"
 
-***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
-layout_constraintTop_toTopOf::
-
 layout_constraintTop_toTopOf       // 将所需视图的顶部与另一个视图的顶部对齐。 
 layout_constraintTop_toBottomOf    // 将所需视图的顶部与另一个视图的底部对齐。 
 layout_constraintBottom_toTopOf    // 将所需视图的底部与另一个视图的顶部对齐。 
@@ -185,15 +182,27 @@ layout_constraintLeft_toRightOf    // 将所需视图的左边与另一个视图
 layout_constraintRight_toLeftOf    // 将所需视图的右边与另一个视图的左边对齐。
 layout_constraintRight_toRightOf   // 将所需视图的右边与另一个视图的右边对齐。
 
+***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
+layout_constraintVertical_weight::
+layout_constraintVertical_bias::
+layout_constraintVertical_chainStyle::
+	
+layout_constraintHorizontal_weight::
+layout_constraintHorizontal_bias::
+layout_constraintHorizontal_chainStyle::
+	
+layout_constraintDimensionRatio::
+
 layout_constraintDimensionRatio="4:3"  //宽高比
 layout_constraintHorizontal_bias="0"  //控件的水平偏移比例
-layout_constraintVertical_bias="0.5"   //控件的垂直偏移比例
+layout_constraintHorizontal_bias="0.5"   //控件的垂直偏移比例
 layout_constraintBaseline_toBaselineOf  //基线
 layout_editor_absoluteX    // 表示此控件在布局中X轴的绝对坐标点
 layout_editor_absoluteY     // 表示此控件在布局中Y轴的绝对坐标点
 layout_constraintGuide_begin    // 表示在布局中引导线距顶部或左边框的距离
 layout_constraintGuide_end    // 表示在布局中引导线距底部的距离
 layout_constraintGuide_percent
+
 
 layout_goneMarginLeft
 layout_goneMarginTop
@@ -204,7 +213,7 @@ layout_goneMarginEnd
 layout_constraintLeft_creator="12"  // 无作用
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
-ConstraintLayout::
+Layout::
 layout_marginStart::
 layout_marginLeft::
 layout_marginTop::
@@ -290,7 +299,6 @@ app:showAsAction="withText"                            #
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 
 last_node::
-
 
 
 

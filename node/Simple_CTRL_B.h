@@ -5,7 +5,9 @@ Save:node\Macro_History.h
 Save:node\Macro_Future.h
 Save:node\Macro_Memory.h
 Save:node\Macro_tmp.h
-Save:Help\Tmp
+// app开发
+Save:node\android\test\Macro_test_debug.h
+Save:node\android\test\Macro_test_api.h
 
 //Java
 Save:node\android\Macro_Note_as.h
@@ -27,6 +29,23 @@ Save:node\android\study\Macro_android_kotlin.h
 /***********************************************************************/
 /********************************临时文件*******************************/
 /***********************************************************************/
+
+
+
+
+
+
+
+
+BeAty.java                  // 9b.交易--BE兑换----------参考appBar
+
+
+
+
+
+
+
+
 
 
 

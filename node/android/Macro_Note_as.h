@@ -8,11 +8,11 @@ base:\\
 //目录[Num][Ca]:
 // 1. as
 Save:node\android\Macro_Note_as.h \[1.1\] as安装+配置
-Save:node\android\Macro_Note_as.h \[1.2\] error、lib
+Save:node\android\Macro_Note_as.h \[1.2\] error、lib、debug
 Save:node\android\Macro_Note_as.h \[1.3\] build、adb
 Save:node\android\Macro_Note_as.h \[1.4\] Apk ------------------升级、平台
 Save:node\android\Macro_Note_as.h \[1.5\] Apk 优化--------------
-Save:node\android\Macro_Note_as.h \[1.6\] web 
+Save:node\android\Macro_Note_as.h \[1.6\] web
 Save:node\android\Macro_Note_as.h \[1.7\] Linux ----------------
 Save:node\android\Macro_Note_as.h \[1.8\] Service Intent -------
 Save:node\android\Macro_Note_as.h \[1.9\] ui -------------------View、兼容、数据通讯
@@ -65,7 +65,7 @@ Save:node\android\install\Macro_android_menu.h
 
 
 
-[1.2] error、lib
+[1.2] error、lib、debug
 // error
 Save:node\android\study\Macro_android_error.h
 
@@ -94,6 +94,11 @@ Save:node\android\project\Macro_as_9820e.h
 
 
 [1.5] Apk 优化
+// debug
+Save:node\android\test\Macro_test_debug.h
+// api
+Save:node\android\test\Macro_test_api.h
+
 
 // apk包优化--未试过
 https://testerhome.com/topics/17629
@@ -182,6 +187,7 @@ Save:node\android\study\Macro_android_kotlin.h
 
 
 [1.13] 
+
 
 
 
