@@ -252,7 +252,7 @@ macro GetFileName(pathName)
 	 while (i + 1)
 	 {
 	  ch = pathName[i]
-	  if ("\\" == "@ch@")
+	  if ("\\" == "@ch@" || "/" == "@ch@")
 	   break
 	  i = i - 1
 	 }

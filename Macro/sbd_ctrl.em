@@ -133,19 +133,21 @@ macro CtrlE()
 {
 	//_TempHeadCTRL()
 	hbuf = GetCurrentBuf()
-	
-	if(IsNoteFile(hbuf))
-	{
-		//内向模式, 跳转到模板项目
-		mode = getMacroValue(hbuf, "Inward", 1)
-		if(mode == "True" || mode == "TRUE"){
-			//从文件名("...\...")跳转另一个文件
-			NoteHander(hbuf, 6, 0)
-			stop
+
+	if(hbuf > 0) {
+		if(IsNoteFile(hbuf))
+		{
+			//内向模式, 跳转到模板项目
+			mode = getMacroValue(hbuf, "Inward", 1)
+			if(mode == "True" || mode == "TRUE"){
+				//从文件名("...\...")跳转另一个文件
+				NoteHander(hbuf, 6, 0)
+				stop
+			}
 		}
+		ret = OpenMiniTest(hbuf)
 	}
-	ret = OpenMiniTest(hbuf)
-	if(ret == 0)
+	if(hbuf == 0 || ret == 0)
 	{
 		Open
 	}

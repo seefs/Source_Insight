@@ -30,7 +30,7 @@ Save:node\Macro_File.h \[4.6\] SecureCRT
 Save:node\Macro_File.h \[4.7\] git
 Save:node\Macro_File.h \[4.8\] SI
 Save:node\Macro_File.h \[4.9\] vim
-Save:node\Macro_File.h \[4.10\] 
+Save:node\Macro_File.h \[4.10\] Image
 
 
 
@@ -210,6 +210,7 @@ Save:node\ToolsMsg\Macro_win.h \[2.4\] SVN 配置
 
 [4.5] Beyond Compare
 C:\Users\Administrator\AppData\Roaming\Scooter^Software\Beyond^Compare^4
+C:\Users\ASUS\AppData\Roaming\Scooter^Software\Beyond^Compare^4
 //   BCmp:
 Save:node\ToolsMsg\Macro_Bcomp.h
 
@@ -234,7 +235,8 @@ Save:node\ToolsMsg\Macro_vim.h
 
 
 
-[4.10] 
+[4.10] Image
+Save:node\ToolsMsg\Macro_Image.h
 
 
 

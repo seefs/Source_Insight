@@ -657,7 +657,7 @@ macro OpenFileHander(hbuf, curPath, cur_row, noteWord, cNum, prompt)
 
 	TestMsg("打开文件: " # CharFromKey(13) # curPath # CharFromKey(13) # noteWord, 2)
 	hbuf = OpenExistFile(curPath)
-
+	
 	if (hbuf != hNil){
 		if(noteWord == "")
 			return 0
@@ -676,6 +676,16 @@ macro OpenFileHander(hbuf, curPath, cur_row, noteWord, cNum, prompt)
 		cmdStr = "copy " # strDefFile # " " # curPath
 		TestMsg("文件不存在, 从模板copy文件: " # CharFromKey(13) # cmdStr, 2)
 		msg(cmdStr)
+		ShellOpenCustomCmd(cmdStr)
+	}
+	else if(IsFileLeft(curPath, "tmp_"))
+	{
+		//8. 使用空模板
+		strDefFile = getCopyPath(0) # "\\Macro_z_null.h"
+		// 演示用，间隔1行
+		curPath = ReplaceWord(curPath, "/", "\\")
+		cmdStr = "copy " # strDefFile # " " # curPath
+		TestMsg("从模板copy文件: " # CharFromKey(13) # cmdStr, 0)
 		ShellOpenCustomCmd(cmdStr)
 	}
 	else
@@ -705,6 +715,15 @@ macro OpenFileHander(hbuf, curPath, cur_row, noteWord, cNum, prompt)
 			{
 				//8. 使用空模板
 				strDefFile = getCopyPath(0) # "\\Macro_z_null.h"
+				// 演示用，间隔1行
+				cmdStr = "copy " # strDefFile # " " # curPath
+				TestMsg("从模板copy文件: " # CharFromKey(13) # cmdStr, 0)
+				ShellOpenCustomCmd(cmdStr)
+			}
+			else if(IsFileType(curPath, ".xml"))
+			{
+				//8. 使用空模板
+				strDefFile = getCopyPath(0) # "\\default_file.xml"
 				// 演示用，间隔1行
 				cmdStr = "copy " # strDefFile # " " # curPath
 				TestMsg("从模板copy文件: " # CharFromKey(13) # cmdStr, 0)

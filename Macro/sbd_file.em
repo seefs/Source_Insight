@@ -183,8 +183,33 @@ macro IsFileType(filename, type)
 	return 0
 }
 //从左边匹配
+macro IsFileLeft(curPath, type)
+{
+	filename = GetFileName(curPath)
+	len = strlen (filename)	
+	typeLen = strlen (type)
+
+	if(len>typeLen)
+	{
+		if(strmid(filename, 0, typeLen) == type)
+		{
+			return 1
+		}
+	}
+	else if(len==typeLen)
+	{
+		if(filename == type)
+		{	
+			return 1
+		}
+	}
+	return 0
+}
+//从左边匹配
 macro IsFileName(hbuf, type)
 {
+	if(hbuf == 0) 
+		return 0
 	filename = GetFileName(GetBufName(hbuf))
 	len = strlen (filename)	
 	typeLen = strlen (type)

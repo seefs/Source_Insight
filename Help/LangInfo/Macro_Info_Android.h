@@ -1,5 +1,11 @@
 ﻿
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
+androidx::
+
+https://developer.android.google.cn/jetpack/androidx/migrate
+https://developer.android.google.cn/jetpack/androidx/migrate/class-mappings
+
+***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 //new
 implement::
 api::
@@ -274,6 +280,35 @@ app:contentPaddingLeft        设置内容的左padding
 app:contentPaddingTop         设置内容的上padding
 app:contentPaddingRight       设置内容的右padding
 app:contentPaddingBottom      设置内容的底padding
+
+***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
+CollapsingToolbarLayout::
+layout_collapseMode::
+layout_collapseParallaxMultiplier::
+contentScrim::
+expandedTitleMarginStart::
+expandedTitleMarginEnd::
+layout_scrollFlags::
+	
+// 基本属性：
+app:layout_collapseMode
+  pin：      有该标志位的View在页面滚动的过程中会一直停留在顶部，比如Toolbar被固定在顶部 
+  parallax：有该标志位的View表示能和页面同时滚动。
+app:layout_collapseParallaxMultiplier
+  该属性是视差因子，表示该View与页面的滚动速度存在差值，造成一种相对滚动的效果。
+app:contentScrim="?attr/colorPrimary"
+  完全折叠后的背景颜色
+app:expandedTitleMarginEnd="60dp"
+app:expandedTitleMarginStart="48dp"
+  布局张开的时候title与左边的距离
+app:layout_scrollFlags="scroll|exitUntilCollapsed"
+  设置滚动表现：
+  Scroll, 表示手指向上滑动的时候,CollapsingToolbarLayout也会向上滚出屏幕并且消失，这个属性必须要有。
+  exitUntilCollapsed, 表示这个layout会一直滚动离开屏幕范围,直到它收折成它的最小高度.
+  enterAlways: 一旦手指向下滑动这个view就可见。
+  enterAlwaysCollapsed:
+这个flag定义的是已经消失之后何时再次显示。假设你定义了一个最小高度（minHeight）同时enterAlways也定义了， 那么view将在到达 这个最小高度的时候开始显示，并且从这个时候开始慢慢展开，当滚动到顶部的时候展开完。
+
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 

@@ -94,10 +94,6 @@ Save:node\android\project\Macro_as_9820e.h
 
 
 [1.5] Apk 优化
-// debug
-Save:node\android\test\Macro_test_debug.h
-// api
-Save:node\android\test\Macro_test_api.h
 
 
 // apk包优化--未试过
@@ -166,6 +162,9 @@ Save:node\android\study\Macro_android_api.h
 https://blog.csdn.net/xiayiye5/article/details/80511554
 // 常用代码
 Save:node\android\study\Macro_android_note.h
+// other
+Save:node\android\study\Macro_other_observer.h
+Save:node\android\study\Macro_other_reclycerView.h
 
 
 
