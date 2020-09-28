@@ -69,8 +69,8 @@ Save:node\ToolsMsg\Macro_git.h \[4.12\]
 git config --global user.name xxx
 git config --global user.email xxx@foxmail.com
 
-git config --global user.name xiaoj
-git config --global user.email jia.xiao@sz-speed.cn
+git config --global user.name seefs
+git config --global user.email seefs@163.com
 	
 //查看本地的global信息
 git config [--local|--global|--system] --list/-l　　　　　　　　　　
