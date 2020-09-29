@@ -27,7 +27,7 @@ Save:node\ToolsMsg\Macro_win.h \[3.1\] mp3
 Save:node\ToolsMsg\Macro_win.h \[3.2\] SecureCRT 连接设置
 Save:node\ToolsMsg\Macro_win.h \[3.3\] UE
 Save:node\ToolsMsg\Macro_win.h \[3.4\] mv
-Save:node\ToolsMsg\Macro_win.h \[3.5\] 
+Save:node\ToolsMsg\Macro_win.h \[3.5\] vpn
 Save:node\ToolsMsg\Macro_win.h \[3.6\] 
 Save:node\ToolsMsg\Macro_win.h \[3.7\] Game
 Save:node\ToolsMsg\Macro_win.h \[3.8\] InputMethod 输入法
@@ -218,6 +218,9 @@ C:\Users\Administrator\AppData\Roaming\Subversion\config
 //http://www.filediag.com/files/npptools.dll.html
 
 
+Incredibuild
+
+
 
 [2.6] ResearchDownload
 //	刷机：
@@ -284,7 +287,10 @@ C:\Users\Administrator\AppData\Roaming\Subversion\config
 
 
 
-[3.5] Incredibuild
+[3.5] vpn
+//
+C:\Users\gongsi\AppData\Local\Google\Chrome\User Data\Default\Extensions
+
 
 
 [3.6] 
