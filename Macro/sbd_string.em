@@ -450,11 +450,14 @@ macro ReplaceWord(noteWord, search_str, replace_str)
 		//msg(cp # "x" # lenStep)
 		if(strmid(noteWord, cp, cp + lenStep) == search_str)
 		{
-			retE = retS # replace_str
-			retS = retE
-			retM = retE
+			retM = retS # replace_str
+			retS = retM
 			last_s = cp + lenStep
 			cp = cp + lenStep
+			if( cp < len - 1)
+				retE = retM # strmid(noteWord, cp, len - 1)
+			else
+				retE = retM
 			//msg("1- " # retS # "--" # retE)
 		}
 		else

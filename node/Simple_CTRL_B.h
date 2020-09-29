@@ -37,7 +37,13 @@ android:hint="最大收入 689888.00"
 
 
 
+//
+复制单号---复制
 
 
 
+if(!isVisible)
+    return
 
+
+	

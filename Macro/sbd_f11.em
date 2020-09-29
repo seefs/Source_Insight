@@ -1171,19 +1171,28 @@ macro NotePythonCmd(hbuf, noteCmd, rootPath, curPath)
 
 macro NoteCmdCd(hbuf, noteCmd, rootPath, curPath)
 {
+	// 原参数:
+	// rootPath: D:\project\Android\\
+	// curPath : git clone https://github.com/web3j/web3j
+	
+	// curPath : git clone https://github.com/web3j/web3j
 	curPath = GetTransFileName(hbuf, curPath, 16)
 	if(noteCmd == "cd")
 		SetClipSimpleString(curPath)
 		
+	// newPath : D:\project\Android\
 	if(rootPath != "")
 		newPath = GetTransFileName(hbuf, rootPath, 0)
 	else
 		newPath = GetTransFileName(hbuf, "", 0)
+		
+	// cmdRoot : D:
 	cmdRoot = GetTransRootDir(newPath)
 
 	//"cd", "cd_i": immediately
 	if(noteCmd == "cd")
 	{
+		// D:&&cd D:\project\Android\&&start cmd.exe&&parse
 //		cmdStr = cmdRoot # "&&cd " # newPath # "&&start " # curPath
 		cmdStr = cmdRoot # "&&cd " # newPath # "&&start cmd.exe&&parse"
 	}

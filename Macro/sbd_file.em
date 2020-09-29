@@ -897,18 +897,32 @@ macro IsTransHead(hbuf, fHead)
 }
 macro ReTransHead(hbuf, fHead, curPath)
 {
+	// curPath----base:
 	if(fHead != ""){
 		headPath = getMacroValue(hbuf, fHead # "Path", 1)
-		if(headPath != ""){
+		if(headPath != "")
+		{
+			//  第1次循环:
+			// curPath-----tmp:
+			// fHead-------tmp:
+			// headPath----base:tmp/
+			// curPath-----base:tmp/
+			//  第2次循环:
+			// curPath-----base:tmp/
+			// fHead-------base:
+			// headPath----D:\project\Android//
+			// curPath-----D:\project\Android//tmp
 			curPath = ReplaceWord(curPath, fHead # ":", headPath # "\\")
 			
 			//for each
 			next = GetHeadIndex(hbuf, curPath)
 			if (next != "X")
 			{
+				// nextHead----base
 				nextHead = strmid(curPath, 0, next)
-				if(IsTransHead(hbuf, nextHead)==1)
+				if(IsTransHead(hbuf, nextHead)==1) {
 					curPath = ReTransHead(hbuf, nextHead, curPath)
+				}
 			}
 		}
 	}

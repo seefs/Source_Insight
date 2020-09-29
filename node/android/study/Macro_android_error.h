@@ -143,6 +143,19 @@ android thread内存泄露
 非静态匿名类未回收
 
 
+// 原因:
+1.延时操作, handler
+3.Fragment, 可能会在其依附的Activity前调用getActivity()
+5.Fragment, 销毁
+
+// 办法:
+1.handler.removeCallbacksAndMessages(null)
+2.弱引用，目的就是为了可以在Android回收内存的时候，可以直接回收掉。
+  强引用---软引用---弱引用---虚引用
+3.Fragment, onAttach(Context context)
+4.多Handler , 传递
+5.Fragment, if(!isVisible) return
+
 
 
 
