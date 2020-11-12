@@ -17,20 +17,12 @@ Save:node\C\study\Macro_8910_Debug.h
 
 /***********************************************************************/
 
-MMINV_SET_AUTO_KEYLOCK_TIME
-MMINV_SET_NOKIA_POWERONOFF
-//
-logo
-search--soft
+
+
 
 //
 xiaojia_bm@163.com
 bomeng608
-
-
-TXT_SCH_AWAKE_NO
-6257 
-4712
 
 
 
@@ -48,8 +40,8 @@ make p=UIS8910_240x320BAR_16MB_DS_USER m=custom_drv
 make p=UIS8910_240x320BAR_16MB_DS_USER m=app_main update image
 // d--w01
 make p=UIS8910_240x320BAR_16MB_SS_WA01U_Q8_USER m=app_main update image
-
-UIS8910_ROM_16MB_DS_USER
+// d--w02
+make p=UIS8910_240x320BAR_16MB_SS_WA01U_Q8_USER m=simulator_idh
 
 
 //
