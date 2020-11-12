@@ -1,20 +1,20 @@
-ï»¿
+
 /***********************************************************************/
 /******************************* base **********************************/
 /***********************************************************************/
 
 
 
-å¸®åŠ©æ–‡ä»¶:
+°ïÖúÎÄ¼ş:
 open: C:\Program^Files\Beyond^Compare^4\BCompare.chm
 
 
-è·¯å¾„:
+Â·¾¶:
 C:\Program Files\Beyond Compare 4\BCompare.exe
 
 
-æ–‡ä»¶å¤¹å¯¹æ¯”å¯¼å‡ºæ–‡ä»¶:
-//BCompare.exe /silent "@D:\tmp\compare_script.txt" "å¾…æ¯”è¾ƒæ–‡ä»¶å¤¹1" "å¾…æ¯”è¾ƒæ–‡ä»¶å¤¹2" "ç»“æœæ–‡ä»¶"
+ÎÄ¼ş¼Ğ¶Ô±Èµ¼³öÎÄ¼ş:
+//BCompare.exe /silent "@D:\tmp\compare_script.txt" "´ı±È½ÏÎÄ¼ş¼Ğ1" "´ı±È½ÏÎÄ¼ş¼Ğ2" "½á¹ûÎÄ¼ş"
 BCompare.exe /silent "@E:\save\SI\Cmd_TXT\compare_script.txt" "F:\6531E_16A\MS_Customize\midi\ARM_2MB" "F:\6531G_16A_MP_W17.43.4\MS_Customize\midi\ARM_2MB" "E:\save\SI\Cmd_TXT\compare_re.txt"
 
 
@@ -27,12 +27,12 @@ Save:SI\Cmd_TXT\compare_script.txt
 //	folder-report layout:xml  output-to:"%3"
 
 
-æ­£å¸¸çª—å£æ‰“å¼€:
-æ–‡ä»¶å¤¹/æ–‡ä»¶å¯¹æ¯”:
+Õı³£´°¿Ú´ò¿ª:
+ÎÄ¼ş¼Ğ/ÎÄ¼ş¶Ô±È:
 BCompare.exe "F:\6531E_16A\MS_Customize\midi\ARM_2MB" "F:\6531G_16A_MP_W17.43.4\MS_Customize\midi\ARM_2MB"
 
 
-//	æ–‡æ¡£ï¼š
+//	ÎÄµµ£º
 //	C:\Program Files\Beyond Compare 4\BCompare.chm
 //
 //	BCompare.exe
@@ -42,12 +42,12 @@ BCompare.exe "F:\6531E_16A\MS_Customize\midi\ARM_2MB" "F:\6531G_16A_MP_W17.43.4\
 //
 //	BCompare.exe C:\Left.ext C:\Right.ext C:\Center.ext
 //
-//	æ— è§†å›¾:
+//	ÎŞÊÓÍ¼:
 //	BCompare.exe "@C:\My Script.txt"
 //
 //	echo %1\BCompare.exe %2 %3
 //
-//	æµ‹è¯•:
+//	²âÊÔ:
 //	E:\save\SI\Cmd\bcompare2.bat  "F:\6531DA_Btdialer\version" "F:\6531DA_Btdialer\version"
 //	E:\save\SI\Cmd\cmd_base2.bat  "C:\\Program Files\\Beyond Compare 4\BCompare.exe" "F:\6531DA_Btdialer\version" "F:\6531DA_Btdialer\version"
 

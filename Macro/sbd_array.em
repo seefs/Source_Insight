@@ -1,7 +1,7 @@
-ï»¿
+
 macro QuickSoftCache(chkBuf, low, high)
 { 
-	//å¿«é€Ÿæ’åº:500ä¸ªçº¦48S, æ¯”è¾ƒæ…¢
+	//¿ìËÙÅÅĞò:500¸öÔ¼48S, ±È½ÏÂı
 	var i 
 	var j
 	var temp
@@ -14,7 +14,7 @@ macro QuickSoftCache(chkBuf, low, high)
 		temp = GetBufLine(chkBuf, i)
         while(i < j) 
         {
-            while((i < j) && Compare(GetBufLine(chkBuf, j), temp) >= 0)//é™åºæ’åˆ—æ”¹ä¸º>= 0
+            while((i < j) && Compare(GetBufLine(chkBuf, j), temp) >= 0)//½µĞòÅÅÁĞ¸ÄÎª>= 0
             { 
             	j = j - 1
             	//counter = counter+1
@@ -25,7 +25,7 @@ macro QuickSoftCache(chkBuf, low, high)
 				PutBufLine(chkBuf, i, GetBufLine(chkBuf, j))
             	i = i + 1
 		    }
-            while((i < j) && Compare(GetBufLine(chkBuf, i), temp) <= 0)//é™åºæ’åˆ—æ”¹ä¸º<= 0
+            while((i < j) && Compare(GetBufLine(chkBuf, i), temp) <= 0)//½µĞòÅÅÁĞ¸ÄÎª<= 0
             {
             	i = i + 1
             	//counter = counter+1
@@ -53,12 +53,12 @@ macro Compare(left, right)
 
 macro CompareEx(left, right, mode)
 {
-	//æ¯”è¾ƒ2ä¸ªå® (å‡åº)
-	//mode = 0: å®Œå…¨åŒ¹é…
-	//mode = 1: ä¸å®Œå…¨åŒ¹é…, left åŒ…å« right
-	//      ret = 1 å°<<0 ç›¸åŒ<<-1 å¤§
-	//mode = 2: ä¸­æ–‡ä¸å®Œå…¨åŒ¹é…, left åŒ…å« right, ç”¨==åˆ¤æ–­
-	//      ret = 1 å°<<2 å°+ä¸­æ–‡éƒ¨åˆ†ç›¸åŒ<<0 ä¸­æ–‡ç›¸åŒ<<-1 å¤§
+	//±È½Ï2¸öºê (ÉıĞò)
+	//mode = 0: ÍêÈ«Æ¥Åä
+	//mode = 1: ²»ÍêÈ«Æ¥Åä, left °üº¬ right
+	//      ret = 1 Ğ¡<<0 ÏàÍ¬<<-1 ´ó
+	//mode = 2: ÖĞÎÄ²»ÍêÈ«Æ¥Åä, left °üº¬ right, ÓÃ==ÅĞ¶Ï
+	//      ret = 1 Ğ¡<<2 Ğ¡+ÖĞÎÄ²¿·ÖÏàÍ¬<<0 ÖĞÎÄÏàÍ¬<<-1 ´ó
 	
 	len1 = strlen (left)
 	len2 = strlen (right)
@@ -74,11 +74,11 @@ macro CompareEx(left, right, mode)
 		cch2 = AsciiFromChar(right[cur])
 		if (cch1 > cch2)
 		{
-			return -1;	//ä»å¤§åˆ°å°(B,A)
+			return -1;	//´Ó´óµ½Ğ¡(B,A)
 		}
 		else if (cch1 < cch2)
 		{
-			return 1;	//ä»å°åˆ°å¤§(A,B)
+			return 1;	//´ÓĞ¡µ½´ó(A,B)
 		}
 		else
 		{
@@ -89,37 +89,37 @@ macro CompareEx(left, right, mode)
 	{
 		if (mode != 2 || mode == 2 && left == right)	
 		{
-			return 0;	//ç›¸åŒ(A,A)
+			return 0;	//ÏàÍ¬(A,A)
 		}
 		else
 		{
-			return 3; // ä»…ç¼–ç ç›¸åŒï¼Œå®é™…ä¸ç›¸åŒ
+			return 3; // ½ö±àÂëÏàÍ¬£¬Êµ¼Ê²»ÏàÍ¬
 		}
 	}
 	else if (len1 < len2)
 	{
-		return 1;	//ä»å°åˆ°å¤§(A,AB) change -1 -> 1
+		return 1;	//´ÓĞ¡µ½´ó(A,AB) change -1 -> 1
 	}
 	else
 	{
-		if (mode == 1)		//ä¸å®Œå…¨åŒ¹é…
+		if (mode == 1)		//²»ÍêÈ«Æ¥Åä
 		{
 			return 0;
 		}
 		else if (mode == 2)	
 		{
-			if (strmid(left, 0, len2) == right)	//ä¸­æ–‡ä¸å®Œå…¨åŒ¹é…
+			if (strmid(left, 0, len2) == right)	//ÖĞÎÄ²»ÍêÈ«Æ¥Åä
 			{
 				return 2;
 			}
 			else
 			{
-				return 3; // ä»…ç¼–ç ç›¸åŒï¼Œå®é™…ä¸ç›¸åŒ
+				return 3; // ½ö±àÂëÏàÍ¬£¬Êµ¼Ê²»ÏàÍ¬
 			}
 		}
 		else
 		{
-			return -1;	//ä»å¤§åˆ°å°(AB,A) change 1 -> -1
+			return -1;	//´Ó´óµ½Ğ¡(AB,A) change 1 -> -1
 		}
 	}
 }
@@ -128,17 +128,17 @@ macro CompareEx(left, right, mode)
 
 macro AppendCache(chkBuf, mcr, row)
 {	
-	//æŒ‰é¡ºåºï¼Œæ·»åŠ å®ï¼ˆæœªä½¿ç”¨ï¼‰
+	//°´Ë³Ğò£¬Ìí¼Óºê£¨Î´Ê¹ÓÃ£©
 	//return 0:
-	//return 1:é‡å¤
+	//return 1:ÖØ¸´
 	
 	//msg ("AppendCache:" # "@mcr@ " # "@row@ ")
 	
-	//endè¡Œä¸ºç©ºï¼Œstartè¡Œ <= mcr < endè¡Œ
-	//1~2è¡Œï¼š mid = 1, åŒºé—´ä¸º0~1ï¼Œ1~1;mid=(0+2)/2
-	//1~3è¡Œï¼š mid = 1, åŒºé—´ä¸º0~1ï¼Œ1~2;mid=(0+3)/2
-	//1~10è¡Œï¼šmid = 1, åŒºé—´ä¸º0~5ï¼Œ5~9;mid=(0+10)/2, r=6,l=5
-	//é€€å‡ºæ¡ä»¶ï¼šend - cur = 2,3..          cur - start = 2,3..
+	//endĞĞÎª¿Õ£¬startĞĞ <= mcr < endĞĞ
+	//1~2ĞĞ£º mid = 1, Çø¼äÎª0~1£¬1~1;mid=(0+2)/2
+	//1~3ĞĞ£º mid = 1, Çø¼äÎª0~1£¬1~2;mid=(0+3)/2
+	//1~10ĞĞ£ºmid = 1, Çø¼äÎª0~5£¬5~9;mid=(0+10)/2, r=6,l=5
+	//ÍË³öÌõ¼ş£ºend - cur = 2,3..          cur - start = 2,3..
 	
 	var left
 	var right
@@ -148,7 +148,7 @@ macro AppendCache(chkBuf, mcr, row)
 	left = 0
 	mid = 0
 	right=row
-	chk = 0//å‘å‰æ·»åŠ 
+	chk = 0//ÏòÇ°Ìí¼Ó
 	
 	
 	while (1)
@@ -161,7 +161,7 @@ macro AppendCache(chkBuf, mcr, row)
 			//msg ("next:" # "@left@~" # "@mid@~" # "@right@ " # "@base@ " # "@mcr@ chk:" # "@chk@ ")
 		}
 		
-		if(chk == 1)//å·²å­˜åœ¨
+		if(chk == 1)//ÒÑ´æÔÚ
 		{
 			//msg ("exist:" # "@left@~" # "@mid@~" # "@right@ " # "@base@ " # "@mcr@ chk:" # "@chk@ ")
 			return 1;
@@ -169,29 +169,29 @@ macro AppendCache(chkBuf, mcr, row)
 		else
 		{
 			
-			if(chk == 0)//å‘å‰æ·»åŠ 
+			if(chk == 0)//ÏòÇ°Ìí¼Ó
 			{
-				if(left < mid)//æ˜¯å¦é€€å‡ºæ¯”è¾ƒ
+				if(left < mid)//ÊÇ·ñÍË³ö±È½Ï
 				{
 					right = mid
 					continue
 				}
 			}
-			else//å‘åæ·»åŠ 
+			else//ÏòºóÌí¼Ó
 			{
-				if(mid + 1 < right)//æ˜¯å¦é€€å‡ºæ¯”è¾ƒ
+				if(mid + 1 < right)//ÊÇ·ñÍË³ö±È½Ï
 				{
 					left = mid + 1
 					continue
 				}
 			}
 			
-			if(chk == 0)//å‘å‰æ·»åŠ 
+			if(chk == 0)//ÏòÇ°Ìí¼Ó
 			{
 				//msg ("left:" # "@left@~" # "@mid@~" # "@right@ " # "@mcr@")
 				InsBufLine(chkBuf, mid, mcr)
 			}
-			else//å‘åæ·»åŠ 
+			else//ÏòºóÌí¼Ó
 			{
 				//msg ("right:" # "@left@~" # "@mid@~" # "@right@ " # "@mcr@")
 				InsBufLine(chkBuf, mid+1, mcr)
@@ -203,8 +203,8 @@ macro AppendCache(chkBuf, mcr, row)
 
 macro FindCache(chkBuf, mcr, row)
 {
-	//æŒ‰é¡ºåºæŸ¥æ‰¾
-	//return è¡Œå·
+	//°´Ë³Ğò²éÕÒ
+	//return ĞĞºÅ
 	return FindCacheExt(chkBuf, mcr, row, 0)
 }
 macro FindCacheExt(chkBuf, mcr, row, isTest)
@@ -218,7 +218,7 @@ macro FindCacheExt(chkBuf, mcr, row, isTest)
 	left = 0
 	mid = 0
 	right=row
-	chk = 0//å‘å‰æ·»åŠ 
+	chk = 0//ÏòÇ°Ìí¼Ó
 
 	//test: mid1 -> mid2 -> mid3 -> +1 -> +1 -> +1 -> ==
 	while (1)
@@ -227,11 +227,11 @@ macro FindCacheExt(chkBuf, mcr, row, isTest)
 		if(mid < row)
 		{
 			base = GetBufLine(chkBuf, mid)
-			base = GetLineMacro(base)		//è·å–å®ï¼Œä¸åŒ…æ‹¬åˆ é™¤æ³¨é‡Š
-			chk = CompareEx(base, mcr, 1)	//ä¸å®Œå…¨åŒ¹é…, baseåŒ…å«mcr
+			base = GetLineMacro(base)		//»ñÈ¡ºê£¬²»°üÀ¨É¾³ı×¢ÊÍ
+			chk = CompareEx(base, mcr, 1)	//²»ÍêÈ«Æ¥Åä, base°üº¬mcr
 		}
 		
-		if(chk == 0)//å·²å­˜åœ¨
+		if(chk == 0)//ÒÑ´æÔÚ
 		{
 			if(isTest)
 			{
@@ -239,14 +239,14 @@ macro FindCacheExt(chkBuf, mcr, row, isTest)
 			}
 			if(base == mcr){
 				return mid
-			}else{ 			// ä¸­æ–‡é—®é¢˜ï¼Œä¸åŒçš„æ±‰å­—ç¼–ç å´ç›¸åŒ
+			}else{ 			// ÖĞÎÄÎÊÌâ£¬²»Í¬µÄºº×Ö±àÂëÈ´ÏàÍ¬
 				ext = mid - 1
 				part = -1
 				while (ext >= 0)
 				{
 					base = GetBufLine(chkBuf, ext)
 					base = GetLineMacro(base)
-					//ret = 1 å°<<2 å°+ä¸­æ–‡éƒ¨åˆ†ç›¸åŒ<<0 ä¸­æ–‡ç›¸åŒ       <<   -1 å¤§ (å‡åº)
+					//ret = 1 Ğ¡<<2 Ğ¡+ÖĞÎÄ²¿·ÖÏàÍ¬<<0 ÖĞÎÄÏàÍ¬       <<   -1 ´ó (ÉıĞò)
 					chk2 = CompareEx(base, mcr, 2)
 					if(isTest)
 					{
@@ -257,7 +257,7 @@ macro FindCacheExt(chkBuf, mcr, row, isTest)
 					}else if(chk2 == 2){
 						part = ext
 						ext = ext - 1
-					}else if(chk2 == 1 || chk2 == 3){  // ä»…ç¼–ç ç›¸åŒï¼Œå®é™…ä¸ç›¸åŒ
+					}else if(chk2 == 1 || chk2 == 3){  // ½ö±àÂëÏàÍ¬£¬Êµ¼Ê²»ÏàÍ¬
 						ext = ext - 1
 					}else{ //-1
 						break
@@ -272,7 +272,7 @@ macro FindCacheExt(chkBuf, mcr, row, isTest)
 				{
 					base = GetBufLine(chkBuf, ext)
 					base = GetLineMacro(base)
-					//ret = 1 å°<<2 å°+ä¸­æ–‡éƒ¨åˆ†ç›¸åŒ<<0 ä¸­æ–‡ç›¸åŒ<<-1 å¤§ (å‡åº)
+					//ret = 1 Ğ¡<<2 Ğ¡+ÖĞÎÄ²¿·ÖÏàÍ¬<<0 ÖĞÎÄÏàÍ¬<<-1 ´ó (ÉıĞò)
 					chk2 = CompareEx(base, mcr, 2)
 					if(isTest)
 					{
@@ -283,7 +283,7 @@ macro FindCacheExt(chkBuf, mcr, row, isTest)
 					}else if(chk2 == 2){
 						part = ext
 						ext = ext + 1
-					}else if(chk2 == -1 || chk2 == 3){ // ä»…ç¼–ç ç›¸åŒï¼Œå®é™…ä¸ç›¸åŒ
+					}else if(chk2 == -1 || chk2 == 3){ // ½ö±àÂëÏàÍ¬£¬Êµ¼Ê²»ÏàÍ¬
 						ext = ext + 1
 					}else{ //1
 						break
@@ -293,35 +293,35 @@ macro FindCacheExt(chkBuf, mcr, row, isTest)
 				{
 					return part;
 				}
-				return -1;  // æœªæ‰¾åˆ°
+				return -1;  // Î´ÕÒµ½
 			}
 		}
-		else if(chk == 1)//å‘å¤§æŸ¥æ‰¾
+		else if(chk == 1)//Ïò´ó²éÕÒ
 		{
 			if(isTest)
 			{
-				msg ("@mid@ -- :" # "@left@~" # "@right@ " # "@base@") //é™åºå‘å¤§æŸ¥æ‰¾ ç”¨--
+				msg ("@mid@ -- :" # "@left@~" # "@right@ " # "@base@") //½µĞòÏò´ó²éÕÒ ÓÃ--
 			}
-			if(left < mid)//æ˜¯å¦é€€å‡ºæ¯”è¾ƒ
+			if(left < mid)//ÊÇ·ñÍË³ö±È½Ï
 			{
 				right = mid
 				continue
 			}else{
-				return -1; // æœªæ‰¾åˆ°
+				return -1; // Î´ÕÒµ½
 			}
 		}
-		else//å‘å°æŸ¥æ‰¾
+		else//ÏòĞ¡²éÕÒ
 		{
 			if(isTest)
 			{
-				msg ("@mid@ ++ :" # "@left@~" # "@right@ " # "@base@") //é™åºå‘å°æŸ¥æ‰¾ ç”¨++
+				msg ("@mid@ ++ :" # "@left@~" # "@right@ " # "@base@") //½µĞòÏòĞ¡²éÕÒ ÓÃ++
 			}
-			if(mid + 1 < right)//æ˜¯å¦é€€å‡ºæ¯”è¾ƒ
+			if(mid + 1 < right)//ÊÇ·ñÍË³ö±È½Ï
 			{
 				left = mid + 1
 				continue
 			}else{
-				return -1; // æœªæ‰¾åˆ°
+				return -1; // Î´ÕÒµ½
 			}
 		}
 	}
@@ -329,8 +329,8 @@ macro FindCacheExt(chkBuf, mcr, row, isTest)
 
 macro ShowCache(hbuf)
 {	
-	//æ˜¾ç¤ºå‰å20è¡Œ
-	//stop	//stop é€€å‡ºShowCache()
+	//ÏÔÊ¾Ç°ºó20ĞĞ
+	//stop	//stop ÍË³öShowCache()
 	row = GetBufLineCount(hbuf)
 	ln = 0
 	txt = ""

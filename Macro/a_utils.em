@@ -1,4 +1,4 @@
-﻿/* Utils.em - a small collection of useful editing macros */
+/* Utils.em - a small collection of useful editing macros */
 
 
 

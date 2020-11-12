@@ -1,4 +1,4 @@
-ï»¿
+
 /***********************************************************************/
 /****************************    Shell  *********************************/
 /***********************************************************************/
@@ -11,7 +11,7 @@ macro ShellAddLink(path1, path2)
 
 macro ShellAddLinkCygwin(path1, path2)
 {
-	//cygwinä¸Žmtkå†²çª, æš‚æ—¶åœ¨batä¸­æ‰‹åŠ¨æ·»åŠ 
+	//cygwinÓëmtk³åÍ», ÔÝÊ±ÔÚbatÖÐÊÖ¶¯Ìí¼Ó
 	ShellExecute("open", "cmd_base_cygwin.bat", "ln -s @path1@ @path2@", getCmdPath(0), 1)
 }
 
@@ -71,7 +71,7 @@ macro ShellOpenCmd(path, file)
 macro ShellAddParam(param)
 {
 	//_TempHeadShell()
-	//batå‘½ä»¤ä¸­æ‰ç”¨ç›¸å¯¹ç›®å½•
+	//batÃüÁîÖÐ²ÅÓÃÏà¶ÔÄ¿Â¼
 	pFile = "..\\Cmd_TXT\\si_param.h"
 	ShellExecute("open", "cmd_base.bat", "echo @param@>> @pFile@", getCmdPath(0), 1)
 }

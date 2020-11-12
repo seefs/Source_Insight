@@ -1,4 +1,4 @@
-﻿
+
 macro _tsGetTabSize(thbuf)
 {
 	szTabSize = GetReg("TabSize");

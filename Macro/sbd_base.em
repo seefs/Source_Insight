@@ -1,14 +1,14 @@
-ï»¿
-
-//ç”¨å›ºå®šç›®å½•æ‰“å¼€æ–‡ä»¶, æ‰‹åŠ¨ä¿®æ”¹ä»¥ä¸‹Saveç›®å½•, Toolç›®å½•
-//è¿™æ ·, project->open project->baseå·¥ç¨‹, å°±ä¸ç”¨æ·»åŠ å¾ˆå¤šæ–‡ä»¶äº†, åªç”¨æ·»åŠ .emçš„ç›®å½•
 
 
-//1) Saveç›®å½•
+//ÓÃ¹Ì¶¨Ä¿Â¼´ò¿ªÎÄ¼ş, ÊÖ¶¯ĞŞ¸ÄÒÔÏÂSaveÄ¿Â¼, ToolÄ¿Â¼
+//ÕâÑù, project->open project->base¹¤³Ì, ¾Í²»ÓÃÌí¼ÓºÜ¶àÎÄ¼şÁË, Ö»ÓÃÌí¼Ó.emµÄÄ¿Â¼
+
+
+//1) SaveÄ¿Â¼
 macro getSavePath(0)		{	return getRootPath(0)						    }
 macro getUserPath(0)		{	return "D:\\Save\\_SI_Cloud"					}
 
-//ShellExecuteå‘½ä»¤ç›®å½•
+//ShellExecuteÃüÁîÄ¿Â¼
 macro getCmdPath(0)			{	return getSavePath(0) # "\\Cmd"			}
 macro getTXTPath(0)			{	return getSavePath(0) # "\\Cmd_TXT"		}
 macro getNodePath(0)		{	return getSavePath(0) # "\\node"		}
@@ -23,11 +23,11 @@ macro getSetPath(0)	    	{	return getSavePath(0) # "\\Set"		}
 macro getCopyPath(0)	    {	return getSavePath(0) # "\\Help\\DefaultFile"		}
 macro getLangInfoPath(0)	    {	return getSavePath(0) # "\\Help\\LangInfo"		}
 
-//2) æ¡Œé¢ï¼Œåˆ›å»ºæ¡Œé¢link
+//2) ×ÀÃæ£¬´´½¨×ÀÃælink
 macro getDesktopPath(0)		{	return "E:\\desktop"				}
 
 
-//3) é¡¹ç›®è·¯å¾„åˆ—è¡¨è®¾ç½®åœ¨æ–‡ä»¶: æ‰“å¼€å¯¹åº”æ–‡ä»¶æ‰‹åŠ¨ä¿®æ”¹
+//3) ÏîÄ¿Â·¾¶ÁĞ±íÉèÖÃÔÚÎÄ¼ş: ´ò¿ª¶ÔÓ¦ÎÄ¼şÊÖ¶¯ĞŞ¸Ä
 //  Save:node\\set\\Macro_Set_Base.h
 macro getPathConfig(0)		{	return getSetPath(0) # "\\Macro_Set_Base.h"				}
 
@@ -36,7 +36,7 @@ macro getPathConfig(0)		{	return getSetPath(0) # "\\Macro_Set_Base.h"				}
 //macro getCustomPath(0)		{	return "D:\\project"				}
 
 
-//5) Toolç›®å½•
+//5) ToolÄ¿Â¼
 //Cmd
 macro getBComparePath(0)	{	return "\"C:\\Program Files\\Beyond Compare 4\\BCompare.exe\""			}
 //macro getBComparePath(0)	{	return "\"C:\\Program Files (x86)\\Beyond Compare 3\\BCompare.exe\""			}
@@ -52,7 +52,7 @@ macro getRARPath(0)			{	return "\"C:\\Program Files (x86)\\360\\360zip\\360zip.e
 
 
 
-//ç›®å½•æ“ä½œ
+//Ä¿Â¼²Ù×÷
 macro getCurPath(hbuf)
 {
 	if(IsSRFile(hbuf))
@@ -73,7 +73,7 @@ macro getCurPath(hbuf)
 		if(hprj>0)
 		{
 			projPath = GetProjDir (hprj)
-			//ç§»åŠ¨F:\\xx\\SI4.0æ–‡ä»¶ä¼šä½¿é»˜è®¤æ”¹ä¸ºF:
+			//ÒÆ¶¯F:\\xx\\SI4.0ÎÄ¼ş»áÊ¹Ä¬ÈÏ¸ÄÎªF:
 			if(strlen (projPath) < 4)
 			{
 				return GetProjDir (hprj)
@@ -84,17 +84,17 @@ macro getCurPath(hbuf)
 			}
 		}
 	}
-	//è·å– å½“å‰ç›®å½•, ä¸åŒ…æ‹¬æ–‡ä»¶å
+	//»ñÈ¡ µ±Ç°Ä¿Â¼, ²»°üÀ¨ÎÄ¼şÃû
 	return getBaseDir(GetBufName(hbuf), 0)
 }
 macro getBasePath(hbuf)
 {
-	//è·å–ç›®å½• 6531E:
+	//»ñÈ¡Ä¿Â¼ 6531E:
 	hprj = GetCurrentProj ()
 	//pathName = GetProjName (hprj)
 	proPath = GetProjDir (hprj)
 	
-	ret = CompareEx(proPath, getSavePath(0), 1)//left åŒ…å« right
+	ret = CompareEx(proPath, getSavePath(0), 1)//left °üº¬ right
 	if(ret == 0)
 	{
 		return getSavePath(0)
@@ -116,8 +116,8 @@ macro getProjectPath(pathName)
 	n = getBaseDirNum(pathName)
 	basePath = SearchPathFromNum("", n)
 	
-	//è·å–ç›®å½• 6531E/project, ä¸è€ƒè™‘ C:
-	//å¾…æ”¹æˆgetBaseProjectEx+"/project"
+	//»ñÈ¡Ä¿Â¼ 6531E/project, ²»¿¼ÂÇ C:
+	//´ı¸Ä³ÉgetBaseProjectEx+"/project"
 	if(n<10){ //0
 		return basePath
 	}
@@ -142,24 +142,24 @@ macro getProjectPath(pathName)
 }
 macro getCurProject(pathName)
 {
-	//è·å–ç›®å½• 6531E/project/SE039_XX, è€ƒè™‘è®¾ç½®å€¼:
-	//å…ˆè·å–ç›®å½• 6531E/project, é¡¹ç›®è·¯å¾„æœªè®¾ç½®å³è¿”å›ä¸Šçº§ç›®å½•
+	//»ñÈ¡Ä¿Â¼ 6531E/project/SE039_XX, ¿¼ÂÇÉèÖÃÖµ:
+	//ÏÈ»ñÈ¡Ä¿Â¼ 6531E/project, ÏîÄ¿Â·¾¶Î´ÉèÖÃ¼´·µ»ØÉÏ¼¶Ä¿Â¼
 	project = getProjectPath(pathName)
-	ret = CompareEx(pathName, project, 1)//è·¯å¾„ åŒ…å«"6531E/project"
+	ret = CompareEx(pathName, project, 1)//Â·¾¶ °üº¬"6531E/project"
 	if(ret ==0)
 	{
-		//projectåé¢çš„ç¬¬ä¸€ä¸ªDirName
+		//projectºóÃæµÄµÚÒ»¸öDirName
 		index = SplitMacro(pathName, "\\", strlen(project)+1, strlen(pathName))
 		if(index<0)
 		{
-			msg("é¡¹ç›®è·¯å¾„æœªè®¾ç½®, è¯·åœ¨ sbd_base.em ä¸Šæ·»åŠ ")
+			msg("ÏîÄ¿Â·¾¶Î´ÉèÖÃ, ÇëÔÚ sbd_base.em ÉÏÌí¼Ó")
 			return ""
 		}
 		return strmid(pathName, 0, index)
 	}
 	else
 	{
-		//F1->9ä¿å­˜çš„DirName
+		//F1->9±£´æµÄDirName
 		projectName = ReadMode(getMakeRow(0))
 		if(projectName != null)
 		{
@@ -170,18 +170,18 @@ macro getCurProject(pathName)
 }
 macro getCurProjectName(pathName)
 {
-	//è·å–ç›®å½• SE039_.._F2:
+	//»ñÈ¡Ä¿Â¼ SE039_.._F2:
 	project = getProjectPath(pathName)
-	ret = CompareEx(pathName, project, 1)//left åŒ…å« right(åŒ…å«6531E/project)
+	ret = CompareEx(pathName, project, 1)//left °üº¬ right(°üº¬6531E/project)
 	if(ret ==0)
 	{
-		//projectåé¢çš„ç¬¬ä¸€ä¸ªDirName
+		//projectºóÃæµÄµÚÒ»¸öDirName
 		index = SplitMacro(pathName, "\\", strlen(project)+1, strlen(pathName))
 		return strmid(pathName, strlen(project)+1, index)
 	}
 	else
 	{
-		//F1->9ä¿å­˜çš„DirName
+		//F1->9±£´æµÄDirName
 		projectName = ReadMode(getMakeRow(0))
 		if(projectName != null)
 		{
@@ -204,13 +204,13 @@ macro getBaseType(pathName)
 }
 macro getBaseFileType(pathName, s)
 {
-	//s=1~5:æŒ‰noteæ–‡ä»¶åæ’åºåˆ†ç±»;
-	//s=1:Macro_ALL_XXX              æœç´¢æ‰€æœ‰å®
-	//s=2:Macro_Group_Make_XXX       åˆ†ç»„(ç°åœ¨ç”¨ä¸ä¸Š)
+	//s=1~5:°´noteÎÄ¼şÃûÅÅĞò·ÖÀà;
+	//s=1:Macro_ALL_XXX              ËÑË÷ËùÓĞºê
+	//s=2:Macro_Group_Make_XXX       ·Ö×é(ÏÖÔÚÓÃ²»ÉÏ)
 	//	  Macro_Group_Menu_XXX
-	//s=3:Macro_Note_XXX             ç¬”è®° 
-	//s=4:Macro_Rule_Key_file_XXX    F5--è·³è½¬åŠŸèƒ½
-	//s=5:si_version_XXX             F1->V--æœç´¢ç‰ˆæœ¬å·
+	//s=3:Macro_Note_XXX             ±Ê¼Ç 
+	//s=4:Macro_Rule_Key_file_XXX    F5--Ìø×ª¹¦ÄÜ
+	//s=5:si_version_XXX             F1->V--ËÑË÷°æ±¾ºÅ
 	type = getBaseType(pathName)
 	if(type == 10 || type == 20 || type == 30)
 	{
@@ -262,7 +262,7 @@ macro getBaseFileType(pathName, s)
 		if(s == 3)
 		{
 			//baseFileType = "Python"
-			baseFileType = "Pythons"  //å¸¦sç”¨æ¨¡æ¿2
+			baseFileType = "Pythons"  //´øsÓÃÄ£°å2
 		}
 		else
 		{
@@ -386,7 +386,7 @@ macro getBaseDirNum(pathName)
 	
 	hbufConfig = OpenCache(getPathConfig(0))
 	nlength = strlen(pathName)
-	i = 1		//æ–‡ä»¶åé•¿åº¦
+	i = 1		//ÎÄ¼şÃû³¤¶È
 	
 	while (i < nlength)
 	{
@@ -406,7 +406,7 @@ macro getBaseDirNum(pathName)
 		n = SearchNumFromPath(hbufConfig, basePath)
 		if(n)
 		{
-			//å•æ•°ä¸ºåªæ˜¯SIç›®å½•, å‰ä¸€é¡¹ä¸ºçœŸå®ç›®å½•(ç›®å½•åˆ†å¼€)
+			//µ¥ÊıÎªÖ»ÊÇSIÄ¿Â¼, Ç°Ò»ÏîÎªÕæÊµÄ¿Â¼(Ä¿Â¼·Ö¿ª)
 			if(n-n/2*2==1)
 			{
 				n = n - 1

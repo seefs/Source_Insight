@@ -1,36 +1,36 @@
-﻿
-//目录[Num][Ca]:
-// 1. win常用
-Save:node\ToolsMsg\Macro_win.h \[1.1\] 重装系统
-Save:node\ToolsMsg\Macro_win.h \[1.2\] 破解软件
-Save:node\ToolsMsg\Macro_win.h \[1.3\] 文件设置
-Save:node\ToolsMsg\Macro_win.h \[1.4\] 系统备份
+
+//Ŀ¼[Num][Ca]:
+// 1. win����
+Save:node\ToolsMsg\Macro_win.h \[1.1\] ��װϵͳ
+Save:node\ToolsMsg\Macro_win.h \[1.2\] �ƽ�����
+Save:node\ToolsMsg\Macro_win.h \[1.3\] �ļ�����
+Save:node\ToolsMsg\Macro_win.h \[1.4\] ϵͳ����
 Save:node\ToolsMsg\Macro_win.h \[1.5\] 
 Save:node\ToolsMsg\Macro_win.h \[1.6\] 
 Save:node\ToolsMsg\Macro_win.h \[1.7\] 
 Save:node\ToolsMsg\Macro_win.h \[1.8\] 
 Save:node\ToolsMsg\Macro_win.h \[1.9\] 
 Save:node\ToolsMsg\Macro_win.h \[1.10\] 
-// 2. 开发
+// 2. ����
 Save:node\ToolsMsg\Macro_win.h \[2.1\] ResOver
 Save:node\ToolsMsg\Macro_win.h \[2.2\] Incredibuild
 Save:node\ToolsMsg\Macro_win.h \[2.3\] cygwin
-Save:node\ToolsMsg\Macro_win.h \[2.4\] SVN 配置
+Save:node\ToolsMsg\Macro_win.h \[2.4\] SVN ����
 Save:node\ToolsMsg\Macro_win.h \[2.5\] VC
 Save:node\ToolsMsg\Macro_win.h \[2.6\] ResearchDownload
-Save:node\ToolsMsg\Macro_win.h \[2.7\] set_path 备份
+Save:node\ToolsMsg\Macro_win.h \[2.7\] set_path ����
 Save:node\ToolsMsg\Macro_win.h \[2.8\] 
 Save:node\ToolsMsg\Macro_win.h \[2.9\] 
 Save:node\ToolsMsg\Macro_win.h \[2.10\] 
-// 3. 工具
+// 3. ����
 Save:node\ToolsMsg\Macro_win.h \[3.1\] mp3
-Save:node\ToolsMsg\Macro_win.h \[3.2\] SecureCRT 连接设置
+Save:node\ToolsMsg\Macro_win.h \[3.2\] SecureCRT ��������
 Save:node\ToolsMsg\Macro_win.h \[3.3\] UE
 Save:node\ToolsMsg\Macro_win.h \[3.4\] mv
 Save:node\ToolsMsg\Macro_win.h \[3.5\] vpn
 Save:node\ToolsMsg\Macro_win.h \[3.6\] 
 Save:node\ToolsMsg\Macro_win.h \[3.7\] Game
-Save:node\ToolsMsg\Macro_win.h \[3.8\] InputMethod 输入法
+Save:node\ToolsMsg\Macro_win.h \[3.8\] InputMethod ���뷨
 Save:node\ToolsMsg\Macro_win.h \[3.9\] 
 Save:node\ToolsMsg\Macro_win.h \[3.10\] 
 // 
@@ -41,39 +41,39 @@ Save:node\ToolsMsg\Macro_win.h \[4.3\]
 
 
 
-[1.1] win7输入法
-//	开启管理员账号
-//	删除其他账号
-//	win7输入法
-//	收藏夹
+[1.1] win7���뷨
+//	��������Ա�˺�
+//	ɾ�������˺�
+//	win7���뷨
+//	�ղؼ�
 
 
-[1.2] 破解软件
-//	win7激活工具
+[1.2] �ƽ�����
+//	win7�����
 //	  oem7
 //
-//	office激活
+//	office����
 //	  Microsoft Toolkit.exe
 //	  Microsoft.NET.exe
 
 
-[1.3] 文件设置
-//	文件权限不能删除：
-//	右击文件→属性→安全→高级→所有者→编辑→点击“将所有者更改为”项下的Administrator
-//	确定→退出打开的属性窗口→重新右击进入属性→编辑→
-//	点击“组或用户名”项下的Administrator→在权限项下勾上“完全控制”→确定
-//	你就完全拥有这个文件的控制权了！
+[1.3] �ļ�����
+//	�ļ�Ȩ�޲���ɾ����
+//	�һ��ļ������ԡ���ȫ���߼��������ߡ��༭��������������߸���Ϊ�����µ�Administrator
+//	ȷ�����˳��򿪵����Դ��ڡ������һ��������ԡ��༭��
+//	���������û��������µ�Administrator����Ȩ�����¹��ϡ���ȫ���ơ���ȷ��
+//	�����ȫӵ������ļ��Ŀ���Ȩ�ˣ�
 
 
-[1.4] 系统备份
-//	1 进入GHOST 的操作界面 
-//	2 选择菜单到 Local（本机）－－Partition（分区）－－ToImage（备份系统）
-//	3 选中硬盘
-//	4 选中分区（C盘）
-//	5 选择要存放备份文件的位置和文件名称，保存
-//	6 选择压缩形式：No表明不紧缩，Fast表明适当紧缩，High高紧缩
-//	7 选择“Yes”开始备份
-//	8 进度条走到100%，点击“Continue”“Quite”,退出备份软件，自动重启系统
+[1.4] ϵͳ����
+//	1 ����GHOST �Ĳ������� 
+//	2 ѡ��˵��� Local������������Partition������������ToImage������ϵͳ��
+//	3 ѡ��Ӳ��
+//	4 ѡ�з�����C�̣�
+//	5 ѡ��Ҫ��ű����ļ���λ�ú��ļ����ƣ�����
+//	6 ѡ��ѹ����ʽ��No������������Fast�����ʵ�������High�߽���
+//	7 ѡ��Yes����ʼ����
+//	8 �������ߵ�100%�������Continue����Quite��,�˳������������Զ�����ϵͳ
 
 
 [1.5] 
@@ -110,43 +110,43 @@ Save:node\ToolsMsg\Macro_win.h \[4.3\]
 //ResOver
 //	F:\SBD_6531_12C_DA\tools\DEBUG_TOOL\ResOver
 //
-//	1、ResOver 保存到 excel 时，提示失败；
-//	2、结束excel进程
-//	3、再打开任一一个excel，关闭，会有一个临时表格
-//	4、编辑临时表格，保存到ntac格式
+//	1��ResOver ���浽 excel ʱ����ʾʧ�ܣ�
+//	2������excel����
+//	3���ٴ���һһ��excel���رգ�����һ����ʱ����
+//	4���༭��ʱ���񣬱��浽ntac��ʽ
 
 
 [2.2] Incredibuild
-//	并行编译软件：Incredibuild5.0 crack.zip		  ---管理员运行，可能VC没菜单
+//	���б���������Incredibuild5.0 crack.zip		  ---����Ա���У�����VCû�˵�
 //	
-//	行号：VC6LineNumberAddin.zip
-//		  win7下注册，修改注册表路径
+//	�кţ�VC6LineNumberAddin.zip
+//		  win7��ע�ᣬ�޸�ע���·��
 //	
-//	~：VA_X_Setup2108.exe
+//	~��VA_X_Setup2108.exe
 
 
 [2.3] cygwin
-//	添加 unzip
+//	���� unzip
 //	C:\CSDTK\cygwin\bin
 
 
-[2.4] SVN 配置
+[2.4] SVN ����
 // config
 C:\Users\Administrator\AppData\Roaming\Subversion\config
 
 //	1.svn error:	
 //	post of '/svn/!svn/me':500 internal server error
-//	svn 500错误 500 Internal Server Error response to POST request
-//	//	打开VisualSVN Server GUI。
-//	//	右键单击左侧导航窗格根目录下的“VisualSVN Server（域）”，然后选择“属性”。
-//	//	在“常规”选项卡下，您将看到“自动调整权限”复选框。
-//	//	A.如果未选中此项，请选中它并单击“应用”。 这将停止并重新启动VisualSVN服务，并应解决此问题。
-//	//	B.如果选中此项，请取消选中并单击“应用”。 这将停止并重新启动Visual SVN服务。 
-//	//	完成后，重新检查该选项并再次单击“应用”。 重新启动服务后，现在应该解决该问题。
+//	svn 500���� 500 Internal Server Error response to POST request
+//	//	��VisualSVN Server GUI��
+//	//	�Ҽ�������ർ�������Ŀ¼�µġ�VisualSVN Server���򣩡���Ȼ��ѡ�����ԡ���
+//	//	�ڡ����桱ѡ��£������������Զ�����Ȩ�ޡ���ѡ��
+//	//	A.���δѡ�д����ѡ������������Ӧ�á��� �⽫ֹͣ����������VisualSVN���񣬲�Ӧ��������⡣
+//	//	B.���ѡ�д����ȡ��ѡ�в�������Ӧ�á��� �⽫ֹͣ����������Visual SVN���� 
+//	//	��ɺ����¼���ѡ��ٴε�����Ӧ�á��� �����������������Ӧ�ý�������⡣
 //	
 //	
 //	
-//	清理失败:
+//	����ʧ��:
 //	sqlite3 wc.db "select * from work_queue"
 //	sqlite3 wc.db "delete from work_queue"
 
@@ -156,7 +156,7 @@ C:\Users\Administrator\AppData\Roaming\Subversion\config
 //	svn log "F:\6531DA_Btdialer\version"
 //	svn log "version"
 //
-//	参考：http://blog.csdn.net/gwzz1228/article/details/7840666
+//	�ο���http://blog.csdn.net/gwzz1228/article/details/7840666
 //	TortoiseProc help
 //	TortoiseProc.exe /command:asdf
 //	TortoiseProc.exe /command:log /path:".\"
@@ -176,45 +176,45 @@ C:\Users\Administrator\AppData\Roaming\Subversion\config
 //	E:\save\SI\Cmd\svn_diff.bat  "F:\6531DA_Btdialer\version.h"
 
 
-//	svn卡死
-//	打开Win7的控制面选，选择“索引选项”，然后选择“修改”，将G:\doc\projects\estar全部反选即可
+//	svn����
+//	��Win7�Ŀ�����ѡ��ѡ������ѡ���Ȼ��ѡ���޸ġ�����G:\doc\projects\estarȫ����ѡ����
 //
-//	1.关闭SVN的cache监视。即关闭tsvncache.exe这个程序对目录的监视。
-//	具体操作步骤如下：
-//	a) 右击任意目录打开右键菜单,打开"tortoisesvn" => "settings"下的设置窗口
-//	b) 找到"icon overlays"的设置项，将"status cache"设置成"none"
+//	1.�ر�SVN��cache���ӡ����ر�tsvncache.exe��������Ŀ¼�ļ��ӡ�
+//	��������������£�
+//	a) �һ�����Ŀ¼���Ҽ��˵�,��"tortoisesvn" => "settings"�µ����ô���
+//	b) �ҵ�"icon overlays"���������"status cache"���ó�"none"
 
 
 
 [2.5] VC
-//	Visual Studio 6.0	 安装：
-//			1、product id：全写111...
-//			2、file may be corrupt：取消（按多次）
-//			3、mmi_menutable.c   error：
-//					//注释，再编译，一般像游戏或者是facebook，whatsapp都会报这种错误
+//	Visual Studio 6.0	 ��װ��
+//			1��product id��ȫд111...
+//			2��file may be corrupt��ȡ��������Σ�
+//			3��mmi_menutable.c   error��
+//					//ע�ͣ��ٱ��룬һ������Ϸ������facebook��whatsapp���ᱨ���ִ���
 //	
-//	***** **** ***** 编译模拟器 ***** **** *****
-//	打开模拟，设置路径后，右击按start：
-//			MS image Files：F:\trunk\SBD_6531_12C_DA\MS_MMI\source\winsimulator_tp\skin\mssim_duallcd_128_160.png
-//			MS ini Files：
-//			MS resouce Files：build\xxx_builddir\img\
-//			如果弹出sim卡设置，可能驱动未更新有问题，或重新编译
+//	***** **** ***** ����ģ���� ***** **** *****
+//	��ģ�⣬����·�����һ���start��
+//			MS image Files��F:\trunk\SBD_6531_12C_DA\MS_MMI\source\winsimulator_tp\skin\mssim_duallcd_128_160.png
+//			MS ini Files��
+//			MS resouce Files��build\xxx_builddir\img\
+//			�������sim�����ã���������δ���������⣬�����±���
 
-//	已停止工作 windows可以联机检查：
-//	控制面板→系统和安全→操作中心→问题报告设置， 设置成“自动解决方案” 就可以了
+//	��ֹͣ���� windows����������飺
+//	��������ϵͳ�Ͱ�ȫ���������ġ����ⱨ�����ã� ���óɡ��Զ���������� �Ϳ�����
 //
-//	2 Visual Studio 与此版本的 Windows 之间存在已知的兼容性问题
-//	设置不再显示
+//	2 Visual Studio ��˰汾�� Windows ֮�������֪�ļ���������
+//	���ò�����ʾ
 
 //office:
-//        需激活，快过期时编不过
-//        win7不能装excel2003，ntac不能直接保存excel，需要打开其他表格（同时会打开ntac的表格）；
-//        ntac再次保存excel，先关闭excel进程；
+//        �輤������ʱ�಻��
+//        win7����װexcel2003��ntac����ֱ�ӱ���excel����Ҫ����������ͬʱ���ntac�ı��񣩣�
+//        ntac�ٴα���excel���ȹر�excel���̣�
 //
-//xp虚拟机安装：
-//        Visual Studio Analyzer：不安装
+//xp�������װ��
+//        Visual Studio Analyzer������װ
 
-///   win7系统文件缺失：
+///   win7ϵͳ�ļ�ȱʧ��
 //http://www.filediag.com/files/npptools.dll.html
 
 
@@ -223,16 +223,16 @@ Incredibuild
 
 
 [2.6] ResearchDownload
-//	刷机：
+//	ˢ����
 //			SBD_6531_12C_DA\build\X601_LZ_S8_ZX_F4_builddir\img\X601_LZ_S8_ZX_F4.pac
 //	ResearchDownload:
-//				1、下载取消校验：set->backup
-//	6531E下载工具:
+//				1������ȡ��У�飺set->backup
+//	6531E���ع���:
 //			   \\192.168.2.118
 
 
-[2.7] set_path 备份
-//	环境变量备份 set_path
+[2.7] set_path ����
+//	������������ set_path
 //	
 //	C:\Perl\bin;
 //	C:\Program Files\ARM\bin\win_32-pentium;
@@ -265,24 +265,24 @@ Incredibuild
 
 [3.1] mp3
 //	HA_GoldWaveHZ
-//	压缩：
-//	保存->格式
+//	ѹ����
+//	����->��ʽ
 
 
-[3.2] SecureCRT 连接设置
-//	1 telnet连接
-//	2 串口连接, serial
+[3.2] SecureCRT ��������
+//	1 telnet����
+//	2 ��������, serial
 //		com2,115200
 //	
 
 
 [3.3] UE
-//	文件关联
-//	高级-配置-应用程序布局-其他-勾选在启动时检查并显示文件关联-重新启动UltraEdit
+//	�ļ�����
+//	�߼�-����-Ӧ�ó��򲼾�-����-��ѡ������ʱ��鲢��ʾ�ļ�����-��������UltraEdit
 
 
 [3.4] mv
-//	MAV剪切
+//	MAV����
 //	DirectWAVMP3Splitter
 
 
@@ -297,7 +297,7 @@ C:\Users\gongsi\AppData\Local\Google\Chrome\User Data\Default\Extensions
 
 
 [3.7] Game
-//war3分辨率--1920*1080
+//war3�ֱ���--1920*1080
 regedit
 HEY_CURRENT_USER
 	software
@@ -310,18 +310,18 @@ HEY_CURRENT_USER
 
 
 [3.8] InputMethod
-// InputMethod 去广告
-// 1) 首先从官网下载并安装最新的万能五笔软件
-// 2) 打开
+// InputMethod ȥ���
+// 1) ���ȴӹ������ز���װ���µ������������
+// 2) ��
 C:\Users\Administrator\AppData\LocalLow
-//  删除两个文件目录:
+//  ɾ�������ļ�Ŀ¼:
 C:\Users\Administrator\AppData\LocalLow\BubblesPop
 C:\Users\Administrator\AppData\LocalLow\WindowPop
-// 3) 安装目录
+// 3) ��װĿ¼
 C:\Program^Files^(x86)\WanNengWBInput\
 C:\Program^Files^(x86)\WanNengWBInput\10.0.4.10418
-// 寻找 WnMoniter.exe，进行改名或者删除
-新建一个文本文件并改名为WnMoniter.exe，设置道只读属性。
+// Ѱ�� WnMoniter.exe�����и�������ɾ��
+�½�һ���ı��ļ�������ΪWnMoniter.exe�����õ�ֻ�����ԡ�
 
 
 
@@ -344,44 +344,44 @@ C:\Program^Files^(x86)\WanNengWBInput\10.0.4.10418
 //	1, adb reboot bootloader
 //	fastboot flashing unlock
 //	
-//	2，fastboot flash recovery E:\root\twrp-3.0.0-1-angler(for mhc19i).img
-//	  .(刷入TWRP RECOVERY, TWRP带多工具的RECOVERY);
+//	2��fastboot flash recovery E:\root\twrp-3.0.0-1-angler(for mhc19i).img
+//	  .(ˢ��TWRP RECOVERY, TWRP���๤�ߵ�RECOVERY);
 //	
-//	3,	进入recovery模式（adb reboot recovery)在这个新RECOVERY中选择放到手机里的BETA-SuperSU-v2.67-20160121175247.zip (TWRP里的RECOVERY-->INSTALL)刷入重起就会有SUPERSU工具。
+//	3,	����recoveryģʽ��adb reboot recovery)�������RECOVERY��ѡ��ŵ��ֻ����BETA-SuperSU-v2.67-20160121175247.zip (TWRP���RECOVERY-->INSTALL)ˢ������ͻ���SUPERSU���ߡ�
 //	
 //	adb push E:\root\BETA-SuperSU-v2.67-20160121175247.zip	/sdcard
 //	
-//	4，其它APK通过个请求权限。
-//	再装个root_exploerer.apk搞定。
+//	4������APKͨ��������Ȩ�ޡ�
+//	��װ��root_exploerer.apk�㶨��
 //	
 //	
-//	google文章
+//	google����
 //	http://forum.xda-developers.com/nexus-6p/general/guides-how-to-guides-beginners-t3206928
 //	
 //	
-//	刷机：
-//	1	 设置-关于手机-系统更新-检测新版本，本地安装可能没有；
-//	2	 recovery 模式，安装ota-zip；安装前，或安装后清除；清除后数据还在？
-//	3	 recovery 模式，adb sideload update.zip，不行
+//	ˢ����
+//	1	 ����-�����ֻ�-ϵͳ����-����°汾�����ذ�װ����û�У�
+//	2	 recovery ģʽ����װota-zip����װǰ����װ���������������ݻ��ڣ�
+//	3	 recovery ģʽ��adb sideload update.zip������
 	
 	
-//anger刷机
-//	1 ota升级，(不用备份，数据、应用不清除)
-//	固件下载：
-//	1.1 vpn连接 －〉 使用迅雷下载
-//	1.2 设置-关于手机-系统更新，如果没有检测到就去你手机的论坛下载最新的增量包或者全量包，在系统更新里选择本地安装
+//angerˢ��
+//	1 ota������(���ñ��ݣ����ݡ�Ӧ�ò����)
+//	�̼����أ�
+//	1.1 vpn���� ���� ʹ��Ѹ������
+//	1.2 ����-�����ֻ�-ϵͳ���£����û�м�⵽��ȥ���ֻ�����̳�������µ�����������ȫ��������ϵͳ������ѡ�񱾵ذ�װ
 //
-//	2 线刷
-//	2.0 进入开发者选项，打开OEM解锁和USB调试
+//	2 ��ˢ
+//	2.0 ���뿪����ѡ���OEM������USB����
 //	    adb push F:\file\root\BETA-SuperSU-v2.67-20160121175247.zip  /sdcard
 //	2.1, adb reboot bootloader
 //	    fastboot flashing unlock
-//	2.2，fastboot flash recovery F:\file\root\twrp-3.0.1-0-angler.img  .(刷入TWRP RECOVERY, TWRP带多工具的RECOVERY);
-//	2.3,  进入recovery模式（adb reboot recovery)在这个新RECOVERY中选择放到手机里的BETA-SuperSU-v2.67-20160121175247.zip (TWRP里的RECOVERY-->INSTALL)刷入重起就会有SUPERSU工具。
-//	2.4，其它APK通过个请求权限。
-//	    再装个root_exploerer.apk搞定。
+//	2.2��fastboot flash recovery F:\file\root\twrp-3.0.1-0-angler.img  .(ˢ��TWRP RECOVERY, TWRP���๤�ߵ�RECOVERY);
+//	2.3,  ����recoveryģʽ��adb reboot recovery)�������RECOVERY��ѡ��ŵ��ֻ����BETA-SuperSU-v2.67-20160121175247.zip (TWRP���RECOVERY-->INSTALL)ˢ������ͻ���SUPERSU���ߡ�
+//	2.4������APKͨ��������Ȩ�ޡ�
+//	    ��װ��root_exploerer.apk�㶨��
 //
-//	3 升级工具，（开不了机）
+//	3 �������ߣ��������˻���
 
 
 

@@ -1,4 +1,4 @@
-ï»¿
+
 macro TranslateDir(file, hbuflist)
 {
 	hbufsub = OpenCache(file)
@@ -10,7 +10,7 @@ macro TranslateDir(file, hbuflist)
 		wr2 = GetBufLine(hbuflist, row+1)
 
 //		msg(wr1 # "~" # wr2)
-//		5 è‹±æ–‡; 37 æ³¢æ–¯
+//		5 Ó¢ÎÄ; 37 ²¨Ë¹
 		TranslateFile(hbufsub, 5, wr1, 37, wr2, hbufLog)
 		
 //		TranslateFile(hbufsub, 1, "STR_GLOBAL_YES", 37, "?????", hbufLog)

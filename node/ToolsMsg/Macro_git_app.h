@@ -1,9 +1,9 @@
-ï»¿
 
-//ç›®å½•[Num][Ca]:
+
+//Ä¿Â¼[Num][Ca]:
 // 1. mysql
 Save:node\ToolsMsg\Macro_git_app.h \[1.1\] 
-Save:node\ToolsMsg\Macro_git_app.h \[1.2\] ä¸ç”¨çš„å‚è€ƒæºç 
+Save:node\ToolsMsg\Macro_git_app.h \[1.2\] ²»ÓÃµÄ²Î¿¼Ô´Âë
 Save:node\ToolsMsg\Macro_git_app.h \[1.3\] 
 Save:node\ToolsMsg\Macro_git_app.h \[1.4\] 
 Save:node\ToolsMsg\Macro_git_app.h \[1.5\] 
@@ -33,61 +33,61 @@ Save:node\ToolsMsg\Macro_git_app.h \[5.3\]
 https://github.com/search?l=Java&p=5&q=github&type=Repositories
 
 [1.1] 
-// æœªä¸‹è½½
+// Î´ÏÂÔØ
 //   Github client for Android
 https://github.com/slapperwan/gh4a
 
-// ç®€å•çš„git-http
+// ¼òµ¥µÄgit-http
 https://github.com/frogermcs/GithubClient
 
 // 3th--git
 https://github.com/ThirtyDegreesRay/OpenHub
 
-// çœ‹æˆªå›¾ä¸é”™
+// ¿´½ØÍ¼²»´í
 https://github.com/Jeffmen/Git.NB
 
 
-[1.2] æœ¬åœ°
-// èƒ½syncä¸èƒ½run, æœ‰api_doc
-//	 ä¹Ÿæ˜¯æœ¬åœ°:
+[1.2] ±¾µØ
+// ÄÜsync²»ÄÜrun, ÓĞapi_doc
+//	 Ò²ÊÇ±¾µØ:
 // 	 builder.readEnvironment().findGitDir().build();
 https://github.com/centic9/jgit-cookbook
 
-// æœ¬åœ°
+// ±¾µØ
 //   ProcessRunner p = new ProcessRunner(cmd, environment);
 https://github.com/lpassos/gitlib
 
-//è¿˜æ˜¯æœ¬åœ°ç›®å½• (æŠ¥é”™)
+//»¹ÊÇ±¾µØÄ¿Â¼ (±¨´í)
 //	 helper = new JGitHelper("/opt/jenkins/jenkins.git/.git");
 https://github.com/centic9/JGitFS
 
 
-[1.3] æ²¡æ³•çœ‹
-// react-native(æŠ¥é”™), +IOS,JS..
+[1.3] Ã»·¨¿´
+// react-native(±¨´í), +IOS,JS..
 https://github.com/gitpoint/git-point
 
-// å¥½åƒåªæœ‰db-git (æŠ¥é”™)
+// ºÃÏñÖ»ÓĞdb-git (±¨´í)
 https://github.com/maks/MGit
 
-// å¤ªå°‘äº†
+// Ì«ÉÙÁË
 https://github.com/ArchibaldBienetre/jGitTest
 
-// æŠ¥é”™+åŸè‡ªå¸¦apkç™»å½•ä¸ä¸Š
-//	 è¿ç½‘è¿‡äºå¤æ‚
+// ±¨´í+Ô­×Ô´øapkµÇÂ¼²»ÉÏ
+//	 Á¬Íø¹ıÓÚ¸´ÔÓ
 https://github.com/TellH/GitClub
 
 
-[1.4] æœªå®š
-// è¿‡æ—¶
+[1.4] Î´¶¨
+// ¹ıÊ±
 https://github.com/sheimi/SGit
 
-//æ²¡ä¾‹å­(çœ‹ä¸æ‡‚)
+//Ã»Àı×Ó(¿´²»¶®)
 https://github.com/gitskarios/GithubAndroidSdk
 
 
 
-[1.5] æ”¾å¼ƒ--ç›¸ç³»ä¸å¤§
-// githot--ç±»ç½‘ç«™
+[1.5] ·ÅÆú--ÏàÏµ²»´ó
+// githot--ÀàÍøÕ¾
 https://github.com/andyiac/githot
 
 

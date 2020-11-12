@@ -1,11 +1,11 @@
-ï»¿
-åŸºç¡€è·¯å¾„è®¾ç½®:
+
+»ù´¡Â·¾¶ÉèÖÃ:
 //basePath = 
 
 /***********************************************************************/
 
-//ç›®å½•[Num][Ca]:
-// 1. 10ç§æµè¡Œè¯­è¨€
+//Ä¿Â¼[Num][Ca]:
+// 1. 10ÖÖÁ÷ĞĞÓïÑÔ
 Save:node\Macro_Future.h \[1.1\] Java
 Save:node\Macro_Future.h \[1.2\] C
 Save:node\Macro_Future.h \[1.3\] Python
@@ -17,10 +17,10 @@ Save:node\Macro_Future.h \[1.8\] PHP
 Save:node\Macro_Future.h \[1.9\] SQL
 Save:node\Macro_Future.h \[1.10\] 
 // 2. 
-Save:node\Macro_Future.h \[2.1\] å…¶ä»–è¯­è¨€
-Save:node\Macro_Future.h \[2.2\] è‡ªå·±çš„èƒ½åŠ›
-Save:node\Macro_Future.h \[2.3\] è‡ªå·±çš„æ— çŸ¥
-Save:node\Macro_Future.h \[2.4\] ç¤¾ä¼šä¹±è±¡
+Save:node\Macro_Future.h \[2.1\] ÆäËûÓïÑÔ
+Save:node\Macro_Future.h \[2.2\] ×Ô¼ºµÄÄÜÁ¦
+Save:node\Macro_Future.h \[2.3\] ×Ô¼ºµÄÎŞÖª
+Save:node\Macro_Future.h \[2.4\] Éç»áÂÒÏó
 Save:node\Macro_Future.h \[2.5\] 
 Save:node\Macro_Future.h \[2.6\] 
 Save:node\Macro_Future.h \[2.7\] 
@@ -32,7 +32,7 @@ Save:node\Macro_Future.h \[2.10\]
 
 [1.1] Java
 Save:node\android\Macro_Note_as.h
-//   ç”¨äºå¼€å‘Androidåº”ç”¨ç¨‹åºã€æ•°æ®åº“ã€æ¡Œé¢åº”ç”¨ç¨‹åºç­‰
+//   ÓÃÓÚ¿ª·¢AndroidÓ¦ÓÃ³ÌĞò¡¢Êı¾İ¿â¡¢×ÀÃæÓ¦ÓÃ³ÌĞòµÈ
 
 [1.2] C
 Save:node\C\Macro_Note_C.h
@@ -40,8 +40,8 @@ Save:node\C\Macro_Note_C.h
 
 [1.3] Python
 Save:node\Pythons\Macro_Note_Python.h
-//ç”¨äºå¼€å‘å¤§é‡æ¸¸æˆï¼Œä¾‹å¦‚æ–‡æ˜IVï¼ŒToontownç­‰ï¼Œç”¨äºåˆ›æ„çš„è½¯ä»¶ï¼Œä¾‹å¦‚Blenderï¼ŒAutodeskï¼ŒInkscapeç­‰ï¼Œ
-//ä»¥åŠç§‘å­¦ç ”ç©¶å·¥ä½œï¼Œå°¤å…¶æ˜¯æ·±åº¦å­¦ä¹ åº”ç”¨ï¼Œç»Ÿè®¡åˆ†æå’Œæœºå™¨äººæŠ€æœ¯ç­‰æ–¹é¢
+//ÓÃÓÚ¿ª·¢´óÁ¿ÓÎÏ·£¬ÀıÈçÎÄÃ÷IV£¬ToontownµÈ£¬ÓÃÓÚ´´ÒâµÄÈí¼ş£¬ÀıÈçBlender£¬Autodesk£¬InkscapeµÈ£¬
+//ÒÔ¼°¿ÆÑ§ÑĞ¾¿¹¤×÷£¬ÓÈÆäÊÇÉî¶ÈÑ§Ï°Ó¦ÓÃ£¬Í³¼Æ·ÖÎöºÍ»úÆ÷ÈË¼¼ÊõµÈ·½Ãæ
 
 
 
@@ -59,8 +59,8 @@ Save:node\C++\Macro_Note_C++.h
 
 [1.7] JavaScript
 //Save:node\JavaScript\Macro_Note_JavaScript.h
-// æ¡†æ¶ï¼ŒåŒ…æ‹¬Electronï¼Œnode.jsï¼ŒAngularJSç­‰
-//   ç”¨äºå‰ç«¯å’Œåç«¯ç¨‹åºä»¥åŠæ¸¸æˆ
+// ¿ò¼Ü£¬°üÀ¨Electron£¬node.js£¬AngularJSµÈ
+//   ÓÃÓÚÇ°¶ËºÍºó¶Ë³ÌĞòÒÔ¼°ÓÎÏ·
 
 
 [1.8] PHP
@@ -68,8 +68,8 @@ Save:node\PHP\Macro_Note_PHP.h
 
 
 [1.9] SQL
-// é›†ä¸­å­˜æ”¾sqlæ–‡æ¡£
-//   éƒ¨åˆ†å­˜æ”¾å…¶ä»–ç›®å½•
+// ¼¯ÖĞ´æ·ÅsqlÎÄµµ
+//   ²¿·Ö´æ·ÅÆäËûÄ¿Â¼
 Save:node\SQL\Macro_Note_SQL.h
 
 
@@ -169,7 +169,7 @@ Save:node\SQL\Macro_Note_SQL.h
 50) Prolog
 
 
-[2.1] å…¶ä»–è¯­è¨€
+[2.1] ÆäËûÓïÑÔ
 Golang
 
 Flutter
@@ -178,53 +178,53 @@ Flutter
 
 
 
-[2.2] è‡ªå·±èƒ½åŠ›
-// ï¼ˆåº”ç”¨æ–¹é¢ï¼‰
-è‚¡ç¥¨:é¢„æµ‹æ–¹å‘
+[2.2] ×Ô¼ºÄÜÁ¦
+// £¨Ó¦ÓÃ·½Ãæ£©
+¹ÉÆ±:Ô¤²â·½Ïò
 
-äººé¢:é¢„æµ‹å§“å
+ÈËÃæ:Ô¤²âĞÕÃû
 
 
-[2.3] è‡ªå·±çš„æ— çŸ¥
+[2.3] ×Ô¼ºµÄÎŞÖª
 //
 android-Unity3D
 
-// å°è¯•
-å¼€å‘-è¯­ä¹‰
-å¼€å‘-PROLOG
-å¼€å‘-lisp
+// ³¢ÊÔ
+¿ª·¢-ÓïÒå
+¿ª·¢-PROLOG
+¿ª·¢-lisp
 
-// æ€»ç»“
-ä¸šä½™-å›½å¤–ä¹¦ç±
+// ×Ü½á
+ÒµÓà-¹úÍâÊé¼®
 
-//		å…¶ä»–
-æ•°æ®-Hadoop 
-æ•°æ®-Hdfs
-æ•°æ®-MapReduce
-æ•°æ®-Hbase 
-æ•°æ®-Hive
-æ•°æ®æ¡†æ¶-Storm
-æ•°æ®æ¡†æ¶-Spark streaming
-å¼•æ“-Lucene
-å¼•æ“-Solr
-å¼•æ“-Elasticsearch
-å¼€å‘-Python
-è“ç‰™Profile
-
-
+//		ÆäËû
+Êı¾İ-Hadoop 
+Êı¾İ-Hdfs
+Êı¾İ-MapReduce
+Êı¾İ-Hbase 
+Êı¾İ-Hive
+Êı¾İ¿ò¼Ü-Storm
+Êı¾İ¿ò¼Ü-Spark streaming
+ÒıÇæ-Lucene
+ÒıÇæ-Solr
+ÒıÇæ-Elasticsearch
+¿ª·¢-Python
+À¶ÑÀProfile
 
 
 
 
 
-[2.4] ç¤¾ä¼šä¹±è±¡
-//é¢„æµ‹æ–¹é¢, ä¸é‡è§†çœŸç†
-//  ç›¸äº²ç½‘ã€soul
-äººæ°”å¤§è¿‡çœŸç†
 
-//å…¬å…±èµ„æº, æ²¡å…¬æ€§
-//  åŒ»é™¢
-å°å¿ƒè¢«æ‹’è¯Š
+
+[2.4] Éç»áÂÒÏó
+//Ô¤²â·½Ãæ, ²»ÖØÊÓÕæÀí
+//  ÏàÇ×Íø¡¢soul
+ÈËÆø´ó¹ıÕæÀí
+
+//¹«¹²×ÊÔ´, Ã»¹«ĞÔ
+//  Ò½Ôº
+Ğ¡ĞÄ±»¾ÜÕï
 
 
 

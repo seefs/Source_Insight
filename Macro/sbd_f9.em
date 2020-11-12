@@ -1,4 +1,4 @@
-ï»¿
+
 macro SearchFile()
 {
     hwnd = GetCurrentWnd()
@@ -15,7 +15,7 @@ macro SearchFile()
 	}
     
 	bft = getBft(1)
-//	bft = getBufBft(hbuf, 1) //åªèƒ½ç”¨ä¸€ä¸ª, å…ˆä¸æ”¹äº†
+//	bft = getBufBft(hbuf, 1) //Ö»ÄÜÓÃÒ»¸ö, ÏÈ²»¸ÄÁË
 //	if(bft == "")
 //		stop
 	//bft = "9820e" //test
@@ -40,7 +40,7 @@ macro StartF9Search(hbuf, bft, filename_key)
 			{
 				cur_line = GetBufLine(hbuf, sel.lnFirst )
 				len    = strlen(cur_line)
-				//åˆ é™¤å‰åç©ºæ ¼ï¼Œæ¢è¡Œç¬¦
+				//É¾³ıÇ°ºó¿Õ¸ñ£¬»»ĞĞ·û
 				start  = GetTransCmdS(cur_line,  sel.ichFirst,  len)
 				next   = EndWS( cur_line, sel.ichLim )
 				filename_key = GetTransStr(cur_line, start, next)
@@ -71,13 +71,13 @@ macro StartF9Search(hbuf, bft, filename_key)
 		hSbuf = OpenCache(getSearchAndroid(0) # file)
 		if(hSbuf != hNil)
 		{
-			//åªèƒ½æŸ¥æ–‡ä»¶å, ä¸”ä¸ä½¿ç”¨é€šé…ç¬¦
+			//Ö»ÄÜ²éÎÄ¼şÃû, ÇÒ²»Ê¹ÓÃÍ¨Åä·û
 			filename_key = ReplaceWord(filename_key, "\\", "\\\\")
 			filename_key = ReplaceWord(filename_key, "/", "\\\\")
 			reTxt = ShowSearchMar(hSbuf, "\\\\" # filename_key # "$")
 			if(reTxt == "")
 			{
-				//é¦–å­—æ¯å¤§å†™, é‡æŸ¥ä¸€æ¬¡(abc->Abc)
+				//Ê××ÖÄ¸´óĞ´, ÖØ²éÒ»´Î(abc->Abc)
 				ch = strmid(filename_key, 0, 1)
 				dCh = AsciiFromChar (ch)
 				if(dCh>=97 && dCh<=97+26)
@@ -87,14 +87,14 @@ macro StartF9Search(hbuf, bft, filename_key)
 				}
 			}
 			
-			//æŸ¥è¯¢ç»“æœ
+			//²éÑ¯½á¹û
 			if(reTxt == "")
 			{
-				msg("æ— ")
+				msg("ÎŞ")
 			}
 			else if(reTxt == "All")
 			{
-				msg("æ·»åŠ å…¨éƒ¨æ–‡ä»¶å?")
+				msg("Ìí¼ÓÈ«²¿ÎÄ¼şÃû?")
 				AddAllFile(hbuf, hSbuf, sel.lnFirst + 1, filename_key)
 				SaveBuf(hbuf)
 			}
@@ -103,19 +103,19 @@ macro StartF9Search(hbuf, bft, filename_key)
 				if(next > 0)
 				{
 					iS = next - strlen(reTxt)
-					//åªæœ‰ä¸€æ¡ç»“æœï¼Œå¹¶ä¸”ç›¸åŒ
+					//Ö»ÓĞÒ»Ìõ½á¹û£¬²¢ÇÒÏàÍ¬
 					if(iS >= 0)
 					{
 						oldTxt = strmid(cur_line, iS, next)
 						oldTxt = ReplaceWord(oldTxt, "/", "\\")
 						if(oldTxt == reTxt)
 						{
-							msg("ç›¸åŒ")
+							msg("ÏàÍ¬")
 							stop
 						}
 					}
 				}
-				//ä¸ç›¸åŒ
+				//²»ÏàÍ¬
 				msg(reTxt)
 				InsBufLine(hbuf, sel.lnFirst + 1, "@reTxt@")
 				SaveBuf(hbuf)
@@ -170,11 +170,11 @@ macro GetSearchMar(hbuf, searchStr, indexMax)
 {
 	mIndex = 0
 	bit = indexMax
-	//2ä½æ•°éœ€æ±‚è¾“å…¥1~2ä¸ªæ•°
+	//2Î»ÊıĞèÇóÊäÈë1~2¸öÊı
 	while (bit > 0 && mIndex*10 <= indexMax)
 	{
 		key = GetKey()
-		//è¾“å…¥0-9a-z, è¿”å›0-9+26
+		//ÊäÈë0-9a-z, ·µ»Ø0-9+26
 		i = GetNumFromKey(key, 10 - 1)
 		if(i >= 0)
 		{
@@ -226,7 +226,7 @@ macro SearchVersion(hbuf)
 	var mFile
 	var mWord
 	
-	if(IsMacroFile(hbuf))  //æµ‹è¯•
+	if(IsMacroFile(hbuf))  //²âÊÔ
 	{
 		mMacro="OpenCache"
 		mWord = "MacroSBD"
@@ -242,12 +242,12 @@ macro SearchVersion(hbuf)
 		//sel = MGetWndSel(hbuf)
 		if (1)//IsNoSelect(sel)) 
 		{
-			//å‰ªåˆ‡æ¿å†…å®¹
+			//¼ôÇĞ°åÄÚÈİ
 			mWord = GetClipString(hbuf)
 		}
 		else
 		{
-			//å½“å‰é€‰æ‹©å†…å®¹
+			//µ±Ç°Ñ¡ÔñÄÚÈİ
 			mWord = GetBufLine(hbuf, sel.lnFirst )
 			if(strlen(mWord) < sel.ichLim)
 				sel.ichLim = sel.ichLim - 1
@@ -284,10 +284,10 @@ macro SearchVersionExt(hbuf, mFile, mMacro, mWord)
 	lnMax = GetBufLineCount(verBuf)
 	//msg ("verSel @verSel@ verFile @verFile@")
 
-	//æœç´¢ç»“æœä¿å­˜åœ¨ä¸´æ—¶æ–‡ä»¶ä¸­ï¼Œå¦‚æœæ²¡æœç´¢åˆ°ï¼Œæ›´æ–°ä¸´æ—¶æ–‡ä»¶
+	//ËÑË÷½á¹û±£´æÔÚÁÙÊ±ÎÄ¼şÖĞ£¬Èç¹ûÃ»ËÑË÷µ½£¬¸üĞÂÁÙÊ±ÎÄ¼ş
 	if (verSel == nil)
 	{
-		msg("å¼€å§‹æ›´æ–°æ‰€æœ‰ç‰ˆæœ¬å·")
+		msg("¿ªÊ¼¸üĞÂËùÓĞ°æ±¾ºÅ")
 		isSave = TRUE
 		EmptyBuf(verBuf)
 		
@@ -327,13 +327,13 @@ macro SearchVersionExt(hbuf, mFile, mMacro, mWord)
 
 	}
 	
-	//SR: æœç´¢ç»“æœä¿å­˜åˆ°è¿™ä¸ªçª—å£
+	//SR: ËÑË÷½á¹û±£´æµ½Õâ¸ö´°¿Ú
 	baseSR = OpenDefaultSR(hbuf)
 	AppendBufLine(baseSR, "----version: @mWord@")
 	if (verSel != nil)
 	{
 		var ichCommp
-		//ç›®å½•å¯èƒ½åŒ…æ‹¬E:\6531E ä¹Ÿå¯èƒ½ä¸åŒ…æ‹¬
+		//Ä¿Â¼¿ÉÄÜ°üÀ¨E:\6531E Ò²¿ÉÄÜ²»°üÀ¨
 	    if(SplitMacro(baseDir, ":", 0, strlen(baseDir)>0)
 	    {
 	    	baseDir = ""
@@ -362,7 +362,7 @@ macro SearchVersionExt(hbuf, mFile, mMacro, mWord)
 			lineStr = mFile # " (@ipath@):@iversion@"
 			AppendBufLine(baseSR, "@lineStr@")
 			
-			//åˆ›å»ºä¸€ä¸ªæ–°çš„æºé“¾æ¥
+			//´´½¨Ò»¸öĞÂµÄÔ´Á´½Ó
 			SetSourceLink (baseSR, lnMax, baseDir # ipath # "\\" # mFile, irow)
 			//SetSourceLink (baseSR, lnMax, baseDir # pathname, irow)
 			
@@ -393,12 +393,12 @@ macro FunTotal(hbuf)
 	sel = MGetWndSel(hbuf)
 	cur_line = GetBufLine(hbuf, sel.lnFirst )
 	
-	//æ˜¾ç¤ºæ‰€æœ‰æ–‡ä»¶æ•°é‡+åˆ†ç±»
+	//ÏÔÊ¾ËùÓĞÎÄ¼şÊıÁ¿+·ÖÀà
 	//fftype = ".em"
 	fftype = "." # cur_line
 	ffCount = FunTotalCalc(hbuf, fftype)
 	
-	//åœ¨æœ«å°¾åŠ  = TRUE
+	//ÔÚÄ©Î²¼Ó = TRUE
 	strNew = cur_line # ": " # ffCount
 	PutBufLine(hbuf, sel.lnFirst, strNew);
 }

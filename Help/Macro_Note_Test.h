@@ -1,5 +1,5 @@
-ï»¿
-åŸºç¡€è·¯å¾„è®¾ç½®:
+
+»ù´¡Â·¾¶ÉèÖÃ:
 basePath = Save:Macro\
 base:\\
 base:sbd_test.em  OpenMiniTest
@@ -7,21 +7,21 @@ base:sbd_test.em  OpenMiniTest
 bakPath = Save:Help\Tmp\target
 bak:\\
 
-// æ˜¾ç¤ºlogçº§åˆ«(testParam)
-//   1: æ˜¾ç¤ºå°‘é‡log
-//   2: æ˜¾ç¤ºå¤šæ•°log
+// ÏÔÊ¾log¼¶±ğ(testParam)
+//   1: ÏÔÊ¾ÉÙÁ¿log
+//   2: ÏÔÊ¾¶àÊılog
 testParam = 1
 //testParam = 2
 
 
-//  å½“å‰æ–‡ä»¶ä½œä¸ºæµ‹è¯•æ–‡ä»¶:
+//  µ±Ç°ÎÄ¼ş×÷Îª²âÊÔÎÄ¼ş:
 MiniTest = True
 
 
 /***********************************************************************/
 
 
-//ç›®å½•[Num][Ca]:
+//Ä¿Â¼[Num][Ca]:
 // 1.FN
 Save:Help\Macro_Note_Test.h \[1.1\] F1----------------
 Save:Help\Macro_Note_Test.h \[1.2\] F2----------------
@@ -33,9 +33,9 @@ Save:Help\Macro_Note_Test.h \[1.7\] F7----------------SVN--Test
 Save:Help\Macro_Note_Test.h \[1.8\] F8----------------
 Save:Help\Macro_Note_Test.h \[1.9\] F9----------------search
 Save:Help\Macro_Note_Test.h \[1.10\] F10--------------group
-Save:Help\Macro_Note_Test.h \[1.11\] F11--------------Noteå¿«æ·é”®
+Save:Help\Macro_Note_Test.h \[1.11\] F11--------------Note¿ì½İ¼ü
 Save:Help\Macro_Note_Test.h \[1.12\] F12--------------
-Save:Help\Macro_Note_Test.h \[1.13\] è¯­æ³•æµ‹è¯•---------åé¢åˆ é™¤æ‰...
+Save:Help\Macro_Note_Test.h \[1.13\] Óï·¨²âÊÔ---------ºóÃæÉ¾³ıµô...
 Save:Help\Macro_Note_Test.h \[1.14\] project
 Save:Help\Macro_Note_Test.h \[1.15\] project path Set
 Save:Help\Macro_Note_Test.h \[1.16\] file list
@@ -47,7 +47,7 @@ Save:Help\Macro_Note_Test.h \[1.21\]
 //2.ctrl
 Save:Help\Macro_Note_Test.h \[2.1\] ctrl+B
 Save:Help\Macro_Note_Test.h \[2.2\] ctrl+T
-Save:Help\Macro_Note_Test.h \[2.3\] ctrl+D------------ç´¢å¼•
+Save:Help\Macro_Note_Test.h \[2.3\] ctrl+D------------Ë÷Òı
 Save:Help\Macro_Note_Test.h \[2.4\] 
 Save:Help\Macro_Note_Test.h \[2.5\] 
 Save:Help\Macro_Note_Test.h \[2.6\] 
@@ -56,7 +56,7 @@ Save:Help\Macro_Note_Test.h \[2.8\]
 Save:Help\Macro_Note_Test.h \[2.9\] 
 Save:Help\Macro_Note_Test.h \[2.10\] 
 //3.f11--Test
-Save:Help\Macro_Note_Test.h \[3.1\] cmdç³»åˆ—-----------1ç±»
+Save:Help\Macro_Note_Test.h \[3.1\] cmdÏµÁĞ-----------1Àà
 Save:Help\Macro_Note_Test.h \[3.2\] open(exe)
 Save:Help\Macro_Note_Test.h \[3.3\] 
 Save:Help\Macro_Note_Test.h \[3.4\] 
@@ -64,10 +64,10 @@ Save:Help\Macro_Note_Test.h \[3.5\] setPath
 Save:Help\Macro_Note_Test.h \[3.6\] setProPath
 Save:Help\Macro_Note_Test.h \[3.7\] sethistory
 Save:Help\Macro_Note_Test.h \[3.8\] cp, RAR
-Save:Help\Macro_Note_Test.h \[3.9\] make--------------2ç±»
+Save:Help\Macro_Note_Test.h \[3.9\] make--------------2Àà
 Save:Help\Macro_Note_Test.h \[3.10\] ctmake
 Save:Help\Macro_Note_Test.h \[3.11\] xmake
-Save:Help\Macro_Note_Test.h \[3.12\] set--------------3ç±»
+Save:Help\Macro_Note_Test.h \[3.12\] set--------------3Àà
 Save:Help\Macro_Note_Test.h \[3.13\] vc
 Save:Help\Macro_Note_Test.h \[3.14\] vs08
 Save:Help\Macro_Note_Test.h \[3.15\] call
@@ -75,14 +75,14 @@ Save:Help\Macro_Note_Test.h \[3.16\]
 Save:Help\Macro_Note_Test.h \[3.17\] 
 Save:Help\Macro_Note_Test.h \[3.18\] 
 Save:Help\Macro_Note_Test.h \[3.19\] git
-Save:Help\Macro_Note_Test.h \[3.20\] python-----------4ç±»
+Save:Help\Macro_Note_Test.h \[3.20\] python-----------4Àà
 Save:Help\Macro_Note_Test.h \[3.21\] python_w
 Save:Help\Macro_Note_Test.h \[3.22\] Save
-Save:Help\Macro_Note_Test.h \[3.23\] ...--------------5ç±»
+Save:Help\Macro_Note_Test.h \[3.23\] ...--------------5Àà
 Save:Help\Macro_Note_Test.h \[3.24\] file
 Save:Help\Macro_Note_Test.h \[3.25\] path
 Save:Help\Macro_Note_Test.h \[3.26\] 
-Save:Help\Macro_Note_Test.h \[3.27\] ç©ºæ ¼
+Save:Help\Macro_Note_Test.h \[3.27\] ¿Õ¸ñ
 Save:Help\Macro_Note_Test.h \[3.28\] 
 Save:Help\Macro_Note_Test.h \[3.29\] 
 Save:Help\Macro_Note_Test.h \[3.30\] 
@@ -110,53 +110,53 @@ Save:Help\Macro_Note_Test.h \[3.30\]
 [1.5] rule goto
 base:sbd_test.em  goto_copy
 	
-//1) é€‰ä¸­(goto_copy), å†ctrl+E
-//  å¤åˆ¶--ä¸­æ–‡è·³è½¬:
-goto_copy  è¶Š
-goto_copy  è¶Šå—
-goto_copy  é˜¿
-goto_copy  æ³°
+//1) Ñ¡ÖĞ(goto_copy), ÔÙctrl+E
+//  ¸´ÖÆ--ÖĞÎÄÌø×ª:
+goto_copy  Ô½
+goto_copy  Ô½ÄÏ
+goto_copy  °¢
+goto_copy  Ì©
 //  to:
 //		VIETNAMESE
 //		ARABIC
 //		THAI
 
-//2) é€‰ä¸­(goto_select), å†ctrl+E
-//  é€‰ä¸­--è‹±æ–‡è·³è½¬:
+//2) Ñ¡ÖĞ(goto_select), ÔÙctrl+E
+//  Ñ¡ÖĞ--Ó¢ÎÄÌø×ª:
 goto_select  GC6133 (file)
 goto_select  USB
 goto_select  PRODUCT_CONFIG (path)
 goto_select  CUSTOMER
 
-//3) é€‰ä¸­(rule_cn_soft), å†ctrl+E
-//  æ‰¹é‡æµ‹è¯•ä¸­æ–‡æ’åºçš„å‡†ç¡®æ€§
-//		(ç•¥)
+//3) Ñ¡ÖĞ(rule_cn_soft), ÔÙctrl+E
+//  ÅúÁ¿²âÊÔÖĞÎÄÅÅĞòµÄ×¼È·ĞÔ
+//		(ÂÔ)
 
-//4) é€‰ä¸­(rule_en_soft), å†ctrl+E
-//  æ‰¹é‡æµ‹è¯•è‹±æ–‡æ’åºçš„å‡†ç¡®æ€§
-//		(ç•¥)
+//4) Ñ¡ÖĞ(rule_en_soft), ÔÙctrl+E
+//  ÅúÁ¿²âÊÔÓ¢ÎÄÅÅĞòµÄ×¼È·ĞÔ
+//		(ÂÔ)
 
-//5) é€‰ä¸­(rule_cn_find), å†ctrl+E
-//  æŸ¥æ‰¾ä¸­æ–‡è·³è½¬
-//		(ç•¥)
+//5) Ñ¡ÖĞ(rule_cn_find), ÔÙctrl+E
+//  ²éÕÒÖĞÎÄÌø×ª
+//		(ÂÔ)
 
-//6) é€‰ä¸­(rule_en_find), å†ctrl+E
-//  æŸ¥æ‰¾è‹±æ–‡è·³è½¬
-//		(ç•¥)
+//6) Ñ¡ÖĞ(rule_en_find), ÔÙctrl+E
+//  ²éÕÒÓ¢ÎÄÌø×ª
+//		(ÂÔ)
 
 
 [1.6] rule soft
-//1) é€‰ä¸­(key_cn_soft), å†ctrl+E
-//  è‹±æ–‡æ’åºæµ‹è¯•
-//		(ç•¥)
+//1) Ñ¡ÖĞ(key_cn_soft), ÔÙctrl+E
+//  Ó¢ÎÄÅÅĞò²âÊÔ
+//		(ÂÔ)
 
-//2) é€‰ä¸­(key_en_soft), å†ctrl+E
-//  ä¸­æ–‡æ’åºæµ‹è¯•
-//		(ç•¥)
+//2) Ñ¡ÖĞ(key_en_soft), ÔÙctrl+E
+//  ÖĞÎÄÅÅĞò²âÊÔ
+//		(ÂÔ)
 
-//3) é€‰ä¸­(add_rule), å†ctrl+E
-//  é€‰ä¸­åæ·»åŠ è§„åˆ™
-//		(ç•¥)
+//3) Ñ¡ÖĞ(add_rule), ÔÙctrl+E
+//  Ñ¡ÖĞºóÌí¼Ó¹æÔò
+//		(ÂÔ)
 
 
 
@@ -169,7 +169,7 @@ F:\11CW1352MP_MT6261DM\custom\codegen\FARSIGHTED61M_CN_11C_BB\codegen_M610_KM_I7
 
 
 //openCmd 
-//cmd	   è¿è¡Œcmdå‘½ä»¤ ä¸åŒ…å«cmd
+//cmd	   ÔËĞĞcmdÃüÁî ²»°üº¬cmd
 cmd: cmd
 
 
@@ -184,21 +184,21 @@ cmd: cmd
 [1.9] search
 base:sbd_test.em  search_bft
 
-//1) é€‰ä¸­(search_version), å†ctrl+E
-//  è‹±æ–‡æ’åºæµ‹è¯•
-//		(ç•¥)
+//1) Ñ¡ÖĞ(search_version), ÔÙctrl+E
+//  Ó¢ÎÄÅÅĞò²âÊÔ
+//		(ÂÔ)
 
-//2) é€‰ä¸­(search_bft), å†ctrl+E
-//  æ‰“å¼€å‚æ•°(bftParam)
+//2) Ñ¡ÖĞ(search_bft), ÔÙctrl+E
+//  ´ò¿ª²ÎÊı(bftParam)
 //bftParam = 6531E
-//  å‘½ä»¤:
+//  ÃüÁî:
 search_bft  MAINMENU
 search_bft  EXTRA
 
-//3) é€‰ä¸­(search_bft), å†ctrl+E
-//  æ‰“å¼€å‚æ•°(bftParam)
+//3) Ñ¡ÖĞ(search_bft), ÔÙctrl+E
+//  ´ò¿ª²ÎÊı(bftParam)
 //bftParam = 9820e
-//  å‘½ä»¤:
+//  ÃüÁî:
 search_bft  lcd/lcd_st7789v2_spi.c
 search_bft  values\config.xml
 search_bft  statusbar\BaseStatusBar.java 
@@ -206,35 +206,35 @@ search_bft  statusbar\BaseStatusBar.java
 
 
 
-[1.10] group åˆ†ç»„
+[1.10] group ·Ö×é
 base:sbd_test.em  sr_group
 
-//1) é€‰ä¸­(sr_group), å†ctrl+E
+//1) Ñ¡ÖĞ(sr_group), ÔÙctrl+E
 //  
 sr_group
 
-//2) é€‰ä¸­(show_menu), å†ctrl+E
+//2) Ñ¡ÖĞ(show_menu), ÔÙctrl+E
 //  
 show_menu
 	
-//3) é€‰ä¸­(group), å†ctrl+E
-//	 1) mkæ–‡ä»¶ä¸­: å¿«æ·é”®è·³è½¬åˆ°å® (ç•¥)
-//	 2) emæ–‡ä»¶ä¸­: æ˜¾ç¤ºåˆ—è¡¨ (ç•¥)
-//	 3) sræ–‡ä»¶ä¸­: å¿«æ·é”®æ‰“å¼€æ–‡ä»¶/æ–‡ä»¶äº’å…³ (ç•¥)
-//	 4) å…¶ä»–:
-// æ‰“å¼€å‚æ•°(bftParam)
+//3) Ñ¡ÖĞ(group), ÔÙctrl+E
+//	 1) mkÎÄ¼şÖĞ: ¿ì½İ¼üÌø×ªµ½ºê (ÂÔ)
+//	 2) emÎÄ¼şÖĞ: ÏÔÊ¾ÁĞ±í (ÂÔ)
+//	 3) srÎÄ¼şÖĞ: ¿ì½İ¼ü´ò¿ªÎÄ¼ş/ÎÄ¼ş»¥¹Ø (ÂÔ)
+//	 4) ÆäËû:
+// ´ò¿ª²ÎÊı(bftParam)
 bftParam = 6531E
-å‘½ä»¤:
+ÃüÁî:
 group  mmiidle_cstyle.c
 group  mmialarm.c
 
 
 
-[1.11] Noteå¿«æ·é”®--
-å¿«æ·é”®[Ca]:
-F11:æ‰“å¼€/å…³é—­ç¬”è®°
-F2: æ‰“å¼€é€‰æ‹©çš„è·¯å¾„/æ–‡ä»¶; æ–‡ä»¶å+æ‰©å±•å
-F5: æ‰“å¼€slnæ–‡ä»¶/cmdå‘½ä»¤+å³é”®ç²˜è´´; å½“å‰è¡Œä»¥setã€cmdã€make/ctmake/xmakeã€openã€vcã€vs08å¼€å¤´; é»˜è®¤æ‰“å¼€æ–‡ä»¶+å…³é”®å­—(è¡Œ)
+[1.11] Note¿ì½İ¼ü--
+¿ì½İ¼ü[Ca]:
+F11:´ò¿ª/¹Ø±Õ±Ê¼Ç
+F2: ´ò¿ªÑ¡ÔñµÄÂ·¾¶/ÎÄ¼ş; ÎÄ¼şÃû+À©Õ¹Ãû
+F5: ´ò¿ªslnÎÄ¼ş/cmdÃüÁî+ÓÒ¼üÕ³Ìù; µ±Ç°ĞĞÒÔset¡¢cmd¡¢make/ctmake/xmake¡¢open¡¢vc¡¢vs08¿ªÍ·; Ä¬ÈÏ´ò¿ªÎÄ¼ş+¹Ø¼ü×Ö(ĞĞ)
 
 
 [1.12] 
@@ -252,11 +252,11 @@ F5: æ‰“å¼€slnæ–‡ä»¶/cmdå‘½ä»¤+å³é”®ç²˜è´´; å½“å‰è¡Œä»¥setã€cmdã€make/ctmake/
 
 
 
-[1.13] è¯­æ³•æµ‹è¯•
-//1.è¿è¡Œè¯­æ³•æµ‹è¯•
-// --Testæ ¼å¼
+[1.13] Óï·¨²âÊÔ
+//1.ÔËĞĞÓï·¨²âÊÔ
+// --Test¸ñÊ½
 test:SiMro
-//	ä»£ç ä½ç½®
+//	´úÂëÎ»ÖÃ
 Save:Macro\sbd_test.em	TestNodeMsg
 
 
@@ -268,20 +268,20 @@ Save:Macro\sbd_test.em	TestNodeMsg
 //bftParam = 6531E
 //bftParam = 9820e
 
-//1) æ‰“å¼€é¡¹ç›®æ–‡ä»¶:
+//1) ´ò¿ªÏîÄ¿ÎÄ¼ş:
 pls_press_ctrl_e
 
 
 
 
 [1.15] path--Set
-//sbd_base è·¯å¾„è®¾ç½®
+//sbd_base Â·¾¶ÉèÖÃ
 Save:Macro\sbd_base.em
 
-//Macro_Set_Base è·¯å¾„è®¾ç½®
+//Macro_Set_Base Â·¾¶ÉèÖÃ
 Save:set\Macro_Set_Base.h
 
-//å®šåˆ¶è·¯å¾„è®¾ç½®: (æ–°åŠ çš„è¯å‚è€ƒå·²æœ‰è·¯å¾„)
+//¶¨ÖÆÂ·¾¶ÉèÖÃ: (ĞÂ¼ÓµÄ»°²Î¿¼ÒÑÓĞÂ·¾¶)
 // Save:
 Save:Macro\sbd_base.em	getSavePath(0)
 Save:Macro\sbd_file.em	"Save:"
@@ -306,13 +306,13 @@ Save:Cmd_TXT\si_filelist.h
 [1.17] mode
 base:sbd_test.em  mode_save
 
-//1) é€‰ä¸­(mode_save), å†ctrl+E
+//1) Ñ¡ÖĞ(mode_save), ÔÙctrl+E
 //  
-//		(ç•¥)
+//		(ÂÔ)
 
-//2) é€‰ä¸­(mode_read), å†ctrl+E
+//2) Ñ¡ÖĞ(mode_read), ÔÙctrl+E
 //  
-//		(ç•¥)
+//		(ÂÔ)
 
 
 
@@ -321,28 +321,28 @@ base:sbd_test.em  mode_save
 [1.18] String
 base:sbd_test.em  line_value
 
-//1) é€‰ä¸­(line_value), å†ctrl+E
+//1) Ñ¡ÖĞ(line_value), ÔÙctrl+E
 //  
-//		(ç•¥)
+//		(ÂÔ)
 
-//2) é€‰ä¸­(string_translate), å†ctrl+E
+//2) Ñ¡ÖĞ(string_translate), ÔÙctrl+E
 //  
-//		(ç•¥)
+//		(ÂÔ)
 	
 
 [1.19] Shell
 base:sbd_test.em  shell_cmd
 
-//1) é€‰ä¸­(shell_cmd), å†ctrl+E
+//1) Ñ¡ÖĞ(shell_cmd), ÔÙctrl+E
 //  
-//		(ç•¥)
+//		(ÂÔ)
 
-//2) é€‰ä¸­(shell_SvnLog), å†ctrl+E
+//2) Ñ¡ÖĞ(shell_SvnLog), ÔÙctrl+E
 //  
-//		(ç•¥)
+//		(ÂÔ)
 	
-//3) é€‰ä¸­(shell_SvnDiff), å†ctrl+E
-//	æ‰“å¼€å‚æ•°(bftParam, fileParam), 
+//3) Ñ¡ÖĞ(shell_SvnDiff), ÔÙctrl+E
+//	´ò¿ª²ÎÊı(bftParam, fileParam), 
 //bftParam = 6531E
 //fileParam = mmiidle_cstyle.c
 //fileParam = mmialarm.c
@@ -352,17 +352,17 @@ base:sbd_test.em  shell_cmd
 [1.20] API
 base:sbd_test.em  API_log
 
-//1) é€‰ä¸­(API_log), å†ctrl+E
+//1) Ñ¡ÖĞ(API_log), ÔÙctrl+E
 //  
-//		(ç•¥)
+//		(ÂÔ)
 
-//2) é€‰ä¸­(API_struct), å†ctrl+E
+//2) Ñ¡ÖĞ(API_struct), ÔÙctrl+E
 //  
-//		(ç•¥)
+//		(ÂÔ)
 
-//3) é€‰ä¸­(API_val), å†ctrl+E
+//3) Ñ¡ÖĞ(API_val), ÔÙctrl+E
 //  
-//		(ç•¥)
+//		(ÂÔ)
 
 
 [1.21] 
@@ -370,20 +370,20 @@ base:sbd_test.em  API_log
 
 
 [2.1] ctrl+B
-//  ä»£ç ä½ç½®
+//  ´úÂëÎ»ÖÃ
 Save:Macro\sbd_ctrl.em  CtrlB
 Save:Macro\sbd_f12.em  ShowNoteHelp
 
-//1) æ˜¾ç¤ºæç¤ºä¿¡æ¯--py/androidè¯­æ³•
+//1) ÏÔÊ¾ÌáÊ¾ĞÅÏ¢--py/androidÓï·¨
 // --Test--Python
-range		(é€‰ä¸­å->ctrlB->æç¤º)
-reduce_sum	(é€‰ä¸­å->ctrlB->æç¤º)
-reduce_0	(é€‰ä¸­å->ctrlB->ä¸å­˜åœ¨, æ‰“å¼€ä¸´æ—¶æ–‡ä»¶)
+range		(Ñ¡ÖĞºó->ctrlB->ÌáÊ¾)
+reduce_sum	(Ñ¡ÖĞºó->ctrlB->ÌáÊ¾)
+reduce_0	(Ñ¡ÖĞºó->ctrlB->²»´æÔÚ, ´ò¿ªÁÙÊ±ÎÄ¼ş)
 // --Test--Android
-implement	(é€‰ä¸­å->ctrlB->æç¤º)
+implement	(Ñ¡ÖĞºó->ctrlB->ÌáÊ¾)
 
 
-//2) pyå’Œandroidè¯´æ˜å‡æœ‰, å¯è®¾ç½®ä¸ºåªæ˜¾ç¤ºandroid:
+//2) pyºÍandroidËµÃ÷¾ùÓĞ, ¿ÉÉèÖÃÎªÖ»ÏÔÊ¾android:
 // --Test
 compile
 // --set py info(0 or 1):
@@ -392,15 +392,15 @@ Save:set\Macro_Set.h 75
 Save:set\Macro_Set.h 78
 
 
-//3) Libå¯¹ç…§è¡¨, (ç‰¹æ®Šæ ¼å¼, å¸¦'.'æ—¶ä¸æœç´¢'::')
+//3) Lib¶ÔÕÕ±í, (ÌØÊâ¸ñÊ½, ´ø'.'Ê±²»ËÑË÷'::')
 Save:Help\LangInfo\Macro_Info_Android_Lib.h
 // --Test
 implementation 'com.android.support:appcompat-v7:25.+'
 implementation 'com.android.support:support-v4:25.+'
 
 
-//4) Infoä½ç½®
-//   æœç´¢å…³é”®å­—:
+//4) InfoÎ»ÖÃ
+//   ËÑË÷¹Ø¼ü×Ö:
 Save:Help\LangInfo\Macro_Info_Android.h  classpath::
 Save:Help\LangInfo\Macro_Info_Python.h
 
@@ -413,10 +413,10 @@ Save:Help\Tmp\sbd_Tmp_Show.em
 Save:Help\Tmp\Tmp_Test.h
 
 
-[2.3] ctrl+Dç´¢å¼•
+[2.3] ctrl+DË÷Òı
 MtkNote
 
-//ä¸»è¦ç´¢å¼•:
+//Ö÷ÒªË÷Òı:
 ctrl+D->ctrl+S:
 ctrl+D->ctrl+C:
 ctrl+D->ctrl+F:
@@ -428,7 +428,7 @@ ctrl+D->ctrl+T:
 ctrl+D->ctrl+R:
 ctrl+D->ctrl+G:
 	
-//åˆ†æ¨¡å—ç´¢å¼•:
+//·ÖÄ£¿éË÷Òı:
 ctrl+D->M:
 ctrl+D->K:
 ctrl+D->R:
@@ -436,17 +436,17 @@ ctrl+D->S:
 ctrl+D->...:
 
 
-//æ˜¾ç¤ºåˆ†é¡µ
-//  ctrlDDå, å¤šæ¬¡ctrlD, ä¸è¿‡æ²¡æœ‰æ˜¾ç¤ºæ€»é¡µæ•°ï¼Œæˆ–è€…:
-//  ctrlD3, æ˜¾ç¤ºç¬¬1é¡µ
-//  ctrlD4, æ˜¾ç¤ºç¬¬2é¡µ
-//  ctrlD5, æ˜¾ç¤ºç¬¬3é¡µ
-//  ctrlD6, æ˜¾ç¤ºç¬¬4é¡µ
+//ÏÔÊ¾·ÖÒ³
+//  ctrlDDºó, ¶à´ÎctrlD, ²»¹ıÃ»ÓĞÏÔÊ¾×ÜÒ³Êı£¬»òÕß:
+//  ctrlD3, ÏÔÊ¾µÚ1Ò³
+//  ctrlD4, ÏÔÊ¾µÚ2Ò³
+//  ctrlD5, ÏÔÊ¾µÚ3Ò³
+//  ctrlD6, ÏÔÊ¾µÚ4Ò³
 Save:Help\DefaultFile\Macro_Node_Num.h
 
-//æ‰‹åŠ¨åˆ¶ä½œç´¢å¼•
-//  ctrlU, æ·»åŠ ç¼–å·
-//  ctrlU, å¤åˆ¶^p^p^p, æ·»åŠ æ¢è¡Œ
+//ÊÖ¶¯ÖÆ×÷Ë÷Òı
+//  ctrlU, Ìí¼Ó±àºÅ
+//  ctrlU, ¸´ÖÆ^p^p^p, Ìí¼Ó»»ĞĞ
 
 
 
@@ -474,77 +474,77 @@ Save:Help\DefaultFile\Macro_Node_Num.h
 
 
 
-[3.1] cmdç³»åˆ—
+[3.1] cmdÏµÁĞ
 # 1) test
-// æ˜¾ç¤ºcmdå‘½ä»¤
+// ÏÔÊ¾cmdÃüÁî
 test:CustomCmd
 
-//	ä»£ç ä½ç½®
+//	´úÂëÎ»ÖÃ
 Save:Macro\sbd_test.em	TestNodeMsg
 
 
 # 2) cmd_w
-//	å¼¹çª— + ç²˜è´´ (baseè·¯å¾„)
-// æ ¼å¼: å»æ‰ä¸€ä¸ªhead(è·¯å¾„åœ¨å³)
+//	µ¯´° + Õ³Ìù (baseÂ·¾¶)
+// ¸ñÊ½: È¥µôÒ»¸öhead(Â·¾¶ÔÚÓÒ)
 cmd_w: ping dl.google.com
 
-//	ä»£ç ä½ç½®
+//	´úÂëÎ»ÖÃ
 Save:Macro\sbd_f11.em	"cmd"
 
 
 # 3) cmd_s
-//	å¼¹çª— + ç²˜è´´ (projectè·¯å¾„)
-// æ ¼å¼: å»æ‰ä¸€ä¸ªhead(è·¯å¾„åœ¨å³)
+//	µ¯´° + Õ³Ìù (projectÂ·¾¶)
+// ¸ñÊ½: È¥µôÒ»¸öhead(Â·¾¶ÔÚÓÒ)
 cmd_s: ping dl.google.com
 
-//	ä»£ç ä½ç½®
+//	´úÂëÎ»ÖÃ
 Save:Macro\sbd_f11.em	macro^NoteCurCmd
 
 
 # 4) cmd_f
-//	åŸç›®å½•
+//	Ô­Ä¿Â¼
 cmd_f: ren Tmp_Test.h Tmp_Test5.0.h
 cmd_f: ren Tmp_Test5.0.h Tmp_Test.h
-//	ä¸Šçº§ç›®å½•
+//	ÉÏ¼¶Ä¿Â¼
 cmd_f: ren target\Tmp_Test.h Tmp_Test5.0.h
 cmd_f: ren target\Tmp_Test5.0.h Tmp_Test.h
-//	å…¨ç›®å½•
+//	È«Ä¿Â¼
 cmd_w: ren D:\Save\SI\Help\Tmp\target\Tmp_Test.h Tmp_Test5.0.h
 
-//	æµ‹è¯•
-// æ ¼å¼: å»æ‰ä¸€ä¸ªhead(è·¯å¾„åœ¨å³è¾¹ä¸­é—´)
+//	²âÊÔ
+// ¸ñÊ½: È¥µôÒ»¸öhead(Â·¾¶ÔÚÓÒ±ßÖĞ¼ä)
 cmd_f: ren bak:Tmp_Test.h Tmp_Test5.0.h
 cmd_f: ren bak:Tmp_Test5.0.h Tmp_Test6.0.h
 cmd_f: ren bak:Tmp_Test6.0.h Tmp_Test.h
-cmd_f: ren L:å¸¸ç”¨å›¾ç‰‡\* *.jpg
+cmd_f: ren L:³£ÓÃÍ¼Æ¬\* *.jpg
 
-//	ä»£ç ä½ç½®
+//	´úÂëÎ»ÖÃ
 Save:Macro\sbd_f11.em	macro^NoteInCmd
-//  ç»“æœ
+//  ½á¹û
 bakPath = Save:Help\Tmp\target
 bak:\\
 
 cmd_w: D:&&cd D:\Save\SI\Macro\
 
 # 5) cmd
-//	æ‰“å¼€åŸºç¡€è·¯å¾„çš„å¼¹çª— + ç²˜è´´(ä¸é€šç”¨)
+//	´ò¿ª»ù´¡Â·¾¶µÄµ¯´° + Õ³Ìù(²»Í¨ÓÃ)
 cmd: ping dl.google.com
 
 
 
 
 [3.2] open(exe)
-//æ‰“å¼€
+//´ò¿ª
 open: C:\Program^Files^(x86)\Tencent\QQ\Bin\QQScLauncher.exe
 
 
-//open	   åˆ›å»ºç¬”è®°; æ‰“å¼€exe; æ‰“å¼€æ–‡ä»¶+å…³é”®å­—; éMacro_å¼€å¤´æ–‡ä»¶ä¸­åªèƒ½ç”¨è¿™ä¸ªæ‰“å¼€æ–‡ä»¶
+//open	   ´´½¨±Ê¼Ç; ´ò¿ªexe; ´ò¿ªÎÄ¼ş+¹Ø¼ü×Ö; ·ÇMacro_¿ªÍ·ÎÄ¼şÖĞÖ»ÄÜÓÃÕâ¸ö´ò¿ªÎÄ¼ş
 open:plutommi\Customer\STMTView.exe
 
-//å·¥å…·:
-//ä¸‹è½½å·¥å…·:
-open:D:\Desktop\å·¥å…·\FlashTool_v5.1548.00\Flash_tool_Beta.exe
-//å­—ç¬¦ä¸²å·¥å…·:
+//¹¤¾ß:
+//ÏÂÔØ¹¤¾ß:
+open:D:\Desktop\¹¤¾ß\FlashTool_v5.1548.00\Flash_tool_Beta.exe
+//×Ö·û´®¹¤¾ß:
 open:plutommi\Customer\STMTView.exe
 //TRACE:
 open D:\ProgramDownTool\3.1304.00_Catcher\Catcher.exe
@@ -558,7 +558,7 @@ open D:\ProgramDownTool\3.1304.00_Catcher\Catcher.exe
 
 
 [3.5] setPath
-//setå½“å‰é¡¹ç›®:
+//setµ±Ç°ÏîÄ¿:
 set ...:
 sethistory:
 
@@ -571,7 +571,7 @@ set M101_COOLCEL_CS181_M_BRAVIS_F3 M101_COOLCEL gsm
 
 
 //setPath  
-setPath old (åœ¨è¿™ä¸€è¡ŒæŒ‰F5, å¼€å§‹æ›¿æ¢)
+setPath old (ÔÚÕâÒ»ĞĞ°´F5, ¿ªÊ¼Ìæ»»)
 
 
 
@@ -595,29 +595,29 @@ Save:Macro\sbd_f11.em	"RAR"
 Save:Macro\sbd_ctrl.em  "newPro"
 
 
-//1) cp: å¤åˆ¶å·¦åˆ°å³
+//1) cp: ¸´ÖÆ×óµ½ÓÒ
 cp Save:Help\Tmp\Tmp_Test.h Save:Help\Tmp\target\Tmp_Test_new.h
 cp Save:Help\Tmp\Tmp_Test.h Save:Help\Tmp\target\
 
-// æŸ¥çœ‹ç»“æœ
+// ²é¿´½á¹û
 Save:Help\Tmp\target\
 
-//	ä»£ç ä½ç½®
+//	´úÂëÎ»ÖÃ
 Save:Macro\sbd_f11.em	macro^NoteCopyFile
 
 
-//2) ctrl+C: å¤åˆ¶æ—§é¡¹ç›®åˆ°æ–°é¡¹ç›®(ç•¥)
-// æ–°é¡¹ç›®è®¾ç½®:
+//2) ctrl+C: ¸´ÖÆ¾ÉÏîÄ¿µ½ĞÂÏîÄ¿(ÂÔ)
+// ĞÂÏîÄ¿ÉèÖÃ:
 newPro = Save:Help\
 newPro = M610_KM_V2411_SP6000_F2
-// é€‰ä¸­åcopy:
+// Ñ¡ÖĞºócopy:
 Save:Help\Tmp\Tmp_Test.h
 
 
-//3) RAR:(ç•¥)
+//3) RAR:(ÂÔ)
 RAR Save:Help\Tmp\RTmp_Test.rar Save:Help\Tmp\RTmp_space.rar
 RAR Save:Help\Tmp\Tmp_Test.h
-//æ‰“å¼€RARæ–‡ä»¶:
+//´ò¿ªRARÎÄ¼ş:
 RAR: Save:Help\Tmp RTmp_Test.rar
 
 
@@ -625,17 +625,17 @@ RAR: Save:Help\Tmp RTmp_Test.rar
 //
 Save:Macro\sbd_f11.em	"make"
 
-//make	   è¿è¡Œcmdå‘½ä»¤
+//make	   ÔËĞĞcmdÃüÁî
 make M115_JGW_D2_X191_F2 gprs gen_modis
 
 
 [3.10] ctmake
-//ctmake   ä¸è¿è¡Œcmdå‘½ä»¤, åªå¤åˆ¶
+//ctmake   ²»ÔËĞĞcmdÃüÁî, Ö»¸´ÖÆ
 ctmake -j 16 CT_TARGET=S069_HK_H1822_IRBIS_SF31_F2_QQVGA
 
 
 [3.11] xmake
-//xmake    ä¸è¿è¡Œcmdå‘½ä»¤, åªå¤åˆ¶
+//xmake    ²»ÔËĞĞcmdÃüÁî, Ö»¸´ÖÆ
 ctmake -j 16 CT_TARGET=S069_HK_H1822_IRBIS_SF31_F2_QQVGA
 
 
@@ -673,25 +673,25 @@ vs08:MoDIS_VC9\MoDIS.sln
 Save:Macro\sbd_f11.em	"python"
 
 //python
-// è®¾ç½®åŒè·¯å¾„
+// ÉèÖÃË«Â·¾¶
 basePath = D:\project\NLP
 toolPath = Save:node\Pythons
 base:\\
 tool:\\
 
-//1) ç¬¬1ä¸ªè·¯å¾„(base + filename)
+//1) µÚ1¸öÂ·¾¶(base + filename)
 nlp_block\_layer.py
 
-//2) ç¬¬2ä¸ªè·¯å¾„(tool + filename)
+//2) µÚ2¸öÂ·¾¶(tool + filename)
 tool:xiaoshuo\test_split.py
 
-//3) ç¬¬1ä¸ªè·¯å¾„(base + filename)
+//3) µÚ1¸öÂ·¾¶(base + filename)
 python_w nlp_block\_layer.py
 
-//4) ç¬¬2ä¸ªè·¯å¾„(tool + filename)
+//4) µÚ2¸öÂ·¾¶(tool + filename)
 python_w tool:xiaoshuo\test_split.py
 
-//5) åŒä¸Š
+//5) Í¬ÉÏ
 python_w:tool xiaoshuo\test_split.py
 
 
@@ -704,8 +704,8 @@ python_w:tool xiaoshuo\test_split.py
 
 [3.23] 
 f11--path--Test
-ç‰¹æ®Šè·¯å¾„
-//1. "E:XXX YYY" è·å–è·¯å¾„ä¸º "E:XXX"
+ÌØÊâÂ·¾¶
+//1. "E:XXX YYY" »ñÈ¡Â·¾¶Îª "E:XXX"
 
 //cfg--fs
 Tool:soft_zip_mp3\BLEPHONE61D_11C_BB.cfg main_region
@@ -714,24 +714,24 @@ root->F
 
 
 [3.24] file
-#   --Testæ–‡ä»¶
-åŸºç¡€è·¯å¾„è®¾ç½®:
+#   --TestÎÄ¼ş
+»ù´¡Â·¾¶ÉèÖÃ:
 basePath = F:\6261D_11C_V33
 //basePath = D:\SVN
 
-//è·³è½¬åˆ°è¡Œå·:
+//Ìø×ªµ½ĞĞºÅ:
 projects\....bld 30
 
-//é€šé…ç¬¦æœç´¢:
+//Í¨Åä·ûËÑË÷:
 //	2002/06/07 --> [0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9]
 projects\....bld [0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9]
 
-//æœç´¢æ–‡ä»¶
+//ËÑË÷ÎÄ¼ş
 Save:Help\Test\Macro_...
 Save:Help\Test\...
 Save:Help\Test\Tmp_Test.h
 
-//æœç´¢æ–‡ä»¶ï¼Œå¹¶ç›´æ¥æ‰“å¼€ä¿å­˜æ–‡ä»¶
+//ËÑË÷ÎÄ¼ş£¬²¢Ö±½Ó´ò¿ª±£´æÎÄ¼ş
 FileSame:Save:Help\Test\Macro_
 
 
@@ -739,18 +739,18 @@ FileSame:Save:Help\Test\Macro_
 
 [3.25] path
 
-//1) åŸºç¡€è·¯å¾„è®¾ç½®:
+//1) »ù´¡Â·¾¶ÉèÖÃ:
 //basePath = Save:node\Pythons
 
-// å­˜åœ¨basePath, ç”¨ basePath + cur
+// ´æÔÚbasePath, ÓÃ basePath + cur
 py_test\file_read_a.txt
 py_test\file_read_b.txt
 
-// ä¸å­˜åœ¨basePath, ç”¨ project path + cur
+// ²»´æÔÚbasePath, ÓÃ project path + cur
 py_test\file_read_a.txt
 
 
-//2) Projectè·¯å¾„--Test
+//2) ProjectÂ·¾¶--Test
 ProjectPath = Save:node\Pythons
 // ok
 Project:py_test\file_read_a.txt
@@ -759,7 +759,7 @@ Project2:py_test\file_read_b.txt
 Project: py_test\file_read_a.txt
 
 
-//3) Toolè·¯å¾„--Test
+//3) ToolÂ·¾¶--Test
 Tool2Path = Save:node\Pythons
 // ok,Tool2=...
 Tool2:py_test\
@@ -767,7 +767,7 @@ Tool2:py_test\
 Tool:py_test\
 
 
-//3) Dataè·¯å¾„--Test
+//3) DataÂ·¾¶--Test
 DataPath = Save:node\Pythons
 // ok
 Data:py_test\file_read_a.txt
@@ -775,15 +775,15 @@ Data:py_test\file_read_a.txt
 Data2:py_test\file_read_b.txt
 
 
-//4) XXXè·¯å¾„--Test
+//4) XXXÂ·¾¶--Test
 XXXPath = Save:node\Pythons\
 // ok
 XXX:install\hello.py
 // err
 YYY:install\hello.py
 
-//5) æœç´¢è·¯å¾„ä¸‹æ–‡ä»¶
-//æœç´¢è·¯å¾„
+//5) ËÑË÷Â·¾¶ÏÂÎÄ¼ş
+//ËÑË÷Â·¾¶
 AsFile:Save:Help\
 	
 
@@ -791,26 +791,26 @@ AsFile:Save:Help\
 [3.26] 
 
 
-[3.27] ç©ºæ ¼
+[3.27] ¿Õ¸ñ
 //
 helpPath = Save:Help
 
-//1) æ ‡å‡†
+//1) ±ê×¼
 help:Tmp\Tmp_Test.h
 help:Tmp\Tmp_Test.h SLIM
 
-//2) æ ‡å‡† + ä¸­åŠ ä¸€ç©ºæ ¼(err)
+//2) ±ê×¼ + ÖĞ¼ÓÒ»¿Õ¸ñ(err)
 help: Tmp\Tmp_Test.h
 help:Tmp\Tmp_Test.h  SLIM
 
-//3) æ ‡å‡† + ååŠ ä¸€ç©ºæ ¼
+//3) ±ê×¼ + ºó¼ÓÒ»¿Õ¸ñ
 help:Tmp\Tmp_Test.h 
 help:Tmp\Tmp_Test.h SLIM 
 
-//4) æ ‡å‡† + ååŠ äºŒå•è¯
+//4) ±ê×¼ + ºó¼Ó¶şµ¥´Ê
 help:Tmp\Tmp_Test.h  SLIM  FULL
 
-//5) python + åŠ ç©ºæ ¼
+//5) python + ¼Ó¿Õ¸ñ
 python_w help:DefaultFile\Macro_z_null.py
 python_w  help:DefaultFile\Macro_z_null.py
 python_w help:DefaultFile\Macro_z_null.py 

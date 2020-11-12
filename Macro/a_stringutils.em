@@ -1,4 +1,4 @@
-﻿// Returns offset of target string in source string
+// Returns offset of target string in source string
 
 // Return X if target string is not found
 

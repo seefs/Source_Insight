@@ -1,4 +1,4 @@
-ï»¿
+
 // File List [Num][Ca]:
 // 1. Common notes
 Save:node\Macro_File.h \[1.1\] work file
@@ -58,33 +58,33 @@ Save:node\Project\Macro_A_Nav.h
 
 
 [1.2] bak file
-//	bak(æœªæ•´ç†, æœªæ”¹)
+//	bak(Î´ÕûÀí, Î´¸Ä)
 Save:Help\bak\Macro_tmp.h
 
 
 [1.3] help--Node Num
-//å‚è€ƒæ ‡å·:
-//  2ä¸ª\\æ˜¯ä¸ºäº†ä¸è¢«æ›¿æ¢
+//²Î¿¼±êºÅ:
+//  2¸ö\\ÊÇÎªÁË²»±»Ìæ»»
 Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 
 [1.4] help--DefaultFile
-//æ ·æ¿æ–‡ä»¶:
+//Ñù°åÎÄ¼ş:
 Save:Help\DefaultFile\Macro_z_index.h
 Save:Help\DefaultFile\Macro_z_null.h
 Save:Help\DefaultFile\Macro_z_null.py
-//æ ·æ¿æ–‡ä»¶-(æ›´å¤šåºå·+):
+//Ñù°åÎÄ¼ş-(¸ü¶àĞòºÅ+):
 Save:Help\DefaultFile\Macro_z_index_2.h
-//Infoæ–‡ä»¶:
+//InfoÎÄ¼ş:
 Save:Help\LangInfo\Macro_Info_Android.h
 Save:Help\LangInfo\Macro_Info_Python.h
 
 
 [1.5] CQ
-//ç¦…é“ å±•è®¯ MTK
-//1) ç¦…é“:
+//ìøµÀ Õ¹Ñ¶ MTK
+//1) ìøµÀ:
 http://192.168.2.252/zentao/my/
-//2) å±•è®¯:
+//2) Õ¹Ñ¶:
 http://222.66.158.139:2008/cqweb/#
 //   9820e:
 https://isupport.spreadtrum.com/iSupport/apply/faq_list#tab-
@@ -121,26 +121,26 @@ Save:Macro\sbd_file.em  IsTxtFile( )
 
 
 [2.2] marco test...
-// åŠŸèƒ½æµ‹è¯•
+// ¹¦ÄÜ²âÊÔ
 Save:Help\Macro_Note_Test.h
-// å¼€å¯æµ‹è¯•
+// ¿ªÆô²âÊÔ
 Save:Macro\sbd_test.em  macro^TestMsg
 
 
 [2.3] set save path
-// 1) æ”¹å˜Saveè·¯å¾„, å®å‘½ä»¤æ‰èƒ½æ­£å¸¸ä½¿ç”¨:
+// 1) ¸Ä±äSaveÂ·¾¶, ºêÃüÁî²ÅÄÜÕı³£Ê¹ÓÃ:
 Save:Macro\sbd_base.em	getSavePath(0)
 Save:Macro\sbd_root_path.em  getRootPath(0)
 
-// 2) é¦–æ¬¡å®‰è£…æ­¥éª¤:
+// 2) Ê×´Î°²×°²½Öè:
 Save:Help\Other\Macro_Help_SI.h
 
 
 [2.4] set work path
-//1) å·¥ç¨‹è·¯å¾„ç¼–å·
+//1) ¹¤³ÌÂ·¾¶±àºÅ
 Save:set\Macro_Set_Base.h
 
-//2) é¡¹ç›®è·¯å¾„ç¼´å­˜(æ›¿æ¢)
+//2) ÏîÄ¿Â·¾¶½É´æ(Ìæ»»)
 Save:set\Macro_Set_Note.h
 
 
@@ -175,7 +175,7 @@ Save:bak\bcmp\bmp_107_mk.bat
 
 [3.4] utf8<-->ansi
 //set file code:
-//   æ·»åŠ ç›®å½•æˆ–æ–‡ä»¶ï¼Œé€ä¸ªè½¬æ¢ç¼–ç æ ¼å¼
+//   Ìí¼ÓÄ¿Â¼»òÎÄ¼ş£¬Öğ¸ö×ª»»±àÂë¸ñÊ½
 Save:Cmd_other\conv_cur_charset\
 Save:Cmd_other\conv_cur_charset\conv_cur_utf8_to_ansi.vbs
 Save:Cmd_other\conv_cur_charset\conv_cur_ansi_to_utf8.vbs
@@ -187,7 +187,7 @@ Save:Cmd_other\
 Save:Cmd_other\git_auto_pull.bat
 Save:Cmd_other\git_auto_push.bat
 
-// å…¶ä»–é¡¹ç›®æ›´æ–°
+// ÆäËûÏîÄ¿¸üĞÂ
 Save:node\android\project\Macro_as_demo.h  git_updata
 
 
@@ -205,7 +205,7 @@ Save:node\ToolsMsg\Macro_Cmd.h
 
 
 [4.4] SVN
-Save:node\ToolsMsg\Macro_win.h \[2.4\] SVN é…ç½®
+Save:node\ToolsMsg\Macro_win.h \[2.4\] SVN ÅäÖÃ
 
 
 [4.5] Beyond Compare

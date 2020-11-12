@@ -1,4 +1,4 @@
-ï»¿
+
 macro SearchForward()
 {
 	var line_count
@@ -6,7 +6,7 @@ macro SearchForward()
 	var sel
 	var isCircle
 
-	isCircle = True //æ˜¯å¦å¾ªç¯æœç´¢
+	isCircle = True //ÊÇ·ñÑ­»·ËÑË÷
 	
 	hbuf = GetCurrentBuf()
 	hwnd = GetCurrentWnd()
@@ -53,7 +53,7 @@ macro SearchForwardSel(hbuf, sel)
 	if (IsSingleSelect(sel))
 	{
 		cur_line = GetBufLine(hbuf, sel.lnFirst )
-		if(sel.ichLim > strlen(cur_line)) //ä¸èƒ½é€‰æ¢è¡Œç¬¦ï¼Œä¼šæŠ¥é”™
+		if(sel.ichLim > strlen(cur_line)) //²»ÄÜÑ¡»»ĞĞ·û£¬»á±¨´í
 		{
 			sel.ichLim = strlen(cur_line)
 		}
@@ -61,7 +61,7 @@ macro SearchForwardSel(hbuf, sel)
 			stop
 		cur_sel = strmid(cur_line, sel.ichFirst, sel.ichLim)
 
-		//é»˜è®¤ç”¨é€šé…ç¬¦æœç´¢, è¿™ä¸ªé€‰é¡¹ä¼šæ”¹å˜ä¸‹æ¬¡æœç´¢
+		//Ä¬ÈÏÓÃÍ¨Åä·ûËÑË÷, Õâ¸öÑ¡Ïî»á¸Ä±äÏÂ´ÎËÑË÷
 		isSolid = FindString(cur_sel, ".")
 		if(isSolid != "X")
 		{

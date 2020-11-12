@@ -1,5 +1,5 @@
-ï»¿
-åŸºç¡€è·¯å¾„è®¾ç½®:
+
+»ù´¡Â·¾¶ÉèÖÃ:
 //basePath = 
 
 Save:node\
@@ -21,7 +21,7 @@ Save:node\S\project\Macro_S_google_hosts.h
 seefs@163.com
 seefss  xjs0f0s0
 
-OSTmançš„é›†åˆ
+OSTmanµÄ¼¯ºÏ
 
 
 https://www.postman.com/collections/1e8f06e4b595a38c05bb
@@ -30,6 +30,6 @@ https://www.postman.com/collections/1e8f06e4b595a38c05bb
 // 
 http://119.28.128.52:8888/v1/history/get_key_accounts
 
-// ä»£ç åœ°å€
+// ´úÂëµØÖ·
 https://103.146.100.4/svn/io-android/branches/hongbao_android
 

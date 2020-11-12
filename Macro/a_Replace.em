@@ -1,4 +1,4 @@
-ï»¿/*
+/*
 ReplaceFromList(thbuf)
 
 ReplaceSpans(hbuf, lnStart, newtext, patternStart, patternEnd, fCaseSens, fRegExp)
@@ -216,7 +216,7 @@ macro DoReplaceRow(hbuf, szOld, szNew, pRow, isRule)
 	hwnd = 0
 	while (TRUE)
 		{
-		//isRule:è®¾ç½®å‚æ•°åˆ—è¡¨ä»è¡Œé¦–æ›¿æ¢
+		//isRule:ÉèÖÃ²ÎÊıÁĞ±í´ÓĞĞÊ×Ìæ»»
 		sel = SearchInBuf(hbuf, szOld, ln, ich, TRUE, isRule, FALSE) //fWholeWordsOnly = FALSE
 		if (sel == "")
 			break;

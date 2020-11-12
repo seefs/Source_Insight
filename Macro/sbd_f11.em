@@ -1,4 +1,4 @@
-ï»¿
+
 macro _NoteTest(hbuf, cNum)
 {
 	//no use
@@ -16,15 +16,15 @@ macro Note()
 	}
 	
 	sel = MGetWndSel(hbuf)
-	isN = FALSE  //é€‰æ‹©->æ˜¾ç¤ºå¤‡æ³¨ åŠŸèƒ½ç”¨é€”ä¸å¤§ï¼Œæ”¹ä¸ºåªæœ‰mk,mak,defæ–‡ä»¶å¯ç”¨
+	isN = FALSE  //Ñ¡Ôñ->ÏÔÊ¾±¸×¢ ¹¦ÄÜÓÃÍ¾²»´ó£¬¸ÄÎªÖ»ÓĞmk,mak,defÎÄ¼ş¿ÉÓÃ
 	if(IsMakeFile(hbuf))
 	{
 		isN = TRUE
 	}
 	if (isN && IsSingleSelect(sel))
 	{
-		//1. é€‰æ‹©æ•´ä¸ªå®,     æ˜¾ç¤ºã€æ·»åŠ å®è¯´æ˜
-		//2. é€‰æ‹©éƒ¨åˆ†å…³é”®è¯,    æ˜¾ç¤ºã€æ·»åŠ è¯è¯´æ˜; 
+		//1. Ñ¡ÔñÕû¸öºê,     ÏÔÊ¾¡¢Ìí¼ÓºêËµÃ÷
+		//2. Ñ¡Ôñ²¿·Ö¹Ø¼ü´Ê,    ÏÔÊ¾¡¢Ìí¼Ó´ÊËµÃ÷; 
 		cur_line = GetBufLine(hbuf, sel.lnFirst )
 		if(strlen(cur_line) < sel.ichLim)
 			sel.ichLim = sel.ichLim - 1
@@ -43,15 +43,15 @@ macro Note()
 	}
 	else if(isN && IsMoreSelect(sel))
 	{
-		//3. å¯é€‰æ‹©å¤šè¡Œ
+		//3. ¿ÉÑ¡Ôñ¶àĞĞ
 		//	LCD_NV3029G_SANLONG_CPT2	= TRUE
 		//	LCD_GC9306_YIHUA_HSD      = TRUE
 		//	LCD_GC9305_SANLONG_HSD2 = TRUE
-		//æç¤º:
-		//	NV3029G	ä¸‰é¾™+CPT
-		//	GC9306	äº¿å
-		//	GC9305	ä¸‰é¾™+HSD
-		//æŒ‰ç¡®è®¤ï¼Œå¤åˆ¶ä»¥ä¸Šå†…å®¹åˆ°å‰ªåˆ‡æ¿ï¼Œå†ç²˜è´´åˆ°è½¯ä»¶è¯´æ˜ä¹¦ä¸­ã€‚
+		//ÌáÊ¾:
+		//	NV3029G	ÈıÁú+CPT
+		//	GC9306	ÒÚ»ª
+		//	GC9305	ÈıÁú+HSD
+		//°´È·ÈÏ£¬¸´ÖÆÒÔÉÏÄÚÈİµ½¼ôÇĞ°å£¬ÔÙÕ³Ìùµ½Èí¼şËµÃ÷ÊéÖĞ¡£
 		nTxt = ""
 		i = sel.lnFirst
 		while (i <= sel.lnLast)
@@ -275,11 +275,11 @@ macro NoteHander(hbuf, cNum, prompt)
 	var cur_line
 	var noteCmd
 	var noteWord
-	var rootPath //æ ¹è·¯å¾„, cmd cdåˆ°è¿™ä¸ªç›®å½•
+	var rootPath //¸ùÂ·¾¶, cmd cdµ½Õâ¸öÄ¿Â¼
 	var curPath
 	var lastStr
 	
-	//ä¸¾ä¾‹: ç¬¬1ä¸²å­—ç¬¦--å‘½ä»¤åç§°ã€ç¬¬2ä¸²å­—ç¬¦--è·¯å¾„ã€ç¬¬3ä¸²å­—ç¬¦--å…³é”®å­—
+	//¾ÙÀı: µÚ1´®×Ö·û--ÃüÁîÃû³Æ¡¢µÚ2´®×Ö·û--Â·¾¶¡¢µÚ3´®×Ö·û--¹Ø¼ü×Ö
 	var firstS
 	var firstE
 	var secondS
@@ -290,14 +290,14 @@ macro NoteHander(hbuf, cNum, prompt)
 	var cur_row
 	var isCmd
 	
-	//æ˜¾ç¤ºlog, æ¸…é™¤ä¸Šå›çš„è®°å½•, è¿™é‡Œæ¸…ä¸€æ¬¡å°±å¯ä»¥äº†
-	TestMsg("ä¼ Xæ¸…é›¶", "X")
+	//ÏÔÊ¾log, Çå³ıÉÏ»ØµÄ¼ÇÂ¼, ÕâÀïÇåÒ»´Î¾Í¿ÉÒÔÁË
+	TestMsg("´«XÇåÁã", "X")
 	
 	sel = MGetWndSel(hbuf)
 	cur_line = GetBufLine(hbuf, sel.lnFirst )
 	cur_row = sel.lnFirst
 
-	//åˆ é™¤è¡Œé¦–ç©ºæ ¼
+	//É¾³ıĞĞÊ×¿Õ¸ñ
 	firstS = StartWS(cur_line, 0 )
 	if (firstS == "X")
 		stop
@@ -305,14 +305,14 @@ macro NoteHander(hbuf, cNum, prompt)
 		cur_line = strmid(cur_line, firstS, strlen(cur_line))
 	len = strlen(cur_line)
 
-	// å–ç¬¬1ä¸²å­—ç¬¦--å‘½ä»¤åç§°, ä»¥":"æˆ–" "åˆ†å¼€
+	// È¡µÚ1´®×Ö·û--ÃüÁîÃû³Æ, ÒÔ":"»ò" "·Ö¿ª
 	firstE = GetHeadIndex(hbuf, cur_line)
 	if (firstE != "X")
 	{
 		noteCmd = strmid(cur_line, 0, firstE)
 		isCmd = 0
 
-		//æ™®é€šæ–‡æœ¬ç¦æ­¢äº†å’Œè·¯å¾„æ— å…³çš„æ“ä½œ(prompt)
+		//ÆÕÍ¨ÎÄ±¾½ûÖ¹ÁËºÍÂ·¾¶ÎŞ¹ØµÄ²Ù×÷(prompt)
 		
 		//type6: [0, 1], -, - (priority)
 		if(IsTransHead(hbuf, noteCmd)==1)
@@ -349,7 +349,7 @@ macro NoteHander(hbuf, cNum, prompt)
 		else if(prompt == 0 && strlen(noteCmd)==1)
 			isCmd = 5
 			
-		//å‘½ä»¤åè½¬åŒ–: åˆ é™¤ç©ºæ ¼
+		//ÃüÁîÃû×ª»¯: É¾³ı¿Õ¸ñ
 		secondS = GetTransCmdS(cur_line, firstE + 1, len)
 		secondE = GetTransCmdE(cur_line, secondS,     len)
 		thirdS  = GetTransCmdS2(cur_line, secondE + 1, len)
@@ -361,7 +361,7 @@ macro NoteHander(hbuf, cNum, prompt)
 			curPath = cur_line						// [0, 1, 2, 3]
 		else if (isCmd == 3)
 		{
-			// å»æ‰1ä¸ªhead(è·¯å¾„åœ¨å³)
+			// È¥µô1¸öhead(Â·¾¶ÔÚÓÒ)
 			// cur_line--> "vs08:base:MoDIS_VC9\MoDIS.sln"
 			// cur_line--> "     base:MoDIS_VC9\MoDIS.sln"
 			// next2-----> "     base "
@@ -378,11 +378,11 @@ macro NoteHander(hbuf, cNum, prompt)
 		}
 		else if (isCmd == 4)
 		{
-			// å»æ‰2ä¸ªhead(è·¯å¾„åœ¨å·¦, å³è¾¹ç”¨ç®€åŒ–è·¯å¾„)
+			// È¥µô2¸öhead(Â·¾¶ÔÚ×ó, ÓÒ±ßÓÃ¼ò»¯Â·¾¶)
 			// cur_line--> "cd:tmp: git clone https://github.com/Rukey7/MvpApp"
 			// cur_line--> "   tmp: git clone https://github.com/Rukey7/MvpApp"
 			// next2-----> "   tmp "
-			curPath = strmid(cur_line, secondS, len)	// -, -, [2, 3] (è·¯å¾„è½¬æ¢æœ‰åŒºåˆ«)
+			curPath = strmid(cur_line, secondS, len)	// -, -, [2, 3] (Â·¾¶×ª»»ÓĞÇø±ğ)
 			secondE = GetHeadIndex(hbuf, curPath)
 			if (secondE != "X")
 			{
@@ -398,26 +398,26 @@ macro NoteHander(hbuf, cNum, prompt)
 				}
 			}
 			else {
-				// python xxx        --> ä¸ä¼šèµ°è¿™é‡Œ
-				// python_w:tool xxx --> ä¼šèµ°è¿™é‡Œ
+				// python xxx        --> ²»»á×ßÕâÀï
+				// python_w:tool xxx --> »á×ßÕâÀï
 			}
-			//å¯èƒ½åªæœ‰ rootPath
+			//¿ÉÄÜÖ»ÓĞ rootPath
 		}
 		else if (isCmd == 5)
 			curPath = strmid(cur_line, 0, secondE)		// [0, 1], -, -
 		else if (isCmd == 6)
 		{
 			curPath = strmid(cur_line, 0, secondE)		// [0, 1], -, -
-			//è·¯å¾„æ›¿æ¢: Tool1->Tool1Path, Tool2->Tool2Path
+			//Â·¾¶Ìæ»»: Tool1->Tool1Path, Tool2->Tool2Path
 			curPath = ReTransHead(hbuf, noteCmd, curPath)
 		}
 		else if (isCmd == 7)
 		{
-			// å»æ‰ä¸€ä¸ªhead(è·¯å¾„åœ¨å³è¾¹ä¸­é—´)
+			// È¥µôÒ»¸öhead(Â·¾¶ÔÚÓÒ±ßÖĞ¼ä)
 			// cur_line--> "cmd_f: ren base:g_rougang_5.h base:g_rougang_5.0.h"
 			// cur_line--> "       ren base:g_rougang_5.h base:g_rougang_5.0.h"
 			// next2-----> "   tmp "
-			curPath = strmid(cur_line, secondS, len)	// -, [1, 2, 3] (è·¯å¾„è½¬æ¢æœ‰åŒºåˆ«)
+			curPath = strmid(cur_line, secondS, len)	// -, [1, 2, 3] (Â·¾¶×ª»»ÓĞÇø±ğ)
 			curPath = ReAllTransHead(hbuf, curPath)
 		}
 		else
@@ -427,8 +427,8 @@ macro NoteHander(hbuf, cNum, prompt)
 		}
 			
 		//goto word and Select
-		//è·å–å…³é”®è¯(å‰©ä½™è¯)
-		//  é˜²æ­¢è¶…è¾¹ç•Œ
+		//»ñÈ¡¹Ø¼ü´Ê(Ê£Óà´Ê)
+		//  ·ÀÖ¹³¬±ß½ç
 		if (isCmd == 0)
 		{
 			noteWord = GetTransStr(cur_line, secondS, secondE)
@@ -448,13 +448,13 @@ macro NoteHander(hbuf, cNum, prompt)
 
 		//use "^" as space
 		noteWord = ReplaceWord(noteWord, "^", " ")
-		//-- æˆ– # å· æˆ– // å·ä½œä¸ºæ³¨é‡Šä¸å¤„ç†
+		//-- »ò # ºÅ »ò // ºÅ×÷Îª×¢ÊÍ²»´¦Àí
 		if(LFindString(noteWord, "--") != "X" || LFindString(noteWord, "#") != "X" || LFindString(noteWord, "//") != "X")
 			noteWord = ""
 
-		// æ™®é€šæ–‡æ¡£ä¸è¦å¤åˆ¶
+		// ÆÕÍ¨ÎÄµµ²»Òª¸´ÖÆ
 		if(prompt == 0) {
-			//ä¿å­˜ (å®=)value åˆ°å‰ªåˆ‡æ¿; å¯å†ç”¨ctrl+Tæ›¿æ¢æ–°å€¼
+			//±£´æ (ºê=)value µ½¼ôÇĞ°å; ¿ÉÔÙÓÃctrl+TÌæ»»ĞÂÖµ
 			lnVar = GetLineValue(cur_line)
 			if(lnVar != "")
 			{
@@ -472,37 +472,37 @@ macro NoteHander(hbuf, cNum, prompt)
 		noteCmd = ""
 		noteWord = ""
 	}
-	TestMsg(isCmd # "," # noteCmd  # "ï¼š" # CharFromKey(13) # curPath # CharFromKey(13) # noteWord, 2)
+	TestMsg(isCmd # "," # noteCmd  # "£º" # CharFromKey(13) # curPath # CharFromKey(13) # noteWord, 2)
 
-	//åŠŸèƒ½è¯´æ˜ï¼š
-	//open:    åˆ›å»ºç¬”è®°; æ‰“å¼€exe; æ‰“å¼€æ–‡ä»¶+å…³é”®å­—; éMacro_å¼€å¤´æ–‡ä»¶ä¸­åªèƒ½ç”¨è¿™ä¸ªæ‰“å¼€æ–‡ä»¶
-	//cmd:     è¿è¡Œcmdå‘½ä»¤ ä¸åŒ…å«cmd
-	//make:    è¿è¡Œcmdå‘½ä»¤
-	//python:  è¿è¡Œcmdå‘½ä»¤
-	//ctmake:  ä¸è¿è¡Œcmdå‘½ä»¤, åªå¤åˆ¶
-	//xmake:   ä¸è¿è¡Œcmdå‘½ä»¤, åªå¤åˆ¶
+	//¹¦ÄÜËµÃ÷£º
+	//open:    ´´½¨±Ê¼Ç; ´ò¿ªexe; ´ò¿ªÎÄ¼ş+¹Ø¼ü×Ö; ·ÇMacro_¿ªÍ·ÎÄ¼şÖĞÖ»ÄÜÓÃÕâ¸ö´ò¿ªÎÄ¼ş
+	//cmd:     ÔËĞĞcmdÃüÁî ²»°üº¬cmd
+	//make:    ÔËĞĞcmdÃüÁî
+	//python:  ÔËĞĞcmdÃüÁî
+	//ctmake:  ²»ÔËĞĞcmdÃüÁî, Ö»¸´ÖÆ
+	//xmake:   ²»ÔËĞĞcmdÃüÁî, Ö»¸´ÖÆ
 	//vc:      
 	//vs08:    
 	//set: 
 	//setPath: 
 	//setProPath: 
 	//sethistory: 
-	//cp:      å¤åˆ¶æ–‡ä»¶
+	//cp:      ¸´ÖÆÎÄ¼ş
 	//cd:tmp: git ...
 	//cd_i:tmp: git ...
-	//é»˜è®¤:
+	//Ä¬ÈÏ:
 	//
 
 	if (isCmd == 6)
 	{
 		// (priority)
-		//æ‰“å¼€æ–‡ä»¶æˆ–ç›®å½•
+		//´ò¿ªÎÄ¼ş»òÄ¿Â¼
 		OpenFileHander(hbuf, curPath, cur_row, noteWord, cNum, prompt)
 	}
 	else if(noteCmd == "open")
 	{
-		//æ–‡ä»¶åè½¬åŒ–:
-		//è½¬åŒ–"Save:"ã€åŒºåˆ†æ ¹ç›®å½•ã€æ·»åŠ é¡¹ç›®ç›®å½•ã€æ›¿æ¢"^"ä¸ºç©ºæ ¼
+		//ÎÄ¼şÃû×ª»¯:
+		//×ª»¯"Save:"¡¢Çø·Ö¸ùÄ¿Â¼¡¢Ìí¼ÓÏîÄ¿Ä¿Â¼¡¢Ìæ»»"^"Îª¿Õ¸ñ
 		curPath = GetTransFileName(hbuf, curPath, cNum)
 		
 		//open tools or file
@@ -511,7 +511,7 @@ macro NoteHander(hbuf, cNum, prompt)
 //	else if(noteCmd == "cmd")
 //	{
 //		//open file
-//		//  åŠŸèƒ½å…³é—­ï¼Œç”¨ä¸ä¸Šã€‚ç”¨cmd_sä»£æ›¿
+//		//  ¹¦ÄÜ¹Ø±Õ£¬ÓÃ²»ÉÏ¡£ÓÃcmd_s´úÌæ
 //		SetClipSimpleString(curPath)
 //		TestMsg("cmd" # CharFromKey(13) # getBasePath(hbuf) # "\\cmd", 2)
 //		ShellExecute("open", getBasePath(hbuf) # "\\cmd", "", "", 1)
@@ -588,18 +588,18 @@ macro NoteHander(hbuf, cNum, prompt)
 	//type3:
 	else if(noteCmd == "set")
 	{
-		//curPath:é™¤setä»¥å¤–çš„str
+		//curPath:³ısetÒÔÍâµÄstr
 		SetNoteHander(hbuf, curPath, cur_row, 0)
 	}
 	//type1:
 	else if(noteCmd == "setPath")
 	{
-		//å¼€å§‹è·¯å¾„åˆ—è¡¨æ›¿æ¢
+		//¿ªÊ¼Â·¾¶ÁĞ±íÌæ»»
 		SetPathNoteHander(hbuf, cmdP1, cur_row)
 	}
 	else if(noteCmd == "setProPath")
 	{
-		msg("setPathçš„æ›¿æ¢åˆ—è¡¨, æš‚æ—¶ä¸å•ç‹¬æ›¿æ¢")
+		msg("setPathµÄÌæ»»ÁĞ±í, ÔİÊ±²»µ¥¶ÀÌæ»»")
 	}
 	else if(noteCmd == "sethistory")
 	{
@@ -608,13 +608,13 @@ macro NoteHander(hbuf, cNum, prompt)
 	else if(noteCmd == "cp")
 	{
 		//cp
-		//å‰é¢cmdP1ä¸­åˆ é™¤äº†å­—ç¬¦("cp")
+		//Ç°ÃæcmdP1ÖĞÉ¾³ıÁË×Ö·û("cp")
 		NoteCopyFile(hbuf, cmdP1, cmdP2, cNum)
 	}
 	else if(noteCmd == "RAR")
 	{
 		//RAR
-		//å‘½ä»¤åè½¬åŒ–: åˆ é™¤ç©ºæ ¼
+		//ÃüÁîÃû×ª»¯: É¾³ı¿Õ¸ñ
 		NoteRARFile(hbuf, cmdP1, cmdP2, cNum)
 	}
 	else if(noteCmd == "FileSame")
@@ -635,7 +635,7 @@ macro NoteHander(hbuf, cNum, prompt)
 	}
 	else
 	{
-		//æ‰“å¼€æ–‡ä»¶æˆ–ç›®å½•
+		//´ò¿ªÎÄ¼ş»òÄ¿Â¼
 		return OpenFileHander(hbuf, curPath, cur_row, noteWord, cNum, prompt)
 	}
 	return 0
@@ -643,90 +643,90 @@ macro NoteHander(hbuf, cNum, prompt)
 
 macro OpenFileHander(hbuf, curPath, cur_row, noteWord, cNum, prompt)
 {
-	//1. æ–‡ä»¶åè½¬åŒ–:
-	//è½¬åŒ–"Save:"ã€åŒºåˆ†æ ¹ç›®å½•ã€æ·»åŠ é¡¹ç›®ç›®å½•ã€æ›¿æ¢"^"ä¸ºç©ºæ ¼
+	//1. ÎÄ¼şÃû×ª»¯:
+	//×ª»¯"Save:"¡¢Çø·Ö¸ùÄ¿Â¼¡¢Ìí¼ÓÏîÄ¿Ä¿Â¼¡¢Ìæ»»"^"Îª¿Õ¸ñ
 	curPath = GetTransFileName(hbuf, curPath, cNum)
 	
-	//2. æ˜¾ç¤ºå®Œæ•´æ–‡ä»¶å: ä»¥"..."ç»“å°¾
+	//2. ÏÔÊ¾ÍêÕûÎÄ¼şÃû: ÒÔ"..."½áÎ²
 	if(NoteShowLikeFile(hbuf, curPath, cur_row, cNum, 0))
 		return 0
 
-	//3. å®šåˆ¶å…³é”®å­—--æ‰“å¼€è·¯å¾„("[Path]"), å›åˆ°ç›®å½•("[Base]"), ä¸‹ä¸€ä¸ª("[Next]")
+	//3. ¶¨ÖÆ¹Ø¼ü×Ö--´ò¿ªÂ·¾¶("[Path]"), »Øµ½Ä¿Â¼("[Base]"), ÏÂÒ»¸ö("[Next]")
 	if(GetTransWord(hbuf, curPath, noteWord))
 		return 0
 
-	TestMsg("æ‰“å¼€æ–‡ä»¶: " # CharFromKey(13) # curPath # CharFromKey(13) # noteWord, 2)
+	TestMsg("´ò¿ªÎÄ¼ş: " # CharFromKey(13) # curPath # CharFromKey(13) # noteWord, 2)
 	hbuf = OpenExistFile(curPath)
 	
 	if (hbuf != hNil){
 		if(noteWord == "")
 			return 0
 			
-		//4. é»˜è®¤å…ˆæœç´¢ä¸€æ¬¡è¡Œé¦–, å†æ™®é€šæœç´¢(æ— é€šé…ç¬¦); å¸¦$æœç´¢è¡Œå°¾
+		//4. Ä¬ÈÏÏÈËÑË÷Ò»´ÎĞĞÊ×, ÔÙÆÕÍ¨ËÑË÷(ÎŞÍ¨Åä·û); ´ø$ËÑË÷ĞĞÎ²
 		NoteScroll(hbuf, curPath, noteWord)
 	}
 	else if(IsFileType(curPath, ".py"))
 	{
-		//5. åœ¨"Macro_"æ–‡ä»¶ä¸­, ä»é»˜è®¤ç›®å½•å¤åˆ¶æ–°æ–‡ä»¶
+		//5. ÔÚ"Macro_"ÎÄ¼şÖĞ, ´ÓÄ¬ÈÏÄ¿Â¼¸´ÖÆĞÂÎÄ¼ş
 		strDefFile = getBaseDir(curPath, 0) # "\\Macro_z_null.py"
 		isF = IsExistFile(strDefFile)
 		if(!isF)
 			strDefFile = getCopyPath(0) # "\\Macro_z_null.py"
 
 		cmdStr = "copy " # strDefFile # " " # curPath
-		TestMsg("æ–‡ä»¶ä¸å­˜åœ¨, ä»æ¨¡æ¿copyæ–‡ä»¶: " # CharFromKey(13) # cmdStr, 2)
+		TestMsg("ÎÄ¼ş²»´æÔÚ, ´ÓÄ£°åcopyÎÄ¼ş: " # CharFromKey(13) # cmdStr, 2)
 		msg(cmdStr)
 		ShellOpenCustomCmd(cmdStr)
 	}
 	else if(IsFileLeft(curPath, "tmp_"))
 	{
-		//8. ä½¿ç”¨ç©ºæ¨¡æ¿
+		//8. Ê¹ÓÃ¿ÕÄ£°å
 		strDefFile = getCopyPath(0) # "\\Macro_z_null.h"
-		// æ¼”ç¤ºç”¨ï¼Œé—´éš”1è¡Œ
+		// ÑİÊ¾ÓÃ£¬¼ä¸ô1ĞĞ
 		curPath = ReplaceWord(curPath, "/", "\\")
 		cmdStr = "copy " # strDefFile # " " # curPath
-		TestMsg("ä»æ¨¡æ¿copyæ–‡ä»¶: " # CharFromKey(13) # cmdStr, 0)
+		TestMsg("´ÓÄ£°åcopyÎÄ¼ş: " # CharFromKey(13) # cmdStr, 0)
 		ShellOpenCustomCmd(cmdStr)
 	}
 	else
 	{
-		//6. æ–‡ä»¶æ‰“å¼€å¤±è´¥, ä½œä¸ºç›®å½•æ‰“å¼€
+		//6. ÎÄ¼ş´ò¿ªÊ§°Ü, ×÷ÎªÄ¿Â¼´ò¿ª
 		ret = ShellExecute("explore", curPath, "", "", 1)
-		//ç›®å½•æ‰“å¼€å¤±è´¥
+		//Ä¿Â¼´ò¿ªÊ§°Ü
 		if(ret == 0){
 			pmsg = "Open failed : " # CharFromKey(13) # curPath
-			//æœ€åå†æç¤º
+			//×îºóÔÙÌáÊ¾
 			//msg(pmsg)
 
 			mI = RFindString(curPath, "Macro_")
 			if(mI != "X")
 			{
-				//7. "Macro_"æ–‡ä»¶, ä»é»˜è®¤ç›®å½•å¤åˆ¶æ–°æ–‡ä»¶
+				//7. "Macro_"ÎÄ¼ş, ´ÓÄ¬ÈÏÄ¿Â¼¸´ÖÆĞÂÎÄ¼ş
 				strDefFile = strmid(curPath, 0, mI) # "Macro_z_index.h"
 				isF = IsExistFile(strDefFile)
 				if(!isF)
 					strDefFile = getCopyPath(0) # "\\Macro_z_index.h"
 
 				cmdStr = "copy " # strDefFile # " " # curPath
-				TestMsg("ä»æ¨¡æ¿copyæ–‡ä»¶: " # CharFromKey(13) # cmdStr, 0)
+				TestMsg("´ÓÄ£°åcopyÎÄ¼ş: " # CharFromKey(13) # cmdStr, 0)
 				ShellOpenCustomCmd(cmdStr)
 			}
 			else if(IsFileType(curPath, ".h"))
 			{
-				//8. ä½¿ç”¨ç©ºæ¨¡æ¿
+				//8. Ê¹ÓÃ¿ÕÄ£°å
 				strDefFile = getCopyPath(0) # "\\Macro_z_null.h"
-				// æ¼”ç¤ºç”¨ï¼Œé—´éš”1è¡Œ
+				// ÑİÊ¾ÓÃ£¬¼ä¸ô1ĞĞ
 				cmdStr = "copy " # strDefFile # " " # curPath
-				TestMsg("ä»æ¨¡æ¿copyæ–‡ä»¶: " # CharFromKey(13) # cmdStr, 0)
+				TestMsg("´ÓÄ£°åcopyÎÄ¼ş: " # CharFromKey(13) # cmdStr, 0)
 				ShellOpenCustomCmd(cmdStr)
 			}
 			else if(IsFileType(curPath, ".xml"))
 			{
-				//8. ä½¿ç”¨ç©ºæ¨¡æ¿
+				//8. Ê¹ÓÃ¿ÕÄ£°å
 				strDefFile = getCopyPath(0) # "\\default_file.xml"
-				// æ¼”ç¤ºç”¨ï¼Œé—´éš”1è¡Œ
+				// ÑİÊ¾ÓÃ£¬¼ä¸ô1ĞĞ
 				cmdStr = "copy " # strDefFile # " " # curPath
-				TestMsg("ä»æ¨¡æ¿copyæ–‡ä»¶: " # CharFromKey(13) # cmdStr, 0)
+				TestMsg("´ÓÄ£°åcopyÎÄ¼ş: " # CharFromKey(13) # cmdStr, 0)
 				ShellOpenCustomCmd(cmdStr)
 			}
 			else if(IsFileType(curPath, ".java") || IsFileType(curPath, ".kt"))
@@ -739,9 +739,9 @@ macro OpenFileHander(hbuf, curPath, cur_row, noteWord, cNum, prompt)
 				{
 					strDefFile = getCopyPath(0) # "\\default_file.kt"
 				}
-				// æ¼”ç¤ºç”¨ï¼Œé—´éš”1è¡Œ
+				// ÑİÊ¾ÓÃ£¬¼ä¸ô1ĞĞ
 				cmdStr = "copy " # strDefFile # " " # curPath
-				TestMsg("ä»æ¨¡æ¿copyæ–‡ä»¶: " # CharFromKey(13) # cmdStr, 0)
+				TestMsg("´ÓÄ£°åcopyÎÄ¼ş: " # CharFromKey(13) # cmdStr, 0)
 				ShellOpenCustomCmd(cmdStr)
 			}
 			else if(prompt > 0)
@@ -750,7 +750,7 @@ macro OpenFileHander(hbuf, curPath, cur_row, noteWord, cNum, prompt)
 			}
 			else
 			{
-				//8. æç¤ºæ–‡ä»¶åæ‰“å¼€å¤±è´¥
+				//8. ÌáÊ¾ÎÄ¼şÃû´ò¿ªÊ§°Ü
 				msg(pmsg)
 			}
 		}
@@ -758,10 +758,10 @@ macro OpenFileHander(hbuf, curPath, cur_row, noteWord, cNum, prompt)
 	return 0
 }
 
-//æ—§åˆ—è¡¨æ›¿æ¢ä¸ºæ–°åˆ—è¡¨,ç©ºæ ¼åˆ†å¼€
+//¾ÉÁĞ±íÌæ»»ÎªĞÂÁĞ±í,¿Õ¸ñ·Ö¿ª
 macro SetNoteHander(hbuf, lastCmd, cur_row, cNum)
 {
-	//ä»å†å²è·¯å¾„ä¸­è®¾ç½®, å…ˆå…³é—­; æ›´æ–°ä¸‹ä¸€ä¸ªæ–‡ä»¶ 
+	//´ÓÀúÊ·Â·¾¶ÖĞÉèÖÃ, ÏÈ¹Ø±Õ; ¸üĞÂÏÂÒ»¸öÎÄ¼ş 
 	if(IsFileName(hbuf, "Macro_Set_Note.h"))
 	{
 		close
@@ -784,20 +784,20 @@ macro SetNoteHander(hbuf, lastCmd, cur_row, cNum)
 	lastBaseCmd = ReadMode(getNoteHanderSet(0))
 	if(lastBaseCmd == lastCmd)
 	{
-		msg("æ–°æ—§æ–‡ä»¶åç›¸åŒ,   ä¸æ›¿æ¢: " # CharFromKey(13) # lastCmd)
+		msg("ĞÂ¾ÉÎÄ¼şÃûÏàÍ¬,   ²»Ìæ»»: " # CharFromKey(13) # lastCmd)
 		stop
 	}
 	if(cNum == 6)
-		msg("è®¾ç½®é»˜è®¤: " # CharFromKey(13) # "æ—§:    " # lastBaseCmd # CharFromKey(13) # "æ–°:     " # lastCmd)
+		msg("ÉèÖÃÄ¬ÈÏ: " # CharFromKey(13) # "¾É:    " # lastBaseCmd # CharFromKey(13) # "ĞÂ:     " # lastCmd)
 	else
-		msg("å¼€å§‹æ›¿æ¢: " # CharFromKey(13) # "æ—§:    " # lastBaseCmd # CharFromKey(13) # "æ–°:     " # lastCmd)
+		msg("¿ªÊ¼Ìæ»»: " # CharFromKey(13) # "¾É:    " # lastBaseCmd # CharFromKey(13) # "ĞÂ:     " # lastCmd)
 		
 	SaveMode(getNoteHanderSet(0), "@lastCmd@")
 	if(cNum == 6)
 		stop
 	
 	{
-		//ç»“æŸæ ‡å¿—
+		//½áÊø±êÖ¾
 		noteWord = "setEnd:"
 		mSel = SearchInBuf(hbuf, "@noteWord@", 0, 0, 0, 0, 0)
 		if (mSel != "")
@@ -818,13 +818,13 @@ macro SetNoteHander(hbuf, lastCmd, cur_row, cNum)
 	iB = 0
 	while (1)
 	{
-		//æŸ¥æ–°æ—§åˆ—è¡¨çš„æ›¿æ¢å­—ç¬¦
+		//²éĞÂ¾ÉÁĞ±íµÄÌæ»»×Ö·û
 		next = NextWS(lastCmd, i)
 		nextB = NextWS(lastBaseCmd, iB)
 //		msg("-" # lastBaseCmd # "-" # next # "-" # nextB # "-")
 		if (next == "X" || nextB == "X")
 		{
-			//æœ€åä¸€æ¬¡æ›¿æ¢
+			//×îºóÒ»´ÎÌæ»»
 			if (next == "X")
 				next = len
 			if (nextB == "X")
@@ -834,7 +834,7 @@ macro SetNoteHander(hbuf, lastCmd, cur_row, cNum)
 			index = FindString( noteWord, noteWordB )
 			if(index == "X")
 				DoReplaceRow(hbuf, noteWordB, noteWord, cur_row + 1, FALSE)
-			SaveBuf(hbuf) //éœ€æ±‚å¤šæ¬¡ä¿å­˜, å¦åˆ™ä¼šæœ‰é—®é¢˜
+			SaveBuf(hbuf) //ĞèÇó¶à´Î±£´æ, ·ñÔò»áÓĞÎÊÌâ
 			break
 		}
 		else
@@ -844,7 +844,7 @@ macro SetNoteHander(hbuf, lastCmd, cur_row, cNum)
 			index = FindString( noteWord, noteWordB )
 			if(index == "X")
 				DoReplaceRow(hbuf, noteWordB, noteWord, cur_row + 1, FALSE)
-			SaveBuf(hbuf) //éœ€æ±‚å¤šæ¬¡ä¿å­˜, å¦åˆ™ä¼šæœ‰é—®é¢˜
+			SaveBuf(hbuf) //ĞèÇó¶à´Î±£´æ, ·ñÔò»áÓĞÎÊÌâ
 		}
 		start = StartWS( lastCmd, next + 1 )
 		startB = StartWS( lastBaseCmd, nextB + 1 )
@@ -853,14 +853,14 @@ macro SetNoteHander(hbuf, lastCmd, cur_row, cNum)
 	}
 }
 
-//æ—§åˆ—è¡¨æ›¿æ¢ä¸ºæ–°åˆ—è¡¨,ç©ºæ ¼åˆ†å¼€
+//¾ÉÁĞ±íÌæ»»ÎªĞÂÁĞ±í,¿Õ¸ñ·Ö¿ª
 macro SetPathNoteHander(hbuf, cmdStr, cur_row)
 {
 	TestMsg(cmdStr, 2)
 	var setItem
 	
 	{
-		//ç»“æŸæ ‡å¿—
+		//½áÊø±êÖ¾
 		mKey = "setEnd:"
 		mSel = SearchInBuf(hbuf, "@mKey@", 0, 0, 0, 0, 0)
 		if (mSel != "")
@@ -873,12 +873,12 @@ macro SetPathNoteHander(hbuf, cmdStr, cur_row)
 		}
 	}
 	{
-		//é¡¹ç›®è·¯å¾„ (åˆå¹¶åˆ°ä»¥ä¸‹æ›¿æ¢å†…å®¹)
+		//ÏîÄ¿Â·¾¶ (ºÏ²¢µ½ÒÔÏÂÌæ»»ÄÚÈİ)
 		mKey = "CurProPath"
 		curProPath = getMacroValue(hbuf, mKey, 1)
 	}
 
-	//æœç´¢æ›¿æ¢åˆ—è¡¨, å•é¡¹å¯ä»¥æ³¨é‡Šæ‰
+	//ËÑË÷Ìæ»»ÁĞ±í, µ¥Ïî¿ÉÒÔ×¢ÊÍµô
 	mKey = "^" # "setProPath"
 	lenKey = strlen("setProPath")
 	mSel = SearchInBuf(hbuf, mKey, 0, 0, FALSE, TRUE, FALSE)
@@ -890,7 +890,7 @@ macro SetPathNoteHander(hbuf, cmdStr, cur_row)
 		line = GetBufLine(hbuf, mSel.lnFirst )
 		ilen = strlen(line)
 
-		//ä¸‹ä¸€ä¸ªéç©º
+		//ÏÂÒ»¸ö·Ç¿Õ
 		start = StartWS(line, lenKey)
 		if (start != "X")
 		{
@@ -900,32 +900,32 @@ macro SetPathNoteHander(hbuf, cmdStr, cur_row)
 			
 			if (cmdStr == "new")
 			{
-			 	//è·¯å¾„åŒ…æ‹¬æ­£åæ–œæ 
+			 	//Â·¾¶°üÀ¨Õı·´Ğ±¸Ü
 				lnMar = "^" # ReplaceWord(lnMar, "\\\\", "[\\\\/]")
 				
-			 	//æ›¿æ¢å†…å®¹å»æ‰ä¸€ä¸ªåæ–œæ 
+			 	//Ìæ»»ÄÚÈİÈ¥µôÒ»¸ö·´Ğ±¸Ü
 				lnVar = ReplaceWord(lnVar, "\\\\", "\\")
 				
 				//msg("[" # lnMar # "]" # CharFromKey(13) # "[" # lnVar # "]")
 				
-			 	//isRule = TRUE: è®¾ç½®å‚æ•°åˆ—è¡¨ä»è¡Œé¦–æ›¿æ¢;å¦åˆ™ä¼šæ›¿æ¢æ‰è®¾ç½®åˆ—è¡¨
+			 	//isRule = TRUE: ÉèÖÃ²ÎÊıÁĞ±í´ÓĞĞÊ×Ìæ»»;·ñÔò»áÌæ»»µôÉèÖÃÁĞ±í
 				DoReplaceRow(hbuf, lnMar, lnVar, cur_row + 1, TRUE)
-				//éœ€æ±‚å¤šæ¬¡ä¿å­˜, å¦åˆ™ä¼šæœ‰é—®é¢˜
+				//ĞèÇó¶à´Î±£´æ, ·ñÔò»áÓĞÎÊÌâ
 				SaveBuf(hbuf)
 			}
 			else if (cmdStr == "old")
 			{
-			 	//è·¯å¾„åŒ…æ‹¬æ­£åæ–œæ 
+			 	//Â·¾¶°üÀ¨Õı·´Ğ±¸Ü
 				lnVar = "^" # ReplaceWord(lnVar, "\\\\", "[\\\\/]")
 				
-			 	//æ›¿æ¢å†…å®¹å»æ‰ä¸€ä¸ªåæ–œæ 
+			 	//Ìæ»»ÄÚÈİÈ¥µôÒ»¸ö·´Ğ±¸Ü
 				lnMar = ReplaceWord(lnMar, "\\\\", "\\")
 				
 				//msg("[" # lnVar # "]" # CharFromKey(13) # "[" # lnMar # "]")
 				
-			 	//isRule = TRUE: è®¾ç½®å‚æ•°åˆ—è¡¨ä»è¡Œé¦–æ›¿æ¢;å¦åˆ™ä¼šæ›¿æ¢æ‰è®¾ç½®åˆ—è¡¨
+			 	//isRule = TRUE: ÉèÖÃ²ÎÊıÁĞ±í´ÓĞĞÊ×Ìæ»»;·ñÔò»áÌæ»»µôÉèÖÃÁĞ±í
 				DoReplaceRow(hbuf, lnVar, lnMar, cur_row + 1, TRUE)
-				//éœ€æ±‚å¤šæ¬¡ä¿å­˜, å¦åˆ™ä¼šæœ‰é—®é¢˜
+				//ĞèÇó¶à´Î±£´æ, ·ñÔò»áÓĞÎÊÌâ
 				SaveBuf(hbuf)
 			}
 		}
@@ -1037,8 +1037,8 @@ macro NoteCopyFile(hbuf, cmdP1, cmdP2, cNum)
 {
 	TestMsg("copy " # cmdP1 # " " # cmdP2 # "", 1)
 
-	//æ–‡ä»¶åè½¬åŒ–:
-	//è½¬åŒ–"Save:"ã€åŒºåˆ†æ ¹ç›®å½•ã€æ·»åŠ é¡¹ç›®ç›®å½•ã€æ›¿æ¢"^"ä¸ºç©ºæ ¼
+	//ÎÄ¼şÃû×ª»¯:
+	//×ª»¯"Save:"¡¢Çø·Ö¸ùÄ¿Â¼¡¢Ìí¼ÓÏîÄ¿Ä¿Â¼¡¢Ìæ»»"^"Îª¿Õ¸ñ
 	cmdPath1 = GetTransFileName(hbuf, cmdP1, 0)
 	cmdPath2 = GetTransFileName(hbuf, cmdP2, 0)
 	
@@ -1052,8 +1052,8 @@ macro NoteRARFile(hbuf, cmdP1, cmdP2, cNum)
 {
 	TestMsg("RAR " # cmdP1 # " " # cmdP2 # "", 1)
 
-	//æ–‡ä»¶åè½¬åŒ–:
-	//è½¬åŒ–"Save:"ã€åŒºåˆ†æ ¹ç›®å½•ã€æ·»åŠ é¡¹ç›®ç›®å½•ã€æ›¿æ¢"^"ä¸ºç©ºæ ¼
+	//ÎÄ¼şÃû×ª»¯:
+	//×ª»¯"Save:"¡¢Çø·Ö¸ùÄ¿Â¼¡¢Ìí¼ÓÏîÄ¿Ä¿Â¼¡¢Ìæ»»"^"Îª¿Õ¸ñ
 	cmdPath1 = GetTransFileName(hbuf, cmdP1, cNum)
 
 	rDir1 = GetTransRootDir(cmdPath1)
@@ -1099,19 +1099,19 @@ macro NoteOpenFile(hbuf, curPath, noteWord)
 
 macro NoteCurCmd(hbuf, noteCmd, curPath)
 {
-//	ç¼–è¯‘æŒ‡ä»¤æ˜¯ç›¸å¯¹ç›®å½•(ä¸ç”¨å®Œæ•´è·¯å¾„)
-//    åªæ›¿æ¢"Save:"ã€"^"
-//    å…¶ä»–è·¯å¾„ä¹‹å‰å·²æ›¿æ¢
+//	±àÒëÖ¸ÁîÊÇÏà¶ÔÄ¿Â¼(²»ÓÃÍêÕûÂ·¾¶)
+//    Ö»Ìæ»»"Save:"¡¢"^"
+//    ÆäËûÂ·¾¶Ö®Ç°ÒÑÌæ»»
 	curPath = GetTransFileName(hbuf, curPath, 16)
 	
-//	cmd_sç”¨é¡¹ç›®è·¯å¾„, å±è”½è®¾ç½®è·¯å¾„(ä¸ç”¨basePathè®¾ç½®)
-//	  (å¯èƒ½æ²¡æœ‰cmdæ–‡ä»¶)
+//	cmd_sÓÃÏîÄ¿Â·¾¶, ÆÁ±ÎÉèÖÃÂ·¾¶(²»ÓÃbasePathÉèÖÃ)
+//	  (¿ÉÄÜÃ»ÓĞcmdÎÄ¼ş)
 	if(noteCmd == "cmd_s")
 		newPath = GetTransFileName(hbuf, "", 4)
 	else
 		newPath = GetTransFileName(hbuf, "", 0)
 		
-//	æ ¹ç›®å½•, ç”¨äºåˆ‡æ¢ç›®å½•
+//	¸ùÄ¿Â¼, ÓÃÓÚÇĞ»»Ä¿Â¼
 	cmdRoot = GetTransRootDir(newPath)
 //	TestMsg("curPath: " # CharFromKey(13) # curPath # CharFromKey(13) # newPath, 0)
 	
@@ -1120,14 +1120,14 @@ macro NoteCurCmd(hbuf, noteCmd, curPath)
 	//cmdStr = cmdRoot # "&&cd " # newPath # "&&echo " # newPath # "^>" # curPath # "&&" # curPath # "&&pause"
 	cmdStr = cmdRoot # "&&cd " # newPath # "&&start cmd.exe&&parse"
 
-	TestMsg("ç¼–è¯‘: " # CharFromKey(13) # noteCmd # CharFromKey(13) # cmdStr, 2)
+	TestMsg("±àÒë: " # CharFromKey(13) # noteCmd # CharFromKey(13) # cmdStr, 2)
 	ShellOpenCustomCmd(cmdStr)
 }
 
 macro NoteInCmd(hbuf, noteCmd, noteStr)
 {
-//	ç¼–è¯‘æŒ‡ä»¤æ˜¯ç›¸å¯¹ç›®å½•(ä¸ç”¨å®Œæ•´è·¯å¾„)
-//  åªæ›¿æ¢"Save:"ã€"^"
+//	±àÒëÖ¸ÁîÊÇÏà¶ÔÄ¿Â¼(²»ÓÃÍêÕûÂ·¾¶)
+//  Ö»Ìæ»»"Save:"¡¢"^"
 	noteStr  = GetTransFileName(hbuf, noteStr, 16)
 	notePath = GetTransFileName(hbuf, "", 0)
 	cmdRoot  = GetTransRootDir(notePath)
@@ -1135,10 +1135,10 @@ macro NoteInCmd(hbuf, noteCmd, noteStr)
 //	cmdStr = cmdRoot # "&&cd " # notePath # "&&echo \"" # notePath # "^>" # noteStr # "\"&&" # noteStr # "&&pause"
 	cmdStr = cmdRoot # "&&cd " # notePath # "&&" # noteStr
 
-	// æµ‹è¯•
+	// ²âÊÔ
 	//SetClipSimpleString(cmdStr)
 
-	TestMsg("ç¼–è¯‘: " # CharFromKey(13) # noteCmd # CharFromKey(13) # cmdStr, 2)
+	TestMsg("±àÒë: " # CharFromKey(13) # noteCmd # CharFromKey(13) # cmdStr, 2)
 	ShellOpenCustomCmd(cmdStr)
 }
 
@@ -1165,13 +1165,13 @@ macro NotePythonCmd(hbuf, noteCmd, rootPath, curPath)
 		cmdStr = cmdRoot # "&&cd " # newPath # "&&echo " # newPath # "^>" # curPath # "&&python " # curPath # "&&pause"
 	}
 
-	TestMsg("ç¼–è¯‘: " # CharFromKey(13) # cmdStr, 2)
+	TestMsg("±àÒë: " # CharFromKey(13) # cmdStr, 2)
 	ShellOpenCustomCmd(cmdStr)
 }
 
 macro NoteCmdCd(hbuf, noteCmd, rootPath, curPath)
 {
-	// åŸå‚æ•°:
+	// Ô­²ÎÊı:
 	// rootPath: D:\project\Android\\
 	// curPath : git clone https://github.com/web3j/web3j
 	
@@ -1201,7 +1201,7 @@ macro NoteCmdCd(hbuf, noteCmd, rootPath, curPath)
 		cmdStr = cmdRoot # "&&cd " # newPath # "&&echo " # newPath # "^>" # curPath # "&& " # curPath # "&&pause"
 	}
 
-	TestMsg("ç¼–è¯‘: " # CharFromKey(13) # cmdStr, 2)
+	TestMsg("±àÒë: " # CharFromKey(13) # cmdStr, 2)
 	ShellOpenCustomCmd(cmdStr)
 }
 
@@ -1213,8 +1213,8 @@ macro NoteShowLikeFile(hbuf, curPath, cur_row, cNum, isCheck)
 	{
 		fLen = strlen(curPath)-3
 		//bsDir = GetFileName(curPath)
-		bsDir = getBaseDir(curPath, 0) //åŠŸèƒ½ä¸€æ ·
-		bsDir = ReplaceWord(bsDir, " ", "#") //ç”¨^ä»£æ›¿ç©ºæ ¼æ— æ•ˆ
+		bsDir = getBaseDir(curPath, 0) //¹¦ÄÜÒ»Ñù
+		bsDir = ReplaceWord(bsDir, " ", "#") //ÓÃ^´úÌæ¿Õ¸ñÎŞĞ§
 		//fName = GetFileName(curPath)
 		fName = strmid(curPath, strlen(bsDir)+1, strlen(curPath) - 3)
 		ret = 0
@@ -1232,12 +1232,12 @@ macro NoteShowLikeFile(hbuf, curPath, cur_row, cNum, isCheck)
 }
 macro NoteScroll(hbuf, curPath, noteWord)
 {
-	//   åˆ†4ç§æƒ…å†µæœç´¢
-	TestMsg("è·³è½¬åˆ°æ–‡ä»¶: " # CharFromKey(13) # curPath # CharFromKey(13) #ã€€"å†…å®¹: " # CharFromKey(13) # noteWord, 2)
+	//   ·Ö4ÖÖÇé¿öËÑË÷
+	TestMsg("Ìø×ªµ½ÎÄ¼ş: " # CharFromKey(13) # curPath # CharFromKey(13) #¡¡"ÄÚÈİ: " # CharFromKey(13) # noteWord, 2)
 	mSel = SearchInBuf(hbuf, "^" # "@noteWord@", 0, 0, 0, 1, 0)
 	if (mSel == "")
 	{
-		//8.1 è¡Œå·è·³è½¬
+		//8.1 ĞĞºÅÌø×ª
 		if(IsNumber ("@noteWord@"))
 		{
 			row = noteWord-1
@@ -1247,7 +1247,7 @@ macro NoteScroll(hbuf, curPath, noteWord)
 	}
 	if (mSel == "")
 	{
-		//8.2 è¡Œå°¾æœç´¢/æ­£å¸¸æœç´¢
+		//8.2 ĞĞÎ²ËÑË÷/Õı³£ËÑË÷
 		re = FindString( noteWord, "$" )
 		if(re != "X")
 			mSel = SearchInBuf(hbuf, "@noteWord@", 0, 0, 0, 1, 0)
@@ -1256,13 +1256,13 @@ macro NoteScroll(hbuf, curPath, noteWord)
 	}
 	if (mSel == "")
 	{
-		//8.3 é€šé…ç¬¦æœç´¢
+		//8.3 Í¨Åä·ûËÑË÷
 		mSel = SearchInBuf(hbuf, "@noteWord@", 0, 0, 0, 1, 0)
 	}
 	if (mSel != "")
 	{
-		//8.4 å…³é”®è¯è·³è½¬
-		TestMsg("è·³è½¬åˆ°æ–‡ä»¶: " # CharFromKey(13) # curPath # CharFromKey(13) #ã€€"å†…å®¹: " # CharFromKey(13) # noteWord, 2)
+		//8.4 ¹Ø¼ü´ÊÌø×ª
+		TestMsg("Ìø×ªµ½ÎÄ¼ş: " # CharFromKey(13) # curPath # CharFromKey(13) #¡¡"ÄÚÈİ: " # CharFromKey(13) # noteWord, 2)
 		ScrollCursor(mSel)
 	}
 }

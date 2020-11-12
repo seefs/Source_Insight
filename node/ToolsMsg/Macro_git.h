@@ -1,63 +1,63 @@
-ï»¿
-åŸºç¡€è·¯å¾„è®¾ç½®:
+
+»ù´¡Â·¾¶ÉèÖÃ:
 basePath = Save:
 base:\\
 
 /***********************************************************************/
 
-å…¶ä»–é—®é¢˜ï¼š
-reset åä¸èƒ½æäº¤
+ÆäËûÎÊÌâ£º
+reset ºó²»ÄÜÌá½»
 diff HEAD
 
 
-//ç›®å½•[Num][Ca]:
-// 1. git å¸¸ç”¨
-Save:node\ToolsMsg\Macro_git.h \[1.1\] git config ----------è®¾ç½®è´¦æˆ·(éœ€è¦å’Œgithubè´¦æˆ·è®¾ç½®ä¸€è‡´)
-Save:node\ToolsMsg\Macro_git.h \[1.2\] git config --list ---æŸ¥çœ‹è®¾ç½®
-Save:node\ToolsMsg\Macro_git.h \[1.3\] git init ------------åˆ›å»ºgitæœ¬åœ°ä»“åº“
-Save:node\ToolsMsg\Macro_git.h \[1.4\] git status ----------æŸ¥çœ‹gitçŠ¶æ€
-Save:node\ToolsMsg\Macro_git.h \[1.5\] git add -------------æ·»åŠ gitæ–‡ä»¶åˆ°æš‚å­˜åŒºï¼ˆéœ€è¦å’Œç‰ˆæœ¬åº“åŒºåˆ†ï¼‰ 
-Save:node\ToolsMsg\Macro_git.h \[1.6\] git rm --------------gitåˆ é™¤æ–‡ä»¶ï¼ˆå¤¹ï¼‰
-Save:node\ToolsMsg\Macro_git.h \[1.7\] git mv --------------gitæ–‡ä»¶é‡å‘½å
-Save:node\ToolsMsg\Macro_git.h \[1.8\] git commit ----------gitæäº¤æ–‡ä»¶
-Save:node\ToolsMsg\Macro_git.h \[1.9\] git pull ------------æ‹‰å–
-Save:node\ToolsMsg\Macro_git.h \[1.10\] git push -----------ä¸Šä¼ 
+//Ä¿Â¼[Num][Ca]:
+// 1. git ³£ÓÃ
+Save:node\ToolsMsg\Macro_git.h \[1.1\] git config ----------ÉèÖÃÕË»§(ĞèÒªºÍgithubÕË»§ÉèÖÃÒ»ÖÂ)
+Save:node\ToolsMsg\Macro_git.h \[1.2\] git config --list ---²é¿´ÉèÖÃ
+Save:node\ToolsMsg\Macro_git.h \[1.3\] git init ------------´´½¨git±¾µØ²Ö¿â
+Save:node\ToolsMsg\Macro_git.h \[1.4\] git status ----------²é¿´git×´Ì¬
+Save:node\ToolsMsg\Macro_git.h \[1.5\] git add -------------Ìí¼ÓgitÎÄ¼şµ½Ôİ´æÇø£¨ĞèÒªºÍ°æ±¾¿âÇø·Ö£© 
+Save:node\ToolsMsg\Macro_git.h \[1.6\] git rm --------------gitÉ¾³ıÎÄ¼ş£¨¼Ğ£©
+Save:node\ToolsMsg\Macro_git.h \[1.7\] git mv --------------gitÎÄ¼şÖØÃüÃû
+Save:node\ToolsMsg\Macro_git.h \[1.8\] git commit ----------gitÌá½»ÎÄ¼ş
+Save:node\ToolsMsg\Macro_git.h \[1.9\] git pull ------------À­È¡
+Save:node\ToolsMsg\Macro_git.h \[1.10\] git push -----------ÉÏ´«
 Save:node\ToolsMsg\Macro_git.h \[1.11\] pull request
 Save:node\ToolsMsg\Macro_git.h \[1.12\] git help
 Save:node\ToolsMsg\Macro_git.h \[1.13\] 
 Save:node\ToolsMsg\Macro_git.h \[1.14\] 
-// 2. git æ—¥å¿—
-Save:node\ToolsMsg\Macro_git.h \[2.1\] git log -------------gitæ“ä½œæ—¥å¿—
-Save:node\ToolsMsg\Macro_git.h \[2.2\] git reset -----------ç‰ˆæœ¬å›é€€
-Save:node\ToolsMsg\Macro_git.h \[2.3\] git checkout --------gitè¿˜åŸ----å½“å‰ä¿®æ”¹
-Save:node\ToolsMsg\Macro_git.h \[2.4\] git reset -----------gitè¿˜åŸ----æš‚å­˜(add)
-Save:node\ToolsMsg\Macro_git.h \[2.5\] git fetch -----------gitè¿˜åŸ----ç‰ˆæœ¬åŒº(commit)
-Save:node\ToolsMsg\Macro_git.h \[2.6\] git diff ------------å¯¹æ¯”
-Save:node\ToolsMsg\Macro_git.h \[2.7\] .gitconfig ----------è®¾ç½®å¯¹æ¯”/åˆå¹¶å·¥å…·
-Save:node\ToolsMsg\Macro_git.h \[2.8\] git difftool --------å¯¹æ¯”å·¥å…·
-Save:node\ToolsMsg\Macro_git.h \[2.9\] git mergetool -------åˆå¹¶å·¥å…·
+// 2. git ÈÕÖ¾
+Save:node\ToolsMsg\Macro_git.h \[2.1\] git log -------------git²Ù×÷ÈÕÖ¾
+Save:node\ToolsMsg\Macro_git.h \[2.2\] git reset -----------°æ±¾»ØÍË
+Save:node\ToolsMsg\Macro_git.h \[2.3\] git checkout --------git»¹Ô­----µ±Ç°ĞŞ¸Ä
+Save:node\ToolsMsg\Macro_git.h \[2.4\] git reset -----------git»¹Ô­----Ôİ´æ(add)
+Save:node\ToolsMsg\Macro_git.h \[2.5\] git fetch -----------git»¹Ô­----°æ±¾Çø(commit)
+Save:node\ToolsMsg\Macro_git.h \[2.6\] git diff ------------¶Ô±È
+Save:node\ToolsMsg\Macro_git.h \[2.7\] .gitconfig ----------ÉèÖÃ¶Ô±È/ºÏ²¢¹¤¾ß
+Save:node\ToolsMsg\Macro_git.h \[2.8\] git difftool --------¶Ô±È¹¤¾ß
+Save:node\ToolsMsg\Macro_git.h \[2.9\] git mergetool -------ºÏ²¢¹¤¾ß
 Save:node\ToolsMsg\Macro_git.h \[2.10\] patch --------------- 
 Save:node\ToolsMsg\Macro_git.h \[2.11\] git stash
 Save:node\ToolsMsg\Macro_git.h \[2.12\] 
 // 3. git remote
-Save:node\ToolsMsg\Macro_git.h \[3.1\] git remote -v -------è¿œç¨‹ä»“åº“
-Save:node\ToolsMsg\Macro_git.h \[3.2\] git remote add ------å¤šä¸ªè¿œç¨‹ä»“åº“
-Save:node\ToolsMsg\Macro_git.h \[3.3\] git checkout -b -----è¿œç¨‹ä»“åº“åˆ†æ”¯
-Save:node\ToolsMsg\Macro_git.h \[3.4\] git fetch/git pull --æ›´æ–°
-Save:node\ToolsMsg\Macro_git.h \[3.5\] git branch ----------åˆ†æ”¯
+Save:node\ToolsMsg\Macro_git.h \[3.1\] git remote -v -------Ô¶³Ì²Ö¿â
+Save:node\ToolsMsg\Macro_git.h \[3.2\] git remote add ------¶à¸öÔ¶³Ì²Ö¿â
+Save:node\ToolsMsg\Macro_git.h \[3.3\] git checkout -b -----Ô¶³Ì²Ö¿â·ÖÖ§
+Save:node\ToolsMsg\Macro_git.h \[3.4\] git fetch/git pull --¸üĞÂ
+Save:node\ToolsMsg\Macro_git.h \[3.5\] git branch ----------·ÖÖ§
 Save:node\ToolsMsg\Macro_git.h \[3.6\] git tag -------------
 Save:node\ToolsMsg\Macro_git.h \[3.7\] 
 // 4. other
-Save:node\ToolsMsg\Macro_git.h \[4.1\] windowä¸‹è½½
-Save:node\ToolsMsg\Macro_git.h \[4.2\] cmd -----------------å‘½ä»¤è¡Œ
-Save:node\ToolsMsg\Macro_git.h \[4.3\] .gitignore ----------å¿½ç•¥ç‰¹æ®Šæ–‡ä»¶
+Save:node\ToolsMsg\Macro_git.h \[4.1\] windowÏÂÔØ
+Save:node\ToolsMsg\Macro_git.h \[4.2\] cmd -----------------ÃüÁîĞĞ
+Save:node\ToolsMsg\Macro_git.h \[4.3\] .gitignore ----------ºöÂÔÌØÊâÎÄ¼ş
 Save:node\ToolsMsg\Macro_git.h \[4.4\] git clean -----------
-Save:node\ToolsMsg\Macro_git.h \[4.5\] sourceTree ----------å·¥å…·
-Save:node\ToolsMsg\Macro_git.h \[4.6\] git config ----------è®¾ç½®é¢œè‰²
-Save:node\ToolsMsg\Macro_git.h \[4.7\] git config ----------é…ç½®åˆ«å
-Save:node\ToolsMsg\Macro_git.h \[4.8\] git config ----------å•ä¸ªç”¨æˆ·é…ç½®-----é…ç½®æ–‡ä»¶
-Save:node\ToolsMsg\Macro_git.h \[4.9\] git config ----------æç¤ºè¾“å…¥ç”¨æˆ·åå’Œå¯†ç 
-Save:node\ToolsMsg\Macro_git.h \[4.10\] hosts ---------------è§£å†³ä¸‹è½½æ…¢
+Save:node\ToolsMsg\Macro_git.h \[4.5\] sourceTree ----------¹¤¾ß
+Save:node\ToolsMsg\Macro_git.h \[4.6\] git config ----------ÉèÖÃÑÕÉ«
+Save:node\ToolsMsg\Macro_git.h \[4.7\] git config ----------ÅäÖÃ±ğÃû
+Save:node\ToolsMsg\Macro_git.h \[4.8\] git config ----------µ¥¸öÓÃ»§ÅäÖÃ-----ÅäÖÃÎÄ¼ş
+Save:node\ToolsMsg\Macro_git.h \[4.9\] git config ----------ÌáÊ¾ÊäÈëÓÃ»§ÃûºÍÃÜÂë
+Save:node\ToolsMsg\Macro_git.h \[4.10\] hosts ---------------½â¾öÏÂÔØÂı
 Save:node\ToolsMsg\Macro_git.h \[4.11\] 
 Save:node\ToolsMsg\Macro_git.h \[4.12\] 
 	
@@ -65,20 +65,20 @@ Save:node\ToolsMsg\Macro_git.h \[4.12\]
 
 
 
-[1.1] git config----------è®¾ç½®è´¦æˆ·(éœ€è¦å’Œgithubè´¦æˆ·è®¾ç½®ä¸€è‡´)
+[1.1] git config----------ÉèÖÃÕË»§(ĞèÒªºÍgithubÕË»§ÉèÖÃÒ»ÖÂ)
 git config --global user.name xxx
 git config --global user.email xxx@foxmail.com
 
 git config --global user.name seefs
 git config --global user.email seefs@163.com
 	
-//æŸ¥çœ‹æœ¬åœ°çš„globalä¿¡æ¯
-git config [--local|--global|--system] --list/-lã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€
-//åˆ é™¤user.nameä¿¡æ¯ã€‚å¦‚æœuser.nameå¯¹åº”å¤šä¸ªå€¼ï¼Œå¯ç”¨unset-allæ¥åˆ é™¤
+//²é¿´±¾µØµÄglobalĞÅÏ¢
+git config [--local|--global|--system] --list/-l¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
+//É¾³ıuser.nameĞÅÏ¢¡£Èç¹ûuser.name¶ÔÓ¦¶à¸öÖµ£¬¿ÉÓÃunset-allÀ´É¾³ı
 git config [--local|--global|--system] --unset[-all] user.name
 
 
-[1.2] git config --list ---æŸ¥çœ‹è®¾ç½®
+[1.2] git config --list ---²é¿´ÉèÖÃ
 git config --list
 //user.name=xiaoj
 //user.email=jia.xiao@sz-speed.cn
@@ -88,22 +88,22 @@ git config --list
 //core.logallrefupdates=true
 
 
-// å‡­è¯é—®é¢˜è¯·å‚è€ƒ
+// Æ¾Ö¤ÎÊÌâÇë²Î¿¼
 https://github.com/Microsoft/Git-Credential-Manager-for-Windows
 https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases/tag/1.20.0
 
 
-[1.3] git init ------------åˆ›å»ºgitæœ¬åœ°ä»“åº“
+[1.3] git init ------------´´½¨git±¾µØ²Ö¿â
 git init
-//æ­¤æ—¶ä¼šå‡ºç°æç¤º : 
+//´ËÊ±»á³öÏÖÌáÊ¾ : 
 //inialized empty Git repository in d://com/liu/.git
 
-//å·²ç»æ·»åŠ è¿‡ æç¤º: 
+//ÒÑ¾­Ìí¼Ó¹ı ÌáÊ¾: 
 //Reinitialized existing Git repository in /home/xiaoj/testaaa/.git/
 
 
 
-[1.4] git statusæŸ¥çœ‹gitçŠ¶æ€
+[1.4] git status²é¿´git×´Ì¬
 git status
 //# On branch master
 //# Changes to be committed:
@@ -124,53 +124,53 @@ git status
 
 
 
-[1.5] git addæ·»åŠ gitæ–‡ä»¶åˆ°æš‚å­˜åŒºï¼ˆéœ€è¦å’Œç‰ˆæœ¬åº“åŒºåˆ†ï¼‰ 
+[1.5] git addÌí¼ÓgitÎÄ¼şµ½Ôİ´æÇø£¨ĞèÒªºÍ°æ±¾¿âÇø·Ö£© 
 git add <name>
 git add bbb.txt
 git add aaa.txt
 
 
 
-[1.6] git rm --------------gitåˆ é™¤æ–‡ä»¶ï¼ˆå¤¹ï¼‰
-git rm test.txt 		 //åˆ é™¤æ–‡ä»¶
-git rm -r filebook	   //åˆ é™¤æ–‡ä»¶å¤¹
-//git rmå’Œç›´æ¥åˆ é™¤çš„åŒºåˆ«åœ¨äºgit rmä¼šå°†æ­¤æ–‡ä»¶çš„æ“ä½œè®°å½•åˆ é™¤ï¼Œè€Œç›´æ¥åˆ é™¤ä»…ä»…æ˜¯åˆ é™¤äº†ç‰©ç†æ–‡ä»¶ï¼Œæ²¡æœ‰åˆ é™¤å’Œæ­¤æ–‡ä»¶ç›¸å…³çš„è®°å½•ã€‚git rmåä¼šåœ¨ç‰ˆæœ¬åº“äº§ç”ŸåŒºåˆ«ï¼ˆæœ‰æ“ä½œæ—¥å¿—ï¼‰ï¼Œè€Œç›´æ¥åˆ é™¤æ²¡æœ‰ã€‚
-//å¯ä»¥ç”¨ä¸‹é¢ä¸¤ç§æ“ä½œåœ¨ç‰ˆæœ¬åº“ä¸­åˆ é™¤æ–‡ä»¶ï¼š
+[1.6] git rm --------------gitÉ¾³ıÎÄ¼ş£¨¼Ğ£©
+git rm test.txt 		 //É¾³ıÎÄ¼ş
+git rm -r filebook	   //É¾³ıÎÄ¼ş¼Ğ
+//git rmºÍÖ±½ÓÉ¾³ıµÄÇø±ğÔÚÓÚgit rm»á½«´ËÎÄ¼şµÄ²Ù×÷¼ÇÂ¼É¾³ı£¬¶øÖ±½ÓÉ¾³ı½ö½öÊÇÉ¾³ıÁËÎïÀíÎÄ¼ş£¬Ã»ÓĞÉ¾³ıºÍ´ËÎÄ¼şÏà¹ØµÄ¼ÇÂ¼¡£git rmºó»áÔÚ°æ±¾¿â²úÉúÇø±ğ£¨ÓĞ²Ù×÷ÈÕÖ¾£©£¬¶øÖ±½ÓÉ¾³ıÃ»ÓĞ¡£
+//¿ÉÒÔÓÃÏÂÃæÁ½ÖÖ²Ù×÷ÔÚ°æ±¾¿âÖĞÉ¾³ıÎÄ¼ş£º
 git rm test.txt   =>	git commit -m 'delete a file'
 rm test.txt 	   =>	 git commit -am 'delete a file'
-//æ³¨æ„ï¼šå‘½ä»¤git rmç”¨äºåˆ é™¤ä¸€ä¸ªæ–‡ä»¶ã€‚å¦‚æœä¸€ä¸ªæ–‡ä»¶å·²ç»è¢«æäº¤åˆ°ç‰ˆæœ¬åº“ï¼Œé‚£ä¹ˆä½ æ°¸è¿œä¸ç”¨æ‹…å¿ƒè¯¯åˆ ï¼Œä½†æ˜¯è¦å°å¿ƒï¼Œä½ åªèƒ½æ¢å¤æ–‡ä»¶åˆ°æœ€æ–°ç‰ˆæœ¬ï¼Œä½ ä¼šä¸¢å¤±æœ€è¿‘ä¸€æ¬¡æäº¤åä½ ä¿®æ”¹çš„å†…å®¹ã€‚
+//×¢Òâ£ºÃüÁîgit rmÓÃÓÚÉ¾³ıÒ»¸öÎÄ¼ş¡£Èç¹ûÒ»¸öÎÄ¼şÒÑ¾­±»Ìá½»µ½°æ±¾¿â£¬ÄÇÃ´ÄãÓÀÔ¶²»ÓÃµ£ĞÄÎóÉ¾£¬µ«ÊÇÒªĞ¡ĞÄ£¬ÄãÖ»ÄÜ»Ö¸´ÎÄ¼şµ½×îĞÂ°æ±¾£¬Äã»á¶ªÊ§×î½üÒ»´ÎÌá½»ºóÄãĞŞ¸ÄµÄÄÚÈİ¡£
 
 
-[1.7] git mv --------------gitæ–‡ä»¶é‡å‘½å
+[1.7] git mv --------------gitÎÄ¼şÖØÃüÃû
 git mv filename newfilename
 
 
-[1.8] git commit ----------gitæäº¤æ–‡ä»¶
+[1.8] git commit ----------gitÌá½»ÎÄ¼ş
 git commit -m "add a function in test.java"
-//-mè¡¨ç¤ºæ³¨é‡Šï¼Œä¸ºæäº¤æ—¶çš„è¯´æ˜ï¼Œå¿…é¡»è¦æœ‰ï¼
+//-m±íÊ¾×¢ÊÍ£¬ÎªÌá½»Ê±µÄËµÃ÷£¬±ØĞëÒªÓĞ£¡
 
 
 
-[1.9] git pull ------------æ‹‰å–
-//æ‹‰å–è¿œç¨‹ä»“åº“ï¼š
+[1.9] git pull ------------À­È¡
+//À­È¡Ô¶³Ì²Ö¿â£º
 git pull origin master
 
 
 
-[1.10] git push ------------ä¸Šä¼ 
-git push XXX branch_nameã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€#ä¸Šä¼ æŒ‡å®šçš„branchåˆ°è¿œç«¯
+[1.10] git push ------------ÉÏ´«
+git push XXX branch_name¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡#ÉÏ´«Ö¸¶¨µÄbranchµ½Ô¶¶Ë
 
-//æ¨é€è¿œç¨‹ä»“åº“ï¼š
+//ÍÆËÍÔ¶³Ì²Ö¿â£º
 git push origin master
-//æäº¤æœ¬åœ°teståˆ†æ”¯ä½œä¸ºè¿œç¨‹çš„masteråˆ†æ”¯
+//Ìá½»±¾µØtest·ÖÖ§×÷ÎªÔ¶³ÌµÄmaster·ÖÖ§
 git push origin test:master
-//æäº¤æœ¬åœ°teståˆ†æ”¯ä½œä¸ºè¿œç¨‹çš„teståˆ†æ”¯
+//Ìá½»±¾µØtest·ÖÖ§×÷ÎªÔ¶³ÌµÄtest·ÖÖ§
 git push origin test:test
-//è¾“å…¥ github ç”¨æˆ·åå¯†ç :
+//ÊäÈë github ÓÃ»§ÃûÃÜÂë:
 //	seefs@163.com, xjs0f0s0
 
 
-//originï¼šè¿œç¨‹ä»“åº“å	masterï¼šåˆ†æ”¯åç§°  -fï¼šforceï¼Œæ„ä¸ºå¼ºåˆ¶ã€å¼ºè¡Œ
+//origin£ºÔ¶³Ì²Ö¿âÃû	master£º·ÖÖ§Ãû³Æ  -f£ºforce£¬ÒâÎªÇ¿ÖÆ¡¢Ç¿ĞĞ
 git push -u origin master -f
 
 
@@ -188,20 +188,20 @@ github-->create pull request-->send pull request
 [1.14] 
 
 
-[2.1] git log -------------gitæ“ä½œæ—¥å¿—
-//1) æ˜¾ç¤ºå½“å‰åŠä¹‹å‰çš„ç‰ˆæœ¬å·
+[2.1] git log -------------git²Ù×÷ÈÕÖ¾
+//1) ÏÔÊ¾µ±Ç°¼°Ö®Ç°µÄ°æ±¾ºÅ
 git log --decorate --graph --oneline --all
 //* 3c38201 (HEAD, master) test 2
 //* be74e6e test
 
-//2) å°†ç‰ˆæœ¬å†å²æ˜¾ç¤ºä¸ºä¸€è¡Œï¼Œå†å²ç‰ˆæœ¬å·å…¨éƒ¨æ˜¾ç¤º
+//2) ½«°æ±¾ÀúÊ·ÏÔÊ¾ÎªÒ»ĞĞ£¬ÀúÊ·°æ±¾ºÅÈ«²¿ÏÔÊ¾
 git log --pretty=oneline
 //3c38201268daa8f79c60b92715fa4967cd51c55b test 2
 //be74e6e044a011f78c6cf3e2cd3c038c6b78d3c1 test
 
-//3) å°†ç‰ˆæœ¬å†å²æ˜¾ç¤ºä¸ºä¸€è¡Œï¼Œå†å²ç‰ˆæœ¬å·éƒ¨åˆ†æ˜¾ç¤º
+//3) ½«°æ±¾ÀúÊ·ÏÔÊ¾ÎªÒ»ĞĞ£¬ÀúÊ·°æ±¾ºÅ²¿·ÖÏÔÊ¾
 git log --pretty=oneline --abbrev-commit
-git log --graph      #æŸ¥çœ‹åˆ†æ”¯åˆå¹¶å›¾
+git log --graph      #²é¿´·ÖÖ§ºÏ²¢Í¼
 
 git log
 //commit 3c38201268daa8f79c60b92715fa4967cd51c55b
@@ -227,60 +227,60 @@ git reflog
 git log dev ^master
 git log master ^dev
 
-//5) -p é€‰é¡¹å±•å¼€æ˜¾ç¤ºæ¯æ¬¡æäº¤çš„å†…å®¹å·®å¼‚ï¼Œç”¨ -2 åˆ™ä»…æ˜¾ç¤ºæœ€è¿‘çš„ä¸¤æ¬¡æ›´æ–°
+//5) -p Ñ¡ÏîÕ¹¿ªÏÔÊ¾Ã¿´ÎÌá½»µÄÄÚÈİ²îÒì£¬ÓÃ -2 Ôò½öÏÔÊ¾×î½üµÄÁ½´Î¸üĞÂ
 git log -p -2
 
 
 
-[2.2] git reset -----------ç‰ˆæœ¬å›é€€
-//æ‰§è¡Œç‰ˆæœ¬é€€å›åï¼Œæœ¬åœ°å·¥ä½œåŒºçš„å†…å®¹ä¼šè‡ªåŠ¨å’Œå›é€€åˆ°çš„ç‰ˆæœ¬åº“ç‰ˆæœ¬çš„å†…å®¹ä¿æŒåŒæ­¥
-git reset --hard HEAD^    å›é€€åˆ°ä¸Šä¸€ä¸ªç‰ˆæœ¬
-git reset --hard HEAD^^   å›é€€åˆ°ä¸Šä¸Šä¸ªç‰ˆæœ¬ï¼Œä»¥æ­¤ç±»æ¨ï¼Œä¸€æ¬¡æäº¤å³ä¸ºä¸€ä¸ªç‰ˆæœ¬
+[2.2] git reset -----------°æ±¾»ØÍË
+//Ö´ĞĞ°æ±¾ÍË»Øºó£¬±¾µØ¹¤×÷ÇøµÄÄÚÈİ»á×Ô¶¯ºÍ»ØÍËµ½µÄ°æ±¾¿â°æ±¾µÄÄÚÈİ±£³ÖÍ¬²½
+git reset --hard HEAD^    »ØÍËµ½ÉÏÒ»¸ö°æ±¾
+git reset --hard HEAD^^   »ØÍËµ½ÉÏÉÏ¸ö°æ±¾£¬ÒÔ´ËÀàÍÆ£¬Ò»´ÎÌá½»¼´ÎªÒ»¸ö°æ±¾
 git reset --hard HEAD~100
-git reset --hard e9efa77  å›é€€åˆ° e9efa77  ç‰ˆæœ¬
+git reset --hard e9efa77  »ØÍËµ½ e9efa77  °æ±¾
 
 
 
-[2.3] git checkout --------gitè¿˜åŸ----å½“å‰ä¿®æ”¹
+[2.3] git checkout --------git»¹Ô­----µ±Ç°ĞŞ¸Ä
 //
-//------------>ä¿®æ”¹-------->add-------->commit----->push-------
-//[å·¥ä½œåŒºä¿®æ”¹]<====[å·¥ä½œåŒº]-----[æš‚å­˜åŒº]-----[ç‰ˆæœ¬åŒº]-----[æœåŠ¡å™¨]
+//------------>ĞŞ¸Ä-------->add-------->commit----->push-------
+//[¹¤×÷ÇøĞŞ¸Ä]<====[¹¤×÷Çø]-----[Ôİ´æÇø]-----[°æ±¾Çø]-----[·şÎñÆ÷]
 //
 git checkout -- readme.txt
-// è¿˜åŸä¿®æ”¹, åˆ é™¤æ–‡ä»¶
-//   ä¸èƒ½è¿˜åŸæ–°åŠ æ–‡ä»¶
+// »¹Ô­ĞŞ¸Ä, É¾³ıÎÄ¼ş
+//   ²»ÄÜ»¹Ô­ĞÂ¼ÓÎÄ¼ş
 git checkout ./
 
 
 
-[2.4] git reset -----------gitè¿˜åŸ----æš‚å­˜(add)
+[2.4] git reset -----------git»¹Ô­----Ôİ´æ(add)
 //
-//------------>ä¿®æ”¹-------->add-------->commit----->push-------
-//[å·¥ä½œåŒºä¿®æ”¹]<====[å·¥ä½œåŒº]<====[æš‚å­˜åŒº]-----[ç‰ˆæœ¬åŒº]-----[æœåŠ¡å™¨]
+//------------>ĞŞ¸Ä-------->add-------->commit----->push-------
+//[¹¤×÷ÇøĞŞ¸Ä]<====[¹¤×÷Çø]<====[Ôİ´æÇø]-----[°æ±¾Çø]-----[·şÎñÆ÷]
 //
 git reset HEAD readme.txt
-//å¤‡æ³¨ï¼šgit resetå‘½ä»¤æ—¢å¯ä»¥å›é€€ç‰ˆæœ¬ï¼Œä¹Ÿå¯ä»¥æŠŠæš‚å­˜åŒºçš„ä¿®æ”¹å›é€€åˆ°å·¥ä½œåŒºã€‚å½“æˆ‘ä»¬ç”¨HEADæ—¶ï¼Œè¡¨ç¤ºæœ€æ–°çš„ç‰ˆæœ¬ã€‚
+//±¸×¢£ºgit resetÃüÁî¼È¿ÉÒÔ»ØÍË°æ±¾£¬Ò²¿ÉÒÔ°ÑÔİ´æÇøµÄĞŞ¸Ä»ØÍËµ½¹¤×÷Çø¡£µ±ÎÒÃÇÓÃHEADÊ±£¬±íÊ¾×îĞÂµÄ°æ±¾¡£
 
-// å¯ä»¥è¿˜åŸæ–°åŠ æ–‡ä»¶
+// ¿ÉÒÔ»¹Ô­ĞÂ¼ÓÎÄ¼ş
 git reset --hard origin/master
 
 
-// æˆ–è€… git restore
-//   ä¸èƒ½è¿˜åŸæ–°åŠ æ–‡ä»¶
+// »òÕß git restore
+//   ²»ÄÜ»¹Ô­ĞÂ¼ÓÎÄ¼ş
 git restore ./
 
 
-[2.5] git fetch ----------gitè¿˜åŸ----ç‰ˆæœ¬åŒº(commit)
+[2.5] git fetch ----------git»¹Ô­----°æ±¾Çø(commit)
 //
-//------------>ä¿®æ”¹-------->add-------->commit----->push-------
-//[å·¥ä½œåŒºä¿®æ”¹]<====[å·¥ä½œåŒº]<====[æš‚å­˜åŒº]<====[ç‰ˆæœ¬åŒº]-----[æœåŠ¡å™¨]
+//------------>ĞŞ¸Ä-------->add-------->commit----->push-------
+//[¹¤×÷ÇøĞŞ¸Ä]<====[¹¤×÷Çø]<====[Ôİ´æÇø]<====[°æ±¾Çø]-----[·şÎñÆ÷]
 //
-//   ä¸èƒ½è¿˜åŸæ–°åŠ æ–‡ä»¶
+//   ²»ÄÜ»¹Ô­ĞÂ¼ÓÎÄ¼ş
 git fetch --all
 
 
 
-[2.6] git diff ------------å¯¹æ¯”
+[2.6] git diff ------------¶Ô±È
 git diff aaa.txt
 //diff --git a/aaa.txt b/aaa.txt
 //index 13cadff..ca5a3a3 100644
@@ -293,21 +293,23 @@ git diff aaa.txt
 //		sdfasdfasdfi:sdfasdfasdfasdf
 // asdfasdf1111
 
-git diff <åˆ†æ”¯å> <åˆ†æ”¯å> -- æ–‡ä»¶å
+git diff <·ÖÖ§Ãû> <·ÖÖ§Ãû> -- ÎÄ¼şÃû
 
-git diff test_branch_nameã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ #æŸ¥çœ‹å½“å‰branchä¸test_branch_nameä¸­ä»£ç çš„åŒºåˆ«
+git diff test_branch_name¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ #²é¿´µ±Ç°branchÓëtest_branch_nameÖĞ´úÂëµÄÇø±ğ
 
 
 
-[2.7] .gitconfigè®¾ç½®å¯¹æ¯”/åˆå¹¶å·¥å…·
+[2.7] .gitconfigÉèÖÃ¶Ô±È/ºÏ²¢¹¤¾ß
 //difftool,mergetool
 git config --global diff.tool bc3
 git config --global difftool.bc3.path "C:\Program Files\Beyond Compare 4\BCompare.exe"
+git config --global difftool.bc3.path "D:\Program Files (x86)\Beyond Compare 3\BCompare.exe"
 
 git config --global merge.tool bc3
 git config --global mergetool.bc3.path "C:\Program Files\Beyond Compare 4\BCompare.exe"
+git config --global mergetool.bc3.path "D:\Program Files (x86)\Beyond Compare 3\BCompare.exe"
 
-//ä¹Ÿå¯ä»¥ç›´æ¥ä¿®æ”¹.gitconfig æ–‡ä»¶ï¼Œç›´æ¥å¢åŠ å¦‚ä¸‹:
+//Ò²¿ÉÒÔÖ±½ÓĞŞ¸Ä.gitconfig ÎÄ¼ş£¬Ö±½ÓÔö¼ÓÈçÏÂ:
 C:\Users\Administrator\.gitconfig
 //	[diff]
 //		tool = bc3
@@ -318,12 +320,12 @@ C:\Users\Administrator\.gitconfig
 //	[mergetool "bc3"]
 //		path = d:/program files/beyond compare 3/bcomp.exe
 
-//è®¾ç½®å¥½åï¼Œä½¿ç”¨å‘½ä»¤æ˜¯ git difftool è€Œä¸æ˜¯ä¹‹å‰çš„ git diff äº†ã€‚
-//git difftool è¯´æ˜æ–‡æ¡£ï¼šhttp://git-scm.com/docs/git-difftool.html
+//ÉèÖÃºÃºó£¬Ê¹ÓÃÃüÁîÊÇ git difftool ¶ø²»ÊÇÖ®Ç°µÄ git diff ÁË¡£
+//git difftool ËµÃ÷ÎÄµµ£ºhttp://git-scm.com/docs/git-difftool.html
 
 
 
-[2.8] git difftool --------å¯¹æ¯”å·¥å…·
+[2.8] git difftool --------¶Ô±È¹¤¾ß
 git difftool
 git difftool -y MacroSBD/sbd_base.em
 git difftool -y node/Simple_CTRL_B.h
@@ -334,64 +336,64 @@ git difftool -d 0c8427888be95166e9c4f948feeca44bfa6e6c72
 git difftool -d dev master
 git difftool -d master dev
 
-//å¯¹æ¯”è¿œç¨‹ä»“åº“:
+//¶Ô±ÈÔ¶³Ì²Ö¿â:
 git difftool master origin/master -d -y
 
 
 
-[2.9] git mergetool -------åˆå¹¶å·¥å…·
-//å…ˆgit commit å†git merge
+[2.9] git mergetool -------ºÏ²¢¹¤¾ß
+//ÏÈgit commit ÔÙgit merge
 git mergetool aaa.txt
 // merge vim:
-//	æŒ‰ä¸‹å­—æ¯é”® cï¼ˆæ­¤æ—¶è¿›å…¥ç¼–è¾‘çŠ¶æ€ï¼‰ï¼Œå¯ä»¥å¼€å§‹ä¿®æ”¹æ³¨é‡Šä¿¡æ¯äº†
-//	æŒ‰ä¸‹Esc (é€€å‡ºç¼–è¾‘çŠ¶æ€)ï¼› æ¥ç€è¿æŒ‰ä¸¤æ¬¡å¤§å†™å­—æ¯Zï¼Œä¿å­˜å¥½é€€å‡º
+//	°´ÏÂ×ÖÄ¸¼ü c£¨´ËÊ±½øÈë±à¼­×´Ì¬£©£¬¿ÉÒÔ¿ªÊ¼ĞŞ¸Ä×¢ÊÍĞÅÏ¢ÁË
+//	°´ÏÂEsc (ÍË³ö±à¼­×´Ì¬)£» ½Ó×ÅÁ¬°´Á½´Î´óĞ´×ÖÄ¸Z£¬±£´æºÃÍË³ö
 
 
-//å»é™¤git mergetoolä¸äº§ç”Ÿ*.origæ–‡ä»¶
-//ä½¿ç”¨git mergetoolåˆå¹¶åˆ†æ”¯æ—¶ï¼Œæ€»ä¼šäº§ç”Ÿä»¥*.origä¸ºæ‰©å±•åçš„å¤‡ä»½æ–‡ä»¶ï¼Œæ¯æ¬¡éƒ½è¦æ‰‹åŠ¨åˆ é™¤ï¼Œ
-//æ„Ÿè§‰å¾ˆç¹çï¼Œå®é™…ä¸Šå¯ä»¥ä¿®æ”¹Gité…ç½®ï¼Œç¦æ­¢äº§ç”Ÿå¤‡ä»½æ–‡ä»¶ã€‚ 
-//æ‰“å¼€æ§åˆ¶å°ï¼ˆæˆ–ç»ˆç«¯ï¼‰æ‰§è¡Œå¦‚ä¸‹å‘½ä»¤ï¼š
+//È¥³ıgit mergetool²»²úÉú*.origÎÄ¼ş
+//Ê¹ÓÃgit mergetoolºÏ²¢·ÖÖ§Ê±£¬×Ü»á²úÉúÒÔ*.origÎªÀ©Õ¹ÃûµÄ±¸·İÎÄ¼ş£¬Ã¿´Î¶¼ÒªÊÖ¶¯É¾³ı£¬
+//¸Ğ¾õºÜ·±Ëö£¬Êµ¼ÊÉÏ¿ÉÒÔĞŞ¸ÄGitÅäÖÃ£¬½ûÖ¹²úÉú±¸·İÎÄ¼ş¡£ 
+//´ò¿ª¿ØÖÆÌ¨£¨»òÖÕ¶Ë£©Ö´ĞĞÈçÏÂÃüÁî£º
 git config --global mergetool.keepBackup false
  
-//æˆ–è€…ç›´æ¥è¿›å…¥ç³»ç»Ÿç”¨æˆ·ç›®å½•ä¸‹ï¼Œä¿®æ”¹.gitconfigæ–‡ä»¶ï¼Œå¢åŠ å¦‚ä¸‹å†…å®¹ï¼š
+//»òÕßÖ±½Ó½øÈëÏµÍ³ÓÃ»§Ä¿Â¼ÏÂ£¬ĞŞ¸Ä.gitconfigÎÄ¼ş£¬Ôö¼ÓÈçÏÂÄÚÈİ£º
 //	[mergetool]
 //		prompt = true
 //		keepBackup = false
 
 
 [2.10] patch ---------------
-// ç¼–è¯‘æºç  
+// ±àÒëÔ´Âë 
 diff -Nur Asrc Adest > test1.patch
 cd Bdest 
 patch -p1 <../test1.patch
 diff -Nur Bsrc Bdest > test2.patch
 patch -R -p1
-å‡ ä¸ªæäº¤é—´
-git format-patch å‰æäº¤..åæäº¤
-å¯¹æ–¹ç”¨git am *.patch
-æ²¡æäº¤å¯ä»¥ç”¨git diff > *.patchä¸æ ‡å‡†
+¼¸¸öÌá½»¼ä
+git format-patch Ç°Ìá½»..ºóÌá½»
+¶Ô·½ÓÃgit am *.patch
+Ã»Ìá½»¿ÉÒÔÓÃgit diff > *.patch²»±ê×¼
 
 
 
 [2.11] git stash
-ç°åœºçš„ä¿å­˜ä¸æ¢å¤: git stash
+ÏÖ³¡µÄ±£´æÓë»Ö¸´: git stash
 
-git stash		 #å°†ç›®å‰çš„å·¥ä½œç°åœºä¿å­˜
-git stash list	 #æŸ¥çœ‹æ‰€æœ‰ä¿å­˜çš„å·¥ä½œç°åœº
+git stash		 #½«Ä¿Ç°µÄ¹¤×÷ÏÖ³¡±£´æ
+git stash list	 #²é¿´ËùÓĞ±£´æµÄ¹¤×÷ÏÖ³¡
 	
 	
-#å·¥ä½œç°åœºè¿˜åœ¨ï¼ŒGitæŠŠstashå†…å®¹å­˜åœ¨æŸä¸ªåœ°æ–¹äº†ï¼Œä½†æ˜¯éœ€è¦æ¢å¤ä¸€ä¸‹ï¼Œæœ‰ä¸¤ä¸ªåŠæ³•ï¼š
+#¹¤×÷ÏÖ³¡»¹ÔÚ£¬Git°ÑstashÄÚÈİ´æÔÚÄ³¸öµØ·½ÁË£¬µ«ÊÇĞèÒª»Ö¸´Ò»ÏÂ£¬ÓĞÁ½¸ö°ì·¨£º
 git stash apply stash@{0}
 
-#æ¢å¤ï¼Œä½†æ˜¯æ¢å¤åï¼Œstashå†…å®¹å¹¶ä¸åˆ é™¤ï¼Œä½ éœ€è¦ç”¨
+#»Ö¸´£¬µ«ÊÇ»Ö¸´ºó£¬stashÄÚÈİ²¢²»É¾³ı£¬ÄãĞèÒªÓÃ
 git stash drop stash@{0}
 
-#å¦ä¸€ç§æ–¹å¼æ˜¯ç”¨ï¼Œæ¢å¤çš„åŒæ—¶æŠŠstashå†…å®¹ä¹Ÿåˆ äº†ï¼Œè¿™ç§æ–¹å¼çœæ—¶çœåŠ›
+#ÁíÒ»ÖÖ·½Ê½ÊÇÓÃ£¬»Ö¸´µÄÍ¬Ê±°ÑstashÄÚÈİÒ²É¾ÁË£¬ÕâÖÖ·½Ê½Ê¡Ê±Ê¡Á¦
 git stash pop
-//æ³¨æ„ç‚¹ï¼š
-//ï¼ˆ1ï¼‰å¦‚æœåœ¨åˆ†æ”¯ä¸‹æ–°å»ºæ–‡ä»¶ï¼Œè€Œå°šæœªæ‰§è¡Œaddæ“ä½œï¼Œstashæ— æ³•å°†æ–°æ–‡ä»¶çº³å…¥ä¿å­˜çš„ç°åœºï¼Œå› ä¸ºstashåªå¯¹è¢«ä¿®æ”¹çš„è¢«è¿½è¸ªçš„æ–‡ä»¶å’Œæš‚å­˜çš„å˜æ›´æœ‰æ•ˆï¼Œå¯¹äºæ–°æ–‡ä»¶å¿…é¡»å…ˆæ‰§è¡Œaddã€‚
-//ï¼ˆ2ï¼‰å¦‚æœä¿®æ”¹åˆ†æ”¯ä¸‹çš„å·²è¢«è¿½è¸ªçš„æ–‡ä»¶ï¼Œä¸ç®¡æœ‰æ²¡æœ‰å¯¹ä¿®æ”¹çš„æ–‡ä»¶è¿›è¡Œaddæ“ä½œï¼Œå¦‚æœæ‰§è¡Œstashï¼Œæ‰€æœ‰ä¿®æ”¹ä¼šè¢«çº³å…¥ä¿å­˜çš„ç°åœºï¼Œè€Œæ–‡ä»¶ä¼šæ¢å¤æˆä¿®æ”¹å‰çš„çŠ¶æ€ã€‚
-//æ¢å¤ç°åœºåï¼Œæ–‡ä»¶åˆå‘ˆç°è¢«ä¿®æ”¹åçš„çŠ¶æ€ã€‚ç‰¹åˆ«çš„æ˜¯ï¼Œå¦‚æœä¿®æ”¹çš„æ–‡ä»¶åœ¨stashå‰å·²ç»è¢«addäº†ï¼Œæ¢å¤ç°åœºåï¼Œæš‚å­˜åŒºçš„å†…å®¹å°±ä¼šæ¸…ç©ºï¼Œç›¸å½“äºè¿™ä¸ªæ–‡ä»¶ä»æœªè¢«addä¸€æ ·ã€‚
+//×¢Òâµã£º
+//£¨1£©Èç¹ûÔÚ·ÖÖ§ÏÂĞÂ½¨ÎÄ¼ş£¬¶øÉĞÎ´Ö´ĞĞadd²Ù×÷£¬stashÎŞ·¨½«ĞÂÎÄ¼şÄÉÈë±£´æµÄÏÖ³¡£¬ÒòÎªstashÖ»¶Ô±»ĞŞ¸ÄµÄ±»×·×ÙµÄÎÄ¼şºÍÔİ´æµÄ±ä¸üÓĞĞ§£¬¶ÔÓÚĞÂÎÄ¼ş±ØĞëÏÈÖ´ĞĞadd¡£
+//£¨2£©Èç¹ûĞŞ¸Ä·ÖÖ§ÏÂµÄÒÑ±»×·×ÙµÄÎÄ¼ş£¬²»¹ÜÓĞÃ»ÓĞ¶ÔĞŞ¸ÄµÄÎÄ¼ş½øĞĞadd²Ù×÷£¬Èç¹ûÖ´ĞĞstash£¬ËùÓĞĞŞ¸Ä»á±»ÄÉÈë±£´æµÄÏÖ³¡£¬¶øÎÄ¼ş»á»Ö¸´³ÉĞŞ¸ÄÇ°µÄ×´Ì¬¡£
+//»Ö¸´ÏÖ³¡ºó£¬ÎÄ¼şÓÖ³ÊÏÖ±»ĞŞ¸ÄºóµÄ×´Ì¬¡£ÌØ±ğµÄÊÇ£¬Èç¹ûĞŞ¸ÄµÄÎÄ¼şÔÚstashÇ°ÒÑ¾­±»addÁË£¬»Ö¸´ÏÖ³¡ºó£¬Ôİ´æÇøµÄÄÚÈİ¾Í»áÇå¿Õ£¬Ïàµ±ÓÚÕâ¸öÎÄ¼ş´ÓÎ´±»addÒ»Ñù¡£
 
 //git add .
 //git stash
@@ -412,40 +414,40 @@ git stash pop
 
 
 
-[3.1] git remote -v --------------è¿œç¨‹ä»“åº“
-// æŸ¥çœ‹è¿œç¨‹ä»“åº“åŠä¼ è¾“åè®®
+[3.1] git remote -v --------------Ô¶³Ì²Ö¿â
+// ²é¿´Ô¶³Ì²Ö¿â¼°´«ÊäĞ­Òé
 git remote
-git remote -v  æŸ¥çœ‹åç§°å’Œè¯¦ç»†åœ°å€
+git remote -v  ²é¿´Ãû³ÆºÍÏêÏ¸µØÖ·
 
-git statusã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€#æŸ¥çœ‹å½“å‰å·¥ä½œçš„
-git branchã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ #æŸ¥çœ‹æœ¬åœ°æ‰€æœ‰çš„
-git branch -aã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€#æŸ¥çœ‹è¿œç¨‹çš„æ‰€æœ‰åˆ†æ”¯
-git branch -d branch_nameã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ #åˆ é™¤æœ¬åœ°branch_nameè¿™ä¸€åˆ†æ”¯
-git push origin --delete branch_nameã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ ã€€ #åˆ é™¤åä¸ºbranch_nameçš„è¿œç¨‹åˆ†æ”¯
-git pullã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€#å°†è¿œç¨‹ä¸Šçš„ç‰ˆæœ¬ä¸æœ¬åœ°ç‰ˆæœ¬è¿›è¡Œåˆå¹¶ï¼Œç›¸å½“äºget fetch + git merge
+git status¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡#²é¿´µ±Ç°¹¤×÷µÄ
+git branch¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ #²é¿´±¾µØËùÓĞµÄ
+git branch -a¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡#²é¿´Ô¶³ÌµÄËùÓĞ·ÖÖ§
+git branch -d branch_name¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ #É¾³ı±¾µØbranch_nameÕâÒ»·ÖÖ§
+git push origin --delete branch_name¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ ¡¡ #É¾³ıÃûÎªbranch_nameµÄÔ¶³Ì·ÖÖ§
+git pull¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡#½«Ô¶³ÌÉÏµÄ°æ±¾Óë±¾µØ°æ±¾½øĞĞºÏ²¢£¬Ïàµ±ÓÚget fetch + git merge
 	
 
 
-[3.2] git remote add ------å¤šä¸ªè¿œç¨‹ä»“åº“
-// æ·»åŠ è¿œç¨‹ä»“åº“
+[3.2] git remote add ------¶à¸öÔ¶³Ì²Ö¿â
+// Ìí¼ÓÔ¶³Ì²Ö¿â
 git remote add github git@github.com:xxx/LearnGit.git
 git remote add gitee git@gitee.com:xxx/LearnGit.git
-// åˆ é™¤ (åŒæ ·æ˜¯Github, åªèƒ½å…³è”ä¸€ä¸ª)
-git remote remove <è¿œç¨‹ä¸»æœºå>
+// É¾³ı (Í¬ÑùÊÇGithub, Ö»ÄÜ¹ØÁªÒ»¸ö)
+git remote remove <Ô¶³ÌÖ÷»úÃû>
 git remote rm origin
-// æŸ¥çœ‹è¿œç¨‹åº“ä¿¡æ¯
+// ²é¿´Ô¶³Ì¿âĞÅÏ¢
 git remote -v
 // 
 gitee   git@gitee.com:xxx/LearnGit.git (push)
 github  git@github.com:xxx/LearnGit.git (fetch)
 github  git@github.com:xxx/LearnGit.git (push)
-// æ¨é€
-git push <è¿œç¨‹ä¸»æœºå> <æœ¬åœ°åˆ†æ”¯å>:<è¿œç¨‹åˆ†æ”¯å>
-git push origin <æœ¬åœ°åˆ†æ”¯å>
+// ÍÆËÍ
+git push <Ô¶³ÌÖ÷»úÃû> <±¾µØ·ÖÖ§Ãû>:<Ô¶³Ì·ÖÖ§Ãû>
+git push origin <±¾µØ·ÖÖ§Ãû>
 git push github master
 git push gitee master
-// æ¨é€, æŒ‡å®šä¸€ä¸ªé»˜è®¤ä¸»æœº
-git push -u <è¿œç¨‹ä¸»æœºå> <æœ¬åœ°åˆ†æ”¯å>
+// ÍÆËÍ, Ö¸¶¨Ò»¸öÄ¬ÈÏÖ÷»ú
+git push -u <Ô¶³ÌÖ÷»úÃû> <±¾µØ·ÖÖ§Ãû>
 git push -u origin master
 // set-url
 git remote set-url --push github https://github.com/seefs/Source_Insight.git
@@ -453,64 +455,64 @@ git remote -v
 
 
 
-[3.3] git checkout -b -----è¿œç¨‹ä»“åº“åˆ†æ”¯
-// ä»è¿œç¨‹cloneåˆ°æœ¬åœ°çš„åº“åªèƒ½çœ‹åˆ°masteråˆ†æ”¯ï¼Œå¦‚æœè¦å°†è¿œç¨‹çš„åˆ†æ”¯åŒæ­¥åˆ°æœ¬åœ°ï¼š
-git checkout -b <æœ¬åœ°åˆ†æ”¯å> <è¿œç¨‹ä¸»æœºå>/<è¿œç¨‹åˆ†æ”¯å>
+[3.3] git checkout -b -----Ô¶³Ì²Ö¿â·ÖÖ§
+// ´ÓÔ¶³Ìcloneµ½±¾µØµÄ¿âÖ»ÄÜ¿´µ½master·ÖÖ§£¬Èç¹ûÒª½«Ô¶³ÌµÄ·ÖÖ§Í¬²½µ½±¾µØ£º
+git checkout -b <±¾µØ·ÖÖ§Ãû> <Ô¶³ÌÖ÷»úÃû>/<Ô¶³Ì·ÖÖ§Ãû>
 
 
 
-[3.4] git fetch/git pull --æ›´æ–°
+[3.4] git fetch/git pull --¸üĞÂ
 // git pull
-git pull <è¿œç¨‹ä¸»æœºå> <è¿œç¨‹åˆ†æ”¯å>:<æœ¬åœ°åˆ†æ”¯å>
+git pull <Ô¶³ÌÖ÷»úÃû> <Ô¶³Ì·ÖÖ§Ãû>:<±¾µØ·ÖÖ§Ãû>
 git pull origin next:master
 git pull origin next
 git pull origin
 git pull
-// rebaseæ¨¡å¼ï¼Œå¯ä»¥ä½¿ç”¨â€“rebaseé€‰é¡¹ã€‚
-git pull --rebase <è¿œç¨‹ä¸»æœºå> <è¿œç¨‹åˆ†æ”¯å>:<æœ¬åœ°åˆ†æ”¯å>
+// rebaseÄ£Ê½£¬¿ÉÒÔÊ¹ÓÃ¨CrebaseÑ¡Ïî¡£
+git pull --rebase <Ô¶³ÌÖ÷»úÃû> <Ô¶³Ì·ÖÖ§Ãû>:<±¾µØ·ÖÖ§Ãû>
 
 // git fetch
-// ç›¸å½“äºæ˜¯ä»è¿œç¨‹è·å–æœ€æ–°ç‰ˆæœ¬åˆ°æœ¬åœ°ï¼Œä¸ä¼šè‡ªåŠ¨åˆå¹¶ã€‚
+// Ïàµ±ÓÚÊÇ´ÓÔ¶³Ì»ñÈ¡×îĞÂ°æ±¾µ½±¾µØ£¬²»»á×Ô¶¯ºÏ²¢¡£
 git fetch origin mastergit log -p master..origin/mastergit merge origin/master
 git fetch origin master:tmpgit diff tmp git merge tmp
 
 
 
-[3.5] git branch ----------åˆ†æ”¯
-//1) æŸ¥çœ‹åˆ†æ”¯
+[3.5] git branch ----------·ÖÖ§
+//1) ²é¿´·ÖÖ§
 git branch
 //* master
 
-//2) åˆ›å»ºåˆ†æ”¯
+//2) ´´½¨·ÖÖ§
 git branch <name>
 
-//3) åˆ›å»ºå¹¶åˆ‡æ¢åˆ°åˆ†æ”¯
+//3) ´´½¨²¢ÇĞ»»µ½·ÖÖ§
 git checkout -b <name>
-//å¤‡æ³¨ï¼šgit checkoutå‘½ä»¤åŠ ä¸Š-bå‚æ•°è¡¨ç¤ºåˆ›å»ºå¹¶åˆ‡æ¢ï¼Œç›¸å½“äºä»¥ä¸‹ä¸¤æ¡å‘½ä»¤
+//±¸×¢£ºgit checkoutÃüÁî¼ÓÉÏ-b²ÎÊı±íÊ¾´´½¨²¢ÇĞ»»£¬Ïàµ±ÓÚÒÔÏÂÁ½ÌõÃüÁî
 git branch <name>
 git checkout <name>
 
-//4) åˆ‡æ¢åˆ†æ”¯
+//4) ÇĞ»»·ÖÖ§
 git checkout <name>
-//åˆ‡æ¢åˆ†æ”¯åï¼Œåœ¨git bashä¸­æ˜¾ç¤ºä¸ºç»¿è‰²
+//ÇĞ»»·ÖÖ§ºó£¬ÔÚgit bashÖĞÏÔÊ¾ÎªÂÌÉ«
 
-//5) åˆ é™¤åˆ†æ”¯
+//5) É¾³ı·ÖÖ§
 git branch -d <name>
-//å¦‚æœåˆ†æ”¯æ²¡æœ‰åˆå¹¶ï¼Œåˆ é™¤åˆ†æ”¯å°±è¡¨ç¤ºä¼šä¸¢å¤±ä¿®æ”¹ï¼Œæ­¤æ—¶gitæ— æ³•ä½¿ç”¨-dåˆ é™¤ï¼Œå¯ä½¿ç”¨-Då¼ºè¡Œåˆ é™¤
+//Èç¹û·ÖÖ§Ã»ÓĞºÏ²¢£¬É¾³ı·ÖÖ§¾Í±íÊ¾»á¶ªÊ§ĞŞ¸Ä£¬´ËÊ±gitÎŞ·¨Ê¹ÓÃ-dÉ¾³ı£¬¿ÉÊ¹ÓÃ-DÇ¿ĞĞÉ¾³ı
 git branch -D <name>
 
-//6) åˆå¹¶åˆ†æ”¯
-gitåˆå¹¶é»˜è®¤ä½¿ç”¨Fast forwardæ¨¡å¼ï¼Œä¸€æ—¦åˆ é™¤åˆ†æ”¯ï¼Œä¼šä¸¢æ‰åˆ†æ”¯ä¿¡æ¯ï¼Œä¹Ÿå°±çœ‹ä¸å‡ºæ¥æ›¾ç»åšè¿‡åˆå¹¶
-git merge <name>     #åŸºäºå½“å‰åˆ†æ”¯ï¼Œåˆå¹¶å¦å¤–ä¸€ä¸ªåˆ†æ”¯ï¼Œå‰æéœ€è¦ä¿è¯åˆ†æ”¯ä¹‹é—´ä¸å†²çª
-å¦‚æœå¼ºåˆ¶ç¦ç”¨Fast forwardæ¨¡å¼ï¼Œå³æ™®é€šæ¨¡å¼ï¼ŒGitå°±ä¼šåœ¨mergeæ—¶ç”Ÿæˆä¸€ä¸ªæ–°çš„commit
+//6) ºÏ²¢·ÖÖ§
+gitºÏ²¢Ä¬ÈÏÊ¹ÓÃFast forwardÄ£Ê½£¬Ò»µ©É¾³ı·ÖÖ§£¬»á¶ªµô·ÖÖ§ĞÅÏ¢£¬Ò²¾Í¿´²»³öÀ´Ôø¾­×ö¹ıºÏ²¢
+git merge <name>     #»ùÓÚµ±Ç°·ÖÖ§£¬ºÏ²¢ÁíÍâÒ»¸ö·ÖÖ§£¬Ç°ÌáĞèÒª±£Ö¤·ÖÖ§Ö®¼ä²»³åÍ»
+Èç¹ûÇ¿ÖÆ½ûÓÃFast forwardÄ£Ê½£¬¼´ÆÕÍ¨Ä£Ê½£¬Git¾Í»áÔÚmergeÊ±Éú³ÉÒ»¸öĞÂµÄcommit
 git merge --no-ff -m "there is a comment" <name>
-å› ä¸ºæœ¬æ¬¡åˆå¹¶è¦åˆ›å»ºä¸€ä¸ªæ–°çš„commitï¼Œæ‰€ä»¥åŠ ä¸Š-må‚æ•°ï¼ŒæŠŠcommitæè¿°å†™è¿›å»ã€‚
-å·¥ä½œä¸­ï¼Œè‚¯å®šéœ€è¦ä¸ç®¡æœ‰æ²¡æœ‰åˆ†æ”¯è¢«åˆ é™¤ï¼Œéƒ½è¦ä»åˆ†æ”¯å†å²ä¸Šå°±æŸ¥çœ‹æ‰€æœ‰çš„å†å²åˆ†æ”¯ä¿¡æ¯ï¼Œæ‰€ä»¥è¦ä½¿ç”¨æ™®é€šæ¨¡å¼åˆå¹¶ã€‚
+ÒòÎª±¾´ÎºÏ²¢Òª´´½¨Ò»¸öĞÂµÄcommit£¬ËùÒÔ¼ÓÉÏ-m²ÎÊı£¬°ÑcommitÃèÊöĞ´½øÈ¥¡£
+¹¤×÷ÖĞ£¬¿Ï¶¨ĞèÒª²»¹ÜÓĞÃ»ÓĞ·ÖÖ§±»É¾³ı£¬¶¼Òª´Ó·ÖÖ§ÀúÊ·ÉÏ¾Í²é¿´ËùÓĞµÄÀúÊ··ÖÖ§ĞÅÏ¢£¬ËùÒÔÒªÊ¹ÓÃÆÕÍ¨Ä£Ê½ºÏ²¢¡£
 
-//7) é‡å‘½ä»¤åˆ†æ”¯
+//7) ÖØÃüÁî·ÖÖ§
 git branch -m oldName newName
 
-//8) åˆ›å»ºè¿œç¨‹åˆ†æ”¯
+//8) ´´½¨Ô¶³Ì·ÖÖ§
 git branch -a
 //* master
 //  remotes/origin/HEAD -> origin/master
@@ -519,67 +521,67 @@ git branch -a
 //  remotes/origin/master
 git push origin siMini:debug
 
-//9) åˆ‡æ¢è¿œç¨‹åˆ†æ”¯
+//9) ÇĞ»»Ô¶³Ì·ÖÖ§
 git push --set-upstream origin dev
 git checkout -b dev origin/dev
-//	å¯èƒ½è¦å…ˆæ‰§è¡Œ
+//	¿ÉÄÜÒªÏÈÖ´ĞĞ
 git fetch
 git checkout dev
 
-//10) åˆ é™¤è¿œç¨‹åˆ†æ”¯
+//10) É¾³ıÔ¶³Ì·ÖÖ§
 git push origin --delete debug
 
 
 
 [3.6] git tag -------------
-// åˆ›å»ºtag
-ï¼ˆ1ï¼‰git tag <tagname>   #é»˜è®¤åœ¨HEADç‰ˆæœ¬
-ï¼ˆ2ï¼‰å¯¹æŒ‡å®šçš„commitç‰ˆæœ¬åˆ›å»ºtag
-éœ€è¦å…ˆæ‰¾åˆ°å†å²commitçš„id
+// ´´½¨tag
+£¨1£©git tag <tagname>   #Ä¬ÈÏÔÚHEAD°æ±¾
+£¨2£©¶ÔÖ¸¶¨µÄcommit°æ±¾´´½¨tag
+ĞèÒªÏÈÕÒµ½ÀúÊ·commitµÄid
 git log --pretty=oneline --abbrev-commit
-ç„¶åå¯¹æŒ‡å®šçš„commitåˆ›å»ºtagï¼š
+È»ºó¶ÔÖ¸¶¨µÄcommit´´½¨tag£º
 git tag <tagname> <commitid>
-ï¼ˆ3ï¼‰åˆ›å»ºå¸¦æœ‰è¯´æ˜çš„tagï¼Œç”¨-aæŒ‡å®šæ ‡ç­¾åï¼Œ-mæŒ‡å®šè¯´æ˜æ–‡å­—
+£¨3£©´´½¨´øÓĞËµÃ÷µÄtag£¬ÓÃ-aÖ¸¶¨±êÇ©Ãû£¬-mÖ¸¶¨ËµÃ÷ÎÄ×Ö
 git tag -a <tagname> -m "there is a tag description" [<commitid>]
-ï¼ˆ4ï¼‰é€šè¿‡-sç”¨ç§é’¥ç­¾åä¸€ä¸ªæ ‡ç­¾ï¼Œç­¾åé‡‡ç”¨PGPç­¾å
+£¨4£©Í¨¹ı-sÓÃË½Ô¿Ç©ÃûÒ»¸ö±êÇ©£¬Ç©Ãû²ÉÓÃPGPÇ©Ãû
 git tag -s <tagname> -m "there is a tag description" [<commitid>]
-å¿…é¡»é¦–å…ˆå®‰è£…gpgï¼ˆGnuPGï¼‰ï¼Œå¦‚æœæ²¡æœ‰æ‰¾åˆ°gpgï¼Œæˆ–è€…æ²¡æœ‰gpgå¯†é’¥å¯¹ï¼Œå°±ä¼šæŠ¥é”™ï¼Œå‚è€ƒGnuPGå¸®åŠ©æ–‡æ¡£é…ç½®Keyã€‚
+±ØĞëÊ×ÏÈ°²×°gpg£¨GnuPG£©£¬Èç¹ûÃ»ÓĞÕÒµ½gpg£¬»òÕßÃ»ÓĞgpgÃÜÔ¿¶Ô£¬¾Í»á±¨´í£¬²Î¿¼GnuPG°ïÖúÎÄµµÅäÖÃKey¡£
 
 
-// æŸ¥çœ‹tag
-git tag    #æ˜¾ç¤ºçš„tagä¸æ˜¯æŒ‰æ—¶é—´é¡ºåºæ’åˆ—ï¼Œè€Œæ˜¯æŒ‰å­—æ¯é¡ºåºæ’åˆ—
-å¦‚æœæƒ³æŸ¥çœ‹tagå’Œcommitçš„å¯¹åº”å…³ç³»ï¼Œå¯ä»¥ç”¨
+// ²é¿´tag
+git tag    #ÏÔÊ¾µÄtag²»ÊÇ°´Ê±¼äË³ĞòÅÅÁĞ£¬¶øÊÇ°´×ÖÄ¸Ë³ĞòÅÅÁĞ
+Èç¹ûÏë²é¿´tagºÍcommitµÄ¶ÔÓ¦¹ØÏµ£¬¿ÉÒÔÓÃ
 git log --pretty=oneline --abbrev-commit
-å¦‚æœæƒ³æŸ¥çœ‹tagçš„çš„è¯¦ç»†æƒ…å†µï¼Œå¯ä»¥ç”¨
+Èç¹ûÏë²é¿´tagµÄµÄÏêÏ¸Çé¿ö£¬¿ÉÒÔÓÃ
 git show <tagname>
 
 
-// åˆ é™¤tag
-åˆ›å»ºçš„æ ‡ç­¾éƒ½åªå­˜å‚¨åœ¨æœ¬åœ°ï¼Œä¸ä¼šè‡ªåŠ¨æ¨é€åˆ°è¿œç¨‹ã€‚æ‰€ä»¥ï¼Œæ‰“é”™çš„æ ‡ç­¾å¯ä»¥åœ¨æœ¬åœ°å®‰å…¨åˆ é™¤ï¼š
+// É¾³ıtag
+´´½¨µÄ±êÇ©¶¼Ö»´æ´¢ÔÚ±¾µØ£¬²»»á×Ô¶¯ÍÆËÍµ½Ô¶³Ì¡£ËùÒÔ£¬´ò´íµÄ±êÇ©¿ÉÒÔÔÚ±¾µØ°²È«É¾³ı£º
 git tag -d <tagname>
-å¦‚æœæ ‡ç­¾å·²ç»æ¨é€åˆ°è¿œç¨‹ï¼Œè¦åˆ é™¤è¿œç¨‹æ ‡ç­¾å°±éº»çƒ¦ä¸€ç‚¹ï¼š
-ï¼ˆ1ï¼‰å…ˆæœ¬åœ°åˆ é™¤ï¼šgit tag -d <tagname>
-ï¼ˆ2ï¼‰å†è¿œç¨‹åˆ é™¤ï¼šgit push origin :refs/tags/<tagname>
+Èç¹û±êÇ©ÒÑ¾­ÍÆËÍµ½Ô¶³Ì£¬ÒªÉ¾³ıÔ¶³Ì±êÇ©¾ÍÂé·³Ò»µã£º
+£¨1£©ÏÈ±¾µØÉ¾³ı£ºgit tag -d <tagname>
+£¨2£©ÔÙÔ¶³ÌÉ¾³ı£ºgit push origin :refs/tags/<tagname>
 
 
-// æ¨é€æ ‡ç­¾è‡³è¿œç¨‹
+// ÍÆËÍ±êÇ©ÖÁÔ¶³Ì
 git push origin <tagname>
-æˆ–è€…ï¼Œä¸€æ¬¡æ€§æ¨é€å…¨éƒ¨å°šæœªæ¨é€åˆ°è¿œç¨‹çš„æœ¬åœ°æ ‡ç­¾ï¼š
+»òÕß£¬Ò»´ÎĞÔÍÆËÍÈ«²¿ÉĞÎ´ÍÆËÍµ½Ô¶³ÌµÄ±¾µØ±êÇ©£º
 git push origin --tags
 	
 
 
-[4.1] windowä¸‹è½½
-// windowä¸‹è½½
+[4.1] windowÏÂÔØ
+// windowÏÂÔØ
 https://git-scm.com/downloads
 
 
-[4.2] cmd -----------------å‘½ä»¤è¡Œ
+[4.2] cmd -----------------ÃüÁîĞĞ
 // exe
 C:\Program^Files\Git\
 C:\Program^Files\Git\git-bash.exe
 
-// æ·»åŠ ç¯å¢ƒå˜é‡ï¼š(å¥½åƒä¼šè‡ªåŠ¨æ·»åŠ )
+// Ìí¼Ó»·¾³±äÁ¿£º(ºÃÏñ»á×Ô¶¯Ìí¼Ó)
 C:\Program Files\Git\cmd
 
 cmd_s:git
@@ -588,42 +590,42 @@ cmd_s:git
 
 
 
-[4.3] .gitignore ----------å¿½ç•¥ç‰¹æ®Šæ–‡ä»¶
-// å¿½ç•¥ç‰¹æ®Šæ–‡ä»¶
+[4.3] .gitignore ----------ºöÂÔÌØÊâÎÄ¼ş
+// ºöÂÔÌØÊâÎÄ¼ş
 .gitignore
-//	æ‰€æœ‰é…ç½®æ–‡ä»¶å¯ä»¥ç›´æ¥åœ¨çº¿æµè§ˆï¼šhttps://github.com/github/gitignore
-//	å¿½ç•¥æ–‡ä»¶çš„åŸåˆ™æ˜¯ï¼š
-//	è‡ªåŠ¨ç”Ÿæˆçš„æ–‡ä»¶ï¼›
-//	ä¸­é—´æ–‡ä»¶ï¼Œ
-//	å£ä»¤
-//	æ¯”å¦‚ä¸€ä¸ªå®Œæˆçš„.gitignoreæ–‡ä»¶ï¼Œå†…å®¹å¦‚ä¸‹ï¼š
+//	ËùÓĞÅäÖÃÎÄ¼ş¿ÉÒÔÖ±½ÓÔÚÏßä¯ÀÀ£ºhttps://github.com/github/gitignore
+//	ºöÂÔÎÄ¼şµÄÔ­ÔòÊÇ£º
+//	×Ô¶¯Éú³ÉµÄÎÄ¼ş£»
+//	ÖĞ¼äÎÄ¼ş£¬
+//	¿ÚÁî
+//	±ÈÈçÒ»¸öÍê³ÉµÄ.gitignoreÎÄ¼ş£¬ÄÚÈİÈçÏÂ£º
 //------------------------------
 //# Windows:Thumbs.dbehthumbs.dbDesktop.ini
 //
 //# Python:*.py[ cod]*.so*.egg*.egg-infodistbuild
 //-------------------------------
 
-//2ï¼‰æŠŠ.gitignoreä¹Ÿæäº¤åˆ°Git
+//2£©°Ñ.gitignoreÒ²Ìá½»µ½Git
 git add .gitignore
 git commit -m "there is a description"
-//å°±å®Œæˆäº†ï¼å½“ç„¶æ£€éªŒ.gitignoreçš„æ ‡å‡†æ˜¯git statuså‘½ä»¤æ˜¯ä¸æ˜¯æ˜¾ç¤ºworking tree cleanã€‚
-//ä½¿ç”¨Windowsçš„æ³¨æ„ï¼šå¦‚æœåœ¨èµ„æºç®¡ç†å™¨é‡Œæ–°å»ºä¸€ä¸ª.gitignoreæ–‡ä»¶ï¼Œç³»ç»Ÿä¼šéå¸¸å¼±æ™ºåœ°æç¤ºå¿…é¡»è¾“å…¥æ–‡ä»¶åï¼Œ
-//ä½†æ˜¯åœ¨æ–‡æœ¬ç¼–è¾‘å™¨é‡Œâ€œä¿å­˜â€æˆ–è€…â€œå¦å­˜ä¸ºâ€å°±å¯ä»¥æŠŠæ–‡ä»¶ä¿å­˜ä¸º.gitignoreäº†ã€‚
+//¾ÍÍê³ÉÁË£¡µ±È»¼ìÑé.gitignoreµÄ±ê×¼ÊÇgit statusÃüÁîÊÇ²»ÊÇÏÔÊ¾working tree clean¡£
+//Ê¹ÓÃWindowsµÄ×¢Òâ£ºÈç¹ûÔÚ×ÊÔ´¹ÜÀíÆ÷ÀïĞÂ½¨Ò»¸ö.gitignoreÎÄ¼ş£¬ÏµÍ³»á·Ç³£ÈõÖÇµØÌáÊ¾±ØĞëÊäÈëÎÄ¼şÃû£¬
+//µ«ÊÇÔÚÎÄ±¾±à¼­Æ÷Àï¡°±£´æ¡±»òÕß¡°Áí´æÎª¡±¾Í¿ÉÒÔ°ÑÎÄ¼ş±£´æÎª.gitignoreÁË¡£
 
-//3ï¼‰å¦‚æœç¡®å®æƒ³è¦æ·»åŠ å·²ç»è¢«.gitignoreå¿½ç•¥çš„æ–‡ä»¶ï¼Œå¯ä»¥ç”¨-få¼ºåˆ¶æ·»åŠ åˆ°Git
+//3£©Èç¹ûÈ·ÊµÏëÒªÌí¼ÓÒÑ¾­±».gitignoreºöÂÔµÄÎÄ¼ş£¬¿ÉÒÔÓÃ-fÇ¿ÖÆÌí¼Óµ½Git
 git add -f test.class
 
-//4ï¼‰æ€€ç–‘.gitignoreå†™çš„æœ‰é—®é¢˜ï¼Œéœ€è¦æŸ¥æ‰¾å“ªä¸ªè§„åˆ™å†™é”™äº†ï¼Œå¯ä»¥ç”¨git check-ignoreå‘½ä»¤æ£€æŸ¥ï¼š
+//4£©»³ÒÉ.gitignoreĞ´µÄÓĞÎÊÌâ£¬ĞèÒª²éÕÒÄÄ¸ö¹æÔòĞ´´íÁË£¬¿ÉÒÔÓÃgit check-ignoreÃüÁî¼ì²é£º
 git check-ignore -v App.class.gitignore:3:*.class	 App.class
-è¡¨ç¤º.gitignoreçš„ç¬¬3è¡Œè§„åˆ™å¿½ç•¥äº†App.classè¿™ä¸ªæ–‡ä»¶ï¼Œäºæ˜¯æˆ‘ä»¬å°±å¯ä»¥çŸ¥é“åº”è¯¥ä¿®è®¢å“ªä¸ªè§„åˆ™ã€‚
+±íÊ¾.gitignoreµÄµÚ3ĞĞ¹æÔòºöÂÔÁËApp.classÕâ¸öÎÄ¼ş£¬ÓÚÊÇÎÒÃÇ¾Í¿ÉÒÔÖªµÀÓ¦¸ÃĞŞ¶©ÄÄ¸ö¹æÔò¡£
 
-//5ï¼‰SIéœ€è¦å¿½ç•¥è¿™å‡ ä¸ªæ–‡ä»¶è§’(æ³¨æ„: å¿½ç•¥åä¼šåˆ é™¤è¿œç¨‹æœåŠ¡å™¨æ–‡ä»¶)
+//5£©SIĞèÒªºöÂÔÕâ¼¸¸öÎÄ¼ş½Ç(×¢Òâ: ºöÂÔºó»áÉ¾³ıÔ¶³Ì·şÎñÆ÷ÎÄ¼ş)
 touch .gitignore
 Save:.gitignore
 //	MacroSBD/sbd_base.em
 //	node/Simple_CTRL_B.h
 
-//6ï¼‰å¿½ç•¥æ— æ•ˆ, æ¸…é™¤æœ¬åœ°ç¼“å­˜
+//6£©ºöÂÔÎŞĞ§, Çå³ı±¾µØ»º´æ
 git rm -r --cached .
 git add .
 git commit -m 'update .gitignore'
@@ -638,48 +640,48 @@ git status
 
 
 
-[4.5] sourceTree ----------å·¥å…·
-sourceTree Git å’Œ Hg å®¢æˆ·ç«¯ç®¡ç†å·¥å…·
+[4.5] sourceTree ----------¹¤¾ß
+sourceTree Git ºÍ Hg ¿Í»§¶Ë¹ÜÀí¹¤¾ß
 sourceTree:
-Git å’Œ Hg å®¢æˆ·ç«¯ç®¡ç†å·¥å…·
+Git ºÍ Hg ¿Í»§¶Ë¹ÜÀí¹¤¾ß
 
 
 
-[4.6] è®¾ç½®Git UIé¢œè‰²
-è®©Gitæ˜¾ç¤ºé¢œè‰²ï¼Œä¼šè®©å‘½ä»¤è¾“å‡ºçœ‹èµ·æ¥æ›´é†’ç›®
+[4.6] ÉèÖÃGit UIÑÕÉ«
+ÈÃGitÏÔÊ¾ÑÕÉ«£¬»áÈÃÃüÁîÊä³ö¿´ÆğÀ´¸üĞÑÄ¿
 git config --global color.ui true
 	
 	
 
-[4.7] git config --global  ä¸ºå‘½ä»¤é…ç½®åˆ«å
-// å‘½ä»¤å¯ä»¥ç®€å†™ï¼Œç”¨git stè¡¨ç¤ºgit statusï¼Œå†æ¯”å¦‚ç”¨coè¡¨ç¤ºcheckoutã€ciè¡¨ç¤ºcommitã€brè¡¨ç¤ºbranchï¼š
+[4.7] git config --global  ÎªÃüÁîÅäÖÃ±ğÃû
+// ÃüÁî¿ÉÒÔ¼òĞ´£¬ÓÃgit st±íÊ¾git status£¬ÔÙ±ÈÈçÓÃco±íÊ¾checkout¡¢ci±íÊ¾commit¡¢br±íÊ¾branch£º
 git config --global alias.co checkoutgit config --global alias.ci commitgit config --global alias.br branch
-ä»¥åæäº¤å°±å¯ä»¥ç®€å†™æˆï¼š
+ÒÔºóÌá½»¾Í¿ÉÒÔ¼òĞ´³É£º
 git ci -m "there is a description"
---globalå‚æ•°æ˜¯å…¨å±€å‚æ•°ï¼Œä¹Ÿå°±æ˜¯è¿™äº›å‘½ä»¤åœ¨è¿™å°ç”µè„‘çš„æ‰€æœ‰Gitä»“åº“ä¸‹éƒ½æœ‰ç”¨ã€‚
+--global²ÎÊıÊÇÈ«¾Ö²ÎÊı£¬Ò²¾ÍÊÇÕâĞ©ÃüÁîÔÚÕâÌ¨µçÄÔµÄËùÓĞGit²Ö¿âÏÂ¶¼ÓĞÓÃ¡£
 
-// å‘½ä»¤git reset HEAD <filename>å¯ä»¥æ’¤é”€æš‚å­˜åŒºçš„ä¿®æ”¹ï¼ˆunstageï¼‰ï¼Œé‡æ–°æ”¾å›å·¥ä½œåŒºã€‚æ—¢ç„¶æ˜¯ä¸€ä¸ªunstageæ“ä½œï¼Œå°±å¯ä»¥é…ç½®ä¸€ä¸ªunstageåˆ«åï¼š
+// ÃüÁîgit reset HEAD <filename>¿ÉÒÔ³·ÏúÔİ´æÇøµÄĞŞ¸Ä£¨unstage£©£¬ÖØĞÂ·Å»Ø¹¤×÷Çø¡£¼ÈÈ»ÊÇÒ»¸öunstage²Ù×÷£¬¾Í¿ÉÒÔÅäÖÃÒ»¸öunstage±ğÃû£º
 git config --global alias.unstage 'reset HEAD'
-å°±å¯ä»¥ç®€åŒ–å‘½ä»¤ï¼š
+¾Í¿ÉÒÔ¼ò»¯ÃüÁî£º
 git unstage test.py   =   git reset HEAD test.py
 
-// é…ç½®ä¸€ä¸ªgit lastï¼Œè®©å…¶æ˜¾ç¤ºæœ€åä¸€æ¬¡æäº¤ä¿¡æ¯ï¼š
+// ÅäÖÃÒ»¸ögit last£¬ÈÃÆäÏÔÊ¾×îºóÒ»´ÎÌá½»ĞÅÏ¢£º
 git config --global alias.last 'log -1'
-è¿™æ ·ï¼Œç”¨git lastå°±èƒ½æ˜¾ç¤ºæœ€è¿‘ä¸€æ¬¡çš„æäº¤ï¼š
+ÕâÑù£¬ÓÃgit last¾ÍÄÜÏÔÊ¾×î½üÒ»´ÎµÄÌá½»£º
 git lastcommit 015851cbe2902bf01fbba198af5d6705dc0e03ac (HEAD -> dev)
 Author: xxx <xxx@foxmail.com>
 Date:	Mon Apr 23 13:52:44 2018 +0800
 	add git ignore list
-// è¿˜æœ‰æŠŠlgé…ç½®æˆäº†ï¼š
+// »¹ÓĞ°ÑlgÅäÖÃ³ÉÁË£º
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-æ¥çœ‹çœ‹git lgçš„æ•ˆæœï¼š
+À´¿´¿´git lgµÄĞ§¹û£º
 	
 	
 
-[4.8] git config ----------å•ä¸ªç”¨æˆ·é…ç½®-----é…ç½®æ–‡ä»¶
+[4.8] git config ----------µ¥¸öÓÃ»§ÅäÖÃ-----ÅäÖÃÎÄ¼ş
 .git/config
-é…ç½®Gitçš„æ—¶å€™ï¼ŒåŠ ä¸Š--globalæ˜¯é’ˆå¯¹å½“å‰ç”¨æˆ·èµ·ä½œç”¨çš„ï¼Œå¦‚æœä¸åŠ ï¼Œé‚£åªé’ˆå¯¹å½“å‰çš„ä»“åº“èµ·ä½œç”¨ã€‚
-æ¯ä¸ªä»“åº“çš„Gité…ç½®æ–‡ä»¶éƒ½æ”¾åœ¨.git/configæ–‡ä»¶ä¸­ï¼š
+ÅäÖÃGitµÄÊ±ºò£¬¼ÓÉÏ--globalÊÇÕë¶Ôµ±Ç°ÓÃ»§Æğ×÷ÓÃµÄ£¬Èç¹û²»¼Ó£¬ÄÇÖ»Õë¶Ôµ±Ç°µÄ²Ö¿âÆğ×÷ÓÃ¡£
+Ã¿¸ö²Ö¿âµÄGitÅäÖÃÎÄ¼ş¶¼·ÅÔÚ.git/configÎÄ¼şÖĞ£º
 cat .git/config
 -----------------------------------------------------------------------------
 //[ core ]
@@ -699,7 +701,7 @@ cat .git/config
 //        fetch = +refs/heads/*:refs/remotes/gitee/*
 -----------------------------------------------------------------------------
 
-è€Œå½“å‰ç”¨æˆ·çš„Gité…ç½®æ–‡ä»¶æ”¾åœ¨ç”¨æˆ·ä¸»ç›®å½•ä¸‹çš„ä¸€ä¸ªéšè—æ–‡ä»¶.gitconfigä¸­ï¼š
+¶øµ±Ç°ÓÃ»§µÄGitÅäÖÃÎÄ¼ş·ÅÔÚÓÃ»§Ö÷Ä¿Â¼ÏÂµÄÒ»¸öÒş²ØÎÄ¼ş.gitconfigÖĞ£º
 -----------------------------------------------------------------------------
 //[ user ]
 //	name = xxx
@@ -715,55 +717,55 @@ cat .git/config
 //	last = log -1
 //	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 -----------------------------------------------------------------------------
-åˆ«åå°±åœ¨[ alias ]åé¢ï¼Œè¦åˆ é™¤åˆ«åï¼Œç›´æ¥æŠŠå¯¹åº”çš„è¡Œåˆ æ‰å³å¯ã€‚é…ç½®åˆ«åä¹Ÿå¯ä»¥ç›´æ¥ä¿®æ”¹è¿™ä¸ªæ–‡ä»¶ï¼Œå¦‚æœæ”¹é”™äº†ï¼Œå¯ä»¥åˆ æ‰æ–‡ä»¶é‡æ–°é€šè¿‡å‘½ä»¤é…ç½®ã€‚
+±ğÃû¾ÍÔÚ[ alias ]ºóÃæ£¬ÒªÉ¾³ı±ğÃû£¬Ö±½Ó°Ñ¶ÔÓ¦µÄĞĞÉ¾µô¼´¿É¡£ÅäÖÃ±ğÃûÒ²¿ÉÒÔÖ±½ÓĞŞ¸ÄÕâ¸öÎÄ¼ş£¬Èç¹û¸Ä´íÁË£¬¿ÉÒÔÉ¾µôÎÄ¼şÖØĞÂÍ¨¹ıÃüÁîÅäÖÃ¡£
 
 
-å¤šäººåä½œçš„å·¥ä½œæ¨¡å¼é€šå¸¸å¦‚ä¸‹ï¼š
-ï¼ˆ1ï¼‰é¦–å…ˆå°†è¿œç¨‹ä»“åº“å…‹éš†ä¸ºæœ¬åœ°ä»“åº“
+¶àÈËĞ­×÷µÄ¹¤×÷Ä£Ê½Í¨³£ÈçÏÂ£º
+£¨1£©Ê×ÏÈ½«Ô¶³Ì²Ö¿â¿ËÂ¡Îª±¾µØ²Ö¿â
 git clone git@github.com:xxx/LearnGit.git
-ï¼ˆ2ï¼‰åœ¨æœ¬åœ°åˆ›å»ºå’Œè¿œç¨‹åˆ†æ”¯å¯¹åº”çš„åˆ†æ”¯
-git checkout -b <æœ¬åœ°åˆ†æ”¯å> origin/<è¿œç¨‹åˆ†æ”¯å>
-æœ¬åœ°å’Œè¿œç¨‹åˆ†æ”¯çš„åç§°æœ€å¥½ä¸€è‡´ï¼›
-ï¼ˆ3ï¼‰åœ¨æœ¬åœ°åˆ†æ”¯å®Œæˆä»»åŠ¡åï¼Œå¯ä»¥è¯•å›¾ç”¨git push <è¿œç¨‹ä¸»æœºå> <æœ¬åœ°åˆ†æ”¯å>æ¨é€è‡ªå·±çš„ä¿®æ”¹ï¼›
-ï¼ˆ2ï¼‰å¦‚æœæ¨é€å¤±è´¥ï¼Œåˆ™è¡¨æ˜è¿œç¨‹åˆ†æ”¯æ¯”æœ¬åœ°æ›´æ–°ï¼Œéœ€è¦å…ˆç”¨git pullè¯•å›¾åˆå¹¶ï¼›
-ï¼ˆ3ï¼‰å¦‚æœpullå¤±è´¥å¹¶æç¤ºâ€œno tracking informationâ€ï¼Œåˆ™è¯´æ˜æœ¬åœ°åˆ†æ”¯å’Œè¿œç¨‹åˆ†æ”¯çš„é“¾æ¥å…³ç³»æ²¡æœ‰åˆ›å»ºï¼Œç”¨å‘½ä»¤git branch --set-upstream-to=<è¿œç¨‹ä¸»æœºå>/<è¿œç¨‹åˆ†æ”¯å>? <æœ¬åœ°åˆ†æ”¯å>åˆ›å»ºé“¾æ¥ï¼›
-ï¼ˆ4ï¼‰å¦‚æœåˆå¹¶æœ‰å†²çªï¼Œåˆ™è§£å†³å†²çªï¼Œå¹¶åœ¨æœ¬åœ°æäº¤ï¼ˆadd => commitï¼‰ï¼›
-ï¼ˆ5ï¼‰æ²¡æœ‰å†²çªæˆ–è€…è§£å†³æ‰å†²çªåï¼Œå†ç”¨git push <è¿œç¨‹ä¸»æœºå> <æœ¬åœ°åˆ†æ”¯å>æ¨é€å°±èƒ½æˆåŠŸã€‚
+£¨2£©ÔÚ±¾µØ´´½¨ºÍÔ¶³Ì·ÖÖ§¶ÔÓ¦µÄ·ÖÖ§
+git checkout -b <±¾µØ·ÖÖ§Ãû> origin/<Ô¶³Ì·ÖÖ§Ãû>
+±¾µØºÍÔ¶³Ì·ÖÖ§µÄÃû³Æ×îºÃÒ»ÖÂ£»
+£¨3£©ÔÚ±¾µØ·ÖÖ§Íê³ÉÈÎÎñºó£¬¿ÉÒÔÊÔÍ¼ÓÃgit push <Ô¶³ÌÖ÷»úÃû> <±¾µØ·ÖÖ§Ãû>ÍÆËÍ×Ô¼ºµÄĞŞ¸Ä£»
+£¨2£©Èç¹ûÍÆËÍÊ§°Ü£¬Ôò±íÃ÷Ô¶³Ì·ÖÖ§±È±¾µØ¸üĞÂ£¬ĞèÒªÏÈÓÃgit pullÊÔÍ¼ºÏ²¢£»
+£¨3£©Èç¹ûpullÊ§°Ü²¢ÌáÊ¾¡°no tracking information¡±£¬ÔòËµÃ÷±¾µØ·ÖÖ§ºÍÔ¶³Ì·ÖÖ§µÄÁ´½Ó¹ØÏµÃ»ÓĞ´´½¨£¬ÓÃÃüÁîgit branch --set-upstream-to=<Ô¶³ÌÖ÷»úÃû>/<Ô¶³Ì·ÖÖ§Ãû>? <±¾µØ·ÖÖ§Ãû>´´½¨Á´½Ó£»
+£¨4£©Èç¹ûºÏ²¢ÓĞ³åÍ»£¬Ôò½â¾ö³åÍ»£¬²¢ÔÚ±¾µØÌá½»£¨add => commit£©£»
+£¨5£©Ã»ÓĞ³åÍ»»òÕß½â¾öµô³åÍ»ºó£¬ÔÙÓÃgit push <Ô¶³ÌÖ÷»úÃû> <±¾µØ·ÖÖ§Ãû>ÍÆËÍ¾ÍÄÜ³É¹¦¡£
 --------------------- 
 
 
 
-[4.9] git config ----------æç¤ºè¾“å…¥ç”¨æˆ·åå’Œå¯†ç 
-// è§£å†³æ¯æ¬¡è¿›å…¥éƒ½éœ€è¦è¾“å…¥ç”¨æˆ·åå’Œå¯†ç 
-è§£å†³åŠæ³•ï¼š
-git bashè¿›å…¥ä½ çš„é¡¹ç›®ç›®å½•ï¼Œè¾“å…¥ï¼š
+[4.9] git config ----------ÌáÊ¾ÊäÈëÓÃ»§ÃûºÍÃÜÂë
+// ½â¾öÃ¿´Î½øÈë¶¼ĞèÒªÊäÈëÓÃ»§ÃûºÍÃÜÂë
+½â¾ö°ì·¨£º
+git bash½øÈëÄãµÄÏîÄ¿Ä¿Â¼£¬ÊäÈë£º
 git config --global credential.helper store
 
 
 
-[4.10] hosts ---------------è§£å†³ä¸‹è½½æ…¢
-//1)åˆ©ç”¨ç äº‘å…‹éš†GitHubé¡¹ç›®
+[4.10] hosts ---------------½â¾öÏÂÔØÂı
+//1)ÀûÓÃÂëÔÆ¿ËÂ¡GitHubÏîÄ¿
 https://gitee.com/
 
-//2)å¼€æ‰‹æœºçƒ­ç‚¹
+//2)¿ªÊÖ»úÈÈµã
 
 //3)hosts
 C:\Windows\System32\drivers\etc\hosts
-//  æ·»åŠ ä»¥ä¸‹ä¸‰ä¸ªã€‚
-//  å‚è€ƒip-1:
+//  Ìí¼ÓÒÔÏÂÈı¸ö¡£
+//  ²Î¿¼ip-1:
 140.82.113.4 github.com
 199.232.1.194 github.global.ssl.fastly.net
 140.82.113.10 codeload.github.com
-//  å‚è€ƒip-2:
+//  ²Î¿¼ip-2:
 140.82.113.3 github.com
 151.101.25.194 github.global.ssl.fastly.net
 140.82.112.10 codeload.github.com
-//  æ„Ÿè§‰å…³é”®æ˜¯ç¬¬ä¸‰ä¸ª
+//  ¸Ğ¾õ¹Ø¼üÊÇµÚÈı¸ö
 
-// åˆ·æ–° DNS ç¼“å­˜
+// Ë¢ĞÂ DNS »º´æ
 cmd_s:ipconfig /flushdns
 // 
-// ä¸èƒ½ç”¨ping
+// ²»ÄÜÓÃping
 https://www.ipaddress.com/
 https://www.ip-tracker.org/locator/ip-lookup.php
 https://community.spiceworks.com/tools/ip-lookup/

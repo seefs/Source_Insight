@@ -1,5 +1,5 @@
-ï»¿/*
-Funç›®å½•ï¼š
+/*
+FunÄ¿Â¼£º
 macro _TempHeadFile(hbuf){}
 _TempCfgFile(hbuf)
 _TempFileType(hbuf)
@@ -17,7 +17,7 @@ _TempSelect(hbuf)
 macro getMarBasePath(0)		{	return "basePath"	}
 macro getMarDemoPath(0)		{	return "demoPath"	}
 
-//è·å–è®¾ç½®BUF
+//»ñÈ¡ÉèÖÃBUF
 macro GetCfgBuf(mode)
 {
 	SetName = getSetPath(0) # "\\Macro_Set.h"
@@ -26,7 +26,7 @@ macro GetCfgBuf(mode)
 	return setBuf
 }
 
-//è¡Œå·ä¸ºåŒæ•°ï¼Œé—´éš”ä¸€è¡Œä½œä¸ºå¤‡æ³¨ä¿¡æ¯
+//ĞĞºÅÎªË«Êı£¬¼ä¸ôÒ»ĞĞ×÷Îª±¸×¢ĞÅÏ¢
 macro getToolsRow(0)		{	return 12	}
 macro getMakeRow(0)			{	return 15	}
 macro getBCompareRow(0)		{	return 18	}
@@ -56,7 +56,7 @@ macro getContentsRow(0)			{	return 87	}
 
 
 
-//è·å–å½“å‰è®¾ç½®:é»˜è®¤F5~goto           F6-rule
+//»ñÈ¡µ±Ç°ÉèÖÃ:Ä¬ÈÏF5~goto           F6-rule
 macro ReadMode(setRow)
 {
 	var setBuf
@@ -81,13 +81,13 @@ macro ReadIntMode(setRow)
 		return 0
 }
 
-//ä¿å­˜å½“å‰è®¾ç½®:é»˜è®¤F5~goto           F6-rule
+//±£´æµ±Ç°ÉèÖÃ:Ä¬ÈÏF5~goto           F6-rule
 macro SaveMode(setRow, val)
 {
 	var setBuf
 	setBuf = GetCfgBuf(0)
 
-	//æ·»åŠ ç©ºè¡Œ
+	//Ìí¼Ó¿ÕĞĞ
 	ln = GetBufLineCount(setBuf)
 	while (ln < setRow)
 	{
@@ -167,7 +167,7 @@ macro IsNoteFile(hbuf)
 		||IsFileName(hbuf, "Log_"))||IsFileName(hbuf, "si_modis_"))
 }
 
-//ä»å³è¾¹åŒ¹é…
+//´ÓÓÒ±ßÆ¥Åä
 macro IsFileType(filename, type)
 {
 	len = strlen (filename)	
@@ -182,7 +182,7 @@ macro IsFileType(filename, type)
 	}
 	return 0
 }
-//ä»å·¦è¾¹åŒ¹é…
+//´Ó×ó±ßÆ¥Åä
 macro IsFileLeft(curPath, type)
 {
 	filename = GetFileName(curPath)
@@ -205,7 +205,7 @@ macro IsFileLeft(curPath, type)
 	}
 	return 0
 }
-//ä»å·¦è¾¹åŒ¹é…
+//´Ó×ó±ßÆ¥Åä
 macro IsFileName(hbuf, type)
 {
 	if(hbuf == 0) 
@@ -230,7 +230,7 @@ macro IsFileName(hbuf, type)
 	}
 	return 0
 }
-//ä»å·¦è¾¹åŒ¹é…
+//´Ó×ó±ßÆ¥Åä
 macro IsPathName(hbuf, type)
 {
 	pathname = GetBufName(hbuf)
@@ -277,7 +277,7 @@ macro OpenDefaultSR(hbuf)
 	}
 	else
 	{
-		//éå†çª—å£
+		//±éÀú´°¿Ú
 		hNext = GetCurrentWnd();
 		wndc = WndListCount ()
 		start = 0
@@ -415,7 +415,7 @@ macro GetRelativelyDir(curName, baseDir, filename)
 	}
 	else if(len > baseLen+fileLen+1)
 	{
-		//è€ƒè™‘ç›®å½•æœ€åä¸€ä¸ª"\"
+		//¿¼ÂÇÄ¿Â¼×îºóÒ»¸ö"\"
 		return strmid (curName, baseLen + 1, len - fileLen - 1)
 	}
 	else
@@ -430,7 +430,7 @@ macro GetRelativelyDir(curName, baseDir, filename)
 /***********************************************************************/
 //macro _TempMakeFile(hbuf){		_TempHeadFile(hbuf)		}
 
-//è·³åˆ°é»˜è®¤mk
+//Ìøµ½Ä¬ÈÏmk
 macro OpenDefaultMake(hbuf)
 {
 	var projectName
@@ -442,15 +442,15 @@ macro OpenDefaultMake(hbuf)
 	}
 	else
 	{
-		msg ("è¯·æŒ‰F11->9æŒ‡å®šé»˜è®¤mkæ–‡ä»¶")
+		msg ("Çë°´F11->9Ö¸¶¨Ä¬ÈÏmkÎÄ¼ş")
 	}
 }
 
-//æŒ‡å®šé»˜è®¤mk
+//Ö¸¶¨Ä¬ÈÏmk
 macro SetDefaultMake(hbuf)
 {
 	sel = MGetWndSel(hbuf)
-	if (IsNoSelect(sel)) //æœªé€‰æ‹©
+	if (IsNoSelect(sel)) //Î´Ñ¡Ôñ
 	{
 		if(IsMakeFile(hbuf))
 		{
@@ -459,8 +459,8 @@ macro SetDefaultMake(hbuf)
 		}
 		else
 		{
-			//æ‰“å¼€ ä¿å­˜mk...
-			msg ("è¯·åœ¨mkæ–‡ä»¶ä¸­ï¼ŒæŒ‡å®šé»˜è®¤mk")
+			//´ò¿ª ±£´æmk...
+			msg ("ÇëÔÚmkÎÄ¼şÖĞ£¬Ö¸¶¨Ä¬ÈÏmk")
 		}
 	}
 	else
@@ -479,7 +479,7 @@ macro SetDefaultMake(hbuf)
 		}
 		else
 		{
-			msg ("è¯·åœ¨SRæ–‡ä»¶ä¸­ï¼Œé€‰æ‹©é¡¹ç›®åç§°ï¼ŒæŒ‡å®šé»˜è®¤mk")
+			msg ("ÇëÔÚSRÎÄ¼şÖĞ£¬Ñ¡ÔñÏîÄ¿Ãû³Æ£¬Ö¸¶¨Ä¬ÈÏmk")
 		}
 	}
 }
@@ -633,7 +633,7 @@ macro IsExistFile(file)
 macro OpenSelMakeFile(hbuf)
 {
 	sel = MGetWndSel(hbuf)
-	if (!IsNoSelect(sel)) //æœªé€‰æ‹©
+	if (!IsNoSelect(sel)) //Î´Ñ¡Ôñ
 	{
 		cur_line = GetBufLine(hbuf, sel.lnFirst )
 		if(strlen(cur_line) < sel.ichLim)
@@ -652,9 +652,9 @@ macro OpenMakeFile(hbuf, file)
 {
 	pathName = GetBufName(hbuf)
 	projectPath = getProjectPath(pathName)
-	//hbuf = OpenCache("@projectPath@\\@file@\\project_@file@.mk")	//æˆ–è€…target.		
+	//hbuf = OpenCache("@projectPath@\\@file@\\project_@file@.mk")	//»òÕßtarget.		
 	//setCurrentBuf(hbuf)
-	hbuf = OpenExistFile("@projectPath@\\@file@\\project_@file@.mk")	//æˆ–è€…target.
+	hbuf = OpenExistFile("@projectPath@\\@file@\\project_@file@.mk")	//»òÕßtarget.
 	return hbuf
 }
 
@@ -685,7 +685,7 @@ macro EmptyCache(hbuf)
 		}
 }
 
-//ret = 0(ç©ºæ–‡ä»¶) 1(åªæœ‰å‚æ•°) 2(æœ‰å‚æ•°+ç›®å½•)
+//ret = 0(¿ÕÎÄ¼ş) 1(Ö»ÓĞ²ÎÊı) 2(ÓĞ²ÎÊı+Ä¿Â¼)
 macro GetParamCacheType(hbuf, param)
 {
 	lnMax = GetBufLineCount(hbuf)
@@ -701,7 +701,7 @@ macro GetParamCacheType(hbuf, param)
 	{
 		if(ret == 0)
 		{
-			//æœ‰å‚æ•° ret = 1
+			//ÓĞ²ÎÊı ret = 1
 			if(line != "")
 			{
 				if(len > 0)
@@ -717,7 +717,7 @@ macro GetParamCacheType(hbuf, param)
 		}
 		else if(ret == 1)
 		{
-			//æœ‰æŒ‡å®šå‚æ•° ret = 2
+			//ÓĞÖ¸¶¨²ÎÊı ret = 2
 			if(param == strmid(line, 0, len))
 			{
 				ret = 2
@@ -736,20 +736,20 @@ macro GetParamCacheType(hbuf, param)
 
 macro GetTransFileName(hbuf, fName, cNum)
 {
-	//åŠŸèƒ½å‚æ•°åˆ†ç±»:
-	// 1.CtrlC,  cNum=0 ä¼˜å…ˆè®¾ç½®è·¯å¾„(å•ç‹¬è®¾ç½®)
-	// 2.F1->F2, cNum=1 ä¼˜å…ˆè®¾ç½®è·¯å¾„(ç»Ÿä¸€è®¾ç½®)
-	// 3.F2,     cNum=2 è€ƒè™‘SR
-	// 4.CtrlR,  cNum=5 ä¼˜å…ˆå½“å‰å·¥ç¨‹è·¯å¾„
-	//   CtrlR,  cNum=15  å½“å‰è·¯å¾„, Log_XXæ–‡ä»¶----no use
+	//¹¦ÄÜ²ÎÊı·ÖÀà:
+	// 1.CtrlC,  cNum=0 ÓÅÏÈÉèÖÃÂ·¾¶(µ¥¶ÀÉèÖÃ)
+	// 2.F1->F2, cNum=1 ÓÅÏÈÉèÖÃÂ·¾¶(Í³Ò»ÉèÖÃ)
+	// 3.F2,     cNum=2 ¿¼ÂÇSR
+	// 4.CtrlR,  cNum=5 ÓÅÏÈµ±Ç°¹¤³ÌÂ·¾¶
+	//   CtrlR,  cNum=15  µ±Ç°Â·¾¶, Log_XXÎÄ¼ş----no use
 	// 5.F5,     cNum=5
-	// 6.F6,     cNum=6 ä¼˜å…ˆè®¾ç½®è·¯å¾„
+	// 6.F6,     cNum=6 ÓÅÏÈÉèÖÃÂ·¾¶
 	// 7.F7,     cNum=6
 	// 8.F11,    cNum=6 python, cp
-	//   F11,    cNum=16 cmd_w python_w ç¼–è¯‘æŒ‡ä»¤æ˜¯ç›¸å¯¹ç›®å½•(ä¸ç”¨å®Œæ•´è·¯å¾„); åªæ›¿æ¢"Save:"ã€"^"
-	//   F11,    cNum=4  cmd_s ç¼–è¯‘æŒ‡ä»¤; å±è”½è®¾ç½®è·¯å¾„(ä¸ç”¨basePathè®¾ç½®); 
+	//   F11,    cNum=16 cmd_w python_w ±àÒëÖ¸ÁîÊÇÏà¶ÔÄ¿Â¼(²»ÓÃÍêÕûÂ·¾¶); Ö»Ìæ»»"Save:"¡¢"^"
+	//   F11,    cNum=4  cmd_s ±àÒëÖ¸Áî; ÆÁ±ÎÉèÖÃÂ·¾¶(²»ÓÃbasePathÉèÖÃ); 
 	
-	//è·¯å¾„+æ–‡ä»¶åæ›¿æ¢:
+	//Â·¾¶+ÎÄ¼şÃûÌæ»»:
 	bPath = ""
 	if(bPath == "")
 	{
@@ -759,7 +759,7 @@ macro GetTransFileName(hbuf, fName, cNum)
 			if(bPath == "")
 			{
 				//android service path: basePath = F:\9820e 
-				//å­˜åœ¨ä¸¤ä»½ä»£ç +ä¸¤ä¸ªè·¯å¾„, è¿™é‡Œç”¨æœåŠ¡å™¨è·¯å¾„(ç»Ÿä¸€è®¾ç½®)
+				//´æÔÚÁ½·İ´úÂë+Á½¸öÂ·¾¶, ÕâÀïÓÃ·şÎñÆ÷Â·¾¶(Í³Ò»ÉèÖÃ)
 				bPath = ReadMode(getNoteBasePath(0))
 			}
 		}
@@ -767,7 +767,7 @@ macro GetTransFileName(hbuf, fName, cNum)
 		{
 			if(IsSRFile(hbuf))
 			{
-				//æ„Ÿè§‰æœ‰ç‚¹é—®é¢˜, ä¹Ÿå¯ä»¥æ‰“å¼€æœåŠ¡å™¨è·¯å¾„
+				//¸Ğ¾õÓĞµãÎÊÌâ, Ò²¿ÉÒÔ´ò¿ª·şÎñÆ÷Â·¾¶
 				if(IsPathName(hbuf, getSavePath(0) # "\\Source Insight"))
 				{
 					bPath = getSavePath(0)
@@ -776,7 +776,7 @@ macro GetTransFileName(hbuf, fName, cNum)
 			if(bPath == "")
 			{
 				//android service path: basePath = F:\9820e 
-				//å­˜åœ¨ä¸¤ä»½ä»£ç +ä¸¤ä¸ªè·¯å¾„, è¿™é‡Œç”¨æœåŠ¡å™¨è·¯å¾„(ç»Ÿä¸€è®¾ç½®)
+				//´æÔÚÁ½·İ´úÂë+Á½¸öÂ·¾¶, ÕâÀïÓÃ·şÎñÆ÷Â·¾¶(Í³Ò»ÉèÖÃ)
 				bPath = ReadMode(getNoteBasePath(0))
 			}
 		}
@@ -784,7 +784,7 @@ macro GetTransFileName(hbuf, fName, cNum)
 		{
 			if(IsSRFile(hbuf))
 			{
-				//è¿™ç§æƒ…å†µåªæœ‰F2ä¼šç”¨åˆ°, æ”¾è¿™é‡Œæˆ–è€…æ”¾å¤–é¢éƒ½ä¸€æ ·
+				//ÕâÖÖÇé¿öÖ»ÓĞF2»áÓÃµ½, ·ÅÕâÀï»òÕß·ÅÍâÃæ¶¼Ò»Ñù
 				if(IsPathName(hbuf, getSavePath(0) # "\\Source Insight"))
 				{
 					bPath = getSavePath(0)
@@ -798,24 +798,24 @@ macro GetTransFileName(hbuf, fName, cNum)
 	}
 	if(bPath == "" && cNum != 4)
 	{
-		//1)ä¼˜å…ˆç”¨basePath; 
-		//2)å±è”½è®¾ç½®è·¯å¾„(ä¸ç”¨basePathè®¾ç½®); 
+		//1)ÓÅÏÈÓÃbasePath; 
+		//2)ÆÁ±ÎÉèÖÃÂ·¾¶(²»ÓÃbasePathÉèÖÃ); 
 		bPath = getMacroValue(hbuf, getMarBasePath(0), 1) //"basePath"
 	}
 	if(bPath == "")
 	{
-		//å¦‚æœæ²¡æœ‰è®¾ç½®basePathï¼Œç”¨é¡¹ç›®ç›®å½•
+		//Èç¹ûÃ»ÓĞÉèÖÃbasePath£¬ÓÃÏîÄ¿Ä¿Â¼
 		bPath = getBasePath(hbuf)
 	}
 
-	//è¡¥å…¨ç›®å½•
-	//  å¸¦":"å·çš„æ˜¯å®Œæ•´ç›®å½•ã€æˆ–æ ¹ç›®å½•
+	//²¹È«Ä¿Â¼
+	//  ´ø":"ºÅµÄÊÇÍêÕûÄ¿Â¼¡¢»ò¸ùÄ¿Â¼
 	re = FindString(fName, ":")
 	if(re == "X")
 	{
 		if(cNum == 16)
 		{
-			//ç¼–è¯‘æŒ‡ä»¤æ˜¯ç›¸å¯¹ç›®å½•(ä¸ç”¨å®Œæ•´è·¯å¾„)
+			//±àÒëÖ¸ÁîÊÇÏà¶ÔÄ¿Â¼(²»ÓÃÍêÕûÂ·¾¶)
 			fName = fName
 		}
 		else if(strlen(fName) > 2)
@@ -837,12 +837,12 @@ macro GetTransFileName(hbuf, fName, cNum)
 
 	//replace test:
 	//xxxx = ReplaceWord("^^^sss^^^ddd^eee^^^", "^", "-")
-	//è¾“å‡º: "---sss---ddd-eee---"
+	//Êä³ö: "---sss---ddd-eee---"
 	//msg(xxxx)
 	
 	//replace test:
 	//xxxx = ReplaceWord("a\\\\bb\\cc\\dd\\\\", "\\\\", "\\")
-	//è¾“å‡º: "a\bb\cc\dd\"
+	//Êä³ö: "a\bb\cc\dd\"
 	//msg(xxxx)
 	
 	//replace
@@ -860,12 +860,12 @@ macro GetTransFileName(hbuf, fName, cNum)
 macro GetHeadIndex(hbuf, cur_line)
 {
 	index = FindString(cur_line, " ")
-	//åˆ é™¤åé¢éƒ¨åˆ†
+	//É¾³ıºóÃæ²¿·Ö
 	if (index != "X"){
 		cur_line = strmid(cur_line, 0, index)
 	}
 	
-	//ä»å·¦å¼€å§‹æ‰¾
+	//´Ó×ó¿ªÊ¼ÕÒ
 	index_colon = FindString(cur_line, ":")
 	if (index_colon != "X"){
 		//cur_line = strmid(cur_line, 0, index_colon)
@@ -873,17 +873,17 @@ macro GetHeadIndex(hbuf, cur_line)
 	}
 	else if (index != "X"){
 		if (index == 1){
-			//å•ä¸ªå­—ç¬¦ï¼Œä¹Ÿæ²¡æœ‰":"å·ï¼Œä½œä¸ºå¼‚å¸¸æƒ…å†µå¤„ç†
+			//µ¥¸ö×Ö·û£¬Ò²Ã»ÓĞ":"ºÅ£¬×÷ÎªÒì³£Çé¿ö´¦Àí
 			return "X"
 		}
 	}
 	
-	// è¿”å›ç¬¬1ä¸ªç©ºæ ¼æˆ–å†’å·çš„ä½ç½®
+	// ·µ»ØµÚ1¸ö¿Õ¸ñ»òÃ°ºÅµÄÎ»ÖÃ
 	return index
 }
 macro IsTransHead(hbuf, fHead)
 {
-	//ä¸èƒ½å¸¦æœ‰*å·ï¼Œå¦åˆ™ä¼šæ— é™æ›¿æ¢ä¸‹å»
+	//²»ÄÜ´øÓĞ*ºÅ£¬·ñÔò»áÎŞÏŞÌæ»»ÏÂÈ¥
 	index = FindString(fHead, "*")
 	if(index != "X"){
 		return 0
@@ -902,12 +902,12 @@ macro ReTransHead(hbuf, fHead, curPath)
 		headPath = getMacroValue(hbuf, fHead # "Path", 1)
 		if(headPath != "")
 		{
-			//  ç¬¬1æ¬¡å¾ªç¯:
+			//  µÚ1´ÎÑ­»·:
 			// curPath-----tmp:
 			// fHead-------tmp:
 			// headPath----base:tmp/
 			// curPath-----base:tmp/
-			//  ç¬¬2æ¬¡å¾ªç¯:
+			//  µÚ2´ÎÑ­»·:
 			// curPath-----base:tmp/
 			// fHead-------base:
 			// headPath----D:\project\Android//
@@ -931,7 +931,7 @@ macro ReTransHead(hbuf, fHead, curPath)
 macro ReAllTransHead(hbuf, curPath)
 {
 	len = strlen(curPath)
-	// ç¬¬1ä¸ªç©ºæ ¼æˆ–å†’å·çš„ä½ç½®
+	// µÚ1¸ö¿Õ¸ñ»òÃ°ºÅµÄÎ»ÖÃ
 	firstS = 0
 	firstE = GetHeadIndex(hbuf, curPath)
 	if (firstE != "X")
@@ -942,7 +942,7 @@ macro ReAllTransHead(hbuf, curPath)
 			nextS     = GetTransCmdS2(curPath, firstE + 1, len)
 			firstPath = strmid(curPath, 0, nextS)
 			nextPath  = strmid(curPath, nextS, len)
-			// åå¤æ›¿æ¢è·¯å¾„
+			// ·´¸´Ìæ»»Â·¾¶
 			firstPath = ReTransHead(hbuf, noteCmd, firstPath)
 			return firstPath # ReAllTransHead(hbuf, nextPath)
 		}
@@ -967,8 +967,8 @@ macro GetTransWord(hbuf, curPath, noteWord)
 	}
 	else if(noteWord == "[Base]")
 	{
-		//å›åˆ°ç›®å½•,ä¸æ‰“å¼€æ–°æ–‡ä»¶
-		noteWord = "ç›®å½•"
+		//»Øµ½Ä¿Â¼,²»´ò¿ªĞÂÎÄ¼ş
+		noteWord = "Ä¿Â¼"
 		NoteScroll(hbuf, curPath, noteWord)
 		return 1
 	}
@@ -982,8 +982,8 @@ macro GetTransWord(hbuf, curPath, noteWord)
 
 macro GetTransCmdS(cur_line, index, len)
 {
-	//ä¸‹ä¸€ä¸ªéç©º
-	//  é€‰æ‹©ç©ºè¡Œæ—¶(å¦‚åªæœ‰ä¸€ä¸ªæ¢è¡Œç¬¦), stop
+	//ÏÂÒ»¸ö·Ç¿Õ
+	//  Ñ¡Ôñ¿ÕĞĞÊ±(ÈçÖ»ÓĞÒ»¸ö»»ĞĞ·û), stop
 	start = StartWS(cur_line, index)
 	if (start == "X")
 	{
@@ -993,7 +993,7 @@ macro GetTransCmdS(cur_line, index, len)
 }
 macro GetTransCmdS2(cur_line, index, len)
 {
-	//ä¸‹ä¸€ä¸ªéç©º
+	//ÏÂÒ»¸ö·Ç¿Õ
 	start = StartWS(cur_line, index)
 	if (start == "X")
 	{
@@ -1003,7 +1003,7 @@ macro GetTransCmdS2(cur_line, index, len)
 }
 macro GetTransCmdE(cur_line, start, len)
 {
-	//ä¸‹ä¸€ä¸ªç©ºæ ¼
+	//ÏÂÒ»¸ö¿Õ¸ñ
 	next = NextWS(cur_line, start)
 	if (next == "X")
 	{
@@ -1095,11 +1095,11 @@ macro ReadCmdFileList(hbuf, cur_row, bsDir, fName)
 					
 					key = 0
 					bit = fileRowCnt
-					//2ä½æ•°éœ€æ±‚è¾“å…¥1~2ä¸ªæ•°
+					//2Î»ÊıĞèÇóÊäÈë1~2¸öÊı
 					while (bit > 0 && input_key*10 <= fileRowCnt)
 					{
 						key = GetKey()
-						//è¾“å…¥0-9a-z, è¿”å›0-9+26
+						//ÊäÈë0-9a-z, ·µ»Ø0-9+26
 						i = GetNumFromKey(key, 10 - 1)
 						if(i >= 0)
 						{
@@ -1111,7 +1111,7 @@ macro ReadCmdFileList(hbuf, cur_row, bsDir, fName)
 			}
 			if (input_key > fileRowCnt)
 			{
-				msg("ä¸‹æ ‡ (@mIndex@) è¶…èŒƒå›´ 1~@indexMax@.")
+				msg("ÏÂ±ê (@mIndex@) ³¬·¶Î§ 1~@indexMax@.")
 			}
 			else if (fileRowCnt == 0)
 			{
@@ -1119,7 +1119,7 @@ macro ReadCmdFileList(hbuf, cur_row, bsDir, fName)
 			}
 			else
 			{
-				//è·å–å½“å‰è¡Œ, æ›¿æ¢ä¸ºæ–°æ–‡ä»¶å
+				//»ñÈ¡µ±Ç°ĞĞ, Ìæ»»ÎªĞÂÎÄ¼şÃû
 				line = GetBufLine(cmdBuf, input_key + firstReRow - 2)
 				lnStr = strmid(line, len + 1, strlen(line))
 				upLine = GetBufLine(hbuf, cur_row)
@@ -1151,27 +1151,27 @@ macro MGetWndSel(hbuf)
 	return sel
 }
 
-//æœ‰é€‰æ‹©
+//ÓĞÑ¡Ôñ
 macro IsHasSelect(sel)
 {
 	return (sel.ichFirst != sel.ichLim || sel.lnFirst != sel.lnLast)
 }
-//ä¸æ˜¯å•è¡Œé€‰æ‹©, åŒ IsSingleSelect ç›¸å
+//²»ÊÇµ¥ĞĞÑ¡Ôñ, Í¬ IsSingleSelect Ïà·´
 macro IsNoSelect(sel)
 {
 	return (sel.ichFirst == sel.ichLim || sel.lnFirst != sel.lnLast)
 }
-//ä¸€èˆ¬è¯é€‰æ‹©, ä¸é€‰æˆ–è€…ä¸æ•´è¡Œé€‰æ‹©
+//Ò»°ã´ÊÑ¡Ôñ, ²»Ñ¡»òÕß²»ÕûĞĞÑ¡Ôñ
 macro IsNoRowSelect(sel)
 {
 	return (sel.ichFirst != 0 && sel.lnFirst == sel.lnLast)
 }
-//æ˜¯å•è¡Œé€‰æ‹©, åŒ IsNoSelect ç›¸å
+//ÊÇµ¥ĞĞÑ¡Ôñ, Í¬ IsNoSelect Ïà·´
 macro IsSingleSelect(sel)
 {
 	return (sel.ichFirst != sel.ichLim && sel.lnFirst == sel.lnLast)
 }
-//æ˜¯å¤šè¡Œé€‰æ‹©
+//ÊÇ¶àĞĞÑ¡Ôñ
 macro IsMoreSelect(sel)
 {
 	return (sel.lnFirst != sel.lnLast)
@@ -1181,7 +1181,7 @@ macro GetSingleSelectState(cur_line, sel, mar)
 {
 	if(sel.ichFirst != sel.ichLim)
 	{	
-		 //é€‰ä¸­æœ€åä¸€è¡Œï¼Œå¸¦æ¢è¡Œç¬¦ä¼šå‡ºé”™
+		 //Ñ¡ÖĞ×îºóÒ»ĞĞ£¬´ø»»ĞĞ·û»á³ö´í
 		if(strlen(cur_line) < sel.ichLim)			sel.ichLim = sel.ichLim - 1
 			
 		selStr = strmid(cur_line, sel.ichFirst, sel.ichLim)

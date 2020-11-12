@@ -1,4 +1,4 @@
-ï»¿
+
 macro Group()
 {
 	//_TempHeadF10(hbuf)
@@ -10,7 +10,7 @@ macro Group()
     	hbuf = OpenDefaultSR(hbuf)
     	stop
 	}
-	//æ—¥å¿—åŠŸèƒ½
+	//ÈÕÖ¾¹¦ÄÜ
 	if(IsNoteFile(hbuf))
 	{
 		NoteGroup(hbuf)
@@ -113,7 +113,7 @@ macro MakeGroup(hbuf)
 		ckey = FindKeyFromGroup(hbuf, clipStr, bft)
 		if(ckey == "")
 		{
-			//ä¾¿äºæ•´è¡Œæ›¿æ¢æ—¶, å…ˆè·³è½¬åˆ°å¯¹åº”ä½ç½®
+			//±ãÓÚÕûĞĞÌæ»»Ê±, ÏÈÌø×ªµ½¶ÔÓ¦Î»ÖÃ
 			mcr = GetLineMacro(clipStr)
 			mSel = SearchInBuf(hbuf, "^@mcr@", 0, 0, 0, 1, 0)
 			if (mSel != "")
@@ -155,7 +155,7 @@ macro MakeSelGroup(hbuf, bft)
 			
 			if(curIndex < 1)
 			{
-				//ä¸å›ºå®šè·³è½¬
+				//²»¹Ì¶¨Ìø×ª
 				curRow = count
 				selHead = GetGroupItem(tmpKey, 1, "Make", bft)
 				mSel = SearchInBuf(hbuf, selHead, curRow + 1, 0, 0, 1, 0)
@@ -172,7 +172,7 @@ macro MakeSelGroup(hbuf, bft)
 						mSel.ichFirst = FindString( cur_line, mar )
 						mSel.ichLim = mSel.ichFirst + strlen(mar)
 						ScrollCursor(mSel)
-						//saveåæ–¹ä¾¿é€ä¸ªè·³è½¬
+						//saveºó·½±ãÖğ¸öÌø×ª
 						SaveMode(getCurSearch(0), "@mar@")
 						SaveMode(getCurCount(0), mSel.lnFirst)
 					}
@@ -181,7 +181,7 @@ macro MakeSelGroup(hbuf, bft)
 			}
 			else
 			{
-				//å›ºå®šè·³è½¬
+				//¹Ì¶¨Ìø×ª
 				if(count<1)
 				{
 					count = ShowGroupMenu(tmpKey, "Make", 0, bft)
@@ -238,7 +238,7 @@ macro MakeSelGroup(hbuf, bft)
 			else
 				grMsg = cur_sel
 			grMsg = "Add item: @grMsg@" # CharFromKey(13)
-			grMsg = grMsg # "Note: LCDã€cameraã€torch" # CharFromKey(13)
+			grMsg = grMsg # "Note: LCD¡¢camera¡¢torch" # CharFromKey(13)
 			head = Ask("@grMsg@")
 			grRule = OpenCache(getGroupPath(0) # "\\Macro_Group_Make_@bft@.h")
 
@@ -320,7 +320,7 @@ macro MakeSelGroup(hbuf, bft)
 						mSel.ichFirst = FindString( cur_line, mar )
 						mSel.ichLim = mSel.ichFirst + strlen(mar)
 						ScrollCursor(mSel)
-						//saveåæ–¹ä¾¿é€ä¸ªè·³è½¬
+						//saveºó·½±ãÖğ¸öÌø×ª
 						SaveMode(getCurSearch(0), "@mar@")
 						SaveMode(getCurIndex(0), "0")
 						SaveMode(getCurCount(0), mSel.lnFirst)
@@ -372,7 +372,7 @@ macro SrGroup(hbuf)
 		msg("No Menu List")
 	}
 }
-//æ·»åŠ SRåˆ—è¡¨
+//Ìí¼ÓSRÁĞ±í
 macro DefaultGroup(filename, bft)
 {
 	//_TempHeadF10(hbuf)
@@ -380,7 +380,7 @@ macro DefaultGroup(filename, bft)
 	if(mNote == "")
 	{
 		grMsg = "Add Menu, File: @filename@" # CharFromKey(13)
-		grMsg = grMsg # "Note: setã€toolã€menu" # CharFromKey(13)
+		grMsg = grMsg # "Note: set¡¢tool¡¢menu" # CharFromKey(13)
 		mNote = Ask("@grMsg@")
 		grRule = OpenCache(getGroupPath(0) # "\\Macro_Group_@grFile@_@bft@.h")
 
@@ -396,7 +396,7 @@ macro DefaultGroup(filename, bft)
 	}
 	else
 	{
-		//å¦‚æœå¤‡æ³¨åŒåï¼Œæ˜¾ç¤ºç›¸å…³åˆ—è¡¨
+		//Èç¹û±¸×¢Í¬Ãû£¬ÏÔÊ¾Ïà¹ØÁĞ±í
 		count = ShowGroupMenu(mNote, "Menu", 1, bft)
 		if(count>0)
 		{
@@ -414,7 +414,7 @@ macro DefaultGroup(filename, bft)
 	}
 }
 
-//èœå•çº§æ•°å¯¹åº”çš„æ‰€æœ‰åç§°+æ–‡ä»¶å
+//²Ëµ¥¼¶Êı¶ÔÓ¦µÄËùÓĞÃû³Æ+ÎÄ¼şÃû
 macro ShowGroupMenu(curHead, grFile, isShow, bft)
 {
 	//_TempHeadF10(hbuf)
@@ -527,7 +527,7 @@ macro GetGroupCountAndIndex(curHead, curMacro, grFile, bft)
 		index = index + 1
 	}
 	CloseBuf(mBuf)
-	return (curIndex*100 + index-1) //index-1æ˜¯æ€»æ•°
+	return (curIndex*100 + index-1) //index-1ÊÇ×ÜÊı
 }
 
 //get:value->key
@@ -626,17 +626,17 @@ macro GotoMakeHead(hbuf, head)
 //////////////////////////////////////////////////////////////
 macro NoteGroup(hbuf)
 {
-	//å¿«æ·é”®F10->sa;key=saæœ€å¤šä½æ•°ä¸º2:
+	//¿ì½İ¼üF10->sa;key=sa×î¶àÎ»ÊıÎª2:
 	count = 2;
 	i = 0;
 	strKey = ""
 	isPreview = 0
 
-	//1.éƒ¨åˆ†ç´¢å¼•ä¼˜å…ˆè·³è½¬, ä¸èƒ½è·³è½¬å†æç¤º
+	//1.²¿·ÖË÷ÒıÓÅÏÈÌø×ª, ²»ÄÜÌø×ªÔÙÌáÊ¾
 	while(i<count)
 	{
 		key = GetKey()
-		//ä¸å»ºè®®å¿«æ·é”®0-9, é”™è¯¯ä¿¡æ¯ä¸­æœ‰å¾ˆå¤š[1]
+		//²»½¨Òé¿ì½İ¼ü0-9, ´íÎóĞÅÏ¢ÖĞÓĞºÜ¶à[1]
 	 	if(key >= 97 && key <= 97 + 26)          		//a-z
 		{
 			strKey = strKey # CharFromKey(key)
@@ -667,7 +667,7 @@ macro NoteGroup(hbuf)
 		{
 			strKey = strKey # "N" # (key-262192)
 		}
-		else if (key >= 262209 && key <= 262209 + 26 && key != 262209 + 3)       // ctrl+a,z,éd
+		else if (key >= 262209 && key <= 262209 + 26 && key != 262209 + 3)       // ctrl+a,z,·Çd
 		{
 			strKey = strKey # "C" # CharFromKey(key - 262209 + 97)
 		}
@@ -691,9 +691,9 @@ macro NoteGroup(hbuf)
 	}
 
 
-	//2.ç´¢å¼•æç¤º
-	//ctrl+D->x, Fx, Ctrl+xç›´æ¥è·³, å…¶ä»–çš„ç”¨åˆ—è¡¨æ˜¾ç¤º
-	//å…¶ä»–æƒ…å†µ, åº”è¯¥åªæœ‰ctrl+D->Ctrl+D, 1~9, å…¶ä»–ç‰¹æ®Šç¬¦å·
+	//2.Ë÷ÒıÌáÊ¾
+	//ctrl+D->x, Fx, Ctrl+xÖ±½ÓÌø, ÆäËûµÄÓÃÁĞ±íÏÔÊ¾
+	//ÆäËûÇé¿ö, Ó¦¸ÃÖ»ÓĞctrl+D->Ctrl+D, 1~9, ÆäËûÌØÊâ·ûºÅ
 	if(isPreview)
 	{
 		NoteGroupPreview(hbuf, key)
@@ -701,7 +701,7 @@ macro NoteGroup(hbuf)
 }
 macro NoteGroupPreview(hbuf, key)
 {
-	//3.ç´¢å¼•æç¤ºåˆ†ç»„0~9
+	//3.Ë÷ÒıÌáÊ¾·Ö×é0~9
 	mode = key - 48
 	if(key == 49)
 		searchStr = "\\[[a-z]+\\]"	//1		//a~zz
@@ -710,33 +710,33 @@ macro NoteGroupPreview(hbuf, key)
 	else if(key >= 51 && key <= 54)
 	{
 		mode = 51 - 48
-		searchStr = "\\[[0-9\.]+\\]"	//num: 3~6		//0-9. éšè—æ ‡å·,é»˜è®¤ä¸­ä¸æ˜¾ç¤º
+		searchStr = "\\[[0-9\.]+\\]"	//num: 3~6		//0-9. Òş²Ø±êºÅ,Ä¬ÈÏÖĞ²»ÏÔÊ¾
 		//searchStr = "\\[N[0-9]+\\]"	//6		//N0-9
 	}
 	else if(key >= 1 && key <= 10)
 	{
 		mode = 51 - 48
-		searchStr = "\\[[0-9\.]+\\]"	  		//0-9. ç‰¹æ®Šéšè—æ ‡å·, åªèƒ½ctrl+Dç¿»é¡µ, æœ€å¤š10*40=400æ¡
+		searchStr = "\\[[0-9\.]+\\]"	  		//0-9. ÌØÊâÒş²Ø±êºÅ, Ö»ÄÜctrl+D·­Ò³, ×î¶à10*40=400Ìõ
 	}
 	else if(key == 55)
 		searchStr = "\\[F[0-9]+\\]"	//num: 7  //F1~F12
 	else if(key == 56)
-		searchStr = "\\[ [a-zFNC][a-z0-9]*\\]"	//num: 8		//ç©ºæ ¼+é»˜è®¤
+		searchStr = "\\[ [a-zFNC][a-z0-9]*\\]"	//num: 8		//¿Õ¸ñ+Ä¬ÈÏ
 	else if(key == 96)							//~
 	{
-		//æ˜¾ç¤ºå¸®åŠ©
-		mStr =        "ctrl+D->~ æ˜¾ç¤ºå¸®åŠ©" # CharFromKey(13)
-		mStr = mStr # "ctrl+D->1 æ˜¾ç¤ºç´¢å¼•[a-z]+" # CharFromKey(13)
-		mStr = mStr # "ctrl+D->2 æ˜¾ç¤ºç´¢å¼•[Ca-z] ctrl+a" # CharFromKey(13)
-		mStr = mStr # "ctrl+D->3 æ˜¾ç¤ºç´¢å¼•[0-9.]+" # CharFromKey(13)
-		mStr = mStr # "ctrl+D->4 æ˜¾ç¤ºç´¢å¼•[0-9.]+" # CharFromKey(13)
-		mStr = mStr # "ctrl+D->5 æ˜¾ç¤ºç´¢å¼•[0-9.]+" # CharFromKey(13)
-		mStr = mStr # "ctrl+D->6 æ˜¾ç¤ºç´¢å¼•[0-9.]+" # CharFromKey(13)
-		//mStr = mStr # "ctrl+D->6 æ˜¾ç¤ºç´¢å¼•[N0-9.]+ ctrl+0" # CharFromKey(13)
-		mStr = mStr # "ctrl+D->7 æ˜¾ç¤ºç´¢å¼•[F1-12]" # CharFromKey(13)
-		mStr = mStr # "ctrl+D->8 æ˜¾ç¤ºç´¢å¼•[ xxx] ç©ºæ ¼+é»˜è®¤" # CharFromKey(13)
-		mStr = mStr # "ctrl+D->9 æ˜¾ç¤ºé»˜è®¤ç´¢å¼• ç¡®è®¤å[]ä¸­åŠ ç©ºæ ¼åŒºåˆ†æ ‡å·" # CharFromKey(13)
-		mStr = mStr # "ctrl+D->ctrl+D æ˜¾ç¤ºé»˜è®¤ç´¢å¼•" # CharFromKey(13)
+		//ÏÔÊ¾°ïÖú
+		mStr =        "ctrl+D->~ ÏÔÊ¾°ïÖú" # CharFromKey(13)
+		mStr = mStr # "ctrl+D->1 ÏÔÊ¾Ë÷Òı[a-z]+" # CharFromKey(13)
+		mStr = mStr # "ctrl+D->2 ÏÔÊ¾Ë÷Òı[Ca-z] ctrl+a" # CharFromKey(13)
+		mStr = mStr # "ctrl+D->3 ÏÔÊ¾Ë÷Òı[0-9.]+" # CharFromKey(13)
+		mStr = mStr # "ctrl+D->4 ÏÔÊ¾Ë÷Òı[0-9.]+" # CharFromKey(13)
+		mStr = mStr # "ctrl+D->5 ÏÔÊ¾Ë÷Òı[0-9.]+" # CharFromKey(13)
+		mStr = mStr # "ctrl+D->6 ÏÔÊ¾Ë÷Òı[0-9.]+" # CharFromKey(13)
+		//mStr = mStr # "ctrl+D->6 ÏÔÊ¾Ë÷Òı[N0-9.]+ ctrl+0" # CharFromKey(13)
+		mStr = mStr # "ctrl+D->7 ÏÔÊ¾Ë÷Òı[F1-12]" # CharFromKey(13)
+		mStr = mStr # "ctrl+D->8 ÏÔÊ¾Ë÷Òı[ xxx] ¿Õ¸ñ+Ä¬ÈÏ" # CharFromKey(13)
+		mStr = mStr # "ctrl+D->9 ÏÔÊ¾Ä¬ÈÏË÷Òı È·ÈÏºó[]ÖĞ¼Ó¿Õ¸ñÇø·Ö±êºÅ" # CharFromKey(13)
+		mStr = mStr # "ctrl+D->ctrl+D ÏÔÊ¾Ä¬ÈÏË÷Òı" # CharFromKey(13)
 		msg(mStr)
 		stop
 	}
@@ -746,9 +746,9 @@ macro NoteGroupPreview(hbuf, key)
 		searchStr = "\\[[a-zFNC][a-z0-9]*\\]"
 	else
 	{
-		//éæ•°å­—æ ‡å·æ¨¡å¼å½’é›¶
+		//·ÇÊı×Ö±êºÅÄ£Ê½¹éÁã
 		mode = 0	//num: 0
-		//3.1. æ˜¾ç¤ºç”¨æ•°å­—æ ‡å·, æ’é˜Ÿ
+		//3.1. ÏÔÊ¾ÓÃÊı×Ö±êºÅ, ÅÅ¶Ó
 		cM = NoteGroupGetMode(hbuf, "\\[Num\\]")
 		if(cM)
 		{
@@ -769,7 +769,7 @@ macro NoteGroupPreview(hbuf, key)
 		}
 	}
 	
-	//4.ç´¢å¼•æç¤ºåˆ†ç»„0~9 å¼€å§‹æœç´¢ç´¢å¼•
+	//4.Ë÷ÒıÌáÊ¾·Ö×é0~9 ¿ªÊ¼ËÑË÷Ë÷Òı
 	mSel = SearchInBuf(hbuf, searchStr, 0, 0, TRUE, TRUE, FALSE)
 	allKeyTxt = ""
 	index = 1
@@ -781,7 +781,7 @@ macro NoteGroupPreview(hbuf, key)
 		indexMin = 1
 	indexMax = indexMin + 40
 	
-	//4.1 ä¸Šä¸€æ¬¡ä½æ•°, æ ‡å·1-9æ˜¯å¦æ˜¾ç¤º01~09
+	//4.1 ÉÏÒ»´ÎÎ»Êı, ±êºÅ1-9ÊÇ·ñÏÔÊ¾01~09
 	nBit = ReadMode(getNumBits(0))
 	if(!IsNumber (nBit))
 		nBit = 1
@@ -852,33 +852,33 @@ macro NoteGroupPreview(hbuf, key)
 		}
 		mSel = SearchInBuf(hbuf, searchStr, mSel.lnLast+1, 0, TRUE, TRUE, FALSE)
 	}
-	//4.ç´¢å¼•æç¤ºåˆ†ç»„0~9 æ˜¾ç¤ºç´¢å¼•
+	//4.Ë÷ÒıÌáÊ¾·Ö×é0~9 ÏÔÊ¾Ë÷Òı
 	if(key == 48+9) //or mode == 9
 	{
-		//æ›¿æ¢æ‰ç´¢å¼• [x]ç±»å‹å˜æˆ[ x]ç±»å‹, åŠ ç©ºæ ¼
+		//Ìæ»»µôË÷Òı [x]ÀàĞÍ±ä³É[ x]ÀàĞÍ, ¼Ó¿Õ¸ñ
 		newTxt = allKeyTxt
 		if(newTxt == "")
-			newTxt = "æ— "
-		newTxt = "åŸæ–‡ä»¶ä¸­çš„[],  ä¸ç´¢å¼•å†²çª,æŒ‰ç¡®è®¤åŠ ä¸Šç©ºæ ¼åŒºåˆ†:" # CharFromKey(13) # CharFromKey(13) # newTxt
+			newTxt = "ÎŞ"
+		newTxt = "Ô­ÎÄ¼şÖĞµÄ[],  ÓëË÷Òı³åÍ»,°´È·ÈÏ¼ÓÉÏ¿Õ¸ñÇø·Ö:" # CharFromKey(13) # CharFromKey(13) # newTxt
 		msg(newTxt)
 		NoteGroupDelete(hbuf, searchStr)
 		stop
 	}
 	else if(mode == 8) //or key == 48+8
 	{
-		//æ›¿æ¢æ‰ç´¢å¼• [x]ç±»å‹å˜æˆ[ x]ç±»å‹, åŠ ç©ºæ ¼, æ˜¾ç¤ºæ—§å†…å®¹
+		//Ìæ»»µôË÷Òı [x]ÀàĞÍ±ä³É[ x]ÀàĞÍ, ¼Ó¿Õ¸ñ, ÏÔÊ¾¾ÉÄÚÈİ
 		newTxt = allKeyTxt
 		if(newTxt == "")
-			newTxt = "æ— "
-		newTxt = "æ˜¾ç¤ºåŠ ç©ºæ ¼çš„[ ],  ä¸ç´¢å¼•å†²çª:" # CharFromKey(13) # CharFromKey(13) # newTxt
+			newTxt = "ÎŞ"
+		newTxt = "ÏÔÊ¾¼Ó¿Õ¸ñµÄ[ ],  ÓëË÷Òı³åÍ»:" # CharFromKey(13) # CharFromKey(13) # newTxt
 		msg(newTxt)
 	}
 	else if(allKeyTxt == "")
 	{
-		//æ— ç´¢å¼•
+		//ÎŞË÷Òı
 		if(key == 48 + 3)
 		{
-			newTxt = "æ— ç´¢å¼•" # CharFromKey(13)
+			newTxt = "ÎŞË÷Òı" # CharFromKey(13)
 			msg(newTxt)
 		}
  		else if(key == 0)
@@ -891,7 +891,7 @@ macro NoteGroupPreview(hbuf, key)
 		}
 		else
 		{
-			//å†æœä¸€éæ•°å­—ç¼–å·
+			//ÔÙËÑÒ»±éÊı×Ö±àºÅ
 			NoteGroupPreview(hbuf, 48 + 3)
 		}
 		stop
@@ -901,15 +901,15 @@ macro NoteGroupPreview(hbuf, key)
 		nTitle = ""
 		if(index < 40 && key == 51)
 		{
-			//ä¸å¤Ÿä¸€é¡µ
+			//²»¹»Ò»Ò³
 			nTitle = ""
 		}
 		else if(key >= 51 && key <= 54)
 		{
-			nTitle = "å½“å‰ç¬¬" # (key - 51 + 1) # "é¡µ, ä¸‹ä¸€é¡µ: ctrl+D æˆ– "
+			nTitle = "µ±Ç°µÚ" # (key - 51 + 1) # "Ò³, ÏÂÒ»Ò³: ctrl+D »ò "
 			if(key == 54)
 			{
-				nTitle = nTitle # "ç¬¬ä¸€é¡µ: ctrl+D->3"
+				nTitle = nTitle # "µÚÒ»Ò³: ctrl+D->3"
 			}
 			else
 			{
@@ -918,13 +918,13 @@ macro NoteGroupPreview(hbuf, key)
 		}
 		else if(key >= 1 && key <= 10)
 		{
-			nTitle = "å½“å‰ç¬¬" # key # "é¡µ, ä¸‹ä¸€é¡µ: ctrl+D"
+			nTitle = "µ±Ç°µÚ" # key # "Ò³, ÏÂÒ»Ò³: ctrl+D"
 		}
 		msg(allKeyTxt # nTitle)
 	}
 
 	
-	//5.é€‰æ‹©ç´¢å¼•
+	//5.Ñ¡ÔñË÷Òı
 	if(allKeyTxt != "")
 	{
 		if(key == 0 || key == 256 || key == 257)
@@ -945,11 +945,11 @@ macro NoteGroupGoto(hbuf, searchStr, indexMin, indexMax)
 	mIndex = 0
 	key = 0
 	bit = indexMax - indexMin
-	//2ä½æ•°éœ€æ±‚è¾“å…¥1~2ä¸ªæ•°
+	//2Î»ÊıĞèÇóÊäÈë1~2¸öÊı
 	while (bit > 0 && mIndex*10 <= indexMax)
 	{
 		key = GetKey()
-		//è¾“å…¥0-9a-z, è¿”å›0-9+26
+		//ÊäÈë0-9a-z, ·µ»Ø0-9+26
 		i = GetNumFromKey(key, 10 - 1)
 		if(i >= 0)
 		{
@@ -957,14 +957,14 @@ macro NoteGroupGoto(hbuf, searchStr, indexMin, indexMax)
 		}
 		else if(key == 262209 + 3) // ctrl+d
 		{
-			//ä¸‹ä¸€é¡µ(+ 1), ç¼–å·ä»0å¼€å§‹, é¡µæ•°å¾ªç¯ ctrl+3~6
+			//ÏÂÒ»Ò³(+ 1), ±àºÅ´Ó0¿ªÊ¼, Ò³ÊıÑ­»· ctrl+3~6
 			page = indexMin/40 + 1
 			page = page + 48 + 3
 			if(page > 48 + 6)
 			{
-				//1) ä¸‹ä¸€é¡µ: ç¬¬5é¡µ
+				//1) ÏÂÒ»Ò³: µÚ5Ò³
 				page = page - (48 + 6) + 4
-				//2) ä¸‹ä¸€é¡µ: ç¬¬1é¡µ
+				//2) ÏÂÒ»Ò³: µÚ1Ò³
 				//page = 48 + 3
 			}
 			NoteGroupPreview(hbuf, page)
@@ -1002,7 +1002,7 @@ macro NoteGroupGoto(hbuf, searchStr, indexMin, indexMax)
 	}
 	else
 	{
-		//å†æœä¸€æ¬¡ctrl+a-z
+		//ÔÙËÑÒ»´Îctrl+a-z
 		count = 2;
 		i = 0;
 		strKey = ""
@@ -1039,7 +1039,7 @@ macro NoteGroupDelete(hbuf, searchStr)
 	while (mSel != "")
 	{
 		line = GetBufLine(hbuf, mSel.lnFirst )
-		//ä¸è€ƒè™‘ä¸€è¡Œ2ä¸ª[]
+		//²»¿¼ÂÇÒ»ĞĞ2¸ö[]
 		indexa = mSel.ichFirst
 		newLine = strmid(line, 0, indexa + 1) # " " # strmid(line, indexa + 1, strlen(line))
 		PutBufLine(hbuf, mSel.lnFirst, newLine);
@@ -1049,7 +1049,7 @@ macro NoteGroupDelete(hbuf, searchStr)
 }
 macro NoteGroupGetMode(hbuf, searchStr)
 {
-	//åˆ¤æ–­å½“å‰æ˜¯ä¸æ˜¯æ ‡å·æ¨¡å¼: å­˜åœ¨[Num]
+	//ÅĞ¶Ïµ±Ç°ÊÇ²»ÊÇ±êºÅÄ£Ê½: ´æÔÚ[Num]
 	mSel = SearchInBuf(hbuf, searchStr, 0, 0, FALSE, TRUE, FALSE)
 	if (mSel != "")
 		return 1
@@ -1074,7 +1074,7 @@ macro ShowMacroGroup(mBuf)
 	index = 0
 
 	{
-		//æµ‹è¯•å¯¹é½
+		//²âÊÔ¶ÔÆë
 //		mlen = 50
 //		tlay_space = "                              " //c>=2
 //		tlay_space = tlay_space # tlay_space # tlay_space # tlay_space # tlay_space
@@ -1101,7 +1101,7 @@ macro ShowMacroGroup(mBuf)
 	}
 
 	{
-		//æµ‹è¯•æœ€å¤šæ˜¾ç¤ºï¼Œ21è¡Œ65å­—ï¼Œ22è¡Œ175å­—ï¼Œ44è¡Œ
+		//²âÊÔ×î¶àÏÔÊ¾£¬21ĞĞ65×Ö£¬22ĞĞ175×Ö£¬44ĞĞ
 //		a1 = "awwwwawww_bwwwwawww_cwwwwawww_dwwwwawww_ewwwwawww_fwwwwwwww_gwwwwawww_hwwwwawww_iwwwawwww"
 //		a1 = "100001000_200002000_300003000_400004000_500005000_600006000_700007000_800008000_900009000_a0000a000_"
 //		b1 = a1 # CharFromKey(13)
@@ -1113,13 +1113,13 @@ macro ShowMacroGroup(mBuf)
 	}
 	
 	{
-		//æµ‹è¯•global
+		//²âÊÔglobal
 //		global lay_test //cmp
 //		if(!IsNumber (lay_test))
 //			lay_test = 10
 //		lay_test_tmp = lay_test - 1
 //		lay_test = lay_char_num
-		//æŒ‰å–æ¶ˆé‡æ–°è®¡æ•°
+		//°´È¡ÏûÖØĞÂ¼ÆÊı
 //		msg(lay_test_tmp)
 //		lay_test = lay_test_tmp
 	}
@@ -1129,11 +1129,11 @@ macro ShowMacroGroup(mBuf)
 	if(!IsNumber (lay_type))
 		lay_type = 1
 	
-//	æµ‹è¯•æœ€å¤šæ˜¾ç¤º:
-//	1) 0  ~ 21 è¡Œ æ•°å­— 65ä¸ª å­—æ¯ 45ä¸ª
-//	2) 22 ~ 44 è¡Œ æ•°å­—175ä¸ª å­—æ¯145ä¸ª
-//	3) 45 ~ 88 è¡Œ æ•°å­— 87ä¸ª å­—æ¯ 72ä¸ª
-//	4) 89 ~ 132è¡Œ æ•°å­— 58ä¸ª å­—æ¯ 48ä¸ª
+//	²âÊÔ×î¶àÏÔÊ¾:
+//	1) 0  ~ 21 ĞĞ Êı×Ö 65¸ö ×ÖÄ¸ 45¸ö
+//	2) 22 ~ 44 ĞĞ Êı×Ö175¸ö ×ÖÄ¸145¸ö
+//	3) 45 ~ 88 ĞĞ Êı×Ö 87¸ö ×ÖÄ¸ 72¸ö
+//	4) 89 ~ 132ĞĞ Êı×Ö 58¸ö ×ÖÄ¸ 48¸ö
 	if(lay_type == 1)
 	{
 		lay_column = 1
@@ -1196,7 +1196,7 @@ macro ShowMacroGroup(mBuf)
 			if(GetSpaceStrlen(curItem, lay_char_num) < 0)
 				curItem = GetSpaceStrMid(curItem, lay_char_num) # "    "
 			else
-				curItem = curItem # strmid(lay_space, 0, GetSpaceStrlen(curItem, lay_char_num)) # "    " //ç©ºæ ¼å åŠä¸ªæ ¼
+				curItem = curItem # strmid(lay_space, 0, GetSpaceStrlen(curItem, lay_char_num)) # "    " //¿Õ¸ñÕ¼°ë¸ö¸ñ
 			lay_cur_column = lay_cur_column + 1
 		}
 		else
@@ -1231,11 +1231,11 @@ macro ShowMacroGroup(mBuf)
 		indexTmp = indexTmp + 1
 	}
 	
-//	æµ‹è¯•æœ€å¤šæ˜¾ç¤º:
-//	1) 0  ~ 21 è¡Œ 65  å­—
-//	2) 22 ~ 44 è¡Œ 175 å­—
-//	3) 45 ~ 88 è¡Œ 87  å­—
-//	4) 89 ~ 132è¡Œ 58  å­—
+//	²âÊÔ×î¶àÏÔÊ¾:
+//	1) 0  ~ 21 ĞĞ 65  ×Ö
+//	2) 22 ~ 44 ĞĞ 175 ×Ö
+//	3) 45 ~ 88 ĞĞ 87  ×Ö
+//	4) 89 ~ 132ĞĞ 58  ×Ö
 	if(index > 88)
 	{
 		if(lay_type < 4)

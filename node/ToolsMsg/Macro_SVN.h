@@ -1,17 +1,17 @@
-﻿
+
 /***********************************************************************/
 /****************************** base ***********************************/
 /***********************************************************************/
 
 1.svn error:	
 post of '/svn/!svn/me':500 internal server error
-svn 500错误 500 Internal Server Error response to POST request
-//	打开VisualSVN Server GUI。
-//	右键单击左侧导航窗格根目录下的“VisualSVN Server（域）”，然后选择“属性”。
-//	在“常规”选项卡下，您将看到“自动调整权限”复选框。
-//	A.如果未选中此项，请选中它并单击“应用”。 这将停止并重新启动VisualSVN服务，并应解决此问题。
-//	B.如果选中此项，请取消选中并单击“应用”。 这将停止并重新启动Visual SVN服务。 
-//	完成后，重新检查该选项并再次单击“应用”。 重新启动服务后，现在应该解决该问题。
+svn 500���� 500 Internal Server Error response to POST request
+//	��VisualSVN Server GUI��
+//	�Ҽ�������ർ�������Ŀ¼�µġ�VisualSVN Server���򣩡���Ȼ��ѡ�����ԡ���
+//	�ڡ����桱ѡ��£������������Զ�����Ȩ�ޡ���ѡ��
+//	A.���δѡ�д����ѡ������������Ӧ�á��� �⽫ֹͣ����������VisualSVN���񣬲�Ӧ��������⡣
+//	B.���ѡ�д����ȡ��ѡ�в�������Ӧ�á��� �⽫ֹͣ����������Visual SVN���� 
+//	��ɺ����¼���ѡ��ٴε�����Ӧ�á��� �����������������Ӧ�ý�������⡣
 
 
 

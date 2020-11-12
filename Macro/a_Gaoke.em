@@ -1,4 +1,4 @@
-﻿/* t357.em - a small collection of useful editing macros */
+/* t357.em - a small collection of useful editing macros */
 
 
 /******************************************************************************

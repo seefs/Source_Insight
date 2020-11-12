@@ -1,4 +1,4 @@
-ï»¿
+
 macro OpenMiniTest(hbuf)
 {
 	isTest = getMacroValue(hbuf, "MiniTest", 1)
@@ -28,8 +28,8 @@ macro OpenMiniTest(hbuf)
 		else if(word_1 == "goto_copy")
 		{
  			//F5
- 			//  1.è·³è½¬åˆ°å¤åˆ¶å¯¹åº”çš„è¯­è¨€/å®
- 			//  2.è·³è½¬åˆ°é€‰ä¸­çš„å®
+ 			//  1.Ìø×ªµ½¸´ÖÆ¶ÔÓ¦µÄÓïÑÔ/ºê
+ 			//  2.Ìø×ªµ½Ñ¡ÖĞµÄºê
 			if(strlen(word_2) > 0)
 			{
 				GotoHan(word_2)
@@ -46,7 +46,7 @@ macro OpenMiniTest(hbuf)
 		else if(word_1 == "goto_select")
 		{
  			//F5
- 			//  é€‰ä¸­å®ï¼Œmkæ–‡ä»¶ä¸­,          æ‰“å¼€/è·³è½¬åˆ°å¯¹åº”çš„æ–‡ä»¶/å®
+ 			//  Ñ¡ÖĞºê£¬mkÎÄ¼şÖĞ,          ´ò¿ª/Ìø×ªµ½¶ÔÓ¦µÄÎÄ¼ş/ºê
 			cur_line = GetBufLine(hbuf, sel.lnFirst )
 			if(strlen(cur_line) < sel.ichLim)
 				sel.ichLim = sel.ichLim - 1
@@ -60,7 +60,7 @@ macro OpenMiniTest(hbuf)
 		else if(word_1 == "rule_cn_soft")
 		{
  			//F5
- 			//  æ‰¹é‡æµ‹è¯•ä¸­æ–‡æ’åºçš„å‡†ç¡®æ€§
+ 			//  ÅúÁ¿²âÊÔÖĞÎÄÅÅĞòµÄ×¼È·ĞÔ
 			hbufRule = OpenCache(getRulePath(0) # "\\Macro_Rule_Han.h")
 			lnMax = GetBufLineCount(hbufRule)
 			TestFindCacheAll(hbufRule, 0, lnMax)
@@ -68,7 +68,7 @@ macro OpenMiniTest(hbuf)
 		else if(word_1 == "rule_en_soft")
 		{
  			//F5
- 			//  æ‰¹é‡æµ‹è¯•è‹±æ–‡æ’åºçš„å‡†ç¡®æ€§
+ 			//  ÅúÁ¿²âÊÔÓ¢ÎÄÅÅĞòµÄ×¼È·ĞÔ
 			hbufRule = OpenCache(getRulePath(0) # "\\Macro_Rule_Key.h")
 			lnMax = GetBufLineCount(hbufRule)
 			TestFindCacheAll(hbufRule, 0, 3)  //lnMax
@@ -76,35 +76,35 @@ macro OpenMiniTest(hbuf)
 		else if(word_1 == "rule_cn_find")
 		{
  			//F5
-			//  æŸ¥æ‰¾ä¸­æ–‡è·³è½¬
+			//  ²éÕÒÖĞÎÄÌø×ª
 			hbufRule = OpenCache(getRulePath(0) # "\\Macro_Rule_Han_file.h")
 			lnMax = GetBufLineCount(hbufRule)
 			
-			TestFindCache(hbufRule, "è¶Š", lnMax)
-			TestFindCache(hbufRule, "è¶Šå—", lnMax)
-			TestFindCache(hbufRule, "é˜¿", lnMax) // æ‰¾ä¸åˆ°
-			TestFindCache(hbufRule, "åŒˆç‰™", lnMax)
-			TestFindCache(hbufRule, "ä¿„", lnMax)
-			TestFindCache(hbufRule, "ä¹Œ", lnMax)
-			TestFindCache(hbufRule, "æ³•", lnMax)
-			TestFindCache(hbufRule, "æ³°", lnMax) // é”™
+			TestFindCache(hbufRule, "Ô½", lnMax)
+			TestFindCache(hbufRule, "Ô½ÄÏ", lnMax)
+			TestFindCache(hbufRule, "°¢", lnMax) // ÕÒ²»µ½
+			TestFindCache(hbufRule, "ĞÙÑÀ", lnMax)
+			TestFindCache(hbufRule, "¶í", lnMax)
+			TestFindCache(hbufRule, "ÎÚ", lnMax)
+			TestFindCache(hbufRule, "·¨", lnMax)
+			TestFindCache(hbufRule, "Ì©", lnMax) // ´í
 		}
 		else if(word_1 == "rule_en_find")
 		{
  			//F5
-			//  æŸ¥æ‰¾è‹±æ–‡è·³è½¬
+			//  ²éÕÒÓ¢ÎÄÌø×ª
 			hbufRule = OpenCache(getRulePath(0) # "\\Macro_Rule_Key.h")
 			lnMax = GetBufLineCount(hbufRule)
 			
-			TestFindCache(hbufRule, "TEST", lnMax) // æ‰¾ä¸åˆ°
-			TestFindCache(hbufRule, "CHIP", lnMax) // æ‰¾ä¸åˆ°
+			TestFindCache(hbufRule, "TEST", lnMax) // ÕÒ²»µ½
+			TestFindCache(hbufRule, "CHIP", lnMax) // ÕÒ²»µ½
 			TestFindCache(hbufRule, "NV3029G", lnMax)
 			TestFindCache(hbufRule, "NV3029H", lnMax)
 		}
 		else if(word_1 == "key_cn_soft")
 		{
  			//F6
- 			//  è‹±æ–‡æ’åºæµ‹è¯•
+ 			//  Ó¢ÎÄÅÅĞò²âÊÔ
 			msg ("test Key file")
 			hbufRule = OpenCache(getRulePath(0) # "\\Macro_Rule_Key_file.h")
 			QuickSoftCacheTest(hbufRule, 0, GetBufLineCount(hbufRule) - 1)
@@ -112,7 +112,7 @@ macro OpenMiniTest(hbuf)
 		else if(word_1 == "key_en_soft")
 		{
  			//F6
- 			//  ä¸­æ–‡æ’åºæµ‹è¯•
+ 			//  ÖĞÎÄÅÅĞò²âÊÔ
 			msg ("test Han file")
 			hbufRule = OpenCache(getRulePath(0) # "\\Macro_Rule_Han_file.h")
 			QuickSoftCacheTest(hbufRule, 0, GetBufLineCount(hbufRule) - 1)
@@ -120,14 +120,14 @@ macro OpenMiniTest(hbuf)
 		else if(word_1 == "add_rule")
 		{
  			//F6
- 			//  é€‰ä¸­åæ·»åŠ è§„åˆ™
+ 			//  Ñ¡ÖĞºóÌí¼Ó¹æÔò
 			msg ("test AddRule")
 			AddRule(hbuf)
 		}
 		else if(word_1 == "search_version")
 		{
  			//F9
- 			//  æœç´¢ç‰ˆæœ¬å·
+ 			//  ËÑË÷°æ±¾ºÅ
 			SearchVersion(hbuf)
 		}
 		else if(word_1 == "search_bft")
@@ -206,7 +206,7 @@ macro OpenMiniTest(hbuf)
 			listfile = "z_translate_list.txt"
 			hbuflist = OpenCache(path # "\\" # listfile)
 
-			//ä¸å¿…è¦åˆ†å¾ˆå¤šæ–‡ä»¶; ä¼°è®¡æœ‰ç‰¹æ®Šå­—ç¬¦Siæ— æ³•ä¿å­˜
+			//²»±ØÒª·ÖºÜ¶àÎÄ¼ş; ¹À¼ÆÓĞÌØÊâ×Ö·ûSiÎŞ·¨±£´æ
 			
 		//	TranslateDir(path # "\\sub_1.txt", hbuflist)
 		//	TranslateDir(path # "\\sub_2.txt", hbuflist)
@@ -259,7 +259,7 @@ macro OpenMiniTest(hbuf)
 			//API
  			//  
 			sel.fExtended  //(sel.fRect || sel.lnFirst != sel.lnLast || sel.ichFirst != sel.ichLim)
-			sel.fRect      //å¦‚æœé€‰æ‹©æ˜¯çŸ©å½¢ï¼ˆå—æ ·å¼ï¼‰åˆ™ä¸ºTRUEã€‚
+			sel.fRect      //Èç¹ûÑ¡ÔñÊÇ¾ØĞÎ£¨¿éÑùÊ½£©ÔòÎªTRUE¡£
 			SetBufIns(hbuf, sel.lnFirst, sel.ichFirst)
 		}
 		else if(word_1 == "API_val")
@@ -278,25 +278,25 @@ macro OpenMiniTest(hbuf)
 
 macro TestChar(key)
 {
-	//æ­£åˆ™è¡¨è¾¾å¼ï¼š
-	//[abc]    ä»»ä½•åœ¨[]ä¹‹å†…çš„å­—ç¬¦
-	//[^abc]   ä»»ä½•ä¸åœ¨[]ä¹‹å†…çš„å­—ç¬¦ï¼Œ^è¡¨ç¤ºä¸åœ¨[]ä¹‹å†…
-	//è½¬ä¹‰å­—ç¬¦ \t(tab), \s(space), \w(tab or space)
+	//ÕıÔò±í´ïÊ½£º
+	//[abc]    ÈÎºÎÔÚ[]Ö®ÄÚµÄ×Ö·û
+	//[^abc]   ÈÎºÎ²»ÔÚ[]Ö®ÄÚµÄ×Ö·û£¬^±íÊ¾²»ÔÚ[]Ö®ÄÚ
+	//×ªÒå×Ö·û \t(tab), \s(space), \w(tab or space)
 
-	//è¡¨æ•°é‡çš„å¦‚ï¼š
-	//* å¤§äºç­‰äº0ä¸ª
-	//+ å¤§äº0ä¸ªï¼Œä¹Ÿå°±æ˜¯è‡³å°‘æœ‰1ä¸ª
+	//±íÊıÁ¿µÄÈç£º
+	//* ´óÓÚµÈÓÚ0¸ö
+	//+ ´óÓÚ0¸ö£¬Ò²¾ÍÊÇÖÁÉÙÓĞ1¸ö
 	
-	//^    è¡¨ç¤ºè¡Œèµ·å§‹ï¼Œæ³¨æ„ä¸è¦æŠŠè¿™ä¸ª^å’Œ[]é‡Œçš„^ææ··äº†ã€‚
-	//$    è¡¨ç¤ºè¡Œç»“æŸ
+	//^    ±íÊ¾ĞĞÆğÊ¼£¬×¢Òâ²»Òª°ÑÕâ¸ö^ºÍ[]ÀïµÄ^¸ã»ìÁË¡£
+	//$    ±íÊ¾ĞĞ½áÊø
 
-	//åˆ†ç»„ä½¿ç”¨\1, \2, \3, ...
+	//·Ö×éÊ¹ÓÃ\1, \2, \3, ...
 	//old:void func(int var1, int var2)
-    //new:void func(int var2, int var1)ï¼Œ
+    //new:void func(int var2, int var1)£¬
 	//old:func(.*, .*)
 	//new:func(\2, \1)
 	
-	//æ›¿æ¢æ•´ä¸ªå·¥ç¨‹ï¼Œå¿«æ·é”®ctrl+shift+H
+	//Ìæ»»Õû¸ö¹¤³Ì£¬¿ì½İ¼üctrl+shift+H
 }
 
 macro TestAPI(key)
@@ -313,7 +313,7 @@ macro TestAPI(key)
 
 	
 	/* Str */
-	//æ›¿æ¢
+	//Ìæ»»
 	//ReplaceInBuf(hbuf, oldPattern, newPattern, lnStart, lnLim, fMatchCase, fRegExp, fWholeWordsOnly, fConfirm)
 	ReplaceInBuf(hbuf, "^\\(\\t*\\)    ", "\\1\\t", 0, GetBufLineCount(hbuf) + 1, 1, 1, 0, 0)
 	cchLine = strlen(szLine)
@@ -329,7 +329,7 @@ macro TestAPI(key)
 	Paste
 	
 	/* Buf */
-	//è·å–å½“å‰è¾“å…¥çš„å¥æŸ„
+	//»ñÈ¡µ±Ç°ÊäÈëµÄ¾ä±ú
 	//hBuf = 0(none), 1(cur), ...
 	 hBuf = GetCurrentBuf()
 	 
@@ -381,7 +381,7 @@ macro OtherAPI(key)
 	isupper (ch)
 	strlen (s)
 	strmid (s, ichFirst, ichLim)
-	strtrunc (s, cch)  å­—ç¬¦ä¸²æˆªæ–­
+	strtrunc (s, cch)  ×Ö·û´®½Ø¶Ï
 	tolower (s)
 	toupper (s)
 
@@ -398,20 +398,20 @@ macro OtherAPI(key)
 	//SYSTIME Record
 
 	//Special Constants :
-	//True		â€œ1â€
-	//False		â€œ0â€
-	//Nil		â€œâ€ â€“ the empty string.
-	//hNil		â€œ0â€ â€“ an invalid handle value.
-	//invalid		"-1" â€“ an invalid index value.
+	//True		¡°1¡±
+	//False		¡°0¡±
+	//Nil		¡°¡± ¨C the empty string.
+	//hNil		¡°0¡± ¨C an invalid handle value.
+	//invalid		"-1" ¨C an invalid index value.
 
 	//Searching Functions :
 	GetSourceLink (hbufSource, lnSource)
 	LoadSearchPattern(pattern, fMatchCase, fRegExp, fWholeWordsOnly)
 	ReplaceInBuf(hbuf, oldPattern, newPattern, lnStart, lnLim, fMatchCase, fRegExp, fWholeWordsOnly, fConfirm)
 	SearchForRefs (hbuf, word, fTouchFiles)
-	//æ–‡ä»¶å†…æœç´¢
+	//ÎÄ¼şÄÚËÑË÷
 	SearchInBuf (hbuf, pattern, lnStart, ichStart, fMatchCase, fRegExp, fWholeWordsOnly)
-	//åˆ›å»ºä¸€ä¸ªæ–°çš„æºé“¾æ¥
+	//´´½¨Ò»¸öĞÂµÄÔ´Á´½Ó
 	SetSourceLink (hbufSource, lnSource, target_file, lnTarget)
 
 	//Window Functions :
@@ -506,7 +506,7 @@ macro OtherAPI(key)
 	info = GetProgramInfo ()
 	//msg ("Proj info @info@")
 	
-	//åŠŸèƒ½ä¸æ¸…æ¥š
+	//¹¦ÄÜ²»Çå³ş
 	AddConditionVariable(hprj, "sbd*", "s")
 	AddConditionVariable(0, "sbd_tmp.em", "s")
 	
@@ -828,7 +828,7 @@ macro TestNodeMsg(msgStr)
 	}
 	else if(msgStr == "SiMro")
 	{
-		//&&å·¦å³ä¸¤è¾¹éƒ½æ‰§è¡Œ
+		//&&×óÓÒÁ½±ß¶¼Ö´ĞĞ
 		if(TestSiMro1()>0 && TestSiMro2()>0)
 			msg("a && b")
 
@@ -840,7 +840,7 @@ macro TestNodeMsg(msgStr)
 	}
 	else
 	{
-		//ä¸´æ—¶
+		//ÁÙÊ±
 		msg(msgStr # " no found")
 	}
 }
@@ -849,10 +849,10 @@ macro TestMsg(msgStr, num)
 {
 	global counter
 
-	//numä¸ä¼ å‚æ•°ä¼šå˜æˆ")"
+	//num²»´«²ÎÊı»á±ä³É")"
 	if(num == "X")
 	{
-		//counter ç¬¬2æ¬¡æ‰§è¡Œå®æœªæ¸…é›¶, å› æ­¤è¦æ‰‹åŠ¨æ¸…é›¶
+		//counter µÚ2´ÎÖ´ĞĞºêÎ´ÇåÁã, Òò´ËÒªÊÖ¶¯ÇåÁã
 		counter = nil
 		return
 	}
@@ -870,9 +870,9 @@ macro TestMsg(msgStr, num)
 	}
 	if(num < counter)
 	{
-		//testParam=0: num=0------æ—¶æ‰“å°, é»˜è®¤
-		//testParam=1: num=0/1----æ—¶æ‰“å°
-		//testParam=2: num=0/1/2--æ—¶æ‰“å°
+		//testParam=0: num=0------Ê±´òÓ¡, Ä¬ÈÏ
+		//testParam=1: num=0/1----Ê±´òÓ¡
+		//testParam=2: num=0/1/2--Ê±´òÓ¡
 		msg(msgStr)
 	}
 }

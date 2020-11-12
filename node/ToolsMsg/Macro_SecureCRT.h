@@ -1,29 +1,29 @@
-ï»¿
+
 /***********************************************************************/
 /************************** SecureCRT **********************************/
 /***********************************************************************/
 
 SecureCRT:
 open: C:\Program^Files\VanDyke^Software\Clients\SecureCRT.exe
-open: E:\desktop\å·¥å…·\2  æ¡Œé¢å¿«æ·æ–¹å¼2\SecureCRT.exe
+open: E:\desktop\¹¤¾ß\2  ×ÀÃæ¿ì½Ý·½Ê½2\SecureCRT.exe
 
 
-è´¦å·ä¿¡æ¯:
+ÕËºÅÐÅÏ¢:
 git config --global user.name xiaoj
 git config --global user.email jia.xiao@sz-speed.cn
 
 
 
 /***********************************************************************/
-/*********************** SecureCRT å¸¸ç”¨ ********************************/
+/*********************** SecureCRT ³£ÓÃ ********************************/
 /***********************************************************************/
 
 
-1 SecureCRTä¹±ç ï¼š
+1 SecureCRTÂÒÂë£º
 
-é€‰æ‹©å­—ç¬¦ç¼–ç ä¸ºUTF-8ã€‚
+Ñ¡Ôñ×Ö·û±àÂëÎªUTF-8¡£
 
-ç‚¹å‡»Options --> é€‰æ‹©Session Options --> ç‚¹å‡»Appearanceã€‚å°†å­—ç¬¦ç¼–ç è®¾ç½®ä¸ºUTF-8æ ¼å¼ã€‚
+µã»÷Options --> Ñ¡ÔñSession Options --> µã»÷Appearance¡£½«×Ö·û±àÂëÉèÖÃÎªUTF-8¸ñÊ½¡£
 
 
 /***********************************************************************/

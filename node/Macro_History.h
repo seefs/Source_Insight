@@ -1,7 +1,7 @@
-ï»¿
+
 
 // File List [Num][Ca]:
-// 1. å¸¸ç”¨ç¬”è®°
+// 1. ³£ÓÃ±Ê¼Ç
 Save:node\Macro_History.h \[1.1\] android
 Save:node\Macro_History.h \[1.2\] C
 Save:node\Macro_History.h \[1.3\] Pythons
@@ -12,7 +12,7 @@ Save:node\Macro_History.h \[1.7\]
 Save:node\Macro_History.h \[1.8\] 
 Save:node\Macro_History.h \[1.9\] 
 Save:node\Macro_History.h \[1.10\] bak file
-//æ ·æ¿æ–‡ä»¶:
+//Ñù°åÎÄ¼ş:
 Save:node\Macro_History.h
 
 
@@ -48,31 +48,31 @@ Save:node\C\project\Macro_Note_7701.h
 Save:node\Pythons\Macro_Note_Python.h
 //	
 Save:node\Pythons\install\Macro_Pythons_Install.h
-Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.1\] ç¬¬1~5è®²
-Save:set\Macro_Set_Note_Python.h      last_node  help è¯´æ˜
+Save:node\Pythons\study\Macro_Pythons_tf_TUT.h \[1.1\] µÚ1~5½²
+Save:set\Macro_Set_Note_Python.h      last_node  help ËµÃ÷
 
-// è¯­æ³•
+// Óï·¨
 Save:node\Pythons\study\Macro_Pythons_tf1.h
 Save:node\Pythons\study\Macro_Pythons_tf2.h tf2.0
 Save:node\Pythons\study\Macro_Pythons_tf3.h
 
-// æ§åˆ¶--çœŸå‡è¯æ€§è½¬æ¢
-Save:node\Pythons\project\Macro_Pythons_jieba_fast.h \[4.2\] çœŸå‡è¯æ€§è½¬æ¢
+// ¿ØÖÆ--Õæ¼Ù´ÊĞÔ×ª»»
+Save:node\Pythons\project\Macro_Pythons_jieba_fast.h \[4.2\] Õæ¼Ù´ÊĞÔ×ª»»
 
-//è§†é¢‘å­¦ä¹ :
+//ÊÓÆµÑ§Ï°:
 Save:node\Pythons\study\Macro_Pythons_tf_TUT.h Num
 
-// æ•°æ®
-Save:node\Pythons\mysql\Macro_Pythons_Mysql.h \[4.36\] åˆ†è¯--
+// Êı¾İ
+Save:node\Pythons\mysql\Macro_Pythons_Mysql.h \[4.36\] ·Ö´Ê--
 Save:node\Pythons\project\Macro_nlp_block.h
 
 
-åƒå¤åˆ¶è¡¨ä¸€æ ·, èº«ä½“ä¸åŠ¨, å¤´éƒ¨ç§»åŠ¨
-æœŸæœ›+æ¯”è¾ƒ, AIåŠ ä¸ŠæœŸæœ›=æ¬ºè´Ÿè€å®äºº
+Ïñ¸´ÖÆ±íÒ»Ñù, ÉíÌå²»¶¯, Í·²¿ÒÆ¶¯
+ÆÚÍû+±È½Ï, AI¼ÓÉÏÆÚÍû=ÆÛ¸ºÀÏÊµÈË
 
-å¯¹æŠ—ï¼Œä¸€ï¼Œä¸€æ®‹å¿çš„åˆ†éš”ï¼Œç‹¬ç«‹å‡ºæ¥--å¦‚é•œå­ï¼Œæ¯å­ï¼Œè¯+è¯è¯ç»„
+¶Ô¿¹£¬Ò»£¬Ò»²ĞÈÌµÄ·Ö¸ô£¬¶ÀÁ¢³öÀ´--Èç¾µ×Ó£¬±­×Ó£¬´Ê+´Ê´Ê×é
 
-ç½‘ä¸­ç½‘: A->B,A->C, åˆ†æ”¯
+ÍøÖĞÍø: A->B,A->C, ·ÖÖ§
 
 
 [1.4] C++
@@ -86,7 +86,7 @@ Save:node\Pythons\project\Macro_nlp_block.h
 
 
 [1.6] weixin
-// weixin-æ€»ç›®å½•:
+// weixin-×ÜÄ¿Â¼:
 Save:node\weixin\Macro_Note_weixin.h
 
 
@@ -109,11 +109,11 @@ Save:node\weixin\Macro_Note_weixin.h
 
 
 [1.10] bak file
-//1) æœªæ•´ç†:
+//1) Î´ÕûÀí:
 Save:bak\bak_mtk_lang.h	
-//2) æœªæ”¹:
+//2) Î´¸Ä:
 Save:bak\bak_mtk_weiti.h	
-//3) bakæ–‡ä»¶:
+//3) bakÎÄ¼ş:
 Save:bak\bak_20181114_tmp_B_old.h
 Save:bak\bak_20181123_git.h
 

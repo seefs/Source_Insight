@@ -1,17 +1,17 @@
-ï»¿
+
 macro ChkRepeat(hbuf)
 {
-	//æ£€æŸ¥é‡å¤
-	//å‚è€ƒï¼šTrimSpaces()
+	//¼ì²éÖØ¸´
+	//²Î¿¼£ºTrimSpaces()
 	
 	//_TempString(hbuf)
 	var msgRpt
-	msg ("æ£€æŸ¥é‡å¤ (æ¯ä¸ªMK 48Så·¦å³, æŒ‰yesç»§ç»­)")
+	msg ("¼ì²éÖØ¸´ (Ã¿¸öMK 48S×óÓÒ, °´yes¼ÌĞø)")
 
 	hwnd = GetCurrentWnd()
 	sel = GetWndSel(hwnd)
 
-	//1.åŒºåˆ†å…¨é€‰ï¼Œéƒ¨åˆ†é€‰ä¸­
+	//1.Çø·ÖÈ«Ñ¡£¬²¿·ÖÑ¡ÖĞ
 	if (sel.fExtended)
 	{
 		// use selected lines
@@ -30,7 +30,7 @@ macro ChkRepeat(hbuf)
 	EmptyCache(chkBuf)
 	lnMax = 0
 	
-	//2.è·å–å®åç§°,åŠ å…¥æ–‡ä»¶
+	//2.»ñÈ¡ºêÃû³Æ,¼ÓÈëÎÄ¼ş
 	// do for each line....
 	while (ln < lnLim)
 	{
@@ -39,13 +39,13 @@ macro ChkRepeat(hbuf)
 		//msg ("mcr:"  # "@mcr@")
 		if(mcr != ""){
 		
-			/*ä¸è€ƒè™‘é‡å¤*/
+			/*²»¿¼ÂÇÖØ¸´*/
 			AppendBufLine(chkBuf, mcr)
 			
-			/*è€ƒè™‘é‡å¤ä¼šæ¯”è¾ƒæ…¢*/
+			/*¿¼ÂÇÖØ¸´»á±È½ÏÂı*/
 			/*
 			ret = AppendCache(chkBuf, mcr, lnMax)
-			if(ret>0)//é‡å¤
+			if(ret>0)//ÖØ¸´
 			{
 				msgRpt = msgRpt # mcr # CharFromKey(13)
 			}
@@ -66,19 +66,19 @@ macro ChkRepeat(hbuf)
 	global counter
 	counter = 0
 	
-	/*ä¸è€ƒè™‘é‡å¤*/
-	QuickSoftCache(chkBuf, 0, GetBufLineCount(chkBuf) - 1)	//æ’åº
+	/*²»¿¼ÂÇÖØ¸´*/
+	QuickSoftCache(chkBuf, 0, GetBufLineCount(chkBuf) - 1)	//ÅÅĞò
 	ShowCache(chkBuf)
-	//msg ("é‡å¤:"   # CharFromKey(13) # "@msgRpt@")
+	//msg ("ÖØ¸´:"   # CharFromKey(13) # "@msgRpt@")
 	msg ("counter:"   # CharFromKey(13) # "@counter@")
 	return msgRpt;
 }
 
 macro SplitMacro(lnStr, ch, start, len)
 {
-	//æ‹†åˆ†å­—ç¬¦ 
+	//²ğ·Ö×Ö·û 
 	//SplitMacro("MAINLCD_DEV_SIZE", "_", 9, len)
-	//è¿”å›index:-1,0~len-1
+	//·µ»Øindex:-1,0~len-1
 	
 	//_TempString(hbuf)
 	n = start
@@ -100,7 +100,7 @@ macro SplitMacro(lnStr, ch, start, len)
 
 macro GetLineMacro(lnStr)
 {
-	//è·å–å®ï¼Œä¸åŒ…æ‹¬åˆ é™¤æ³¨é‡Šï¼ˆ# , Tab ç©ºæ ¼ =ï¼‰
+	//»ñÈ¡ºê£¬²»°üÀ¨É¾³ı×¢ÊÍ£¨# , Tab ¿Õ¸ñ =£©
 	
 	//_TempString(hbuf)
 	//msg ("GetLineMacro:" # "@lnStr@ ")
@@ -190,7 +190,7 @@ macro GetLineValue(lnStr)
 
 macro GetWholeMacro(cur_line, sel)
 {
-	//è·å–å®Œæ•´å®ï¼Œåªèƒ½æ£€æŸ¥Ascii
+	//»ñÈ¡ÍêÕûºê£¬Ö»ÄÜ¼ì²éAscii
 	
 	//_TempString(hbuf)
 	c0 = AsciiFromChar("0")
@@ -269,8 +269,8 @@ macro GetSpaceStrMid(noteWord, newlen)
 }
 macro GetFileNameType(str, p_Type)
 {
-	//(fileTypeå½“åˆ†éš”ç¬¦ç”¨)
-	//è·å–æ–‡ä»¶åç§°ç±»å‹     project_SE022_XX.mk (project..  ->  (.mk)
+	//(fileTypeµ±·Ö¸ô·ûÓÃ)
+	//»ñÈ¡ÎÄ¼şÃû³ÆÀàĞÍ     project_SE022_XX.mk (project..  ->  (.mk)
 	
 	//_TempString(hbuf)
 	cSolid = AsciiFromChar(".")
@@ -333,7 +333,7 @@ macro ShowSelAscii(hbuf)
 	//_TempString(hbuf)
 	ret = ""
 	sel = MGetWndSel(hbuf)
-	if (IsSingleSelect(sel)) //æœ‰é€‰æ‹©
+	if (IsSingleSelect(sel)) //ÓĞÑ¡Ôñ
 	{
 		cur_line = GetBufLine(hbuf, sel.lnFirst )
 		if(strlen(cur_line) < sel.ichLim)
@@ -354,12 +354,12 @@ macro ShowSelAscii(hbuf)
 }
 macro DeleteTxtRight(hbuf, ln, fileType)
 {
-	//æ¸…é™¤.mkå³ä¾§å†…å®¹ï¼Œç”¨äºå¯¹æ¯”(fileTypeå½“åˆ†éš”ç¬¦ç”¨)
+	//Çå³ı.mkÓÒ²àÄÚÈİ£¬ÓÃÓÚ¶Ô±È(fileTypeµ±·Ö¸ô·ûÓÃ)
 	
 	//_TempString(hbuf)
 	cur_line = GetBufLine(hbuf, ln)
 	index = GetFileNameType(cur_line, fileType)
-	if (index > 0) //æœªé€‰æ‹©
+	if (index > 0) //Î´Ñ¡Ôñ
 	{
 		new_line = strmid(cur_line, 0, index)
 		PutBufLine(hbuf, ln, new_line)
@@ -373,11 +373,11 @@ macro DeleteTxtRight(hbuf, ln, fileType)
 
 macro DeleteTxtRightMk(hbuf)
 {
-	//æ¸…é™¤.mkå³ä¾§å†…å®¹ï¼ŒfileTypeå½“åˆ†éš”ç¬¦ç”¨
+	//Çå³ı.mkÓÒ²àÄÚÈİ£¬fileTypeµ±·Ö¸ô·ûÓÃ
 	
 	//_TempString(hbuf)
 	sel = MGetWndSel(hbuf)
-	if (IsSRFile(hbuf) && IsHasSelect(sel)) //æœ‰é€‰æ‹©
+	if (IsSRFile(hbuf) && IsHasSelect(sel)) //ÓĞÑ¡Ôñ
 	{
 		cur_line = GetBufLine(hbuf, sel.lnFirst )
 		file_type = GetFileNameType(cur_line, "")
@@ -396,7 +396,7 @@ macro DeleteTxtRightMk(hbuf)
 }
 macro DeleteMkComment(key)
 {
-	/æ¸…é™¤.mkæ³¨é‡Šï¼ˆåŠŸèƒ½æ²¡ç”¨ï¼Œæœªå†™å®Œï¼‰
+	/Çå³ı.mk×¢ÊÍ£¨¹¦ÄÜÃ»ÓÃ£¬Î´Ğ´Íê£©
     hbuf = GetCurrentBuf()
 	if (hwnd == 0)
 	{
@@ -405,7 +405,7 @@ macro DeleteMkComment(key)
 	
 	//_TempString(hbuf)
 	sel = MGetWndSel(hbuf)
-	if (IsSRFile(hbuf) && IsHasSelect(sel)) //æœ‰é€‰æ‹©
+	if (IsSRFile(hbuf) && IsHasSelect(sel)) //ÓĞÑ¡Ôñ
 	{
 		cur_line = GetBufLine(hbuf, sel.lnFirst )
 		file_type = GetFileNameType(cur_line, "")
@@ -438,7 +438,7 @@ macro ReplaceWord(noteWord, search_str, replace_str)
 	cp = 0
 	last_s = 0
 	
-	//æ€»æ˜¯æ›´æ–°å‰ä¸­åçš„ç»“æœï¼Œè¿™æ ·é€»è¾‘ç®€å•.
+	//×ÜÊÇ¸üĞÂÇ°ÖĞºóµÄ½á¹û£¬ÕâÑùÂß¼­¼òµ¥.
 	retS = ""
 	retM = ""
 	retE = ""
@@ -462,9 +462,9 @@ macro ReplaceWord(noteWord, search_str, replace_str)
 		}
 		else
 		{
-			// å–å•ä¸ªå­—ç¬¦
+			// È¡µ¥¸ö×Ö·û
 			//   ret = ret # noteWord[cp]
-			//     Bug.ä¼šæœ‰ä¸­æ–‡ç¼–ç é—®é¢˜
+			//     Bug.»áÓĞÖĞÎÄ±àÂëÎÊÌâ
 			retS = retM # strmid(noteWord, last_s, cp + 1)
 			retE = retM # strmid(noteWord, last_s, cp + lenStep)
 			//last_w = cp + 1

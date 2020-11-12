@@ -1,14 +1,14 @@
-ï»¿
-//  é‡æ–°ç¼–å·:
+
+//  ÖØĞÂ±àºÅ:
 Number = True
-//	é‡å¤:
+//	ÖØ¸´:
 Foreach = True
-//  å±è”½tabè·³è½¬å½“å‰æ–‡ä»¶
+//  ÆÁ±ÎtabÌø×ªµ±Ç°ÎÄ¼ş
 TabOver  = True
 
-//  å†…å‘æ¨¡å¼:
+//  ÄÚÏòÄ£Ê½:
 Save:node\Macro_Inward.h
-// åŠŸèƒ½æµ‹è¯•
+// ¹¦ÄÜ²âÊÔ
 Save:Help\Macro_Note_Test.h
 
 

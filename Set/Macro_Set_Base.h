@@ -1,10 +1,10 @@
-﻿//
-// 2~4行一组; row(value), row(path)相连
-// 注意格式不要多余空格
+//
+// 2~4��һ��; row(value), row(path)����
+// ע���ʽ��Ҫ����ո�
 //
 
 
-//(1) 6531DA 项目路径
+//(1) 6531DA ��Ŀ·��
 10
 project:E:\SVN\6531DA_new,
 //12
@@ -12,13 +12,13 @@ project:E:\SVN\6531DA_new,
 
 
 
-//(2) 6531btdialer 项目路径
+//(2) 6531btdialer ��Ŀ·��
 20
 project:F:\6531DA_Btdialer,
 
 
 
-//(3) 6531E 项目路径
+//(3) 6531E ��Ŀ·��
 30
 project:F:\6531E_16A,
 31
@@ -30,40 +30,40 @@ project:F:\_SI4.0\6531G.si4project,
 
 
 
-//(4) soft 项目路径
+//(4) soft ��Ŀ·��
 40
 project:F:\soft,
 
 
-//(5) 6533 项目路径
+//(5) 6533 ��Ŀ·��
 50
 project:F:\SC6533G\soft,
-//奇数项, 解决源码+SI目录分开问题, 源码目录单独设置在前一项
+//������, ���Դ��+SIĿ¼�ֿ�����, Դ��Ŀ¼����������ǰһ��
 51
 project:E:\SC6533G,
 
 
-//(6) 7701 项目路径
+//(6) 7701 ��Ŀ·��
 60
 project:D:\SVN\SC7701,
 
 
-//(7) MTK 项目路径1
+//(7) MTK ��Ŀ·��1
 70
 project:F:\6261D_KM,
-//奇数项, 解决源码+SI目录分开问题, 源码目录单独设置在前一项
+//������, ���Դ��+SIĿ¼�ֿ�����, Դ��Ŀ¼����������ǰһ��
 71
 project:F:\_SI4.0\11CW1352MP_KM.si4project
 
 72
 project:F:\6261A_11C_V33,
-//奇数项, 解决源码+SI目录分开问题, 源码目录单独设置在前一项
+//������, ���Դ��+SIĿ¼�ֿ�����, Դ��Ŀ¼����������ǰһ��
 73
 project:F:\_SI4.0\11CW1352MP_BLEPHONE61A.si4project,
 
 74
 project:F:\6261D_11C_V33,
-//奇数项, 解决源码+SI目录分开问题, 源码目录单独设置在前一项
+//������, ���Դ��+SIĿ¼�ֿ�����, Դ��Ŀ¼����������ǰһ��
 75
 project:F:\_SI4.0\6261D_11C_V33.si4project,
 
@@ -122,7 +122,7 @@ project:X:\NoneEmpty,
 
 //
 //
-//新加 type 同步修改笔记名称：
+//�¼� type ͬ���޸ıʼ����ƣ�
 //    getBaseFileType(pathName, s)
 //
 

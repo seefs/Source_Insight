@@ -1,4 +1,4 @@
-﻿
+
 
 // Finds matching scoping delimiters and jumps to them.
 // If the cursor is not positioned on a delimiter but is inside 

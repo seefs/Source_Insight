@@ -1,26 +1,26 @@
-ï»¿
 
-//ç›®å½•[Num][Ca]:
-// 1. SIå¸¸ç”¨é—®é¢˜
-Save:node\ToolsMsg\Macro_SI.h \[1.1\] æ–‡ä»¶æ€»æ•°
+
+//Ä¿Â¼[Num][Ca]:
+// 1. SI³£ÓÃÎÊÌâ
+Save:node\ToolsMsg\Macro_SI.h \[1.1\] ÎÄ¼ş×ÜÊı
 Save:node\ToolsMsg\Macro_SI.h \[1.2\] 
-Save:node\ToolsMsg\Macro_SI.h \[1.3\] æ–‡ä»¶ä¹±ç 
-Save:node\ToolsMsg\Macro_SI.h \[1.4\] é€šé…ç¬¦æ›¿æ¢
-Save:node\ToolsMsg\Macro_SI.h \[1.5\] SIå´©æºƒé—®é¢˜---------
+Save:node\ToolsMsg\Macro_SI.h \[1.3\] ÎÄ¼şÂÒÂë
+Save:node\ToolsMsg\Macro_SI.h \[1.4\] Í¨Åä·ûÌæ»»
+Save:node\ToolsMsg\Macro_SI.h \[1.5\] SI±ÀÀ£ÎÊÌâ---------
 Save:node\ToolsMsg\Macro_SI.h \[1.6\] 
-Save:node\ToolsMsg\Macro_SI.h \[1.7\] å®‰è£…
-Save:node\ToolsMsg\Macro_SI.h \[1.8\] æœ‰è¶£çš„æ ¼å¼
+Save:node\ToolsMsg\Macro_SI.h \[1.7\] °²×°
+Save:node\ToolsMsg\Macro_SI.h \[1.8\] ÓĞÈ¤µÄ¸ñÊ½
 Save:node\ToolsMsg\Macro_SI.h \[1.9\] 
 // 2. 
 Save:node\ToolsMsg\Macro_SI.h \[2.1\] ShellExecute
 Save:node\ToolsMsg\Macro_SI.h \[2.2\] 
 Save:node\ToolsMsg\Macro_SI.h \[2.3\] modifier charac-ters
 Save:node\ToolsMsg\Macro_SI.h \[2.4\] path
-Save:node\ToolsMsg\Macro_SI.h \[2.5\] æœç´¢
-Save:node\ToolsMsg\Macro_SI.h \[2.6\] SI3.5æ’ä»¶
-Save:node\ToolsMsg\Macro_SI.h \[2.7\] è‡ªå®šä¹‰å‘½ä»¤
-Save:node\ToolsMsg\Macro_SI.h \[2.8\] è‡ªå®šä¹‰èœå•
-Save:node\ToolsMsg\Macro_SI.h \[2.9\] å¸¸ç”¨è®¾ç½®
+Save:node\ToolsMsg\Macro_SI.h \[2.5\] ËÑË÷
+Save:node\ToolsMsg\Macro_SI.h \[2.6\] SI3.5²å¼ş
+Save:node\ToolsMsg\Macro_SI.h \[2.7\] ×Ô¶¨ÒåÃüÁî
+Save:node\ToolsMsg\Macro_SI.h \[2.8\] ×Ô¶¨Òå²Ëµ¥
+Save:node\ToolsMsg\Macro_SI.h \[2.9\] ³£ÓÃÉèÖÃ
 Save:node\ToolsMsg\Macro_SI.h \[2.10\] 
 // 3. config_all
 Save:node\ToolsMsg\Macro_SI.h \[3.1\] config_all
@@ -31,8 +31,8 @@ Save:node\ToolsMsg\Macro_SI.h \[3.4\]
 
 
 
-[1.1] æ–‡ä»¶æ€»æ•°
-//f1->G æ˜¾ç¤ºé¡¹ç›®ä¸­ä¸€ç§æ–‡ä»¶ç±»å‹æ•°é‡, ç©ºè¡Œæ˜¾ç¤ºæ–‡ä»¶æ€»æ•°
+[1.1] ÎÄ¼ş×ÜÊı
+//f1->G ÏÔÊ¾ÏîÄ¿ÖĞÒ»ÖÖÎÄ¼şÀàĞÍÊıÁ¿, ¿ÕĞĞÏÔÊ¾ÎÄ¼ş×ÜÊı
 //	mk
 //	//==>
 //	mk: 5373
@@ -42,31 +42,31 @@ Save:node\ToolsMsg\Macro_SI.h \[3.4\]
 //	java: 38179
 
 
-[1.2] Source Insight å¯¼å…¥.c .hæœç´¢ä¼šå¡, å¯åªå¯¼å…¥javaæ–‡ä»¶
+[1.2] Source Insight µ¼Èë.c .hËÑË÷»á¿¨, ¿ÉÖ»µ¼ÈëjavaÎÄ¼ş
 
 
 
 
-[1.3] xmlç¿»è¯‘æ–‡ä»¶ä¹±ç :
-// ç¿»è¯‘æ–‡ä»¶UTF-8æ­£å¸¸æ‰“å¼€
-// ä¸èƒ½æ”¹æ–‡ä»¶æ ¼å¼, æ²¡ä»€ä¹ˆåŠæ³•
+[1.3] xml·­ÒëÎÄ¼şÂÒÂë:
+// ·­ÒëÎÄ¼şUTF-8Õı³£´ò¿ª
+// ²»ÄÜ¸ÄÎÄ¼ş¸ñÊ½, Ã»Ê²Ã´°ì·¨
 
 
 
 
-[1.4] é€šé…ç¬¦æ›¿æ¢
+[1.4] Í¨Åä·ûÌæ»»
 //	old:
-//	\(.*\)ã€
+//	\(.*\)¡¢
 //	new:
 //	[1.\1] 
-//	// .*, .*, .* åˆ†åˆ« \1, \2, \3
+//	// .*, .*, .* ·Ö±ğ \1, \2, \3
 
 
 
 
-[1.5] SIå´©æºƒé—®é¢˜
+[1.5] SI±ÀÀ£ÎÊÌâ
 C:\Users\Administrator\AppData\Local\Temp
-//	åˆ é™¤ä»¥TFXå¼€å¤´çš„æ‰€æœ‰ä¸´æ—¶æ–‡ä»¶ã€‚
+//	É¾³ıÒÔTFX¿ªÍ·µÄËùÓĞÁÙÊ±ÎÄ¼ş¡£
 
 
 
@@ -76,26 +76,26 @@ C:\Users\Administrator\AppData\Local\Temp
 
 
 
-[1.7] å®‰è£…
-//	å®‰è£…
-//	1 å®‰è£… sourceinsight4084-setup.exe
-//	2 ç”¨sourceinsight4.exeæ›¿æ¢å®‰è£…ç›®å½•ä¸‹çš„æ–‡ä»¶
-//	3 æ‰“å¼€sourceinsight4.exeï¼Œå¯¼å…¥è¯ä¹¦si4.pediy.lic
+[1.7] °²×°
+//	°²×°
+//	1 °²×° sourceinsight4084-setup.exe
+//	2 ÓÃsourceinsight4.exeÌæ»»°²×°Ä¿Â¼ÏÂµÄÎÄ¼ş
+//	3 ´ò¿ªsourceinsight4.exe£¬µ¼ÈëÖ¤Êési4.pediy.lic
 
-//Settingè·¯å¾„
-//	1ã€ä¿å­˜é…ç½®ã€ä¿®æ”¹é»˜è®¤Settingè·¯å¾„
+//SettingÂ·¾¶
+//	1¡¢±£´æÅäÖÃ¡¢ĞŞ¸ÄÄ¬ÈÏSettingÂ·¾¶
 //	Options -> Style properties->Load->E:\save\Source Insight\SettingsXml
 //	Options -> Preferences -> Folders->E:\save\Source Insight
 //
-//	2ã€æ‰¹å¤„ç†:
-//	project->add project Files->E:\save\SI3.5->åŒæ­¥æ–‡ä»¶
-//	project->add project Files->E:\save\SI4.0->åŒæ­¥æ–‡ä»¶    # åŒæ—¶æ‰“å¼€è¿è¡Œæ‰¹å¤„ç†æœ‰é—®é¢˜
+//	2¡¢Åú´¦Àí:
+//	project->add project Files->E:\save\SI3.5->Í¬²½ÎÄ¼ş
+//	project->add project Files->E:\save\SI4.0->Í¬²½ÎÄ¼ş    # Í¬Ê±´ò¿ªÔËĞĞÅú´¦ÀíÓĞÎÊÌâ
 //
-//	3ã€å…¶ä»–:
-//	ç”¨.h, .txté¢œè‰²å•ä¸€
+//	3¡¢ÆäËû:
+//	ÓÃ.h, .txtÑÕÉ«µ¥Ò»
 
 
-[1.8] æœ‰è¶£çš„æ ¼å¼
+[1.8] ÓĞÈ¤µÄ¸ñÊ½
 
 $time$
 
@@ -159,47 +159,47 @@ $time$
 //	%APPDATA_DIR% %DESKTOP_DIR% %LOCAL_APPDATA_DIR% %MYDOCUMENTS_DIR% %PROGRAM_DIR% %PROGRAMFILES_DIR% %PROGRAMFILESX86_DIR% %PROJECT_DATA_DIR% %PROJECT_SOURCE_DIR% %PROJECT_NAM%E %SHARED_DOCUMENTS_DIR% %SOURCEINSIGHT_USER_DIR% %TEMP_DIR% %WINDOWS_DIR%
 
 
-[2.5] æœç´¢
-//	***** **** ***** æœç´¢ ***** **** *****
+[2.5] ËÑË÷
+//	***** **** ***** ËÑË÷ ***** **** *****
 //	lookup refercences:
-//		1ã€Simple String
-//		2ã€Regular Expression
-//		3ã€Keyword Expression
-//		4ã€Look Up Reference	 SI4.0ç”¨ä¸äº†
+//		1¡¢Simple String
+//		2¡¢Regular Expression
+//		3¡¢Keyword Expression
+//		4¡¢Look Up Reference	 SI4.0ÓÃ²»ÁË
 //	search result option:
-//		1ã€Include name of container function of clase    ä¸æœç´¢missæ–‡ä»¶
+//		1¡¢Include name of container function of clase    ²»ËÑË÷missÎÄ¼ş
 
 
-[2.6] SI3.5æ’ä»¶
-//	å®‰è£…è¯´æ˜:
+[2.6] SI3.5²å¼ş
+//	°²×°ËµÃ÷:
 //	
-//	è§£å‹msimg32.dll sihook.dll siutf8.dll åˆ°Source Insight 3.Xå®‰è£…ç›®å½•
+//	½âÑ¹msimg32.dll sihook.dll siutf8.dll µ½Source Insight 3.X°²×°Ä¿Â¼
 //	
-//	msimg32.dll å¼•å¯¼ç¨‹åº(*)
-//	sihook.dll æ ‡ç­¾æ’ä»¶(M)
-//	siutf8.dll utf8æ’ä»¶(M)
+//	msimg32.dll Òıµ¼³ÌĞò(*)
+//	sihook.dll ±êÇ©²å¼ş(M)
+//	siutf8.dll utf8²å¼ş(M)
 //	
-//	åŠŸèƒ½è¯´æ˜:
-//	1,å¢åŠ SIå¤šæ ‡ç­¾åŠŸèƒ½
-//	2,ä¿®å¤SIå½“å…‰æ ‡åœ¨ä¸­æ–‡å­—ç¬¦ä¸ŠæŒ‰CTRL+Fæ—¶å´©æºƒçš„é—®é¢˜.(æ„Ÿè°¢çœ‹é›ªçš„å°å¿ƒé”çˆ±)
-//	3,utf8ç¼–ç æ”¯æŒ.
+//	¹¦ÄÜËµÃ÷:
+//	1,Ôö¼ÓSI¶à±êÇ©¹¦ÄÜ
+//	2,ĞŞ¸´SIµ±¹â±êÔÚÖĞÎÄ×Ö·ûÉÏ°´CTRL+FÊ±±ÀÀ£µÄÎÊÌâ.(¸ĞĞ»¿´Ñ©µÄ·âĞÄËø°®)
+//	3,utf8±àÂëÖ§³Ö.
 //	
-//	å·²çŸ¥é—®é¢˜:
-//	å½“utf8ç¼–ç æ–‡ä»¶åœ¨å¤–éƒ¨æ”¹å˜æ—¶,SIä¸ä¼šæ£€æµ‹åˆ°æ›´æ–°.éœ€è¦é‡æ–°å…³é—­SIå†æ‰“å¼€.
+//	ÒÑÖªÎÊÌâ:
+//	µ±utf8±àÂëÎÄ¼şÔÚÍâ²¿¸Ä±äÊ±,SI²»»á¼ì²âµ½¸üĞÂ.ĞèÒªÖØĞÂ¹Ø±ÕSIÔÙ´ò¿ª.
 
 
-[2.7] è‡ªå®šä¹‰å‘½ä»¤
-//	Options->Custom Command1. Addã€new Commands2. Run ã€å¡«å…¥å¾…æ‰§è¡Œå‘½ä»¤è¡Œï¼Œ	2.1  F:; cd F:/Base/command; open_build.bat  %j æ³¨é‡Šï¼š%jä¸ºå½“å‰å·¥ç¨‹ç›®å½•
+[2.7] ×Ô¶¨ÒåÃüÁî
+//	Options->Custom Command1. Add¡¢new Commands2. Run ¡¢ÌîÈë´ıÖ´ĞĞÃüÁîĞĞ£¬	2.1  F:; cd F:/Base/command; open_build.bat  %j ×¢ÊÍ£º%jÎªµ±Ç°¹¤³ÌÄ¿Â¼
 //	   2.2	explorer /select,%f
 //	
 //	
-//	æ³¨é‡Šï¼šæ‰“å¼€æ–‡ä»¶
-//	3. Dir æ¡†ã€æ‰§è¡Œå‘½ä»¤è¡Œæ—¶åº”å¤„çš„ç›®å½•ï¼Œå¦‚ä¸å¡«ï¼Œä»¥æºä»£ç æ–‡ä»¶æ‰€åœ¨ç›®å½•ä¸ºå‘½ä»¤æ‰§è¡Œç›®å½•
-//	4. å‹¾é€‰ Output æ¡†çš„ Capture Output ã€è¾“å‡ºè¢«æ•æ‰ï¼Œå¦‚æœå‹¾é€‰ Paste Output ï¼Œè¾“å‡ºè¢«ç²˜è´´
-//	   å‹¾é€‰ Control Group æ¡†ä¸­çš„ Save Files First ã€ SIS ä¼šåœ¨è¿è¡Œå‘½ä»¤å‰å…ˆæ£€æŸ¥æ–‡ä»¶æ˜¯å¦ä¿å­˜    å‹¾é€‰ Control Group æ¡†ä¸­çš„ Pause When Done ã€ SIS ä¼šåœ¨å‘½ä»¤ç»“æŸåæš‚åœã€æ–¹ä¾¿æ£€æŸ¥	å‹¾é€‰ Source Links in Output æ¡†ä¸­çš„ Parse Source Links
+//	×¢ÊÍ£º´ò¿ªÎÄ¼ş
+//	3. Dir ¿ò¡¢Ö´ĞĞÃüÁîĞĞÊ±Ó¦´¦µÄÄ¿Â¼£¬Èç²»Ìî£¬ÒÔÔ´´úÂëÎÄ¼şËùÔÚÄ¿Â¼ÎªÃüÁîÖ´ĞĞÄ¿Â¼
+//	4. ¹´Ñ¡ Output ¿òµÄ Capture Output ¡¢Êä³ö±»²¶×½£¬Èç¹û¹´Ñ¡ Paste Output £¬Êä³ö±»Õ³Ìù
+//	   ¹´Ñ¡ Control Group ¿òÖĞµÄ Save Files First ¡¢ SIS »áÔÚÔËĞĞÃüÁîÇ°ÏÈ¼ì²éÎÄ¼şÊÇ·ñ±£´æ    ¹´Ñ¡ Control Group ¿òÖĞµÄ Pause When Done ¡¢ SIS »áÔÚÃüÁî½áÊøºóÔİÍ£¡¢·½±ã¼ì²é	¹´Ñ¡ Source Links in Output ¿òÖĞµÄ Parse Source Links
 
-[2.8] è‡ªå®šä¹‰èœå•
-//	***** **** ***** è‡ªå®šä¹‰èœå• ***** **** *****
+[2.8] ×Ô¶¨Òå²Ëµ¥
+//	***** **** ***** ×Ô¶¨Òå²Ëµ¥ ***** **** *****
 //	open base:
 //	Options->Menu->OpenPath 	->Menu/work->Insert->key/F2    select next window
 //	Options->Menu->TwoWordFind ->Menu/work->Insert->key/F5
@@ -212,40 +212,40 @@ $time$
 //	Options->Menu->Win		  ->Menu/work->Insert->key/F10
 //	Options->Menu->Tree    ->Menu/work->Insert->key/F11
 //	Options->Menu->ShowNote    ->Menu/work->Insert->key/F12
-//	Options->Menu->testMacro, é€‰æ‹©command
-//	-------------------------------------------- å¯é€‰ï¼šè¿˜æœ‰ç”¨çš„
+//	Options->Menu->testMacro, Ñ¡Ôñcommand
+//	-------------------------------------------- ¿ÉÑ¡£º»¹ÓĞÓÃµÄ
 
 
-[2.9] å¸¸ç”¨è®¾ç½®
-//	***** **** ***** å¸¸ç”¨è®¾ç½® ***** **** *****
-//	1ã€æ–‡ä»¶ç±»å‹
+[2.9] ³£ÓÃÉèÖÃ
+//	***** **** ***** ³£ÓÃÉèÖÃ ***** **** *****
+//	1¡¢ÎÄ¼şÀàĞÍ
 //	options->Document type:
-//	1.c file:åŠ *.bat	  # é¢œè‰²åŒºåˆ†
-//	2.make file:åŠ *.mak
-//	3.new file:åŠ *.ss
+//	1.c file:¼Ó*.bat	  # ÑÕÉ«Çø·Ö
+//	2.make file:¼Ó*.mak
+//	3.new file:¼Ó*.ss
 //	
-//	2ã€å­—ä½“å¤§å°ã€è¡Œå·ã€ä¸­æ–‡
+//	2¡¢×ÖÌå´óĞ¡¡¢ĞĞºÅ¡¢ÖĞÎÄ
 //	options->Preferences->font
 //	options->Document type->Screen font
 //	options->Preferences->File->Default code->System default(Windows ANSI)
 //	
-//	3ã€SI 3.5çª—å£
+//	3¡¢SI 3.5´°¿Ú
 //	options->Preferences->Show
-//	(é€‰é¡¹é‡å ...)
+//	(Ñ¡ÏîÖØµş...)
 //	
-//	4ã€SI 4.0çª—å£
+//	4¡¢SI 4.0´°¿Ú
 //	options->Preferences->Show->Overviews->close 
-//	overview->å³é”®->hide
+//	overview->ÓÒ¼ü->hide
 //	view->overview->close
 //	
 //	title->hide
 //	view->stutas bar->close
 //	view->mono font->close(Alt+F12)
-//	view->panel->project file, å…¶ä»–å…³é—­
-//	view->panel->context windows->Tool->Jump to definition,æ¢å¤é»˜è®¤çª—å£
+//	view->panel->project file, ÆäËû¹Ø±Õ
+//	view->panel->context windows->Tool->Jump to definition,»Ö¸´Ä¬ÈÏ´°¿Ú
 //	
-//	5ã€å…¶ä»–
-//	F8, shift+F8éƒ½æ”¹æˆé«˜äº®
+//	5¡¢ÆäËû
+//	F8, shift+F8¶¼¸Ä³É¸ßÁÁ
 
 
 [2.10] 
@@ -255,8 +255,8 @@ $time$
 
 [3.1] config_all
 //	1.
-//	å¾®è½¯é›…é»‘
-//	å®‹ä½“
+//	Î¢ÈíÑÅºÚ
+//	ËÎÌå
 //	2.
 //	psize="9" fpfamily="0" charset="1"
 //	psize="12" fpfamily="2" charset="134"
