@@ -1,7 +1,9 @@
 ﻿
 基础路径设置: 
 //base
-basePath = C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\
+//basePath = C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\
+basePath = D:\Program^Files\py\Scripts\
+base:\\
 //test
 testPath = Save:node\Pythons\py_test\
 //py
@@ -42,7 +44,7 @@ Save:node\Pythons\install\Macro_Pythons_Install.h \[3.5\] jieba
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.6\] conf
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.7\] tfmpl---------3D
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.8\] chardet
-Save:node\Pythons\install\Macro_Pythons_Install.h \[3.9\] 
+Save:node\Pythons\install\Macro_Pythons_Install.h \[3.9\] PIL
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.10\] 
 //	install
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.1\] install
@@ -329,7 +331,16 @@ cmd_w: pip install params_flow
 
 
 
-[3.9] 
+[3.9] PIL
+cmd_w: pip install PIL
+cmd_w: python -m pip install PIL
+cmd_w: pip3 install --index-url https://pypi.douban.com/simple PIL
+//pillow
+cmd_w: pip install pillow
+cmd_w: python -m pip install pillow
+cmd_w: pip3 install --index-url https://pypi.douban.com/simple PIL
+//
+cmd_w: pip install PIL -image -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
 
 
 

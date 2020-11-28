@@ -17,14 +17,18 @@ Save:node\C\study\Macro_8910_Debug.h
 
 /***********************************************************************/
 
-
-
-
 //
 xiaojia_bm@163.com
 bomeng608
 
-
+// bug
+edit--num--del--行数不对
+//
+txt
+//
+dial--soft
+//
+idle--pb
 
 
 // g-8910s
@@ -71,25 +75,6 @@ D:\WATCH_TOUCH_MOCOR_UIS8910_20B_W20.28.4
 
 
 MSG_OPEN_WINDOW
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
