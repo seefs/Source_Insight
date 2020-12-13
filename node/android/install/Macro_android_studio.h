@@ -269,6 +269,11 @@ D:\Program Files\Git\bin
 //查看版本号:
 git - -version
 
+// 图形化界面
+https://tortoisegit.org/download/
+//
+
+
 
 
 [1.9] adb
@@ -310,6 +315,9 @@ https://blog.csdn.net/riyuexingchen1204/article/details/84594061
 // 华为手机设置:
 Hisuite通过HDB连接设备-------
 选择USB配置-------多媒体传输
+
+// win10显示usb设备:
+https://www.cnblogs.com/findumars/p/10332440.html
 
 
 
