@@ -16,7 +16,7 @@ Save:node\ToolsMsg\Macro_win.h \[2.1\] ResOver
 Save:node\ToolsMsg\Macro_win.h \[2.2\] Incredibuild
 Save:node\ToolsMsg\Macro_win.h \[2.3\] cygwin
 Save:node\ToolsMsg\Macro_win.h \[2.4\] SVN 配置
-Save:node\ToolsMsg\Macro_win.h \[2.5\] VC
+Save:node\ToolsMsg\Macro_win.h \[2.5\] 
 Save:node\ToolsMsg\Macro_win.h \[2.6\] ResearchDownload
 Save:node\ToolsMsg\Macro_win.h \[2.7\] set_path 备份
 Save:node\ToolsMsg\Macro_win.h \[2.8\] 
@@ -167,6 +167,8 @@ C:\Users\Administrator\AppData\Roaming\Subversion\config
 //	TortoiseProc.exe /command:diff /path:%1 /path2:%2
 //	TortoiseProc.exe /command:update /path:"c:\svn_wc\" /closeonend:0
 //
+"D:\Program Files\TortoiseSVN\bin\TortoiseProc.exe" /command:revert /path:"MS_MMI_Main\source\resource\Common\RING\"  /closeonend:0
+
 //
 //
 //	E:\save\SI\Cmd\svn_commit.bat "F:\6531DA_Btdialer\version" xx
@@ -174,7 +176,11 @@ C:\Users\Administrator\AppData\Roaming\Subversion\config
 //	E:\save\SI\Cmd\cmd_base.bat  "F:\6531DA_Btdialer\version"
 //	E:\save\SI\Cmd\svn_diff.bat  "F:\6531DA_Btdialer\version"
 //	E:\save\SI\Cmd\svn_diff.bat  "F:\6531DA_Btdialer\version.h"
+"
 
+
+# revert
+#svn revert [-R] xxx_file_dir
 
 //	svn卡死
 //	打开Win7的控制面选，选择“索引选项”，然后选择“修改”，将G:\doc\projects\estar全部反选即可
@@ -186,39 +192,23 @@ C:\Users\Administrator\AppData\Roaming\Subversion\config
 
 
 
-[2.5] VC
-//	Visual Studio 6.0	 安装：
-//			1、product id：全写111...
-//			2、file may be corrupt：取消（按多次）
-//			3、mmi_menutable.c   error：
-//					//注释，再编译，一般像游戏或者是facebook，whatsapp都会报这种错误
-//	
-//	***** **** ***** 编译模拟器 ***** **** *****
-//	打开模拟，设置路径后，右击按start：
-//			MS image Files：F:\trunk\SBD_6531_12C_DA\MS_MMI\source\winsimulator_tp\skin\mssim_duallcd_128_160.png
-//			MS ini Files：
-//			MS resouce Files：build\xxx_builddir\img\
-//			如果弹出sim卡设置，可能驱动未更新有问题，或重新编译
-
-//	已停止工作 windows可以联机检查：
-//	控制面板→系统和安全→操作中心→问题报告设置， 设置成“自动解决方案” 就可以了
-//
-//	2 Visual Studio 与此版本的 Windows 之间存在已知的兼容性问题
-//	设置不再显示
-
-//office:
-//        需激活，快过期时编不过
-//        win7不能装excel2003，ntac不能直接保存excel，需要打开其他表格（同时会打开ntac的表格）；
-//        ntac再次保存excel，先关闭excel进程；
-//
-//xp虚拟机安装：
-//        Visual Studio Analyzer：不安装
-
-///   win7系统文件缺失：
-//http://www.filediag.com/files/npptools.dll.html
+[2.5] 
 
 
-Incredibuild
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -279,6 +269,20 @@ Incredibuild
 [3.3] UE
 //	文件关联
 //	高级-配置-应用程序布局-其他-勾选在启动时检查并显示文件关联-重新启动UltraEdit
+
+
+// UE 卸载
+D:\Program^Files^(x86)\IDM^Computer^Solutions
+C:/Users/YJ/AppData/Roaming
+C:/Users/YJ/AppData/Roaming/IDMComp
+C:/Program^Files^(x86)/InstallShield^Installation^Information
+C:/ProgramData/
+C:/ProgramData/IDMComp
+
+//
+regedit
+//  IDM
+
 
 
 [3.4] mv

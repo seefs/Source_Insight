@@ -1,12 +1,12 @@
 //
 // 2~4行一组; row(value), row(path)相连
-// 注意格式不要多余空格
+// (path)注意格式不要多余空格
 //
 
 
 //(1) 6531DA 项目路径
 10
-project:E:\SVN\6531DA_new,
+project:G:\SP6531D,
 //12
 //project:F:\SBD_6531_12C_DA_FCC,
 
@@ -20,13 +20,9 @@ project:F:\6531DA_Btdialer,
 
 //(3) 6531E 项目路径
 30
-project:F:\6531E_16A,
+project:E:\SPDE6531E,
 31
-project:F:\_SI4.0\6531E.si4project,
-32
-project:F:\6531G_16A_MP_W17.43.4,
-33
-project:F:\_SI4.0\6531G.si4project,
+project:D:\_SI4.0\6531E.si4project,
 
 
 
@@ -43,41 +39,48 @@ project:F:\SC6533G\soft,
 project:E:\SC6533G,
 
 
-//(6) 7701 项目路径
+//(6) 7701, 8910 项目路径
 60
-project:D:\SVN\SC7701,
+project:G:\UIS8910_git,
+62
+project:G:\wa01u_svn_small,
+64
+project:G:\wa01u_svn,
+66
+project:G:\UIS8910_schcard_git,
 
 
-//(7) MTK 项目路径1
+//(7) 7701, 8910 项目路径
 70
+project:G:\wa01u_8910s_svn,
+72
+project:G:\T107,
+
+
+//(8) MTK 项目路径1
+80
 project:F:\6261D_KM,
 //奇数项, 解决源码+SI目录分开问题, 源码目录单独设置在前一项
-71
-project:F:\_SI4.0\11CW1352MP_KM.si4project
+81
+project:D:\_SI4.0\11CW1352MP_KM.si4project
 
-72
+82
 project:F:\6261A_11C_V33,
 //奇数项, 解决源码+SI目录分开问题, 源码目录单独设置在前一项
-73
-project:F:\_SI4.0\11CW1352MP_BLEPHONE61A.si4project,
+83
+project:D:\_SI4.0\11CW1352MP_BLEPHONE61A.si4project,
 
-74
+84
 project:F:\6261D_11C_V33,
 //奇数项, 解决源码+SI目录分开问题, 源码目录单独设置在前一项
-75
-project:F:\_SI4.0\6261D_11C_V33.si4project,
+85
+project:D:\_SI4.0\6261D_11C_V33.si4project,
 
 
-//(8) base -> save
-80
+//(9) base -> save
+90
 project:D:\Save,
 
-
-//(9) tmp
-90
-project:D:\project\X_police,
-121
-project:D:\_SI4.0\X_police.si4project,
 
 
 //(10) tmp
@@ -112,7 +115,7 @@ project:D:\_SI4.0\tensorflow.si4project,
 140
 project:F:\9820e,
 141
-project:F:\_SI4.0\9820E_local.si4project,
+project:D:\_SI4.0\9820E_local.si4project,
 
 // tmp
 150

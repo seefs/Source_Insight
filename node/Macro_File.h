@@ -194,6 +194,8 @@ Save:node\android\project\Macro_as_demo.h  git_updata
 
 [4.1] win
 Save:node\ToolsMsg\Macro_win.h
+// vc
+Save:node\ToolsMsg\Macro_VC.h
 
 
 [4.2] Office
@@ -210,7 +212,7 @@ Save:node\ToolsMsg\Macro_win.h \[2.4\] SVN ≈‰÷√
 
 [4.5] Beyond Compare
 C:\Users\Administrator\AppData\Roaming\Scooter^Software\Beyond^Compare^4
-C:\Users\ASUS\AppData\Roaming\Scooter^Software\Beyond^Compare^4
+C:\Users\YJ\AppData\Roaming\Scooter^Software\Beyond^Compare^4
 //   BCmp:
 Save:node\ToolsMsg\Macro_Bcomp.h
 

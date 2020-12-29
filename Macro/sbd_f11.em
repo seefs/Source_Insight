@@ -1118,7 +1118,7 @@ macro NoteCurCmd(hbuf, noteCmd, curPath)
 	SetClipSimpleString(curPath)
 
 	//cmdStr = cmdRoot # "&&cd " # newPath # "&&echo " # newPath # "^>" # curPath # "&&" # curPath # "&&pause"
-	cmdStr = cmdRoot # "&&cd " # newPath # "&&start cmd.exe&&parse"
+	cmdStr = cmdRoot # "&&cd " # newPath # "&&start cmd.exe&&pause"
 
 	TestMsg("Брвы: " # CharFromKey(13) # noteCmd # CharFromKey(13) # cmdStr, 2)
 	ShellOpenCustomCmd(cmdStr)

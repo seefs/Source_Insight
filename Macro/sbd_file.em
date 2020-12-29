@@ -139,7 +139,7 @@ macro IsMacroFile(hbuf)
 macro IsMakeFile(hbuf)
 {
 	fName = GetFileName(GetBufName(hbuf))
-	return IsFileType(fName, ".mk") || IsFileType(fName, ".def") || IsFileType(fName, ".mak")
+	return IsFileType(fName, ".mk") || IsFileType(fName, ".def") || IsFileType(fName, ".mak") || IsFileType(fName, ".cfg")
 }
 
 macro IsTxtFile(hbuf)

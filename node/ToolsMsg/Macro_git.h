@@ -69,7 +69,7 @@ Save:node\ToolsMsg\Macro_git.h \[4.12\]
 git config --global user.name xxx
 git config --global user.email xxx@foxmail.com
 
-git config --global user.name seefs
+git config --global user.name xiaojia
 git config --global user.email seefs@163.com
 	
 //查看本地的global信息
@@ -574,6 +574,8 @@ git push origin --tags
 [4.1] window下载
 // window下载
 https://git-scm.com/downloads
+//
+https://tortoisegit.org/download/
 
 
 [4.2] cmd -----------------命令行
