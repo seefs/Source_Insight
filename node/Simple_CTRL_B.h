@@ -21,9 +21,6 @@ Save:node\C\study\Macro_data_8910.h
 /***********************************************************************/
 
 
-//
-拨号--智能拨号--第1次好像不正常
-
 
 
 
@@ -81,7 +78,7 @@ make p=UIS8910_ROM_16MB_SS_GZ02F_USER m=custom_drv update image
 // T107
 make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_user m=simulator_main
 make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_user m=resource_main
-make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_user m=main
+make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_user m=app_main
 
 
 
