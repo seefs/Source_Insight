@@ -42,7 +42,7 @@ macro getCurCount(0)		{	return 45	}
 macro getBCompareOnOff(0)	{	return 48	}
 //macro getPathRow(0)			{	return 51	}
 macro getWndVertRow(0)		{	return 54	}
-macro getNoteHanderSet(0)	{	return 57	}
+macro getNoteHanderSet(0)	{	return 57	} //no use
 macro getNoteHanderBak(0)	{	return 60	}
 macro getNoteBasePath(0)	{	return 63	}
 macro getNumBits(0)			{	return 66	}
@@ -615,18 +615,19 @@ macro OpenExistFileRow(file, row)
 }
 
 macro IsExistFile(file)
-{	
+{
 	hbuf = GetBufHandle(file)
 	if (hbuf == hNil)
 	{
 	 	hbuf = OpenBuf(file)
 		if (hbuf == hNil){
-			//msg ("hbuf doesn't exist.")
 			//hbuf = NewBuf(file)
+			//msg(file # " doesn't exist. (no)")
 			return 0
 		}
 		CloseBuf(hbuf)
  	}
+	//msg(file # " is exist. (yes)")
 	return 1
 }
 
