@@ -1,7 +1,133 @@
 ﻿
+基础路径设置:
+//basePath = 
 
 
-[1.1] SI4.0安装步骤
+//目录[Num][Ca]:
+// 1. 
+Save:Help\Other\Macro_Help_SI.h \[1.1\] marco file
+Save:Help\Other\Macro_Help_SI.h \[1.2\] marco test...
+Save:Help\Other\Macro_Help_SI.h \[1.3\] set save path
+Save:Help\Other\Macro_Help_SI.h \[1.4\] set work path
+Save:Help\Other\Macro_Help_SI.h \[1.5\] other set
+Save:Help\Other\Macro_Help_SI.h \[1.6\] 
+Save:Help\Other\Macro_Help_SI.h \[1.7\] 
+Save:Help\Other\Macro_Help_SI.h \[1.8\] 
+Save:Help\Other\Macro_Help_SI.h \[1.9\] 
+Save:Help\Other\Macro_Help_SI.h \[1.10\] 
+Save:Help\Other\Macro_Help_SI.h \[1.11\] 
+Save:Help\Other\Macro_Help_SI.h \[1.12\] 
+// 2. SI4.0安装步骤
+Save:Help\Other\Macro_Help_SI.h \[2.1\] SI4.0安装步骤
+Save:Help\Other\Macro_Help_SI.h \[2.2\] 更新配置文件
+Save:Help\Other\Macro_Help_SI.h \[2.3\] 初次配置需要同步, 更新新功能也可能要同步(否则报函数找不到)
+Save:Help\Other\Macro_Help_SI.h \[2.4\] 设置保存目录
+Save:Help\Other\Macro_Help_SI.h \[2.5\] 验证配置OK
+Save:Help\Other\Macro_Help_SI.h \[2.6\] 
+Save:Help\Other\Macro_Help_SI.h \[2.7\] 
+Save:Help\Other\Macro_Help_SI.h \[2.8\] 
+
+
+
+
+[1.1] marco file
+//1) path:
+Save:Macro\
+//2) f1~f12:
+Save:Macro\sbd_f1.em
+Save:Macro\sbd_f2.em
+Save:Macro\sbd_f7.em
+Save:Macro\sbd_f10.em  macro^NoteGroup
+Save:Macro\sbd_f11.em  macro^NoteHander
+Save:Macro\sbd_ctrl.em
+//3) tool:
+Save:Macro\a_String.em
+//4) file style:
+Save:Macro\sbd_file.em  IsTxtFile( )
+
+
+[1.2] marco test...
+// 功能测试
+Save:Help\Macro_Note_Test.h
+// 开启测试
+Save:Macro\sbd_test.em  macro^TestMsg
+
+
+[1.3] set save path
+// 1) 改变Save路径, 宏命令才能正常使用:
+Save:Macro\sbd_base.em	getSavePath(0)
+Save:Macro\sbd_root_path.em  getRootPath(0)
+
+// 2) 首次安装步骤:
+Save:Help\Other\Macro_Help_SI.h
+
+
+[1.4] set work path
+//1) 工程路径编号
+Save:set\Macro_Set_Base.h
+
+//2) 项目路径缴存(替换)
+Save:set\Macro_Set_Note.h
+
+
+[1.5] other set
+// show python help
+//   1--on, 0--off
+Save:set\Macro_Set.h 75
+
+// show android help
+//   1--on, 0--off
+Save:set\Macro_Set.h 78
+
+
+[1.6] 
+
+
+
+[1.7] 
+
+
+
+
+[1.8] 
+
+
+
+
+[1.9] 
+
+
+
+
+[1.10] 
+
+
+
+[1.11] 
+
+
+
+
+[1.12] 
+
+
+
+
+[1.13] 
+
+
+
+
+[1.14] 
+
+
+
+
+[1.15] 
+
+
+
+[2.1] SI4.0安装步骤
 
 	1) 安装包文件:
 		SI4.0安装包\si4.pediy.lic
@@ -19,8 +145,7 @@
 		//SI4.0安装使用.txt
 
 
-
-[1.2] 更新配置文件
+[2.2] 更新配置文件
 #    配置文件 下载命令:
 git clone https://github.com/seefs/Source_Insight_4_0_cfg
 
@@ -32,7 +157,7 @@ git clone https://github.com/seefs/Source_Insight_4_0_cfg
 	
 
 
-[1.3] 初次配置需要同步, 更新新功能也可能要同步(否则报函数找不到)
+[2.3] 初次配置需要同步, 更新新功能也可能要同步(否则报函数找不到)
 
 菜单--project -> 打开project -> base project 
 切换到base project下：
@@ -50,7 +175,7 @@ git clone https://github.com/seefs/Source_Insight_4_0_cfg
 
 
 
-[1.4] 设置保存目录
+[2.4] 设置保存目录
 运行:
 ...\Cmd_other\first_set_path.bat
 
@@ -59,10 +184,22 @@ git clone https://github.com/seefs/Source_Insight_4_0_cfg
 	
 
 
-[1.5] 验证配置OK
+[2.5] 验证配置OK
 ###快捷键
 ctrl+b, 即打开临时文件--simple_tmp_b.h
 f2, 打开当前目录
+
+
+[2.6] 
+
+
+[2.7] 
+
+
+[2.8] 
+
+
+
 
 
 

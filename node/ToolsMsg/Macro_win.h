@@ -15,7 +15,7 @@ Save:node\ToolsMsg\Macro_win.h \[1.10\]
 Save:node\ToolsMsg\Macro_win.h \[2.1\] ResOver
 Save:node\ToolsMsg\Macro_win.h \[2.2\] Incredibuild
 Save:node\ToolsMsg\Macro_win.h \[2.3\] cygwin
-Save:node\ToolsMsg\Macro_win.h \[2.4\] SVN 配置
+Save:node\ToolsMsg\Macro_win.h \[2.4\] 
 Save:node\ToolsMsg\Macro_win.h \[2.5\] 
 Save:node\ToolsMsg\Macro_win.h \[2.6\] ResearchDownload
 Save:node\ToolsMsg\Macro_win.h \[2.7\] set_path 备份
@@ -130,82 +130,17 @@ Save:node\ToolsMsg\Macro_win.h \[4.3\]
 //	C:\CSDTK\cygwin\bin
 
 
-[2.4] SVN 配置
-// config
-C:\Users\Administrator\AppData\Roaming\Subversion\config
-
-//	1.svn error:	
-//	post of '/svn/!svn/me':500 internal server error
-//	svn 500错误 500 Internal Server Error response to POST request
-//	//	打开VisualSVN Server GUI。
-//	//	右键单击左侧导航窗格根目录下的“VisualSVN Server（域）”，然后选择“属性”。
-//	//	在“常规”选项卡下，您将看到“自动调整权限”复选框。
-//	//	A.如果未选中此项，请选中它并单击“应用”。 这将停止并重新启动VisualSVN服务，并应解决此问题。
-//	//	B.如果选中此项，请取消选中并单击“应用”。 这将停止并重新启动Visual SVN服务。 
-//	//	完成后，重新检查该选项并再次单击“应用”。 重新启动服务后，现在应该解决该问题。
-//	
-//	
-//	
-//	清理失败:
-//	sqlite3 wc.db "select * from work_queue"
-//	sqlite3 wc.db "delete from work_queue"
 
 
-//	path add:
-//	D:\Program Files\TortoiseSVN\bin\TortoiseProc.exe
-//	svn log "F:\6531DA_Btdialer\version"
-//	svn log "version"
-//
-//	参考：http://blog.csdn.net/gwzz1228/article/details/7840666
-//	TortoiseProc help
-//	TortoiseProc.exe /command:asdf
-//	TortoiseProc.exe /command:log /path:".\"
-//	TortoiseProc.exe /command:log /path:"F:\6531DA_Btdialer\version"
-//	TortoiseProc.exe /command:commit /path:".\"
-//	TortoiseProc.exe /command:commit /path:%1
-//	TortoiseProc.exe /command:commit /path:"c:\svn_wc\file1.txt*c:\svn_wc\file2.txt" /logmsg:"test log message" /closeonend:0
-//	TortoiseProc.exe /command:diff /path:%1 /path2:%2
-//	TortoiseProc.exe /command:update /path:"c:\svn_wc\" /closeonend:0
-//
-"D:\Program Files\TortoiseSVN\bin\TortoiseProc.exe" /command:revert /path:"MS_MMI_Main\source\resource\Common\RING\"  /closeonend:0
 
-//
-//
-//	E:\save\SI\Cmd\svn_commit.bat "F:\6531DA_Btdialer\version" xx
-//	E:\save\SI\Cmd\svn_log.bat  "F:\6531DA_Btdialer\version"
-//	E:\save\SI\Cmd\cmd_base.bat  "F:\6531DA_Btdialer\version"
-//	E:\save\SI\Cmd\svn_diff.bat  "F:\6531DA_Btdialer\version"
-//	E:\save\SI\Cmd\svn_diff.bat  "F:\6531DA_Btdialer\version.h"
-"
+[2.4] 
 
 
-# revert
-#svn revert [-R] xxx_file_dir
 
-//	svn卡死
-//	打开Win7的控制面选，选择“索引选项”，然后选择“修改”，将G:\doc\projects\estar全部反选即可
-//
-//	1.关闭SVN的cache监视。即关闭tsvncache.exe这个程序对目录的监视。
-//	具体操作步骤如下：
-//	a) 右击任意目录打开右键菜单,打开"tortoisesvn" => "settings"下的设置窗口
-//	b) 找到"icon overlays"的设置项，将"status cache"设置成"none"
 
 
 
 [2.5] 
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
