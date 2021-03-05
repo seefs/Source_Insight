@@ -77,8 +77,12 @@ Save:node\ToolsMsg\Macro_win.h \[4.3\]
 
 
 [1.5] 
-
-
+// 20min
+shutdown -s -t 1200
+// 30min
+shutdown -s -t 1800
+//
+shutdown -a
 
 
 [1.6] 

@@ -311,6 +311,8 @@ if not defined sbd_param1 (
 	exit
 ) 
 
+// and or
+
 
 [1.12] setlocal----------变量延迟
 // 变量延迟

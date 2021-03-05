@@ -58,7 +58,7 @@ Save:node\ToolsMsg\Macro_git.h \[4.7\] git config ----------配置别名
 Save:node\ToolsMsg\Macro_git.h \[4.8\] git config ----------单个用户配置-----配置文件
 Save:node\ToolsMsg\Macro_git.h \[4.9\] git config ----------提示输入用户名和密码
 Save:node\ToolsMsg\Macro_git.h \[4.10\] hosts ---------------解决下载慢
-Save:node\ToolsMsg\Macro_git.h \[4.11\] 
+Save:node\ToolsMsg\Macro_git.h \[4.11\] git postBuffer ------Git缓存值
 Save:node\ToolsMsg\Macro_git.h \[4.12\] 
 	
 
@@ -319,13 +319,13 @@ git config --global mergetool.bc3.path "D:\Program Files (x86)\Beyond Compare 3\
 //也可以直接修改.gitconfig 文件，直接增加如下:
 C:\Users\Administrator\.gitconfig
 //	[diff]
-//		tool = bc3
-//	[difftool "bc3"]
-//		path = d:/program files/beyond compare 3/bcomp.exe
+//		tool = bc4
+//	[difftool "bc4"]
+//		path = C:\\Program Files\\Beyond Compare 4\\BCompare.exe
 //	[merge]
-//		tool = bc3
-//	[mergetool "bc3"]
-//		path = d:/program files/beyond compare 3/bcomp.exe
+//		tool = bc4
+//	[mergetool "bc4"]
+//		path = C:\\Program Files\\Beyond Compare 4\\BCompare.exe
 
 //设置好后，使用命令是 git difftool 而不是之前的 git diff 了。
 //git difftool 说明文档：http://git-scm.com/docs/git-difftool.html
@@ -581,7 +581,7 @@ git push origin --tags
 [4.1] window下载
 // window下载
 https://git-scm.com/downloads
-//
+// tortoisegit
 https://tortoisegit.org/download/
 
 
@@ -780,8 +780,13 @@ https://www.ip-tracker.org/locator/ip-lookup.php
 https://community.spiceworks.com/tools/ip-lookup/
 
 
-[4.11] 
-
+[4.11] git postBuffer ------Git缓存值
+// 查看
+// git config --list
+http.postbuffer=1524288000
+//
+git config --global http.postBuffer 524288000
+git config --global https.postBuffer 524288000
 
 
 

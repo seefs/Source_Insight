@@ -162,6 +162,7 @@ Save:node\ToolsMsg\Macro_SecureCRT.h
 [2.7] git
 Save:node\ToolsMsg\Macro_git.h
 Save:node\ToolsMsg\Macro_git_md.h
+Save:node\ToolsMsg\Macro_git_config.h
 Save:node\ToolsMsg\Macro_git_app.h
 
 
