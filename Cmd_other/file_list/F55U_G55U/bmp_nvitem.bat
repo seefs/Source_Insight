@@ -1,0 +1,1 @@
+"C:\Program Files\Beyond Compare 4\BCompare.exe" G:\_HW_NV_PARA.git\8910FFS\W20.36.2\F55U_G55U\ ".\nvitem\"

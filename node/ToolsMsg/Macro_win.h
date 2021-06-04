@@ -16,7 +16,7 @@ Save:node\ToolsMsg\Macro_win.h \[2.1\] ResOver
 Save:node\ToolsMsg\Macro_win.h \[2.2\] Incredibuild
 Save:node\ToolsMsg\Macro_win.h \[2.3\] cygwin
 Save:node\ToolsMsg\Macro_win.h \[2.4\] 
-Save:node\ToolsMsg\Macro_win.h \[2.5\] 
+Save:node\ToolsMsg\Macro_win.h \[2.5\] Usb
 Save:node\ToolsMsg\Macro_win.h \[2.6\] ResearchDownload
 Save:node\ToolsMsg\Macro_win.h \[2.7\] set_path ±¸·Ý
 Save:node\ToolsMsg\Macro_win.h \[2.8\] 
@@ -144,9 +144,9 @@ shutdown -a
 
 
 
-[2.5] 
-
-
+[2.5] Usb
+//
+C:\Windows\inf\setupapi.dev.log
 
 
 

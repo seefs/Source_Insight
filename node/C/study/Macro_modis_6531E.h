@@ -1,17 +1,12 @@
-/***********************************************************************/
-/******************************** SPR modis ****************************/
-/***********************************************************************/
-// 索引, 标号优先:
-[Num]
-// 目录:[Ca]
+// 目录:
 //   1. 功能点
-Save:node\C\study\Macro_modis_6531E.h  \[1.1\] Display
-Save:node\C\study\Macro_modis_6531E.h  \[1.2\] Softkey
-Save:node\C\study\Macro_modis_6531E.h  \[1.3\] GetString()
-Save:node\C\study\Macro_modis_6531E.h  \[1.4\] STATUSBAR
-Save:node\C\study\Macro_modis_6531E.h  \[1.5\] Theme
+Save:node\C\study\Macro_modis_6531E.h  \[1.1\] display
+Save:node\C\study\Macro_modis_6531E.h  \[1.2\] softkey
+Save:node\C\study\Macro_modis_6531E.h  \[1.3\] string
+Save:node\C\study\Macro_modis_6531E.h  \[1.4\] statusbar, change----
+Save:node\C\study\Macro_modis_6531E.h  \[1.5\] theme
 Save:node\C\study\Macro_modis_6531E.h  \[1.6\] pubWin  Alert
-Save:node\C\study\Macro_modis_6531E.h  \[1.7\] nv
+Save:node\C\study\Macro_modis_6531E.h  \[1.7\] form
 Save:node\C\study\Macro_modis_6531E.h  \[1.8\] rect
 Save:node\C\study\Macro_modis_6531E.h  \[1.9\] timer
 Save:node\C\study\Macro_modis_6531E.h  \[1.10\] option
@@ -23,8 +18,18 @@ Save:node\C\study\Macro_modis_6531E.h  \[1.15\] layer
 Save:node\C\study\Macro_modis_6531E.h  \[1.16\] simulator
 Save:node\C\study\Macro_modis_6531E.h  \[1.17\] key
 Save:node\C\study\Macro_modis_6531E.h  \[1.18\] Lcd
-Save:node\C\study\Macro_modis_6531E.h  \[1.19\] 
-Save:node\C\study\Macro_modis_6531E.h  \[1.10\]
+Save:node\C\study\Macro_modis_6531E.h  \[1.19\] sublcd
+Save:node\C\study\Macro_modis_6531E.h  \[1.20\] font
+Save:node\C\study\Macro_modis_6531E.h  \[1.21\] list
+Save:node\C\study\Macro_modis_6531E.h  \[1.22\] height------
+Save:node\C\study\Macro_modis_6531E.h  \[1.23\] edit, im, pen
+Save:node\C\study\Macro_modis_6531E.h  \[1.24\] color
+Save:node\C\study\Macro_modis_6531E.h  \[1.25\] label
+Save:node\C\study\Macro_modis_6531E.h  \[1.26\] 
+Save:node\C\study\Macro_modis_6531E.h  \[1.27\] 
+Save:node\C\study\Macro_modis_6531E.h  \[1.28\] 
+Save:node\C\study\Macro_modis_6531E.h  \[1.29\] 
+Save:node\C\study\Macro_modis_6531E.h  \[1.30\]
 //	 2. 界面
 Save:node\C\study\Macro_modis_6531E.h  \[2.1\] win fun.
 Save:node\C\study\Macro_modis_6531E.h  \[2.2\] idle, lock
@@ -55,56 +60,31 @@ Save:node\C\study\Macro_modis_6531E.h  \[2.26\] res
 Save:node\C\study\Macro_modis_6531E.h  \[2.27\] Browser 网络参数
 Save:node\C\study\Macro_modis_6531E.h  \[2.28\] sos
 Save:node\C\study\Macro_modis_6531E.h  \[2.29\] startup
-Save:node\C\study\Macro_modis_6531E.h  \[2.20\]
-//	 3. GUI
-Save:node\C\study\Macro_modis_6531E.h  \[3.1\] 事件:
-Save:node\C\study\Macro_modis_6531E.h  \[3.2\] Rect
-Save:node\C\study\Macro_modis_6531E.h  \[3.3\] form
-Save:node\C\study\Macro_modis_6531E.h  \[3.4\] font--------------
-Save:node\C\study\Macro_modis_6531E.h  \[3.5\] list
-Save:node\C\study\Macro_modis_6531E.h  \[3.6\] menu custom
-Save:node\C\study\Macro_modis_6531E.h  \[3.7\] str, wstr
-Save:node\C\study\Macro_modis_6531E.h  \[3.8\] draw
-Save:node\C\study\Macro_modis_6531E.h  \[3.9\] height------
-Save:node\C\study\Macro_modis_6531E.h  \[3.10\] edit, im, pen
-Save:node\C\study\Macro_modis_6531E.h  \[3.11\] color
-Save:node\C\study\Macro_modis_6531E.h  \[3.12\] Im
-Save:node\C\study\Macro_modis_6531E.h  \[3.13\] icon
-Save:node\C\study\Macro_modis_6531E.h  \[3.14\] label
-Save:node\C\study\Macro_modis_6531E.h  \[3.15\] 
-Save:node\C\study\Macro_modis_6531E.h  \[3.16\] 
-Save:node\C\study\Macro_modis_6531E.h  \[3.17\] 
-Save:node\C\study\Macro_modis_6531E.h  \[3.18\] 
-Save:node\C\study\Macro_modis_6531E.h  \[3.19\] 
-Save:node\C\study\Macro_modis_6531E.h  \[3.10\]
+Save:node\C\study\Macro_modis_6531E.h  \[2.30\]
 	
 
-/***********************************************************************/
-/******************************** SPR modis ****************************/
-/***********************************************************************/
-// 功能点:[Cs]
 
 
 [1.1] Display
-GUISTR_DrawTextToLCDInRect
-
-
-DisplayHighlightAndStr
-		str_style.font_color	   = 0x3333;
-
-HandleSetTimeWindow
-
-		GUIEDIT_SetFontColor(MMISET_SET_TIME_TIMEEDITBOX_CTRL_ID, MMI_GREEN_COLOR);
-
-		MMK_SetAtvCtrl(win_id,MMISET_SET_TIME_TIMEEDITBOX_CTRL_ID);
-HandleSetDateWindow
-
-		GUIEDIT_SetFontColor(MMISET_SET_DATE_DATEEDITBOX_CTRL_ID, MMI_GREEN_COLOR);
-
-
-显示省略：
-DrawTextInRect
-DrawTextInLine	  GUISTR_STATE_ELLIPSIS
+//GUISTR_DrawTextToLCDInRect
+//
+//
+//DisplayHighlightAndStr
+//		str_style.font_color	   = 0x3333;
+//
+//HandleSetTimeWindow
+//
+//		GUIEDIT_SetFontColor(MMISET_SET_TIME_TIMEEDITBOX_CTRL_ID, MMI_GREEN_COLOR);
+//
+//		MMK_SetAtvCtrl(win_id,MMISET_SET_TIME_TIMEEDITBOX_CTRL_ID);
+//HandleSetDateWindow
+//
+//		GUIEDIT_SetFontColor(MMISET_SET_DATE_DATEEDITBOX_CTRL_ID, MMI_GREEN_COLOR);
+//
+//
+//显示省略：
+//DrawTextInRect
+//DrawTextInLine	  GUISTR_STATE_ELLIPSIS
 
 
 
@@ -112,7 +92,7 @@ DrawTextInLine	  GUISTR_STATE_ELLIPSIS
 [1.2] Softkey
 
 // 中间softkey
-MS_MMI_Main/source/mmi_gui/source/win/c/guiwin.c  GUIWIN_SeSoftkeytButtonIconId
+MS_MMI/source/mmi_gui/source/win/c/guiwin.c  GUIWIN_SeSoftkeytButtonIconId
 //	#if defined (MAINLCD_SIZE_128X128) //中间softkey显示黑色
 //	if(button_num == 1) {
 //	}
@@ -120,7 +100,7 @@ MS_MMI_Main/source/mmi_gui/source/win/c/guiwin.c  GUIWIN_SeSoftkeytButtonIconId
 //	#endif
 
 // 中间softkey
-MS_MMI_Main/source/mmi_gui/source/win/c/guiwin.c  GUIWIN_SeSoftkeytButtonTextId
+MS_MMI/source/mmi_gui/source/win/c/guiwin.c  GUIWIN_SeSoftkeytButtonTextId
 //	#if defined (MAINLCD_SIZE_128X128)
 //	if(MIDDLE_BUTTON == button_num) { //中间softkey显示黑色
 //	}
@@ -128,58 +108,67 @@ MS_MMI_Main/source/mmi_gui/source/win/c/guiwin.c  GUIWIN_SeSoftkeytButtonTextId
 //	#endif
 
 // 中间softkey--btn
-MS_MMI_Main/source/mmi_ctrl/source/Softkey/c/ctrlsoftkey.c  void^DrawAllButtons
+MS_MMI/source/mmi_ctrl/source/Softkey/c/ctrlsoftkey.c  void^DrawAllButtons
 //	#if !defined (MAINLCD_SIZE_128X128)  //not show softkey mid
 //    DrawButtonContent(softkey_ptr, MIDDLE_BUTTON);
 //	#endif
 
 // softkey--rect
-MS_MMI_Main/source/mmi_ctrl/source/Softkey/c/ctrlsoftkey.c  void^CalSoftkeyRect
+MS_MMI/source/mmi_ctrl/source/Softkey/c/ctrlsoftkey.c  void^CalSoftkeyRect
 
 
 //
-MS_MMI_Main/source/mmi_app/app/theme/h/mmi_position.h  MMI_FULLSCREEN_SOFTKEY_BAR_HEIGHT
+MS_MMI/source/mmi_app/app/theme/h/mmi_position.h  MMI_FULLSCREEN_SOFTKEY_BAR_HEIGHT
 
 
 //
-MS_MMI_Main/source/mmi_ctrl/source/Softkey/c/ctrlsoftkey.c  void^GUISOFTKEY_Init
+MS_MMI/source/mmi_ctrl/source/Softkey/c/ctrlsoftkey.c  void^GUISOFTKEY_Init
 // type
-MS_MMI_Main\source\mmi_gui\include\guisoftkey.h  GUISOFTKEY_SetTextId
-MS_MMI_Main\source\mmi_gui\include\guisoftkey.h  GUISOFTKEY_SetButtonTextId
-MS_MMI_Main\source\mmi_gui\include\guisoftkey.h  GUISOFTKEY_SetButtonIconId
+MS_MMI\source\mmi_gui\include\guisoftkey.h  GUISOFTKEY_SetTextId
+MS_MMI\source\mmi_gui\include\guisoftkey.h  GUISOFTKEY_SetButtonTextId
+MS_MMI\source\mmi_gui\include\guisoftkey.h  GUISOFTKEY_SetButtonIconId
 
 
 //
-MS_MMI_Main/source/mmi_ctrl/source/Softkey/c/ctrlsoftkey.c  void^DrawSoftkey
+MS_MMI/source/mmi_ctrl/source/Softkey/c/ctrlsoftkey.c  void^DrawSoftkey
 // bg
-MS_MMI_Main\source\mmi_app\app\theme\c\mmitheme_softkey.c  MMITHEME_GetSoftkeyStyle
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_softkey.c  MMITHEME_GetSoftkeyStyle
 
 
 //常见修改
-ms_mmi_main\source\mmi_app\common\c\mmi_setlist_win.c TXT_COMMON_OK
-ms_mmi_main\source\mmi_app\app\theme\c\mmitheme_list.c TXT_COMMON_OK
+MS_MMI\source\mmi_app\common\c\mmi_setlist_win.c TXT_COMMON_OK
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c TXT_COMMON_OK
 
 
 // 软键
-MS_MMI_Main\source\mmi_app\app\theme\c\mmi_theme.c  MMITHEME_GetInvalidTextID
-ms_mmi_main\source\mmi_app\kernel\c\Mmi_resource.c  GetText 11
-ms_mmi_main\source\mmi_app\kernel\c\Mmi_resource.c  MMIRES_GetText	10
+MS_MMI\source\mmi_app\app\theme\c\mmi_theme.c  MMITHEME_GetInvalidTextID
+MS_MMI\source\mmi_app\kernel\c\Mmi_resource.c  GetText 11
+MS_MMI\source\mmi_app\kernel\c\Mmi_resource.c  MMIRES_GetText	10
 //
-ms_mmi_main\source\mmi_app\app\theme\c\Mmi_theme.c  MMITHEME_GetResText  10
+MS_MMI\source\mmi_app\app\theme\c\Mmi_theme.c  MMITHEME_GetResText  10
 //
-ms_mmi_main\source\mmi_gui\source\softkey\c\Guisoftkey.c 
+MS_MMI\source\mmi_gui\source\softkey\c\Guisoftkey.c 
 //
-MS_MMI_Main/source/mmi_ctrl/source/Softkey/c/ctrlsoftkey.c  void^DrawButtonText	   9
-MS_MMI_Main/source/mmi_ctrl/source/Softkey/c/ctrlsoftkey.c  void^DrawButtonContent	  8
-MS_MMI_Main/source/mmi_ctrl/source/Softkey/c/ctrlsoftkey.c  void^DrawAllButtons	   7
-MS_MMI_Main/source/mmi_ctrl/source/Softkey/c/ctrlsoftkey.c  void^DrawSoftkey 	6
+MS_MMI/source/mmi_ctrl/source/Softkey/c/ctrlsoftkey.c  void^DrawButtonText	   9
+MS_MMI/source/mmi_ctrl/source/Softkey/c/ctrlsoftkey.c  void^DrawButtonContent	  8
+MS_MMI/source/mmi_ctrl/source/Softkey/c/ctrlsoftkey.c  void^DrawAllButtons	   7
+MS_MMI/source/mmi_ctrl/source/Softkey/c/ctrlsoftkey.c  void^DrawSoftkey 	6
 //		
-ms_mmi_main\source\mmi_gui\source\win\c\Guiwin.c  GUIWIN_SetSoftkeyTextId    8
+MS_MMI\source\mmi_gui\source\win\c\Guiwin.c  GUIWIN_SetSoftkeyTextId    8
 //	
-ms_mmi_main\source\mmi_app\app\menu\c\Mmimenu_second.c DisplaySecondMenu	 6
-ms_mmi_main\source\mmi_app\app\menu\c\Mmimenu_second.c MMIMENU_SetSoftkey	  7
+MS_MMI\source\mmi_app\app\menu\c\Mmimenu_second.c DisplaySecondMenu	 6
+MS_MMI\source\mmi_app\app\menu\c\Mmimenu_second.c MMIMENU_SetSoftkey	  7
 //	
-ms_mmi_main\source\mmi_gui\source\menu\c\Guimenu.c 	MenuHandleMsg	 5
+MS_MMI\source\mmi_gui\source\menu\c\Guimenu.c 	MenuHandleMsg	 5
+
+// set Font
+GUISOFTKEY_Init
+MMITHEME_GetSoftKeyTextFont
+
+// param
+//	ctrl_id = ((MMI_NOTIFY_T*) param)->src_id;
+//	MMICOMMON_BUTTON_SOFTKEY_LEFT_CTRL_ID
+//	MMICOMMON_BUTTON_SOFTKEY_RIGHT_CTRL_ID
 
 
 	
@@ -191,6 +180,9 @@ ms_mmi_main\source\mmi_gui\source\menu\c\Guimenu.c 	MenuHandleMsg	 5
 
 
 [1.4] statusbar, change
+// statusbar init
+MS_MMI/source/mmi_app/app/idle/c/mainapp.c  MMIAPICOM_StatusAreaInit
+
 //动态创建状态条:
 SBD_MMI_DIALWIN_HAS_STATUSBAR
 // Draw
@@ -198,56 +190,58 @@ DrawStatusBarAllItem
 
 
 // init--pos
-MS_MMI_Main\source\mmi_app\common\c\mmicom_statusarea.c  void^SetStatusAreaInfo
+MS_MMI\source\mmi_app\common\c\mmicom_statusarea.c  void^SetStatusAreaInfo
 
 
 // sim--刷新
-MS_MMI_Main\source\mmi_app\common\c\mmicom_statusarea.c  void^StatusAreaSetSimInfo
+MS_MMI\source\mmi_app\common\c\mmicom_statusarea.c  void^StatusAreaSetSimInfo
+MS_MMI\source\mmi_app\common\h\mmicom_statusarea.h  MMICOM_WIN_ICON_E
+MS_MMI\source\mmi_app\app\idle\h\mmiidle_statusbar.h  MMI_WIN_ICON_E
 
 // idle
 // 电量--刷新
-MS_MMI_Main\source\mmi_app\app\idle\c\mmiidle_statusbar.c   void^MAIN_SetIdleChargeState
+MS_MMI\source\mmi_app\app\idle\c\mmiidle_statusbar.c   void^MAIN_SetIdleChargeState
 // 电量--Level
-MS_MMI_Main\source\mmi_app\app\idle\c\mmiidle_statusbar.c   void^MAIN_SetIdleBatLevel
+MS_MMI\source\mmi_app\app\idle\c\mmiidle_statusbar.c   void^MAIN_SetIdleBatLevel
 // 电量--Level2
-MS_MMI_Main\source\mmi_app\app\idle\c\mmiidle_statusbar.c   void^MAIN_SetIdleDbatLevel
+MS_MMI\source\mmi_app\app\idle\c\mmiidle_statusbar.c   void^MAIN_SetIdleDbatLevel
 //
 //    MMIAPICOM_StatusAreaSetBatLevel(bat_level);
 
 
 // set
 // set--电量--刷新
-MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_phonewin.c  void^UpdateStatusBar
+MS_MMI\source\mmi_app\app\setting\c\mmiset_phonewin.c  void^UpdateStatusBar
 
 
 // 电量--service
-MS_MMI_Main\source\mmi_app\kernel\c\mmimain.c  CHR_SERVICE
-MS_MMI_Main\source\mmi_app\kernel\c\mmimain.c  void^ChargeCallBackFunc
+MS_MMI\source\mmi_app\kernel\c\mmimain.c  CHR_SERVICE
+MS_MMI\source\mmi_app\kernel\c\mmimain.c  void^ChargeCallBackFunc
 // 电量--msg
-MS_MMI_Main\source\mmi_app\app\phone\c\mmiphone.c  void^HandlePsAndRefMsg
-MS_MMI_Main\source\mmi_app\app\phone\c\mmiphone_charge.c   MMI_RESULT_E^MMIPHONE_ChargeHandlePsAndRefMsg
+MS_MMI\source\mmi_app\app\phone\c\mmiphone.c  void^HandlePsAndRefMsg
+MS_MMI\source\mmi_app\app\phone\c\mmiphone_charge.c   MMI_RESULT_E^MMIPHONE_ChargeHandlePsAndRefMsg
 
 
 // ps--open
-MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_phonewin.c   void^MMIAPISET_OpenPowerSettingMode
-MS_MMI_Main\source\mmi_app\app\phone\c\mmiphone_charge.c   920
+MS_MMI\source\mmi_app\app\setting\c\mmiset_phonewin.c   void^MMIAPISET_OpenPowerSettingMode
+MS_MMI\source\mmi_app\app\phone\c\mmiphone_charge.c   920
 // ps--close
-MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_phonewin.c   void^MMIAPISET_SetPowerSavingSetting
-MS_MMI_Main\source\mmi_app\app\phone\c\mmiphone_charge.c   887
+MS_MMI\source\mmi_app\app\setting\c\mmiset_phonewin.c   void^MMIAPISET_SetPowerSavingSetting
+MS_MMI\source\mmi_app\app\phone\c\mmiphone_charge.c   887
 //            power_sav_setting.is_active = FALSE;
 //            MMIAPISET_SetPowerSavingSetting(power_sav_setting);
 //            MMIAPIENVSET_ResetActModeOtherRingSet();
 
 
 // Draw
-MS_MMI_Main\source\mmi_ctrl\source\Statusbar\c\ctrlstatusbar.c  DrawStatusBarAllItem
+MS_MMI\source\mmi_ctrl\source\Statusbar\c\ctrlstatusbar.c  DrawStatusBarAllItem
 
 
 
 
 [1.5] Theme
 // 
-MS_MMI_Main/source/mmi_app/app/theme/c/mmitheme_list.c  4343
+MS_MMI/source/mmi_app/app/theme/c/mmitheme_list.c  4343
 
 
 RECORD 选择框字体:
@@ -275,16 +269,16 @@ THEMELIST_GetStyle
 	
 
 // cc---3方通话
-ms_mmi_main\source\mmi_app\app\theme\c\mmitheme_list.c   s_item_style_no_initialtext_text_and_text_with_mask_ms 
-ms_mmi_main\source\mmi_app\app\theme\c\mmitheme_list.c   s_item_style_no_bigicon_text_and_text_with_mask_ms
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c   s_item_style_no_initialtext_text_and_text_with_mask_ms 
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c   s_item_style_no_bigicon_text_and_text_with_mask_ms
 // cc---紧急拨号字体
-ms_mmi_main\source\mmi_app\app\theme\c\mmitheme_list.c   s_item_style_2_text_text
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c   s_item_style_2_text_text
 // ff---video delete 
-ms_mmi_main\source\mmi_app\app\theme\c\mmitheme_list.c   s_item_style_multi_choice_picker_two_line_bigicon_text_and_text
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c   s_item_style_multi_choice_picker_two_line_bigicon_text_and_text
 // sms----未读/已读-短信
-ms_mmi_main\source\mmi_app\app\theme\c\mmitheme_list.c   s_item_style_2_2text_and_text_icon_ms
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c   s_item_style_2_2text_and_text_icon_ms
 // cl---通话记录
-ms_mmi_main\source\mmi_app\app\theme\c\mmitheme_list.c   s_item_style_2_text_icon_and_text_ms
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c   s_item_style_2_text_icon_and_text_ms
 
 
 
@@ -295,46 +289,46 @@ ms_mmi_main\source\mmi_app\app\theme\c\mmitheme_list.c   s_item_style_2_text_ico
 
 
 [1.6] pubWin  Alert
-OpenAlertWin
+//OpenAlertWin
 
 // 去icon
-MS_MMI_Main\source\mmi_app\common\c\mmi_pubwin.c  5882
+MS_MMI\source\mmi_app\common\c\mmi_pubwin.c  5882
 
 // 去 softkey
-MS_MMI_Main\source\mmi_app\common\c\mmi_pubwin.c  void^MMIPUBCreatSoftkeyCtrl
+MS_MMI\source\mmi_app\common\c\mmi_pubwin.c  void^MMIPUBCreatSoftkeyCtrl
 //    if(MMIPUB_SOFTKEY_NONE == win_info_ptr->softkey_style)
 //    {
 //        return;
 //    }
 
 // 居中bg
-MS_MMI_Main\source\mmi_app\common\c\mmi_pubwin.c  bg_rect.bottom^=
+MS_MMI\source\mmi_app\common\c\mmi_pubwin.c  bg_rect.bottom^=
 //	#if !defined (MAINLCD_SIZE_128X128) //pubwin居中
 //		bg_rect.bottom = bg_rect.bottom -(bg_rect.bottom - inter_bg_rect.bottom);
 //	#endif
 
 
 // 间距
-MS_MMI_Main\source\mmi_app\app\theme\c\mmitheme_pubwin.c  MMIPUB_TITLE_V_MARGIN_TOP
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_pubwin.c  MMIPUB_TITLE_V_MARGIN_TOP
 
 
 //弹出窗:
-DisplayTipsPtr
-
-MMIPUB_OpenAlertWarningWin(TXT_INSERT_SIM);
+//DisplayTipsPtr
+//
+//MMIPUB_OpenAlertWarningWin(TXT_INSERT_SIM);
 
 //提示窗pub：
-MMIPUBLayout
-MMIPUBDisplayWin
-DisplayPubWinText
-DrawTextInRect
-DrawTextInLine
-SPMLAPI_DrawText
+//	MMIPUBLayout
+//	MMIPUBDisplayWin
+//	DisplayPubWinText
+//	DrawTextInRect
+//	DrawTextInLine
+//	SPMLAPI_DrawText
 
 
 //测试Alert：
-MMIAPICL_OpenCallsListWindow(MMICL_CALL_DIALED);
-MMIPUB_OpenWaitWin
+//	MMIAPICL_OpenCallsListWindow(MMICL_CALL_DIALED);
+//	MMIPUB_OpenWaitWin
 //	Layout
 MS_MMI\source\mmi_app\common\c\mmi_pubwin.c void^MMIPUBLayout
 MS_MMI\source\mmi_app\common\c\mmi_pubwin.c 4097
@@ -343,30 +337,36 @@ MS_MMI\source\mmi_app\common\c\mmi_pubwin.c 4193 bg_rect
 MS_MMI\source\mmi_app\common\c\mmi_pubwin.c 4224 alert_rect
 MS_MMI\source\mmi_app\common\c\mmi_pubwin.c 4263 title_rect
 
+//
+//关闭询问窗口
+//MMIPUB_CloseQuerytWin(PNULL);
+//关闭密码错误提示
+//MMIPUB_CloseAlertWin();
+
+
+// 去掉softkey
+//MMIPUB_SOFTKEY_CUSTOMER  MMIPUB_SOFTKEY_ONE
 
 
 
+//	MMIPUB_OpenAlertWinByTextId(
+//		 PNULL, 
+//		 TXT_COMMON_LOCK_SUCCESS, 
+//		 TXT_NULL,
+//		 IMAGE_PUBWIN_SUCCESS,
+//		 PNULL, 
+//		 PNULL,
+//		 MMIPUB_SOFTKEY_ONE,
+//		 PNULL);
 
-
-
-MMIPUB_OpenAlertWinByTextId(
-	 PNULL, 
-	 TXT_COMMON_LOCK_SUCCESS, 
-	 TXT_NULL,
-	 IMAGE_PUBWIN_SUCCESS,
-	 PNULL, 
-	 PNULL,
-	 MMIPUB_SOFTKEY_ONE,
-	 PNULL);
-
-HandleDefaultWinMsg(MMIPUB_WAIT_ANIM_CTRL_ID)
+//HandleDefaultWinMsg(MMIPUB_WAIT_ANIM_CTRL_ID)
 
 //wait pub
-DisplayPubWinText
+//DisplayPubWinText
 
 
 //	提示
-MMITHEME_GetTipsStrInfo
+//MMITHEME_GetTipsStrInfo
 
 // pop--格式化
 MS_MMI/source/mmi_app/app/fmm/c/mmifmm_sd.c  MMIPUB_OpenProgressWinByTextId  MMIPUB_SOFTKEY_ONE
@@ -374,43 +374,54 @@ MS_MMI/source/mmi_app/app/fmm/c/mmifmm_sd.c  MMIPUB_OpenProgressWinByTextId  MMI
 MS_MMI/source/mmi_app/app/connection/c/mmiconn_manager_wintab.c
 
 
-[1.7] nv
-//
-MMISET_ResetFactorySetting()
-MMISET_CleanUserData()
+[1.7] form
+//form pos
+//	GUIFORM_GetDisplayMaxWidth
+//form cal
+//	CalculateChildWidthHeight
+//	CalculateChildHeight 		++++
+////form cal item
+//	LabelCtrlGetHeightByWidth
+//	EditCtrlGetHeightByWidth
+//	GetSetListHeight
+//	ButtonCtrlGetHeightByWidth
 
-//
-MMIAPIENG_RegNv
 
-// nv
-HW_NV_PARA\8910FF\W20.36.2\WA03U
+// form--Calculate
+MS_MMI\source\mmi_ctrl\source\Form\c\ctrlform_calc.c  CalculateChildHeight
+MS_MMI\source\mmi_ctrl\source\Form\c\ctrlform_calc.c  690
+//	if(17 == child_ptr->height || 20 < child_ptr->height && 35> child_ptr->height) 
+//	{
+//		int a = child_ptr->height;
+//		a += 0;
+//		a += 0;
+//	}
+
+
+// form--edit--getH
+MS_MMI\source\mmi_ctrl\source\editbox\c\ctrlbaseedit.c  BaseEditCtrlGetHeightByWidth
+MS_MMI\source\mmi_ctrl\source\editbox\c\ctrlbaseedit.c  BASEEDIT_EXTRA_AREA
+
+//update unit form and all child
+//	GUIFROM_Display(FALSE,TRUE,form_ctrl_ptr);
+//set child rect
+//	GUIFORM_SetChildRect(TRUE,form_ctrl_ptr);
+
+
+// 
+//CTRLFORM_SetChildSpace
 
 
 
 [1.8] Rect
 //
-MMITHEME_GetFullScreenBothRect
-//
-MMITHEME_GetStatusBarHeight
+//MMITHEME_GetFullScreenBothRect
+////
+//MMITHEME_GetStatusBarHeight
 
 
 
-[1.9] timer
-//	LOCAL uint8 g_test_timer  = 0;
-//	LOCAL void Test_Callback(uint8 timer_id, uint32 param)
-//	{
-//	    MMK_StopTimer(0);
-//	}
-//	PUBLIC void MMIMANMENU_EnterSetting(uint32 param1, uint32 param2)
-//	{
-//		g_test_timer = MMK_CreateTimerCallback(5*1000, Test_Callback, PNULL, FALSE);
-//	    MMIAPIMENU_EnterSetting();
-//	}
-
-
-// 背光, 上锁
-MS_MMI/source/mmi_app/app/setting/c/mmiset_func.c  MMIAPISET_GetAutoBoardKeyMS
-MS_MMI\source\mmi_app\kernel\c\mmi_default.c  void^MMIDEFAULT_StartAutoKeylockTimer
+[1.9] 
 
 
 
@@ -438,93 +449,102 @@ MS_MMI/source/resource/mmi_res_prj_def.h
 common/export/inc/nv_item_id.h
 
 
+//
+MS_MMI/source/mmi_app/app/phone/c/mmiphone_onoff.c  MMISET_RING_TYPE_POWER
+//
+MS_MMI/source/resource/mmi_res_prj_def.h R_POWER_1
+
+
+
+
+
 [1.12] title
 // title bg:
-IMAGE_TITLE_BAR
-
+//	IMAGE_TITLE_BAR
+//
+//	//
+//	//
+//	IMAGE_TITLE_BAR
+//	IMAGE_CONTROL_TAB_DEFAULT
+//	IMAGE_TAB_BG
+//	// sms--box--tab
+//	MMI_TAB_HEIGHT
 //
 //
-IMAGE_TITLE_BAR
-IMAGE_CONTROL_TAB_DEFAULT
-IMAGE_TAB_BG
-// sms--box--tab
-MMI_TAB_HEIGHT
-
-
-//	  标题
-Mmi_resource.c (MS_MMI\source\mmi_app\kernel\c)
-    GetText 11
-    MMIRES_GetText  10
-Mmi_theme.c (MS_MMI\source\mmi_app\app\theme\c)
-    MMITHEME_GetResText   9
-Guititle.c (MS_MMI\source\mmi_gui\source\title\c)
-    GetTitleText    8
-    DisplayTitleText 7
-    DisplayTitle    6
-    TitleHandleMsg 5
-Cafcontrol.h (caf\template\include)
-    IGUICTRL_HandleEvent    4
-MMK_RunCtrlProc 4
-
-
-//    表单标题
-Mmi_resource.c (MS_MMI\source\mmi_app\kernel\c)
-    GetText 11
-    MMIRES_GetText  10
-Mmi_modu_main.c (MS_MMI\source\mmi_app\kernel\c)
-    MMI_GetLabelTextByLang   9
-Mmi_theme.c (MS_MMI\source\mmi_app\app\theme\c)
-        MMITHEME_GetLabelTextByLang   9
-Guimenu.c (MS_MMI\source\mmi_gui\source\menu\c)
-        GUIMENU_GetTitleText    8
-Mmimenu_second.c (MS_MMI\source\mmi_app\app\menu\c)
-    SetSecondTitle    7
-    DisplaySecondMenu    6
-Guimenu.c (MS_MMI\source\mmi_gui\source\menu\c)
-    MenuHandleMsg    5
-
-
-// Text 列表项
-MS_MMI\source\mmi_app\kernel\c\Mmi_resource.c 
-	GetText 11
-	MMIRES_GetText	10
-MS_MMI\source\mmi_app\kernel\c\Mmi_modu_main.c 
-	MMI_GetLabelTextByLang	 9
-MS_MMI\source\mmi_app\app\theme\c\Mmi_theme.c 
-		MMITHEME_GetLabelTextByLang   9
-MS_MMI\source\mmi_gui\source\menu\c\Guimenu.c 
-	GUIMENU_GetItem    8
-MS_MMI\source\mmi_app\app\menu\c\Mmimenu_second.c 
-
-DisplaySecMenuItemText	  7
-DisplaySecMenuItem	   6
-DisplayOneItem	   6
-DisplaySecMenuAllItem	  6
-		DisplaySecoMS_MMI\source\mmi_gui\source\menu\c\Guimenu.c 
-ndMenu	 6
-	MenuHandleMsg	 5
+//	//	  标题
+//	Mmi_resource.c (MS_MMI\source\mmi_app\kernel\c)
+//	    GetText 11
+//	    MMIRES_GetText  10
+//	Mmi_theme.c (MS_MMI\source\mmi_app\app\theme\c)
+//	    MMITHEME_GetResText   9
+//	Guititle.c (MS_MMI\source\mmi_gui\source\title\c)
+//	    GetTitleText    8
+//	    DisplayTitleText 7
+//	    DisplayTitle    6
+//	    TitleHandleMsg 5
+//	Cafcontrol.h (caf\template\include)
+//	    IGUICTRL_HandleEvent    4
+//	MMK_RunCtrlProc 4
+//
+//
+//	//    表单标题
+//	Mmi_resource.c (MS_MMI\source\mmi_app\kernel\c)
+//	    GetText 11
+//	    MMIRES_GetText  10
+//	Mmi_modu_main.c (MS_MMI\source\mmi_app\kernel\c)
+//	    MMI_GetLabelTextByLang   9
+//	Mmi_theme.c (MS_MMI\source\mmi_app\app\theme\c)
+//	        MMITHEME_GetLabelTextByLang   9
+//	Guimenu.c (MS_MMI\source\mmi_gui\source\menu\c)
+//	        GUIMENU_GetTitleText    8
+//	Mmimenu_second.c (MS_MMI\source\mmi_app\app\menu\c)
+//	    SetSecondTitle    7
+//	    DisplaySecondMenu    6
+//	Guimenu.c (MS_MMI\source\mmi_gui\source\menu\c)
+//	    MenuHandleMsg    5
+//
+//
+//	// Text 列表项
+//	MS_MMI\source\mmi_app\kernel\c\Mmi_resource.c 
+//		GetText 11
+//		MMIRES_GetText	10
+//	MS_MMI\source\mmi_app\kernel\c\Mmi_modu_main.c 
+//		MMI_GetLabelTextByLang	 9
+//	MS_MMI\source\mmi_app\app\theme\c\Mmi_theme.c 
+//			MMITHEME_GetLabelTextByLang   9
+//	MS_MMI\source\mmi_gui\source\menu\c\Guimenu.c 
+//		GUIMENU_GetItem    8
+//	MS_MMI\source\mmi_app\app\menu\c\Mmimenu_second.c 
+//
+//	DisplaySecMenuItemText	  7
+//	DisplaySecMenuItem	   6
+//	DisplayOneItem	   6
+//	DisplaySecMenuAllItem	  6
+//			DisplaySecoMS_MMI\source\mmi_gui\source\menu\c\Guimenu.c 
+//	ndMenu	 6
+//		MenuHandleMsg	 5
 
 
 
 
 [1.13] anim
 //
-TYPEMNG_Register
-//
-BaseCtrlConstruct
-AnimCtrlConstruct
-StatusbarCtrlConstruct
-MainmenuCtrlConstruct
-btn
-softkey
-ProgressBar
-TitleCtrlConstruct
-MenuConstruct
-ListCtrlConstruct
-FormConstruct
-BaseEditCtrlConstruct
-BaseFlexCtrlConstruct
-TextEditCtrlConstruct
+//	TYPEMNG_Register
+//	//
+//	BaseCtrlConstruct
+//	AnimCtrlConstruct
+//	StatusbarCtrlConstruct
+//	MainmenuCtrlConstruct
+//	btn
+//	softkey
+//	ProgressBar
+//	TitleCtrlConstruct
+//	MenuConstruct
+//	ListCtrlConstruct
+//	FormConstruct
+//	BaseEditCtrlConstruct
+//	BaseFlexCtrlConstruct
+//	TextEditCtrlConstruct
 
 
 
@@ -557,14 +577,18 @@ MS_MMI/source/mmi_app/app/idle/c/mainapp.c  MAINMENU_REMOVE_KEY0_STAR_HASH_DIAL
 //	    GUIWIN_UpdateStb();
 
 // key 0--系统bat
-MS_MMI\source\mmi_app\app\idle\c\mmiidle_mstyle.c  4286
+IdleWin_HandleMsg
+MS_MMI\source\mmi_app\app\idle\c\mmiidle_mstyle.c  4489
+MS_MMI\source\mmi_app\app\idle\c\mmiidle_mstyle.c  case^MSG_KEYUP_0
+// 107
+MS_MMI\source\mmi_app\app\idle\c\mainapp.c  case^MSG_KEYDOWN_1
 //
 //    case MSG_KEYUP_0:
 //		// 更新电量
 //		MMIPHONE_ChargeHandlePsAndRefMsg(PNULL,    CHR_MSG_CAP_IND,   PNULL);
 //        break;
 //    case MSG_KEYUP_1:
-//		// 充电开
+//		// 充电开(关机充电start)
 //		MMIPHONE_ChargeHandlePsAndRefMsg(PNULL,    CHR_MSG_CHARGE_START_IND,   PNULL);
 //        break;
 //    case MSG_KEYUP_2:
@@ -572,7 +596,7 @@ MS_MMI\source\mmi_app\app\idle\c\mmiidle_mstyle.c  4286
 //		MMIPHONE_ChargeHandlePsAndRefMsg(PNULL,    CHR_MSG_CHARGE_END_IND,   PNULL);
 //        break;
 //    case MSG_KEYUP_3:
-//		// 充电完
+//		// 充电完(关机充电ok)
 //		MMIPHONE_ChargeHandlePsAndRefMsg(PNULL,    CHR_MSG_CHARGE_FINISH_IND,   PNULL);
 //        break;
 //		
@@ -685,6 +709,9 @@ MS_MMI\source\winsimulator_tp\skin
 
 [1.18] Lcd
 
+//		GUI_RECT_T	full_rect = {0,0,10,10};
+//		GUI_COLOR_T conv_value = 0x33ff;
+//      GUI_LCD_DEV_INFO    lcd_dev_info = {GUI_MAIN_LCD_ID,GUI_BLOCK_MAIN};
 //    for (i = 0; i < img_h; i++)
 //    {
 //	    for (j = 0; j < img_w; j++)
@@ -706,21 +733,225 @@ MS_MMI\source\winsimulator_tp\skin
 
 
 
-[1.19] 
+[1.19] sublcd
+//
+MMIAPIPHONE_GetBatCapacity
+// Bat
+MMISUB_GetBatteryLevel
+// sim
+MS_MMI\source\mmi_app\app\idle\c\mmi_subwintab.c  void^DisplaySubLcdIconOneLine
+// show(mp3,fm,sms,call)
+MS_MMI\source\mmi_app\app\idle\c\mmi_subwintab.c  void^MMISUB_UpdateDisplaySubLcd
 
 
 
 
-[1.20] 
+[1.20] font
+// font
+MS_MMI/source/mmi_service/export/inc/mmi_custom_define.h  MMI_DEFAULT_NORMAL_FONT
+
+
+open tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe 
+MS_MMI\source\resource\Common\FONT\LANG_FONT_LATIN_H9.lib
+MS_MMI\source\resource\Common\FONT\
+
+// 输入法字体
+MS_MMI/source/mmi_app/app/theme/c/mmitheme_edit.c  theme_ptr->info_font
+
+
+// Height--label
+MS_MMI\source\mmi_ctrl\source\Label\c\ctrllabel.c  LabelCtrlGetHeightByWidth
+
+// set font
+MS_MMI\source\mmi_ctrl\source\editbox\c\ctrlbaseflex.c  BaseFlexCtrlSetFont
+
+
+[1.21] list
+
+// id1= 19 ~ 21
+MS_MMI\source\mmi_kernel\include\mmitheme_list.h  GUIITEM_LAYOUT_ONE_LINE_CHECK
+// id2= 20 ~ 25
+MS_MMI\source\mmi_kernel\include\mmitheme_list.h  GUIITEM_STYLE_ONE_LINE_CHECK
+// layout
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c  s_item_layout_1line_check_icon
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c  s_item_layout_1line_focus_check_icon
+// layout id= 19 ~ 21
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c  &s_item_layout_1line_check
+// reg id= 20 ~ 25(匹配id1)
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c  s_item_style_table 
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c  2561
+// state id3= 20 ~ 25
+//   custom+radio 一定要设置 GUIITEM_STYLE_STATE_RADIO
+//	 MMITHEME_CustomListItemStyleReg(ctrl_id, &my_style, GUIITEM_STYLE_STATE_RADIO);
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c s_item_style_state_table
+	
+// 其他错位
+MS_MMI\source\mmi_kernel\include\mmitheme_list.h  GUIITEM_STYLE_ONE_LINE_ICON_TEXT_ICON_EXT
+
+// HL image
+MS_MMI/source/mmi_gui/source/listbox/c/guilistbox.c  GUIITEM_DATA_IMAGE_ID
+
+//softkey
+GUILIST_SetOwnSofterKey( ctrl_id, TRUE );
+
+
+// draw
+MS_MMI\source\mmi_ctrl\source\ListBox\c\ctrllistbox.c  GUIITEM_STATE_HAS_NUM
+MS_MMI\source\mmi_ctrl\source\ListBox\c\ctrllist_item.c  GUIITEM_STATE_HAS_NUM
+
+
+### list--位置
+MS_MMI/source/mmi_app/app/theme/c/mmitheme_list.c  s_item_style_2_text_text_2_ms
+//    { MMI_LIST_TEXT_LEFT_SPACE_MS, MMI_LIST_ITEM_TOP_MARGIN_MS, MMI_LIST_ITEM_RIGHT_MS, MMI_LIST_DOUBLE_LINE_ITEM2_HEIGHT_MS/2 - 1},    /* 1 */
+//    { MMI_LIST_TEXT_LEFT_SPACE_MS, MMI_LIST_ITEM_TOP_MARGIN_MS, MMI_LIST_ITEM_RIGHT_MS, MMI_LIST_DOUBLE_LINE_ITEM2_HEIGHT_MS/2 - 1},    /* 1 */
+
+//    { MMI_LIST_TEXT_LEFT_SPACE_MS, MMI_LIST_DOUBLE_LINE_ITEM2_HEIGHT_MS/2, MMI_LIST_ITEM_RIGHT_MS, MMI_LIST_DOUBLE_LINE_ITEM2_HEIGHT_MS - MMI_LIST_ITEM_BOTTOM_MARGIN_MS},     /* 2 */
+//    { MMI_LIST_TEXT_LEFT_SPACE_MS, MMI_LIST_DOUBLE_LINE_ITEM2_HEIGHT_MS/2, MMI_LIST_ITEM_RIGHT_MS, MMI_LIST_DOUBLE_LINE_ITEM2_HEIGHT_MS - MMI_LIST_ITEM_BOTTOM_MARGIN_MS},     /* 2 */
+
+MS_MMI/source/mmi_ctrl/source/ListBox/c/ctrllistbox.c  end_item_bottom_margin
+//    list_ctrl_ptr->end_item_bottom_margin = 6;
+
+
+### list--add icon
+MS_MMI/source/mmi_app/app/setting/c/mmiset_phonewin.c  5824
+//	#if defined (MAINLCD_SIZE_128X128)
+//		item_t.item_style = GUIITEM_STYLE_ONE_LINE_NUMBER_TEXT;
+//	#else
+//    	item_t.item_style    = GUIITEM_STYLE_ONE_LINE_TEXT;
+//	#endif
+
+//    AppendPdaPhoneSettingsItem1Line(ctrl_id, TXT_COMMON_SETTING_AS, IMAGE_NULL, ID_SET_CUSTOM);
+//    AppendPdaPhoneSettingsItem1Line(ctrl_id, TXT_SETTINGS_ENVIONMENT, IMAGE_NULL, ID_SETTINGS_ENVIONMENT);
+//    AppendPdaPhoneSettingsItem1Line(ctrl_id, TXT_SET_PHONE, IMAGE_NULL, ID_SETTINGS_PHONE);
+//    AppendPdaPhoneSettingsItem1Line(ctrl_id, TXT_COMM_SECURITY_SETTING, IMAGE_NULL, ID_SETTINGS_SECURITY);
+//    AppendPdaPhoneSettingsItem1Line(ctrl_id, TXT_COMMON_RESTORE_FACTORY_SETTINGS, IMAGE_NULL, ID_SET_RESET_FACTORY);
+
+
+MS_MMI/source/mmi_ctrl/source/ListBox/c/ctrllistbox.c  CTRLLIST_AppendItem( )
+//  if(item_ptr->state & GUIITEM_STATE_HAS_NUM) {
+//		list_ctrl_ptr->show_num = TRUE;
+//	}
+//	else {
+//		list_ctrl_ptr->show_num = FALSE;
+//	}
+
+
+// list--check
+LIST_GetSelectIconId
+// list--check--pos--init
+MS_MMI\source\mmi_ctrl\source\ListBox\c\ctrllistbox.c  mark_left_margin
+MS_MMI/source/mmi_app/app/theme/c/mmitheme_list.c  tag_width
+// list--check--pos--set
+MS_MMI\source\mmi_ctrl\source\ListBox\c\ctrllist_item.c  LIST_ResetItemDisp
+// list--check--pos--draw
+MS_MMI\source\mmi_ctrl\source\ListBox\c\ctrllistbox.c  ListDrawItem
 
 
 
 
+[1.22] height
+//
+MS_MMI/source/mmi_app/app/accessory/c/mmialarm.c
+// 
+// line
+MS_MMI/source/mmi_app/app/accessory/h/mmiacc_event.h  CHILD_FORM_BUTTON_HIGHT
+MS_MMI/source/mmi_app/app/theme/c/mmitheme_edit.c  MMITHEME_EDIT_MARGIN_TB_SPACE
+MS_MMI/source/mmi_app/app/theme/c/mmitheme_form.c  MMITHEME_FORM_PADDING
+MS_MMI/source/mmi_app/app/theme/c/mmitheme_label.c  MMITHEME_LABEL_MARGIN_TB_SPACE
+// 
+MS_MMI/source/mmi_app/app/theme/c/mmitheme_richtext.c  RICHTEXT_TEXT_LINE_SPACE
+// list
+MS_MMI/source/mmi_app/app/theme/h/mmi_position.h  MMI_LIST_ITEM_RIGHT_MS
+MS_MMI/source/mmi_app/app/theme/h/mmi_position.h  633
+// form--label 
+MS_MMI/source/mmi_ctrl/source/Label/c/ctrllabel.c  CTRLLABEL_SetMargin
+// form--edit 
+MS_MMI/source/mmi_ctrl/source/editbox/c/ctrlbaseedit.c  BASEEDIT_EXTRA_AREA
+// form--edit(im,pen)
+MS_MMI/source/mmi_ctrl/source/editbox/c/ctrlbaseedit_internal.c  BASEEDIT_DisplayEditExtraArea
+// form--edit(画边框前)
+MS_MMI/source/mmi_ctrl/source/editbox/c/ctrlbaseedit_internal.c  GUI_RECT_T^BASEEDIT_GetClientRect
+MS_MMI\source\mmi_ctrl\source\editbox\c\ctrlbaseflex_display.c  344
+// 滚动条
+MS_MMI/source/mmi_kernel/include/mmitheme_pos.h  MMITHEME_SLIDEWIN_SCROLLBAR_WIDTH
+MS_MMI\source\mmi_app\app\theme\c\mmitheme_prgbox.c  MMITHEME_GetSlideScrollBarWidth
+	
+
+
+
+//BASEEDIT_DisplayBg
+//
+//GUI_DisplayBorder
+////
+//电话本
+
+
+[1.23] edit, im, pen
+//
+//	GUIEDIT_PermitBorder(ctrl_id, FALSE);
+//	//GUIEDIT_SetDispImIcon(ctrl_id,&is_disp_im_icon,&is_disp_num_info);
+//	GUIEDIT_SetStyle(ctrl_id,GUIEDIT_STYLE_MULTI_DYN_DOWN);
+//	GUIEDIT_SetFont(ctrl_id, SONG_FONT_60);
+
+
+
+//	BOOLEAN           is_Permit = FALSE;
+//	CTRLFORM_PermitChildFont(MMISET_SOS_MSG_CONTENT_EDIT_FORM_CTRL_ID,is_Permit);
+//	CTRLFORM_PermitChildFont(MMISET_SOS_MSG_CONTENT_EDIT_CTRL_ID, is_Permit);
+
+//	GUI_FONT_ALL_T FONT_ALL1 = {0};
+//	FONT_ALL1.font = CAF_FONT_50;
+//	FONT_ALL1.color = MMI_BLACK_COLOR;
+//	CTRLFORM_SetChildTheme(MMISET_SOS_MSG_CONTENT_EDIT_CTRL_ID, PNULL, PNULL, &FONT_ALL1);
+
+
+
+// im + pen
+MS_MMI/source/mmi_ctrl/source/editbox/c/ctrlbaseflex_display.c  BaseFlexCtrlDisplayLeftNum
+// im + pen--display
+MS_MMI/source/mmi_ctrl/source/editbox/c/ctrlbaseedit_internal.c  BASEEDIT_DisplayEditExtraArea
+MS_MMI/source/mmi_ctrl/source/editbox/c/ctrlbaseedit_internal.c  721
+// im + pen--MSG
+MS_MMI\source\mmi_ctrl\source\editbox\c\ctrllistedit.c  MSG_NOTIFY_IM_COMMIT
+
+
+//Im
+//Initialize
 
 
 
 
+[1.24] color
+//
+//MMITHEME_GetAccentColorByOffset(MMITHEME_OFFSET_COLOR_DEFAULT)
 
+//
+//   GUI_FONT_T font        = MMI_DEFAULT_NORMAL_FONT;
+//   GUI_COLOR_T font_color = MMI_BLACK_COLOR;
+//   GUITEXT_SetFont(MMIENG_TEXTBOX1_CTRL_ID,&font,&font_color);
+
+//
+//   GUILABEL_SetFont(MMIENG_UITEST_LABEL_CTRL_ID, CUSTOM_UITEST_FONT, CUSTOM_UITEST_COLOR);
+
+
+
+[1.25] label
+// label
+MS_MMI\source\mmi_ctrl\source\Label\c\ctrllabel.c  LabelDrawString
+//
+// alpha
+//	CTRLLIST_SetItemContentOpacityFontColor
+//	//
+//	// draw
+//	LabelDrawBg
+//	// bg-custom
+//	CTRLLABEL_SetBg
+//	// bg-form
+//	LabelCtrlSetBg
+//	CTRLFORM_PermitChildBg(MMIMP3_TITLE_FORM_CTRL_ID, FALSE);
+
+
+[1.26] 
 
 
 [2.1] win fun.
@@ -741,7 +972,7 @@ GUI_DisplayBg
 // win
 MMK_CreateWin
 MMK_CloseWin
-MMK_CreateChildWin (MMIFMM_MAIN_WIN_ID, (uint32*) MMIFMM_UDISK_CHILD_WIN_TAB, );
+MMK_CreateChildWin (, , );
 
 // list
 GUILIST_AppendItem
@@ -985,6 +1216,19 @@ HandlePinInputExceptPhone
 
 
 [2.8] sms
+// Enter
+MS_MMI\source\mmi_app\app\sms\c\mmisms_mainmenuwin.c  MMISMS_EnterSMSMainMenuWin
+// Main
+MS_MMI\source\mmi_app\app\sms\c\mmisms_mainmenuwin.c  HandleSmsMainMenuWinMsg
+// option
+MS_MMI\source\mmi_app\app\sms\c\mmisms_editsmswin.c  HandleEditMenuWinMsg
+// option--save  APP_MN_SMS_MEM_FULL_IND
+MS_MMI\source\mmi_app\app\sms\c\mmisms_editsmswin.c  EditSMSWin_SaveSMS
+
+### 来短信
+MS_MMI\source\mmi_app\app\sms\c\mmismsapp_main.c  MMI_RESULT_E^HandlePsMsg
+MS_MMI\source\mmi_app\app\sms\c\mmismsapp_main.c  case^APP_MN_SMS_IND
+
 //
 mmismsapp_wintab.c
 
@@ -1076,6 +1320,8 @@ MS_MMI\source\mmi_app\app\cc\c\mmicc_wintab_custom.c  MMICC_STATUS_WIN_ID
 MS_MMI\source\mmi_app\app\cc\c\mmicc_wintab_custom.c 20008
 
 
+// 流程--接听
+MS_MMI\source\mmi_app\app\cc\c\mmicc_main.c  MSG_KEYUP_FLIP  CCApplet_HandleEvent
 
 // 112
 MS_MMI\source\mmi_app\app\cc\c\mmicc_wintab_custom.c  MMICC_MENU_EMERGENCY_OPT_WIN_TAB  
@@ -1155,16 +1401,40 @@ InitPdaCallLogListCtrl        CallLog
 
 
 [2.11] camera
-//
-拍照
-HandleCameraWinMsg
-//
-//option 
-MS_MMI\source\mmi_app\app\camera\c\Mmidc_osd_option.c  MMIDC_OpenVideoOption
-
-
 // Win
 MS_MMI\source\mmi_app\app\camera\c\mmidc_main_wintab.c  MMI_RESULT_E^HandleCameraWinMsg
+// softkey
+MS_MMI\source\mmi_app\app\camera\c\mmidc_full_osd_display.c  MMIDC_DisplaySettingTip
+MS_MMI\source\mmi_app\app\camera\c\mmidc_full_osd_display.c  void^MMIDC_DisplayString
+// sizelist
+MS_MMI\source\mmi_app\app\camera\c\mmidc_full_osd_display.c  DisplayIconString
+MS_MMI\source\mmi_app\app\camera\c\mmidc_guiiconbar.c  DisplayIconSize
+// Show
+MS_MMI\source\mmi_app\app\camera\c\mmidc_full_osd_display.c  ShowAllOSD
+
+
+//option 
+MS_MMI\source\mmi_app\app\camera\c\Mmidc_osd_option.c  MMIDC_OpenVideoOption
+// menu
+//		InitRunningParameter
+//		MMIDC_OpenPhotoOption
+//		MMIDC_OpenVideoOption
+//		MenuDisplayAndTP
+//		OpenDCModeMenu
+// switch
+//		SetVideoMode
+//		SetPhotoMode
+
+// key
+MS_MMI\source\mmi_app\app\camera\c\mmidc_main_wintab.c  KeyFunction
+//		LSDCPreview
+//		LSDVPreview
+//		LeftDCPreview
+//		LeftDVPreview
+//		RightDCPreview
+//		RightDVPreview
+//DC
+//		GetPhonePhotoSizeList
 // LCD_ANGLE_90
 MS_MMI\source\mmi_app\app\camera\c\mmidc_main_wintab.c  755
 MS_MMI\source\mmi_app\app\camera\c\mmidc_setting.c  3682
@@ -1232,42 +1502,18 @@ MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c IMAGE_RECORD_BG_ANIM_FRAME
 MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c IMAGE_RECORD_PLAY_BTN_UNSEL  
 
 
-//draw
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 2137 soft
-//status
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 954	web
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 2994	canel + Alert
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 4100	stop
-//重新播放+
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 4088	ok
-//canel + query
-//canel + close
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 995
-//red + query
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 1032
-//timeout 
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 1067
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 3567
-
-
-
-//main
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 867
-//opt
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 3622
-//set
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 6842
-//file
-MS_MMI\source\mmi_app\app\record\c\mmirecord.c 2084  ++ path
-
-//save
-MS_MMI\source\mmi_app\app\record\c\mmirecord.c 865
 
 
 
 
 [2.14] fm
-item:mult,mmifm_wintab.c
+//Display:
+MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  void^DisplayMainWindow
+//Record
+MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleFmRecordMsg
+MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleFMCustomRecordAction
+//Record test
+MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleFMCustomRecordActionTest
 
 
 //opt
@@ -1287,13 +1533,6 @@ MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleCustomEditBoxW
 // file: Music/FM Radio clips/Radio___J-001.wav
 
 
-//Display:
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  void^^DisplayMainWindow
-//Record
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleFmRecordMsg
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleFMCustomRecordAction
-//Record test
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleFMCustomRecordActionTest
 	
 
 	
@@ -1370,6 +1609,8 @@ MS_MMI\source\mmi_app\app\audioplayer\c\mmiapwin_main_mini.c  HandleMiniDefaultW
 MS_MMI\source\mmi_app\app\audioplayer\c\mmiapwin_main_mini.c  MMIMP3_PLAY_WIN_TAB_V
 // enter--pda
 MS_MMI\source\mmi_app\app\audioplayer\c\mmiapwin_main_pda.c  HandlePDADefaultWinMsg
+// enter--play/pause
+MS_MMI\source\mmi_app\app\audioplayer\c\mmiapwin_common.c  void^MMIMP3_DisplayButton
 
 // 
 MS_MMI\source\mmi_app\app\audioplayer\c\mmiapwin_main.c  HandleMainWinOpenMsg
@@ -1380,9 +1621,19 @@ MS_MMI\source\mmi_app\app\audioplayer\c\mmiapwin_common.c  progress_groove_rect
 // pos (只跑一次)
 MS_MMI\source\mmi_app\app\audioplayer\c\mmiapwin_main_mini.c  435
 
+// bg play
+MS_MMI\source\mmi_app\app\audioplayer\c\mmiap_play.c  MMIAPIMP3_ResumeMp3
 
 
 [2.18] alarm
+# Enter
+// Enter
+MS_MMI\source\mmi_app\app\accessory\c\mmialarm.c WINDOW_TABLE(^ALARM_EDITWIN_TAB )
+MS_MMI\source\mmi_app\app\accessory\c\mmialarm.c MMI_RESULT_E^^HandleAlarmEditWinMsg
+MS_MMI\source\mmi_app\app\accessory\h\mmialarm_position.h
+//新功能:
+MS_MMI\source\mmi_app\app\accessory\c\mmialarm.c MMI_RESULT_E^HandleAutoPowerOnOffWinMsg
+
 // key Headset
 MS_MMI\source\mmi_app\kernel\c\mmi_default.c  BOOLEAN^DefaultHeadsetDetect
 //
@@ -1436,17 +1687,6 @@ MS_MMI\source\mmi_app\app\accessory\h\mmialarm_position.h
 MS_MMI\source\mmi_app\app\accessory\c\mmialarm.c MMI_RESULT_E^HandleAutoPowerOnOffWinMsg
 
 
-//BUG:
-// 未录: 按键音 短信 开关机
-// edit->time->am->mid key
-// btn_ring 不滚动
-// 闹钟ring 外放
-// 状态条背景 同主题
-// tone h-2;vol+2;up-2;
-// 重新打开弹窗
-// 按键音与来电铃声重叠
-//	sel ring -》red.
-// tone->option
 
 MS_MMI\source\mmi_app\app\accessory\c\mmialarm.c 4788
 OpenAlarmAliveWin
@@ -1487,7 +1727,7 @@ MS_MMI\source\mmi_app\app\accessory\c\mmicalendar_main.c MMI_RESULT_E^HandleCale
 // opt--go to
 MS_MMI\source\mmi_app\app\accessory\c\mmicalendar_main.c MMIAPICALEND_OpenCalendarQueryByDate
 // list-opt
-MMK_CreateWin((uint32 *)SCH_LIST_OPTION_WIN_TAB, (ADD_DATA)detail_win_param);
+//MMK_CreateWin((uint32 *)SCH_LIST_OPTION_WIN_TAB, (ADD_DATA)detail_win_param);
 
 //draw:
 MS_MMI\source\mmi_app\app\accessory\c\mmicalendar_main.c
@@ -1500,13 +1740,14 @@ MS_MMI\source\mmi_app\app\accessory\c\mmischedule.c
 
 [2.22] 
 
-snake:
-square:
-Initlabel
+//snake:
+//square:
+//Initlabel
 	
 
 [2.23] bt
-mmibt_wintab.c
+//mmibt_wintab.c
+//MMIAPIBT_AppInit
 
 // 蓝牙自动测试优化
 MS_Ref/source/autotest_device/src/autotest_device.c  1904
@@ -1696,391 +1937,6 @@ MS_MMI\source\mmi_app\app\phone\c\mmiphone_onoff.c  MMI_RESULT_E^HandleNormalSta
 
 
 
-
-
-
-
-[3.1] 事件:
-	
-	
-GUIFORM_SetChildDisplay(MMI_EDITWIN_FORM_CTRL_ID,MMIALM_EDIT_NAME_FORM_CTRL_ID,GUIFORM_CHILD_DISP_HIDE);
-
-
-//ICON
-mmiphone--HandlePsAndRefMsgmmiphone--HandleScellRssiInd    信号 - 状态条
-//	Mmitheme
-s_item_layout_id_table
-s_item_layout_1line_icon_2text2
-
-s_item_layout_1line_focus_icon_2text2 
-
-s_item_layout_id_table 
-s_item_style_table 
-s_item_style_state_table 
-
-
-
-
-[3.2] Rect
-LCD_FillRect
-
-
-	GUI_RECT_T form_rect = {0};   
-	GUI_RECT_T rect = {10,0,128,20};
-//	FormCtrlGetRect(MMK_GetCtrlPtr(MMIALM_DAYS_FORM_CTRL_ID), &rect);
-//	form_rect.left = rect.left;
-//	form_rect.top = rect.top + 2;
-//	form_rect.right = rect.right;
-//	form_rect.bottom = form_rect.top + 20;
-	GUIFORM_SetRect(MMI_EDITWIN_CHILD_FORM_CTRL_ID, &rect);
-
-
-[3.3] form
-//form pos
-GUIFORM_GetDisplayMaxWidth
-//form cal
-	CalculateChildWidthHeight
-	CalculateChildHeight 		++++
-//form cal item
-	LabelCtrlGetHeightByWidth
-	EditCtrlGetHeightByWidth
-	GetSetListHeight
-	ButtonCtrlGetHeightByWidth
-
-
-// form--Calculate
-MS_MMI\source\mmi_ctrl\source\Form\c\ctrlform_calc.c  CalculateChildHeight
-MS_MMI\source\mmi_ctrl\source\Form\c\ctrlform_calc.c  690
-//	if(17 == child_ptr->height || 20 < child_ptr->height && 35> child_ptr->height) 
-//	{
-//		int a = child_ptr->height;
-//		a += 0;
-//		a += 0;
-//	}
-
-
-// form--edit--getH
-MS_MMI\source\mmi_ctrl\source\editbox\c\ctrlbaseedit.c  BaseEditCtrlGetHeightByWidth
-MS_MMI\source\mmi_ctrl\source\editbox\c\ctrlbaseedit.c  BASEEDIT_EXTRA_AREA
-
-//update unit form and all child
-GUIFROM_Display(FALSE,TRUE,form_ctrl_ptr);
-//set child rect
-GUIFORM_SetChildRect(TRUE,form_ctrl_ptr);
-
-
-// 
-CTRLFORM_SetChildSpace
-
-
-
-
-
-
-
-
-[3.4] font
-// font
-MS_MMI/source/mmi_service/export/inc/mmi_custom_define.h  MMI_DEFAULT_NORMAL_FONT
-
-
-open tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe 
-MS_MMI\source\resource\Common\FONT\LANG_FONT_LATIN_H9.lib
-MS_MMI\source\resource\Common\FONT\
-
-// 输入法字体
-MS_MMI/source/mmi_app/app/theme/c/mmitheme_edit.c  theme_ptr->info_font
-
-
-// Height--label
-MS_MMI\source\mmi_ctrl\source\Label\c\ctrllabel.c  LabelCtrlGetHeightByWidth
-
-
-
-
-[3.5] list
-// id1= 19 ~ 21
-MS_MMI\source\mmi_kernel\include\mmitheme_list.h  GUIITEM_LAYOUT_ONE_LINE_CHECK
-// id2= 20 ~ 25
-MS_MMI\source\mmi_kernel\include\mmitheme_list.h  GUIITEM_STYLE_ONE_LINE_CHECK
-// layout
-MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c  s_item_layout_1line_check_icon
-MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c  s_item_layout_1line_focus_check_icon
-// layout id= 19 ~ 21
-MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c  &s_item_layout_1line_check
-// reg id= 20 ~ 25(匹配id1)
-MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c  s_item_style_table 
-MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c  2561
-// state id3= 20 ~ 25
-//   custom+radio 一定要设置 GUIITEM_STYLE_STATE_RADIO
-//	 MMITHEME_CustomListItemStyleReg(ctrl_id, &my_style, GUIITEM_STYLE_STATE_RADIO);
-MS_MMI\source\mmi_app\app\theme\c\mmitheme_list.c s_item_style_state_table
-	
-// 其他错位
-MS_MMI\source\mmi_kernel\include\mmitheme_list.h  GUIITEM_STYLE_ONE_LINE_ICON_TEXT_ICON_EXT
-
-// HL image
-MS_MMI/source/mmi_gui/source/listbox/c/guilistbox.c  GUIITEM_DATA_IMAGE_ID
-
-//softkey
-GUILIST_SetOwnSofterKey( ctrl_id, TRUE );
-
-
-// draw
-MS_MMI\source\mmi_ctrl\source\ListBox\c\ctrllistbox.c  GUIITEM_STATE_HAS_NUM
-MS_MMI\source\mmi_ctrl\source\ListBox\c\ctrllist_item.c  GUIITEM_STATE_HAS_NUM
-
-
-### list--位置
-MS_MMI/source/mmi_app/app/theme/c/mmitheme_list.c  s_item_style_2_text_text_2_ms
-//    { MMI_LIST_TEXT_LEFT_SPACE_MS, MMI_LIST_ITEM_TOP_MARGIN_MS, MMI_LIST_ITEM_RIGHT_MS, MMI_LIST_DOUBLE_LINE_ITEM2_HEIGHT_MS/2 - 1},    /* 1 */
-//    { MMI_LIST_TEXT_LEFT_SPACE_MS, MMI_LIST_ITEM_TOP_MARGIN_MS, MMI_LIST_ITEM_RIGHT_MS, MMI_LIST_DOUBLE_LINE_ITEM2_HEIGHT_MS/2 - 1},    /* 1 */
-
-//    { MMI_LIST_TEXT_LEFT_SPACE_MS, MMI_LIST_DOUBLE_LINE_ITEM2_HEIGHT_MS/2, MMI_LIST_ITEM_RIGHT_MS, MMI_LIST_DOUBLE_LINE_ITEM2_HEIGHT_MS - MMI_LIST_ITEM_BOTTOM_MARGIN_MS},     /* 2 */
-//    { MMI_LIST_TEXT_LEFT_SPACE_MS, MMI_LIST_DOUBLE_LINE_ITEM2_HEIGHT_MS/2, MMI_LIST_ITEM_RIGHT_MS, MMI_LIST_DOUBLE_LINE_ITEM2_HEIGHT_MS - MMI_LIST_ITEM_BOTTOM_MARGIN_MS},     /* 2 */
-
-MS_MMI/source/mmi_ctrl/source/ListBox/c/ctrllistbox.c  end_item_bottom_margin
-//    list_ctrl_ptr->end_item_bottom_margin = 6;
-
-
-### list--add icon
-MS_MMI/source/mmi_app/app/setting/c/mmiset_phonewin.c  5824
-//	#if defined (MAINLCD_SIZE_128X128)
-//		item_t.item_style = GUIITEM_STYLE_ONE_LINE_NUMBER_TEXT;
-//	#else
-//    	item_t.item_style    = GUIITEM_STYLE_ONE_LINE_TEXT;
-//	#endif
-
-//    AppendPdaPhoneSettingsItem1Line(ctrl_id, TXT_COMMON_SETTING_AS, IMAGE_NULL, ID_SET_CUSTOM);
-//    AppendPdaPhoneSettingsItem1Line(ctrl_id, TXT_SETTINGS_ENVIONMENT, IMAGE_NULL, ID_SETTINGS_ENVIONMENT);
-//    AppendPdaPhoneSettingsItem1Line(ctrl_id, TXT_SET_PHONE, IMAGE_NULL, ID_SETTINGS_PHONE);
-//    AppendPdaPhoneSettingsItem1Line(ctrl_id, TXT_COMM_SECURITY_SETTING, IMAGE_NULL, ID_SETTINGS_SECURITY);
-//    AppendPdaPhoneSettingsItem1Line(ctrl_id, TXT_COMMON_RESTORE_FACTORY_SETTINGS, IMAGE_NULL, ID_SET_RESET_FACTORY);
-
-
-MS_MMI/source/mmi_ctrl/source/ListBox/c/ctrllistbox.c  CTRLLIST_AppendItem( )
-//  if(item_ptr->state & GUIITEM_STATE_HAS_NUM) {
-//		list_ctrl_ptr->show_num = TRUE;
-//	}
-//	else {
-//		list_ctrl_ptr->show_num = FALSE;
-//	}
-
-
-// list--check
-LIST_GetSelectIconId
-// list--check--pos--init
-MS_MMI\source\mmi_ctrl\source\ListBox\c\ctrllistbox.c  mark_left_margin
-MS_MMI/source/mmi_app/app/theme/c/mmitheme_list.c  tag_width
-// list--check--pos--set
-MS_MMI\source\mmi_ctrl\source\ListBox\c\ctrllist_item.c  LIST_ResetItemDisp
-// list--check--pos--draw
-MS_MMI\source\mmi_ctrl\source\ListBox\c\ctrllistbox.c  ListDrawItem
-
-
-[3.6] menu
-//宏套宏
-#define Handle_WinMsg(_ID1_, _ID2_) \
-	LOCAL MMI_RESULT_E Handle_QMOBILE_##_ID1_##_##_ID2_##_WinMsg () \
-	... \
-
-
-[3.7] str, wstr
-//
-MMIAPICOM_WstrToStr
-//
-MMIAPICOM_StrToWstr(pb_num.number, pb_num_str.wstr_ptr);
-	pb_num_str.wstr_len = pb_num.number_len;
-
-
-
-
-[3.8] draw
-// Rect , line
-GUI_FillRect
-//
-BASEEDIT_GetLineRect
-
-//
-{
-    GUI_LCD_DEV_INFO  lcd_dev_info = {0, 0};
-    GUI_RECT_T        test_rect   = {0, 0, 239, 25};
-    MMI_STRING_T      text_str = {0};
-    wchar             temp_wstr[8 + 1] = {0};
-    uint8             num_str[8 + 1]  = {0};
-    static uint8      num =  0;	
-    GUISTR_STYLE_T   text_style = {0};/*lint !e64*/
-    GUISTR_STATE_T   text_state = GUISTR_STATE_BOLD;
-	
-    //MMK_GetWinLcdDevInfo(win_id, &lcd_dev_info);
-	num += 1;
-    sprintf((char*)num_str, "x %02d", (int)num);
-	MMI_STRNTOWSTR( temp_wstr, 8, (char*)num_str, strlen(num_str),  strlen(num_str) );
-	text_str.wstr_ptr = temp_wstr;
-	text_str.wstr_len = strlen(num_str);
-	
-    text_style.font = SONG_FONT_16;
-    text_style.font_color = MMI_BLACK_COLOR;
-
-	GUISTR_DrawTextToLCDInRect( 
-		(const GUI_LCD_DEV_INFO *)&lcd_dev_info,
-		&test_rect,
-		&test_rect,
-	    (const MMI_STRING_T     *)&text_str,
-	    &text_style,
-	    text_state,
-	    GUISTR_TEXT_DIR_AUTO);
-}
-
-
-
-[3.9] height
-//
-MS_MMI/source/mmi_app/app/accessory/c/mmialarm.c
-// 
-// line
-MS_MMI/source/mmi_app/app/accessory/h/mmiacc_event.h  CHILD_FORM_BUTTON_HIGHT
-MS_MMI/source/mmi_app/app/theme/c/mmitheme_edit.c  MMITHEME_EDIT_MARGIN_TB_SPACE
-MS_MMI/source/mmi_app/app/theme/c/mmitheme_form.c  MMITHEME_FORM_PADDING
-MS_MMI/source/mmi_app/app/theme/c/mmitheme_label.c  MMITHEME_LABEL_MARGIN_TB_SPACE
-// 
-MS_MMI/source/mmi_app/app/theme/c/mmitheme_richtext.c  RICHTEXT_TEXT_LINE_SPACE
-// list
-MS_MMI/source/mmi_app/app/theme/h/mmi_position.h  MMI_LIST_ITEM_RIGHT_MS
-MS_MMI/source/mmi_app/app/theme/h/mmi_position.h  633
-// form--label 
-MS_MMI/source/mmi_ctrl/source/Label/c/ctrllabel.c  CTRLLABEL_SetMargin
-// form--edit 
-MS_MMI/source/mmi_ctrl/source/editbox/c/ctrlbaseedit.c  BASEEDIT_EXTRA_AREA
-// form--edit(im,pen)
-MS_MMI/source/mmi_ctrl/source/editbox/c/ctrlbaseedit_internal.c  BASEEDIT_DisplayEditExtraArea
-// form--edit(画边框前)
-MS_MMI/source/mmi_ctrl/source/editbox/c/ctrlbaseedit_internal.c  GUI_RECT_T^BASEEDIT_GetClientRect
-MS_MMI\source\mmi_ctrl\source\editbox\c\ctrlbaseflex_display.c  344
-// 滚动条
-MS_MMI/source/mmi_kernel/include/mmitheme_pos.h  MMITHEME_SLIDEWIN_SCROLLBAR_WIDTH
-MS_MMI\source\mmi_app\app\theme\c\mmitheme_prgbox.c  MMITHEME_GetSlideScrollBarWidth
-	
-
-
-
-BASEEDIT_DisplayBg
-
-GUI_DisplayBorder
-//
-电话本
-
-
-
-
-
-[3.10] edit, im, pen
-//
-GUIEDIT_PermitBorder(ctrl_id, FALSE);
-//GUIEDIT_SetDispImIcon(ctrl_id,&is_disp_im_icon,&is_disp_num_info);
-GUIEDIT_SetStyle(ctrl_id,GUIEDIT_STYLE_MULTI_DYN_DOWN);
-GUIEDIT_SetFont(ctrl_id, SONG_FONT_60);
-
-
-
-//	BOOLEAN           is_Permit = FALSE;
-//	CTRLFORM_PermitChildFont(MMISET_SOS_MSG_CONTENT_EDIT_FORM_CTRL_ID,is_Permit);
-//	CTRLFORM_PermitChildFont(MMISET_SOS_MSG_CONTENT_EDIT_CTRL_ID, is_Permit);
-
-//	GUI_FONT_ALL_T FONT_ALL1 = {0};
-//	FONT_ALL1.font = CAF_FONT_50;
-//	FONT_ALL1.color = MMI_BLACK_COLOR;
-//	CTRLFORM_SetChildTheme(MMISET_SOS_MSG_CONTENT_EDIT_CTRL_ID, PNULL, PNULL, &FONT_ALL1);
-
-
-
-
-
-
-
-
-
-
-// im + pen
-MS_MMI/source/mmi_ctrl/source/editbox/c/ctrlbaseflex_display.c  BaseFlexCtrlDisplayLeftNum
-// im + pen--display
-MS_MMI/source/mmi_ctrl/source/editbox/c/ctrlbaseedit_internal.c  BASEEDIT_DisplayEditExtraArea
-MS_MMI/source/mmi_ctrl/source/editbox/c/ctrlbaseedit_internal.c  721
-// im + pen--MSG
-MS_MMI\source\mmi_ctrl\source\editbox\c\ctrllistedit.c  MSG_NOTIFY_IM_COMMIT
-
-
-
-[3.11] color
-//
-MMITHEME_GetAccentColorByOffset(MMITHEME_OFFSET_COLOR_DEFAULT)
-
-
-
-
-[3.12] Im
-Initialize
-
-
-
-[3.13] icon
-// RES_ADD_IMG()
-//    背景使用整图，缩放的背景带花纹或重叠
-//  IMG_CMP_PNG_ARGB                   -------正常
-//  IMG_CMP_PNG_ARGB |SABM_HOR_STRETCH -------重叠
-//  IMG_CMP_PNG_SABM_RLE |SABM_HOR_STRETCH ---带花纹
-
-
-
-
-
-[3.14] label
-// label
-MS_MMI\source\mmi_ctrl\source\Label\c\ctrllabel.c  LabelDrawString
-//
-// alpha
-CTRLLIST_SetItemContentOpacityFontColor
-
-
-
-
-
-
-
-[3.15] 
-
-
-[3.16] 
-
-
-[3.17] 
-
-
-[3.18] 
-
-
-[3.19] 
-
-
-[3.20] 
-
-
-[3.21] 
-
-
-[3.22] 
-
-
-[3.23] 
-
-
-[3.24] 
-
-
-[3.25] 
-
-
-[3.26] 
 
 
 

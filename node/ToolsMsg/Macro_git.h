@@ -24,7 +24,7 @@ Save:node\ToolsMsg\Macro_git.h \[1.9\] git pull ------------À­È¡
 Save:node\ToolsMsg\Macro_git.h \[1.10\] git push -----------ÉÏ´«
 Save:node\ToolsMsg\Macro_git.h \[1.11\] pull request
 Save:node\ToolsMsg\Macro_git.h \[1.12\] git help
-Save:node\ToolsMsg\Macro_git.h \[1.13\] 
+Save:node\ToolsMsg\Macro_git.h \[1.13\] git clone
 Save:node\ToolsMsg\Macro_git.h \[1.14\] 
 // 2. git ÈÕÖ¾
 Save:node\ToolsMsg\Macro_git.h \[2.1\] git log -------------git²Ù×÷ÈÕÖ¾
@@ -59,7 +59,13 @@ Save:node\ToolsMsg\Macro_git.h \[4.8\] git config ----------µ¥¸öÓÃ»§ÅäÖÃ-----ÅäÖ
 Save:node\ToolsMsg\Macro_git.h \[4.9\] git config ----------ÌáÊ¾ÊäÈëÓÃ»§ÃûºÍÃÜÂë
 Save:node\ToolsMsg\Macro_git.h \[4.10\] hosts ---------------½â¾öÏÂÔØÂı
 Save:node\ToolsMsg\Macro_git.h \[4.11\] git postBuffer ------Git»º´æÖµ
-Save:node\ToolsMsg\Macro_git.h \[4.12\] 
+Save:node\ToolsMsg\Macro_git.h \[4.12\] ´ò¿ªGitµ÷ÊÔÈÕÖ¾¼ÇÂ¼
+Save:node\ToolsMsg\Macro_git.h \[4.13\] 
+Save:node\ToolsMsg\Macro_git.h \[4.14\] git-upload-pack
+Save:node\ToolsMsg\Macro_git.h \[4.15\] create SSH key
+Save:node\ToolsMsg\Macro_git.h \[4.16\] 
+Save:node\ToolsMsg\Macro_git.h \[4.17\] 
+Save:node\ToolsMsg\Macro_git.h \[4.18\] 
 	
 
 
@@ -76,6 +82,10 @@ git config --global user.email seefs@163.com
 git config [--local|--global|--system] --list/-l¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
 //É¾³ıuser.nameĞÅÏ¢¡£Èç¹ûuser.name¶ÔÓ¦¶à¸öÖµ£¬¿ÉÓÃunset-allÀ´É¾³ı
 git config [--local|--global|--system] --unset[-all] user.name
+
+// win
+C:\Users\Administrator\.gitconfig
+G:\wa03u_git\.git\config
 
 
 [1.2] git config --list ---²é¿´ÉèÖÃ
@@ -154,7 +164,25 @@ git commit -m "add a function in test.java"
 [1.9] git pull ------------À­È¡
 //À­È¡Ô¶³Ì²Ö¿â£º
 git pull origin master
+// subtree
+git pull -X subtree=./lib
+// depth
+git pull --depth=1
+// shallow-since
+git pull --shallow-since "2021-03-01"
+git pull --shallow-since "2021-03-01 00:00:00"
+git pull --shallow-since="Mon Oct 23 13:38:21 2017 +0800"
+git pull --shallow-since="Oct 23 00:00 2020"
 
+//
+git pull -upload-pack lib
+git pull --upload-pack lib
+git pull-pack lib
+//
+git pull --upload-pack /path/to/git-upload-pack
+
+//
+git push <remotename> <commit SHA>:<branch>
 
 
 [1.10] git push ------------ÉÏ´«
@@ -182,7 +210,22 @@ github-->create pull request-->send pull request
 [1.12] git help
 
 
-[1.13] 
+[1.13] git clone
+// clone
+git clone <repo>
+git clone <repo> <directory>
+// 
+git clone --depth=1
+git clone --depth=1 http://xiaojia:123456@192.168.2.148:8080/r/MOCOR_20B_W20.36.2_WATCH.git
+// 
+git fetch --unshallow
+// shallow-since
+git clone git://github.com/ims0/root.git --shallow-since "2017-10-22"
+git clone git://github.com/ims0/root.git --shallow-since "2017-10-22 00:00:00"
+git clone git://github.com/ims0/root.git --shallow-since="Mon Oct 23 13:38:21 2017 +0800"
+git clone git://github.com/ims0/root.git --shallow-since="Oct 23 00:00 2017"
+
+
 
 
 [1.14] 
@@ -238,7 +281,8 @@ git reset --hard HEAD^    »ØÍËµ½ÉÏÒ»¸ö°æ±¾
 git reset --hard HEAD^^   »ØÍËµ½ÉÏÉÏ¸ö°æ±¾£¬ÒÔ´ËÀàÍÆ£¬Ò»´ÎÌá½»¼´ÎªÒ»¸ö°æ±¾
 git reset --hard HEAD~100
 git reset --hard e9efa77  »ØÍËµ½ e9efa77  °æ±¾
-
+//
+git reset --hard HEAD
 
 
 [2.3] git checkout --------git»¹Ô­----µ±Ç°ĞŞ¸Ä
@@ -432,7 +476,19 @@ git branch -a¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡#²é¿´Ô¶³ÌµÄËù
 git branch -d branch_name¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ #É¾³ı±¾µØbranch_nameÕâÒ»·ÖÖ§
 git push origin --delete branch_name¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ ¡¡ #É¾³ıÃûÎªbranch_nameµÄÔ¶³Ì·ÖÖ§
 git pull¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡#½«Ô¶³ÌÉÏµÄ°æ±¾Óë±¾µØ°æ±¾½øĞĞºÏ²¢£¬Ïàµ±ÓÚget fetch + git merge
-	
+
+
+// https
+[remote "origin"]
+url = https://git.coding.net/coder/DMP.git
+// git
+url = git@git.coding.net:coder/DMP.git
+// ssh
+ssh -T xiaojia:123456@192.168.2.148:8080
+ssh -T git@192.168.2.148:8080
+ssh -T xiaojia:123456@192.168.2.148
+
+
 
 
 [3.2] git remote add ------¶à¸öÔ¶³Ì²Ö¿â
@@ -583,6 +639,7 @@ git push origin --tags
 https://git-scm.com/downloads
 // tortoisegit
 https://tortoisegit.org/download/
+
 
 
 [4.2] cmd -----------------ÃüÁîĞĞ
@@ -788,8 +845,48 @@ http.postbuffer=1524288000
 git config --global http.postBuffer 524288000
 git config --global https.postBuffer 524288000
 
+// Èç¹ûHTTP´«ÊäËÙ¶ÈĞ¡ÓÚ1000µÄÊ±¼ä³¬¹ı30Ãë£¬Ôò´«Êä½«ÖĞÖ¹¡£
+git config --global http.lowSpeedLimit 1000
+git config --global http.lowSpeedTime 30
+
+git config --global http.lowSpeedLimit 1
+git config --global http.lowSpeedTime 1000
 
 
-[4.12] 
+[4.12] ´ò¿ªGitµ÷ÊÔÈÕÖ¾¼ÇÂ¼
+// ÔÚÖ´ĞĞGitÃüÁîÖ®Ç°£¬ÇëÔÚÃüÁîĞĞÖĞÖ´ĞĞÒÔÏÂ²Ù×÷£º
+set GIT_TRACE_PACKET=1
+set GIT_TRACE=1
+set GIT_CURL_VERBOSE=1
+
+
+[4.13] 
+
+
+[4.14] git-upload-pack
+// command not found
+Çë°ÑÎÄ¼ş£¨git¡¢git-upload-pack¡¢git-upload-archive¡¢git-receive-pack£©¿½µ½gitµÄbinÄ¿Â¼ÏÂ
+
+
+
+[4.15] create SSH key
+//
+ssh-keygen -t rsa -C "seefs@163.com"
+// .ssh file
+C:\Users\Administrator\.ssh
+C:\Users\Administrator\.ssh\id_rsa.pub
+
+
+[4.16] 
+
+
+
+
+[4.17] 
+
+
+
+[4.18] 
+
 
 
