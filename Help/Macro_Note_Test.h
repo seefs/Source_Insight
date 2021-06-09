@@ -588,16 +588,17 @@ setProPath plutommi\\Customer\\Audio\\M115\\M115_JGW_D2_X191_F2 = AUDIO\\PLUTO
 
 
 
-[3.8] cp, RAR
+[3.8] cp, cprow, RAR
 //
 Save:Macro\sbd_f11.em	"cp"
+Save:Macro\sbd_f11.em	"cprow"
 Save:Macro\sbd_f11.em	"RAR"
 Save:Macro\sbd_ctrl.em  "newPro"
 
 
 //1) cp: 复制左到右
-cp Save:Help\Tmp\Tmp_Test.h Save:Help\Tmp\target\Tmp_Test_new.h
-cp Save:Help\Tmp\Tmp_Test.h Save:Help\Tmp\target\
+cp Save:Help\Tmp\Tmp_space.h Save:Help\Tmp\target\Tmp_Test_new.h
+cp Save:Help\Tmp\Tmp_space.h Save:Help\Tmp\target\
 
 // 查看结果
 Save:Help\Tmp\target\
@@ -606,7 +607,19 @@ Save:Help\Tmp\target\
 Save:Macro\sbd_f11.em	macro^NoteCopyFile
 
 
-//2) ctrl+C: 复制旧项目到新项目(略)
+//2) cprow: 按行复制左到右
+cprow Save:Help\Tmp\Tmp_space.h Save:Help\Tmp\target\Tmp_Test_new.c
+cprow Save:Help\Tmp\Tmp_space.h Save:Help\Tmp\target\
+
+// 查看结果
+Save:Help\Tmp\target\
+
+//	代码位置
+Save:Macro\sbd_f11.em	macro^NoteCopyFile
+Save:Macro\sbd_f11.em	macro^NoteCopyRowFile
+
+
+//3) ctrl+C: 复制旧项目到新项目(略)
 // 新项目设置:
 newPro = Save:Help\
 newPro = M610_KM_V2411_SP6000_F2
@@ -614,7 +627,7 @@ newPro = M610_KM_V2411_SP6000_F2
 Save:Help\Tmp\Tmp_Test.h
 
 
-//3) RAR:(略)
+//4) RAR:(略)
 RAR Save:Help\Tmp\RTmp_Test.rar Save:Help\Tmp\RTmp_space.rar
 RAR Save:Help\Tmp\Tmp_Test.h
 //打开RAR文件:

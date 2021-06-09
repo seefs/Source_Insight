@@ -320,7 +320,7 @@ macro NoteHander(hbuf, cNum, prompt)
 			
 		//type1:  -, [1], -, -
 		else if(prompt == 0 && (noteCmd == "open"  || noteCmd == "test" || noteCmd == "setPath" || noteCmd == "setProPath" || noteCmd == "sethistory"
-			 || noteCmd == "cp" || noteCmd == "RAR"))
+			 || noteCmd == "cp" || noteCmd == "cprow" || noteCmd == "RAR"))
 			isCmd = 1
 
 		//type2: [0, 1, 2, 3] (only copy)
@@ -610,6 +610,12 @@ macro NoteHander(hbuf, cNum, prompt)
 		//cp
 		//前面cmdP1中删除了字符("cp")
 		NoteCopyFile(hbuf, cmdP1, cmdP2, cNum)
+	}
+	else if(noteCmd == "cprow")
+	{
+		//cp
+		//前面cmdP1中删除了字符("cp")
+		NoteCopyRowFile(hbuf, cmdP1, cmdP2, cNum)
 	}
 	else if(noteCmd == "RAR")
 	{
@@ -1032,20 +1038,73 @@ macro SaveNoteHistory(cur_line)
 	
 	CloseBuf(mBuf)
 }
-
+	
 macro NoteCopyFile(hbuf, cmdP1, cmdP2, cNum)
 {
-	TestMsg("copy " # cmdP1 # " " # cmdP2 # "", 1)
-
+	cmdP1 = ReAllTransHead(hbuf, cmdP1)
+	cmdP2 = ReAllTransHead(hbuf, cmdP2)
+	
+	TestMsg("copy (file1->file2):" # CharFromKey(13) # cmdP1  
+			# CharFromKey(13) # cmdP2 # "", 1)
+			
 	//文件名转化:
 	//转化"Save:"、区分根目录、添加项目目录、替换"^"为空格
 	cmdPath1 = GetTransFileName(hbuf, cmdP1, 0)
 	cmdPath2 = GetTransFileName(hbuf, cmdP2, 0)
 	
 	cmdStr = "copy " # cmdPath1 # " " # cmdPath2
-	msg(cmdStr)
+	//msg(cmdStr)
 
 	ShellOpenCustomCmd(cmdStr)
+}
+
+macro NoteCopyRowFile(hbuf, cmdP1, cmdP2, cNum)
+{
+	cmdP1 = ReAllTransHead(hbuf, cmdP1)
+	cmdP2 = ReAllTransHead(hbuf, cmdP2)
+	
+	TestMsg("copy row (file1->file2):" # CharFromKey(13) # cmdP1  
+			# CharFromKey(13) # cmdP2 # "", 1)
+
+	//文件名转化:
+	//转化"Save:"、区分根目录、添加项目目录、替换"^"为空格
+	srcPath = GetTransFileName(hbuf, cmdP1, 0)
+	tarPath = GetTransFileName(hbuf, cmdP2, 0)
+	if(IsExistFile(tarPath))
+	{
+//		msg("file exist:" # CharFromKey(13) # tarPath)
+//		stop
+	}
+	else
+	{
+		//cp default file.
+		tmpFile = getCopyPath(0) # "\\Macro_z_null.c"
+		cmdStr = "copy " # tmpFile # " " # tarPath
+//		msg(cmdStr)
+		ShellOpenCustomCmd(cmdStr)
+	}
+
+	//cp row
+	{
+		var srcBuf
+		var tarBuf
+		srcBuf = OpenCache(srcPath)
+		tarBuf = OpenNewFileCache(tarPath)
+		EmptyCache(tarBuf)
+
+		ln = 0
+		maxRow = GetBufLineCount(srcBuf)
+		while (ln < maxRow)
+		{
+			line = GetBufLine(srcBuf, ln)
+			AppendBufLine(tarBuf, line)
+			ln =  ln + 1
+		}
+		
+		SaveBuf(tarBuf)
+		CloseBuf(tarBuf)
+		CloseBuf(srcBuf)
+	}
 }
 
 macro NoteRARFile(hbuf, cmdP1, cmdP2, cNum)

@@ -572,6 +572,18 @@ macro OpenFile(file)
 	return hbuf
 }
 
+macro OpenNewFileCache(file)
+{	
+	hbuf = GetBufHandle(file)
+	if (hbuf == hNil)
+	{
+	 	hbuf = OpenBuf(file)
+		if (hbuf == hNil){
+			stop
+		}
+ 	}
+	return hbuf
+}
 
 macro OpenExistFile(file)
 {	
@@ -853,6 +865,7 @@ macro GetTransFileName(hbuf, fName, cNum)
 	fName = ReplaceWord(fName, "^", " ")
 	//resolve SI Cache bug.
 	fName = ReplaceWord(fName, "\\\\", "\\")
+	fName = ReplaceWord(fName, "/", "\\")
 //	msg(fName)
 	
 	return fName
