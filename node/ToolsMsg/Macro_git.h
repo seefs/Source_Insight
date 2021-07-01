@@ -62,7 +62,7 @@ Save:node\ToolsMsg\Macro_git.h \[4.11\] git postBuffer ------Git缓存值
 Save:node\ToolsMsg\Macro_git.h \[4.12\] 打开Git调试日志记录
 Save:node\ToolsMsg\Macro_git.h \[4.13\] 
 Save:node\ToolsMsg\Macro_git.h \[4.14\] git-upload-pack
-Save:node\ToolsMsg\Macro_git.h \[4.15\] create SSH key
+Save:node\ToolsMsg\Macro_git.h \[4.15\] 
 Save:node\ToolsMsg\Macro_git.h \[4.16\] 
 Save:node\ToolsMsg\Macro_git.h \[4.17\] 
 Save:node\ToolsMsg\Macro_git.h \[4.18\] 
@@ -302,7 +302,7 @@ git checkout ./
 // 是将咱暂存区和HEAD的提交保持一致
 git reset HEAD 
 
-// 是将工作区、暂存取和HEAD保持一致
+// 是将工作区、暂存区和HEAD保持一致
 git reset --hard HEAD 
 
 //
@@ -869,12 +869,8 @@ set GIT_CURL_VERBOSE=1
 
 
 
-[4.15] create SSH key
-//
-ssh-keygen -t rsa -C "seefs@163.com"
-// .ssh file
-C:\Users\Administrator\.ssh
-C:\Users\Administrator\.ssh\id_rsa.pub
+[4.15] 
+
 
 
 [4.16] 

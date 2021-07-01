@@ -5,9 +5,9 @@ Save:node\ToolsMsg\Macro_win.h \[1.1\] 重装系统
 Save:node\ToolsMsg\Macro_win.h \[1.2\] 破解软件
 Save:node\ToolsMsg\Macro_win.h \[1.3\] 文件设置
 Save:node\ToolsMsg\Macro_win.h \[1.4\] 系统备份
-Save:node\ToolsMsg\Macro_win.h \[1.5\] 
-Save:node\ToolsMsg\Macro_win.h \[1.6\] 
-Save:node\ToolsMsg\Macro_win.h \[1.7\] 
+Save:node\ToolsMsg\Macro_win.h \[1.5\] shutdown
+Save:node\ToolsMsg\Macro_win.h \[1.6\] Excel
+Save:node\ToolsMsg\Macro_win.h \[1.7\] 卸载软件
 Save:node\ToolsMsg\Macro_win.h \[1.8\] 
 Save:node\ToolsMsg\Macro_win.h \[1.9\] 
 Save:node\ToolsMsg\Macro_win.h \[1.10\] 
@@ -76,22 +76,25 @@ Save:node\ToolsMsg\Macro_win.h \[4.3\]
 //	8 进度条走到100%，点击“Continue”“Quite”,退出备份软件，自动重启系统
 
 
-[1.5] 
+[1.5] shutdown
 // 20min
 shutdown -s -t 1200
 // 30min
 shutdown -s -t 1800
+// 3hour/160min
+shutdown -s -t 9600
 //
 shutdown -a
 
 
-[1.6] 
+[1.6] Excel
+//
+msvcr100.dll
 
 
 
-
-[1.7] 
-
+[1.7] 卸载软件
+//
 
 
 
