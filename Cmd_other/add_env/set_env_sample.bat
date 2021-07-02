@@ -33,4 +33,4 @@ echo   AAA_SYS  %AAA_SYS%
 echo   AAA_USER %AAA_USER%
 
 
-
+pause
