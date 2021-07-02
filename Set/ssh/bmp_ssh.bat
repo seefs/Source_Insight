@@ -1,1 +1,0 @@
-"C:\Program Files\Beyond Compare 4\BCompare.exe" "C:\Users\Administrator\.ssh" ".\PC_BM_ME\"
