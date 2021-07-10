@@ -58,7 +58,7 @@ Save:node\ToolsMsg\Macro_git.h \[4.7\] git config ----------配置别名
 Save:node\ToolsMsg\Macro_git.h \[4.8\] git config ----------单个用户配置-----配置文件
 Save:node\ToolsMsg\Macro_git.h \[4.9\] git config ----------提示输入用户名和密码
 Save:node\ToolsMsg\Macro_git.h \[4.10\] hosts ---------------解决下载慢
-Save:node\ToolsMsg\Macro_git.h \[4.11\] git postBuffer ------Git缓存值
+Save:node\ToolsMsg\Macro_git.h \[4.11\] 
 Save:node\ToolsMsg\Macro_git.h \[4.12\] 打开Git调试日志记录
 Save:node\ToolsMsg\Macro_git.h \[4.13\] 
 Save:node\ToolsMsg\Macro_git.h \[4.14\] git-upload-pack
@@ -837,20 +837,7 @@ https://www.ip-tracker.org/locator/ip-lookup.php
 https://community.spiceworks.com/tools/ip-lookup/
 
 
-[4.11] git postBuffer ------Git缓存值
-// 查看
-// git config --list
-http.postbuffer=1524288000
-//
-git config --global http.postBuffer 524288000
-git config --global https.postBuffer 524288000
-
-// 如果HTTP传输速度小于1000的时间超过30秒，则传输将中止。
-git config --global http.lowSpeedLimit 1000
-git config --global http.lowSpeedTime 30
-
-git config --global http.lowSpeedLimit 1
-git config --global http.lowSpeedTime 1000
+[4.11] 
 
 
 [4.12] 打开Git调试日志记录
