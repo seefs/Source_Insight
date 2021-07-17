@@ -23,47 +23,13 @@ Save:node\C\study\Macro_nv_8910.h
 //
 Save:node\C\study\Macro_slide_8910.h
 Save:node\C\study\Macro_zmaee_8910.h
+Save:node\C\study\Macro_sccard_8910.h
+Save:node\C\study\Macro_socket_8910.h
 
 
 /***********************************************************************/
 
 
-
-//
-灭屏--长按RED--失效
-
-//
-视频分辨率
-
-
-//
-好像可以在resource_main.mk，app_main.mk里加宏，默认删debug的铃声
-
-
-//
-没有idle:time_date
-
-
-//
-SOS
-
-//
-二维码
-
-//
-GUIRES_DisplayImg
-GUI_DisplayBg
-//
-
-
-//
-//彩信
-MMK_CloseWin
-MMK_SendMsg
-//
-sms_ring_不支持,pubwin不自动消失
-
-//
 
 
 

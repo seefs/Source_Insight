@@ -27,7 +27,7 @@ Save:node\ToolsMsg\Macro_git.h \[1.12\] git help
 Save:node\ToolsMsg\Macro_git.h \[1.13\] git clone
 Save:node\ToolsMsg\Macro_git.h \[1.14\] 
 // 2. git 日志
-Save:node\ToolsMsg\Macro_git.h \[2.1\] git log -------------git操作日志
+Save:node\ToolsMsg\Macro_git.h \[2.1\] git log/reflog ------git操作日志
 Save:node\ToolsMsg\Macro_git.h \[2.2\] git reset -----------版本回退
 Save:node\ToolsMsg\Macro_git.h \[2.3\] git checkout --------git还原----当前修改
 Save:node\ToolsMsg\Macro_git.h \[2.4\] git reset -----------git还原----暂存(add)
