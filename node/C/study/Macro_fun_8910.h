@@ -33,7 +33,7 @@ Save:node\C\study\Macro_fun_8910.h \[2.4\] Dtmf
 Save:node\C\study\Macro_fun_8910.h \[2.5\] CC--msg
 Save:node\C\study\Macro_fun_8910.h \[2.6\] SMS--tp input
 Save:node\C\study\Macro_fun_8910.h \[2.7\] cursor
-Save:node\C\study\Macro_fun_8910.h \[2.8\] make
+Save:node\C\study\Macro_fun_8910.h \[2.8\] 
 Save:node\C\study\Macro_fun_8910.h \[2.9\] select_sim
 Save:node\C\study\Macro_fun_8910.h \[2.10\] Sleep
 Save:node\C\study\Macro_fun_8910.h \[2.11\] reset----------÷ÿ∆Ù
@@ -279,6 +279,20 @@ custom_drv chip_drv version aud_dev aud_config refbase dv_cfg bt_pal
 ucom usbservice ubot scp scm lcd dc caf_templete utility utility_performance cdrom 
 app_main mmk_main gui_main mmk_sys_main !resource_main ctrl mmi_service 
 !dmdsp !cm4 !fdl1 !fdl2 !bootloader !tf_fdl midisoundbank autotest_device
+
+// app_main
+//	ifeq       #ifdef
+//	ifneq      #ifndef
+//	else       #else
+//	endif      #endif
+
+//
+app_macro.mk
+//LOW_MEMORY_SUPPORT 32X32
+//LOW_MEMORY_SUPPORT NONE
+//Common
+app_main.macro
+app_main.mk
 
 
 

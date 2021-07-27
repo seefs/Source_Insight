@@ -20,9 +20,9 @@ Save:node\C\project\Macro_cfg_8910.h \[1.4\] MMS
 Save:node\C\project\Macro_cfg_8910.h \[1.5\] BROWSER
 Save:node\C\project\Macro_cfg_8910.h \[1.6\] BT
 Save:node\C\project\Macro_cfg_8910.h \[1.7\] RECORD
-Save:node\C\project\Macro_cfg_8910.h \[1.8\] Lcd
+Save:node\C\project\Macro_cfg_8910.h \[1.8\] Lcd---------------
 Save:node\C\project\Macro_cfg_8910.h \[1.9\] shortcut----------menu
-Save:node\C\project\Macro_cfg_8910.h \[1.10\] production_param
+Save:node\C\project\Macro_cfg_8910.h \[1.10\] 
 Save:node\C\project\Macro_cfg_8910.h \[1.11\] 
 Save:node\C\project\Macro_cfg_8910.h \[1.12\] 
 //
@@ -146,7 +146,7 @@ MS_MMI_Main\source\mmi_service\export\inc\mmi_custom_define.h  MMINV_MAX_SMS_REC
 //		#define MMINV_MAX_SMS_RECORDS    200
 
 // (CQ没说，最好也改下)
-MS_MMI_Main\source\mmi_service\export\inc\mmi_custom_define.h  MMISMS_MAX_SYS_SIM_SMS_NUM
+MS_MMI_Main\source\mmi_service\export\inc\mmi_custom_define.h  define^MMISMS_MAX_SYS_SIM_SMS_NUM
 //		#define MMISMS_MAX_SYS_SIM_SMS_NUM    200
 
 // 2.调整RUNNINT NV大小。需要相应的flash cfg的配置增大running nv的sector数目
@@ -245,11 +245,14 @@ lib/modem/UIS8910_ROM_16MB_DS_USER/nvitem/audio_calib_VQE.nvm
 [1.8] Lcd
 // 128*128
 SPDE_PRJ\K220U_L680_QQVGA\uis8910_phone_user_base_config.cfg 128X128
+
 // 128*160
 SPDE_PRJ\K220U_QQVGA\uis8910_phone_user_base_config.cfg 128X160
+
 // 128*160H
 SPDE_PRJ\K220U_SHY_S13_HQQVGA\uis8910_phone_user_base_config.cfg 128X160
 SPDE_PRJ\K220U_SHY_S13_HQQVGA\uis8910_phone_user_base_config.cfg MMI_RES_ORIENT
+
 // 160*128
 SPDE_PRJ\K220U_QQVGA\uis8910_phone_user_base_config.cfg 160X128
 SPDE_PRJ\K220U_LBR_L691_HS_L51_QQVGA\uis8910_phone_user_base_config.cfg 160X128
@@ -307,11 +310,7 @@ MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_phonewin.c  MMI_RESULT_E^HandleS
 
 
 
-[1.10] production_param
-// 107
-//  production_param
-SPDE_PRJ/S98T_FLP_E535/RDNV/production_param_T.xml
-// OCV 
+[1.10] 
 
 
 
@@ -619,9 +618,6 @@ tmp:UIX8910.map  Region^RAM_RW
 
 // range 3(SRAM) (calc size)
 tmp:UIX8910.map  Region^SRAM_RES
-
-// range 4
-tmp:UIX8910.map  Region^SYS_MMU_MEM_AREA
 
 // Total
 tmp:UIX8910.map  Total^RO

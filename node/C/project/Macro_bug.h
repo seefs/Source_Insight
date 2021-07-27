@@ -1,54 +1,36 @@
 
-//
-倒滑没显示
 
 
-//
-128--tp测试，圆太大
 
+# watch_git
 //
 计算器--red灭屏
 日历--red无反应
-
-
-
 //
-灭屏--长按RED--失效
-
+倒滑没显示
 //
 视频分辨率
-
-
 //
-好像可以在resource_main.mk，app_main.mk里加宏，默认删debug的铃声
-
-
-//
-没有idle:time_date
-
-//
-国外cta， debug记得把网络参数还原
-
+sms_ring_不支持,pubwin不自动消失
 //
 SOS
 
-//
-二维码
 
+# watch_svn
+128--tp测试，圆太大
 //
-GUIRES_DisplayImg
-GUI_DisplayBg
-//
+灭屏--长按RED--失效
 
 
-//
+
+# 8910
+国外cta， debug记得把网络参数还原
+
+
+# 107
 //彩信
-MMK_CloseWin
-MMK_SendMsg
-//
-sms_ring_不支持,pubwin不自动消失
 
-//
+
 
 
 
