@@ -1,5 +1,24 @@
 
 
+SPDE_PLAT_YX_SUPPORT_VOICE
+
+//
+MMI_WATCH_NEW_STYLE
+
+//
+SOS报警
+simicon
+//
+仅idle--状态条
+去长按
+// 看真机
+idle--wallpaper刷新--time重叠
+idle--dg刷新--重叠
+
+// 模拟器问题
+灭屏亮屏时，隔1秒再滑动主菜单
+滑动主菜单, 区域不能超出窗口外
+
 
 
 # watch_git

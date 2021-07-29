@@ -28,7 +28,7 @@ Save:node\C\study\Macro_fun_8910.h \[1.20\]
 // 2.func
 Save:node\C\study\Macro_fun_8910.h \[2.1\] lock
 Save:node\C\study\Macro_fun_8910.h \[2.2\] light
-Save:node\C\study\Macro_fun_8910.h \[2.3\] 
+Save:node\C\study\Macro_fun_8910.h \[2.3\] ADN FDN SDN
 Save:node\C\study\Macro_fun_8910.h \[2.4\] Dtmf
 Save:node\C\study\Macro_fun_8910.h \[2.5\] CC--msg
 Save:node\C\study\Macro_fun_8910.h \[2.6\] SMS--tp input
@@ -64,7 +64,7 @@ make\resource_main\resource_target.mk 42
 
 
 [1.2] str, wstr
-//
+#str, wstr
 //	MMI_STRNTOWSTR
 //	//
 //	MMIAPICOM_WstrToStr
@@ -77,6 +77,7 @@ make\resource_main\resource_target.mk 42
 //	MMIAPICOM_Wstrlen( const wchar* str )
 
 
+#GUIEDIT
 // MMK_SendMsg
 //		MMI_WIN_ID_T win_id = MMK_GetFocusChildWinId();
 //		MMK_SendMsg(win_id, MSG_LONG0_DIAL_EDIT, PNULL);
@@ -91,12 +92,19 @@ make\resource_main\resource_target.mk 42
 //}
 
 
+#Strcat
 //	MMIAPICOM_StrcatFromSTRINGToUCS2(uint16_str, &uint16_str_len, &cr_s);//换行
 //	MMIAPICOM_StrcatFromSTRINGToUCS2(uint16_str, &uint16_str_len, &cr_s);//换行
 //	deviceVersion = adups_get_device_version();
 //  MMIAPICOM_StrcatFromStrToUCS2(uint16_str, &uint16_str_len, (uint8*)deviceVersion, SCI_STRLEN((char*)deviceVersion));
 //  MMIAPICOM_StrcatFromSTRINGToUCS2(uint16_str, &uint16_str_len, &cr_s);//换行
 //	MMIAPICOM_StrcatFromTextIDToUCS2(uint16_str, &uint16_str_len, TXT_ADUPS_FOTA_STR);
+
+#GB Wstr
+//	GUI_GBToWstr
+//	GUI_WstrToGB
+
+
 
 
 [1.3] timer, LONG_0
@@ -203,11 +211,13 @@ s_mmi_usernv_len
 
 // win_id
 //	MMI_WIN_ID_T win_id1 		= MMK_GetFocusChildWinId();
-//	MMI_WIN_ID_T EXT_id_sub 	= MMK_GetWinId(win_id1);
-//	MMI_WIN_ID_T EXT_id_main	= MMIPB_MAIN_WIN_ID;
-//	MMI_WIN_ID_T EXT_id_sub		= MMIPB_ENTRY_LIST_TAB_WIN_ID;
+//	MMI_WIN_ID_T WIN_ID_SUB 	= MMK_GetWinId(win_id1);
+//	MMI_WIN_ID_T WIN_ID_MAIN    = MMIPB_MAIN_WIN_ID;
+//	MMI_WIN_ID_T WIN_ID_SUB		= MMIPB_ENTRY_LIST_TAB_WIN_ID;
 //	MMI_WIN_ID_T win_id5 		= MMK_GetFocusWinId();
-//  MMI_WIN_ID_T EXT_id_main	= MMK_GetWinId(win_id5);
+//  MMI_WIN_ID_T WIN_ID_MAIN	= MMK_GetWinId(win_id5);
+
+//	MMI_WIN_ID_T win_id1 		= MMK_ConvertIdToHandle(WIN_ID_SUB);
 
 // fun
 //	MMK_IsFocusWin
@@ -533,7 +543,27 @@ MS_MMI_Main\source\mmi_app\kernel\c\mmi_default.c  CloseAllLight
 
 
 
-[2.3] 
+[2.3] ADN FDN SDN
+//
+//	ADN Abbreviated dialing number
+//	FDN Fixed dialer number
+//	BDN Barred dialing numbers
+//	LND Last number dialed
+//	SDN Service dialing number
+
+//	ADN(SIM 电话簿) 缩位拨号。数字 + #，然后按SNED键。
+//	FDN(SIM 固定拨号) 固定拨号。当启用后，只能拨打所设置的号码，来电不受影响。需要输入PIN2码
+//	能否使用固定拨号功能取决于SIM卡类型以及网络商是否提供此功能
+//	MSISDN(SIM 保护号码)
+//	EN(SIM 紧急号码)
+//	LND(合成 ME 和 SIM 最后拨号)
+//	MSD(SIM 未接听号码)
+//	ME(ME 电话簿)
+//	MT(合成 ME 和 SIM 电话簿)
+//	LIC(ME 接听号码)
+//	SDN (系统拨叫号码) 网络服务拨号。固化的用户不能编辑。
+
+//SIM卡中最多能存放的电话号码数量等于:AND+FDN+SDN
 
 
 [2.4] Dtmf
@@ -551,6 +581,7 @@ MS_MMI_Main\source\mmi_app\kernel\c\mmi_default.c  CloseAllLight
 //	// 41317--APP_MN_SETUP_IND
 //	12194 ccapp: CC_HandlePsMsg->APP_MN_SETUP_IND  
 //	12199 CC_CallSetupIndEx  calling_num_present = 1 
+
 
 
 

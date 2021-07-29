@@ -17,11 +17,12 @@ Save:node\C\study\
 Save:node\C\study\Macro_app_8910.h
 Save:node\C\study\Macro_gui_8910.h
 Save:node\C\study\Macro_fun_8910.h
-Save:node\C\study\Macro_data_8910.h
+Save:node\C\study\Macro_doc_8910.h
 Save:node\C\study\Macro_res_8910.h
 Save:node\C\study\Macro_nv_8910.h
 //
 Save:node\C\study\Macro_slide_8910.h
+Save:node\C\study\Macro_zdt_8910.h
 Save:node\C\study\Macro_zmaee_8910.h
 Save:node\C\study\Macro_sccard_8910.h
 Save:node\C\study\Macro_socket_8910.h
@@ -50,11 +51,11 @@ make p=UIS8910_240x240BAR_16MB_SS_USER m=simulator_idh
 make p=UIS8910_240x240BAR_16MB_SS_USER new job=12
 make p=UIS8910_240x240BAR_16MB_SS_USER m=resource_main
 // w0
-make p=UIS8910_ROM_16MB_SS_WA07U_F8Z_QQVGA_DEBUG m=simulator_idh
-make p=UIS8910_240x320BAR_16MB_SS_WA03U_T2_V2_USER m=app_main update image
-make p=UIS8910_ROM_16MB_SS_WA07U_F30Z_DEBUG m=resource_main
-make p=UIS8910_ROM_16MB_SS_WA07U_F30ZL_USER m=app_main update image
-make p=UIS8910_ROM_16MB_SS_WA07U_F30ZL_USER m=custom_drv update image
+make p=UIS8910_240x320BAR_16MB_SS_WA03U_T2_HERO_user m=simulator_idh
+make p=UIS8910_240x320BAR_16MB_SS_WA03U_T2_HERO_user m=app_main update image
+make p=UIS8910_240x320BAR_16MB_SS_WA03U_T2_HERO_user m=resource_main
+make p=UIS8910_240x320BAR_16MB_SS_WA03U_T2_HERO_user m=app_main update image
+make p=UIS8910_240x320BAR_16MB_SS_WA03U_T2_HERO_user m=custom_drv update image
 make p=UIS8910_ROM_16MB_SS_WA07U_F30Z_USER m=resource_main update image
 make p=UIS8910_ROM_16MB_SS_WA07U_F30Z_USER m="resource_main app_main" update image
 make p=UIS8910_ROM_16MB_SS_WA07U_F30Z_USER m="custom_drv app_main" update image
