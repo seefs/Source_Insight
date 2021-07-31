@@ -46,7 +46,9 @@ Save:node\Pythons\install\Macro_Pythons_Install.h \[3.6\] conf
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.7\] tfmpl---------3D
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.8\] chardet
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.9\] pillow--------imgsize
-Save:node\Pythons\install\Macro_Pythons_Install.h \[3.10\] 
+Save:node\Pythons\install\Macro_Pythons_Install.h \[3.10\] pyyaml-------ttf
+Save:node\Pythons\install\Macro_Pythons_Install.h \[3.11\] 
+Save:node\Pythons\install\Macro_Pythons_Install.h \[3.12\] 
 //	install
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.1\] install
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.2\] upgrade
@@ -126,9 +128,9 @@ open: F:\tool_soft\python\GitHubDesktopSetup.exe
 
 
 [2.2] pip
-cmd_w: python -m pip install --upgrade pip
-//cmd_w: pip show pip
+cmd_w: pip show pip
 //	Version: 19.2.3
+cmd_w: python -m pip install --upgrade pip
 
 
 [2.3] python (<3.7)
@@ -346,8 +348,28 @@ cmd_w: pip3 install pillow
 
 
 
-[3.10] 
+[3.10] pyyaml
+# pyyaml fontforge
+cmd_w: pip show pyyaml
+// Version: 5.4.1
+cmd_w: pip show fonttools
+// Version: 4.25.2
 
+cmd_w: pip install pyyaml
+cmd_w: pip install fontforge
+cmd_w: pip install python-fontforge
+cmd_w: pip install fontforge==1.0
+cmd_w: pip install python-fontforge
+cmd_w: pip install fonttools
+
+
+
+[3.11] 
+
+
+
+
+[3.12] 
 
 
 
