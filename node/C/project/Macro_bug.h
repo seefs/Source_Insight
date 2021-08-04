@@ -2,6 +2,22 @@
 
 SPDE_PLAT_YX_SUPPORT_VOICE
 
+
+
+
+# watch_git
+//
+计算器--red灭屏
+日历--red无反应
+//
+倒滑没显示
+//
+视频分辨率
+//
+sms_ring_不支持,pubwin不自动消失
+//
+SOS
+
 //
 MMI_WATCH_NEW_STYLE
 
@@ -18,21 +34,8 @@ idle--dg刷新--重叠
 // 模拟器问题
 灭屏亮屏时，隔1秒再滑动主菜单
 滑动主菜单, 区域不能超出窗口外
-
-
-
-# watch_git
 //
-计算器--red灭屏
-日历--red无反应
-//
-倒滑没显示
-//
-视频分辨率
-//
-sms_ring_不支持,pubwin不自动消失
-//
-SOS
+时钟单独列出来
 
 
 # watch_svn

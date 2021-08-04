@@ -8,7 +8,7 @@ Save:node\ToolsMsg\Macro_win.h \[1.4\] 系统备份
 Save:node\ToolsMsg\Macro_win.h \[1.5\] shutdown
 Save:node\ToolsMsg\Macro_win.h \[1.6\] Excel
 Save:node\ToolsMsg\Macro_win.h \[1.7\] 卸载软件
-Save:node\ToolsMsg\Macro_win.h \[1.8\] 
+Save:node\ToolsMsg\Macro_win.h \[1.8\] IP
 Save:node\ToolsMsg\Macro_win.h \[1.9\] 
 Save:node\ToolsMsg\Macro_win.h \[1.10\] 
 // 2. 开发
@@ -98,7 +98,7 @@ msvcr100.dll
 
 
 
-[1.8] 
+[1.8] IP
 
 
 

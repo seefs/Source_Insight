@@ -119,30 +119,22 @@ F:\6531G_SX\MS_MMI\source\resource\Common\FONT\LANG_FONT_LATIN_12_14_29.lib
 https://fontforge.org/en-US/downloads/windows-dl/
 //
 // 汉化
+prog:FontForgeBuilds\
 prog:FontForgeBuilds\fontforge.bat
 //	::set LANGUAGE=en
 //	::set LANGUAGE=zh_CN
 
+// 脚本
+prog:FontForgeBuilds\fontforge-console.bat
+
 // project
-Save:node\C\project\Macro_c_list.h
+Save:node\C\project\Macro_c_list.h \[1.5\] fontforge
 
 // 其他font软件
 FontCreator, AsiaFont Studio
 
 
-//tts test
-
-D:/project/C/Demo/_test/test1-Regular.ttf
-D:/project/C/Demo/_test/test2-Regular.ttf
-D:\project\C\Demo\_test\test1-Regular.ttf
-D:\project\C\Demo\_test\test2-Regular.ttf
-//tts test
-D:\project\C\Demo\_test\test1-Regular.nam
-D:\project\C\Demo\_test\test2-Regular.nam
-//
-D:\project\C\Demo\_test\test1-item1.sfd
-
-//
+// 默认存储
 C:\Users\Administrator\AppData\Roaming\FontForge
 
 
