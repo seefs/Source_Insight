@@ -5,6 +5,13 @@ resPath = MS_MMI_Main/source/resource/mmi_res_240x240
 res:\\
 appPath = MS_MMI_Main\source\mmi_app\app
 app:\\
+commonPath = MS_MMI_Main\source\mmi_app\common
+common:\\
+zdtPath = MS_MMI_Main\source\mmi_app\app\zdt
+zdt:\\
+fzdPath = MS_MMI_Main\source\mmi_app\app\fzd
+fzd:\\
+
 
 
 /***********************************************************************/
@@ -14,22 +21,25 @@ app:\\
 Save:node\C\study\Macro_slide_8910.h \[1.1\] btn
 Save:node\C\study\Macro_slide_8910.h \[1.2\] list
 Save:node\C\study\Macro_slide_8910.h \[1.3\] switch
-Save:node\C\study\Macro_slide_8910.h \[1.4\] pubwin
+Save:node\C\study\Macro_slide_8910.h \[1.4\] pubwin, wait
 Save:node\C\study\Macro_slide_8910.h \[1.5\] banner
 Save:node\C\study\Macro_slide_8910.h \[1.6\] im
-Save:node\C\study\Macro_slide_8910.h \[1.7\] wait
+Save:node\C\study\Macro_slide_8910.h \[1.7\] 
 Save:node\C\study\Macro_slide_8910.h \[1.8\] 
 Save:node\C\study\Macro_slide_8910.h \[1.9\] anim, common
 Save:node\C\study\Macro_slide_8910.h \[1.10\] make---------------关联宏
-Save:node\C\study\Macro_slide_8910.h \[1.11\] 
-Save:node\C\study\Macro_slide_8910.h \[1.12\] 
+Save:node\C\study\Macro_slide_8910.h \[1.11\] app
+Save:node\C\study\Macro_slide_8910.h \[1.12\] log
+Save:node\C\study\Macro_slide_8910.h \[1.13\] file
+Save:node\C\study\Macro_slide_8910.h \[1.14\] 
+Save:node\C\study\Macro_slide_8910.h \[1.15\] 
 //
 Save:node\C\study\Macro_slide_8910.h \[2.1\] dropdown------------下拉消息
 Save:node\C\study\Macro_slide_8910.h \[2.2\] menu----------------主菜单
 Save:node\C\study\Macro_slide_8910.h \[2.3\] clock, idle---------待机
-Save:node\C\study\Macro_slide_8910.h \[2.4\] dial----------------
-Save:node\C\study\Macro_slide_8910.h \[2.5\] call----------------
-Save:node\C\study\Macro_slide_8910.h \[2.6\] cl, pb--------------
+Save:node\C\study\Macro_slide_8910.h \[2.4\] dial----------------拨号
+Save:node\C\study\Macro_slide_8910.h \[2.5\] call----------------通话
+Save:node\C\study\Macro_slide_8910.h \[2.6\] cl, pb--------------记录
 Save:node\C\study\Macro_slide_8910.h \[2.7\] sms-----------------
 Save:node\C\study\Macro_slide_8910.h \[2.8\] record--------------
 Save:node\C\study\Macro_slide_8910.h \[2.9\] pic-----------------
@@ -41,7 +51,7 @@ Save:node\C\study\Macro_slide_8910.h \[2.14\] qrcode-------------
 Save:node\C\study\Macro_slide_8910.h \[2.15\] other app----------
 Save:node\C\study\Macro_slide_8910.h \[2.16\] powoff
 Save:node\C\study\Macro_slide_8910.h \[2.17\] charge
-Save:node\C\study\Macro_slide_8910.h \[2.18\] 
+Save:node\C\study\Macro_slide_8910.h \[2.18\] tcp
 Save:node\C\study\Macro_slide_8910.h \[2.19\] 
 Save:node\C\study\Macro_slide_8910.h \[2.20\] 
 // 其他标号
@@ -117,6 +127,8 @@ app:launcher\c\watch_launcher_main.c  WatchCOM_NoteWin_1Line_Enter
 app:launcher\c\watch_launcher_main.c  WatchCOM_NoteWin_2Line_Enter
 // query
 app:launcher\c\watch_launcher_main.c  WatchCOM_QueryWin_1Btn_Enter
+common:c\watch_commonwin_query.c      WatchCOM_QueryWin_1Btn_With2Str_Enter
+common:c\watch_commonwin_query.c      WatchCOM_QueryWin_2Btn_Enter
 
 
 // pub wait
@@ -124,7 +136,7 @@ HandleTempWaitWinMsg
 HandleDCWaitWinMsg
 
 // --rect
-MS_MMI_Main\source\mmi_app\common\c\watch_commonwin_internal.c CommonWin_GetLayoutByType
+common:c\watch_commonwin_internal.c CommonWin_GetLayoutByType
 
 
 
@@ -184,17 +196,66 @@ make\app_watch_main\app_watch_main.mk  watch_stopwatch
 
 
 
-[1.11] 
+[1.11] app
+// Msg--base
+zdt:c\zdt_app.c  HandleZDTAppMsg
+// Msg--base--net
+zdt:c\zdt_net.c MMIZDT_Net_Handle_AppMsg
+// Msg--base--net--init--send--reg--post--reg
+zdt:c\zdt_net.c ZDT_Net_Init
+zdt:c\zdt_net.c UBX_AGPS_TCP_Send
+zdt:c\zdt_net.c ZDT_API_TCP_Reg
+zdt:c\zdt_tcp.c ZDT_TCP_PostEvtTo_APP
+zdt:c\zdt_net.c MMIZDT_TCP_Handle_AppMsg
+zdt:c\zdt_tcp.c ZdtTCP_HandleReg
+// Msg--base--net--tcp--open
+zdt:c\zdt_net.c MMIZDT_Net_Open
+zdt:c\zdt_net.c ZDT_Net_Open
+zdt:c\zdt_net.c ZDT_Net_StartPdpActiveTimer
+// Msg--base--net--tcp--ok
+zdt:c\zdt_net.c MMIZDT_Net_Handle_PDPActiveOK
+zdt:c\zdt_tcp.c MMI_ZDT_TCP_PdpStateActive
+zdt:c\zdt_tcp.c ZdtTCP_RegStart
+zdt:c\zdt_net.c UBX_AGPS_TCP_Callback
+// Msg--base--net--tcp--send
+zdt:c\zdt_net.c UBX_AGPS_TCP_SendExt
+zdt:c\zdt_tcp.c ZdtTCP_HandleSend
+zdt:c\zdt_tcp.c ZdtTCP_HandleSendStart
+zdt:c\zdt_tcp.c ZdtTCP_ConnWrite
+zdt:c\zdt_tcp.c ZdtTcp_Write
+// Msg--base--net--tcp--send
+zdt:c\zdt_tcp.c TCP_Task_HandleSig_Write
+zdt:c\zdt_tcp.c sci_sock_send
+// Msg--base--net--tcp--recv ?no
+zdt:c\zdt_tcp.c sci_sock_recv
 
 
 
+[1.12] log
+### zdt
+zdt:c\zdt_app.c  MMIZDT_AppInit
+zdt:c\zdt_app.c  MMIZDT_InitModule
+//
+common:h\mmi_appmsg.h  MSG_USRE_LOG_BUF_SAVE
+app:phone\c\mmiphone.c  MSG_USRE_LOG_BUF_SAVE
 
-[1.12] 
+
+### fzd
+fzd:c\mmifzd_app.c  FZDAPP_Init
+//
+common:h\mmi_appmsg.h  MSG_WATCH_LOG_BUF_SAVE
+app:phone\c\mmiphone.c  MSG_WATCH_LOG_BUF_SAVE
+//
 
 
 
-
-[1.13] 
+[1.13] file
+### fzd
+fzd:c\mmifzd_app.c  FZDAPP_Init
+//
+fzd:c/mmifzd_cr.c  x
+fzd:c/mmifzd_heartbeat.c
+fzd:c/mmifzd_time.c
 
 
 
@@ -219,6 +280,15 @@ app:launcher\c\watch_launcher_main.c  WatchLAUNCHER_HandleCommonWinMsg
 
 // statusbar
 app:dropdownwin\c\mmidropdownwin_main.c  NotifyWin_HandleWinMsg
+
+
+###slide win
+app:slidewin\c\watch_slidewin.c  WatchSLIDEWIN_HandleMsgHook
+//   DOWN->move->time->step->full->status
+// ->FULL->move->time->step->full->status
+// ->UP        ->time->step->full->status
+// ->FULL      ->time->step->full->status->close
+// ->FULL
 
 
 
@@ -506,13 +576,13 @@ res:set/MMI_RES_DEFAULT/IMAG/set_sound/
 res:set/MMI_RES_DEFAULT/IMAG/set_volte/
 //res:set/MMI_RES_DEFAULT/IMAG/set_wifi/
 
-// main
+// main(list, CallBack)
 app:setting\c\watch_set_main.c  HandleSettingsMainWindow
 
-// 1.bn (大图标)
+// 1.bn 亮度(大图标)
 app:setting\c\watch_set_brightness.c  HandleSettingsBrightnessWindow
 
-// 2.bl (rdo)
+// 2.bl 背光时间(rdo)
 app:setting\c\watch_set_backlight.c  HandleSettingsBacklightWindow
 
 // 3.sound/next icon
@@ -534,7 +604,7 @@ res:common/MMI_RES_DEFAULT/IMAG/watch/2vm
 
 // enter
 app:launcher\c\watch_launcher_main.c  Watch2VM_MainWin_Enter
-app:launcher\c\watch_qrcode_win.c  QRCODE_FILE_NAME
+app:launcher\c\watch_qrcode_win.c  WATCH_QR_PATH_NAME
 
 
 ### 2.style
@@ -577,9 +647,13 @@ app:launcher\c\watch_launcher_main.c  WatchTemp_MainWin_Enter
 app:launcher\c\watch_launcher_main.c  WatchKCB_MainWin_Enter
 app:launcher\c\watch_launcher_editclockwin.c  WatchLAUNCHER_EditClockWin_Enter
 
+
 // 防走丢
 app:launcher\c\watch_launcher_main.c  WatchAnti_MainWin_Enter
 
+
+// test
+app:launcher\c\watch_comm_test.c  WatchTest_Win_Enter
 
 
 
@@ -599,7 +673,10 @@ app:launcher\c\watch_charge_win.c  HandleLauncherChargeTipWinMsg
 app:launcher\c\watch_charge_win.c  HandleLauncherChargeWinMsg
 
 
-[2.18] 
+[2.18] tcp
+//
+app:launcher\c\
+app:launcher\c\watch_charge_win.c  HandleLauncherChargeTipWinMsg
 
 
 [2.19] 

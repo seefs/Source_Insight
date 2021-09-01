@@ -500,7 +500,7 @@ MMI_APP_REMOVE_SMS_NUM
 // 8910F
 MS_Customize/source/product/config/uis8910ff_refphone/spiflash_cfg.c  FLASH_SIZE_128MBITX64MBIT_NEW
 // 8910s
-MS_Customize/source/product/config/uis8910ff_refphone/spiflash_cfg.c  FLASH_SIZE_128MBIT
+MS_Customize/source/product/config/uis8910ff_refphone/spiflash_cfg.c  FLASH_SIZE_128MBIT$
 
 
 
@@ -541,12 +541,12 @@ chip_drv/chip_module/analog/v7
 [2.16] Lib
 ### w07U
 // baseLib
-SPDE_PRJ\WA07U\project_UIS8910_ROM_16MB_SS_WA07U_USER.mk  PRODUCT_BASELIB_DIR
+SPDE_PRJ\WA07U_F3Z\project_UIS8910_ROM_16MB_SS_WA07U_F3Z_USER.mk  PRODUCT_BASELIB_DIR
 // 分开
 //   PRODUCT_BASELIB_DIR = UIS8910_ROM_16MB_SS_USER
 
 // binFile
-SPDE_PRJ\WA07U\project_UIS8910_ROM_16MB_SS_WA07U_USER.mk  MODEM_BIN_FILE
+SPDE_PRJ\WA07U_F3Z\project_UIS8910_ROM_16MB_SS_WA07U_F3Z_USER.mk  MODEM_BIN_FILE
 // 共用
 //   MODEM_BIN_FILE = UIS8910_ROM_16MB_DS_USER
 

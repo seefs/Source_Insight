@@ -2,9 +2,9 @@
 基础路径设置:
 //basePath = SPDE_PRJ\
 //base:\\
-//zmaeePath = SPDE_PRJ\WA07U_F30Z\zmaee
+zmaeePath = SPDE_PRJ\WA07U_F30Z\zmaee
 //zmaeePath = SPDE_PRJ\WA03U_T2_V2\zmaee
-zmaeePath = SPDE_PRJ\WA03U_T2_HERO\zmaee
+//zmaeePath = SPDE_PRJ\WA03U_T2_HERO\zmaee
 zmaee:\\
 
 /***********************************************************************/
@@ -25,8 +25,8 @@ Save:node\C\study\Macro_zmaee_8910.h \[1.11\]
 Save:node\C\study\Macro_zmaee_8910.h \[1.12\] 
 // 2. path
 Save:node\C\study\Macro_zmaee_8910.h \[2.1\] patch
-Save:node\C\study\Macro_zmaee_8910.h \[2.2\] 
-Save:node\C\study\Macro_zmaee_8910.h \[2.3\] 
+Save:node\C\study\Macro_zmaee_8910.h \[2.2\] fota
+Save:node\C\study\Macro_zmaee_8910.h \[2.3\] fota url
 Save:node\C\study\Macro_zmaee_8910.h \[2.4\] 
 Save:node\C\study\Macro_zmaee_8910.h \[2.5\] 
 Save:node\C\study\Macro_zmaee_8910.h \[2.6\] 
@@ -46,7 +46,7 @@ zmaee:c\zmaee_fixedapp.c  ZMAEE_FIXEDRES^g_zmaee_fixedres
 //	{6660, (const char*)sg_zmaee_6660_rom, sizeof(sg_zmaee_6660_rom)},//心电
 
 
-// menu
+// menu(enter)
 zmaee:h\zmaee_watchos_menu.h  sg_zmaee_fwatch_shortcuts_ui
 
 
@@ -146,15 +146,28 @@ SPDE_PRJ\WA03U_T2_V2\            ----阿拉町
 SPDE_PRJ\WA06U\                  ----
 //
 SPDE_PRJ\WA07U_F3Z\              ----华米
+// 电池:630mA
+SPDE_PRJ\WA07U_F30X\             ----华米
+// 电池:400mA,TP,单摄,喇叭
 SPDE_PRJ\WA07U_F8Z_QQVGA\        ----华米
+// 电池:400mA
 SPDE_PRJ\WA07U_F30Z\             ----华米
+// 电池:400mA
 //
 SPDE_PRJ\WA08U\                  ----华米--
-SPDE_PRJ\WA08U_QQVGA\            ----华米--F20
+// 电池:默认4.15v
+SPDE_PRJ\WA08U_F20_QQVGA\        ----华米--F20
+// 电池:默认4.15v
+SPDE_PRJ\WA08U_X6C\              ----众智--X6C
+// 电池:500mA
 SPDE_PRJ\WA08U_ZZ_QQVGA\         ----众智--X6
+// 电池:500mA?
 // 
 SPDE_PRJ\WA11U\                  ----华米
-SPDE_PRJ\WA11U_QQVGA\            ----华米
+SPDE_PRJ\WA11U_C36W_QQVGA\       ----华米
+// 电池:350mA,TP,摄像头
+SPDE_PRJ\WA11U_F31W_QQVGA\       ----华米
+// 电池:400mA,TP,摄像头
 
 
 [1.11] 
@@ -197,10 +210,57 @@ lib/UIS8910_ROM_16MB_SS_USER/img_proc.a
 
 
 
-[2.2] 
+[2.2] fota
+// addr
+Third-party\rsfota\rsupdate\src\rs_ua_porting.c  rs_fota_addr
+
+## fota--adups
+fdl_bootloader/fota_bootloader/src/tf_display.c
+//
+//adups_net_start_get_new_version()
+//// 下载进度
+//ADUPS_get_download_percent()
+//// 升级进度
+//adups_patch_ratio
+//// state//版本号
+//GetMainStates
+//// 
+//adups_get_device_version()
 
 
-[2.3] 
+## fota--rs
+// 1、下载检测：开机一分半，24小时周期
+Third-party\rsfota\rsdl\porting\UIS8910\src\rs_param.c  rs_u32^rs_cb_get_first_check_cycle()
+//	return (90*1000);//量产出货阶段配置参数
+
+Third-party\rsfota\rsdl\porting\UIS8910\src\rs_param.c  rs_u32^rs_cb_get_auto_check_cycle()
+//	return (24*60*60*1000);//量产出货阶段配置参数
+
+
+// 2、安装检测：2-5点，30分钟周期，如果检测有，不继续检测
+Third-party\rsfota\rsdl\porting\UIS8910\src\rs_param.c  rs_bool^rs_sys_localtime_fit_for_install
+Third-party\rsfota\rsdl\porting\UIS8910\src\rs_param.c  INSTALL_TIME_END_CLOCK
+//	#define INSTALL_TIME_START_CLOCK  22 // 2
+//	#define INSTALL_TIME_END_CLOCK  1823  //5
+//	#define INSTALL_AUTO_CYCLE_TIME  (30*60*1000) //(2*60*60*1000) //2小时
+
+
+// 3、安装时间：检测有包后，会在2-5点，随机一个时间
+
+
+
+[2.3] fota url
+// OTA后台
+https://fota.redstone.net.cn/
+//	用户名 bomengAdmin
+//	密码 bomeng@2020w
+
+
+//差分后台
+http://diff.livedevice.com.cn/diffservice/atool/bomeng.html
+//	用户名 bomengAdmin
+//	密码 bomeng@2020w
+
 
 
 [2.4] 

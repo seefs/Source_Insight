@@ -31,7 +31,7 @@ Save:node\ToolsMsg\Macro_win.h \[3.5\] vpn
 Save:node\ToolsMsg\Macro_win.h \[3.6\] 
 Save:node\ToolsMsg\Macro_win.h \[3.7\] Game
 Save:node\ToolsMsg\Macro_win.h \[3.8\] InputMethod 输入法
-Save:node\ToolsMsg\Macro_win.h \[3.9\] 
+Save:node\ToolsMsg\Macro_win.h \[3.9\] postman
 Save:node\ToolsMsg\Macro_win.h \[3.10\] 
 // 
 Save:node\ToolsMsg\Macro_win.h \[4.1\] 
@@ -104,8 +104,23 @@ msvcr100.dll
 
 
 [1.9] 
+// 浏览 电脑变慢
+virus.vbs-writebin.a
+// exe dll
+Virus.Win32.Sality.I
+// 复制繁殖
+Virus.Win32.Ramnit.X
+// js
+virus.js.qexvmc.1
 
+### file
+// wa01u_svn
+//   tabstrip.htm
+tools\DEBUG_TOOL\AudioCalibrator\Equalizer\TI ADC\parameter-data.files
 
+// tool
+//   CmdDloader.exe
+D:\Desktop\tool\wa03u_git\ResearchDownload_R25.21.1401\ResearchDownload_R25.21.1401\Bin\
 
 
 [1.10] 
@@ -271,8 +286,10 @@ C:\Program^Files^(x86)\WanNengWBInput\10.0.4.10418
 
 
 
-[3.9] 
+[3.9] postman
 
+//
+https://www.postman.com/collections/1e8f06e4b595a38c05bb
 
 
 

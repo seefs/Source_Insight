@@ -17,7 +17,7 @@ Save:node\C\study\Macro_fun_8910.h \[1.9\] sms_member
 Save:node\C\study\Macro_fun_8910.h \[1.10\] 
 Save:node\C\study\Macro_fun_8910.h \[1.11\] make------------
 Save:node\C\study\Macro_fun_8910.h \[1.12\] debug, trace
-Save:node\C\study\Macro_fun_8910.h \[1.13\] fota------------
+Save:node\C\study\Macro_fun_8910.h \[1.13\] 
 Save:node\C\study\Macro_fun_8910.h \[1.14\] mp3-------------刷新
 Save:node\C\study\Macro_fun_8910.h \[1.15\] tts
 Save:node\C\study\Macro_fun_8910.h \[1.16\] draw str wchar
@@ -33,7 +33,7 @@ Save:node\C\study\Macro_fun_8910.h \[2.4\] Dtmf
 Save:node\C\study\Macro_fun_8910.h \[2.5\] CC--msg
 Save:node\C\study\Macro_fun_8910.h \[2.6\] SMS--tp input
 Save:node\C\study\Macro_fun_8910.h \[2.7\] cursor
-Save:node\C\study\Macro_fun_8910.h \[2.8\] 
+Save:node\C\study\Macro_fun_8910.h \[2.8\] file
 Save:node\C\study\Macro_fun_8910.h \[2.9\] select_sim
 Save:node\C\study\Macro_fun_8910.h \[2.10\] Sleep
 Save:node\C\study\Macro_fun_8910.h \[2.11\] reset----------重启
@@ -220,8 +220,8 @@ s_mmi_usernv_len
 //	MMI_WIN_ID_T win_id1 		= MMK_ConvertIdToHandle(WIN_ID_SUB);
 
 // fun
-//	MMK_IsFocusWin
-//	MMK_IsOpenWin
+//	MMK_IsFocusWin()
+//	MMK_IsOpenWin()
 //	MMK_CloseWin()
 
 // 静态创建
@@ -229,6 +229,19 @@ s_mmi_usernv_len
 // 动态创建
 //	MMK_CreateWindow()
 
+//
+MS_MMI_Main\source\mmi_kernel_sys\source\c\mmk_window.c  ^CreateWin( )
+// create
+//   win_id ->create_ptr->applet_handle->add_data_ptr->create_ptr2->node_ptr  ->create_ptr3->node_ptr2
+//   1769499->0x1bb9fa18->16711680     ->0x0758bebc  ->0x1bb9f994 ->0x0758c16c->0x0758c1ac ->0x0758c28c
+// get--MMIPUB_GetWinAddDataPtr
+//   win_id ->node_ptr2 ->handle  ->win_ptr3  ->adddata_ex_ptr
+//   1769499->0x0758c28c->22347790->0x0758c1ac->0x00
+//
+// ptr
+//      win_create.add_data_ptr
+//      win_create.add_data_ex_ptr
+//
 
 
 [1.7] #define
@@ -313,39 +326,7 @@ app_main.mk
 
 
 
-[1.13] fota
-## fota--adups
-fdl_bootloader/fota_bootloader/src/tf_display.c
-//
-//adups_net_start_get_new_version()
-//// 下载进度
-//ADUPS_get_download_percent()
-//// 升级进度
-//adups_patch_ratio
-//// state//版本号
-//GetMainStates
-//// 
-//adups_get_device_version()
-
-
-## fota--rs
-// 1、下载检测：开机一分半，24小时周期
-Third-party\rsfota\rsdl\porting\UIS8910\src\rs_param.c  rs_u32^rs_cb_get_first_check_cycle()
-//	return (90*1000);//量产出货阶段配置参数
-
-Third-party\rsfota\rsdl\porting\UIS8910\src\rs_param.c  rs_u32^rs_cb_get_auto_check_cycle()
-//	return (24*60*60*1000);//量产出货阶段配置参数
-
-
-// 2、安装检测：2-5点，30分钟周期，如果检测有，不继续检测
-Third-party\rsfota\rsdl\porting\UIS8910\src\rs_param.c  rs_bool^rs_sys_localtime_fit_for_install
-Third-party\rsfota\rsdl\porting\UIS8910\src\rs_param.c  INSTALL_TIME_END_CLOCK
-//	#define INSTALL_TIME_START_CLOCK  22 // 2
-//	#define INSTALL_TIME_END_CLOCK  1823  //5
-//	#define INSTALL_AUTO_CYCLE_TIME  (30*60*1000) //(2*60*60*1000) //2小时
-
-
-// 3、安装时间：检测有包后，会在2-5点，随机一个时间
+[1.13] 
 
 
 
@@ -609,9 +590,9 @@ MS_MMI_Main/source/mmi_ctrl/source/editbox/c/ctrlbaseflex_cursor.c  void^FillCur
 
 
 
-[2.8] 
-
-
+[2.8] file
+//
+LoadFileToImage
 
 
 [2.9] select_sim

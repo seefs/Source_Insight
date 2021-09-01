@@ -137,8 +137,10 @@ MMIDEFAULT_HandleAutoSendSMSTimer        # 处理发送
 "####1040#",
 // Engineer
 "#*8378#1#", "*#555#",
-// OutVersion -- bg
-"#*8378#2#", "####0000#", "*#888#",
+// Version--Out -- bg
+"#*8378#2#", "####0000#", 
+// Version--3
+"*#888#",
 // Chip
 "#*8378#5#",
 // NV
@@ -157,6 +159,38 @@ MMIDEFAULT_HandleAutoSendSMSTimer        # 处理发送
 "*#119*#", "*#70#",
 // ELECTRIC
 "*#2010#"; "*#0808#"; "*#0809#", 
+
+// test code
+MS_MMI_Main/source/mmi_app/app/eng/c/mmieng_main.c  UITESTWIN_OpenPhoneTestWin
+//    {
+//         "#1#",
+//         MMIENG_IDLE_DIAL_NUM_UI_TEST2, //func id
+//         PARS_MANUFACTURE_TEST,         //无使用
+//         MMIAPIENG_StartUITest
+//    }
+
+### 
+//--v--time,data,vol
+//MMIENG_IDLE_DIAL_NUM_PHONE_INFO
+//--v--mk--sw--hide
+//MMIENG_IDLE_DIAL_NUM_SW_VERSION
+//--v--8910--outV, HW closed
+//MMIENG_IDLE_DIAL_NUM_SHOW_VERSION1,
+//--v--8910--outV, HW closed
+//MMIENG_IDLE_DIAL_NUM_SHOW_VERSION2,
+//--l--no use
+//MMIENG_IDLE_DIAL_NUM_MONKEY_TEST_AUTOSET,
+//--t--nv error
+//MMIENG_IDLE_DIAL_NUM_NV_COUNTING,
+//--x--no use
+//MMIENG_IDLE_DIAL_NUM_AUDIO_DEMO,
+//MMIENG_IDLE_DIAL_NUM_VIDEO_DEMO,
+//MMIENG_IDLE_DIAL_NUM_MEDIA_DEMO,
+//--x--no use
+//MMIENG_IDLE_DIAL_NUM_AUTO_LOG,
+//MMIENG_IDLE_DIAL_NUM_LOG_OFF,
+//--wa01u, mk,
+//MMIENG_IDLE_DIAL_NUM_SHOW_VERSION3, //显示更多版本信息
 
 
 
