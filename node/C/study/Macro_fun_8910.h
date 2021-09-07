@@ -218,6 +218,9 @@ s_mmi_usernv_len
 //  MMI_WIN_ID_T WIN_ID_MAIN	= MMK_GetWinId(win_id5);
 
 //	MMI_WIN_ID_T win_id1 		= MMK_ConvertIdToHandle(WIN_ID_SUB);
+//
+//	MMI_WIN_ID_T wid_chld = MMK_GetWinId(win_handle);
+//	MMI_WIN_ID_T wid_prnt = MMK_GetWinId(MMK_GetParentWinHandle(win_handle));
 
 // fun
 //	MMK_IsFocusWin()

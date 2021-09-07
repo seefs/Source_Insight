@@ -147,12 +147,14 @@ SPDE_PRJ\WA06U\                  ----
 //
 SPDE_PRJ\WA07U_F3Z\              ----华米
 // 电池:630mA
-SPDE_PRJ\WA07U_F30X\             ----华米
+SPDE_PRJ\WA07U_F3X\             ----华米
 // 电池:400mA,TP,单摄,喇叭
 SPDE_PRJ\WA07U_F8Z_QQVGA\        ----华米
 // 电池:400mA
 SPDE_PRJ\WA07U_F30Z\             ----华米
 // 电池:400mA
+SPDE_PRJ\WA07U_F30ZL_AMT\        ----华米
+// 电池:630mA,双摄
 //
 SPDE_PRJ\WA08U\                  ----华米--
 // 电池:默认4.15v

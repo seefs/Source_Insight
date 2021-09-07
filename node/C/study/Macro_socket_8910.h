@@ -105,7 +105,11 @@ fJcZar4toZrCOfT9VDguc6h23Q4BMTXD
 
 
 [1.5] ipurl
+//test
 #define FZD_SOCKET_URL          "test.xcloudtech.com"
+#define FZD_SOCKET_IPURL        "203.195.151.158"
+//
+#define FZD_SOCKET_URL          "api.xcloudtech.com" 9000
 #define FZD_SOCKET_IPURL        "203.195.151.158"
 
 

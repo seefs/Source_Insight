@@ -24,7 +24,7 @@ Save:node\C\study\Macro_slide_8910.h \[1.3\] switch
 Save:node\C\study\Macro_slide_8910.h \[1.4\] pubwin, wait
 Save:node\C\study\Macro_slide_8910.h \[1.5\] banner
 Save:node\C\study\Macro_slide_8910.h \[1.6\] im
-Save:node\C\study\Macro_slide_8910.h \[1.7\] 
+Save:node\C\study\Macro_slide_8910.h \[1.7\] tp
 Save:node\C\study\Macro_slide_8910.h \[1.8\] 
 Save:node\C\study\Macro_slide_8910.h \[1.9\] anim, common
 Save:node\C\study\Macro_slide_8910.h \[1.10\] make---------------¹ØÁªºê
@@ -134,6 +134,9 @@ common:c\watch_commonwin_query.c      WatchCOM_QueryWin_2Btn_Enter
 // pub wait
 HandleTempWaitWinMsg
 HandleDCWaitWinMsg
+//
+// draw
+CommonWin_GetLayoutByType
 
 // --rect
 common:c\watch_commonwin_internal.c CommonWin_GetLayoutByType
@@ -154,10 +157,9 @@ res:im/MMI_RES_DEFAULT/IMAG/TOUCH/
 
 
 
-[1.7] win
-// draw
-CommonWin_GetLayoutByType
-
+[1.7] tp
+//
+MS_MMI_Main\source\mmi_kernel\source\c\mmk_tp.c  MMK_DispatchMSGTp
 
 
 
@@ -194,6 +196,8 @@ make/app_watch_main/release_app_watch_macro.mk  MMI_WATCH_UI
 // add .c
 make\app_watch_main\app_watch_main.mk  watch_stopwatch
 
+//
+make\app_watch_main\app_watch_main.mk  fzd
 
 
 [1.11] app
