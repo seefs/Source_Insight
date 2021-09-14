@@ -23,11 +23,11 @@ Save:node\Pythons\Macro_Note_Python.h \[2.2\] tf2--explain
 Save:node\Pythons\Macro_Note_Python.h \[2.3\] bert、keras
 Save:node\Pythons\Macro_Note_Python.h \[2.4\] tf2_Examples, 画图
 Save:node\Pythons\Macro_Note_Python.h \[2.5\] word
-Save:node\Pythons\Macro_Note_Python.h \[1.6\] 
-Save:node\Pythons\Macro_Note_Python.h \[1.7\] 
-Save:node\Pythons\Macro_Note_Python.h \[1.8\] 
-Save:node\Pythons\Macro_Note_Python.h \[1.9\] 
-Save:node\Pythons\Macro_Note_Python.h \[1.10\] 
+Save:node\Pythons\Macro_Note_Python.h \[2.6\] audio
+Save:node\Pythons\Macro_Note_Python.h \[2.7\] 
+Save:node\Pythons\Macro_Note_Python.h \[2.8\] 
+Save:node\Pythons\Macro_Note_Python.h \[2.9\] 
+Save:node\Pythons\Macro_Note_Python.h \[2.10\] 
 
 
 
@@ -79,7 +79,6 @@ Save:node\Pythons\study\Macro_Pythons_requests.h
 
 
 [1.6] 
-
 
 
 
@@ -157,7 +156,11 @@ Save:node\SQL\project\Macro_file_Word.h
 Save:node\Pythons\project\Macro_txt_block.h
 
 
-[2.6] 
+[2.6] audio
+//
+Save:node\Pythons\project\Macro_audio.h
+
+
 
 
 [2.7] 

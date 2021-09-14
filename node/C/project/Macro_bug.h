@@ -26,21 +26,16 @@ SPDE_PLAT_YX_SUPPORT_VOICE
 
 
 #bug
-//clock--set--end--不能滑
 //
 
 #res
 //R_CALL_3
 //simicon
-//仅idle--状态条
-//仅idle--去长按
 
 #func
 //SOS
 //SOS报警
-//时钟单独列出来
 
-//
 
 # 按键
 //"*#6789#" 无法退出
@@ -55,18 +50,12 @@ SPDE_PLAT_YX_SUPPORT_VOICE
 //sms_ring_不支持,pubwin不自动消失
 //
 //status--sim一半
-//idle/clock--time
-//sim--time
-//red->charge
-//idle2->red
+//idle/clock--time-----------(注意)
+//sim--time------------------(注意)
+
 
 # 死机
-status--下拉--快速小步上拉--死机
-status--下拉--下拉sim_txt--死机
-status--下拉--(从下)再下拉--back死机
-status--下拉--(从上)再下拉--sim list
-status--下拉--概率黑屏--死机
-status--下拉--拖动上拉--死机
+//status--下拉---------------(已关)
 
 
 
@@ -113,6 +102,13 @@ SPDE_PRJ/WA07U_F3Z/zmaee/h/sg_zmaee_app6_rom.h
 
 # 107
 //彩信
+
+# 
+1.版本号01B
+2.
+2.fota
+
+
 
 
 

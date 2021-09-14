@@ -147,12 +147,12 @@ SPDE_PRJ\WA06U\                  ----
 //
 SPDE_PRJ\WA07U_F3Z\              ----华米
 // 电池:630mA
-SPDE_PRJ\WA07U_F3X\             ----华米
+SPDE_PRJ\WA07U_F3X\              ----华米
 // 电池:400mA,TP,单摄,喇叭
 SPDE_PRJ\WA07U_F8Z_QQVGA\        ----华米
 // 电池:400mA
 SPDE_PRJ\WA07U_F30Z\             ----华米
-// 电池:400mA
+// 电池:400mA,双摄
 SPDE_PRJ\WA07U_F30ZL_AMT\        ----华米
 // 电池:630mA,双摄
 //
@@ -217,6 +217,9 @@ lib/UIS8910_ROM_16MB_SS_USER/img_proc.a
 Third-party\rsfota\rsupdate\src\rs_ua_porting.c  rs_fota_addr
 
 ## fota--adups
+//
+SPDE_PRJ\S98T_FLP_E535_31\adups_define.h
+//
 fdl_bootloader/fota_bootloader/src/tf_display.c
 //
 //adups_net_start_get_new_version()

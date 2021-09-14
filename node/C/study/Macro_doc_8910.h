@@ -133,10 +133,10 @@ MMIDEFAULT_HandleAutoSendSMSTimer        # ¥¶¿Ì∑¢ÀÕ
 "#*8378#4#",
 // SN
 "####2222#",
-// Net
+// Net--mcc,mnc
 "####1040#",
 // Engineer
-"#*8378#1#", "*#555#",
+"#*8378#1#", "*#555#",--mcc,mnc
 // Version--Out -- bg
 "#*8378#2#", "####0000#", 
 // Version--3

@@ -826,7 +826,7 @@ macro GetTransFileName(hbuf, fName, cNum)
 	re = FindString(fName, ":")
 	if(re == "X")
 	{
-		if(cNum == 16)
+		if(cNum == 16 || cNum == 17)
 		{
 			//编译指令是相对目录(不用完整路径)
 			fName = fName
@@ -865,7 +865,8 @@ macro GetTransFileName(hbuf, fName, cNum)
 	fName = ReplaceWord(fName, "^", " ")
 	//resolve SI Cache bug.
 	fName = ReplaceWord(fName, "\\\\", "\\")
-	fName = ReplaceWord(fName, "/", "\\")
+	if(cNum != 17)
+		fName = ReplaceWord(fName, "/", "\\")
 //	msg(fName)
 	
 	return fName

@@ -1,9 +1,7 @@
 ﻿
 基础路径设置: 
 //base
-//basePath = C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\
-//basePath = D:\Program^Files\py\Scripts\
-basePath = D:\Program^Files\Python\Python36-32\Scripts\
+basePath = D:\Program^Files\Python\Scripts\
 base:\\
 //test
 testPath = Save:node\Pythons\py_test\
@@ -47,7 +45,7 @@ Save:node\Pythons\install\Macro_Pythons_Install.h \[3.7\] tfmpl---------3D
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.8\] chardet
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.9\] pillow--------imgsize
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.10\] pyyaml-------ttf
-Save:node\Pythons\install\Macro_Pythons_Install.h \[3.11\] 
+Save:node\Pythons\install\Macro_Pythons_Install.h \[3.11\] websocket
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.12\] 
 //	install
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.1\] install
@@ -132,12 +130,21 @@ cmd_w: pip show pip
 //	Version: 19.2.3
 cmd_w: python -m pip install --upgrade pip
 
+//
+https://pypi.org/project/pip/#files
+//
+cd:D:\Program Files\Python\pip\pip-21.2.4
+python setup.py install
+
 
 [2.3] python (<3.7)
 open: F:\tool_python\python\python-3.6.6-amd64.exe
+//下载地址：https://www.python.org/downloads/
 //下载地址：http://www.python.org/getit/
 //下载地址：https://www.python.org/ftp/python/3.2.5/python-3.2.5.msi
 open: C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe
+// 太新装不上
+//  win7--3.7.5
 		
 //添加环境变量, path:
 C:\Users\Administrator\AppData\Local\Programs\Python\Python36\
@@ -163,6 +170,11 @@ python install\version.py
 
 // 打开python窗口：
 open: C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe
+
+
+// 修改路径: 改环境变量+改名
+D:\Program^Files\Python\Python36-32
+D:\Program^Files\Python\python-3.8.10
 
 
 
@@ -364,9 +376,22 @@ cmd_w: pip install fonttools
 
 
 
-[3.11] 
+[3.11] websocket
+//
+cmd_w: pip show websocket
+//
+cmd_w: pip install websocket
+cmd_w: pip install websocket-client 
+cmd_w: pip install 
 
-
+//	cffi==1.12.3
+//	gevent==1.4.0
+//	greenlet==0.4.15
+//	pycparser==2.19
+//	six==1.12.0
+//	websocket==0.2.1
+//	websocket-client==0.56.0
+//	wave
 
 
 [3.12] 

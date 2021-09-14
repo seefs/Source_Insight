@@ -1235,7 +1235,7 @@ macro NoteCmdCd(hbuf, noteCmd, rootPath, curPath)
 	// curPath : git clone https://github.com/web3j/web3j
 	
 	// curPath : git clone https://github.com/web3j/web3j
-	curPath = GetTransFileName(hbuf, curPath, 16)
+	curPath = GetTransFileName(hbuf, curPath, 17)
 	if(noteCmd == "cd")
 		SetClipSimpleString(curPath)
 		

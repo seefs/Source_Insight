@@ -722,6 +722,9 @@ MS_MMI_Main/source/mmi_app/app/eng/c/mmieng_uitestwin.c  TestKeyboard
 //#endif
 
 
+//
+ATEST_SUPPORT
+
 
 [2.16] sim--œ‘ æµ•ø®
 //

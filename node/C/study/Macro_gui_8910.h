@@ -1,5 +1,4 @@
 
-
 //appPath = MS_MMI_Main/source/mmi_app/app
 appPath = MS_MMI/source/mmi_app/app
 app:\\
@@ -9,7 +8,6 @@ ctrl:\\
 //guiPath = MS_MMI_Main\source\mmi_gui\source
 guiPath = MS_MMI\source\mmi_gui\source
 gui:\\
-
 
 
 // Ŀ¼:

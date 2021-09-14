@@ -300,9 +300,11 @@ s_shortcut_list_text_id
 OpenSelectedShortcutWin--func_arr
 
 ### ƒ¨»œ/œ‘ æ
+// default list
 s_shortcut_menu_show_list_text_id
 
 ### ±‡º≠
+// all list
 s_shortcut_menu_edit_list_text_id
 
 // edit-menu
