@@ -4,38 +4,21 @@ charset_old = "GB2312"
 charset_new = "UTF-8"
 
 
-' 转换整个目录, 不能有不存在的文件夹:
+' Convert the entire directory, there can be no non-existent folders:
 ConvPath ".\\..\\..\\Macro",charset_new
 ConvPath ".\\..\\..\\Help",charset_new
-ConvPath ".\\..\\..\\Help\\Test",charset_new
 ConvPath ".\\..\\..\\Help\\Tmp",charset_new
 ConvPath ".\\..\\..\\node",charset_new
-ConvPath ".\\..\\..\\node\\android",charset_new
-ConvPath ".\\..\\..\\node\\android\\app",charset_new
-ConvPath ".\\..\\..\\node\\android\\base",charset_new
-ConvPath ".\\..\\..\\node\\android\\sys",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\install",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\study",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\sqlite3",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\tfTUT",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf5_example2",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf11_build_network",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf12_plot_result",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf14_tensorboard",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf15_tensorboard",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf16_classification",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf17_dropout",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf18_CNN2",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\py_test",charset_new
 ConvPath ".\\..\\..\\node\\ToolsMsg",charset_new
 ConvPath ".\\..\\..\\Set",charset_new
 
-' 转换整个目录:
-convertct ".\\..\\..\\README_utf8.txt",charset_new
+' Convert a single file:
+convertct ".\\..\\..\\node\\Simple_CTRL_B.h",charset_new
 
-MsgBox "字符编码转换结束",,"tya提示"
+
+MsgBox "End of character encoding conversion",,"prompt"
   
-'将读取的文件内容以指定编码写入文件
+'Write the content of the read file to the file with the specified encoding
 Function ConvPath(fdpath,charset)
 	Set fso = CreateObject("scripting.filesystemobject")
 	Set fd = fso.GetFolder(fdpath)
@@ -45,24 +28,24 @@ Function ConvPath(fdpath,charset)
 	Next
 End Function
   
-'将读取的文件内容以指定编码写入文件
+'Write the content of the read file to the file with the specified encoding
 Function convertct(filepath,charset)
 	Dim FileName, FileContents, dFileContents
 	FileName = filepath 
 	FileContents = LoadFile(FileName)
 	Set savefile = CreateObject("adodb.stream")
-	savefile.Type = 2  '这里1为二进制，2为文本型
+	savefile.Type = 2  'Here 1 is binary and 2 is text
 	savefile.Mode = 3
 	savefile.Open()
 	savefile.charset = charset
 	savefile.Position = savefile.Size
-	savefile.Writetext(FileContents)  'write写二进制,writetext写文本型
+	savefile.Writetext(FileContents)  'write write binary, writetext write text
 	savefile.SaveToFile filepath,2
 	savefile.Close()
 	set savefile = nothing
 End Function
 
-'以文件本身编码读取文件
+'Read the file with the file encoding
 Function LoadFile(Path)
     Dim Stm2
     Set Stm2 = CreateObject("ADODB.Stream")
@@ -81,7 +64,7 @@ Function LoadFile(Path)
 End Function
 
 
-'该函数检查并返回文件的编码类型
+'This function checks and returns the encoding type of the file
 Function CheckCode(file)
 	Dim slz
 	set slz = CreateObject("Adodb.Stream") 
@@ -104,7 +87,7 @@ Function CheckCode(file)
 End Function
 
 
-'将Byte()数组转成String字符串
+'Convert Byte () array to String
 Function read(path)
     Dim ado, a(), i, n
     Set ado = CreateObject("ADODB.Stream")
@@ -119,8 +102,8 @@ Function read(path)
 End Function
 
 
-'准确验证文件是否为utf-8（能验证无BOM头的uft-8文件）
-Function is_valid_utf8(ByRef input) 'ByRef以提高效率
+'Accurately verify whether the file is utf-8 (can verify the UFT-8 file without BOM header)
+Function is_valid_utf8(ByRef input) 'ByRef to improve efficiency
     Dim s, re
     Set re = New Regexp
     s = "[\xC0-\xDF]([^\x80-\xBF]|$)"

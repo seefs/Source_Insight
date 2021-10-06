@@ -257,7 +257,7 @@ gradlew -q app:dependencies
 gradlew dependencies --info
 
 8) 常用查错命令：
-//查看build 的info  
+//查看build 的info??
 gradlew compileDebugSources --stacktrace -debug --scan
 gradlew compileDebugSources --stacktrace -info
 
@@ -401,7 +401,7 @@ demo:app\build.gradle
 
 [2.1] gradle version
 # 当前插件--3.5.2
-build.gradle
+demo:build.gradle
 //	classpath 'com.android.tools.build:gradle:3.1.2'
 
 # 当前Gradle--5.4.1
@@ -416,6 +416,11 @@ D:\android\.gradle\wrapper\dists
 #   手动下载gradle
 #   最新: v6.3
 https://gradle.org/releases/
+
+
+// Gradle版本对应关系
+https://developer.android.google.cn/studio/releases/gradle-plugin#updating-gradle
+
 
 
 

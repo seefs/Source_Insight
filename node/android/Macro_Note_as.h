@@ -160,7 +160,7 @@ Save:node\android\study\Macro_android_Data.h
 Save:node\android\study\Macro_android_api.h
 // 权限兼容，未整理
 https://blog.csdn.net/xiayiye5/article/details/80511554
-// 常用代码
+// 常用库，启动模式
 Save:node\android\study\Macro_android_note.h
 // other
 Save:node\android\study\Macro_other_observer.h
