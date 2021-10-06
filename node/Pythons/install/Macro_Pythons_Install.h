@@ -1,8 +1,7 @@
 ﻿
 基础路径设置: 
 //base
-//basePath = C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\
-basePath = D:\Program^Files\py\Scripts\
+basePath = D:\Program^Files\Python\Scripts\
 base:\\
 //test
 testPath = Save:node\Pythons\py_test\
@@ -44,8 +43,10 @@ Save:node\Pythons\install\Macro_Pythons_Install.h \[3.5\] jieba
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.6\] conf
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.7\] tfmpl---------3D
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.8\] chardet
-Save:node\Pythons\install\Macro_Pythons_Install.h \[3.9\] PIL
-Save:node\Pythons\install\Macro_Pythons_Install.h \[3.10\] 
+Save:node\Pythons\install\Macro_Pythons_Install.h \[3.9\] pillow--------imgsize
+Save:node\Pythons\install\Macro_Pythons_Install.h \[3.10\] pyyaml-------ttf
+Save:node\Pythons\install\Macro_Pythons_Install.h \[3.11\] websocket
+Save:node\Pythons\install\Macro_Pythons_Install.h \[3.12\] 
 //	install
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.1\] install
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.2\] upgrade
@@ -125,16 +126,25 @@ open: F:\tool_soft\python\GitHubDesktopSetup.exe
 
 
 [2.2] pip
-cmd_w: python -m pip install --upgrade pip
-//cmd_w: pip show pip
+cmd_w: pip show pip
 //	Version: 19.2.3
+cmd_w: python -m pip install --upgrade pip
+
+//
+https://pypi.org/project/pip/#files
+//
+cd:D:\Program Files\Python\pip\pip-21.2.4
+python setup.py install
 
 
 [2.3] python (<3.7)
 open: F:\tool_python\python\python-3.6.6-amd64.exe
+//下载地址：https://www.python.org/downloads/
 //下载地址：http://www.python.org/getit/
 //下载地址：https://www.python.org/ftp/python/3.2.5/python-3.2.5.msi
 open: C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe
+// 太新装不上
+//  win7--3.7.5
 		
 //添加环境变量, path:
 C:\Users\Administrator\AppData\Local\Programs\Python\Python36\
@@ -160,6 +170,11 @@ python install\version.py
 
 // 打开python窗口：
 open: C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe
+
+
+// 修改路径: 改环境变量+改名
+D:\Program^Files\Python\Python36-32
+D:\Program^Files\Python\python-3.8.10
 
 
 
@@ -254,6 +269,13 @@ C:\Program^Files\JetBrains\PyCharm^2019.1\bin\
 56ZS5PQ1RF-eyJsaWNlbnNlSWQiOiI1NlpTNVBRMVJGIiwibGljZW5zZWVOYW1lIjoi5q2j54mI5o6I5p2DIC4iLCJhc3NpZ25lZU5hbWUiOiIiLCJhc3NpZ25lZUVtYWlsIjoiIiwibGljZW5zZVJlc3RyaWN0aW9uIjoiRm9yIGVkdWNhdGlvbmFsIHVzZSBvbmx5IiwiY2hlY2tDb25jdXJyZW50VXNlIjpmYWxzZSwicHJvZHVjdHMiOlt7ImNvZGUiOiJJSSIsInBhaWRVcFRvIjoiMjAyMC0wMy0xMCJ9LHsiY29kZSI6IkFDIiwicGFpZFVwVG8iOiIyMDIwLTAzLTEwIn0seyJjb2RlIjoiRFBOIiwicGFpZFVwVG8iOiIyMDIwLTAzLTEwIn0seyJjb2RlIjoiUFMiLCJwYWlkVXBUbyI6IjIwMjAtMDMtMTAifSx7ImNvZGUiOiJHTyIsInBhaWRVcFRvIjoiMjAyMC0wMy0xMCJ9LHsiY29kZSI6IkRNIiwicGFpZFVwVG8iOiIyMDIwLTAzLTEwIn0seyJjb2RlIjoiQ0wiLCJwYWlkVXBUbyI6IjIwMjAtMDMtMTAifSx7ImNvZGUiOiJSUzAiLCJwYWlkVXBUbyI6IjIwMjAtMDMtMTAifSx7ImNvZGUiOiJSQyIsInBhaWRVcFRvIjoiMjAyMC0wMy0xMCJ9LHsiY29kZSI6IlJEIiwicGFpZFVwVG8iOiIyMDIwLTAzLTEwIn0seyJjb2RlIjoiUEMiLCJwYWlkVXBUbyI6IjIwMjAtMDMtMTAifSx7ImNvZGUiOiJSTSIsInBhaWRVcFRvIjoiMjAyMC0wMy0xMCJ9LHsiY29kZSI6IldTIiwicGFpZFVwVG8iOiIyMDIwLTAzLTEwIn0seyJjb2RlIjoiREIiLCJwYWlkVXBUbyI6IjIwMjAtMDMtMTAifSx7ImNvZGUiOiJEQyIsInBhaWRVcFRvIjoiMjAyMC0wMy0xMCJ9LHsiY29kZSI6IlJTVSIsInBhaWRVcFRvIjoiMjAyMC0wMy0xMCJ9XSwiaGFzaCI6IjEyMjkxNDk4LzAiLCJncmFjZVBlcmlvZERheXMiOjAsImF1dG9Qcm9sb25nYXRlZCI6ZmFsc2UsImlzQXV0b1Byb2xvbmdhdGVkIjpmYWxzZX0=-SYSsDcgL1WJmHnsiGaHUWbaZLPIe2oI3QiIneDtaIbh/SZOqu63G7RGudSjf3ssPb1zxroMti/bK9II1ugHz/nTjw31Uah7D0HqeaCO7Zc0q9BeHysiWmBZ+8bABs5vr25GgIa5pO7CJhL7RitXQbWpAajrMBAeZ2En3wCgNwT6D6hNmiMlhXsWgwkw2OKnyHZ2dl8yEL+oV5SW14t7bdjYGKQrYjSd4+2zc4FnaX88yLnGNO9B3U6G+BuM37pxS5MjHrkHqMTK8W3I66mIj6IB6dYXD5nvKKO1OZREBAr6LV0BqRYSbuJKFhZ8nd6YDG20GvW6leimv0rHVBFmA0w==-MIIElTCCAn2gAwIBAgIBCTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTE4MTEwMTEyMjk0NloXDTIwMTEwMjEyMjk0NlowaDELMAkGA1UEBhMCQ1oxDjAMBgNVBAgMBU51c2xlMQ8wDQYDVQQHDAZQcmFndWUxGTAXBgNVBAoMEEpldEJyYWlucyBzLnIuby4xHTAbBgNVBAMMFHByb2QzeS1mcm9tLTIwMTgxMTAxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcQkq+zdxlR2mmRYBPzGbUNdMN6OaXiXzxIWtMEkrJMO/5oUfQJbLLuMSMK0QHFmaI37WShyxZcfRCidwXjot4zmNBKnlyHodDij/78TmVqFl8nOeD5+07B8VEaIu7c3E1N+e1doC6wht4I4+IEmtsPAdoaj5WCQVQbrI8KeT8M9VcBIWX7fD0fhexfg3ZRt0xqwMcXGNp3DdJHiO0rCdU+Itv7EmtnSVq9jBG1usMSFvMowR25mju2JcPFp1+I4ZI+FqgR8gyG8oiNDyNEoAbsR3lOpI7grUYSvkB/xVy/VoklPCK2h0f0GJxFjnye8NT1PAywoyl7RmiAVRE/EKwIDAQABo4GZMIGWMAkGA1UdEwQCMAAwHQYDVR0OBBYEFGEpG9oZGcfLMGNBkY7SgHiMGgTcMEgGA1UdIwRBMD+AFKOetkhnQhI2Qb1t4Lm0oFKLl/GzoRykGjAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBggkA0myxg7KDeeEwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQAF8uc+YJOHHwOFcPzmbjcxNDuGoOUIP+2h1R75Lecswb7ru2LWWSUMtXVKQzChLNPn/72W0k+oI056tgiwuG7M49LXp4zQVlQnFmWU1wwGvVhq5R63Rpjx1zjGUhcXgayu7+9zMUW596Lbomsg8qVve6euqsrFicYkIIuUu4zYPndJwfe0YkS5nY72SHnNdbPhEnN8wcB2Kz+OIG0lih3yz5EqFhld03bGp222ZQCIghCTVL6QBNadGsiN/lWLl4JdR3lJkZzlpFdiHijoVRdWeSWqM4y0t23c92HXKrgppoSV18XMxrWVdoSM3nuMHwxGhFyde05OdDtLpCv+jlWf5REAHHA201pAU6bJSZINyHDUTB+Beo28rRXSwSh3OUIvYwKNVeoBY+KwOJ7WnuTCUq1meE6GkKc4D/cXmgpOyW/1SmBz3XjVIi/zprZ0zf3qH5mkphtg6ksjKgKjmx1cXfZAAX6wcDBNaCL+Ortep1Dh8xDUbqbBVNBL4jbiL3i3xsfNiyJgaZ5sX7i8tmStEpLbPwvHcByuf59qJhV/bZOl8KqJBETCDJcY6O2aqhTUy+9x93ThKs1GKrRPePrWPluud7ttlgtRveit/pcBrnQcXOl1rHq7ByB8CFAxNotRUYL9IF5n3wJOgkPojMy6jetQA5Ogc8Sm7RG6vg1yow==
 
 
+//
+https://www.cnblogs.com/51QA/p/8081255.html 3、注册码：
+经过网上多次查找和尝试，【感谢网友qq_34554123亲试可行的方案：】
+server选项里边输入 http://idea.imsxm.com/
+
+
+
 [2.12] requests
 cmd_w: pip install requests
 // 解析网页
@@ -331,22 +353,48 @@ cmd_w: pip install params_flow
 
 
 
-[3.9] PIL
-cmd_w: pip install PIL
-cmd_w: python -m pip install PIL
-cmd_w: pip3 install --index-url https://pypi.douban.com/simple PIL
+[3.9] pillow
 //pillow
 cmd_w: pip install pillow
-cmd_w: python -m pip install pillow
-cmd_w: pip3 install --index-url https://pypi.douban.com/simple PIL
+cmd_w: pip3 install pillow
+
+
+
+[3.10] pyyaml
+# pyyaml fontforge
+cmd_w: pip show pyyaml
+// Version: 5.4.1
+cmd_w: pip show fonttools
+// Version: 4.25.2
+
+cmd_w: pip install pyyaml
+cmd_w: pip install fontforge
+cmd_w: pip install python-fontforge
+cmd_w: pip install fontforge==1.0
+cmd_w: pip install python-fontforge
+cmd_w: pip install fonttools
+
+
+
+[3.11] websocket
 //
-cmd_w: pip install PIL -image -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
+cmd_w: pip show websocket
+//
+cmd_w: pip install websocket
+cmd_w: pip install websocket-client 
+cmd_w: pip install 
+
+//	cffi==1.12.3
+//	gevent==1.4.0
+//	greenlet==0.4.15
+//	pycparser==2.19
+//	six==1.12.0
+//	websocket==0.2.1
+//	websocket-client==0.56.0
+//	wave
 
 
-
-
-[3.10] 
-
+[3.12] 
 
 
 

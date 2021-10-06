@@ -1,4 +1,5 @@
 
+
 Save
 Save:node\Macro_File.h
 Save:node\Macro_History.h
@@ -8,84 +9,88 @@ Save:node\Macro_tmp.h
 
 //C
 Save:node\C\Macro_Note_C.h
+Save:node\C\project\Macro_bug.h
 //
 Save:node\C\project\Macro_Note_8910.h
-Save:node\C\study\Macro_modis_8910.h
+Save:node\C\project\Macro_cfg_8910.h
 Save:node\C\study\
-Save:node\C\study\Macro_8910_Debug.h
+Save:node\C\study\Macro_app_8910.h
+Save:node\C\study\Macro_gui_8910.h
+Save:node\C\study\Macro_fun_8910.h
+Save:node\C\study\Macro_doc_8910.h
+Save:node\C\study\Macro_res_8910.h
+Save:node\C\study\Macro_nv_8910.h
+//
+Save:node\C\study\Macro_slide_8910.h
+Save:node\C\study\Macro_zdt_8910.h
+Save:node\C\study\Macro_zmaee_8910.h
+Save:node\C\study\Macro_sccard_8910.h
+Save:node\C\study\Macro_socket_8910.h
 
 
 /***********************************************************************/
 
-//
-xiaojia_bm@163.com
-bomeng608
-
-// bug
-edit--num--del--行数不对
-//
-txt
-//
-dial--soft
-//
-idle--pb
 
 
-// g-8910s
+
+
+// 8910s
 make p=UIS8910_ROM_16MB_DS_USER m=simulator_idh
 make p=UIS8910_ROM_16MB_DS_USER m=custom_drv update image
 make p=UIS8910_ROM_16MB_DS_USER m=app_main update image
+make p=UIS8910_ROM_16MB_DS_DEBUG m=resource_main update image
+make p=UIS8910_ROM_16MB_DS_USER m=ctrl update image
+make p=UIS8910_ROM_16MB_DS_USER m=gui_main update image
+make p=UIS8910_ROM_16MB_DS_DEBUG image
+// launcher
+make p=UIS8910_128x160BAR_16MB_SS_WA03U_T2_V2_USER m=simulator_idh
+// 8910wa
+make p=UIS8910_128x160BAR_16MB_SS_WA03U_T2_V2_USER m=simulator_idh
+// thir_wa
+make p=UIS8910_240x240BAR_16MB_SS_USER m=simulator_idh
+make p=UIS8910_240x240BAR_16MB_SS_USER new job=12
+make p=UIS8910_240x240BAR_16MB_SS_USER m=resource_main
+// w0
+make p=UIS8910_240x320BAR_16MB_SS_WA03U_T2_HERO_user m=simulator_idh
+make p=UIS8910_240x320BAR_16MB_SS_WA03U_T2_HERO_user m=app_main update image
+make p=UIS8910_240x320BAR_16MB_SS_WA03U_T2_HERO_user m=resource_main
+make p=UIS8910_240x320BAR_16MB_SS_WA03U_T2_HERO_user m=app_main update image
+make p=UIS8910_240x320BAR_16MB_SS_WA03U_T2_HERO_user m=custom_drv update image
+make p=UIS8910_ROM_16MB_SS_WA07U_F30Z_USER m=resource_main update image
+make p=UIS8910_ROM_16MB_SS_WA07U_F30Z_USER m="resource_main app_main" update image
+make p=UIS8910_ROM_16MB_SS_WA07U_F30Z_USER m="custom_drv app_main" update image
+make p=UIS8910_ROM_16MB_SS_WA07U_F30Z_USER image
+// w07 差异(不然监拍会显示页面)
+make p=UIS8910_ROM_16MB_SS_WA07U_USER m=isp_service update image
+// bmw0
+make p=UIS8910_240x320BAR_16MB_SS_BMWATCH_USER m=simulator_idh
+make p=UIS8910_240x320BAR_16MB_SS_BMWATCH_USER m=resource_main
+make p=UIS8910_240x320BAR_16MB_SS_BMWATCH_USER m=app_watch_main update image
+make p=UIS8910_240x320BAR_16MB_SS_BMWATCH_USER m=app_watch_main
+make p=UIS8910_240x320BAR_16MB_SS_BMWATCH_USER m=chip_drv
+// sch
+make p=UIS8910_ROM_16MB_SS_GZ02F_USER m=simulator_idh
+make p=UIS8910_ROM_16MB_SS_GZ02F_USER m=app_main update image
+make p=UIS8910_ROM_16MB_SS_GZ02F_USER m=custom_drv update image
+// 6531
+make p=sc6531_F55S_32X32_240X320_formal_SUOAI_Z6_A m=simulator
+make p=sc6531_F55S_32X32_240X320_formal_SUOAI_Z6_A m=resource
+make p=sc6531_F55S_32X32_240X320_formal_SUOAI_Z6_A m=app update image
+make p=sc6531_F55S_32X32_240X320_formal_SUOAI_Z6_A m=app
+make p=sc6531_F55S_32X32_240X320_formal_SUOAI_Z6_A image
+make p=sc6531_F55S_32X32_240X320_formal_SUOAI_Z6_A m="gui app" update image
+make p=sc6531_F55S_32X32_240X320_formal_SUOAI_Z6_A new job=12
+// T107
+make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_user m=simulator_main
+make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_user m=resource_main
+make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_user m=app_main update image
+make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_user m=ctrl update image
+make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_user m=custom_drv
+make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_user m=custom_drv update image
+make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_user m="mmk_main ctrl app_main" update image
+make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_user m=mmk_main update image
+make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_user image
+make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_user m=bootloader update image
 //
-make p=UIS8910_240x320BAR_16MB_SS_USER m=simulator_idh
-make p=UIS8910_240x320BAR_16MB_SS_USER m=app_main update image
-make p=UIS8910_240x320BAR_16MB_SS_WA01U_Q8_USER m=app_main update image
-//
-make p=UIS8910_240x320BAR_16MB_DS_USER m=custom_drv
-make p=UIS8910_240x320BAR_16MB_DS_USER m=app_main update image
-// d--w01
-make p=UIS8910_240x320BAR_16MB_SS_WA01U_Q8_USER m=app_main update image
-// d--w02
-make p=UIS8910_240x320BAR_16MB_SS_WA01U_Q8_USER m=simulator_idh
 
 
-//
-E:\T107\T107_20201012.git
-//
-G:\UIS8910FF_36.2\UIS8910.36.2.FFS.git
-//
-D:\K220U_QQVGA\SPDE_PRJ
-
-
-D:\W01AU_SVN\code
-
-make p=UIS8910_ROM_16MB_DS_USER image
-
-
-//
-G:\SP6531D\MS_MMI\source\resource\mmi_res_240x320
-
-
-
-
-
-D:\WATCH_TOUCH_MOCOR_UIS8910_20B_W20.28.4
-
-
-
-
-
-MSG_OPEN_WINDOW
-
-
-
-
-
-
-
-
-
-
-
-
-
-	

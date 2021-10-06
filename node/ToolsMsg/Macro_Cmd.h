@@ -26,7 +26,7 @@ Save:node\ToolsMsg\Macro_Cmd.h \[2.5\] show: File
 Save:node\ToolsMsg\Macro_Cmd.h \[2.6\] show: File Time
 Save:node\ToolsMsg\Macro_Cmd.h \[2.7\] show: hide File
 Save:node\ToolsMsg\Macro_Cmd.h \[2.8\] attrib
-Save:node\ToolsMsg\Macro_Cmd.h \[2.9\] 
+Save:node\ToolsMsg\Macro_Cmd.h \[2.9\] 当前盘符
 Save:node\ToolsMsg\Macro_Cmd.h \[2.10\]
 // 3. apk、adb
 Save:node\ToolsMsg\Macro_Cmd.h \[3.1\] logcat
@@ -312,6 +312,9 @@ if not defined sbd_param1 (
 ) 
 
 
+// and or
+
+
 [1.12] setlocal----------变量延迟
 // 变量延迟
 @echo off&setlocal EnableDelayedExpansion
@@ -454,7 +457,17 @@ ren K:歌曲\北国之春.mp4 北国之春.mp3
 //	ATTRIB [+R | -R] [+A | -A ] [+S | -S] [+H | -H] [[drive:] [path] filename] [/S [/D]]
 
 
-[2.9] 
+[2.9] 当前盘符
+//	当前盘符：%~d0
+//	当前路径：%cd%
+//	当前执行命令行：%0
+//	当前bat文件路径：%~dp0
+//	当前bat文件短路径：%~sdp0
+//	G:
+//	G:\T1073\
+//	G:\T1073\S98T_nv_test.bat
+//	G:\T1073\
+//	G:\T1073\
 
 
 [2.10] 

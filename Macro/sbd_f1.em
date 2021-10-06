@@ -13,12 +13,13 @@ macro Tree()
 	if(IsNoteFile(hbuf) || IsMacroFile(hbuf))
 	{
 		Item_Tree(0)
-		stop	}
+		stop
+	}
     
 	key = GetKey()
 	if (key >= 48 && key <= 57 )                     // 数字0~9
 	{
-		TreeNum(hbuf, key)
+		TreeNum(hbuf, key-48)
 	}
 	else if (key >= 97 && key <= 122 )               // 字母a~z
 	{
@@ -26,7 +27,7 @@ macro Tree()
 	}
 	else if (key >= 262209 && key <= 262209 + 26 )   // ctrl+a~z
 	{
-		TreeCtrlChar(hbuf, key)
+		TreeCtrlChar(hbuf, key-262209)
 	}
 	else if (key >= 4208 && key <= 4219)             // F1~F12  显示f1~f12 功能说明(SI3.5编码)
 	{
@@ -46,6 +47,10 @@ macro Tree()
 		else if(key == 4211) //F4
 		{
 			Search_Forward
+		}
+		else if(key == 4212) //F5
+		{
+			testTmp(hbuf)
 		}
 		else if(key == 4213) //F6
 		{
@@ -75,6 +80,10 @@ macro Tree()
 		{
 			Search_Forward
 		}
+		else if(key == 1048692) //F5
+		{
+			testTmp(hbuf)
+		}
 		else if(key == 1048693) //F6
 		{
 			BCompare(1)
@@ -103,41 +112,117 @@ macro Item_10()		{		Item_Tree(10)	}
 
 macro Item_Tree(num)
 {
+	var key
     hbuf = GetCurrentBuf()
 
-	global g_sel
-	global g_ok
+	//state: 按完不清零, 需要手动清零
+	//  0 none
+	//  1 layer1
+	//  2 layer2
+	//  3 layer3
+	global g_state
+	//layer: 按完清零
+	global g_layer_1
+	global g_layer_2
+	global g_layer_3
+	var layer_sum
 
-	if(num == 0)
+	// 循环输入0~9
+	if (num == 48)
+		num = 10
+	else if(num >= 49 && num <= 57 )
+		num = num - 48
+		
+	if (num>10)
 	{
-		g_sel = 0
-		ShowFHelp(hbuf, "Base")
-		stop
+		g_state = NIL
+		g_layer_1 = 0
+		g_layer_2 = 0
+		g_layer_3 = 0
+		return 0;
 	}
-	else if(g_sel == 0 && num == 8)
+
+	if(num == 0)    //layer_0
 	{
-		//数字提示
-		ShowFHelp(hbuf, "F1")
-		stop
+		if(g_layer_1 != 0) 
+		{
+			g_state = 1
+			key = GetKey()
+			Item_Tree(key)
+			return 0;
+		}
+		else if(g_state == NIL) 
+		{
+			ShowFHelp(hbuf, "Base")
+			g_state = 1
+			key = GetKey()
+			Item_Tree(key)
+			return 0;
+		}
+		g_state = NIL
+		g_layer_1 = 0
+		g_layer_2 = 0
+		g_layer_3 = 0
+		return 0;
 	}
-	else if(g_sel == 0 && num == 9)
+
+	if(g_state == 1)  //layer_1
 	{
-		//字母提示(最常用)
-		ShowFHelp(hbuf, "F1A")
-		stop
+		if(g_layer_1 != num)
+		{
+			if(num == 1)
+				msg("F1->1->?, 再输入数字0~9")
+			else if(num == 2)
+				msg("F1->2->?, 再输入字母a-j")
+			else if(num == 3)
+				msg("F1->3->?, 再输入字母k-t")
+			else if(num == 4)
+				msg("F1->4->?, 再输入字母u-z")
+			else if(num == 5)
+				msg("F1->5->?, 再输入f1-f10")
+			else if(num == 6)
+				msg("F1->6->?, 再输入f11-f12, Other -,+,back,del,方向键")
+			else if(num == 7)
+				msg("F1->7->?, 再输入ctrl+a~D")
+			else if(num == 8)
+				//数字提示
+				ShowFHelp(hbuf, "F1")
+			else if(num == 9)
+				//字母提示(最常用)
+				ShowFHelp(hbuf, "F1A")
+		}
+		g_layer_1 = num
+		g_state = 2
+		
+		key = GetKey()
+		Item_Tree(key)
+		return 0;
 	}
-	else if(g_sel == 0 || g_sel > 100)
+	else if(g_state == 2)
 	{
-		g_sel = num*10
-		//显示11~19，或61~69
-		msg(g_sel)
-		stop
+		layer_sum = g_layer_1*10 + num
+		if(g_layer_2 != num)
+		{
+		}
+		g_layer_2 = num
+	}
+	else if(g_state == 3)
+	{
+		layer_sum = g_layer_2*10 + g_layer_1*10 + num
+		if(g_layer_3 != num)
+		{
+			msg(layer_sum)
+		}
+		g_layer_3 = num
 	}
 	else
 	{
-		g_ok = g_sel + num
+		return 0;
 	}
-	Code_Tree(g_ok)
+	msg("Code_Tree " # layer_sum)
+	Code_Tree(layer_sum)
+	g_state = NIL
+	return 0;
 }
 
 macro Code_Tree(g_ok)
@@ -146,14 +231,11 @@ macro Code_Tree(g_ok)
     
 	if(g_ok > 10 && g_ok <= 20)
 	{
-		if (g_ok == 20)
-			key = g_ok - 20 + 48
-		else
-			key = g_ok - 10 + 48
-		
-		msg("TreeNum " # key)
 		//数字0~9,10个
-//		TreeNum(hbuf, key)
+		if (g_ok == 20)
+			TreeNum(hbuf, 0)
+		else
+			TreeNum(hbuf, g_ok-10)
 	}
 	else if(g_ok > 20 && g_ok <= 46)
 	{
@@ -167,26 +249,21 @@ macro Code_Tree(g_ok)
 		
 		TreeChar(hbuf, lower_key)
 	}
-	else if(g_ok > 50 && g_ok <= 60)
+	else if(g_ok > 50 && g_ok <= 61)
 	{
-		//f1-f10,6个
-		key = g_ok - 20 + 96
-		msg("f1-f10, " # key)
-//		TreeChar(hbuf, key)
+		//f1-f12
+		TreeFNum(hbuf, g_ok - 50)
 	}
-	else if(g_ok > 60 && g_ok <= 70)
+	else if(g_ok > 61 && g_ok <= 70)
 	{
-		//f11-f12, Other
-		key = g_ok - 20 + 96
-		msg("f1-f10, " # key)
-//		TreeChar(hbuf, key)
+		//char, Other
+		msg("char, " # g_ok)
+		TreeChar(hbuf, g_ok)
 	}
 	else if(g_ok > 70 && g_ok <= 80)
 	{
 		//ctrl+a~D
-		key = g_ok - 20 + 96
-		msg("f1-f10, " # key)
-//		TreeOther(hbuf, key)
+		TreeCtrlChar(hbuf, g_ok - 70)
 	}
 	else
 	{
@@ -198,60 +275,60 @@ macro TreeNum(hbuf, key)
 {
 	//_TempHeadF1()
 	//指定默认文件可能为任意目录
-	if (key != 49)
+	if (key != 1)
 	{
 		bft = getBft(2)
 	}
 	
-	if (key == 49) //数字1
+	if (key == 1) //数字1
 	{
 		//跳到默认file
 		SetDefaultProject(hbuf)
 //		file = GetGroupItem(bft, 1, "Project", "File")
 	}
-	else if (key == 50) //数字2
+	else if (key == 2) //数字2
 	{
 		file = GetGroupItem(bft, 1, "Project", "File")
 		OpenProjectFile(hbuf, file, "", "")
 	}
-	else if (key == 51) //数字3
+	else if (key == 3) //数字3
 	{
 		file = GetGroupItem(bft, 2, "Project", "File")
 		OpenProjectFile(hbuf, file, "", "")
 	}
-	else if (key == 52) //数字4
+	else if (key == 4) //数字4
 	{
 		file = GetGroupItem(bft, 3, "Project", "File")
 		word = "MMISET_EDEFAULT_LANGUAGE"
 		OpenProjectFile(hbuf, file, "", word)
 	}
-	else if (key == 53) //数字5
+	else if (key == 5) //数字5
 	{
 		file1 = GetGroupItem(bft, 4, "Project", "File")
 		file2 = GetGroupItem(bft, 5, "Project", "File")
 		word = "menu_mainmenu_icon"
 		OpenProjectFile(hbuf, file1, file2, word)
 	}
-	else if (key == 54) //数字6
+	else if (key == 6) //数字6
 	{
 		file = GetGroupItem(bft, 6, "Project", "File")
 		OpenProjectFile(hbuf, file, "", "")
 	}
-	else if (key == 55) //数字7
+	else if (key == 7) //数字7
 	{
 		file = GetGroupItem(bft, 7, "Project", "File")
 		OpenProjectFile(hbuf, file, "", "")
 	}
-	else if (key == 56) //数字8
+	else if (key == 8) //数字8
 	{
 		OpenBuildDir(hbuf)
 	}
-	else if (key == 57) //数字9
+	else if (key == 9) //数字9
 	{
 		//设置默认mk
 		SetDefaultMake(hbuf)
 	}
-	else if (key == 48) //数字0
+	else if (key == 0) //数字0
 	{
 		//跳到默认mk
 		OpenDefaultMake(hbuf)
@@ -385,11 +462,11 @@ macro TreeChar(hbuf, key)
 macro TreeCtrlChar(hbuf, key)
 {
 	//_TempHeadF1()
-	if (key == 262209) //字母A
+	if (key == 1) //字母A
 	{
 		ShowFHelp(hbuf, "F1A")
 	}
-	else if (key == 262212) //字母D
+	else if (key == 4) //字母D
 	{
 		if(IsNoteFile(hbuf))
 		{
@@ -405,26 +482,7 @@ macro TreeCtrlChar(hbuf, key)
 macro TreeFNum(hbuf, key)
 {
 	//_TempHeadF1()
-	if (key == 12) 		//12->1, F1
-	{
-		ShowFHelp(hbuf, "F1")
-	}
-	else 				//1->12, F2~F12
-	{
-		if(key - 1>=9)
-		{
-			chr = "1" # CharFromKey(key - 1 + 49 -10)
-		}
-		else if(key==1)
-		{
-			chr = "12"
-		}
-		else
-		{
-			chr = CharFromKey(key - 1 + 49)
-		}
-		ShowFHelp(hbuf, "F@chr@")
-	}
+	ShowFHelp(hbuf, "F@key@")
 }
 
 macro TreeOther(hbuf, key)

@@ -1,19 +1,19 @@
 
 目录[Num][Ca]:
-Save:node\Simple_CTRL_K.h \[1.1\] 宏说明:
-Save:node\Simple_CTRL_K.h \[2.1\] key:[F1] (按F1后再按0~9、A~Z、F2~F12)
-Save:node\Simple_CTRL_K.h \[2.2\] key:[F2] 打开目录
-Save:node\Simple_CTRL_K.h \[2.3\] key:[F3] 修改默认向前搜索
-Save:node\Simple_CTRL_K.h \[2.4\] key:[F4] 修改默认向后搜索
-Save:node\Simple_CTRL_K.h \[2.5\] key:[F5] 打开/跳转
-Save:node\Simple_CTRL_K.h \[2.6\] key:[F6] (区分中文跳转 和 英文跳转)
-Save:node\Simple_CTRL_K.h \[2.7\] key:[F7]
-Save:node\Simple_CTRL_K.h \[2.8\] key:[F8] 高亮   同原功能
-Save:node\Simple_CTRL_K.h \[2.9\] key:[F9] 关闭文件, 显示所有宏, 便于查找
-Save:node\Simple_CTRL_K.h \[2.10\] key:[F10] 分组索引
-Save:node\Simple_CTRL_K.h \[2.11\] key:[F11] 宏注释 项目笔记
-Save:node\Simple_CTRL_K.h \[2.12\] key:[F12] 显示配置 是否定义
-Save:node\Simple_CTRL_K.h \[2.13\] key:CTRL组合 [Cf]
+Save:node\Simple_CTRL_K.h \[1.1\] F1-0 宏说明
+Save:node\Simple_CTRL_K.h \[2.1\] F1 (按F1后再按0~9、A~Z、F2~F12)
+Save:node\Simple_CTRL_K.h \[2.2\] F2 打开目录
+Save:node\Simple_CTRL_K.h \[2.3\] F3 修改默认向前搜索
+Save:node\Simple_CTRL_K.h \[2.4\] F4 修改默认向后搜索
+Save:node\Simple_CTRL_K.h \[2.5\] F5 打开/跳转
+Save:node\Simple_CTRL_K.h \[2.6\] F6 (区分中文跳转 和 英文跳转)
+Save:node\Simple_CTRL_K.h \[2.7\] F7
+Save:node\Simple_CTRL_K.h \[2.8\] F8 高亮   同原功能
+Save:node\Simple_CTRL_K.h \[2.9\] F9 关闭文件, 显示所有宏, 便于查找
+Save:node\Simple_CTRL_K.h \[2.10\] F10 分组索引
+Save:node\Simple_CTRL_K.h \[2.11\] F11 宏注释 项目笔记
+Save:node\Simple_CTRL_K.h \[2.12\] F12 显示配置 是否定义
+Save:node\Simple_CTRL_K.h \[2.13\] CTRL组合
 Save:node\Simple_CTRL_K.h \[3.1\] 当前文件快捷键
 Save:node\Simple_CTRL_K.h \[3.2\] 特殊标记
 
@@ -23,6 +23,8 @@ Save:node\Simple_CTRL_K.h unfinished:
 /***********************************************************************/
 /************************** 新功能和BUG说明 ****************************/
 /***********************************************************************/
+
+
 
 
 // 未设置--死循环
@@ -53,19 +55,21 @@ pro: ^# 代码项目名，同时ctrlC替换 ^#
 /******************************* 宏说明 ********************************/
 /***********************************************************************/
 
-[1.1] 宏说明:
+[1.1] F1-0 宏说明
+//
 Save:Macro\sbd_f1.em
+// 标签
 [Base]
-F1宏子功能:
-1:  数字0~9
-2:  字母a-j
-3:  字母k-t
-4:  字母u-z
-5:  f1-f10
-6:  f11-f12, Other -,+,back,del,方向键 
-7:  ctrl+a~D
-8:  数字提示
-9:  字母提示(最常用)
+  功能显示(当前非项目文件):
+F1-1:  数字0~9
+F1-2:  字母a-j
+F1-3:  字母k-t
+F1-4:  字母u-z
+F1-5:  f1-f10
+F1-6:  f11-f12, Other -,+,back,del,方向键 
+F1-7:  ctrl+a~D
+F1-8:  数字提示
+F1-9:  字母提示(最常用)
 
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 
@@ -468,7 +472,7 @@ unfinished:4: [Next]  打开其他工程mk, F12没有匹配对; 以前可以现在不行了...
 ***** **** ***** ***** ***** ***** ***** ***** ***** **** *****
 
 Save:Macro\sbd_ctrl.em
-[2.13] key:CTRL组合 [Cf]
+[2.13] key:CTRL组合
 部分功能替换原有功能
 
 CTRL + ↑: 1.搜索结果中同文件选择; 
@@ -703,5 +707,4 @@ xxxPath  = XXX
 
 
 
-end :[Cg]
 

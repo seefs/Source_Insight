@@ -42,7 +42,7 @@ macro getCurCount(0)		{	return 45	}
 macro getBCompareOnOff(0)	{	return 48	}
 //macro getPathRow(0)			{	return 51	}
 macro getWndVertRow(0)		{	return 54	}
-macro getNoteHanderSet(0)	{	return 57	}
+macro getNoteHanderSet(0)	{	return 57	} //no use
 macro getNoteHanderBak(0)	{	return 60	}
 macro getNoteBasePath(0)	{	return 63	}
 macro getNumBits(0)			{	return 66	}
@@ -139,7 +139,7 @@ macro IsMacroFile(hbuf)
 macro IsMakeFile(hbuf)
 {
 	fName = GetFileName(GetBufName(hbuf))
-	return IsFileType(fName, ".mk") || IsFileType(fName, ".def") || IsFileType(fName, ".mak")
+	return IsFileType(fName, ".mk") || IsFileType(fName, ".def") || IsFileType(fName, ".mak") || IsFileType(fName, ".cfg")
 }
 
 macro IsTxtFile(hbuf)
@@ -572,6 +572,18 @@ macro OpenFile(file)
 	return hbuf
 }
 
+macro OpenNewFileCache(file)
+{	
+	hbuf = GetBufHandle(file)
+	if (hbuf == hNil)
+	{
+	 	hbuf = OpenBuf(file)
+		if (hbuf == hNil){
+			stop
+		}
+ 	}
+	return hbuf
+}
 
 macro OpenExistFile(file)
 {	
@@ -615,18 +627,19 @@ macro OpenExistFileRow(file, row)
 }
 
 macro IsExistFile(file)
-{	
+{
 	hbuf = GetBufHandle(file)
 	if (hbuf == hNil)
 	{
 	 	hbuf = OpenBuf(file)
 		if (hbuf == hNil){
-			//msg ("hbuf doesn't exist.")
 			//hbuf = NewBuf(file)
+			//msg(file # " doesn't exist. (no)")
 			return 0
 		}
 		CloseBuf(hbuf)
  	}
+	//msg(file # " is exist. (yes)")
 	return 1
 }
 
@@ -813,7 +826,7 @@ macro GetTransFileName(hbuf, fName, cNum)
 	re = FindString(fName, ":")
 	if(re == "X")
 	{
-		if(cNum == 16)
+		if(cNum == 16 || cNum == 17)
 		{
 			//编译指令是相对目录(不用完整路径)
 			fName = fName
@@ -852,6 +865,8 @@ macro GetTransFileName(hbuf, fName, cNum)
 	fName = ReplaceWord(fName, "^", " ")
 	//resolve SI Cache bug.
 	fName = ReplaceWord(fName, "\\\\", "\\")
+	if(cNum != 17)
+		fName = ReplaceWord(fName, "/", "\\")
 //	msg(fName)
 	
 	return fName

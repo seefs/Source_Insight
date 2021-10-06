@@ -39,7 +39,7 @@ macro getPathConfig(0)		{	return getSetPath(0) # "\\Macro_Set_Base.h"				}
 //5) ToolĿ¼
 //Cmd
 macro getBComparePath(0)	{	return "\"C:\\Program Files\\Beyond Compare 4\\BCompare.exe\""			}
-//macro getBComparePath(0)	{	return "\"C:\\Program Files (x86)\\Beyond Compare 3\\BCompare.exe\""			}
+//macro getBComparePath(0)	{	return "\"D:\\Program Files (x86)\\Beyond Compare 3\\BCompare.exe\""			}
 
 //VC
 macro getVCPath(0)			{	return "C:\\Program Files (x86)\\Microsoft Visual Studio\\Common\\MSDev98\\Bin\\MSDEV.EXE"		}
@@ -112,7 +112,8 @@ macro getProjectPath(pathName)
 	// n == 40: soft
 	// n == 50: 6533
 	// n == 60: 7701
-	// n == 70: MTK
+	// n == 70: 7701
+	// n == 80: MTK
 	n = getBaseDirNum(pathName)
 	basePath = SearchPathFromNum("", n)
 	
@@ -127,13 +128,16 @@ macro getProjectPath(pathName)
 	else if(n<60){ //40,50
 		return basePath # "\\target"
 	}
-	else if(n<70){
-		return basePath # "\\project"
-	}
-	else if(n==70){
-		return basePath # "\\make"
+	else if(n<70){ //40,50
+		return basePath # "\\target"
 	}
 	else if(n<80){
+		return basePath # "\\project"
+	}
+	else if(n==80){
+		return basePath # "\\make"
+	}
+	else if(n<90){
 		return basePath # "\\project"
 	}
 	else{
@@ -198,7 +202,8 @@ macro getBaseType(pathName)
 	// n == 40: soft
 	// n == 50: 6533
 	// n == 60: 7701
-	// n == 70: MTK
+	// n == 70: 7701
+	// n == 80: MTK
 	type = getBaseDirNum(pathName)
 	return type/10 *10
 }
@@ -242,11 +247,12 @@ macro getBaseFileType(pathName, s)
 			baseFileType = "6533"
 		}
 	}
-	else if(type == 60)
+	else if(type == 60 || type == 70)
 	{
-		baseFileType = "7701"
+		//baseFileType = "7701"
+		baseFileType = "8910"
 	}
-	else if(type == 70)
+	else if(type == 80)
 	{
 		if(s == 5)
 		{

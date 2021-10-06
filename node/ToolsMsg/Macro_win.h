@@ -5,18 +5,18 @@ Save:node\ToolsMsg\Macro_win.h \[1.1\] 重装系统
 Save:node\ToolsMsg\Macro_win.h \[1.2\] 破解软件
 Save:node\ToolsMsg\Macro_win.h \[1.3\] 文件设置
 Save:node\ToolsMsg\Macro_win.h \[1.4\] 系统备份
-Save:node\ToolsMsg\Macro_win.h \[1.5\] 
-Save:node\ToolsMsg\Macro_win.h \[1.6\] 
-Save:node\ToolsMsg\Macro_win.h \[1.7\] 
-Save:node\ToolsMsg\Macro_win.h \[1.8\] 
+Save:node\ToolsMsg\Macro_win.h \[1.5\] shutdown
+Save:node\ToolsMsg\Macro_win.h \[1.6\] Excel
+Save:node\ToolsMsg\Macro_win.h \[1.7\] 卸载软件
+Save:node\ToolsMsg\Macro_win.h \[1.8\] IP
 Save:node\ToolsMsg\Macro_win.h \[1.9\] 
 Save:node\ToolsMsg\Macro_win.h \[1.10\] 
 // 2. 开发
 Save:node\ToolsMsg\Macro_win.h \[2.1\] ResOver
 Save:node\ToolsMsg\Macro_win.h \[2.2\] Incredibuild
 Save:node\ToolsMsg\Macro_win.h \[2.3\] cygwin
-Save:node\ToolsMsg\Macro_win.h \[2.4\] SVN 配置
-Save:node\ToolsMsg\Macro_win.h \[2.5\] VC
+Save:node\ToolsMsg\Macro_win.h \[2.4\] 
+Save:node\ToolsMsg\Macro_win.h \[2.5\] Usb
 Save:node\ToolsMsg\Macro_win.h \[2.6\] ResearchDownload
 Save:node\ToolsMsg\Macro_win.h \[2.7\] set_path 备份
 Save:node\ToolsMsg\Macro_win.h \[2.8\] 
@@ -31,7 +31,7 @@ Save:node\ToolsMsg\Macro_win.h \[3.5\] vpn
 Save:node\ToolsMsg\Macro_win.h \[3.6\] 
 Save:node\ToolsMsg\Macro_win.h \[3.7\] Game
 Save:node\ToolsMsg\Macro_win.h \[3.8\] InputMethod 输入法
-Save:node\ToolsMsg\Macro_win.h \[3.9\] 
+Save:node\ToolsMsg\Macro_win.h \[3.9\] postman
 Save:node\ToolsMsg\Macro_win.h \[3.10\] 
 // 
 Save:node\ToolsMsg\Macro_win.h \[4.1\] 
@@ -76,29 +76,51 @@ Save:node\ToolsMsg\Macro_win.h \[4.3\]
 //	8 进度条走到100%，点击“Continue”“Quite”,退出备份软件，自动重启系统
 
 
-[1.5] 
+[1.5] shutdown
+// 20min
+shutdown -s -t 1200
+// 30min
+shutdown -s -t 1800
+// 3hour/160min
+shutdown -s -t 9600
+//
+shutdown -a
+
+
+[1.6] Excel
+//
+msvcr100.dll
 
 
 
-
-[1.6] 
-
-
-
-
-[1.7] 
+[1.7] 卸载软件
+//
 
 
 
-
-[1.8] 
+[1.8] IP
 
 
 
 
 [1.9] 
+// 浏览 电脑变慢
+virus.vbs-writebin.a
+// exe dll
+Virus.Win32.Sality.I
+// 复制繁殖
+Virus.Win32.Ramnit.X
+// js
+virus.js.qexvmc.1
 
+### file
+// wa01u_svn
+//   tabstrip.htm
+tools\DEBUG_TOOL\AudioCalibrator\Equalizer\TI ADC\parameter-data.files
 
+// tool
+//   CmdDloader.exe
+D:\Desktop\tool\wa03u_git\ResearchDownload_R25.21.1401\ResearchDownload_R25.21.1401\Bin\
 
 
 [1.10] 
@@ -130,95 +152,20 @@ Save:node\ToolsMsg\Macro_win.h \[4.3\]
 //	C:\CSDTK\cygwin\bin
 
 
-[2.4] SVN 配置
-// config
-C:\Users\Administrator\AppData\Roaming\Subversion\config
-
-//	1.svn error:	
-//	post of '/svn/!svn/me':500 internal server error
-//	svn 500错误 500 Internal Server Error response to POST request
-//	//	打开VisualSVN Server GUI。
-//	//	右键单击左侧导航窗格根目录下的“VisualSVN Server（域）”，然后选择“属性”。
-//	//	在“常规”选项卡下，您将看到“自动调整权限”复选框。
-//	//	A.如果未选中此项，请选中它并单击“应用”。 这将停止并重新启动VisualSVN服务，并应解决此问题。
-//	//	B.如果选中此项，请取消选中并单击“应用”。 这将停止并重新启动Visual SVN服务。 
-//	//	完成后，重新检查该选项并再次单击“应用”。 重新启动服务后，现在应该解决该问题。
-//	
-//	
-//	
-//	清理失败:
-//	sqlite3 wc.db "select * from work_queue"
-//	sqlite3 wc.db "delete from work_queue"
 
 
-//	path add:
-//	D:\Program Files\TortoiseSVN\bin\TortoiseProc.exe
-//	svn log "F:\6531DA_Btdialer\version"
-//	svn log "version"
+
+[2.4] 
+
+
+
+
+
+
+[2.5] Usb
 //
-//	参考：http://blog.csdn.net/gwzz1228/article/details/7840666
-//	TortoiseProc help
-//	TortoiseProc.exe /command:asdf
-//	TortoiseProc.exe /command:log /path:".\"
-//	TortoiseProc.exe /command:log /path:"F:\6531DA_Btdialer\version"
-//	TortoiseProc.exe /command:commit /path:".\"
-//	TortoiseProc.exe /command:commit /path:%1
-//	TortoiseProc.exe /command:commit /path:"c:\svn_wc\file1.txt*c:\svn_wc\file2.txt" /logmsg:"test log message" /closeonend:0
-//	TortoiseProc.exe /command:diff /path:%1 /path2:%2
-//	TortoiseProc.exe /command:update /path:"c:\svn_wc\" /closeonend:0
-//
-//
-//
-//	E:\save\SI\Cmd\svn_commit.bat "F:\6531DA_Btdialer\version" xx
-//	E:\save\SI\Cmd\svn_log.bat  "F:\6531DA_Btdialer\version"
-//	E:\save\SI\Cmd\cmd_base.bat  "F:\6531DA_Btdialer\version"
-//	E:\save\SI\Cmd\svn_diff.bat  "F:\6531DA_Btdialer\version"
-//	E:\save\SI\Cmd\svn_diff.bat  "F:\6531DA_Btdialer\version.h"
+C:\Windows\inf\setupapi.dev.log
 
-
-//	svn卡死
-//	打开Win7的控制面选，选择“索引选项”，然后选择“修改”，将G:\doc\projects\estar全部反选即可
-//
-//	1.关闭SVN的cache监视。即关闭tsvncache.exe这个程序对目录的监视。
-//	具体操作步骤如下：
-//	a) 右击任意目录打开右键菜单,打开"tortoisesvn" => "settings"下的设置窗口
-//	b) 找到"icon overlays"的设置项，将"status cache"设置成"none"
-
-
-
-[2.5] VC
-//	Visual Studio 6.0	 安装：
-//			1、product id：全写111...
-//			2、file may be corrupt：取消（按多次）
-//			3、mmi_menutable.c   error：
-//					//注释，再编译，一般像游戏或者是facebook，whatsapp都会报这种错误
-//	
-//	***** **** ***** 编译模拟器 ***** **** *****
-//	打开模拟，设置路径后，右击按start：
-//			MS image Files：F:\trunk\SBD_6531_12C_DA\MS_MMI\source\winsimulator_tp\skin\mssim_duallcd_128_160.png
-//			MS ini Files：
-//			MS resouce Files：build\xxx_builddir\img\
-//			如果弹出sim卡设置，可能驱动未更新有问题，或重新编译
-
-//	已停止工作 windows可以联机检查：
-//	控制面板→系统和安全→操作中心→问题报告设置， 设置成“自动解决方案” 就可以了
-//
-//	2 Visual Studio 与此版本的 Windows 之间存在已知的兼容性问题
-//	设置不再显示
-
-//office:
-//        需激活，快过期时编不过
-//        win7不能装excel2003，ntac不能直接保存excel，需要打开其他表格（同时会打开ntac的表格）；
-//        ntac再次保存excel，先关闭excel进程；
-//
-//xp虚拟机安装：
-//        Visual Studio Analyzer：不安装
-
-///   win7系统文件缺失：
-//http://www.filediag.com/files/npptools.dll.html
-
-
-Incredibuild
 
 
 
@@ -281,6 +228,20 @@ Incredibuild
 //	高级-配置-应用程序布局-其他-勾选在启动时检查并显示文件关联-重新启动UltraEdit
 
 
+// UE 卸载
+D:\Program^Files^(x86)\IDM^Computer^Solutions
+C:/Users/YJ/AppData/Roaming
+C:/Users/YJ/AppData/Roaming/IDMComp
+C:/Program^Files^(x86)/InstallShield^Installation^Information
+C:/ProgramData/
+C:/ProgramData/IDMComp
+
+//
+regedit
+//  IDM
+
+
+
 [3.4] mv
 //	MAV剪切
 //	DirectWAVMP3Splitter
@@ -325,8 +286,10 @@ C:\Program^Files^(x86)\WanNengWBInput\10.0.4.10418
 
 
 
-[3.9] 
+[3.9] postman
 
+//
+https://www.postman.com/collections/1e8f06e4b595a38c05bb
 
 
 

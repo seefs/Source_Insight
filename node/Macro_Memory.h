@@ -6,6 +6,9 @@ Save:node\
 /***********************************************************************/
 
 
+// ¶¾--bmw0
+make/make_cmd/VLRSign.exe
+tools/DEBUG_TOOL/VLRSign/VLRSign.exe
 
 
 
