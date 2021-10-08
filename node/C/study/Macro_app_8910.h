@@ -10,7 +10,7 @@ Save:node\C\study\Macro_app_8910.h  \[1.3\] menu, second
 Save:node\C\study\Macro_app_8910.h  \[1.4\] dial
 Save:node\C\study\Macro_app_8910.h  \[1.5\] test, version
 Save:node\C\study\Macro_app_8910.h  \[1.6\] file
-Save:node\C\study\Macro_app_8910.h  \[1.7\] Setting
+Save:node\C\study\Macro_app_8910.h  \[1.7\] setting
 Save:node\C\study\Macro_app_8910.h  \[1.8\] sms -----------------
 Save:node\C\study\Macro_app_8910.h  \[1.9\] call
 Save:node\C\study\Macro_app_8910.h  \[1.10\] pb, cl
@@ -292,6 +292,10 @@ head:Set,mmiset_wintab.c
 item:Set,mmiset_wintab.c
 item:set,mmiset_displaywin.c
 //
+
+// cl set
+mmi:mmi_app\app\setting\c\mmiset_callwin.c  InitPdaCallOtherSettingsCtrl
+
 
 
 // Reset
@@ -860,6 +864,9 @@ mmi:mmi_app\app\accessory\c\mmischedule.c
 	
 
 [1.23] bt
+// enter
+mmi:mmi_app\app\bt\c\mmibt_mainwin.c  MMI_RESULT_E^^^HandleMainMenuWinMsg
+
 //mmibt_wintab.c
 //MMIAPIBT_AppInit
 

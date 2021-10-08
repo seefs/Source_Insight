@@ -74,6 +74,9 @@ zmaee:h\zmaee_watchos_capabilities.h  CAP_LED
 //
 MS_MMI_Main\source\mmi_app\app\zmaee\c\zmaee_porting.c  MMI_ZMAEE_MAIN_WIN_ID
 
+//
+MS_MMI_Main\source\mmi_app\app\zmaee\c\zmaee_watch.c  ZMAEE_IWatch_PowerOff
+
 
 
 [1.4] set--led
@@ -146,13 +149,14 @@ SPDE_PRJ\WA03U_T2_V2\            ----阿拉町
 SPDE_PRJ\WA06U\                  ----
 //
 SPDE_PRJ\WA07U_F3Z\              ----华米
-// 电池:630mA
+// 电池:630mA->400mA,TP,单摄,喇叭
 SPDE_PRJ\WA07U_F3X\              ----华米
 // 电池:400mA,TP,单摄,喇叭
 SPDE_PRJ\WA07U_F8Z_QQVGA\        ----华米
-// 电池:400mA
+// 电池待定:400mA
 SPDE_PRJ\WA07U_F30Z\             ----华米
-// 电池:400mA,双摄
+SPDE_PRJ\WA07U_F30ZL\            ----华米
+// 电池:400mA->630mA,双摄
 SPDE_PRJ\WA07U_F30ZL_AMT\        ----华米
 // 电池:630mA,双摄
 //
@@ -230,7 +234,7 @@ fdl_bootloader/fota_bootloader/src/tf_display.c
 //// state//版本号
 //GetMainStates
 //// 
-//adups_get_device_version()
+Third-party\adups\hal\src\adups_device.c  adups_get_device_version()
 
 
 ## fota--rs

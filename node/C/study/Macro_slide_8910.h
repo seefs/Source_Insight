@@ -58,6 +58,14 @@ Save:node\C\study\Macro_slide_8910.h \[2.20\]
 Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 
+//
+@Jefe?展讯新推送过来一个8910 手表代码版本，需要就下载一下
+链接：https://pan.baidu.com/s/1NxS3ceKx_f9zpCGEJ_9bTQ 
+提取码：ydo7 
+
+何华:
+MOCOR_20B_SW_W21.35.4.rar
+
 
 
 [1.1] btn

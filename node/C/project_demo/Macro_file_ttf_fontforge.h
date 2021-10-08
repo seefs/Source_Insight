@@ -126,6 +126,12 @@ fontforge -script pe/scriptclear_mnoV.pe AAA_FONT_CN.sfd ".sfd"
 //   0x5760 .sfd没问题 .ttf没问题 .lib有问题
 
 
+### 总结
+1.8910简+繁: 2M+4.5M=6.5M
+2.T107简+繁: 2M+1.8M=3.8M, 一宽一窄, 大内存可用
+3.合并简+繁: 4.9M，估计也丢失字符
+4.merge de:  2.4M，丢失一部分字符
+5.ttc de:    2.9M
 
 
 
