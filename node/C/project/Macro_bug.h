@@ -100,6 +100,9 @@ SPDE_PRJ/WA07U_F3Z/zmaee/h/sg_zmaee_app6_rom.h
 
 [1.6] 107
 
+# fota
+删了fota 副屏(好像boot是共用的)
+
 # 107
 //彩信
 

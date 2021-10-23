@@ -1,6 +1,9 @@
 
 基础路径设置:
-//basePath = 
+resPath = MS_MMI_Main/source/resource/mmi_res_240x240
+res:\\
+appPath = MS_MMI_Main\source\mmi_app\app
+app:\\
 
 /***********************************************************************/
 
@@ -12,7 +15,7 @@ Save:node\C\study\Macro_socket_8910.h \[1.3\] 平台
 Save:node\C\study\Macro_socket_8910.h \[1.4\] API param
 Save:node\C\study\Macro_socket_8910.h \[1.5\] ipurl
 Save:node\C\study\Macro_socket_8910.h \[1.6\] command, IMEI
-Save:node\C\study\Macro_socket_8910.h \[1.7\] code
+Save:node\C\study\Macro_socket_8910.h \[1.7\] code----------fzd
 Save:node\C\study\Macro_socket_8910.h \[1.8\] 
 Save:node\C\study\Macro_socket_8910.h \[1.9\] 
 Save:node\C\study\Macro_socket_8910.h \[1.10\] tool
@@ -160,13 +163,86 @@ XT*33453345880000001566*000D*LKVMg3oCnND6NzhfA6dmNfSnBWZuKyLdeY
 
 
 [1.7] code
+// 1.app init (0s)
+// --Subscribe
+app:fzd\c\mmifzd_app.c  MMIAPIFZD_InitModule
+app:fzd\c\mmifzd_app.c  FZDAPP_Init
+
+
+// 2.idle open applet (3s)
+// --applet
+app:idle\c\mmiidle_mstyle.c  FZDAPP_Open
+app:fzd\c\mmifzd_app.c  FZDAPP_Open
+app:fzd\c\mmifzd_app.c  MMK_StartApplet
+app:fzd\c\mmifzd_app.c  FZDAppletHandleEvent
+//    case MSG_APPLET_START:
+//    case MSG_APPLET_STOP: 
+
+
+// 3.active (10s)
+// --app msg
+app:fzd\c\mmifzd_app.c  FzdApp_HandlePdpEvent
+//    MMIPDP_NOTIFY_EVENT_ACTIVED:
+//    MMIPDP_NOTIFY_EVENT_DEACTIVED:
 //
-MS_MMI_Main\source\mmi_app\app\fzd\c\mmifzd_md5_b64.c
-MS_MMI_Main\source\mmi_app\app\fzd\c\mmifzd_nv.c
-MS_MMI_Main\source\mmi_app\app\fzd\c\mmifzd_app.c
-MS_MMI_Main\source\mmi_app\app\fzd\c\logger.c
-MS_MMI_Main\source\mmi_app\app\fzd\c\mmifzd_manage_task.c
-MS_MMI_Main\source\mmi_app\app\fzd\c\mmifzd_heartbeat.c
+app:fzd\c\mmifzd_app.c  HandleFzdMsg
+app:fzd\c\mmifzd_app.c  case^FZD_APP_ACTIVE_PDP_REQ
+app:fzd\c\mmifzd_app.c  FzdApp_ActivePdp
+app:fzd\c\mmifzd_app.c  pdp_callback
+app:fzd\c\mmifzd_app.c  FzdApp_SendSignal2MMI(FZD_APP_PDP_ACTIVE_IND)
+
+
+// 4.Heartbeat (5min)
+// --SOS不能等5min回调 [bug]
+app:fzd\c\mmifzd_app.c  case^FZD_APP_PDP_ACTIVE_IND
+app:fzd\c\mmifzd_app.c  FzdApp_StartWork
+app:fzd\c\mmifzd_app.c  ActiveHeartbeat
+app:fzd\c\mmifzd_app.c  HeartbeatTimerFun
+app:fzd\c\mmifzd_app.c  case^FZD_APP_START_A_NOTICE_REQ
+// --fzd-task
+app:fzd\c\mmifzd_heartbeat.c  FzdApp_ReportHeartBeat
+// --fzd-task-entry
+app:fzd\c\mmifzd_heartbeat.c  Fzd_HeartBeat_socket_async_entry
+
+
+// 5.host
+// --reset timer 未exit [bug]
+// --不必连接就心跳 [bug]
+app:fzd\c\mmifzd_heartbeat.c  socket_async_gethostbyName
+app:fzd\c\mmifzd_heartbeat.c  case^SOCKET_ASYNC_GETHOSTBYNAME_CNF
+app:fzd\c\mmifzd_heartbeat.c  open( )
+app:fzd\c\mmifzd_heartbeat.c  connect( )
+app:fzd\c\mmifzd_heartbeat.c  case^SOCKET_CONNECT_EVENT_IND
+// --45s 心跳
+app:fzd\c\mmifzd_heartbeat.c  send( )
+
+
+// 5.send
+// --没有超长连发
+app:fzd\c\mmifzd_heartbeat.c  case^SOCKET_WRITE_EVENT_IND
+app:fzd\c\mmifzd_heartbeat.c  case^SOCKET_CONNECTION_CLOSE_EVENT_IND
+
+
+// 5.read (自动读)
+app:fzd\c\mmifzd_heartbeat.c  case^SOCKET_READ_EVENT_IND
+
+
+// 6.GetHost
+// task->GetHost->delay->GetHostCB->delay->exit
+// task->GetHost->Connect->delay->ConnectCB->delay->exit
+// task->GetHost->open->ConnectOk->sendCB
+// sendCB->readCB->
+
+// applet->PdpREQ->Active->Heartbeat->task
+// Heartbeat->isTaskClose->taskOpen->ReTimer->Heartbeat
+// Heartbeat->SendCb->Check->Active->isTaskClose->taskOpen->ReTimer->Heartbeat
+// Heartbeat->SendCb->Check->Active->isTaskOpen->...
+// LK->SendCb->Check->Active->isTaskClose->taskOpen->ReTimer->GetHost
+
+// SOS->SendCb->Check->ReActive->fail->delay->ReActive
+// SOS->SendCb->Check->ReActive->ok->task
+// SOS->SendCb->Check->Active->isTaskClose->taskOpen->ReTimer
+// SOS->SendCb->Check->Active->isTaskOpen->...
 
 
 

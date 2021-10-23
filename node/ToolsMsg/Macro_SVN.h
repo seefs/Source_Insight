@@ -12,8 +12,8 @@ Save:node\ToolsMsg\Macro_svn.h \[1.3\] path add
 Save:node\ToolsMsg\Macro_svn.h \[1.4\] revert
 Save:node\ToolsMsg\Macro_svn.h \[1.5\] svn.exe
 Save:node\ToolsMsg\Macro_svn.h \[1.6\] revert test
-Save:node\ToolsMsg\Macro_svn.h \[1.7\] 
-Save:node\ToolsMsg\Macro_svn.h \[1.8\] 
+Save:node\ToolsMsg\Macro_svn.h \[1.7\] help
+Save:node\ToolsMsg\Macro_svn.h \[1.8\] SVN test
 Save:node\ToolsMsg\Macro_svn.h \[1.9\] 
 Save:node\ToolsMsg\Macro_svn.h \[1.10\] 
 Save:node\ToolsMsg\Macro_svn.h \[1.11\] 
@@ -159,7 +159,10 @@ powershell "svn revert -R ./"
 "C:\Program Files\TortoiseSVN\bin\TortoiseProc.exe" /command:help
 
 
-[1.8] 
+[1.8] SVN test
+SVN test
+TortoiseProc.exe /command:commit /path:"c:\svn_wc\file1.txt*c:\svn_wc\file2.txt" /logmsg:"test log message" 
+F:\11CW1352MP_MT6261DM\custom\codegen\FARSIGHTED61M_CN_11C_BB\codegen_M107_XYZN_S2_4A_WESTERN_F2.dws
 
 
 

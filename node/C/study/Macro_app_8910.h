@@ -908,6 +908,9 @@ MS_MMI_Main\source\mmi_app\app\bt\c\mmibt_app.c  MMIBT_A2DPCallBackFunc
 //	10090009  a2_dc
 
 
+// bt mode
+mmi:mmi_app\app\heroengine\tts\c\hero_tts_api.c  BLUETOOTH_SUPPORT
+
 
 
 [1.24] env

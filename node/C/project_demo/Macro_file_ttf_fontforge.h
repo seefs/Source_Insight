@@ -127,12 +127,32 @@ fontforge -script pe/scriptclear_mnoV.pe AAA_FONT_CN.sfd ".sfd"
 
 
 ### 总结
+// 原lib
 1.8910简+繁: 2M+4.5M=6.5M
 2.T107简+繁: 2M+1.8M=3.8M, 一宽一窄, 大内存可用
-3.合并简+繁: 4.9M，估计也丢失字符
-4.merge de:  2.4M，丢失一部分字符
-5.ttc de:    2.9M
-
+// 新fontforge-lib
+1.big-合并简+繁:       4.49M，估计也丢失字符 (BIG_FORGE.lib)
+2.small-merge de:  2.45M，丢失一部分字符 (SMALL_FORGE.lib)
+3.small-ttc de:    2.84M  (SMALL_FORGE_TC.lib)
+// 新FONTTOOL-lib
+1.big--tts1: 4.51M，(BIG_FTOOL_NS.lib)
+2.big--tts2: 5.17M，(BIG_FTOOL_NSST.lib)
+3.big--tts3: 5.24M，(BIG_FTOOL_NSTT.lib)
+4.small--tts1: 2.45M，(SMALL_FTOOL_NS.lib)
+5.small--tts2: 2.84M，(SMALL_FTOOL_NSST.lib)
+6.small--tts3: 2.88M，(SMALL_FTOOL_NSTT.lib)
+// 对比效果
+86B0: NS>DEF>NSST=NSTT
+// 属性
+FBBx FBBy: 字体的宽度和高度(defW=16, 90%W=14)
+maxbearingY: 上移, 未压缩--4, 压缩--2
+// 最终使用
+//LANG_FONT_HAN_TRAD_TW_VECTOR_SMALL_FTOOL_NS_BY4
+// 步骤:
+MS_MMI_Main\source\resource\Common\FONT\Zouk TTF\NotoSans.ttf + 
+tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe + 
+tools\DEBUG_TOOL\FONTTOOL\Bin\Han_merge_small.ini + 
+导入时maxbearingY设置为4(上移4解决显示超边界问题)
 
 
 ### 使用循环

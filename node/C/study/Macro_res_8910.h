@@ -14,9 +14,9 @@ Save:node\C\study\Macro_res_8910.h \[1.2\] anim
 Save:node\C\study\Macro_res_8910.h \[1.3\] str
 Save:node\C\study\Macro_res_8910.h \[1.4\] res
 Save:node\C\study\Macro_res_8910.h \[1.5\] icon
-Save:node\C\study\Macro_res_8910.h \[1.6\] add res
+Save:node\C\study\Macro_res_8910.h \[1.6\] ring
 Save:node\C\study\Macro_res_8910.h \[1.7\] add app
-Save:node\C\study\Macro_res_8910.h \[1.8\] ring
+Save:node\C\study\Macro_res_8910.h \[1.8\] add res
 Save:node\C\study\Macro_res_8910.h \[1.9\] 
 Save:node\C\study\Macro_res_8910.h \[1.10\] test
 Save:node\C\study\Macro_res_8910.h \[1.11\] OLD_PRELOAD
@@ -96,13 +96,9 @@ MS_MMI_Main\source\mmi_app\common\h\common_mdu_def.h  ANIM_PUBWIN_WAIT_PDA
 
 
 
-[1.6] add res
-make\resource_main\resource_main.mk  SPDEHTTP_SUPPORT
-make\resource_main\resource_header.mk  SPDEHTTP_SUPPORT
-//	SRCPATH	+= $(MMI_DIR)/source/mmi_app/app/spdehttp/h
-//	SOURCES	 += spdehttp_mdu_def.h
-MS_MMI_Main\source\resource\mmi_res_prj_def.h  SPDEHTTP_SUPPORT
-//	RES_ADD_MODULE(MMI_MODULE_SPDEHTTP,"\\spdehttp\\spdehttp_mdu_def.h")
+[1.6] ring
+// TONE_425HZ
+//MMISRVAUD_Play_BusyTone
 
 
 
@@ -129,9 +125,14 @@ MS_MMI_Main\source\mmi_app\common\h\mmi_appmsg.h   SPDEHTTP_SUPPORT
 
 
 
-[1.8] ring
-// TONE_425HZ
-//MMISRVAUD_Play_BusyTone
+[1.8] add res
+make\resource_main\resource_main.mk  SPDEHTTP_SUPPORT
+make\resource_main\resource_header.mk  SPDEHTTP_SUPPORT
+//	SRCPATH	+= $(MMI_DIR)/source/mmi_app/app/spdehttp/h
+//	SOURCES	 += spdehttp_mdu_def.h
+MS_MMI_Main\source\resource\mmi_res_prj_def.h  SPDEHTTP_SUPPORT
+//	RES_ADD_MODULE(MMI_MODULE_SPDEHTTP,"\\spdehttp\\spdehttp_mdu_def.h")
+
 
 
 [1.9] 

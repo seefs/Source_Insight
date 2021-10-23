@@ -18,7 +18,7 @@ Save:node\C\project\Macro_c_list.h \[1.2\]
 Save:node\C\project\Macro_c_list.h \[1.3\] TTF
 Save:node\C\project\Macro_c_list.h \[1.4\] TTF edit
 Save:node\C\project\Macro_c_list.h \[1.5\] fontforge
-Save:node\C\project\Macro_c_list.h \[1.6\] Warcraft-Font-Merger
+Save:node\C\project\Macro_c_list.h \[1.6\] 
 Save:node\C\project\Macro_c_list.h \[1.7\] 
 Save:node\C\project\Macro_c_list.h \[1.8\] 
 Save:node\C\project\Macro_c_list.h \[1.9\] 
@@ -168,14 +168,7 @@ Save:node\C\project_demo\Macro_file_ttf_fontforge.h
 
 
 
-[1.6] Warcraft-Font-Merger
-
-// Warcraft-Font-Merger
-Useful = False
-//	
-cd:tmp: git clone https://github.com/nowar-fonts/Warcraft-Font-Merger
-// c++11 ±à²»¹ý
-Save:node\C\project_demo\Macro_file_ttf_Warcraft.h
+[1.6] 
 
 
 
