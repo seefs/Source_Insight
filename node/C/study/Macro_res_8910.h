@@ -9,66 +9,34 @@ res:\\
 
 //目录[Num][Ca]:
 // 1. common
-Save:node\C\study\Macro_res_8910.h \[1.1\] xx_mdu_def.h
-Save:node\C\study\Macro_res_8910.h \[1.2\] anim
+Save:node\C\study\Macro_res_8910.h \[1.1\] 扩展项目
+Save:node\C\study\Macro_res_8910.h \[1.2\] mk
 Save:node\C\study\Macro_res_8910.h \[1.3\] str
 Save:node\C\study\Macro_res_8910.h \[1.4\] res
-Save:node\C\study\Macro_res_8910.h \[1.5\] icon
+Save:node\C\study\Macro_res_8910.h \[1.5\] icon, anim
 Save:node\C\study\Macro_res_8910.h \[1.6\] ring
 Save:node\C\study\Macro_res_8910.h \[1.7\] add app
 Save:node\C\study\Macro_res_8910.h \[1.8\] add res
-Save:node\C\study\Macro_res_8910.h \[1.9\] 
+Save:node\C\study\Macro_res_8910.h \[1.9\] font
 Save:node\C\study\Macro_res_8910.h \[1.10\] test
 Save:node\C\study\Macro_res_8910.h \[1.11\] OLD_PRELOAD
-Save:node\C\study\Macro_res_8910.h \[1.12\] 
+Save:node\C\study\Macro_res_8910.h \[1.12\] xx_mdu_def.h
+Save:node\C\study\Macro_res_8910.h \[1.13\] 
+Save:node\C\study\Macro_res_8910.h \[1.14\] 
+Save:node\C\study\Macro_res_8910.h \[1.15\] 
+Save:node\C\study\Macro_res_8910.h \[1.16\] 
+Save:node\C\study\Macro_res_8910.h \[1.17\] 
+Save:node\C\study\Macro_res_8910.h \[1.18\] 
+Save:node\C\study\Macro_res_8910.h \[1.19\] 
+Save:node\C\study\Macro_res_8910.h \[1.20\] 
 
 
 
 
-[1.1] xx_mdu_def.h
-// audioplayer
-//	audioplayer_mdu_def.h
-//	browser_manager_mdu_def.h	browser
-//	browser_mdu_def.h	browser
-// camera
-MS_MMI_Main\source\mmi_app\app\camera\h\camera_mdu_def.h  IMG_DC_ICON_PHOTO
-// cc
-//	cc_mdu_def.h
-//	clock_mdu_def.h	clock
-//	common_mdu_def.h	common
-MS_MMI_Main\source\mmi_app\common\h\common_mdu_def.h  TXT_AUDIO
-//	connection_mdu_def.h	connection
-//	datacounter_mdu_def.h	dataCounter
-//	dl_mdu_def.h	dl
-//	drm_mdu_def.h	drm
-//	ebook_mdu_def.h	ebook
-//	email_mdu_def.h	email
-//	files_manager_mdu_def.h	files_manager
-//	fm_mdu_def.h	fm
-//	game_snake_mdu_def.h	game_snake
-//	im_mdu_def.h	im
-//	mms_mdu_def.h	mms
-//	multim_mdu_def.h	multim
-//	pb_mdu_def.h	pb
-//	pic_crop_mdu_def.h	pic
-//	pic_mdu_def.h	pic_crop
-//	pic_viewer_mdu_def.h	pic_viewer
-//	push_mail_mdu_def.h	preload
-//	record_mdu_def.h	record
-//	sample_mdu_def.h	rect_table.xls
-//	search_mdu_def.h	ring_default.mid
-//	set_mdu_def.h	set
-//	sms_mdu_def.h	sms
-//	tencentmcarev31_mdu_def.h	
-//	tools_mdu_def.h	tools
-//	videoplayer_mdu_def.h	videoplayer
-//	wallpaper_mdu_def.h	wallpaper
-//	wifi_mdu_def.h	wifi
+[1.1] 
 
 
-[1.2] anim
-//
-MS_MMI_Main\source\mmi_app\common\h\common_mdu_def.h  ANIM_PUBWIN_WAIT_PDA
+[1.2] 
 
 
 
@@ -86,7 +54,7 @@ MS_MMI_Main\source\mmi_app\common\h\common_mdu_def.h  ANIM_PUBWIN_WAIT_PDA
 
 
 
-[1.5] icon
+[1.5] icon, anim
 // RES_ADD_IMG()
 //    背景使用整图，缩放的背景带花纹或重叠
 //  IMG_CMP_PNG_ARGB                   -------正常
@@ -94,6 +62,8 @@ MS_MMI_Main\source\mmi_app\common\h\common_mdu_def.h  ANIM_PUBWIN_WAIT_PDA
 //  IMG_CMP_PNG_SABM_RLE |SABM_HOR_STRETCH ---带花纹
 
 
+// anim
+MS_MMI_Main\source\mmi_app\common\h\common_mdu_def.h  ANIM_PUBWIN_WAIT_PDA
 
 
 [1.6] ring
@@ -135,8 +105,33 @@ MS_MMI_Main\source\resource\mmi_res_prj_def.h  SPDEHTTP_SUPPORT
 
 
 
-[1.9] 
+[1.9] font
+//	字库：
+MS_MMI_Main\source\resource\mmi_res_prj_def.h
+MS_MMI_Main\source\resource\Common\FONT
+open tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe
 
+
+MS_MMI_Main\source\resource\Common\FONT\LANG_FONT_LATIN_12_14_29.lib
+MS_MMI_Main\source\resource\Common\FONT\
+
+
+// VIB
+key:VIB,file:mmi_res_prj_def.h
+
+// FONT
+key:FONT,file:mmi_res_prj_def.h
+
+
+// RING
+key:RING,file:mmi_res_prj_def.h
+
+
+// LANG
+key:LANG,file:mmi_res_prj_def.h
+
+// IM
+key:IM,file:mmi_res_prj_def.h
 
 
 
@@ -154,7 +149,45 @@ make\preload_app\preload_app.mk  51
 
 
 
-[1.12] 
+[1.12] xx_mdu_def.h
+// audioplayer
+//	audioplayer_mdu_def.h
+//	browser_manager_mdu_def.h	browser
+//	browser_mdu_def.h	browser
+// camera
+MS_MMI_Main\source\mmi_app\app\camera\h\camera_mdu_def.h  IMG_DC_ICON_PHOTO
+// cc
+//	cc_mdu_def.h
+//	clock_mdu_def.h	clock
+//	common_mdu_def.h	common
+MS_MMI_Main\source\mmi_app\common\h\common_mdu_def.h  TXT_AUDIO
+//	connection_mdu_def.h	connection
+//	datacounter_mdu_def.h	dataCounter
+//	dl_mdu_def.h	dl
+//	drm_mdu_def.h	drm
+//	ebook_mdu_def.h	ebook
+//	email_mdu_def.h	email
+//	files_manager_mdu_def.h	files_manager
+//	fm_mdu_def.h	fm
+//	game_snake_mdu_def.h	game_snake
+//	im_mdu_def.h	im
+//	mms_mdu_def.h	mms
+//	multim_mdu_def.h	multim
+//	pb_mdu_def.h	pb
+//	pic_crop_mdu_def.h	pic
+//	pic_mdu_def.h	pic_crop
+//	pic_viewer_mdu_def.h	pic_viewer
+//	push_mail_mdu_def.h	preload
+//	record_mdu_def.h	record
+//	sample_mdu_def.h	rect_table.xls
+//	search_mdu_def.h	ring_default.mid
+//	set_mdu_def.h	set
+//	sms_mdu_def.h	sms
+//	tencentmcarev31_mdu_def.h	
+//	tools_mdu_def.h	tools
+//	videoplayer_mdu_def.h	videoplayer
+//	wallpaper_mdu_def.h	wallpaper
+//	wifi_mdu_def.h	wifi
 
 
 

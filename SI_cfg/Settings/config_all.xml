@@ -185,7 +185,7 @@
 		ReloadFiles="1"
 		PromptReload="1"
 		UseEofChar="0"
-		MakeBackup="1"
+		MakeBackup="0"
 		CleanupBackup="1"
 		BackupAgingDays="365"
 		SaveAllPromptEach="0"
@@ -200,7 +200,7 @@
 		BlockBinaryFiles="1"
 		OpenBackupsAsReadOnly="1"
 		DefaultFileFormat="1"
-		DefaultEncoding="65001"
+		DefaultEncoding="0"
 		FileOpenAction="Project File List"
 		/>
 	<LookupPreferences
@@ -1075,7 +1075,7 @@
 		</Type>
 		<Type
 			Name="C Source File"
-			FileFilter="*.c;*.cc;*.h"
+			FileFilter="*.c;*.cc;*.h;*.bld"
 			Language="ANSI C Language"
 			ParsePattern=""
 			WordWrap="0"
@@ -1098,7 +1098,7 @@
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="120"
-			IndentWidth="1"
+			IndentWidth="0"
 			AutoInsertPairs="1"
 			ParsePatternSymbolType=""
 			AutoIndentMode="2"
@@ -1110,7 +1110,7 @@
 		</Type>
 		<Type
 			Name="C/C++ Source File"
-			FileFilter="*.c;*.h;*.cpp;*.hpp;*.cxx;*.hxx"
+			FileFilter="*.c;*.h;*.cpp;*.hpp;*.cxx;*.hxx;*.scf"
 			Language="C/C++ Language"
 			ParsePattern=""
 			WordWrap="0"
@@ -1133,7 +1133,7 @@
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="120"
-			IndentWidth="4"
+			IndentWidth="1"
 			AutoInsertPairs="1"
 			ParsePatternSymbolType=""
 			AutoIndentMode="2"
@@ -1215,7 +1215,7 @@
 		</Type>
 		<Type
 			Name="Python File"
-			FileFilter="*.py"
+			FileFilter="*.py,*.pe"
 			Language="Python"
 			ParsePattern=""
 			WordWrap="0"
@@ -1238,7 +1238,7 @@
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="120"
-			IndentWidth="4"
+			IndentWidth="1"
 			AutoInsertPairs="1"
 			ParsePatternSymbolType=""
 			AutoIndentMode="2"
@@ -1635,7 +1635,7 @@
 		</Type>
 		<Type
 			Name="Make File"
-			FileFilter="*.mak;makefile;*.mk"
+			FileFilter="*.mak;makefile;*.mk;*.CFG;*.cfg;*.modules;*.third-party"
 			Language="Makefile"
 			ParsePattern=""
 			WordWrap="0"
@@ -7631,10 +7631,10 @@
 				LinesOfContext="1"
 				ResultFileName="1"
 				ResultLineNumber="0"
-				ResultLineText="0"
+				ResultLineText="1"
 				ResultContainer="0"
 				ResultSourceLinks="1"
-				ResultNormalizeFileNames="0"
+				ResultNormalizeFileNames="1"
 				/>
 			<SearchProject
 				SearchMethod="Keyword Expression"
@@ -7701,88 +7701,88 @@
 					NewRow="0"
 					/>
 				<Toolbar
-					Name="File"
-					Width="196"
-					Ordinal="1"
-					IsVisible="1"
-					NewRow="0"
-					/>
-				<Toolbar
 					Name="Edit"
 					Width="168"
-					Ordinal="2"
+					Ordinal="1"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Search"
 					Width="188"
-					Ordinal="3"
+					Ordinal="2"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Navigation"
 					Width="132"
-					Ordinal="4"
+					Ordinal="3"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Symbols"
 					Width="160"
-					Ordinal="5"
+					Ordinal="4"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Window"
 					Width="132"
-					Ordinal="6"
+					Ordinal="5"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Help"
 					Width="76"
-					Ordinal="7"
+					Ordinal="6"
 					IsVisible="0"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="View"
 					Width="328"
-					Ordinal="8"
+					Ordinal="7"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Source Control"
 					Width="175"
-					Ordinal="9"
+					Ordinal="8"
 					IsVisible="0"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Build"
 					Width="132"
-					Ordinal="10"
+					Ordinal="9"
 					IsVisible="0"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Outline"
 					Width="132"
-					Ordinal="11"
+					Ordinal="10"
 					IsVisible="1"
 					NewRow="0"
 					/>
 				<Toolbar
 					Name="Layout"
 					Width="188"
-					Ordinal="12"
+					Ordinal="11"
 					IsVisible="1"
 					NewRow="0"
+					/>
+				<Toolbar
+					Name="File"
+					Width="196"
+					Ordinal="12"
+					IsVisible="1"
+					NewRow="1"
 					/>
 			</Toolbars>
 		</MainToolbar>
@@ -7816,7 +7816,7 @@
 		<SymbolTypes All="1" />
 	</ProjectReport>
 	<SymbolPane
-		Width="219"
+		Width="198"
 		TextColor="#000000"
 		BackColor="#c5d2de"
 		ShowChanges="1"

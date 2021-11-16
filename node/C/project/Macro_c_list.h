@@ -16,7 +16,7 @@ tmp2:\\
 Save:node\C\project\Macro_c_list.h \[1.1\] 
 Save:node\C\project\Macro_c_list.h \[1.2\] 
 Save:node\C\project\Macro_c_list.h \[1.3\] TTF
-Save:node\C\project\Macro_c_list.h \[1.4\] TTF edit
+Save:node\C\project\Macro_c_list.h \[1.4\] //TTF edit
 Save:node\C\project\Macro_c_list.h \[1.5\] fontforge
 Save:node\C\project\Macro_c_list.h \[1.6\] 
 Save:node\C\project\Macro_c_list.h \[1.7\] 
@@ -88,66 +88,36 @@ Save:node\C\project_demo\Macro_file_ttf_google.h
 
 
 // TTF read
-Useful = True
+Useful = False
 //	
-cd:tmp: git clone https://github.com/JohnWong/PyTTF
+//cd:tmp: git clone https://github.com/JohnWong/PyTTF
 
 
 
 // BDF to TTF 
-Useful = True
+Useful = False
 //	
-cd:tmp: git clone https://github.com/Tblue/mkttf
+//cd:tmp: git clone https://github.com/Tblue/mkttf
 
-
-
-// ttftrim
-Useful = True
-//	
-cd:tmp: git clone https://github.com/arp242/ttftrim
-// fontforge
-Save:node\C\project_demo\Macro_file_ttf_ttftrim.h
 
 
 // ttfdiet
 Useful = False
 //	对 .ttf 字体进行了调整 减小了字体的文件大小
-cd:tmp: git clone https://github.com/twardoch/ttfdiet
+//cd:tmp: git clone https://github.com/twardoch/ttfdiet
 // fonttools 不存在
 Save:node\C\project_demo\Macro_file_ttf_ttfdiet.h
 
-
-// fonttools
-Useful = True
-//	lib
-cd:tmp: git clone https://github.com/fonttools/fonttools
-// 
-Save:node\C\project_demo\Macro_file_ttf_fonttools.h
 
 
 
 // ttf_to_png
 Useful = False
 //	ttf转png, woff转png
-cd:tmp: git clone https://github.com/biodog/ttf_to_png
+//cd:tmp: git clone https://github.com/biodog/ttf_to_png
 // fontTools 库代码
 Save:node\C\project_demo\Macro_file_ttf_ttf_to_png.h
 
-
-// svg2ttf
-Useful = False
-//	svg 到ttf
-cd:tmp: git clone https://github.com/0x00-pl/svg2ttf
-// fontforge 错误
-Save:node\C\project_demo\Macro_file_ttf_svg2ttf.h
-
-
-// ttf2utf
-Useful = False
-//	将ttf 中键入的文本转换为 unicode。支持多种ttf字体
-cd:tmp: git clone https://github.com/sapradhan/nep-ttf2utf
-// 编不过
-Save:node\C\project_demo\Macro_file_ttf_ttf2utf.h
 
 
 

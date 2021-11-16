@@ -19,7 +19,7 @@ Save:node\C\study\Macro_zmaee_8910.h \[1.5\] make--res
 Save:node\C\study\Macro_zmaee_8910.h \[1.6\] mulit
 Save:node\C\study\Macro_zmaee_8910.h \[1.7\] 热插拨功能
 Save:node\C\study\Macro_zmaee_8910.h \[1.8\] 耗电
-Save:node\C\study\Macro_zmaee_8910.h \[1.9\] 
+Save:node\C\study\Macro_zmaee_8910.h \[1.9\] Torch
 Save:node\C\study\Macro_zmaee_8910.h \[1.10\] 客户
 Save:node\C\study\Macro_zmaee_8910.h \[1.11\] 
 Save:node\C\study\Macro_zmaee_8910.h \[1.12\] 
@@ -127,9 +127,10 @@ SIM_PLUG_IN_SUPPORT
 
 
 
-[1.9] 
-
-
+[1.9] Torch
+//
+SPDE_PRJ/WA07U_F30ZL_AMT/zmaee/c/zmaee_watch.c ZMAEETorchWinHandleMsg
+SPDE_PRJ/WA07U_F30ZL_AMT/zmaee/c/zmaee_watch.c 4580
 
 
 [1.10] 客户

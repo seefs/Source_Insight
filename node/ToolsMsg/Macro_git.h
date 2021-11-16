@@ -77,6 +77,9 @@ git config --global user.email xxx@foxmail.com
 
 git config --global user.name xiaojia
 git config --global user.email seefs@163.com
+
+git config --global user.name xiaojia
+git config --global user.email xiaojia_bm@163.com
 	
 //臥心云仇議global佚連
 git config [--local|--global|--system] --list/-l　　　　　　　　　　

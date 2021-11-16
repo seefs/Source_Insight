@@ -1,1 +1,1 @@
-"C:\Program Files\Beyond Compare 4\BCompare.exe" .\Settings ".\..\..\Source Insight 4.0\Settings"
+"C:\Program Files\Beyond Compare 4\BCompare.exe" .\Settings ".\..\..\Source Insight\Settings"

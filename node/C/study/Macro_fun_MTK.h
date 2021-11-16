@@ -7,42 +7,42 @@ patch:\\
 // 1. constant
 Save:node\C\study\Macro_fun_MTK.h \[1.1\] resource_main
 Save:node\C\study\Macro_fun_MTK.h \[1.2\] str, wstr
-Save:node\C\study\Macro_fun_MTK.h \[1.3\] timer, LONG_0----
-Save:node\C\study\Macro_fun_MTK.h \[1.4\] MSG
-Save:node\C\study\Macro_fun_MTK.h \[1.5\] NV, init
+Save:node\C\study\Macro_fun_MTK.h \[1.3\] //timer, LONG_0----
+Save:node\C\study\Macro_fun_MTK.h \[1.4\] //MSG
+Save:node\C\study\Macro_fun_MTK.h \[1.5\] //NV, init
 Save:node\C\study\Macro_fun_MTK.h \[1.6\] Win, Param, id---ID转换
-Save:node\C\study\Macro_fun_MTK.h \[1.7\] #define----------宏套宏
-Save:node\C\study\Macro_fun_MTK.h \[1.8\] RED
-Save:node\C\study\Macro_fun_MTK.h \[1.9\] sms_member
+Save:node\C\study\Macro_fun_MTK.h \[1.7\] //#define----------宏套宏
+Save:node\C\study\Macro_fun_MTK.h \[1.8\] //RED
+Save:node\C\study\Macro_fun_MTK.h \[1.9\] //sms_member
 Save:node\C\study\Macro_fun_MTK.h \[1.10\] 
-Save:node\C\study\Macro_fun_MTK.h \[1.11\] make------------
+Save:node\C\study\Macro_fun_MTK.h \[1.11\] //make------------
 Save:node\C\study\Macro_fun_MTK.h \[1.12\] debug, trace
 Save:node\C\study\Macro_fun_MTK.h \[1.13\] 
-Save:node\C\study\Macro_fun_MTK.h \[1.14\] mp3-------------刷新
+Save:node\C\study\Macro_fun_MTK.h \[1.14\] //mp3-------------刷新
 Save:node\C\study\Macro_fun_MTK.h \[1.15\] tts
-Save:node\C\study\Macro_fun_MTK.h \[1.16\] draw str wchar
+Save:node\C\study\Macro_fun_MTK.h \[1.16\] //draw str wchar
 Save:node\C\study\Macro_fun_MTK.h \[1.17\] time
-Save:node\C\study\Macro_fun_MTK.h \[1.18\] press key
-Save:node\C\study\Macro_fun_MTK.h \[1.19\] Rect
+Save:node\C\study\Macro_fun_MTK.h \[1.18\] //press key
+Save:node\C\study\Macro_fun_MTK.h \[1.19\] //Rect
 Save:node\C\study\Macro_fun_MTK.h \[1.20\]
 // 2.func
-Save:node\C\study\Macro_fun_MTK.h \[2.1\] lock
-Save:node\C\study\Macro_fun_MTK.h \[2.2\] light
-Save:node\C\study\Macro_fun_MTK.h \[2.3\] ADN FDN SDN
-Save:node\C\study\Macro_fun_MTK.h \[2.4\] Dtmf
-Save:node\C\study\Macro_fun_MTK.h \[2.5\] CC--msg
-Save:node\C\study\Macro_fun_MTK.h \[2.6\] SMS--tp input
-Save:node\C\study\Macro_fun_MTK.h \[2.7\] cursor
-Save:node\C\study\Macro_fun_MTK.h \[2.8\] file
-Save:node\C\study\Macro_fun_MTK.h \[2.9\] select_sim
-Save:node\C\study\Macro_fun_MTK.h \[2.10\] Sleep
-Save:node\C\study\Macro_fun_MTK.h \[2.11\] reset----------重启
-Save:node\C\study\Macro_fun_MTK.h \[2.12\] 小图标
-Save:node\C\study\Macro_fun_MTK.h \[2.13\] Browser--------默认PIC
-Save:node\C\study\Macro_fun_MTK.h \[2.14\] BT-------------msg
-Save:node\C\study\Macro_fun_MTK.h \[2.15\] Test-----------key id
-Save:node\C\study\Macro_fun_MTK.h \[2.16\] sim--显示单卡
-Save:node\C\study\Macro_fun_MTK.h \[2.17\] usb
+Save:node\C\study\Macro_fun_MTK.h \[2.1\] //lock
+Save:node\C\study\Macro_fun_MTK.h \[2.2\] //light
+Save:node\C\study\Macro_fun_MTK.h \[2.3\] //ADN FDN SDN
+Save:node\C\study\Macro_fun_MTK.h \[2.4\] //Dtmf
+Save:node\C\study\Macro_fun_MTK.h \[2.5\] //CC--msg
+Save:node\C\study\Macro_fun_MTK.h \[2.6\] //SMS--tp input
+Save:node\C\study\Macro_fun_MTK.h \[2.7\] //cursor
+Save:node\C\study\Macro_fun_MTK.h \[2.8\] //file
+Save:node\C\study\Macro_fun_MTK.h \[2.9\] //select_sim
+Save:node\C\study\Macro_fun_MTK.h \[2.10\] //Sleep
+Save:node\C\study\Macro_fun_MTK.h \[2.11\] //reset----------重启
+Save:node\C\study\Macro_fun_MTK.h \[2.12\] //小图标
+Save:node\C\study\Macro_fun_MTK.h \[2.13\] //Browser--------默认PIC
+Save:node\C\study\Macro_fun_MTK.h \[2.14\] //BT-------------msg
+Save:node\C\study\Macro_fun_MTK.h \[2.15\] //Test-----------key id
+Save:node\C\study\Macro_fun_MTK.h \[2.16\] //sim--显示单卡
+Save:node\C\study\Macro_fun_MTK.h \[2.17\] //usb
 Save:node\C\study\Macro_fun_MTK.h \[2.18\] 
 Save:node\C\study\Macro_fun_MTK.h \[2.19\] 
 Save:node\C\study\Macro_fun_MTK.h \[2.20\] 
@@ -139,9 +139,9 @@ MMI_ID mmi_popup_display_ext(
 
 
 
-[1.12] 
-
-
+[1.12] debug, trace
+//
+MMI_SLK_LOG((TRC_MMI_SLK_TURN_ON_BACKLIGHT, 200));
 
 
 [1.13] 
@@ -154,7 +154,12 @@ MMI_ID mmi_popup_display_ext(
 
 
 
-[1.15] 
+[1.15] tts
+// lock
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_scr_locker_close
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_scr_locker_launch
+// menu
+
 
 
 

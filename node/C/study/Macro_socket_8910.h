@@ -89,8 +89,13 @@ http://fzd.xcloudtech.com/
 测试端口 9000 
 
 
-Android App
+//Android App
 //
+
+//
+//	如果没响，那应该是您还没对接好，对接尽量使用lab.xcloudtech.com:9000
+//	测试服测通了再转正式服
+
 
 
 

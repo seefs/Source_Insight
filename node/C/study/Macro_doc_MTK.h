@@ -6,19 +6,23 @@
 
 //目录[Num][Ca]:
 // 1. 
-Save:node\C\study\Macro_doc_MTK.h \[1.1\] Message 切换
-Save:node\C\study\Macro_doc_MTK.h \[1.2\] FUN 入口-------------
+Save:node\C\study\Macro_doc_MTK.h \[1.1\] //Message 切换
+Save:node\C\study\Macro_doc_MTK.h \[1.2\] //FUN 入口-------------
 Save:node\C\study\Macro_doc_MTK.h \[1.3\] 
-Save:node\C\study\Macro_doc_MTK.h \[1.4\] 移配置
-Save:node\C\study\Macro_doc_MTK.h \[1.5\] 说明文档
-Save:node\C\study\Macro_doc_MTK.h \[1.6\] Win数据
-Save:node\C\study\Macro_doc_MTK.h \[1.7\] SALE统计
+Save:node\C\study\Macro_doc_MTK.h \[1.4\] //移配置
+Save:node\C\study\Macro_doc_MTK.h \[1.5\] //说明文档
+Save:node\C\study\Macro_doc_MTK.h \[1.6\] //Win数据
+Save:node\C\study\Macro_doc_MTK.h \[1.7\] //SALE统计
 Save:node\C\study\Macro_doc_MTK.h \[1.8\] 
-Save:node\C\study\Macro_doc_MTK.h \[1.9\] test code-------------
-Save:node\C\study\Macro_doc_MTK.h \[1.10\] ImageNote
-Save:node\C\study\Macro_doc_MTK.h \[1.11\] TextNote
+Save:node\C\study\Macro_doc_MTK.h \[1.9\] //test code-------------
+Save:node\C\study\Macro_doc_MTK.h \[1.10\] //ImageNote
+Save:node\C\study\Macro_doc_MTK.h \[1.11\] //TextNote
 Save:node\C\study\Macro_doc_MTK.h \[1.12\] 
 Save:node\C\study\Macro_doc_MTK.h \[1.13\] 
+//
+Save:node\C\study\Macro_doc_MTK.h \[2.1\] build error
+Save:node\C\study\Macro_doc_MTK.h \[2.2\] moids error
+Save:node\C\study\Macro_doc_MTK.h \[2.3\] 
 // 其他标号
 Save:Help\\DefaultFile\\Macro_Node_Num.h
 
@@ -27,16 +31,9 @@ Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 [1.1] Message 切换
 
-//	Message 切换
-Save:node\C\study\Macro_Spr_MsgId.h
-//
-// MMK_WinGrabFocus(MMIWIFI_LIST_WIN_ID);
-
 
 
 [1.2] FUN 入口
-//	FUN 入口
-Save:node\C\study\Macro_Spr_Fun.h
 
 
 
@@ -47,71 +44,19 @@ Save:node\C\study\Macro_Spr_Fun.h
 
 
 [1.4] 移配置
-common\nv_parameters\S036_MB
-MS_Customize\source\product\config\S036_MB
-MS_Customize\SC6530_S036_MB_vm
-version\SC6530_S036_MB_version.c
 
 
 
 
 [1.5] 说明文档
-SC6530平台_application_notes.doc				  ###  宏说明			   
-Universe手机使用说明.docx 					   ###	手机使用说明
-Build_Environment_Manual.doc ###  编译环境
 
 
 
 
 [1.6] Win数据
-//
-VIRTUAL_WIN_ID
-//
-MMI_BASE_NODE_T    # 可以转 WINDOW_NODE
-MMI_HANDLE_NODE_T
-MMI_TREE_NODE_T    HANDLE
-MMI_HANDLE_T		HANDLE_NODE + APPLET_NODE	 #应用
-
-MMI_WINDOW_T		
-MMI_WINDOW_NODE_T		 NODE + WINDOW + HANDLE
-MMI_WINDOW_TABLE_CREATE_T	 参数
-MMI_WINDOW_CREATE_T 	   参数
-MMI_APPLET_NODE_T		 
-MMI_ZORDER_SYSTEM_T
-MMI_ZORDER_NODE_T		 WINDOW_NODE + ……
-
-MMI_APPLET_SYSTEM_T
-
-MMI_CTRL_NODE_T
-MMI_CONTROL_CREATE_T	参数
-
-MMI_MESSAGE_PTR_T 
-CAF_GUID_T			 module_manager
-GUIMENU_GROUP_T
-
-GUI_POINT_T
-GUI_RECT_T
-MMI_WIN_ID_T
-MMI_IMAGE_ID_T
-GUI_LCD_DEV_INFO
-IMG_RES_SRC_T		 显示图片
-CAF_GUID_T	  
-MMI_MODINFO_NODE_T	  kernel模块的信息
-CAF_RES_T
-CAF_HANDLE_T
-RES_NODE_DATA_T
-
-IMG_RES_DST_T	 显示
-IMG_RES_SRC_T
-
 
 
 [1.7] SALE统计
-MMIDEFAULT_StartAutoSendSMSTimer        # 默认
-HandleSetSmsAutoSendWindow
-Enter_SMS_APP_AutoSend_SIM1
-MMIDEFAULT_HandleAutoSendSMSTimer        # 处理发送
-
 
 
 
@@ -121,119 +66,17 @@ MMIDEFAULT_HandleAutoSendSMSTimer        # 处理发送
 
 
 [1.9] test code
-// Phone
-"#*8378#0#", "*#15963#", "####1111#",
-// UI
-"####1111#", "*#87#", "*#666#",
-// Item
- "*#777#", "*#66*#", "*#79*#",
-// Product
-"#*8378#3#",
-// PhoneInfo -- bg
-"#*8378#4#",
-// SN
-"####2222#",
-// Net--mcc,mnc
-"####1040#",
-// Engineer
-"#*8378#1#", "*#555#",--mcc,mnc
-// Version--Out -- bg
-"#*8378#2#", "####0000#", 
-// Version--3
-"*#888#",
-// Chip
-"#*8378#5#",
-// NV
-"#*786646468#",
-// Monkey
-"#*8378#8#",
-// TFload
-"#*8378#9#",
-// ALLSVN -- bg
-"#*786837#",
-// HW
-"*#999#", "*#523#",
-// IMEI
-"*#333#", "*#0066#", "*#3184#"; "*#06#",
-// Reset
-"*#119*#", "*#70#",
-// ELECTRIC
-"*#2010#"; "*#0808#"; "*#0809#", 
-
-// test code
-MS_MMI_Main/source/mmi_app/app/eng/c/mmieng_main.c  UITESTWIN_OpenPhoneTestWin
-//    {
-//         "#1#",
-//         MMIENG_IDLE_DIAL_NUM_UI_TEST2, //func id
-//         PARS_MANUFACTURE_TEST,         //无使用
-//         MMIAPIENG_StartUITest
-//    }
-
-### 
-//--v--time,data,vol
-//MMIENG_IDLE_DIAL_NUM_PHONE_INFO
-//--v--mk--sw--hide
-//MMIENG_IDLE_DIAL_NUM_SW_VERSION
-//--v--8910--outV, HW closed
-//MMIENG_IDLE_DIAL_NUM_SHOW_VERSION1,
-//--v--8910--outV, HW closed
-//MMIENG_IDLE_DIAL_NUM_SHOW_VERSION2,
-//--l--no use
-//MMIENG_IDLE_DIAL_NUM_MONKEY_TEST_AUTOSET,
-//--t--nv error
-//MMIENG_IDLE_DIAL_NUM_NV_COUNTING,
-//--x--no use
-//MMIENG_IDLE_DIAL_NUM_AUDIO_DEMO,
-//MMIENG_IDLE_DIAL_NUM_VIDEO_DEMO,
-//MMIENG_IDLE_DIAL_NUM_MEDIA_DEMO,
-//--x--no use
-//MMIENG_IDLE_DIAL_NUM_AUTO_LOG,
-//MMIENG_IDLE_DIAL_NUM_LOG_OFF,
-//--wa01u, mk,
-//MMIENG_IDLE_DIAL_NUM_SHOW_VERSION3, //显示更多版本信息
 
 
 
 [1.10] ImageNote
 
-//查看图标是否存在
-Save:node\C\study\Show_Pic_dir.h IMAGE_PUBWIN_QUERY
-Save:node\C\study\Show_Pic_dir.h IMAGE_PUBWIN_SUCCESS  
-Tool:common\MMI_RES_DEFAULT\IMAG\Pubwin\PDA
-
-Tool:clock\MMI_RES_DEFAULT\IMAG\Alarm\IMAGE_CLOCK_ALARM_ALERT.png
-Tool:clock\MMI_RES_DEFAULT\IMAG\Alarm
-
-
-
-//查看图标是否存在
-build\UIS8910_ROM_16MB_DS_USER_builddir\tmp\mmi_res_240x320_imag.txt IMAGE_PUBWIN_QUERY
 
 
 
 
 [1.11] TextNote
 
-//
-build\UIS8910_ROM_16MB_DS_USER_builddir\tmp\mmi_res_128x128_text.txt TXT_EXTRA_SETTINGS
-build\UIS8910_ROM_16MB_DS_USER_builddir\tmp\mmi_res_128x128_text.txt TXT_SETTINGS_COMMAND
-build\UIS8910_ROM_16MB_DS_USER_builddir\tmp\mmi_res_128x128_text.txt _EMPTY
-build\UIS8910_ROM_16MB_DS_USER_builddir\tmp\mmi_res_128x128_text.txt Delete
-build\UIS8910_ROM_16MB_DS_USER_builddir\tmp\mmi_res_128x128_text.txt Search
-//字符整理:
-// 公式:
-// =IF(ISNUMBER(MATCH(C1,A$1:A$14254,)),INDEX(B$1:B$14254,MATCH(C1,A$1:A$14254,)),"")
-Save:node\C\study\Show_Str_eng.h ,^Select^all,
-Save:node\C\study\Show_Str_eng.h ,^Settings,
-Save:node\C\study\Show_Str_eng.h ,^Once, //TXT_ALARM_MODE_ONCE
-Save:node\C\study\Show_Str_eng.h ,^Daily,//TXT_ALARM_MODE_EVERYDAY
-Save:node\C\study\Show_Str_eng.h ,^Weekly, //TXT_CALENDAR_WEEKLY
-	
-Save:node\C\study\Show_Str_eng.h ,^Close^spea
-Save:node\C\study\Show_Str_eng.h ,^PAUSE,
-//softkey:
-STXT_CANCEL, STXT_STOP, STXT_RETURN, STXT_SAVE, STXT_OPTION, STXT_SELECT, TXT_DELETE, TXT_EDIT
-STXT_OK, TXT_COMMON_CLEAR, 
 
 
 
@@ -256,6 +99,199 @@ STXT_OK, TXT_COMMON_CLEAR,
 
 
 [1.15] 
+
+
+
+
+[2.1] build error
+
+# 1.Error: 超空间:
+AAPMC Error: Error[-2-] Calculating correct VIVA memory value...Failed.
+Error: L6388E: ScatterAssert expression (ImageLimit(ZIMAGE_ER) < ImageBase(CACHED_DUMMY_END)) failed on line 904
+Please check link error or check 
+build\M107_XYZN_S2_4A_WESTERN_F2\log\vivaConfig.log Error:
+	
+
+# 2.Error: zimage_check 
+make[-1-]: *** [zimage_check] Error 1
+make[-1-]: Leaving directory 'F:/11CW1352MP_MT6261DM'
+make[-1-]: Entering directory 'F:/11CW1352MP_MT6261DM'
+make[-1-]: Leaving directory 'F:/11CW1352MP_MT6261DM'
+make: *** [POSTBUILD ] Error 1
+perl tools\ChkDepMod.pl --step 2 M107_XYZN_S2_4A_WESTERN_F2 gprs MT6261
+
+//可能要删这个文件
+custom\system\FARSIGHTED61M_CN_11C_BB
+
+
+# 3.Error:  vivaConfig.log
+vivaConfig.log:
+Checking VIVA configuration reason
+Error: L6388E: ScatterAssert expression (ImageLimit(ZIMAGE_ER) < ImageBase(CACHED_DUMMY_END)) failed on line 904
+原因未知, 重新new正常
+
+
+# 4.Error: mmiresource.lib
+make[-1-]: *** [mmiresource.lib] Error 1
+make[-1-]: *** Waiting for unfinished jobs....
+make[-1-]: Leaving directory 'F:/11CW1352MP_MT6261DM'
+
+make: *** [xgc_all_libs_2] Error 1
+
+
+# 5.Error:  资源出错
+更换语言后 资源出错 开关机动画/状态图标不显示 --> NV中修改语言
+
+
+# 6.Error:  MMI Feature Check Error
+soft\tst\database_classb下面的临时文件删除
+
+
+# 7.Error:  XX.bin does not exist.
+XX.bin does not exist. Please check it.
+
+
+# 8.Error:  并行编译出错->Disable
+make: *** [xgc_all_libs_2] Error 1
+
+
+# 9.Error:  CreateProcess 拒绝访问
+process_begin: CreateProcess(C:\Users\ADMINI~1\AppData\Local\Temp\make6688-1.bat, 
+make (e=5): 拒绝访问
+
+
+# 10.Error:  msys-1.0.dll
+Tools\MSYS\bin\sh.exe: *** Couldn't reserve space for cygwin's heap (0x715B0000 <0x1FE0000>)
+旧:
+tools\MSYS\bin\msys-1.0.dll
+新:
+Save:SI\z-other-patch\mtk-tools\msys-1.0.dll [openDir]
+换了后还是报错:
+make[-1-]: *** [fluency.lib] Error 2
+最后解决: 重启一次可以了。
+
+
+# 11.Error: obigo03cstkadp
+make[-1-]: *** [obigo03cstkadp.lib] Error 2
+make[-1-]: *** [peripheral.lib] Error 2
+make[-1-]: *** [postproc.lib] Error 2
+make[-1-]: Leaving directory 'F:/11CW1352MP_MT6261DM'
+
+make: *** [xgc_all_libs_2] Error 1
+new
+
+
+# 12.Error:  文件名长度超过256
+F:\11CW1352MP_KM2\build\M105_JX_..\M105_JX_._20181217.bin\M105_JX_.._20181217.bin
+文件名长度超过256，不会生成bin文件
+
+
+# 13.Error: 丢失 BOOTLOADER 文件，原因同上(6.12)
+M105_..._BOOTLOADER_V005_MT6261_..._ext.bin
+
+
+
+[2.2] moids error
+
+# 1.KM模拟器编不过, 缺文件
+// F:\6261D_11C_V33\plutommi\Framework\MTE\MTEInc\mte_data.h
+// F:\6261D_KM\plutommi\Framework\MTE\MTEInc\mte_data.h
+cp->
+cp F:\6261D_11C_V33\plutommi\Framework\MTE\MTEInc\mte_data.h F:\6261D_KM\plutommi\Framework\MTE\MTEInc\mte_data.h
+
+
+// copy这2个文件
+// F:\6261D_KM\tst\database_classb\pstrace_db\wap_trc_gen.h
+// F:\6261D_KM\tst\database_classb\pstrace_db\wps_trc_gen.h
+
+// F:\6261D_KM\vendor\wap\obigo_Q03C\adaptation\integration\include\wap_trc.h
+// F:\6261D_KM\vendor\wap\obigo_Q03C\adaptation\integration\include\wap_trc_gen.h
+cp->
+cp tst\database_classb\pstrace_db\wap_trc_gen.h vendor\wap\obigo_Q03C\adaptation\integration\include\wap_trc_gen.h
+
+// F:\6261D_KM\vendor\framework\obigo_Q03C\adaptation\integration\include\trc\wps_trc.h
+// F:\6261D_KM\vendor\framework\obigo_Q03C\adaptation\integration\include\trc\wps_trc_gen.h
+cp->
+cp tst\database_classb\pstrace_db\wps_trc_gen.h vendor\framework\obigo_Q03C\adaptation\integration\include\trc\wps_trc_gen.h
+
+	
+err->
+// f:\6261D_KM\custom\system\FARSIGHTED61M_CN_11C_BB\custom_config.c sys_mem_size_modis.h
+// F:\6261D_KM\custom\system\FARSIGHTED61M_CN_11C_BB\sys_mem_size_modis.h
+cp custom\system\FARSIGHTED61M_CN_11C_BB\sys_mem_size.h custom\system\FARSIGHTED61M_CN_11C_BB\sys_mem_size_modis.h
+// 或
+cp F:\6261D_KM\custom\system\FARSIGHTED61M_CN_11C_BB\sys_mem_size.h F:\6261D_KM\custom\system\FARSIGHTED61M_CN_11C_BB\sys_mem_size_modis.h
+
+
+# 2.模拟器改NV后, 运行报错, 删除文件:
+MoDIS_VC9\WIN32FS\DRIVE_C
+
+
+# 3.模拟器Error: mte_data.h 少}
+plutommi\framework\mte\mteinc\mte.h
+plutommi\framework\mte\mteinc\mte_data.h 少一个}编不过
+
+
+# 4.模拟器Error:   'shortname' 文件名超长
+Run-time check Failure #2 - ... 'shortname' was corrupted
+MoDIS_VC9\filesystem\FileSystemInc\FSSim_def.h FSSIM_SFN_LEN  ->19 最长18
+
+
+# 5.模拟器Error:    vs_cfg:
+ Stack around the variable XX was corrupted
+ 项目-属性-配置属性-C/C++-代码生成中”，将基本运行时检查设置成默认值
+ code->basic runtime checks
+
+
+# 6.模拟器Error:   exist not modis.exe 
+ MoDIS_VC9 删除重拉代码
+
+
+# 7.模拟器Error:    cannot update program database:
+modis_vc9\mmi_service\debug\vc90.pdb
+项目设置（打开项目设置ALT F7，以英文版为例）:
+	C\C | General | Debug Information format | C7 Compatible (/Z7)
+	C\C | Code Generation | Enable String Pooling | Yes (/GF)
+	Linker |Debuging |General Debug Info | Yes (/DEBUG)
+网上被互相转载的都是这三项，不过经过实验，只修改第一项即可。
+修改保存后，再次编译会出现真正的错误点位置，修改该错误，
+然后将各个设置恢复为修改前的值，再[重编]就不会出现cannot update program database错误了
+
+
+# 8.模拟器Error: 空定义	
+vendor\framework\obigo_Q03C\v1_official\msf\msf_lib\export\msf_log.h #define^MSF_LOG_MSG_ARGS
+空定义
+//	#ifdef WIN32
+//	#undef  MSF_LOG_MSG_ARGS_(type, modId, msgId, format, s, ...)      
+//	#undef MSF_LOG_MSG_NOARG_(type, modId, msgId, format, s)          
+//	#undef MSF_LOG_MSG_NOARG(x)                                       
+//	#undef MSF_LOG_MSG_ARGS(x)                                        
+//	#endif
+
+
+# 9.Run-Time Check Failure
+// Run-Time Check Failure #3 - The variable 'ix' is being used without being initialized.
+plutommi\Framework\GUI\GUI_SRC\gui_buttons.c  gui_icontext_button_get_display_area_ex
+//同(5.xx)
+
+
+# 10.未处理的异常
+//修改VS设置（Debug -> Exceptions -> Win32 Exceptions ,将这些异常都抛出），重新运行程序。
+//VS能给了出更明确的提示：访问冲突，并定位到了冲突的代码。
+#ifdef WIN32
+	return;
+#endif
+
+
+# 11.未处理的异常
+//_set_lcd_driving_current 已经在 drv_sim.lib(w32_dummy_drv.obj) 
+// 中定义	modis_lcd.lib	MoDIS
+MoDIS_VC9\drv_sim\src\w32_dummy_drv.c  set_lcd_driving_current
+
+
+
+[2.3] 
+
 
 
 

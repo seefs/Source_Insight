@@ -27,7 +27,7 @@ Save:node\C\project\Macro_Note_8910.h \[1.8\] hr
 Save:node\C\project\Macro_Note_8910.h \[1.9\] breathled
 Save:node\C\project\Macro_Note_8910.h \[1.10\] 
 // ÉèÖÃ
-Save:node\C\project\Macro_Note_8910.h \[2.1\] ×Ö¿â---------mmi_res_prj_def.h
+Save:node\C\project\Macro_Note_8910.h \[2.1\] 
 Save:node\C\project\Macro_Note_8910.h \[2.2\] ÑÕÉ«---------common_mdu_def.h
 Save:node\C\project\Macro_Note_8910.h \[2.3\] ÅäÖÃ
 Save:node\C\project\Macro_Note_8910.h \[2.4\] fm
@@ -213,35 +213,10 @@ sensors:breathled\led_AW2013.c
 
 
 
-[2.1] ×Ö¿â---------mmi_res_prj_def.h
-//	×Ö¿â£º
-MS_MMI_Main\source\resource\mmi_res_prj_def.h
-MS_MMI_Main\source\resource\Common\FONT
-open tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe
-
-
-MS_MMI_Main\source\resource\Common\FONT\LANG_FONT_LATIN_12_14_29.lib
-MS_MMI_Main\source\resource\Common\FONT\
+[2.1] 
 
 
 
-
-// VIB
-key:VIB,file:mmi_res_prj_def.h
-
-// FONT
-key:FONT,file:mmi_res_prj_def.h
-
-
-// RING
-key:RING,file:mmi_res_prj_def.h
-
-
-// LANG
-key:LANG,file:mmi_res_prj_def.h
-
-// IM
-key:IM,file:mmi_res_prj_def.h
 
 
 

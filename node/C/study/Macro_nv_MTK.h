@@ -11,21 +11,21 @@ nv:\\
 
 //目录[Num][Ca]:
 // 1. 
-Save:node\C\study\Macro_nv_MTK.h \[1.1\] 充电------------电流
-Save:node\C\study\Macro_nv_MTK.h \[1.2\] 充电/放电-------电压(修改放电n%)
-Save:node\C\study\Macro_nv_MTK.h \[1.3\] 低电电压
-Save:node\C\study\Macro_nv_MTK.h \[1.4\] charge_end_voltage 高压电池
-Save:node\C\study\Macro_nv_MTK.h \[1.5\] PA
-Save:node\C\study\Macro_nv_MTK.h \[1.6\] 2IN1,3IN1
-Save:node\C\study\Macro_nv_MTK.h \[1.7\] production_param
-Save:node\C\study\Macro_nv_MTK.h \[1.8\] nv define
-Save:node\C\study\Macro_nv_MTK.h \[1.9\] nv test
-Save:node\C\study\Macro_nv_MTK.h \[1.10\] IMEI
-Save:node\C\study\Macro_nv_MTK.h \[1.11\] bat_capacity
-Save:node\C\study\Macro_nv_MTK.h \[1.12\] custom
+Save:node\C\study\Macro_nv_MTK.h \[1.1\] //充电------------电流
+Save:node\C\study\Macro_nv_MTK.h \[1.2\] //充电/放电-------电压(修改放电n%)
+Save:node\C\study\Macro_nv_MTK.h \[1.3\] //低电电压
+Save:node\C\study\Macro_nv_MTK.h \[1.4\] //charge_end_voltage 高压电池
+Save:node\C\study\Macro_nv_MTK.h \[1.5\] //PA
+Save:node\C\study\Macro_nv_MTK.h \[1.6\] //2IN1,3IN1
+Save:node\C\study\Macro_nv_MTK.h \[1.7\] //production_param
+Save:node\C\study\Macro_nv_MTK.h \[1.8\] //nv define
+Save:node\C\study\Macro_nv_MTK.h \[1.9\] //nv test
+Save:node\C\study\Macro_nv_MTK.h \[1.10\] //IMEI
+Save:node\C\study\Macro_nv_MTK.h \[1.11\] //bat_capacity
+Save:node\C\study\Macro_nv_MTK.h \[1.12\] //custom
 Save:node\C\study\Macro_nv_MTK.h \[1.13\] HOMEPAGE
-Save:node\C\study\Macro_nv_MTK.h \[1.14\] 
-Save:node\C\study\Macro_nv_MTK.h \[1.15\] 
+Save:node\C\study\Macro_nv_MTK.h \[1.14\] set
+Save:node\C\study\Macro_nv_MTK.h \[1.15\] nv_config
 Save:node\C\study\Macro_nv_MTK.h \[1.14\] 
 Save:node\C\study\Macro_nv_MTK.h \[1.15\] 
 Save:node\C\study\Macro_nv_MTK.h \[1.16\] 
@@ -103,17 +103,22 @@ Save:node\C\study\Macro_nv_MTK.h \[1.26\]
 
 
 [1.13] HOMEPAGE
-NV
+//NV
 NVRAM_BRW_SETTINGS_HOMEPAGE
 
 
 
-[1.14] 
+[1.14] set
+//
+plutommi\mmi\gpio\gpiores\PhnsetGpio.res  NVRAM_SETTING_KEY_BACKLITE_SWITCH
 
 
 
+[1.15] nv_config
 
-[1.15] 
+// 格式化不删除短信时间
+custom/common/PLUTO_MMI/nvram_common_config.c NVRAM_EF_SRV_SMS_SIM_CUST_DATA_LID
+
 
 
 
