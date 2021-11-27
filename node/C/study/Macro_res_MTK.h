@@ -1,15 +1,24 @@
 
+//共用路径设置
+Save:node\C\project\Macro_c_path.h
+
 基础路径设置:
-//basePath = 
-//imagesPath = projects\M107\M107_XYZN_S2_4A_WESTERN_F2
-imagesPath = plutommi\Customer\Images\K220_L12_MGUO\
+refPath = Save:set\Macro_Set_Path_mtk.h
+ref:\\
+//	
 images:\\
-audioPath = plutommi\Customer\AUDIO\K220_L12_MGUO\
 audio:\\
-featuresPath = plutommi\Customer\CustResource\K220_L12_MGUO_MMI\
 features:\\
 
 
+//当前项目
+// 查看--选择历史项目列表: 
+Save:set\
+Save:set\Macro_Set_Note.h  MTK
+Save:set\Macro_Set.h  87
+
+//路径保存
+Save:set\Macro_Set_Path_mtk.h 61
 
 
 /***********************************************************************/
@@ -59,10 +68,6 @@ custom\system\K220M_YGW_BB\custom_MemoryDevice.h  NOR_BOOTING_NAND_FS_SIZE
 
 
 
-### newPro
-mk, bld, features, nv, image, audio
-
-
 //ctrl+C自动添加新文件, 旧项目->新项目
 //新项目设置:
 newPro = K220_Z97_MGUO
@@ -87,24 +92,32 @@ plutommi\Customer\CustResource\M107_MMI\CustMiscDataM107.c
 
 
 
+### newPro
+mk, bld, features, nv, image, audio
+
+
 
 [1.2] mk, features, nv
 // --mk
 make/K220_D18E_GSM.mak
 make/Verno_K220_D18E.bld
+// tmp
+cp make/K220_V19_WD_GSM.mak make/K220_V35_WD_GSM.mak
+cp make/Verno_K220_V19_WD.bld make/Verno_K220_V35_WD.bld
 //
-cp make/K220_D18E_GSM.mak make/K220_Z97_MGUO_GSM.mak
 cp make/K220_Z97_MGUO_GSM.mak make/K220_Z97_JMZ_GSM.mak
 cp make/K220_Z97_MGUO_GSM.mak make/K220_Z97_JSZ_GSM.mak
 cp make/K220_Z97_MGUO_GSM.mak make/K220_Z97_MLL_GSM.mak
 cp make/K220_Z97_MGUO_GSM.mak make/K220_Z97_MOLOO_GSM.mak
 //
-cp make/Verno_K220_D18E.bld make/Verno_K220_Z97_MGUO.bld
 cp make/Verno_K220_Z97_MGUO.bld make/Verno_K220_Z97_JMZ.bld
 cp make/Verno_K220_Z97_MGUO.bld make/Verno_K220_Z97_JSZ.bld
 cp make/Verno_K220_Z97_MGUO.bld make/Verno_K220_Z97_MLL.bld
 cp make/Verno_K220_Z97_MGUO.bld make/Verno_K220_Z97_MOLOO.bld
 cp make/Verno_K220_Z97_MGUO.bld make/Verno_K220_Y01A_MGUO.bld
+cp make/Verno_K220_Z97_MGUO.bld make/Verno_K220_Y22_MGUO.bld
+
+
 //
 make/K220_Z97_MGUO_GSM.mak
 make/K220_Z97_JMZ_GSM.mak
@@ -113,17 +126,28 @@ make/K220_Z97_MLL_GSM.mak
 make/K220_Z97_MOLOO_GSM.mak
 make/K220_Y01A_MGUO_GSM.mak
 make/K220_L12_MGUO_GSM.mak
+make/K220_Y22_MGUO_GSM.mak
 // bcmp
 cmd_f: ren bak:Tmp_Test.h Tmp_Test5.0.h
 
 ###
 // --project
 make/K220_Z97_MGUO_GSM.mak  PRJ_NAME
+// --bld
 make/Verno_K220_Z97_MGUO.bld  VERNO
 make/Verno_K220_Y01A_MOLOO.bld  VERNO
 make/Verno_K220_Y01A_MGUO.bld  VERNO
 make/Verno_K220_L12_MGUO.bld  VERNO
-MGUO
+make/Verno_K220_Y22_MGUO.bld  VERNO
+// --bld--L12
+make/Verno_K220_L12_MGUO.bld  VERNO
+make/Verno_K220_L12_JMZ.bld  VERNO
+make/Verno_K220_L12_JSZ.bld  VERNO
+make/Verno_K220_L12_MLL.bld  VERNO
+make/Verno_K220_L12_MOLOO.bld  VERNO
+
+//
+
 //	__K220_Z97_JMZ__
 //	__K220_Z97__
 //	__JMZ__
@@ -131,7 +155,7 @@ MGUO
 
 // --features
 plutommi\Customer\CustResource\K220_L12_MGUO_MMI\
-plutommi\Customer\CustResource\K220_L12_MGUO_MMI\MMI_features_switchK220_Y01A_MGUO.h
+plutommi\Customer\CustResource\K220_L12_MGUO_MMI\MMI_features_switchK220_L12_MGUO.h
 plutommi\Customer\CustResource\K220_L12_MGUO_MMI\CustResDef.h SSC_SW_VERSION
 plutommi\Customer\CustResource\K220_L12_MGUO_MMI\ThemeRes.c  theme_defaultTheme
 plutommi\Customer\CustResource\K220_L12_MGUO_MMI\Themecomponents.h  title_text_color_defaultTheme
@@ -141,33 +165,37 @@ plutommi\Customer\CustResource\ThemeRes.c  theme_defaultTheme
 plutommi\Customer\CustResource\Themecomponents.h  title_text_color_defaultTheme
 // --features
 plutommi\mmi\Inc\MMI_features.h  STATUS_BAR
-// --ref_list
-plutommi\Customer\CustResource\K220_D18E_MMI\ref_list.txt
-// --path
+// --path--val
 plutommi\Customer\CustResource\K220_Z97_MGUO_MMI\
 plutommi\Customer\CustResource\K220_Z97_MGUO_MMI\CustResDef.h  CUST_IMG_PATH
 plutommi\Customer\CustResource\K220_Z97_MGUO_MMI\CustResDef.h  CUST_ADO_PATH
 plutommi\Customer\CustResource\K220_Z97_MGUO_MMI\ref_list.txt
+// --path--Z97
+plutommi\Customer\CustResource\K220_L12_JMZ_MMI\
+plutommi\Customer\CustResource\K220_L12_JSZ_MMI\
+plutommi\Customer\CustResource\K220_L12_MGUO_MMI\
+plutommi\Customer\CustResource\K220_L12_MLL_MMI\
+plutommi\Customer\CustResource\K220_L12_MOLOO_MMI\
 // --path
-plutommi\Customer\CustResource\K220_Z97_JMZ_MMI\
-plutommi\Customer\CustResource\K220_Z97_MGUO_MMI\
-plutommi\Customer\CustResource\K220_Z97_JSZ_MMI\
-plutommi\Customer\CustResource\K220_Z97_MLL_MMI\
+plutommi\Customer\CustResource\K220_L12_MOLOO_MMI\
 plutommi\Customer\CustResource\K220_Z97_MOLOO_MMI\
 plutommi\Customer\CustResource\K220_Y01A_MGUO_MMI\
+// --path
+plutommi\Customer\CustResource\F55M_H639D_WELCOME_MMI\
+plutommi\Customer\CustResource\K220_V35_WD_MMI\
 
 
 // --nv
-make/K220_Z97_JMZ_GSM.mak  BOARD_VER_CUST_AUDIO
+make/K220_V35_WD_GSM.mak  BOARD_VER_CUST_AUDIO
 //	BOARD_VER_CUST_AUDIO = K220_Z97_AUDIO_BB
 // 
 make\custom\custom.mak BOARD_VER_CUST_AUDIO
 // 
 //custom\common\PLUTO_MMI
 //custom\meta\K220M_YGW_BB
-custom\audio\K220_D18E_AUDIO_BB\
-custom\audio\K220_D18E_AUDIO_BB\nvram_default_audio.c
 custom\audio\K220_Z97_AUDIO_BB\
+custom\audio\K220_Z97_AUDIO_BB\nvram_default_audio.c
+custom\audio\K220_V35_WD_AUDIO_BB\
 //custom\audio\K220M_YGW_BB
 
 
@@ -176,10 +204,10 @@ custom\audio\K220_Z97_AUDIO_BB\
 //	字符串定义
 make\Resgen.mak REFLIST_LIST += ref_list_
 //
-plutommi\Customer\CustResource\K220_D18E_MMI\
-plutommi\Customer\CustResource\K220_D18E_MMI\ref_list.txt
-plutommi\Customer\CustResource\K220_Z97_JMZ_MMI\
-plutommi\Customer\CustResource\K220_Z97_JMZ_MMI\ref_list.txt
+features:\
+features:\ref_list.txt
+plutommi\Customer\CustResource\K220_Z97_MGUO_MMI\
+plutommi\Customer\CustResource\K220_Z97_MGUO_MMI\ref_list.txt
 plutommi\Customer\CustResource\PLUTO_MMI\ref_list.txt
 // custom
 make/K220_Z97_JMZ_GSM.mak  NEW_CUS_REL_TRACE_DEFS
@@ -315,11 +343,17 @@ plutommi\Customer\AUDIO\K220_Z97_JSZ\
 plutommi\Customer\AUDIO\K220_Z97_MLL\
 plutommi\Customer\AUDIO\K220_Z97_MOLOO\
 //
-plutommi\Customer\AUDIO\K220_Y01A_MGUO\
-plutommi\Customer\AUDIO\K220_Y01A_JMZ\
-plutommi\Customer\AUDIO\K220_Y01A_JSZ\
-plutommi\Customer\AUDIO\K220_Y01A_MLL\
-plutommi\Customer\AUDIO\K220_Y01A_MOLOO\
+plutommi\Customer\AUDIO\K220_L12_MGUO\
+plutommi\Customer\AUDIO\K220_L12_JMZ\
+plutommi\Customer\AUDIO\K220_L12_JSZ\
+plutommi\Customer\AUDIO\K220_L12_MLL\
+plutommi\Customer\AUDIO\K220_L12_MOLOO\
+//
+plutommi\Customer\AUDIO\K220_L12_MGUO\
+plutommi\Customer\AUDIO\K220_Y22_MGUO\
+//
+plutommi\Customer\AUDIO\K220_V19_WD\
+plutommi\Customer\AUDIO\K220_V35_WD\
 // image
 plutommi\Customer\Images\
 plutommi\Customer\Images\K220_Z97_MGUO\
@@ -328,11 +362,17 @@ plutommi\Customer\Images\K220_Z97_JSZ\
 plutommi\Customer\Images\K220_Z97_MLL\
 plutommi\Customer\Images\K220_Z97_MOLOO\
 //
-plutommi\Customer\Images\K220_Y01A_MGUO\
-plutommi\Customer\Images\K220_Y01A_JMZ\
-plutommi\Customer\Images\K220_Y01A_JSZ\
-plutommi\Customer\Images\K220_Y01A_MLL\
-plutommi\Customer\Images\K220_Y01A_MOLOO\
+plutommi\Customer\Images\K220_L12_MGUO\
+plutommi\Customer\Images\K220_L12_JMZ\
+plutommi\Customer\Images\K220_L12_JSZ\
+plutommi\Customer\Images\K220_L12_MLL\
+plutommi\Customer\Images\K220_L12_MOLOO\
+//
+plutommi\Customer\Images\K220_L12_MGUO\
+plutommi\Customer\Images\K220_Y22_MGUO\
+//
+plutommi\Customer\Images\K220_V19_WD\
+plutommi\Customer\Images\K220_V35_WD\
 
 
 #####
@@ -408,8 +448,14 @@ images:MainLCD\UIELEMENT\charger\
 images:MainLCD\IdleScreen\Statusicons\battery\SI_BAT\
 
 // idle--sim
-plutommi\mmi\NwInfo\NwInfoSrc\NwInfoSignal.c  mmi_nw_info_signal_set_image
+Save:node\C\study\Macro_gui_MTK.h  statusbar:sim
+// --sim--normal
 images:MainLCD\IdleScreen\Statusicons\DualSIM\Master\SI_SIG1\
+images:MainLCD\IdleScreen\Statusicons\DualSIM\Slave\SI_SIG2\
+// --sim--closed
+images:MainLCD\IdleScreen\Statusicons\DualSIM\Master\SI_SIG1_CLOSE\
+images:MainLCD\IdleScreen\Statusicons\DualSIM\Slave\SI_SIG2_CLOSE\
+
 	
 
 //	屏保:
@@ -427,9 +473,11 @@ images:MainLCD\IdleScreen\Techno\DigitalClock\
 //
 
 // 拨号
+plutommi\Framework\GUI\GUI_Res\Gui.res  IMG_DIALING_INPUT_M0          #小号数字
+plutommi\Framework\GUI\GUI_Res\Gui.res  IMG_DIALING_0                 #大号数字
 // --黑--小号数字
 images:MainLCD\DialingScreen\INPUT\MEDIUM\
-// --黑--大号数字
+// --黑--大号数字/mid-icon
 images:MainLCD\DialingScreen\DialNum\
 images:MainLCD\DialingScreen\DialNum_2\
 
@@ -439,6 +487,13 @@ plutommi\MtkApp\AudioPlayer\AudioPlayerRes\AudioPlayer.res  vol_full
 plutommi\Customer\CustResource\PLUTO_MMI\resource_audply_skins.c  1829
 //
 images:MainLCD\Multimedia\
+
+// call
+plutommi\Service\Gsm3gCallSrv\GCallSrv.res  CL_NET
+//
+images:MainLCD\Call\Connect\
+
+
 
 
 ###

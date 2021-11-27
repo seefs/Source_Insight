@@ -395,8 +395,10 @@ macro CtrlR()
 	hwnd = GetCurrentWnd()
 	hbuf = GetCurrentBuf()
 	
-	//add file type
+	//check file type
 	prompt = 100
+	//a.marco file
+	//b.normal file
 	if(IsNoteFile(hbuf))
 		prompt = 0
 	else if(ReadMode(getContentsRow(0))>0)
@@ -404,6 +406,7 @@ macro CtrlR()
 	if(prompt != 100)
 	{
 		//1. 多行命令
+		//  逐行处理，忘了怎么用
 		sel = MGetWndSel(hbuf)
 		if(IsMoreSelect(sel)) {
 			iS = sel.lnFirst
@@ -418,9 +421,11 @@ macro CtrlR()
 			return
 		}
 		
+		//  单行跳转
 		cur_line = GetBufLine(hbuf, sel.lnFirst )	
 		if(strlen(cur_line) > 2) {
-			//2. 文件内索引跳转
+			//2. 标签跳转到索引，只能在文件内
+			//  [1.1]  ==>  \[1.1\]
 			searchStr = ""
 			cur_sel_left  = FindString( cur_line, "\[" )
 			cur_sel_right = FindString( cur_line, "\]" )
@@ -440,8 +445,9 @@ macro CtrlR()
 					}
 				}
 			}
-			//3. 文件名("...\...")跳转另一个文件
-			//4. 目录("\[...\]")跳到标号("[...]")
+			//3. 索引跳转到标签，同文件或不同文件
+			//  \[1.1\]  ==>  [1.1]
+			//  str      ==>  str
 			ret = NoteHander(hbuf, 5, prompt)
 			if(ret == 0)
 				return

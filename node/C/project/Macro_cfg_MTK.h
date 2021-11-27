@@ -1,15 +1,13 @@
 
 基础路径设置:
 //basePath = 
-//imagesPath = projects\M107\M107_XYZN_S2_4A_WESTERN_F2
-imagesPath = plutommi\Customer\Images\K220_Y01A_MGUO\
-images:\\
-audioPath = plutommi\Customer\AUDIO\K220_Y01A_MGUO\
-audio:\\
-featuresPath = plutommi\Customer\CustResource\K220_Y01A_MGUO_MMI\
+featuresPath = plutommi\Customer\CustResource\K220_L12_MGUO_MMI\
 features:\\
-buildPath = build\K220_Y01A_MGUO\
+boardPath = custom\system\K15M_BB\
+board:\\
+buildPath = build\K220_L12_MGUO\
 build:\\
+
 
 /***********************************************************************/
 
@@ -22,7 +20,7 @@ Save:node\C\project\Macro_cfg_MTK.h \[1.4\] //MMS
 Save:node\C\project\Macro_cfg_MTK.h \[1.5\] //BROWSER
 Save:node\C\project\Macro_cfg_MTK.h \[1.6\] //BT
 Save:node\C\project\Macro_cfg_MTK.h \[1.7\] //RECORD
-Save:node\C\project\Macro_cfg_MTK.h \[1.8\] //Lcd---------------
+Save:node\C\project\Macro_cfg_MTK.h \[1.8\] Lcd---------------
 Save:node\C\project\Macro_cfg_MTK.h \[1.9\] //shortcut----------menu
 Save:node\C\project\Macro_cfg_MTK.h \[1.10\] USB
 Save:node\C\project\Macro_cfg_MTK.h \[1.11\] 
@@ -41,7 +39,7 @@ Save:node\C\project\Macro_cfg_MTK.h \[2.10\] //Tool
 Save:node\C\project\Macro_cfg_MTK.h \[2.11\] lib-----------
 Save:node\C\project\Macro_cfg_MTK.h \[2.12\] build 服务器流程
 Save:node\C\project\Macro_cfg_MTK.h \[2.13\] //build 省空间
-Save:node\C\project\Macro_cfg_MTK.h \[2.14\] //spiflash_cfg
+Save:node\C\project\Macro_cfg_MTK.h \[2.14\] MemoryDevice
 Save:node\C\project\Macro_cfg_MTK.h \[2.15\] marco
 Save:node\C\project\Macro_cfg_MTK.h \[2.16\] //Lib
 Save:node\C\project\Macro_cfg_MTK.h \[2.17\] //FLASH (大、/小版本)
@@ -89,8 +87,14 @@ Save:node\C\project\Macro_cfg_MTK.h \[2.20\]
 
 
 
-[1.8] 
+[1.8] Lcd
+// 
+make/K220_V35_WD_GSM.mak   MAIN_LCD_SIZE
+// MAIN_LCD_SIZE = 128X160
 
+//
+make/K220_H660_TX_GSM.mak   MAIN_LCD_SIZE
+// MAIN_LCD_SIZE = 240X320
 
 
 
@@ -207,14 +211,19 @@ plutommi\mmi\Setting\SettingSrc\PhoneSetup.c void^mmi_sale_track2_init( )
 //	return;
 //#endif
 
+// num
+plutommi/mmi/Setting/SettingSrc/PhoneSetup.c  SALE_TRACK_SRV_DEF_NUMBER
+
 
 
 [2.4] SCREENSAVER
-
+//
 plutommi\mmi\Setting\SettingRes\ScreenSaver.res NVRAM_SCREENSAVER_STATUS
 plutommi\mmi\Setting\SettingRes\ScreenSaver.res RESTORE_DEFAULT_SCREENSAVER_STATUS
 plutommi\mmi\Setting\SettingRes\ScreenSaver.res NVRAM_CURRENT_SCREENSVER_ID
 plutommi\mmi\Setting\SettingRes\ScreenSaver.res RESTORE_DEFAULT_CURRENT_SCREENSVER_ID
+
+
 
 [2.5] 
 
@@ -292,7 +301,42 @@ tools\NVRAMStatistic\include\custom_option.txt
 [2.13] 
 
 
-[2.14] 
+[2.14] MemoryDevice
+// ADDRESS:
+//    0x02C0000        -0x1000*N
+//    0x02BF000
+board:\\custom_MemoryDevice.h  NOR_BOOTING_NOR_FS_BASE_ADDRESS
+//    0x0040000        +0x1000*N
+//    0x0041000
+board:\\custom_MemoryDevice.h  NOR_BOOTING_NOR_FS_SIZE
+//    24               +8*N, 1N=0x200=512=0.5K, 8N=4K
+board:\\custom_MemoryDevice.h  NOR_BOOTING_NOR_FS_FIRST_DRIVE_SECTORS
+//
+//    ADDRESS+SIZE=0x400000
+
+
+// FileSystemConfig
+build:log\ckSysDrv.log Cluster^Size^(Bytes) 	看剩余空间，nv大小
+//Cluster Size (Bytes)                                    512
+//Free Space (Clusters)                                   424   #不够可以减小 SECTORS(8*N)
+//Folders and Applications Requirement (Clusters)         428	#超了减少起始地址, 同上----14K
+
+
+// VIVA
+//    2225952        -0x1000*N
+build:log\ckImgSize.log  file^system  查看ROM空间
+//	The VIVA bin size = 2225952
+//	The base address of file system = 2949120
+//	[Check VIVA bin size]
+//	The Boundary of VIVA bin                 = 2949120  bytes
+//	Actual VIVA End Address                  = 2921572  bytes
+
+//L12--27K
+
+
+//
+//tools\MemoryDeviceList\MemoryDeviceList_MT6261_Since11CW1352.xls
+
 
 
 [2.15] 
@@ -306,6 +350,7 @@ tools\NVRAMStatistic\include\custom_option.txt
 
 [2.18] build map
 //
+build:log\
 build:log\ckSysDrv.log Cluster^Size^(Bytes) 	看剩余空间，nv大小
 //Cluster Size (Bytes)                                    512
 //Free Space (Clusters)                                   400   #不够可以减小 SECTORS(8*N)
@@ -319,9 +364,6 @@ build:log\ckImgSize.log Error: $The^Boundary^of^VIVA  查看ROM空间
 //Actual VIVA End Address 				 = 3741620	bytes
 //============================================================
 //Check VIVA Compressed ROM Size: PASS!
-
-//ADDRESS:
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\custom_MemoryDevice.h NOR_BOOTING_NOR_FS_BASE_ADDRESS
 
 
 

@@ -306,7 +306,7 @@ macro NoteHander(hbuf, cNum, prompt)
 	len = strlen(cur_line)
 
 	// 取第1串字符--命令名称, 以":"或" "分开
-	firstE = GetHeadIndex(hbuf, cur_line)
+	firstE = GetHeadIndex(cur_line)
 	if (firstE != "X")
 	{
 		noteCmd = strmid(cur_line, 0, firstE)
@@ -315,8 +315,12 @@ macro NoteHander(hbuf, cNum, prompt)
 		//普通文本禁止了和路径无关的操作(prompt)
 		
 		//type6: [0, 1], -, - (priority)
-		if(IsTransHead(hbuf, noteCmd)==1)
+		if(IsTransHead(hbuf, noteCmd)>=1)
 			isCmd = 6
+			
+		//type6: [0, 1], -, - (key save)
+		else if(IsKeyHead(hbuf, noteCmd)>=1)
+			isCmd = 8
 			
 		//type1:  -, [1], -, -
 		else if(prompt == 0 && (noteCmd == "open"  || noteCmd == "test" || noteCmd == "setPath" || noteCmd == "setProPath" || noteCmd == "sethistory"
@@ -356,23 +360,23 @@ macro NoteHander(hbuf, cNum, prompt)
 		thirdE  = GetTransCmdE(cur_line, thirdS,     len)
 		
 		if (isCmd == 1)
-			curPath = strmid(cur_line, secondS, secondE)	// -, [1], -, -
+			curPath = strmid(cur_line, secondS, secondE)	// head, [path], str1, str2
 		else if (isCmd == 2)
-			curPath = cur_line						// [0, 1, 2, 3]
+			curPath = cur_line						// [head, path, str1, str2]
 		else if (isCmd == 3)
 		{
 			// 去掉1个head(路径在右)
 			// cur_line--> "vs08:base:MoDIS_VC9\MoDIS.sln"
 			// cur_line--> "     base:MoDIS_VC9\MoDIS.sln"
 			// next2-----> "     base "
-			curPath = strmid(cur_line, secondS, len)	// -, [1, 2, 3]
-			index2 = GetHeadIndex(hbuf, curPath)
+			curPath = strmid(cur_line, secondS, len)	// head, [path, str1, str2]
+			index2 = GetHeadIndex(curPath)
 			if (index2 != "X")
 			{
 				// noteCmd2---> "   base "
 				// curPath----> "     ...MoDIS_VC9\MoDIS.sln"
 				noteCmd2 = strmid(curPath, 0, index2)
-				if(IsTransHead(hbuf, noteCmd2)==1)
+				if(IsTransHead(hbuf, noteCmd2)>=1)
 					curPath = ReTransHead(hbuf, noteCmd2, curPath)
 			}
 		}
@@ -382,15 +386,15 @@ macro NoteHander(hbuf, cNum, prompt)
 			// cur_line--> "cd:tmp: git clone https://github.com/Rukey7/MvpApp"
 			// cur_line--> "   tmp: git clone https://github.com/Rukey7/MvpApp"
 			// next2-----> "   tmp "
-			curPath = strmid(cur_line, secondS, len)	// -, -, [2, 3] (路径转换有区别)
-			secondE = GetHeadIndex(hbuf, curPath)
+			curPath = strmid(cur_line, secondS, len)	// head, path, [str1, str2] (路径转换有区别)
+			secondE = GetHeadIndex(curPath)
 			if (secondE != "X")
 			{
 				// noteCmd2---> "   tmp "
 				// rootPath---> "   tmp... "
 				// curPath----> "       git clone https://github.com/Rukey7/MvpApp"
 				noteCmd2 = strmid(curPath, 0, secondE)
-				if(IsTransHead(hbuf, noteCmd2)==1)
+				if(IsTransHead(hbuf, noteCmd2)>=1)
 				{
 					rootPath = ReTransHead(hbuf, noteCmd2, noteCmd2 # ":")
 					thirdS   = GetTransCmdS2(cur_line, secondS + secondE + 1, len)
@@ -404,10 +408,10 @@ macro NoteHander(hbuf, cNum, prompt)
 			//可能只有 rootPath
 		}
 		else if (isCmd == 5)
-			curPath = strmid(cur_line, 0, secondE)		// [0, 1], -, -
+			curPath = strmid(cur_line, 0, secondE)		// [head, path], str1, str2
 		else if (isCmd == 6)
 		{
-			curPath = strmid(cur_line, 0, secondE)		// [0, 1], -, -
+			curPath = strmid(cur_line, 0, secondE)		// [head, path], str1, str2
 			//路径替换: Tool1->Tool1Path, Tool2->Tool2Path
 			curPath = ReTransHead(hbuf, noteCmd, curPath)
 		}
@@ -417,12 +421,16 @@ macro NoteHander(hbuf, cNum, prompt)
 			// cur_line--> "cmd_f: ren base:g_rougang_5.h base:g_rougang_5.0.h"
 			// cur_line--> "       ren base:g_rougang_5.h base:g_rougang_5.0.h"
 			// next2-----> "   tmp "
-			curPath = strmid(cur_line, secondS, len)	// -, [1, 2, 3] (路径转换有区别)
+			curPath = strmid(cur_line, secondS, len)	// head, [path, str1, str2] (路径转换有区别)
 			curPath = ReAllTransHead(hbuf, curPath)
+		}
+		else if (isCmd == 8)
+		{
+			curPath = ""                  	    	// [head, path, str1, str2]
 		}
 		else
 		{
-			curPath = noteCmd						// [0], 1, 2, 3
+			curPath = noteCmd						// [head], path, str1, str2
 			noteCmd = ""
 		}
 			
@@ -437,7 +445,7 @@ macro NoteHander(hbuf, cNum, prompt)
 		{
 			noteWord = GetTransStr(cur_line, thirdS, thirdE)
 		}
-		else if (isCmd == 2 || isCmd == 3 || isCmd == 4 || isCmd == 7)
+		else if (isCmd == 2 || isCmd == 3 || isCmd == 4 || isCmd == 7 || isCmd == 8)
 		{
 			noteWord = ""
 		}
@@ -498,6 +506,11 @@ macro NoteHander(hbuf, cNum, prompt)
 		// (priority)
 		//打开文件或目录
 		OpenFileHander(hbuf, curPath, cur_row, noteWord, cNum, prompt)
+	}
+	else if(isCmd == 8)
+	{
+		//设置转换key
+		SaveKeyHead(hbuf, noteCmd)
 	}
 	else if(noteCmd == "open")
 	{

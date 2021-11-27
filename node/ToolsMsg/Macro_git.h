@@ -227,7 +227,8 @@ git clone git://github.com/ims0/root.git --shallow-since "2017-10-22"
 git clone git://github.com/ims0/root.git --shallow-since "2017-10-22 00:00:00"
 git clone git://github.com/ims0/root.git --shallow-since="Mon Oct 23 13:38:21 2017 +0800"
 git clone git://github.com/ims0/root.git --shallow-since="Oct 23 00:00 2017"
-
+// git clone ∑÷÷ß
+git clone -b schoolcard git@139.155.19.38:8910-developer/MOCOR_20B_W21.12.7.git
 
 
 

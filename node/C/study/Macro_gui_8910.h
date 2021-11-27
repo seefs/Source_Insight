@@ -12,7 +12,7 @@ gui:\\
 
 // 目录:
 //   1. 功能点
-Save:node\C\study\Macro_gui_8910.h  \[1.1\] display
+Save:node\C\study\Macro_gui_8910.h  \[1.1\] display str
 Save:node\C\study\Macro_gui_8910.h  \[1.2\] softkey
 Save:node\C\study\Macro_gui_8910.h  \[1.3\] draw ---------------画图
 Save:node\C\study\Macro_gui_8910.h  \[1.4\] statusbar, change----
@@ -45,7 +45,7 @@ Save:node\C\study\Macro_gui_8910.h  \[1.30\]
 
 
 
-[1.1] Display
+[1.1] display str
 //GUISTR_DrawTextToLCDInRect
 //
 //

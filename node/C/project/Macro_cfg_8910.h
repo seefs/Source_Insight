@@ -255,7 +255,7 @@ SPDE_PRJ\K220U_SHY_S13_HQQVGA\uis8910_phone_user_base_config.cfg MMI_RES_ORIENT
 
 // 160*128
 SPDE_PRJ\K220U_QQVGA\uis8910_phone_user_base_config.cfg 160X128
-SPDE_PRJ\K220U_LBR_L691_HS_L51_QQVGA\uis8910_phone_user_base_config.cfg 160X128
+SPDE_PRJ\K220U_LBR_L691_HS_L51_HQQVGA\uis8910_phone_user_base_config.cfg 160X128
 
 // LAND
 //	MMI_RES_ORIENT_LANDSCAPE

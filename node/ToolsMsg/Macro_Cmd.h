@@ -12,7 +12,7 @@ Save:node\ToolsMsg\Macro_Cmd.h \[1.7\] --
 Save:node\ToolsMsg\Macro_Cmd.h \[1.8\] unrar
 Save:node\ToolsMsg\Macro_Cmd.h \[1.9\] findstr
 Save:node\ToolsMsg\Macro_Cmd.h \[1.10\] string ------------截取、替换、合并
-Save:node\ToolsMsg\Macro_Cmd.h \[1.11\] if...else...
+Save:node\ToolsMsg\Macro_Cmd.h \[1.11\] if...else..., EQU
 Save:node\ToolsMsg\Macro_Cmd.h \[1.12\] setlocal ----------变量延迟
 Save:node\ToolsMsg\Macro_Cmd.h \[1.13\] set /a, set /p
 Save:node\ToolsMsg\Macro_Cmd.h \[1.14\] rename
@@ -301,7 +301,7 @@ findstr /s /i /c:"RAM_RW" *.*
 
 
 
-[1.11] if...else...
+[1.11] if...else..., EQU
 // 
 if not defined sbd_param1 (
 	set sbd_param1=%%j
@@ -313,6 +313,16 @@ if not defined sbd_param1 (
 
 
 // and or
+
+
+//
+//	EQU - 等于
+//	NEQ - 不等于
+//	LSS - 小于
+//	LEQ - 小于或等于
+//	GTR - 大于
+//	GEQ - 大于或等于
+
 
 
 [1.12] setlocal----------变量延迟

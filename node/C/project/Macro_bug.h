@@ -13,6 +13,10 @@ Save:node\C\project\Macro_bug.h \[1.5\] 8910
 Save:node\C\project\Macro_bug.h \[1.6\] 107
 Save:node\C\project\Macro_bug.h \[1.7\] 
 Save:node\C\project\Macro_bug.h \[1.8\] 
+// tmp
+Save:node\C\project\
+Save:node\C\project\Macro_bug_tmp.h
+
 
 
 
@@ -135,6 +139,7 @@ red,
 
 
 [1.8] 
+
 
 
 

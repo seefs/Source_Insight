@@ -12,14 +12,14 @@ gui:\\
 
 // 目录:
 //   1. 功能点
-Save:node\C\study\Macro_gui_MTK.h  \[1.1\] display
+Save:node\C\study\Macro_gui_MTK.h  \[1.1\] display str
 Save:node\C\study\Macro_gui_MTK.h  \[1.2\] softkey
-Save:node\C\study\Macro_gui_MTK.h  \[1.3\] //draw ---------------画图
+Save:node\C\study\Macro_gui_MTK.h  \[1.3\] draw ---------------画图
 Save:node\C\study\Macro_gui_MTK.h  \[1.4\] statusbar, change----
 Save:node\C\study\Macro_gui_MTK.h  \[1.5\] theme-----------------主题
-Save:node\C\study\Macro_gui_MTK.h  \[1.6\] pubWin  Alert
-Save:node\C\study\Macro_gui_MTK.h  \[1.7\] //form
-Save:node\C\study\Macro_gui_MTK.h  \[1.8\] rect--------------Coordinates
+Save:node\C\study\Macro_gui_MTK.h  \[1.6\] pubWin, Alert
+Save:node\C\study\Macro_gui_MTK.h  \[1.7\] form, point
+Save:node\C\study\Macro_gui_MTK.h  \[1.8\] rect, coordinates
 Save:node\C\study\Macro_gui_MTK.h  \[1.9\] //timer
 Save:node\C\study\Macro_gui_MTK.h  \[1.10\] option
 Save:node\C\study\Macro_gui_MTK.h  \[1.11\] //onoff
@@ -39,9 +39,11 @@ Save:node\C\study\Macro_gui_MTK.h  \[1.24\] //color--------------属性
 Save:node\C\study\Macro_gui_MTK.h  \[1.25\] //label--------------
 Save:node\C\study\Macro_gui_MTK.h  \[1.26\] text---------------
 Save:node\C\study\Macro_gui_MTK.h  \[1.27\] //prgbox-------------进度条
-Save:node\C\study\Macro_gui_MTK.h  \[1.28\] //menu
+Save:node\C\study\Macro_gui_MTK.h  \[1.28\] menu
 Save:node\C\study\Macro_gui_MTK.h  \[1.29\] //owndraw------------
-Save:node\C\study\Macro_gui_MTK.h  \[1.30\]
+Save:node\C\study\Macro_gui_MTK.h  \[1.30\] slide
+Save:node\C\study\Macro_gui_MTK.h  \[1.31\] 
+Save:node\C\study\Macro_gui_MTK.h  \[1.32\] 
 
 
 
@@ -58,42 +60,6 @@ Save:node\C\study\Macro_gui_MTK.h  \[1.30\]
 // gui_move_text_cursor((LCD_WIDTH-string_w)/2, y+num_height);
 // gui_print_text((UI_string_type)GetString(STR_ID_CLNDR_WEEK_SUN + nWeek));  
             
-
-// --image
-// gdi_image_draw_id(x, y, (U16)(IMG_TECHNO_DIGITAL_CLOCK_0 + num1));
-// gui_measure_image(icon, &width, &height);	
-// gui_show_image(x1, y1, icon);
-// --image--画图找这个
-plutommi\Framework\GUI\GUI_SRC\wgui_categories_util.c get_image
- 
-
-
-// draw area
-plutommi\Framework\GUI\GUI_SRC\gui.c void^gui_draw_filled_area
-//	if(y1<242 && y1>238 && y2<242 && y2>238 )
-//	{
-//		rx1 = rx1;
-//	}
-
-
-
-// draw bg/color/cursor
-plutommi\Framework\GDI\GDISrc\gdi_primitive.c void^gdi_draw_solid_rect( )
-//	if(y2>20 && y2<320 && y2 != 292)
-//	{
-//		int a = 1;
-//		a = 1;
-//	}
-
-// draw border
-plutommi\Framework\GDI\GDISrc\gdi_primitive.c void^gdi_draw_frame_rect( )
-plutommi\Framework\GDI\GDISrc\gdi_primitive.c void^gdi_draw_rect( )
-
-
-// draw line
-plutommi\Framework\GUI\OEM_SRC\gui_tab_bars_oem.c gdi_draw_line
-
-
 
 
 //字符方向：
@@ -132,7 +98,41 @@ plutommi\Framework\EventHandling\EventsSrc\KeyBrd.c
 //}
 
 
-[1.3] 
+[1.3] draw
+
+// --image
+// gdi_image_draw_id(x, y, (U16)(IMG_TECHNO_DIGITAL_CLOCK_0 + num1));
+// gui_measure_image(icon, &width, &height);	
+// gui_show_image(x1, y1, icon);
+// --image--画图找这个
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_util.c get_image
+ 
+
+// draw area
+plutommi\Framework\GUI\GUI_SRC\gui.c void^gui_draw_filled_area
+//	if(y1<242 && y1>238 && y2<242 && y2>238 )
+//	{
+//		rx1 = rx1;
+//	}
+
+
+// draw bg
+//   --cursor
+plutommi\Framework\GDI\GDISrc\gdi_primitive.c void^gdi_draw_solid_rect( )
+//	if(y2>20 && y2<320 && y2 != 292)
+//	{
+//		int a = 1;
+//		a = 1;
+//	}
+
+// draw border+bg
+plutommi\Framework\GDI\GDISrc\gdi_primitive.c void^gdi_draw_frame_rect( )
+// draw border
+plutommi\Framework\GDI\GDISrc\gdi_primitive.c void^gdi_draw_rect( )
+
+
+// draw line
+plutommi\Framework\GUI\OEM_SRC\gui_tab_bars_oem.c gdi_draw_line
 
 
 
@@ -165,7 +165,7 @@ plutommi\Framework\GUI\GUI_SRC\gui_clock.c gui_clock_show_digital_small_image
 	
 
 
-	时间状态条:
+//	时间状态条:
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_UI_CLOCK_SMAILL_DIGITAL_IMAGE_CLOCK
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_WGUI_STATUS_ICON_SHOW_TIME_IN_RIGHT
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Images\MainLCD\IdleScreen\Techno\SmallClock\0030.bmp
@@ -194,6 +194,13 @@ custom\app\FARSIGHTED61M_CN_11C_BB\nvram_user_config.c NVRAM_EF_CUST_HW_LEVEL_TB
 plutommi\mmi\MiscFramework\MiscFrameworkSrc\PwronCharger.c  STR_CHARGING_DONE
 
 
+# statusbar:sim
+//
+plutommi\mmi\NwInfo\NwInfoSrc\NwInfoSignal.c  mmi_nw_info_signal_set_image
+
+
+
+
 
 [1.5] theme
 // init
@@ -207,21 +214,26 @@ plutommi\Framework\GUI\GUI_SRC\gui_themes.c set_MMI_calendar_theme( )
 
 
 // theme
-plutommi\Customer\CustResource\K220_Y01A_MGUO_MMI\
-plutommi\Customer\CustResource\K220_Y01A_MGUO_MMI\ThemeRes.c  theme_defaultTheme
-plutommi\Customer\CustResource\K220_Y01A_MGUO_MMI\Themecomponents.h  title_text_color_defaultTheme
+plutommi\Customer\CustResource\K220_L12_MGUO_MMI\
+plutommi\Customer\CustResource\K220_L12_MGUO_MMI\ThemeRes.c  theme_defaultTheme
+plutommi\Customer\CustResource\K220_L12_MGUO_MMI\Themecomponents.h  title_text_color_defaultTheme
 plutommi\Customer\CustResource\ThemeRes.c  theme_defaultTheme
 plutommi\Customer\CustResource\Themecomponents.h  title_text_color_defaultTheme
 
-// --color--border
-//		==>MMI_singleline_inputbox
+// --color--edit--border
+//		==>.single_line_input_box
 //		==>.normal_filler
-//		==>current_single_line_input_box_theme
-plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  gui_set_single_line_input_box_current_theme
-plutommi\Framework\GUI\GUI_SRC\wgui_inputs_singleline.c  wgui_inputs_sl_resize( )
+//		==>.f
 plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  gui_draw_single_line_background
-//		==>
+//		==>current_single_line_input_box_theme
+//		==>.single_line_input_box
+//		==>.MMI_inline_singleline_inputbox
+plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  gui_set_single_line_input_box_current_theme
+//		==>wgui_inline_singleline_inputbox_focussed_theme
+//		==>current_single_line_input_box_theme
 plutommi\Framework\GUI\GUI_SRC\wgui_inline_edit.c  show_inline_singleline_inputbox
+//		==>date_time_input_theme
+//		==>current_single_line_input_box_theme
 plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c create_time_input
 
 // --color--txt
@@ -270,6 +282,7 @@ plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  dm_search_control_set
 //	--MMI_CATEGORY30_ID = 23;
 //	--MMI_CATEGORY39_ID = 28;
 //	--MMI_CATEGORY63_ID = 34;
+//	--MMI_CATEGORY52_ID = ;
 plutommi\Framework\GUI\GUI_INC\wgui_categories_enum.h  MMI_CATEGORY39_ID
 plutommi\Customer\CustResource\CustCoordinates.c  MMI_CATEGORY63_ID
 
@@ -291,8 +304,28 @@ custom\common\PLUTO_MMI\custom_events_notify.c mmi_events_notify_tbl
 
 
 
-[1.7] 
+[1.7] form, point
+// point--idle--sim
+plutommi\Framework\GUI\GUI_INC\gui_switch.h  __K220_Z97__
+plutommi\Framework\GUI\GUI_INC\gui_switch.h  CFG_UI_IDLE_NETWORK_NAME_Y
+// point--gui--softkey
+plutommi\Framework\GUI\GUI_INC\gui_switch.h  CFG_UI_SOFTKEY_WIDTH
+// point--gui--pop
+plutommi\Framework\GUI\GUI_INC\gui_switch.h  CFG_UI_POP_UP_DIALOG_WIDTH
+// point--list--pb
+plutommi\Framework\GUI\GUI_INC\gui_switch.h  CFG_UI_ICONTEXT_MENUITEM_TEXT_X
+//
+plutommi\Framework\GUI\GUI_INC\gui_switch.h  __K220_L12__
 
+//
+// point--list--pb
+plutommi\Framework\GUI\GUI_INC\wgui.h  __K220_Z97__
+plutommi\Framework\GUI\GUI_INC\wgui.h  __K220_L12__
+plutommi\Framework\GUI\GUI_INC\wgui.h  MMI_ICONTEXT_MENUITEM_HEIGHT
+// point--input--pin
+plutommi\Framework\GUI\GUI_INC\wgui.h  MMI_SINGLELINE_INPUTBOX_HEIGHT
+// point--input--im
+plutommi\Framework\GUI\GUI_INC\wgui.h  INFORMATION_BAR_HEIGHT
 
 
 
@@ -371,18 +404,45 @@ plutommi\Framework\GUI\GUI_SRC\wgui_categories_MM.c matrix_title_theme.active_fi
 
 
 [1.21] list
-	List:
+//	List:
 plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res CUSTOMER_NAME_M107_XYZN_S2_4A_WESTERN_F2
 plutommi\mmi\Setting\SettingRes\Wallpaper.res CUSTOMER_NAME_M107_XYZN_S2_4A_WESTERN_F2 壁纸位置不是这里
-	list 标号:
+//	list 标号:
 plutommi\Customer\Images\M107\M107_S2401_GRAVITY_ULTRA_F1\MainLCD\SubMenu\ListMenuIcon\L_NB30.bmp
 
 //
 ShowCategory53Screen(): 列表
 
-// height
-plutommi/Framework/GUI/GUI_INC/wgui.h  MMI_ICONTEXT_MENUITEM_HEIGHT
-plutommi/Framework/GUI/GUI_INC/wgui.h  MMI_INLINE_EDIT_MENUITEM_HEIGHT
+// list--
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_list.c  ShowCategory52Screen_int
+// list--menu
+plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  wgui_fixed_list_create_icontext_menu
+
+
+// list--menu--height
+//		==>MMI_MENUITEM_HEIGHT
+//		==>gui_set_fixed_icontext_menuitem_current_theme
+plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  create_fixed_icontext_menuitems
+//		==>MMI_fixed_icontext_menuitem/color
+plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  associate_fixed_icontext_list
+// list--menu--show
+plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  show_fixed_list
+//	--MMI_CATEGORY52_ID = ;
+//		==>
+
+
+// --list--line--color
+//		==>.list_grid_line_color
+plutommi\Framework\GUI\GUI_SRC\gui_dynamic_menus.c  gui_show_dynamic_list_menu_draw_bg
+plutommi\Framework\GUI\GUI_SRC\gui_dynamic_menus.c  1598
+// --list--line--pb
+plutommi\mmi\PhoneBook\PhoneBookSrc\PhoneBookList.c  mmi_phb_quick_search_list_seperate_line
+// --list--line--menu...
+// --list--line--file...
+// --list--line--set--call
+plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  gui_draw_list_menuitem_separator_line
+plutommi\Framework\GUI\GUI_SRC\gui_fixed_menus.c  4515
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_list.c  void^ShowCategory353Screen_ext_int
 
 
 
@@ -453,6 +513,30 @@ plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  void^gui_multi_line_input_box_regis
 plutommi/Framework/InputMethod/UI/UI_Src/Imui.c  11310
 
 
+# cursor
+// cursor--init--color
+plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  UI_inputbox_show_cursor
+// cursor--timer
+plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  UI_inputbox_blink_cursor
+
+// cursor--color
+//		==>.single_line_input_box
+//		==>.cursor_color
+plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  gui_single_line_input_box_show_cursor
+//		==>current_single_line_input_box_theme
+//		==>.single_line_input_box
+//		==>.MMI_inline_singleline_inputbox
+plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  gui_set_single_line_input_box_current_theme
+//		==>wgui_inline_singleline_inputbox_focussed_theme
+//		==>current_single_line_input_box_theme
+plutommi\Framework\GUI\GUI_SRC\wgui_inline_edit.c  11598
+//		==>.inline_edit_cursor_color
+//		==>wgui_inline_singleline_inputbox_focussed_theme
+plutommi\Framework\GUI\GUI_SRC\gui_themes.c  inline_edit_cursor_color
+
+
+
+
 [1.24] 
 
 
@@ -478,7 +562,18 @@ plutommi\Framework\GUI\GUI_SRC\gui_single_line_inputs.c  gui_draw_single_line_on
 
 
 
-[1.28] 
+[1.28] menu
+// menu--switch--key
+plutommi\mmi\Setting\SettingSrc\PhnsetGPIO.c  mmi_phnset_gpio_key_backlite_time_quantum_entry
+
+// menu--switch--env
+plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c  onoff_item_struct
+
+## arrow
+// margin
+plutommi\Framework\GUI\GUI_SRC\gui_horizontal_selector.c  gui_horizontal_select_show_arrow
+// GUI_HORIZONTAL_SELECT_ICON_X_GAP
+
 
 
 
@@ -488,8 +583,21 @@ plutommi\Framework\GUI\GUI_SRC\gui_single_line_inputs.c  gui_draw_single_line_on
 
 
 
-[1.30] 
+[1.30] slide
+## slide
+// set--key
+plutommi\Framework\GUI\GUI_SRC\gui_slide_bar.c  gui_slide_bar_create
+// set--timeformat
+plutommi\mmi\Setting\SettingSrc\DateAndTime.c  EntryPhnsetSetFormat
 
+
+
+[1.31] 
+
+
+
+
+[1.32] 
 
 
 

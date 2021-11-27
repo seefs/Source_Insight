@@ -9,12 +9,12 @@ Save:node\C
 //目录[Num][Ca]:
 // 1. 
 Save:node\C\Macro_Note_C.h \[1.1\] 安装+配置
-Save:node\C\Macro_Note_C.h \[1.2\] project----------note
-Save:node\C\Macro_Note_C.h \[1.3\] study------------app gui
-Save:node\C\Macro_Note_C.h \[1.4\] version, Group
+Save:node\C\Macro_Note_C.h \[1.2\] project----------8910 mtk
+Save:node\C\Macro_Note_C.h \[1.3\] third
+Save:node\C\Macro_Note_C.h \[1.4\] other
 Save:node\C\Macro_Note_C.h \[1.5\] 
-Save:node\C\Macro_Note_C.h \[1.6\] rule-------------
-Save:node\C\Macro_Note_C.h \[1.7\] search-----------
+Save:node\C\Macro_Note_C.h \[1.6\] rule
+Save:node\C\Macro_Note_C.h \[1.7\] search
 Save:node\C\Macro_Note_C.h \[1.8\] 
 Save:node\C\Macro_Note_C.h \[1.9\] 
 Save:node\C\Macro_Note_C.h \[1.10\] Test------------功能测试
@@ -30,24 +30,59 @@ Save:node\C\install\Macro_MTK_FlashTool.h
 
 
 
-[1.2] project
-//project
+[1.2] 8910 mtk
 Save:node\C\project\
-Save:node\C\project\Macro_Note_6531E.h
-Save:node\C\project\Macro_Note_6531E.h
-Save:node\C\project\Macro_Note_6533.h
-Save:node\C\project\Macro_Note_7701.h
-Save:node\C\project\Macro_Note_MTK.h
-Save:node\C\project\Macro_Note_MTK2.h
-Save:node\C\project\Macro_Note_RDA.h
-Save:node\C\project\Macro_Note_Base.h
+
+// 8910
 Save:node\C\project\Macro_Note_8910.h
-//cfg
 Save:node\C\project\Macro_cfg_8910.h
-// rule
-Save:node\C\project\Macro_Note_Long.h
-Save:node\C\project\Macro_Note_Short.h
-Save:node\C\project\Macro_Note_Short.h
+Save:node\C\study\
+Save:node\C\study\Macro_app_8910.h
+Save:node\C\study\Macro_gui_8910.h
+Save:node\C\study\Macro_fun_8910.h
+Save:node\C\study\Macro_doc_8910.h
+Save:node\C\study\Macro_res_8910.h
+Save:node\C\study\Macro_nv_8910.h
+
+// mtk
+Save:node\C\project\Macro_Note_MTK.h
+Save:node\C\project\Macro_cfg_MTK.h
+Save:node\C\study\
+Save:node\C\study\Macro_app_MTK.h
+Save:node\C\study\Macro_gui_MTK.h
+Save:node\C\study\Macro_fun_MTK.h
+Save:node\C\study\Macro_doc_MTK.h
+Save:node\C\study\Macro_res_MTK.h
+Save:node\C\study\Macro_nv_MTK.h
+
+// 6531E
+Save:node\C\project\Macro_Note_6531E.h
+Save:node\C\study\Macro_doc_6531E.h
+Save:node\C\study\Macro_modis_6531E.h
+
+// 6533
+Save:node\C\project\Macro_Note_6533.h
+
+// RDA
+Save:node\C\project\Macro_Note_6533.h
+
+// 7701
+Save:node\C\project\Macro_Note_7701.h
+
+// Base
+Save:node\C\project\Macro_Note_6533.h
+
+
+
+
+[1.3] third
+// third
+Save:node\C\study\Macro_slide_8910.h
+Save:node\C\study\Macro_zdt_8910.h
+Save:node\C\study\Macro_zmaee_8910.h
+Save:node\C\study\Macro_socket_8910.h
+Save:node\C\study\Macro_patch_8910.h
+
 // 蓝牙
 Save:node\C\project\Macro_Note_Nordic.h
 // ref list
@@ -57,37 +92,11 @@ Save:node\C\project\Macro_c_list.h
 
 
 
-
-[1.3] study
-// app gui fun
-Save:node\C\study\Macro_app_8910.h
-Save:node\C\study\Macro_gui_8910.h
-Save:node\C\study\Macro_fun_8910.h
-// data res nv
-Save:node\C\study\Macro_doc_8910.h
-Save:node\C\study\Macro_doc_6531E.h
-Save:node\C\study\Macro_res_8910.h
-Save:node\C\study\Macro_nv_8910.h
-// third
-Save:node\C\study\Macro_slide_8910.h
-Save:node\C\study\Macro_zdt_8910.h
-Save:node\C\study\Macro_zmaee_8910.h
-Save:node\C\study\Macro_sccard_8910.h
-Save:node\C\study\Macro_socket_8910.h
-// modis
-Save:node\C\study\
-Save:node\C\study\Macro_modis_6531E.h
-Save:node\C\study\Macro_modis_8910.h
-Save:node\C\study\Macro_modis_MTK.h
-// other
-Save:node\C\study\Macro_patch_8910.h
+[1.4] other
+// other--no use
 Save:node\C\study\Macro_Spr_Fun.h
 Save:node\C\study\Macro_Spr_MsgId.h
 
-
-
-
-[1.4] version Group
 //version
 // 版本号快速查询
 Save:node\C\group\
@@ -119,6 +128,7 @@ Save:node\C\group\Macro_Group_Project_File.h
 
 
 [1.6] rule
+#
 //1) rule 中文:
 Save:node\C\rule\Macro_Rule_Han_file.h
 //2) rule LCD+CAM 文件跳转:
@@ -128,6 +138,10 @@ Save:node\C\rule\Macro_Rule_Key_file_7701.h
 Save:node\C\rule\Macro_Rule_Key_file_MTK.h
 
 
+// rule
+Save:node\C\project\Macro_Note_Long.h
+Save:node\C\project\Macro_Note_Short.h
+Save:node\C\project\Macro_Note_Short.h
 
 
 

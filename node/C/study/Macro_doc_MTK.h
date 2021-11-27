@@ -8,7 +8,7 @@
 // 1. 
 Save:node\C\study\Macro_doc_MTK.h \[1.1\] //Message 切换
 Save:node\C\study\Macro_doc_MTK.h \[1.2\] //FUN 入口-------------
-Save:node\C\study\Macro_doc_MTK.h \[1.3\] 
+Save:node\C\study\Macro_doc_MTK.h \[1.3\] lang
 Save:node\C\study\Macro_doc_MTK.h \[1.4\] //移配置
 Save:node\C\study\Macro_doc_MTK.h \[1.5\] //说明文档
 Save:node\C\study\Macro_doc_MTK.h \[1.6\] //Win数据
@@ -18,7 +18,7 @@ Save:node\C\study\Macro_doc_MTK.h \[1.9\] //test code-------------
 Save:node\C\study\Macro_doc_MTK.h \[1.10\] //ImageNote
 Save:node\C\study\Macro_doc_MTK.h \[1.11\] //TextNote
 Save:node\C\study\Macro_doc_MTK.h \[1.12\] 
-Save:node\C\study\Macro_doc_MTK.h \[1.13\] 
+Save:node\C\study\Macro_doc_MTK.h \[1.13\] powon time
 //
 Save:node\C\study\Macro_doc_MTK.h \[2.1\] build error
 Save:node\C\study\Macro_doc_MTK.h \[2.2\] moids error
@@ -38,8 +38,9 @@ Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 
 
-[1.3] 
-
+[1.3] lang
+//
+mre\sdkinc\vmchset_sdk.h PUNJABI
 
 
 
@@ -88,7 +89,13 @@ Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 
 
-[1.13] 
+[1.13] powon time
+// powon time
+custom\drv\misc_drv\_Default_BB\MT6261\custom_hw_default.c  DEFAULT_HARDWARE_DAY
+custom\drv\misc_drv\_Default_BB\MT6261\custom_hw_default.c  __NEW_DEFAULT_TIME_20211030_STYLE__
+//
+plutommi\mmi\Setting\SettingSrc\Restore.c  mmi_restore_reset_date_time
+plutommi\mmi\Setting\SettingSrc\Restore.c  __NEW_DEFAULT_TIME_20211030_STYLE__
 
 
 
@@ -287,6 +294,15 @@ plutommi\Framework\GUI\GUI_SRC\gui_buttons.c  gui_icontext_button_get_display_ar
 //_set_lcd_driving_current 已经在 drv_sim.lib(w32_dummy_drv.obj) 
 // 中定义	modis_lcd.lib	MoDIS
 MoDIS_VC9\drv_sim\src\w32_dummy_drv.c  set_lcd_driving_current
+
+
+
+# 12.未处理的异常
+//
+media\audio\src\aud_player_modis.c  kal_int32^_aud_player_modis_get
+//#ifndef WIN32
+//	                w32_Audio_GetCurrentPosition(self_p->aud_handle, &position);
+//#endif
 
 
 

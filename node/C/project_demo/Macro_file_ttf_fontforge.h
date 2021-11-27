@@ -136,11 +136,11 @@ fontforge -script pe/scriptclear_mnoV.pe AAA_FONT_CN.sfd ".sfd"
 3.small-ttc de:    2.84M  (SMALL_FORGE_TC.lib)
 // 新FONTTOOL-lib
 1.big--tts1: 4.51M，(BIG_FTOOL_NS.lib)
-2.big--tts2: 5.17M，(BIG_FTOOL_NSST.lib)
-3.big--tts3: 5.24M，(BIG_FTOOL_NSTT.lib)
+2.big--tts2: 5.17M，(BIG_FTOOL_NSSC.lib)
+3.big--tts3: 5.24M，(BIG_FTOOL_NSTC.lib)
 4.small--tts1: 2.45M，(SMALL_FTOOL_NS.lib)
-5.small--tts2: 2.84M，(SMALL_FTOOL_NSST.lib)
-6.small--tts3: 2.88M，(SMALL_FTOOL_NSTT.lib)
+5.small--tts2: 2.84M，(SMALL_FTOOL_NSSC.lib)
+6.small--tts3: 2.88M，(SMALL_FTOOL_NSTC.lib)
 // 对比效果
 86B0: NS>DEF>NSST=NSTT
 // 属性

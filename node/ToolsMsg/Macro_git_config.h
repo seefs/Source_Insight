@@ -210,8 +210,8 @@ C:\Program Files\Git\usr\bin\ssh.exe
 //
 http://139.155.19.38/
 xiaojia   xiaojia123456   xjs0f0s0
-git clone 139.155.19.38:8910-developer/MOCOR_20B_W21.12.7.git
 git clone git@139.155.19.38:8910-developer/MOCOR_20B_W21.12.7.git
+git clone git@139.155.19.38:featurephone-hwnv/HW_NV_PARA.git
 //
 //	Cloning into ''... Administrator@s password:
 

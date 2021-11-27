@@ -32,7 +32,7 @@ Save:node\C\study\Macro_fun_MTK.h \[2.3\] //ADN FDN SDN
 Save:node\C\study\Macro_fun_MTK.h \[2.4\] //Dtmf
 Save:node\C\study\Macro_fun_MTK.h \[2.5\] //CC--msg
 Save:node\C\study\Macro_fun_MTK.h \[2.6\] //SMS--tp input
-Save:node\C\study\Macro_fun_MTK.h \[2.7\] //cursor
+Save:node\C\study\Macro_fun_MTK.h \[2.7\] cursor
 Save:node\C\study\Macro_fun_MTK.h \[2.8\] //file
 Save:node\C\study\Macro_fun_MTK.h \[2.9\] //select_sim
 Save:node\C\study\Macro_fun_MTK.h \[2.10\] //Sleep
@@ -245,7 +245,13 @@ plutommi\mmi\Setting\SettingSrc\DateAndTime.c void^PhnsetSendSetTimeReqMessage( 
 [2.6] 
 
 
-[2.7] 
+[2.7] cursor
+//
+plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  UI_inputbox_blink_cursor
+//#ifdef WIN32
+//	        return;
+//#endif
+
 
 
 [2.8] 

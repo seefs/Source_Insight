@@ -1,5 +1,5 @@
 
-featuresPath = plutommi\Customer\CustResource\K220_Z97_MGUO_MMI\
+featuresPath = plutommi\Customer\CustResource\K220_L12_MGUO_MMI\
 features:\\
 
 // 目录:
@@ -83,14 +83,17 @@ plutommi/Framework/GUI/GUI_SRC/wgui_categories_idlescreen.c MMI_BOOL^wgui_cat033
 plutommi/Framework/GUI/GUI_SRC/wgui_categories_idlescreen.c wgui_cat033_get_extra_text
 
 
-// 4) week:
+// 4) date:
+// --date--week
 //plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c void^km_idle_clock_week( )
 //plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c void^show_main_LCD_date_time( )
 plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c void^show_idle_day_display( )
-
-// 5) date:
+// --date--date
+plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c void^set_dt_display( )
+// --date--lunar
 plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c wgui_clock_create(&wgui_clock_mainlcd_clock2
 plutommi\mmi\Organizer\OrganizerSrc\Calendar.c  show_idle_lunar( )
+
 
 // 6) time:
 // --init
@@ -127,7 +130,7 @@ custom\common\PLUTO_MMI\nvram_common_config.c NVRAM_SHORTCUTS_TOTAL
 plutommi\Customer\CustResource\mmi_rp_menu_shortcut_data.c mmi_shct_candidate_menu
 
 //	Idle:ShortCut
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_DEDICATED_KEY_SHORTCUTS
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_DEDICATED_KEY_SHORTCUTS
 //	statusBar
 //gui_status_icon_bar_show_oem
 
@@ -172,7 +175,7 @@ plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res <STRING^id="MAIN_MENU_SETTINGS
 //plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res <MENUITEM^id="MAIN_MENU_ FMRDO_MENUID"
 plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res <MENU^id="MAIN_MENU_SETTINGS_MENUID"
 plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res <MENU^id="MAIN_MENU_MULTIMEDIA_MENUID"
-//plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res <MENU^id="MAIN_MENU_ORGANIZER_MENUID"
+plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res <MENU^id="MAIN_MENU_ORGANIZER_MENUID"
 plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res <MENU^id="MAIN_MENU_TOOLS_MENUID"
 plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res <MENU^id="MAIN_MENU_SETTINGS_MENUID"
 //	设置--通话中心:
@@ -207,7 +210,7 @@ plutommi\mmi\Messages\MessagesRes\SmsAppRes.res <MENU^id="MAIN_MENU_MESSAGES_MEN
 
 //	主菜单格式:
 plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res MM_ST
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_RES_TYPE_MAINMENU_MATRIX_SEL
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_RES_TYPE_MAINMENU_MATRIX_SEL
 
 //
 // 1) 菜单ID1 添加 子菜单ID2: 
@@ -250,7 +253,12 @@ plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c 6500 gui_show_animation_wit
 [1.4] dial
 //	enter: 
 //cui_dialer_classic_on_enter
+// --大
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c void^ShowCategory16ScreenInternal
+// --小
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_idlescreen_op.c  void^ShowCategory203Screen
+plutommi\Framework\GUI\GUI_SRC\wgui_inputs_multiline.c  wgui_inputs_ml_setup_ext2
+
 
 // 拨号按键:
 //ExecuteCurrKeyHandler
@@ -275,13 +283,101 @@ plutommi\Customer\CustResource\PLUTO_MMI\MMI_features_switchPLUTO.h CFG_MMI_MULT
 
 //	 通话动画:
 plutommi/Service/Gsm3gCallSrv/GCallSrvStructMgmt.c IMG_ID_GCALL_CALL_INCOMEING
+
 // dial--光标
 inline_edit_cursor_color_defaultTheme
-// dial--pos init--margin
-plutommi\Framework\GUI\GUI_SRC\wgui_inputs_multiline.c  wgui_inputs_ml_create_set_buffer
-plutommi/Framework/GUI/GUI_SRC/gui_inputs.c gui_create_multi_line_input_box_set_buffer
-// dial--pos--rect
+
+
+## dial--pos
+// dial--pos--rect--大
+//   ::修改(1) height是imageH倍数
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c  __K220_L12__
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c  MMI_CAT16_DIALING_INPUT_BOX_OFFSET_Y
+// dial--pos--rect--小
+//   ::修改(2) rect height ext
+plutommi\Framework\GUI\GUI_INC\wgui_categories_idlescreen_op.h  __K220_Z97__
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_idlescreen_op.c  CAT203_MULTI_LINE_INPUTBOX_H
+
+// dial--show--rect--x,top
+//   ::修改(3) top, left--初始化一次
+//		==>b->text_x  = b->text_gap + b->margin.left_margin;
+//		==>           = 1 + {0, 1, !2!};
+//		==>           = 1
+//		==>b->text_y  = b->margin.top_margin;
+//		==>           = {   1, !2!};
+plutommi/Framework/GUI/GUI_SRC/gui_inputs.c gui_create_multi_line_input_box_set_buffer
+//		==>edit_width
+plutommi/Framework/GUI/GUI_SRC/gui_inputs.c gui_resize_multi_line_input_box_no_draw
+
+// dial--show
+//   ::修改(4) image height
+//		==>xtx, yty, upper_addition
+//		==>bs->yty = bs->yy + bs->ty;
+//		==>        = {-23,3,29} + 26;
+//		==>        = {-33,3,47,91} + 44;
+plutommi\Framework\GUI\GUI_SRC\gui_multi_line_inputs.c  gui_draw_multi_line_text
+//		==>        = bs->yy
+//		==>        = bs->y1 + b->text_y + b->text_offset_y + bs->border_y;
+//		==>        = 1 + {0, 44} + {-42,2,46}/{0} + 0;
+//		==>        = {1, -41, -85}
+plutommi/Framework/GUI/GUI_SRC/gui_inputs.c gui_show_multi_line_input_box_basic
+//		==>        = b->edit_height
+//		==>        = 
+plutommi\Framework\GUI\GUI_SRC\gui_multi_line_inputs.c gui_setup_multi_line_text_clip
+//		==>        = bs->y1
+//		==>        = b->y
+//		==>        = top
+plutommi\Framework\GUI\GUI_SRC\gui_multi_line_inputs.c  gui_prepare_multi_line_show_area
+//		==>        = b->cursor_y
+//		==>        = bs->ty;
+plutommi\Framework\GUI\GUI_SRC\gui_multi_line_inputs.c  gui_set_multi_line_cursor_information
+//		==>        = b->text_offset_y
+//		==>        = b->cursor_y + bs->cursor_line_height - bs->edit_height;
+//		==>        = {0,44,88,!132!} + 44 - {46,90,!134!};
+//		==>        = {-42,2,46}  --取整为0
+plutommi\Framework\GUI\GUI_SRC\gui_multi_line_inputs.c  gui_adjust_multi_line_text_offset_y
+
+// dial--show--str
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_idlescreen_op.c  wgui_cat203_draw_ctrl_area2
+
+
+// dial--show--rect--y
+//   ::修改(5) 换行
+//		==>MMI_multiline_inputbox
+//		==>text_y--(first row.)
+//		==>{-27,0,27,54}  --取整为0
+plutommi\Framework\GUI\GUI_SRC\wgui_inputs_multiline.c  wgui_inputs_ml_change_callback
+
+// dial--show--rect--h
+//		==>character_height+1
+plutommi\Framework\GUI\GUI_SRC\gui_multi_line_inputs.c  get_number_image_hight
+
+// dial--list--empty
+plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  wgui_list_menu_show_empty_label_if_needed
+
+
+## dial--theme
+// dial--num/list bg.
+//		==>MMI_ml_inputbox_theme
+//		==>b/tmp
+//		==>MMI_multiline_inputbox
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_idlescreen_op.c  wgui_cat203_set_editor_focus_state
+//		==>?
+//		==>current_multi_line_input_box_theme
+//		==>b
+
+// dial--edit bg.
+plutommi/Framework/GUI/GUI_SRC/gui_inputs.c gui_set_multi_line_input_box_current_theme
+//		==>current_MMI_theme
+//		==>dialer_inputbox_background_filler
+//		==>f
+plutommi\Framework\GUI\GUI_SRC\gui_multi_line_inputs.c  gui_draw_multi_line_background_area
+
+// dial--fullbg
+//		==>current_MMI_theme
+//		==>inputbox_filler
+plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  dm_get_current_scr_bg_filler
+
 
 
 [1.5] test
@@ -310,8 +406,8 @@ plutommi\AppCore\SSC\SSCStringTable.h SSC_MANUAL_SET_IMEI
 
 [1.6] file
 //	文件管理 精简:
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_SLIM_FILE_MANAGER
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_ULTRA_SLIM_FILE_MANAGER
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_SLIM_FILE_MANAGER
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_ULTRA_SLIM_FILE_MANAGER
 //	文件管理 详情opt:
 plutommi\MtkApp\FileMgr\FileMgrSrc\FileMgrMain.c MENU_ID_FMGR_CARD_DETAIL SRV_FMGR_DRV_CARD_TYPE
 //	文件管理 格式化:
@@ -384,7 +480,7 @@ plutommi\mmi\Setting\SettingSrc\PhnsetDisplay.c  mmi_phnset_disp_setup_sub_menu_
 [1.8] sms
 
 //	短信-短语-翻译:
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_SMS_TEMPLATE_SPANISH
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_SMS_TEMPLATE_SPANISH
 	
 
 //	短信-list:
@@ -426,6 +522,12 @@ plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c show_main_LCD_date_time
 
 //	--status
 wgui_status_icon_bar_set_display
+//	--draw
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c RedrawMOMTCallScreen
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c 7933
+//	--draw--icon
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c SetMOMTCallImageClip
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c 8539
 
 
 //	拨出
@@ -437,16 +539,16 @@ plutommi\mmi\Ucm\UcmSrc\UcmUi.c  mmi_ucm_enter_outgoing_call
 [1.10] pb, cl
 # pb
 //	联系人切换用tab+icon
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_PHB_UI_IN_TABS
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_PHB_CALLER_GROUP
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_TAB_BARS_SUPPORT
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_PHB_UI_IN_TABS
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_PHB_CALLER_GROUP
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_TAB_BARS_SUPPORT
 //	群组功能:
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_PHB_UI_IN_TABS
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_PHB_CALLER_GROUP
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_CONTACT_SLIM
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_PHB_UI_IN_TABS
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_PHB_CALLER_GROUP
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_CONTACT_SLIM
 //	多选---会死机:
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_PHB_MULTI_OPERATION
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_PHB_GENERIC_MULTI_SELECT
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_PHB_MULTI_OPERATION
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_PHB_GENERIC_MULTI_SELECT
 //	联系人条数:
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak PHB_PHONE_ENTRY
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak PHB_SIM_ENTRY
@@ -512,7 +614,7 @@ plutommi/Customer/CustResource/PLUTO_MMI/MMI_features_camera.h #define^CAMERA_DE
 [1.12] pic
 //	Image:
 plutommi\MtkApp\ImageView\ImageViewRes\imgview.res
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h USE_SW_PNG_DECODER
+features:MMI_features_switchK220_L12_MGUO.h USE_SW_PNG_DECODER
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak PNG_DECODE	开了会报几个错误, PNG打不开
 
 //
@@ -559,7 +661,7 @@ plutommi\MtkApp\Sndrec\SndrecSrc\SndrecUI.c  EVT_ID_ON_KEY
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak FM_RADIO_RECORD
 //	EZFM:
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak SBD_EZFM_SUPPORT EASY_FM
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_FM_RADIO_BIND_EARPHONE
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_FM_RADIO_BIND_EARPHONE
 //	FM 天线:
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak INTERNAL_ANTENNAL_SUPPORT
 
@@ -583,8 +685,26 @@ plutommi\Customer\CustResource\M107_MMI\resource_fmradio_skins.c g_fmrdo_skins
 
 
 [1.17] mp3
+//
+mp3Path = plutommi/MtkApp/AudioPlayer\
+mp3:\\
+
+// enter
+mp3:AudioPlayerSrc/AudioPlayerSrc.c void^mmi_audply_entry_player_screen(void)
+// --init--draw
+mp3:AudioPlayerSrc\AudioPlayerMainScreen.c  mmi_audply_redraw_main_screen
+mp3:AudioPlayerSrc\AudioPlayerMainScreen.c  __MMI_AUDIO_PLAYER_DISPLAY_VOL_BUTTON__
+// --init--draw--vol
+mp3:AudioPlayerSrc\AudioPlayerMainScreen.c  mmi_audply_redraw_main_volumebar
+// --init--draw--index
+mp3:AudioPlayerSrc\AudioPlayerMainScreen.c  3938
+//
+// skins
+plutommi/Customer/CustResource/PLUTO_MMI/resource_audply_skins.c 1480
+
+
 //	Mp3自动刷新列表:(无效，改了会出现后台占用问题)
-plutommi/MtkApp/AudioPlayer/AudioPlayerSrc/AudioPlayerSrc.c void^mmi_audply_entry_player_screen(void)
+mp3:AudioPlayerSrc/AudioPlayerSrc.c void^mmi_audply_entry_player_screen(void)
 //	if (!g_mmi_audply_init_done)
 //	{
 //	}
@@ -593,29 +713,36 @@ plutommi/MtkApp/AudioPlayer/AudioPlayerSrc/AudioPlayerSrc.c void^mmi_audply_entr
 //		g_mmi_audply_init_done = MMI_FALSE;
 //	}
 
+
 # 内置mp3--样1
 // name
-plutommi\MtkApp\AudioPlayer\AudioPlayerSrc\AudioPlayerMainScreen.c  g_audio_test_name
+mp3:AudioPlayerSrc\AudioPlayerMainScreen.c  g_audio_test_name
+// time
+mp3:AudioPlayerSrc\AudioPlayerMainScreen.c  BUILD_MUSIC_DURATION
 
 
 # 内置mp3--样2
+//	Idle:ShortCut
+features:MMI_features_switchK220_L12_MGUO.h  CFG_MMI_BUILT_MP3
+//	#define CFG_MMI_BUILT_MP3 (__ON__)
+//
 // name
-plutommi\MtkApp\AudioPlayer\AudioPlayerSrc\AudioPlayerPlayList.c  
+mp3:AudioPlayerSrc\AudioPlayerPlayList.c  built_mp3_name1
 
 
 
 [1.18] alarm
 
 //	闹钟 祈祷闹钟
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CALC CFG_MMI_ALARM_SLIM
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_AZAAN_ALARM
+features:MMI_features_switchK220_L12_MGUO.h CALC CFG_MMI_ALARM_SLIM
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_AZAAN_ALARM
 	祈祷闹钟铃声: 
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\AUDIO\PLUTO\UserProfiles\Ring\Allah.O.Akber.mp3 没有
 	祈祷闹钟资源关闭SLIM: 
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_ALARM_SLIM
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_ALARM_SLIM
 	祈祷闹钟AMPM: 
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak __KM_AZAAN_ALARM_ADD_AMPM__
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_TIME_SETTING_AM_PM_SUPPORT
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_TIME_SETTING_AM_PM_SUPPORT
 
 	
 // 5) tool:Alarm:
@@ -632,28 +759,31 @@ plutommi\mmi\Extra\ExtraSrc\Calculator.c  calc_register_input_hdlr
 
 
 //	tool:计算器: 
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CALC CFG_MMI_CALCULATOR CFG_MMI_CAL_SLIM
+features:MMI_features_switchK220_L12_MGUO.h CALC CFG_MMI_CALCULATOR CFG_MMI_CAL_SLIM
 
 
 
 [1.20] calendar
-# 日历开宏: 
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_CALENDAR
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h __MMI_CALENDAR_EVENT__ (不开)
+// calendar--mk
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_CALENDAR
+features:MMI_features_switchK220_L12_MGUO.h __MMI_CALENDAR_EVENT__ (不开)
 plutommi\Framework\GUI\GUI_INC\gui_calendar.h __MMI_CALENDAR_TITLE__
 //	默认日历开始日为周一: 
 plutommi\mmi\Organizer\OrganizerRes\calendar.res NVRAM_CLNDR_FIRST_DAY_OF_WEEK
 
 // calendar--init
 plutommi\Framework\GUI\GUI_SRC\gui_calendar.c  gui_calendar_create
+plutommi\Framework\GUI\GUI_SRC\gui_calendar.c  gui_calendar_init_layout
+// calendar--init--h
+plutommi\Framework\GUI\GUI_INC\gui_typedef.h GUI_CALENDAR_FRAME_HEIGHT
+// calendar--init--cell--h
+plutommi\Framework\GUI\GUI_INC\gui_calendar.h  GUI_CALENDAR_HORIZONTAL_STRING_HEIGHT
 // calendar--theme
 plutommi\Framework\GUI\GUI_SRC\gui_calendar.c  gui_calendar_set_theme
 
 
 // calendar--draw
-plutommi\Framework\GUI\GUI_SRC\gui_calendar.c gui_calendar_init_layout
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_calendar.c SBD_HIJRI_CALENDAR_AFGHAN
-plutommi\Framework\GUI\GUI_INC\gui_typedef.h GUI_CALENDAR_FRAME_HEIGHT
 // calendar--draw--title
 plutommi\Framework\GUI\GUI_SRC\gui_calendar.c  highlight_change_callback
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_calendar.c wgui_cat83_draw_horizontal_select
@@ -662,7 +792,7 @@ plutommi\Framework\GUI\GUI_SRC\wgui_categories_calendar.c calendar_horizontal_te
 
 
 # 伊斯兰开宏: 
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\MMI_features_switchPLUTO.h CFG_MMI_HIJRI_CALENDAR
+features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_HIJRI_CALENDAR
 //	伊斯兰日历:
 plutommi\mmi\Inc\MMI_features.h __MMI_HIJRI_CALENDAR__
 plutommi\mmi\Organizer\OrganizerRes\calendar.res __MMI_HIJRI_CALENDAR__
