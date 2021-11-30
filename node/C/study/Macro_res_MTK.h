@@ -1,31 +1,8 @@
 
-//¹²ÓÃÂ·¾¶ÉèÖÃ
-Save:node\C\project\Macro_c_path.h
-
-»ù´¡Â·¾¶ÉèÖÃ:
-refPath = Save:set\Macro_Set_Path_mtk.h
-ref:\\
-//	
-images:\\
-audio:\\
-features:\\
-
-
-//µ±Ç°ÏîÄ¿
-// ²é¿´--Ñ¡ÔñÀúÊ·ÏîÄ¿ÁÐ±í: 
-Save:set\
-Save:set\Macro_Set_Note.h  MTK
-Save:set\Macro_Set.h  87
-
-//Â·¾¶±£´æ
-Save:set\Macro_Set_Path_mtk.h 61
-
-
-/***********************************************************************/
 
 //Ä¿Â¼[Num][Ca]:
 // 1. common
-Save:node\C\study\Macro_res_MTK.h \[1.1\] À©Õ¹ÏîÄ¿
+Save:node\C\study\Macro_res_MTK.h \[1.1\] ÏîÄ¿ÅäÖÃ
 Save:node\C\study\Macro_res_MTK.h \[1.2\] mk, features, nv
 Save:node\C\study\Macro_res_MTK.h \[1.3\] str
 Save:node\C\study\Macro_res_MTK.h \[1.4\] res-------
@@ -49,47 +26,72 @@ Save:node\C\study\Macro_res_MTK.h \[1.20\]
 
 
 
-[1.1] À©Õ¹ÏîÄ¿
-// --dws
-//custom\codegen\K220M_YGW_BB\
-//custom\codegen\K220M_YGW_BB\codegen_H660.dws
+[1.1] ÏîÄ¿ÅäÖÃ
+// new pro
+Save:node\C\project\Macro_c_path.h  _mtk_copy_
 
-// --config_account
-//custom\common\custom_config_account.c  g_config_account_gprs
+
+// (1).nv
+make/{cur}_GSM.mak  BOARD_VER_CUST_AUDIO
+//	BOARD_VER_CUST_AUDIO = K220_Z97_AUDIO_BB
+// 
+make\custom\custom.mak BOARD_VER_CUST_AUDIO
+//custom\drv\audio\{nv}\
+custom\audio\{nv}\
+// 
+//custom\common\PLUTO_MMI
+//custom\meta\K220M_YGW_BB
+// 
+// --nv set
+Save:set\Macro_Set_Path_mtk.h  nvKey
+
+
+// (2).board
+make/{cur}_GSM.mak  BOARD_VER
+//	BOARD_VER = K220M_BH_BB
+//
+// --dws
+custom\codegen\{board}\
+custom\codegen\{board}\codegen_H660.dws
+// --MemoryDevice
+custom\system\{board}\
+custom\system\{board}\custom_MemoryDevice.h  NOR_BOOTING_NAND_FS_SIZE
+// 
+// --board set
+Save:set\Macro_Set_Path_mtk.h  boardKey
+
+
+// (3).rf
+make/{cur}_GSM.mak  RF_MODULE
+//	RF_MODULE = MT6261RF_HS8235L_CUSTOM
+
+
+
+// (4).consistent
+make/{cur}_GSM.mak  COM_DEFS_FOR
+//	COM_DEFS_FOR_MT6261RF_HS8235L_CUSTOM
+//	COM_DEFS_FOR_K220D_QQVGA_LCM
+
+
+
+// (5).config_account
+custom\common\custom_config_account.c  g_config_account_gprs
 //custom\common\
 //custom\common\config_account_M107_XYZN_S2_4A_WESTERN_F2.h
 
-// --userprofile
-//custom\common\userprofile_nvram_def.h
-
-// --MemoryDevice
-custom\system\K220M_YGW_BB\
-custom\system\K220M_YGW_BB\custom_MemoryDevice.h  NOR_BOOTING_NAND_FS_SIZE
+// (6).userprofile
+custom\common\userprofile_nvram_def.h
+//custom\common\
+//custom\common\userprofile_nvram_def_M107_XYZN_S2_4A_WESTERN_F2.h
 
 
 
 //ctrl+C×Ô¶¯Ìí¼ÓÐÂÎÄ¼þ, ¾ÉÏîÄ¿->ÐÂÏîÄ¿
 //ÐÂÏîÄ¿ÉèÖÃ:
-newPro = K220_Z97_MGUO
+//newPro = K220_Z97_MGUO
 
-//À©Õ¹ÏîÄ¿
-//custom\codegen\FARSIGHTED61M_CN_11C_BB\codegen_M107_XYZN_S2_4A_WESTERN_F2.dws
-//custom\common\config_account_M107_XYZN_S2_4A_WESTERN_F2.h
-//custom\common\userprofile_nvram_def_M107_XYZN_S2_4A_WESTERN_F2.h
-//custom\system\FARSIGHTED61M_CN_11C_BB\custom_MemoryDevice_M107_XYZN_S2_4A_WESTERN_F2.h
-make/K220_Z97_JMZ_GSM.mak
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Verno_M107_XYZN_S2_4A_WESTERN_F2.bld
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\AUDIO\PLUTO\audio.zip
-images:image.zip
-features:MMI_features_switchK220_Z97_MGUO.h 
-plutommi\Customer\CustResource\M107_MMI\M107_XYZN_S2_4A_WESTERN_F2\
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\ThemeRes.c 
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\Themecomponents.h 
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\ref_list.txt 
-features:CustResDef.h
-plutommi\Customer\CustResource\M107_MMI\CustMiscDataM107.c
-//CUSTOMER_NAME_M107_XYZN_S2_4A_WESTERN_F2 ÆäËûÏà¹Ø
-
+// bcmp
+cmd_f: ren bak:Tmp_Test.h Tmp_Test5.0.h
 
 
 ### newPro
@@ -99,104 +101,44 @@ mk, bld, features, nv, image, audio
 
 [1.2] mk, features, nv
 // --mk
-make/K220_D18E_GSM.mak
-make/Verno_K220_D18E.bld
-// tmp
-cp make/K220_V19_WD_GSM.mak make/K220_V35_WD_GSM.mak
-cp make/Verno_K220_V19_WD.bld make/Verno_K220_V35_WD.bld
-//
-cp make/K220_Z97_MGUO_GSM.mak make/K220_Z97_JMZ_GSM.mak
-cp make/K220_Z97_MGUO_GSM.mak make/K220_Z97_JSZ_GSM.mak
-cp make/K220_Z97_MGUO_GSM.mak make/K220_Z97_MLL_GSM.mak
-cp make/K220_Z97_MGUO_GSM.mak make/K220_Z97_MOLOO_GSM.mak
-//
-cp make/Verno_K220_Z97_MGUO.bld make/Verno_K220_Z97_JMZ.bld
-cp make/Verno_K220_Z97_MGUO.bld make/Verno_K220_Z97_JSZ.bld
-cp make/Verno_K220_Z97_MGUO.bld make/Verno_K220_Z97_MLL.bld
-cp make/Verno_K220_Z97_MGUO.bld make/Verno_K220_Z97_MOLOO.bld
-cp make/Verno_K220_Z97_MGUO.bld make/Verno_K220_Y01A_MGUO.bld
-cp make/Verno_K220_Z97_MGUO.bld make/Verno_K220_Y22_MGUO.bld
+make/{cur}_GSM.mak
 
+// --bld
+make/Verno_{cur}.bld   VERNO
 
-//
-make/K220_Z97_MGUO_GSM.mak
-make/K220_Z97_JMZ_GSM.mak
-make/K220_Z97_JSZ_GSM.mak
-make/K220_Z97_MLL_GSM.mak
-make/K220_Z97_MOLOO_GSM.mak
-make/K220_Y01A_MGUO_GSM.mak
-make/K220_L12_MGUO_GSM.mak
-make/K220_Y22_MGUO_GSM.mak
-// bcmp
-cmd_f: ren bak:Tmp_Test.h Tmp_Test5.0.h
+// --features
+plutommi\Customer\CustResource\{cur}_MMI\
+features:\\
+
+// --nv
+custom\audio\{nv}\
+custom\audio\{nv}\nvram_default_audio.c
+
 
 ###
 // --project
-make/K220_Z97_MGUO_GSM.mak  PRJ_NAME
-// --bld
-make/Verno_K220_Z97_MGUO.bld  VERNO
-make/Verno_K220_Y01A_MOLOO.bld  VERNO
-make/Verno_K220_Y01A_MGUO.bld  VERNO
-make/Verno_K220_L12_MGUO.bld  VERNO
-make/Verno_K220_Y22_MGUO.bld  VERNO
-// --bld--L12
-make/Verno_K220_L12_MGUO.bld  VERNO
-make/Verno_K220_L12_JMZ.bld  VERNO
-make/Verno_K220_L12_JSZ.bld  VERNO
-make/Verno_K220_L12_MLL.bld  VERNO
-make/Verno_K220_L12_MOLOO.bld  VERNO
-
-//
-
+make/{cur}_GSM.mak  PRJ_NAME
 //	__K220_Z97_JMZ__
 //	__K220_Z97__
 //	__JMZ__
 
 
 // --features
-plutommi\Customer\CustResource\K220_L12_MGUO_MMI\
-plutommi\Customer\CustResource\K220_L12_MGUO_MMI\MMI_features_switchK220_L12_MGUO.h
-plutommi\Customer\CustResource\K220_L12_MGUO_MMI\CustResDef.h SSC_SW_VERSION
-plutommi\Customer\CustResource\K220_L12_MGUO_MMI\ThemeRes.c  theme_defaultTheme
-plutommi\Customer\CustResource\K220_L12_MGUO_MMI\Themecomponents.h  title_text_color_defaultTheme
+features:\
+features:\MMI_features_switch{cur}.h
+features:\CustResDef.h SSC_SW_VERSION
+features:\ThemeRes.c  theme_defaultTheme
+features:\Themecomponents.h  title_text_color_defaultTheme
+features:\ref_list.txt
 // --features--tmp
 plutommi\Customer\CustResource\PLUTO_MMI\CustResDefPLUTO.h SSC_SW_VERSION
 plutommi\Customer\CustResource\ThemeRes.c  theme_defaultTheme
 plutommi\Customer\CustResource\Themecomponents.h  title_text_color_defaultTheme
+plutommi\Customer\CustResource\PLUTO_MMI\ref_list.txt
+
 // --features
 plutommi\mmi\Inc\MMI_features.h  STATUS_BAR
-// --path--val
-plutommi\Customer\CustResource\K220_Z97_MGUO_MMI\
-plutommi\Customer\CustResource\K220_Z97_MGUO_MMI\CustResDef.h  CUST_IMG_PATH
-plutommi\Customer\CustResource\K220_Z97_MGUO_MMI\CustResDef.h  CUST_ADO_PATH
-plutommi\Customer\CustResource\K220_Z97_MGUO_MMI\ref_list.txt
-// --path--Z97
-plutommi\Customer\CustResource\K220_L12_JMZ_MMI\
-plutommi\Customer\CustResource\K220_L12_JSZ_MMI\
-plutommi\Customer\CustResource\K220_L12_MGUO_MMI\
-plutommi\Customer\CustResource\K220_L12_MLL_MMI\
-plutommi\Customer\CustResource\K220_L12_MOLOO_MMI\
-// --path
-plutommi\Customer\CustResource\K220_L12_MOLOO_MMI\
-plutommi\Customer\CustResource\K220_Z97_MOLOO_MMI\
-plutommi\Customer\CustResource\K220_Y01A_MGUO_MMI\
-// --path
-plutommi\Customer\CustResource\F55M_H639D_WELCOME_MMI\
-plutommi\Customer\CustResource\K220_V35_WD_MMI\
 
-
-// --nv
-make/K220_V35_WD_GSM.mak  BOARD_VER_CUST_AUDIO
-//	BOARD_VER_CUST_AUDIO = K220_Z97_AUDIO_BB
-// 
-make\custom\custom.mak BOARD_VER_CUST_AUDIO
-// 
-//custom\common\PLUTO_MMI
-//custom\meta\K220M_YGW_BB
-custom\audio\K220_Z97_AUDIO_BB\
-custom\audio\K220_Z97_AUDIO_BB\nvram_default_audio.c
-custom\audio\K220_V35_WD_AUDIO_BB\
-//custom\audio\K220M_YGW_BB
 
 
 
@@ -206,22 +148,20 @@ make\Resgen.mak REFLIST_LIST += ref_list_
 //
 features:\
 features:\ref_list.txt
-plutommi\Customer\CustResource\K220_Z97_MGUO_MMI\
-plutommi\Customer\CustResource\K220_Z97_MGUO_MMI\ref_list.txt
-plutommi\Customer\CustResource\PLUTO_MMI\ref_list.txt
 // custom
-make/K220_Z97_JMZ_GSM.mak  NEW_CUS_REL_TRACE_DEFS
+make/{cur}_GSM.mak  NEW_CUS_REL_TRACE_DEFS
 //	USE_PROJECT_STRING_LIST = TRUE
 
 //
-make/K220_Z97_JMZ_GSM.mak REF_LIST_BRANCH = M107
+//make/{cur}_GSM.mak REF_LIST_BRANCH = M107
 
 
-//×Ö·û´®
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Resource\ref_list.txt 
+// --str--out
 plutommi\Customer\ResGenerator\debug\string_resource_usage.txt
+// --str--charger
 plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res IMG_ID_CHARGER_CHARGING
 plutommi\mmi\Inc\mmi_res_range_def.h RESOURCE_BASE_TABLE_ITEM_PATH( , ".\\mmi\\...\\Res\\")
+
 
 //	×Ö·û´®¹¤¾ß:
 open:plutommi\Customer\STMTView.exe
@@ -229,16 +169,21 @@ open:plutommi\Customer\STMTView.exe
 
 
 [1.4] res
-// --project
-make/K220_D18E_GSM.mak  PRJ_NAME
+#########
+// --PRJ_NAME
+make/{cur}_GSM.mak  PRJ_NAME
 //	PRJ_NAME = K220_D18E
-make/K220_D18E_GSM.mak  PRJ_MAINBOARD_NAME
+//
+make/{cur}_GSM.mak  PRJ_MAINBOARD_NAME
 //	PRJ_MAINBOARD_NAME = K220M
-make/K220_D18E_GSM.mak  PRJ_LOGO_NAME
+//
+make/{cur}_GSM.mak  PRJ_LOGO_NAME
 //	PRJ_LOGO_NAME = WJT
-make/K220_D18E_GSM.mak  PRJ_MODEL_NAME
+//
+make/{cur}_GSM.mak  PRJ_MODEL_NAME
 //	PRJ_MODEL_NAME	= K220_N48
-make/K220_D18E_GSM.mak  KEY_LAYOUT_STYLE
+//
+make/{cur}_GSM.mak  KEY_LAYOUT_STYLE
 //	#KEY_LAYOUT_STYLE = CODEGEN_H660
 
 
@@ -251,35 +196,22 @@ make\Option.mak  PRJ_LOGO_NAME
 //	__WJT__
 
 
-// --board
-make/K220_D18E_GSM.mak  BOARD_VER
-//	BOARD_VER = K220M_YGW_BB
-make/K220_D18E_GSM.mak  BOARD_VER_CUST_AUDIO
-//	BOARD_VER_CUST_AUDIO = K220_D18E_AUDIO_BB
-
-
-// --rf
-make/K220_D18E_GSM.mak  RF_MODULE
-//	RF_MODULE = MT6261RF_HS8235L_CUSTOM
-
-
-// --consistent
-make/K220_D18E_GSM.mak  COM_DEFS_FOR
-//	COM_DEFS_FOR_MT6261RF_HS8235L_CUSTOM
-//	COM_DEFS_FOR_K220D_QQVGA_LCM
-
-
 #########
 // --MMI_VERSION
-make/K220_D18E_GSM.mak  MMI_VERSION
+make/{cur}_GSM.mak  MMI_VERSION
 //	MMI_VERSION = PLUTO_MMI
+
+// --FLAVOR
+make/{cur}_GSM.mak  FLAVOR
+//	FLAVOR = NO_CAM
+
 
 // --MMI_PROJ
 make\Resgen.mak MMI_PROJ
 //	MMI_PROJ = PLUTO
 
 // --MMI_BASE
-make/K220_D18E_GSM.mak  MMI_BASE
+make/{cur}_GSM.mak  MMI_BASE
 //	MMI_BASE = PLUTO_MMI
 
 // --MMI_BASE_PRJ
@@ -303,101 +235,83 @@ make\Option.mak ORIGINAL_CUSTOMER
 //	CUSTOMER = K220_D18E
 
 
+#########
 // --copy
 make\Resgen.mak REFLIST_LIST += ref_list_
-// --copy--1--switch--CUSTOMER=>MMI_PROJ
-// --copy--1--switch--PRJ_NAME=>MMI_PROJ
-plutommi\Customer\CustResource\K220_D18E_MMI\
-plutommi\Customer\CustResource\K220_D18E_MMI\MMI_features_switchK220_D18E.h
-plutommi\Customer\CustResource\MMI_features_switchK220_D18E.h
+// --copy--1--switch_list
+//    dst    => MMI_VERSION/MMI_PROJ
+//           => "PLUTO_MMI"/"PLUTO"
 plutommi\Customer\CustResource\PLUTO_MMI\MMI_features_switchPLUTO.h
-// --copy--2--data--CUSTOMER=>MMI_BASE_PRJ
-//plutommi\Customer\CustResource\K220_D18E_MMI\CustMiscDataPLUTO.c
-//plutommi\Customer\CustResource\PLUTO_MMI\CustMiscDataPLUTO.c
-// --copy--3--CUSTOMER=>MMI_PROJ
-// --copy--3--PRJ_NAME=>MMI_PROJ
-plutommi\Customer\CustResource\K220_D18E_MMI\
-//plutommi\Customer\CustResource\K220_D18E_MMI\CustResDefK220_D18E.h
-plutommi\Customer\CustResource\K220_D18E_MMI\CustResDef.h SSC_SW_VERSION
+//    src    => ORIGINAL_CUSTOMER/ORIGINAL_CUSTOMER
+//           => "{cur}"/"{cur}"
+plutommi\Customer\CustResource\{cur}_MMI\MMI_features_switch{cur}.h
+//    src    => ORIGINAL_CUSTOMER/ORIGINAL_CUSTOMER/FLAVOR
+//           => "{cur}"/"{cur}"/"NO_CAM"
+plutommi\Customer\CustResource\{cur}_MMI\MMI_features_switch{cur}NO_CAM.h
+//    src    => PRJ_NAME/PRJ_NAME
+//           => "{cur}"/"{cur}"
+plutommi\Customer\CustResource\{cur}_MMI\MMI_features_switch{cur}.h
+//
+// --copy--2--data
+//    dst    => MMI_BASE/MMI_BASE_PRJ
+//           => "PLUTO_MMI"/"PLUTO"
+plutommi\Customer\CustResource\PLUTO_MMI\CustMiscDataPLUTO.c
+//    src    => ORIGINAL_CUSTOMER/ORIGINAL_CUSTOMER
+//           => "{cur}"/"{cur}"
+//plutommi\Customer\CustResource\{cur}_MMI\CustMiscData{cur}.c
+//
+// --copy--3--resdef
+//    dst    => MMI_BASE/MMI_BASE_PRJ
+//           => "PLUTO_MMI"/"PLUTO"
 plutommi\Customer\CustResource\PLUTO_MMI\CustResDefPLUTO.h SSC_SW_VERSION
-// --copy--4--CUSTOMER=>MMI_BASE
-// --copy--4--PRJ_NAME=>MMI_BASE
-plutommi\Customer\CustResource\K220_D18E_MMI\
-plutommi\Customer\CustResource\K220_D18E_MMI\ref_list.txt
-plutommi\Customer\CustResource\K15M_A105_JKD_MMI\ref_list.txt
+//    src    => ORIGINAL_CUSTOMER/ORIGINAL_CUSTOMER
+//           => "{cur}"/"{cur}"
+//plutommi\Customer\CustResource\{cur}_MMI\CustResDef{cur}.h
+//    src    => PRJ_NAME
+//           => "{cur}"
+plutommi\Customer\CustResource\{cur}_MMI\CustResDef.h SSC_SW_VERSION
+//
+// --copy--4--reflist
+//    dst    => MMI_BASE
+//           => "PLUTO_MMI"
 plutommi\Customer\CustResource\PLUTO_MMI\ref_list.txt
-
+//    src    => ORIGINAL_CUSTOMER
+//           => "{cur}"
+plutommi\Customer\CustResource\{cur}_MMI\ref_list.txt
+//    src    => PRJ_NAME
+//           => "{cur}"
+plutommi\Customer\CustResource\{cur}_MMI\ref_list.txt
 
 
 
 
 [1.5] image
 // --path
-plutommi\Customer\CustResource\K220_D18E_MMI\CustResDef.h  CUST_IMG_PATH
-plutommi\Customer\CustResource\K220_D18E_MMI\CustResDef.h  CUST_ADO_PATH
+features:\CustResDef.h  CUST_IMG_PATH
+features:\CustResDef.h  CUST_ADO_PATH
 // audio
 plutommi\Customer\AUDIO\
-plutommi\Customer\AUDIO\K220_Z97_MGUO\
-plutommi\Customer\AUDIO\K220_Z97_JMZ\
-plutommi\Customer\AUDIO\K220_Z97_JSZ\
-plutommi\Customer\AUDIO\K220_Z97_MLL\
-plutommi\Customer\AUDIO\K220_Z97_MOLOO\
-//
-plutommi\Customer\AUDIO\K220_L12_MGUO\
-plutommi\Customer\AUDIO\K220_L12_JMZ\
-plutommi\Customer\AUDIO\K220_L12_JSZ\
-plutommi\Customer\AUDIO\K220_L12_MLL\
-plutommi\Customer\AUDIO\K220_L12_MOLOO\
-//
-plutommi\Customer\AUDIO\K220_L12_MGUO\
-plutommi\Customer\AUDIO\K220_Y22_MGUO\
-//
-plutommi\Customer\AUDIO\K220_V19_WD\
-plutommi\Customer\AUDIO\K220_V35_WD\
+plutommi\Customer\AUDIO\{cur}\
+audio:\
 // image
 plutommi\Customer\Images\
-plutommi\Customer\Images\K220_Z97_MGUO\
-plutommi\Customer\Images\K220_Z97_JMZ\
-plutommi\Customer\Images\K220_Z97_JSZ\
-plutommi\Customer\Images\K220_Z97_MLL\
-plutommi\Customer\Images\K220_Z97_MOLOO\
-//
-plutommi\Customer\Images\K220_L12_MGUO\
-plutommi\Customer\Images\K220_L12_JMZ\
-plutommi\Customer\Images\K220_L12_JSZ\
-plutommi\Customer\Images\K220_L12_MLL\
-plutommi\Customer\Images\K220_L12_MOLOO\
-//
-plutommi\Customer\Images\K220_L12_MGUO\
-plutommi\Customer\Images\K220_Y22_MGUO\
-//
-plutommi\Customer\Images\K220_V19_WD\
-plutommi\Customer\Images\K220_V35_WD\
+plutommi\Customer\Images\{cur}\
+images:\
 
-
-#####
-//	×ÊÔ´Â·¾¶:
-//	old code£º
-features:CustResDef.h #define^CUST_IMG_PATH
-//	new code£º
-features:CustResDef.h #define^CUST_IMG_PATH
-features:CustResDef.h #define^CUST_ADO_PATH
 
 
 //	×ÊÔ´×ÓÂ·¾¶:
-features:CustResDef.h #define^IMG_MAINMENU_SUB_DIR
-features:Themecomponents.h #define^img_menu_bkg_filler_defaultTheme
-features:Themecomponents.h #define^img_matrix_main_menu_highlight_image_defaultTheme
-plutommi\mmi\Resource\PopulateRes.c IMG_MAINMENU_SUB_DIR
-plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res IMG_MAINMENU_SUB_DIR Ìí¼ÓÍêÕûÂ·¾¶
+//features:CustResDef.h #define^IMG_MAINMENU_SUB_DIR
+//plutommi\mmi\Resource\PopulateRes.c IMG_MAINMENU_SUB_DIR
+//plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res IMG_MAINMENU_SUB_DIR Ìí¼ÓÍêÕûÂ·¾¶
 
 //	×ÊÔ´×ÓÂ·¾¶ ÁÙÊ±ÎÄ¼þ(Ô­Í¼²»´æÔÚ, ×ÊÔ´²»Éú³É):
-plutommi\Customer\CustResource\CustImgDataHWExt.h MM_BG _PNG_
-plutommi\Customer\CustResource\CustImgResExt.c mtk_nCustImageNamesEXT
-plutommi\Customer\CustResource\CustImgDataRes_2.c
+//plutommi\Customer\CustResource\CustImgDataHWExt.h MM_BG _PNG_
+//plutommi\Customer\CustResource\CustImgResExt.c mtk_nCustImageNamesEXT
+//plutommi\Customer\CustResource\CustImgDataRes_2.c
 
 
-//	Ö÷²Ëµ¥Í¼Æ¬:
+// --Ö÷²Ëµ¥Í¼Æ¬
 images:MainLCD\MainMenu\SLIM_MATRIX
 images:MainLCD\MainMenu\PAGE
 //
@@ -406,41 +320,43 @@ plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res IMG_MAINMENU_SUB_DIR Ìí¼ÓÍêÕûÂ
 plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res 850
 
 
-//	±ÚÖ½
+// --±ÚÖ½
 images:MainLCD\Phonebook\
 images:MainLCD\IdleScreen\Wallpaper
-features:MMI_features_switchK220_Z97_MGUO.h CFG_MMI_RES_TYPE_WALLPAPER_SEL
+features:MMI_features_switch{cur}.h CFG_MMI_RES_TYPE_WALLPAPER_SEL
 plutommi\mmi\Inc\MMI_features.h __MMI_RES_TYPE_WALLPAPER_SEL__
 plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c WALL01."__MMI_RES_TYPE_WALLPAPER__ "
 plutommi\mmi\Setting\SettingSrc\Wallpaper.c wp_item_amount ^=
 plutommi\Customer\CustomerInc\CustResDef.h IMG_WALLPAPER_SUB_DIR
 
 
-// ¿ª¹Ø»úLogo:(½öKMÕâÌ×´úÂë)
+// --¿ª¹Ø»úLogo:(½öKMÕâÌ×´úÂë)
 plutommi\mmi\Resource\PopulateRes.c LOGO_FILE_NAME
 images:MainLCD\Active\poweronoff\
 images:MainLCD\Active\poweronoff\logo.BMP
 
 
-// ¿ª¹Ø»ú¶¯»­:
+// --¿ª¹Ø»ú¶¯»­:
 //  ÓëÁåÉùÍ¬²½ÎÊÌâ ½¨Òé¿ª»ú¶¯»­Ê±¼äÏà±È¼õ0.5s ¹Ø»ú¶¯»­Ê±¼ä¼õ2s
 images:MainLCD\Active\Poweronoff\
 images:MainLCD\Active\Poweronoff\logo.bmp
 images:MainLCD\Active\Poweronoff\POON.gif
 images:MainLCD\Active\Poweronoff\pooff.gif
 //
-features:MMI_features_switchK220_Z97_MGUO.h CFG_MMI_POWER_ON_OFF_DISPLAY
-features:MMI_features_switchK220_Z97_MGUO.h CFG_MMI_RES_TYPE_POWER_ONOFF_SEL
+features:MMI_features_switch{cur}.h CFG_MMI_POWER_ON_OFF_DISPLAY
+features:MMI_features_switch{cur}.h CFG_MMI_RES_TYPE_POWER_ONOFF_SEL
 plutommi\mmi\Inc\MMI_features.h  __MMI_RES_TYPE_POWER_ONOFF_SEL__
 plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c POON.gif
 
 //
-make/K220_Z97_JMZ_GSM.mak SBD_POWER_ONOFF_SAME_LOGO
+make/{cur}_GSM.mak SBD_POWER_ONOFF_SAME_LOGO
 //~ 
 //~ lcd_sw_rnd DRV_MAINLCD_INIT_COLOR ÉèÖÃlogo±³¾°É«
 
 
-// ¹Ø»ú³äµç¶¯»­
+// --¹Ø»ú³äµç¶¯»­
+make/{cur}_GSM.mak  __MMI_POWERONRING_MP3__
+//
 plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res IMG_ID_CHARGER_CHARGING
 images:MainLCD\UIELEMENT\charger\
 
@@ -458,8 +374,8 @@ images:MainLCD\IdleScreen\Statusicons\DualSIM\Slave\SI_SIG2_CLOSE\
 
 	
 
-//	ÆÁ±£:
-features:MMI_features_switchK220_Z97_MGUO.h  #define^CFG_MMI_SCREEN_SAVER
+// --ÆÁ±£:
+features:MMI_features_switch{cur}.h  #define^CFG_MMI_SCREEN_SAVER
 //
 plutommi\Framework\GUI\GUI_Res\Gui.res  IMG_IDLE_DATE_0             #ËøÆÁ
 plutommi\Framework\GUI\GUI_Res\Gui.res  IMG_TECHNO_DIGITAL_CLOCK_0  #idle
@@ -472,7 +388,7 @@ images:MainLCD\IdleScreen\lock_new\
 images:MainLCD\IdleScreen\Techno\DigitalClock\
 //
 
-// ²¦ºÅ
+// --²¦ºÅ
 plutommi\Framework\GUI\GUI_Res\Gui.res  IMG_DIALING_INPUT_M0          #Ð¡ºÅÊý×Ö
 plutommi\Framework\GUI\GUI_Res\Gui.res  IMG_DIALING_0                 #´óºÅÊý×Ö
 // --ºÚ--Ð¡ºÅÊý×Ö
@@ -482,7 +398,7 @@ images:MainLCD\DialingScreen\DialNum\
 images:MainLCD\DialingScreen\DialNum_2\
 
 
-//	Mp3
+// --Mp3
 plutommi\MtkApp\AudioPlayer\AudioPlayerRes\AudioPlayer.res  vol_full
 plutommi\Customer\CustResource\PLUTO_MMI\resource_audply_skins.c  1829
 //
@@ -516,9 +432,9 @@ plutommi/mmi/Setting/SettingInc/PhoneSetupResList.h #define^MAX_POWER_ON_IMG
 // --tone
 plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res AUD_ID_PROF_TONE1
 //	AUD_ID_PROF_TONE1 --> play_mp3.mp3
-plutommi\Customer\AUDIO\K220_D18E\
+audio:\
 //	AUD_ID_PROF_TONE2 --> cs02.mp3
-plutommi\Customer\AUDIO\K220_D18E\UserProfiles\Tone\
+audio:UserProfiles\Tone\
 //	AUD_ID_PROF_TONE3 --> cs03.mid
 //	AUD_ID_PROF_TONE4 --> cs04.mid
 //	AUD_ID_PROF_TONE5 --> cs05.mid
@@ -526,9 +442,9 @@ plutommi\Customer\AUDIO\K220_D18E\UserProfiles\Tone\
 // --ring
 plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res AUD_ID_PROF_RING1
 //	AUD_ID_PROF_RING1 --> play_mp3.mp3
-plutommi\Customer\AUDIO\K220_D18E\
+audio:\
 //	AUD_ID_PROF_RING2 --> s1imy06.imy
-plutommi\Customer\AUDIO\K220_D18E\UserProfiles\Ring\
+audio:UserProfiles\Ring\
 //	AUD_ID_PROF_RING3 --> s1imy07.imy
 //	AUD_ID_PROF_RING4 --> s1imy04.imy
 //	AUD_ID_PROF_RING5 --> s1imy08.imy
@@ -536,12 +452,12 @@ plutommi\Customer\AUDIO\K220_D18E\UserProfiles\Ring\
 // --play
 plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res AUD_ID_MP3_PLAY_0
 //	AUD_ID_MP3_PLAY_0 --> play_mp3.mp3
-plutommi\Customer\AUDIO\K220_D18E\
+audio:
 
 // --SOS
 plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res AUD_ID_SOS_MP3
 //	AUD_ID_SOS_MP3 --> SOS.mp3
-plutommi\Customer\AUDIO\K220_D18E\
+audio:
 
 // --HERO
 plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res TIHO_ID_PROF_NUM1_0
@@ -647,6 +563,9 @@ features:MMI_features_switchK220_Z97_MGUO.h  CFG_MMI_CSTAR_MULTITAP
 //	²Î¿¼: ÖÆ×÷×Ö¿â
 https://wenku.baidu.com/view/ea58850bf78a6529647d53a1.html
 
+
+// ´ó×ÖÌå
+make/{cur}.mak  __COMMON_HW2424_24_FONT__
 
 
 [1.10] 

@@ -1,6 +1,4 @@
 
-featuresPath = plutommi\Customer\CustResource\K220_L12_MGUO_MMI\
-features:\\
 
 // 目录:
 //	 2. 界面
@@ -130,7 +128,7 @@ custom\common\PLUTO_MMI\nvram_common_config.c NVRAM_SHORTCUTS_TOTAL
 plutommi\Customer\CustResource\mmi_rp_menu_shortcut_data.c mmi_shct_candidate_menu
 
 //	Idle:ShortCut
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_DEDICATED_KEY_SHORTCUTS
+features:MMI_features_switch{cur}.h CFG_MMI_DEDICATED_KEY_SHORTCUTS
 //	statusBar
 //gui_status_icon_bar_show_oem
 
@@ -210,7 +208,7 @@ plutommi\mmi\Messages\MessagesRes\SmsAppRes.res <MENU^id="MAIN_MENU_MESSAGES_MEN
 
 //	主菜单格式:
 plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res MM_ST
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_RES_TYPE_MAINMENU_MATRIX_SEL
+features:MMI_features_switch{cur}.h CFG_MMI_RES_TYPE_MAINMENU_MATRIX_SEL
 
 //
 // 1) 菜单ID1 添加 子菜单ID2: 
@@ -318,7 +316,7 @@ plutommi/Framework/GUI/GUI_SRC/gui_inputs.c gui_resize_multi_line_input_box_no_d
 plutommi\Framework\GUI\GUI_SRC\gui_multi_line_inputs.c  gui_draw_multi_line_text
 //		==>        = bs->yy
 //		==>        = bs->y1 + b->text_y + b->text_offset_y + bs->border_y;
-//		==>        = 1 + {0, 44} + {-42,2,46}/{0} + 0;
+//		==>        = 1 + {0, 44} + {-42,2,46}/{0} + 0; //text_y从下向上
 //		==>        = {1, -41, -85}
 plutommi/Framework/GUI/GUI_SRC/gui_inputs.c gui_show_multi_line_input_box_basic
 //		==>        = b->edit_height
@@ -343,10 +341,10 @@ plutommi\Framework\GUI\GUI_SRC\wgui_categories_idlescreen_op.c  wgui_cat203_draw
 
 // dial--show--rect--y
 //   ::修改(5) 换行
-//		==>MMI_multiline_inputbox
-//		==>text_y--(first row.)
-//		==>{-27,0,27,54}  --取整为0
-plutommi\Framework\GUI\GUI_SRC\wgui_inputs_multiline.c  wgui_inputs_ml_change_callback
+//		==>        = b->text_y  --(first row.)
+//		==>        = MMI_multiline_inputbox->text_y
+//		==>        = {-27,0,27,54}  --取整为0
+plutommi\Framework\GUI\GUI_SRC\wgui_inputs_multiline.c  void^wgui_inputs_ml_change_callback
 
 // dial--show--rect--h
 //		==>character_height+1
@@ -380,6 +378,7 @@ plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  dm_get_current_scr_bg_filler
 
 
 
+
 [1.5] test
 // testMode
 plutommi\MtkApp\FactoryMode\FactoryModeSrc\FactoryModeMain.c  void^EntryFMMenu
@@ -406,8 +405,8 @@ plutommi\AppCore\SSC\SSCStringTable.h SSC_MANUAL_SET_IMEI
 
 [1.6] file
 //	文件管理 精简:
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_SLIM_FILE_MANAGER
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_ULTRA_SLIM_FILE_MANAGER
+features:MMI_features_switch{cur}.h CFG_MMI_SLIM_FILE_MANAGER
+features:MMI_features_switch{cur}.h CFG_MMI_ULTRA_SLIM_FILE_MANAGER
 //	文件管理 详情opt:
 plutommi\MtkApp\FileMgr\FileMgrSrc\FileMgrMain.c MENU_ID_FMGR_CARD_DETAIL SRV_FMGR_DRV_CARD_TYPE
 //	文件管理 格式化:
@@ -480,7 +479,7 @@ plutommi\mmi\Setting\SettingSrc\PhnsetDisplay.c  mmi_phnset_disp_setup_sub_menu_
 [1.8] sms
 
 //	短信-短语-翻译:
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_SMS_TEMPLATE_SPANISH
+features:MMI_features_switch{cur}.h CFG_MMI_SMS_TEMPLATE_SPANISH
 	
 
 //	短信-list:
@@ -539,16 +538,16 @@ plutommi\mmi\Ucm\UcmSrc\UcmUi.c  mmi_ucm_enter_outgoing_call
 [1.10] pb, cl
 # pb
 //	联系人切换用tab+icon
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_PHB_UI_IN_TABS
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_PHB_CALLER_GROUP
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_TAB_BARS_SUPPORT
+features:MMI_features_switch{cur}.h CFG_MMI_PHB_UI_IN_TABS
+features:MMI_features_switch{cur}.h CFG_MMI_PHB_CALLER_GROUP
+features:MMI_features_switch{cur}.h CFG_MMI_TAB_BARS_SUPPORT
 //	群组功能:
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_PHB_UI_IN_TABS
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_PHB_CALLER_GROUP
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_CONTACT_SLIM
+features:MMI_features_switch{cur}.h CFG_MMI_PHB_UI_IN_TABS
+features:MMI_features_switch{cur}.h CFG_MMI_PHB_CALLER_GROUP
+features:MMI_features_switch{cur}.h CFG_MMI_CONTACT_SLIM
 //	多选---会死机:
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_PHB_MULTI_OPERATION
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_PHB_GENERIC_MULTI_SELECT
+features:MMI_features_switch{cur}.h CFG_MMI_PHB_MULTI_OPERATION
+features:MMI_features_switch{cur}.h CFG_MMI_PHB_GENERIC_MULTI_SELECT
 //	联系人条数:
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak PHB_PHONE_ENTRY
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak PHB_SIM_ENTRY
@@ -614,7 +613,7 @@ plutommi/Customer/CustResource/PLUTO_MMI/MMI_features_camera.h #define^CAMERA_DE
 [1.12] pic
 //	Image:
 plutommi\MtkApp\ImageView\ImageViewRes\imgview.res
-features:MMI_features_switchK220_L12_MGUO.h USE_SW_PNG_DECODER
+features:MMI_features_switch{cur}.h USE_SW_PNG_DECODER
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak PNG_DECODE	开了会报几个错误, PNG打不开
 
 //
@@ -661,7 +660,7 @@ plutommi\MtkApp\Sndrec\SndrecSrc\SndrecUI.c  EVT_ID_ON_KEY
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak FM_RADIO_RECORD
 //	EZFM:
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak SBD_EZFM_SUPPORT EASY_FM
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_FM_RADIO_BIND_EARPHONE
+features:MMI_features_switch{cur}.h CFG_MMI_FM_RADIO_BIND_EARPHONE
 //	FM 天线:
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak INTERNAL_ANTENNAL_SUPPORT
 
@@ -701,6 +700,8 @@ mp3:AudioPlayerSrc\AudioPlayerMainScreen.c  3938
 //
 // skins
 plutommi/Customer/CustResource/PLUTO_MMI/resource_audply_skins.c 1480
+// skins--tmp
+plutommi\Customer\CustResource\resource_audply_skins.c  1480
 
 
 //	Mp3自动刷新列表:(无效，改了会出现后台占用问题)
@@ -723,7 +724,7 @@ mp3:AudioPlayerSrc\AudioPlayerMainScreen.c  BUILD_MUSIC_DURATION
 
 # 内置mp3--样2
 //	Idle:ShortCut
-features:MMI_features_switchK220_L12_MGUO.h  CFG_MMI_BUILT_MP3
+features:MMI_features_switch{cur}.h  CFG_MMI_BUILT_MP3
 //	#define CFG_MMI_BUILT_MP3 (__ON__)
 //
 // name
@@ -734,15 +735,15 @@ mp3:AudioPlayerSrc\AudioPlayerPlayList.c  built_mp3_name1
 [1.18] alarm
 
 //	闹钟 祈祷闹钟
-features:MMI_features_switchK220_L12_MGUO.h CALC CFG_MMI_ALARM_SLIM
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_AZAAN_ALARM
+features:MMI_features_switch{cur}.h CALC CFG_MMI_ALARM_SLIM
+features:MMI_features_switch{cur}.h CFG_MMI_AZAAN_ALARM
 	祈祷闹钟铃声: 
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\AUDIO\PLUTO\UserProfiles\Ring\Allah.O.Akber.mp3 没有
 	祈祷闹钟资源关闭SLIM: 
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_ALARM_SLIM
+features:MMI_features_switch{cur}.h CFG_MMI_ALARM_SLIM
 	祈祷闹钟AMPM: 
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak __KM_AZAAN_ALARM_ADD_AMPM__
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_TIME_SETTING_AM_PM_SUPPORT
+features:MMI_features_switch{cur}.h CFG_MMI_TIME_SETTING_AM_PM_SUPPORT
 
 	
 // 5) tool:Alarm:
@@ -759,14 +760,14 @@ plutommi\mmi\Extra\ExtraSrc\Calculator.c  calc_register_input_hdlr
 
 
 //	tool:计算器: 
-features:MMI_features_switchK220_L12_MGUO.h CALC CFG_MMI_CALCULATOR CFG_MMI_CAL_SLIM
+features:MMI_features_switch{cur}.h CALC CFG_MMI_CALCULATOR CFG_MMI_CAL_SLIM
 
 
 
 [1.20] calendar
 // calendar--mk
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_CALENDAR
-features:MMI_features_switchK220_L12_MGUO.h __MMI_CALENDAR_EVENT__ (不开)
+features:MMI_features_switch{cur}.h CFG_MMI_CALENDAR
+features:MMI_features_switch{cur}.h __MMI_CALENDAR_EVENT__ (不开)
 plutommi\Framework\GUI\GUI_INC\gui_calendar.h __MMI_CALENDAR_TITLE__
 //	默认日历开始日为周一: 
 plutommi\mmi\Organizer\OrganizerRes\calendar.res NVRAM_CLNDR_FIRST_DAY_OF_WEEK
@@ -792,7 +793,7 @@ plutommi\Framework\GUI\GUI_SRC\wgui_categories_calendar.c calendar_horizontal_te
 
 
 # 伊斯兰开宏: 
-features:MMI_features_switchK220_L12_MGUO.h CFG_MMI_HIJRI_CALENDAR
+features:MMI_features_switch{cur}.h CFG_MMI_HIJRI_CALENDAR
 //	伊斯兰日历:
 plutommi\mmi\Inc\MMI_features.h __MMI_HIJRI_CALENDAR__
 plutommi\mmi\Organizer\OrganizerRes\calendar.res __MMI_HIJRI_CALENDAR__

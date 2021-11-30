@@ -1,15 +1,7 @@
 
-imagesPath = plutommi\Customer\Images\K220_L12_MGUO\
-images:\\
-audioPath = plutommi\Customer\AUDIO\K220_L12_MGUO\
-audio:\\
-featuresPath = plutommi\Customer\CustResource\K220_L12_MGUO_MMI\
-features:\\
-
-
 
 //目录[Num][Ca]:
-// 项目选择 编译
+// 项目
 Save:node\C\project\Macro_Note_MTK.h \[1.1\] set project
 Save:node\C\project\Macro_Note_MTK.h \[1.2\] MTK编译指令
 Save:node\C\project\Macro_Note_MTK.h \[1.3\] KEY
@@ -46,85 +38,35 @@ Save:node\C\project\Macro_Note_MTK.h \[2.20\]
 
 
 
-[1.1] 项目路径替换
-//当前项目
-// 查看--选择历史项目列表: 
-Save:set\Macro_Set_Note.h \[1.2\] MTK
+[1.1] set project
+//
+// bak
+Save:node\C\project\Macro_c_path.h  _mtk_bak_
 
-//手动替换
-Save:set\Macro_Set.h 61
-
---------------------------------------------------
-// 默认项目(便于上传svn) [Cs]:
-set K220_Y01A_MGUO K220 GSM
-set K220_L12_MGUO K220 GSM
-set F55M_H639D_WELCOME K220 GSM
+// set
+//   F12查找宏有用
+Save:set\Macro_Set_Path_mtk.h  curKey
 
 
-// 更换projects目录:	
-setPath old (在这一行按F5, 开始替换)
-setPath new (在这一行按F5, 开始替换, 路径为 projects\...)
-
-setEnd:从setEnd行开始替换名称(上一次选中->当前选中); 以空格分开; 不要直接替换(M105<->M105_MLT 暂时未判断)
-
-	
-#### set project path auto replace start ####
-/*
-项目路径: (合并到以下替换内容)
-//设置项 用双斜杠
-CurProPath = projects\\M107\\K220_L12_MGUO
-
-默认路径转换: 
-//不用的设置项 可以注释掉
-//正反斜杠都可以替换
-//第2个路径会加上(CurProPath)
-//部分行，行尾加空格，防止整个替换会带缩进
-setProPath plutommi\\Customer\\Audio\\M107\\K220_L12_MGUO = AUDIO\\PLUTO
-setProPath plutommi\\Customer\\Images\\M107\\K220_L12_MGUO = Images
-#setProPath plutommi\\Customer\\CustResource\\M107_MMI\\K220_L12_MGUO = Resource
-setProPath plutommi\\Customer\\CustResource\\M107_MMI\\MMI_features_switchK220_L12_MGUO.h = Resource\\MMI_features_switchPLUTO.h
-#setProPath plutommi\\Customer\\CustResource\\M107_MMI\\ref_list_K220_L12_MGUO.txt = Resource\\ref_list.txt
-setProPath plutommi\\Customer\\CustResource\\M107_MMI\\ref_list_K220_L12_MGUO.txt = Resource\\ref_list.txt
-
-setProPath plutommi\\Customer\\CustResource\\M107_MMI\\K220_L12_MGUO\\Themecomponents.h = Resource\\Themecomponents.h
-setProPath plutommi\\Customer\\CustResource\\M107_MMI\\K220_L12_MGUO\\ThemeRes.c = Resource\\ThemeRes.c
-
-setProPath make\\K220_L12_MGUO_gprs.mak = K220_L12_MGUO_gprs.mak
-setProPath make\\Verno_K220_L12_MGUO.bld = Verno_K220_L12_MGUO.bld
-*/
-#### set project path auto replace end ####
-
-
-
-###
-make/K220_Z97_JMZ_GSM.mak  __MMI_POWERONRING_MP3__
-make/K220_Z97_JMZ_GSM.mak  __MMI_K220_Z97_CUSTOM_STYLE__
-
-
-
-Make 特殊宏:
-make/K220_Y01A_MGUO_GSM.mak REF_LIST_BRANCH  翻译
-make/K220_Y01A_MGUO_GSM.mak CUSTOM_DEVICE
+//特殊宏:
+make/{cur}_GSM.mak REF_LIST_BRANCH  翻译
+make/{cur}_GSM.mak CUSTOM_DEVICE
 custom/system/FARSIGHTED61M_CN_11C_BB/custom_MemoryDevice_K220_L12_MGUO.h __MMI_SUPER_BATTERY__
 
 
 
-features:
+//features:
 plutommi/mmi/Inc/MMI_features.h PEER_CONTROL
+//
 projects\M107\K220_L12_MGUO\Resource\MMI_features_switchPLUTO.h CFG_MMI_DYNAMIC_SIM_DYNAMIC_UI
 projects\M107\K220_L12_MGUO\Resource\MMI_features_switchPLUTO.h WHITELIST
 	
 
 
-版本号[Cv]:
-projects\M107\K220_L12_MGUO\Verno_K220_L12_MGUO.bld BUILD_DATE 版本文件
-//
-make/Verno_K220_Z97_JMZ.bld  VERNO
 
 
 
 [1.2] MTK编译指令
-cmd: cmd
 
 //编译1:
 make K220_L12_MGUO gprs new
@@ -524,11 +466,13 @@ cmd: cmd
 
 [2.17] Build问题
 //
-buildPath = build\K220_Y01A_MGUO
+buildPath = build\{cur}
 build:\\
 
 build:build.log cleanlib 				编译时间
 build:MT6261.log Finished: 			链接问题看这个
+build:log\
+build:log\mmi_check.log Error:
 build:log\mmiresource.log Error:
 build:log\mmi_framework.log Error:
 build:log\mmi_app.log Error:

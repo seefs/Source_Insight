@@ -48,7 +48,7 @@ Save:Help\Macro_Note_Test.h \[1.21\]
 Save:Help\Macro_Note_Test.h \[2.1\] ctrl+B
 Save:Help\Macro_Note_Test.h \[2.2\] ctrl+T
 Save:Help\Macro_Note_Test.h \[2.3\] ctrl+D------------索引
-Save:Help\Macro_Note_Test.h \[2.4\] 
+Save:Help\Macro_Note_Test.h \[2.4\] ctrl+C
 Save:Help\Macro_Note_Test.h \[2.5\] 
 Save:Help\Macro_Note_Test.h \[2.6\] 
 Save:Help\Macro_Note_Test.h \[2.7\] 
@@ -450,7 +450,21 @@ Save:Help\DefaultFile\Macro_Node_Num.h
 
 
 
-[2.4] 
+[2.4] ctrl+C
+// auto set
+Save:set\Macro_Set_Path_mtk.h  oldKey
+//	oldKey = K220_V18_WD
+//	newKey = K220_V35_WD
+//
+
+// 不能复制
+Save:Help\Tmp\Tmp_space.h
+// 复制
+Save:Help\Tmp\Tmp_space{cp}.h
+// 复制
+Save:Help\Tmp\Tmp_space_K220_V18_WD.h
+// 复制
+Save:Help\Tmp\Tmp_space_K220_V35_WD.h
 
 
 

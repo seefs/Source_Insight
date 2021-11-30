@@ -13,7 +13,13 @@ audioPath = plutommi\Customer\AUDIO\K220_V35_WD\
 audio:\\
 featuresPath = plutommi\Customer\CustResource\K220_V35_WD_MMI\
 features:\\
+buildPath = build\K220_V35_WD\
+build:\\
 
+
+nvKey  = K220_V35_WD_AUDIO_BB
+
+boardKey  = K220M_BH_BB
 
 curKey = K220_V35_WD
 

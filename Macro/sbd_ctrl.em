@@ -776,25 +776,38 @@ macro CtrlC()
 		//当前行
 		cur_line = GetBufLine(hbuf, row)
 		
-		//新项目名称 (文件中设置)
-		mKey = "newPro"
-		newPro = getMacroValue(hbuf, mKey, 1)
-		
-		//旧项目名称 (读设置)
-		baseDir = getBasePath(hbuf)
-		//baseDir = "F:\\11CW1352MP_BLEPHONE61D_11C_V33"
-		setProPath = ReadMode(getNoteHanderSet(0))
-		len = strlen(setProPath)
-		//命令名转化: 删除空格
-		start = GetTransCmdS(setProPath, 0, len)
-		next  = GetTransCmdE(setProPath, start,     len)
-		oldPro = strmid(setProPath, start, next)
-		
-		//组合命令
 		//文件名转化:
 		//转化"Save:"、区分根目录、添加项目目录、替换"^"为空格
 		cmdPath1 = GetTransFileName(hbuf, cur_line, 0)
-		cmdPath2 = ReplaceWord(cmdPath1, oldPro, newPro)
+		
+		oldVal = getKeyHead(hbuf, "old")
+		newVal = getKeyHead(hbuf, "new")
+			
+		index = FindString(cur_line, "{cp}")
+		if(index != "X")
+		{
+			cmdPath2 = ReplaceWord(cmdPath1, "{cp}", newPro)
+			cmdPath1 = ReplaceWord(cmdPath1, "{cp}", oldVal)
+		}
+		else
+		{
+			indexO = FindString(cur_line, oldVal)
+			indexN = FindString(cur_line, newVal)
+			if(indexO != "X")
+			{
+				cmdPath2 = ReplaceWord(cmdPath1, oldVal, newVal)
+			}
+			else if(indexN != "X")
+			{
+				cmdPath2 = cmdPath1
+				cmdPath1 = ReplaceWord(cmdPath2, newVal, oldVal)
+			}
+			else
+			{
+				stop
+			}
+		}
+		
 		if(cmdPath1 == cmdPath2)
 			stop
 		cmdStr = "copy " # cmdPath1 # " " # cmdPath2
@@ -804,11 +817,6 @@ macro CtrlC()
 		
 		//执行命令
 		ShellOpenCustomCmd(cmdStr)
-
-		//插入新文件名称
-		insStr = ReplaceWord(cur_line, oldPro, newPro)
-		InsBufLine(hbuf, row + 1, insStr)
-		SaveBuf(hbuf)
 	}
 }
 macro CtrlBack()

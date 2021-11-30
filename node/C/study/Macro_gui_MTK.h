@@ -1,14 +1,4 @@
 
-//appPath = MS_MMI_Main/source/mmi_app/app
-appPath = MS_MMI/source/mmi_app/app
-app:\\
-//ctrlPath = MS_MMI_Main\source\mmi_ctrl\source
-ctrlPath = MS_MMI\source\mmi_ctrl\source
-ctrl:\\
-//guiPath = MS_MMI_Main\source\mmi_gui\source
-guiPath = MS_MMI\source\mmi_gui\source
-gui:\\
-
 
 // 目录:
 //   1. 功能点
@@ -554,6 +544,7 @@ plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  void^gui_show_single_line_input_box
 plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  void^gui_create_multi_line_input_box_set_buffer
 // --text--cursor--text_y
 plutommi\Framework\GUI\GUI_SRC\gui_single_line_inputs.c  gui_draw_single_line_one_line
+plutommi\Framework\GUI\GUI_SRC\gui_single_line_inputs.c  1815
 
 
 

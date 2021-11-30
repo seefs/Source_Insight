@@ -25,6 +25,10 @@ Save:node\Simple_CTRL_K.h unfinished:
 /***********************************************************************/
 
 
+// c,多选？冲突...
+make {cur} GSM new
+make {cur} GSM new
+
 
 
 // 未设置--死循环
@@ -351,9 +355,6 @@ Save:Macro\sbd_f11.em
 	//open:         (1) 打开exe; 
 	                (2) 打开文本文件+关键字，可以是非Macro_开头文件
 	//test:         (1)
-	//setPath:      (1) 补充--F6: 只保存, 不修改   目录; 先用F6设置当前目录, 再用F5修改新目录
-	//setProPath:   (1) 
-	//sethistory:   (1) mtk笔记 显示历史path list-->ok, 输编号, 插入path行
 	//cp:           (1) 复制文件
 	//RAR:          (1) 
 	
@@ -363,7 +364,6 @@ Save:Macro\sbd_f11.em
 	//xmake:        (1) 不运行cmd命令, 只复制
 	
 	### 命令格式: 取2~4串字符, 路径转换--不分左右
-	//set:          (1) 替换当前笔记目录; 可能要按2次, 先设置一次当前目录
 	//vc:           (1) 打开模拟器
 	//vs08:         (1) 打开模拟器
 	

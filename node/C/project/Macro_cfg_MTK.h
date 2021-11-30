@@ -1,19 +1,8 @@
 
-基础路径设置:
-//basePath = 
-featuresPath = plutommi\Customer\CustResource\K220_L12_MGUO_MMI\
-features:\\
-boardPath = custom\system\K15M_BB\
-board:\\
-buildPath = build\K220_L12_MGUO\
-build:\\
-
-
-/***********************************************************************/
 
 //目录[Num][Ca]:
 // 1. 
-Save:node\C\project\Macro_cfg_MTK.h \[1.1\] //AUDIO, TONE
+Save:node\C\project\Macro_cfg_MTK.h \[1.1\] AUDIO, TONE
 Save:node\C\project\Macro_cfg_MTK.h \[1.2\] //PB
 Save:node\C\project\Macro_cfg_MTK.h \[1.3\] //SMS
 Save:node\C\project\Macro_cfg_MTK.h \[1.4\] //MMS
@@ -27,7 +16,7 @@ Save:node\C\project\Macro_cfg_MTK.h \[1.11\]
 Save:node\C\project\Macro_cfg_MTK.h \[1.12\] 
 //
 Save:node\C\project\Macro_cfg_MTK.h \[2.1\] //IM
-Save:node\C\project\Macro_cfg_MTK.h \[2.2\] //DTMF
+Save:node\C\project\Macro_cfg_MTK.h \[2.2\] DTMF, Dial
 Save:node\C\project\Macro_cfg_MTK.h \[2.3\] 电子保卡
 Save:node\C\project\Macro_cfg_MTK.h \[2.4\] SCREENSAVER
 Save:node\C\project\Macro_cfg_MTK.h \[2.5\] //CAMERA
@@ -52,8 +41,9 @@ Save:node\C\project\Macro_cfg_MTK.h \[2.20\]
 
 
 
-[1.1] 
-
+[1.1] AUDIO, TONE
+// 回声测试
+#COM_DEFS += __ECHO_TO_SPEAKER__				# 回声测试从喇叭输出
 
 
 
@@ -201,7 +191,14 @@ UART3_SUPPORT = FALSE
 [2.1] 
 
 
-[2.2] 
+[2.2] DTMF, Dial
+// 
+features:
+#define CFG_MMI_DIALER_SEARCH	(__ON__)
+#define CFG_MMI_DIALER_SLIM	(__OFF__)
+mk:
+COM_DEFS += __MMI_DIAL_SEARCH_STYLE_MODIFY__
+
 
 
 [2.3] 电子保卡
@@ -222,7 +219,11 @@ plutommi\mmi\Setting\SettingRes\ScreenSaver.res NVRAM_SCREENSAVER_STATUS
 plutommi\mmi\Setting\SettingRes\ScreenSaver.res RESTORE_DEFAULT_SCREENSAVER_STATUS
 plutommi\mmi\Setting\SettingRes\ScreenSaver.res NVRAM_CURRENT_SCREENSVER_ID
 plutommi\mmi\Setting\SettingRes\ScreenSaver.res RESTORE_DEFAULT_CURRENT_SCREENSVER_ID
+//
 
+//
+#COM_DEFS+= __IDLE_LOCK_SHOW_TIME_NEW_STYLE__
+#COM_DEFS += __MMI_LOCK_SCR_BH_STYLE__
 
 
 [2.5] 
@@ -250,6 +251,7 @@ make/K220_Y01A_MGUO_GSM.mak CUSTOMER_APPLICATION
 
 
 [2.9] 
+
 
 
 [2.10] 
@@ -359,7 +361,7 @@ build:log\ckSysDrv.log Cluster^Size^(Bytes) 	看剩余空间，nv大小
 build:log\resgen_mtk_resgenerator_make.log		res添加头文件
 build:log\resgen_xml_preprocess.log Error:
 build:log\FileSystemConfig.log  Error:^Shortage
-build:log\ckImgSize.log Error: $The^Boundary^of^VIVA  查看ROM空间
+build:log\ckImgSize.log  file^system  查看ROM空间
 //The Boundary of VIVA bin				 = 3883008	bytes		#可以修改单位 8*512=4096
 //Actual VIVA End Address 				 = 3741620	bytes
 //============================================================

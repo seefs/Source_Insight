@@ -1,7 +1,4 @@
 
-基础路径设置:
-patchPath = Save:\..\patch\UIS8910_git
-patch:\\
 
 //目录:
 // 1. constant

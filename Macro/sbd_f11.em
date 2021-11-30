@@ -324,7 +324,7 @@ macro NoteHander(hbuf, cNum, prompt)
 			isCmd = 8
 			
 		//type1:  head, [path], str1, str2
-		else if(prompt == 0 && (noteCmd == "open"  || noteCmd == "test" || noteCmd == "setPath" || noteCmd == "setProPath" || noteCmd == "sethistory"
+		else if(prompt == 0 && (noteCmd == "open"  || noteCmd == "test"
 			 || noteCmd == "cp" || noteCmd == "cprow" || noteCmd == "RAR"))
 			isCmd = 1
 			
@@ -337,7 +337,7 @@ macro NoteHander(hbuf, cNum, prompt)
 			isCmd = 2
 			
 		//type3: head, [path, str1, str2]
-		else if(prompt == 0 && (noteCmd == "set"  || noteCmd == "vc" || noteCmd == "vs08"))
+		else if(prompt == 0 && (noteCmd == "vc" || noteCmd == "vs08"))
 			isCmd = 3
 			
 		//type4: head, path, [str1, str2]
@@ -566,7 +566,7 @@ macro NoteHander(hbuf, cNum, prompt)
 	}
 		
 	// parse "{cur}"
-	if(prompt == 0 && isCmd == 0)
+	if(prompt == 0 && (isCmd == 0 || isCmd == 2))
 	{
 		tmpPath = ReAllKeyHead(hbuf, curPath)
 		//test: 0.open, 1.cur, 2,close.
@@ -597,10 +597,6 @@ macro NoteHander(hbuf, cNum, prompt)
 	//xmake:   不运行cmd命令, 只复制
 	//vc:      
 	//vs08:    
-	//set: 
-	//setPath: 
-	//setProPath: 
-	//sethistory: 
 	//cp:      复制文件
 	//cd:tmp: git ...
 	//cd_i:tmp: git ...
@@ -704,26 +700,7 @@ macro NoteHander(hbuf, cNum, prompt)
 		pmsg = "Set Ok : " # CharFromKey(13) # lnVar
 		msg(pmsg)
 	}
-	//type3:
-	else if(noteCmd == "set")
-	{
-		//curPath:除set以外的str
-		SetNoteHander(hbuf, curPath, cur_row, 0)
-	}
 	//type1:
-	else if(noteCmd == "setPath")
-	{
-		//开始路径列表替换
-		SetPathNoteHander(hbuf, cmdP1, cur_row)
-	}
-	else if(noteCmd == "setProPath")
-	{
-		msg("setPath的替换列表, 暂时不单独替换")
-	}
-	else if(noteCmd == "sethistory")
-	{
-		SetNoteHistory(hbuf)
-	}
 	else if(noteCmd == "cp")
 	{
 		//cp
@@ -895,281 +872,6 @@ macro OpenFileHander(hbuf, curPath, cur_row, noteWord, cNum, prompt)
 	return 0
 }
 
-//旧列表替换为新列表,空格分开
-macro SetNoteHander(hbuf, lastCmd, cur_row, cNum)
-{
-	//从历史路径中设置, 先关闭; 更新下一个文件 
-	if(IsFileName(hbuf, "Macro_Set_Note.h"))
-	{
-		close
-		hbuf = GetCurrentBuf()
-		if(IsFileName(hbuf, "Macro_Note_"))
-			stop
-		cNum = 0
-	}
-	else
-	{
-		if(cNum != 6)
-		{
-			//save
-			SaveNoteHistory("set " # lastCmd)
-		}
-	}
-	
-	//msg("-" # lastCmd # "-")
-	var lastBaseCmd
-	lastBaseCmd = ReadMode(getNoteHanderSet(0))
-	if(lastBaseCmd == lastCmd)
-	{
-		msg("新旧文件名相同,   不替换: " # CharFromKey(13) # lastCmd)
-		stop
-	}
-	if(cNum == 6)
-		msg("设置默认: " # CharFromKey(13) # "旧:    " # lastBaseCmd # CharFromKey(13) # "新:     " # lastCmd)
-	else
-		msg("开始替换: " # CharFromKey(13) # "旧:    " # lastBaseCmd # CharFromKey(13) # "新:     " # lastCmd)
-		
-	SaveMode(getNoteHanderSet(0), "@lastCmd@")
-	if(cNum == 6)
-		stop
-	
-	{
-		//结束标志
-		noteWord = "setEnd:"
-		mSel = SearchInBuf(hbuf, "@noteWord@", 0, 0, 0, 0, 0)
-		if (mSel != "")
-		{
-			cur_row = mSel.lnFirst
-		}
-		else
-		{
-			cur_row = cur_row + 8
-		}
-	}
-	
-	len = strlen(lastCmd)
-	lenB = strlen(lastBaseCmd)
-	if (0 == len || 0 == lenB)
-		stop
-	i = 0
-	iB = 0
-	while (1)
-	{
-		//查新旧列表的替换字符
-		next = NextWS(lastCmd, i)
-		nextB = NextWS(lastBaseCmd, iB)
-//		msg("-" # lastBaseCmd # "-" # next # "-" # nextB # "-")
-		if (next == "X" || nextB == "X")
-		{
-			//最后一次替换
-			if (next == "X")
-				next = len
-			if (nextB == "X")
-				nextB = lenB
-			noteWord = strmid(lastCmd, i, next)
-			noteWordB = strmid(lastBaseCmd, iB, nextB)
-			index = FindString( noteWord, noteWordB )
-			if(index == "X")
-				DoReplaceRow(hbuf, noteWordB, noteWord, cur_row + 1, FALSE)
-			SaveBuf(hbuf) //需求多次保存, 否则会有问题
-			break
-		}
-		else
-		{
-			noteWord = strmid(lastCmd, i, next)
-			noteWordB = strmid(lastBaseCmd, iB, nextB)
-			index = FindString( noteWord, noteWordB )
-			if(index == "X")
-				DoReplaceRow(hbuf, noteWordB, noteWord, cur_row + 1, FALSE)
-			SaveBuf(hbuf) //需求多次保存, 否则会有问题
-		}
-		start = StartWS( lastCmd, next + 1 )
-		startB = StartWS( lastBaseCmd, nextB + 1 )
-		i = start
-		iB = startB
-	}
-}
-
-//旧列表替换为新列表,空格分开
-macro SetPathNoteHander(hbuf, cmdStr, cur_row)
-{
-	TestMsg(cmdStr, 2)
-	var setItem
-	
-	{
-		//结束标志
-		mKey = "setEnd:"
-		mSel = SearchInBuf(hbuf, "@mKey@", 0, 0, 0, 0, 0)
-		if (mSel != "")
-		{
-			cur_row = mSel.lnFirst
-		}
-		else
-		{
-			cur_row = cur_row + 8
-		}
-	}
-	{
-		//项目路径 (合并到以下替换内容)
-		mKey = "CurProPath"
-		curProPath = getMacroValue(hbuf, mKey, 1)
-	}
-
-	//搜索替换列表, 单项可以注释掉
-	mKey = "^" # "setProPath"
-	lenKey = strlen("setProPath")
-	mSel = SearchInBuf(hbuf, mKey, 0, 0, FALSE, TRUE, FALSE)
-	nTxt = ""
-
-	setItem = ""
-	while (mSel != "")
-	{
-		line = GetBufLine(hbuf, mSel.lnFirst )
-		ilen = strlen(line)
-
-		//下一个非空
-		start = StartWS(line, lenKey)
-		if (start != "X")
-		{
-			setItem = strmid(line, start, strlen(line))
-			lnMar = GetLineMacro(setItem)
-			lnVar = curProPath # "\\\\" # GetLineValue(setItem)
-			
-			if (cmdStr == "new")
-			{
-			 	//路径包括正反斜杠
-				lnMar = "^" # ReplaceWord(lnMar, "\\\\", "[\\\\/]")
-				
-			 	//替换内容去掉一个反斜杠
-				lnVar = ReplaceWord(lnVar, "\\\\", "\\")
-				
-				//msg("[" # lnMar # "]" # CharFromKey(13) # "[" # lnVar # "]")
-				
-			 	//isRule = TRUE: 设置参数列表从行首替换;否则会替换掉设置列表
-				DoReplaceRow(hbuf, lnMar, lnVar, cur_row + 1, TRUE)
-				//需求多次保存, 否则会有问题
-				SaveBuf(hbuf)
-			}
-			else if (cmdStr == "old")
-			{
-			 	//路径包括正反斜杠
-				lnVar = "^" # ReplaceWord(lnVar, "\\\\", "[\\\\/]")
-				
-			 	//替换内容去掉一个反斜杠
-				lnMar = ReplaceWord(lnMar, "\\\\", "\\")
-				
-				//msg("[" # lnVar # "]" # CharFromKey(13) # "[" # lnMar # "]")
-				
-			 	//isRule = TRUE: 设置参数列表从行首替换;否则会替换掉设置列表
-				DoReplaceRow(hbuf, lnVar, lnMar, cur_row + 1, TRUE)
-				//需求多次保存, 否则会有问题
-				SaveBuf(hbuf)
-			}
-		}
-		
-		mSel = SearchInBuf(hbuf, mKey, mSel.lnLast+1, 0, FALSE, TRUE, FALSE)
-	}
-
-}
-
-macro SetNoteHistory(hbuf)
-{
-	bft = getBft(3)
-//		if(bft == "")
-//			stop
-
-	mBuf = OpenCache(getSetPath(0) # "\\Macro_Set_Note.h")
-	mKey = bft # ":"
-	mSel = SearchInBuf(mBuf, mKey, 0, 0, FALSE, FALSE, FALSE)
-	len = strlen(mKey)
-	nTxt = "Macro_Set_Note.h" # " "  # bft # " :" # CharFromKey(13)
-	count = 1
-
-	while (mSel != "")
-	{
-		line = GetBufLine(mBuf, mSel.lnFirst )
-		ilen = strlen(line)
-			
-		nTxt   = nTxt # count # "." # strmid(line, len, ilen) # CharFromKey(13)
-		count = count + 1
-		
-		mSel = SearchInBuf(mBuf, mKey, mSel.lnLast+1, 0, 0, 0, 0)
-	}
-	CloseBuf(mBuf)
-	
-	if(count-1<1)
-		stop
-		
-	msg(nTxt)
-	key = GetKeyExt(count - 1)
-	if (key>0)
-	{
-		curSet = GetNoteHistory(bft, key)
-
-		//insert line
-		sel = MGetWndSel(hbuf)
-		InsBufLine(hbuf, sel.lnFirst + 1, "@curSet@")
-		SaveBuf(hbuf)
-	}
-}
-
-macro GetNoteHistory(bft, mIndex)
-{
-	mBuf = OpenCache(getSetPath(0) # "\\Macro_Set_Note.h")
-	mKey = bft # ":"
-	mSel = SearchInBuf(mBuf, mKey, 0, 0, FALSE, FALSE, FALSE)
-	len = strlen(mKey)
-	
-	index = 1
-	curItem = ""
-
-	while (mSel != "")
-	{
-		if(index == mIndex)
-		{
-			line = GetBufLine(mBuf, mSel.lnFirst )
-			ilen = strlen(line)
-			
-			curItem = strmid(line, len, ilen) # CharFromKey(13)
-			break
-		}
-		
-		mSel = SearchInBuf(mBuf, mKey, mSel.lnLast+1, 0, 0, 0, 0)
-		index = index + 1
-	}
-	CloseBuf(mBuf)
-	return curItem
-}
-
-macro SaveNoteHistory(cur_line)
-{
-	bft = getBft(3)
-//		if(bft == "")
-//			stop
-	
-	mBuf = OpenCache(getSetPath(0) # "\\Macro_Set_Note.h")
-	
-	mKey = cur_line //set^aa^bb^cc
-	mSel = SearchInBuf(mBuf, mKey, 0, 0, FALSE, FALSE, FALSE)
-	if (mSel == "")
-	{
-		mProKey = bft # "-note-set" //mtk-note-set
-		mProSel = SearchInBuf(mBuf, mProKey, 0, 0, FALSE, FALSE, FALSE)
-		if (mProSel == "")
-		{
-			AppendBufLine(mBuf, mProKey)
-			AppendBufLine(mBuf, mKey)
-		}
-		else
-		{
-			InsBufLine(mBuf, mProSel.lnFirst + 1, "@mKey@")
-		}
-		SaveBuf(mBuf)
-	}
-	
-	CloseBuf(mBuf)
-}
-	
 macro NoteCopyFile(hbuf, cmdP1, cmdP2, cNum)
 {
 	cmdP1 = ReAllTransHead(hbuf, cmdP1)

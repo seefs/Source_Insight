@@ -15,13 +15,13 @@ b
 SE039_SXJY_D700_VORTEX_F3
 
 ### 18.BCompare target(3344表示33与44互相比较)
-6860
+6070
 
 ### 21.tree  (未使用)
 project
 
 ### 24.SR Mode  (CTRL + D : search head 删除相同头部的行)
-project_
+resource
 
 ### 27.last command (未使用)
 CtrlW
@@ -51,13 +51,13 @@ IM
 E:\6531E_20180113\tmp
 
 ### 54.note row(第2次打开同一行, F11关闭note会修改这里)
-222
+30
 
-### 57.Note Hander Set(笔记路径, 替换当前path, MTK)
-UIS8910_ROM_16MB_DS_USER
+### 57.
+
 	
-### 60.Note Hander Set(笔记路径, 替换当前path, MTK)--bak
-XG05_KM_Q2407_SP5000_F2 M103_KEMAN gprs
+### 60.
+
 
 ### 63.Note Save Base(笔记路径, 替换当前path, android)
 E:\Desktop\SGIT\Git_NB
@@ -66,10 +66,10 @@ E:\Desktop\SGIT\Git_NB
 2
 
 ### 69.default project path
-D:\_SI4.0\8910.si4project\8910.SearchResults
+D:\Save\SI\node\Simple_CTRL_K.h
 
 ### 72.default project path
-0
+60
 
 ### 75.show python help(0 or 1)
 0

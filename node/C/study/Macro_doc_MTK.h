@@ -1,8 +1,4 @@
 
-基础路径设置:
-//basePath = 
-
-/***********************************************************************/
 
 //目录[Num][Ca]:
 // 1. 
@@ -13,7 +9,7 @@ Save:node\C\study\Macro_doc_MTK.h \[1.4\] //移配置
 Save:node\C\study\Macro_doc_MTK.h \[1.5\] //说明文档
 Save:node\C\study\Macro_doc_MTK.h \[1.6\] //Win数据
 Save:node\C\study\Macro_doc_MTK.h \[1.7\] //SALE统计
-Save:node\C\study\Macro_doc_MTK.h \[1.8\] 
+Save:node\C\study\Macro_doc_MTK.h \[1.8\] tihu
 Save:node\C\study\Macro_doc_MTK.h \[1.9\] //test code-------------
 Save:node\C\study\Macro_doc_MTK.h \[1.10\] //ImageNote
 Save:node\C\study\Macro_doc_MTK.h \[1.11\] //TextNote
@@ -61,8 +57,11 @@ mre\sdkinc\vmchset_sdk.h PUNJABI
 
 
 
-[1.8] 
-
+[1.8] tihu
+//
+make/{cur}_GSM.mak  HERO_ENGINE_SUPPORT
+//
+make/{cur}_GSM.mak  TIHO_TTS_SUPPORT
 
 
 
