@@ -56,9 +56,9 @@ Save:Help\Macro_Note_Test.h \[2.8\]
 Save:Help\Macro_Note_Test.h \[2.9\] 
 Save:Help\Macro_Note_Test.h \[2.10\] 
 //3.f11--Test
-Save:Help\Macro_Note_Test.h \[3.1\] cmd系列-----------1类
-Save:Help\Macro_Note_Test.h \[3.2\] open(exe)
-Save:Help\Macro_Note_Test.h \[3.3\] 
+Save:Help\Macro_Note_Test.h \[3.1\] cmd系列-----------7类
+Save:Help\Macro_Note_Test.h \[3.2\] 
+Save:Help\Macro_Note_Test.h \[3.3\] open(exe)---------1类
 Save:Help\Macro_Note_Test.h \[3.4\] 
 Save:Help\Macro_Note_Test.h \[3.5\] setPath
 Save:Help\Macro_Note_Test.h \[3.6\] setProPath
@@ -76,7 +76,7 @@ Save:Help\Macro_Note_Test.h \[3.17\]
 Save:Help\Macro_Note_Test.h \[3.18\] 
 Save:Help\Macro_Note_Test.h \[3.19\] git
 Save:Help\Macro_Note_Test.h \[3.20\] python-----------4类
-Save:Help\Macro_Note_Test.h \[3.21\] python_w
+Save:Help\Macro_Note_Test.h \[3.21\] str
 Save:Help\Macro_Note_Test.h \[3.22\] Save
 Save:Help\Macro_Note_Test.h \[3.23\] ...--------------5类
 Save:Help\Macro_Note_Test.h \[3.24\] file
@@ -533,7 +533,11 @@ cmd: ping dl.google.com
 
 
 
-[3.2] open(exe)
+[3.2] 
+
+
+
+[3.3] open(exe)
 //打开
 open: C:\Program^Files^(x86)\Tencent\QQ\Bin\QQScLauncher.exe
 
@@ -548,10 +552,6 @@ open:D:\Desktop\工具\FlashTool_v5.1548.00\Flash_tool_Beta.exe
 open:plutommi\Customer\STMTView.exe
 //TRACE:
 open D:\ProgramDownTool\3.1304.00_Catcher\Catcher.exe
-
-
-
-[3.3] 
 
 
 [3.4] 
@@ -679,7 +679,19 @@ vs08:MoDIS_VC9\MoDIS.sln
 [3.18] 
 
 
-[3.19] 
+[3.19] git
+//
+tmpPath = D:\project\C\tmp
+tmp:\\
+tmpCPath = D:\project\C\
+tmpC:\\
+//
+cd:tmp:      git clone https://github.com/twardoch/ttfdiet
+cd:tmpC:tmp\ git clone https://github.com/twardoch/ttfdiet
+cd:tmpC:tmp  git clone https://github.com/twardoch/ttfdiet
+cd:tmp       git clone https://github.com/twardoch/ttfdiet
+
+
 
 
 [3.20] python
@@ -688,28 +700,35 @@ Save:Macro\sbd_f11.em	"python"
 //python
 // 设置双路径
 basePath = D:\project\NLP
-toolPath = Save:node\Pythons
 base:\\
+toolPath = Save:node\Pythons
 tool:\\
 
 //1) 第1个路径(base + filename)
 nlp_block\_layer.py
+python_w nlp_block\_layer.py
+//python   nlp_block\_layer.py
 
 //2) 第2个路径(tool + filename)
-tool:xiaoshuo\test_split.py
-
-//3) 第1个路径(base + filename)
-python_w nlp_block\_layer.py
-
-//4) 第2个路径(tool + filename)
-python_w tool:xiaoshuo\test_split.py
-
-//5) 同上
-python_w:tool xiaoshuo\test_split.py
+tool:py_test\test_time.py
+python_w tool:py_test\test_time.py
+python_w:tool py_test\test_time.py
+python_w:tool: py_test\test_time.py
 
 
 
-[3.21] 
+
+
+
+[3.21] str
+# 1) replace
+//	
+replace a123456 12 ccc
+replace tmpC:tmp\ tmpC: D:\project\C\
+replace tmpC:tmp  tmpC: D:\project\C\
+replace ^^^sss^^^ddd^eee^^^   ^  =
+replace a\\\\bb\\cc\\dd\\\\   \  =
+
 
 
 [3.22] 
@@ -728,7 +747,7 @@ root->F
 
 [3.24] file
 #   --Test文件
-基础路径设置:
+//基础路径设置:
 basePath = F:\6261D_11C_V33
 //basePath = D:\SVN
 
@@ -754,51 +773,36 @@ FileSame:Save:Help\Test\Macro_
 
 //1) 基础路径设置:
 //basePath = Save:node\Pythons
+base:\\
 
-// 存在basePath, 用 basePath + cur
+// 1.1.存在basePath, 用 basePath + curPath
 py_test\file_read_a.txt
 py_test\file_read_b.txt
 
-// 不存在basePath, 用 project path + cur
+// 1.2.不存在basePath, 用 project path + curPath
 py_test\file_read_a.txt
 
 
-//2) Project路径--Test
-ProjectPath = Save:node\Pythons
-// ok
-Project:py_test\file_read_a.txt
-// err
-Project2:py_test\file_read_b.txt
-Project: py_test\file_read_a.txt
-
-
-//3) Tool路径--Test
-Tool2Path = Save:node\Pythons
-// ok,Tool2=...
-Tool2:py_test\
-// err,Tool=...
-Tool:py_test\
-
-
-//3) Data路径--Test
-DataPath = Save:node\Pythons
-// ok
-Data:py_test\file_read_a.txt
-// err
-Data2:py_test\file_read_b.txt
-
-
-//4) XXX路径--Test
+//2) XXX路径--Test
 XXXPath = Save:node\Pythons\
+XXX:\\
 // ok
 XXX:install\hello.py
 // err
 YYY:install\hello.py
 
-//5) 搜索路径下文件
+
+//3) 搜索路径下文件
 //搜索路径
 AsFile:Save:Help\
-	
+
+
+//4) {cur}
+//搜索路径
+install\hello{cur}.py
+plutommi\Customer\CustResource\{cur}_MMI\
+make/{cur}_GSM.mak  XX = A
+
 
 
 [3.26] 

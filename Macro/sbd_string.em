@@ -433,8 +433,6 @@ macro ReplaceWord(noteWord, search_str, replace_str)
 	len = strlen( noteWord )
 	lenStep = strlen(search_str)
 
-	//test1:  "^^^sss^^^ddd^eee^^^"
-	//test2:  "a\\\\bb\\cc\\dd\\\\"
 	cp = 0
 	last_s = 0
 	
@@ -442,23 +440,34 @@ macro ReplaceWord(noteWord, search_str, replace_str)
 	retS = ""
 	retM = ""
 	retE = ""
-	//
-	//msg("len-" # strlen( noteWord ) # "--" # strlen( search_str ) # "--" # strlen( replace_str ))
 	while( cp < len - lenStep + 1)
 	{
-		//msg(strmid(noteWord, cp, cp + lenStep) # "==" # search_str)
-		//msg(cp # "x" # lenStep)
 		if(strmid(noteWord, cp, cp + lenStep) == search_str)
 		{
+			tmpcp = cp
 			retM = retS # replace_str
 			retS = retM
 			last_s = cp + lenStep
 			cp = cp + lenStep
 			if( cp < len - 1)
-				retE = retM # strmid(noteWord, cp, len - 1)
+				retE = retM # strmid(noteWord, cp, len)
 			else
 				retE = retM
-			//msg("1- " # retS # "--" # retE)
+//			if("tmpC:tmp" == noteWord || "tmpC:tmp\\" == noteWord)
+//			{
+//				//test: 0.open, 1.cur, 2,close.
+//				TestMsg("==ReplaceWord==1" # CharFromKey(13)
+//					  # "srcPath" # "--" # noteWord # "--" # CharFromKey(13)
+//					  # "cmdP1" # "--" # search_str # "--" # CharFromKey(13)
+//					  # "cmdP2" # "--" # replace_str # "--" # CharFromKey(13)
+//					  # CharFromKey(13)
+//					  # "i" # "--" # tmpcp # "-" # cp # "--" # CharFromKey(13)
+//					  # "isConn" # "--" # (len - 1) # "--" # CharFromKey(13)
+//					  # "strleft" # "--" # retS # "--" # CharFromKey(13)
+//					  # "strMid" # "---" # strmid(noteWord, cp, len - 1) # "--" # CharFromKey(13)
+//					  # "retE" # "---" # retE # "--" # CharFromKey(13)
+//						, 0)
+//			}
 		}
 		else
 		{
@@ -468,8 +477,21 @@ macro ReplaceWord(noteWord, search_str, replace_str)
 			retS = retM # strmid(noteWord, last_s, cp + 1)
 			retE = retM # strmid(noteWord, last_s, cp + lenStep)
 			//last_w = cp + 1
+			tmpcp = cp
 			cp = cp + 1
-			//msg("2- " # retS # "--" # retE)
+//			if("tmpC:tmp" == noteWord || "tmpC:tmp\\" == noteWord)
+//			{
+//				//test: 0.open, 1.cur, 2,close.
+//				TestMsg("==ReplaceWord==2" # CharFromKey(13)
+//					  # "srcPath" # CharFromKey(13) # "--" # noteWord # "--" # CharFromKey(13)
+//					  # "cmdP1" # CharFromKey(13) # "--" # search_str # "--" # CharFromKey(13)
+//					  # "cmdP2" # CharFromKey(13) # "--" # replace_str # "--" # CharFromKey(13)
+//					  # CharFromKey(13)
+//					  # "i" # "--" # tmpcp # "-" # cp # "--" # CharFromKey(13)
+//					  # "retS" # CharFromKey(13) # "--" # retS # "--" # CharFromKey(13)
+//					  # "retE" # CharFromKey(13) # "--" # retE # "--" # CharFromKey(13)
+//						, 1)
+//			}
 		}
 	}
 	return retE

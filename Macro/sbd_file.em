@@ -25,6 +25,21 @@ macro GetCfgBuf(mode)
 	
 	return setBuf
 }
+//获取公共路径BUF
+macro GetPubPathBuf(hbuf)
+{
+	baseName = getBasePath(hbuf)
+	//获取当前工程分类，区分处理
+	n = getBaseType(baseName)
+	if(n == 80 || n == 90)
+	{
+		SetName = getSetPath(0) # "\\Macro_Set_Path_mtk.h"
+		setBuf = OpenCache(SetName)
+		return setBuf
+	}
+	
+	return hNil
+}
 
 //行号为双数，间隔一行作为备注信息
 macro getToolsRow(0)		{	return 12	}
@@ -872,7 +887,7 @@ macro GetTransFileName(hbuf, fName, cNum)
 	return fName
 }
 
-macro GetHeadIndex(hbuf, cur_line)
+macro GetHeadIndex(cur_line)
 {
 	index = FindString(cur_line, " ")
 	//删除后面部分
@@ -904,14 +919,29 @@ macro IsTransHead(hbuf, fHead)
 		return 0
 	}
 	
+	//check cur file
 	headPath = getMacroValue(hbuf, fHead # "Path", 1)
 	if(headPath != ""){
+		//tag:1 ==> save pub path file
+		//SaveMode(getNoteBasePath(0), "@lnVar@")
 		return 1
 	}
+	
+	//check pub path file
+	pathBuf = GetPubPathBuf(hbuf)
+	//msg("pathBuf " # pathBuf)
+	if(pathBuf != hNil){
+		headPath = getMacroValue(pathBuf, fHead # "Path", 1)
+		if(headPath != ""){
+			return 2
+		}
+	}
+	
 	return 0
 }
 macro ReTransHead(hbuf, fHead, curPath)
 {
+	srcPath = curPath
 	// curPath----base:
 	if(fHead != ""){
 		headPath = getMacroValue(hbuf, fHead # "Path", 1)
@@ -930,14 +960,46 @@ macro ReTransHead(hbuf, fHead, curPath)
 			curPath = ReplaceWord(curPath, fHead # ":", headPath # "\\")
 			
 			//for each
-			next = GetHeadIndex(hbuf, curPath)
+			next = GetHeadIndex(curPath)
 			if (next != "X")
 			{
 				// nextHead----base
 				nextHead = strmid(curPath, 0, next)
-				if(IsTransHead(hbuf, nextHead)==1) {
+				if(IsTransHead(hbuf, nextHead)>=1) {
 					curPath = ReTransHead(hbuf, nextHead, curPath)
 				}
+			}
+			//test: 0.open, 1.cur, 2,close.
+//			TestMsg("==ReTransHead==" # CharFromKey(13)
+//				  # "srcPath" # CharFromKey(13) # "--" # srcPath # "--" # CharFromKey(13)
+//				  # "cmdP1" # CharFromKey(13) # "--" # fHead # ":--" # CharFromKey(13)
+//				  # "cmdP2" # CharFromKey(13) # "--" # headPath # "\\--" # CharFromKey(13)
+//				  # "curPath" # CharFromKey(13) # "--" # curPath # "--" # CharFromKey(13)
+//				  # "next" # CharFromKey(13) # "--" # next # "--" # CharFromKey(13)
+//				  # "nextHead" # CharFromKey(13) # "--" # nextHead # "--" # CharFromKey(13)
+//				  # "IsHead" # CharFromKey(13) # "--" # IsTransHead(hbuf, nextHead) # "--" # CharFromKey(13)
+//					, 2)
+			return curPath
+		}
+		
+		pathBuf = GetPubPathBuf(hbuf)
+		if(pathBuf != hNil){
+			headPath = getMacroValue(pathBuf, fHead # "Path", 1)
+			if(headPath != ""){
+				curPath = ReplaceWord(curPath, fHead # ":", headPath # "\\")
+				
+				//for each
+				next = GetHeadIndex(curPath)
+				if (next != "X")
+				{
+					// nextHead----base
+					nextHead = strmid(curPath, 0, next)
+					// 不区分1还是2
+					if(IsTransHead(hbuf, nextHead)>=1) {
+						curPath = ReTransHead(hbuf, nextHead, curPath)
+					}
+				}
+				return curPath
 			}
 		}
 	}
@@ -948,11 +1010,11 @@ macro ReAllTransHead(hbuf, curPath)
 	len = strlen(curPath)
 	// 第1个空格或冒号的位置
 	firstS = 0
-	firstE = GetHeadIndex(hbuf, curPath)
+	firstE = GetHeadIndex(curPath)
 	if (firstE != "X")
 	{
 		noteCmd = strmid(curPath, 0, firstE)
-		if(IsTransHead(hbuf, noteCmd)==1)
+		if(IsTransHead(hbuf, noteCmd)>=1)
 		{
 			nextS     = GetTransCmdS2(curPath, firstE + 1, len)
 			firstPath = strmid(curPath, 0, nextS)
@@ -1052,6 +1114,94 @@ macro GetTransRootDir(fName)
 	{
 		return strmid(fName, 0, index + 1)
 	}
+}
+macro IsKeySetHead(hbuf, fHead)
+{
+	//不能带有*号，否则会无限替换下去
+	index = FindString(fHead, "*")
+	if(index != "X"){
+		return 0
+	}
+	
+	//get new Key
+	newKeyVal = getMacroValue(hbuf, fHead # "Key", 1)
+	if(newKeyVal != ""){
+		return 1
+	}
+	
+	return 0
+}
+macro getKeyHead(hbuf, fHead)
+{
+	//不能带有*号，否则会无限替换下去
+	index = FindString(fHead, "*")
+	if(index != "X"){
+		return ""
+	}
+	
+	//get cfg file
+	pathBuf = GetPubPathBuf(hbuf)
+	
+	//get new Key
+	keyVal = getMacroValue(pathBuf, fHead # "Key", 1)
+	if(keyVal != ""){
+		return keyVal
+	}
+	
+	return ""
+}
+macro SaveKeyHead(hbuf, fHead)
+{
+	//get cfg file
+	pathBuf = GetPubPathBuf(hbuf)
+	//msg("pathBuf " # pathBuf)
+	if(pathBuf != hNil){
+		//get new Key
+		newKeyVal = getMacroValue(hbuf, fHead # "Key", 1)
+		
+		//get old Key
+		oldKeyVal = ""
+		oldKeyVal = getMacroValue(pathBuf, fHead # "Key", 1)
+		pKey = fHead # "Key"
+		if(oldKeyVal != ""){
+			//replace line
+			setMacroValue(pathBuf, pKey, 1, newKeyVal)
+		}
+		else{
+			//append line
+			AppendBufLine(pathBuf, fHead # "Key = " # newKeyVal)
+			AppendBufLine(pathBuf, "")
+			SaveBuf(pathBuf)
+		}
+		return 1
+	}
+	
+	return 0
+}
+macro ReAllKeyHead(hbuf, curPath)
+{
+	len = strlen(curPath)
+	firstS = FindString(curPath, "{")
+	if (firstS == "X")
+		return curPath
+		
+	firstE = FindString(curPath, "}")
+	if (firstE == "X")
+		return curPath
+		
+	if (firstS > firstE)
+		return curPath
+		
+	pathMid = strmid(curPath, firstS + 1, firstE)
+	keyVal = getKeyHead(hbuf, pathMid)
+	if (keyVal != "")
+	{
+		pathS  = strmid(curPath, 0, firstS)
+		pathE  = strmid(curPath, firstE + 1, len)
+		pathE  = ReAllKeyHead(hbuf, pathE)
+		return pathS # keyVal # pathE
+	}
+	return curPath
 }
 /***********************************************************************/
 /************************** select  **********************************/
@@ -1220,7 +1370,7 @@ macro ScrollCursor(mSel)
 		ScrollWndToLine(hwnd, 0)
 	SetWndSel(hwnd, mSel)
 }
-macro ScrollCursorRow(row1, row2)
+macro ScrollCursorRow(hbuf, row1, row2)
 {
 	hwnd = GetCurrentWnd()
 	if(row1>20)
@@ -1229,7 +1379,7 @@ macro ScrollCursorRow(row1, row2)
 		ScrollWndToLine(hwnd, row1)
 	if(row1 + 1 == row2)
 	{
-		mLine = GetBufLine(hwnd, row1)
+		mLine = GetBufLine(hbuf, row1)
 		mRowCnt = strlen(mLine)
 		mSel = "lnFirst=\"@row1@\";ichFirst=\"0\";lnLast=\"@row1@\";ichLim=\"@mRowCnt@\";fExtended=\"1\";fRect=\"0\""
 	}

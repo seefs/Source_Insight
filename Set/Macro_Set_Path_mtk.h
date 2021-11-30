@@ -1,22 +1,21 @@
 ###
 ### pub path
 ### 
-### 自动增加新path，或者替换旧path
+### 1.暂时只能手动修改
+### 2.自动增加，待改
+### 3.自动替换，待改
 ###
 
 
-imagesPath = plutommi\Customer\Images\K220_L12_MGUO\
+imagesPath = plutommi\Customer\Images\K220_V35_WD\
 images:\\
-audioPath = plutommi\Customer\AUDIO\K220_L12_MGUO\
+audioPath = plutommi\Customer\AUDIO\K220_V35_WD\
 audio:\\
-featuresPath = plutommi\Customer\CustResource\F55M_H639D_WELCOME_MMI\
+featuresPath = plutommi\Customer\CustResource\K220_V35_WD_MMI\
 features:\\
 
 
-
-
-
-
+curKey = K220_V35_WD
 
 oldKey = K220_V18_WD
 

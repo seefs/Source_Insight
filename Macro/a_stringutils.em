@@ -146,7 +146,7 @@ macro StartWS( string, first )
 		    break
     }
 
-	if( i == len )
+	if( i >= len )
 		return "X"
 	else
 	    return i

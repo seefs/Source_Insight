@@ -279,7 +279,8 @@ macro NoteHander(hbuf, cNum, prompt)
 	var curPath
 	var lastStr
 	
-	//举例: 第1串字符--命令名称、第2串字符--路径、第3串字符--关键字
+	//举例: 
+	// 1.命令名称 + 2.路径 + 3.关键字 + 4.备注
 	var firstS
 	var firstE
 	var secondS
@@ -290,7 +291,7 @@ macro NoteHander(hbuf, cNum, prompt)
 	var cur_row
 	var isCmd
 	
-	//显示log, 清除上回的记录, 这里清一次就可以了
+	//显示log, 记录清除
 	TestMsg("传X清零", "X")
 	
 	sel = MGetWndSel(hbuf)
@@ -314,42 +315,46 @@ macro NoteHander(hbuf, cNum, prompt)
 
 		//普通文本禁止了和路径无关的操作(prompt)
 		
-		//type6: [0, 1], -, - (priority)
+		//type6: [head, path], str1, str2 (priority)
 		if(IsTransHead(hbuf, noteCmd)>=1)
 			isCmd = 6
 			
-		//type6: [0, 1], -, - (key save)
-		else if(IsKeyHead(hbuf, noteCmd)>=1)
+		//type6: [head, path, str1, str2] (key save)
+		else if(prompt == 0 && IsKeySetHead(hbuf, noteCmd)>=1)
 			isCmd = 8
 			
-		//type1:  -, [1], -, -
+		//type1:  head, [path], str1, str2
 		else if(prompt == 0 && (noteCmd == "open"  || noteCmd == "test" || noteCmd == "setPath" || noteCmd == "setProPath" || noteCmd == "sethistory"
 			 || noteCmd == "cp" || noteCmd == "cprow" || noteCmd == "RAR"))
 			isCmd = 1
+			
+		//type1:  head, [path], str1, str2
+		else if(prompt == 0 && (noteCmd == "replace")
+			isCmd = 9
 
-		//type2: [0, 1, 2, 3] (only copy)
+		//type2: [head, path, str1, str2] (only copy)
 		else if(prompt == 0 && (noteCmd == "make" || noteCmd == "ctmake" || noteCmd == "xmake"))
 			isCmd = 2
 			
-		//type3: -, [1, 2, 3]
+		//type3: head, [path, str1, str2]
 		else if(prompt == 0 && (noteCmd == "set"  || noteCmd == "vc" || noteCmd == "vs08"))
 			isCmd = 3
 			
-		//type4: -, -, [2, 3]
+		//type4: head, path, [str1, str2]
 		else if(prompt == 0 && (noteCmd == "python" || noteCmd == "python_w" || noteCmd == "FileSame" || noteCmd == "AsFile"  || noteCmd == "EcFile"
 			 || noteCmd == "cd" || noteCmd == "cd_i"))
 			isCmd = 4
 			
-		//type7: -, [1, 2, 3]
+		//type7: head, [path, str1, str2]
 		else if(noteCmd == "cmd_f" || noteCmd == "cmd_w" || noteCmd == "cmd_s")
 			isCmd = 7
 			
-		//type5: [0, 1], -, -
+		//type5: [head, path], str1, str2
 		//  add all replace words:
 		else if(noteCmd == "Save" || noteCmd == "App")
 			isCmd = 5
 			
-		//type5: [0, 1], -, -
+		//type5: [head, path], str1, str2
 		else if(prompt == 0 && strlen(noteCmd)==1)
 			isCmd = 5
 			
@@ -361,20 +366,28 @@ macro NoteHander(hbuf, cNum, prompt)
 		
 		if (isCmd == 1)
 			curPath = strmid(cur_line, secondS, secondE)	// head, [path], str1, str2
+		else if (isCmd == 9)
+		{
+			rootPath = strmid(cur_line, secondS, secondE)
+			curPath = strmid(cur_line, thirdS, thirdE)  	// head, [path], str1, str2
+			thirdS  = GetTransCmdS2(cur_line, thirdE + 1, len)
+			thirdE  = GetTransCmdE(cur_line, thirdS,     len)
+		}
 		else if (isCmd == 2)
-			curPath = cur_line						// [head, path, str1, str2]
+			curPath = cur_line						        // [head, path, str1, str2]
 		else if (isCmd == 3)
 		{
 			// 去掉1个head(路径在右)
+			//   --去掉 "vs08"
 			// cur_line--> "vs08:base:MoDIS_VC9\MoDIS.sln"
-			// cur_line--> "     base:MoDIS_VC9\MoDIS.sln"
-			// next2-----> "     base "
-			curPath = strmid(cur_line, secondS, len)	// head, [path, str1, str2]
+			// curPath--->      "base:MoDIS_VC9\MoDIS.sln"
+			// index2---->      "base"
+			curPath = strmid(cur_line, secondS, len)	    // head, [path, str1, str2]
 			index2 = GetHeadIndex(curPath)
 			if (index2 != "X")
 			{
-				// noteCmd2---> "   base "
-				// curPath----> "     ...MoDIS_VC9\MoDIS.sln"
+				// noteCmd2--->    "base"
+				// curPath---->    "...MoDIS_VC9\MoDIS.sln"
 				noteCmd2 = strmid(curPath, 0, index2)
 				if(IsTransHead(hbuf, noteCmd2)>=1)
 					curPath = ReTransHead(hbuf, noteCmd2, curPath)
@@ -383,27 +396,93 @@ macro NoteHander(hbuf, cNum, prompt)
 		else if (isCmd == 4)
 		{
 			// 去掉2个head(路径在左, 右边用简化路径)
-			// cur_line--> "cd:tmp: git clone https://github.com/Rukey7/MvpApp"
-			// cur_line--> "   tmp: git clone https://github.com/Rukey7/MvpApp"
-			// next2-----> "   tmp "
-			curPath = strmid(cur_line, secondS, len)	// head, path, [str1, str2] (路径转换有区别)
+			//   --去掉 "cd:tmp:"
+			//   --str2: "tmp:"
+			//   --str3: "git"
+			// cur_line--> "cd:tmp:xx\ git clone https://github.com/Rukey7/MvpApp"
+			// curPath--->    "tmp:xx\ git clone https://github.com/Rukey7/MvpApp"
+			// secondE--->    "tmp"
+			// 
+			// cur_line--> "python_w tool:xiaoshuo\test_split.py"
+			// curPath--->    "tool:xiaoshuo\test_split.py"
+			// secondE--->    "tool"
+			curPath = strmid(cur_line, secondS, len)	    // head, path, [str1, str2] (路径转换有区别)
 			secondE = GetHeadIndex(curPath)
 			if (secondE != "X")
 			{
-				// noteCmd2---> "   tmp "
-				// rootPath---> "   tmp... "
-				// curPath----> "       git clone https://github.com/Rukey7/MvpApp"
+				// noteCmd2--->    "tmp"
+				// noteCmd2--->    "tool"
 				noteCmd2 = strmid(curPath, 0, secondE)
 				if(IsTransHead(hbuf, noteCmd2)>=1)
 				{
-					rootPath = ReTransHead(hbuf, noteCmd2, noteCmd2 # ":")
-					thirdS   = GetTransCmdS2(cur_line, secondS + secondE + 1, len)
-					curPath  = strmid(cur_line, thirdS, len)
+					// thirdE----->    "tmp:"
+					// thirdE----->    "tmp:xx"
+					// thirdE----->    "tmp"
+					// fourS------>    "git ..."
+					// rootPath--->    "c:\AA"
+					// curPath---->    "git clone https://github.com/Rukey7/MvpApp"
+					// 
+					// thirdE----->    "....py"
+					// fourS------>    ""
+					// rootPath--->    "c:\AA"
+					// curPath---->    "xxx.py"
+					lenP = strlen(curPath)
+					thirdE   = GetTransCmdE(curPath, secondE + 1, lenP)
+					fourS    = GetTransCmdS2(curPath, thirdE + 1, lenP)
+					if(fourS>thirdE)
+					{
+						// cd:tmp:xx\ git xxx    --> 会走这里
+						if(":" == strmid(curPath, secondE, secondE+1))
+						{
+							rootPath = ReTransHead(hbuf, noteCmd2, strmid(curPath, 0, thirdE))
+						}
+						else
+						{
+							rootPath = ReTransHead(hbuf, noteCmd2, strmid(curPath, 0, secondE) # ":")
+						}
+						tmpPath = curPath
+						curPath  = strmid(curPath, fourS, lenP)
+						
+						//test: 0.open, 1.cur, 2,close.
+						TestMsg("--curPath--" # CharFromKey(13) # curPath # CharFromKey(13)
+							  # "--rootPath--" # CharFromKey(13) # rootPath # CharFromKey(13)
+							  # "--noteCmd2--" # CharFromKey(13) # noteCmd2 # CharFromKey(13)
+							  # "--2E--" # CharFromKey(13) # strmid(tmpPath, 0, secondE) # "-" # CharFromKey(13)
+							  # "--3E--" # CharFromKey(13) # strmid(tmpPath, 0, thirdE) # "-" # CharFromKey(13)
+							  # "--4S--" # CharFromKey(13) # strmid(tmpPath, 0, fourS) # "-" # CharFromKey(13)
+							  # "--conn--" # CharFromKey(13) # strmid(tmpPath, secondE, secondE+1) # CharFromKey(13)
+								, 2)
+					}
+					else
+					{
+						if(":" == strmid(curPath, secondE, secondE+1))
+						{
+							// python_w tool:xxx --> 会走这里
+							rootPath = ReTransHead(hbuf, noteCmd2, strmid(curPath, 0, secondE+1))
+						}
+						else
+						{
+							// python_w:tool xxx --> 会走这里
+							rootPath = ReTransHead(hbuf, noteCmd2, strmid(curPath, 0, secondE) # ":")
+						}
+						tmpPath = curPath
+						curPath  = strmid(curPath, secondE+1, thirdE)
+						
+						//test: 0.open, 1.cur, 2,close.
+						TestMsg("--curPath--" # CharFromKey(13) # curPath # CharFromKey(13)
+							  # "--rootPath--" # CharFromKey(13) # rootPath # CharFromKey(13)
+							  # "--noteCmd2--" # CharFromKey(13) # noteCmd2 # CharFromKey(13)
+							  # "--2E--" # CharFromKey(13) # strmid(tmpPath, 0, secondE) # "-" # CharFromKey(13)
+							  # "--3E--" # CharFromKey(13) # strmid(tmpPath, 0, thirdE) # "-" # CharFromKey(13)
+							  # "--4S--" # CharFromKey(13) # strmid(tmpPath, 0, fourS) # "-" # CharFromKey(13)
+							  # "--conn--" # CharFromKey(13) # strmid(tmpPath, secondE, secondE+1) # CharFromKey(13)
+								, 2)
+					}
 				}
 			}
 			else {
-				// python xxx        --> 不会走这里
-				// python_w:tool xxx --> 会走这里
+				// python xxx        --> 会走这里
+				// python_w xxx      --> 会走这里(无路径)
 			}
 			//可能只有 rootPath
 		}
@@ -426,11 +505,11 @@ macro NoteHander(hbuf, cNum, prompt)
 		}
 		else if (isCmd == 8)
 		{
-			curPath = ""                  	    	// [head, path, str1, str2]
+			curPath = ""                  	    	    // [head, path, str1, str2]
 		}
 		else
 		{
-			curPath = noteCmd						// [head], path, str1, str2
+			curPath = noteCmd						    // [head], path, str1, str2
 			noteCmd = ""
 		}
 			
@@ -442,6 +521,10 @@ macro NoteHander(hbuf, cNum, prompt)
 			noteWord = GetTransStr(cur_line, secondS, secondE)
 		}
 		else if (isCmd == 1 || isCmd == 5 || isCmd == 6)
+		{
+			noteWord = GetTransStr(cur_line, thirdS, thirdE)
+		}
+		else if (isCmd == 9)
 		{
 			noteWord = GetTransStr(cur_line, thirdS, thirdE)
 		}
@@ -476,11 +559,34 @@ macro NoteHander(hbuf, cNum, prompt)
 	}
 	else
 	{
+		isCmd = 0
 		curPath = cur_line
 		noteCmd = ""
 		noteWord = ""
 	}
-	TestMsg(isCmd # "," # noteCmd  # "：" # CharFromKey(13) # curPath # CharFromKey(13) # noteWord, 2)
+		
+	// parse "{cur}"
+	if(prompt == 0 && isCmd == 0)
+	{
+		tmpPath = ReAllKeyHead(hbuf, curPath)
+		//test: 0.open, 1.cur, 2,close.
+		TestMsg("==ReAllKeyHead==" # CharFromKey(13)
+			  # "curPath" # CharFromKey(13) # "--" # curPath # "--" # CharFromKey(13)
+			  # "out" # CharFromKey(13) # "--" # tmpPath # "--" # CharFromKey(13)
+				, 2)
+				
+		if(tmpPath != "")
+			curPath = tmpPath
+			
+	}
+	
+	//test: 0.open, 1.cur, 2,close.
+	TestMsg("==Note==" # CharFromKey(13)
+		  # "isCmd" # CharFromKey(13) # "--" # isCmd # "--" # CharFromKey(13)
+		  # "noteCmd" # CharFromKey(13) # "--" # noteCmd # "--" # CharFromKey(13)
+		  # "curPath" # CharFromKey(13) # "--" # curPath # "--" # CharFromKey(13)
+		  # "noteWord" # CharFromKey(13) # "--" # noteWord # "--" # CharFromKey(13)
+			, 2)
 
 	//功能说明：
 	//open:    创建笔记; 打开exe; 打开文件+关键字; 非Macro_开头文件中只能用这个打开文件
@@ -651,6 +757,18 @@ macro NoteHander(hbuf, cNum, prompt)
 	{
 		curPath = GetTransFileName(hbuf, rootPath, cNum)
 		ShellGetEcFileList(curPath # " "  # cNum)
+	}
+	//type9:
+	else if(noteCmd == "replace")
+	{
+		str = ReplaceWord(rootPath, cmdP1, cmdP2)
+		//test: 0.open, 1.cur, 2,close.
+		TestMsg("==replace==" # CharFromKey(13)
+			  # "data" # CharFromKey(13) # "--" # rootPath # "--" # CharFromKey(13)
+			  # "cmdP1" # CharFromKey(13) # "--" # cmdP1 # "--" # CharFromKey(13)
+			  # "cmdP2" # CharFromKey(13) # "--" # cmdP2 # "--" # CharFromKey(13)
+			  # "str" # CharFromKey(13) # "--" # str # "--" # CharFromKey(13)
+				, 2)
 	}
 	else
 	{
@@ -1313,7 +1431,7 @@ macro NoteScroll(hbuf, curPath, noteWord)
 		if(IsNumber ("@noteWord@"))
 		{
 			row = noteWord-1
-			ScrollCursorRow(row, row+1)
+			ScrollCursorRow(hbuf, row, row+1)
 			return 1
 		}
 	}
