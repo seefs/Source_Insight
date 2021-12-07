@@ -79,6 +79,8 @@ plutommi/mmi/Idle/IdleSrc/IdleClassic.c void^mmi_idle_classic_on_update_service_
 plutommi/Framework/GUI/GUI_SRC/wgui_categories_idlescreen.c MMI_BOOL^wgui_cat033_show_network_name( )
 // --mp3
 plutommi/Framework/GUI/GUI_SRC/wgui_categories_idlescreen.c wgui_cat033_get_extra_text
+plutommi/Framework/GUI/GUI_SRC/wgui_categories_idlescreen.c wgui_cat033_show_extra_information
+plutommi/Framework/GUI/GUI_SRC/wgui_categories_idlescreen.c 5143
 
 
 // 4) date:
@@ -157,10 +159,8 @@ plutommi\mmi\Idle\IdleSrc\IdleCommon.c  __IDLE_LOCK_CLOSE_BACKLIGHT__
 
 //	主菜单
 plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c
-plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res __M107_2403_VGOTEL__
 //	主菜单 顺序:
 plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res <MENU^id="IDLE_SCREEN_MENU_ID"
-plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res __M107_V2408_VGOTEL__
 //	新加主菜单:
 plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res <SCREEN > ...
 plutommi/mmi/MainMenu/MainMenuRes/MainMenuRes.res <MAINMENUITEM^id="MENU_ID_FMRDO_MAIN"
@@ -380,26 +380,35 @@ plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  dm_get_current_scr_bg_filler
 
 
 [1.5] test
-// testMode
-plutommi\MtkApp\FactoryMode\FactoryModeSrc\FactoryModeMain.c  void^EntryFMMenu
-plutommi\MtkApp\FactoryMode\FactoryModeSrc\FactoryModeMain.c  g_fm_test_item_tab
 //
-plutommi\MtkApp\FactoryMode\FactoryModeSrc\FactoryModeMisc.c __K220_Z97__
+testPath = plutommi\MtkApp\FactoryMode\
+test:\\
+
+// testMode
+test:FactoryModeSrc\FactoryModeMain.c  void^EntryFMMenu
+test:FactoryModeSrc\FactoryModeMain.c  g_fm_test_item_tab
+//
+test:FactoryModeSrc\FactoryModeMisc.c __K220_Z97__
 
 
 // 1) 版本号:
-plutommi\MtkApp\FactoryMode\FactoryModeSrc\FactoryModeMisc.c void^mmi_fm_select_version_summary_menu
-plutommi\MtkApp\FactoryMode\FactoryModeSrc\FactoryModeMain.c MMI_RET^mmi_fm_enter_main_menu_proc
-plutommi\MtkApp\FactoryMode\FactoryModeRes\FactoryMode.res <MENUITEM^id="MENU_ID_FM_FLASH"
+test:FactoryModeSrc\FactoryModeMisc.c void^mmi_fm_select_version_summary_menu
+test:FactoryModeSrc\FactoryModeMain.c MMI_RET^mmi_fm_enter_main_menu_proc
+test:FactoryModeRes\FactoryMode.res <MENUITEM^id="MENU_ID_FM_FLASH"
 // 2) 校准参数:	测试模式->版本号->SERIAL#: 10表示已校准
-plutommi\MtkApp\FactoryMode\FactoryModeSrc\FactoryModeMisc.c ReadRecordSlim(NVRAM_EF_BARCODE_NUM_LID, 
+test:FactoryModeSrc\FactoryModeMisc.c ReadRecordSlim(NVRAM_EF_BARCODE_NUM_LID, 
 // 3) 菜单
-plutommi/MtkApp/FactoryMode/FactoryModeRes/FactoryMode.res 403
+test:FactoryModeRes/FactoryMode.res 403
 
 
 // IMEI
 plutommi/AppCore/SSC/SSCPassEngine.c SSCHandleIMEI
 plutommi\AppCore\SSC\SSCStringTable.h SSC_MANUAL_SET_IMEI
+
+
+// audioTest
+test:FactoryModeSrc\FactoryModeAudio.c  mmi_fm_select_echo_loop
+test:FactoryModeSrc\FactoryModeAudio.c  __ECHO_TO_SPEAKER__
 
 
 
@@ -693,6 +702,8 @@ mp3:AudioPlayerSrc/AudioPlayerSrc.c void^mmi_audply_entry_player_screen(void)
 // --init--draw
 mp3:AudioPlayerSrc\AudioPlayerMainScreen.c  mmi_audply_redraw_main_screen
 mp3:AudioPlayerSrc\AudioPlayerMainScreen.c  __MMI_AUDIO_PLAYER_DISPLAY_VOL_BUTTON__
+// --init--draw--title
+mp3:AudioPlayerSrc\AudioPlayerMainScreen.c  3385  mmi_audply_redraw_main_title
 // --init--draw--vol
 mp3:AudioPlayerSrc\AudioPlayerMainScreen.c  mmi_audply_redraw_main_volumebar
 // --init--draw--index
@@ -702,6 +713,12 @@ mp3:AudioPlayerSrc\AudioPlayerMainScreen.c  3938
 plutommi/Customer/CustResource/PLUTO_MMI/resource_audply_skins.c 1480
 // skins--tmp
 plutommi\Customer\CustResource\resource_audply_skins.c  1480
+
+
+//	Mp3 finish
+plutommi\Service\MDI\MDISrc\mdi_audio.c  mdi_audio_play_finish_ind
+mp3:AudioPlayerSrc\AudioPlayerPlayList.c  mmi_audply_playlist_apply_picked_file
+mp3:AudioPlayerSrc\AudioPlayerPlayList.c  8860
 
 
 //	Mp3自动刷新列表:(无效，改了会出现后台占用问题)
@@ -864,18 +881,39 @@ plutommi/MtkApp/Connectivity/ConnectivitySrc/BtCommon/BTMMIScr.c S1716
 
 
 [1.24] env, Profile
+//
+envPath = plutommi/mmi/PROFILES\
+env:\\
+
 // select
-plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c mmi_prof_customize_scrn_csk_hdlr
+env:ProfilesSrc\ProfilesApp.c mmi_prof_customize_scrn_csk_hdlr
 // select type--1--2
-plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c cui_tone_selector_listscr_entry
+env:ProfilesSrc\ProfilesApp.c cui_tone_selector_listscr_entry
 // select menu
-plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c mmi_prof_menu_item_select
+env:ProfilesSrc\ProfilesApp.c mmi_prof_menu_item_select
 // select menu list
 plutommi\CUI\MenuCui\MenuCui.c cui_menu_run
 
 
 // env--vol
-plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c EntryScrSetKeyPadVolumeLevel
+env:ProfilesSrc\ProfilesApp.c EntryScrSetKeyPadVolumeLevel
+
+
+// env--ring
+env:ProfilesSrc\ProfilesApp.c mmi_prof_preview_play_tone
+env:ProfilesSrc\ProfilesApp.c mdi_audio_play_string_with_vol_path
+env:ProfilesSrc\ProfilesApp.c 6608
+// ------vol==71, MDI_AUD_VOL_MUTE(7)
+// ------path==4, MDI_DEVICE_SPEAKER2
+// env--ring--pub
+plutommi\Service\MDI\MDISrc\mdi_audio.c  mdi_audio_play_string_hdlr
+// call--ring
+plutommi\mmi\Ucm\UcmSrc\UcmUi.c  mmi_ucm_play_incoming_tone
+plutommi\Service\ProfilesSrv\ProfilesSrvMain.c srv_prof_play_tone_with_id
+// ------vol==71, MDI_AUD_VOL_MUTE(7)
+// ------path==6, MDI_AUD_PTH_EX(6), MDI_DEVICE_SPEAKER_BOTH
+// env--ring--pub
+plutommi\Service\MDI\MDISrc\mdi_audio.c  mdi_audio_play_string_hdlr
 
 
 

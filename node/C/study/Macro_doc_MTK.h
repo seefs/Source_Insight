@@ -14,7 +14,7 @@ Save:node\C\study\Macro_doc_MTK.h \[1.9\] //test code-------------
 Save:node\C\study\Macro_doc_MTK.h \[1.10\] //ImageNote
 Save:node\C\study\Macro_doc_MTK.h \[1.11\] //TextNote
 Save:node\C\study\Macro_doc_MTK.h \[1.12\] 
-Save:node\C\study\Macro_doc_MTK.h \[1.13\] powon time
+Save:node\C\study\Macro_doc_MTK.h \[1.13\] build time-------------
 //
 Save:node\C\study\Macro_doc_MTK.h \[2.1\] build error
 Save:node\C\study\Macro_doc_MTK.h \[2.2\] moids error
@@ -63,6 +63,10 @@ make/{cur}_GSM.mak  HERO_ENGINE_SUPPORT
 //
 make/{cur}_GSM.mak  TIHO_TTS_SUPPORT
 
+// vol
+plutommi\mmi\Setting\SettingRes\TihoBroadcastSetting.res  __TTS_VOLUME_DEFAULT_MAX__
+plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  __TTS_VOLUME_DEFAULT_MAX__
+
 
 
 [1.9] test code
@@ -88,7 +92,7 @@ make/{cur}_GSM.mak  TIHO_TTS_SUPPORT
 
 
 
-[1.13] powon time
+[1.13] phone time
 // powon time
 custom\drv\misc_drv\_Default_BB\MT6261\custom_hw_default.c  DEFAULT_HARDWARE_DAY
 custom\drv\misc_drv\_Default_BB\MT6261\custom_hw_default.c  __NEW_DEFAULT_TIME_20211030_STYLE__

@@ -11,7 +11,7 @@ Save:node\C\project\Macro_bug.h \[1.3\]
 Save:node\C\project\Macro_bug.h \[1.4\] 
 Save:node\C\project\Macro_bug.h \[1.5\] 8910
 Save:node\C\project\Macro_bug.h \[1.6\] 107
-Save:node\C\project\Macro_bug.h \[1.7\] 
+Save:node\C\project\Macro_bug.h \[1.7\] MTK
 Save:node\C\project\Macro_bug.h \[1.8\] 
 // tmp
 Save:node\C\project\
@@ -133,8 +133,18 @@ red,
 
 
 
-[1.7] 
+[1.7] MTK
+//
+桑菲项目，可以参靠如下建mark：
+X221_E172 ---->K3D_F03
+X218_E207 ---->K225D_Z61
+K209_F11   ---->K209_F11
 
+其中
+K209_F11差异最小的，主框架基本一样，只需要在细节出调整。具体见《F11外单项目对比结果.xlsx》
+
+X218_E207差异最大，大结构和硬件功能类似，具体菜单需要重做。
+X221_E172居中，待机、主界面等个别界面有差异，一些菜单细节有差异。主体框架一致。细节在整理中。
 
 
 

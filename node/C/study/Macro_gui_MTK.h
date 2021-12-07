@@ -66,6 +66,7 @@ plutommi\Customer\CustResource\CustCoordinates.c coordinate_set33
 plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  dm_setup_and_draw_button_bar
 // show
 plutommi\Framework\GUI\GUI_SRC\wgui_softkeys.c  void^show_softkey
+plutommi\Framework\GUI\GUI_SRC\gui_buttons.c  2185 gui_show_icontext_button
 // reset
 plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  dm_reset_lsk_coordinates
 
@@ -163,7 +164,9 @@ projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Images\MainLCD\IdleScreen\Techno\SmallC
 
 # 电量
 // 5络电池
-//BATTERY_FIVE_LEVEL
+//make\Option.mak  BATTERY_FIVE_LEVEL
+make\Option.mak  BATTERY_SIX_LEVEL
+
 //	电量:
 plutommi/Framework/GUI/GUI_Res/Status_icon_bar.res IMG_SI_BATTERY_STRENGTH 电量
 plutommi\Framework\GUI\GUI_SRC\wgui_status_icon_bar.c STATUS_ICON_BATTERY_STRENGTH
@@ -251,16 +254,23 @@ ime_focused_border_color
 
 
 [1.6] pubWin  Alert
-//
+// display
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  mmi_popup_display
 
 
 // pubWin
 plutommi\Framework\CommonScreens\CommonScreensSrc\AlertScreen.c  mmi_ret^popup_entry
+// pubWin--no softkey
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_popup.c  ShowCategory63Screen_ex
+// pubWin--has softkey {,27,,106}
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_popup.c  ShowCategory163Screen_ext_int
 // pubWin--bg
 plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  case^DM_POPUP_BACKGROUND
+// pubWin--bg {,27,,106} {,27,,110}
 plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  MMI_POP_UP_DIALOG_X
+plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  9516
+// pubWin--bg [124+2*2=128, 107+26+24=157]
+plutommi\Framework\GUI\GUI_INC\gui_switch.h  2955
 // pubWin--rect
 plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  case^DM_ALIGNED_AREA_START
 plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  dm_popupbg_set_clip

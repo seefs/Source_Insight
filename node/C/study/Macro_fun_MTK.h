@@ -23,7 +23,7 @@ Save:node\C\study\Macro_fun_MTK.h \[1.18\] //press key
 Save:node\C\study\Macro_fun_MTK.h \[1.19\] //Rect
 Save:node\C\study\Macro_fun_MTK.h \[1.20\]
 // 2.func
-Save:node\C\study\Macro_fun_MTK.h \[2.1\] //lock
+Save:node\C\study\Macro_fun_MTK.h \[2.1\] lock
 Save:node\C\study\Macro_fun_MTK.h \[2.2\] //light
 Save:node\C\study\Macro_fun_MTK.h \[2.3\] //ADN FDN SDN
 Save:node\C\study\Macro_fun_MTK.h \[2.4\] //Dtmf
@@ -79,6 +79,8 @@ mmi_ucs2ncpy
 
 // STR_GLOBAL_PLEASE_WAIT
 
+# w,h
+UI_measure_string
 
 gui_print_truncated_borderd_text
 
@@ -110,6 +112,45 @@ MMI_ID mmi_popup_display_ext(
 	MMI_STR_ID title, 
 	mmi_event_notify_enum event_type, 
 	mmi_popup_property_struct *arg)
+
+
+//
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_idlescreen.c  4810
+//	#if defined(__IDLE_LOCK_SHOW_TIME_NEW_STYLE__)
+//		//#include "IdleAppResDef.h"
+//	#include "CommonScreensResDef.h"
+//		/* static */ MMI_BOOL wgui_is_idle_win_and_no_pop(void)
+//		{
+//			MMI_BOOL xa = mmi_scr_locker_is_locked();
+//			MMI_BOOL xb = mmi_idle_is_active();
+//	
+//			MMI_ID g0 = SCR_ID_ALERT_0;
+//			MMI_ID g9 = SCR_ID_ALERT_9;
+//	
+//			MMI_ID g3 = GetActiveScreenId();
+//					
+//			MMI_ID grp_id;
+//			MMI_ID scrn_id;
+//	
+//			mmi_frm_get_active_scrn_id(&grp_id, &scrn_id);
+//				
+//	#if defined(__IDLE_LOCK_SHOW_TIME_NEW_STYLE__)
+//			#if 0
+//				if (GetActiveScreenId() == IDLE_SCREEN_ID)
+//				{
+//				}
+//			#else
+//				if (GetActiveScreenId() != SCR_ID_IDLE_MAIN)
+//				{
+//					int xc = 1;
+//				}
+//			#endif
+//	#endif 
+//	
+//	
+//		}
+//	#endif 
+
 
 
 [1.7] 
@@ -224,7 +265,11 @@ plutommi\mmi\Setting\SettingSrc\DateAndTime.c void^PhnsetSendSetTimeReqMessage( 
 
 
 
-[2.1] 
+[2.1] lock
+// 
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  mmi_slk_classic_on_key
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  1543
+
 
 
 [2.2] 

@@ -12,7 +12,7 @@ Save:node\C\project\Macro_cfg_MTK.h \[1.7\] //RECORD
 Save:node\C\project\Macro_cfg_MTK.h \[1.8\] Lcd---------------
 Save:node\C\project\Macro_cfg_MTK.h \[1.9\] //shortcut----------menu
 Save:node\C\project\Macro_cfg_MTK.h \[1.10\] USB
-Save:node\C\project\Macro_cfg_MTK.h \[1.11\] 
+Save:node\C\project\Macro_cfg_MTK.h \[1.11\] ATA
 Save:node\C\project\Macro_cfg_MTK.h \[1.12\] 
 //
 Save:node\C\project\Macro_cfg_MTK.h \[2.1\] //IM
@@ -27,7 +27,7 @@ Save:node\C\project\Macro_cfg_MTK.h \[2.9\] //SS
 Save:node\C\project\Macro_cfg_MTK.h \[2.10\] //Tool
 Save:node\C\project\Macro_cfg_MTK.h \[2.11\] lib-----------
 Save:node\C\project\Macro_cfg_MTK.h \[2.12\] build 服务器流程
-Save:node\C\project\Macro_cfg_MTK.h \[2.13\] //build 省空间
+Save:node\C\project\Macro_cfg_MTK.h \[2.13\] build 省空间
 Save:node\C\project\Macro_cfg_MTK.h \[2.14\] MemoryDevice
 Save:node\C\project\Macro_cfg_MTK.h \[2.15\] marco
 Save:node\C\project\Macro_cfg_MTK.h \[2.16\] //Lib
@@ -42,6 +42,16 @@ Save:node\C\project\Macro_cfg_MTK.h \[2.20\]
 
 
 [1.1] AUDIO, TONE
+## 喇叭听筒二合一
+make/{cur}_GSM.mak  __RECEIVER_SPEAKER_2IN1_SUPPORT__
+//
+make/{cur}_GSM.mak  BOARD_VER_CUST_AUDIO
+//BOARD_VER_CUST_AUDIO = xxx_2IN1_BB
+//
+custom\audio\K220_N48_SPK_2IN1_BB\
+custom\audio\K220_N48_BB\
+
+
 // 回声测试
 #COM_DEFS += __ECHO_TO_SPEAKER__				# 回声测试从喇叭输出
 
@@ -111,7 +121,9 @@ UART3_SUPPORT = FALSE
 
 
 [1.11] 
-
+//
+ATA_SUPPORT = TRUE
+COM_DEFS += __ATA_AUTO_TEST__
 
 
 
@@ -301,6 +313,11 @@ tools\NVRAMStatistic\include\custom_option.txt
 
 
 [2.13] 
+//
+plutommi/mmi/Resource/MemoryRes.c  __MMI_K220_Z97_MEM_STYLE__
+plutommi/mmi/Resource/MemoryRes.c  g_applib_mem_ap_pool
+
+
 
 
 [2.14] MemoryDevice
@@ -351,6 +368,10 @@ build:log\ckImgSize.log  file^system  查看ROM空间
 
 
 [2.18] build map
+// auto set
+build\
+Save:set\Macro_Set_Path_mtk.h  curKey
+
 //
 build:log\
 build:log\ckSysDrv.log Cluster^Size^(Bytes) 	看剩余空间，nv大小

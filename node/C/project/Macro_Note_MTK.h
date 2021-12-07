@@ -252,6 +252,8 @@ projects\M107\K220_L12_MGUO\Images\MainLCD\IdleScreen\StatusIcons\SI_CHARGING.pn
 make/K220_Y01A_MGUO_GSM.mak __KM_EASY_FM__
 projects\M107\K220_L12_MGUO\Resource\MMI_features_switchPLUTO.h CFG_MMI_FM_RADIO_BIND_EARPHONE
 
+// 马达
+make/{cur}_GSM.mak  __NO_VIBRATOR__
 
 //	按键配置:
 open:custom\drv\Drv_Tool\DrvGen.exe
@@ -316,11 +318,11 @@ plutommi\mmi\Inc\ProcedureConfig.h KM_MMI_FRM_PROC_ID_MOBILE_TRACKER
 
 [2.6] 情景模式 音频参数
 //
-custom\audio\K220_Z97_AUDIO_BB\
-custom\audio\K220_Z97_AUDIO_BB\nvram_default_audio.c NVRAM_EF_CUST_ACOUSTIC_DATA_DEFAULT
+custom\audio\{nv}\
+custom\audio\{nv}\nvram_default_audio.c NVRAM_EF_CUST_ACOUSTIC_DATA_DEFAULT
 //
-custom\audio\K220_Z97_AUDIO_BB\nvram_default_audio.c
-custom\audio\K220_Z97_AUDIO_BB\nvram_default_audio_K220_L12_MGUO.h
+custom\audio\{nv}\nvram_default_audio.c
+custom\audio\{nv}\nvram_default_audio_K220_L12_MGUO.h
 //	GAIN_HND_SPH_VOL0  音频参数 免提音 
 //	GAIN_NOR_SPH_VOL0	正常音
 
@@ -385,22 +387,29 @@ tools\MemoryDeviceList\MemoryDeviceList_MT6261_Since11CW1352.xls
 
 
 [2.11] 屏幕，时间
-//	自动更新:
+// 自动更新:
 plutommi\Service\NITZSrv\res\NITZSrv.res NVRAM_SETTING_AUTOUPDATE_DT_TIME_STATUS 
 plutommi\mmi\Setting\SettingRes\PhoneSetting.res NVRAM_AUTOUPDATE_DT_STATUS ??不清楚用途
-//	默认城市/时区
+// 默认城市/时区
 plutommi\mmi\Organizer\OrganizerRes\WorldClock\WorldClock.res id="CURRENT_CITY"
 plutommi\mmi\Organizer\OrganizerRes\WorldClock\WorldClock.res <STRING^id="STR_WCLOCK_CITY78"/>
 plutommi\Customer\CustResource\PLUTO_MMI\resource_world_clock_city.c TimeZoneData 新加时区
 //  Lima – Peru   GMT-5
 //	{-5, 		STR_WCLOCK_Lima,		STR_WCLOCK_CITY_ABBRE10,63, 98, 1},
 	
-//	背光时间:
+// 背光时间:
 plutommi\Service\GpioSrv\gpiosrv.res NVRAM_BYTE_BL_SETTING_LEVEL
 plutommi\Service\GpioSrv\gpiosrv.res NVRAM_BYTE_BL_SETTING_HFTIME
-//	锁屏时间:
+
+// 锁屏时间:
 plutommi/mmi/ScrLocker/ScrLockerRes/ScrLocker.res <MENU^id="MENU_ID_SLK_TIME_SETTING_MENU"
 plutommi/mmi/ScrLocker/ScrLockerSrc/ScrLockerSetting.c #define^MMI_SLK_SET_SELECTION_DEFAULT
+
+// 按键灯时间
+make/{cur}_GSM.mak  __MMI_KEY_BACKLITE_STYLE__
+make/{cur}_GSM.mak  __MMI_KEY_BACKLITE_STYLE_07_TO_19_HOUR__
+//
+plutommi\mmi\gpio\gpiores\PhnsetGpio.res  __MMI_KEY_BACKLITE_STYLE_07_TO_19_HOUR__
 
 
 
@@ -466,9 +475,6 @@ cmd: cmd
 
 [2.17] Build问题
 //
-buildPath = build\{cur}
-build:\\
-
 build:build.log cleanlib 				编译时间
 build:MT6261.log Finished: 			链接问题看这个
 build:log\
@@ -479,7 +485,6 @@ build:log\mmi_app.log Error:
 build:log\custom.log Error:
 build:log\mmi_service.log Error:
 build:log\resgen.log Error:
-build:log\mmi_check.log Error:
 build:log\resgen_mtk_resgenerator_make.log Error:
 build:log\resgen_xml_parse.log Error:
 build:log\conn_app.log Error:
@@ -496,7 +501,6 @@ build:log\vivaConfig.log Error:     #RAM超 把0x003B6000改小
 //#define NOR_BOOTING_NOR_FS_SIZE 0x00048000  //<-  0x0004A000
 
 build:gprs\MT6261r\pregen_dep\emigen.det
-build:log\resgen_mtk_resgenerator_make.log Error:
 
 
 

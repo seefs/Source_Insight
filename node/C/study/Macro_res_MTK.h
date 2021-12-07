@@ -27,68 +27,21 @@ Save:node\C\study\Macro_res_MTK.h \[1.20\]
 
 
 [1.1] 项目配置
-// new pro
+// set cur project
+Save:node\C\project\Macro_c_path.h  _mtk_bak_
+
+// set cur project nv
+Save:node\C\project\Macro_c_path.h  _mtk_cfg_
+
+// set cur project other -- no use
+//Save:node\C\project\Macro_c_path.h  _mtk_other_
+
+###
+// create new project
 Save:node\C\project\Macro_c_path.h  _mtk_copy_
 
 
-// (1).nv
-make/{cur}_GSM.mak  BOARD_VER_CUST_AUDIO
-//	BOARD_VER_CUST_AUDIO = K220_Z97_AUDIO_BB
-// 
-make\custom\custom.mak BOARD_VER_CUST_AUDIO
-//custom\drv\audio\{nv}\
-custom\audio\{nv}\
-// 
-//custom\common\PLUTO_MMI
-//custom\meta\K220M_YGW_BB
-// 
-// --nv set
-Save:set\Macro_Set_Path_mtk.h  nvKey
-
-
-// (2).board
-make/{cur}_GSM.mak  BOARD_VER
-//	BOARD_VER = K220M_BH_BB
-//
-// --dws
-custom\codegen\{board}\
-custom\codegen\{board}\codegen_H660.dws
-// --MemoryDevice
-custom\system\{board}\
-custom\system\{board}\custom_MemoryDevice.h  NOR_BOOTING_NAND_FS_SIZE
-// 
-// --board set
-Save:set\Macro_Set_Path_mtk.h  boardKey
-
-
-// (3).rf
-make/{cur}_GSM.mak  RF_MODULE
-//	RF_MODULE = MT6261RF_HS8235L_CUSTOM
-
-
-
-// (4).consistent
-make/{cur}_GSM.mak  COM_DEFS_FOR
-//	COM_DEFS_FOR_MT6261RF_HS8235L_CUSTOM
-//	COM_DEFS_FOR_K220D_QQVGA_LCM
-
-
-
-// (5).config_account
-custom\common\custom_config_account.c  g_config_account_gprs
-//custom\common\
-//custom\common\config_account_M107_XYZN_S2_4A_WESTERN_F2.h
-
-// (6).userprofile
-custom\common\userprofile_nvram_def.h
-//custom\common\
-//custom\common\userprofile_nvram_def_M107_XYZN_S2_4A_WESTERN_F2.h
-
-
-
 //ctrl+C自动添加新文件, 旧项目->新项目
-//新项目设置:
-//newPro = K220_Z97_MGUO
 
 // bcmp
 cmd_f: ren bak:Tmp_Test.h Tmp_Test5.0.h
@@ -113,6 +66,8 @@ features:\\
 // --nv
 custom\audio\{nv}\
 custom\audio\{nv}\nvram_default_audio.c
+custom\app\{board}\
+custom\app\{board}\nvram_user_config.c  __MORE_BATTERY_LEVEL__
 
 
 ###
@@ -322,9 +277,12 @@ plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res 850
 
 // --壁纸
 images:MainLCD\Phonebook\
-images:MainLCD\IdleScreen\Wallpaper
+images:MainLCD\IdleScreen\Wallpaper\
+//
+features:\
 features:MMI_features_switch{cur}.h CFG_MMI_RES_TYPE_WALLPAPER_SEL
 plutommi\mmi\Inc\MMI_features.h __MMI_RES_TYPE_WALLPAPER_SEL__
+//
 plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c WALL01."__MMI_RES_TYPE_WALLPAPER__ "
 plutommi\mmi\Setting\SettingSrc\Wallpaper.c wp_item_amount ^=
 plutommi\Customer\CustomerInc\CustResDef.h IMG_WALLPAPER_SUB_DIR
@@ -337,6 +295,9 @@ images:MainLCD\Active\poweronoff\logo.BMP
 
 
 // --开关机动画:
+// --powonoff--gif
+make/{cur}_GSM.mak  __MMI_POWER_GIF_DISPLAY__
+
 //  与铃声同步问题 建议开机动画时间相比减0.5s 关机动画时间减2s
 images:MainLCD\Active\Poweronoff\
 images:MainLCD\Active\Poweronoff\logo.bmp
@@ -398,7 +359,7 @@ images:MainLCD\DialingScreen\DialNum\
 images:MainLCD\DialingScreen\DialNum_2\
 
 
-// --Mp3
+// --Mp3_img
 plutommi\MtkApp\AudioPlayer\AudioPlayerRes\AudioPlayer.res  vol_full
 plutommi\Customer\CustResource\PLUTO_MMI\resource_audply_skins.c  1829
 //
@@ -429,6 +390,13 @@ plutommi/mmi/Setting/SettingInc/PhoneSetupResList.h #define^MAX_POWER_ON_IMG
 
 
 [1.6] ring
+// --mp3--powonoff
+make/{cur}_GSM.mak  __MMI_POWERRING_SAME__
+make/{cur}_GSM.mak  __MMI_POWERONRING_MP3__
+make/{cur}_GSM.mak  __AUDIO_SAME_AS_POWONOFF__
+//
+plutommi\Customer\CustResource\{cur}_MMI\MMI_features_switch{cur}.h
+
 // --tone
 plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res AUD_ID_PROF_TONE1
 //	AUD_ID_PROF_TONE1 --> play_mp3.mp3

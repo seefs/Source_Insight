@@ -1,12 +1,12 @@
 
 //目录[Num][Ca]:
 // 1. 模板
-Save:node\C\project\Macro_c_path.h \[1.1\] mtk_copy
-Save:node\C\project\Macro_c_path.h \[1.2\] mtk_xxx
-Save:node\C\project\Macro_c_path.h \[1.3\] mtk_bak
-Save:node\C\project\Macro_c_path.h \[1.4\] 
-Save:node\C\project\Macro_c_path.h \[1.5\] Macro_Set
-Save:node\C\project\Macro_c_path.h \[1.6\] //mtk_sbd
+Save:node\C\project\Macro_c_path.h \[1.1\] mtk_bak--------
+Save:node\C\project\Macro_c_path.h \[1.2\] mtk_copy
+Save:node\C\project\Macro_c_path.h \[1.3\] mtk_cfg--------nv, board
+Save:node\C\project\Macro_c_path.h \[1.4\] mtk_other------rf
+Save:node\C\project\Macro_c_path.h \[1.5\] 
+Save:node\C\project\Macro_c_path.h \[1.6\] //mtk_sbd------
 Save:node\C\project\Macro_c_path.h \[1.7\] 
 Save:node\C\project\Macro_c_path.h \[1.8\] 
 Save:node\C\project\Macro_c_path.h \[1.9\] 
@@ -30,51 +30,31 @@ Save:node\C\project\Macro_c_path.h \[2.12\]
 
 
 
-[1.1] _mtk_copy_
-// auto set
-Save:set\Macro_Set_Path_mtk.h  oldKey
-//	oldKey = K220_V18_WD
-//	newKey = K220_V35_WD
-
-// test
-cp make/{old}_GSM.mak make/{new}_GSM.mak
-cp make/Verno_{old}.bld make/Verno_{new}.bld
-
-
-
-[1.2] _mtk_xxx_
-// auto set
-Save:set\Macro_Set_Path_mtk.h  images
-
-// --mk
-make/{cur}.mak
-make/Verno_{cur}.bld
-//imagesPath = plutommi\Customer\Images\K220_L12_MGUO\
-images:\
-audioPath = plutommi\Customer\AUDIO\K220_L12_MGUO\
-audio:\
-//featuresPath = plutommi\Customer\CustResource\K220_L12_MGUO_MMI\
-features:\
-
-//
-images:\
-audio:\
-features:\
-
-
-
-
-
-
-[1.3] _mtk_bak_
-// auto set
+[1.1] _mtk_bak_
+// (1).curKey
+// --images/audio/features/build
 Save:set\Macro_Set_Path_mtk.h  curKey
+
+// (2).bak
+// A86
+curKey = K220_A86
 
 // Y01A
 curKey = K220_Y01A_MGUO
 
 // Y22
 curKey = K220_Y22_MGUO
+curKey = K220_Y22_JMZ
+curKey = K220_Y22_JSZ
+curKey = K220_Y22_MLL
+curKey = K220_Y22_MOLOO
+
+// Y22
+//make K220_Y22_MGUO GSM new
+//make K220_Y22_JMZ GSM new
+//make K220_Y22_JSZ GSM new
+//make K220_Y22_MLL GSM new
+//make K220_Y22_MOLOO GSM new
 
 // L12
 curKey = K220_L12_MGUO
@@ -90,10 +70,15 @@ curKey = K220_Z97_JSZ
 curKey = K220_Z97_MLL
 curKey = K220_Z97_MOLOO
 
-// other
+// V35
 curKey = K220_V97A_WD
 curKey = K220_V88_WD
 curKey = K220_V35_WD
+
+// V35
+make K220_V97A_WD GSM new
+//make K220_V88_WD GSM new
+make K220_V35_WD GSM new
 
 
 // 61D
@@ -102,48 +87,133 @@ curKey = K220_H660_TX
 
 
 
-[1.4] 
+[1.2] _mtk_copy_
+// (1).mk/bld
+Save:set\Macro_Set_Path_mtk.h  oldKey
+//	oldKey = K220_V18_WD
+//	newKey = K220_V35_WD
+
+// --mk
+cp make/{old}_GSM.mak make/{new}_GSM.mak
+// --bld
+cp make/Verno_{old}.bld make/Verno_{new}.bld
+//
+cp make/K220_D183A_GSM.mak make/K220_A86_GSM.mak
+cp make/Verno_K220_D183A.bld make/Verno_K220_A86.bld
+
+
+// (2).images/audio/features
+Save:set\Macro_Set_Path_mtk.h  images
+plutommi\Customer\Images\{old}\
+plutommi\Customer\Images\{new}\
+images:\\
+
+Save:set\Macro_Set_Path_mtk.h  audio
+plutommi\Customer\AUDIO\{old}\
+plutommi\Customer\AUDIO\{new}\
+audio:\\
+
+Save:set\Macro_Set_Path_mtk.h  features
+plutommi\Customer\CustResource\{old}_MMI\
+plutommi\Customer\CustResource\{new}_MMI\
+features:\\
+
+
+
+[1.3] _mtk_cfg_
+// (1).nv
+Save:set\Macro_Set_Path_mtk.h  nvKey
+//
+make/{cur}_GSM.mak  BOARD_VER_CUST_AUDIO
+//	BOARD_VER_CUST_AUDIO = K220_Z97_AUDIO_BB
+// 
+//make\custom\custom.mak BOARD_VER_CUST_AUDIO
+//custom\drv\audio\{nv}\
+custom\audio\{nv}\
+// 
+//custom\common\PLUTO_MMI
+//custom\meta\K220M_YGW_BB
+// 
+
+
+// (2).board
+Save:set\Macro_Set_Path_mtk.h  boardKey
+//
+make/{cur}_GSM.mak  BOARD_VER
+//	BOARD_VER = K220M_BH_BB
+//
+// --dws
+//custom\codegen\{board}\
+//custom\codegen\{board}\codegen_H660.dws
+// --MemoryDevice
+//custom\system\{board}\
+//custom\system\{board}\custom_MemoryDevice.h  NOR_BOOTING_NAND_FS_SIZE
 
 
 
 
-[1.5] Macro_Set
+[1.4] _mtk_other_
 
-//当前项目
-// 查看--选择历史项目列表: 
-Save:set\
-Save:set\Macro_Set.h  87
+// (3).rf
+make/{cur}_GSM.mak  RF_MODULE
+//	RF_MODULE = MT6261RF_HS8235L_CUSTOM
+
+
+
+// (4).consistent
+make/{cur}_GSM.mak  COM_DEFS_FOR
+//	COM_DEFS_FOR_MT6261RF_HS8235L_CUSTOM
+//	COM_DEFS_FOR_K220D_QQVGA_LCM
+
+
+
+// (5).config_account
+custom\common\custom_config_account.c  g_config_account_gprs
+//custom\common\
+//custom\common\config_account_M107_XYZN_S2_4A_WESTERN_F2.h
+
+// (6).userprofile
+custom\common\userprofile_nvram_def.h
+//custom\common\
+//custom\common\userprofile_nvram_def_M107_XYZN_S2_4A_WESTERN_F2.h
+
+
+
+
+
+[1.5] 
 
 
 
 [1.6] mtk_sbd
 // auto set
-Save:set\Macro_Set_Path_mtk.h 10
-
+//Save:set\Macro_Set_Path_mtk.h 10
+//
 // new
-imagesPath = projects\M107\K220_L12_MGUO\Images\
-images:\
-audioPath = projects\M107\K220_L12_MGUO\AUDIO\PLUTO\
-audio:\
-resourcePath = projects\M107\K220_L12_MGUO\Resource\
-resource:\
-//featuresPath = plutommi\Customer\CustResource\K220_L12_MGUO_MMI\
-features:\
-
-
+//imagesPath = projects\M107\K220_L12_MGUO\Images\
+//images:\
+//audioPath = projects\M107\K220_L12_MGUO\AUDIO\PLUTO\
+//audio:\
+//resourcePath = projects\M107\K220_L12_MGUO\Resource\
+//resource:\
+////featuresPath = plutommi\Customer\CustResource\K220_L12_MGUO_MMI\
+//features:\
+//
+//
 // old
-imagesPath = plutommi\Customer\Images\M107\K220_L12_MGUO
-images:\
-audioPath = plutommi\Customer\Audio\M107\K220_L12_MGUO
-audio:\
-resourcePath = plutommi\Customer\CustResource\M107_MMI\K220_L12_MGUO
-resource:\
-//featuresPath = plutommi\Customer\CustResource\K220_L12_MGUO_MMI\
-features:\
+//imagesPath = plutommi\Customer\Images\M107\K220_L12_MGUO
+//images:\
+//audioPath = plutommi\Customer\Audio\M107\K220_L12_MGUO
+//audio:\
+//resourcePath = plutommi\Customer\CustResource\M107_MMI\K220_L12_MGUO
+//resource:\
+////featuresPath = plutommi\Customer\CustResource\K220_L12_MGUO_MMI\
+//features:\
 
 
 
 [1.7] 
+
 
 
 
