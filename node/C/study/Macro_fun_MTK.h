@@ -24,7 +24,7 @@ Save:node\C\study\Macro_fun_MTK.h \[1.19\] //Rect
 Save:node\C\study\Macro_fun_MTK.h \[1.20\]
 // 2.func
 Save:node\C\study\Macro_fun_MTK.h \[2.1\] lock
-Save:node\C\study\Macro_fun_MTK.h \[2.2\] //light
+Save:node\C\study\Macro_fun_MTK.h \[2.2\] light
 Save:node\C\study\Macro_fun_MTK.h \[2.3\] //ADN FDN SDN
 Save:node\C\study\Macro_fun_MTK.h \[2.4\] //Dtmf
 Save:node\C\study\Macro_fun_MTK.h \[2.5\] //CC--msg
@@ -270,9 +270,51 @@ plutommi\mmi\Setting\SettingSrc\DateAndTime.c void^PhnsetSendSetTimeReqMessage( 
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  mmi_slk_classic_on_key
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  1543
 
+// lock
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_scr_locker_launch
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_scr_locker_stop_timer
+// unlock
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_scr_locker_start_timer
+
+// lock
+// --À¯∆¡≤ªπÿlcd
+plutommi\mmi\Idle\IdleSrc\IdleCommon.c  mmi_idle_closebacklight_and_lock
 
 
-[2.2] 
+// …œÀ¯
+// lock--left + #
+plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c  __LOCK_BY_LSK_POUND__
+// lock--left + *
+plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c  __LOCK_BY_LSK_STAR_OR_LSK_CENTER_KEY_
+// --lock--1Key--ok
+
+// Ω‚À¯
+// unlock--left + right
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  __UNLOCK_BY_LSK_RSK__
+// --unlock--1Key--ok
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  1565
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  void^mmi_slk_classic_popup_unlock_me
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  840
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  867  mmi_popup_display
+// --unlock--1Key--err
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  1564??
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  void^mmi_slk_classic_popup_help_msg
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  980  mmi_popup_display
+// --unlock--2Key--ok
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  1361
+
+
+
+
+[2.2] light
+// light--3º¸µ„¡¡
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_ret^mmi_slk_handle_pre_key_routing
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_ret^mmi_slk_handle_post_key_routing
+
+// light--…æ∞Î¡¡
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  void^mmi_scr_locker_turn_on_backlight
+
+
 
 
 [2.3] 

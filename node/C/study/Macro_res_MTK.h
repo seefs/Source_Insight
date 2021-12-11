@@ -41,14 +41,6 @@ Save:node\C\project\Macro_c_path.h  _mtk_cfg_
 Save:node\C\project\Macro_c_path.h  _mtk_copy_
 
 
-//ctrl+C自动添加新文件, 旧项目->新项目
-
-// bcmp
-cmd_f: ren bak:Tmp_Test.h Tmp_Test5.0.h
-
-
-### newPro
-mk, bld, features, nv, image, audio
 
 
 
@@ -120,6 +112,15 @@ plutommi\mmi\Inc\mmi_res_range_def.h RESOURCE_BASE_TABLE_ITEM_PATH( , ".\\mmi\\.
 
 //	字符串工具:
 open:plutommi\Customer\STMTView.exe
+
+
+###
+//STR_GLOBAL_FRIDAY             星期五
+//STR_GLOBAL_FRIDAY_SHORT       五
+//STR_ID_CLNDR_WEEK_FRI         星期五
+//STR_SUBLCD_CHI_FRIDAY         (五)
+//STR_SUBLCD_ENG_FRIDAY         (Fri)
+
 
 
 

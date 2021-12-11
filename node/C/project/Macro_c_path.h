@@ -7,7 +7,7 @@ Save:node\C\project\Macro_c_path.h \[1.3\] mtk_cfg--------nv, board
 Save:node\C\project\Macro_c_path.h \[1.4\] mtk_other------rf
 Save:node\C\project\Macro_c_path.h \[1.5\] 
 Save:node\C\project\Macro_c_path.h \[1.6\] //mtk_sbd------
-Save:node\C\project\Macro_c_path.h \[1.7\] 
+Save:node\C\project\Macro_c_path.h \[1.7\] other
 Save:node\C\project\Macro_c_path.h \[1.8\] 
 Save:node\C\project\Macro_c_path.h \[1.9\] 
 Save:node\C\project\Macro_c_path.h \[1.10\] 
@@ -88,36 +88,67 @@ curKey = K220_H660_TX
 
 
 [1.2] _mtk_copy_
-// (1).mk/bld
+// set
 Save:set\Macro_Set_Path_mtk.h  oldKey
 //	oldKey = K220_V18_WD
 //	newKey = K220_V35_WD
 
+### 
+mk, bld, features, nv, image, audio
+
+===================copy_start===================
+// (1).mk/bld
 // --mk
 cp make/{old}_GSM.mak make/{new}_GSM.mak
 // --bld
 cp make/Verno_{old}.bld make/Verno_{new}.bld
 //
-cp make/K220_D183A_GSM.mak make/K220_A86_GSM.mak
-cp make/Verno_K220_D183A.bld make/Verno_K220_A86.bld
+make/{new}_GSM.mak
+make/Verno_{new}.bld
 
 
 // (2).images/audio/features
-Save:set\Macro_Set_Path_mtk.h  images
+// --images--[用"\"]
+cmd_f: md plutommi\Customer\Images\{new}
+cmd_f: xcopy plutommi\Customer\Images\{old}  plutommi\Customer\Images\{new}  /e /i /y
+// --images
 plutommi\Customer\Images\{old}\
 plutommi\Customer\Images\{new}\
 images:\\
-
-Save:set\Macro_Set_Path_mtk.h  audio
+// --audio--[用"\"]
+cmd_f: md plutommi\Customer\AUDIO\{new}
+cmd_f: xcopy plutommi\Customer\AUDIO\{old}  plutommi\Customer\AUDIO\{new}  /e /i /y
+// --audio
 plutommi\Customer\AUDIO\{old}\
 plutommi\Customer\AUDIO\{new}\
 audio:\\
 
-Save:set\Macro_Set_Path_mtk.h  features
+// --features--dir
+// 手动创建文件夹
+//cmd_w: md plutommi\Customer\CustResource\K220_D33D_MMI
+// 自动创建文件夹
+cmd_f: md plutommi\Customer\CustResource\{new}_MMI
+cmd_f: xcopy plutommi\Customer\CustResource\{old}_MMI plutommi\Customer\CustResource\{new}_MMI /e /i /y
+// --features
 plutommi\Customer\CustResource\{old}_MMI\
 plutommi\Customer\CustResource\{new}_MMI\
 features:\\
 
+// --features--rename
+cmd_w: ren plutommi\Customer\CustResource\{new}_MMI\MMI_features_switch{old}.h  MMI_features_switch{new}.h
+
+
+// (3).nv
+// --nv--dir
+cmd_f: md custom\audio\{nv}\
+cmd_f: xcopy plutommi\Customer\Images\{old}  plutommi\Customer\Images\{new}  /e /i /y
+// --nv
+custom\audio\{old}_AUDIO_BB\
+custom\audio\{new}_AUDIO_BB\
+custom\audio\{nv}\
+
+
+===================copy_end===================
 
 
 [1.3] _mtk_cfg_
@@ -129,11 +160,11 @@ make/{cur}_GSM.mak  BOARD_VER_CUST_AUDIO
 // 
 //make\custom\custom.mak BOARD_VER_CUST_AUDIO
 //custom\drv\audio\{nv}\
+// --nv
 custom\audio\{nv}\
 // 
 //custom\common\PLUTO_MMI
-//custom\meta\K220M_YGW_BB
-// 
+
 
 
 // (2).board
@@ -142,12 +173,48 @@ Save:set\Macro_Set_Path_mtk.h  boardKey
 make/{cur}_GSM.mak  BOARD_VER
 //	BOARD_VER = K220M_BH_BB
 //
+custom\app\{board}\
+custom\app\{board}\nvram_user_config.c  __MORE_BATTERY_LEVEL__
+
 // --dws
-//custom\codegen\{board}\
-//custom\codegen\{board}\codegen_H660.dws
+custom\codegen\{board}\
+custom\codegen\{board}\codegen.dws
+custom\codegen\{board}\codegen_H660.dws
+
+// --dws
+custom\drv\bluetooth\{board}\
+
+custom\drv\camera\{board}\
+
+custom\drv\misc_drv\{board}\
+custom\drv\misc_drv\{board}\alerterdrv.c
+
+custom\meta\{board}\
+custom\meta\{board}\ft_customize.c
+
+custom\ps\{board}\
+custom\ps\{board}\Customer_sim_voltage_support.c
+
 // --MemoryDevice
-//custom\system\{board}\
-//custom\system\{board}\custom_MemoryDevice.h  NOR_BOOTING_NAND_FS_SIZE
+custom\system\{board}\
+custom\system\{board}\custom_FeatureConfig.h
+custom\system\{board}\custom_MemoryDevice.h  NOR_BOOTING_NAND_FS_SIZE
+
+
+
+// (3).lcd
+Save:set\Macro_Set_Path_mtk.h  lcdKey
+//
+make/{cur}_GSM.mak  LCD_MODULE
+//	LCD_MODULE = K220D_QQVGA_LCM
+
+
+custom\drv\LCD\{lcd}\
+custom\drv\LCD\{lcd}\combo_lcm_ST7735S.c
+
+custom\drv\color\{lcd}\
+custom\drv\color\{lcd}\color_custom.c
+
 
 
 
@@ -159,12 +226,10 @@ make/{cur}_GSM.mak  RF_MODULE
 //	RF_MODULE = MT6261RF_HS8235L_CUSTOM
 
 
-
 // (4).consistent
 make/{cur}_GSM.mak  COM_DEFS_FOR
 //	COM_DEFS_FOR_MT6261RF_HS8235L_CUSTOM
 //	COM_DEFS_FOR_K220D_QQVGA_LCM
-
 
 
 // (5).config_account
@@ -172,13 +237,11 @@ custom\common\custom_config_account.c  g_config_account_gprs
 //custom\common\
 //custom\common\config_account_M107_XYZN_S2_4A_WESTERN_F2.h
 
+
 // (6).userprofile
 custom\common\userprofile_nvram_def.h
 //custom\common\
 //custom\common\userprofile_nvram_def_M107_XYZN_S2_4A_WESTERN_F2.h
-
-
-
 
 
 [1.5] 
@@ -212,8 +275,10 @@ custom\common\userprofile_nvram_def.h
 
 
 
-[1.7] 
+[1.7] other
 
+// bcmp
+//cmd_f: ren bak:Tmp_Test.h Tmp_Test5.0.h
 
 
 

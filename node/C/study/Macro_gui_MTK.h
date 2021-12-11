@@ -49,7 +49,10 @@ Save:node\C\study\Macro_gui_MTK.h  \[1.32\]
 // gui_set_font(&MMI_large_font);
 // gui_move_text_cursor((LCD_WIDTH-string_w)/2, y+num_height);
 // gui_print_text((UI_string_type)GetString(STR_ID_CLNDR_WEEK_SUN + nWeek));  
-            
+
+// --txt--menu
+// gui_print_truncated_text
+// gui_print_text
 
 
 //字符方向：
@@ -192,6 +195,9 @@ plutommi\mmi\MiscFramework\MiscFrameworkSrc\PwronCharger.c  STR_CHARGING_DONE
 plutommi\mmi\NwInfo\NwInfoSrc\NwInfoSignal.c  mmi_nw_info_signal_set_image
 
 
+//	statusBar
+//gui_status_icon_bar_show_oem
+
 
 
 
@@ -327,6 +333,9 @@ plutommi\Framework\GUI\GUI_INC\wgui.h  MMI_SINGLELINE_INPUTBOX_HEIGHT
 // point--input--im
 plutommi\Framework\GUI\GUI_INC\wgui.h  INFORMATION_BAR_HEIGHT
 
+// lcd
+custom\common\hal_public\lcd_sw_inc.h  LCD_WIDTH
+
 
 
 [1.8] rect--------------Coordinates
@@ -408,7 +417,8 @@ plutommi\Framework\GUI\GUI_SRC\wgui_categories_MM.c matrix_title_theme.active_fi
 plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res CUSTOMER_NAME_M107_XYZN_S2_4A_WESTERN_F2
 plutommi\mmi\Setting\SettingRes\Wallpaper.res CUSTOMER_NAME_M107_XYZN_S2_4A_WESTERN_F2 壁纸位置不是这里
 //	list 标号:
-plutommi\Customer\Images\M107\M107_S2401_GRAVITY_ULTRA_F1\MainLCD\SubMenu\ListMenuIcon\L_NB30.bmp
+images:\MainLCD\SubMenu\ListMenuIcon\
+images:\MainLCD\SubMenu\ListMenuIcon\L_NB30.bmp
 
 //
 ShowCategory53Screen(): 列表
@@ -429,6 +439,9 @@ plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  associate_fixed_icontext_list
 plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  show_fixed_list
 //	--MMI_CATEGORY52_ID = ;
 //		==>
+// list--menu--show--txt
+plutommi/Framework/GUI/GUI_SRC/gui_fixed_menuitems.c  4880  gui_list_show_text
+plutommi/Framework/GUI/GUI_SRC/gui_fixed_menuitems.c  9704  gui_show_fixed_icontext_list_menuitem
 
 
 // --list--line--color
@@ -443,7 +456,6 @@ plutommi\mmi\PhoneBook\PhoneBookSrc\PhoneBookList.c  mmi_phb_quick_search_list_s
 plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  gui_draw_list_menuitem_separator_line
 plutommi\Framework\GUI\GUI_SRC\gui_fixed_menus.c  4515
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_list.c  void^ShowCategory353Screen_ext_int
-
 
 
 

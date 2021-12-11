@@ -10,7 +10,7 @@ Save:node\C\project\Macro_cfg_MTK.h \[1.5\] //BROWSER
 Save:node\C\project\Macro_cfg_MTK.h \[1.6\] //BT
 Save:node\C\project\Macro_cfg_MTK.h \[1.7\] //RECORD
 Save:node\C\project\Macro_cfg_MTK.h \[1.8\] Lcd---------------
-Save:node\C\project\Macro_cfg_MTK.h \[1.9\] //shortcut----------menu
+Save:node\C\project\Macro_cfg_MTK.h \[1.9\] shortcut----------menu
 Save:node\C\project\Macro_cfg_MTK.h \[1.10\] USB
 Save:node\C\project\Macro_cfg_MTK.h \[1.11\] ATA
 Save:node\C\project\Macro_cfg_MTK.h \[1.12\] 
@@ -18,12 +18,12 @@ Save:node\C\project\Macro_cfg_MTK.h \[1.12\]
 Save:node\C\project\Macro_cfg_MTK.h \[2.1\] //IM
 Save:node\C\project\Macro_cfg_MTK.h \[2.2\] DTMF, Dial
 Save:node\C\project\Macro_cfg_MTK.h \[2.3\] 电子保卡
-Save:node\C\project\Macro_cfg_MTK.h \[2.4\] SCREENSAVER
+Save:node\C\project\Macro_cfg_MTK.h \[2.4\] 
 Save:node\C\project\Macro_cfg_MTK.h \[2.5\] //CAMERA
 Save:node\C\project\Macro_cfg_MTK.h \[2.6\] //DL
 Save:node\C\project\Macro_cfg_MTK.h \[2.7\] //FM
 Save:node\C\project\Macro_cfg_MTK.h \[2.8\] WIFI
-Save:node\C\project\Macro_cfg_MTK.h \[2.9\] //SS
+Save:node\C\project\Macro_cfg_MTK.h \[2.9\] SS-------------屏保
 Save:node\C\project\Macro_cfg_MTK.h \[2.10\] //Tool
 Save:node\C\project\Macro_cfg_MTK.h \[2.11\] lib-----------
 Save:node\C\project\Macro_cfg_MTK.h \[2.12\] build 服务器流程
@@ -31,7 +31,7 @@ Save:node\C\project\Macro_cfg_MTK.h \[2.13\] build 省空间
 Save:node\C\project\Macro_cfg_MTK.h \[2.14\] MemoryDevice
 Save:node\C\project\Macro_cfg_MTK.h \[2.15\] marco
 Save:node\C\project\Macro_cfg_MTK.h \[2.16\] //Lib
-Save:node\C\project\Macro_cfg_MTK.h \[2.17\] //FLASH (大、/小版本)
+Save:node\C\project\Macro_cfg_MTK.h \[2.17\] FLASH (大、/小版本)
 Save:node\C\project\Macro_cfg_MTK.h \[2.18\] build map
 Save:node\C\project\Macro_cfg_MTK.h \[2.19\] 
 Save:node\C\project\Macro_cfg_MTK.h \[2.20\] 
@@ -98,8 +98,22 @@ make/K220_H660_TX_GSM.mak   MAIN_LCD_SIZE
 
 
 
-[1.9] 
+[1.9] shortcut
+// shortcut--key
+plutommi\Customer\CustResource\PLUTO_MMI\resource_shortcuts.c g_mmi_shct_nav_key_default_list
+// shortcut--tmp
+plutommi\Customer\CustResource\resource_shortcuts.c g_mmi_shct_nav_key_default_list 临时文件(模拟器改这个文件)
+custom\common\PLUTO_MMI\nvram_common_config.c NVRAM_SHORTCUTS_TOTAL
+//	short ID:
+plutommi\Customer\CustResource\mmi_rp_menu_shortcut_data.c mmi_shct_candidate_menu
 
+// ShortCut
+features:MMI_features_switch{cur}.h CFG_MMI_DEDICATED_KEY_SHORTCUTS
+// ShortCut
+plutommi\Customer\CustResource\PLUTO_MMI\MMI_features_switchPLUTO.h CFG_MMI_DEDICATED_KEY_SHORTCUTS
+
+// shortcut--menu
+plutommi\Customer\CustResource\PLUTO_MMI\resource_shortcuts.c g_mmi_shct_quick_menu_default_list
 
 
 
@@ -225,17 +239,7 @@ plutommi/mmi/Setting/SettingSrc/PhoneSetup.c  SALE_TRACK_SRV_DEF_NUMBER
 
 
 
-[2.4] SCREENSAVER
-//
-plutommi\mmi\Setting\SettingRes\ScreenSaver.res NVRAM_SCREENSAVER_STATUS
-plutommi\mmi\Setting\SettingRes\ScreenSaver.res RESTORE_DEFAULT_SCREENSAVER_STATUS
-plutommi\mmi\Setting\SettingRes\ScreenSaver.res NVRAM_CURRENT_SCREENSVER_ID
-plutommi\mmi\Setting\SettingRes\ScreenSaver.res RESTORE_DEFAULT_CURRENT_SCREENSVER_ID
-//
-
-//
-#COM_DEFS+= __IDLE_LOCK_SHOW_TIME_NEW_STYLE__
-#COM_DEFS += __MMI_LOCK_SCR_BH_STYLE__
+[2.4] 
 
 
 [2.5] 
@@ -262,7 +266,18 @@ __FM_LCD_OLD_TEST__
 make/K220_Y01A_MGUO_GSM.mak CUSTOMER_APPLICATION
 
 
-[2.9] 
+[2.9] SS
+//
+make/{cur}_GSM.mak  __IDLE_LOCK_SHOW_TIME_NEW_STYLE__
+make/{cur}_GSM.mak  __MMI_LOCK_SCR_BH_STYLE__
+
+
+// SCREENSAVER
+plutommi\mmi\Setting\SettingRes\ScreenSaver.res NVRAM_SCREENSAVER_STATUS
+plutommi\mmi\Setting\SettingRes\ScreenSaver.res RESTORE_DEFAULT_SCREENSAVER_STATUS
+plutommi\mmi\Setting\SettingRes\ScreenSaver.res NVRAM_CURRENT_SCREENSVER_ID
+plutommi\mmi\Setting\SettingRes\ScreenSaver.res RESTORE_DEFAULT_CURRENT_SCREENSVER_ID
+//
 
 
 
@@ -361,10 +376,19 @@ build:log\ckImgSize.log  file^system  查看ROM空间
 [2.15] 
 
 
+
 [2.16] 
 
 
+
 [2.17] 
+// history
+_bat\build\_ckImgSize.log  project
+//
+// tmp
+build\
+build\{tmp}\log\ckImgSize.log  system
+
 
 
 [2.18] build map

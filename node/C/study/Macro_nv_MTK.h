@@ -26,7 +26,7 @@ Save:node\C\study\Macro_nv_MTK.h \[1.12\] //custom
 Save:node\C\study\Macro_nv_MTK.h \[1.13\] HOMEPAGE
 Save:node\C\study\Macro_nv_MTK.h \[1.14\] set
 Save:node\C\study\Macro_nv_MTK.h \[1.15\] nv_config
-Save:node\C\study\Macro_nv_MTK.h \[1.16\] nv_med----------模式
+Save:node\C\study\Macro_nv_MTK.h \[1.16\] nv----------模式
 Save:node\C\study\Macro_nv_MTK.h \[1.17\] other
 Save:node\C\study\Macro_nv_MTK.h \[1.18\] 
 Save:node\C\study\Macro_nv_MTK.h \[1.19\] 
@@ -137,25 +137,26 @@ custom/common/PLUTO_MMI/nvram_common_config.c NVRAM_EF_SRV_SMS_SIM_CUST_DATA_LID
 
 
 
-[1.16] nv_med
-// 模式4
-custom\audio\{nv}\afe.c  AFE_SwitchExtAmplifier
+[1.16] nv
+// nv
+custom\audio\{nv}\nvram_default_audio.c
+//custom\audio\{nv}\nvram_default_audio_{cur}.h
+
 // 来电铃声
 custom\audio\{nv}\nvram_default_audio.c  GAIN_NOR_MED_VOL6
-#define GAIN_NOR_MED_VOL      6
-#define GAIN_NOR_MED_VOL0     10
-#define GAIN_NOR_MED_VOL1     18
-#define GAIN_NOR_MED_VOL2     26
-#define GAIN_NOR_MED_VOL3     34
-#define GAIN_NOR_MED_VOL4     42
-#define GAIN_NOR_MED_VOL5     50
 #define GAIN_NOR_MED_VOL6     58
 
-// mp3
-custom\audio\{nv}\nvram_default_audio.c  GAIN_NOR_MED_VOL6
+// mp3_max
+custom\audio\{nv}\nvram_default_audio.c  GAIN_NOR_MED_VOL_MAX
 #define GAIN_NOR_MED_VOL_MAX      58
 
+// 免提音
+custom\audio\{nv}\nvram_default_audio.c  GAIN_HND_SPH_VOL0
+// 正常音
+custom\audio\{nv}\nvram_default_audio.c  GAIN_NOR_SPH_VOL0
 
+
+###
 // Call Tone
 custom\audio\{nv}\nvram_default_audio.c  GAIN_NOR_CTN_VOL0,
 media\audio\include\aud_defs.h  AUD_VOLUME_CTN
@@ -185,6 +186,9 @@ media\audio\include\aud_defs.h  AUD_VOLUME_MEDIA
 
 
 [1.17] other
+// 模式4
+custom\audio\{nv}\afe.c  AFE_SwitchExtAmplifier
+
 // 通道
 custom\audio\{nv}\audcoeff.c  L1SP_MICROPHONE1
 custom\audio\{nv}\audcoeff.c  L1SP_SPEAKER1

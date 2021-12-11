@@ -552,10 +552,6 @@ macro NoteHander(hbuf, cNum, prompt)
 				SetClipString(lnVar)
 			}
 		}
-
-		//only chg value name
-		cmdP1 = curPath
-		cmdP2 = noteWord
 	}
 	else
 	{
@@ -566,7 +562,7 @@ macro NoteHander(hbuf, cNum, prompt)
 	}
 		
 	// parse "{cur}"
-	if(prompt == 0 && (isCmd == 0 || isCmd == 2))
+	if(prompt == 0 && (isCmd == 0 || isCmd == 1 || isCmd == 2 || isCmd == 6 || isCmd == 7))
 	{
 		tmpPath = ReAllKeyHead(hbuf, curPath)
 		//test: 0.open, 1.cur, 2,close.
@@ -578,6 +574,10 @@ macro NoteHander(hbuf, cNum, prompt)
 		if(tmpPath != "")
 			curPath = tmpPath
 			
+		tmpPath = ReAllKeyHead(hbuf, noteWord)
+		if(tmpPath != "")
+			noteWord = tmpPath
+			
 	}
 	
 	//test: 0.open, 1.cur, 2,close.
@@ -587,6 +587,10 @@ macro NoteHander(hbuf, cNum, prompt)
 		  # "curPath" # CharFromKey(13) # "--" # curPath # "--" # CharFromKey(13)
 		  # "noteWord" # CharFromKey(13) # "--" # noteWord # "--" # CharFromKey(13)
 			, 2)
+
+	//only chg value name
+	cmdP1 = curPath
+	cmdP2 = noteWord
 
 	//功能说明：
 	//open:    创建笔记; 打开exe; 打开文件+关键字; 非Macro_开头文件中只能用这个打开文件
@@ -994,7 +998,7 @@ macro NoteCurCmd(hbuf, noteCmd, curPath)
 //	编译指令是相对目录(不用完整路径)
 //    只替换"Save:"、"^"
 //    其他路径之前已替换
-	curPath = GetTransFileName(hbuf, curPath, 16)
+	curPath = GetTransFileName(hbuf, curPath, 17)
 	
 //	cmd_s用项目路径, 屏蔽设置路径(不用basePath设置)
 //	  (可能没有cmd文件)
@@ -1020,7 +1024,7 @@ macro NoteInCmd(hbuf, noteCmd, noteStr)
 {
 //	编译指令是相对目录(不用完整路径)
 //  只替换"Save:"、"^"
-	noteStr  = GetTransFileName(hbuf, noteStr, 16)
+	noteStr  = GetTransFileName(hbuf, noteStr, 17)
 	notePath = GetTransFileName(hbuf, "", 0)
 	cmdRoot  = GetTransRootDir(notePath)
 

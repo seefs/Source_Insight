@@ -16,17 +16,29 @@ features:\\
 buildPath = build\K220_A86\
 build:\\
 
-
-nvKey  = K220_A86_AUDIO_BB
+### 1.cfg
+nvKey  = K220_D33D_AUDIO_BB
 
 boardKey  = K220_D183A_BB
 
-###
+lcdKey  = K220D_QQVGA_LCM
+
+### 2.cur
 curKey = K220_A86
 
-oldKey = K220_D183A
+### 3.copy
+oldKey = K220_A86
 
-newKey = K220_A86
+newKey = K220_D33D
 
-tmpKey = K220_V97A_WD
+### 4.tmp
+tmpKey = K220_Y01A_MGUO
+
+### 5.mk info bak
+bak1Key = K220_Y01A_MGUO
+
+bak1Key = K220_Y01A_JMZ
+
+bak3Key = K220_Y01A_JMZ
+
 

@@ -121,18 +121,6 @@ plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  void^dm_redraw_category_scre
 plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  case^DM_WALL_PAPER
 plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  case^DM_BUTTON_BAR1
 
-// 9) Idle:ShortCut
-plutommi\Customer\CustResource\PLUTO_MMI\MMI_features_switchPLUTO.h CFG_MMI_DEDICATED_KEY_SHORTCUTS
-plutommi\Customer\CustResource\PLUTO_MMI\resource_shortcuts.c g_mmi_shct_nav_key_default_list
-plutommi\Customer\CustResource\resource_shortcuts.c g_mmi_shct_nav_key_default_list 临时文件(模拟器改这个文件)
-custom\common\PLUTO_MMI\nvram_common_config.c NVRAM_SHORTCUTS_TOTAL
-//	short ID:
-plutommi\Customer\CustResource\mmi_rp_menu_shortcut_data.c mmi_shct_candidate_menu
-
-//	Idle:ShortCut
-features:MMI_features_switch{cur}.h CFG_MMI_DEDICATED_KEY_SHORTCUTS
-//	statusBar
-//gui_status_icon_bar_show_oem
 
 // 10) page
 plutommi/Framework/GUI/GUI_SRC/wgui_categories_idlescreen.c wgui_cat033_redraw( )
@@ -152,6 +140,19 @@ plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c mmi_slk_handle_post_key_rout
 // lock--bl
 plutommi\mmi\Idle\IdleSrc\IdleCommon.c  mmi_idle_closebacklight_and_lock
 plutommi\mmi\Idle\IdleSrc\IdleCommon.c  __IDLE_LOCK_CLOSE_BACKLIGHT__
+
+// 上锁
+// lock--left + #
+plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c  __LOCK_BY_LSK_POUND__
+// lock--left + *
+plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c  __LOCK_BY_LSK_STAR_OR_LSK_CENTER_KEY_
+
+// 解锁
+// unlock--left + right
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  __UNLOCK_BY_LSK_RSK__
+
+
+
 
 
 
@@ -380,35 +381,55 @@ plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  dm_get_current_scr_bg_filler
 
 
 [1.5] test
-//
+// --test--path
 testPath = plutommi\MtkApp\FactoryMode\
 test:\\
 
-// testMode
+// --test--menu
 test:FactoryModeSrc\FactoryModeMain.c  void^EntryFMMenu
 test:FactoryModeSrc\FactoryModeMain.c  g_fm_test_item_tab
 //
 test:FactoryModeSrc\FactoryModeMisc.c __K220_Z97__
+// --test--menu
+test:FactoryModeRes\FactoryMode.res  MENU_ID_FM_ROOT
 
 
-// 1) 版本号:
+// --test1--version
 test:FactoryModeSrc\FactoryModeMisc.c void^mmi_fm_select_version_summary_menu
 test:FactoryModeSrc\FactoryModeMain.c MMI_RET^mmi_fm_enter_main_menu_proc
 test:FactoryModeRes\FactoryMode.res <MENUITEM^id="MENU_ID_FM_FLASH"
-// 2) 校准参数:	测试模式->版本号->SERIAL#: 10表示已校准
+// --test1--version--校准参数:	测试模式->版本号->SERIAL#: 10表示已校准
 test:FactoryModeSrc\FactoryModeMisc.c ReadRecordSlim(NVRAM_EF_BARCODE_NUM_LID, 
-// 3) 菜单
+// --test1--version--菜单
 test:FactoryModeRes/FactoryMode.res 403
 
 
-// IMEI
-plutommi/AppCore/SSC/SSCPassEngine.c SSCHandleIMEI
-plutommi\AppCore\SSC\SSCStringTable.h SSC_MANUAL_SET_IMEI
 
-
-// audioTest
+// --test2--audio
 test:FactoryModeSrc\FactoryModeAudio.c  mmi_fm_select_echo_loop
 test:FactoryModeSrc\FactoryModeAudio.c  __ECHO_TO_SPEAKER__
+
+// --test8--rec
+test:FactoryModeRes\FactoryMode.res  MENU_ID_FM_RECEIVER
+
+// --test9--chr
+test:FactoryModeRes\FactoryMode.res  MENU_ID_FM_ADC
+
+// --test10--rtc
+test:FactoryModeRes\FactoryMode.res  MENU_ID_FM_RTC
+
+// --test11--rtc
+test:FactoryModeRes\FactoryMode.res  MENU_ID_FM_MEMORY_CARD
+
+// --test12--k test
+test:FactoryModeRes\FactoryMode.res  MENU_ID_FM_MISC_AUTO_TEST_SETTING
+
+
+
+
+// --testcode--IMEI
+plutommi/AppCore/SSC/SSCPassEngine.c SSCHandleIMEI
+plutommi\AppCore\SSC\SSCStringTable.h SSC_MANUAL_SET_IMEI
 
 
 
@@ -430,10 +451,13 @@ plutommi\Service\FileMgrSrv\FileMgrSrvStorage.c srv_fmgr_drv_init(void)
 // 1) setting:torch 手电筒
 plutommi\mmi\Idle\IdleSrc\IdleCommon.c km_mmi_electric_torch_switch 	长按打开手电筒
 
+
 // 2) setting:charging 充电宝
 plutommi\mmi\Idle\IdleSrc\IdleCommon.c km_mmi_charging_switch			长按打开充电宝
 hal\peripheral\src\bmt_task_main.c bmt_chr_indication
 plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c mmi_popup_msg_charger_1
+
+
 // 3) 添加充电宝状态图标
 plutommi\Framework\GUI\GUI_Res\Status_icon_bar.res IMG_SI_CHARGING
 plutommi\Framework\GUI\GUI_SRC\wgui_status_icon_bar.c IMG_SI_CHARGING	顺序一致 分组为NO_GROUP
@@ -443,21 +467,26 @@ plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c STATUS_ICON_CHARGING
 //	添加翻译:
 plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res STR_CHARGER_BANK_REMOVED
 //	电量电压:
-4格~4.1V   3格~3.91   2格~3.83   1格~3.75   黑~3.62   红~3.52
+//4格~4.1V   3格~3.91   2格~3.83   1格~3.75   黑~3.62   红~3.52
+
 
 // 4) setting:lcd
 custom\common\hal_public\lcd_sw_rnd.h DRV_MAINLCD_INIT_COLOR
 plutommi\Framework\GUI\GUI_INC\gui_config.h
+
 // 5) 滚动条宽度
 plutommi\Framework\GUI\GUI_INC\gui_switch.h #define^CFG_UI_SOFTKEY_WIDTH
 plutommi\Framework\GUI\GUI_INC\gui_switch.h #define^CFG_UI_SCROLLBAR_WIDTH
+
 // 6) audio vol
 custom\common\PLUTO_MMI\custom_mmi_default_value.h	--audio vol
+
 // 7) 新加情景模式:
 plutommi\Service\ProfilesSrv\ProfilesSrvConfig.h SRV_PROF_PROFILES_TOTAL_NUM
 custom\common\userprofile_nvram_def.h NVRAM_SRV_PROF_PROFILES_TOTAL_NUM
 custom\common\PLUTO_MMI\Common_nvram_editor_data_item.h nvram_meta_profile_struct # 可能没有加
-	
+
+
 // 8) setting:datetime 设置日期时间:
 plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c void^show_datetime_input
 plutommi\mmi\Setting\SettingSrc\DateAndTime.c void^mmi_phnset_entry_set_date_and_time
@@ -472,6 +501,8 @@ plutommi\mmi\Setting\SettingSrc\DateAndTime.c void^PhnsetSendSetTimeReqMessage( 
 plutommi\Framework\GUI\GUI_SRC\gui_inputs.c void^gui_show_multi_line_input_box_ext_internal
 //	日期有效性:
 plutommi\Framework/GUI/GUI_SRC/wgui_datetime.c default_inline_date_validation
+// set--time--format
+plutommi\Service\SettingSrv\res\GeneralSettingSrv.res  NVRAM_DT_SEP_FORMAT
 
 
 // 9) setting:Restore 恢复出厂设置:
@@ -480,8 +511,54 @@ plutommi\mmi\Setting\SettingSrc\Restore.c mmi_restore_app_reboot(void)
 custom\common\PLUTO_MMI\nvram_common_config.c NVRAM_ATTR_FACTORY_RESET
 
 
+// 10) set--phone
 // --set--phone--endlock
 plutommi\mmi\Setting\SettingSrc\PhnsetDisplay.c  mmi_phnset_disp_setup_sub_menu_select_handler
+
+// 11) set--short
+// --set--phone--short
+plutommi\mmi\Extra\ExtraSrc\Shortcuts.c  EntryShctInMainMenu
+// ===short--menuId--base
+plutommi\Customer\CustResource\mmi_rp_menu_shortcut_data.c  mmi_shct_candidate_menu
+// ===short--init
+plutommi\mmi\Bootup\BootupSrc\BootupScrAni.c  mmi_ani_finalize
+plutommi\mmi\Bootup\BootupSrc\BootupInitApps.c  mmi_bootup_notify_completed
+plutommi\mmi\Bootup\BootupSrc\BootupInitApps.c  mmi_bootup_init_apps
+plutommi\mmi\Extra\ExtraSrc\Shortcuts.c  mmi_shct_init
+// ===short--init--base
+//		==>menu_id
+//		==>mmi_shct_candidate_menu.launch_func
+//		==>nCustMenus[].nStrId
+//		==>NVRAM_EF_SHORTCUTS_LID
+plutommi\mmi\Extra\ExtraSrc\Shortcuts.c  void^ShctReadFromNvram
+plutommi\Customer\CustResource\PLUTO_MMI\resource_shortcuts.c g_mmi_shct_quick_menu_default_list
+// ===short--reg
+//		==>shortcut="ON"
+//		==>NVRAM_EF_SHORTCUTS_LID
+plutommi\mmi\Setting\SettingRes\TihoBroadcastSettingInrom.res  MENU_TIHO_BROADCAST_SETTING_SETUP
+
+
+// 12) set--gif
+// --set--phone--power--gif
+plutommi\mmi\Inc\MMI_features.h  __MMI_POWER_ON_OFF_DISPLAY__
+//		==>has set
+//		==>POON/pooff
+plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c  1219
+//		==>no set
+//		==>POONOFF
+plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c  1453
+//		==>no gif
+//		==>logo
+plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c  1483
+//		==>no LOW
+//		==>POON/pooff
+plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c  1506
+
+
+
+// 13) set--phone--other
+// --set--phone--other--lcd
+plutommi\Customer\CustResource\CustCoordinates.c  coordinate_set111
 
 
 
@@ -514,7 +591,9 @@ plutommi/CUI/SmsCui/SmsSenderCui.c cui_sms_dm_pre_send_msg
 //	Show: 
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c ShowMOMTCallScreen
 
-//	来电
+//	来电/去电
+//		==>no status
+//		==>status_icon = 0;
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c ShowMOMTCallScreen
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c 7020
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c ShowCategory17Screen_int
@@ -530,16 +609,24 @@ plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c show_main_LCD_date_time
 
 //	--status
 wgui_status_icon_bar_set_display
+
+
 //	--draw
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c RedrawMOMTCallScreen
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c 7933
 //	--draw--icon
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c SetMOMTCallImageClip
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c 8539
+//	--draw--bar
+//		==>no bg/color
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c wgui_cat403_draw_tab_bar_ctrl_area1
 
 
 //	拨出
 plutommi\mmi\Ucm\UcmSrc\UcmUi.c  mmi_ucm_enter_outgoing_call
+
+//	call--option--hold
+plutommi\mmi\Ucm\UcmSrc\UcmUi.c  mmi_ucm_handle_incall_option
 
 
 
@@ -665,15 +752,6 @@ plutommi\MtkApp\Sndrec\SndrecSrc\SndrecUI.c  EVT_ID_ON_KEY
 
 
 [1.14] fm
-//	FM:
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak FM_RADIO_RECORD
-//	EZFM:
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak SBD_EZFM_SUPPORT EASY_FM
-features:MMI_features_switch{cur}.h CFG_MMI_FM_RADIO_BIND_EARPHONE
-//	FM 天线:
-projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak INTERNAL_ANTENNAL_SUPPORT
-
-
 //	FM-画界面:
 plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioMainScreen.c void^mmi_fmrdo_show_main
 //	FM-channel字体:
@@ -681,6 +759,8 @@ plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioMainScreen.c void^mmi_fmrdo_redraw_mai
 //	FM-其他颜色:
 plutommi\Customer\CustResource\M107_MMI\resource_fmradio_skins.c g_fmrdo_skins
 
+//	FM-vol:
+plutommi\MtkApp\FMRadio\FMRadioRes\FMRadio.res  FACTORY_RESTORE_DEFAULT_FMRDO_VOLUME
 
 
 [1.15] 
@@ -706,6 +786,8 @@ mp3:AudioPlayerSrc\AudioPlayerMainScreen.c  __MMI_AUDIO_PLAYER_DISPLAY_VOL_BUTTO
 mp3:AudioPlayerSrc\AudioPlayerMainScreen.c  3385  mmi_audply_redraw_main_title
 // --init--draw--vol
 mp3:AudioPlayerSrc\AudioPlayerMainScreen.c  mmi_audply_redraw_main_volumebar
+mp3:AudioPlayerRes\AudioPlayer.res  NVRAM_AUDPLY_VOLUME
+custom\common\PLUTO_MMI\custom_mmi_default_value.h  FACTORY_RESTORE_DEFAULT_AUDPLY_VOLUME
 // --init--draw--index
 mp3:AudioPlayerSrc\AudioPlayerMainScreen.c  3938
 //
@@ -982,16 +1064,41 @@ cui_dtcnt_get_first_entry_highlight_item
 
 
 [1.28] sos
-// sos
-//MENU_SOS_SETUP
+## sos
+// sos--menu
+plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res  MENU_SOS_SETUP
+plutommi\mmi\Setting\SettingRes\PhoneSetting.res  MENU_SOS_SETUP
+// sos--setKey
+plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  __MMI_SOS_LIST__
+// sos--menu--num
+plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  MENU_ID_SET_SOS_NUM
 
 
-// SPEED
+
+## SPEED
+// speed--setKey
+plutommi\mmi\Idle\IdleSrc\IdleCommon.c  mmi_new_speed_dail_nine_call
+//	SetKeyHandler(mmi_new_speed_dail_nine_call, KEY_9, KEY_LONG_PRESS);
+//	SetKeyHandler(mmi_idle_entry_dialer_by_key,KEY_9,KEY_EVENT_UP);
+//	ClearKeyHandler(KEY_9,KEY_EVENT_DOWN); 
+
+plutommi\Customer\CustResource\{cur}_MMI\MMI_features_switch{cur}.h  CFG_MMI_PHB_SPEED_DIAL
+features:\MMI_features_switch{cur}.h
+//	#define CFG_MMI_PHB_SPEED_DIAL	(__OFF__)
+
+// speed--set--menu
 plutommi\mmi\Setting\SettingRes\PhoneSetting.res  MENU_NEW_SPEED_DAIL_MENU_SETTING
-//
+// speed--set
 plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  MENU_NEW_SPEED_DAIL_MENU_SETTING
+plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  mmi_idle_speed_dail_luanch
+// speed--setKey
+plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  mmi_new_speed_dail_nine_call
 
 
+# SIGNAL
+make/{cur}_GSM.mak  __MMI_SUPER_SIGNAL__  假超强信号
+// signal--setKey
+plutommi\mmi\Idle\IdleSrc\IdleCommon.c  __MMI_SUPER_SIGNAL__
 
 
 

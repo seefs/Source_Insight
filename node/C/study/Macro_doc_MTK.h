@@ -3,14 +3,14 @@
 //目录[Num][Ca]:
 // 1. 
 Save:node\C\study\Macro_doc_MTK.h \[1.1\] //Message 切换
-Save:node\C\study\Macro_doc_MTK.h \[1.2\] //FUN 入口-------------
+Save:node\C\study\Macro_doc_MTK.h \[1.2\] FUN 入口-------------
 Save:node\C\study\Macro_doc_MTK.h \[1.3\] lang
 Save:node\C\study\Macro_doc_MTK.h \[1.4\] //移配置
 Save:node\C\study\Macro_doc_MTK.h \[1.5\] //说明文档
 Save:node\C\study\Macro_doc_MTK.h \[1.6\] //Win数据
 Save:node\C\study\Macro_doc_MTK.h \[1.7\] //SALE统计
 Save:node\C\study\Macro_doc_MTK.h \[1.8\] tihu
-Save:node\C\study\Macro_doc_MTK.h \[1.9\] //test code-------------
+Save:node\C\study\Macro_doc_MTK.h \[1.9\] test code-------------
 Save:node\C\study\Macro_doc_MTK.h \[1.10\] //ImageNote
 Save:node\C\study\Macro_doc_MTK.h \[1.11\] //TextNote
 Save:node\C\study\Macro_doc_MTK.h \[1.12\] 
@@ -30,7 +30,11 @@ Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 
 [1.2] FUN 入口
-
+//
+vendor\search_engine\GUOBI\winguo\adapter\winguo_platform\platform_src\GB_SMDSysPort.c  ORGANIZER_CALENDER_MENU
+vendor\search_engine\GUOBI\winguo_v2\src\model\platform\src\GB_SMD_PlatformElementApp.c  ORGANIZER_CALENDER_MENU
+//
+plutommi\Framework\EventHandling\EventsInc\mmi_menu_handlers.h  ORGANIZER_CALENDER_MENU
 
 
 
@@ -58,19 +62,82 @@ mre\sdkinc\vmchset_sdk.h PUNJABI
 
 
 [1.8] tihu
-//
+// tihu--open
 make/{cur}_GSM.mak  HERO_ENGINE_SUPPORT
-//
-make/{cur}_GSM.mak  TIHO_TTS_SUPPORT
+// tihu--来电
+//     --TCARD/125kb/145kb
+make/{cur}_GSM.mak  HERO_ENGINE_INCOMECALL
 
-// vol
+
+// tts--open
+make/{cur}_GSM.mak  TIHO_TTS_SUPPORT
+// tts--vol
+make/{cur}_GSM.mak  __TTS_VOLUME_DEFAULT_MAX__
+make/{cur}_GSM.mak  __MMI_TONE_VOL_MAX5__
+//
 plutommi\mmi\Setting\SettingRes\TihoBroadcastSetting.res  __TTS_VOLUME_DEFAULT_MAX__
 plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  __TTS_VOLUME_DEFAULT_MAX__
 
 
+// tts--ring
+plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  ttsNumKeyDataId
+
+
 
 [1.9] test code
+// code
+plutommi/AppCore/SSC/SSCPassEngine.c SSCHandleIMEI
+plutommi\AppCore\SSC\SSCStringTable.h SSC_MANUAL_SET_IMEI
 
+
+// Phone
+"#*8378#0#", "*#15963#", "####1111#",
+"*#2151118*#"  "*#555#"
+// UI
+"*#87#", "*#666#",
+// Item
+ "*#79*#", 
+"*#66*#", "*#2266#", "*#777#", "*#*#6666#*#"
+// Product
+"#*8378#3#",
+// PhoneInfo -- bg
+"#*8378#4#",
+// SN
+"####2222#",
+// Net--mcc,mnc
+"####1040#",
+// Engineer
+"#*8378#1#", "*#555#",--mcc,mnc
+// Version--Out -- bg
+"#*8378#2#", "####0000#", 
+"*#8375#" "*#0000#"
+// Version--3
+"*#888#",
+// Chip
+"#*8378#5#",
+// NV
+"#*786646468#",
+// Monkey
+"#*8378#8#",
+// TFload
+"#*8378#9#",
+// ALLSVN -- bg
+"#*786837#",
+// HW
+"*#999#", "*#523#",
+"*#888999#"
+// IMEI
+"*#06#",
+"*#5353#"
+// Reset
+"*#119*#", "*#70#",
+// ELECTRIC/SALE
+1-"*#2010#"; 
+2-"*#0808#"; 
+3-"*#0809#", 
+1-"*#8214#" ,"*#1616#", "*#8888*#", "*#888#"
+2-"*#4128#", "*#161617#", "*#27688#", "*#*#0808*#*#"
+// SALE-New
 
 
 [1.10] ImageNote

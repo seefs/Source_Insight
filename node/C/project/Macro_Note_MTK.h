@@ -18,7 +18,7 @@ Save:node\C\project\Macro_Note_MTK.h \[2.2\] //颜色---------common_mdu_def.h
 Save:node\C\project\Macro_Note_MTK.h \[2.3\] 配置, 主题
 Save:node\C\project\Macro_Note_MTK.h \[2.4\] fm
 Save:node\C\project\Macro_Note_MTK.h \[2.5\] 语言, 字体----mmi_custom_define.h
-Save:node\C\project\Macro_Note_MTK.h \[2.6\] 情景模式 音频参数
+Save:node\C\project\Macro_Note_MTK.h \[2.6\] 情景模式
 Save:node\C\project\Macro_Note_MTK.h \[2.7\] //手电筒
 Save:node\C\project\Macro_Note_MTK.h \[2.8\] U盘-----------mmisrvfmm_export.h 
 Save:node\C\project\Macro_Note_MTK.h \[2.9\] 版本号--------Verno_xx.bld
@@ -118,35 +118,54 @@ CFG_MMI_MULTITAP_KEY_0
 
 [1.4] LCD
 //
-make/K220_Y01A_MGUO_GSM.mak CUSTOMER_NAME = M107
+make/{cur}_GSM.mak  LCD_MODULE
+//	LCD_MODULE = K220D_QQVGA_LCM
 //
-make/K220_Y01A_MGUO_GSM.mak MAIN_LCD_SIZE
+make/{cur}_GSM.mak  COM_DEFS_FOR_ xxx_LCM
+//	COM_DEFS_FOR_K220D_D188A_QQVGA_LCM = COLOR_LCD K220D_QQVGA_LCM TFT_MAINLCD
+
 //
-make/K220_Y01A_MGUO_GSM.mak _COMBO_LCM = ST7735S GC9106	  屏设置
-make/K220_Y01A_MGUO_GSM.mak SYNC_LCM_SUPPORT 			  屏设置 TE脚
-//make\K220_L12_MGUO_gprs.mak 2_DATA_LANE_LCM 		  屏 三线/四线
-make/K220_Y01A_MGUO_GSM.mak DUAL_CAMERA_SUPPORT 	  		  摄像头设置
-make/K220_Y01A_MGUO_GSM.mak CMOS_SENSOR GC6133_SERIAL	  摄像头设置
-make/K220_Y01A_MGUO_GSM.mak CMOS_SENSOR_BAK1 SP0821_SERIAL 摄像头设置
-make/K220_Y01A_MGUO_GSM.mak FLASHLIGHT_TYPE				  闪光灯
-make/K220_Y01A_MGUO_GSM.mak CUSTOM_OPTION 			  	  自定义宏
+//make/{cur}_GSM.mak CUSTOMER_NAME = M107
+//make/{cur}_GSM.mak _COMBO_LCM = ST7735S GC9106	  屏设置
+//
+make/{cur}_GSM.mak SYNC_LCM_SUPPORT 			  屏设置 TE脚
+//make\{cur}_GSM.mak 2_DATA_LANE_LCM 		  屏 三线/四线
+
 
 // 横屏
-make/K220_Y01A_MGUO_GSM.mak BOARD_VER
+make/{cur}_GSM.mak BOARD_VER
 //	BOARD_VER = K220_L12_BB
-make/K220_Y01A_MGUO_GSM.mak MAIN_LCD_SIZE
+make/{cur}_GSM.mak MAIN_LCD_SIZE
 //	MAIN_LCD_SIZE = 160X128
-make/K220_Y01A_MGUO_GSM.mak LCM_ROTATE_SUPPORT
+make/{cur}_GSM.mak LCM_ROTATE_SUPPORT
 //	LCM_ROTATE_SUPPORT = TRUE
-make/K220_Y01A_MGUO_GSM.mak MAIN_LCM_SCANLINE_ROTATION
+make/{cur}_GSM.mak MAIN_LCM_SCANLINE_ROTATION
 //	MAIN_LCM_SCANLINE_ROTATION = TRUE
-make/K220_Y01A_MGUO_GSM.mak LCM_SCANLINE_ROTATION_SUPPORT
+make/{cur}_GSM.mak LCM_SCANLINE_ROTATION_SUPPORT
 //	LCM_SCANLINE_ROTATION_SUPPORT = TRUE
 
+//
+custom\drv\LCD\{lcd}\
+custom\drv\LCD\{lcd}\combo_lcm_ST7735S.c
+//
+custom\drv\LCD\K220D_QQVGA_LCM\lcd_sw.h  main_lcm_enum
+//	GC9108,
+//	GC9102,
 
+// 背光电流
+custom/drv/misc_drv/_Default_BB/
+custom/drv/misc_drv/_Default_BB/MT6261/pmu_custom.c  ISINK0_STEP
+
+// 背光等级?? 
+custom\app\{board}\nvram_user_config.c  MTKLCM_COLOR
 
 
 [1.5] CAM
+//
+make/{cur}_GSM.mak DUAL_CAMERA_SUPPORT 	  		  摄像头设置
+make/{cur}_GSM.mak CMOS_SENSOR GC6133_SERIAL	  摄像头设置
+make/{cur}_GSM.mak CMOS_SENSOR_BAK1 SP0821_SERIAL 摄像头设置
+
 
 // 关CAM报错:
 	MJPG_ENCODE = FALSE
@@ -159,6 +178,9 @@ make/K220_Y01A_MGUO_GSM.mak LCM_SCANLINE_ROTATION_SUPPORT
 	make: *** [.\build\M115_JGW_D2_X191_F2\gprs\MT6261r\codegen_dep\cgen_cfg.det] Error 253
 
 
+//
+make/{cur}_GSM.mak FLASHLIGHT_TYPE				  闪光灯
+make/{cur}_GSM.mak CUSTOM_OPTION 			  	  自定义宏
 
 
 [1.6] 
@@ -241,15 +263,15 @@ make/K220_Y01A_MGUO_GSM.mak LCM_SCANLINE_ROTATION_SUPPORT
 
 [2.3] 配置, 主题
 //	modis: 手电筒:
-make/K220_Y01A_MGUO_GSM.mak __KM_ELECTRIC_TORCH__			手电筒
+make/{cur}_GSM.mak __KM_ELECTRIC_TORCH__			手电筒
 
 //	modis: 充电宝:
-make/K220_Y01A_MGUO_GSM.mak __SBD_CHARGING_TREASURE_SWITCH__ 充电宝
+make/{cur}_GSM.mak __SBD_CHARGING_TREASURE_SWITCH__ 充电宝
 //	充电宝图标
 projects\M107\K220_L12_MGUO\Images\MainLCD\IdleScreen\StatusIcons\SI_CHARGING.png
 
 //	EZFM:
-make/K220_Y01A_MGUO_GSM.mak __KM_EASY_FM__
+make/{cur}_GSM.mak __KM_EASY_FM__
 projects\M107\K220_L12_MGUO\Resource\MMI_features_switchPLUTO.h CFG_MMI_FM_RADIO_BIND_EARPHONE
 
 // 马达
@@ -273,6 +295,30 @@ projects\M107\K220_L12_MGUO\Resource\Themecomponents.h #define^img_menuitem_sing
 
 
 [2.4] fm
+//
+make/{cur}_GSM.mak  FM_RADIO_CHIP
+//	FM_RADIO_CHIP = MT6261FM
+//	FM_RADIO_CHIP = NONE
+//
+make/{cur}_GSM.mak  FM_RADIO_HW_SEARCH
+//	FM_RADIO_HW_SEARCH = TRUE
+//
+make/{cur}_GSM.mak  FM_RADIO_I2S_PATH
+//	FM_RADIO_I2S_PATH = TRUE
+
+
+### old
+//	FM:
+make/{cur}_GSM.mak  FM_RADIO_RECORD
+//	EZFM:
+make/{cur}_GSM.mak  SBD_EZFM_SUPPORT 
+make/{cur}_GSM.mak  EASY_FM
+//features:MMI_features_switch{cur}.h CFG_MMI_FM_RADIO_BIND_EARPHONE
+plutommi\Customer\CustResource\{cur}_MMI\MMI_features_switch{cur}.h CFG_MMI_FM_RADIO_BIND_EARPHONE
+//	FM 天线:
+make/{cur}_GSM.mak  INTERNAL_ANTENNAL_SUPPORT
+
+
 
 
 
@@ -316,34 +362,41 @@ plutommi\mmi\SecuritySetting\SecSetRes\SecSet.res MENU_ID_MOBILE_TRACKER
 plutommi\mmi\Inc\ProcedureConfig.h KM_MMI_FRM_PROC_ID_MOBILE_TRACKER
 
 
-[2.6] 情景模式 音频参数
-//
-custom\audio\{nv}\
-custom\audio\{nv}\nvram_default_audio.c NVRAM_EF_CUST_ACOUSTIC_DATA_DEFAULT
-//
-custom\audio\{nv}\nvram_default_audio.c
-custom\audio\{nv}\nvram_default_audio_K220_L12_MGUO.h
-//	GAIN_HND_SPH_VOL0  音频参数 免提音 
-//	GAIN_NOR_SPH_VOL0	正常音
+[2.6] 情景模式
 
 NVRAM_PROFILES_ACTIVATED 情景模式默认NV	
+
 //	K类: K类设置不同可能开不了机
-make/K220_Y01A_MGUO_GSM.mak CLASSK_CHARGEPUMP_SUPPORT
-make/K220_Y01A_MGUO_GSM.mak SBD_EXTERNAL_AMPLIFIER_CLASSK
+make/{cur}_GSM.mak CLASSK_CHARGEPUMP_SUPPORT
+make/{cur}_GSM.mak SBD_EXTERNAL_AMPLIFIER_CLASSK
 	
 //	省电模式:
-make/K220_Y01A_MGUO_GSM.mak __MMI_SUPER_BATTERY__
-make/K220_Y01A_MGUO_GSM.mak __KM_MMI_PROFILE_RETRENCH__
+make/{cur}_GSM.mak __MMI_SUPER_BATTERY__
+make/{cur}_GSM.mak __KM_MMI_PROFILE_RETRENCH__
 
-//	情景默认等级:
+
+###	情景默认等级:
 custom\common\userprofile_nvram_def.c NVRAM_PROFILES_DEFAULT
-custom\common\userprofile_nvram_def_K220_L12_MGUO.h
-//		mt_call_tone[ 4 ]:这个应该是来电
+custom\common\userprofile_nvram_def_{cur}.h
+custom\common\userprofile_nvram_def.c 462
+custom\common\userprofile_nvram_def.h  nvram_srv_prof_setting_struct;
+// +1~8: ring_vol ~ ring_type
+// +1~6: intelligent_call_alert ~ touch_vib
+// +1~5: power_on_tone ~ cover_close_tone
+// +1~4: sms_tone
+// +1~4: mms_tone
+// +1~4: email_tone
+// +1~4: voice_tone
+// +1~4: mt_call_tone  这个应该是来电
+// +1~4: vt_call_tone
+
+
 
 //	耳机+外放音量等级:
 plutommi\Service\GpioSrv\gpiosrv.res NVRAM_NORMAL_MODE_VOICE_LEVEL //听筒
 plutommi\Service\GpioSrv\gpiosrv.res NVRAM_HDSET_MODE_VOICE_LEVEL  //耳机
 plutommi\Service\GpioSrv\gpiosrv.res NVRAM_LDSPK_MODE_VOICE_LEVEL  //外放
+
 
 
 [2.7] 手电筒
