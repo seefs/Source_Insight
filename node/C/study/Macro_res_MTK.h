@@ -28,7 +28,7 @@ Save:node\C\study\Macro_res_MTK.h \[1.20\]
 
 [1.1] 项目配置
 // set cur project
-Save:node\C\project\Macro_c_path.h  _mtk_bak_
+Save:node\C\project\Macro_c_path.h  _mtk_cur_
 
 // set cur project nv
 Save:node\C\project\Macro_c_path.h  _mtk_cfg_
@@ -82,6 +82,9 @@ plutommi\Customer\CustResource\PLUTO_MMI\CustResDefPLUTO.h SSC_SW_VERSION
 plutommi\Customer\CustResource\ThemeRes.c  theme_defaultTheme
 plutommi\Customer\CustResource\Themecomponents.h  title_text_color_defaultTheme
 plutommi\Customer\CustResource\PLUTO_MMI\ref_list.txt
+plutommi\Customer\CustResource\PLUTO_MMI\MMI_features_switchPLUTO.h
+//plutommi\mmi\Inc\MMI_features_switch.h
+
 
 // --features
 plutommi\mmi\Inc\MMI_features.h  STATUS_BAR
@@ -268,8 +271,8 @@ images:\
 
 
 // --主菜单图片
-images:MainLCD\MainMenu\SLIM_MATRIX
-images:MainLCD\MainMenu\PAGE
+images:MainLCD\MainMenu\SLIM_MATRIX\
+images:MainLCD\MainMenu\PAGE\
 //
 plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res __MMI_MAINMENU_PAGE_SUPPORT__
 plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res IMG_MAINMENU_SUB_DIR 添加完整路径
@@ -296,22 +299,24 @@ images:MainLCD\Active\poweronoff\logo.BMP
 
 
 // --开关机动画:
-// --powonoff--gif
+// ---power--gif
 make/{cur}_GSM.mak  __MMI_POWER_GIF_DISPLAY__
 
 //  与铃声同步问题 建议开机动画时间相比减0.5s 关机动画时间减2s
 images:MainLCD\Active\Poweronoff\
-images:MainLCD\Active\Poweronoff\logo.bmp
-images:MainLCD\Active\Poweronoff\POON.gif
-images:MainLCD\Active\Poweronoff\pooff.gif
-//
+//	logo.bmp
+//	POON.gif
+//	pooff.gif
+
+// ---power--on
 features:MMI_features_switch{cur}.h CFG_MMI_POWER_ON_OFF_DISPLAY
+// ---power--gif
 features:MMI_features_switch{cur}.h CFG_MMI_RES_TYPE_POWER_ONOFF_SEL
 plutommi\mmi\Inc\MMI_features.h  __MMI_RES_TYPE_POWER_ONOFF_SEL__
 plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c POON.gif
 
 //
-make/{cur}_GSM.mak SBD_POWER_ONOFF_SAME_LOGO
+//make/{cur}_GSM.mak SBD_POWER_ONOFF_SAME_LOGO
 //~ 
 //~ lcd_sw_rnd DRV_MAINLCD_INIT_COLOR 设置logo背景色
 
@@ -396,7 +401,11 @@ make/{cur}_GSM.mak  __MMI_POWERRING_SAME__
 make/{cur}_GSM.mak  __MMI_POWERONRING_MP3__
 make/{cur}_GSM.mak  __AUDIO_SAME_AS_POWONOFF__
 //
-plutommi\Customer\CustResource\{cur}_MMI\MMI_features_switch{cur}.h
+//plutommi\Customer\CustResource\{cur}_MMI\MMI_features_switch{cur}.h
+
+
+// --短信/来电
+//plutommi\Service\ProfilesSrv\ProfilesSrvMain.c  AUD_ID_PROF_TONE1^+^index
 
 // --tone
 plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res AUD_ID_PROF_TONE1
@@ -421,12 +430,12 @@ audio:UserProfiles\Ring\
 // --play
 plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res AUD_ID_MP3_PLAY_0
 //	AUD_ID_MP3_PLAY_0 --> play_mp3.mp3
-audio:
+audio:\
 
-// --SOS
+// --__SOS__
 plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res AUD_ID_SOS_MP3
 //	AUD_ID_SOS_MP3 --> SOS.mp3
-audio:
+audio:\
 
 // --HERO
 plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res TIHO_ID_PROF_NUM1_0
@@ -506,9 +515,14 @@ vendor\font\FontData\OfficialFont\RUSSIAN\Russian_16.bdf
 vendor\font\FontData\OfficialFont\RUSSIAN\Russian_18.bdf
 
 // --中文
+vendor\font\MTK\official\project\plutommi\content\src\MainLcd160X128\res_gen_font.cpp __MMI_LANG_SM_CHINESE__
 vendor\font\MTK\official\project\plutommi\content\src\MainLcd128X160\res_gen_font.cpp __MMI_LANG_SM_CHINESE__
 // --中文-bdf
 vendor\font\FontData\OfficialFont\Chinese\
+//	font_22_type.bdf-----------L12, 粗, 2.12M
+//  HW2424_18_New.BDF----------V35, 大, 1.51M
+//  GB2312_24.BDF-----------------, --, 2.00M
+//	common.BDF-----------------Def, --, 2.15M
 
 // --波斯
 vendor\font\MTK\official\project\plutommi\content\inc\MainLcd240X320\L_MTK_Arabic_vk_9.h

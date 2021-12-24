@@ -30,7 +30,7 @@ Save:node\ToolsMsg\Macro_win.h \[3.4\] mv
 Save:node\ToolsMsg\Macro_win.h \[3.5\] vpn
 Save:node\ToolsMsg\Macro_win.h \[3.6\] CorelDRAW
 Save:node\ToolsMsg\Macro_win.h \[3.7\] Game
-Save:node\ToolsMsg\Macro_win.h \[3.8\] InputMethod 输入法
+Save:node\ToolsMsg\Macro_win.h \[3.8\] InputMethod 输入法, 小狼毫
 Save:node\ToolsMsg\Macro_win.h \[3.9\] postman
 Save:node\ToolsMsg\Macro_win.h \[3.10\] 
 // 
@@ -387,6 +387,11 @@ C:\Program^Files^(x86)\WanNengWBInput\
 C:\Program^Files^(x86)\WanNengWBInput\10.0.4.10418
 // 寻找 WnMoniter.exe，进行改名或者删除
 新建一个文本文件并改名为WnMoniter.exe，设置道只读属性。
+
+
+// 小狼毫
+Save:node\C\project\Macro_c_list.h  __rime__
+
 
 
 

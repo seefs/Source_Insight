@@ -13,12 +13,12 @@ tmp2:\\
 
 //Ŀ¼[Num][Ca]:
 // 1. 
-Save:node\C\project\Macro_c_list.h \[1.1\] 
+Save:node\C\project\Macro_c_list.h \[1.1\] qrcode
 Save:node\C\project\Macro_c_list.h \[1.2\] 
 Save:node\C\project\Macro_c_list.h \[1.3\] TTF
 Save:node\C\project\Macro_c_list.h \[1.4\] //TTF edit
 Save:node\C\project\Macro_c_list.h \[1.5\] fontforge
-Save:node\C\project\Macro_c_list.h \[1.6\] 
+Save:node\C\project\Macro_c_list.h \[1.6\] rime
 Save:node\C\project\Macro_c_list.h \[1.7\] 
 Save:node\C\project\Macro_c_list.h \[1.8\] 
 Save:node\C\project\Macro_c_list.h \[1.9\] 
@@ -29,7 +29,7 @@ Save:node\C\project\Macro_c_list.h \[1.12\]
 
 
 
-[1.1] 
+[1.1] qrcode
 //
 
 // qrcode
@@ -138,10 +138,17 @@ Save:node\C\project_demo\Macro_file_ttf_fontforge.h
 
 
 
-[1.6] 
+[1.6] __rime__
+//
+cd:tmp: git clone https://github.com/rime/rime-wubi
+//
+C:\Program^Files^(x86)\Rime\weasel-0.14.3\data\
+// hotkeys
+C:\Program^Files^(x86)\Rime\weasel-0.14.3\data\default.yaml
+//    - F4
 
 
-
+ 
 
 [1.7] 
 

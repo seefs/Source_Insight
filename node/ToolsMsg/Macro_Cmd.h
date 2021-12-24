@@ -146,6 +146,8 @@ ECHO %VAR%
 //	Shutdown -s -t 600
 // 20∑÷÷”£∫  
 //	Shutdown -s -t 1200
+// 30∑÷÷”£∫  
+//	Shutdown -s -t 1800
 // 100∑÷÷”£∫  
 //	Shutdown -s -t 6000
 //	Shutdown -a

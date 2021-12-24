@@ -1,7 +1,7 @@
 
 //Ä¿Â¼[Num][Ca]:
 // 1. Ä£°å
-Save:node\C\project\Macro_c_path.h \[1.1\] mtk_bak--------
+Save:node\C\project\Macro_c_path.h \[1.1\] mtk_cur--------
 Save:node\C\project\Macro_c_path.h \[1.2\] mtk_copy
 Save:node\C\project\Macro_c_path.h \[1.3\] mtk_cfg--------nv, board
 Save:node\C\project\Macro_c_path.h \[1.4\] mtk_other------rf
@@ -30,7 +30,7 @@ Save:node\C\project\Macro_c_path.h \[2.12\]
 
 
 
-[1.1] _mtk_bak_
+[1.1] _mtk_cur_
 // (1).curKey
 // --images/audio/features/build
 Save:set\Macro_Set_Path_mtk.h  curKey
@@ -38,6 +38,13 @@ Save:set\Macro_Set_Path_mtk.h  curKey
 // (2).bak
 // A86
 curKey = K220_A86
+curKey = K220_D33D
+curKey = K220_XHT_V79
+
+// A86
+make K220_A86 GSM new
+make K220_D33D GSM new
+
 
 // Y01A
 curKey = K220_Y01A_MGUO

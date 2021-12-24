@@ -53,16 +53,18 @@ custom\app\{board}\nvram_user_config.c  __MORE_BATTERY_LEVEL__
 //
 
 // (1).tmp nv
+// cur
+custom\app\{board}\
+custom\app\{board}\nvram_user_config.c  __MORE_BATTERY_LEVEL__
+
 // bak
-Save:node\C\project\Macro_c_path.h  _mtk_bak_
-// set
 Save:set\Macro_Set_Path_mtk.h  tmpKey
 // board
 make/{tmp}_GSM.mak  BOARD_VER
+Save:set\Macro_Set_Path_mtk.h  tmpBoardKey
 //
-boardPath = custom\app\K220M_BH_BB\
-board:\\
-board:nvram_user_config.c  __MORE_BATTERY_LEVEL__
+custom\app\{tmpBoard}\
+custom\app\{tmpBoard}\nvram_user_config.c  __MORE_BATTERY_LEVEL__
 
 
 

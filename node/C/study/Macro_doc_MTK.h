@@ -8,13 +8,14 @@ Save:node\C\study\Macro_doc_MTK.h \[1.3\] lang
 Save:node\C\study\Macro_doc_MTK.h \[1.4\] //移配置
 Save:node\C\study\Macro_doc_MTK.h \[1.5\] //说明文档
 Save:node\C\study\Macro_doc_MTK.h \[1.6\] //Win数据
-Save:node\C\study\Macro_doc_MTK.h \[1.7\] //SALE统计
+Save:node\C\study\Macro_doc_MTK.h \[1.7\] //touch
 Save:node\C\study\Macro_doc_MTK.h \[1.8\] tihu
 Save:node\C\study\Macro_doc_MTK.h \[1.9\] test code-------------
 Save:node\C\study\Macro_doc_MTK.h \[1.10\] //ImageNote
 Save:node\C\study\Macro_doc_MTK.h \[1.11\] //TextNote
-Save:node\C\study\Macro_doc_MTK.h \[1.12\] 
+Save:node\C\study\Macro_doc_MTK.h \[1.12\] FontTool
 Save:node\C\study\Macro_doc_MTK.h \[1.13\] build time-------------
+Save:node\C\study\Macro_doc_MTK.h \[1.14\] 
 //
 Save:node\C\study\Macro_doc_MTK.h \[2.1\] build error
 Save:node\C\study\Macro_doc_MTK.h \[2.2\] moids error
@@ -55,21 +56,34 @@ mre\sdkinc\vmchset_sdk.h PUNJABI
 
 
 [1.6] Win数据
+//
+//搜索菜单ID 如 MAIN_MENU_ENTERTAINMENT_MENU_ID
+//搜索字符串ID如 MAIN_MENU_MENU_TEXT
+//搜索图片ID 如MAIN_MENU_PHONEBOOK_ICON
 
 
-[1.7] SALE统计
+[1.7] 触摸屏
+//
+// 触屏相关 wgui_touch_screen.c
+//wgui_general_pen_down_hdlr // 触摸屏按下函数
+//wgui_general_pen_move_hdlr // 触摸屏移动函数
+//wgui_general_pen_down_hdlr // 触摸屏松开函数
+//wgui_general_pen_repeat_hdlr // 重复
+//wgui_general_pen_abort_hdlr // 放弃操作
+
 
 
 
 [1.8] tihu
-// tihu--open
+// 1) tihu
 make/{cur}_GSM.mak  HERO_ENGINE_SUPPORT
 // tihu--来电
 //     --TCARD/125kb/145kb
 make/{cur}_GSM.mak  HERO_ENGINE_INCOMECALL
+make/{cur}_GSM.mak  HERO_ENGINE_INCOMECALL_GSM_TCARD
 
 
-// tts--open
+// 2) tts
 make/{cur}_GSM.mak  TIHO_TTS_SUPPORT
 // tts--vol
 make/{cur}_GSM.mak  __TTS_VOLUME_DEFAULT_MAX__
@@ -77,17 +91,58 @@ make/{cur}_GSM.mak  __MMI_TONE_VOL_MAX5__
 //
 plutommi\mmi\Setting\SettingRes\TihoBroadcastSetting.res  __TTS_VOLUME_DEFAULT_MAX__
 plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  __TTS_VOLUME_DEFAULT_MAX__
+// tts--str
+// =====> fun==lock
+// tts--data/lunar
+make/{cur}_GSM.mak  __TIHO_TTS_ONE_KEY_TIME_NO_READ_LUNAR__
+make/{cur}_GSM.mak  __TIHO_TTS_ONE_KEY_TIME_NO_READ_WEEK__
+make/{cur}_GSM.mak  __TIHO_TTS_ONE_KEY_TIME_NO_READ_DATE__
+// tts--time
+//   关闭宏, 默认白天
+make/{cur}_GSM.mak  __TIHO_TTS_TIME_DEFAULT_OFF__
+//   8:00-20:00, 或8:00-18:00
+make/{cur}_GSM.mak  __TIHO_TTS_TIME_DEFAULT_DAY_END20__
 
 
-// tts--ring
+// 3) tts--low
+//		====>STR_LOW_BATTERY
+//		====>STR_TIHO_TTS_LOWPOWER
+//		==>g_mmi_bootup_main_flow
+//		==>mmi_bootup_flow_battery_check
+plutommi\mmi\Bootup\BootupSrc\BootupAdp.c  tiho_tts_play_low_power_set
+//		==>LBAT_IDLE_DURCNT_NORMAL      //30 * 1min = 30min
+plutommi\Service\CharBatSrv\CharBatSrv.c  srv_charbat_low_battery_common_action
+//		==>mmi_charbat_other_evt_hdlr
+//		==>tiho_tts_charbat_start_low_battery_waring
+plutommi\mmi\MiscFramework\MiscFrameworkSrc\PwronCharger.c  tiho_tts_charbat_start_low_battery_waring
+
+
+// 4) tts--other
+// tts--dial--mp3
 plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  ttsNumKeyDataId
-
+// tts--time--整点报时
+plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  tiho_tts_need_broadcast
+// tts--usb--conn
+plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  mmi_play_USB_in_tts
+plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  mmi_play_USB_out_tts
+// tts--bat--conn/out
+plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  tiho_tts_battery_broadcast
+// tts--menu
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_util.c  UI_string_type^get_item_text
+plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  void^tiho_tts_menu_broadcast
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_util.c  tiho_tts_need_broadcast
 
 
 [1.9] test code
+//
+codePath = plutommi\AppCore\SSC\
+code:\
+
 // code
 plutommi/AppCore/SSC/SSCPassEngine.c SSCHandleIMEI
 plutommi\AppCore\SSC\SSCStringTable.h SSC_MANUAL_SET_IMEI
+// ELECTRIC-2
+plutommi/AppCore/SSC/SSCPassEngine.c  mmi_entry_dzbk_info_scr
 
 
 // Phone
@@ -127,6 +182,7 @@ plutommi\AppCore\SSC\SSCStringTable.h SSC_MANUAL_SET_IMEI
 "*#999#", "*#523#",
 "*#888999#"
 // IMEI
+code:SSCStringTable.h  454 SSC_MANUAL_SET_IMEI
 "*#06#",
 "*#5353#"
 // Reset
@@ -138,6 +194,8 @@ plutommi\AppCore\SSC\SSCStringTable.h SSC_MANUAL_SET_IMEI
 1-"*#8214#" ,"*#1616#", "*#8888*#", "*#888#"
 2-"*#4128#", "*#161617#", "*#27688#", "*#*#0808*#*#"
 // SALE-New
+code:SSCPassEngine.c   __XLS_SALE_CUSTOM_TIME__
+"*#0808#"; 
 
 
 [1.10] ImageNote
@@ -152,10 +210,37 @@ plutommi\AppCore\SSC\SSCStringTable.h SSC_MANUAL_SET_IMEI
 
 
 
-[1.12] 
-	
+[1.12] FontTool
+### 如何修改字体？
+//	1、使用mtk提供的range 生成一个range文件，使用工具FontEdit.exe 生成相应的bdf文件。
+//	2、使用mtk工具MCT 来转换bdf文件到C，h文件。
+//	3、复制头文件到相应的目录下；如
+//	vendor/font/MTK/official/project/plutommi/content/inc/MainLcd176X220
+//	4、复制C文件中的相关信息到Fontres.c 
+//	vendor/font/MTK/official/project/plutommi/content/src/MainLcd176X220/】
+//	      const RangeData ××××_RangeData[####]={
+//	         const RangeDetails ××××_RangeInfo={
+//	         sCustFontData Pluto_×××× =
+//	   注意
+//	   {FONTATTRIB_NORMAL|FONTATTRIB_BOLD|FONTATTRIB_ITALIC|FONTATTRIB_OBLIQUE|FONTATTRIB_UNDERLINE
+//	   	|FONTATTRIB_STRIKETHROUGH,FONTATTRIB_NORMAL|FONTATTRIB_BOLD|FONTATTRIB_ITALIC|FONTATTRIB_OBLIQUE
+//	   	|FONTATTRIB_UNDERLINE|FONTATTRIB_STRIKETHROUGH},
+//	         设置；
+//	5、在 FontRes.c 中增加 此种字体的头文件包含；
+//	6、检查 FontFamily 部分，查看前面设置是否正确 （）：
+//	    pluto_××_standardFamily  
 
-
+### 怎么样增加字体库？
+//	1、制作字库中计划包含的所有字符的unicode的range段；参见fontres.c
+//	2、使用fontEdit工具生成bdf文件；这一步要求使用正确的字库，如Pmingliu.ttf 华文中宋.ttf，
+//	并设置正确的charset；
+//	3、使用mct工具转换bdf文件到c文件。
+//	4、移植到fontres.c 并把头文件复制到相应inc目录。
+//	5、编译 r mmiresource，上机验证。
+//	还有如果找不到合适的ttf等字库的情况：
+//	可以自己画bmp位图字体，使用mct工具加到bdf文件中；
+//	关于字体字库是一个专门的学问，有兴趣查查
+//	http://www.microsoft.com/typography/otspec/default.htm
 
 
 
@@ -360,14 +445,14 @@ plutommi\Framework\GUI\GUI_SRC\gui_buttons.c  gui_icontext_button_get_display_ar
 #endif
 
 
-# 11.未处理的异常
+# 11.lcd
 //_set_lcd_driving_current 已经在 drv_sim.lib(w32_dummy_drv.obj) 
 // 中定义	modis_lcd.lib	MoDIS
 MoDIS_VC9\drv_sim\src\w32_dummy_drv.c  set_lcd_driving_current
 
 
 
-# 12.未处理的异常
+# 12.61d-modis
 //
 media\audio\src\aud_player_modis.c  kal_int32^_aud_player_modis_get
 //#ifndef WIN32
@@ -377,7 +462,9 @@ media\audio\src\aud_player_modis.c  kal_int32^_aud_player_modis_get
 
 
 [2.3] 
-
+# 1.断点
+//菜单Run->Add Breakpoint->Source Breakpoint，
+//在Condition中输入条件，在Pass count中输入要忽略的次数。
 
 
 

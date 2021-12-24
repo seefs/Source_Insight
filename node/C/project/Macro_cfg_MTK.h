@@ -3,7 +3,7 @@
 //目录[Num][Ca]:
 // 1. 
 Save:node\C\project\Macro_cfg_MTK.h \[1.1\] AUDIO, TONE
-Save:node\C\project\Macro_cfg_MTK.h \[1.2\] //PB
+Save:node\C\project\Macro_cfg_MTK.h \[1.2\] PB
 Save:node\C\project\Macro_cfg_MTK.h \[1.3\] //SMS
 Save:node\C\project\Macro_cfg_MTK.h \[1.4\] //MMS
 Save:node\C\project\Macro_cfg_MTK.h \[1.5\] //BROWSER
@@ -12,11 +12,11 @@ Save:node\C\project\Macro_cfg_MTK.h \[1.7\] //RECORD
 Save:node\C\project\Macro_cfg_MTK.h \[1.8\] Lcd---------------
 Save:node\C\project\Macro_cfg_MTK.h \[1.9\] shortcut----------menu
 Save:node\C\project\Macro_cfg_MTK.h \[1.10\] USB
-Save:node\C\project\Macro_cfg_MTK.h \[1.11\] ATA
+Save:node\C\project\Macro_cfg_MTK.h \[1.11\] ATA--------------自动测试
 Save:node\C\project\Macro_cfg_MTK.h \[1.12\] 
 //
 Save:node\C\project\Macro_cfg_MTK.h \[2.1\] //IM
-Save:node\C\project\Macro_cfg_MTK.h \[2.2\] DTMF, Dial
+Save:node\C\project\Macro_cfg_MTK.h \[2.2\] DTMF, Dial, SIM
 Save:node\C\project\Macro_cfg_MTK.h \[2.3\] 电子保卡
 Save:node\C\project\Macro_cfg_MTK.h \[2.4\] 
 Save:node\C\project\Macro_cfg_MTK.h \[2.5\] //CAMERA
@@ -57,9 +57,25 @@ custom\audio\K220_N48_BB\
 
 
 
-[1.2] 
+[1.2] PB
+//
+make/{cur}_GSM.mak  PHB_PHONE_ENTRY = 200
+//
+make/{cur}_GSM.mak  SMS_TOTAL_ENTRY = 100
 
 
+// SIM 中的电话簿条目数
+make/{cur}_GSM.mak  PHB_SIM_ENTRY = 100
+//
+// NVRAM 中的电话簿条目数
+make/{cur}_GSM.mak  PHB_PHONE_ENTRY = 100
+
+// 通话记录最后条目数
+make/{cur}_GSM.mak  PHB_LN_ENTRY = 100
+
+
+// 电话号码匹配的规则
+PHONEBOOK_COMPARE_LENGTH
 
 
 [1.3] 
@@ -96,6 +112,13 @@ make/K220_V35_WD_GSM.mak   MAIN_LCD_SIZE
 make/K220_H660_TX_GSM.mak   MAIN_LCD_SIZE
 // MAIN_LCD_SIZE = 240X320
 
+
+### 交流电频率--外单
+// 50HZ/60HZ
+plutommi\Customer\CustResource\PLUTO_MMI\MMI_features_video.h   VDOREC_DEFAULT_SETTING_BANDING
+//plutommi\mmi\Inc\MMI_features_video.h  VDOREC_DEFAULT_SETTING_BANDING
+plutommi\Customer\CustResource\PLUTO_MMI\MMI_features_camera.h   CAMERA_DEFAULT_SETTING_BANDING
+//plutommi\mmi\Inc\MMI_features_camera.h  CAMERA_DEFAULT_SETTING_BANDING
 
 
 [1.9] shortcut
@@ -134,10 +157,23 @@ USB_MASS_STORAGE_CDROM_SUPPORT	?
 UART3_SUPPORT = FALSE
 
 
-[1.11] 
+# 如何在pc上隐藏手机盘符，而只显示存储卡盘符?
+//	1、0812， #define PARTITION_SECTORS     0
+//	2、0836， #define NOR_FAT_PARTITION_SECTORS     0
+//或者采用另外一种方式：
+custom\drv\misc_drv\_Default_BB\MT6261\usb_custom.c  custom_usb_ms_init
+//中注释掉以下句子：
+// USB_Ms_Register_DiskDriver(&USB_NOR_drv);
+
+
+
+[1.11] ATA
 //
-ATA_SUPPORT = TRUE
-COM_DEFS += __ATA_AUTO_TEST__
+make/{cur}_GSM.mak   ATA_SUPPORT
+// ATA_SUPPORT = TRUE
+
+make/{cur}_GSM.mak   __ATA_AUTO_TEST__
+// COM_DEFS += __ATA_AUTO_TEST__
 
 
 
@@ -217,7 +253,7 @@ COM_DEFS += __ATA_AUTO_TEST__
 [2.1] 
 
 
-[2.2] DTMF, Dial
+[2.2] DTMF, Dial, SIM
 // 
 features:
 #define CFG_MMI_DIALER_SEARCH	(__ON__)
@@ -225,6 +261,21 @@ features:
 mk:
 COM_DEFS += __MMI_DIAL_SEARCH_STYLE_MODIFY__
 
+
+// dial--record
+//   中间OK 键长按通话中界面
+make/{cur}_GSM.mak  __REC_MID_SOFTKEY_ENABLE__
+// dial--record--set
+make/{cur}_GSM.mak  __AUTO_IN_CALL_SET_RECORDER__
+// dial--record--fun
+make/{cur}_GSM.mak  __MMI_CSK_REC_IN_CALL__
+
+
+##
+// 双卡选卡
+make/{cur}_GSM.mak  __NEW_SPEED_DAIL_SIM_SELECT_ENABLE__
+// sim反
+make/{cur}_GSM.mak  __MMI_DRV_SIM_SWITCH_STYLE__
 
 
 [2.3] 电子保卡
@@ -236,6 +287,15 @@ plutommi\mmi\Setting\SettingSrc\PhoneSetup.c void^mmi_sale_track2_init( )
 
 // num
 plutommi/mmi/Setting/SettingSrc/PhoneSetup.c  SALE_TRACK_SRV_DEF_NUMBER
+
+
+//
+make/{cur}_GSM.mak  XLS_SALE_SERVERS
+make\Option.mak  __XLS_DZBK_FUN__
+make/{cur}_GSM.mak  __XLS_SALE_CUSTOM_TIME__
+// 激活
+plutommi\mmi\Ucm\UcmSrc\UcmUi.c  NVRAM_EF_BAOKA_DATA_LID
+plutommi\Service\SmsSrv\SmsConverterSrv.c  NVRAM_EF_BAOKA_DATA_LID
 
 
 
@@ -328,48 +388,52 @@ tools\NVRAMStatistic\include\custom_option.txt
 
 
 [2.13] 
+
 //
-plutommi/mmi/Resource/MemoryRes.c  __MMI_K220_Z97_MEM_STYLE__
-plutommi/mmi/Resource/MemoryRes.c  g_applib_mem_ap_pool
-
-
+make/{cur}_GSM.mak  #FS_SIZE_56_STYLE = TRUE
+make/{cur}_GSM.mak  FS_SIZE_48_STYLE = TRUE
+make/{cur}_GSM.mak  #FS_SIZE_40_STYLE = TRUE
 
 
 [2.14] MemoryDevice
+###
 // ADDRESS:
 //    0x02C0000        -0x1000*N
 //    0x02BF000
-board:\\custom_MemoryDevice.h  NOR_BOOTING_NOR_FS_BASE_ADDRESS
+custom\system\{board}\custom_MemoryDevice.h  NOR_BOOTING_NOR_FS_BASE_ADDRESS
 //    0x0040000        +0x1000*N
 //    0x0041000
-board:\\custom_MemoryDevice.h  NOR_BOOTING_NOR_FS_SIZE
+custom\system\{board}\custom_MemoryDevice.h  NOR_BOOTING_NOR_FS_SIZE
 //    24               +8*N, 1N=0x200=512=0.5K, 8N=4K
-board:\\custom_MemoryDevice.h  NOR_BOOTING_NOR_FS_FIRST_DRIVE_SECTORS
+custom\system\{board}\custom_MemoryDevice.h  NOR_BOOTING_NOR_FS_FIRST_DRIVE_SECTORS
 //
 //    ADDRESS+SIZE=0x400000
 
 
-// FileSystemConfig
-build:log\ckSysDrv.log Cluster^Size^(Bytes) 	看剩余空间，nv大小
-//Cluster Size (Bytes)                                    512
-//Free Space (Clusters)                                   424   #不够可以减小 SECTORS(8*N)
-//Folders and Applications Requirement (Clusters)         428	#超了减少起始地址, 同上----14K
 
-
-// VIVA
-//    2225952        -0x1000*N
-build:log\ckImgSize.log  file^system  查看ROM空间
-//	The VIVA bin size = 2225952
-//	The base address of file system = 2949120
-//	[Check VIVA bin size]
-//	The Boundary of VIVA bin                 = 2949120  bytes
-//	Actual VIVA End Address                  = 2921572  bytes
-
-//L12--27K
-
+### mem--cfg
+// 
+plutommi/mmi/Resource/MemoryRes.c  __MMI_K220_Z97_MEM_STYLE__
+plutommi/mmi/Resource/MemoryRes.c  g_applib_mem_ap_pool
+//
+build\{cur}\{cur}_MT6261_S00.lis  g_applib_mem_ap_pool
+// g_applib_mem_ap_pool                     0xf0136860   Data       662433
 
 //
-//tools\MemoryDeviceList\MemoryDeviceList_MT6261_Since11CW1352.xls
+build\{cur}\{cur}_MT6261_S00.lis  DYNAMIC_COMP_CODE
+//    Total RO  Size (Code + RO Data)              3950992 (3858.39kB)
+//    Total RW  Size (RW Data + ZI Data)           1905676 (1861.01kB)
+//    Total ROM Size (Code + RO Data + RW Data)    3974928 (3881.77kB)
+
+
+###
+tools\emigenMD.pl  fs_size_40_style
+tools\emigenMD.pl  fs_size_48_style
+tools\emigenMD.pl  fs_size_60_style
+//
+tools\MemoryDeviceList\
+tools\MemoryDeviceList\MemoryDeviceList_MT6261_Since11CW1352.xls
+
 
 
 
@@ -380,21 +444,21 @@ build:log\ckImgSize.log  file^system  查看ROM空间
 [2.16] 
 
 
-
 [2.17] 
 // history
 _bat\build\_ckImgSize.log  project
 //
 // tmp
-build\
-build\{tmp}\log\ckImgSize.log  system
+//Save:set\Macro_Set_Path_mtk.h  tmpKey
+//build\
+//build\{tmp}\log\ckImgSize.log  system
 
 
 
 [2.18] build map
 // auto set
-build\
-Save:set\Macro_Set_Path_mtk.h  curKey
+//build\
+//Save:set\Macro_Set_Path_mtk.h  curKey
 
 //
 build:log\
@@ -406,6 +470,13 @@ build:log\ckSysDrv.log Cluster^Size^(Bytes) 	看剩余空间，nv大小
 build:log\resgen_mtk_resgenerator_make.log		res添加头文件
 build:log\resgen_xml_preprocess.log Error:
 build:log\FileSystemConfig.log  Error:^Shortage
+//Cluster Size (Bytes)                                    512
+//Free Space (Clusters)                                   185
+//Folders and Applications Requirement (Clusters)         221
+//
+//		==>185=304-24-11-74-10
+//		==>221=208+9+4
+//		==>221<=185
 build:log\ckImgSize.log  file^system  查看ROM空间
 //The Boundary of VIVA bin				 = 3883008	bytes		#可以修改单位 8*512=4096
 //Actual VIVA End Address 				 = 3741620	bytes

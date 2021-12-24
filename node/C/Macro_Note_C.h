@@ -10,7 +10,7 @@ Save:node\C
 // 1. 
 Save:node\C\Macro_Note_C.h \[1.1\] ∞≤◊∞+≈‰÷√
 Save:node\C\Macro_Note_C.h \[1.2\] project----------8910 mtk
-Save:node\C\Macro_Note_C.h \[1.3\] third
+Save:node\C\Macro_Note_C.h \[1.3\] third, list
 Save:node\C\Macro_Note_C.h \[1.4\] other
 Save:node\C\Macro_Note_C.h \[1.5\] 
 Save:node\C\Macro_Note_C.h \[1.6\] rule
@@ -75,7 +75,7 @@ Save:node\C\project\Macro_Note_6533.h
 
 
 
-[1.3] third
+[1.3] third, list
 // third
 Save:node\C\study\Macro_slide_8910.h
 Save:node\C\study\Macro_zdt_8910.h

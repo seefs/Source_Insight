@@ -11,7 +11,7 @@ Save:node\C\study\Macro_fun_MTK.h \[1.6\] Win, Param, id---ID转换
 Save:node\C\study\Macro_fun_MTK.h \[1.7\] //#define----------宏套宏
 Save:node\C\study\Macro_fun_MTK.h \[1.8\] //RED
 Save:node\C\study\Macro_fun_MTK.h \[1.9\] //sms_member
-Save:node\C\study\Macro_fun_MTK.h \[1.10\] 
+Save:node\C\study\Macro_fun_MTK.h \[1.10\] popup
 Save:node\C\study\Macro_fun_MTK.h \[1.11\] //make------------
 Save:node\C\study\Macro_fun_MTK.h \[1.12\] debug, trace
 Save:node\C\study\Macro_fun_MTK.h \[1.13\] 
@@ -19,7 +19,7 @@ Save:node\C\study\Macro_fun_MTK.h \[1.14\] //mp3-------------刷新
 Save:node\C\study\Macro_fun_MTK.h \[1.15\] tts
 Save:node\C\study\Macro_fun_MTK.h \[1.16\] //draw str wchar
 Save:node\C\study\Macro_fun_MTK.h \[1.17\] time
-Save:node\C\study\Macro_fun_MTK.h \[1.18\] //press key
+Save:node\C\study\Macro_fun_MTK.h \[1.18\] key, handle
 Save:node\C\study\Macro_fun_MTK.h \[1.19\] //Rect
 Save:node\C\study\Macro_fun_MTK.h \[1.20\]
 // 2.func
@@ -31,7 +31,7 @@ Save:node\C\study\Macro_fun_MTK.h \[2.5\] //CC--msg
 Save:node\C\study\Macro_fun_MTK.h \[2.6\] //SMS--tp input
 Save:node\C\study\Macro_fun_MTK.h \[2.7\] cursor
 Save:node\C\study\Macro_fun_MTK.h \[2.8\] //file
-Save:node\C\study\Macro_fun_MTK.h \[2.9\] //select_sim
+Save:node\C\study\Macro_fun_MTK.h \[2.9\] select_sim
 Save:node\C\study\Macro_fun_MTK.h \[2.10\] //Sleep
 Save:node\C\study\Macro_fun_MTK.h \[2.11\] //reset----------重启
 Save:node\C\study\Macro_fun_MTK.h \[2.12\] //小图标
@@ -40,7 +40,7 @@ Save:node\C\study\Macro_fun_MTK.h \[2.14\] //BT-------------msg
 Save:node\C\study\Macro_fun_MTK.h \[2.15\] //Test-----------key id
 Save:node\C\study\Macro_fun_MTK.h \[2.16\] //sim--显示单卡
 Save:node\C\study\Macro_fun_MTK.h \[2.17\] //usb
-Save:node\C\study\Macro_fun_MTK.h \[2.18\] 
+Save:node\C\study\Macro_fun_MTK.h \[2.18\] bat
 Save:node\C\study\Macro_fun_MTK.h \[2.19\] 
 Save:node\C\study\Macro_fun_MTK.h \[2.20\] 
 // 其他标号
@@ -168,7 +168,29 @@ plutommi\Framework\GUI\GUI_SRC\wgui_categories_idlescreen.c  4810
 
 
 
-[1.10] 
+[1.10] popup
+//
+//	mmi_confirm_property_struct property;
+//
+//	if(s_sos_ring_cycle_state)
+//	{
+//		mmi_confirm_property_init(&property, CNFM_TYPE_USER_DEFINE);
+//		property.parent_id = GRP_ID_ROOT;
+//		property.callback	= SOSRingCallback;
+//	    property.f_auto_map_empty_softkey = MMI_TRUE;
+//	    property.f_msg_icon = MMI_FALSE;
+//	    property.softkey[2].str = get_string(STR_GLOBAL_STOP);
+//
+//		if(string)
+//		{
+//			mmi_confirm_display((UI_string_type)string, MMI_EVENT_QUERY, &property);
+//		}
+//		else
+//		{
+//			mmi_confirm_display((UI_string_type)GetString(STR_ID_SOS_RING_POPUP), MMI_EVENT_QUERY, &property);
+//		}
+//		ClearKeyHandler(KEY_END, KEY_LONG_PRESS);
+//	}
 
 
 
@@ -221,7 +243,48 @@ plutommi\mmi\Setting\SettingSrc\DateAndTime.c void^PhnsetSendSetTimeReqMessage( 
 
 
 
-[1.18] 
+[1.18] key, handle
+// cb
+//		==>static_table[i]
+plutommi\Framework\CallbackManager\mmi_cb_mgr.c  execute_evt_cb
+// lock
+//		==>mmi_slk_handle_pre_key_routing
+//		==>obj->on_key(obj, evt)
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_slk_main_evt_hdlr
+
+
+// key
+//		==>dev_key_handle
+//		==>process_key_event_routing
+//		==>mmi_key_hdlr_proc
+//		==>(*curr_func_ptr)()
+//			==>cui_dialer_classic_on_run
+//			==>mmi_idle_entry_dialer_by_key
+//			==>mmi_idle_handle_wrapped_lsk   #lsk-up
+//			==>left_softkey_down             #lsk-down
+//			==>mmi_idle_handle_wrapped_rsk   #rsk-up
+//			==>right_softkey_down            #rsk-down
+//			==>center_softkey_down
+//			==>softkey_up
+//			====>EntryMainMenuFromIdleScreen
+//			==>set_idle_pre_index_down       #left
+//			==>set_idle_next_index_down      #right
+//			==>ShctExecuteDownKey            #up/down
+//			==>ShctExecuteUpKey              #up/-
+//			==>mmi_clog_sendkey_launch
+//			==>mmi_idle_closebacklight_and_lock
+//			==>SetKeyPadVolDown
+//			==>SetKeyPadVolUp
+plutommi\Framework\EventHandling\EventsSrc\KeyBrd.c  mmi_frm_key_handle
+// menu
+plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  fixed_list_goto_next_item
+
+
+// dial
+//		==>mmi_ucm_accept_act_rsp
+//		==>mmi_ucm_enter_in_call
+//		==>mmi_ucm_entry_in_call
+plutommi\mmi\Ucm\UcmSrc\UcmEventHdlr.c  mmi_ucm_act_notify_hdlr
 
 
 
@@ -272,9 +335,21 @@ plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  1543
 
 // lock
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_scr_locker_launch
-plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_scr_locker_stop_timer
+//plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_scr_locker_stop_timer
 // unlock
-plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_scr_locker_start_timer
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_scr_locker_close
+//plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_scr_locker_start_timer
+
+// --popup--str--end
+//		==>STR_ID_END_KBD_UNLOCK_DONE
+//		==>STR_ID_SLK_LOCK_PAD_MSG
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  1570
+
+// --popup--tts--lock/unlock
+//		==>STR_ID_SECSET_LOCKED
+//		==>STR_ID_SECSET_UNLOCKED
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  tiho_tts_one_key_lock
+
 
 // lock
 // --锁屏不关lcd
@@ -286,7 +361,12 @@ plutommi\mmi\Idle\IdleSrc\IdleCommon.c  mmi_idle_closebacklight_and_lock
 plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c  __LOCK_BY_LSK_POUND__
 // lock--left + *
 plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c  __LOCK_BY_LSK_STAR_OR_LSK_CENTER_KEY_
-// --lock--1Key--ok
+// lock--left + right
+plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c  __UNLOCK_BY_LSK_RSK__
+// --long
+plutommi\mmi\Idle\IdleSrc\IdleCommon.c  __STAR_LONGPRESS_UNLOCK__
+plutommi\mmi\Idle\IdleSrc\IdleCommon.c  __LSK_LONGPRESS_LOCK__
+
 
 // 解锁
 // unlock--left + right
@@ -302,7 +382,8 @@ plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  void^mmi_slk_classic_pop
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  980  mmi_popup_display
 // --unlock--2Key--ok
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  1361
-
+// --long
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  __LSK_LONGPRESS_UNLOCK__
 
 
 
@@ -342,6 +423,11 @@ plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  UI_inputbox_blink_cursor
 
 
 [2.9] 
+//
+plutommi\mmi\Ucm\UcmSrc\UcmUi.c  void^mmi_ucm_entry_call_type
+// cancel
+plutommi\mmi\Ucm\UcmSrc\UcmUi.c  void^mmi_ucm_cancel_call_type_select
+
 
 
 [2.10] 
@@ -368,7 +454,17 @@ plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  UI_inputbox_blink_cursor
 [2.17] 
 
 
-[2.18] 
+[2.18] bat
+
+// --bat
+//		==>BATTERY_LOW_WARNING
+//		==>EVT_ID_SRV_CHARBAT_REMIND_LOW_POWER
+plutommi\Service\CharBatSrv\CharBatSrv.c   srv_charbat_low_battery_common_action
+//		==>tiho_tts_charbat_start_low_battery_waring
+//		==>TIHO_TTS_LOW_BATTERY_LOOP_BROADCAST
+plutommi\mmi\MiscFramework\MiscFrameworkSrc\PwronCharger.c  mmi_charbat_other_evt_hdlr
+
+
 
 
 [2.19] 

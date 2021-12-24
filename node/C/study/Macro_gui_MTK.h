@@ -25,7 +25,7 @@ Save:node\C\study\Macro_gui_MTK.h  \[1.20\] //font
 Save:node\C\study\Macro_gui_MTK.h  \[1.21\] list
 Save:node\C\study\Macro_gui_MTK.h  \[1.22\] //height-------------滚动条
 Save:node\C\study\Macro_gui_MTK.h  \[1.23\] edit, im, pen
-Save:node\C\study\Macro_gui_MTK.h  \[1.24\] //color--------------属性
+Save:node\C\study\Macro_gui_MTK.h  \[1.24\] color--------------属性
 Save:node\C\study\Macro_gui_MTK.h  \[1.25\] //label--------------
 Save:node\C\study\Macro_gui_MTK.h  \[1.26\] text---------------
 Save:node\C\study\Macro_gui_MTK.h  \[1.27\] //prgbox-------------进度条
@@ -39,24 +39,34 @@ Save:node\C\study\Macro_gui_MTK.h  \[1.32\]
 
 
 [1.1] display
-// --txt
+// --cursor
 // gui_move_text_cursor();
+// UI_move_text_cursor();
 // gui_set_text_border_color();
-// UI_print_text();
+
+// --img
+//	gui_measure_image  //_measure_image
+//	gui_show_image     //_show_image
+//  gdi_image_draw_id
 
 // --txt
 // gui_set_text_color(gui_color(255, 0, 0));
-// gui_set_font(&MMI_large_font);
-// gui_move_text_cursor((LCD_WIDTH-string_w)/2, y+num_height);
-// gui_print_text((UI_string_type)GetString(STR_ID_CLNDR_WEEK_SUN + nWeek));  
+// UI_set_font      //gui_set_font      //设置字体
+// UI_measure_string
 
 // --txt--menu
 // gui_print_truncated_text
-// gui_print_text
+// gui_print_truncated_borderd_text    // title
+// UI_print_text    //gui_print_text     // 画一个字符串
+// UI_print_bordered_text    // 画一个有边色字符串
+// UI_print_text_n        // 画一个有n个字符的字符串
+// UI_print_bordered_text_n // 画一个有n个字符的带边框色字符串
+// UI_print_bordered_character //画一个的带边框色字符
+// UI_print_character      //画一个字符
 
 
 //字符方向：
-gui_get_multi_line_text_language_type
+// gui_get_multi_line_text_language_type
 
 
 
@@ -93,6 +103,19 @@ plutommi\Framework\EventHandling\EventsSrc\KeyBrd.c
 
 
 [1.3] draw
+//
+//	UI_fill_rectangle       // 填充一个矩形框
+//	UI_draw_vertical_line     // 画一条垂直线
+//	UI_draw_horizontal_line    // 画一条水平线
+//	UI_draw_dotted_horizontal_line //水平虚线
+//	UI_draw_dotted_vertical_line // 垂直虚线
+
+//
+//	gdi_image_draw        //从绘图事件开始跟踪的函数
+//	_show_image          // 画一个gif
+//	_show_transparent_image    //画有设透明色的图片
+//	_show_animation_frame     // 画设置祯数的图片
+
 
 // --image
 // gdi_image_draw_id(x, y, (U16)(IMG_TECHNO_DIGITAL_CLOCK_0 + num1));
@@ -127,6 +150,8 @@ plutommi\Framework\GDI\GDISrc\gdi_primitive.c void^gdi_draw_rect( )
 
 // draw line
 plutommi\Framework\GUI\OEM_SRC\gui_tab_bars_oem.c gdi_draw_line
+//	gui_draw_vertical_line = UI_draw_vertical_line;
+//	gui_draw_horizontal_line = UI_draw_horizontal_line;
 
 
 
@@ -213,9 +238,9 @@ plutommi\Framework\GUI\GUI_SRC\gui_themes.c set_MMI_calendar_theme( )
 
 
 // theme
-plutommi\Customer\CustResource\K220_L12_MGUO_MMI\
-plutommi\Customer\CustResource\K220_L12_MGUO_MMI\ThemeRes.c  theme_defaultTheme
-plutommi\Customer\CustResource\K220_L12_MGUO_MMI\Themecomponents.h  title_text_color_defaultTheme
+plutommi\Customer\CustResource\{cur}_MMI\
+plutommi\Customer\CustResource\{cur}_MMI\ThemeRes.c  theme_defaultTheme
+plutommi\Customer\CustResource\{cur}_MMI\Themecomponents.h  title_text_color_defaultTheme
 plutommi\Customer\CustResource\ThemeRes.c  theme_defaultTheme
 plutommi\Customer\CustResource\Themecomponents.h  title_text_color_defaultTheme
 
@@ -295,6 +320,8 @@ plutommi\Customer\CustResource\CustCoordinates.c  MMI_CATEGORY63_ID
 
 // pubWin--IMAGE
 plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  case^DM_IMAGE
+// pubWin--border
+plutommi\Framework\GUI\GUI_INC\wgui_categories_popup.h  UI_POPUP_BORDER_SIZE
 
 
 // 1) SIM弹窗
@@ -318,20 +345,9 @@ plutommi\Framework\GUI\GUI_INC\gui_switch.h  CFG_UI_IDLE_NETWORK_NAME_Y
 plutommi\Framework\GUI\GUI_INC\gui_switch.h  CFG_UI_SOFTKEY_WIDTH
 // point--gui--pop
 plutommi\Framework\GUI\GUI_INC\gui_switch.h  CFG_UI_POP_UP_DIALOG_WIDTH
-// point--list--pb
-plutommi\Framework\GUI\GUI_INC\gui_switch.h  CFG_UI_ICONTEXT_MENUITEM_TEXT_X
 //
 plutommi\Framework\GUI\GUI_INC\gui_switch.h  __K220_L12__
 
-//
-// point--list--pb
-plutommi\Framework\GUI\GUI_INC\wgui.h  __K220_Z97__
-plutommi\Framework\GUI\GUI_INC\wgui.h  __K220_L12__
-plutommi\Framework\GUI\GUI_INC\wgui.h  MMI_ICONTEXT_MENUITEM_HEIGHT
-// point--input--pin
-plutommi\Framework\GUI\GUI_INC\wgui.h  MMI_SINGLELINE_INPUTBOX_HEIGHT
-// point--input--im
-plutommi\Framework\GUI\GUI_INC\wgui.h  INFORMATION_BAR_HEIGHT
 
 // lcd
 custom\common\hal_public\lcd_sw_inc.h  LCD_WIDTH
@@ -364,11 +380,20 @@ plutommi\Framework\GUI\GUI_INC\wgui_categories_enum.h  MMI_CATEGORY88_1ITEM_ID
 
 
 [1.12] title
+//
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_MM.c matrix_title_theme.active_filler
 plutommi\Framework\GUI\GUI_SRC\gui_buttons.c gui_show_icontext_button
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_cm.c MMI_multiline_inputbox.normal_text_color
 //	title:
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_MM.c matrix_title_theme.active_filler
+//
+//	title-draw
+plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  draw_title
+plutommi\Framework\GUI\GUI_SRC\wgui_title.c  wgui_title_move
+plutommi\Framework\GUI\GUI_SRC\wgui_title.c  gui_title_change_ex
+plutommi\Framework\GUI\GUI_SRC\wgui_title.c  wgui_title_show
+plutommi\Framework\GUI\OEM_SRC\gui_title_oem.c  gui_title_oem_show_normal
+plutommi\Framework\GUI\OEM_SRC\gui_title_oem.c  gui_title_show_text
 
 
 
@@ -507,8 +532,6 @@ plutommi\Framework\GUI\GUI_SRC\gui_themes.c set_MMI_PIN_inputbox_theme( )
 
 # im
 //
-plutommi/Customer/CustResource/CustCoordinates.c
-//
 plutommi/Framework/GUI/GUI_INC/gui_inputs_internal.h
 //
 plutommi/Framework/InputMethod/UI/UI_Src/Imui.c  MMI_IMUI_SELECTION_AREA_VER_GAP
@@ -549,8 +572,9 @@ plutommi\Framework\GUI\GUI_SRC\gui_themes.c  inline_edit_cursor_color
 
 
 
-[1.24] 
-
+[1.24] color
+//
+UI_COLOR_DARK_GREY
 
 
 
@@ -587,7 +611,42 @@ plutommi\mmi\PROFILES\ProfilesSrc\ProfilesApp.c  onoff_item_struct
 plutommi\Framework\GUI\GUI_SRC\gui_horizontal_selector.c  gui_horizontal_select_show_arrow
 // GUI_HORIZONTAL_SELECT_ICON_X_GAP
 
+//
+gui_show_fixed_list_menu
 
+//
+// menu--height--set
+//		==>CFG_UI_MENUITEM_HEIGHT
+//		==>26  ==>1*24+2
+//
+//		==>CFG_UI_MENUITEM_TWOLINE_HEIGHT
+//		==>45  ==>2*22+3
+//
+// menu--pb--list--x
+//		==>CFG_UI_ICONTEXT_MENUITEM_TEXT_X
+//		==>24  ==>22+2
+plutommi\Framework\GUI\GUI_INC\gui_switch.h  
+plutommi\Framework\GUI\GUI_INC\gui_switch.h  CFG_UI_MENUITEM_TWOLINE_HEIGHT
+plutommi\Framework\GUI\GUI_INC\gui_switch.h  3145
+
+
+// list--height--pb
+//		==>MMI_ICONTEXT_MENUITEM_HEIGHT
+//		==>26  ==>24+2
+//		==>MMI_INLINE_EDIT_MENUITEM_HEIGHT
+//		==>26  ==>24+2
+//		==>MMI_MULTIROW_MENUITEM_HEIGHT
+//		==>45  ==>???
+plutommi\Framework\GUI\GUI_INC\wgui.h  MMI_ICONTEXT_MENUITEM_HEIGHT
+plutommi\Framework\GUI\GUI_INC\wgui.h  1934
+// point--input--pin
+//		==>MMI_SINGLELINE_INPUTBOX_HEIGHT
+//		==>26  ==>24+2
+plutommi\Framework\GUI\GUI_INC\wgui.h  MMI_SINGLELINE_INPUTBOX_HEIGHT
+plutommi\Framework\GUI\GUI_INC\wgui.h  2663
+// point--input--im
+plutommi\Framework\GUI\GUI_INC\wgui.h  INFORMATION_BAR_HEIGHT
+plutommi\Framework\GUI\GUI_INC\wgui.h  2872
 
 
 
@@ -598,8 +657,12 @@ plutommi\Framework\GUI\GUI_SRC\gui_horizontal_selector.c  gui_horizontal_select_
 
 [1.30] slide
 ## slide
-// set--key
+// set--phone--other--lcd
 plutommi\Framework\GUI\GUI_SRC\gui_slide_bar.c  gui_slide_bar_create
+// set--phone--other--remove lcd
+plutommi\Customer\CustResource\CustCoordinates.c  coordinate_set88_1_item
+plutommi\mmi\Setting\SettingSrc\PhnsetGPIO.c  N_ITEMS
+
 // set--timeformat
 plutommi\mmi\Setting\SettingSrc\DateAndTime.c  EntryPhnsetSetFormat
 
