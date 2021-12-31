@@ -28,7 +28,8 @@ Save:node\Simple_CTRL_K.h unfinished:
 // c,多选？冲突...
 make {cur} GSM new
 make {cur} GSM new
-
+//
+mk-->ctrl+D, F12->lcd info
 
 
 // 未设置--死循环

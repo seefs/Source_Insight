@@ -9,7 +9,7 @@ Save:node\C\study\Macro_doc_MTK.h \[1.4\] //移配置
 Save:node\C\study\Macro_doc_MTK.h \[1.5\] //说明文档
 Save:node\C\study\Macro_doc_MTK.h \[1.6\] //Win数据
 Save:node\C\study\Macro_doc_MTK.h \[1.7\] //touch
-Save:node\C\study\Macro_doc_MTK.h \[1.8\] tihu
+Save:node\C\study\Macro_doc_MTK.h \[1.8\] 
 Save:node\C\study\Macro_doc_MTK.h \[1.9\] test code-------------
 Save:node\C\study\Macro_doc_MTK.h \[1.10\] //ImageNote
 Save:node\C\study\Macro_doc_MTK.h \[1.11\] //TextNote
@@ -74,63 +74,7 @@ mre\sdkinc\vmchset_sdk.h PUNJABI
 
 
 
-[1.8] tihu
-// 1) tihu
-make/{cur}_GSM.mak  HERO_ENGINE_SUPPORT
-// tihu--来电
-//     --TCARD/125kb/145kb
-make/{cur}_GSM.mak  HERO_ENGINE_INCOMECALL
-make/{cur}_GSM.mak  HERO_ENGINE_INCOMECALL_GSM_TCARD
-
-
-// 2) tts
-make/{cur}_GSM.mak  TIHO_TTS_SUPPORT
-// tts--vol
-make/{cur}_GSM.mak  __TTS_VOLUME_DEFAULT_MAX__
-make/{cur}_GSM.mak  __MMI_TONE_VOL_MAX5__
-//
-plutommi\mmi\Setting\SettingRes\TihoBroadcastSetting.res  __TTS_VOLUME_DEFAULT_MAX__
-plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  __TTS_VOLUME_DEFAULT_MAX__
-// tts--str
-// =====> fun==lock
-// tts--data/lunar
-make/{cur}_GSM.mak  __TIHO_TTS_ONE_KEY_TIME_NO_READ_LUNAR__
-make/{cur}_GSM.mak  __TIHO_TTS_ONE_KEY_TIME_NO_READ_WEEK__
-make/{cur}_GSM.mak  __TIHO_TTS_ONE_KEY_TIME_NO_READ_DATE__
-// tts--time
-//   关闭宏, 默认白天
-make/{cur}_GSM.mak  __TIHO_TTS_TIME_DEFAULT_OFF__
-//   8:00-20:00, 或8:00-18:00
-make/{cur}_GSM.mak  __TIHO_TTS_TIME_DEFAULT_DAY_END20__
-
-
-// 3) tts--low
-//		====>STR_LOW_BATTERY
-//		====>STR_TIHO_TTS_LOWPOWER
-//		==>g_mmi_bootup_main_flow
-//		==>mmi_bootup_flow_battery_check
-plutommi\mmi\Bootup\BootupSrc\BootupAdp.c  tiho_tts_play_low_power_set
-//		==>LBAT_IDLE_DURCNT_NORMAL      //30 * 1min = 30min
-plutommi\Service\CharBatSrv\CharBatSrv.c  srv_charbat_low_battery_common_action
-//		==>mmi_charbat_other_evt_hdlr
-//		==>tiho_tts_charbat_start_low_battery_waring
-plutommi\mmi\MiscFramework\MiscFrameworkSrc\PwronCharger.c  tiho_tts_charbat_start_low_battery_waring
-
-
-// 4) tts--other
-// tts--dial--mp3
-plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  ttsNumKeyDataId
-// tts--time--整点报时
-plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  tiho_tts_need_broadcast
-// tts--usb--conn
-plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  mmi_play_USB_in_tts
-plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  mmi_play_USB_out_tts
-// tts--bat--conn/out
-plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  tiho_tts_battery_broadcast
-// tts--menu
-plutommi\Framework\GUI\GUI_SRC\wgui_categories_util.c  UI_string_type^get_item_text
-plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  void^tiho_tts_menu_broadcast
-plutommi\Framework\GUI\GUI_SRC\wgui_categories_util.c  tiho_tts_need_broadcast
+[1.8] 
 
 
 [1.9] test code
@@ -145,12 +89,15 @@ plutommi\AppCore\SSC\SSCStringTable.h SSC_MANUAL_SET_IMEI
 plutommi/AppCore/SSC/SSCPassEngine.c  mmi_entry_dzbk_info_scr
 
 
-// Phone
+// Phone--工程模式
+code:SSCStringTable.h  SSC_ENGINEERING_MODE
+code:SSCStringTable.h  SSC_ENGINEERING_MODE1
 "#*8378#0#", "*#15963#", "####1111#",
 "*#2151118*#"  "*#555#"
 // UI
 "*#87#", "*#666#",
-// Item
+// Item--原厂设定
+code:SSCPassEngine.c SSC_FACTORY_MODE_4
  "*#79*#", 
 "*#66*#", "*#2266#", "*#777#", "*#*#6666#*#"
 // Product
@@ -179,6 +126,7 @@ plutommi/AppCore/SSC/SSCPassEngine.c  mmi_entry_dzbk_info_scr
 // ALLSVN -- bg
 "#*786837#",
 // HW
+code:SSCStringTable.h  SSC_LCD_IC_SHOW
 "*#999#", "*#523#",
 "*#888999#"
 // IMEI
@@ -188,6 +136,7 @@ code:SSCStringTable.h  454 SSC_MANUAL_SET_IMEI
 // Reset
 "*#119*#", "*#70#",
 // ELECTRIC/SALE
+code:SSCStringTable.h  __PHONE_SALE_SERVERS_NEW__
 1-"*#2010#"; 
 2-"*#0808#"; 
 3-"*#0809#", 
@@ -350,6 +299,10 @@ F:\11CW1352MP_KM2\build\M105_JX_..\M105_JX_._20181217.bin\M105_JX_.._20181217.bi
 
 # 13.Error: 丢失 BOOTLOADER 文件，原因同上(6.12)
 M105_..._BOOTLOADER_V005_MT6261_..._ext.bin
+
+
+# 14.convert.ext 弹窗
+// 改为: 兼容xp-service3
 
 
 

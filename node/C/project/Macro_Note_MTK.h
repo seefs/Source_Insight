@@ -146,11 +146,15 @@ make/{cur}_GSM.mak LCM_SCANLINE_ROTATION_SUPPORT
 
 //
 custom\drv\LCD\{lcd}\
+custom\drv\LCD\{lcd}\combo_lcm_ILI9340.c __FM_ADD_LCD_ID_EX__
 custom\drv\LCD\{lcd}\combo_lcm_ST7735S.c
 //
-custom\drv\LCD\K220D_QQVGA_LCM\lcd_sw.h  main_lcm_enum
+custom\drv\LCD\{lcd}\lcd_sw.h  main_lcm_enum
 //	GC9108,
 //	GC9102,
+// hw--ic
+custom\drv\LCD\{lcd}\combo_lcm.c  get_lcm_type_info
+ 
 
 // 背光电流
 custom/drv/misc_drv/_Default_BB/
@@ -306,6 +310,15 @@ make/{cur}_GSM.mak  FM_RADIO_HW_SEARCH
 make/{cur}_GSM.mak  FM_RADIO_I2S_PATH
 //	FM_RADIO_I2S_PATH = TRUE
 
+//	FM--headset
+make/{cur}_GSM.mak  __MMI_FM_NO_HEADSET__
+//	COM_DEFS	+= __MMI_FM_NO_HEADSET__               	# 不支持耳机
+//	COM_DEFS	+= __PLUGOUT_DEFAULT__        			# 不支持耳机须开此宏
+
+//	FM--headset
+features:MMI_features_switch{cur}.h  CFG_MMI_FM_RADIO_BIND_EARPHONE
+
+
 
 ### old
 //	FM:
@@ -376,9 +389,11 @@ make/{cur}_GSM.mak __KM_MMI_PROFILE_RETRENCH__
 
 
 ###	情景默认等级:
+// --env--vol
 custom\common\userprofile_nvram_def.c NVRAM_PROFILES_DEFAULT
-custom\common\userprofile_nvram_def_{cur}.h
+//custom\common\userprofile_nvram_def_{cur}.h
 custom\common\userprofile_nvram_def.c 462
+// --env--vol--define
 custom\common\userprofile_nvram_def.h  nvram_srv_prof_setting_struct;
 // +1~8: ring_vol ~ ring_type
 // +1~6: intelligent_call_alert ~ touch_vib
@@ -393,10 +408,12 @@ custom\common\userprofile_nvram_def.h  nvram_srv_prof_setting_struct;
 
 
 //	耳机+外放音量等级:
+// --call--vol
 plutommi\Service\GpioSrv\gpiosrv.res NVRAM_NORMAL_MODE_VOICE_LEVEL //听筒
 plutommi\Service\GpioSrv\gpiosrv.res NVRAM_HDSET_MODE_VOICE_LEVEL  //耳机
-plutommi\Service\GpioSrv\gpiosrv.res NVRAM_LDSPK_MODE_VOICE_LEVEL  //外放
-
+plutommi\Service\GpioSrv\gpiosrv.res NVRAM_LDSPK_MODE_VOICE_LEVEL  //外放/免提
+//
+custom\common\PLUTO_MMI\custom_mmi_default_value.h  LEVEL6
 
 
 [2.7] 手电筒
@@ -412,8 +429,8 @@ plutommi\Service\GpioSrv\gpiosrv.res NVRAM_LDSPK_MODE_VOICE_LEVEL  //外放
 
 [2.10] 型号
 
-
-
+//	蓝牙名称:
+//BTMMICm.c  MMI_BT_DEF_HOST_BT_NAME
 //	蓝牙名称:
 custom\common\PLUTO_MMI\nvram_common_config.c #define^BT_NAME
 //	USB 链接名称:
@@ -450,11 +467,18 @@ plutommi\Customer\CustResource\PLUTO_MMI\resource_world_clock_city.c TimeZoneDat
 //  Lima – Peru   GMT-5
 //	{-5, 		STR_WCLOCK_Lima,		STR_WCLOCK_CITY_ABBRE10,63, 98, 1},
 	
-// 背光时间:
+// 屏背光亮度/时间:
+// --亮度默认5
 plutommi\Service\GpioSrv\gpiosrv.res NVRAM_BYTE_BL_SETTING_LEVEL
+// --时间默认10s
 plutommi\Service\GpioSrv\gpiosrv.res NVRAM_BYTE_BL_SETTING_HFTIME
+// 屏半亮时间:
+//    g_gpio_p->hf_time  = 15
+//    g_gpio_p->dim_time =  5
+//       ==>SRV_GPIO_BACKLIGHT_DIMMING_TIME
+plutommi/Service/GpioSrv/gpioBacklightSrv.c 940
 
-// 锁屏时间:
+// 自动锁屏时间:
 plutommi/mmi/ScrLocker/ScrLockerRes/ScrLocker.res <MENU^id="MENU_ID_SLK_TIME_SETTING_MENU"
 plutommi/mmi/ScrLocker/ScrLockerSrc/ScrLockerSetting.c #define^MMI_SLK_SET_SELECTION_DEFAULT
 
@@ -463,6 +487,13 @@ make/{cur}_GSM.mak  __MMI_KEY_BACKLITE_STYLE__
 make/{cur}_GSM.mak  __MMI_KEY_BACKLITE_STYLE_07_TO_19_HOUR__
 //
 plutommi\mmi\gpio\gpiores\PhnsetGpio.res  __MMI_KEY_BACKLITE_STYLE_07_TO_19_HOUR__
+
+// 关机时间
+//		==>Powerkey_longpress_timeout = 300 /*3s*/
+// 长按时间
+//		==>KBD.longpress_timeout = 200; /*2s*/
+hal\peripheral\src\kbdmain.c  __KPD_LONGPRESS_POWER_KEY_ALONE_TIME__
+hal\peripheral\src\kbdmain.c  Kbd_Initiaze
 
 
 
@@ -536,6 +567,7 @@ build:log\mmiresource.log Error:
 build:log\mmi_framework.log Error:
 build:log\mmi_app.log Error:
 build:log\custom.log Error:
+build:log\ckImgSize.log Error:
 build:log\mmi_service.log Error:
 build:log\resgen.log Error:
 build:log\resgen_mtk_resgenerator_make.log Error:

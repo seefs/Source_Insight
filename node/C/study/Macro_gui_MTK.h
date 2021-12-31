@@ -10,18 +10,18 @@ Save:node\C\study\Macro_gui_MTK.h  \[1.5\] theme-----------------主题
 Save:node\C\study\Macro_gui_MTK.h  \[1.6\] pubWin, Alert
 Save:node\C\study\Macro_gui_MTK.h  \[1.7\] form, point
 Save:node\C\study\Macro_gui_MTK.h  \[1.8\] rect, coordinates
-Save:node\C\study\Macro_gui_MTK.h  \[1.9\] //timer
+Save:node\C\study\Macro_gui_MTK.h  \[1.9\] timer
 Save:node\C\study\Macro_gui_MTK.h  \[1.10\] option
 Save:node\C\study\Macro_gui_MTK.h  \[1.11\] //onoff
 Save:node\C\study\Macro_gui_MTK.h  \[1.12\] title
 Save:node\C\study\Macro_gui_MTK.h  \[1.13\] //anim --------------所有Construct
 Save:node\C\study\Macro_gui_MTK.h  \[1.14\] //tmp ---------------
 Save:node\C\study\Macro_gui_MTK.h  \[1.15\] //layer
-Save:node\C\study\Macro_gui_MTK.h  \[1.16\] //simulator----------
+Save:node\C\study\Macro_gui_MTK.h  \[1.16\] simulator----------
 Save:node\C\study\Macro_gui_MTK.h  \[1.17\] //key
 Save:node\C\study\Macro_gui_MTK.h  \[1.18\] //Lcd
 Save:node\C\study\Macro_gui_MTK.h  \[1.19\] //sublcd
-Save:node\C\study\Macro_gui_MTK.h  \[1.20\] //font
+Save:node\C\study\Macro_gui_MTK.h  \[1.20\] font
 Save:node\C\study\Macro_gui_MTK.h  \[1.21\] list
 Save:node\C\study\Macro_gui_MTK.h  \[1.22\] //height-------------滚动条
 Save:node\C\study\Macro_gui_MTK.h  \[1.23\] edit, im, pen
@@ -364,7 +364,16 @@ plutommi\Customer\CustResource\CustCoordinates.c  MMI_CATEGORY88_1ITEM_ID
 plutommi\Framework\GUI\GUI_INC\wgui_categories_enum.h  MMI_CATEGORY88_1ITEM_ID
 
 
-[1.9] 
+[1.9] timer
+// 1.
+// void Dzbk_count_main(void){}
+// StartTimer(DZBK_COUNT_TIMER_ID, 1000*60*1, Dzbk_count_main);  
+// StopTimer(DZBK_COUNT_TIMER_ID);
+
+// 2.
+//  void clearLockKeyHandler(void){}
+//	gui_start_timer(2000,clearLockerHandler);
+//	gui_cancel_timer(clearLockerHandler);
 
 
 
@@ -412,7 +421,11 @@ plutommi\Framework\GUI\OEM_SRC\gui_title_oem.c  gui_title_show_text
 
 
 
-[1.16] 
+[1.16] simulator
+//
+MoDIS_VC9\MoDIS\Debug\MoDIS.ini
+//	[INTEGRATE]
+//	CATCHER =T:\[3.0852.00]Catcher\Catcher.exe
 
 
 
@@ -432,8 +445,15 @@ plutommi\Framework\GUI\OEM_SRC\gui_title_oem.c  gui_title_show_text
 
 
 
-[1.20] 
+[1.20] font
+// font--height
+//fir_fh = Get_CharHeightOfAllLang(gui_font_get_type(GUI_FONT_SIZE_LIST)->size)+3;
+//
+//Get_CharWidthHeight(c, &w, &h);
+//Get_StringWidthHeight((U8*) text, width, height);
 
+// C61
+//  CN:32, en:24
 
 
 
@@ -481,6 +501,34 @@ plutommi\mmi\PhoneBook\PhoneBookSrc\PhoneBookList.c  mmi_phb_quick_search_list_s
 plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  gui_draw_list_menuitem_separator_line
 plutommi\Framework\GUI\GUI_SRC\gui_fixed_menus.c  4515
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_list.c  void^ShowCategory353Screen_ext_int
+
+
+
+// --list--calllog--height
+//		==>wgui_cat1031_tab_show
+//		  ==>MMI_MULTIROW_MENUITEM_HEIGHT 52
+//		==>wgui_list_create_multi_icontext_menu
+//		  ==>MMI_fixed_menuitem_pointers
+//		==>resize_fixed_icontext_list_menuitems
+//		  ==>MMI_fixed_icontext_list_menuitem->height 52
+//		    ==>associate_fixed_list
+//		      ==>common_item_data 52
+//		==>dm_setup_and_draw_asyncdynamic_list
+//		  ==>gui_show_dynamic_list_menu_draw_items
+//		    ==>item_measure_function
+//		      ==>common_item_data 52
+// --list--calllog--x
+//		==>set_fixed_icontext_list_icon_coordinates
+//		====>GUI_ICONTEXT_MENUITEM_ICON_X
+plutommi\Framework\GUI\GUI_SRC\gui_dynamic_menus.c  gui_show_dynamic_list_menu_draw_items
+plutommi\Framework\GUI\GUI_SRC\gui_dynamic_menus.c  1678
+// --list--calllog--txt
+//		  ==>iy1 = m->icon_coordinates[i].y + y1;
+plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c  9123
+plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c  9383
+plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c  9567
+
+        
 
 
 
@@ -578,6 +626,8 @@ UI_COLOR_DARK_GREY
 
 
 
+
+
 [1.25] 
 
 
@@ -588,9 +638,18 @@ UI_COLOR_DARK_GREY
 plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  void^gui_show_single_line_input_box_ext
 // --text--border
 plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  void^gui_create_multi_line_input_box_set_buffer
-// --text--cursor--text_y
+// --text--input--time
+//		==>text_y
 plutommi\Framework\GUI\GUI_SRC\gui_single_line_inputs.c  gui_draw_single_line_one_line
 plutommi\Framework\GUI\GUI_SRC\gui_single_line_inputs.c  1815
+
+// text--":"
+//   时间设置中间间隔符(冒号)
+//		==>d->s1_y + d->input.y-4,
+//		==>[13] + 75
+//		==>text_ascent_simply - query.baseline
+//		==>27 - 19
+plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c  __COMMON_HW2424_24_FONT__
 
 
 
@@ -644,7 +703,7 @@ plutommi\Framework\GUI\GUI_INC\wgui.h  1934
 //		==>26  ==>24+2
 plutommi\Framework\GUI\GUI_INC\wgui.h  MMI_SINGLELINE_INPUTBOX_HEIGHT
 plutommi\Framework\GUI\GUI_INC\wgui.h  2663
-// point--input--im
+// point--input--bar--im
 plutommi\Framework\GUI\GUI_INC\wgui.h  INFORMATION_BAR_HEIGHT
 plutommi\Framework\GUI\GUI_INC\wgui.h  2872
 

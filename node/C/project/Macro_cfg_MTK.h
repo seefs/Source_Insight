@@ -13,12 +13,13 @@ Save:node\C\project\Macro_cfg_MTK.h \[1.8\] Lcd---------------
 Save:node\C\project\Macro_cfg_MTK.h \[1.9\] shortcut----------menu
 Save:node\C\project\Macro_cfg_MTK.h \[1.10\] USB
 Save:node\C\project\Macro_cfg_MTK.h \[1.11\] ATA--------------自动测试
-Save:node\C\project\Macro_cfg_MTK.h \[1.12\] 
+Save:node\C\project\Macro_cfg_MTK.h \[1.12\] CALL record
+Save:node\C\project\Macro_cfg_MTK.h \[1.13\] 
 //
 Save:node\C\project\Macro_cfg_MTK.h \[2.1\] //IM
 Save:node\C\project\Macro_cfg_MTK.h \[2.2\] DTMF, Dial, SIM
 Save:node\C\project\Macro_cfg_MTK.h \[2.3\] 电子保卡
-Save:node\C\project\Macro_cfg_MTK.h \[2.4\] 
+Save:node\C\project\Macro_cfg_MTK.h \[2.4\] tihu
 Save:node\C\project\Macro_cfg_MTK.h \[2.5\] //CAMERA
 Save:node\C\project\Macro_cfg_MTK.h \[2.6\] //DL
 Save:node\C\project\Macro_cfg_MTK.h \[2.7\] //FM
@@ -26,8 +27,8 @@ Save:node\C\project\Macro_cfg_MTK.h \[2.8\] WIFI
 Save:node\C\project\Macro_cfg_MTK.h \[2.9\] SS-------------屏保
 Save:node\C\project\Macro_cfg_MTK.h \[2.10\] //Tool
 Save:node\C\project\Macro_cfg_MTK.h \[2.11\] lib-----------
-Save:node\C\project\Macro_cfg_MTK.h \[2.12\] build 服务器流程
-Save:node\C\project\Macro_cfg_MTK.h \[2.13\] build 省空间
+Save:node\C\project\Macro_cfg_MTK.h \[2.12\] 编译流程
+Save:node\C\project\Macro_cfg_MTK.h \[2.13\] 省空间--------app
 Save:node\C\project\Macro_cfg_MTK.h \[2.14\] MemoryDevice
 Save:node\C\project\Macro_cfg_MTK.h \[2.15\] marco
 Save:node\C\project\Macro_cfg_MTK.h \[2.16\] //Lib
@@ -76,6 +77,13 @@ make/{cur}_GSM.mak  PHB_LN_ENTRY = 100
 
 // 电话号码匹配的规则
 PHONEBOOK_COMPARE_LENGTH
+
+// pb--copy
+features:\MMI_features_switch{cur}.h  CFG_MMI_PHB_STARTUP_COPY_SIM  __ON__
+features:\MMI_features_switch{cur}.h  CFG_MMI_PHB_MULTI_OPERATION  __ON__
+features:\MMI_features_switch{cur}.h  CFG_MMI_PHB_GENERIC_MULTI_SELECT  __ON__
+
+
 
 
 [1.3] 
@@ -177,7 +185,13 @@ make/{cur}_GSM.mak   __ATA_AUTO_TEST__
 
 
 
-[1.12] 
+[1.12] CALL record
+//
+make/{cur}_GSM.mak   __SNDREC_SAVE_RENAME_CALL_NUM_STYLE__
+//# 通话录音时保存文件名 电话号_日期那些命名
+//	COM_DEFS 	+= __SNDREC_SAVE_RENAME_CALL_NUM_STYLE__
+//	COM_DEFS 	+= __SNDREC_SAVE_RENAME_STYLE__
+
 
 
 
@@ -289,17 +303,91 @@ plutommi\mmi\Setting\SettingSrc\PhoneSetup.c void^mmi_sale_track2_init( )
 plutommi/mmi/Setting/SettingSrc/PhoneSetup.c  SALE_TRACK_SRV_DEF_NUMBER
 
 
-//
+// 1.
 make/{cur}_GSM.mak  XLS_SALE_SERVERS
 make\Option.mak  __XLS_DZBK_FUN__
 make/{cur}_GSM.mak  __XLS_SALE_CUSTOM_TIME__
 // 激活
 plutommi\mmi\Ucm\UcmSrc\UcmUi.c  NVRAM_EF_BAOKA_DATA_LID
 plutommi\Service\SmsSrv\SmsConverterSrv.c  NVRAM_EF_BAOKA_DATA_LID
+// baoka--init--异常值，无用
+plutommi\mmi\Bootup\BootupInc\BootupInitConfig.h  srv_dzbk_init
+// baoka--timer
+//		==>mmi_idle_obj_enter
+//		==mmi_idle_classic_on_update_service_indication
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_idlescreen.c  SetIdleScreenNetworkName
+
+
+// 2.
+make\Option.mak  __PHONE_SALE_SERVERS_NEW__
+
+
+// 3.给指定号码发短信
+make\Option.mak  MX_MMI_SALE_TRACK
 
 
 
-[2.4] 
+[2.4] tihu
+// 1) tihu
+make/{cur}_GSM.mak  HERO_ENGINE_SUPPORT
+// tihu--来电
+//     --TCARD/125kb/145kb
+make/{cur}_GSM.mak  HERO_ENGINE_INCOMECALL
+make/{cur}_GSM.mak  HERO_ENGINE_INCOMECALL_GSM_TCARD
+
+
+// 2) tts
+make/{cur}_GSM.mak  TIHO_TTS_SUPPORT
+// tts--SLIM 省97K 
+make/{cur}_GSM.mak  TIHO_TTS_SUPPORT_INROM_SLIM
+// tts--vol
+make/{cur}_GSM.mak  __TTS_VOLUME_DEFAULT_MAX__
+make/{cur}_GSM.mak  __MMI_TONE_VOL_MAX5__
+//
+plutommi\mmi\Setting\SettingRes\TihoBroadcastSetting.res  __TTS_VOLUME_DEFAULT_MAX__
+plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  __TTS_VOLUME_DEFAULT_MAX__
+// tts--str
+// =====> fun==lock
+// tts--data/lunar
+make/{cur}_GSM.mak  __TIHO_TTS_ONE_KEY_TIME_NO_READ_LUNAR__
+make/{cur}_GSM.mak  __TIHO_TTS_ONE_KEY_TIME_NO_READ_WEEK__
+make/{cur}_GSM.mak  __TIHO_TTS_ONE_KEY_TIME_NO_READ_DATE__
+// tts--time
+//   关闭宏, 默认白天
+make/{cur}_GSM.mak  __TIHO_TTS_TIME_DEFAULT_OFF__
+//   8:00-20:00, 或8:00-18:00
+make/{cur}_GSM.mak  __TIHO_TTS_TIME_DEFAULT_DAY_END20__
+
+
+// 3) tts--low
+//		====>STR_LOW_BATTERY
+//		====>STR_TIHO_TTS_LOWPOWER
+//		==>g_mmi_bootup_main_flow
+//		==>mmi_bootup_flow_battery_check
+plutommi\mmi\Bootup\BootupSrc\BootupAdp.c  tiho_tts_play_low_power_set
+//		==>LBAT_IDLE_DURCNT_NORMAL      //30 * 1min = 30min
+plutommi\Service\CharBatSrv\CharBatSrv.c  srv_charbat_low_battery_common_action
+//		==>mmi_charbat_other_evt_hdlr
+//		==>tiho_tts_charbat_start_low_battery_waring
+plutommi\mmi\MiscFramework\MiscFrameworkSrc\PwronCharger.c  tiho_tts_charbat_start_low_battery_waring
+
+
+// 4) tts--other
+// tts--dial--mp3
+plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  ttsNumKeyDataId
+// tts--time--整点报时
+plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  tiho_tts_need_broadcast
+// tts--usb--conn
+plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  mmi_play_USB_in_tts
+plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  mmi_play_USB_out_tts
+// tts--bat--conn/out
+plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  tiho_tts_battery_broadcast
+// tts--menu
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_util.c  UI_string_type^get_item_text
+plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  void^tiho_tts_menu_broadcast
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_util.c  tiho_tts_need_broadcast
+
+
 
 
 [2.5] 
@@ -387,16 +475,21 @@ plutommi\Customer\ResGenerator\custom_option.txt
 tools\NVRAMStatistic\include\custom_option.txt
 
 
-[2.13] 
+[2.13] 省空间
+// history
+_bat\build\_ckImgSize.log  project
 
-//
-make/{cur}_GSM.mak  #FS_SIZE_56_STYLE = TRUE
-make/{cur}_GSM.mak  FS_SIZE_48_STYLE = TRUE
-make/{cur}_GSM.mak  #FS_SIZE_40_STYLE = TRUE
+### 1.app
+// 来电归属地121K 
+// TTS-SLIM 省97K 
+// 智能拨号 16.4K
+
+
+
 
 
 [2.14] MemoryDevice
-###
+### 1.Mem
 // ADDRESS:
 //    0x02C0000        -0x1000*N
 //    0x02BF000
@@ -412,7 +505,7 @@ custom\system\{board}\custom_MemoryDevice.h  NOR_BOOTING_NOR_FS_FIRST_DRIVE_SECT
 
 
 ### mem--cfg
-// 
+// 可以省 37.6K(加150内存), 28K(加150内存)
 plutommi/mmi/Resource/MemoryRes.c  __MMI_K220_Z97_MEM_STYLE__
 plutommi/mmi/Resource/MemoryRes.c  g_applib_mem_ap_pool
 //
@@ -426,13 +519,22 @@ build\{cur}\{cur}_MT6261_S00.lis  DYNAMIC_COMP_CODE
 //    Total ROM Size (Code + RO Data + RW Data)    3974928 (3881.77kB)
 
 
-###
+### 2.文件系统
+// 可以省 32.7K, 64K(加16)
+make/{cur}_GSM.mak  #FS_SIZE_56_STYLE = TRUE
+make/{cur}_GSM.mak  FS_SIZE_48_STYLE = TRUE
+make/{cur}_GSM.mak  #FS_SIZE_40_STYLE = TRUE
+//
 tools\emigenMD.pl  fs_size_40_style
 tools\emigenMD.pl  fs_size_48_style
 tools\emigenMD.pl  fs_size_60_style
 //
 tools\MemoryDeviceList\
 tools\MemoryDeviceList\MemoryDeviceList_MT6261_Since11CW1352.xls
+
+
+### 3.联系人
+// 可以省 5K(加200pb)
 
 
 
@@ -445,13 +547,6 @@ tools\MemoryDeviceList\MemoryDeviceList_MT6261_Since11CW1352.xls
 
 
 [2.17] 
-// history
-_bat\build\_ckImgSize.log  project
-//
-// tmp
-//Save:set\Macro_Set_Path_mtk.h  tmpKey
-//build\
-//build\{tmp}\log\ckImgSize.log  system
 
 
 
@@ -483,6 +578,12 @@ build:log\ckImgSize.log  file^system  查看ROM空间
 //============================================================
 //Check VIVA Compressed ROM Size: PASS!
 
+
+### tmp
+//Save:set\Macro_Set_Path_mtk.h  tmpKey
+//build\
+//build\{tmp}\log\ckImgSize.log  system
+//
 
 
 

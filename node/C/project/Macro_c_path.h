@@ -5,7 +5,7 @@ Save:node\C\project\Macro_c_path.h \[1.1\] mtk_cur--------
 Save:node\C\project\Macro_c_path.h \[1.2\] mtk_copy
 Save:node\C\project\Macro_c_path.h \[1.3\] mtk_cfg--------nv, board
 Save:node\C\project\Macro_c_path.h \[1.4\] mtk_other------rf
-Save:node\C\project\Macro_c_path.h \[1.5\] 
+Save:node\C\project\Macro_c_path.h \[1.5\] mtk_bat
 Save:node\C\project\Macro_c_path.h \[1.6\] //mtk_sbd------
 Save:node\C\project\Macro_c_path.h \[1.7\] other
 Save:node\C\project\Macro_c_path.h \[1.8\] 
@@ -32,7 +32,7 @@ Save:node\C\project\Macro_c_path.h \[2.12\]
 
 [1.1] _mtk_cur_
 // (1).curKey
-// --images/audio/features/build
+// --images / audio / features / build
 Save:set\Macro_Set_Path_mtk.h  curKey
 
 // (2).bak
@@ -40,10 +40,13 @@ Save:set\Macro_Set_Path_mtk.h  curKey
 curKey = K220_A86
 curKey = K220_D33D
 curKey = K220_XHT_V79
+curKey = K220_C61
+
 
 // A86
 make K220_A86 GSM new
 make K220_D33D GSM new
+make K220_C61 GSM new
 
 
 // Y01A
@@ -251,7 +254,16 @@ custom\common\userprofile_nvram_def.h
 //custom\common\userprofile_nvram_def_M107_XYZN_S2_4A_WESTERN_F2.h
 
 
-[1.5] 
+
+[1.5] _mtk_bat_
+// (1).curKey
+Save:set\Macro_Set_Path_mtk.h  curKey
+//	set proP1={cur}
+
+// (2).bak
+Save:set\Macro_Set_Path_mtk.h  boardKey
+make/{cur}_GSM.mak  BOARD_VER
+//	set proC1={board}
 
 
 

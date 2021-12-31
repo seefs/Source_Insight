@@ -15,7 +15,7 @@ Save:node\C\study\Macro_res_MTK.h \[1.10\] //test
 Save:node\C\study\Macro_res_MTK.h \[1.11\] //OLD_PRELOAD
 Save:node\C\study\Macro_res_MTK.h \[1.12\] //anim
 Save:node\C\study\Macro_res_MTK.h \[1.13\] //xx_mdu_def.h
-Save:node\C\study\Macro_res_MTK.h \[1.14\] 
+Save:node\C\study\Macro_res_MTK.h \[1.14\] tmp_project
 Save:node\C\study\Macro_res_MTK.h \[1.15\] 
 Save:node\C\study\Macro_res_MTK.h \[1.16\] 
 Save:node\C\study\Macro_res_MTK.h \[1.17\] 
@@ -27,10 +27,10 @@ Save:node\C\study\Macro_res_MTK.h \[1.20\]
 
 
 [1.1] 项目配置
-// set cur project
+// set cur
+// --images / audio / features / build
 Save:node\C\project\Macro_c_path.h  _mtk_cur_
-
-// set cur project nv
+// --nv / board / lcd
 Save:node\C\project\Macro_c_path.h  _mtk_cfg_
 
 // set cur project other -- no use
@@ -46,7 +46,7 @@ Save:node\C\project\Macro_c_path.h  _mtk_copy_
 
 [1.2] mk, features, nv
 // --mk
-make/{cur}_GSM.mak
+make/{cur}_GSM.mak  {cur}
 
 // --bld
 make/Verno_{cur}.bld   VERNO
@@ -304,11 +304,16 @@ make/{cur}_GSM.mak  __MMI_POWER_GIF_DISPLAY__
 
 //  与铃声同步问题 建议开机动画时间相比减0.5s 关机动画时间减2s
 images:MainLCD\Active\Poweronoff\
-//	logo.bmp
-//	POON.gif
-//	pooff.gif
+//	FE_DISPLAY  RES_TYPE   LOW   MK_DISPLAY   DIFF    --      
+//	OFF         -          ON    OFF          -       logo.bmp
+//	OFF1        -          ON2   ON3          OFF4    POONOFF.gif
+//	ON          gif        -     -            -       POON.gif/pooff.gif
+//	ON          OFF        -     -            -       POON.gif/pooff.gif
+//	OFF         -          ON    ON           ON      POON.gif/pooff.gif
+//	OFF         gif        OFF   -            -       POON.gif/pooff.gif
+//	OFF         OFF        OFF   -            -       POON.gif/pooff.gif
 
-// ---power--on
+// ---power--on--setItem
 features:MMI_features_switch{cur}.h CFG_MMI_POWER_ON_OFF_DISPLAY
 // ---power--gif
 features:MMI_features_switch{cur}.h CFG_MMI_RES_TYPE_POWER_ONOFF_SEL
@@ -327,6 +332,12 @@ make/{cur}_GSM.mak  __MMI_POWERONRING_MP3__
 plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res IMG_ID_CHARGER_CHARGING
 images:MainLCD\UIELEMENT\charger\
 
+// idle--bat--7格/6格/5格
+//		==>__FIVE_BATTERY_LEVEL__
+//		==>__SIX_BATTERY_LEVEL__
+//		==>__MORE_BATTERY_LEVEL__
+make/{cur}_GSM.mak  BATTERY_FIVE_LEVEL
+make/{cur}_GSM.mak  BATTERY_SIX_LEVEL
 // idle--bat
 images:MainLCD\IdleScreen\Statusicons\battery\SI_BAT\
 
@@ -403,8 +414,16 @@ make/{cur}_GSM.mak  __AUDIO_SAME_AS_POWONOFF__
 //
 //plutommi\Customer\CustResource\{cur}_MMI\MMI_features_switch{cur}.h
 
+## --开关机
+plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res AUD_ID_PROF_TONE1
+audio:UserProfiles\Tone\
+//	AUD_ID_PROF_TONE1 --> cs01.mid
+// --onoff--env
+//		==>__MMI_POWER_ON_OFF_NO_CUSTOMIZE__
+features:\MMI_features_switch{cur}.h  CFG_MMI_POWER_ON_OFF_NO_CUSTOMIZE
 
-// --短信/来电
+
+## --短信/来电
 //plutommi\Service\ProfilesSrv\ProfilesSrvMain.c  AUD_ID_PROF_TONE1^+^index
 
 // --tone
@@ -570,8 +589,17 @@ make/{cur}.mak  __COMMON_HW2424_24_FONT__
 
 
 
-[1.14] 
-
+[1.14] tmp_project
+//
+plutommi\Customer\Images\F55_H649_TX\
+plutommi\Customer\AUDIO\F55_H649_TX\
+plutommi\Customer\CustResource\F55_H649_TX_MMI\
+build\K220_C61\
+_bat\build
+make/K220_V19_WD_GSM.mak  XLS
+make/K220_V88_WD_GSM.mak  XLS
+make/K220_V35_WD_GSM.mak  __PHONE_SALE_SERVERS_QUICK_CONFIG__
+//
 
 
 

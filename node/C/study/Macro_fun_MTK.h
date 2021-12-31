@@ -278,6 +278,7 @@ plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_slk_main_evt_hdlr
 plutommi\Framework\EventHandling\EventsSrc\KeyBrd.c  mmi_frm_key_handle
 // menu
 plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  fixed_list_goto_next_item
+// key--back
 
 
 // dial
@@ -377,7 +378,7 @@ plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  void^mmi_slk_classic_pop
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  840
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  867  mmi_popup_display
 // --unlock--1Key--err
-plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  1564??
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  1564 ??
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  void^mmi_slk_classic_popup_help_msg
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  980  mmi_popup_display
 // --unlock--2Key--ok

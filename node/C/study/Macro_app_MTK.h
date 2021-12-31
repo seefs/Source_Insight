@@ -207,7 +207,7 @@ plutommi\mmi\CallSetting\CallSettingRes\CallSet.res  <MENU^id="MENU_ID_CALLSET_M
 plutommi\mmi\Setting\SettingRes\PhoneSetting.res <MENU^id^=^"MENU9102_INITIAL_SETUP"
 //	设置--手机设置--时间:
 plutommi\mmi\Setting\SettingRes\PhoneSetting.res <MENU^id^=^"MENU9141_TIME_AND_DATE"
-//	设置--手机设置--待机:
+//	设置--手机设置--待机菜单显示:
 plutommi\mmi\Setting\SettingRes\PhoneSetting.res <MENU^id^=^"MENU_IDLE_SCR_DISP"
 //	设置--手机设置--其他:
 plutommi\mmi\gpio\gpiores\PhnsetGpio.res <MENU^id^=^"MENU_ID_PHNSET_GPIO_SETTING"
@@ -674,6 +674,7 @@ plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c show_main_LCD_date_time
 wgui_status_icon_bar_set_display
 
 
+
 //	--draw
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c RedrawMOMTCallScreen
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c 7933
@@ -695,6 +696,14 @@ plutommi\mmi\Ucm\UcmSrc\UcmUi.c  mmi_ucm_go_back_screen_check
 plutommi\mmi\Ucm\UcmRes\ucm.res  "MENU_ID_UCM_INCALL_OPTION"
 plutommi\mmi\Ucm\UcmSrc\UcmUi.c  mmi_ucm_handle_incall_option
 plutommi\mmi\Ucm\UcmSrc\UcmUi.c  case^MENU_ID_UCM_INCALL_OPTION_HOLD
+
+//	call--录音--中键
+plutommi\mmi\Ucm\UcmSrc\UcmUi.c  __MMI_SHORT_CSK_REC_IN_CALL__
+
+
+//	call--紧急号码
+custom\common\hal_public\custom_ecc.c  ecc_special_num
+custom\common\hal_public\custom_ecc.c  ecc_default_num
 
 
 
@@ -746,6 +755,9 @@ mmi_phb_op_mark_several_copy_pre_req
 // option
 plutommi\mmi\PhoneBook\PhoneBookRes\phonebook.res  MITEM101_PBOOK_VIEW_OPTIONS
 
+// 售后服务热线
+make/{cur}_GSM.mak  __MMI_PHONEBOOK_SALES_SERVICE__
+
 
 # cl--log
 main:MainMenuRes.res  MAIN_MENU_CALL_CENTER
@@ -788,6 +800,13 @@ plutommi/Customer/CustResource/PLUTO_MMI/MMI_features_camera.h #define^CAMERA_DE
 
 
 [1.12] pic
+//
+make/{cur}_GSM.mak  IMAGE_VIEWER_VER = SLIM
+//		==>__IMAGE_VIEWER_SLIM__
+make\Option.mak  AUD_RECORD
+//		==>__MMI_IMAGE_VIEWER__
+plutommi\mmi\Inc\MMI_features.h  __MMI_IMAGE_VIEWER__
+
 // pic--menu
 plutommi\MtkApp\Camera\CameraRes\imageview.res  <MENU^id^=^"MENU_ID_IMGVIEW_APP"
 plutommi\MtkApp\ImageView\ImageViewRes\imgview.res  <MENU^id^=^"MENU_ID_IMGVIEW_APP"
@@ -803,9 +822,17 @@ plutommi\Framework\GUI\GUI_SRC\wgui_categories_multimedia.c  Cat222DrawTitle
 
 
 
+
 [1.13] record
 //	Image:
 plutommi\MtkApp\Sndrec\SndrecRes\Sndrec.res
+//
+make/{cur}_GSM.mak  AUD_RECORD
+//		==>AUD_REC_ENABLE
+make\Option.mak  AUD_RECORD
+//		==>__MMI_SOUND_RECORDER__
+plutommi\mmi\Inc\MMI_features.h  __MMI_SOUND_RECORDER__
+
 
 
 // enter
@@ -835,21 +862,39 @@ plutommi\MtkApp\Sndrec\SndrecSrc\SndrecUI.c  EVT_ID_ON_KEY
 
 
 [1.14] fm
-//	FM-画界面:
+//	FM--enter
+plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioSrc.c  void^mmi_fmrdo_run_app
+
+//	FM--draw
 plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioMainScreen.c void^mmi_fmrdo_show_main
-//	FM-title:
+//	FM--draw--中--title
 plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioMainScreen.c void^mmi_fmrdo_redraw_main_title
-//	FM-channel字体:
+//	FM--draw--英--label 1,2
 plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioMainScreen.c void^mmi_fmrdo_redraw_main_freq_label
-//	FM-channel--cur:
+//	FM--draw--中--channel--cur:
 //		==>.media_player_content_text_color
 //		==>.media_player_content_text_border_color
 plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioMainScreen.c void^mmi_fmrdo_redraw_main_channel_name
 
+//	FM--draw--channel--list:
+//		==>wgui_cat1031_tab_show
+//		==>FM_RADIO_CHANNEL_NUM
+plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioSrc.c mmi_fmrdo_channel_scrn_proc
+
+//	FM--draw--vol--+/-
+plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioMainScreen.c void^mmi_fmrdo_redraw_main_volume
+images:MainLCD\Multimedia\
+// vol_down.bmp
+// vol_up.bmp
+// next.bmp
 
 
 // skins
-plutommi/Customer/CustResource/PLUTO_MMI/resource_fmradio_skins.c 2264
+//		==>title
+//		==>label, 1,2
+//		==>frequency
+//		==>channel_name
+plutommi/Customer/CustResource/PLUTO_MMI/resource_fmradio_skins.c 4359 2264
 // skins--tmp
 plutommi\Customer\CustResource\resource_fmradio_skins.c  2264
 
@@ -939,7 +984,7 @@ mp3:AudioPlayerSrc/AudioPlayerSrc.c void^mmi_audply_entry_player_screen(void)
 //		====>mmi_audply_playlist_generate_internal
 //		====>mmi_audply_playlist_generate_search
 //		====>mmi_audply_lookup_audio_file_format("mp3")
-// --Mp3--play
+// --Mp3--list--play
 //		==>mmi_audply_playlist_initiate_play
 //		==>mmi_audply_do_play_action
 //		==>mmi_audply_do_portion_play_action_without_handle_result
@@ -951,6 +996,9 @@ mp3:AudioPlayerSrc\AudioPlayerPlayList.c  13869  #保存 MARK_LNAME
 // mp3--file
 //  #define SRV_FMGR_PHONE_DRV          
 //    FS_GetDrive()
+
+// mp3--order
+mdi_audio_get_background_callback_order
 
 
 
@@ -1112,8 +1160,6 @@ projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak SBD
 
 
 [1.23] bt
-//	tool:蓝牙:
-Save:node\C\study\Macro_modis_MTK.h tool:bluetooth
 //	关闭蓝牙:
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak BLUETOOTH_SUPPORT = NONE
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak BT_HFG_PROFILE = FALSE
@@ -1134,6 +1180,10 @@ plutommi/MtkApp/Connectivity/ConnectivitySrc/BtCommon/BTMMIScr.c S1716
 //
 envPath = plutommi/mmi/PROFILES\
 env:\\
+
+// env--edit--menu
+env:ProfilesSrc\ProfilesApp.c mmi_prof_entry_customize_scrn
+
 
 // select
 env:ProfilesSrc\ProfilesApp.c mmi_prof_customize_scrn_csk_hdlr
@@ -1194,9 +1244,6 @@ plutommi\Service\MDI\MDISrc\mdi_audio.c  mdi_audio_play_string_hdlr
 
 
 [1.27] Browser 网络参数
-
-//	modis: Browser
-Save:node\C\study\Macro_modis_MTK.h	 \[2.7\] Browser
 //	开启浏览器:
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak BROWSER_SUPPORT = OBIGO_Q03C_SLIM
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak OBIGO_FEATURE = WAP2_SEC_HTTP_ONLY

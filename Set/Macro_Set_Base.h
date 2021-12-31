@@ -43,38 +43,39 @@ project:E:\SC6533G,
 60
 project:G:\UIS8910_git,
 62
-project:G:\wa01u_svn_small,
+project:G:\UIS8910_schcard_git,
 64
 project:G:\wa01u_svn,
 66
-project:G:\UIS8910_schcard_git,
+project:G:\wa01u_svn_small_new2,
+68
+project:G:\wa01u_svn_small_new,
 
 
 //(7) 7701, 8910 项目路径
 70
-project:G:\wa01u_8910s_svn,
+project:G:\wa01u_svn_small_new3,
 72
-project:G:\T107,
+project:G:\T1071,
+74
+project:G:\watch_sprd,
+76
+project:G:\wa03u_git,
+78
+project:G:\wa03u_git2,
 
 
 //(8) MTK 项目路径1
 80
-project:F:\6261D_KM,
+project:E:\60M_11C_EX\trunk,
 //奇数项, 解决源码+SI目录分开问题, 源码目录单独设置在前一项
 81
-project:D:\_SI4.0\11CW1352MP_KM.si4project
-
+project:E:\_SI4.0\60M_11C_EX.si4project
 82
-project:F:\6261A_11C_V33,
-//奇数项, 解决源码+SI目录分开问题, 源码目录单独设置在前一项
+project:E:\MT61D_ZYF,
 83
-project:D:\_SI4.0\11CW1352MP_BLEPHONE61A.si4project,
+project:E:\_SI4.0\61M_ZYF.si4project
 
-84
-project:F:\6261D_11C_V33,
-//奇数项, 解决源码+SI目录分开问题, 源码目录单独设置在前一项
-85
-project:D:\_SI4.0\6261D_11C_V33.si4project,
 
 
 //(9) base -> save

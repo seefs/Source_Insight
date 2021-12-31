@@ -7,24 +7,27 @@
 ###
 
 
-imagesPath = plutommi\Customer\Images\K220_A86\
+imagesPath = plutommi\Customer\Images\K220_C61\
 images:\\
-audioPath = plutommi\Customer\AUDIO\K220_A86\
+audioPath = plutommi\Customer\AUDIO\K220_C61\
 audio:\\
-featuresPath = plutommi\Customer\CustResource\K220_A86_MMI\
+featuresPath = plutommi\Customer\CustResource\K220_C61_MMI\
 features:\\
-buildPath = build\K220_A86\
+buildPath = build\K220_C61\
 build:\\
+batPath = _bat\build
+bat:\\
+
 
 ### 1.cfg
-nvKey  = K220_D33D_AUDIO_BB
+nvKey  = K220_C61_AUDIO_BB
 
-boardKey  = K220_D183A_BB
+boardKey  = K220M_YGW_BB
 
-lcdKey  = K220D_QQVGA_LCM
+lcdKey  = K220D_QVGA_LCM
 
 ### 2.cur
-curKey = K220_A86
+curKey = K220_C61
 
 ### 3.copy
 oldKey = K220_A86
@@ -34,8 +37,10 @@ newKey = K220_D33D
 ### 4.tmp
 tmpKey = K220_Y01A_MGUO
 
+tmpBoardKey = K220M_YGW_BB
+
 ### 5.mk info bak
-bak1Key = K220_Y01A_MGUO
+bak1Key = K220_A86
 
 bak1Key = K220_Y01A_JMZ
 
