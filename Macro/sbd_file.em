@@ -1140,6 +1140,12 @@ macro getKeyHead(hbuf, fHead)
 	
 	//get cfg file
 	pathBuf = GetPubPathBuf(hbuf)
+	if(pathBuf == hNil){
+		msg("key: {@fHead@}" # CharFromKey(13)
+		   # "proj is not exist!" # CharFromKey(13) # CharFromKey(13)
+		   # "(Macro_Set_Base.h)")
+		return ""
+	}
 	
 	//get new Key
 	keyVal = getMacroValue(pathBuf, fHead # "Key", 1)

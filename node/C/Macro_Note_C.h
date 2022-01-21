@@ -26,6 +26,8 @@ Save:node\C\Macro_Note_C.h \[1.10\] Test------------功能测试
 //安装+配置
 Save:node\C\install\Macro_C_Install.h
 Save:node\C\install\Macro_MTK_FlashTool.h
+// si
+Save:node\ToolsMsg\Macro_SI.h  __SI_MTK__
 
 
 

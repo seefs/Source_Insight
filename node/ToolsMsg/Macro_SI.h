@@ -3,7 +3,7 @@
 //目录[Num][Ca]:
 // 1. SI常用问题
 Save:node\ToolsMsg\Macro_SI.h \[1.1\] 文件总数
-Save:node\ToolsMsg\Macro_SI.h \[1.2\] 
+Save:node\ToolsMsg\Macro_SI.h \[1.2\] 文件过滤
 Save:node\ToolsMsg\Macro_SI.h \[1.3\] 文件乱码
 Save:node\ToolsMsg\Macro_SI.h \[1.4\] 通配符替换
 Save:node\ToolsMsg\Macro_SI.h \[1.5\] SI崩溃问题---------
@@ -42,8 +42,31 @@ Save:node\ToolsMsg\Macro_SI.h \[3.4\]
 //	java: 38179
 
 
-[1.2] Source Insight 导入.c .h搜索会卡, 可只导入java文件
+[1.2] 文件过滤
+###
+//====同步时，不要点自动添加文件====
 
+# __SI_JAVA__
+//
+Source Insight 导入.c .h搜索会卡, 可只导入java文件
+
+
+# __SI_MTK__
+// 过滤:
+//  \tst\    142
+// *CustResDef.h
+// *ref_list.txt   820
+// *.html   820
+// *.xml    200
+// *.hpp    200
+
+// 过滤---不掉:
+// *Themecomponents.h K1*_MMM
+//    Themecomponents.h K99M_F02_PHILIPS_EH_MMI
+// *ThemeRes.c
+
+
+// 过滤--61M_zyf:
 
 
 

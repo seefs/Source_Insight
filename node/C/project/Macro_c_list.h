@@ -128,8 +128,9 @@ Save:node\C\project_demo\Macro_file_ttf_ttf_to_png.h
 Useful = True
 //	
 cd:tmp: git clone https://github.com/fontforge/fontforge
-// 安装
+// 输出编码,  清除
 Save:node\C\project_demo\Macro_file_ttf_fontforge.h
+Save:node\C\project_demo\Macro_file_ttf_fontforge.h  __MTK__
 
 
 // ttc 转化ttf 工具

@@ -33,14 +33,23 @@ Save:node\C\project\Macro_c_path.h \[2.12\]
 [1.1] _mtk_cur_
 // (1).curKey
 // --images / audio / features / build
+Save:set\
 Save:set\Macro_Set_Path_mtk.h  curKey
 
 // (2).bak
-// A86
+// A86===>自动配置
 curKey = K220_A86
+curKey = K220_A87_JTY
+curKey = K220_A87_LW
+curKey = K220_A87_OB
 curKey = K220_D33D
 curKey = K220_XHT_V79
 curKey = K220_C61
+curKey = X218_E207
+curKey = K220_Y22_BOSS
+curKey = K220_Y28_MGUO
+curKey = K220_V992
+curKey = K220_D58
 
 
 // A86
@@ -98,13 +107,13 @@ curKey = K220_H660_TX
 
 
 [1.2] _mtk_copy_
-// set
+
+### 从旧项目复制新项目
+// copy: 
+//   mk, bld, features, nv, image, audio
 Save:set\Macro_Set_Path_mtk.h  oldKey
 //	oldKey = K220_V18_WD
 //	newKey = K220_V35_WD
-
-### 
-mk, bld, features, nv, image, audio
 
 ===================copy_start===================
 // (1).mk/bld
@@ -145,13 +154,13 @@ plutommi\Customer\CustResource\{new}_MMI\
 features:\\
 
 // --features--rename
-cmd_w: ren plutommi\Customer\CustResource\{new}_MMI\MMI_features_switch{old}.h  MMI_features_switch{new}.h
+cmd_f: ren plutommi\Customer\CustResource\{new}_MMI\MMI_features_switch{old}.h  MMI_features_switch{new}.h
 
 
 // (3).nv
-// --nv--dir
-cmd_f: md custom\audio\{nv}\
-cmd_f: xcopy plutommi\Customer\Images\{old}  plutommi\Customer\Images\{new}  /e /i /y
+// --nv--dir--NV目录可能不是这个
+cmd_f: md custom\audio\{new}_AUDIO_BB\
+cmd_f: xcopy custom\audio\{old}_AUDIO_BB\*  custom\audio\{new}_AUDIO_BB\  /e /i /y
 // --nv
 custom\audio\{old}_AUDIO_BB\
 custom\audio\{new}_AUDIO_BB\
@@ -262,7 +271,7 @@ Save:set\Macro_Set_Path_mtk.h  curKey
 
 // (2).bak
 Save:set\Macro_Set_Path_mtk.h  boardKey
-make/{cur}_GSM.mak  BOARD_VER
+make/{cur}_{GSM}.mak  BOARD_VER
 //	set proC1={board}
 
 

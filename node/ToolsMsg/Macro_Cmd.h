@@ -151,6 +151,9 @@ ECHO %VAR%
 cmd_s:Shutdown -s -t 1800
 // 100分钟：  
 //	Shutdown -s -t 6000
+// 3小时：  
+//	Shutdown -s -t 10800
+// 取消
 //	Shutdown -a
 
 

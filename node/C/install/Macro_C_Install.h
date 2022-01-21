@@ -264,6 +264,8 @@ Save:node\ToolsMsg\Macro_vim.h
 [1.22] SI
 //
 Save:node\ToolsMsg\Macro_SI.h
+//
+Save:node\ToolsMsg\Macro_SI.h  __SI_MTK__
 
 
 

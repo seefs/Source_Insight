@@ -776,7 +776,7 @@ mmi:mmi_app\app\accessory\c\mmialarm.c MMI_RESULT_E^HandleAutoPowerOnOffWinMsg
 
 
 # Ä£Äâ
-// key Headset
+// key Headset--³¤°´´¥·¢ÄÖÖÓ
 mmi:mmi_app\kernel\c\mmi_default.c  BOOLEAN^DefaultHeadsetDetect
 //    case KEY_LONG_RELEASED:
 //			MMIAPIALM_StartAlarm(0, 0);
@@ -795,16 +795,14 @@ mmi:mmi_app\app\accessory\c\mmialarm.c  5568
 //
 
 
-// ÐÞ¸ÄÆ¥Åä
+// ÐÞ¸ÄÆ¥Åä--²»ÅÐ¶Ï´¥·¢
 mmi:mmi_app\app\accessory\c\mmialarm.c  BOOLEAN^MMIALM_GetArrivedEvent
-//
 //        if (cur_event_ptr->is_valid &&
 //            cur_event_ptr->is_on &&
 //            TRUE ) // IsMatchEvent(cur_date, cur_time, cur_event_ptr) )
 
 //
 mmi:mmi_app\app\accessory\c\mmialarm.c  BOOLEAN^MMIAPIALM_StartAlarm
-
 //
 mmi:mmi_app\app\accessory\c\mmialarm.c  BOOLEAN^OpenAlarmExpiredWin
 

@@ -24,12 +24,12 @@ Save:node\C\study\Macro_nv_MTK.h \[1.10\] //IMEI
 Save:node\C\study\Macro_nv_MTK.h \[1.11\] //bat_capacity
 Save:node\C\study\Macro_nv_MTK.h \[1.12\] //custom
 Save:node\C\study\Macro_nv_MTK.h \[1.13\] HOMEPAGE
-Save:node\C\study\Macro_nv_MTK.h \[1.14\] set
-Save:node\C\study\Macro_nv_MTK.h \[1.15\] nv_config
-Save:node\C\study\Macro_nv_MTK.h \[1.16\] nv----------模式
-Save:node\C\study\Macro_nv_MTK.h \[1.17\] other
-Save:node\C\study\Macro_nv_MTK.h \[1.18\] 
-Save:node\C\study\Macro_nv_MTK.h \[1.19\] 
+Save:node\C\study\Macro_nv_MTK.h \[1.14\] nv_set
+Save:node\C\study\Macro_nv_MTK.h \[1.15\] nv_sim
+Save:node\C\study\Macro_nv_MTK.h \[1.16\] nv_audio
+Save:node\C\study\Macro_nv_MTK.h \[1.17\] nv_audio_other
+Save:node\C\study\Macro_nv_MTK.h \[1.18\] nv_bat
+Save:node\C\study\Macro_nv_MTK.h \[1.19\] nv_tarce
 Save:node\C\study\Macro_nv_MTK.h \[1.20\] 
 Save:node\C\study\Macro_nv_MTK.h \[1.21\] 
 Save:node\C\study\Macro_nv_MTK.h \[1.22\] 
@@ -125,13 +125,13 @@ NVRAM_BRW_SETTINGS_HOMEPAGE
 
 
 
-[1.14] set
+[1.14] nv_set
 //
 plutommi\mmi\gpio\gpiores\PhnsetGpio.res  NVRAM_SETTING_KEY_BACKLITE_SWITCH
 
 
 
-[1.15] nv_config
+[1.15] nv_sim
 
 // 格式化不删除短信时间
 custom/common/PLUTO_MMI/nvram_common_config.c NVRAM_EF_SRV_SMS_SIM_CUST_DATA_LID
@@ -139,7 +139,7 @@ custom/common/PLUTO_MMI/nvram_common_config.c NVRAM_EF_SRV_SMS_SIM_CUST_DATA_LID
 
 
 
-[1.16] nv
+[1.16] nv_audio
 // nv
 custom\audio\{nv}\nvram_default_audio.c
 //custom\audio\{nv}\nvram_default_audio_{cur}.h
@@ -187,7 +187,7 @@ media\audio\include\aud_defs.h  AUD_VOLUME_MEDIA
 
 
 
-[1.17] other
+[1.17] nv_audio_other
 // 模式4
 custom\audio\{nv}\afe.c  AFE_SwitchExtAmplifier
 
@@ -199,13 +199,19 @@ custom\audio\{nv}\audcoeff.c  L1SP_SPEAKER1
 
 
 
-[1.18] 
+[1.18] nv_bat
+//
+custom\app\{board}\
+custom\app\{board}\nvram_user_config.c  __MORE_BATTERY_LEVEL__
+// bat
+interface\middleware\nvram_editor_data_item.h  custom_hw_level_struct
 
 
 
-
-[1.19] 
-
+[1.19] nv_tarce
+//
+// 为99时，关闭此打印，为4时，是USB打印
+custom\common\hal\nvram\nvram_data_items.c  NVRAM_EF_PORT_SETTING_DEFAULT
 
 
 

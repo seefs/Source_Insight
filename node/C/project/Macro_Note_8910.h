@@ -144,20 +144,29 @@ MS_Customize/source/product/driver/lcd/tft_ST7735S.c
 MS_Ref\source\lcd\src\lcd.c GC9306_Ex
 MS_Customize\source\product\driver\lcd\tft_GC9300.c GC9300_Ex(void)
 
-//	屏亮度:
+//	屏亮度/背景电流:
 chip_drv\chip_module\analog\
-chip_drv\chip_module\analog\v7\analog_phy.c  s_ana_bln_sw_tab
-chip_drv\chip_module\analog\sc2720\analog_phy_sc2720.c  s_ana_bln_sw_tab
+//	--6531D
+chip_drv\chip_module\analog\sr1131\analog_phy_sr1131.c  s_ana_bln_sw_tab
+chip_drv\chip_module\analog\sr1131\analog_phy_sr1131.c  s_ana_dev_tab
+//	--6531E
 chip_drv\chip_module\analog\sr1161\analog_phy_sr1161.c s_ana_bln_sw_tab
-//	背景电流:
-chip_drv\chip_module\analog\v7\analog_phy.c  BLTC_LCM_CURRENT_V
+//	--t703
+chip_drv\chip_module\analog\sc2720\analog_phy_sc2720.c  s_ana_bln_sw_tab
 chip_drv\chip_module\analog\sc2720\analog_phy_sc2720.c  s_ana_dev_tab
-//
+//	--t107
+chip_drv\chip_module\analog\v7\analog_phy.c  s_ana_bln_sw_tab
+chip_drv\chip_module\analog\v7\analog_phy.c  BLTC_LCM_CURRENT_V
+chip_drv\chip_module\analog\v7\analog_phy.c  s_ana_dev_tab
+//	背景电流 = BLTC_LCM_CURRENT_V
+
+//	--目录
 make\chip_drv\def_config\
 make\chip_drv\def_config\UMS9117.cfg  CONFIG_ANALOG_VER = v7
 make\chip_drv\chip_modules\analog.mk  CONFIG_ANALOG_VER
 //
 make\chip_drv\chip_drv.mk  analog_phy_sc2720.c
+make\chip_drv\chip_drv.mk  analog_phy
 
 
 // SUBLCD
@@ -417,6 +426,9 @@ MS_MMI_Main/source/mmi_app/app/idle/c/mainapp.c  iTimeOut  KEYLOCK_LSK_TIME
 
 // time--ALERT
 MS_MMI_Main\source\mmi_service\export\inc\mmi_custom_define.h  xx  SBD_ALERT_WIN_TIME_PERIOD_1S
+// time--format-12
+MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_display.c  MMI_TIME_DISPALY_TYPE_DEFAULT_12
+
 
 // POWER
 mmiphone_onoff.c  SBD_CHANGE_POWER_OFF_TIME_10S

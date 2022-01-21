@@ -27,7 +27,8 @@ Save:node\C\study\Macro_res_MTK.h \[1.20\]
 
 
 [1.1] 项目配置
-// set cur
+
+### 设置当前项目
 // --images / audio / features / build
 Save:node\C\project\Macro_c_path.h  _mtk_cur_
 // --nv / board / lcd
@@ -36,7 +37,7 @@ Save:node\C\project\Macro_c_path.h  _mtk_cfg_
 // set cur project other -- no use
 //Save:node\C\project\Macro_c_path.h  _mtk_other_
 
-###
+### 新项目
 // create new project
 Save:node\C\project\Macro_c_path.h  _mtk_copy_
 
@@ -46,7 +47,7 @@ Save:node\C\project\Macro_c_path.h  _mtk_copy_
 
 [1.2] mk, features, nv
 // --mk
-make/{cur}_GSM.mak  {cur}
+make/{cur}_{GSM}.mak  {cur}
 
 // --bld
 make/Verno_{cur}.bld   VERNO
@@ -64,7 +65,7 @@ custom\app\{board}\nvram_user_config.c  __MORE_BATTERY_LEVEL__
 
 ###
 // --project
-make/{cur}_GSM.mak  PRJ_NAME
+make/{cur}_{GSM}.mak  PRJ_NAME
 //	__K220_Z97_JMZ__
 //	__K220_Z97__
 //	__JMZ__
@@ -78,6 +79,7 @@ features:\ThemeRes.c  theme_defaultTheme
 features:\Themecomponents.h  title_text_color_defaultTheme
 features:\ref_list.txt
 // --features--tmp
+plutommi\Customer\CustResource\
 plutommi\Customer\CustResource\PLUTO_MMI\CustResDefPLUTO.h SSC_SW_VERSION
 plutommi\Customer\CustResource\ThemeRes.c  theme_defaultTheme
 plutommi\Customer\CustResource\Themecomponents.h  title_text_color_defaultTheme
@@ -99,11 +101,11 @@ make\Resgen.mak REFLIST_LIST += ref_list_
 features:\
 features:\ref_list.txt
 // custom
-make/{cur}_GSM.mak  NEW_CUS_REL_TRACE_DEFS
+make/{cur}_{GSM}.mak  NEW_CUS_REL_TRACE_DEFS
 //	USE_PROJECT_STRING_LIST = TRUE
 
 //
-//make/{cur}_GSM.mak REF_LIST_BRANCH = M107
+//make/{cur}_{GSM}.mak REF_LIST_BRANCH = M107
 
 
 // --str--out
@@ -124,25 +126,59 @@ open:plutommi\Customer\STMTView.exe
 //STR_SUBLCD_CHI_FRIDAY         (五)
 //STR_SUBLCD_ENG_FRIDAY         (Fri)
 
+### excel导出到txt, 第1列不能为空，E207 删了30条
+// --多余复制
+//	STR_FTP_OPTION_GET_ALL---------------------ok--x2844
+//	STR_WCLOCK_CITY_ABBRE78--------------------ok--x12378
+//	MEA_STR_ID_CONFIG_PERS---------------------ok--x2169--第2次
+//  STR_ID_DA_JOB_LIST-------------------------ok--x3866--第2次
+//	STR_ID_OPERA_LNG_366-----------------------ok--x9898--第2次
+//	STR_ID_SRV_SMS_TEMPLATE_6------------------ok--x12283-第2次
+// --合并到1行
+//  STR_ID_AM_UNINSTALL------------------------ok--x15368
+//  STR_ID_GX_PUZZLE_HELP_DESCRIPTION----------ok--x582----第2次
+// --缺失--少引号
+//  STR_GLOBAL_SIM_2---------------------------ok--x12357--第2次
+// --引号问题, 未配对
+//  STR_ID_GX_COPTER_HELP_DESCRIPTION_JET_TP---ok--569
+//	STR_UC_CAN_NOT_PLAY_COMPLETE---------------ok--1148
+//	MEA_STR_ID_ADD_BOOKMARK_TEXT---------------ok--2134
+//	STR_BT_RECV_DRV_NOT_AVAIL_CNF--------------ok--2713
+//	STR_BT_ACTIVATING--------------------------ok--2772
+//	STR_DA_APP_FILE----------------------------ok--3823
+//	STR_EBOOK_TOUCH_SCREEN_HELP----------------ok--3926
+//	STR_ID_SYNC_CODE_FORBIDDEN-----------------ok--4103
+//	STR_ID_UMMS_MODE_RESTRICTED_REMOVE_CONFIRM-ok--4881
+//	STR_ID_DCD_HELP_INFO2----------------------ok--7206--连续7个
+//	STR_INDICAL_HELP---------------------------ok--8622
+//	STR_HIJRI_CALENDAR_HELP--------------------ok--8644
+//	STR_ID_OPERA_LNG_338-----------------------ok--9872
+//	STR_ID_SECURE_TIME_EXPIRED-----------------ok--12216
+//	STR_ID_SRV_TETHERING_USB_RECONNECT---------ok--12302
+//	STR_ID_UMMS_COMPOSER_OPTION----------------ok--13577--描述--连续3个
+//	STR_ID_PHOEDT_HELP_DOODLE_INFO_FTE---------ok--13649
+//	STR_ID_PHOEDT_HELP_CLIP_INFO_FTE-----------ok--13657--连上
+//	STR_ID_OPERA_V11_LNG_363-------------------ok--14566
+//	STR_ID_PHILIPS_INFO------------------------ok--16964--描述--连续7个
 
 
 
 [1.4] res
 #########
 // --PRJ_NAME
-make/{cur}_GSM.mak  PRJ_NAME
+make/{cur}_{GSM}.mak  PRJ_NAME
 //	PRJ_NAME = K220_D18E
 //
-make/{cur}_GSM.mak  PRJ_MAINBOARD_NAME
+make/{cur}_{GSM}.mak  PRJ_MAINBOARD_NAME
 //	PRJ_MAINBOARD_NAME = K220M
 //
-make/{cur}_GSM.mak  PRJ_LOGO_NAME
+make/{cur}_{GSM}.mak  PRJ_LOGO_NAME
 //	PRJ_LOGO_NAME = WJT
 //
-make/{cur}_GSM.mak  PRJ_MODEL_NAME
+make/{cur}_{GSM}.mak  PRJ_MODEL_NAME
 //	PRJ_MODEL_NAME	= K220_N48
 //
-make/{cur}_GSM.mak  KEY_LAYOUT_STYLE
+make/{cur}_{GSM}.mak  KEY_LAYOUT_STYLE
 //	#KEY_LAYOUT_STYLE = CODEGEN_H660
 
 
@@ -157,11 +193,11 @@ make\Option.mak  PRJ_LOGO_NAME
 
 #########
 // --MMI_VERSION
-make/{cur}_GSM.mak  MMI_VERSION
+make/{cur}_{GSM}.mak  MMI_VERSION
 //	MMI_VERSION = PLUTO_MMI
 
 // --FLAVOR
-make/{cur}_GSM.mak  FLAVOR
+make/{cur}_{GSM}.mak  FLAVOR
 //	FLAVOR = NO_CAM
 
 
@@ -170,7 +206,7 @@ make\Resgen.mak MMI_PROJ
 //	MMI_PROJ = PLUTO
 
 // --MMI_BASE
-make/{cur}_GSM.mak  MMI_BASE
+make/{cur}_{GSM}.mak  MMI_BASE
 //	MMI_BASE = PLUTO_MMI
 
 // --MMI_BASE_PRJ
@@ -247,11 +283,6 @@ plutommi\Customer\CustResource\{cur}_MMI\ref_list.txt
 [1.5] image
 // --path
 features:\CustResDef.h  CUST_IMG_PATH
-features:\CustResDef.h  CUST_ADO_PATH
-// audio
-plutommi\Customer\AUDIO\
-plutommi\Customer\AUDIO\{cur}\
-audio:\
 // image
 plutommi\Customer\Images\
 plutommi\Customer\Images\{cur}\
@@ -300,7 +331,7 @@ images:MainLCD\Active\poweronoff\logo.BMP
 
 // --开关机动画:
 // ---power--gif
-make/{cur}_GSM.mak  __MMI_POWER_GIF_DISPLAY__
+make/{cur}_{GSM}.mak  __MMI_POWER_GIF_DISPLAY__
 
 //  与铃声同步问题 建议开机动画时间相比减0.5s 关机动画时间减2s
 images:MainLCD\Active\Poweronoff\
@@ -321,13 +352,13 @@ plutommi\mmi\Inc\MMI_features.h  __MMI_RES_TYPE_POWER_ONOFF_SEL__
 plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c POON.gif
 
 //
-//make/{cur}_GSM.mak SBD_POWER_ONOFF_SAME_LOGO
+//make/{cur}_{GSM}.mak SBD_POWER_ONOFF_SAME_LOGO
 //~ 
 //~ lcd_sw_rnd DRV_MAINLCD_INIT_COLOR 设置logo背景色
 
 
 // --关机充电动画
-make/{cur}_GSM.mak  __MMI_POWERONRING_MP3__
+//make/{cur}_{GSM}.mak  __MMI_POWERONRING_MP3__
 //
 plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res IMG_ID_CHARGER_CHARGING
 images:MainLCD\UIELEMENT\charger\
@@ -336,8 +367,8 @@ images:MainLCD\UIELEMENT\charger\
 //		==>__FIVE_BATTERY_LEVEL__
 //		==>__SIX_BATTERY_LEVEL__
 //		==>__MORE_BATTERY_LEVEL__
-make/{cur}_GSM.mak  BATTERY_FIVE_LEVEL
-make/{cur}_GSM.mak  BATTERY_SIX_LEVEL
+make/{cur}_{GSM}.mak  BATTERY_FIVE_LEVEL
+make/{cur}_{GSM}.mak  BATTERY_SIX_LEVEL
 // idle--bat
 images:MainLCD\IdleScreen\Statusicons\battery\SI_BAT\
 
@@ -407,10 +438,18 @@ plutommi/mmi/Setting/SettingInc/PhoneSetupResList.h #define^MAX_POWER_ON_IMG
 
 
 [1.6] ring
+// --path
+features:\CustResDef.h  CUST_ADO_PATH
+// audio
+plutommi\Customer\AUDIO\
+plutommi\Customer\AUDIO\{cur}\
+audio:\
+
+
 // --mp3--powonoff
-make/{cur}_GSM.mak  __MMI_POWERRING_SAME__
-make/{cur}_GSM.mak  __MMI_POWERONRING_MP3__
-make/{cur}_GSM.mak  __AUDIO_SAME_AS_POWONOFF__
+make/{cur}_{GSM}.mak  __MMI_POWERRING_SAME__
+make/{cur}_{GSM}.mak  __MMI_POWERONRING_MP3__
+make/{cur}_{GSM}.mak  __AUDIO_SAME_AS_POWONOFF__
 //
 //plutommi\Customer\CustResource\{cur}_MMI\MMI_features_switch{cur}.h
 
@@ -515,8 +554,12 @@ plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res AUD_ID_PROF_RING1
 
 
 [1.9] font
-//
-plutommi\Customer\CustResource\FontRes.c
+// 英文、中文、特殊字符" ?￠"
+plutommi\Customer\CustResource\FontRes.c   g_small_font_data_array
+// 中文--3309
+vendor\font\inc\L_Chinesec_small.h  AGB2312_TRIM_32_BOLD_RangeInfo
+// 乱码--嗄--55c4--50516
+
 
 
 // --英文
@@ -536,6 +579,7 @@ vendor\font\FontData\OfficialFont\RUSSIAN\Russian_18.bdf
 // --中文
 vendor\font\MTK\official\project\plutommi\content\src\MainLcd160X128\res_gen_font.cpp __MMI_LANG_SM_CHINESE__
 vendor\font\MTK\official\project\plutommi\content\src\MainLcd128X160\res_gen_font.cpp __MMI_LANG_SM_CHINESE__
+vendor\font\MTK\official\project\plutommi\content\src\MainLcd240X320\res_gen_font.cpp __MMI_LANG_SM_CHINESE__
 // --中文-bdf
 vendor\font\FontData\OfficialFont\Chinese\
 //	font_22_type.bdf-----------L12, 粗, 2.12M
@@ -560,10 +604,18 @@ vendor\font\FontData\OfficialFont\Dialing\L_MTK_DiallingFont_27.bdf
 // 字体
 plutommi\Framework\GUI\GUI_SRC\gui_font_size.c GUI_FONT_SIZE_CALENDAR_TITLE
 plutommi\Framework\Interface\FontRes.h SMALL_FONT
+
+
 //	输入法
-features:MMI_features_switchK220_Z97_MGUO.h  CFG_MMI_CSTAR_MULTITAP
+features:\MMI_features_switch{cur}.h  CFG_MMI_CSTAR_MULTITAP
+//对应语言之输入法
+plutommi/customer/lcdresource/mainlcd240x320/
+plutommi/customer/lcdresource/mainlcd240x320/inputmethod/inc/Zi8DatZH_Prc.h
+
+
 //	参考: 制作字库
 https://wenku.baidu.com/view/ea58850bf78a6529647d53a1.html
+https://blog.csdn.net/zzsg2005/article/details/4330253
 
 
 // 大字体
@@ -591,14 +643,14 @@ make/{cur}.mak  __COMMON_HW2424_24_FONT__
 
 [1.14] tmp_project
 //
-plutommi\Customer\Images\F55_H649_TX\
-plutommi\Customer\AUDIO\F55_H649_TX\
-plutommi\Customer\CustResource\F55_H649_TX_MMI\
-build\K220_C61\
+plutommi\Customer\Images\K220_GZ_N61_WJT\
+plutommi\Customer\AUDIO\K220_GZ_N61_WJT\
+plutommi\Customer\CustResource\K220_GZ_N61_WJT_MMI\
+build\K220_GZ_N61_WJT\
 _bat\build
-make/K220_V19_WD_GSM.mak  XLS
-make/K220_V88_WD_GSM.mak  XLS
-make/K220_V35_WD_GSM.mak  __PHONE_SALE_SERVERS_QUICK_CONFIG__
+make/K220_V19_WD_{GSM}.mak  XLS
+make/K220_V88_WD_{GSM}.mak  XLS
+make/K220_V35_WD_{GSM}.mak  __PHONE_SALE_SERVERS_QUICK_CONFIG__
 //
 
 

@@ -7,9 +7,9 @@ Save:node\C\study\Macro_doc_MTK.h \[1.2\] FUN 入口-------------
 Save:node\C\study\Macro_doc_MTK.h \[1.3\] lang
 Save:node\C\study\Macro_doc_MTK.h \[1.4\] //移配置
 Save:node\C\study\Macro_doc_MTK.h \[1.5\] //说明文档
-Save:node\C\study\Macro_doc_MTK.h \[1.6\] //Win数据
+Save:node\C\study\Macro_doc_MTK.h \[1.6\] Win数据--------------菜单
 Save:node\C\study\Macro_doc_MTK.h \[1.7\] //touch
-Save:node\C\study\Macro_doc_MTK.h \[1.8\] 
+Save:node\C\study\Macro_doc_MTK.h \[1.8\] File
 Save:node\C\study\Macro_doc_MTK.h \[1.9\] test code-------------
 Save:node\C\study\Macro_doc_MTK.h \[1.10\] //ImageNote
 Save:node\C\study\Macro_doc_MTK.h \[1.11\] //TextNote
@@ -61,6 +61,21 @@ mre\sdkinc\vmchset_sdk.h PUNJABI
 //搜索字符串ID如 MAIN_MENU_MENU_TEXT
 //搜索图片ID 如MAIN_MENU_PHONEBOOK_ICON
 
+//
+//		==>MENU_ID_CALLSET_BLACKLIST
+//		====>STR_ID_CALLSET_BLACKLIST
+plutommi\Customer\CustResource\CustMenuTree_Out.c  MENU_ID_CALLSET_BLACKLIST
+//		====>37020
+plutommi\Framework\MSLT\MSLTInc\MSLT_INFO\mmi_mslt_string.txt
+//		====>{0,2,128,13,37020,0,(U16 *)nOrderMenuItem_36989}
+//		====>submenu, {36988,36989}
+plutommi\Customer\CustResource\CustMenuRes.c
+//		====>Attr, 13, MMI_RG_MENU_TYPE_APP_SUB
+plutommi\VendorApp\ResGenerator\CustDataProts.h  DISPATTRIBUTE
+//		====>menuId, 36988
+plutommi\Customer\CustomerInc\mmi_rp_app_callset_def.h  MENU_ID_CALLSET_MORE
+
+
 
 [1.7] 触摸屏
 //
@@ -74,7 +89,13 @@ mre\sdkinc\vmchset_sdk.h PUNJABI
 
 
 
-[1.8] 
+[1.8] File
+//
+// result = FS_CreateDir(filepath);
+//
+plutommi\MtkApp\EngineerMode\EngineerModeApp\EngineerModeAppSrc\EngineerModeFSTestCore.c 
+//		FS_Write(file_handler
+
 
 
 [1.9] test code
@@ -88,6 +109,10 @@ plutommi\AppCore\SSC\SSCStringTable.h SSC_MANUAL_SET_IMEI
 // ELECTRIC-2
 plutommi/AppCore/SSC/SSCPassEngine.c  mmi_entry_dzbk_info_scr
 
+// psw
+plutommi\mmi\SecuritySetting\SecSetSrc\SecSetPhone.c  __PRIVACY_PROTECT_DEFAULT_0000__
+plutommi\mmi\SecuritySetting\SecSetSrc\SecSetPhone.c  __PHONE_KEY_DEFAULT_0000__
+
 
 // Phone--工程模式
 code:SSCStringTable.h  SSC_ENGINEERING_MODE
@@ -98,6 +123,7 @@ code:SSCStringTable.h  SSC_ENGINEERING_MODE1
 "*#87#", "*#666#",
 // Item--原厂设定
 code:SSCPassEngine.c SSC_FACTORY_MODE_4
+code:SSCStringTable.h  SSC_ELT_FACTORY_MODE
  "*#79*#", 
 "*#66*#", "*#2266#", "*#777#", "*#*#6666#*#"
 // Product
@@ -201,6 +227,8 @@ custom\drv\misc_drv\_Default_BB\MT6261\custom_hw_default.c  __NEW_DEFAULT_TIME_2
 plutommi\mmi\Setting\SettingSrc\Restore.c  mmi_restore_reset_date_time
 plutommi\mmi\Setting\SettingSrc\Restore.c  __NEW_DEFAULT_TIME_20211030_STYLE__
 
+// 模拟器时间
+applib\misc\src\app_datetime.c  2845
 
 
 

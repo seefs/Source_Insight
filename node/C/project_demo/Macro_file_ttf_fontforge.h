@@ -173,3 +173,15 @@ fontforge -script convert.pe *.pfb
 build\pe\test.pe
 
 
+### __MTK__
+// ttfתbdf
+build\ttf\
+
+
+
+
+
+
+
+
+

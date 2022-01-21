@@ -292,6 +292,7 @@ plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  mmi_popup_display
 // pubWin
 plutommi\Framework\CommonScreens\CommonScreensSrc\AlertScreen.c  mmi_ret^popup_entry
 // pubWin--no softkey
+//		==>MMI_CATEGORY63_ID
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_popup.c  ShowCategory63Screen_ex
 // pubWin--has softkey {,27,,106}
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_popup.c  ShowCategory163Screen_ext_int
@@ -301,12 +302,16 @@ plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  case^DM_POPUP_BACKGROUND
 plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  MMI_POP_UP_DIALOG_X
 plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  9516
 // pubWin--bg [124+2*2=128, 107+26+24=157]
+// pubWin--bg [140+2*10=160, 84+20+24=128]
 plutommi\Framework\GUI\GUI_INC\gui_switch.h  2955
+// pubWin--bg--(border=3)
+plutommi/Framework/GUI/GUI_INC/wgui_categories_popup.h  355
 // pubWin--rect
 plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  case^DM_ALIGNED_AREA_START
 plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  dm_popupbg_set_clip
 plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  dm_setup_and_draw_aligned_area
 plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  case^DM_ALIGNED_AREA_END
+
 // pubWin--rect--id
 plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  dm_search_control_set
 //	category_id=34
@@ -576,6 +581,17 @@ plutommi\Framework\GUI\GUI_SRC\wgui_categories_inputs.c  gui_set_single_line_inp
 // --height--setup_UI_wrappers()
 plutommi\Framework\GUI\GUI_SRC\wingui.c  MMI_singleline_inputbox_height
 plutommi\Framework\GUI\GUI_SRC\gui_themes.c set_MMI_PIN_inputbox_theme( )
+
+// input--bg
+//		==>.inline_edit_focussed_filler
+//		==>wgui_inline_singleline_inputbox_focussed_theme
+//		==>current_single_line_input_box_theme
+plutommi\Framework\GUI\GUI_SRC\wgui_inline_edit.c  create_inline_edit_singleline_inputbox_set_buffer
+
+// input--dial num
+//		==>mmi_imc_key_group_key_down_int
+//		==>MMI_IMC_MESSAGE_INSERT_CHAR
+plutommi\Framework\GUI\GUI_SRC\wgui_inputs_multiline.c  U32^mmi_input_box_msg_call_back_multiline
 
 
 # im

@@ -42,16 +42,37 @@ Save:node\C\study\Macro_nv_MTK.h
 
 
 
+//
+设计--无重复者先，而不是身份优先
+
+//
+16:00
+//
+start cmd /k echo Hello, World!
 
 
 //
-make {cur} GSM new
-make {cur} GSM remake
-make {cur} GSM remake custom
-make {cur} GSM remake plutommi
-make {cur} GSM Resgen
-make {cur} GSM remake mmiresource
-make {cur} GSM gen_modis
+FM--title
+
+
+//
+晚上--str--list
+
+//
+build--info, create dir..
+
+//
+回声测试--*#加音量
+
+
+//
+make {cur} {GSM} new
+make {cur} {GSM} remake
+make {cur} {GSM} remake custom
+make {cur} {GSM} remake plutommi
+make {cur} {GSM} Resgen
+make {cur} {GSM} remake mmiresource
+make {cur} {GSM} gen_modis
 // 8910s
 make p=UIS8910_ROM_16MB_DS_USER m=simulator_idh
 make p=UIS8910_ROM_16MB_DS_USER m=custom_drv update image
@@ -59,7 +80,7 @@ make p=UIS8910_ROM_16MB_DS_USER m=app_main update image
 make p=UIS8910_ROM_16MB_DS_USER m=resource_main update image
 make p=UIS8910_ROM_16MB_DS_USER m=ctrl update image
 make p=UIS8910_ROM_16MB_DS_USER m=gui_main update image
-make p=UIS8910_ROM_16MB_DS_DEBUG image
+make p=UIS8910_ROM_16MB_DS_USER image
 // launcher
 make p=UIS8910_128x160BAR_16MB_SS_WA03U_T2_V2_USER m=simulator_idh
 // 8910wa
@@ -102,16 +123,16 @@ make p=sc6531_K220S_32X32_QCIF_HCG_H1621_1 m=app
 make p=sc6531_K220S_32X32_QCIF_HCG_H1621_1 image
 make p=sc6531_K220S_32X32_QCIF_HCG_H1621_1 m="gui app" update image
 make p=sc6531_K220S_32X32_QCIF_HCG_H1621_1 new job=12
-// T107
+// T107--如果报错, 分开编
 make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_31_debug m=simulator_main
 make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_31_debug m=resource_main
-make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_31_debug m=app_main update image
+make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_31C_user m=app_main update image
 make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_31_debug m=ctrl update image
 make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_31_user m=custom_drv
 make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_31_user m=custom_drv update image
 make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_31_debug m="mmk_main ctrl app_main" update image
 make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_31_debug m=mmk_main update image
-make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_31_debug image
+make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_31C_user image
 make p=ums9117_240X320BAR_48MB_S98T_FLP_E535_31_user m=bootloader update image
 //
 

@@ -96,6 +96,12 @@ plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c  wgui_clock_update_main_lcd
 plutommi\Framework\GUI\GUI_SRC\Wgui_clock.c   gui_clock_update( )
 plutommi\Framework\GUI\GUI_SRC\gui_clock.c   gui_clock_show_digital( )
 plutommi\Framework\GUI\GUI_SRC\gui_clock.c   2916
+// --关机充电--time
+//		==>ShowChargingScr_int
+//		==>DT_POWER_OFF_CHARGER_SCREEN
+plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c  7083
+//		==>c.x
+plutommi\Framework\GUI\GUI_SRC\gui_clock.c   2584
 
 
 // 2) date:
@@ -193,8 +199,8 @@ main:MainMenuRes.res <STRING^id="MAIN_MENU_SETTINGS_TEXT"
 //main:MainMenuRes.res <MENUITEM^id="MAIN_MENU_ FMRDO_MENUID"
 main:MainMenuRes.res <MENU^id="MAIN_MENU_SETTINGS_MENUID"
 main:MainMenuRes.res <MENU^id="MAIN_MENU_MULTIMEDIA_MENUID"
-main:MainMenuRes.res <MENU^id="MAIN_MENU_ORGANIZER_MENUID"
-main:MainMenuRes.res <MENU^id="MAIN_MENU_TOOLS_MENUID"
+main:MainMenuRes.res <MENU^id="MAIN_MENU_ORGANIZER_MENUID"        #240X320
+main:MainMenuRes.res <MENU^id="MAIN_MENU_TOOLS_MENUID"            #128X160
 main:MainMenuRes.res <MENU^id="MAIN_MENU_SETTINGS_MENUID"
 //	设置--通话中心:
 plutommi\mmi\CallSetting\CallSettingRes\CallSet.res  <MENU^id="MENU_ID_CALLSET_CALL_CENTER"
@@ -263,7 +269,8 @@ plutommi\Customer\CustomerInc\screen_enum.h SCR_ID_IDLE_SIM_SPACE_SETTING
 
 
 //主菜单入口:
-EntryMainMenuFromIdleScreen
+//		==>MAIN_MENU_SCREENID
+plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c  EntryMainMenuFromIdleScreen
 //draw - txt
 plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c 4889 gui_print_truncated_text
 //draw - scroll txt
@@ -548,8 +555,10 @@ plutommi\mmi\Setting\SettingSrc\DateAndTime.c void^PhnsetSendSetTimeReqMessage( 
 plutommi\Framework\GUI\GUI_SRC\gui_inputs.c void^gui_show_multi_line_input_box_ext_internal
 //	日期有效性:
 plutommi\Framework/GUI/GUI_SRC/wgui_datetime.c default_inline_date_validation
-// set--time--format
+// set--time--format--"/"
 plutommi\Service\SettingSrv\res\GeneralSettingSrv.res  NVRAM_DT_SEP_FORMAT
+// set--time--draw--"/"
+plutommi/Framework/GUI/GUI_SRC/wgui_inline_edit.c  inline_date_edit_set_seperator
 
 
 // 9) setting:Restore 恢复出厂设置:
@@ -562,6 +571,7 @@ custom\common\PLUTO_MMI\nvram_common_config.c NVRAM_ATTR_FACTORY_RESET
 // --set--phone--endlock
 plutommi\mmi\Setting\SettingSrc\PhnsetDisplay.c  mmi_phnset_disp_setup_sub_menu_select_handler
 
+
 // 11) set--short
 // --set--phone--short
 plutommi\mmi\Extra\ExtraSrc\Shortcuts.c  EntryShctInMainMenu
@@ -573,16 +583,24 @@ plutommi\mmi\Bootup\BootupSrc\BootupInitApps.c  mmi_bootup_notify_completed
 plutommi\mmi\Bootup\BootupSrc\BootupInitApps.c  mmi_bootup_init_apps
 plutommi\mmi\Extra\ExtraSrc\Shortcuts.c  mmi_shct_init
 // ===short--init--base
-//		==>menu_id
-//		==>mmi_shct_candidate_menu.launch_func
-//		==>nCustMenus[].nStrId
-//		==>NVRAM_EF_SHORTCUTS_LID
+//		==>NVRAM_EF_SHORTCUTS_LID   [12个, 完整, 数据]
+//		====>menu_id
+//		==>str
+//		====>nCustMenus[].nStrId
+//		==>func
+//		====>mmi_shct_candidate_menu.launch_func
 plutommi\mmi\Extra\ExtraSrc\Shortcuts.c  void^ShctReadFromNvram
 plutommi\Customer\CustResource\PLUTO_MMI\resource_shortcuts.c g_mmi_shct_quick_menu_default_list
 // ===short--reg
 //		==>shortcut="ON"
 //		==>NVRAM_EF_SHORTCUTS_LID
 plutommi\mmi\Setting\SettingRes\TihoBroadcastSettingInrom.res  MENU_TIHO_BROADCAST_SETTING_SETUP
+// --idle--short
+//		==>mmi_entry_blacklist_luanch
+//		==>mmi_callset_blacklist_launch
+//		==>mmi_callset_call_setting_launch_data
+//		====>mmi_callset_proc_common
+plutommi\mmi\Extra\ExtraSrc\Shortcuts.c  mmi_shct_launch_app_by_quick_menu
 
 
 // 12) set--gif
@@ -607,8 +625,6 @@ plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c  1506
 // --set--sec--pin--文字与edit间距
 plutommi\Customer\CustResource\CustCoordinates.c  coordinate_set111
 
-
-// 15) set--sec
 // --set--sec--psw--powon
 //		==>ShowCategory111Screen_ext_int
 //		  ==>wgui_inputs_sl_setup
@@ -622,6 +638,10 @@ plutommi\CUI\PasswordCui\PwdCuiBasic.c  cui_pwd_basic_entry
 //		==>cui_pwd_basic_entry
 //		==>gui_create_multi_line_input_box_set_buffer
 plutommi\CUI\PasswordCui\PwdCuiBasic.c  cui_pwd_basic_entry
+
+
+// 14) set--callset
+
 
 
 
@@ -726,9 +746,13 @@ projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak PHB
 projects\M107\M107_XYZN_S2_4A_WESTERN_F2\M107_XYZN_S2_4A_WESTERN_F2_gprs.mak PHB_LN_ENTRY # 10 20 50
 
 # pb
-plutommi\mmi\PhoneBook\PhoneBookSrc\PhoneBookSetting.c
+//
+pbPath = plutommi\mmi\PhoneBook\
+pb:\\
+
+pb:PhoneBookSrc\PhoneBookSetting.c
 //	联系人-预览:
-plutommi/mmi/PhoneBook/PhoneBookSrc/PhoneBookEditor.c mmi_phb_entry_view_contact_entry_inline_tab_0
+pb:PhoneBookSrc/PhoneBookEditor.c mmi_phb_entry_view_contact_entry_inline_tab_0
 //	联系人 高亮：
 mmi_clog_lt_item_hlt_hdlr
 //	显示：
@@ -748,10 +772,12 @@ srv_phb_oplib_get_contact_info
 mmi_clog_act_create_phb_udata
 srv_gcall_cntxt_set_ptr
 // option
-mmi_phb_entry_op_option
-mmi_phb_op_mark_several_delete_coinfirm
-mmi_phb_op_mark_several_copy_coinfirm
-mmi_phb_op_mark_several_copy_pre_req
+//		==>op
+//		====>mmi_phb_op_mark_several_delete_coinfirm
+//		====>mmi_phb_op_mark_several_copy_coinfirm
+//		====>mmi_phb_op_mark_several_copy_pre_req
+pb:PhoneBookSrc\PhoneBookApp.c  mmi_phb_entry_op_option
+
 // option
 plutommi\mmi\PhoneBook\PhoneBookRes\phonebook.res  MITEM101_PBOOK_VIEW_OPTIONS
 
@@ -778,6 +804,9 @@ main:MainMenuRes.res  877
 main:MainMenuRes.res  STR_ID_CALLSET_CALL_CENTER
 //main:MainMenuRes.res  MAIN_MENU_CALL_LOG_ICON
 
+// cl--2row--txt
+//		==>?
+plutommi/Framework/GUI/GUI_INC/wgui.h  MMI_ICONTEXT_MENUITEM_HEIGHT
 
 
 
@@ -803,8 +832,6 @@ plutommi/Customer/CustResource/PLUTO_MMI/MMI_features_camera.h #define^CAMERA_DE
 //
 make/{cur}_GSM.mak  IMAGE_VIEWER_VER = SLIM
 //		==>__IMAGE_VIEWER_SLIM__
-make\Option.mak  AUD_RECORD
-//		==>__MMI_IMAGE_VIEWER__
 plutommi\mmi\Inc\MMI_features.h  __MMI_IMAGE_VIEWER__
 
 // pic--menu
@@ -836,10 +863,12 @@ plutommi\mmi\Inc\MMI_features.h  __MMI_SOUND_RECORDER__
 
 
 // enter
+//		==>mmi_sndrec_main_screen_proc
+//		====>mmi_sndrec_get_file_path(filepath)
+//		==>mmi_sndrec_entry_main_screen_active
+//		==>mmi_sndrec_show_record_screen
+//		==>ShowCategory223Screen_ext
 plutommi\MtkApp\Sndrec\SndrecSrc\SndrecUI.c  mmi_sndrec_entry_main_screen_active
-plutommi\MtkApp\Sndrec\SndrecSrc\SndrecUI.c  mmi_sndrec_show_record_screen
-plutommi\MtkApp\Sndrec\SndrecSrc\SndrecUI.c  ShowCategory223Screen_ext
-//
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_multimedia.c  ShowCategory223Screen_ext
 
 // --time
@@ -850,8 +879,8 @@ plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c  datetime_bar_duration_text_color
 plutommi\MtkApp\Sndrec\SndrecSrc\SndrecUI.c  mmi_sndrec_entry_option_screen
 plutommi\MtkApp\Sndrec\SndrecRes\Sndrec.res  MENU_ID_SNDREC_OPTION
 //
-features:MMI_features_switchK220_Z97_MGUO.h  CFG_MMI_SNDREC_SLIM
-features:MMI_features_switchK220_Z97_MGUO.h  CFG_MMI_SNDREC_SLIM_SETTINGS
+features:MMI_features_switch{cur}.h  CFG_MMI_SNDREC_SLIM
+features:MMI_features_switch{cur}.h  CFG_MMI_SNDREC_SLIM_SETTINGS
 // --option--editname
 plutommi\MtkApp\Sndrec\SndrecSrc\SndrecUI.c  mmi_sndrec_entry_edit_name
 // --title--非SLIM, SLIM默认有标题
@@ -859,6 +888,28 @@ plutommi\Framework\GUI\GUI_SRC\wgui_categories_multimedia.c  __NOTITLE_SOUND_REC
 // --softkey--mid
 plutommi\MtkApp\Sndrec\SndrecSrc\SndrecUI.c  EVT_ID_ON_KEY
 
+//	rec--save
+//		==>
+plutommi\MtkApp\Sndrec\SndrecSrc\SndrecUI.c  mmi_sndrec_get_new_file
+//	rec--call--save
+//		==>MENU_ID_UCM_INCALL_OPTION_SOUND_RECORDER
+//		==>mmi_ucm_sndrec_in_call_action
+//		==>mmi_sndrec_entry_record_from_other_app_ex
+//		==>mmi_sndrec_check_folder_valid
+//		====>mmi_sndrec_fs_check_folder
+//		==>mmi_sndrec_get_new_file
+//		====>mmi_sndrec_get_full_file_name
+//		======>mmi_sndrec_get_file_path
+plutommi\MtkApp\Sndrec\SndrecSrc\SndrecUI.c  mmi_sndrec_get_new_file
+
+//	rec--list
+//		==>cui_folder_browser_create
+//		====>fmgr_general_entry_explorer
+//		====>mmi_fmgri_fsdata_instance_load_data_async
+//		======>srv_fmgr_drivelist_destroy
+//		==>post_search
+//		====>mmi_fmgr_fsdata_load_file_result_proc
+plutommi\MtkApp\Sndrec\SndrecSrc\SndrecUI.c  mmi_sndrec_entry_record_list
 
 
 [1.14] fm
@@ -894,7 +945,8 @@ images:MainLCD\Multimedia\
 //		==>label, 1,2
 //		==>frequency
 //		==>channel_name
-plutommi/Customer/CustResource/PLUTO_MMI/resource_fmradio_skins.c 4359 2264
+plutommi/Customer/CustResource/PLUTO_MMI/resource_fmradio_skins.c 4359 240X320
+plutommi/Customer/CustResource/PLUTO_MMI/resource_fmradio_skins.c 2420 160X128
 // skins--tmp
 plutommi\Customer\CustResource\resource_fmradio_skins.c  2264
 
@@ -1181,29 +1233,33 @@ plutommi/MtkApp/Connectivity/ConnectivitySrc/BtCommon/BTMMIScr.c S1716
 envPath = plutommi/mmi/PROFILES\
 env:\\
 
-// env--edit--menu
+
+// env--option
+//		==>mmi_prof_menu_item_select
+//		==>cui_menu_run
+env:ProfilesSrc\ProfilesApp.c mmi_prof_entry_options_scrn
+
+// env--edit
+//		==>mmi_prof_menu_item_select
+//		==>.prof_inline_screen
+//		====>.prof_inline_item
 env:ProfilesSrc\ProfilesApp.c mmi_prof_entry_customize_scrn
-
-
-// select
+// env--edit--csk
 env:ProfilesSrc\ProfilesApp.c mmi_prof_customize_scrn_csk_hdlr
-// select type--1--2
+// env--edit--tone type--1--2
 env:ProfilesSrc\ProfilesApp.c cui_tone_selector_listscr_entry
-// select menu
-env:ProfilesSrc\ProfilesApp.c mmi_prof_menu_item_select
-// select menu list
-plutommi\CUI\MenuCui\MenuCui.c cui_menu_run
 
 
-// env--vol
+### 通话/mp3音量
+// env--edit--vol
 env:ProfilesSrc\ProfilesApp.c EntryScrSetKeyPadVolumeLevel
-// env--vol--mp3/call
+// env--edit--vol--mp3/call
 make\{cur}_GSM.mak  __MMI_MEDIA_VOL_NOT_ZERO__
 mp3:AudioPlayerSrc/AudioPlayerSrc.c  mmi_audply_long_press_dec_volume
 mp3:AudioPlayerSrc/AudioPlayerSrc.c  mmi_audply_press_dec_volume_down
 plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioSrc.c  mmi_fmrdo_dec_volume
 plutommi\Customer\CustResource\PLUTO_MMI\MMI_features_video.h  __VDOPLY_FEATURE_VOLUME_MUTE__
-// call--vol
+// call--edit--vol
 //		==>SetKeyPadVolUp
 //		==>mmi_volume_hdlr_key_pad_vol
 //		==>mmi_volume_hdlr_show_vertical_bar
@@ -1213,21 +1269,27 @@ plutommi\mmi\gpio\gpioSrc\VolumeHandler.c  SetDefaultVolumeKeyHandlers
 plutommi\mmi\gpio\gpioSrc\VolumeHandler.c  EntryScrSetKeyPadVolumeLevel
 make\Option.mak  __MMI_VOLUME_NOT_ZERO__
 
+// __mp3_vol__
+plutommi\MtkApp\AudioPlayer\AudioPlayerRes\AudioPlayer.res  NVRAM_AUDPLY_VOLUME
+custom\common\PLUTO_MMI\custom_mmi_default_value.h  __VOL_MAX_STYLE__
 
-// env--ring
+
+
+### env音量
+// env--edit--ring
 env:ProfilesSrc\ProfilesApp.c mmi_prof_preview_play_tone
 env:ProfilesSrc\ProfilesApp.c mdi_audio_play_string_with_vol_path
 env:ProfilesSrc\ProfilesApp.c 6608
 // ------vol==71, MDI_AUD_VOL_MUTE(7)
 // ------path==4, MDI_DEVICE_SPEAKER2
-// env--ring--pub
+// env--edit--ring--pub
 plutommi\Service\MDI\MDISrc\mdi_audio.c  mdi_audio_play_string_hdlr
 // call--ring
 plutommi\mmi\Ucm\UcmSrc\UcmUi.c  mmi_ucm_play_incoming_tone
 plutommi\Service\ProfilesSrv\ProfilesSrvMain.c srv_prof_play_tone_with_id
 // ------vol==71, MDI_AUD_VOL_MUTE(7)
 // ------path==6, MDI_AUD_PTH_EX(6), MDI_DEVICE_SPEAKER_BOTH
-// env--ring--pub
+// env--edit--ring--pub
 plutommi\Service\MDI\MDISrc\mdi_audio.c  mdi_audio_play_string_hdlr
 
 

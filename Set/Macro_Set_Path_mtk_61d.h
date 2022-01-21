@@ -7,13 +7,13 @@
 ###
 
 
-imagesPath = plutommi\Customer\Images\K220_C61\
+imagesPath = plutommi\Customer\Images\K220_D58\
 images:\\
-audioPath = plutommi\Customer\AUDIO\K220_C61\
+audioPath = plutommi\Customer\AUDIO\K220_D58\
 audio:\\
-featuresPath = plutommi\Customer\CustResource\K220_C61_MMI\
+featuresPath = plutommi\Customer\CustResource\K220_D58_MMI\
 features:\\
-buildPath = build\K220_C61\
+buildPath = build\K220_D58\
 build:\\
 batPath = _bat\build
 bat:\\
@@ -27,7 +27,7 @@ boardKey  = K220M_YGW_BB
 lcdKey  = K220D_QVGA_LCM
 
 ### 2.cur
-curKey = K220_C61
+curKey = K220_D58
 GSMKey = GSM
 
 ### 3.copy

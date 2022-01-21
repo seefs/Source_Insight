@@ -36,7 +36,7 @@ Save:node\C\project\Macro_cfg_8910.h \[2.7\] FM
 Save:node\C\project\Macro_cfg_8910.h \[2.8\] WIFI
 Save:node\C\project\Macro_cfg_8910.h \[2.9\] SS
 Save:node\C\project\Macro_cfg_8910.h \[2.10\] Tool
-Save:node\C\project\Macro_cfg_8910.h \[2.11\] 
+Save:node\C\project\Macro_cfg_8910.h \[2.11\] lib--------------
 Save:node\C\project\Macro_cfg_8910.h \[2.12\] build 服务器流程
 Save:node\C\project\Macro_cfg_8910.h \[2.13\] build 省空间
 Save:node\C\project\Macro_cfg_8910.h \[2.14\] spiflash_cfg
@@ -414,8 +414,23 @@ SPDE_PRJ\K220T_JGW_Z105\project_ums9117_176X220BAR_48MB_K220T_JGW_Z105_user.mk W
 
 
 
-[2.11] 
+[2.11] lib
+// fota--alup
+mk: 
+// ADUPS_FOTA_DELETE_SETTING_MENU
+MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_menutable.c  FOTA_SUPPORT_ADUPS
 
+
+// xmly--
+mk: XYSDK_SUPPORT
+// 案号:\n  XMLY133
+MS_MMI_Main/source/mmi_app/app/xysdk/h/xysdk_mdu_def.h  TXT_XYSDK_VER_INFO
+
+
+// xmly--
+mk: XYSDK_SUPPORT
+// 案号:\n  XMLY133
+MS_MMI_Main/source/mmi_app/app/xysdk/h/xysdk_mdu_def.h  TXT_XYSDK_VER_INFO
 
 
 

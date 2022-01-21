@@ -202,6 +202,11 @@ plutommi\Framework\GUI\GUI_SRC\wgui_categories_idlescreen.c  4810
 [1.12] debug, trace
 //
 MMI_SLK_LOG((TRC_MMI_SLK_TURN_ON_BACKLIGHT, 200));
+//
+MMI_TRACE(MMI_TRACE_INFO, MMI_A2DP_STATE_CURRENT, g_mmi_a2dp_cntx.state);
+//
+kal_prompt_trace(MOD_VIDEO,"xiaoyu 45du ,huan yuan zhou qi 3min");
+kal_prompt_trace(MOD_VIDEO,"jgh mmi_sale_track2_get_sms_data sim=%d", sim);
 
 
 [1.13] 
@@ -275,7 +280,7 @@ plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_slk_main_evt_hdlr
 //			==>mmi_idle_closebacklight_and_lock
 //			==>SetKeyPadVolDown
 //			==>SetKeyPadVolUp
-plutommi\Framework\EventHandling\EventsSrc\KeyBrd.c  mmi_frm_key_handle
+plutommi\Framework\EventHandling\EventsSrc\KeyBrd.c  void^mmi_frm_key_handle
 // menu
 plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  fixed_list_goto_next_item
 // key--back
@@ -390,12 +395,27 @@ plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  __LSK_LONGPRESS_UNLOCK__
 
 [2.2] light
 // light--3键点亮
+//		==>pre_key
+//		====>mmi_scr_locker_turn_on_backlight
+//		==>post_key
+//		====>mmi_scr_locker_turn_on_backlight
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_ret^mmi_slk_handle_pre_key_routing
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_ret^mmi_slk_handle_post_key_routing
 
 // light--删半亮
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  void^mmi_scr_locker_turn_on_backlight
 
+// light--灭屏长按
+//		==>pre_key
+//		====>key_code====不拦截
+//		====>turn_on=====不亮
+//		====>obj->on_key(obj, evt);=====长按
+//		======>mmi_slk_classic_on_key
+//		==>post_key
+//		====>is_on=======拦截
+//		====>is_off======拦截
+//		====>turn_on=====处理不到
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  mmi_slk_classic_on_key
 
 
 

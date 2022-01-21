@@ -58,8 +58,8 @@ custom/system/FARSIGHTED61M_CN_11C_BB/custom_MemoryDevice_K220_L12_MGUO.h __MMI_
 //features:
 plutommi/mmi/Inc/MMI_features.h PEER_CONTROL
 //
-projects\M107\K220_L12_MGUO\Resource\MMI_features_switchPLUTO.h CFG_MMI_DYNAMIC_SIM_DYNAMIC_UI
-projects\M107\K220_L12_MGUO\Resource\MMI_features_switchPLUTO.h WHITELIST
+features:MMI_features_switch{cur}.h  CFG_MMI_DYNAMIC_SIM_DYNAMIC_UI
+features:MMI_features_switch{cur}.h  WHITELIST
 	
 
 
@@ -274,10 +274,6 @@ make/{cur}_GSM.mak __SBD_CHARGING_TREASURE_SWITCH__ 充电宝
 //	充电宝图标
 projects\M107\K220_L12_MGUO\Images\MainLCD\IdleScreen\StatusIcons\SI_CHARGING.png
 
-//	EZFM:
-make/{cur}_GSM.mak __KM_EASY_FM__
-projects\M107\K220_L12_MGUO\Resource\MMI_features_switchPLUTO.h CFG_MMI_FM_RADIO_BIND_EARPHONE
-
 // 马达
 make/{cur}_GSM.mak  __NO_VIBRATOR__
 
@@ -326,32 +322,37 @@ make/{cur}_GSM.mak  FM_RADIO_RECORD
 //	EZFM:
 make/{cur}_GSM.mak  SBD_EZFM_SUPPORT 
 make/{cur}_GSM.mak  EASY_FM
-//features:MMI_features_switch{cur}.h CFG_MMI_FM_RADIO_BIND_EARPHONE
-plutommi\Customer\CustResource\{cur}_MMI\MMI_features_switch{cur}.h CFG_MMI_FM_RADIO_BIND_EARPHONE
+features:MMI_features_switch{cur}.h  CFG_MMI_FM_RADIO_BIND_EARPHONE
 //	FM 天线:
 make/{cur}_GSM.mak  INTERNAL_ANTENNAL_SUPPORT
+
+//	EZFM:
+//make/{cur}_GSM.mak __KM_EASY_FM__
+features:MMI_features_switch{cur}.h  CFG_MMI_FM_RADIO_BIND_EARPHONE
 
 
 
 
 
 [2.5] 语言, 默认语言:
-projects\M107\K220_L12_MGUO\Resource\MMI_features_switchPLUTO.h CFG_MMI_LANG_
-projects\M107\K220_L12_MGUO\Resource\MMI_features_switchPLUTO.h CFG_MMI_LANG_.*(__ON__)
+
+### 语言
+features:MMI_features_switch{cur}.h  CFG_MMI_LANG_
+features:MMI_features_switch{cur}.h  CFG_MMI_LANG_.*(__ON__)
 plutommi\Service\SettingSrv\res\GeneralSettingSrv.res NVRAM_SETTING_LANG
-	默认输入法:
+//	默认输入法:
 plutommi\Framework\CommonScreens\CommonScreensRes\editor.res NVRAM_SETTING_PREFER_INPUT_METHOD
 plutommi\Framework\CommonScreens\CommonScreensRes\editor.res RESTORE_PREFER_INPUT_METHOD
 plutommi\Framework\InputMethod\Inc\ImeGprotEnums.h mmi_imm_input_mode_enum 参考这个枚举, 注意错位2个
-	按键字符定义, 输入法丝印:
+//	按键字符定义, 输入法丝印:
 vendor/InputMethod/mtk/mtkmultitap.c g_multitap_pashto
 vendor\InputMethod\mtk\mtkmultitap.c g_multitap_urdu
 vendor\InputMethod\mtk\mtkmultitap.c g_multitap_fr
-	孟拉加组合字--Cstar:
-projects\M107\K220_L12_MGUO\Resource\MMI_features_switchPLUTO.h CFG_MMI_MULTITAP_BANGLA_SPEC
-projects\M107\K220_L12_MGUO\Resource\MMI_features_switchPLUTO.h CFG_MMI_CSTAR_MULTITAP
-projects\M107\K220_L12_MGUO\Resource\MMI_features_switchPLUTO.h CFG_MMI_MULTIGRAPH_SUPPORT
-projects\M107\K220_L12_MGUO\Resource\MMI_features_switchPLUTO.h CFG_MMI_IRE_SLIM	关闭, # 1键部分字符组合
+//	孟拉加组合字--Cstar:
+features:MMI_features_switch{cur}.h  CFG_MMI_MULTITAP_BANGLA_SPEC
+features:MMI_features_switch{cur}.h  CFG_MMI_CSTAR_MULTITAP
+features:MMI_features_switch{cur}.h  CFG_MMI_MULTIGRAPH_SUPPORT
+features:MMI_features_switch{cur}.h  CFG_MMI_IRE_SLIM	关闭, # 1键部分字符组合
 plutommi\Framework\IndicLanguages\IndicLanguagesSrc\Bengali.c
 
 
@@ -441,6 +442,9 @@ custom\drv\misc_drv\_Default_BB\MT6261\usb_custom.c USB_PRODUCT_STRING
 custom\drv\misc_drv\_Default_BB\MT6261\usb_custom.c custom_usb_ms_init
 // 编码（改了无效）
 CFG_MMI_SET_DEF_ENCODING_TYPE
+//
+// BOAT_SW_CUSTOMER_UDISK_NAME_SUPPORT
+plutommi\MtkApp\FileMgr\FileMgrSrc\FileMgrMain.c  BOAT_CUSTOM_TF_CARD1_NAME_WSTR
 	
 
 // flash size
@@ -490,11 +494,15 @@ plutommi\mmi\gpio\gpiores\PhnsetGpio.res  __MMI_KEY_BACKLITE_STYLE_07_TO_19_HOUR
 
 // 关机时间
 //		==>Powerkey_longpress_timeout = 300 /*3s*/
-// 长按时间
-//		==>KBD.longpress_timeout = 200; /*2s*/
 hal\peripheral\src\kbdmain.c  __KPD_LONGPRESS_POWER_KEY_ALONE_TIME__
+// 长按时间(no use)
+//		==>KBD.longpress_timeout = 200; /*2s*/
 hal\peripheral\src\kbdmain.c  Kbd_Initiaze
-
+// 长按时间
+//		==>uem_set_repeat_time(0.6s); /*0.6s*/
+custom\drv\misc_drv\_Default_BB\MT6261\custom_hw_default.c  KPD_LONGPRESS_PERIOD
+//		==>repeat_time   /*1s->0.5s*/
+ps\l4\uem\src\uem_main.c  KPD_REPEAT_PERIOD
 
 
 [2.12] 指令
@@ -532,13 +540,29 @@ custom\common\hal\nvram\nvram_cust_pack.c COMMON_NVRAM_EF_MS_SECURITY_DEFAULT
 
 
 
-[2.13] 
+[2.13] 音量
+//
+Save:node\C\study\Macro_app_MTK.h  __mp3_vol__
 
 
 [2.14] 
 
 
-[2.15] 
+[2.15] trace
+### 利用Catcher抓取真机上的LOG
+// *#555#
+//device-->set uart-->uart-->usb port
+//tool-->log mode-->nv file
+//tool-->connect, filter, view-->ps
+
+
+### 利用Catcher抓取模拟器上的LOG
+//1、启动Modis（一定要先启动这个，否则可能会报错）
+//2、启动Catcher，在config->set database path下选择.
+//  \tst\database_modis\BPGUInfoCustomApp_pc_SrcP
+//
+
+
 
 
 [2.16] findstr
@@ -566,6 +590,7 @@ build:log\mmi_check.log Error:
 build:log\mmiresource.log Error:
 build:log\mmi_framework.log Error:
 build:log\mmi_app.log Error:
+build:log\mmi_core.log Error:
 build:log\custom.log Error:
 build:log\ckImgSize.log Error:
 build:log\mmi_service.log Error:

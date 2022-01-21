@@ -4,31 +4,31 @@
 // 1. 
 Save:node\C\project\Macro_cfg_MTK.h \[1.1\] AUDIO, TONE
 Save:node\C\project\Macro_cfg_MTK.h \[1.2\] PB
-Save:node\C\project\Macro_cfg_MTK.h \[1.3\] //SMS
+Save:node\C\project\Macro_cfg_MTK.h \[1.3\] SMS
 Save:node\C\project\Macro_cfg_MTK.h \[1.4\] //MMS
 Save:node\C\project\Macro_cfg_MTK.h \[1.5\] //BROWSER
 Save:node\C\project\Macro_cfg_MTK.h \[1.6\] //BT
 Save:node\C\project\Macro_cfg_MTK.h \[1.7\] //RECORD
 Save:node\C\project\Macro_cfg_MTK.h \[1.8\] Lcd---------------
 Save:node\C\project\Macro_cfg_MTK.h \[1.9\] shortcut----------menu
-Save:node\C\project\Macro_cfg_MTK.h \[1.10\] USB
+Save:node\C\project\Macro_cfg_MTK.h \[1.10\] USB, 充电电流
 Save:node\C\project\Macro_cfg_MTK.h \[1.11\] ATA--------------自动测试
 Save:node\C\project\Macro_cfg_MTK.h \[1.12\] CALL record
 Save:node\C\project\Macro_cfg_MTK.h \[1.13\] 
 //
 Save:node\C\project\Macro_cfg_MTK.h \[2.1\] //IM
-Save:node\C\project\Macro_cfg_MTK.h \[2.2\] DTMF, Dial, SIM
+Save:node\C\project\Macro_cfg_MTK.h \[2.2\] DTMF, Dial, SIM, 天线
 Save:node\C\project\Macro_cfg_MTK.h \[2.3\] 电子保卡
-Save:node\C\project\Macro_cfg_MTK.h \[2.4\] tihu
+Save:node\C\project\Macro_cfg_MTK.h \[2.4\] tihu--------------语音王
 Save:node\C\project\Macro_cfg_MTK.h \[2.5\] //CAMERA
 Save:node\C\project\Macro_cfg_MTK.h \[2.6\] //DL
 Save:node\C\project\Macro_cfg_MTK.h \[2.7\] //FM
 Save:node\C\project\Macro_cfg_MTK.h \[2.8\] WIFI
-Save:node\C\project\Macro_cfg_MTK.h \[2.9\] SS-------------屏保
+Save:node\C\project\Macro_cfg_MTK.h \[2.9\] SS----------------屏保
 Save:node\C\project\Macro_cfg_MTK.h \[2.10\] //Tool
-Save:node\C\project\Macro_cfg_MTK.h \[2.11\] lib-----------
+Save:node\C\project\Macro_cfg_MTK.h \[2.11\] lib--------------
 Save:node\C\project\Macro_cfg_MTK.h \[2.12\] 编译流程
-Save:node\C\project\Macro_cfg_MTK.h \[2.13\] 省空间--------app
+Save:node\C\project\Macro_cfg_MTK.h \[2.13\] 省空间-----------app
 Save:node\C\project\Macro_cfg_MTK.h \[2.14\] MemoryDevice
 Save:node\C\project\Macro_cfg_MTK.h \[2.15\] marco
 Save:node\C\project\Macro_cfg_MTK.h \[2.16\] //Lib
@@ -44,9 +44,9 @@ Save:node\C\project\Macro_cfg_MTK.h \[2.20\]
 
 [1.1] AUDIO, TONE
 ## 喇叭听筒二合一
-make/{cur}_GSM.mak  __RECEIVER_SPEAKER_2IN1_SUPPORT__
+make/{cur}_{GSM}.mak  __RECEIVER_SPEAKER_2IN1_SUPPORT__
 //
-make/{cur}_GSM.mak  BOARD_VER_CUST_AUDIO
+make/{cur}_{GSM}.mak  BOARD_VER_CUST_AUDIO
 //BOARD_VER_CUST_AUDIO = xxx_2IN1_BB
 //
 custom\audio\K220_N48_SPK_2IN1_BB\
@@ -60,19 +60,19 @@ custom\audio\K220_N48_BB\
 
 [1.2] PB
 //
-make/{cur}_GSM.mak  PHB_PHONE_ENTRY = 200
+make/{cur}_{GSM}.mak  PHB_PHONE_ENTRY = 200
 //
-make/{cur}_GSM.mak  SMS_TOTAL_ENTRY = 100
+make/{cur}_{GSM}.mak  SMS_TOTAL_ENTRY = 100
 
 
 // SIM 中的电话簿条目数
-make/{cur}_GSM.mak  PHB_SIM_ENTRY = 100
+make/{cur}_{GSM}.mak  PHB_SIM_ENTRY = 100
 //
 // NVRAM 中的电话簿条目数
-make/{cur}_GSM.mak  PHB_PHONE_ENTRY = 100
+make/{cur}_{GSM}.mak  PHB_PHONE_ENTRY = 100
 
 // 通话记录最后条目数
-make/{cur}_GSM.mak  PHB_LN_ENTRY = 100
+make/{cur}_{GSM}.mak  PHB_LN_ENTRY = 100
 
 
 // 电话号码匹配的规则
@@ -86,8 +86,13 @@ features:\MMI_features_switch{cur}.h  CFG_MMI_PHB_GENERIC_MULTI_SELECT  __ON__
 
 
 
-[1.3] 
-
+[1.3] SMS
+//
+make/{cur}_{GSM}.mak  SMS_PHONE_ENTRY = 50
+//
+make/{cur}_{GSM}.mak  SMS_SIM_ENTRY = 50
+//
+make/{cur}_{GSM}.mak  SMS_TOTAL_ENTRY = 100
 
 
 
@@ -113,11 +118,11 @@ features:\MMI_features_switch{cur}.h  CFG_MMI_PHB_GENERIC_MULTI_SELECT  __ON__
 
 [1.8] Lcd
 // 
-make/K220_V35_WD_GSM.mak   MAIN_LCD_SIZE
+make/K220_V35_WD_{GSM}.mak   MAIN_LCD_SIZE
 // MAIN_LCD_SIZE = 128X160
 
 //
-make/K220_H660_TX_GSM.mak   MAIN_LCD_SIZE
+make/K220_H660_TX_{GSM}.mak   MAIN_LCD_SIZE
 // MAIN_LCD_SIZE = 240X320
 
 
@@ -174,20 +179,39 @@ custom\drv\misc_drv\_Default_BB\MT6261\usb_custom.c  custom_usb_ms_init
 // USB_Ms_Register_DiskDriver(&USB_NOR_drv);
 
 
+# 充电超时，默认6小时
+//		==>BMT_TOTAL_CHARGE_TIME  6*60
+//		==>bmt_total_charge_time  6*60
+//		==>BMT_CHARGE_TIMEOUT_TIMER  6*60*13000
+//		==>bmt_charging_timeout_timer_callback
+//		====>BMT_CHARGE_TIMEOUT
+hal\peripheral\inc\bmt_sw.h  __DRV_BMT_BATTERY_LARGER_1600MA__
+
+
+# 充电停止，默认30分
+//		==>BMT_STOP_CHARGE_TIMER  30
+//		==>bmt_stop_charge_timer_callback
+hal\peripheral\inc\bmt_sw.h  BMT_STOP_CHARGE_TIMER
+
+
+# 充电电流，默认500mA
+custom\drv\misc_drv\_Default_BB\MT6261\chr_parameter.h  __CHR_CHARGE_CURRENT_300__
+
+
 
 [1.11] ATA
 //
-make/{cur}_GSM.mak   ATA_SUPPORT
+make/{cur}_{GSM}.mak   ATA_SUPPORT
 // ATA_SUPPORT = TRUE
 
-make/{cur}_GSM.mak   __ATA_AUTO_TEST__
+make/{cur}_{GSM}.mak   __ATA_AUTO_TEST__
 // COM_DEFS += __ATA_AUTO_TEST__
 
 
 
 [1.12] CALL record
 //
-make/{cur}_GSM.mak   __SNDREC_SAVE_RENAME_CALL_NUM_STYLE__
+make/{cur}_{GSM}.mak   __SNDREC_SAVE_RENAME_CALL_NUM_STYLE__
 //# 通话录音时保存文件名 电话号_日期那些命名
 //	COM_DEFS 	+= __SNDREC_SAVE_RENAME_CALL_NUM_STYLE__
 //	COM_DEFS 	+= __SNDREC_SAVE_RENAME_STYLE__
@@ -278,35 +302,42 @@ COM_DEFS += __MMI_DIAL_SEARCH_STYLE_MODIFY__
 
 // dial--record
 //   中间OK 键长按通话中界面
-make/{cur}_GSM.mak  __REC_MID_SOFTKEY_ENABLE__
+make/{cur}_{GSM}.mak  __REC_MID_SOFTKEY_ENABLE__
 // dial--record--set
-make/{cur}_GSM.mak  __AUTO_IN_CALL_SET_RECORDER__
+make/{cur}_{GSM}.mak  __AUTO_IN_CALL_SET_RECORDER__
 // dial--record--fun
-make/{cur}_GSM.mak  __MMI_CSK_REC_IN_CALL__
+make/{cur}_{GSM}.mak  __MMI_CSK_REC_IN_CALL__
 
 
 ##
 // 双卡选卡
-make/{cur}_GSM.mak  __NEW_SPEED_DAIL_SIM_SELECT_ENABLE__
+make/{cur}_{GSM}.mak  __NEW_SPEED_DAIL_SIM_SELECT_ENABLE__
 // sim反
-make/{cur}_GSM.mak  __MMI_DRV_SIM_SWITCH_STYLE__
+make/{cur}_{GSM}.mak  __MMI_DRV_SIM_SWITCH_STYLE__
+
+
+# 天线
+// 4格/5格/6格
+//		==>EVT_ID_SRV_NW_INFO_SIGNAL_STRENGTH_CHANGED
+//		==>mmi_nw_info_signal_on_strength_changed
+//		==>wgui_status_icon_bar_change_icon_level
+plutommi/Service/NwInfoSrv/NwInfoSrvSignal.c  srv_nw_info_get_percentage_from_{GSM}_rssi
+
 
 
 [2.3] 电子保卡
-//
-plutommi\mmi\Setting\SettingSrc\PhoneSetup.c void^mmi_sale_track2_init( )
-//#if 0//def WIN32
-//	return;
-//#endif
+// 4种
+make\Option.mak  __PHONE_SALE_SERVERS_NEW__
 
-// num
-plutommi/mmi/Setting/SettingSrc/PhoneSetup.c  SALE_TRACK_SRV_DEF_NUMBER
+// 1.内置版
+make/{cur}_{GSM}.mak  XLS_SALE_SERVERS
+//	XLS_SALE_SERVERS = TRUE
+//	COM_DEFS += __XLS_SALE_SERVERS_TEST_PATCH__	#快速激活电子保卡
+//	COM_DEFS += __XLS_SALE_META_TIME_STYLE__
 
-
-// 1.
-make/{cur}_GSM.mak  XLS_SALE_SERVERS
+make/{cur}_{GSM}.mak  __XLS_SALE_CUSTOM_TIME__
 make\Option.mak  __XLS_DZBK_FUN__
-make/{cur}_GSM.mak  __XLS_SALE_CUSTOM_TIME__
+
 // 激活
 plutommi\mmi\Ucm\UcmSrc\UcmUi.c  NVRAM_EF_BAOKA_DATA_LID
 plutommi\Service\SmsSrv\SmsConverterSrv.c  NVRAM_EF_BAOKA_DATA_LID
@@ -317,46 +348,60 @@ plutommi\mmi\Bootup\BootupInc\BootupInitConfig.h  srv_dzbk_init
 //		==mmi_idle_classic_on_update_service_indication
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_idlescreen.c  SetIdleScreenNetworkName
 
+//
+plutommi\mmi\Setting\SettingSrc\PhoneSetup.c void^mmi_sale_track2_init( )
+//#if 0//def WIN32
+//	return;
+//#endif
 
-// 2.
+// num
+plutommi/mmi/Setting/SettingSrc/PhoneSetup.c  SALE_TRACK_SRV_DEF_NUMBER
+
+
+
+// 2.默认
 make\Option.mak  __PHONE_SALE_SERVERS_NEW__
 
 
 // 3.给指定号码发短信
+make/{cur}_{GSM}.mak  MX_MMI_SALE_TRACK
+//	MX_MMI_SALE_TRACK = TRUE 		# 销量统计功能给指定号码发送信息
+//	COM_DEFS += __KINGBELL_SALE_TRACK_NUMBER__ 		#KINGBELL 销量统计后台号码
+
 make\Option.mak  MX_MMI_SALE_TRACK
 
 
 
 [2.4] tihu
 // 1) tihu
-make/{cur}_GSM.mak  HERO_ENGINE_SUPPORT
+make/{cur}_{GSM}.mak  HERO_ENGINE_SUPPORT
 // tihu--来电
 //     --TCARD/125kb/145kb
-make/{cur}_GSM.mak  HERO_ENGINE_INCOMECALL
-make/{cur}_GSM.mak  HERO_ENGINE_INCOMECALL_GSM_TCARD
+make/{cur}_{GSM}.mak  HERO_ENGINE_INCOMECALL
+make/{cur}_{GSM}.mak  HERO_ENGINE_INCOMECALL_{GSM}_TCARD
 
 
 // 2) tts
-make/{cur}_GSM.mak  TIHO_TTS_SUPPORT
+make/{cur}_{GSM}.mak  TIHO_TTS_SUPPORT
 // tts--SLIM 省97K 
-make/{cur}_GSM.mak  TIHO_TTS_SUPPORT_INROM_SLIM
+make/{cur}_{GSM}.mak  TIHO_TTS_SUPPORT_INROM_SLIM
 // tts--vol
-make/{cur}_GSM.mak  __TTS_VOLUME_DEFAULT_MAX__
-make/{cur}_GSM.mak  __MMI_TONE_VOL_MAX5__
+make/{cur}_{GSM}.mak  __TTS_VOLUME_DEFAULT_MAX__
+make/{cur}_{GSM}.mak  __MMI_TONE_VOL_MAX5__
 //
 plutommi\mmi\Setting\SettingRes\TihoBroadcastSetting.res  __TTS_VOLUME_DEFAULT_MAX__
 plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  __TTS_VOLUME_DEFAULT_MAX__
 // tts--str
 // =====> fun==lock
 // tts--data/lunar
-make/{cur}_GSM.mak  __TIHO_TTS_ONE_KEY_TIME_NO_READ_LUNAR__
-make/{cur}_GSM.mak  __TIHO_TTS_ONE_KEY_TIME_NO_READ_WEEK__
-make/{cur}_GSM.mak  __TIHO_TTS_ONE_KEY_TIME_NO_READ_DATE__
+make/{cur}_{GSM}.mak  __TIHO_TTS_ONE_KEY_TIME_NO_READ_LUNAR__
+make/{cur}_{GSM}.mak  __TIHO_TTS_ONE_KEY_TIME_NO_READ_WEEK__
+make/{cur}_{GSM}.mak  __TIHO_TTS_ONE_KEY_TIME_NO_READ_DATE__
 // tts--time
 //   关闭宏, 默认白天
-make/{cur}_GSM.mak  __TIHO_TTS_TIME_DEFAULT_OFF__
+make/{cur}_{GSM}.mak  __TIHO_TTS_TIME_DEFAULT_OFF__
 //   8:00-20:00, 或8:00-18:00
-make/{cur}_GSM.mak  __TIHO_TTS_TIME_DEFAULT_DAY_END20__
+make/{cur}_{GSM}.mak  __TIHO_TTS_TIME_DEFAULT_DAY_END20__
 
 
 // 3) tts--low
@@ -388,6 +433,17 @@ plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  void^tiho_tts_menu_broadcast
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_util.c  tiho_tts_need_broadcast
 
 
+// 5) tts--nv
+plutommi\mmi\Setting\SettingRes\TihoBroadcastSetting.res  __TIHO_TTS_TIME_DEFAULT_OFF__
+
+
+// 6) tts--time
+//		==>tiho_broadcast_speak_time
+//		==>tiho_broadcast_speak_time_function
+//		==>tiho_broadcast_play_speak_time
+//		==>tiho_tts_cur_time_broadcast
+
+
 
 
 [2.5] 
@@ -398,7 +454,7 @@ plutommi\Framework\GUI\GUI_SRC\wgui_categories_util.c  tiho_tts_need_broadcast
 
 [2.7] FM
 //
-make/K220_Y01A_MGUO_GSM.mak FM_RADIO_ENABLE
+make/K220_Y01A_MGUO_{GSM}.mak FM_RADIO_ENABLE
 //	FM_RADIO_I2S_PATH = FALSE   #TRUE
 //	FM_RADIO_CHIP = NONE   #MT6261FM
 //	FM_RADIO_HW_SEARCH = FALSE#TRUE
@@ -411,13 +467,13 @@ __FM_LCD_OLD_TEST__
 
 [2.8] 
 // wifi 宏总(不关模拟器编不过)
-make/K220_Y01A_MGUO_GSM.mak CUSTOMER_APPLICATION
+make/K220_Y01A_MGUO_{GSM}.mak CUSTOMER_APPLICATION
 
 
 [2.9] SS
 //
-make/{cur}_GSM.mak  __IDLE_LOCK_SHOW_TIME_NEW_STYLE__
-make/{cur}_GSM.mak  __MMI_LOCK_SCR_BH_STYLE__
+make/{cur}_{GSM}.mak  __IDLE_LOCK_SHOW_TIME_NEW_STYLE__
+make/{cur}_{GSM}.mak  __MMI_LOCK_SCR_BH_STYLE__
 
 
 // SCREENSAVER
@@ -435,12 +491,12 @@ plutommi\mmi\Setting\SettingRes\ScreenSaver.res RESTORE_DEFAULT_CURRENT_SCREENSV
 [2.11] lib
 //	1.MRE
 //	tool:关闭MRE
-make/K220_Y01A_MGUO_GSM.mak MRE_PACKAGE = SLIM
-make/K220_Y01A_MGUO_GSM.mak MRE_CONTENT_NUMBER = 0
-make/K220_Y01A_MGUO_GSM.mak CUSTOM_OPTION     +=  __MRE_CUST_MEM_SIZE__=1
-make/K220_Y01A_MGUO_GSM.mak CUSTOM_OPTION     +=  __CUSTOM_MRE_MAX_SIZE__=0
-make/K220_Y01A_MGUO_GSM.mak CUSTOM_OPTION     +=  __DISABLE_SANDBOX_LIB__
-make/K220_Y01A_MGUO_GSM.mak CUSTOM_OPTION     +=  __MRE_BGMEM_SIZE__=0
+make/K220_Y01A_MGUO_{GSM}.mak MRE_PACKAGE = SLIM
+make/K220_Y01A_MGUO_{GSM}.mak MRE_CONTENT_NUMBER = 0
+make/K220_Y01A_MGUO_{GSM}.mak CUSTOM_OPTION     +=  __MRE_CUST_MEM_SIZE__=1
+make/K220_Y01A_MGUO_{GSM}.mak CUSTOM_OPTION     +=  __CUSTOM_MRE_MAX_SIZE__=0
+make/K220_Y01A_MGUO_{GSM}.mak CUSTOM_OPTION     +=  __DISABLE_SANDBOX_LIB__
+make/K220_Y01A_MGUO_{GSM}.mak CUSTOM_OPTION     +=  __MRE_BGMEM_SIZE__=0
 
 //彻底关闭MRE
 //@wanc 彻底关闭MRE
@@ -458,6 +514,11 @@ tst/database_modis/MT6261/S00/gprs/FLAVOR/NONE
 tst/database_modis/MT6261/S00/gprs/FLAVOR/GEMINI_3_KAL_OFF
 tst/database_classb/MT6261/S00/gprs/FLAVOR/NONE
 tst/database_classb/MT6261/S00/gprs/FLAVOR/GEMINI_3_KAL_OFF
+
+// 模拟器编不过, 换为:
+FLAVOR = NONE
+
+
 
 
 [2.12] 
@@ -480,9 +541,14 @@ tools\NVRAMStatistic\include\custom_option.txt
 _bat\build\_ckImgSize.log  project
 
 ### 1.app
-// 来电归属地121K 
-// TTS-SLIM 省97K 
-// 智能拨号 16.4K
+// 1.来电归属地------121K 
+// 2.TTS-SLIM--------97K 
+// 3.智能拨号--------16.4K
+// 4.联系人复制------8K
+// 5.紧急求助--------8K
+// 6.图片搜索--------6K
+// 7.待机壁纸--------10K
+// 8.来电2个---------1K
 
 
 
@@ -521,9 +587,9 @@ build\{cur}\{cur}_MT6261_S00.lis  DYNAMIC_COMP_CODE
 
 ### 2.文件系统
 // 可以省 32.7K, 64K(加16)
-make/{cur}_GSM.mak  #FS_SIZE_56_STYLE = TRUE
-make/{cur}_GSM.mak  FS_SIZE_48_STYLE = TRUE
-make/{cur}_GSM.mak  #FS_SIZE_40_STYLE = TRUE
+make/{cur}_{GSM}.mak  #FS_SIZE_56_STYLE = TRUE
+make/{cur}_{GSM}.mak  FS_SIZE_48_STYLE = TRUE
+make/{cur}_{GSM}.mak  #FS_SIZE_40_STYLE = TRUE
 //
 tools\emigenMD.pl  fs_size_40_style
 tools\emigenMD.pl  fs_size_48_style

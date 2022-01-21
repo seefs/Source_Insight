@@ -10,14 +10,14 @@ cfg:\\
 //目录[Num][Ca]:
 // 1. 
 Save:node\ToolsMsg\Macro_git_config.h \[1.1\] .git\config
-Save:node\ToolsMsg\Macro_git_config.h \[1.2\] git postBuffer ------Git缓存值
+Save:node\ToolsMsg\Macro_git_config.h \[1.2\] git postBuffer------Git缓存值
 Save:node\ToolsMsg\Macro_git_config.h \[1.3\] 
 Save:node\ToolsMsg\Macro_git_config.h \[1.4\] url--port
 Save:node\ToolsMsg\Macro_git_config.h \[1.5\] create SSH key
 Save:node\ToolsMsg\Macro_git_config.h \[1.6\] create SSH key--官网方案
 Save:node\ToolsMsg\Macro_git_config.h \[1.7\] auto psw
 Save:node\ToolsMsg\Macro_git_config.h \[1.8\] git(小乌龟)
-Save:node\ToolsMsg\Macro_git_config.h \[1.9\] gitlab
+Save:node\ToolsMsg\Macro_git_config.h \[1.9\] gitlab---------------url
 Save:node\ToolsMsg\Macro_git_config.h \[1.10\] 
 Save:node\ToolsMsg\Macro_git_config.h \[1.11\] 
 Save:node\ToolsMsg\Macro_git_config.h \[1.12\] 
@@ -134,8 +134,7 @@ clip < ~/.ssh/id_ed25519.pub
 // 测试您的 SSH 连接
 // [git base here]
 ssh -T git@github.com
-ssh github.com
-ssh xiaojia@192.168.2.148
+ssh -T git@git.spdephone.com
 // yes
 //Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 
@@ -146,7 +145,6 @@ ssh -T git@139.155.19.38
 // 故障排除
 ssh -Tvvv git@139.155.19.38
 ssh -Tv git@139.155.19.38
-
 
 
 [1.7] auto psw (用方式2)
@@ -203,17 +201,33 @@ C:\Program Files\Git\usr\bin\ssh.exe
 
 
 [1.9] gitlab
-//
+// url--本地
 [remote "origin"]
  url = git@139.155.19.38:8910-developer/MOCOR_20B_W21.12.7.git
 	url = git@github.com:seefs/tool_mini.git
-//
+
+
+// url--外网1
 http://139.155.19.38/
-xiaojia   xiaojia123456   xjs0f0s0
+//xiaojia   xiaojia123456   xjs0f0s0
 git clone git@139.155.19.38:8910-developer/MOCOR_20B_W21.12.7.git
 git clone git@139.155.19.38:featurephone-hwnv/HW_NV_PARA.git
 //
 //	Cloning into ''... Administrator@s password:
+//
+//url = http://xiaojia:123456@192.168.2.148:8080/r/MOCOR_20B_W20.36.2.git
+//
+//url = git@139.155.19.38:8910-developer/MOCOR_20B_W21.12.7.git
+//	puttykeyfile = C:\\Users\\Administrator\\.ssh\\bm2048pub.ppk
+
+
+// url--外网2
+// 搜索框输入"ssh"
+http://git.spdephone.com/
+git clone git@git.spdephone.com:mtk-developer/60A_6464.git
+//
+//url = git@git.spdephone.com:8910-developer/MOCOR_20B_W21.12.7.git
+//	puttykeyfile = C:\\Users\\Administrator\\.ssh\\bm2048pub.ppk
 
 
 
