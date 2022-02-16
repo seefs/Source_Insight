@@ -33,7 +33,12 @@ macro GetPubPathBuf(hbuf)
 	n = getBaseType(baseName)
 	if(n == 80 || n == 90)
 	{
-		SetName = getSetPath(0) # "\\Macro_Set_Path_mtk.h"
+		n = getBaseDirNum(baseName)
+		SetName = getSetPath(0) # "\\Macro_Set_Path_mtk_" # n # ".h"
+		if (!IsExistFile(SetName))
+		{
+			SetName = getSetPath(0) # "\\Macro_Set_Path_mtk_.h"
+		}
 		setBuf = OpenCache(SetName)
 		return setBuf
 	}
@@ -774,6 +779,7 @@ macro GetTransFileName(hbuf, fName, cNum)
 	// 7.F7,     cNum=6
 	// 8.F11,    cNum=6 python, cp
 	//   F11,    cNum=16 cmd_w python_w 编译指令是相对目录(不用完整路径); 只替换"Save:"、"^"
+	//   F11,    cNum=17 不替换"/",如 git
 	//   F11,    cNum=4  cmd_s 编译指令; 屏蔽设置路径(不用basePath设置); 
 	
 	//路径+文件名替换:
@@ -1207,6 +1213,65 @@ macro ReAllKeyHead(hbuf, curPath)
 		return pathS # keyVal # pathE
 	}
 	return curPath
+}
+macro getCustomKeyHead(hbuf, fHead)
+{
+	//不能带有*号，否则会无限替换下去
+	index = FindString(fHead, "*")
+	if(index != "X"){
+		return ""
+	}
+	
+	//特殊关键字
+	if(fHead == "pro"){
+		n = 0
+		hprj = GetCurrentProj ()
+		if(hprj>0)
+		{
+			path = GetProjDir (hprj)
+			//n = getBaseType(path)
+			n = getBaseDirNum(path)
+		}
+		return n
+	}
+	
+	return ""
+}
+macro ReCustomKeyHead(hbuf, curPathS, curPathE)
+{
+	len = strlen(curPathE)
+	firstS = FindString(curPathE, "{")
+	if (firstS == "X")
+		return curPathE
+		
+	firstE = FindString(curPathE, "}")
+	if (firstE == "X")
+		return curPathE
+		
+	if (firstS > firstE)
+		return curPathE
+
+	pathMid = strmid(curPathE, firstS + 1, firstE)
+	keyVal = getCustomKeyHead(hbuf, pathMid)
+	if (keyVal != "")
+	{
+		pathS  = strmid(curPathE, 0, firstS)
+		pathE  = strmid(curPathE, firstE + 1, len)
+		pathER = ReCustomKeyHead(hbuf, curPathS # pathS # keyVal, pathE)
+		pathOut = curPathS # pathS # keyVal # pathER
+		pathOutR  = GetTransFileName(hbuf, pathOut, 16)
+		if (IsExistFile(pathOutR))
+		{
+			return pathOut
+		}
+		else
+		{
+			pathER = ReCustomKeyHead(hbuf, curPathS # pathS # "", pathE)
+			pathOut = curPathS # pathS # "" # pathE
+			return pathOut
+		}
+	}
+	return curPathE
 }
 /***********************************************************************/
 /************************** select  **********************************/

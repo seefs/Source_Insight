@@ -34,7 +34,10 @@ Save:node\C\project\Macro_c_path.h \[2.12\]
 // (1).curKey
 // --images / audio / features / build
 Save:set\
-Save:set\Macro_Set_Path_mtk.h  curKey
+Save:set\Macro_Set_Path_mtk_{pro}.h  curKey
+Save:set\Macro_Set_Path_mtk_.h  curKey
+// --每个项目一个配置
+Save:set\Macro_Set_Base.h  80 / 82 / 84
 
 // (2).bak
 // A86===>自动配置

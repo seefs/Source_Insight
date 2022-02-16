@@ -99,6 +99,7 @@ ssh-keygen -t rsa -b 2048 -C "xiaojia_bm@163.com"
 C:\Users\Administrator\.ssh
 C:\Users\Administrator\.ssh\id_rsa.pub
 C:\Users\Administrator\.ssh\id_gitlab.pub
+C:\Users\Administrator\.ssh\id_github.pub
 // 复制该密钥
 // 打开github
 https://github.com/settings/keys
