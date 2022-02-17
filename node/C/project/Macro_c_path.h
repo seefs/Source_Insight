@@ -114,7 +114,7 @@ curKey = K220_H660_TX
 ### 从旧项目复制新项目
 // copy: 
 //   mk, bld, features, nv, image, audio
-Save:set\Macro_Set_Path_mtk.h  oldKey
+Save:set\Macro_Set_Path_mtk_{pro}.h  oldKey
 //	oldKey = K220_V18_WD
 //	newKey = K220_V35_WD
 
@@ -175,7 +175,7 @@ custom\audio\{nv}\
 
 [1.3] _mtk_cfg_
 // (1).nv
-Save:set\Macro_Set_Path_mtk.h  nvKey
+Save:set\Macro_Set_Path_mtk_{pro}.h  nvKey
 //
 make/{cur}_GSM.mak  BOARD_VER_CUST_AUDIO
 //	BOARD_VER_CUST_AUDIO = K220_Z97_AUDIO_BB
@@ -190,7 +190,7 @@ custom\audio\{nv}\
 
 
 // (2).board
-Save:set\Macro_Set_Path_mtk.h  boardKey
+Save:set\Macro_Set_Path_mtk_{pro}.h  boardKey
 //
 make/{cur}_GSM.mak  BOARD_VER
 //	BOARD_VER = K220M_BH_BB
@@ -225,7 +225,7 @@ custom\system\{board}\custom_MemoryDevice.h  NOR_BOOTING_NAND_FS_SIZE
 
 
 // (3).lcd
-Save:set\Macro_Set_Path_mtk.h  lcdKey
+Save:set\Macro_Set_Path_mtk_{pro}.h  lcdKey
 //
 make/{cur}_GSM.mak  LCD_MODULE
 //	LCD_MODULE = K220D_QQVGA_LCM
@@ -269,11 +269,11 @@ custom\common\userprofile_nvram_def.h
 
 [1.5] _mtk_bat_
 // (1).curKey
-Save:set\Macro_Set_Path_mtk.h  curKey
+Save:set\Macro_Set_Path_mtk_{pro}.h  curKey
 //	set proP1={cur}
 
 // (2).bak
-Save:set\Macro_Set_Path_mtk.h  boardKey
+Save:set\Macro_Set_Path_mtk_{pro}.h  boardKey
 make/{cur}_{GSM}.mak  BOARD_VER
 //	set proC1={board}
 
@@ -281,7 +281,7 @@ make/{cur}_{GSM}.mak  BOARD_VER
 
 [1.6] mtk_sbd
 // auto set
-//Save:set\Macro_Set_Path_mtk.h 10
+//Save:set\Macro_Set_Path_mtk_{pro}.h 10
 //
 // new
 //imagesPath = projects\M107\K220_L12_MGUO\Images\

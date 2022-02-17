@@ -409,11 +409,11 @@ custom\common\userprofile_nvram_def.h  nvram_srv_prof_setting_struct;
 
 
 //	耳机+外放音量等级:
-// --call--vol
+// __call_vol__
 plutommi\Service\GpioSrv\gpiosrv.res NVRAM_NORMAL_MODE_VOICE_LEVEL //听筒
 plutommi\Service\GpioSrv\gpiosrv.res NVRAM_HDSET_MODE_VOICE_LEVEL  //耳机
 plutommi\Service\GpioSrv\gpiosrv.res NVRAM_LDSPK_MODE_VOICE_LEVEL  //外放/免提
-//
+// 用 [71] 不用 [LEVEL7]
 custom\common\PLUTO_MMI\custom_mmi_default_value.h  LEVEL6
 
 
@@ -541,8 +541,12 @@ custom\common\hal\nvram\nvram_cust_pack.c COMMON_NVRAM_EF_MS_SECURITY_DEFAULT
 
 
 [2.13] 音量
-//
+// mp3
 Save:node\C\study\Macro_app_MTK.h  __mp3_vol__
+// env
+Save:node\C\study\Macro_app_MTK.h  __env_vol__
+// call
+Save:node\C\project\Macro_Note_MTK.h  __call_vol__
 
 
 [2.14] 

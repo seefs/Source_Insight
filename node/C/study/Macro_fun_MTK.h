@@ -475,9 +475,9 @@ plutommi\mmi\Ucm\UcmSrc\UcmUi.c  void^mmi_ucm_cancel_call_type_select
 [2.17] 
 
 
-[2.18] bat
+[2.18] __bat__
 
-// --bat
+// --bat, µÍµçÁ¿ÌáÐÑ
 //		==>BATTERY_LOW_WARNING
 //		==>EVT_ID_SRV_CHARBAT_REMIND_LOW_POWER
 plutommi\Service\CharBatSrv\CharBatSrv.c   srv_charbat_low_battery_common_action

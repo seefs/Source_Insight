@@ -395,7 +395,8 @@ images:MainLCD\IdleScreen\lock_day_new\
 images:MainLCD\IdleScreen\lock_new\
 // --数字黑--idle
 images:MainLCD\IdleScreen\Techno\DigitalClock\
-//
+// --日期--status
+images:MainLCD\IdleScreen\Techno\SmallClock\
 
 // --拨号
 plutommi\Framework\GUI\GUI_Res\Gui.res  IMG_DIALING_INPUT_M0          #小号数字
@@ -560,6 +561,8 @@ plutommi\Customer\CustResource\FontRes.c   g_small_font_data_array
 vendor\font\inc\L_Chinesec_small.h  AGB2312_TRIM_32_BOLD_RangeInfo
 // 乱码--嗄--55c4--50516
 
+// 字体高度
+Save:node\C\study\Macro_gui_MTK.h  __font__
 
 
 // --英文

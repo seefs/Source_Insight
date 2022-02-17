@@ -136,7 +136,16 @@ plutommi\mmi\gpio\gpiores\PhnsetGpio.res  NVRAM_SETTING_KEY_BACKLITE_SWITCH
 // 格式化不删除短信时间
 custom/common/PLUTO_MMI/nvram_common_config.c NVRAM_EF_SRV_SMS_SIM_CUST_DATA_LID
 
+// 小区广播默认频道+订阅
+custom\common\hal\nvram\nvram_data_items.c  COMMON_NVRAM_EF_CB_CH_INFO_DEFAULT
+interface\middleware\nvram_editor_data_item.h  NVRAM_EF_CB_CH_INFO_TOTAL
+// ??
+custom/common/PLUTO_MMI/nvram_common_config.c NVRAM_EF_CB_CONFIG_LID
 
+// 第一个字节表示小区广播是否开，第二个字节表示小区广播是否支持所有语言
+custom\common\hal\nvram\nvram_cust_pack.c  COMMON_NVRAM_EF_SMSAL_COMMON_PARAM_DEFAULT
+interface\middleware\nvram_editor_data_item.h  NVRAM_EF_SMSAL_COMMON_PARAM_TOTAL
+//    0x00, 0x01,         /* CB setting */
 
 
 [1.16] nv_audio

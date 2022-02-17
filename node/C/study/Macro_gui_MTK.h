@@ -40,14 +40,14 @@ Save:node\C\study\Macro_gui_MTK.h  \[1.32\]
 
 [1.1] display
 // --cursor
-// gui_move_text_cursor();
-// UI_move_text_cursor();
+// gui_move_text_cursor();  //UI_move_text_cursor();
 // gui_set_text_border_color();
 
 // --img
 //	gui_measure_image  //_measure_image
 //	gui_show_image     //_show_image
 //  gdi_image_draw_id
+//  gdi_image_draw_blend2layers
 
 // --txt
 // gui_set_text_color(gui_color(255, 0, 0));
@@ -176,6 +176,12 @@ plutommi\Framework\GUI\OEM_SRC\gui_status_icon_bar_oem.c 1836
 // 画图标
 plutommi\Framework\GUI\OEM_SRC\gui_status_icon_bar_oem.c 2723
 
+// statusbar--audioplayer
+plutommi\MtkApp\AudioPlayer\AudioPlayerSrc\AudioPlayerMsgHandler.c  STATUS_ICON_AUDPLY
+// --id/res/list
+plutommi\Framework\GUI\GUI_INC\gui_typedef.h  STATUS_ICON_AUDPLY  以这个为顺序
+plutommi/Framework/GUI/GUI_Res/Status_icon_bar.res  IMG_SI_AUDPLY
+plutommi\Framework\GUI\GUI_SRC\wgui_status_icon_bar.c  STATUS_ICON_AUDPLY
 
 
 //时间状态条
@@ -450,7 +456,7 @@ MoDIS_VC9\MoDIS\Debug\MoDIS.ini
 
 
 
-[1.20] font
+[1.20] __font__
 // font--height
 //fir_fh = Get_CharHeightOfAllLang(gui_font_get_type(GUI_FONT_SIZE_LIST)->size)+3;
 //
@@ -475,7 +481,7 @@ ShowCategory53Screen(): 列表
 
 // list--
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_list.c  ShowCategory52Screen_int
-// list--menu
+// list--menu(主菜单)
 plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  wgui_fixed_list_create_icontext_menu
 
 
@@ -494,7 +500,7 @@ plutommi/Framework/GUI/GUI_SRC/gui_fixed_menuitems.c  4880  gui_list_show_text
 plutommi/Framework/GUI/GUI_SRC/gui_fixed_menuitems.c  9704  gui_show_fixed_icontext_list_menuitem
 
 
-// --list--line--color
+// --list--line--color(联系人)
 //		==>.list_grid_line_color
 plutommi\Framework\GUI\GUI_SRC\gui_dynamic_menus.c  gui_show_dynamic_list_menu_draw_bg
 plutommi\Framework\GUI\GUI_SRC\gui_dynamic_menus.c  1598
@@ -507,6 +513,14 @@ plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  gui_draw_list_menuitem_separa
 plutommi\Framework\GUI\GUI_SRC\gui_fixed_menus.c  4515
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_list.c  void^ShowCategory353Screen_ext_int
 
+// --list--txt(动态)
+//		==>mmi_phb_quick_search_list_get_item
+//		====>g_mmi_phb_list_p->contact_array
+//		======>(gui_iconlist_menu_item)md
+//		======>(fixed_icontext_list_menuitem_type)MMI_fixed_icontext_list_menuitems
+plutommi\mmi\PhoneBook\PhoneBookSrc\PhoneBookList.c  ShowCategory200Screen_ext
+//		======>MMI_fixed_list_menu.highlighted_item
+plutommi\Framework\GUI\GUI_SRC\gui_dynamic_menus.c  gui_show_dynamic_list_menu_int
 
 
 // --list--calllog--height
@@ -687,7 +701,16 @@ plutommi\Framework\GUI\GUI_SRC\gui_horizontal_selector.c  gui_horizontal_select_
 // GUI_HORIZONTAL_SELECT_ICON_X_GAP
 
 //
-gui_show_fixed_list_menu
+//gui_show_fixed_list_menu
+
+
+// menu--txt
+//		==>cui_menu_create
+//		====>MENU_ID_SLK_TIME_SETTING_MENU
+//		======>STR_ID_SLK_20_SEC
+//		==>MMI_fixed_list_menu
+plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  redraw_fixed_list
+
 
 //
 // menu--height--set

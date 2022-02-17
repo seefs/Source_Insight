@@ -9,12 +9,12 @@ Save:node\C\study\Macro_doc_MTK.h \[1.4\] //移配置
 Save:node\C\study\Macro_doc_MTK.h \[1.5\] //说明文档
 Save:node\C\study\Macro_doc_MTK.h \[1.6\] Win数据--------------菜单
 Save:node\C\study\Macro_doc_MTK.h \[1.7\] //touch
-Save:node\C\study\Macro_doc_MTK.h \[1.8\] File
-Save:node\C\study\Macro_doc_MTK.h \[1.9\] test code-------------
+Save:node\C\study\Macro_doc_MTK.h \[1.8\] File-----------------
+Save:node\C\study\Macro_doc_MTK.h \[1.9\] test code------------
 Save:node\C\study\Macro_doc_MTK.h \[1.10\] //ImageNote
 Save:node\C\study\Macro_doc_MTK.h \[1.11\] //TextNote
 Save:node\C\study\Macro_doc_MTK.h \[1.12\] FontTool
-Save:node\C\study\Macro_doc_MTK.h \[1.13\] build time-------------
+Save:node\C\study\Macro_doc_MTK.h \[1.13\] build time----------
 Save:node\C\study\Macro_doc_MTK.h \[1.14\] 
 //
 Save:node\C\study\Macro_doc_MTK.h \[2.1\] build error
@@ -95,6 +95,11 @@ plutommi\Customer\CustomerInc\mmi_rp_app_callset_def.h  MENU_ID_CALLSET_MORE
 //
 plutommi\MtkApp\EngineerMode\EngineerModeApp\EngineerModeAppSrc\EngineerModeFSTestCore.c 
 //		FS_Write(file_handler
+
+// file--pic
+plutommi\MtkApp\FileMgr\FileMgrInc\FileMgrType.h  FMGR_DEFAULT_FOLDER_PHOTOS
+MoDIS_VC9\WIN32FS\DRIVE_E\Photos\
+
 
 
 
@@ -382,8 +387,9 @@ MoDIS_VC9\filesystem\FileSystemInc\FSSim_def.h FSSIM_SFN_LEN  ->19 最长18
 
 # 5.模拟器Error:    vs_cfg:
  Stack around the variable XX was corrupted
- 项目-属性-配置属性-C/C++-代码生成中”，将基本运行时检查设置成默认值
- code->basic runtime checks
+// 项目-属性-配置属性-C/C++-代码生成中”，将基本运行时检查设置成默认值
+// code->basic runtime checks
+// 61D_ZYF--D58: mmi_app, mmi_framework, nvram(设置3项，其他设置2项)
 
 
 # 6.模拟器Error:   exist not modis.exe 
@@ -392,18 +398,18 @@ MoDIS_VC9\filesystem\FileSystemInc\FSSim_def.h FSSIM_SFN_LEN  ->19 最长18
 
 # 7.模拟器Error:    cannot update program database:
 modis_vc9\mmi_service\debug\vc90.pdb
-项目设置（打开项目设置ALT F7，以英文版为例）:
-	C\C | General | Debug Information format | C7 Compatible (/Z7)
-	C\C | Code Generation | Enable String Pooling | Yes (/GF)
-	Linker |Debuging |General Debug Info | Yes (/DEBUG)
-网上被互相转载的都是这三项，不过经过实验，只修改第一项即可。
-修改保存后，再次编译会出现真正的错误点位置，修改该错误，
-然后将各个设置恢复为修改前的值，再[重编]就不会出现cannot update program database错误了
+//项目设置（打开项目设置ALT F7，以英文版为例）:
+//	C\C | General | Debug Information format | C7 Compatible (/Z7)
+//	C\C | Code Generation | Enable String Pooling | Yes (/GF)
+//	Linker |Debuging |General Debug Info | Yes (/DEBUG)
+//网上被互相转载的都是这三项，不过经过实验，只修改第一项即可。
+//修改保存后，再次编译会出现真正的错误点位置，修改该错误，
+//然后将各个设置恢复为修改前的值，再[重编]就不会出现cannot update program database错误了
 
 
 # 8.模拟器Error: 空定义	
 vendor\framework\obigo_Q03C\v1_official\msf\msf_lib\export\msf_log.h #define^MSF_LOG_MSG_ARGS
-空定义
+//空定义
 //	#ifdef WIN32
 //	#undef  MSF_LOG_MSG_ARGS_(type, modId, msgId, format, s, ...)      
 //	#undef MSF_LOG_MSG_NOARG_(type, modId, msgId, format, s)          
@@ -440,6 +446,10 @@ media\audio\src\aud_player_modis.c  kal_int32^_aud_player_modis_get
 //	                w32_Audio_GetCurrentPosition(self_p->aud_handle, &position);
 //#endif
 
+
+# 13.FLAVOR
+// 换库
+Save:node\C\project\Macro_cfg_MTK.h  __FLAVOR__
 
 
 [2.3] 

@@ -22,7 +22,7 @@ Save:node\C\project\Macro_cfg_MTK.h \[2.3\] 电子保卡
 Save:node\C\project\Macro_cfg_MTK.h \[2.4\] tihu--------------语音王
 Save:node\C\project\Macro_cfg_MTK.h \[2.5\] //CAMERA
 Save:node\C\project\Macro_cfg_MTK.h \[2.6\] //DL
-Save:node\C\project\Macro_cfg_MTK.h \[2.7\] //FM
+Save:node\C\project\Macro_cfg_MTK.h \[2.7\] FM
 Save:node\C\project\Macro_cfg_MTK.h \[2.8\] WIFI
 Save:node\C\project\Macro_cfg_MTK.h \[2.9\] SS----------------屏保
 Save:node\C\project\Macro_cfg_MTK.h \[2.10\] //Tool
@@ -55,6 +55,9 @@ custom\audio\K220_N48_BB\
 
 // 回声测试
 #COM_DEFS += __ECHO_TO_SPEAKER__				# 回声测试从喇叭输出
+
+// 版权的原因，需要关闭AAC AAC+解码
+make/{cur}_{GSM}.mak  AAC_DECODE = FALSE
 
 
 
@@ -134,22 +137,55 @@ plutommi\Customer\CustResource\PLUTO_MMI\MMI_features_camera.h   CAMERA_DEFAULT_
 //plutommi\mmi\Inc\MMI_features_camera.h  CAMERA_DEFAULT_SETTING_BANDING
 
 
-[1.9] shortcut
-// shortcut--key
+[1.9] __shortcut__
+// shortcut--key--方向键
 plutommi\Customer\CustResource\PLUTO_MMI\resource_shortcuts.c g_mmi_shct_nav_key_default_list
-// shortcut--tmp
+// shortcut--key--tmp
 plutommi\Customer\CustResource\resource_shortcuts.c g_mmi_shct_nav_key_default_list 临时文件(模拟器改这个文件)
 custom\common\PLUTO_MMI\nvram_common_config.c NVRAM_SHORTCUTS_TOTAL
-//	short ID:
+// shortcut--key--ID:
 plutommi\Customer\CustResource\mmi_rp_menu_shortcut_data.c mmi_shct_candidate_menu
 
-// ShortCut
+// ShortCut--menu--mk
 features:MMI_features_switch{cur}.h CFG_MMI_DEDICATED_KEY_SHORTCUTS
-// ShortCut
-plutommi\Customer\CustResource\PLUTO_MMI\MMI_features_switchPLUTO.h CFG_MMI_DEDICATED_KEY_SHORTCUTS
-
 // shortcut--menu
 plutommi\Customer\CustResource\PLUTO_MMI\resource_shortcuts.c g_mmi_shct_quick_menu_default_list
+
+// --short--set
+Save:node\C\study\Macro_app_MTK.h  __shortcut__
+
+### set
+// --set--phone--short
+plutommi\mmi\Extra\ExtraSrc\Shortcuts.c  EntryShctInMainMenu
+// ===short--menu--Id--base
+plutommi\Customer\CustResource\mmi_rp_menu_shortcut_data.c  mmi_shct_candidate_menu
+// ===short--menu--init
+plutommi\mmi\Bootup\BootupSrc\BootupScrAni.c  mmi_ani_finalize
+plutommi\mmi\Bootup\BootupSrc\BootupInitApps.c  mmi_bootup_notify_completed
+plutommi\mmi\Bootup\BootupSrc\BootupInitApps.c  mmi_bootup_init_apps
+plutommi\mmi\Extra\ExtraSrc\Shortcuts.c  mmi_shct_init
+// ===short--menu--init--base
+//		==>NVRAM_EF_SHORTCUTS_LID   [12个, 完整, 数据]
+//		====>menu_id
+//		==>str
+//		====>nCustMenus[].nStrId
+//		==>func
+//		====>mmi_shct_candidate_menu.launch_func
+plutommi\mmi\Extra\ExtraSrc\Shortcuts.c  void^ShctReadFromNvram
+plutommi\Customer\CustResource\PLUTO_MMI\resource_shortcuts.c g_mmi_shct_quick_menu_default_list
+// ===short--menu--reg
+//		==>shortcut="ON"
+//		==>NVRAM_EF_SHORTCUTS_LID
+plutommi\mmi\Setting\SettingRes\TihoBroadcastSettingInrom.res  MENU_TIHO_BROADCAST_SETTING_SETUP
+// ===short--menu--add
+plutommi\mmi\Extra\ExtraSrc\Shortcuts.c  EntryShctEditScreen
+plutommi\Customer\CustResource\mmi_rp_menu_shortcut_data.c  mmi_shct_candidate_menu
+// --idle--short
+//		==>mmi_entry_blacklist_luanch
+//		==>mmi_callset_blacklist_launch
+//		==>mmi_callset_call_setting_launch_data
+//		====>mmi_callset_proc_common
+plutommi\mmi\Extra\ExtraSrc\Shortcuts.c  mmi_shct_launch_app_by_quick_menu
 
 
 
@@ -160,7 +196,8 @@ USB_SUPPORT 	#USB功能的总开关
 USB_HS_SUPPORT	#usb high speed
 USB_MASS_STORAGE_SUPPORT	#usb mass storage
 USB_IN_NORMAL_MODE_SUPPORT	#开机 mass storage
-USB_COM_PORT_SUPPORT		#usb com port
+// usb com port--
+make\{cur}_{GSM}.mak  USB_COM_PORT_SUPPORT = TRUE
 USB_MULTIPLE_COMPORT_ENABLE	#枚举 com port
 
 
@@ -314,7 +351,7 @@ make/{cur}_{GSM}.mak  __MMI_CSK_REC_IN_CALL__
 make/{cur}_{GSM}.mak  __NEW_SPEED_DAIL_SIM_SELECT_ENABLE__
 // sim反
 make/{cur}_{GSM}.mak  __MMI_DRV_SIM_SWITCH_STYLE__
-
+custom\drv\misc_drv\_Default_BB\MT6261\custom_drv_init.c  sim_switchPhysicalSlotMapping
 
 # 天线
 // 4格/5格/6格
@@ -504,7 +541,7 @@ make/K220_Y01A_MGUO_{GSM}.mak CUSTOM_OPTION     +=  __MRE_BGMEM_SIZE__=0
 //    MMI_BOOTUP_INIT_REG(srv_mre_appmgr_bootup_hdlr)
 //#endif
 
-// 2.FLAVOR 库
+// 2.__FLAVOR__ 库
 //FLAVOR = GEMINI_2_NONE
 mtk_lib/MT6261/S00/gprs/FLAVOR/NONE
 mtk_lib/MT6261/S00/gprs/FLAVOR/GEMINI_3_KAL_OFF
@@ -516,7 +553,7 @@ tst/database_classb/MT6261/S00/gprs/FLAVOR/NONE
 tst/database_classb/MT6261/S00/gprs/FLAVOR/GEMINI_3_KAL_OFF
 
 // 模拟器编不过, 换为:
-FLAVOR = NONE
+make/{cur}_{GSM}.mak  FLAVOR = NONE
 
 
 
