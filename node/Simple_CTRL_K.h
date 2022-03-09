@@ -30,6 +30,8 @@ make {cur} GSM new
 make {cur} GSM new
 //
 mk-->ctrl+D, F12->lcd info
+//
+加入指定项目文件--->si
 
 
 // 未设置--死循环

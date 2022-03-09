@@ -161,10 +161,12 @@ custom\audio\{nv}\nvram_default_audio.c  GAIN_NOR_MED_VOL6
 custom\audio\{nv}\nvram_default_audio.c  GAIN_NOR_MED_VOL_MAX
 #define GAIN_NOR_MED_VOL_MAX      58
 
-// 免提音
+// 免提--通话--音
 custom\audio\{nv}\nvram_default_audio.c  GAIN_HND_SPH_VOL0
-// 正常音
+// 正常--通话--音
 custom\audio\{nv}\nvram_default_audio.c  GAIN_NOR_SPH_VOL0
+// 耳机--通话--音
+custom\audio\{nv}\nvram_default_audio.c  GAIN_HED_SPH_VOL0
 
 
 ###
@@ -198,11 +200,16 @@ media\audio\include\aud_defs.h  AUD_VOLUME_MEDIA
 
 [1.17] nv_audio_other
 // 模式4
-custom\audio\{nv}\afe.c  AFE_SwitchExtAmplifier
+custom\audio\{nv}\afe.c  void^AFE_SwitchExtAmplifier
 
 // 通道
 custom\audio\{nv}\audcoeff.c  L1SP_MICROPHONE1
 custom\audio\{nv}\audcoeff.c  L1SP_SPEAKER1
+//
+// 听筒 !SPH_MODE_LOUDSPK
+// 免提 SPH_MODE_LOUDSPK
+// MP3  mmi_audply_is_playing()
+custom\audio\{nv}\afe.c  void^AFE_SwitchExtAmplifier
 
 
 

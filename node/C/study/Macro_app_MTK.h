@@ -11,12 +11,12 @@ Save:node\C\study\Macro_app_MTK.h  \[1.6\] file
 Save:node\C\study\Macro_app_MTK.h  \[1.7\] setting
 Save:node\C\study\Macro_app_MTK.h  \[1.8\] sms -----------------
 Save:node\C\study\Macro_app_MTK.h  \[1.9\] call
-Save:node\C\study\Macro_app_MTK.h  \[1.10\] pb, cl
+Save:node\C\study\Macro_app_MTK.h  \[1.10\] pb, cl, callset
 Save:node\C\study\Macro_app_MTK.h  \[1.11\] camera -------------
 Save:node\C\study\Macro_app_MTK.h  \[1.12\] pic
 Save:node\C\study\Macro_app_MTK.h  \[1.13\] record
 Save:node\C\study\Macro_app_MTK.h  \[1.14\] fm
-Save:node\C\study\Macro_app_MTK.h  \[1.15\] fmm
+Save:node\C\study\Macro_app_MTK.h  \[1.15\] ebook
 Save:node\C\study\Macro_app_MTK.h  \[1.16\] //vp
 Save:node\C\study\Macro_app_MTK.h  \[1.17\] mp3
 Save:node\C\study\Macro_app_MTK.h  \[1.18\] alarm --------------
@@ -112,17 +112,15 @@ plutommi\Framework\GUI\GUI_SRC\gui_clock.c   2584
 // 2) date:
 // --date--date
 plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c void^set_dt_display( )
-// --date--lunar
-plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c wgui_clock_create(&wgui_clock_mainlcd_clock2
-plutommi\mmi\Organizer\OrganizerSrc\Calendar.c  show_idle_lunar( )
-
-
-// 3) week
+// --date--date--week
 //		==>date==>y1
 //		==>week==>.date.y
 //plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c void^km_idle_clock_week( )
 //plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c void^show_main_LCD_date_time( )
-plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c void^show_idle_day_display( )
+plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c  void^show_idle_day_display
+// --date--lunar
+plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c wgui_clock_create(&wgui_clock_mainlcd_clock2
+plutommi\mmi\Organizer\OrganizerSrc\Calendar.c  show_idle_lunar( )
 
 
 // 5) network mp3 fm
@@ -133,6 +131,9 @@ plutommi/Framework/GUI/GUI_SRC/wgui_categories_idlescreen.c MMI_BOOL^wgui_cat033
 // --idle--network--sim--icon
 plutommi/Framework/GUI/GUI_SRC/wgui_categories_idlescreen.c gdi_image_draw_blend2layers
 // --idle--mp3
+//		==>idle_update
+//		====>wgui_cat033_show_extra_details        #双屏
+//		======>wgui_cat033_show_extra_information
 plutommi/Framework/GUI/GUI_SRC/wgui_categories_idlescreen.c wgui_cat033_get_extra_text
 //		==>MMI_IDLE_EXTRA_Y
 //		==>CFG_UI_IDLE_EXTRA_Y
@@ -166,7 +167,7 @@ plutommi\Framework\GUI\GUI_SRC\wgui_draw_manager.c  mmi_idle_lock_show_new_style
 // lock--turnon/off
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c mmi_slk_handle_pre_key_routing
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c mmi_slk_handle_post_key_routing
-// lock--bl
+// lock--bl--锁屏不灭屏
 plutommi\mmi\Idle\IdleSrc\IdleCommon.c  mmi_idle_closebacklight_and_lock
 plutommi\mmi\Idle\IdleSrc\IdleCommon.c  __IDLE_LOCK_CLOSE_BACKLIGHT__
 
@@ -179,9 +180,6 @@ plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c  __LOCK_BY_LSK_STAR_OR_LSK_CENTER_K
 // 解锁
 // unlock--left + right
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  __UNLOCK_BY_LSK_RSK__
-
-
-
 
 
 
@@ -468,11 +466,10 @@ test:\\
 // --test--menu
 test:FactoryModeSrc\FactoryModeMain.c  void^EntryFMMenu
 test:FactoryModeSrc\FactoryModeMain.c  g_fm_test_item_tab
+test:FactoryModeRes\FactoryMode.res  MENU_ID_FM_ROOT
 //
 test:FactoryModeSrc\FactoryModeMisc.c __K220_Z97__
-// --test--menu
-test:FactoryModeRes\FactoryMode.res  MENU_ID_FM_ROOT
-
+test:FactoryModeSrc/FactoryModeMain.c  mmi_fm_enter_main_menu_proc
 
 // --test1--version
 test:FactoryModeSrc\FactoryModeMisc.c void^mmi_fm_select_version_summary_menu
@@ -498,7 +495,7 @@ test:FactoryModeRes\FactoryMode.res  MENU_ID_FM_ADC
 // --test10--rtc
 test:FactoryModeRes\FactoryMode.res  MENU_ID_FM_RTC
 
-// --test11--rtc
+// --test11--tcard
 test:FactoryModeRes\FactoryMode.res  MENU_ID_FM_MEMORY_CARD
 
 // --test12--k test
@@ -524,6 +521,8 @@ plutommi\MtkApp\FileMgr\FileMgrSrc\FileMgrMain.c fmgr_main_drive_action_hdlr(voi
 plutommi\Service\FileMgrSrv\FileMgrSrvStorage.c srv_fmgr_drv_init(void)
 
 
+//	fmm-sub menu:
+plutommi\Customer\Res_MMI\res_FileMgrService.c  MENU_ID_FMGR_GEN_OPTION_FORWARD_USE
 
 
 [1.7] setting
@@ -601,9 +600,14 @@ custom\common\PLUTO_MMI\nvram_common_config.c NVRAM_ATTR_FACTORY_RESET
 
 
 // 10) set--phone
+// --set--phone
+//		==>mmi_phnset_menu_handler
+//		====>mmi_phnset_init_main_menu
+plutommi\mmi\Setting\SettingSrc\PhoneSetup.c void^EntryPhnsetScr
 // --set--phone--endlock
 plutommi\mmi\Setting\SettingSrc\PhnsetDisplay.c  mmi_phnset_disp_setup_sub_menu_select_handler
-
+// --set--phone--autopower
+plutommi\mmi\Setting\SettingRes\SchedulePowerOnOff.res  "MENU_SETTING_SCHEDULE_POWER"
 
 // 11) set--__shortcut__
 // --short--set
@@ -657,10 +661,21 @@ plutommi\CUI\PasswordCui\PwdCuiBasic.c  cui_pwd_basic_entry
 features:MMI_features_switch{cur}.h CFG_MMI_SMS_TEMPLATE_SPANISH
 //	sms-opt-"Save as template":
 features:MMI_features_switch{cur}.h CFG_MMI_MESSAGES_USERDEFINED_TEMPLATE
+//	sms-# switch
+features:MMI_features_switch{cur}.h CFG_MMI_IME_IMC_CAPITAL_SWITCH   __ON__
+//	 --(010) (100) (110) __MMI_IME_MIXED_LANG_SUPPORT__
+features:MMI_features_switch{cur}.h CFG_MMI_IME_PREFER_WRITING_LANG  __ON__
+features:MMI_features_switch{cur}.h CFG_MMI_PREFER_INPUT_METHOD      __OFF__
+features:MMI_features_switch{cur}.h CFG_MMI_IME_MIXED_LANG_SUPPORT   __OFF__  主副語言
+
 
 
 //	--menu-sms
 plutommi\mmi\UnifiedMessage\UnifiedMessageRes\UnifiedMessage.res  MAIN_MENU_MESSAGES_MENUID
+//	--menu-sms-edit-opt
+plutommi\mmi\Messages\MessagesRes\SmsAppRes.res  MENU_ID_SMS_EDITOR_OPTIONS
+plutommi\Framework\CommonScreens\CommonScreensRes\editor.res  MENU_SET_EDITOR_OPT
+plutommi\Framework\CommonScreens\CommonScreensRes\editor.res  MENU_ID_EDITOR_OPT_INPUT_METHOD_OPTIONS
 //	--menu-sms-unsent-opt
 //		==>mmi_um_ui_adp_get_opt_menu_id
 plutommi\mmi\Messages\MessagesSrc\SmsAppUtil.c  MENU_ID_SMS_UNSENT_LIST_OPT
@@ -681,6 +696,8 @@ plutommi\Customer\CustResource\CustMenuTree_Out.c  MENU_ID_SMS_EDITOR_OPTIONS
 plutommi\Customer\CustResource\CustMenuTree_Out.c  MENU_ID_SMS_INBOX_LIST_OPT
 //	--menu-sms-view-opt
 plutommi\mmi\Messages\MessagesRes\SmsAppRes.res  MENU_ID_SMS_SENT_VIEWER_OPT
+//	--menu-sms-temp
+plutommi\mmi\UnifiedMessage\UnifiedMessageSrc\UMAdaptor.c  MENU_ID_UM_TEMPLATE_SMS
 
 
 //	短信-list:
@@ -692,7 +709,6 @@ plutommi/mmi/Messages/MessagesSrc/SmsAppMainUI.c mmi_sms_entry_viewer
 plutommi/mmi/Messages/MessagesSrc/SmsAppEditor.c mmi_sms_editor_opt_select_hdlr
 //	短信-edit:
 plutommi/mmi/Messages/MessagesSrc/SmsAppEditor.c mmi_sms_entry_editor
-plutommi/Framework/InputMethod/Engine/Engine_Src/Imc_key.c mmi_imc_key_set_softkey
 //	短信-send:
 plutommi/CUI/SmsCui/SmsSenderCui.c cui_sms_send_proc
 plutommi/CUI/SmsCui/SmsSenderCui.c cui_sms_entry_add_recipient
@@ -707,20 +723,58 @@ plutommi\mmi\Messages\MessagesRes\CbsApp.res  MENU_ID_CBS_MAIN
 // --cb--channel
 plutommi\mmi\Messages\MessagesSrc\CbsAppMain.c  MENU_ID_CBS_CHANNELS
 
+// sms--boot
+//		==>srv_sms_startup_add_sim_msg_node
+//		========>[boot写sim]
+// sms--read
+//		==>srv_sms_get_msg_info_from_pdu
+//		====>smslib_decode_pdu 读
+//		====>smslib_encode_pdu 写
+//		========>[库修改不了]
+// sms--receive
+//		==>srv_sms_msg_add_pdu
+//		========>[decode, msg, encode, addPdu, add]
+//		====>srv_sms_add_pdu
+//		======>srv_sms_write_sim_sms
+//		========>[写sim]
+//		========>srv_sms_write_sim_sms_callback
+//		====>srv_sms_decode_data_to_msg_node
+//		======>add_pdu->decode_data->tpdu->data.deliver_tpdu->scts
+//		========>[开机读短信或新短信]
+//		==>srv_sms_save_sms_callback
+//		====>srv_sms_add_new_data
+//		======>[add data]
+//		====>mmi_msg_new_msg_ind
+//		======>[app msg]
+//		==>mmi_msg_entry_new_msg_ind
+//		======>[alert]
+plutommi\Service\SmsSrv\SmsReceiverSrv.c  void^srv_sms_save_sms_callback
 
+//	sms-# switch(long)
+//		==>mmi_imc_key_register_ime_keys
+//		====>mmi_imc_key_translate_pound_key
+//		======>mmi_ime_entry_input_method_screen_with_sg
+//		======>EntryInputMethodScreen
+//		======>ShowCategory36Screen
+//	sms-# switch(short)
+//		==>mmi_imc_key_change_input_mode
+//		====>mmi_imc_change_input_mode
+//		======>g_mmi_imm_curr_allowed_input_mode[79]----所有输入法 RU==>3
+//		======>g_mmi_imm_current_input_mode-------------RU
+//		======>gIMEModeArray[200]-----------------------所有输入法 3==>Lang
+//		======>g_mmi_imm_current_input_mode
+plutommi/Framework/InputMethod/Engine/Engine_Src/Imc_key.c mmi_imc_key_set_softkey
 
 
 [1.9] call
-//	Show: 
-plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c ShowMOMTCallScreen
-
-//	来电/去电
-//		==>no status
+//	来电/去电 (未接通)
+//		==>mmi_ucm_entry_outgoing_call
+//		====>ShowCategory17Screen_int
+//		======>ShowMOMTCallScreen
 //		==>status_icon = 0;
-plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c ShowMOMTCallScreen
-plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c 7020
-plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c ShowCategory17Screen_int
-plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c 5032
+//		====>no status
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c void^ShowCategory17Screen_int
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c void^ShowMOMTCallScreen
 //	来电--接通
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c ShowCategory403Screen_int
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c 10370
@@ -767,7 +821,7 @@ custom\common\hal_public\custom_ecc.c  ecc_default_num
 
 
 
-[1.10] pb, cl
+[1.10] pb, cl, callset
 # pb
 //	联系人切换用tab+icon
 features:MMI_features_switch{cur}.h CFG_MMI_PHB_UI_IN_TABS
@@ -798,12 +852,13 @@ srv_phb_get_image
 srv_phb_oplib_get_contact_info
 
 // pb--option
+plutommi\mmi\PhoneBook\PhoneBookRes\phonebook.res  MITEM101_PBOOK_VIEW_OPTIONS
+// pb--option--hide
 //		==>op
 //		====>mmi_phb_op_mark_several_delete_coinfirm
 //		====>mmi_phb_op_mark_several_copy_coinfirm
 //		====>mmi_phb_op_mark_several_copy_pre_req
 pb:PhoneBookSrc\PhoneBookApp.c  mmi_phb_entry_op_option
-plutommi\mmi\PhoneBook\PhoneBookRes\phonebook.res  MITEM101_PBOOK_VIEW_OPTIONS
 
 // --pb--add
 //		==>g_mmi_phb_contact_p
@@ -817,16 +872,25 @@ plutommi\Service\PhbSrv\PhbOplibSrv.c  srv_phb_oplib_add_contact
 //		====>srv_phb_pinyin_compare_wchar
 //		==>srv_phb_write_phone_name
 plutommi\Service\PhbSrv\PhbOplibSrv.c  srv_phb_record_index_to_store_index
-
+// --pb--copy--progress
+//		==>mmi_phb_show_mass_processing
+//		====>ShowCategory402Screen (del prg img)
+//		======>dm_redraw_percentage_bar
+//		==>left_side_image
+//		==>IMG_PERCENTAGE_BAR_LEFT_IMAGE
+pb:PhoneBookSrc\PhoneBookList.c  ShowCategory402Screen (del "moving")
+ 
 
 // 售后服务热线
 make\{cur}_{GSM}.mak  __MMI_PHONEBOOK_SALES_SERVICE__
 
 
 # cl--log
-main:MainMenuRes.res  MAIN_MENU_CALL_CENTER
+main:MainMenuRes.res  parent="MAIN_MENU_CALL_CENTER"
 //	show:
 plutommi\mmi\CallLog\CallLogSrc\callloglayout.c void^mmi_clog_lt_show_list( )
+//	hide:
+plutommi\mmi\CallLog\CallLogSrc\CallLogMainMenu.c mmi_clog_hide_menu
 //	选项:
 plutommi\mmi\CallLog\CallLogSrc\callloglayout.c mmi_clog_key_tbl_struct^g_mmi_clog_lt_key_tbl
 plutommi\mmi\CallLog\CallLogSrc\CallLogAction.c MMI_CLOG_OP_MID_SAVE_TO_PHB
@@ -852,6 +916,7 @@ make\{cur}_{GSM}.mak  __MMI_CALL_LOG_ON_MAINMENU__
 make\{cur}_{GSM}.mak  __CALL_CENTER_IN_SETTING_MENU_STYLE__
 make\{cur}_{GSM}.mak  __MMI_CALLCENTER_MAINMENU_SPECIAL_MODE__
 
+
 # cl--center
 // cl--callcenter
 main:MainMenuRes.res  id="MAIN_MENU_CALL_CENTER"
@@ -866,6 +931,9 @@ main:MainMenuRes.res  MENU_ID_UCM_CALL_SETTING
 plutommi\mmi\CallSetting\CallSettingRes\CallSet.res  MENU_ID_CALLSET_CALL_SETTING_SIM1
 // cl--callset--sim1/sim2--divert
 plutommi/mmi/CallSetting/CallSettingRes/CallSet.res  id="MENU_ID_CALLSET_CALL_FWD"
+// cl--callset--more--
+plutommi/mmi/CallSetting/CallSettingRes/CallSet.res  id="MENU_ID_CALLSET_MORE"
+plutommi\Service\CallSetSrv\CallSetSrv.res  NVRAM_CALLSET_CONNECT_NOTICE
 
 // cl--2row--txt
 //		==>?
@@ -1031,9 +1099,17 @@ plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioSrc.c mmi_fmrdo_release_power_button
 
 
 
-[1.15] fmm
-//	fmm-sub menu:
-plutommi\Customer\Res_MMI\res_FileMgrService.c  MENU_ID_FMGR_GEN_OPTION_FORWARD_USE
+[1.15] ebook
+
+// ebook
+//		==>默认T卡
+plutommi\mmi\EbookReader\EbookSrc\EbookSrc.c  void^mmi_ebr_pre_entry_book_shel_screen
+plutommi\mmi\EbookReader\EbookSrc\EbookSrc.c  mmi_ebr_app_entry_bookshelf
+plutommi\mmi\EbookReader\EbookSrc\EbookSrc.c  fmgr_general_entry_explorer
+//		==>默认font
+custom\common\PLUTO_MMI\nvram_common_config.c  NVRAM_EF_EBOOK_DEFAULT_VALUE
+
+
 
 
 [1.16] 
@@ -1128,6 +1204,9 @@ mp3:AudioPlayerSrc\AudioPlayerPlayList.c  13869  #保存 MARK_LNAME
 
 // mp3--order
 mdi_audio_get_background_callback_order
+// mp3--nv
+mp3:AudioPlayerRes\AudioPlayer.res  NVRAM_AUDPLY_REPEAT
+
 
 
 
@@ -1168,6 +1247,8 @@ __MUSIC_FOLDER_T_CART__
 [1.18] alarm
 // alarm--enter
 plutommi\mmi\Organizer\OrganizerSrc\Alarm.c  AlmFillInlineEditStruct 
+// alarm--week--custom
+plutommi\mmi\Organizer\OrganizerSrc\Alarm.c  mmi_alm_entry_repeat_type_custom_menu_int 
 
 
 //	闹钟 祈祷闹钟
@@ -1232,7 +1313,9 @@ plutommi\Framework\GUI\GUI_SRC\gui_calendar.c  gui_calendar_set_theme
 
 // calendar--draw
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_calendar.c SBD_HIJRI_CALENDAR_AFGHAN
-// calendar--draw--title
+// calendar--draw--week (M T W T F S S)
+plutommi\Framework\GUI\GUI_SRC\gui_calendar.c gui_calendar_draw_horizontal_string
+// calendar--draw--highlight--title (02.2002)
 plutommi\Framework\GUI\GUI_SRC\gui_calendar.c  highlight_change_callback
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_calendar.c wgui_cat83_draw_horizontal_select
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_calendar.c calendar_horizontal_text_color
@@ -1314,6 +1397,7 @@ envPath = plutommi/mmi/PROFILES\
 env:\\
 
 
+
 // env--option
 //		==>mmi_prof_menu_item_select
 //		==>cui_menu_run
@@ -1327,7 +1411,9 @@ env:ProfilesSrc\ProfilesApp.c mmi_prof_entry_customize_scrn
 // env--edit--csk
 env:ProfilesSrc\ProfilesApp.c mmi_prof_customize_scrn_csk_hdlr
 // env--edit--tone type--1--2
-env:ProfilesSrc\ProfilesApp.c cui_tone_selector_listscr_entry
+plutommi\CUI\ToneSelectorCui\ToneSelectorCui.c void^cui_tone_selector_listscr_entry
+// env--edit--menu--ring
+features:\MMI_features_switch{cur}.h CFG_MMI_POWER_ON_OFF_NO_CUSTOMIZE
 
 
 ### 通话/mp3音量
@@ -1438,6 +1524,9 @@ cui_dtcnt_get_first_entry_highlight_item
 
 [1.28] sos
 ## sos
+// sos--enter--otherkey
+//		==>mmi_idle_entry_dialer_by_key (test)
+plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  mmi_make_call_sos_num_redail
 // sos--menu
 plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res  MENU_SOS_SETUP
 plutommi\mmi\Setting\SettingRes\PhoneSetting.res  MENU_SOS_SETUP
@@ -1471,11 +1560,12 @@ plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  MAX_SOS_CALL_NUMBER
 //		======>curSOScallNumIndex = 0
 //		==>make_sos_num_call                       #电话
 //		====>MakeSOSCall
-//		====>mmi_ucm_call_end_timeout_handler      #电话--超时
+//		====>mmi_ucm_call_end_timeout_handler      #电话--超时(先走 mmi_ucm_ind_hdlr )
 //		======>make_sos_num_call_cycle
 //		====>mmi_ucm_incoming_call_sendkey         #电话--应答
 //		====>mmi_ucm_exit_call_type_select         #电话--取消
-//		====>mmi_ucm_outgoing_call_endkey          #电话--挂
+//		====>mmi_ucm_outgoing_call_endkey          #电话--主动挂断(后走 mmi_ucm_ind_hdlr )
+//		====>                                      #电话--被动挂断(只走 mmi_ucm_ind_hdlr )
 //		====>mmi_ucm_entry_in_call                 #电话--接通
 //		======>ShowCategory16ScreenInternal        #电话--拨出
 //		==>make_sos_num_call

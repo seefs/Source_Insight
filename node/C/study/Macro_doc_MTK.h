@@ -142,6 +142,7 @@ code:SSCStringTable.h  SSC_ELT_FACTORY_MODE
 // Engineer
 "#*8378#1#", "*#555#",--mcc,mnc
 // Version--Out -- bg
+code:SSCStringTable.h  SSC_SW_VERSION
 "#*8378#2#", "####0000#", 
 "*#8375#" "*#0000#"
 // Version--3
@@ -236,6 +237,18 @@ plutommi\mmi\Setting\SettingSrc\Restore.c  __NEW_DEFAULT_TIME_20211030_STYLE__
 applib\misc\src\app_datetime.c  2845
 
 
+### version
+// build version
+MoDIS_VC9\drv_sim\src\w32_dummy_drv.c  INT_VersionNumbers
+hal/system/init/src/init.c  INT_VersionNumbers
+// build version--branch
+make\Gsm2.mak  build_branch_str
+verno\verno.c  build_branch_str
+verno\verno.h  build_branch_str
+make\~DbgInfoGen.cfg  PRJ
+// build version--branch--mk
+make\Option.mak  BRANCH
+init.c
 
 [1.14] 
 

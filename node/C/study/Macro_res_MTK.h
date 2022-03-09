@@ -16,7 +16,7 @@ Save:node\C\study\Macro_res_MTK.h \[1.11\] //OLD_PRELOAD
 Save:node\C\study\Macro_res_MTK.h \[1.12\] //anim
 Save:node\C\study\Macro_res_MTK.h \[1.13\] //xx_mdu_def.h
 Save:node\C\study\Macro_res_MTK.h \[1.14\] tmp_project
-Save:node\C\study\Macro_res_MTK.h \[1.15\] 
+Save:node\C\study\Macro_res_MTK.h \[1.15\] tmp_menu
 Save:node\C\study\Macro_res_MTK.h \[1.16\] 
 Save:node\C\study\Macro_res_MTK.h \[1.17\] 
 Save:node\C\study\Macro_res_MTK.h \[1.18\] 
@@ -100,6 +100,9 @@ make\Resgen.mak REFLIST_LIST += ref_list_
 //
 features:\
 features:\ref_list.txt
+// default
+plutommi\Customer\CustResource\PLUTO_MMI\
+plutommi\Customer\CustResource\PLUTO_MMI\ref_list.txt
 // custom
 make/{cur}_{GSM}.mak  NEW_CUS_REL_TRACE_DEFS
 //	USE_PROJECT_STRING_LIST = TRUE
@@ -288,6 +291,8 @@ plutommi\Customer\Images\
 plutommi\Customer\Images\{cur}\
 images:\
 
+// ==>image
+Save:node\C\study\Macro_res_image_MTK.h
 
 
 //	资源子路径:
@@ -299,127 +304,6 @@ images:\
 //plutommi\Customer\CustResource\CustImgDataHWExt.h MM_BG _PNG_
 //plutommi\Customer\CustResource\CustImgResExt.c mtk_nCustImageNamesEXT
 //plutommi\Customer\CustResource\CustImgDataRes_2.c
-
-
-// --主菜单图片
-images:MainLCD\MainMenu\SLIM_MATRIX\
-images:MainLCD\MainMenu\PAGE\
-//
-plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res __MMI_MAINMENU_PAGE_SUPPORT__
-plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res IMG_MAINMENU_SUB_DIR 添加完整路径
-plutommi\mmi\MainMenu\MainMenuRes\MainMenuRes.res 850
-
-
-// --壁纸
-images:MainLCD\Phonebook\
-images:MainLCD\IdleScreen\Wallpaper\
-//
-features:\
-features:MMI_features_switch{cur}.h CFG_MMI_RES_TYPE_WALLPAPER_SEL
-plutommi\mmi\Inc\MMI_features.h __MMI_RES_TYPE_WALLPAPER_SEL__
-//
-plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c WALL01."__MMI_RES_TYPE_WALLPAPER__ "
-plutommi\mmi\Setting\SettingSrc\Wallpaper.c wp_item_amount ^=
-plutommi\Customer\CustomerInc\CustResDef.h IMG_WALLPAPER_SUB_DIR
-
-
-// --开关机Logo:(仅KM这套代码)
-plutommi\mmi\Resource\PopulateRes.c LOGO_FILE_NAME
-images:MainLCD\Active\poweronoff\
-images:MainLCD\Active\poweronoff\logo.BMP
-
-
-// --开关机动画:
-// ---power--gif
-make/{cur}_{GSM}.mak  __MMI_POWER_GIF_DISPLAY__
-
-//  与铃声同步问题 建议开机动画时间相比减0.5s 关机动画时间减2s
-images:MainLCD\Active\Poweronoff\
-//	FE_DISPLAY  RES_TYPE   LOW   MK_DISPLAY   DIFF    --      
-//	OFF         -          ON    OFF          -       logo.bmp
-//	OFF1        -          ON2   ON3          OFF4    POONOFF.gif
-//	ON          gif        -     -            -       POON.gif/pooff.gif
-//	ON          OFF        -     -            -       POON.gif/pooff.gif
-//	OFF         -          ON    ON           ON      POON.gif/pooff.gif
-//	OFF         gif        OFF   -            -       POON.gif/pooff.gif
-//	OFF         OFF        OFF   -            -       POON.gif/pooff.gif
-
-// ---power--on--setItem
-features:MMI_features_switch{cur}.h CFG_MMI_POWER_ON_OFF_DISPLAY
-// ---power--gif
-features:MMI_features_switch{cur}.h CFG_MMI_RES_TYPE_POWER_ONOFF_SEL
-plutommi\mmi\Inc\MMI_features.h  __MMI_RES_TYPE_POWER_ONOFF_SEL__
-plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_PhoneSetting.c POON.gif
-
-//
-//make/{cur}_{GSM}.mak SBD_POWER_ONOFF_SAME_LOGO
-//~ 
-//~ lcd_sw_rnd DRV_MAINLCD_INIT_COLOR 设置logo背景色
-
-
-// --关机充电动画
-//make/{cur}_{GSM}.mak  __MMI_POWERONRING_MP3__
-//
-plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res IMG_ID_CHARGER_CHARGING
-images:MainLCD\UIELEMENT\charger\
-
-// idle--bat--7格/6格/5格
-//		==>__FIVE_BATTERY_LEVEL__
-//		==>__SIX_BATTERY_LEVEL__
-//		==>__MORE_BATTERY_LEVEL__
-make/{cur}_{GSM}.mak  BATTERY_FIVE_LEVEL
-make/{cur}_{GSM}.mak  BATTERY_SIX_LEVEL
-// idle--bat
-images:MainLCD\IdleScreen\Statusicons\battery\SI_BAT\
-
-// idle--sim
-Save:node\C\study\Macro_gui_MTK.h  statusbar:sim
-// --sim--normal
-images:MainLCD\IdleScreen\Statusicons\DualSIM\Master\SI_SIG1\
-images:MainLCD\IdleScreen\Statusicons\DualSIM\Slave\SI_SIG2\
-// --sim--closed
-images:MainLCD\IdleScreen\Statusicons\DualSIM\Master\SI_SIG1_CLOSE\
-images:MainLCD\IdleScreen\Statusicons\DualSIM\Slave\SI_SIG2_CLOSE\
-
-	
-
-// --屏保:
-features:MMI_features_switch{cur}.h  #define^CFG_MMI_SCREEN_SAVER
-//
-plutommi\Framework\GUI\GUI_Res\Gui.res  IMG_IDLE_DATE_0             #锁屏
-plutommi\Framework\GUI\GUI_Res\Gui.res  IMG_TECHNO_DIGITAL_CLOCK_0  #idle
-plutommi\Framework\GUI\GUI_Res\Gui.res  IMG_IDLE_DAY_0              #天
-// --数字蓝--天
-images:MainLCD\IdleScreen\lock_day_new\
-// --数字白--锁屏
-images:MainLCD\IdleScreen\lock_new\
-// --数字黑--idle
-images:MainLCD\IdleScreen\Techno\DigitalClock\
-// --日期--status
-images:MainLCD\IdleScreen\Techno\SmallClock\
-
-// --拨号
-plutommi\Framework\GUI\GUI_Res\Gui.res  IMG_DIALING_INPUT_M0          #小号数字
-plutommi\Framework\GUI\GUI_Res\Gui.res  IMG_DIALING_0                 #大号数字
-// --黑--小号数字
-images:MainLCD\DialingScreen\INPUT\MEDIUM\
-// --黑--大号数字/mid-icon
-images:MainLCD\DialingScreen\DialNum\
-images:MainLCD\DialingScreen\DialNum_2\
-
-
-// --Mp3_img
-plutommi\MtkApp\AudioPlayer\AudioPlayerRes\AudioPlayer.res  vol_full
-plutommi\Customer\CustResource\PLUTO_MMI\resource_audply_skins.c  1829
-//
-images:MainLCD\Multimedia\
-
-// call
-plutommi\Service\Gsm3gCallSrv\GCallSrv.res  CL_NET
-//
-images:MainLCD\Call\Connect\
-
-
 
 
 ###
@@ -575,20 +459,26 @@ vendor\font\FontData\OfficialFont\Latin\pluto_small.bdf
 //   2.4屏用Russian_18,20号字;其他:dotum24太大;arial_ru_20缺字符;Cyrillic_20不熟悉;
 vendor\font\MTK\official\project\plutommi\content\src\MainLcd128X160\res_gen_font.cpp __MMI_LANG_RUSSIAN__
 // --俄文-bdf
-vendor\font\FontData\OfficialFont\Chinese\
+vendor\font\FontData\OfficialFont\RUSSIAN\
 vendor\font\FontData\OfficialFont\RUSSIAN\Russian_16.bdf
 vendor\font\FontData\OfficialFont\RUSSIAN\Russian_18.bdf
 
 // --中文
+vendor\font\FontData\OfficialFont\Chinese\
 vendor\font\MTK\official\project\plutommi\content\src\MainLcd160X128\res_gen_font.cpp __MMI_LANG_SM_CHINESE__
 vendor\font\MTK\official\project\plutommi\content\src\MainLcd128X160\res_gen_font.cpp __MMI_LANG_SM_CHINESE__
 vendor\font\MTK\official\project\plutommi\content\src\MainLcd240X320\res_gen_font.cpp __MMI_LANG_SM_CHINESE__
 // --中文-bdf
 vendor\font\FontData\OfficialFont\Chinese\
+// --中文-128*160
 //	font_22_type.bdf-----------L12, 粗, 2.12M
 //  HW2424_18_New.BDF----------V35, 大, 1.51M
 //  GB2312_24.BDF-----------------, --, 2.00M
 //	common.BDF-----------------Def, --, 2.15M
+// --中文-240*320
+//	S_36_CHINESE.BDF-----------D58, 粗, 3.20M
+//	GB2312_TRIM_32_BOLD.BDF----D58, 粗, 2.20M
+
 
 // --波斯
 vendor\font\MTK\official\project\plutommi\content\inc\MainLcd240X320\L_MTK_Arabic_vk_9.h
@@ -658,8 +548,9 @@ make/K220_V35_WD_{GSM}.mak  __PHONE_SALE_SERVERS_QUICK_CONFIG__
 
 
 
-[1.15] 
-
+[1.15] tmp_menu
+//
+MENU_SETTING_LANGUAGE
 
 
 [1.16] 

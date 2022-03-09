@@ -102,6 +102,15 @@ plutommi\Framework\EventHandling\EventsSrc\KeyBrd.c
 //}
 
 
+// 3) CAT203
+// CAT203_DYNAMIC_LIST_Y + menu_h - 1
+// = CAT203_STRING_Y + CAT203_STRING_H
+// = 20+84+38 + 93 -1
+// = 234/226
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_idlescreen_op.c  void^wgui_cat203_resize_and_draw
+
+
+
 [1.3] draw
 //
 //	UI_fill_rectangle       // 填充一个矩形框
@@ -291,7 +300,10 @@ ime_focused_border_color
 
 
 [1.6] pubWin  Alert
-// display
+//1.DisplayPopup
+//	DisplayPopup((PU8)text_ptr, IMG_GLOBAL_INFO, 0, 1000, 4);
+//	DisplayPopup((PU8) GetString(STR_ID_SMS_LANG_SAVE_FAILD), 1, 0, 1000, NULL);
+//2.mmi_popup_display
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  mmi_popup_display
 
 
@@ -343,9 +355,10 @@ ShowCategory66Screen
 ShowCategory208Screen_int
 // 2) 弹窗图标:
 custom\common\PLUTO_MMI\custom_events_notify.c mmi_events_notify_tbl
-
-//
-
+//		==>mmi_msg_entry_new_msg_ind
+//		====>mmi_um_alert_um_inbox_alert_data_prepare
+//		==>.popup_string
+plutommi\Framework\Notification\NotificationSrc\Notification.c  nmgr_alert_pluto_popup_scrn_entry
 
 
 [1.7] form, point
@@ -476,21 +489,26 @@ plutommi\mmi\Setting\SettingRes\Wallpaper.res CUSTOMER_NAME_M107_XYZN_S2_4A_WEST
 images:\MainLCD\SubMenu\ListMenuIcon\
 images:\MainLCD\SubMenu\ListMenuIcon\L_NB30.bmp
 
-//
-ShowCategory53Screen(): 列表
+// 1.num+str list
+ShowCategory15Screen
+// 2.方框+str list(多选)
+ShowCategory53Screen()
+// 3.圆框+str list(单选)
 
 // list--
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_list.c  ShowCategory52Screen_int
 // list--menu(主菜单)
+//		==>create_fixed_icontext_menuitems
+//		====>gui_set_fixed_icontext_menuitem_current_theme
+//		====>MMI_MENUITEM_HEIGHT                         # 菜单 height
+//		==>associate_fixed_icontext_list
+//		====>common_item_data
+//		======>m.text_x, 30
+//		====>MMI_fixed_icontext_menuitem/color           # 菜单 color
+//		==>wgui_fixed_list_create_menu_common
+//		====>common_item_data
 plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  wgui_fixed_list_create_icontext_menu
 
-
-// list--menu--height
-//		==>MMI_MENUITEM_HEIGHT
-//		==>gui_set_fixed_icontext_menuitem_current_theme
-plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  create_fixed_icontext_menuitems
-//		==>MMI_fixed_icontext_menuitem/color
-plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  associate_fixed_icontext_list
 // list--menu--show
 plutommi\Framework\GUI\GUI_SRC\wgui_fixed_menus.c  show_fixed_list
 //	--MMI_CATEGORY52_ID = ;
@@ -547,7 +565,32 @@ plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c  9123
 plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c  9383
 plutommi\Framework\GUI\GUI_SRC\gui_fixed_menuitems.c  9567
 
-        
+
+// list--pb--height
+//		==>MMI_ICONTEXT_MENUITEM_HEIGHT
+//		==>26  ==>24+2
+//		==>MMI_INLINE_EDIT_MENUITEM_HEIGHT
+//		==>26  ==>24+2
+//		==>MMI_MULTIROW_MENUITEM_HEIGHT
+//		==>45  ==>???
+plutommi\Framework\GUI\GUI_INC\wgui.h  MMI_ICONTEXT_MENUITEM_HEIGHT
+plutommi\Framework\GUI\GUI_INC\wgui.h  1934
+// point--input--pin
+//		==>MMI_SINGLELINE_INPUTBOX_HEIGHT
+//		==>26  ==>24+2
+plutommi\Framework\GUI\GUI_INC\wgui.h  MMI_SINGLELINE_INPUTBOX_HEIGHT
+plutommi\Framework\GUI\GUI_INC\wgui.h  2663
+// point--input--bar--im
+plutommi\Framework\GUI\GUI_INC\wgui.h  INFORMATION_BAR_HEIGHT
+plutommi\Framework\GUI\GUI_INC\wgui.h  2872
+
+
+// list--setting--height
+//		==>m->text_x  #icon
+//		==>item_measure_function
+//		====>gui_measure_fixed_icontext_menuitem
+//		====>common_item_data
+plutommi/Framework/GUI/GUI_SRC/gui_fixed_menuitems.c  4880  gui_list_show_text
 
 
 
@@ -596,13 +639,13 @@ plutommi\Framework\GUI\GUI_SRC\wgui_categories_inputs.c  gui_set_single_line_inp
 plutommi\Framework\GUI\GUI_SRC\wingui.c  MMI_singleline_inputbox_height
 plutommi\Framework\GUI\GUI_SRC\gui_themes.c set_MMI_PIN_inputbox_theme( )
 
-// input--bg
+// input--bg (加边框)
 //		==>.inline_edit_focussed_filler
 //		==>wgui_inline_singleline_inputbox_focussed_theme
 //		==>current_single_line_input_box_theme
 plutommi\Framework\GUI\GUI_SRC\wgui_inline_edit.c  create_inline_edit_singleline_inputbox_set_buffer
 
-// input--dial num
+// input--dial num str
 //		==>mmi_imc_key_group_key_down_int
 //		==>MMI_IMC_MESSAGE_INSERT_CHAR
 plutommi\Framework\GUI\GUI_SRC\wgui_inputs_multiline.c  U32^mmi_input_box_msg_call_back_multiline
@@ -669,9 +712,19 @@ plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  void^gui_show_single_line_input_box
 // --text--border
 plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  void^gui_create_multi_line_input_box_set_buffer
 // --text--input--time
-//		==>text_y
+// --text--input--pb edit
+// --text--input--pb search
+//		==>gui_show_single_line_input_box_ext
+//		====bs->y1, +2  #去掉
 plutommi\Framework\GUI\GUI_SRC\gui_single_line_inputs.c  gui_draw_single_line_one_line
-plutommi\Framework\GUI\GUI_SRC\gui_single_line_inputs.c  1815
+plutommi\Framework\GUI\GUI_SRC\gui_single_line_inputs.c  bs->text_y^>=^0
+plutommi\Framework\GUI\GUI_SRC\gui_single_line_inputs.c  query.pHeight^<=^text_height_simply
+//		==>bs.text_y
+//		====>wgui_inputs_sl_setup_ext
+//		==>b.text_y  #边框
+//		====>2 or -2, #居中
+plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  void^gui_create_single_line_input_box_set_buffer
+
 
 // text--":"
 //   时间设置中间间隔符(冒号)
@@ -704,7 +757,7 @@ plutommi\Framework\GUI\GUI_SRC\gui_horizontal_selector.c  gui_horizontal_select_
 //gui_show_fixed_list_menu
 
 
-// menu--txt
+// menu--enter--txt
 //		==>cui_menu_create
 //		====>MENU_ID_SLK_TIME_SETTING_MENU
 //		======>STR_ID_SLK_20_SEC
@@ -727,24 +780,6 @@ plutommi\Framework\GUI\GUI_INC\gui_switch.h
 plutommi\Framework\GUI\GUI_INC\gui_switch.h  CFG_UI_MENUITEM_TWOLINE_HEIGHT
 plutommi\Framework\GUI\GUI_INC\gui_switch.h  3145
 
-
-// list--height--pb
-//		==>MMI_ICONTEXT_MENUITEM_HEIGHT
-//		==>26  ==>24+2
-//		==>MMI_INLINE_EDIT_MENUITEM_HEIGHT
-//		==>26  ==>24+2
-//		==>MMI_MULTIROW_MENUITEM_HEIGHT
-//		==>45  ==>???
-plutommi\Framework\GUI\GUI_INC\wgui.h  MMI_ICONTEXT_MENUITEM_HEIGHT
-plutommi\Framework\GUI\GUI_INC\wgui.h  1934
-// point--input--pin
-//		==>MMI_SINGLELINE_INPUTBOX_HEIGHT
-//		==>26  ==>24+2
-plutommi\Framework\GUI\GUI_INC\wgui.h  MMI_SINGLELINE_INPUTBOX_HEIGHT
-plutommi\Framework\GUI\GUI_INC\wgui.h  2663
-// point--input--bar--im
-plutommi\Framework\GUI\GUI_INC\wgui.h  INFORMATION_BAR_HEIGHT
-plutommi\Framework\GUI\GUI_INC\wgui.h  2872
 
 
 

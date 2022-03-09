@@ -30,7 +30,7 @@ Save:node\C\project\Macro_cfg_8910.h \[2.1\] IM
 Save:node\C\project\Macro_cfg_8910.h \[2.2\] DTMF
 Save:node\C\project\Macro_cfg_8910.h \[2.3\] µç×Ó±£¿¨
 Save:node\C\project\Macro_cfg_8910.h \[2.4\] 
-Save:node\C\project\Macro_cfg_8910.h \[2.5\] CAMERA
+Save:node\C\project\Macro_cfg_8910.h \[2.5\] 
 Save:node\C\project\Macro_cfg_8910.h \[2.6\] DL
 Save:node\C\project\Macro_cfg_8910.h \[2.7\] FM
 Save:node\C\project\Macro_cfg_8910.h \[2.8\] WIFI
@@ -360,10 +360,7 @@ MMI_DIALPANEL_DTMF_SUPPORT
 //
 
 
-[2.5] CAMERA
-//
-CAMERA_SUPPORT = TRUE                               ### CAMERA Support
-DC_FLASH_SUPPORT = TRUE
+[2.5] 
 
 
 

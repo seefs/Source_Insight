@@ -193,7 +193,12 @@ MS_Customize/source/product/driver/dc/sensor_gc6153.c
 //
 project_UIS8910_ROM_16MB_DS_USER.mk SENSOR_CHIP
 
-	
+//
+//CAMERA_SUPPORT = TRUE                               ### CAMERA Support
+//DC_FLASH_SUPPORT = TRUE
+
+
+
 [1.6] TP
 // BL6133  CST816S
 project_UIS8910_ROM_16MB_SS_WA07U_USER.mk  CAP_TP_SUPPORT

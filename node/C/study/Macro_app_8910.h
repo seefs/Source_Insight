@@ -18,7 +18,7 @@ Save:node\C\study\Macro_app_8910.h  \[1.11\] camera -------------
 Save:node\C\study\Macro_app_8910.h  \[1.12\] pic
 Save:node\C\study\Macro_app_8910.h  \[1.13\] record
 Save:node\C\study\Macro_app_8910.h  \[1.14\] fm
-Save:node\C\study\Macro_app_8910.h  \[1.15\] fmm
+Save:node\C\study\Macro_app_8910.h  \[1.15\] 
 Save:node\C\study\Macro_app_8910.h  \[1.16\] vp
 Save:node\C\study\Macro_app_8910.h  \[1.17\] mp3
 Save:node\C\study\Macro_app_8910.h  \[1.18\] alarm --------------
@@ -278,6 +278,15 @@ mmi:mmi_app\app\udisk\c\mmi_sd.c  MMISD_CreateDefaultFold
 UpdateRecordFilePath(record_win_data_ptr);
 
 
+//
+mmi:mmi_app\app\fmm\c\mmifmm_mainwin.c HandleFmmMainWinMsg
+mmi:mmi_app\app\fmm\c\mmifmm_mainwin.c HandleMenuOption
+// record
+mmi:mmi_app\app\fmm\c\mmifmm_mainwin.c HandleRecordListWinMsg
+
+//FILE
+MMIFMM_HandleOpenFileWin
+
 
 [1.7] Setting
 //
@@ -522,11 +531,14 @@ mmi:mmi_app\app\cc\c\mmicc_menutable.c GUIMENU_ITEM_T^menu_cl
 mmi:mmi_app\app\cl\c\Mmicl_wintab.c   HandleLogListWindow
 
 //3.cl-deltail
+//		==>从号码获取姓名
 mmi:mmi_app\app\cl\c\Mmicl_wintab.c   InitLogListDetailContactItem
 // cl deltail--调显示位置
 mmi:mmi_app/app/cl/c/Mmicl_wintab.c  AppendLogListDetailItem
 // cl list--(107)
 mmi:mmi_app\app\cl\c\Mmicl_wintab.c   AppendLogListItem
+//
+mmi:mmi_app\app\cl\c\mmicl_custom_wintab.c   AppendLogListItem
 
 // str
 InitPdaCallLogListCtrl        CallLog
@@ -704,16 +716,7 @@ mmi:mmi_app\app\fm\c\mmifm_wintab.c  void^MMIFM_HandleHeadsetAction
 
 
 
-[1.15] fmm
-
-//
-mmi:mmi_app\app\fmm\c\mmifmm_mainwin.c HandleFmmMainWinMsg
-mmi:mmi_app\app\fmm\c\mmifmm_mainwin.c HandleMenuOption
-// record
-mmi:mmi_app\app\fmm\c\mmifmm_mainwin.c HandleRecordListWinMsg
-
-//FILE
-MMIFMM_HandleOpenFileWin
+[1.15] 
 
 
 

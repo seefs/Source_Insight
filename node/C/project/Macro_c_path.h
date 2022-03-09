@@ -53,6 +53,8 @@ curKey = K220_Y22_BOSS
 curKey = K220_Y28_MGUO
 curKey = K220_V992
 curKey = K220_D58
+curKey = K220_D36A
+
 
 
 // A86
@@ -176,8 +178,8 @@ custom\audio\{nv}\
 [1.3] _mtk_cfg_
 // (1).nv
 Save:set\Macro_Set_Path_mtk_{pro}.h  nvKey
-//
-make/{cur}_GSM.mak  BOARD_VER_CUST_AUDIO
+// Œ¥…Ë÷√”√ƒ¨»œ BOARD_VER
+make/{cur}_{GSM}.mak  BOARD_VER_CUST_AUDIO
 //	BOARD_VER_CUST_AUDIO = K220_Z97_AUDIO_BB
 // 
 //make\custom\custom.mak BOARD_VER_CUST_AUDIO
@@ -192,7 +194,7 @@ custom\audio\{nv}\
 // (2).board
 Save:set\Macro_Set_Path_mtk_{pro}.h  boardKey
 //
-make/{cur}_GSM.mak  BOARD_VER
+make/{cur}_{GSM}.mak  BOARD_VER
 //	BOARD_VER = K220M_BH_BB
 //
 custom\app\{board}\
@@ -227,7 +229,7 @@ custom\system\{board}\custom_MemoryDevice.h  NOR_BOOTING_NAND_FS_SIZE
 // (3).lcd
 Save:set\Macro_Set_Path_mtk_{pro}.h  lcdKey
 //
-make/{cur}_GSM.mak  LCD_MODULE
+make/{cur}_{GSM}.mak  LCD_MODULE
 //	LCD_MODULE = K220D_QQVGA_LCM
 
 
@@ -237,6 +239,8 @@ custom\drv\LCD\{lcd}\combo_lcm_ST7735S.c
 custom\drv\color\{lcd}\
 custom\drv\color\{lcd}\color_custom.c
 
+// ≈‰÷√id
+Save:node\C\project\Macro_Note_MTK.h  __LCD__
 
 
 
@@ -244,12 +248,12 @@ custom\drv\color\{lcd}\color_custom.c
 [1.4] _mtk_other_
 
 // (3).rf
-make/{cur}_GSM.mak  RF_MODULE
+make/{cur}_{GSM}.mak  RF_MODULE
 //	RF_MODULE = MT6261RF_HS8235L_CUSTOM
 
 
 // (4).consistent
-make/{cur}_GSM.mak  COM_DEFS_FOR
+make/{cur}_{GSM}.mak  COM_DEFS_FOR
 //	COM_DEFS_FOR_MT6261RF_HS8235L_CUSTOM
 //	COM_DEFS_FOR_K220D_QQVGA_LCM
 

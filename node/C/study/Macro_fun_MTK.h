@@ -362,19 +362,30 @@ plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerMain.c  tiho_tts_one_key_lock
 plutommi\mmi\Idle\IdleSrc\IdleCommon.c  mmi_idle_closebacklight_and_lock
 
 
-// 上锁
+// ==上锁==
 // lock--left + #
 plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c  __LOCK_BY_LSK_POUND__
 // lock--left + *
 plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c  __LOCK_BY_LSK_STAR_OR_LSK_CENTER_KEY_
 // lock--left + right
 plutommi\mmi\MainMenu\MainMenuSrc\MainMenu.c  __UNLOCK_BY_LSK_RSK__
+// --end
+//		==>idle
+//		====>SetKeyHandler(mmi_idle_closebacklight_and_lock)
 // --long
+//		==>idle
+//		====>SetKeyHandler(mmi_scr_locker_launch)
+//		==>pre_key
+//		====>null
+//		==>post_key
+//		====>...
+//		==>process_key_event_routing
+//		====>mmi_scr_locker_launch
 plutommi\mmi\Idle\IdleSrc\IdleCommon.c  __STAR_LONGPRESS_UNLOCK__
 plutommi\mmi\Idle\IdleSrc\IdleCommon.c  __LSK_LONGPRESS_LOCK__
 
 
-// 解锁
+// ==解锁==
 // unlock--left + right
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  __UNLOCK_BY_LSK_RSK__
 // --unlock--1Key--ok
@@ -389,6 +400,9 @@ plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  980  mmi_popup_display
 // --unlock--2Key--ok
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  1361
 // --long
+//		==>mmi_slk_classic_on_key 
+//		====>popup
+//		====>mmi_scr_locker_close
 plutommi\mmi\ScrLocker\ScrLockerSrc\ScrLockerClassic.c  __LSK_LONGPRESS_UNLOCK__
 
 
@@ -449,6 +463,8 @@ plutommi\mmi\Ucm\UcmSrc\UcmUi.c  void^mmi_ucm_entry_call_type
 // cancel
 plutommi\mmi\Ucm\UcmSrc\UcmUi.c  void^mmi_ucm_cancel_call_type_select
 
+// 模拟只插一张卡
+plutommi\Service\SimCtrlSrv\SimCtrlSrv.c  srv_sim_ctrl_is_available
 
 
 [2.10] 
@@ -470,6 +486,31 @@ plutommi\mmi\Ucm\UcmSrc\UcmUi.c  void^mmi_ucm_cancel_call_type_select
 
 
 [2.16] 
+// --sms--update
+//		#if 0
+//        srv_sms_read_pdu_cb_struct *read_cb_data;
+//        srv_sms_spdu_struct *spdu_data;
+//	//test
+//        read_cb_data = (srv_sms_read_pdu_cb_struct*)data->action_data;
+//        spdu_data = read_cb_data->spdu_data;
+//		add_pdu_data
+//        //if ((spdu_data->status == SRV_SMS_STATUS_UNREAD))
+//        {
+////            cmgr_res->stat = srv_sms_msg_status_to_at_status(SRV_SMS_STATUS_READ);
+//            spdu_data->status = SRV_SMS_STATUS_READ;
+//			//add
+//            spdu_data->timestamp = 15655615UL;
+//
+//            srv_sms_msg_update_pdu(
+//                pdu_id,// cmgr_cntx->pdu_id
+//                spdu_data,
+//                NULL,//srv_sms_at_cmgr_update_callback
+//                NULL); //cmgr_cntx
+//
+//            spdu_data->status = SRV_SMS_STATUS_UNREAD;
+//        }
+//		#endif
+
 
 
 [2.17] 

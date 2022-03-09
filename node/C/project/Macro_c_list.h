@@ -138,6 +138,11 @@ Save:node\C\project_demo\Macro_file_ttf_fontforge.h  __MTK__
 //字蛛 只可直接抽取ttf的字体
 
 
+// 取中文编码
+cd:tmp: git clone https://github.com/seefs/Personality
+
+
+
 
 [1.6] __rime__
 //

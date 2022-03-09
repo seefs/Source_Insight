@@ -116,7 +116,7 @@ CFG_MMI_MULTITAP_KEY_0
 
 
 
-[1.4] LCD
+[1.4] __LCD__
 //
 make/{cur}_GSM.mak  LCD_MODULE
 //	LCD_MODULE = K220D_QQVGA_LCM
@@ -148,7 +148,11 @@ make/{cur}_GSM.mak LCM_SCANLINE_ROTATION_SUPPORT
 custom\drv\LCD\{lcd}\
 custom\drv\LCD\{lcd}\combo_lcm_ILI9340.c __FM_ADD_LCD_ID_EX__
 custom\drv\LCD\{lcd}\combo_lcm_ST7735S.c
-//
+// lcd--id
+custom\drv\LCD\{lcd}\lcd_sw.h  LCD_GC9306
+// lcd--id
+custom\drv\LCD\{lcd}\lcd_sw.h  SERIAL_LCM_2_DATA_LINE_PROTOCOL
+// lcd--str
 custom\drv\LCD\{lcd}\lcd_sw.h  main_lcm_enum
 //	GC9108,
 //	GC9102,
@@ -163,13 +167,30 @@ custom/drv/misc_drv/_Default_BB/MT6261/pmu_custom.c  ISINK0_STEP
 // 背光等级?? 
 custom\app\{board}\nvram_user_config.c  MTKLCM_COLOR
 
+// 背光延时
+custom/drv/misc_drv/_Default_BB/MT6261/uem_gpio.c  __DRV_DELAY_ON_LED__
+
 
 [1.5] CAM
-//
-make/{cur}_GSM.mak DUAL_CAMERA_SUPPORT 	  		  摄像头设置
-make/{cur}_GSM.mak CMOS_SENSOR GC6133_SERIAL	  摄像头设置
-make/{cur}_GSM.mak CMOS_SENSOR_BAK1 SP0821_SERIAL 摄像头设置
-
+// 摄像头设置(开)
+make/{cur}_GSM.mak CMOS_SENSOR = GC6133_SERIAL
+make/{cur}_GSM.mak SENSOR_TYPE = YUV
+make/{cur}_GSM.mak FLAVOR = NONE
+make/{cur}_GSM.mak SWITCHABLE_FEATURE_2ND = GEMINI
+make/{cur}_GSM.mak ISP_SUPPORT = TRUE
+// 摄像头设置(关)
+make/{cur}_GSM.mak CMOS_SENSOR = NONE
+make/{cur}_GSM.mak SENSOR_TYPE = NONE
+make/{cur}_GSM.mak FLAVOR = NO_CAM / GEMINI_2_NO_CAM / GEMINI_2_SIM_OFF(gprs)
+make/{cur}_GSM.mak SWITCHABLE_FEATURE_2ND = FLAVOR
+make/{cur}_GSM.mak ISP_SUPPORT = FALSE
+// 双摄
+make/{cur}_GSM.mak DUAL_CAMERA_SUPPORT = FALSE
+make/{cur}_GSM.mak CMOS_SENSOR_BAK1 = SP0821_SERIAL
+//make/{cur}_GSM.mak CMOS_SENSOR_SUB = NONE
+//make/{cur}_GSM.mak CMOS_SENSOR_SUB_BAK1 = NONE
+// 视频录像
+make/{cur}_GSM.mak VIDEO_PLAYER_RECORDER_W_DCM = ENABLE
 
 // 关CAM报错:
 	MJPG_ENCODE = FALSE
@@ -361,6 +382,7 @@ plutommi\Service\SettingSrv\res\GeneralSettingSrv.res TIME_FORMAT
 plutommi\Service\SettingSrv\res\GeneralSettingSrv.res DATE_FORMAT
 	系统时间:
 custom/drv/misc_drv/_Default_BB/MT6261/custom_hw_default.c DEFAULT_HARDWARE_YEAR
+plutommi\mmi\Setting\SettingSrc\Restore.c  time->info.data_time.rtc_year
 
 	亮度:
 plutommi\Service\GpioSrv\gpiosrv.res NVRAM_BYTE_BL_SETTING_LEVEL
@@ -555,9 +577,10 @@ Save:node\C\project\Macro_Note_MTK.h  __call_vol__
 [2.15] trace
 ### 利用Catcher抓取真机上的LOG
 // *#555#
-//device-->set uart-->uart-->usb port
-//tool-->log mode-->nv file
-//tool-->connect, filter, view-->ps
+//device-->set uart-->uart-->usb port->usb model
+//tool-->log mode(bar9)-->nv file
+//tool-->connect(bar14), filter, view-->ps
+//tool-->view-->ps intergrated
 
 
 ### 利用Catcher抓取模拟器上的LOG
@@ -577,9 +600,9 @@ find ./ -name "*.log"| xargs grep "ERROR"
 findstr /s /i "ERROR" *.log>aaaa.txt
 
 // open aaaa:
-cmd: F:&&cd build\K220_L12_MGUO\log&&findstr /s /i "ERROR" *.log>aaaa.txt&&start aaaa.txt
+cmd: F:&&cd build\{cur}\log&&findstr /s /i "ERROR" *.log>aaaa.txt&&start aaaa.txt
 // open aaaa:
-build\K220_L12_MGUO\log\aaaa.txt Error:
+build\{cur}\log\aaaa.txt Error:
 // open cmd:
 cmd: cmd
 

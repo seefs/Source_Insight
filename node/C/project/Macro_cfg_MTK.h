@@ -9,7 +9,7 @@ Save:node\C\project\Macro_cfg_MTK.h \[1.4\] //MMS
 Save:node\C\project\Macro_cfg_MTK.h \[1.5\] //BROWSER
 Save:node\C\project\Macro_cfg_MTK.h \[1.6\] //BT
 Save:node\C\project\Macro_cfg_MTK.h \[1.7\] //RECORD
-Save:node\C\project\Macro_cfg_MTK.h \[1.8\] Lcd---------------
+Save:node\C\project\Macro_cfg_MTK.h \[1.8\] LCD_SIZE----------
 Save:node\C\project\Macro_cfg_MTK.h \[1.9\] shortcut----------menu
 Save:node\C\project\Macro_cfg_MTK.h \[1.10\] USB, 充电电流
 Save:node\C\project\Macro_cfg_MTK.h \[1.11\] ATA--------------自动测试
@@ -20,7 +20,7 @@ Save:node\C\project\Macro_cfg_MTK.h \[2.1\] //IM
 Save:node\C\project\Macro_cfg_MTK.h \[2.2\] DTMF, Dial, SIM, 天线
 Save:node\C\project\Macro_cfg_MTK.h \[2.3\] 电子保卡
 Save:node\C\project\Macro_cfg_MTK.h \[2.4\] tihu--------------语音王
-Save:node\C\project\Macro_cfg_MTK.h \[2.5\] //CAMERA
+Save:node\C\project\Macro_cfg_MTK.h \[2.5\] PLS---------------语音王
 Save:node\C\project\Macro_cfg_MTK.h \[2.6\] //DL
 Save:node\C\project\Macro_cfg_MTK.h \[2.7\] FM
 Save:node\C\project\Macro_cfg_MTK.h \[2.8\] WIFI
@@ -86,7 +86,10 @@ features:\MMI_features_switch{cur}.h  CFG_MMI_PHB_STARTUP_COPY_SIM  __ON__
 features:\MMI_features_switch{cur}.h  CFG_MMI_PHB_MULTI_OPERATION  __ON__
 features:\MMI_features_switch{cur}.h  CFG_MMI_PHB_GENERIC_MULTI_SELECT  __ON__
 
-
+// pb--style
+features:\MMI_features_switch{cur}.h  CFG_MMI_TAB_BARS_SUPPORT	(__OFF__)
+features:\MMI_features_switch{cur}.h CFG_MMI_PHB_OPTIONAL_FIELD_ADDITIONAL	(__ON__)
+features:\MMI_features_switch{cur}.h CFG_MMI_PHB_CALLER_GROUP	(__OFF__)
 
 
 [1.3] SMS
@@ -119,13 +122,13 @@ make/{cur}_{GSM}.mak  SMS_TOTAL_ENTRY = 100
 
 
 
-[1.8] Lcd
+[1.8] LCD_SIZE
 // 
-make/K220_V35_WD_{GSM}.mak   MAIN_LCD_SIZE
+make/{cur}_{GSM}.mak  MAIN_LCD_SIZE
 // MAIN_LCD_SIZE = 128X160
 
 //
-make/K220_H660_TX_{GSM}.mak   MAIN_LCD_SIZE
+make/{cur}_{GSM}.mak  MAIN_LCD_SIZE
 // MAIN_LCD_SIZE = 240X320
 
 
@@ -415,7 +418,7 @@ make/{cur}_{GSM}.mak  HERO_ENGINE_SUPPORT
 // tihu--来电
 //     --TCARD/125kb/145kb
 make/{cur}_{GSM}.mak  HERO_ENGINE_INCOMECALL
-make/{cur}_{GSM}.mak  HERO_ENGINE_INCOMECALL_{GSM}_TCARD
+make/{cur}_{GSM}.mak  HERO_ENGINE_INCOMECALL_TCARD
 
 
 // 2) tts
@@ -483,7 +486,10 @@ plutommi\mmi\Setting\SettingRes\TihoBroadcastSetting.res  __TIHO_TTS_TIME_DEFAUL
 
 
 
-[2.5] 
+[2.5] PLS
+// 1) PLS
+make/{cur}_{GSM}.mak  PLS_APP_GSM_SUPPORT
+
 
 
 [2.6] 
@@ -504,7 +510,7 @@ __FM_LCD_OLD_TEST__
 
 [2.8] 
 // wifi 宏总(不关模拟器编不过)
-make/K220_Y01A_MGUO_{GSM}.mak CUSTOMER_APPLICATION
+make/{cur}_{GSM}.mak   CUSTOMER_APPLICATION
 
 
 [2.9] SS
@@ -524,16 +530,30 @@ plutommi\mmi\Setting\SettingRes\ScreenSaver.res RESTORE_DEFAULT_CURRENT_SCREENSV
 
 [2.10] 
 
+// 61D mk
+make/{cur}_{GSM}.mak  VM_CODEC = FALSE
+make/{cur}_{GSM}.mak  DCM_COMPRESSION_MAUI_INIT = TRUE
+make/{cur}_{GSM}.mak  SECURE_JTAG_ENABLE = FALSE
+make/{cur}_{GSM}.mak  BOOT_ZIMAGE_SUPPORT = FALSE
+make/{cur}_{GSM}.mak  SERIAL_FLASH_SUPPORT = TRUE
+make/{cur}_{GSM}.mak  SIP_SERIAL_FLASH_SIZE = NONE
+
+// file SLIM
+features:\MMI_features_switch{cur}.h  CFG_MMI_SLIM_FILE_MANAGER	(__ON__)
+features:\MMI_features_switch{cur}.h CFG_MMI_FMGR_SUPPORT_DEFAULT_STORAGE	(__OFF__)
+features:\MMI_features_switch{cur}.h CFG_MMI_FMGR_FOLDER_COPY_SUPPORT	(__OFF__)
+features:\MMI_features_switch{cur}.h CFG_MMI_ULTRA_SLIM_FILE_MANAGER	(__ON__)
+
 
 [2.11] lib
 //	1.MRE
 //	tool:关闭MRE
-make/K220_Y01A_MGUO_{GSM}.mak MRE_PACKAGE = SLIM
-make/K220_Y01A_MGUO_{GSM}.mak MRE_CONTENT_NUMBER = 0
-make/K220_Y01A_MGUO_{GSM}.mak CUSTOM_OPTION     +=  __MRE_CUST_MEM_SIZE__=1
-make/K220_Y01A_MGUO_{GSM}.mak CUSTOM_OPTION     +=  __CUSTOM_MRE_MAX_SIZE__=0
-make/K220_Y01A_MGUO_{GSM}.mak CUSTOM_OPTION     +=  __DISABLE_SANDBOX_LIB__
-make/K220_Y01A_MGUO_{GSM}.mak CUSTOM_OPTION     +=  __MRE_BGMEM_SIZE__=0
+make/{cur}_{GSM}.mak MRE_PACKAGE = SLIM
+make/{cur}_{GSM}.mak MRE_CONTENT_NUMBER = 0
+make/{cur}_{GSM}.mak CUSTOM_OPTION     +=  __MRE_CUST_MEM_SIZE__=1
+make/{cur}_{GSM}.mak CUSTOM_OPTION     +=  __CUSTOM_MRE_MAX_SIZE__=0
+make/{cur}_{GSM}.mak CUSTOM_OPTION     +=  __DISABLE_SANDBOX_LIB__
+make/{cur}_{GSM}.mak CUSTOM_OPTION     +=  __MRE_BGMEM_SIZE__=0
 
 //彻底关闭MRE
 //@wanc 彻底关闭MRE
@@ -615,7 +635,8 @@ plutommi/mmi/Resource/MemoryRes.c  g_applib_mem_ap_pool
 build\{cur}\{cur}_MT6261_S00.lis  g_applib_mem_ap_pool
 // g_applib_mem_ap_pool                     0xf0136860   Data       662433
 
-//
+// ue打开
+build\{cur}\
 build\{cur}\{cur}_MT6261_S00.lis  DYNAMIC_COMP_CODE
 //    Total RO  Size (Code + RO Data)              3950992 (3858.39kB)
 //    Total RW  Size (RW Data + ZI Data)           1905676 (1861.01kB)
