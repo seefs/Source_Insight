@@ -14,7 +14,7 @@ Save:node\C\study\Macro_res_MTK.h \[1.9\] font
 Save:node\C\study\Macro_res_MTK.h \[1.10\] //test
 Save:node\C\study\Macro_res_MTK.h \[1.11\] //OLD_PRELOAD
 Save:node\C\study\Macro_res_MTK.h \[1.12\] //anim
-Save:node\C\study\Macro_res_MTK.h \[1.13\] //xx_mdu_def.h
+Save:node\C\study\Macro_res_MTK.h \[1.13\] xx_mdu_def.h
 Save:node\C\study\Macro_res_MTK.h \[1.14\] tmp_project
 Save:node\C\study\Macro_res_MTK.h \[1.15\] tmp_menu
 Save:node\C\study\Macro_res_MTK.h \[1.16\] 
@@ -30,18 +30,17 @@ Save:node\C\study\Macro_res_MTK.h \[1.20\]
 
 ### 设置当前项目
 // --images / audio / features / build
-Save:node\C\project\Macro_c_path.h  _mtk_cur_
+Save:node\C\cfg\Macro_c_path.h  _mtk_cur_
+
 // --nv / board / lcd
-Save:node\C\project\Macro_c_path.h  _mtk_cfg_
+Save:node\C\cfg\Macro_c_path.h  _mtk_cfg_
 
 // set cur project other -- no use
-//Save:node\C\project\Macro_c_path.h  _mtk_other_
+//Save:node\C\cfg\Macro_c_path.h  _mtk_other_
 
 ### 新项目
 // create new project
-Save:node\C\project\Macro_c_path.h  _mtk_copy_
-
-
+Save:node\C\cfg\Macro_c_path.h  _mtk_copy_
 
 
 
@@ -330,6 +329,8 @@ plutommi\Customer\AUDIO\
 plutommi\Customer\AUDIO\{cur}\
 audio:\
 
+// ==>image
+Save:node\C\study\Macro_res_ring_MTK.h
 
 // --mp3--powonoff
 make/{cur}_{GSM}.mak  __MMI_POWERRING_SAME__
@@ -530,9 +531,29 @@ make/{cur}.mak  __COMMON_HW2424_24_FONT__
 
 
 [1.13] 
+// imgview--cui
+plutommi\CUI\ImageViewCui\res\imgviewcui.res  STR_ID_IMGVIEWCUI_NAME
+// imgview--reg
+plutommi\mmi\Inc\mmi_pluto_res_range_def.h  CUI_IMAGEVIEWER
+// imgview--def
+plutommi\Customer\CustomerInc\mmi_rp_cui_imageviewer_def.h STR_ID_IMGVIEWCUI_NAME
+// imgview--app_info
+plutommi\Customer\CustResource\mmi_rp_app_data.c  RESOURCE_BASE_CUI_IMAGEVIEWER
 
+// hero_engine--app
+plutommi\mmi\HeroEngine\HeroEngineRes\HeroEngine.res  MENU_HERO_HCCALL
+// hero_engine--reg
+plutommi\mmi\Inc\mmi_res_range_def.h  APP_HERO_ENGINE
+// hero_engine--def
+plutommi\Customer\CustomerInc\mmi_rp_app_hero_engine_def.h MENU_HERO_HCCALL
+// hero_engine--app_info
+plutommi\Customer\CustResource\mmi_rp_app_data.c  RESOURCE_BASE_APP_HERO_ENGINE
 
-
+// build...
+plutommi\Customer\CustResource\PLUTO_MMI\Res_MMI\Res_Hero.c  heroResDef
+plutommi\mmi/heroengine/heroengineinc/heroResDef.h  mmi_rp_all_defs
+plutommi\Customer\customerinc/mmi_rp_all_defs.h  mmi_rp_app_mre_def
+plutommi\Customer\CustomerInc\mmi_rp_app_hero_engine_def.h heroResDef
 
 [1.14] tmp_project
 //

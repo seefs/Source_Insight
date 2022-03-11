@@ -1,31 +1,18 @@
 
 //目录[Num][Ca]:
 // 1. 模板
-Save:node\C\project\Macro_c_path.h \[1.1\] mtk_cur--------
-Save:node\C\project\Macro_c_path.h \[1.2\] mtk_copy
-Save:node\C\project\Macro_c_path.h \[1.3\] mtk_cfg--------nv, board
-Save:node\C\project\Macro_c_path.h \[1.4\] mtk_other------rf
-Save:node\C\project\Macro_c_path.h \[1.5\] mtk_bat
-Save:node\C\project\Macro_c_path.h \[1.6\] //mtk_sbd------
-Save:node\C\project\Macro_c_path.h \[1.7\] other
-Save:node\C\project\Macro_c_path.h \[1.8\] 
-Save:node\C\project\Macro_c_path.h \[1.9\] 
-Save:node\C\project\Macro_c_path.h \[1.10\] 
-Save:node\C\project\Macro_c_path.h \[1.11\] 
-Save:node\C\project\Macro_c_path.h \[1.12\] 
-// 2. build cmd
-Save:node\C\project\Macro_c_path.h \[2.1\] F55M_H639D_WELCOME
-Save:node\C\project\Macro_c_path.h \[2.2\] K220_H660_TX_GSM
-Save:node\C\project\Macro_c_path.h \[2.3\] K220_V35_WD
-Save:node\C\project\Macro_c_path.h \[2.4\] 
-Save:node\C\project\Macro_c_path.h \[2.5\] 
-Save:node\C\project\Macro_c_path.h \[2.6\] 
-Save:node\C\project\Macro_c_path.h \[2.7\] 
-Save:node\C\project\Macro_c_path.h \[2.8\] 
-Save:node\C\project\Macro_c_path.h \[2.9\] 
-Save:node\C\project\Macro_c_path.h \[2.10\] 
-Save:node\C\project\Macro_c_path.h \[2.11\] 
-Save:node\C\project\Macro_c_path.h \[2.12\] 
+Save:node\C\cfg\Macro_c_path.h \[1.1\] mtk_cur--------
+Save:node\C\cfg\Macro_c_path.h \[1.2\] mtk_copy
+Save:node\C\cfg\Macro_c_path.h \[1.3\] mtk_cfg--------nv, board
+Save:node\C\cfg\Macro_c_path.h \[1.4\] mtk_other------rf
+Save:node\C\cfg\Macro_c_path.h \[1.5\] mtk_bat
+Save:node\C\cfg\Macro_c_path.h \[1.6\] //mtk_sbd------
+Save:node\C\cfg\Macro_c_path.h \[1.7\] other
+Save:node\C\cfg\Macro_c_path.h \[1.8\] 
+Save:node\C\cfg\Macro_c_path.h \[1.9\] 
+Save:node\C\cfg\Macro_c_path.h \[1.10\] 
+Save:node\C\cfg\Macro_c_path.h \[1.11\] 
+Save:node\C\cfg\Macro_c_path.h \[1.12\] 
 
 
 
@@ -126,20 +113,20 @@ Save:set\Macro_Set_Path_mtk_{pro}.h  oldKey
 cp make/{old}_GSM.mak make/{new}_GSM.mak
 // --bld
 cp make/Verno_{old}.bld make/Verno_{new}.bld
-//
-make/{new}_GSM.mak
-make/Verno_{new}.bld
+// --mk name
+make/{new}_GSM.mak    PRJ_NAME
+make/Verno_{new}.bld  VERNO
 
 
 // (2).images/audio/features
-// --images--[用"\"]
+// --images--[xcopy用"\"]
 cmd_f: md plutommi\Customer\Images\{new}
 cmd_f: xcopy plutommi\Customer\Images\{old}  plutommi\Customer\Images\{new}  /e /i /y
 // --images
 plutommi\Customer\Images\{old}\
 plutommi\Customer\Images\{new}\
 images:\\
-// --audio--[用"\"]
+// --audio--[xcopy用"\"]
 cmd_f: md plutommi\Customer\AUDIO\{new}
 cmd_f: xcopy plutommi\Customer\AUDIO\{old}  plutommi\Customer\AUDIO\{new}  /e /i /y
 // --audio
@@ -160,6 +147,8 @@ features:\\
 
 // --features--rename
 cmd_f: ren plutommi\Customer\CustResource\{new}_MMI\MMI_features_switch{old}.h  MMI_features_switch{new}.h
+// --features--path
+plutommi\Customer\CustResource\{new}_MMI\CustResDef.h  CUST_IMG_PATH
 
 
 // (3).nv
@@ -341,75 +330,5 @@ make/{cur}_{GSM}.mak  BOARD_VER
 [1.12] 
 
 
-
-
-[1.13] 
-
-
-
-
-[1.14] 
-
-
-
-
-[1.15] 
-
-
-[2.1] F55M_H639D_WELCOME
-
-//
-plutommi/Customer/Images/F55M_H639D_WELCOME/
-//
-make/F55M_H639D_WELCOME_GSM.mak
-make F55M_H639D_WELCOME
-make F55M_H639D_WELCOME GSM gen_modis
-make F55M_H639D_WELCOME GSM remake plutommi
-//
-make/Verno_F55M_H639D_WELCOME.bld  VERNO
-
-
-
-[2.2] K220_H660_TX_GSM
-
-//
-make/K220_H660_TX_GSM.mak  BOARD_VER
-//
-make K220_H660_TX
-make K220_H660_TX GSM gen_modis
-
-
-
-[2.3] K220_V35_WD
-//
-make/K220_V35_WD_GSM.mak  BOARD_VER
-
-
-[2.4] 
-
-
-[2.5] 
-
-
-[2.6] 
-
-
-[2.7] 
-
-
-[2.8] 
-
-
-[2.9] 
-
-
-[2.10] 
-
-
-
-[2.11] 
-
-
-[2.12] 
 
 

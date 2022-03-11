@@ -790,11 +790,9 @@ wgui_status_icon_bar_set_display
 
 
 //	--draw
-plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c RedrawMOMTCallScreen
-plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c 7933
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c void^RedrawMOMTCallScreen( ) #2
 //	--draw--icon
-plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c SetMOMTCallImageClip
-plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c 8539
+plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c void^SetMOMTCallImageClip #2
 //	--draw--bar
 //		==>no bg/color
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_CM.c wgui_cat403_draw_tab_bar_ctrl_area1
@@ -1316,10 +1314,13 @@ plutommi\Framework\GUI\GUI_SRC\wgui_categories_calendar.c SBD_HIJRI_CALENDAR_AFG
 // calendar--draw--week (M T W T F S S)
 plutommi\Framework\GUI\GUI_SRC\gui_calendar.c gui_calendar_draw_horizontal_string
 // calendar--draw--highlight--title (02.2002)
-plutommi\Framework\GUI\GUI_SRC\gui_calendar.c  highlight_change_callback
+//		==>gui_calendar_general_switch_update
+//		====>c->highlight_change_callback
+//		====>calendar_horizontal_text_color  # txt
+//		====>calendar_horizontal_text_color  # txt
+//		==>wgui_cat83_init_horizontal_select
+//		====>g_cat83_cal_h_select[0]         # pos
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_calendar.c wgui_cat83_draw_horizontal_select
-plutommi\Framework\GUI\GUI_SRC\wgui_categories_calendar.c calendar_horizontal_text_color
-
 
 
 # ÒÁË¹À¼¿ªºê: 

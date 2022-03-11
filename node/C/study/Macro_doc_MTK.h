@@ -461,8 +461,19 @@ media\audio\src\aud_player_modis.c  kal_int32^_aud_player_modis_get
 
 
 # 13.FLAVOR
-// »»¿â
+// »»¿â(61D Ä£ÄâÆ÷±à²»¹ý)
 Save:node\C\project\Macro_cfg_MTK.h  __FLAVOR__
+
+
+# 14.font ASSERT
+hal\graphics\bfc\src\bfc_decode_api.c  bfcDecDrawGlyph
+//	#if WIN32
+//	   ASSERT(glyphWidth > 0 || glyphHeight > 0);
+//	#else
+//	   ASSERT(glyphWidth > 0);
+//	   ASSERT(glyphHeight > 0);
+//	#endif
+
 
 
 [2.3] 

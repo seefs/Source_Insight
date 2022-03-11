@@ -10,9 +10,9 @@ Save:node\C
 // 1. 
 Save:node\C\Macro_Note_C.h \[1.1\] ∞≤◊∞+≈‰÷√
 Save:node\C\Macro_Note_C.h \[1.2\] project----------8910 mtk
-Save:node\C\Macro_Note_C.h \[1.3\] third, list
-Save:node\C\Macro_Note_C.h \[1.4\] other
-Save:node\C\Macro_Note_C.h \[1.5\] 
+Save:node\C\Macro_Note_C.h \[1.3\] ext
+Save:node\C\Macro_Note_C.h \[1.4\] list
+Save:node\C\Macro_Note_C.h \[1.5\] other
 Save:node\C\Macro_Note_C.h \[1.6\] rule
 Save:node\C\Macro_Note_C.h \[1.7\] search
 Save:node\C\Macro_Note_C.h \[1.8\] 
@@ -77,24 +77,28 @@ Save:node\C\project\Macro_Note_6533.h
 
 
 
-[1.3] third, list
-// third
+[1.3] ext
+// ext
 Save:node\C\study\Macro_slide_8910.h
 Save:node\C\study\Macro_zdt_8910.h
 Save:node\C\study\Macro_zmaee_8910.h
 Save:node\C\study\Macro_socket_8910.h
 Save:node\C\study\Macro_patch_8910.h
 
+
+
+
+
+
+[1.4] list
 // ¿∂—¿
 Save:node\C\project\Macro_Note_Nordic.h
 // ref list
-Save:node\C\project\Macro_c_list.h
+Save:node\C\cfg\Macro_c_list.h
 
 
 
-
-
-[1.4] other
+[1.5] other
 // other--no use
 Save:node\C\study\Macro_Spr_Fun.h
 Save:node\C\study\Macro_Spr_MsgId.h
@@ -123,8 +127,6 @@ Save:node\C\group\Macro_Group_Menu_7701.h
 Save:node\C\group\Macro_Group_Menu_MTK.h
 Save:node\C\group\Macro_Group_Project_File.h
 
-
-[1.5] 
 
 
 

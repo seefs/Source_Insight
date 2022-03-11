@@ -21,7 +21,7 @@ Save:node\C\project\Macro_cfg_MTK.h \[2.2\] DTMF, Dial, SIM, 天线
 Save:node\C\project\Macro_cfg_MTK.h \[2.3\] 电子保卡
 Save:node\C\project\Macro_cfg_MTK.h \[2.4\] tihu--------------语音王
 Save:node\C\project\Macro_cfg_MTK.h \[2.5\] PLS---------------语音王
-Save:node\C\project\Macro_cfg_MTK.h \[2.6\] //DL
+Save:node\C\project\Macro_cfg_MTK.h \[2.6\] DIGIT_TONE--------简易版语音王
 Save:node\C\project\Macro_cfg_MTK.h \[2.7\] FM
 Save:node\C\project\Macro_cfg_MTK.h \[2.8\] WIFI
 Save:node\C\project\Macro_cfg_MTK.h \[2.9\] SS----------------屏保
@@ -32,9 +32,9 @@ Save:node\C\project\Macro_cfg_MTK.h \[2.13\] 省空间-----------app
 Save:node\C\project\Macro_cfg_MTK.h \[2.14\] MemoryDevice
 Save:node\C\project\Macro_cfg_MTK.h \[2.15\] marco
 Save:node\C\project\Macro_cfg_MTK.h \[2.16\] //Lib
-Save:node\C\project\Macro_cfg_MTK.h \[2.17\] FLASH (大、/小版本)
+Save:node\C\project\Macro_cfg_MTK.h \[2.17\] FLASH------------文件系统
 Save:node\C\project\Macro_cfg_MTK.h \[2.18\] build map
-Save:node\C\project\Macro_cfg_MTK.h \[2.19\] 
+Save:node\C\project\Macro_cfg_MTK.h \[2.19\] bak
 Save:node\C\project\Macro_cfg_MTK.h \[2.20\] 
 
 
@@ -62,11 +62,6 @@ make/{cur}_{GSM}.mak  AAC_DECODE = FALSE
 
 
 [1.2] PB
-//
-make/{cur}_{GSM}.mak  PHB_PHONE_ENTRY = 200
-//
-make/{cur}_{GSM}.mak  SMS_TOTAL_ENTRY = 100
-
 
 // SIM 中的电话簿条目数
 make/{cur}_{GSM}.mak  PHB_SIM_ENTRY = 100
@@ -75,7 +70,7 @@ make/{cur}_{GSM}.mak  PHB_SIM_ENTRY = 100
 make/{cur}_{GSM}.mak  PHB_PHONE_ENTRY = 100
 
 // 通话记录最后条目数
-make/{cur}_{GSM}.mak  PHB_LN_ENTRY = 100
+make/{cur}_{GSM}.mak  PHB_LN_ENTRY = 10
 
 
 // 电话号码匹配的规则
@@ -486,13 +481,40 @@ plutommi\mmi\Setting\SettingRes\TihoBroadcastSetting.res  __TIHO_TTS_TIME_DEFAUL
 
 
 
-[2.5] PLS
+[2.5] PLS---------------语音王
 // 1) PLS
 make/{cur}_{GSM}.mak  PLS_APP_GSM_SUPPORT
 
+// 报时中午/下午
+make/{cur}_{GSM}.mak  PLS_MSP_TTS_TIME_ZXBH
+//
+plutommi\mmi\msp\tts\interface\msp_api.c  __MSP_TTS_TIME_ZXBH__
 
 
-[2.6] 
+
+[2.6] DIGIT_TONE--------简易版语音王
+// 简易版语音王
+make/{cur}_{GSM}.mak  DIGIT_TONE_SUPPORT = TRUE
+make/{cur}_{GSM}.mak  NEW_DIGIT_TONE_SUPPORT = TRUE
+// 主菜单播报	
+make/{cur}_{GSM}.mak  __PLAY_AUDIO_FOR_MENU__
+make/{cur}_{GSM}.mak  __AUDIO_PLAYING_DISABLED_KING_VOICE__
+// 低电量语音提醒	
+make/{cur}_{GSM}.mak  __AUDIO_BAT_CHAR_LOW__
+make/{cur}_{GSM}.mak  __CHARGER_TTS__
+make/{cur}_{GSM}.mak  __USB_CHARGER_TTS__
+// 一键报时
+make/{cur}_{GSM}.mak  __MMI_TIMEKEEPING__
+// 整点报时/白天模式
+make/{cur}_{GSM}.mak  __MMI_PUNCTUAL_TIMEKEEPING__
+make/{cur}_{GSM}.mak  __MMI_PUNCTUAL_TIMEKEEPING_DEFAULT_CLOSE__
+make/{cur}_{GSM}.mak  __MMI_PUNCTUAL_TIMEKEEPING_TIME_QUANTUM_DAY_MODE__
+
+// 一键报时
+plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  __MMI_IDLE_KEY_0_TIMEKEEPING__
+// 白天模式
+plutommi\mmi\Setting\SettingRes\PhoneSetting.res  __MMI_PUNCTUAL_TIMEKEEPING_TIME_QUANTUM_DAY_MODE__
+
 
 
 [2.7] FM
@@ -572,7 +594,7 @@ tst/database_modis/MT6261/S00/gprs/FLAVOR/GEMINI_3_KAL_OFF
 tst/database_classb/MT6261/S00/gprs/FLAVOR/NONE
 tst/database_classb/MT6261/S00/gprs/FLAVOR/GEMINI_3_KAL_OFF
 
-// 模拟器编不过, 换为:
+// (61D)模拟器编不过, 换为:
 make/{cur}_{GSM}.mak  FLAVOR = NONE
 
 
@@ -594,8 +616,6 @@ tools\NVRAMStatistic\include\custom_option.txt
 
 
 [2.13] 省空间
-// history
-_bat\build\_ckImgSize.log  project
 
 ### 1.app
 // 1.来电归属地------121K 
@@ -643,19 +663,6 @@ build\{cur}\{cur}_MT6261_S00.lis  DYNAMIC_COMP_CODE
 //    Total ROM Size (Code + RO Data + RW Data)    3974928 (3881.77kB)
 
 
-### 2.文件系统
-// 可以省 32.7K, 64K(加16)
-make/{cur}_{GSM}.mak  #FS_SIZE_56_STYLE = TRUE
-make/{cur}_{GSM}.mak  FS_SIZE_48_STYLE = TRUE
-make/{cur}_{GSM}.mak  #FS_SIZE_40_STYLE = TRUE
-//
-tools\emigenMD.pl  fs_size_40_style
-tools\emigenMD.pl  fs_size_48_style
-tools\emigenMD.pl  fs_size_60_style
-//
-tools\MemoryDeviceList\
-tools\MemoryDeviceList\MemoryDeviceList_MT6261_Since11CW1352.xls
-
 
 ### 3.联系人
 // 可以省 5K(加200pb)
@@ -670,8 +677,20 @@ tools\MemoryDeviceList\MemoryDeviceList_MT6261_Since11CW1352.xls
 [2.16] 
 
 
-[2.17] 
 
+[2.17] FLASH------------文件系统
+### 文件系统
+// 可以省 32.7K/64K (加16, 48比40大)
+make/{cur}_{GSM}.mak  #FS_SIZE_56_STYLE = TRUE
+make/{cur}_{GSM}.mak  FS_SIZE_48_STYLE = TRUE
+make/{cur}_{GSM}.mak  #FS_SIZE_40_STYLE = TRUE
+//
+tools\emigenMD.pl  fs_size_40_style
+tools\emigenMD.pl  fs_size_48_style
+tools\emigenMD.pl  fs_size_60_style
+//
+tools\MemoryDeviceList\
+tools\MemoryDeviceList\MemoryDeviceList_MT6261_Since11CW1352.xls
 
 
 [2.18] build map
@@ -710,9 +729,9 @@ build:log\ckImgSize.log  file^system  查看ROM空间
 //
 
 
-
-
-[2.19] 
+[2.19] bak
+// bak
+_bat\build\_ckImgSize.log  project
 
 
 [2.20] 

@@ -9,7 +9,7 @@ res:\\
 
 //目录[Num][Ca]:
 // 1. common
-Save:node\C\study\Macro_res_8910.h \[1.1\] 扩展项目
+Save:node\C\study\Macro_res_8910.h \[1.1\] 项目配置
 Save:node\C\study\Macro_res_8910.h \[1.2\] mk
 Save:node\C\study\Macro_res_8910.h \[1.3\] str
 Save:node\C\study\Macro_res_8910.h \[1.4\] res
@@ -33,7 +33,25 @@ Save:node\C\study\Macro_res_8910.h \[1.20\]
 
 
 
-[1.1] 
+[1.1] 项目配置
+
+### 设置当前项目
+// --images / audio / features / build
+Save:node\C\cfg\
+
+Save:node\C\cfg\Macro_c_path_sprd.h  _mtk_cur_
+
+// --nv / board / lcd
+Save:node\C\cfg\Macro_c_path_sprd.h  _mtk_cfg_
+
+// set cur project other -- no use
+//Save:node\C\cfg\Macro_c_path_sprd.h  _mtk_other_
+
+### 新项目
+// create new project
+Save:node\C\cfg\Macro_c_path_sprd.h  _mtk_copy_
+
+
 
 
 [1.2] 

@@ -126,6 +126,16 @@ project_UIS8910_ROM_16MB_DS_USER.mk MMI_MULTI_GREEN_KEY =DUAL ÂÌ¼ü
 
 
 [1.4] LCD
+//
+mk: RELEASE_INFO = FALSE
+project_UIS8910_ROM_16MB_DS_USER.mk _23KEY
+
+mkPath = SPDE_PRJ\K220U_SHY_517T\project_UIS8910_ROM_16MB_DS_USER.mk
+mk:\\
+cfgPath = SPDE_PRJ\K220U_SHY_517T\uis8910_phone_user_base_config.cfg
+cfg:\\
+
+
 // ÐÂÆÁ
 make\custom_drv\custom_drv.mk  tft_ST7735S.c
 //
