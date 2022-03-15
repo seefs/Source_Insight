@@ -1,9 +1,9 @@
-ï»¿
-åŸºç¡€è·¯å¾„è®¾ç½®:
+
+»ù´¡Â·¾¶ÉèÖÃ:
 //basePath = 
 
 
-//ç›®å½•[Num][Ca]:
+//Ä¿Â¼[Num][Ca]:
 // 1. 
 Save:Help\Other\Macro_Help_SI.h \[1.1\] marco file
 Save:Help\Other\Macro_Help_SI.h \[1.2\] marco test...
@@ -17,12 +17,12 @@ Save:Help\Other\Macro_Help_SI.h \[1.9\]
 Save:Help\Other\Macro_Help_SI.h \[1.10\] 
 Save:Help\Other\Macro_Help_SI.h \[1.11\] 
 Save:Help\Other\Macro_Help_SI.h \[1.12\] 
-// 2. SI4.0å®‰è£…æ­¥éª¤
-Save:Help\Other\Macro_Help_SI.h \[2.1\] SI4.0å®‰è£…æ­¥éª¤
-Save:Help\Other\Macro_Help_SI.h \[2.2\] æ›´æ–°é…ç½®æ–‡ä»¶
-Save:Help\Other\Macro_Help_SI.h \[2.3\] åˆæ¬¡é…ç½®éœ€è¦åŒæ­¥, æ›´æ–°æ–°åŠŸèƒ½ä¹Ÿå¯èƒ½è¦åŒæ­¥(å¦åˆ™æŠ¥å‡½æ•°æ‰¾ä¸åˆ°)
-Save:Help\Other\Macro_Help_SI.h \[2.4\] è®¾ç½®ä¿å­˜ç›®å½•
-Save:Help\Other\Macro_Help_SI.h \[2.5\] éªŒè¯é…ç½®OK
+// 2. SI4.0°²×°²½Öè
+Save:Help\Other\Macro_Help_SI.h \[2.1\] SI4.0°²×°²½Öè
+Save:Help\Other\Macro_Help_SI.h \[2.2\] ¸üĞÂÅäÖÃÎÄ¼ş
+Save:Help\Other\Macro_Help_SI.h \[2.3\] ³õ´ÎÅäÖÃĞèÒªÍ¬²½, ¸üĞÂĞÂ¹¦ÄÜÒ²¿ÉÄÜÒªÍ¬²½(·ñÔò±¨º¯ÊıÕÒ²»µ½)
+Save:Help\Other\Macro_Help_SI.h \[2.4\] ÉèÖÃ±£´æÄ¿Â¼
+Save:Help\Other\Macro_Help_SI.h \[2.5\] ÑéÖ¤ÅäÖÃOK
 Save:Help\Other\Macro_Help_SI.h \[2.6\] 
 Save:Help\Other\Macro_Help_SI.h \[2.7\] 
 Save:Help\Other\Macro_Help_SI.h \[2.8\] 
@@ -47,26 +47,26 @@ Save:Macro\sbd_file.em  IsTxtFile( )
 
 
 [1.2] marco test...
-// åŠŸèƒ½æµ‹è¯•
+// ¹¦ÄÜ²âÊÔ
 Save:Help\Macro_Note_Test.h
-// å¼€å¯æµ‹è¯•
+// ¿ªÆô²âÊÔ
 Save:Macro\sbd_test.em  macro^TestMsg
 
 
 [1.3] set save path
-// 1) æ”¹å˜Saveè·¯å¾„, å®å‘½ä»¤æ‰èƒ½æ­£å¸¸ä½¿ç”¨:
+// 1) ¸Ä±äSaveÂ·¾¶, ºêÃüÁî²ÅÄÜÕı³£Ê¹ÓÃ:
 Save:Macro\sbd_base.em	getSavePath(0)
 Save:Macro\sbd_root_path.em  getRootPath(0)
 
-// 2) é¦–æ¬¡å®‰è£…æ­¥éª¤:
+// 2) Ê×´Î°²×°²½Öè:
 Save:Help\Other\Macro_Help_SI.h
 
 
 [1.4] set work path
-//1) å·¥ç¨‹è·¯å¾„ç¼–å·
+//1) ¹¤³ÌÂ·¾¶±àºÅ
 Save:set\Macro_Set_Base.h
 
-//2) é¡¹ç›®è·¯å¾„ç¼´å­˜(æ›¿æ¢)
+//2) ÏîÄ¿Â·¾¶½É´æ(Ìæ»»)
 Save:set\Macro_Set_Note.h
 
 
@@ -127,67 +127,67 @@ Save:set\Macro_Set.h 78
 
 
 
-[2.1] SI4.0å®‰è£…æ­¥éª¤
+[2.1] SI4.0°²×°²½Öè
 
-	1) å®‰è£…åŒ…æ–‡ä»¶:
-		SI4.0å®‰è£…åŒ…\si4.pediy.lic
-		SI4.0å®‰è£…åŒ…\sourceinsight4.exe
-		SI4.0å®‰è£…åŒ…\sourceinsight4084-setup.exe
+	1) °²×°°üÎÄ¼ş:
+		SI4.0°²×°°ü\si4.pediy.lic
+		SI4.0°²×°°ü\sourceinsight4.exe
+		SI4.0°²×°°ü\sourceinsight4084-setup.exe
 
-	2) å®‰è£…æ­¥éª¤:
-		1 å®‰è£… sourceinsight4084-setup.exe
-		2 ç”¨sourceinsight4.exeæ›¿æ¢å®‰è£…ç›®å½•ä¸‹çš„æ–‡ä»¶
+	2) °²×°²½Öè:
+		1 °²×° sourceinsight4084-setup.exe
+		2 ÓÃsourceinsight4.exeÌæ»»°²×°Ä¿Â¼ÏÂµÄÎÄ¼ş
 			D:\Program Files (x86)\Source Insight 4.0\sourceinsight4.exe
-		3 æ‰“å¼€sourceinsight4.exeï¼Œå¯¼å…¥è¯ä¹¦si4.pediy.lic
+		3 ´ò¿ªsourceinsight4.exe£¬µ¼ÈëÖ¤Êési4.pediy.lic
 
-	3) SI4.0é»˜è®¤é…ç½®, éœ€è¦æ”¹å­—ä½“ã€ç¼–ç ã€å¸ƒå±€..
-		//å…·ä½“æŸ¥çœ‹:
-		//SI4.0å®‰è£…ä½¿ç”¨.txt
+	3) SI4.0Ä¬ÈÏÅäÖÃ, ĞèÒª¸Ä×ÖÌå¡¢±àÂë¡¢²¼¾Ö..
+		//¾ßÌå²é¿´:
+		//SI4.0°²×°Ê¹ÓÃ.txt
 
 
-[2.2] æ›´æ–°é…ç½®æ–‡ä»¶
-#    é…ç½®æ–‡ä»¶ ä¸‹è½½å‘½ä»¤:
+[2.2] ¸üĞÂÅäÖÃÎÄ¼ş
+#    ÅäÖÃÎÄ¼ş ÏÂÔØÃüÁî:
 git clone https://github.com/seefs/Source_Insight_4_0_cfg
 
-#    æ›´æ–°åè¦†ç›–è¿™ä¸ªç›®å½•
-#    å·²è®¾ç½®å¥½å¿«æ·é”®ï¼Œå­—ä½“ï¼Œèœå•
+#    ¸üĞÂºó¸²¸ÇÕâ¸öÄ¿Â¼
+#    ÒÑÉèÖÃºÃ¿ì½İ¼ü£¬×ÖÌå£¬²Ëµ¥
 ...\Save\Source Insight 4.0\Settings
-#    (ä¸¾ä¾‹)
+#    (¾ÙÀı)
 	
 	
 
 
-[2.3] åˆæ¬¡é…ç½®éœ€è¦åŒæ­¥, æ›´æ–°æ–°åŠŸèƒ½ä¹Ÿå¯èƒ½è¦åŒæ­¥(å¦åˆ™æŠ¥å‡½æ•°æ‰¾ä¸åˆ°)
+[2.3] ³õ´ÎÅäÖÃĞèÒªÍ¬²½, ¸üĞÂĞÂ¹¦ÄÜÒ²¿ÉÄÜÒªÍ¬²½(·ñÔò±¨º¯ÊıÕÒ²»µ½)
 
-èœå•--project -> æ‰“å¼€project -> base project 
-åˆ‡æ¢åˆ°base projectä¸‹ï¼š
+²Ëµ¥--project -> ´ò¿ªproject -> base project 
+ÇĞ»»µ½base projectÏÂ£º
 
-###æ·»åŠ å®æ–‡ä»¶:
-èœå•--project -> æ·»åŠ æˆ–ç§»é™¤é¡¹ç›®æ–‡ä»¶ -> æ·»åŠ 
+###Ìí¼ÓºêÎÄ¼ş:
+²Ëµ¥--project -> Ìí¼Ó»òÒÆ³ıÏîÄ¿ÎÄ¼ş -> Ìí¼Ó
 ...\Macro
 
-é€‰æ‰€æœ‰æ–‡ä»¶, 
-å…¶ä»–æ–‡ä»¶ä¸ç”¨æ·»åŠ 
+Ñ¡ËùÓĞÎÄ¼ş, 
+ÆäËûÎÄ¼ş²»ÓÃÌí¼Ó
 
 
-###åŒæ­¥:
-èœå•--project -> åŒæ­¥æ–‡ä»¶
+###Í¬²½:
+²Ëµ¥--project -> Í¬²½ÎÄ¼ş
 
 
 
-[2.4] è®¾ç½®ä¿å­˜ç›®å½•
-è¿è¡Œ:
+[2.4] ÉèÖÃ±£´æÄ¿Â¼
+ÔËĞĞ:
 ...\Cmd_other\first_set_path.bat
 
-æˆ–è€…ç›´æ¥ç¼–è¾‘:
+»òÕßÖ±½Ó±à¼­:
 ...\Save\SI_db\Macro\sbd_root_path.em
 	
 
 
-[2.5] éªŒè¯é…ç½®OK
-###å¿«æ·é”®
-ctrl+b, å³æ‰“å¼€ä¸´æ—¶æ–‡ä»¶--simple_tmp_b.h
-f2, æ‰“å¼€å½“å‰ç›®å½•
+[2.5] ÑéÖ¤ÅäÖÃOK
+###¿ì½İ¼ü
+ctrl+b, ¼´´ò¿ªÁÙÊ±ÎÄ¼ş--simple_tmp_b.h
+f2, ´ò¿ªµ±Ç°Ä¿Â¼
 
 
 [2.6] 

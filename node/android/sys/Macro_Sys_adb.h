@@ -32,7 +32,7 @@ Save:node\android\sys\Macro_Sys_adb.h \[2.7\] android adb shell am pm 列出说�
 Save:node\android\sys\Macro_Sys_adb.h \[2.8\] Android 通过adb 当前输入法信息
 Save:node\android\sys\Macro_Sys_adb.h \[2.9\] 
 Save:node\android\sys\Macro_Sys_adb.h \[2.10\] adb-----查看设备信息
-Save:node\android\sys\Macro_Sys_adb.h \[2.11\] 
+Save:node\android\sys\Macro_Sys_adb.h \[2.11\] ADBWireless
 Save:node\android\sys\Macro_Sys_adb.h \[2.12\] 
 Save:node\android\sys\Macro_Sys_adb.h \[2.13\] 
 
@@ -122,7 +122,6 @@ adb pull   /data/data/com.android.launcher3/files/default_thumb.jpg E:\资源\�
 [1.10] adb -- other apk
 //install
 cmd_w: adb install  E:\Desktop\SGIT\GitClub\apk\app-release.apk
-cmd_w: ping dl.google.com
 
 
 //uninstall
@@ -132,8 +131,8 @@ cmd_w: adb uninstall com.hongbao.plus
 
 
 
-[1.11] 
 
+[1.11] 
 
 
 [1.12] 
@@ -426,7 +425,7 @@ adb shell dumpsys battery
 //查看分辨率
 adb shell wm size
 //	Physical size: 1080x2280
-
+//	Physical size: 1080x2340
 
 //查看屏幕密度
 adb shell wm density
@@ -509,7 +508,16 @@ ro.sf.lcd_density	屏幕密度
 adb shell getprop ro.build.version.sdk
 
 
-[2.11] 
+[2.11] __ADBWireless__ (需要root)
+
+// 直接下载
+https://github.com/LJason77/ADBWireless
+//
+ADBWireless\
+
+// 用有线装
+cmd_w: adb install  .\ADBWireless\app-release.apk
+
 
 
 

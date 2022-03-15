@@ -498,7 +498,7 @@ Save:Macro\sbd_test.em	TestNodeMsg
 
 
 # 2) cmd_w
-//	弹窗 + 粘贴 (base路径)
+//	弹窗 + 粘贴 (黰认project base路径)
 // 格式: 去掉一个head(路径在右)
 cmd_w: ping dl.google.com
 
@@ -720,17 +720,18 @@ tool:\\
 
 //1) 第1个路径(base + filename)
 nlp_block\_layer.py
-python_w nlp_block\_layer.py
-//python   nlp_block\_layer.py
 
 //2) 第2个路径(tool + filename)
-tool:py_test\test_time.py
-python_w tool:py_test\test_time.py
-python_w:tool py_test\test_time.py
-python_w:tool: py_test\test_time.py
+tool:xiaoshuo\test_split.py
 
+//3) 第1个路径(base + filename)
+python_w nlp_block\_layer.py
 
+//4) 第2个路径(tool + filename)
+python_w tool:xiaoshuo\test_split.py
 
+//5) 同上
+python_w:tool xiaoshuo\test_split.py
 
 
 

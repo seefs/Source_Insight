@@ -296,12 +296,12 @@ cmd_s: set p path
 cmd_s: setx ..
 
 
-[1.10] usb
+[1.10] __usb__
 File->Settings->Appearance&Behavior->System Settings->Android SDK->SDK Tools,
-// 选中“Google USB Driver”。
-// 更新驱动:
-D:\android\sdk\extras\google\usb_driver
-// 安装 adb interface
+// ->选中“Google USB Driver”。
+// ->更新驱动:
+D:\android\sdk\extras\google\usb_driver\
+// ->安装 adb interface
 https://blog.csdn.net/riyuexingchen1204/article/details/84594061
 
 // usb驱动正常显示位置:
@@ -312,9 +312,9 @@ https://blog.csdn.net/riyuexingchen1204/article/details/84594061
 //   移动盘联络接口
 
 
-// 华为手机设置:
-Hisuite通过HDB连接设备-------
-选择USB配置-------多媒体传输
+// 华为手机设置:(安装驱动2:hdb)
+//Hisuite通过HDB连接设备-------
+//选择USB配置-------多媒体传输
 
 // win10显示usb设备:
 https://www.cnblogs.com/findumars/p/10332440.html

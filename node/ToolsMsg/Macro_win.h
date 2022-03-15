@@ -104,7 +104,7 @@ Qualcomm Atheros Communications Inc.
 Qualcomm Atheros AR956x wireless network adapter
 //
 // win10无线网卡被自动关闭
-管理--设备管理器--网络适配器--Wireless--属性--电源管理--取消勾选“允许计算机关闭此设备的电源”
+管理--设备管理器--网络适配器--AR956x Wireless--属性--电源管理--取消勾选“允许计算机关闭此设备的电源”
 // 或者
 --驱动--禁用--启用
 

@@ -2,11 +2,14 @@
 基础路径设置: 
 //base
 basePath = D:\Program^Files\Python\Scripts\
+basePath = D:\Program^Files\py\Scripts\
 base:\\
 //test
 testPath = Save:node\Pythons\py_test\
+test:\\
 //py
 pyPath = Save:node\Pythons
+py:\\
 
 
 /***********************************************************************/
@@ -145,10 +148,14 @@ open: F:\tool_python\python\python-3.6.6-amd64.exe
 open: C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe
 // 太新装不上
 //  win7--3.7.5
+//  win10--3.10.0
 		
 //添加环境变量, path:
 C:\Users\Administrator\AppData\Local\Programs\Python\Python36\
 cmd_w: path
+//自定义路径
+D:\Program^Files\py\py310\
+
 
 //验证 Python
 // 验证 Python 安装:
