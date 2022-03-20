@@ -5,6 +5,7 @@ charset_new = "GB2312"
 
 
 ' Convert the entire directory, there can be no non-existent folders:
+ConvPath ".\\..\\..\\node\\C\\cfg",charset_new
 ConvPath ".\\..\\..\\node\\C\\group",charset_new
 ConvPath ".\\..\\..\\node\\C\\install",charset_new
 ConvPath ".\\..\\..\\node\\C\\project",charset_new

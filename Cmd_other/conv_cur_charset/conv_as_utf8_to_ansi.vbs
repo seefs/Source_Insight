@@ -28,7 +28,8 @@ ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf18_CNN2",charset_new
 ConvPath ".\\..\\..\\node\\Pythons\\py_test",charset_new
 
 ' Convert a single file:
-convertct ".\\..\\..\\node\\Simple_CTRL_B.h",charset_new
+convertct ".\\..\\..\\node\\android\\Macro_Note_as.h",charset_new
+convertct ".\\..\\..\\node\\Pythons\\Macro_Note_Python.h",charset_new
 
 MsgBox "End of character encoding conversion",,"prompt"
   

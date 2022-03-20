@@ -5,15 +5,19 @@ charset_new = "UTF-8"
 
 
 ' Convert the entire directory, there can be no non-existent folders:
-ConvPath ".\\..\\..\\Macro",charset_new
-ConvPath ".\\..\\..\\Help",charset_new
-ConvPath ".\\..\\..\\Help\\Tmp",charset_new
-ConvPath ".\\..\\..\\node",charset_new
-ConvPath ".\\..\\..\\node\\ToolsMsg",charset_new
-ConvPath ".\\..\\..\\Set",charset_new
+ConvPath ".\\..\\..\\node\\S\\Info",charset_new
+ConvPath ".\\..\\..\\node\\S\\install",charset_new
+ConvPath ".\\..\\..\\node\\S\\Mirror",charset_new
+ConvPath ".\\..\\..\\node\\S\\Mirror\\Lang",charset_new
+ConvPath ".\\..\\..\\node\\S\\Mirror\\Wu",charset_new
+ConvPath ".\\..\\..\\node\\S\\project",charset_new
+ConvPath ".\\..\\..\\node\\S\\project\\Doc",charset_new
+ConvPath ".\\..\\..\\node\\S\\projectBank",charset_new
+ConvPath ".\\..\\..\\node\\S\\projectTry",charset_new
+ConvPath ".\\..\\..\\node\\S\\World",charset_new
 
 ' Convert a single file:
-convertct ".\\..\\..\\node\\Simple_CTRL_B.h",charset_new
+convertct ".\\..\\..\\node\\S\\Macro_Note_S.h",charset_new
 
 
 MsgBox "End of character encoding conversion",,"prompt"

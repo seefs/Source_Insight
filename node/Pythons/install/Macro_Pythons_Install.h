@@ -133,11 +133,18 @@ cmd_w: pip show pip
 //	Version: 19.2.3
 cmd_w: python -m pip install --upgrade pip
 
-//
+// (1)down (不可用)
+// -- pip-22.0.4.tar.gz (2.1 MB view hashes)
 https://pypi.org/project/pip/#files
 //
 cd:D:\Program Files\Python\pip\pip-21.2.4
 python setup.py install
+
+// (2) 保存为 get-pip.py
+https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+python -m pip --version
+
 
 
 [2.3] python (<3.7)
@@ -172,8 +179,8 @@ python_w py:tfTUT\tf_day1_line1.py
 
 
 // 查询tensorflow 版本, 安装路径:
-install\version.py
-python install\version.py
+py:install\version.py
+python_w py:install\version.py
 
 // 打开python窗口：
 open: C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe
@@ -386,7 +393,7 @@ cmd_w: pip install fonttools
 [3.11] websocket
 //
 cmd_w: pip show websocket
-//
+// 都装
 cmd_w: pip install websocket
 cmd_w: pip install websocket-client 
 cmd_w: pip install 
