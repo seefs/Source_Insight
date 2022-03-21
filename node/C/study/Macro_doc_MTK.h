@@ -1,6 +1,6 @@
 
 
-//目录[Num][Ca]:
+//目录
 // 1. 
 Save:node\C\study\Macro_doc_MTK.h \[1.1\] //Message 切换
 Save:node\C\study\Macro_doc_MTK.h \[1.2\] FUN 入口-------------

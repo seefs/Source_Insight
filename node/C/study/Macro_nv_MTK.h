@@ -1,15 +1,6 @@
 
-基础路径设置:
-//basePath = 
-//nvPath = SPDE_PRJ\WA08U_X6C\nvitem
-//nvPath = SPDE_PRJ\WA03U_T2_V2\nvitem
-//nvPath = SPDE_PRJ\WA07U_F30Z\nvitem
-nvPath = common\nv_parameters\ProductionParam
-nv:\\
 
-/***********************************************************************/
-
-//目录[Num][Ca]:
+//目录
 // 1. 
 Save:node\C\study\Macro_nv_MTK.h \[1.1\] //充电------------电流
 Save:node\C\study\Macro_nv_MTK.h \[1.2\] 充电/放电-------电压(修改放电n%)

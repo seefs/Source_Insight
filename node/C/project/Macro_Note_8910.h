@@ -1,22 +1,9 @@
 
 
-mkPath = SPDE_PRJ\K220U_SHY_517T\project_UIS8910_ROM_16MB_DS_USER.mk
-mk:\\
-cfgPath = SPDE_PRJ\K220U_SHY_517T\uis8910_phone_user_base_config.cfg
-cfg:\\
-configPath = MS_Customize\source\product\config
-config:\\
-sensorsPath = MS_Customize\source\product\driver\sensors
-sensors:\\
-//buildPath = build\UIS8910_ROM_16MB_DS_USER_builddir
-buildPath = build\UIS8910_ROM_16MB_SS_WA07U_F30X_USER_builddir
-build:\\
 
-
-
-//目录[Num][Ca]:
+//目录
 // 项目选择 编译
-Save:node\C\project\Macro_Note_8910.h \[1.1\] set project
+Save:node\C\project\Macro_Note_8910.h \[1.1\] 
 Save:node\C\project\Macro_Note_8910.h \[1.2\] 6531E编译指令:
 Save:node\C\project\Macro_Note_8910.h \[1.3\] KEY
 Save:node\C\project\Macro_Note_8910.h \[1.4\] LCD
@@ -51,24 +38,8 @@ Save:node\C\project\Macro_Note_8910.h \[2.20\]
 
 
 
-[1.1] 当前项目
-// 查看--选择历史项目列表: 
-Save:set\Macro_Set_Note.h	6531E-note-set
+[1.1] 
 
-// 默认项目(便于上传svn) [Cs]:
-set K220U_ZXBLX_H35_Z
-
-	
-// 当前项目:
-set UIS8910_ROM_16MB_DS_USER
-set ums9117_240X320BAR_48MB_X206T_H1616_user
-
-setEnd:从setEnd行开始替换名称(上一次选中->当前选中)
-
-
-//	版本号：
-version\SC6530_sc6500_32X32_128X160BAR_X89E_WWK_VIB_version.c
-build:tmp/version_software_project.h
 
 
 [1.2] 6531E编译指令:
@@ -121,20 +92,17 @@ F:\6531G_16A_MP_W17.43.4\build\UIS8910_ROM_16MB_DS_USER_builddir\img
 config:uis8910ff_refphone\keymap_cfg.c  keymap\[\]
 
 //	23键：
-project_UIS8910_ROM_16MB_DS_USER.mk _23KEY
-project_UIS8910_ROM_16MB_DS_USER.mk MMI_MULTI_GREEN_KEY =DUAL 绿键
+prj:project_{cur}.mk   _23KEY
+prj:project_{cur}.mk   MMI_MULTI_GREEN_KEY =DUAL 绿键
 
 
 [1.4] LCD
+prj:project_{cur}.mk   ST7789
+prj:project_{cur}.mk   ST7735S
 //
-mk: RELEASE_INFO = FALSE
-project_UIS8910_ROM_16MB_DS_USER.mk _23KEY
-
-mkPath = SPDE_PRJ\K220U_SHY_517T\project_UIS8910_ROM_16MB_DS_USER.mk
-mk:\\
-cfgPath = SPDE_PRJ\K220U_SHY_517T\uis8910_phone_user_base_config.cfg
-cfg:\\
-
+MS_Customize/source/product/driver/lcd/
+MS_Customize/source/product/driver/lcd/tft_ST7789.c
+MS_Customize/source/product/driver/lcd/tft_GC9106.c
 
 // 新屏
 make\custom_drv\custom_drv.mk  tft_ST7735S.c
@@ -201,7 +169,7 @@ MS_Customize\source\product\config\uis8910ff_refphone\sensor_cfg.c main_sensor_i
 //
 MS_Customize/source/product/driver/dc/sensor_gc6153.c
 //
-project_UIS8910_ROM_16MB_DS_USER.mk SENSOR_CHIP
+prj:project_{cur}.mk SENSOR_CHIP
 
 //
 //CAMERA_SUPPORT = TRUE                               ### CAMERA Support
@@ -247,29 +215,29 @@ sensors:breathled\led_AW2013.c
 [2.2] 颜色---------common_mdu_def.h
 // 新加 COLOR_RES_CUSTOM_BG
 ms_mmi_main/source/mmi_app/common/h/common_mdu_def.h       COLOR_RES_PUBWIN_BG
-MS_MMI_Main\source\mmi_app\app\theme\c\mmi_theme.c     COLOR_RES_PUBWIN_BG
-MS_MMI_Main\source\mmi_app\app\theme\c\mmi_theme.c MMI_THEME_PUBWIN_BG
+source:mmi_app\app\theme\c\mmi_theme.c     COLOR_RES_PUBWIN_BG
+source:mmi_app\app\theme\c\mmi_theme.c MMI_THEME_PUBWIN_BG
 
 //
-MS_MMI_Main\source\resource\Common\RING\
+source:resource\Common\RING\
 
 
 
 
 [2.3] 配置
 //	双摄像头(默认单)：
-project_UIS8910_ROM_16MB_DS_USER.mk SBD_DUAL_CAMERA_SUPPORT
+prj:project_{cur}.mk SBD_DUAL_CAMERA_SUPPORT
 
 //	四频 / 2频设置;开就是2频：
-project_UIS8910_ROM_16MB_DS_USER.mk __SBD_RF_TWO_BAND_SUPPORT__
-project_UIS8910_ROM_16MB_DS_USER.mk SBD_RF_TWO_BAND_SUPPORT
+prj:project_{cur}.mk __SBD_RF_TWO_BAND_SUPPORT__
+prj:project_{cur}.mk SBD_RF_TWO_BAND_SUPPORT
 
 //	不带马达：
-project_UIS8910_ROM_16MB_DS_USER.mk __HHT_REMOVE_VIBRA__ =TRUE
+prj:project_{cur}.mk __HHT_REMOVE_VIBRA__ =TRUE
 
 //	双卡：
-project_UIS8910_ROM_16MB_DS_USER.mk MMI_MULTI_SIM_SYS = DUAL
-project_UIS8910_ROM_16MB_DS_USER.mk MULTI_SIM_SYS = DUAL
+prj:project_{cur}.mk MMI_MULTI_SIM_SYS = DUAL
+prj:project_{cur}.mk MULTI_SIM_SYS = DUAL
 nv_type_4band.nvm	0x10203, 0x1000203,    卡反
 //	单卡翻译：
 //TXT_SIM_SEL_SIM1--pb	--	 SIM1
@@ -281,11 +249,11 @@ nv_type_4band.nvm	0x10203, 0x1000203,    卡反
 
 [2.4] fm
 //	FM：
-project_UIS8910_ROM_16MB_DS_USER.mk MMI_FM_OPEN_SPEAK_OPEN_SUPPORT=TRUE
-project_UIS8910_ROM_16MB_DS_USER.mk SBD_FM_OPEN_SPEAK_OPEN_SUPPORT=TRUE
-project_UIS8910_ROM_16MB_DS_USER.mk HHT_MMI_FMTEST_OPEN_SPEAK = TRUE
-project_UIS8910_ROM_16MB_DS_USER.mk SBD_FM_THRESHOLD_TYPE1=TRUE 	   #带上搜的台多一点
-project_UIS8910_ROM_16MB_DS_USER.mk HHT_FM_USE_GSM_ANT_SIGNAL_STRONG=TRUE	 #外放时打开
+prj:project_{cur}.mk MMI_FM_OPEN_SPEAK_OPEN_SUPPORT=TRUE
+prj:project_{cur}.mk SBD_FM_OPEN_SPEAK_OPEN_SUPPORT=TRUE
+prj:project_{cur}.mk HHT_MMI_FMTEST_OPEN_SPEAK = TRUE
+prj:project_{cur}.mk SBD_FM_THRESHOLD_TYPE1=TRUE 	   #带上搜的台多一点
+prj:project_{cur}.mk HHT_FM_USE_GSM_ANT_SIGNAL_STRONG=TRUE	 #外放时打开
 
 //
 FM_SUPPORT = NONE          
@@ -299,13 +267,13 @@ FM_VBC = FALSE
 	
 [2.5] 语言, 字体---mmi_custom_define.h 
 // font-8910
-MS_MMI_Main\source\mmi_service\export\inc\mmi_custom_define.h  MMI_DEFAULT_BIG_FONT
+source:mmi_service\export\inc\mmi_custom_define.h  MMI_DEFAULT_BIG_FONT
 // font-6531
 MS_MMI\source\mmi_app\custom\h\mmi_custom_define.h MMI_DEFAULT_BIG_FONT
 // 默认语言:
-MS_MMI_Main\source\mmi_service\export\inc\mmi_custom_define.h  MMISET_EDEFAULT_LANGUAGE
+source:mmi_service\export\inc\mmi_custom_define.h  MMISET_EDEFAULT_LANGUAGE
 // sms--sim--num
-MS_MMI_Main\source\mmi_service\export\inc\mmi_custom_define.h  MMISMS_MAX_SYS_SIM_SMS_NUM
+source:mmi_service\export\inc\mmi_custom_define.h  MMISMS_MAX_SYS_SIM_SMS_NUM
 
 // MULTIM
 key:MULTIM,file:mmiset_export.h
@@ -326,19 +294,19 @@ MMISET_EDEFAULT_INPUT_LANGUAGE_TRAD_CN = TRUE
 
 [2.6] 情景模式 音频参数:
 //	外置K类功放：
-project_UIS8910_ROM_16MB_DS_USER.mk __HHT_EXT_AMPLIFIER_CLASS_K__ = TRUE
+prj:project_{cur}.mk __HHT_EXT_AMPLIFIER_CLASS_K__ = TRUE
 
 //	软件2合1：FALSE是喇叭听筒独立(硬件二合一)，分开是软件2合1
-project_UIS8910_ROM_16MB_DS_USER.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = FALSE
-project_UIS8910_ROM_16MB_DS_USER.mk SBD_EARPIECE_SPEAK_USE_ONE
-project_UIS8910_ROM_16MB_DS_USER.mk CUSTOMER = S039_JX_2IN1	                 # 二合一的音频（带K类的音频不同）
+prj:project_{cur}.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = FALSE
+prj:project_{cur}.mk SBD_EARPIECE_SPEAK_USE_ONE
+prj:project_{cur}.mk CUSTOMER = S039_JX_2IN1	                 # 二合一的音频（带K类的音频不同）
 \audio\audio_dsp_codec_6531.nvm    0x6C0/硬件2合1;    0x638/软件2合1
 
 //	三合一：
-project_UIS8910_ROM_16MB_DS_USER.mk CUS_ADD_SHAKE= TRUE  三合一喇叭宏        
-project_UIS8910_ROM_16MB_DS_USER.mk VIRTUAL_VIBRATE_FUNC
-project_UIS8910_ROM_16MB_DS_USER.mk __SPEAKER_VIB_INTENSITY_WEAK__
-project_UIS8910_ROM_16MB_DS_USER.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = TRUE 三合一同时开
+prj:project_{cur}.mk CUS_ADD_SHAKE= TRUE  三合一喇叭宏        
+prj:project_{cur}.mk VIRTUAL_VIBRATE_FUNC
+prj:project_{cur}.mk __SPEAKER_VIB_INTENSITY_WEAK__
+prj:project_{cur}.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = TRUE 三合一同时开
 
 
 // CUSTOMER
@@ -354,105 +322,85 @@ key:PRODUCT_CONFIG,path:MS_Customize\source\product\config\{CONFIG}
 
 [2.7] 手电筒
 //	手电筒
-project_UIS8910_ROM_16MB_DS_USER.mk HHT_ADD_TORCHLIGHT= TRUE
-project_UIS8910_ROM_16MB_DS_USER.mk SBD_ADD_TORCHLIGHT			 #6531E
+prj:project_{cur}.mk HHT_ADD_TORCHLIGHT= TRUE
+prj:project_{cur}.mk SBD_ADD_TORCHLIGHT			 #6531E
 	
 //	闪光灯
-project_UIS8910_ROM_16MB_DS_USER.mk DC_FLASH_SUPPORT= TRUE
+prj:project_{cur}.mk DC_FLASH_SUPPORT= TRUE
 
 
 [2.8] 
 //	U盘
-project_UIS8910_ROM_16MB_DS_USER.mk UMEM_PRTITION _MICRO
+prj:project_{cur}.mk UMEM_PRTITION _MICRO
 // path 
 //  MMIMULTIM_DIR_MUSIC
-MS_MMI_Main\source\mmi_service\export\inc\mmisrvfmm_export.h 
+source:mmi_service\export\inc\mmisrvfmm_export.h 
 
 
 
 
-[2.9] 版本号version_software_mocor.h
-version_software_mocor.h
-
-// VERSION
-key:VERSION,file:mmieng_main.c
-
-// SAR
-key:SAR,file:mmieng_base.c
-
-
-// IMEI
-key:IMEI,file:mmieng_main.c
-
-// FULLTEST
-key:FULLTEST,file:mmieng_main.c
-
-// BUILD
-key:BUILD,file:mmieng_base.c
+[2.9] 
 
 
 
 [2.10] 型号---------bt_cfg.h
 
 	型号--MSD, 翻译：
-project_UIS8910_ROM_16MB_DS_USER.mk MMI_MSD_SUPPORT
+prj:project_{cur}.mk MMI_MSD_SUPPORT
 //TXT_MSD_NOTIFY_INFO
 
 // USB
 MS_Customize\source\product\driver\ubot\ubot_cfg_info.c  s_UBOT_StrProduct
 
 // UDISK
-key:UDISK,file:mmisd_export.h
+source:mmi_app\app\udisk\h\mmisd_export.h  CUST_CFG_UDISK_DEFAULT_NAME
 
 // UA
-key:UA,file:mmibrowser_wintable.c
+//key:UA,file:mmibrowser_wintable.c
 
 // FMM
-key:FMM,file:mmisd_export.h
+//key:FMM,file:mmisd_export.h
 
 // DEVICE
-key:DEVICE,file:bt_cfg.h
+//key:DEVICE,file:bt_cfg.h
 
 // BT
 MS_Customize\export\inc\bt_cfg.h  BT_DEFAULT_LOCAL_NAME
+MS_Customize\export\inc\bt_cfg.h  BLUETOOTH_NAME_FLP_E535
+
 
 
 [2.11] 屏幕，时间---------mmidisplay_data.h
 
 // TITLE
-MS_MMI_Main\source\mmi_app\app\theme\h\mmidisplay_data.h  MMI_TITLE_TEXT_FONT
+source:mmi_app\app\theme\h\mmidisplay_data.h  MMI_TITLE_TEXT_FONT
 
 // softkey
-MS_MMI_Main\source\mmi_app\app\theme\h\mmidisplay_data.h  MMI_FULLSCREEN_SOFTKEY_TEXT_FONT
+source:mmi_app\app\theme\h\mmidisplay_data.h  MMI_FULLSCREEN_SOFTKEY_TEXT_FONT
 
 // 背光亮度
 chip_drv/chip_module/analog/sr1131/analog_phy_sr1131.c
 
 // time--背光灯
-MS_MMI_Main\source\mmi_service\export\inc\mmi_custom_define.h  MMISET_EDEFAULT_BACKLIGHT_TIME
+source:mmi_service\export\inc\mmi_custom_define.h  MMISET_EDEFAULT_BACKLIGHT_TIME
 // time--按键灯
-MS_MMI_Main\source\mmi_service\export\inc\mmi_custom_define.h  MMISET_EDEFAULT_KEYBOARD_LIGHT_TIME
+source:mmi_service\export\inc\mmi_custom_define.h  MMISET_EDEFAULT_KEYBOARD_LIGHT_TIME
 
 // time--KEYLOCK
-MS_MMI_Main\source\mmi_app\app\setting\h\mmiset_func.h  DEFAULT_KEYLOCK_TIME_15S_SETTING
+source:mmi_app\app\setting\h\mmiset_func.h  DEFAULT_KEYLOCK_TIME_15S_SETTING
 // 解锁提示框
 MS_MMI_Main/source/mmi_app/app/idle/c/mainapp.c  iTimeOut  KEYLOCK_LSK_TIME
 
 
 // time--ALERT
-MS_MMI_Main\source\mmi_service\export\inc\mmi_custom_define.h  xx  SBD_ALERT_WIN_TIME_PERIOD_1S
+source:mmi_service\export\inc\mmi_custom_define.h  xx  SBD_ALERT_WIN_TIME_PERIOD_1S
 // time--format-12
-MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_display.c  MMI_TIME_DISPALY_TYPE_DEFAULT_12
+source:mmi_app\app\setting\c\mmiset_display.c  MMI_TIME_DISPALY_TYPE_DEFAULT_12
 
 
 // POWER
 mmiphone_onoff.c  SBD_CHANGE_POWER_OFF_TIME_10S
 
-// sys time
-DisplaySystemDate
-MMIAPISET_GetCurrentDateStr
-RestoreDataTimeFactorySetting
-MMIAPISET_IsNeedResetDateTime
 
 // red--长按重启时间
 chip_drv\chip_module\chip\uix8910\chip_phy_uix8910.c  CHIP_PHY_PB1KeyHwRstSet
@@ -468,24 +416,22 @@ MS_MMI_Main/source/mmi_app/app/setting/h/mmiset_security.h  MMISET_PRIVACY_PROTE
 
 [2.13] 音量---------mmienvset_internal.h
 // set vol
-MS_MMI_Main\source\mmi_app\app\envset\h\mmienvset_internal.h  MMIENVSET_CALL_RING_VOL_SILENT_MODE
+source:mmi_app\app\envset\h\mmienvset_internal.h  MMIENVSET_CALL_RING_VOL_SILENT_MODE
 // multim vol
-MS_MMI_Main\source\mmi_app\app\setting\h\mmiset_export.h  MMISET_VOL_DEFAULT_MULTIM
+source:mmi_app\app\setting\h\mmiset_export.h  MMISET_VOL_DEFAULT_MULTIM
 
 
 [2.14] 电池---------
-// battery
-Save:node\C\study\Macro_Spr_battery.h
 
 
 
 
 [2.15] trace
-mk: RELEASE_INFO = FALSE
-project_UIS8910_ROM_16MB_DS_USER.mk RELEASE_INFO = FALSE
-project_UIS8910_ROM_16MB_DS_USER.mk MEMORY_DEBUG_SUPPORT = TRUE
-project_UIS8910_ROM_16MB_DS_USER.mk TRACE_INFO_SUPPORT = TRUE
-project_UIS8910_ROM_16MB_DS_USER.mk PRODUCT_BASELIB_DIR = sc6531_32X32_320X240BAR_QW_ATV_formal_trace
+prj:project_{cur}.mk  RELEASE_INFO = FALSE
+prj:project_{cur}.mk RELEASE_INFO = FALSE
+prj:project_{cur}.mk MEMORY_DEBUG_SUPPORT = TRUE
+prj:project_{cur}.mk TRACE_INFO_SUPPORT = TRUE
+prj:project_{cur}.mk PRODUCT_BASELIB_DIR = sc6531_32X32_320X240BAR_QW_ATV_formal_trace
 //
 UART_LOG_SUPPORT
 // 8910
@@ -580,10 +526,10 @@ uart抓trace:
 //8 para set->debug->assert:open  (不确定开不开)
 
 
-抓trace--压缩空间:
-project_UIS8910_ROM_16MB_DS_USER.mk FM_SUPPORT = NONE 
-project_UIS8910_ROM_16MB_DS_USER.mk VIDEO_PLAYER_SUPPORT = FALSE
-project_UIS8910_ROM_16MB_DS_USER.mk PIC_VIEWER_SUPPORT = FALSE
+### 抓trace--压缩空间:
+prj:project_{cur}.mk FM_SUPPORT = NONE 
+prj:project_{cur}.mk VIDEO_PLAYER_SUPPORT = FALSE
+prj:project_{cur}.mk PIC_VIEWER_SUPPORT = FALSE
 
 
 // USB--log--ok
@@ -608,9 +554,9 @@ project_UIS8910_ROM_16MB_DS_USER.mk PIC_VIEWER_SUPPORT = FALSE
 
 
 --------------------------------------------------
-CE 蓝牙定频版本:
-project_UIS8910_ROM_16MB_DS_USER.mk PRODUCT_BASELIB_DIR = sc6531efm_32X32_320X240BAR_AB_CE
-project_UIS8910_ROM_16MB_DS_USER.mk BT_NONSIG_SUPPORT = TRUE
+//CE 蓝牙定频版本:
+make/{cur}_{GSM}.mak PRODUCT_BASELIB_DIR = sc6531efm_32X32_320X240BAR_AB_CE
+make/{cur}_{GSM}.mak BT_NONSIG_SUPPORT = TRUE
 
 
 
@@ -629,12 +575,11 @@ project_UIS8910_ROM_16MB_DS_USER.mk BT_NONSIG_SUPPORT = TRUE
 //findstr /s /i "ERROR" *.log>aaaa.txt
 
 // open aaaa:
-cmd: F:&&cd build\M115_JGW_D2_X191_F2\log&&findstr /s /i "ERROR" *.log>aaaa.txt&&start aaaa.txt
+cmd_s: cd build\{cur}_builddir\log&&findstr /s /i "ERROR" *.log>aaaa.txt&&start aaaa.txt
 // open aaaa:
-build\M115_JGW_D2_X191_F2\log\aaaa.txt Error:
+build\{cur}_builddir\log\aaaa.txt Error:
 // open cmd:
 cmd: cmd
-
 
 
 [2.17] Build问题

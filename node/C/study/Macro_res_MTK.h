@@ -1,11 +1,11 @@
 
 
-//目录[Num][Ca]:
+//目录
 // 1. common
 Save:node\C\study\Macro_res_MTK.h \[1.1\] 项目配置
 Save:node\C\study\Macro_res_MTK.h \[1.2\] mk, features, nv
 Save:node\C\study\Macro_res_MTK.h \[1.3\] str
-Save:node\C\study\Macro_res_MTK.h \[1.4\] res-------
+Save:node\C\study\Macro_res_MTK.h \[1.4\] res-------option key
 Save:node\C\study\Macro_res_MTK.h \[1.5\] image
 Save:node\C\study\Macro_res_MTK.h \[1.6\] ring, audio
 Save:node\C\study\Macro_res_MTK.h \[1.7\] //add app
@@ -233,10 +233,23 @@ make\Option.mak ORIGINAL_CUSTOMER
 
 
 #########
+// --CUST_AUDIO
+make\Option.mak  (BOARD_VER_CUST_AUDIO)
+// --CUST_SYSTEM
+make\Option.mak  (BOARD_VER_CUST_MEMORYDEVICE)
+make/{cur}_{GSM}.mak  BOARD_VER
+
+
+
+
+#########
 // --copy
 make\Resgen.mak REFLIST_LIST += ref_list_
+make\Resgen.mak 264  NEED_COPY_MMISWITCH
+//    dst
+plutommi\MMI\Inc\MMI_features_switch.h
 // --copy--1--switch_list
-//    dst    => MMI_VERSION/MMI_PROJ
+//    src    => MMI_VERSION/MMI_PROJ
 //           => "PLUTO_MMI"/"PLUTO"
 plutommi\Customer\CustResource\PLUTO_MMI\MMI_features_switchPLUTO.h
 //    src    => ORIGINAL_CUSTOMER/ORIGINAL_CUSTOMER
@@ -248,9 +261,10 @@ plutommi\Customer\CustResource\{cur}_MMI\MMI_features_switch{cur}NO_CAM.h
 //    src    => PRJ_NAME/PRJ_NAME
 //           => "{cur}"/"{cur}"
 plutommi\Customer\CustResource\{cur}_MMI\MMI_features_switch{cur}.h
+plutommi\Customer\CustResource\{cur}_MMI\MMI_features_switch{cur}.h
 //
 // --copy--2--data
-//    dst    => MMI_BASE/MMI_BASE_PRJ
+//    src    => MMI_BASE/MMI_BASE_PRJ
 //           => "PLUTO_MMI"/"PLUTO"
 plutommi\Customer\CustResource\PLUTO_MMI\CustMiscDataPLUTO.c
 //    src    => ORIGINAL_CUSTOMER/ORIGINAL_CUSTOMER
@@ -258,7 +272,7 @@ plutommi\Customer\CustResource\PLUTO_MMI\CustMiscDataPLUTO.c
 //plutommi\Customer\CustResource\{cur}_MMI\CustMiscData{cur}.c
 //
 // --copy--3--resdef
-//    dst    => MMI_BASE/MMI_BASE_PRJ
+//    src    => MMI_BASE/MMI_BASE_PRJ
 //           => "PLUTO_MMI"/"PLUTO"
 plutommi\Customer\CustResource\PLUTO_MMI\CustResDefPLUTO.h SSC_SW_VERSION
 //    src    => ORIGINAL_CUSTOMER/ORIGINAL_CUSTOMER
@@ -269,7 +283,7 @@ plutommi\Customer\CustResource\PLUTO_MMI\CustResDefPLUTO.h SSC_SW_VERSION
 plutommi\Customer\CustResource\{cur}_MMI\CustResDef.h SSC_SW_VERSION
 //
 // --copy--4--reflist
-//    dst    => MMI_BASE
+//    src    => MMI_BASE
 //           => "PLUTO_MMI"
 plutommi\Customer\CustResource\PLUTO_MMI\ref_list.txt
 //    src    => ORIGINAL_CUSTOMER
@@ -385,6 +399,9 @@ audio:\
 plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res TIHO_ID_PROF_NUM1_0
 //	TIHO_ID_PROF_NUM1_0 --> no
 
+// --TTS--local
+plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res AUD_ID_PROF_NUM1_DOT
+
 
 
 #####
@@ -451,7 +468,11 @@ Save:node\C\study\Macro_gui_MTK.h  __font__
 
 
 // --英文
-vendor\font\MTK\official\project\plutommi\content\src\MainLcd128X160\res_gen_font.cpp __MMI_LANG_ENGLISH__
+//		==>__MMI_FONT_LATIN_BASIC__
+//		==>__MMI_FONT_RESOURCE_SLIM__
+//		====>MCT_SMALL_FONT/MCT_MEDIUM_FONT/MCT_LARGE_FONT
+vendor\font\MTK\official\project\plutommi\content\src\MainLcd128X160\res_gen_font.cpp __MMI_FONT_RESOURCE_SLIM__
+vendor\font\MTK\official\project\plutommi\content\src\MainLcd240X320\res_gen_font.cpp __MMI_FONT_RESOURCE_SLIM__
 // --英文-bdf
 vendor\font\FontData\OfficialFont\Latin\
 vendor\font\FontData\OfficialFont\Latin\pluto_small.bdf
@@ -493,6 +514,9 @@ vendor\font\FontData\OfficialFont\Bengali\
 
 // --
 vendor\font\FontData\OfficialFont\Dialing\L_MTK_DiallingFont_27.bdf
+
+// dial
+vendor\font\MTK\official\project\plutommi\content\src\MainLcd240X320\res_gen_font.cpp L_MTK_DiallingFont_27
 
 
 // 字体

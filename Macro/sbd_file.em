@@ -42,6 +42,17 @@ macro GetPubPathBuf(hbuf)
 		setBuf = OpenCache(SetName)
 		return setBuf
 	}
+	else if(n == 10 || n == 30 || n == 60 || n == 70)
+	{
+		n = getBaseDirNum(baseName)
+		SetName = getSetPath(0) # "\\Macro_Set_Path_sprd_" # n # ".h"
+		if (!IsExistFile(SetName))
+		{
+			SetName = getSetPath(0) # "\\Macro_Set_Path_sprd_.h"
+		}
+		setBuf = OpenCache(SetName)
+		return setBuf
+	}
 	
 	return hNil
 }
@@ -1268,6 +1279,7 @@ macro ReCustomKeyHead(hbuf, curPathS, curPathE)
 		{
 			pathER = ReCustomKeyHead(hbuf, curPathS # pathS # "", pathE)
 			pathOut = curPathS # pathS # "" # pathE
+			msg("not exist: " # keyVal)
 			return pathOut
 		}
 	}

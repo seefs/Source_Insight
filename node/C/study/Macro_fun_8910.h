@@ -1,7 +1,4 @@
 
-基础路径设置:
-patchPath = Save:\..\patch\UIS8910_git
-patch:\\
 
 //目录:
 // 1. constant
@@ -14,7 +11,7 @@ Save:node\C\study\Macro_fun_8910.h \[1.6\] Win, Param, id---ID转换
 Save:node\C\study\Macro_fun_8910.h \[1.7\] #define----------宏套宏
 Save:node\C\study\Macro_fun_8910.h \[1.8\] RED
 Save:node\C\study\Macro_fun_8910.h \[1.9\] sms_member
-Save:node\C\study\Macro_fun_8910.h \[1.10\] 
+Save:node\C\study\Macro_fun_8910.h \[1.10\] //popup
 Save:node\C\study\Macro_fun_8910.h \[1.11\] make------------
 Save:node\C\study\Macro_fun_8910.h \[1.12\] debug, trace
 Save:node\C\study\Macro_fun_8910.h \[1.13\] 
@@ -22,7 +19,7 @@ Save:node\C\study\Macro_fun_8910.h \[1.14\] mp3-------------刷新
 Save:node\C\study\Macro_fun_8910.h \[1.15\] tts
 Save:node\C\study\Macro_fun_8910.h \[1.16\] draw str wchar
 Save:node\C\study\Macro_fun_8910.h \[1.17\] time
-Save:node\C\study\Macro_fun_8910.h \[1.18\] press key
+Save:node\C\study\Macro_fun_8910.h \[1.18\] key, handle
 Save:node\C\study\Macro_fun_8910.h \[1.19\] Rect
 Save:node\C\study\Macro_fun_8910.h \[1.20\]
 // 2.func
@@ -43,7 +40,7 @@ Save:node\C\study\Macro_fun_8910.h \[2.14\] BT-------------msg
 Save:node\C\study\Macro_fun_8910.h \[2.15\] Test-----------key id
 Save:node\C\study\Macro_fun_8910.h \[2.16\] sim--显示单卡
 Save:node\C\study\Macro_fun_8910.h \[2.17\] usb
-Save:node\C\study\Macro_fun_8910.h \[2.18\] 
+Save:node\C\study\Macro_fun_8910.h \[2.18\] //bat
 Save:node\C\study\Macro_fun_8910.h \[2.19\] 
 Save:node\C\study\Macro_fun_8910.h \[2.20\] 
 // 其他标号
@@ -121,47 +118,47 @@ make\resource_main\resource_target.mk 42
 
 
 // 背光, 上锁
-MS_MMI_Main/source/mmi_app/app/setting/c/mmiset_func.c  MMIAPISET_GetAutoBoardKeyMS
-MS_MMI_Main\source\mmi_app\kernel\c\mmi_default.c  void^MMIDEFAULT_StartAutoKeylockTimer
+app:setting/c/mmiset_func.c  MMIAPISET_GetAutoBoardKeyMS
+source:mmi_app\kernel\c\mmi_default.c  void^MMIDEFAULT_StartAutoKeylockTimer
 
 
 ## LONG_0 
 // 	 MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-MS_MMI_Main\source\mmi_ctrl\source\editbox\c\ctrlbaseflex.c
+source:mmi_ctrl\source\editbox\c\ctrlbaseflex.c
 // (7)LONG 处理
-MS_MMI_Main\source\mmi_ctrl\source\editbox\c\ctrlbaseflex.c MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-MS_MMI_Main\source\mmi_ctrl\source\Im\c\ctrlim.c 
-MS_MMI_Main\source\mmi_ctrl\include\ctrlim_base.h 
+source:mmi_ctrl\source\editbox\c\ctrlbaseflex.c MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
+source:mmi_ctrl\source\Im\c\ctrlim.c 
+source:mmi_ctrl\include\ctrlim_base.h 
 // switch
-MS_MMI_Main\source\mmi_ctrl\source\editbox\c\ctrlphonenumedit.c MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-MS_MMI_Main\source\mmi_ctrl\source\editbox\c\ctrlphonenumedit.c 
-MS_MMI_Main\source\mmi_ctrl\source\editbox\c\ctrlphonenumedit.c 
-MS_MMI_Main\source\mmi_app\app\idle\c\mainapp.c MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-MS_MMI_Main\source\mmi_app\app\idle\c\mainapp.c 
-MS_MMI_Main\source\mmi_app\app\idle\c\mainapp.c 
-MS_MMI_Main\source\mmi_app\app\idle\c\mainapp.c 
-MS_MMI_Main\source\mmi_app\app\idle\c\mmiidle_dial.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-MS_MMI_Main\source\mmi_app\app\idle\h\mmiidle_export.h 
-MS_MMI_Main\source\mmi_app\app\im\c\mmiim_sp_multitap.c 
-MS_MMI_Main\source\mmi_app\app\im\c\mmiim_sp_multitap.c 
+source:mmi_ctrl\source\editbox\c\ctrlphonenumedit.c MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
+source:mmi_ctrl\source\editbox\c\ctrlphonenumedit.c 
+source:mmi_ctrl\source\editbox\c\ctrlphonenumedit.c 
+source:mmi_app\app\idle\c\mainapp.c MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
+source:mmi_app\app\idle\c\mainapp.c 
+source:mmi_app\app\idle\c\mainapp.c 
+source:mmi_app\app\idle\c\mainapp.c 
+source:mmi_app\app\idle\c\mmiidle_dial.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
+source:mmi_app\app\idle\h\mmiidle_export.h 
+source:mmi_app\app\im\c\mmiim_sp_multitap.c 
+source:mmi_app\app\im\c\mmiim_sp_multitap.c 
 // (6)LONG 前
-MS_MMI_Main\source\mmi_app\app\im\c\mmiim_sp_multitap.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
+source:mmi_app\app\im\c\mmiim_sp_multitap.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
 // (3)timer R
-MS_MMI_Main\source\mmi_kernel\source\c\mmk_kbd.c 
+source:mmi_kernel\source\c\mmk_kbd.c 
 // (1)timer S
 // (4)timer R
-MS_MMI_Main\source\mmi_kernel\source\c\mmk_kbd.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-MS_MMI_Main\source\mmi_kernel\include\mmk_msg.h 
+source:mmi_kernel\source\c\mmk_kbd.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
+source:mmi_kernel\include\mmk_msg.h 
 // (2)timer
-MS_MMI_Main\source\mmi_kernel\source\c\mmk_timer.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-MS_MMI_Main\source\mmi_kernel\include\mmk_timer.h 
+source:mmi_kernel\source\c\mmk_timer.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
+source:mmi_kernel\include\mmk_timer.h 
 
 
 
 
 [1.4] MSG
 // MSG
-MS_MMI_Main\source\mmi_app\common\h\mmi_appmsg.h  MSG_SET_RESET_NEED_WAIT_IND
+source:mmi_app\common\h\mmi_appmsg.h  MSG_SET_RESET_NEED_WAIT_IND
 //
 MMK_SendMsg(VIRTUAL_WIN_ID, MSG_ALM_ALERTING_END, PNULL);
 
@@ -233,7 +230,7 @@ s_mmi_usernv_len
 //	MMK_CreateWindow()
 
 //
-MS_MMI_Main\source\mmi_kernel_sys\source\c\mmk_window.c  ^CreateWin( )
+source:mmi_kernel_sys\source\c\mmk_window.c  ^CreateWin( )
 // create
 //   win_id ->create_ptr->applet_handle->add_data_ptr->create_ptr2->node_ptr  ->create_ptr3->node_ptr2
 //   1769499->0x1bb9fa18->16711680     ->0x0758bebc  ->0x1bb9f994 ->0x0758c16c->0x0758c1ac ->0x0758c28c
@@ -258,7 +255,7 @@ MS_MMI_Main\source\mmi_kernel_sys\source\c\mmk_window.c  ^CreateWin( )
 
 [1.8] RED
 // down
-MS_MMI_Main\source\mmi_kernel\source\c\mmk_kbd.c  BOOLEAN^SaveKeyDownStatus
+source:mmi_kernel\source\c\mmk_kbd.c  BOOLEAN^SaveKeyDownStatus
 //          if(KEY_RED == key_code) 
 //			{
 //	            StartSOSLongEventTimer();
@@ -267,7 +264,7 @@ MS_MMI_Main\source\mmi_kernel\source\c\mmk_kbd.c  BOOLEAN^SaveKeyDownStatus
 
 [1.9] sms_member
 // sms_member
-MS_MMI_Main\source\mmi_app\app\sms\c\mmisms_editsmswin.c
+source:mmi_app\app\sms\c\mmisms_editsmswin.c
 //        uint8 i = 0;
 //        uint8 aaaaa = 0;
 //		SMS_HANDLE_T sms_ret = PNULL;
@@ -335,7 +332,7 @@ app_main.mk
 
 [1.14] mp3--show
 // HandlePDADefaultWinMsg
-MS_MMI_Main\source\mmi_app\app\audioplayer\c\mmiapwin_main_pda.c  470
+source:mmi_app\app\audioplayer\c\mmiapwin_main_pda.c  470
 //
 //	#ifdef WIN32
 //		    case MSG_APP_5:
@@ -464,11 +461,11 @@ MS_MMI_Main\source\mmi_app\app\audioplayer\c\mmiapwin_main_pda.c  470
 
 [2.1] lock
 //
-MS_MMI_Main\source\mmi_app\app\keylock\c\mmikl_keylock.c  MMIAPIKL_LockPhone
-MS_MMI_Main\source\mmi_app\app\keylock\c\mmikl_keylock.c  MMIAPIKL_UnlockPhone
+source:mmi_app\app\keylock\c\mmikl_keylock.c  MMIAPIKL_LockPhone
+source:mmi_app\app\keylock\c\mmikl_keylock.c  MMIAPIKL_UnlockPhone
 //
-MS_MMI_Main\source\mmi_app\app\keylock\c\mmikl_keylock.c  1912
-MS_MMI_Main\source\mmi_app\app\keylock\c\mmikl_keylock.c  3523
+source:mmi_app\app\keylock\c\mmikl_keylock.c  1912
+source:mmi_app\app\keylock\c\mmikl_keylock.c  3523
 
 //	MMIKL_SetWinStatus
 //
@@ -477,35 +474,35 @@ MS_MMI_Main\source\mmi_app\app\keylock\c\mmikl_keylock.c  3523
 //	MMIKL_OpenTimeScreenSaverWin
 
 // KeyLock
-MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_security.c  MMI_RESULT_E^^HandleSetAutoKeyLockWindow
+source:mmi_app\app\setting\c\mmiset_security.c  MMI_RESULT_E^^HandleSetAutoKeyLockWindow
 
 
 
 [2.2] light
 //
-MS_MMI_Main\source\mmi_app\kernel\c\mmi_default.c  KEYLOCK_PRESS_ANY_KEY_BACKLIGHT
+source:mmi_app\kernel\c\mmi_default.c  KEYLOCK_PRESS_ANY_KEY_BACKLIGHT
 //
-MS_MMI_Main\source\mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_IsBacklightOn
+source:mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_IsBacklightOn
 //
-MS_MMI_Main\source\mmi_app\kernel\c\mmi_default.c  StartSettingLCDBackLightTimer
+source:mmi_app\kernel\c\mmi_default.c  StartSettingLCDBackLightTimer
 
 
 ### base msg
-MS_MMI_Main\source\mmi_kernel\source\c\mmk_kbd.c  BOOLEAN^HandleMSGKbd
-MS_MMI_Main\source\mmi_app\kernel\c\mmi_default.c  MSG_KEYDOWN_FLIP
+source:mmi_kernel\source\c\mmk_kbd.c  BOOLEAN^HandleMSGKbd
+source:mmi_app\kernel\c\mmi_default.c  MSG_KEYDOWN_FLIP
 // 1490
-MS_MMI_Main\source\mmi_app\kernel\c\mmi_default.c  MSG_KEYUP_FLIP
+source:mmi_app\kernel\c\mmi_default.c  MSG_KEYUP_FLIP
 //		MMK_HandlePublicKey: MSG_KEYUP_FLIP!
 
 ### record msg
-MS_MMI_Main\source\mmi_kernel\source\c\mmk_kbd.c  CheckFlipKeyMsgNumber
-MS_MMI_Main\source\mmi_kernel\source\c\mmk_kbd.c  MMI_FlipKeyHandle
+source:mmi_kernel\source\c\mmk_kbd.c  CheckFlipKeyMsgNumber
+source:mmi_kernel\source\c\mmk_kbd.c  MMI_FlipKeyHandle
 
 ### flip msg
 // kbd msg
-MS_MMI_Main\source\mmi_kernel\source\c\mmk_kbd.c  MMIDEFAULT_HandleFlipKey
+source:mmi_kernel\source\c\mmk_kbd.c  MMIDEFAULT_HandleFlipKey
 // app msg
-MS_MMI_Main\source\mmi_app\app\accessory\c\mmialarm.c  MMIDEFAULT_HandleFlipKey
+source:mmi_app\app\accessory\c\mmialarm.c  MMIDEFAULT_HandleFlipKey
 
 ### gpio msg
 // 1360
@@ -518,11 +515,11 @@ MS_Customize\source\product\driver\gpio\gpio_prod.c  void^GPIO_Set_SubLcd_BackLi
 
 ### 亮灭屏
 // 参考动画流程
-MS_MMI_Main\source\mmi_app\kernel\c\mmi_default.c  MMI_TURNON_BACKLIGHT_EFFECT_SUPPORT
+source:mmi_app\kernel\c\mmi_default.c  MMI_TURNON_BACKLIGHT_EFFECT_SUPPORT
 //
-MS_MMI_Main\source\mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_TurnOnBackLight
-//MS_MMI_Main\source\mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_TurnOffBackLight
-MS_MMI_Main\source\mmi_app\kernel\c\mmi_default.c  CloseAllLight
+source:mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_TurnOnBackLight
+//source:mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_TurnOffBackLight
+source:mmi_app\kernel\c\mmi_default.c  CloseAllLight
 
 
 
@@ -631,7 +628,7 @@ LoadFileToImage
 
 [2.13] Browser--------
 //
-MS_MMI_Main/source/mmi_app/app/browser/control/src/brw_control_PIC.c uint32^Brw_InitImageListInfo
+app:browser/control/src/brw_control_PIC.c uint32^Brw_InitImageListInfo
 //#if 1//
 //	    {
 //	    	BRW_IMAGE_INFO_LIST_T img_add = {0};
@@ -650,8 +647,8 @@ MS_MMI_Main/source/mmi_app/app/browser/control/src/brw_control_PIC.c uint32^Brw_
 
 [2.14] BT-msg
 //
-MS_MMI_Main/source/mmi_app/app/bt/c/mmibt_app.c MMIBT_CallBackFunc
-MS_MMI_Main/source/mmi_app/app/bt/c/mmibt_app.c MMIBT_A2DPCallBackFunc
+app:bt/c/mmibt_app.c MMIBT_CallBackFunc
+app:bt/c/mmibt_app.c MMIBT_A2DPCallBackFunc
 //	PUBLIC void MMIBT_A2DPCallBackFunc_Test(uint16 mode)
 //	{
 //	    BT_MSG_T dg_msg;
@@ -684,7 +681,7 @@ MS_MMI_Main/source/mmi_app/app/bt/c/mmibt_app.c MMIBT_A2DPCallBackFunc
 
 [2.15] Test----key id
 //
-MS_MMI_Main/source/mmi_app/app/eng/c/mmieng_uitestwin.c  TestKeyboard
+app:eng/c/mmieng_uitestwin.c  TestKeyboard
 //#if 1//def WIN32
 //	{
 //    	wchar               disp_text[20] = {0};
@@ -728,7 +725,7 @@ ATEST_SUPPORT
 
 [2.16] sim--显示单卡
 //
-MS_MMI_Main/source/mmi_app/app/phone/c/mmiphone.c  MMIAPIPHONE_GetSimExistedStatus
+app:phone/c/mmiphone.c  MMIAPIPHONE_GetSimExistedStatus
 //#if 0//defined IDLE_NETWORK_ONE_SIM_SHOW_EXIST_STYLE
 //	if(dual_sys==MN_DUAL_SYS_1)
 //		return FALSE;
@@ -744,7 +741,7 @@ MS_MMI_Main/source/mmi_app/app/phone/c/mmiphone.c  MMIAPIPHONE_GetSimExistedStat
 //#endif
 
 //
-MS_MMI_Main/source/mmi_app/app/phone/c/mmiphone.c  MMIAPIPHONE_GetSimExistedNum
+app:phone/c/mmiphone.c  MMIAPIPHONE_GetSimExistedNum
 //#if 0//defined IDLE_NETWORK_ONE_SIM_SHOW_EXIST_STYLE
 //    return 1;
 //#else
@@ -754,8 +751,7 @@ MS_MMI_Main/source/mmi_app/app/phone/c/mmiphone.c  MMIAPIPHONE_GetSimExistedNum
 
 [2.17] usb
 //
-MS_MMI_Main/source/mmi_app/app/udisk/c/mmiudisk_wintab.c  MMIAPIUdisk_OpenUsbOperWindow
-
+app:udisk/c/mmiudisk_wintab.c  MMIAPIUdisk_OpenUsbOperWindow
 
 
 [2.18] 

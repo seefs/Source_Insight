@@ -27,15 +27,16 @@ bat:\\
 
 
 ### 1.cfg
+versionKey  = UMS9117_ums9117_barphone_version
 lcdKey  = K220D_QVGA_LCM
 
 
 ### 2.cur
-prjPath  = SPDE_PRJ\UIS8910_ROM_16MB_DS_USER\
+prjPath  = SPDE_PRJ\WA07U_F30Z\
 prj:\\
 
-curKey   = UIS8910_ROM_16MB_DS_USER
-cfgKey   = us8910_phone_user_base_config
+curKey   = UIS8910_ROM_16MB_SS_WA07U_F30Z_USER
+cfgKey   = uis8910_phone_user_base_config
 
 // USER debug
 useKey   = USER

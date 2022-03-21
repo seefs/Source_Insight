@@ -1,6 +1,6 @@
 
 
-//目录[Num][Ca]:
+//目录:
 // 1. 
 Save:node\C\project\Macro_cfg_MTK.h \[1.1\] AUDIO, TONE
 Save:node\C\project\Macro_cfg_MTK.h \[1.2\] PB
@@ -29,7 +29,7 @@ Save:node\C\project\Macro_cfg_MTK.h \[2.10\] //Tool
 Save:node\C\project\Macro_cfg_MTK.h \[2.11\] lib--------------
 Save:node\C\project\Macro_cfg_MTK.h \[2.12\] 编译流程
 Save:node\C\project\Macro_cfg_MTK.h \[2.13\] 省空间-----------app
-Save:node\C\project\Macro_cfg_MTK.h \[2.14\] MemoryDevice
+Save:node\C\project\Macro_cfg_MTK.h \[2.14\] mem_pool
 Save:node\C\project\Macro_cfg_MTK.h \[2.15\] marco
 Save:node\C\project\Macro_cfg_MTK.h \[2.16\] //Lib
 Save:node\C\project\Macro_cfg_MTK.h \[2.17\] FLASH------------文件系统
@@ -484,12 +484,22 @@ plutommi\mmi\Setting\SettingRes\TihoBroadcastSetting.res  __TIHO_TTS_TIME_DEFAUL
 [2.5] PLS---------------语音王
 // 1) PLS
 make/{cur}_{GSM}.mak  PLS_APP_GSM_SUPPORT
+make/{cur}_{GSM}.mak  PLS_MSP_TTS_SHORT_WAIT_TIME
+
 
 // 报时中午/下午
 make/{cur}_{GSM}.mak  PLS_MSP_TTS_TIME_ZXBH
 //
 plutommi\mmi\msp\tts\interface\msp_api.c  __MSP_TTS_TIME_ZXBH__
 
+// vol
+plutommi\mmi\msp\tts\interface\msp_tts_platform.c  msp_tts_get_volume_value
+
+// 整点报时时段
+custom\common\PLUTO_MMI\nvram_common_config.c  __PLS_MSP_TTS_TIME_DEFULT_DAY__
+
+// lib
+plutommi/mmi/plsApp/core/lib/
 
 
 [2.6] DIGIT_TONE--------简易版语音王
@@ -515,6 +525,14 @@ plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  __MMI_IDLE_KEY_0_TIMEKEEPING__
 // 白天模式
 plutommi\mmi\Setting\SettingRes\PhoneSetting.res  __MMI_PUNCTUAL_TIMEKEEPING_TIME_QUANTUM_DAY_MODE__
 
+// other
+// mp3
+make/{cur}_{GSM}.mak  __AUDIO_PLAYING_DISABLED_KING_VOICE__
+// backlight
+make/{cur}_{GSM}.mak  __MMI_TIMEKEEPING_BACKLIGHT_OFF__
+
+// ring
+plutommi\Service\MDI\MDISrc\mdi_audio.c  mdi_audio_get_word_resource
 
 
 [2.7] FM
@@ -627,25 +645,12 @@ tools\NVRAMStatistic\include\custom_option.txt
 // 7.待机壁纸--------10K
 // 8.来电2个---------1K
 
+// 可以省 5K(加200pb)
 
 
 
 
-[2.14] MemoryDevice
-### 1.Mem
-// ADDRESS:
-//    0x02C0000        -0x1000*N
-//    0x02BF000
-custom\system\{board}\custom_MemoryDevice.h  NOR_BOOTING_NOR_FS_BASE_ADDRESS
-//    0x0040000        +0x1000*N
-//    0x0041000
-custom\system\{board}\custom_MemoryDevice.h  NOR_BOOTING_NOR_FS_SIZE
-//    24               +8*N, 1N=0x200=512=0.5K, 8N=4K
-custom\system\{board}\custom_MemoryDevice.h  NOR_BOOTING_NOR_FS_FIRST_DRIVE_SECTORS
-//
-//    ADDRESS+SIZE=0x400000
-
-
+[2.14] mem_pool
 
 ### mem--cfg
 // 可以省 37.6K(加150内存), 28K(加150内存)
@@ -664,10 +669,6 @@ build\{cur}\{cur}_MT6261_S00.lis  DYNAMIC_COMP_CODE
 
 
 
-### 3.联系人
-// 可以省 5K(加200pb)
-
-
 
 
 [2.15] 
@@ -681,9 +682,9 @@ build\{cur}\{cur}_MT6261_S00.lis  DYNAMIC_COMP_CODE
 [2.17] FLASH------------文件系统
 ### 文件系统
 // 可以省 32.7K/64K (加16, 48比40大)
-make/{cur}_{GSM}.mak  #FS_SIZE_56_STYLE = TRUE
+make/{cur}_{GSM}.mak  FS_SIZE_56_STYLE = TRUE
 make/{cur}_{GSM}.mak  FS_SIZE_48_STYLE = TRUE
-make/{cur}_{GSM}.mak  #FS_SIZE_40_STYLE = TRUE
+make/{cur}_{GSM}.mak  FS_SIZE_40_STYLE = TRUE
 //
 tools\emigenMD.pl  fs_size_40_style
 tools\emigenMD.pl  fs_size_48_style
@@ -691,6 +692,36 @@ tools\emigenMD.pl  fs_size_60_style
 //
 tools\MemoryDeviceList\
 tools\MemoryDeviceList\MemoryDeviceList_MT6261_Since11CW1352.xls
+
+
+### Mem
+// ADDRESS+SIZE=0x400000 (61D) 否则超过会报：FAT空间超过物理NOR大小
+// ADDRESS+SIZE=0x300000 (61M)
+// --ADDRESS  -0x1000=4K  (可以理解为viva大小吗？)
+custom\system\{board}\
+custom\system\{board}\custom_MemoryDevice.h  NOR_BOOTING_NOR_FS_BASE_ADDRESS
+// --FS_SIZE  +0x1000=4K
+custom\system\{board}\custom_MemoryDevice.h  NOR_BOOTING_NOR_FS_SIZE
+// --SECTORS 为0或20以上, 为0开机起不来(可能是语音王问题)
+//		==>umem  0/24/32/40  +8*N, 8N=4K
+custom\system\{board}\custom_MemoryDevice.h  define^NOR_BOOTING_NOR_FS_FIRST_DRIVE_SECTORS
+
+// 若VIVA超4K, ADDRESS加0x1000, umem减0x1000, SECTORS减8
+
+### ADDRESS
+// --default/custom   #自动生成
+custom\system\{board}\
+custom\system\{board}\flash_opt_gen.h  NOR_FLASH_BASE_ADDRESS_DEFAULT   0x002D0000
+custom\system\{board}\flash_opt_gen.h  NOR_ALLOCATED_FAT_SPACE_DEFAULT  0x00030000
+custom\system\{board}\flash_opt_gen.h  FOTA_DM_FS_OFFSET                0x0
+custom\system\{board}\flash_opt_gen.h  NOR_DISK0_BLOCK_SIZE             0x1000
+// --default
+custom\common\hal\flash_opt.h  359  NOR_FLASH_BASE_ADDRESS              0x002D0000
+custom\common\hal\flash_opt.h  376  NOR_BOOTING_NOR_DISK0_SIZE          5784+0x1000=>0x1698=>0x2000
+custom\common\hal\flash_opt.h  384  NOR_BOOTING_NOR_DISK0_BASE_ADDRESS  0x002D0000+0x00030000-0x2000
+custom\common\hal\flash_opt.h  392  FS_BKP_OVERLAP_SIZE                 0x002D0000+0x00030000-...=>0x2000
+custom\common\hal\flash_opt.h  432  NOR_ALLOCATED_FAT_SPACE             0x00030000-0x2000
+
 
 
 [2.18] build map
@@ -707,7 +738,7 @@ build:log\ckSysDrv.log Cluster^Size^(Bytes) 	看剩余空间，nv大小
 
 build:log\resgen_mtk_resgenerator_make.log		res添加头文件
 build:log\resgen_xml_preprocess.log Error:
-build:log\FileSystemConfig.log  Error:^Shortage
+build:log\FileSystemConfig.log  Error:^Shortage    # 178 Sectors = -89.0 KB
 //Cluster Size (Bytes)                                    512
 //Free Space (Clusters)                                   185
 //Folders and Applications Requirement (Clusters)         221

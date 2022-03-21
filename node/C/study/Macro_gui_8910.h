@@ -1,14 +1,4 @@
 
-//appPath = MS_MMI_Main/source/mmi_app/app
-appPath = MS_MMI/source/mmi_app/app
-app:\\
-//ctrlPath = MS_MMI_Main\source\mmi_ctrl\source
-ctrlPath = MS_MMI\source\mmi_ctrl\source
-ctrl:\\
-//guiPath = MS_MMI_Main\source\mmi_gui\source
-guiPath = MS_MMI\source\mmi_gui\source
-gui:\\
-
 
 // 目录:
 //   1. 功能点
@@ -752,9 +742,9 @@ MS_MMI_Main\source\winsimulator_tp\skin
 
 [1.19] sublcd
 //
-MMIAPIPHONE_GetBatCapacity
 // Bat
-MMISUB_GetBatteryLevel
+//		==>MMIAPIPHONE_GetBatCapacity
+MS_MMI_Main\source\mmi_app\app\idle\c\mmi_subwintab.c  uint8^MMISUB_GetBatteryLevel
 // sim
 MS_MMI_Main\source\mmi_app\app\idle\c\mmi_subwintab.c  void^DisplaySubLcdIconOneLine
 // show(mp3,fm,sms,call)

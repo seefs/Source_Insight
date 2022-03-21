@@ -10,7 +10,7 @@ Save:Help\Other\Macro_Help_SI.h \[1.2\] marco test...
 Save:Help\Other\Macro_Help_SI.h \[1.3\] set save path
 Save:Help\Other\Macro_Help_SI.h \[1.4\] set work path
 Save:Help\Other\Macro_Help_SI.h \[1.5\] other set
-Save:Help\Other\Macro_Help_SI.h \[1.6\] 
+Save:Help\Other\Macro_Help_SI.h \[1.6\] set cfg path
 Save:Help\Other\Macro_Help_SI.h \[1.7\] 
 Save:Help\Other\Macro_Help_SI.h \[1.8\] 
 Save:Help\Other\Macro_Help_SI.h \[1.9\] 
@@ -80,7 +80,18 @@ Save:set\Macro_Set.h 75
 Save:set\Macro_Set.h 78
 
 
-[1.6] 
+[1.6] set {pro} path
+// 每个项目独立配置;多个key会遍历所有可能,不存在取key为空
+// {pro}
+Save:Macro\sbd_f11.em   ReCustomKeyHead
+// {pro}--num--10/20/62
+Save:Macro\sbd_base.em  getPathConfig(0)
+Save:set\Macro_Set_Base.h
+// {pro}--num转key map转value, 有map后续才能工作
+Save:Macro\sbd_file.em  GetPubPathBuf
+//
+Save:set\
+Save:set\Macro_Set_Path_*_*.h
 
 
 

@@ -1,15 +1,6 @@
 
-基础路径设置:
-//basePath = 
-//nvPath = SPDE_PRJ\WA08U_X6C\nvitem
-//nvPath = SPDE_PRJ\WA03U_T2_V2\nvitem
-//nvPath = SPDE_PRJ\WA07U_F30Z\nvitem
-nvPath = common\nv_parameters\ProductionParam
-nv:\\
 
-/***********************************************************************/
-
-//目录[Num][Ca]:
+//目录:
 // 1. 
 Save:node\C\study\Macro_nv_8910.h \[1.1\] 充电------------电流
 Save:node\C\study\Macro_nv_8910.h \[1.2\] 充电/放电-------电压(修改放电n%)
@@ -17,7 +8,7 @@ Save:node\C\study\Macro_nv_8910.h \[1.3\] 低电电压
 Save:node\C\study\Macro_nv_8910.h \[1.4\] charge_end_voltage 高压电池
 Save:node\C\study\Macro_nv_8910.h \[1.5\] PA
 Save:node\C\study\Macro_nv_8910.h \[1.6\] 2IN1,3IN1
-Save:node\C\study\Macro_nv_8910.h \[1.7\] production_param
+Save:node\C\study\Macro_nv_8910.h \[1.7\] 充电/放电-------107
 Save:node\C\study\Macro_nv_8910.h \[1.8\] nv define
 Save:node\C\study\Macro_nv_8910.h \[1.9\] nv test
 Save:node\C\study\Macro_nv_8910.h \[1.10\] IMEI
@@ -76,12 +67,6 @@ nv:ProductionParam_uix8910.nvm  dischg_bat_tab[0]
 //    ITEM_CONTENT = 0x10F2   // 4.338V
 
 
-### T107
-// 充电截止电压
-nv:production_param_T.xml  charge_end_current
-
-// 放电时
-nv:production_param_T.xml  dischg_bat_tab
 
 
 
@@ -138,7 +123,7 @@ nv:audio_calib_VQE.nvm  audio_calib
 
 
 [1.6] 2IN1,3IN1
-// select prj
+// select prj--8910
 nv1Path = SPDE_PRJ\K220U_HYBL_H661A\nvitem
 nv2Path = SPDE_PRJ\K220U_HYBL_H660A_HTX_LTC\nvitem
 nv3Path = SPDE_PRJ\K220U_HYBL_H660A\nvitem
@@ -168,12 +153,16 @@ nv3:audio_calib_VQE.nvm  65
 
 
 
-[1.7] production_param
-// 107
+[1.7] 充电/放电-------107
 //  production_param
-SPDE_PRJ/S98T_FLP_E535/RDNV/production_param_T.xml
+prj:RDNV\production_param_T.xml
 // OCV 
 
+// 充电截止电压
+prj:RDNV\
+prj:RDNV\production_param_T.xml  charge_end_current
+// 放电时
+prj:RDNV\production_param_T.xml  dischg_bat_tab
 
 
 

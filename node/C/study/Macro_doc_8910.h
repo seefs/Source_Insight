@@ -1,24 +1,21 @@
 
-基础路径设置:
-//basePath = 
 
-/***********************************************************************/
-
-//目录[Num][Ca]:
+//目录
 // 1. 
 Save:node\C\study\Macro_doc_8910.h \[1.1\] Message 切换
 Save:node\C\study\Macro_doc_8910.h \[1.2\] FUN 入口-------------
-Save:node\C\study\Macro_doc_8910.h \[1.3\] 
+Save:node\C\study\Macro_doc_8910.h \[1.3\] //lang
 Save:node\C\study\Macro_doc_8910.h \[1.4\] 移配置
 Save:node\C\study\Macro_doc_8910.h \[1.5\] 说明文档
 Save:node\C\study\Macro_doc_8910.h \[1.6\] Win数据
 Save:node\C\study\Macro_doc_8910.h \[1.7\] SALE统计
-Save:node\C\study\Macro_doc_8910.h \[1.8\] 
+Save:node\C\study\Macro_doc_8910.h \[1.8\] //File-----------------
 Save:node\C\study\Macro_doc_8910.h \[1.9\] test code-------------
 Save:node\C\study\Macro_doc_8910.h \[1.10\] ImageNote
 Save:node\C\study\Macro_doc_8910.h \[1.11\] TextNote
-Save:node\C\study\Macro_doc_8910.h \[1.12\] 
-Save:node\C\study\Macro_doc_8910.h \[1.13\] 
+Save:node\C\study\Macro_doc_8910.h \[1.12\] //FontTool
+Save:node\C\study\Macro_doc_8910.h \[1.13\] build time----------
+Save:node\C\study\Macro_doc_8910.h \[1.14\] 
 // 其他标号
 Save:Help\\DefaultFile\\Macro_Node_Num.h
 
@@ -121,11 +118,22 @@ MMIDEFAULT_HandleAutoSendSMSTimer        # 处理发送
 
 
 [1.9] test code
+
+
+// SAR
+//app:eng\c\mmieng_base.c  SAR
+
+// BUILD
+app:eng\c\mmieng_base.c  BUILD
+
+
+
 // Phone
 "#*8378#0#", "*#15963#", "####1111#",
 // UI
 "####1111#", "*#87#", "*#666#",
 // Item
+app:eng\c\mmieng_main.c  MMIENG_IDLE_ITEM_TEST
  "*#777#", "*#66*#", "*#79*#",
 // Product
 "#*8378#3#",
@@ -138,8 +146,10 @@ MMIDEFAULT_HandleAutoSendSMSTimer        # 处理发送
 // Engineer
 "#*8378#1#", "*#555#",--mcc,mnc
 // Version--Out -- bg
+app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SHOW_VERSION1
 "#*8378#2#", "####0000#", 
 // Version--3
+app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SHOW_VERSION2
 "*#888#",
 // Chip
 "#*8378#5#",
@@ -152,8 +162,10 @@ MMIDEFAULT_HandleAutoSendSMSTimer        # 处理发送
 // ALLSVN -- bg
 "#*786837#",
 // HW
+app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SHOW_HW_VERSION
 "*#999#", "*#523#",
 // IMEI
+app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SET_SIM_IMEI_ALL
 "*#333#", "*#0066#", "*#3184#"; "*#06#",
 // Reset
 "*#119*#", "*#70#",
@@ -161,7 +173,7 @@ MMIDEFAULT_HandleAutoSendSMSTimer        # 处理发送
 "*#2010#"; "*#0808#"; "*#0809#", 
 
 // test code
-MS_MMI_Main/source/mmi_app/app/eng/c/mmieng_main.c  UITESTWIN_OpenPhoneTestWin
+app:eng/c/mmieng_main.c  UITESTWIN_OpenPhoneTestWin
 //    {
 //         "#1#",
 //         MMIENG_IDLE_DIAL_NUM_UI_TEST2, //func id
@@ -199,10 +211,11 @@ MS_MMI_Main/source/mmi_app/app/eng/c/mmieng_main.c  UITESTWIN_OpenPhoneTestWin
 //查看图标是否存在
 Save:node\C\study\Show_Pic_dir.h IMAGE_PUBWIN_QUERY
 Save:node\C\study\Show_Pic_dir.h IMAGE_PUBWIN_SUCCESS  
-Tool:common\MMI_RES_DEFAULT\IMAG\Pubwin\PDA
+//
+images:common\MMI_RES_DEFAULT\IMAG\Pubwin\PDA
 
-Tool:clock\MMI_RES_DEFAULT\IMAG\Alarm\IMAGE_CLOCK_ALARM_ALERT.png
-Tool:clock\MMI_RES_DEFAULT\IMAG\Alarm
+images:clock\MMI_RES_DEFAULT\IMAG\Alarm\IMAGE_CLOCK_ALARM_ALERT.png
+images:clock\MMI_RES_DEFAULT\IMAG\Alarm
 
 
 
@@ -215,11 +228,11 @@ build\UIS8910_ROM_16MB_DS_USER_builddir\tmp\mmi_res_240x320_imag.txt IMAGE_PUBWI
 [1.11] TextNote
 
 //
-build\UIS8910_ROM_16MB_DS_USER_builddir\tmp\mmi_res_128x128_text.txt TXT_EXTRA_SETTINGS
-build\UIS8910_ROM_16MB_DS_USER_builddir\tmp\mmi_res_128x128_text.txt TXT_SETTINGS_COMMAND
-build\UIS8910_ROM_16MB_DS_USER_builddir\tmp\mmi_res_128x128_text.txt _EMPTY
-build\UIS8910_ROM_16MB_DS_USER_builddir\tmp\mmi_res_128x128_text.txt Delete
-build\UIS8910_ROM_16MB_DS_USER_builddir\tmp\mmi_res_128x128_text.txt Search
+build\{cur}_builddir\tmp\mmi_res_128x128_text.txt TXT_EXTRA_SETTINGS
+build\{cur}_builddir\tmp\mmi_res_128x128_text.txt TXT_SETTINGS_COMMAND
+build\{cur}_builddir\tmp\mmi_res_128x128_text.txt _EMPTY
+build\{cur}_builddir\tmp\mmi_res_128x128_text.txt Delete
+build\{cur}_builddir\tmp\mmi_res_128x128_text.txt Search
 //字符整理:
 // 公式:
 // =IF(ISNUMBER(MATCH(C1,A$1:A$14254,)),INDEX(B$1:B$14254,MATCH(C1,A$1:A$14254,)),"")
@@ -245,8 +258,20 @@ STXT_OK, TXT_COMMON_CLEAR,
 
 
 
-[1.13] 
+[1.13] build time
 
+// 默认出厂日期
+prj:project_{cur}.mk   DEFAULT_FACTORY_YEAR_MONTH_DAY
+
+// DisplaySystemDate
+app:setting\c\mmiset_datetime.c DEFAULT_FACTORY_YEAR_MONTH_DAY
+// DisplaySystemDate
+app:setting\c\mmiset_display.c DEFAULT_FACTORY_YEAR_MONTH_DAY
+// DisplaySystemDate
+app:setting\c\mmiset_func.c DEFAULT_FACTORY_YEAR_MONTH_DAY
+MMIAPISET_GetCurrentDateStr
+RestoreDataTimeFactorySetting
+MMIAPISET_IsNeedResetDateTime
 
 
 

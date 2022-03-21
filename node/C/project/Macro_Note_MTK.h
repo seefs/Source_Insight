@@ -1,8 +1,8 @@
 
 
-//目录[Num][Ca]:
+//目录
 // 项目
-Save:node\C\project\Macro_Note_MTK.h \[1.1\] set project
+Save:node\C\project\Macro_Note_MTK.h \[1.1\] 
 Save:node\C\project\Macro_Note_MTK.h \[1.2\] MTK编译指令
 Save:node\C\project\Macro_Note_MTK.h \[1.3\] KEY
 Save:node\C\project\Macro_Note_MTK.h \[1.4\] LCD
@@ -38,14 +38,11 @@ Save:node\C\project\Macro_Note_MTK.h \[2.20\]
 
 
 
-[1.1] set project
-//
-// bak
-Save:node\C\project\Macro_c_path.h  _mtk_bak_
+[1.1] 
 
 // set
 //   F12查找宏有用
-Save:set\Macro_Set_Path_mtk.h  curKey
+Save:set\Macro_Set_Path_mtk_.h  curKey
 
 
 //特殊宏:
@@ -600,7 +597,9 @@ find ./ -name "*.log"| xargs grep "ERROR"
 findstr /s /i "ERROR" *.log>aaaa.txt
 
 // open aaaa:
-cmd: F:&&cd build\{cur}\log&&findstr /s /i "ERROR" *.log>aaaa.txt&&start aaaa.txt
+cmd_f cd build\{cur}\log&&findstr /s /i "ERROR" *.log>aaaa.txt&&start aaaa.txt
+cmd_f cd build\{cur}\log&&findstr /s /i "font" *.log>aaaa.txt&&start aaaa.txt
+cmd_f cd build\{cur}\log&&findstr /s /i "BOARD" *.log>aaaa.txt&&start aaaa.txt
 // open aaaa:
 build\{cur}\log\aaaa.txt Error:
 // open cmd:

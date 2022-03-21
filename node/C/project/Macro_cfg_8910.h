@@ -1,26 +1,15 @@
 
-基础路径设置:
-//basePath = 
-mkPath = SPDE_PRJ\K220U_SHY_517T\project_UIS8910_ROM_16MB_DS_USER.mk
-mk:\\
-cfgPath = SPDE_PRJ\K220U_SHY_517T\uis8910_phone_user_base_config.cfg
-cfg:\\
-//imgPath = build\UIS8910_240x320BAR_16MB_SS_WA03U_T2_V2_USER_builddir\img
-tmpPath = build\tmp
-tmp:\\
 
-/***********************************************************************/
-
-//目录[Num][Ca]:
+//目录:
 // 1. 
 Save:node\C\project\Macro_cfg_8910.h \[1.1\] AUDIO, TONE
 Save:node\C\project\Macro_cfg_8910.h \[1.2\] PB
 Save:node\C\project\Macro_cfg_8910.h \[1.3\] SMS
 Save:node\C\project\Macro_cfg_8910.h \[1.4\] MMS
-Save:node\C\project\Macro_cfg_8910.h \[1.5\] BROWSER
+Save:node\C\project\Macro_cfg_8910.h \[1.5\] BROWSER, DL
 Save:node\C\project\Macro_cfg_8910.h \[1.6\] BT
 Save:node\C\project\Macro_cfg_8910.h \[1.7\] RECORD
-Save:node\C\project\Macro_cfg_8910.h \[1.8\] Lcd---------------
+Save:node\C\project\Macro_cfg_8910.h \[1.8\] LCD_SIZE---------------
 Save:node\C\project\Macro_cfg_8910.h \[1.9\] shortcut----------menu
 Save:node\C\project\Macro_cfg_8910.h \[1.10\] 
 Save:node\C\project\Macro_cfg_8910.h \[1.11\] 
@@ -29,9 +18,9 @@ Save:node\C\project\Macro_cfg_8910.h \[1.12\]
 Save:node\C\project\Macro_cfg_8910.h \[2.1\] IM
 Save:node\C\project\Macro_cfg_8910.h \[2.2\] DTMF
 Save:node\C\project\Macro_cfg_8910.h \[2.3\] 电子保卡
-Save:node\C\project\Macro_cfg_8910.h \[2.4\] 
-Save:node\C\project\Macro_cfg_8910.h \[2.5\] 
-Save:node\C\project\Macro_cfg_8910.h \[2.6\] DL
+Save:node\C\project\Macro_cfg_8910.h \[2.4\] tihu--------------语音王
+Save:node\C\project\Macro_cfg_8910.h \[2.5\] PLS---------------语音王
+Save:node\C\project\Macro_cfg_8910.h \[2.6\] DIGIT_TONE--------简易版语音王
 Save:node\C\project\Macro_cfg_8910.h \[2.7\] FM
 Save:node\C\project\Macro_cfg_8910.h \[2.8\] WIFI
 Save:node\C\project\Macro_cfg_8910.h \[2.9\] SS
@@ -44,7 +33,7 @@ Save:node\C\project\Macro_cfg_8910.h \[2.15\] marco
 Save:node\C\project\Macro_cfg_8910.h \[2.16\] Lib
 Save:node\C\project\Macro_cfg_8910.h \[2.17\] FLASH (大、/小版本)
 Save:node\C\project\Macro_cfg_8910.h \[2.18\] build map
-Save:node\C\project\Macro_cfg_8910.h \[2.19\] 
+Save:node\C\project\Macro_cfg_8910.h \[2.19\] //bak
 Save:node\C\project\Macro_cfg_8910.h \[2.20\] 
 // 其他标号
 Save:Help\\DefaultFile\\Macro_Node_Num.h
@@ -198,9 +187,14 @@ MS_Customize\source\product\config\uis8910ff_refphone\mem_cfg.c  259
 
 
 [1.4] MMS
-//MMS
-cfg: . MMS_SMS_IN_1_SUPPORT
-//	MMS_SMS_IN_1_SUPPORT = TRUE
+
+//MMS--107
+prj:project_{cur}.mk  MMS_SMS_IN_1_SUPPORT = TRUE
+
+//MMS--8910
+prj:{cfg}.cfg  MMS_SMS_IN_1_SUPPORT = TRUE
+
+
 
 //
 MMS_SUPPORT = DORADO
@@ -213,7 +207,7 @@ MMS_SMS_IN_1_SUPPORT = TRUE                         ### MMS SMS IN 1 Support:
 
 
 
-[1.5] BROWSER
+[1.5] BROWSER, DL
 // mk
 BROWSER_SUPPORT = TRUE                
 BROWSER_SUPPORT_DORADO = TRUE   
@@ -223,6 +217,14 @@ DL_SUPPORT = TRUE
 //
 OPERA_MINI_SUPPORT = VER42
 BROWSER_ALL_RUNNING_SUPPORT = TRUE 
+
+
+// Download
+DL_SUPPORT = TRUE                                   ###Download Manager Supplier:
+OMADL_SUPPORT = TRUE 
+
+//
+DATACOUNTER_SUPPORT = TRUE
 
 
 
@@ -281,7 +283,8 @@ MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_shortcut.c  OpenSelectedShortcut
 MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_shortcut.c  GetDirectionKey
 // key 2
 MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_shortcut.c  GetFunctionKey
-
+// key web
+MS_MMI_Main\source\mmi_app\app\idle\c\mmiidle_cstyle.c  case^MSG_APP_WEB
 
 ### 捷径对齐
 // id
@@ -350,10 +353,23 @@ MMI_DIALPANEL_DTMF_SUPPORT
 
 
 [2.3] 电子保卡
-//
-//	#AOLEDA_ELECTRIC_GUARANTEE_CARD = TRUE 
-//	SPDE_ELECTRIC_GUARANTEE_CARD_V2   = TRUE 
-//	SPDEHTTP_SUPPORT                  = TRUE 
+
+// 1.本地版
+prj:project_{cur}.mk   SPDE_ELECTRIC_GUARANTEE_CARD = TRUE
+// nv同网络版
+prj:project_{cur}.mk   NV_CUS_FIXNV_DATA_LEN_128 = TRUE
+
+
+// 2.网络版
+prj:project_{cur}.mk   SPDE_ELECTRIC_GUARANTEE_CARD_V2 = TRUE
+prj:project_{cur}.mk   SPDEHTTP_SUPPORT = TRUE
+prj:project_{cur}.mk   SPDE_ELECTRIC_GUARANTEE_CARD_V2_USE_LOCAL_TIME = TRUE
+prj:project_{cur}.mk   NV_CUS_FIXNV_DATA_LEN_128 = TRUE
+
+
+// 3.本地版
+prj:project_{cur}.mk   AOLEDA_ELECTRIC_GUARANTEE_CARD = TRUE
+
 
 
 [2.4] 
@@ -364,13 +380,7 @@ MMI_DIALPANEL_DTMF_SUPPORT
 
 
 
-[2.6] DL
-// Download
-DL_SUPPORT = TRUE                                   ###Download Manager Supplier:
-OMADL_SUPPORT = TRUE 
-
-//
-DATACOUNTER_SUPPORT = TRUE
+[2.6] 
 
 
 
@@ -394,20 +404,23 @@ WIFI_VENDOR = UNISOC
 
 
 [2.9] SS
-//
-cfg: SCREENSAVER_SUPPORT
+//MMS--107
+prj:project_{cur}.mk  SCREENSAVER_SUPPORT = TRUE
+
+//MMS--8910
+prj:{cfg}.cfg  SCREENSAVER_SUPPORT = TRUE
 
 
 
 [2.10] Tool
 // CALCULATOR_SUPPORT
-SPDE_PRJ\K220T_JGW_Z105\project_ums9117_176X220BAR_48MB_K220T_JGW_Z105_user.mk CALCULATOR_SUPPORT
+prj:project_{cur}.mk CALCULATOR_SUPPORT
 // STOPWATCH_SUPPORT
-SPDE_PRJ\K220T_JGW_Z105\project_ums9117_176X220BAR_48MB_K220T_JGW_Z105_user.mk STOPWATCH_SUPPORT
+prj:project_{cur}.mk STOPWATCH_SUPPORT
 // CALENDAR_SUPPORT
-SPDE_PRJ\K220T_JGW_Z105\project_ums9117_176X220BAR_48MB_K220T_JGW_Z105_user.mk CALENDAR_SUPPORT
+prj:project_{cur}.mk CALENDAR_SUPPORT
 // WORLD_CLOCK_SUPPORT
-SPDE_PRJ\K220T_JGW_Z105\project_ums9117_176X220BAR_48MB_K220T_JGW_Z105_user.mk WORLD_CLOCK_SUPPORT
+prj:project_{cur}.mk WORLD_CLOCK_SUPPORT
 
 
 
@@ -475,34 +488,29 @@ build\tmp\app_main.macro  AAC_SUPPORT = TRUE                                   #
 build\tmp\app_main.macro  AMR_SUPPORT = TRUE                                   ### AMR Decoder Support:
 
 
-// mk
-SPDE_PRJ\WA01U_Q3M\project_UIS8910_ROM_16MB_SS_WA07U_USER.mk
-SPDE_PRJ\WA01U_Q3M\uis8910_phone_user_base_config.cfg
-
 
 
 // BT
-SPDE_PRJ\WA01U_Q3M\uis8910_phone_user_base_config.cfg  BT_NONSIG_SUPPORT = TRUE   
-SPDE_PRJ\WA01U_Q3M\uis8910_phone_user_base_config.cfg  BT_BQB_SUPPORT = TRUE      
-SPDE_PRJ\WA01U_Q3M\uis8910_phone_user_base_config.cfg  BT_OPP_SUPPORT = TRUE      
-SPDE_PRJ\WA01U_Q3M\uis8910_phone_user_base_config.cfg  BT_FTS_SUPPORT = TRUE      
-SPDE_PRJ\WA01U_Q3M\uis8910_phone_user_base_config.cfg  BT_HFG_SUPPORT = TRUE      
-SPDE_PRJ\WA01U_Q3M\uis8910_phone_user_base_config.cfg  BT_A2DP_SUPPORT = TRUE     
-SPDE_PRJ\WA01U_Q3M\uis8910_phone_user_base_config.cfg  MP3_A2DP_SUPPORT = TRUE    
-SPDE_PRJ\WA01U_Q3M\uis8910_phone_user_base_config.cfg  WAV_A2DP_SUPPORT = TRUE    
-SPDE_PRJ\WA01U_Q3M\uis8910_phone_user_base_config.cfg  AMR_A2DP_SUPPORT = TRUE    
-SPDE_PRJ\WA01U_Q3M\uis8910_phone_user_base_config.cfg  MIDI_A2DP_SUPPORT = TRUE   
-SPDE_PRJ\WA01U_Q3M\uis8910_phone_user_base_config.cfg  AAC_A2DP_SUPPORT = TRUE    
-
+prj:{cfg}.cfg  BT_NONSIG_SUPPORT = TRUE   
+prj:{cfg}.cfg  BT_BQB_SUPPORT = TRUE      
+prj:{cfg}.cfg  BT_OPP_SUPPORT = TRUE      
+prj:{cfg}.cfg  BT_FTS_SUPPORT = TRUE      
+prj:{cfg}.cfg  BT_HFG_SUPPORT = TRUE      
+prj:{cfg}.cfg  BT_A2DP_SUPPORT = TRUE     
+prj:{cfg}.cfg  MP3_A2DP_SUPPORT = TRUE    
+prj:{cfg}.cfg  WAV_A2DP_SUPPORT = TRUE    
+prj:{cfg}.cfg  AMR_A2DP_SUPPORT = TRUE    
+prj:{cfg}.cfg  MIDI_A2DP_SUPPORT = TRUE   
+prj:{cfg}.cfg  AAC_A2DP_SUPPORT = TRUE    
 
 // MP3
-SPDE_PRJ\WA01U_Q3M\uis8910_phone_user_base_config.cfg MP3_SUPPORT = TRUE
-SPDE_PRJ\WA01U_Q3M\uis8910_phone_user_base_config.cfg AAC_SUPPORT = TRUE
-SPDE_PRJ\WA01U_Q3M\uis8910_phone_user_base_config.cfg AMR_SUPPORT = TRUE
+prj:{cfg}.cfg MP3_SUPPORT = TRUE
+prj:{cfg}.cfg AAC_SUPPORT = TRUE
+prj:{cfg}.cfg AMR_SUPPORT = TRUE
 WAV_SUPPORT = TRUE
 
 // H264
-SPDE_PRJ\WA01U_Q3M\uis8910_phone_user_base_config.cfg H264_DEC_SUPPORT = TRUE
+prj:{cfg}.cfg H264_DEC_SUPPORT = TRUE
 
 
 // SMS
@@ -555,12 +563,12 @@ chip_drv/chip_module/analog/v7
 [2.16] Lib
 ### w07U
 // baseLib
-SPDE_PRJ\WA07U_F3Z\project_UIS8910_ROM_16MB_SS_WA07U_F3Z_USER.mk  PRODUCT_BASELIB_DIR
+prj:project_{cur}.mk  PRODUCT_BASELIB_DIR
 // 分开
 //   PRODUCT_BASELIB_DIR = UIS8910_ROM_16MB_SS_USER
 
 // binFile
-SPDE_PRJ\WA07U_F3Z\project_UIS8910_ROM_16MB_SS_WA07U_F3Z_USER.mk  MODEM_BIN_FILE
+prj:project_{cur}.mk  MODEM_BIN_FILE
 // 共用
 //   MODEM_BIN_FILE = UIS8910_ROM_16MB_DS_USER
 
@@ -573,12 +581,12 @@ lib\modem\UIS8910_ROM_16MB_DS_USER
 
 ### w03u
 // baseLib
-SPDE_PRJ\WA03U_T2_TW\project_UIS8910_240x320BAR_16MB_SS_WA03U_T2_TW_USER.mk  PRODUCT_BASELIB_DIR
+prj:project_{cur}.mk PRODUCT_BASELIB_DIR
 // 分开
 //   PRODUCT_BASELIB_DIR = UIS8910_240x320BAR_16MB_SS_USER
 
 // binFile
-SPDE_PRJ\WA03U_T2_TW\project_UIS8910_240x320BAR_16MB_SS_WA03U_T2_TW_USER.mk  MODEM_BIN_FILE
+prj:project_{cur}.mk MODEM_BIN_FILE
 // 共用
 //   MODEM_BIN_FILE = MODEM_USER
 
@@ -612,24 +620,19 @@ lib\ums9117_240X320BAR_48MB_CAT1
 
 
 [2.17] FLASH
-### w07U (小版本)
-SPDE_PRJ\WA07U\project_UIS8910_ROM_16MB_SS_WA07U_USER.mk  FLASH_SIZE
+
+prj:project_{cur}.mk  FLASH_SIZE
+//(小版本)
 //   FLASH_SIZE = 128MBIT
-
-### w03u (大版本)
-SPDE_PRJ\WA03U_T2_TW\project_UIS8910_240x320BAR_16MB_SS_WA03U_T2_TW_USER.mk  FLASH_SIZE
-//   FLASH_SIZE = 128MBITX64MBIT_NEW
-
-### BMWATCH (大版本)
-SPDE_PRJ\BMWATCH\project_UIS8910_240x320BAR_16MB_SS_BMWATCH_USER.mk  FLASH_SIZE
-//   FLASH_SIZE = 128MBITX64MBIT_NEW
-
-### WA01U_Q3M (大版本)
-SPDE_PRJ\WA01U_Q3M\project_UIS8910_240x320BAR_16MB_SS_WA01U_Q3M_USER.mk  FLASH_SIZE
+//(大版本)
 //   FLASH_SIZE = 128MBITX64MBIT_NEW
 
 
 [2.18] build map
+//
+tmpPath = build\tmp
+tmp:\\
+
 // 总image
 tmp:UIX8910.map  Region^LOAD_KERNEL_IMAGE
 
@@ -654,8 +657,7 @@ MS_Customize/UIX8910_normal.scf  277
 
 [2.19] 
 
-G:\wa01u_svn_small_new\build\UIS8910_ROM_16MB_SS_WA07U_F30ZL_USER_builddir\win
-
+build\tmp
 
 
 

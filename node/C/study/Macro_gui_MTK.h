@@ -27,7 +27,7 @@ Save:node\C\study\Macro_gui_MTK.h  \[1.22\] //height-------------滚动条
 Save:node\C\study\Macro_gui_MTK.h  \[1.23\] edit, im, pen
 Save:node\C\study\Macro_gui_MTK.h  \[1.24\] color--------------属性
 Save:node\C\study\Macro_gui_MTK.h  \[1.25\] //label--------------
-Save:node\C\study\Macro_gui_MTK.h  \[1.26\] text---------------
+Save:node\C\study\Macro_gui_MTK.h  \[1.26\] text, time, date---
 Save:node\C\study\Macro_gui_MTK.h  \[1.27\] //prgbox-------------进度条
 Save:node\C\study\Macro_gui_MTK.h  \[1.28\] menu
 Save:node\C\study\Macro_gui_MTK.h  \[1.29\] //owndraw------------
@@ -706,24 +706,31 @@ UI_COLOR_DARK_GREY
 
 
 
-[1.26] text
-//
-plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  void^gui_show_single_line_input_box_ext
+[1.26] text, time, date
 // --text--border
 plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  void^gui_create_multi_line_input_box_set_buffer
 // --text--input--time
 // --text--input--pb edit
 // --text--input--pb search
-//		==>gui_show_single_line_input_box_ext
-//		====bs->y1, +2  #去掉
+//		==>gui_show_single_line_input_box_ext         # [大字小框]处理
+//		====bs->y1, +2  #去掉 +2 或者只减正值
+//		==>gui_draw_single_line_one_line              # [同框]字上移
+//		====bs->base_line减，text_height加
+//		==>MMI_SINGLELINE_INPUTBOX_HEIGHT
 plutommi\Framework\GUI\GUI_SRC\gui_single_line_inputs.c  gui_draw_single_line_one_line
 plutommi\Framework\GUI\GUI_SRC\gui_single_line_inputs.c  bs->text_y^>=^0
 plutommi\Framework\GUI\GUI_SRC\gui_single_line_inputs.c  query.pHeight^<=^text_height_simply
+
+// --text--time--hg bg
+plutommi\Framework\GUI\GUI_SRC\gui_single_line_inputs.c  gui_draw_single_line_highlight
 //		==>bs.text_y
 //		====>wgui_inputs_sl_setup_ext
 //		==>b.text_y  #边框
 //		====>2 or -2, #居中
+//		==>create_time_input     # h=50
+//		==>create_date_input     # h=44
 plutommi\Framework\GUI\GUI_SRC\gui_inputs.c  void^gui_create_single_line_input_box_set_buffer
+
 
 
 // text--":"

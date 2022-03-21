@@ -28,12 +28,7 @@ Save:set\Macro_Set_Base.h  80 / 82 / 84
 
 // (2).bak
 // A86===>◊‘∂Ø≈‰÷√
-curKey = K220_A86
-curKey = K220_A87_JTY
-curKey = K220_A87_LW
-curKey = K220_A87_OB
-curKey = K220_D33D
-curKey = K220_XHT_V79
+curKey = K220_BH_G20
 curKey = K220_C61
 curKey = X218_E207
 curKey = K220_Y22_BOSS
@@ -231,6 +226,14 @@ custom\drv\color\{lcd}\color_custom.c
 // ≈‰÷√id
 Save:node\C\project\Macro_Note_MTK.h  __LCD__
 
+
+// (4).system
+//
+custom\system\K2M_BB\
+custom\system\{board}\
+custom\system\{board}\scatBL_MT6261.txt
+custom\system\{board}\scatBL_MT6261_ext.txt
+custom\system\K220M_YGW_BB\scatBL_MT6261_ext.txt
 
 
 

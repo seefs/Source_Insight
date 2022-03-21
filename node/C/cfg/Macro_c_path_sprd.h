@@ -23,25 +23,10 @@ Save:node\C\cfg\Macro_c_path_sprd.h \[1.12\]
 Save:set\
 Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 Save:set\Macro_Set_Path_sprd_.h  curKey
-// --每个项目一个配置
-Save:set\Macro_Set_Base.h  80 / 82 / 84
 
 // (2).bak
 // A86===>自动配置
 curKey = K220_A86
-curKey = K220_A87_JTY
-curKey = K220_A87_LW
-curKey = K220_A87_OB
-curKey = K220_D33D
-curKey = K220_XHT_V79
-curKey = K220_C61
-curKey = X218_E207
-curKey = K220_Y22_BOSS
-curKey = K220_Y28_MGUO
-curKey = K220_V992
-curKey = K220_D58
-curKey = K220_D36A
-
 
 
 // A86

@@ -7,33 +7,33 @@
 ###
 
 
-imagesPath = plutommi\Customer\Images\K220_C61\
+imagesPath = plutommi\Customer\Images\K220_BH_G20\
 images:\\
-audioPath = plutommi\Customer\AUDIO\K220_C61\
+audioPath = plutommi\Customer\AUDIO\K220_BH_G20\
 audio:\\
-featuresPath = plutommi\Customer\CustResource\K220_C61_MMI\
+featuresPath = plutommi\Customer\CustResource\K220_BH_G20_MMI\
 features:\\
-buildPath = build\K220_C61\
+buildPath = build\K220_BH_G20\
 build:\\
 batPath = _bat\build
 bat:\\
 
 
 ### 1.cfg
-nvKey  = K220_Y28_AUDIO_BB
+nvKey  = K220_G20_AUDIO_BB
 
 boardKey  = K220M_YGW_BB
 
-lcdKey  = K220D_QVGA_LCM
+lcdKey  = K220D_QVGA_SH_LCM
 
 ### 2.cur
-curKey = K220_C61
+curKey = K220_BH_G20
 GSMKey = GSM
 
 ### 3.copy
-oldKey = K220_Y22_MGUO
+oldKey = K220_D60_CX
 
-newKey = K220_Y28_MGUO
+newKey = K220_D60_WJK
 
 ### 4.tmp
 tmpKey = K220_Y01A_MGUO

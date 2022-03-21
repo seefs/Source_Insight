@@ -1,20 +1,12 @@
 
-基础路径设置:
-//basePath = 
-resPath = MS_MMI_Main/source/resource/mmi_res_240x240
-res:\\
 
-
-/***********************************************************************/
-
-//目录[Num][Ca]:
 // 1. common
 Save:node\C\study\Macro_res_8910.h \[1.1\] 项目配置
-Save:node\C\study\Macro_res_8910.h \[1.2\] mk
+Save:node\C\study\Macro_res_8910.h \[1.2\] mk, version, nv
 Save:node\C\study\Macro_res_8910.h \[1.3\] str
-Save:node\C\study\Macro_res_8910.h \[1.4\] res
+Save:node\C\study\Macro_res_8910.h \[1.4\] res-------
 Save:node\C\study\Macro_res_8910.h \[1.5\] icon, anim
-Save:node\C\study\Macro_res_8910.h \[1.6\] ring
+Save:node\C\study\Macro_res_8910.h \[1.6\] ring, audio
 Save:node\C\study\Macro_res_8910.h \[1.7\] add app
 Save:node\C\study\Macro_res_8910.h \[1.8\] add res
 Save:node\C\study\Macro_res_8910.h \[1.9\] font
@@ -39,7 +31,7 @@ Save:node\C\study\Macro_res_8910.h \[1.20\]
 // --images / audio / features / build
 Save:node\C\cfg\
 
-Save:node\C\cfg\Macro_c_path_sprd.h  _mtk_cur_
+Save:node\C\cfg\Macro_c_path_sprd.h  _sprd_cur_
 
 // --nv / board / lcd
 Save:node\C\cfg\Macro_c_path_sprd.h  _mtk_cfg_
@@ -54,15 +46,25 @@ Save:node\C\cfg\Macro_c_path_sprd.h  _mtk_copy_
 
 
 
-[1.2] 
+[1.2] mk
+//
+prj:\\
+prj:project_{cur}.mk   HERO_ENGINE_SUPPORT
+// 107
+prj:{version}.c        s_version_info
+// 8910
+prj:version_software_mocor.h     s_version_info
 
 
 
-[1.3] 
+[1.3] str
 
 //
 //IMG_DC_ICON_PHOTO
 
+
+//
+build\{cur}_builddir\tmp\mmi_res_240X320_text.txt  SUCCESS
 
 
 [1.4] res
@@ -84,10 +86,28 @@ Save:node\C\cfg\Macro_c_path_sprd.h  _mtk_copy_
 MS_MMI_Main\source\mmi_app\common\h\common_mdu_def.h  ANIM_PUBWIN_WAIT_PDA
 
 
+
+// --status
+prj:project_{cur}.mk   MMI_STATUSBAR_ICON_BLACK
+images:\common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\
+
+// --status--bat
+MS_MMI_Main\source\mmi_app\common\h\common_mdu_def.h  battery_syle1
+images:\common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\
+
+// bat
+
+
+
 [1.6] ring
 // TONE_425HZ
 //MMISRVAUD_Play_BusyTone
 
+
+// mp3
+prj:resource\my_music\
+prj:resource\my_music\mmiap_song_name.h
+prj:resource\my_music\song1.mp3
 
 
 

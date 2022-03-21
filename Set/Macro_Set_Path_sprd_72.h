@@ -10,31 +10,31 @@ imagesPath = MS_MMI_Main\source\resource\mmi_res_240x320\
 images:\\
 ringPath = MS_MMI_Main\source\resource\Common\RING\
 images:\\
-batNvPath = common\nv_parameters\ProductionParam\
-batNv:\\
-nvPath = SPDE_PRJ\WA07U_F30Z\nvitem\
+nvPath = SPDE_PRJ\S98T_JL_F13\CustNV\
 nv:\\
+nv8910Path = common\nv_parameters\ProductionParam
+nv8910:\\
 
-
-sourcePath  = MS_MMI_Main\source\
-appPath     = MS_MMI_Main\source\mmi_app\app\
-ctrlPath    = MS_MMI_Main\source\mmi_ctrl\source
-guiPath     = MS_MMI_Main\source\mmi_gui\source
-configPath  = MS_Customize\source\product\config
+mmiPath = MS_MMI_Main\source\
+mmi:\\
+configPath = MS_Customize\source\product\config
+config:\\
 sensorsPath = MS_Customize\source\product\driver\sensors
-batPath     = _bat\build
+sensors:\\
+batPath = _bat\build
 bat:\\
 
 
 ### 1.cfg
+versionKey  = UMS9117_ums9117_barphone_version
 lcdKey  = K220D_QVGA_LCM
 
 
 ### 2.cur
-prjPath  = SPDE_PRJ\UIS8910_ROM_16MB_DS_USER\
+prjPath  = SPDE_PRJ\S98T_JL_F13\
 prj:\\
 
-curKey   = UIS8910_ROM_16MB_DS_USER
+curKey   = ums9117_240X320BAR_48MB_S98T_JL_F13_user
 cfgKey   = us8910_phone_user_base_config
 
 // USER debug

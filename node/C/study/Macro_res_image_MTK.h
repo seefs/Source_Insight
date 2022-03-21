@@ -9,7 +9,7 @@
 Save:node\C\study\Macro_res_image_MTK.h \[1.1\] Logo--开关机
 Save:node\C\study\Macro_res_image_MTK.h \[1.2\] MainMenu--主菜单图片
 Save:node\C\study\Macro_res_image_MTK.h \[1.3\] Wallpaper--壁纸
-Save:node\C\study\Macro_res_image_MTK.h \[1.4\] charger--关机充电动画
+Save:node\C\study\Macro_res_image_MTK.h \[1.4\] charger--关机/充电动画
 Save:node\C\study\Macro_res_image_MTK.h \[1.5\] Statusicons
 Save:node\C\study\Macro_res_image_MTK.h \[1.6\] DialNum--拨号日期锁屏
 Save:node\C\study\Macro_res_image_MTK.h \[1.7\] Mp3_img
@@ -90,10 +90,10 @@ plutommi\Customer\CustomerInc\CustResDef.h IMG_WALLPAPER_SUB_DIR
 
 
 
-[1.4] charger关机充电动画
+[1.4] charger关机/充电动画
 
 
-// --关机充电动画
+// --关机/充电动画
 //make/{cur}_{GSM}.mak  __MMI_POWERONRING_MP3__
 //
 plutommi\mmi\MiscFramework\MiscFrameworkRes\ChargerApp.res IMG_ID_CHARGER_CHARGING
