@@ -6,22 +6,25 @@
 ### 3.×Ô¶¯Ìæ»»£¬´ý¸Ä
 ###
 
+0Key  = 8910
+
 imagesPath = MS_MMI_Main\source\resource\mmi_res_240x320\
 images:\\
 ringPath = MS_MMI_Main\source\resource\Common\RING\
 images:\\
+batNvPath = common\nv_parameters\ProductionParam\
+batNv:\\
 nvPath = SPDE_PRJ\S98T_JL_F13\CustNV\
 nv:\\
-nv8910Path = common\nv_parameters\ProductionParam
-nv8910:\\
 
-mmiPath = MS_MMI_Main\source\
-mmi:\\
-configPath = MS_Customize\source\product\config
-config:\\
+
+sourcePath  = MS_MMI_Main\source\
+appPath     = MS_MMI_Main\source\mmi_app\app\
+ctrlPath    = MS_MMI_Main\source\mmi_ctrl\source
+guiPath     = MS_MMI_Main\source\mmi_gui\source
+configPath  = MS_Customize\source\product\config
 sensorsPath = MS_Customize\source\product\driver\sensors
-sensors:\\
-batPath = _bat\build
+batPath     = _bat\build
 bat:\\
 
 

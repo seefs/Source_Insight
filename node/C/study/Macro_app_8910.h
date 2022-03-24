@@ -96,8 +96,8 @@ app:theme/h/mmi_position.h  IDLE_TIME_PIC_WIDTH
 
 [1.3] menu, second
 // index
-mmi:mmi_kernel/include/mmitheme_mainmenu.h  MMITHEME_MAINMENU_CUR_ITEM_INDEX
-mmi:mmi_kernel/include/mmitheme_mainmenu.h  MAINLCD_SIZE_240X320
+source:mmi_kernel/include/mmitheme_mainmenu.h  MMITHEME_MAINMENU_CUR_ITEM_INDEX
+source:mmi_kernel/include/mmitheme_mainmenu.h  MAINLCD_SIZE_240X320
 // bg rect
 app:mainmenu\c\mmi_mainmenu_matrix.c  BOOLEAN^MatrixMenuGetTitleStyleInfo
 // icon rect
@@ -105,7 +105,7 @@ app:mainmenu\c\mmi_mainmenu_matrix.c  HandleMatrixMenuGetIconRect
 // draw
 app:mainmenu\c\mmi_mainmenu_matrix.c  MMITHEME_DrawMainmenuItem
 // title
-mmi:mmi_service/export/inc/mmi_custom_define.h  MMISET_DEFAULT_MENU_STYLE_E
+source:mmi_service/export/inc/mmi_custom_define.h  MMISET_DEFAULT_MENU_STYLE_E
 // menu softkey, prg
 app:theme/c/mmitheme_mainmenu.c  is_has_button
 app:mainmenu/c/mainmenu_win.c  MAINMENU_ICON_WIN_TAB
@@ -113,11 +113,11 @@ app:mainmenu\c\mmi_mainmenu_matrix.c  ->is_need_prgbox
 
 // menu--one page
 app:mainmenu\c\mainmenu_win.c  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
-mmi:mmi_kernel\include\mmitheme_mainmenu.h  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
+source:mmi_kernel\include\mmitheme_mainmenu.h  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
 app:mainmenu\c\mmi_mainmenu_data_128x128.c  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
 app:mainmenu\c\mmi_mainmenu_data_240X320.c  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
 app:mainmenu\c\mmi_mainmenu_matrix.c  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
-mmi:mmi_app\common\c\mmi_menutable_240x320.c  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
+source:mmi_app\common\c\mmi_menutable_240x320.c  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
 
 // menu--main
 app:mainmenu\c\mmi_mainmenu_data_128x128.c s_mainmenu_item_data
@@ -134,28 +134,28 @@ app:mainmenu\c\mainmenu_win.c  HandleSecMenuStaticMsg
 app:mainmenu\c\mainmenu_win.c  3353
 
 // menu--tools
-mmi:mmi_app\common\c\mmi_menutable_128x128.c  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
-mmi:mmi_app\common\c\mmi_menutable_128x128.c GUIMENU_ITEM_T^menu_icon_tools
-mmi:mmi_app\common\c\mmi_menutable_128x160.c GUIMENU_ITEM_T^menu_icon_tools
-mmi:mmi_app\common\c\mmi_menutable_176x220.c GUIMENU_ITEM_T^menu_icon_tools
-mmi:mmi_app\common\c\mmi_menutable_240x320.c GUIMENU_ITEM_T^menu_icon_tools
+source:mmi_app\common\c\mmi_menutable_128x128.c  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
+source:mmi_app\common\c\mmi_menutable_128x128.c GUIMENU_ITEM_T^menu_icon_tools
+source:mmi_app\common\c\mmi_menutable_128x160.c GUIMENU_ITEM_T^menu_icon_tools
+source:mmi_app\common\c\mmi_menutable_176x220.c GUIMENU_ITEM_T^menu_icon_tools
+source:mmi_app\common\c\mmi_menutable_240x320.c GUIMENU_ITEM_T^menu_icon_tools
 
 // menu--palyer
-mmi:mmi_app\common\c\mmi_menutable_128x128.c  GUIMENU_ITEM_T^menu_icon_player
-mmi:mmi_app\common\c\mmi_menutable_176x220.c  GUIMENU_ITEM_T^menu_icon_player
-mmi:mmi_app\common\c\mmi_menutable_240x320.c  GUIMENU_ITEM_T^menu_icon_player
+source:mmi_app\common\c\mmi_menutable_128x128.c  GUIMENU_ITEM_T^menu_icon_player
+source:mmi_app\common\c\mmi_menutable_176x220.c  GUIMENU_ITEM_T^menu_icon_player
+source:mmi_app\common\c\mmi_menutable_240x320.c  GUIMENU_ITEM_T^menu_icon_player
 
 // menu--settings
-mmi:mmi_app\common\c\mmi_menutable_128x128.c  GUIMENU_ITEM_T^menu_settings_icon
-mmi:mmi_app\common\c\mmi_menutable_176x220.c  GUIMENU_ITEM_T^menu_settings_icon
-mmi:mmi_app\common\c\mmi_menutable_240x320.c  GUIMENU_ITEM_T^menu_settings_icon
+source:mmi_app\common\c\mmi_menutable_128x128.c  GUIMENU_ITEM_T^menu_settings_icon
+source:mmi_app\common\c\mmi_menutable_176x220.c  GUIMENU_ITEM_T^menu_settings_icon
+source:mmi_app\common\c\mmi_menutable_240x320.c  GUIMENU_ITEM_T^menu_settings_icon
 // menu--settings(107)
 app:setting\c\mmiset_menutable.c  GUIMENU_ITEM_T^menu_set_phone
 
 
 // menu img
-mmi:mmi_ctrl\source\Menu\c\ctrlmenu_popup.c  check_unsel_img
-mmi:mmi_ctrl\source\Menu\c\ctrlmenu_sec.c   check_unsel_img
+source:mmi_ctrl\source\Menu\c\ctrlmenu_popup.c  check_unsel_img
+source:mmi_ctrl\source\Menu\c\ctrlmenu_sec.c   check_unsel_img
 
 
 //tone
@@ -170,19 +170,19 @@ app:idle\c\mmiidle_dial.c  HandleDialWinMsg
 
 
 // display--分行--平均行间距 
-mmi:mmi_ctrl\source\editbox\c\ctrlbaseflex_display.c  void^DisplayTextString
-mmi:mmi_ctrl\source\editbox\c\ctrlbaseflex_display.c  BIG_DIAL_NUM
+source:mmi_ctrl\source\editbox\c\ctrlbaseflex_display.c  void^DisplayTextString
+source:mmi_ctrl\source\editbox\c\ctrlbaseflex_display.c  BIG_DIAL_NUM
 // display--分行--取消底部间距，相差1个像素刚好对齐
-mmi:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  GUI_RECT_T^BASEEDIT_GetClientRect
-mmi:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  976
+source:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  GUI_RECT_T^BASEEDIT_GetClientRect
+source:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  976
 // display--分行--拨号不计算行间距
-mmi:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  uint16^BASEEDIT_GetLineHeight
-mmi:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  1023
+source:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  uint16^BASEEDIT_GetLineHeight
+source:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  1023
 // display--分行--拨号位置不下移
-mmi:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  GUI_RECT_T^BASEEDIT_GetLineRect
-mmi:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  1270
+source:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  GUI_RECT_T^BASEEDIT_GetLineRect
+source:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  1270
 // display--分行--超位置
-mmi:mmi_ctrl\source\editbox\c\ctrlbaseflex_cursor.c  BASEEDIT_GetTopLineOffsetRange
+source:mmi_ctrl\source\editbox\c\ctrlbaseflex_cursor.c  BASEEDIT_GetTopLineOffsetRange
 
 
 
@@ -190,16 +190,16 @@ mmi:mmi_ctrl\source\editbox\c\ctrlbaseflex_cursor.c  BASEEDIT_GetTopLineOffsetRa
 app:idle\c\mmiidle_dial.c  HandleDialWinMsg
 app:idle\c\mmiidle_dial.c  MMIAPIIDLE_SwitchEditDialWin
 // icon
-mmi:mmi_kernel\include\mmi_theme.h  BIG_DIAL_NUM
+source:mmi_kernel\include\mmi_theme.h  BIG_DIAL_NUM
 
 // 拨号光标
-mmi:mmi_ctrl\source\editbox\c\ctrlbaseflex_cursor.c  void^BASEFLEX_DisplayCursor
+source:mmi_ctrl\source\editbox\c\ctrlbaseflex_cursor.c  void^BASEFLEX_DisplayCursor
 // 拨号光标--set
-mmi:mmi_ctrl\source\editbox\c\ctrlbaseedit_highlight.c   void^BaseEditCtrlSetHighlight
+source:mmi_ctrl\source\editbox\c\ctrlbaseedit_highlight.c   void^BaseEditCtrlSetHighlight
 // display--align
-mmi:mmi_ctrl\source\editbox\c\ctrlbaseedit.c  CTRLBASEEDIT_SetAlign
+source:mmi_ctrl\source\editbox\c\ctrlbaseedit.c  CTRLBASEEDIT_SetAlign
 // display--bg
-mmi:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  BASEEDIT_DisplayBg
+source:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  BASEEDIT_DisplayBg
 
 
 
@@ -244,8 +244,10 @@ app:eng/c/mmieng_uitestwin.c  BOOLEAN^MMIAPIENG_StartUITest
 app:eng/c/mmieng_uitestwin.c  MMI_RESULT_E^ENGUITestResultWinHandleMsg
 app:eng/c/mmieng_uitestwin.c  int32^GetUITestResultInfo
 
-
-
+// 工程模式
+app:eng/c/mmieng_main.c  MMI_RESULT_E^ENGMainMenuWinHandleMsg
+// 工程模式--menu
+app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_eng
 
 
 
@@ -270,8 +272,8 @@ app:fmm/c/mmifmm_mainwin.c  HandleFmmListWinMsg
 app:fmm/c/mmifmm_mainwin.c  MMI_RESULT_E^HandleFmmMainDetailMenuMsg
 
 // --init
-mmi:mmi_service/export/inc/mmisrvfmm_export.h  MMIMULTIM_DIR_MOVIE
-mmi:mmi_service\source\mmisrvcommon\c\mmi_common.c s_file_default_path
+source:mmi_service/export/inc/mmisrvfmm_export.h  MMIMULTIM_DIR_MOVIE
+source:mmi_service\source\mmisrvcommon\c\mmi_common.c s_file_default_path
 app:udisk\c\mmi_sd.c  MMISD_CreateDefaultFold
 
 //record
@@ -433,7 +435,7 @@ app:cc\c\mmicc_wintab_custom.c  MMICC_MO_CONNECTED_WIN_TAB  MMICC_STATUS_WIN_ID
 
 
 // 流程--挂断 DIS
-mmi:mmi_app\kernel\c\mmi_default.c  HandleFlipDown  MSG_KEYDOWN_FLIP
+source:mmi_app\kernel\c\mmi_default.c  HandleFlipDown  MSG_KEYDOWN_FLIP
 app:cc\c\mmicc_app.c 4345
 app:cc\c\mmicc_wintab_custom.c  CC_HandleDisconnectWinMsg
 app:cc\c\mmicc_wintab_custom.c  MMICC_OpenDisconnectWin  
@@ -615,7 +617,7 @@ app:pic_viewer\c\mmipicview_wintab.c HandlePreviewOptWinMsg
 // zoom
 app:pic_viewer\c\mmipicview_zoom.c  HandlePicZoomWinMsg
 // title
-mmi:mmi_ctrl\source\IconList\c\ctrliconlist.c  void^DisplayDelimiter
+source:mmi_ctrl\source\IconList\c\ctrliconlist.c  void^DisplayDelimiter
 app:pic_viewer\c\mmipicview_list.c  MMIPICVIEW_TITLE_COLOR
 
 
@@ -782,17 +784,17 @@ app:accessory\c\mmialarm.c MMI_RESULT_E^HandleAutoPowerOnOffWinMsg
 
 # 模拟
 // key Headset--长按触发闹钟
-mmi:mmi_app\kernel\c\mmi_default.c  BOOLEAN^DefaultHeadsetDetect
+source:mmi_app\kernel\c\mmi_default.c  BOOLEAN^DefaultHeadsetDetect
 //    case KEY_LONG_RELEASED:
 //			MMIAPIALM_StartAlarm(0, 0);
 
 // key Headset 不亮屏
-mmi:mmi_app\kernel\c\mmi_default.c  BOOLEAN^DefaultBackLight
-mmi:mmi_app\kernel\c\mmi_default.c  1825
+source:mmi_app\kernel\c\mmi_default.c  BOOLEAN^DefaultBackLight
+source:mmi_app\kernel\c\mmi_default.c  1825
 //            //MMIDEFAULT_TurnOnBackLight();
-mmi:mmi_app\kernel\c\mmi_default.c  void^MMK_HandlePublicKey
-mmi:mmi_app\kernel\c\mmi_default.c  4147
-mmi:mmi_app\kernel\c\mmi_default.c  4133
+source:mmi_app\kernel\c\mmi_default.c  void^MMK_HandlePublicKey
+source:mmi_app\kernel\c\mmi_default.c  4147
+source:mmi_app\kernel\c\mmi_default.c  4133
 //            //MMIDEFAULT_TurnOnBackLight();
 // 
 app:accessory\c\mmialarm.c  5568
@@ -819,7 +821,7 @@ app:accessory\c\mmialarm.c  8835
 app:accessory\c\mmialarm.c  MMI_RESULT_E^HandleEventAliveWinMsg
 
 //
-mmi:mmi_app\common\c\mmi_pubwin.c  5352
+source:mmi_app\common\c\mmi_pubwin.c  5352
 
 	
 
@@ -1071,6 +1073,7 @@ app:browser\c\mmibrowser_func.c  MMIBROWSER_IsOnlyChooseStorage
 
 
 [1.28] sos
+## sos
 // sos 开关
 prj:project_{cur}.mk  MMI_INDIAN_SOS_SUPPORT
 
@@ -1081,6 +1084,8 @@ app:setting\c\mmiset_sos.c  MMIAPISET_EnterSOSSettingWin
 app:setting\c\mmiset_sos.c  HandleSOSMessageEditBoxWinMsg
 
 
+
+## SPEED
 // 亲情号码
 app:cc\c\mmicc_speeddial.c  HandleSpeedDialSettingsWinMsg
 // 亲情号码--编辑

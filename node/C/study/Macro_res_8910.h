@@ -82,6 +82,9 @@ build\{cur}_builddir\tmp\mmi_res_240X320_text.txt  SUCCESS
 //  IMG_CMP_PNG_SABM_RLE |SABM_HOR_STRETCH ---´ø»¨ÎÆ
 
 
+// logo
+prj:resource\logo\
+
 // anim
 MS_MMI_Main\source\mmi_app\common\h\common_mdu_def.h  ANIM_PUBWIN_WAIT_PDA
 
@@ -91,11 +94,14 @@ MS_MMI_Main\source\mmi_app\common\h\common_mdu_def.h  ANIM_PUBWIN_WAIT_PDA
 prj:project_{cur}.mk   MMI_STATUSBAR_ICON_BLACK
 images:\common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\
 
-// --status--bat
-MS_MMI_Main\source\mmi_app\common\h\common_mdu_def.h  battery_syle1
-images:\common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\
+// --bat
+source:mmi_app\common\h\common_mdu_def.h  battery_syle1
+images:common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\battery_syle1\
 
-// bat
+
+// --time
+source:mmi_app\common\h\common_mdu_def.h  IDLE_BLACK_FONT
+images:common\MMI_RES_DEFAULT\IMAG\QVGA_TIME_BLACK\Idle_time\
 
 
 

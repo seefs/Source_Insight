@@ -357,7 +357,7 @@ make/{cur}_{GSM}.mak  __AUDIO_SAME_AS_POWONOFF__
 plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res AUD_ID_PROF_TONE1
 audio:UserProfiles\Tone\
 //	AUD_ID_PROF_TONE1 --> cs01.mid
-// --onoff--env
+// --env--onoff
 //		==>__MMI_POWER_ON_OFF_NO_CUSTOMIZE__
 features:\MMI_features_switch{cur}.h  CFG_MMI_POWER_ON_OFF_NO_CUSTOMIZE
 
@@ -365,7 +365,7 @@ features:\MMI_features_switch{cur}.h  CFG_MMI_POWER_ON_OFF_NO_CUSTOMIZE
 ## --¶ÌÐÅ/À´µç
 //plutommi\Service\ProfilesSrv\ProfilesSrvMain.c  AUD_ID_PROF_TONE1^+^index
 
-// --tone
+// --tone--call
 plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res AUD_ID_PROF_TONE1
 //	AUD_ID_PROF_TONE1 --> play_mp3.mp3
 audio:\
@@ -375,7 +375,7 @@ audio:UserProfiles\Tone\
 //	AUD_ID_PROF_TONE4 --> cs04.mid
 //	AUD_ID_PROF_TONE5 --> cs05.mid
 
-// --ring
+// --ring--sms
 plutommi\Service\ProfilesSrv\ProfilesSrvRes\ProfilesSrv.res AUD_ID_PROF_RING1
 //	AUD_ID_PROF_RING1 --> play_mp3.mp3
 audio:\

@@ -6,6 +6,7 @@
 ### 3.×Ô¶¯Ìæ»»£¬´ý¸Ä
 ###
 
+0Key  = MTK
 
 imagesPath = plutommi\Customer\Images\K220_G20_Z\
 images:\\

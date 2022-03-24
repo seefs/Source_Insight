@@ -11,12 +11,12 @@ Save:node\C\project\Macro_cfg_8910.h \[1.6\] BT
 Save:node\C\project\Macro_cfg_8910.h \[1.7\] RECORD
 Save:node\C\project\Macro_cfg_8910.h \[1.8\] LCD_SIZE---------------
 Save:node\C\project\Macro_cfg_8910.h \[1.9\] shortcut----------menu
-Save:node\C\project\Macro_cfg_8910.h \[1.10\] 
+Save:node\C\project\Macro_cfg_8910.h \[1.10\] CTA
 Save:node\C\project\Macro_cfg_8910.h \[1.11\] 
 Save:node\C\project\Macro_cfg_8910.h \[1.12\] 
 //
 Save:node\C\project\Macro_cfg_8910.h \[2.1\] IM
-Save:node\C\project\Macro_cfg_8910.h \[2.2\] DTMF
+Save:node\C\project\Macro_cfg_8910.h \[2.2\] DTMF, Dial, SIM, 天线
 Save:node\C\project\Macro_cfg_8910.h \[2.3\] 电子保卡
 Save:node\C\project\Macro_cfg_8910.h \[2.4\] tihu--------------语音王
 Save:node\C\project\Macro_cfg_8910.h \[2.5\] PLS---------------语音王
@@ -311,11 +311,16 @@ s_shortcut_menu_show_list_text_id
 s_shortcut_menu_edit_list_text_id
 
 // edit-menu
-MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_phonewin.c  MMI_RESULT_E^HandleShortCutSetMenuWindow
+app:setting\c\mmiset_phonewin.c  MMI_RESULT_E^HandleShortCutSetMenuWindow
 
 
 
-[1.10] 
+[1.10] CTA
+// PLMN
+prj:project_{cur}.mk  MMI_PREFER_PLMN_SUPPORT
+// PLMN--popup
+//  ----都改为: TXT_COMPLETE
+app:setting/c/mmiset_callwin.c  BOOLEAN^MMIAPISET_HandlePreferNetworkListCnf
 
 
 
@@ -351,6 +356,10 @@ MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_phonewin.c  MMI_RESULT_E^HandleS
 //
 MMI_DIALPANEL_DTMF_SUPPORT
 
+// 还有一个地方
+app:phone\c\mmiphone.c  MMI_RESULT_E^HandleScellRssiInd
+
+
 
 [2.3] 电子保卡
 
@@ -373,7 +382,21 @@ prj:project_{cur}.mk   AOLEDA_ELECTRIC_GUARANTEE_CARD = TRUE
 
 
 [2.4] 
+
 //
+prj:project_{cur}.mk  HERO_ENGINE_SUPPORT
+prj:project_{cur}.mk  HERO_ENGINE_TTS_SWTICH_SUPPORT
+
+// 总开关
+app:heroengine\tts\c\hero_tts_ui.c  masterSwitch.isShow
+
+// 改ID不用改代码
+prj:project_{cur}.mk  HERO_ENGINE_CFG_VAR_HANDSETID_FIRST
+prj:project_{cur}.mk  HERO_ENGINE_CFG_VAR_HANDSETID_SEC
+
+// mp3
+prj:project_{cur}.mk  HERO_ENGINE_TTS_NUM_USE_MP3
+
 
 
 [2.5] 

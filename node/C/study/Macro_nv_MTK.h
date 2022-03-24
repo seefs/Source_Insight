@@ -154,7 +154,7 @@ custom\audio\{nv}\nvram_default_audio.c  GAIN_NOR_MED_VOL_MAX
 
 // 免提--通话--音
 custom\audio\{nv}\nvram_default_audio.c  GAIN_HND_SPH_VOL0
-// 正常--通话--音
+// 正常/听筒--通话--音
 custom\audio\{nv}\nvram_default_audio.c  GAIN_NOR_SPH_VOL0
 // 耳机--通话--音
 custom\audio\{nv}\nvram_default_audio.c  GAIN_HED_SPH_VOL0

@@ -6,6 +6,8 @@
 ### 3.×Ô¶¯Ìæ»»£¬´ý¸Ä
 ###
 
+0Key  = 8910
+
 imagesPath = MS_MMI_Main\source\resource\mmi_res_240x320\
 images:\\
 ringPath = MS_MMI_Main\source\resource\Common\RING\

@@ -6,14 +6,15 @@
 ### 3.×Ô¶¯Ìæ»»£¬´ý¸Ä
 ###
 
+0Key  = MTK
 
-imagesPath = plutommi\Customer\Images\K220_BH_G20\
+imagesPath = plutommi\Customer\Images\K220_C61\
 images:\\
-audioPath = plutommi\Customer\AUDIO\K220_BH_G20\
+audioPath = plutommi\Customer\AUDIO\K220_C61\
 audio:\\
-featuresPath = plutommi\Customer\CustResource\K220_BH_G20_MMI\
+featuresPath = plutommi\Customer\CustResource\K220_C61_MMI\
 features:\\
-buildPath = build\K220_BH_G20\
+buildPath = build\K220_C61\
 build:\\
 batPath = _bat\build
 bat:\\
@@ -27,7 +28,7 @@ boardKey  = K220M_YGW_BB
 lcdKey  = K220D_QVGA_SH_LCM
 
 ### 2.cur
-curKey = K220_BH_G20
+curKey = K220_C61
 GSMKey = GSM
 
 ### 3.copy

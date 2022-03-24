@@ -695,6 +695,9 @@ tools\MemoryDeviceList\MemoryDeviceList_MT6261_Since11CW1352.xls
 
 
 ### Mem
+make/{cur}_{GSM}.mak  BOARD_VER_CUST_MEMORYDEVICE = C61
+make\Codegen.mak  BOARD_VER_CUST_MEMORYDEVICE
+
 // ADDRESS+SIZE=0x400000 (61D) 否则超过会报：FAT空间超过物理NOR大小
 // ADDRESS+SIZE=0x300000 (61M)
 // --ADDRESS  -0x1000=4K  (可以理解为viva大小吗？)

@@ -1230,7 +1230,8 @@ mp3:AudioPlayerSrc\AudioPlayerMainScreen.c  g_audio_test_name
 # 内置mp3--样2--T卡中显示, 可以后台播放
 // mp3--mk
 features:MMI_features_switch{cur}.h  CFG_MMI_BUILT_MP3  #开
-make\{cur}_{GSM}.mak  __AUDIO_PLAY_TEST__                 #关
+make\{cur}_{GSM}.mak  __AUDIO_PLAY_TEST__               #关
+plutommi\mmi\Inc\MMI_features.h  CFG_MMI_BUILT_MP3
 //
 // name
 mp3:AudioPlayerSrc\AudioPlayerPlayList.c  built_mp3_name1
