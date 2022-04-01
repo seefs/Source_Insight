@@ -266,7 +266,7 @@ FM_VBC = FALSE
 
 	
 [2.5] 语言, 字体---mmi_custom_define.h 
-// font-8910
+// font-8910/107
 source:mmi_service\export\inc\mmi_custom_define.h  MMI_DEFAULT_BIG_FONT
 // font-6531
 MS_MMI\source\mmi_app\custom\h\mmi_custom_define.h MMI_DEFAULT_BIG_FONT
@@ -584,13 +584,14 @@ cmd: cmd
 
 [2.17] Build问题
 //
-build:\
-build:log\midisoundbank.log 文件无法删除 
-build:log\app_main.log ERROR
-build:log\resource.log ERROR
-build:log\caf_templete.log ERROR
-build:tmp/SC6531EFM.def 宏
-build:tmp\app.macro 查看宏是否存在
+build\{cur}_builddir\
+build\{cur}_builddir\log\midisoundbank.log 文件无法删除 
+build\{cur}_builddir\log\app_main.log ERROR
+build\{cur}_builddir\log\resource.log ERROR
+build\{cur}_builddir\log\resource_main.log ERROR
+build\{cur}_builddir\log\caf_templete.log ERROR
+build\{cur}_builddir\tmp/SC6531EFM.def 宏
+build\{cur}_builddir\tmp\app.macro 查看宏是否存在
 	
 
 //cmd:

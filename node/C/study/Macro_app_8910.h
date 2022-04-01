@@ -453,6 +453,15 @@ app:cc\c\mmicc_wintab_custom.c  MMICC_STATUS_WIN_ID
 //app:cc\c\mmicc_app.c MMICC_ANIMATION_WIN_ID
 app:cc\c\mmicc_wintab_custom.c 20008
 
+// 107
+//		==>MMICC_HandlePsMsg
+//		====>CC_DisconnectedCall
+//		======>CC_DisconnectedCallByIndex
+//		==>MMICC_OpenDisconnectWin(call_time)
+//		====>PdaDisplayDisconnectWin
+//		======>CC_TimeCountToStr(call_time)
+app:cc\c\mmicc_app.c case^APP_MN_CALL_DISCONNECTED_IND
+
 
 // Á÷³Ì--½ÓÌý
 app:cc\c\mmicc_main.c  MSG_KEYUP_FLIP  CCApplet_HandleEvent
@@ -471,10 +480,6 @@ app:cc\c\mmicc_wintab_custom.c  6514
 app:cc\c\mmicc_wintab_custom.c  6541
 
 
-//
-app:cc\c\mmicc_app.c MMICC_HandlePsMsg
-// DISCONNECTED
-//   APP_MN_CALL_DISCONNECTED_IND
 
 
 //

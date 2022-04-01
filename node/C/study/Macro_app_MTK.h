@@ -1093,7 +1093,16 @@ plutommi\Customer\CustResource\resource_fmradio_skins.c  2264
 plutommi\MtkApp\FMRadio\FMRadioRes\FMRadio.res  FACTORY_RESTORE_DEFAULT_FMRDO_VOLUME
 
 //	FM-play:
+//		==>mmi_fmrdo_release_power_button/mmi_fmrdo_run_app
+//		====>mmi_fmrdo_power_on_check
+//		======>mmi_fmrdo_power_on
+//		========>mdi_fmr_power_on_with_path
 plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioSrc.c mmi_fmrdo_release_power_button
+//	FM-AutoSearch:
+//		==>mmi_fmrdo_hw_scan_finish
+//		====>mmi_fmrdo_preset_list_done
+//		==>mmi_fmrdo_entry_main(Í£Ö¹tts)
+plutommi\MtkApp\FMRadio\FMRadioSrc\FMRadioSrc.c mmi_fmrdo_preset_list_done
 
 
 
@@ -1189,8 +1198,10 @@ mp3:AudioPlayerSrc/AudioPlayerSrc.c void^mmi_audply_entry_player_screen(void)
 //		====>mmi_audply_lookup_audio_file_format("mp3")
 // --Mp3--list--play
 //		==>mmi_audply_playlist_initiate_play
-//		==>mmi_audply_do_play_action
-//		==>mmi_audply_do_portion_play_action_without_handle_result
+//		====>mmi_audply_do_play_action
+//		====>mmi_audply_do_portion_play_action_without_handle_result
+//		==>mmi_audply_press_play_button_up / mmi_audply_playlist_initiate_play / mmi_audply_delay_play
+//		====>mmi_audply_play / mmi_audply_resume
 mp3:AudioPlayerSrc\AudioPlayerPlayList.c  1997
 mp3:AudioPlayerSrc\AudioPlayerPlayList.c  2360   #½âÎö MARK_DRIVE
 mp3:AudioPlayerSrc\AudioPlayerPlayList.c  13869  #±£´æ MARK_LNAME

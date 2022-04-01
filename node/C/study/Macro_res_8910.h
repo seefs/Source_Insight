@@ -97,6 +97,9 @@ images:\common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\
 // --bat
 source:mmi_app\common\h\common_mdu_def.h  battery_syle1
 images:common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\battery_syle1\
+// --bat--sub
+source:mmi_app\common\h\common_mdu_def.h  SUBIDLE_ICON_BATTERIES_CHARGE1
+images:common\MMI_RES_DEFAULT\IMAG\SUBLCD_SIZE_128_160\sub_icon\
 
 
 // --time

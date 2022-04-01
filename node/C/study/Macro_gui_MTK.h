@@ -210,12 +210,15 @@ projects\M107\M107_XYZN_S2_4A_WESTERN_F2\Images\MainLCD\IdleScreen\Techno\SmallC
 //make\Option.mak  BATTERY_FIVE_LEVEL
 make\Option.mak  BATTERY_SIX_LEVEL
 
-//	电量:
-plutommi/Framework/GUI/GUI_Res/Status_icon_bar.res IMG_SI_BATTERY_STRENGTH 电量
+//	--status--bat--init:
+plutommi/Framework/GUI/GUI_Res/Status_icon_bar.res IMG_SI_BATTERY_STRENGTH
 plutommi\Framework\GUI\GUI_SRC\wgui_status_icon_bar.c STATUS_ICON_BATTERY_STRENGTH
 plutommi\Framework\GUI\GUI_SRC\wgui_status_icon_bar.c wgui_status_icon_bar_icon_blink_and_animate_timer_callback
 plutommi\mmi\MiscFramework\MiscFrameworkSrc\PwronCharger.c g_charbat_context.chargerLevel 电量等级
 //	电量更新:
+//		==>1格-->25%
+//		==>wgui_status_icon_bar_change_icon_level
+//		====>25%-->1格
 plutommi\mmi\MiscFramework\MiscFrameworkSrc\PwronCharger.c void^BatteryStatusIndication
 //	添加电量百分比:
 plutommi\mmi\km\SDK\Src\KM_Util.c km_charbat_get_persent
@@ -224,7 +227,7 @@ custom\drv\misc_drv\_Default_BB\MT6261\chr_parameter.c chr_usb_detect_volt = 140
 //	电池充满后继续充半个小时(多处定义):
 hal\peripheral\src\bmt.c STOPTIMER_TIMEOUT_TICK  (KAL_TICKS_1_MIN*30)
 //	电压数组:
-custom\app\FARSIGHTED61M_CN_11C_BB\nvram_user_config.c NVRAM_EF_CUST_HW_LEVEL_TBL_DEFAULT
+custom\app\{board}\nvram_user_config.c NVRAM_EF_CUST_HW_LEVEL_TBL_DEFAULT
 
 # 充电完成
 plutommi\mmi\MiscFramework\MiscFrameworkSrc\PwronCharger.c  STR_CHARGING_DONE

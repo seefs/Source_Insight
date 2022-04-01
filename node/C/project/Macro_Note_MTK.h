@@ -523,6 +523,9 @@ custom\drv\misc_drv\_Default_BB\MT6261\custom_hw_default.c  KPD_LONGPRESS_PERIOD
 //		==>repeat_time   /*1s->0.5s*/
 ps\l4\uem\src\uem_main.c  KPD_REPEAT_PERIOD
 
+// 充电超时
+Save:node\C\project\Macro_cfg_MTK.h  __CHARGE__
+
 
 [2.12] 指令
 // version
@@ -596,10 +599,11 @@ find ./ -name "*.log"| xargs grep "ERROR"
 没装cygwin:
 findstr /s /i "ERROR" *.log>aaaa.txt
 
-// open aaaa:
+// 有 ERROR 才打开 aaaa.txt:
 cmd_f cd build\{cur}\log&&findstr /s /i "ERROR" *.log>aaaa.txt&&start aaaa.txt
 cmd_f cd build\{cur}\log&&findstr /s /i "font" *.log>aaaa.txt&&start aaaa.txt
-cmd_f cd build\{cur}\log&&findstr /s /i "BOARD" *.log>aaaa.txt&&start aaaa.txt
+cmd_f cd build\{cur}\log&&findstr /s /i "custom_MemoryDevice" *.log>aaaa.txt&&start aaaa.txt
+cmd_f cd build\{cur}\&&findstr /s /i "copy" *.log>aaaa.txt&&start aaaa.txt
 // open aaaa:
 build\{cur}\log\aaaa.txt Error:
 // open cmd:

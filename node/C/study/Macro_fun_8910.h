@@ -41,7 +41,7 @@ Save:node\C\study\Macro_fun_8910.h \[2.15\] Test-----------key id
 Save:node\C\study\Macro_fun_8910.h \[2.16\] sim--显示单卡
 Save:node\C\study\Macro_fun_8910.h \[2.17\] usb
 Save:node\C\study\Macro_fun_8910.h \[2.18\] //bat
-Save:node\C\study\Macro_fun_8910.h \[2.19\] 
+Save:node\C\study\Macro_fun_8910.h \[2.19\] sms mst
 Save:node\C\study\Macro_fun_8910.h \[2.20\] 
 // 其他标号
 Save:Help\\DefaultFile\\Macro_Node_Num.h
@@ -757,7 +757,23 @@ app:udisk/c/mmiudisk_wintab.c  MMIAPIUdisk_OpenUsbOperWindow
 [2.18] 
 
 
-[2.19] 
+[2.19] sms mst
+// mst--enter
+source:mmi_app/common/h/common_mdu_def.h  VIET_MST
+source:mmi_app/app/mainmenu/c/mmi_mainmenu_data_240X320.c  VIET_MST
+source:mmi_app/common/h/mmi_menu_id.def  VIET_MST
+// mst--str
+source:mmi_app/app/sms/h/sms_mdu_def.h  VIET_MST
+// mst--winId
+source:mmi_app/common/h/mmi_id.def  VIET_MST
+// mst--ctrlId
+source:mmi_app/app/sms/h/mmisms_id.h  VIET_MST
+// mst--nodeId
+source:mmi_app/app/sms/h/
+source:mmi_app/app/sms/h/mmisms_app.h  VIET_MST
+source:mmi_app/app/sms/h/mmisms_app_mst.h
+// mst--menu
+source:mmi_app/app/sms/c/mmismsapp_main.c  VIET_MST
 
 
 [2.20] 

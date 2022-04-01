@@ -214,7 +214,7 @@ custom\drv\misc_drv\_Default_BB\MT6261\usb_custom.c  custom_usb_ms_init
 // USB_Ms_Register_DiskDriver(&USB_NOR_drv);
 
 
-# 充电超时，默认6小时
+# 充电超时，默认6小时 __CHARGE__
 //		==>BMT_TOTAL_CHARGE_TIME  6*60
 //		==>bmt_total_charge_time  6*60
 //		==>BMT_CHARGE_TIMEOUT_TIMER  6*60*13000
@@ -404,7 +404,8 @@ make/{cur}_{GSM}.mak  MX_MMI_SALE_TRACK
 //	COM_DEFS += __KINGBELL_SALE_TRACK_NUMBER__ 		#KINGBELL 销量统计后台号码
 
 make\Option.mak  MX_MMI_SALE_TRACK
-
+// --sale--number
+plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  SALE_TRACK_SRV_DEF_NUMBER
 
 
 [2.4] tihu
@@ -455,8 +456,6 @@ plutommi\mmi\MiscFramework\MiscFrameworkSrc\PwronCharger.c  tiho_tts_charbat_sta
 // 4) tts--other
 // tts--dial--mp3
 plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  ttsNumKeyDataId
-// tts--time--整点报时
-plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  tiho_tts_need_broadcast
 // tts--usb--conn
 plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  mmi_play_USB_in_tts
 plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  mmi_play_USB_out_tts
@@ -465,7 +464,6 @@ plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  tiho_tts_battery_broadcast
 // tts--menu
 plutommi\Framework\GUI\GUI_SRC\wgui_categories_util.c  UI_string_type^get_item_text
 plutommi\mmi\HeroEngine\TTS\src\TIHOTTSAPI.c  void^tiho_tts_menu_broadcast
-plutommi\Framework\GUI\GUI_SRC\wgui_categories_util.c  tiho_tts_need_broadcast
 
 
 // 5) tts--nv
@@ -473,10 +471,14 @@ plutommi\mmi\Setting\SettingRes\TihoBroadcastSetting.res  __TIHO_TTS_TIME_DEFAUL
 
 
 // 6) tts--time
+// 一键报时
 //		==>tiho_broadcast_speak_time
 //		==>tiho_broadcast_speak_time_function
 //		==>tiho_broadcast_play_speak_time
 //		==>tiho_tts_cur_time_broadcast
+// 整点报时
+//		==>tiho_tts_time_broadcast
+//		==>tiho_tts_need_broadcast
 
 
 
@@ -500,6 +502,17 @@ custom\common\PLUTO_MMI\nvram_common_config.c  __PLS_MSP_TTS_TIME_DEFULT_DAY__
 
 // lib
 plutommi/mmi/plsApp/core/lib/
+
+//
+make\Option.mak   PLS_APP_GSM_SUPPORT
+// 一键报时
+//		==>msp_tts_current_time_bc_start
+//		==>msp_tts_bc_curr_time
+// 整点报时
+//		==>msp_tts_time_bc_t
+//		==>msp_tts_need_broadcast
+//		==>msp_tts_other_is_available
+
 
 
 [2.6] DIGIT_TONE--------简易版语音王
@@ -533,6 +546,16 @@ make/{cur}_{GSM}.mak  __MMI_TIMEKEEPING_BACKLIGHT_OFF__
 
 // ring
 plutommi\Service\MDI\MDISrc\mdi_audio.c  mdi_audio_get_word_resource
+
+//
+make\Option.mak   DIGIT_TONE_SUPPORT
+// 一键报时
+//		====>test
+//		====>mmi_idle_entry_dialer_by_key
+plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  mmi_timekeeping_strat
+// 整点报时
+plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  mmi_spunctual_timekeeping_start
+
 
 
 [2.7] FM
@@ -618,7 +641,45 @@ make/{cur}_{GSM}.mak  FLAVOR = NONE
 
 
 
-[2.12] 
+[2.12] 编译流程
+// 编译
+// (1) MODEM
+make/{cur}_{GSM}.mak  MODEM.mak
+//	include make\MODEM.mak
+make\MODEM.mak  COMPLIST
+//	COMPLIST  	+= plutommi gdi_arm mmiresource vendorapp
+
+// (2) gsm
+//	PROJECT=gsm
+make/{cur}_{GSM}.mak   RELEASE_PACKAGE	= REL_CR_MMI_$(strip $(PROJECT))
+//	include make\$(strip $(RELEASE_PACKAGE)).mak
+make\REL_CR_MMI_gsm.mak  COMPLIST
+
+// (3) Option
+make\Option.mak
+//	COMPLIST :=  $(filter-out lcmmi,$(COMPLIST))
+make\REL_COMP_COMMON.mak 
+//	REL_SRC_COMP_COMMON += mmiresource
+tools\scatGenLib.pl 
+//	mmiresource - Font
+
+// (4) Gsm2
+make2.pl  myMF
+//	$myMF = "gsm2.mak"
+make\Gsm2.mak  option.mak
+//	include make\option.mak
+
+// (5) test...
+// --> Codegen --> gsm2.mak ??可能是这个顺序
+make\Codegen.mak  genmoduleinfo:
+//	@tools\make.exe -fmake\gsm2.mak -r -R...
+//
+// log:
+//	@echo copy custom_MemoryDevice_default >>$(strip $(TARGDIR))\aaaa.log
+//  $(warning ...)
+//	$(error ...)
+
+
 
 编译问题:
 // 1) mk:
@@ -631,6 +692,8 @@ plutommi\mmi\TargetOption.txt
 // 3) SI删除:行太长
 plutommi\Customer\ResGenerator\custom_option.txt 
 tools\NVRAMStatistic\include\custom_option.txt
+
+
 
 
 [2.13] 省空间
