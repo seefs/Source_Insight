@@ -214,31 +214,36 @@ make/{cur}_{GSM}.mak  MMI_BASE
 // --MMI_BASE_PRJ
 make\Option.mak MMI_BASE_PRJ
 make\Resgen.mak MMI_BASE_PRJ
-//	MMI_BASE_PRJ = PLUTO
+//	MMI_BASE_PRJ = MMI_BASE = PLUTO
 
 
 #########
-// --CUSTOMER
+// --CUSTOMER / PROJECT
+make2.pl  echo^CUSTOMER
+make\~buildinfo.tmp
+//	CUSTOMER=K220_D18E 
+//	PROJECT=gsm
 make\Option.mak  (CUSTOMER)
-//	CUSTOMER = K220_D18E
-
-// --PROJECT
 make\MODEM.mak  (PROJECT)
-//	CUSTOMER = GSM
 
-
-// --ORIGINAL
+// --ORIGINAL_CUSTOMER
 make\Option.mak ORIGINAL_CUSTOMER
-//	CUSTOMER = K220_D18E
+//	ORIGINAL_CUSTOMER = K220_D18E
 
 
 #########
 // --CUST_AUDIO
 make\Option.mak  (BOARD_VER_CUST_AUDIO)
-// --CUST_SYSTEM
+// --CUST_MEMORYDEVICE
 make\Option.mak  (BOARD_VER_CUST_MEMORYDEVICE)
 make/{cur}_{GSM}.mak  BOARD_VER
 
+// --test
+make\Codegen.mak (error )
+//	$(warning BOARD_VER: $(strip $(BOARD_VER)))
+//	$(error PLEASE check above dependency errors!)
+//
+//	FIXPATH=. 
 
 
 

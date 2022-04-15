@@ -17,7 +17,7 @@ Save:node\C\study\Macro_gui_MTK.h  \[1.12\] title
 Save:node\C\study\Macro_gui_MTK.h  \[1.13\] //anim --------------ËùÓÐConstruct
 Save:node\C\study\Macro_gui_MTK.h  \[1.14\] //tmp ---------------
 Save:node\C\study\Macro_gui_MTK.h  \[1.15\] //layer
-Save:node\C\study\Macro_gui_MTK.h  \[1.16\] simulator----------
+Save:node\C\study\Macro_gui_MTK.h  \[1.16\] 
 Save:node\C\study\Macro_gui_MTK.h  \[1.17\] //key
 Save:node\C\study\Macro_gui_MTK.h  \[1.18\] //Lcd
 Save:node\C\study\Macro_gui_MTK.h  \[1.19\] //sublcd
@@ -448,11 +448,7 @@ plutommi\Framework\GUI\OEM_SRC\gui_title_oem.c  gui_title_show_text
 
 
 
-[1.16] simulator
-//
-MoDIS_VC9\MoDIS\Debug\MoDIS.ini
-//	[INTEGRATE]
-//	CATCHER =T:\[3.0852.00]Catcher\Catcher.exe
+[1.16] 
 
 
 

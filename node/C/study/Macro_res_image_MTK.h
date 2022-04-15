@@ -32,6 +32,10 @@ plutommi\mmi\Resource\PopulateRes.c LOGO_FILE_NAME
 images:MainLCD\Active\poweronoff\
 images:MainLCD\Active\poweronoff\logo.BMP
 
+// ---Logo--color
+plutommi\Framework\GUI\GUI_SRC\bootup_logo.c  __BOOTUP_CLEAR_WHITE__
+plutommi\Framework\GUI\GUI_SRC\wgui_categories.c  __BOOTUP_CLEAR_WHITE__
+
 
 // --开关机动画:
 // ---power--gif

@@ -17,7 +17,7 @@ Save:node\C\study\Macro_gui_8910.h  \[1.12\] title
 Save:node\C\study\Macro_gui_8910.h  \[1.13\] anim --------------所有Construct
 Save:node\C\study\Macro_gui_8910.h  \[1.14\] tmp ---------------
 Save:node\C\study\Macro_gui_8910.h  \[1.15\] layer
-Save:node\C\study\Macro_gui_8910.h  \[1.16\] simulator----------
+Save:node\C\study\Macro_gui_8910.h  \[1.16\] 
 Save:node\C\study\Macro_gui_8910.h  \[1.17\] key
 Save:node\C\study\Macro_gui_8910.h  \[1.18\] Lcd
 Save:node\C\study\Macro_gui_8910.h  \[1.19\] sublcd
@@ -56,7 +56,8 @@ Save:node\C\study\Macro_gui_8910.h  \[1.30\]
 //DrawTextInRect
 //DrawTextInLine	  GUISTR_STATE_ELLIPSIS
 
-
+// --Height
+// GetFontHeight
 
 
 [1.2] Softkey
@@ -162,12 +163,17 @@ app:idle/c/mainapp.c  MMIAPICOM_StatusAreaInit
 
 //动态创建状态条:
 SBD_MMI_DIALWIN_HAS_STATUSBAR
-// Draw
-DrawStatusBarAllItem
+
+// --statusbar--icon
+source:mmi_ctrl\source\Statusbar\c\ctrlstatusbar.c  DrawStatusBarAllItem
+
+
+// --statusbar--bg
+source:mmi_ctrl\source\Statusbar\c\ctrlstatusbar.c  BOOLEAN^DrawStatusBarBg
 
 
 // init--pos
-MS_MMI_Main\source\mmi_app\common\c\mmicom_statusarea.c  void^SetStatusAreaInfo
+source:mmi_app\common\c\mmicom_statusarea.c  void^SetStatusAreaInfo
 
 
 // sim--刷新
@@ -692,29 +698,7 @@ MS_MMI_Main\source\mmi_gui\source\graph\c\guigraph.c  2908
 
 
 
-[1.16] simulator
-// simulator
-make\simulator\simulator.ini  MMI_LCD_176_220
-make\simulator_idh\simulator.ini   MMI_LCD_176_220
-make\simulator_main\simulator.ini   MMI_LCD_176_220
-// 
-app:cs\h\mmics_position.h 
-app:dcd\h\mmidcd_position.h 
-// ini(copy)
-make/simulator_idh/simulator_idh.mk  mssim_duallcd_
-make/simulator_main/simulator_main.mk  mssim_duallcd_
-
-// skin name
-make\simulator\simulator.mk  SKIN_FILE_NAME
-make\simulator_idh\simulator_idh.mk  SKIN_FILE_NAME
-make\simulator_main\simulator_main.mk  SKIN_FILE_NAME
-// skin name _T
-make\simulator_idh\simulator_idh.mk  SUFFIX
-make\simulator_main\simulator_main.mk  SUFFIX
-// skin file
-MS_MMI_Main\source\winsimulator_tp\skin
-//   mssim_duallcd_160_128
-//   mssim_duallcd_160_128_T   90^
+[1.16] 
 
 
 

@@ -14,7 +14,8 @@ Save:node\C\project\Macro_cfg_MTK.h \[1.9\] shortcut----------menu
 Save:node\C\project\Macro_cfg_MTK.h \[1.10\] USB, 充电电流
 Save:node\C\project\Macro_cfg_MTK.h \[1.11\] ATA--------------自动测试
 Save:node\C\project\Macro_cfg_MTK.h \[1.12\] CALL record
-Save:node\C\project\Macro_cfg_MTK.h \[1.13\] 
+Save:node\C\project\Macro_cfg_MTK.h \[1.13\] simulator
+Save:node\C\project\Macro_cfg_MTK.h \[1.14\] 
 //
 Save:node\C\project\Macro_cfg_MTK.h \[2.1\] //IM
 Save:node\C\project\Macro_cfg_MTK.h \[2.2\] DTMF, Dial, SIM, 天线
@@ -255,7 +256,11 @@ make/{cur}_{GSM}.mak   __SNDREC_SAVE_RENAME_CALL_NUM_STYLE__
 
 
 
-[1.13] 
+[1.13] simulator
+//
+MoDIS_VC9\MoDIS\Debug\MoDIS.ini
+//	[INTEGRATE]
+//	CATCHER =T:\[3.0852.00]Catcher\Catcher.exe
 
 
 

@@ -11,10 +11,10 @@
 imagesPath = MS_MMI_Main\source\resource\mmi_res_240x320\
 images:\\
 ringPath = MS_MMI_Main\source\resource\Common\RING\
-images:\\
+ring:\\
 batNvPath = common\nv_parameters\ProductionParam\
 batNv:\\
-nvPath = SPDE_PRJ\S98T_JL_F13\CustNV\
+nvPath = SPDE_PRJ\T5_W53_VIET\CustNV\
 nv:\\
 
 
@@ -30,27 +30,27 @@ bat:\\
 
 ### 1.cfg
 versionKey  = UMS9117_ums9117_barphone_version
-lcdKey  = K220D_QVGA_LCM
+sizeKey  = 240X320
+lcdKey  = xx
 
 
 ### 2.cur
-prjPath  = SPDE_PRJ\S98T_JL_F13\
+prjPath  = SPDE_PRJ\T5_W53_VIET\
 prj:\\
 
-curKey   = ums9117_240X320BAR_48MB_S98T_JL_F13_user
-cfgKey   = us8910_phone_user_base_config
+curKey   = ums9117_240X320BAR_48MB_T5_W53_VIET_user
+cfgKey   = xx
 
 // USER debug
 useKey   = USER
 
 ### 3.copy
-oldKey = K220_Y22_MGUO
+oldKey = xx
 
-newKey = K220_Y28_MGUO
+newKey = xx
 
 ### 4.tmp
-tmpKey = K220_Y01A_MGUO
+tmpKey = xx
 
-tmpBoardKey = K220M_YGW_BB
 
 

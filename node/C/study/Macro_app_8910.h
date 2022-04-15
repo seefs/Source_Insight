@@ -22,8 +22,8 @@ Save:node\C\study\Macro_app_8910.h  \[1.17\] mp3
 Save:node\C\study\Macro_app_8910.h  \[1.18\] alarm --------------
 Save:node\C\study\Macro_app_8910.h  \[1.19\] calc
 Save:node\C\study\Macro_app_8910.h  \[1.20\] calendar
-Save:node\C\study\Macro_app_8910.h  \[1.21\] 单位转换
-Save:node\C\study\Macro_app_8910.h  \[1.22\] 游戏 魔音
+Save:node\C\study\Macro_app_8910.h  \[1.21\] unitconversion
+Save:node\C\study\Macro_app_8910.h  \[1.22\] game
 Save:node\C\study\Macro_app_8910.h  \[1.23\] bt
 Save:node\C\study\Macro_app_8910.h  \[1.24\] env, Profile
 Save:node\C\study\Macro_app_8910.h  \[1.25\] 
@@ -71,8 +71,10 @@ app:idle\c\mainapp.c  MMIAPIIDLE_OpenIdleWin
 
 // IDLE--107
 app:idle\c\mmiidle_cstyle.c  void^OutIdleWinContent
+app:idle\c\mmiidle_cstyle.c  void^DisplayIdleWinSoftkey
 // IDLE--8910
 app:idle\c\mmiidle_mstyle.c  void^OutIdleWinContent
+app:idle\c\mmiidle_mstyle.c  void^DisplayIdleWinSoftkey
 
 // LOCK
 app:keylock\c\mmikl_keylock.c  BOOLEAN^MMIKL_HandleKLDispWinMsg
@@ -80,13 +82,14 @@ app:keylock\c\mmikl_keylock.c  BOOLEAN^MMIKL_HandleKLDispWinMsg
 app:keylock\c\mmikl_keylock.c  void^DisplayClockCallbackFun
 
 
-// pos--date,week
+// --idle--pos
+app:theme/c/mmidisplay_data_{size}.c  MMI_IDLE_DISPLAY_T^^mmi_idle_display
+// --idle--sim
+app:theme/c/mmidisplay_data_{size}.c  MMI_IDLE_COMON_MAIN_LCD_Y_NETWORKNAME
+// --idle--date,week
 app:theme/c/
-app:theme/c/mmidisplay_data_128x128.c
-app:theme/c/mmidisplay_data_176x220.c
-app:theme/c/mmidisplay_data_240x320.c
-// pos--time
-app:idle\c\mmiidle_cstyle.c
+app:theme/c/mmidisplay_data_{size}.c  MMI_IDLE_DATE_Y
+// --idle--time
 app:theme/h/mmi_position.h  MMI_MAIN_TIME_Y
 app:theme/h/mmi_position.h  IDLE_TIME_PIC_WIDTH
 
@@ -106,6 +109,7 @@ app:mainmenu\c\mmi_mainmenu_matrix.c  HandleMatrixMenuGetIconRect
 app:mainmenu\c\mmi_mainmenu_matrix.c  MMITHEME_DrawMainmenuItem
 // title
 source:mmi_service/export/inc/mmi_custom_define.h  MMISET_DEFAULT_MENU_STYLE_E
+app:mainmenu\c\mmi_mainmenu_matrix.c  MatrixMenuDisplayActiveItemTitle
 // menu softkey, prg
 app:theme/c/mmitheme_mainmenu.c  is_has_button
 app:mainmenu/c/mainmenu_win.c  MAINMENU_ICON_WIN_TAB
@@ -118,6 +122,15 @@ app:mainmenu\c\mmi_mainmenu_data_128x128.c  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
 app:mainmenu\c\mmi_mainmenu_data_240X320.c  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
 app:mainmenu\c\mmi_mainmenu_matrix.c  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
 source:mmi_app\common\c\mmi_menutable_240x320.c  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
+
+// menu--matrix
+source:mmi_app\app\theme\c\mmitheme_mainmenu.c  MAINMENU_NINE_MATRIX_STYLE
+source:mmi_kernel\include\mmitheme_mainmenu.h  MAINMENU_NINE_MATRIX_STYLE
+source:mmi_service\export\inc\mmi_custom_define.h  MAINMENU_NINE_MATRIX_STYLE
+app:mainmenu\c\mmi_mainmenu_data_240X320.c  MAINMENU_NINE_MATRIX_STYLE
+app:mainmenu\c\mmi_mainmenu_matrix.c  MAINMENU_NINE_MATRIX_STYLE
+source:mmi_app\common\c\mmi_menutable_240x320.c  MAINMENU_NINE_MATRIX_STYLE
+
 
 // menu--main
 app:mainmenu\c\mmi_mainmenu_data_128x128.c s_mainmenu_item_data
@@ -249,7 +262,7 @@ app:eng/c/mmieng_main.c  MMI_RESULT_E^ENGMainMenuWinHandleMsg
 // 工程模式--menu
 app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_eng
 
-
+// MONKEY_TEST
 
 
 
@@ -353,9 +366,20 @@ app:sms\c\mmisms_mainmenuwin.c  HandleMsgBoxMainWindow
 mmismsapp_wintab.c
 
 ### 来短信
+//		==>SMSAPPNewEventCallback
 app:sms\c\mmismsapp_main.c  MMI_RESULT_E^HandlePsMsg
 app:sms\c\mmismsapp_main.c  case^APP_MN_SMS_IND
+//		==>MMISMS_ShowNewMsgPrompt
+//		====>ShowNewMsgPrompt
+//		======>MMIPUB_OpenAlertWinByTextPtr
+app:sms\c\mmisms_commonui.c  MMISMS_HandleNewMsgWin
 
+### 未读数量
+// mainmenu--sms--num
+//		==>MatrixMenuDraw
+//		====>MatrixMenuDrawItem
+//		======>MMITHEME_DrawMainmenuItem
+app:sms\c\mmisms_api.c MMIAPISMS_GetAllUnreadMsgCount
 
 
 
@@ -489,6 +513,8 @@ app:cc\c\mmicc_wintab_custom.c  6541
 	
 [1.10] pb, cl
 // enter
+//		==>MMIMAINMENU_StartPB
+//		====>MMIPB_OpenPbWin
 app:pb\c\Mmipb_view.c  MMIPB_MAIN_WIN_ID
 
 // MEM
@@ -538,6 +564,7 @@ app:cc\c\mmicc_menutable.c GUIMENU_ITEM_T^menu_cl
 //2.cl-list
 // cl--title
 app:cl\c\Mmicl_wintab.c   HandleLogListWindow
+app:cl\c\Mmicl_wintab.c   HandleCallLogChildWindow
 
 //3.cl-deltail
 //		==>从号码获取姓名
@@ -730,6 +757,10 @@ app:fm\c\mmifm_wintab.c  void^MMIFM_HandleHeadsetAction
 
 
 [1.16] vp
+//
+prj:project_{cur}.mk  VIDEO_PLAYER_SUPPORT = TRUE
+
+
 // time
 app:videoplayer/c/mmivp_wintable.c  5788
 // set param
@@ -748,7 +779,9 @@ MMIAPMAINWIN_Enter
 
 
 [1.17] mp3
-// enter-- 
+// enter
+//		==>JoinMainPDAWin      # 240*320
+//		====>MMIMP3_PLAY_WIN_TAB_V
 app:audioplayer\c\mmiapwin_main.c  MMIAPMAINWIN_Enter
 // enter-- draw
 app:audioplayer\c\mmiapwin_main.c  HandleMp3PlayWinMsg
@@ -863,15 +896,52 @@ app:accessory\c\mmischedule.c
 
 
 
-[1.21] 
+[1.21] unitconversion
+## unitconversion
+prj:project_{cur}.mk  MMI_UNITCONVERSION_SUPPORT = TRUE
 
 
-[1.22] 
+[1.22] game
+## game
+prj:project_{cur}.mk  GAME_SUPPORT = TRUE
+app:game\
 
-//snake:
-//square:
-//Initlabel
-	
+
+// 推箱子
+prj:project_{cur}.mk  GAME_BOXMAN_SUPPORT = TRUE
+// 俄罗斯方块
+prj:project_{cur}.mk  GAME_TETRIS_SUPPORT = TRUE
+app:game\game_square\
+// 贪吃蛇
+prj:project_{cur}.mk  GAME_SNAKE_SUPPORT = TRUE
+//prj:project_{cur}.mk  DEFAULT_GAME = TETRIS
+
+// 连连看
+prj:project_{cur}.mk  GAME_LINK_SUPPORT = TRUE
+// 五子棋
+prj:project_{cur}.mk  GAME_QUINTET_SUPPORT = TRUE
+
+
+// game
+// --.c, .h, file
+make\app_main\app_main.mk  game_boxman
+// --默认游戏
+make\app_main\app_macro.mk  GAME_BOXMAN_SUPPORT
+make\app_main\release_app_macro.mk  GAME_BOXMAN_SUPPORT
+// --mdu_def
+make\resource_main\resource_header.mk  game_boxman_mdu_def
+// --menutable
+app:game\game_manager\c\mmigame_menutable.c  GUIMENU_ITEM_T^^menu_gm_list
+app:game\game_manager\c\mmigame_wintab.c  IDGAME_MENU_SNAKE_ITEM_ID
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_SECMENU_ICON_PASTIME_SNAKE 
+// --MODULE
+source:resource\mmi_res_prj_def.h  game_snake
+
+###
+// snake
+app:game\game_snake\c\mmigame_snake_wintab.c
+
+
 
 [1.23] bt
 // enter

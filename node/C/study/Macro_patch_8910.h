@@ -61,8 +61,9 @@ MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_tts.c
 
 // 107/git
 // --udisk--test
+//		==>MMIAPIUdisk_HandleUsbCablePlugIn
+//		====>MMIAPIUdisk_OpenUsbOperWindow
 MS_MMI_Main\source\mmi_app\app\udisk\c\mmiudisk_wintab.c
-
 
 
 

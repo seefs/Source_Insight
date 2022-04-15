@@ -2,7 +2,7 @@
 
 //目录
 // 1. 
-Save:node\C\study\Macro_nv_MTK.h \[1.1\] //充电------------电流
+Save:node\C\study\Macro_nv_MTK.h \[1.1\] 充电------------电流
 Save:node\C\study\Macro_nv_MTK.h \[1.2\] 充电/放电-------电压(修改放电n%)
 Save:node\C\study\Macro_nv_MTK.h \[1.3\] //低电电压
 Save:node\C\study\Macro_nv_MTK.h \[1.4\] //charge_end_voltage 高压电池
@@ -33,7 +33,8 @@ Save:node\C\study\Macro_nv_MTK.h \[1.26\]
 
 
 [1.1] 
-
+//
+custom\drv\misc_drv\_Default_BB\MT6261\chr_parameter.h  __MMI_CHR_450MA__
 
 
 

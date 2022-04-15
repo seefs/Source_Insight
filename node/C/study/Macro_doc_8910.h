@@ -16,8 +16,10 @@ Save:node\C\study\Macro_doc_8910.h \[1.11\] TextNote
 Save:node\C\study\Macro_doc_8910.h \[1.12\] //FontTool
 Save:node\C\study\Macro_doc_8910.h \[1.13\] build time----------
 Save:node\C\study\Macro_doc_8910.h \[1.14\] 
-// ÆäËû±êºÅ
-Save:Help\\DefaultFile\\Macro_Node_Num.h
+//
+Save:node\C\study\Macro_doc_8910.h \[2.1\] build error
+Save:node\C\study\Macro_doc_8910.h \[2.2\] moids error
+Save:node\C\study\Macro_doc_8910.h \[2.3\] 
 
 
 
@@ -282,6 +284,25 @@ MMIAPISET_IsNeedResetDateTime
 
 [1.15] 
 
+
+
+
+[2.1] 
+
+
+
+
+[2.2] 
+
+//
+build\{cur}_builddir\
+build\{cur}_builddir\tmp\mmi_res_128x128_text.txt TXT_SETTINGS_COMMAND
+build\{cur}_builddir\tmp\mmi_res_128x128_text.txt _EMPTY
+build\{cur}_builddir\tmp\mmi_res_128x128_text.txt Delete
+
+
+
+[2.3] 
 
 
 

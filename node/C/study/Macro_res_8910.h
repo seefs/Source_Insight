@@ -5,7 +5,7 @@ Save:node\C\study\Macro_res_8910.h \[1.1\] 项目配置
 Save:node\C\study\Macro_res_8910.h \[1.2\] mk, version, nv
 Save:node\C\study\Macro_res_8910.h \[1.3\] str
 Save:node\C\study\Macro_res_8910.h \[1.4\] res-------
-Save:node\C\study\Macro_res_8910.h \[1.5\] icon, anim
+Save:node\C\study\Macro_res_8910.h \[1.5\] image
 Save:node\C\study\Macro_res_8910.h \[1.6\] ring, audio
 Save:node\C\study\Macro_res_8910.h \[1.7\] add app
 Save:node\C\study\Macro_res_8910.h \[1.8\] add res
@@ -74,7 +74,18 @@ build\{cur}_builddir\tmp\mmi_res_240X320_text.txt  SUCCESS
 
 
 
-[1.5] icon, anim
+
+
+[1.5] image
+// --path
+Save:set\Macro_Set_Path_sprd_{pro}.h  images
+// image
+images:\
+
+
+// ==>image
+Save:node\C\study\Macro_res_image_8910.h
+
 // RES_ADD_IMG()
 //    背景使用整图，缩放的背景带花纹或重叠
 //  IMG_CMP_PNG_ARGB                   -------正常
@@ -82,35 +93,77 @@ build\{cur}_builddir\tmp\mmi_res_240X320_text.txt  SUCCESS
 //  IMG_CMP_PNG_SABM_RLE |SABM_HOR_STRETCH ---带花纹
 
 
-// logo
-prj:resource\logo\
+###
+//	图片资源大小:
+build\{cur}_builddir\tmp\mmi_res_{size}_imag.txt
 
-// anim
-MS_MMI_Main\source\mmi_app\common\h\common_mdu_def.h  ANIM_PUBWIN_WAIT_PDA
-
-
-
-// --status
-prj:project_{cur}.mk   MMI_STATUSBAR_ICON_BLACK
-images:\common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\
-
-// --bat
-source:mmi_app\common\h\common_mdu_def.h  battery_syle1
-images:common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\battery_syle1\
-// --bat--sub
-source:mmi_app\common\h\common_mdu_def.h  SUBIDLE_ICON_BATTERIES_CHARGE1
-images:common\MMI_RES_DEFAULT\IMAG\SUBLCD_SIZE_128_160\sub_icon\
-
-
-// --time
-source:mmi_app\common\h\common_mdu_def.h  IDLE_BLACK_FONT
-images:common\MMI_RES_DEFAULT\IMAG\QVGA_TIME_BLACK\Idle_time\
 
 
 
 [1.6] ring
+// --path
+Save:set\Macro_Set_Path_sprd_{pro}.h  ring
+// ring
+ring:\
+
+
+
 // TONE_425HZ
 //MMISRVAUD_Play_BusyTone
+
+
+### sms ring
+//
+HandleSelectMsgRingWindow
+
+// sms one
+//		==>ALERT_NAMES_EX
+//		==>ALERT_NAMES
+app:setting\h\mmiset_export.h  SPDE_MMI_MSG_RING_NUM_ONE
+app:setting\h\mmiset_export.h  SPDE_MMI_MSG_RING_NUM_ONE
+//		==>MMISET_MSG_FIXED_RING_MAX_ITEM   1
+app:setting\c\mmiset_wintab.c  MMI_RESULT_E^^HandleSelectMsgRingWindow
+source:resource\mmi_res_prj_def.h  SPDE_MMI_MSG_RING_NUM_ONE
+//		==>ALERT_NAMES_EX
+//		==>ALERT_NAMES
+app:setting\c\mmiset_ring.c  MMIAPISET_AppendFixedItemsOnly
+//  107
+source:resource\mmi_res_prj_def.h  MMISET_MSGRING_USER_MAX_NUM   2
+source:resource\mmi_res_prj_def.h  MMISET_MMSRING_USER_MAX_NUM   2
+//  8910
+source:resource\mmi_res_prj_def.h  MMISET_ALERT_RING_MAX_NUM_EX  2
+source:resource\mmi_res_prj_def.h  MMISET_ALERT_RING_MAX_NUM     2
+
+
+// call one
+//		==>RING_NAMES
+//		==>RING_NAMES_EX
+app:setting\h\mmiset_export.h  SPDE_MMI_CALL_RING_NUM_ONE
+app:setting\h\mmiset_export.h  SPDE_MMI_CALL_RING_NUM_ONE
+//		==>MMISET_RING_FIXED_DEFAUT_NUM   1
+app:setting\c\mmiset_wintab.c  SPDE_MMI_CALL_RING_NUM_ONE
+source:resource\mmi_res_prj_def.h  SPDE_MMI_CALL_RING_NUM_ONE
+//		==>RING_NAMES
+//		==>RING_NAMES_EX
+app:setting\c\mmiset_ring.c  MMIAPISET_AppendFixedItemsOnly
+//  107/8910
+source:resource\mmi_res_prj_def.h  MMISET_RING_USER_MAX_NUM        1
+source:resource\mmi_res_prj_def.h  MMISET_RING_USER_MAX_NUM_EX     2
+
+
+// clock one
+//		==>CLOCK_NAMES
+//		==>CLOCK_NAMES_MAT
+app:setting\h\mmiset_export.h  SPDE_MMI_CLOCK_RING_NUM_ONE
+//		==>MMIALM_RING_FIXED_DEFAULT_NUM   1
+app:accessory\c\mmialarm.c  HandleAlarmRingSelWinMsg
+source:resource\mmi_res_prj_def.h  SPDE_MMI_CLOCK_RING_NUM_ONE
+//		==>CLOCK_NAMES
+//		==>CLOCK_NAMES_MAT
+app:setting\c\mmiset_ring.c  MMIAPISET_GetClockRingName
+//  107/8910
+source:resource\mmi_res_prj_def.h  MMIALM_CLOCK_RING_MAX_NUM        1
+source:resource\mmi_res_prj_def.h  MMIALM_CLOCK_RING_MAX_NUM_MAT    1
 
 
 // mp3

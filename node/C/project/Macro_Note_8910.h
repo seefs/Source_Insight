@@ -3,8 +3,8 @@
 
 //目录
 // 项目选择 编译
-Save:node\C\project\Macro_Note_8910.h \[1.1\] 
-Save:node\C\project\Macro_Note_8910.h \[1.2\] 6531E编译指令:
+Save:node\C\project\Macro_Note_8910.h \[1.1\] 编译指令
+Save:node\C\project\Macro_Note_8910.h \[1.2\] gpio_cfg
 Save:node\C\project\Macro_Note_8910.h \[1.3\] KEY
 Save:node\C\project\Macro_Note_8910.h \[1.4\] LCD
 Save:node\C\project\Macro_Note_8910.h \[1.5\] CAM
@@ -38,38 +38,30 @@ Save:node\C\project\Macro_Note_8910.h \[2.20\]
 
 
 
-[1.1] 
+[1.1] 编译指令:
 
-
-
-[1.2] 6531E编译指令:
-cmd: cmd
-
-
-编译:
+//编译:
 open: project\UIS8910_ROM_16MB_DS_USER\New_common.bat
 
-
-编译模块
+//编译模块
 make p=UIS8910_ROM_16MB_DS_USER
 make p=UIS8910_ROM_16MB_DS_USER m=custom_drv
 make p=UIS8910_ROM_16MB_DS_USER image
 
-
-或 (1行命令)
+//或 (1行命令)
 make p=UIS8910_ROM_16MB_DS_USER m=custom_drv update image
 make p=UIS8910_ROM_16MB_DS_USER m=custom_drv update image job=4
 
-编译资源 (VS接着编译即可)
+//编译资源 (VS接着编译即可)
 make p=UIS8910_ROM_16MB_DS_USER m=resource job=4
 
 
-其他编模块
+//其他编模块
 make p=UIS8910_ROM_16MB_DS_USER m=app_main update image
 make p=UIS8910_ROM_16MB_DS_USER m=app_main
 
 
-模拟器：
+//模拟器：
 make p=UIS8910_ROM_16MB_DS_USER m=simulator_idh
 vc: build\UIS8910_ROM_16MB_DS_USER_builddir\win\simulator.dsw
 build\UIS8910_ROM_16MB_DS_USER_builddir\win\
@@ -84,6 +76,15 @@ build\UIS8910_ROM_16MB_DS_USER_builddir\img
 
 F:\6531G_16A_MP_W17.43.4\build\UIS8910_ROM_16MB_DS_USER_builddir\img
 
+
+
+[1.2] gpio_cfg
+//
+make\custom_drv\custom_drv.mk  DRIVER_CONFIG_WA011U
+//SOURCES   +=	gpio_cfg_wa022u.c pinmap_cfg_wa022u.c
+
+//
+MS_Customize\source\product\config\uis8910ff_refphone\
 
 
 
@@ -397,6 +398,9 @@ source:mmi_service\export\inc\mmi_custom_define.h  xx  SBD_ALERT_WIN_TIME_PERIOD
 // time--format-12
 source:mmi_app\app\setting\c\mmiset_display.c  MMI_TIME_DISPALY_TYPE_DEFAULT_12
 
+// time--system
+MS_Ref/source/base/src/sys_time.c  s_sys_default_date
+
 
 // POWER
 mmiphone_onoff.c  SBD_CHANGE_POWER_OFF_TIME_10S
@@ -523,7 +527,7 @@ uart抓trace:
 //8 para set->arm log:open
 //8 para set->dsp log:open
 //8 para set->usb log:close (不确定)
-//8 para set->debug->assert:open  (不确定开不开)
+//8 para set->debug (para)->assert:open  (不确定开不开)
 
 
 ### 抓trace--压缩空间:

@@ -236,8 +236,8 @@ chip_drv\chip_module\charge\uix8910\charge_uix8910.c  _CHGMNG_VoltagetoPercentum
 
 
 
-[1.12] custom
-
+[1.12] custom 
+### 107
 make/perl_script/
 
 // electronic guarantee card
@@ -246,6 +246,20 @@ make/perl_script/UIX8910_128MBIT.xml  0x230
 // NV_ALIPAY_ID
 make/perl_script/UIX8910_128MBITX64MBIT_new.xml  0x1B4
 
+
+### 8910
+nv:\\
+HW:\
+// sim
+HW:{project}\nv_type_uix8910.nvm  sim_card_number
+//	0x1
+
+//
+HW:{project}\nv_type_uix8910.nvm  com_data
+//	0xFF
+
+// static
+HW:{project}\modem_nv_cat1bis_uix8910_static.nvm  9166
 
 
 [1.13] 

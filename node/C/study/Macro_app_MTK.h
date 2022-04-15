@@ -82,25 +82,36 @@ plutommi/Framework/GUI/GUI_SRC/wgui_categories_idlescreen.c ShowCategory33Screen
 //plutommi/Framework/GUI/GUI_SRC/wgui_categories_idlescreen.c wgui_cat033_show_details( )
 // idle--key:
 
-// 1) time:
+
+// 1) idle--update:
+//		==>DateTimerProc  #改成10秒更新一次
+//		====>update_mainlcd_dt_display
+//		======>Fun==>update_main_LCD_date_time
+//		==>wgui_clock_update_main_lcd
+//		====>gui_clock_update  #时钟列表
+//		======>gui_clock_show
+//		========>gui_clock_show_digital
+//		==========>画背景
+//		==========>gui_clock_show_digital_image
+//		==>show_idle_day_display  #week
+plutommi\Framework\GUI\GUI_SRC\gui_clock.c   gui_clock_show_digital( )
+
+
+// 2) time:
 // --idle--time--init
 //		==>clock1==>time
 //		==>clock2==>date
+//		====>object.date.height
+//		====>object.date.y = y = y2 + 5;        #week
+//		====>y1 = y;                            #date
 plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c wgui_clock_move
 // --idle--time----Seperator
 plutommi\mmi\Setting\SettingSrc\DateAndTime.c  PhnsetGetDateSeperatorFormat
-// --idle--time--image
-//plutommi\Framework\GUI\GUI_SRC\gui_clock.c   gui_clock_show( )
-plutommi\Framework\GUI\GUI_SRC\gui_clock.c   gui_clock_show_digital_image
-plutommi/Framework/GUI/GUI_SRC/wgui_categories_idlescreen.c  update_mainlcd_dt_display
-// --idle--update
-plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c  wgui_clock_update_main_lcd
-plutommi\Framework\GUI\GUI_SRC\Wgui_clock.c   gui_clock_update( )
-plutommi\Framework\GUI\GUI_SRC\gui_clock.c   gui_clock_show_digital( )
-plutommi\Framework\GUI\GUI_SRC\gui_clock.c   2916
+
 // --idle--time--status
 //plutommi\Framework\GUI\GUI_SRC\wgui_status_icon_bar.c wgui_status_icon_bar_time_small_hide_callback
 plutommi\Framework\GUI\GUI_SRC\gui_clock.c   gui_clock_show_digital_small_image
+
 // --关机充电--time, __POWER__
 //		==>enter: ShowChargingScr_int
 plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c  case^DT_POWER_OFF_CHARGER_SCREEN
@@ -108,8 +119,7 @@ plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c  case^DT_POWER_OFF_CHARGER_SCREEN
 plutommi\Framework\GUI\GUI_SRC\gui_clock.c   2584
 
 
-
-// 2) date:
+// 3) date:
 // --date--date
 plutommi\Framework\GUI\GUI_SRC\wgui_datetime.c void^set_dt_display( )
 // --date--date--week
@@ -1583,6 +1593,15 @@ plutommi\mmi\Setting\SettingSrc\PhoneSetup.c  MAX_SOS_CALL_NUMBER
 //		======>ShowCategory16ScreenInternal        #电话--拨出
 //		==>make_sos_num_call
 plutommi\mmi\Idle\IdleSrc\IdleCommon.c  mmi_make_call_sos_num_redail
+// 61D实测：
+// 超时==>ind==>timeout(2.2s)==>cycle==>call
+// 被挂==>ind==>timeout(2.2s)==>cycle==>call
+// 主挂==>endkey==>ind==>timeout(2.1s)==>cycle==>call
+// 空号==>ind==>timeout(4.1s)==>cycle==>call
+// 未接==>ind==>timeout(2.1s)==>cycle==>call
+// 接通==>ind==>timeout(2.1s)==>switch==>sms
+
+
 // sos--call--end
 //		==>StopSOSTimer(JDD_TIMER_01)
 //		==>

@@ -41,7 +41,7 @@ Save:node\C\study\Macro_fun_8910.h \[2.15\] Test-----------key id
 Save:node\C\study\Macro_fun_8910.h \[2.16\] sim--显示单卡
 Save:node\C\study\Macro_fun_8910.h \[2.17\] usb
 Save:node\C\study\Macro_fun_8910.h \[2.18\] //bat
-Save:node\C\study\Macro_fun_8910.h \[2.19\] sms mst
+Save:node\C\study\Macro_fun_8910.h \[2.19\] sms mst, sale
 Save:node\C\study\Macro_fun_8910.h \[2.20\] 
 // 其他标号
 Save:Help\\DefaultFile\\Macro_Node_Num.h
@@ -757,7 +757,8 @@ app:udisk/c/mmiudisk_wintab.c  MMIAPIUdisk_OpenUsbOperWindow
 [2.18] 
 
 
-[2.19] sms mst
+[2.19] sms mst, sale
+### mst
 // mst--enter
 source:mmi_app/common/h/common_mdu_def.h  VIET_MST
 source:mmi_app/app/mainmenu/c/mmi_mainmenu_data_240X320.c  VIET_MST
@@ -774,6 +775,54 @@ source:mmi_app/app/sms/h/mmisms_app.h  VIET_MST
 source:mmi_app/app/sms/h/mmisms_app_mst.h
 // mst--menu
 source:mmi_app/app/sms/c/mmismsapp_main.c  VIET_MST
+
+
+###
+// sale--mk
+Save:node\C\project\Macro_cfg_8910.h __sale__
+// sale--str
+source:mmi_app\common\h\common_mdu_def.h  SPDE_SALES_TRACKER_SUPPORT
+// sale--nv, 定时时间/号1/号2; 开关
+source:mmi_app\app\eng\c\mmieng_nv.c  SPDE_SALES_TRACKER_SUPPORT
+source:mmi_app\app\eng\h\mmieng_nv.h  SPDE_SALES_TRACKER_SUPPORT
+source:mmi_app\app\setting\c\mmiset_nv.c  SPDE_SALES_TRACKER_SUPPORT
+source:mmi_app\app\setting\h\mmiset_nv.h   SPDE_SALES_TRACKER_SUPPORT
+source:mmi_app\app\setting\c\mmiset_func.c  SPDE_SALES_TRACKER_SUPPORT
+// sale--timer
+source:mmi_kernel\include\mmk_timer.h  SPDE_SALES_TRACKER_SUPPORT
+source:mmi_kernel\source\c\mmk_timer.c  SPDE_SALES_TRACKER_SUPPORT
+source:mmi_kernel\include\mmi_default.h  SPDE_SALES_TRACKER_SUPPORT
+//source:mmi_app\kernel\c\mmi_default.c  SPDE_SALES_TRACKER_SUPPORT
+// mst--winId, 询问&成功
+source:mmi_app\app\sms\h\mmisms_id.h  SPDE_SALES_TRACKER_SUPPORT
+source:mmi_app\app\sms\h\mmisms_id.def  SPDE_SALES_TRACKER_SUPPORT
+source:mmi_app\app\eng\h\mmieng_id.h  SPDE_SALES_TRACKER_SUPPORT
+source:mmi_app\app\eng\h\mmieng_id.def  SPDE_SALES_TRACKER_SUPPORT
+// sale--set
+source:mmi_app\app\eng\c\mmieng_win.c  SPDE_SALES_TRACKER_SUPPORT
+source:mmi_app\app\eng\c\mmieng_main.c  SPDE_SALES_TRACKER_SUPPORT
+source:mmi_app\app\eng\h\mmieng_export.h  SPDE_SALES_TRACKER_SUPPORT
+// sale--sms
+source:mmi_app\app\sms\h\mmisms_export.h  SPDE_SALES_TRACKER_SUPPORT
+source:mmi_app/app/sms/c/mmismsapp_main.c  SPDE_SALES_TRACKER_SUPPORT
+// sale--call
+//		==>MMISET_SetSalesTrackerCallTime
+source:mmi_app/app/cc/c/mmicc_wintab.c  SPDE_SALES_TRACKER_SUPPORT
+// sale--boot
+//		==>HandleNormalStartupWindow
+//		====>MMIDEFAULT_StartAutoSendSMSTimer
+//		======>MMIDEFAULT_HandleAutoSendSMSTimer
+//		==>Enter_SMS_APP_AutoSend(MN_DUAL_SYS_1)
+//		====>SMS_APP_AutoSendMsg_str
+//		======>MMISMS_AppSendSms()
+//		==>SMS_APP_SMSSendCnfCallback()
+//		====>MMIDEFAULT_StartAutoReSendSMSTimer
+//		======>MMIDEFAULT_HandleAutoSendSMSTimer
+source:mmi_app\app\phone\c\mmiphone_onoff.c  SPDE_SALES_TRACKER_SUPPORT
+
+
+
+
 
 
 [2.20] 

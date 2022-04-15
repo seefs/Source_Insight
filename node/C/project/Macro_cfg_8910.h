@@ -11,9 +11,11 @@ Save:node\C\project\Macro_cfg_8910.h \[1.6\] BT
 Save:node\C\project\Macro_cfg_8910.h \[1.7\] RECORD
 Save:node\C\project\Macro_cfg_8910.h \[1.8\] LCD_SIZE---------------
 Save:node\C\project\Macro_cfg_8910.h \[1.9\] shortcut----------menu
-Save:node\C\project\Macro_cfg_8910.h \[1.10\] CTA
-Save:node\C\project\Macro_cfg_8910.h \[1.11\] 
-Save:node\C\project\Macro_cfg_8910.h \[1.12\] 
+Save:node\C\project\Macro_cfg_8910.h \[1.10\] //USB
+Save:node\C\project\Macro_cfg_8910.h \[1.11\] CTA
+Save:node\C\project\Macro_cfg_8910.h \[1.12\] //CALL record
+Save:node\C\project\Macro_cfg_8910.h \[1.13\] simulator
+Save:node\C\project\Macro_cfg_8910.h \[1.14\] 
 //
 Save:node\C\project\Macro_cfg_8910.h \[2.1\] IM
 Save:node\C\project\Macro_cfg_8910.h \[2.2\] DTMF, Dial, SIM, 天线
@@ -183,6 +185,8 @@ MS_Customize\source\product\config\uis8910ff_refphone\mem_cfg.c  259
 //	要注意的是有其他应用有使用短信的选项也需要屏蔽掉，例如在拨号介面输入号码去发短信，也需从该菜单屏蔽掉。
 
 
+// SECURITYBOX
+make\app_main\app_macro.mk  MMI_SMS_SECURITYBOX_SUPPORT
 
 
 
@@ -315,16 +319,16 @@ app:setting\c\mmiset_phonewin.c  MMI_RESULT_E^HandleShortCutSetMenuWindow
 
 
 
-[1.10] CTA
+[1.10] 
+
+
+
+[1.11] CTA
 // PLMN
 prj:project_{cur}.mk  MMI_PREFER_PLMN_SUPPORT
 // PLMN--popup
 //  ----都改为: TXT_COMPLETE
 app:setting/c/mmiset_callwin.c  BOOLEAN^MMIAPISET_HandlePreferNetworkListCnf
-
-
-
-[1.11] 
 
 
 
@@ -334,7 +338,29 @@ app:setting/c/mmiset_callwin.c  BOOLEAN^MMIAPISET_HandlePreferNetworkListCnf
 
 
 
-[1.13] 
+[1.13] simulator
+// simulator
+make\simulator\simulator.ini  MMI_LCD_176_220
+make\simulator_idh\simulator.ini   MMI_LCD_176_220
+make\simulator_main\simulator.ini   MMI_LCD_176_220
+// 
+app:cs\h\mmics_position.h 
+app:dcd\h\mmidcd_position.h 
+// ini(copy)
+make/simulator_idh/simulator_idh.mk  mssim_duallcd_
+make/simulator_main/simulator_main.mk  mssim_duallcd_
+
+// skin name
+make\simulator\simulator.mk  SKIN_FILE_NAME
+make\simulator_idh\simulator_idh.mk  SKIN_FILE_NAME
+make\simulator_main\simulator_main.mk  SKIN_FILE_NAME
+// skin name _T
+make\simulator_idh\simulator_idh.mk  SUFFIX
+make\simulator_main\simulator_main.mk  SUFFIX
+// skin file
+MS_MMI_Main\source\winsimulator_tp\skin
+//   mssim_duallcd_160_128
+//   mssim_duallcd_160_128_T   90^
 
 
 
@@ -367,7 +393,8 @@ app:phone\c\mmiphone.c  MMI_RESULT_E^HandleScellRssiInd
 prj:project_{cur}.mk   SPDE_ELECTRIC_GUARANTEE_CARD = TRUE
 // nv同网络版
 prj:project_{cur}.mk   NV_CUS_FIXNV_DATA_LEN_128 = TRUE
-
+//
+app:eng\c\mmieng_win.c  void^SEGC_call_connected_handle
 
 // 2.网络版
 prj:project_{cur}.mk   SPDE_ELECTRIC_GUARANTEE_CARD_V2 = TRUE
@@ -378,7 +405,28 @@ prj:project_{cur}.mk   NV_CUS_FIXNV_DATA_LEN_128 = TRUE
 
 // 3.本地版
 prj:project_{cur}.mk   AOLEDA_ELECTRIC_GUARANTEE_CARD = TRUE
+//
+app:eng\c\mmieng_win.c  void^AOLEDA_call_connected_handle
 
+
+// 4.销量统计
+// sale--set
+Save:node\C\study\Macro_fun_8910.h  __sale__
+//
+prj:project_{cur}.mk   SPDE_SALES_TRACKER_SUPPORT 				= TRUE
+prj:project_{cur}.mk   SPDE_SALES_TRACKER_FOR_T5_W53			= TRUE ###时间，接收号码中心号码
+prj:project_{cur}.mk   SPDE_SALES_TRACKER_SETTING_SUPPORT		= TRUE ###设置菜单
+prj:project_{cur}.mk   SPDE_SALES_TRACKER_RESEND_SMS_IF_FAILED 	= TRUE	###销售追踪发送消息失败后(在不重启的情况下)继续发送
+prj:project_{cur}.mk   SPDE_SALES_TRACKER_CODE_XJ123XJ			= TRUE	###查询指令*#4695#
+prj:project_{cur}.mk   SPDE_SALES_TRACKER_SAVE_SEND_STATUS_AFTER_CLEAR_DATA = TRUE
+prj:project_{cur}.mk   SPDE_SALES_SIM1_FAILE_USE_TO_SIM2		= TRUE ##卡1  失败就用卡2
+// other
+prj:project_{cur}.mk   SPDE_SALES_TRACKER_OTHER_NUMBER_SUPPORT
+prj:project_{cur}.mk   SPDE_SALES_TRACKER_SETTING_ADD_SMS_SHOW
+prj:project_{cur}.mk   SPDE_SALES_TRACKER_CONFIRM_WINDOW
+prj:project_{cur}.mk   SPDE_SALES_TRACKER_SHOW_SUCCESS_NOTIFY
+prj:project_{cur}.mk   SPDE_SALES_TRACKER_DEFAULT_OFF
+prj:project_{cur}.mk   SPDE_SALES_TRACKER_SEND_BY_CONFIRM
 
 
 [2.4] 

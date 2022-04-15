@@ -8,13 +8,16 @@
 
 0Key  = 8910
 
+HWKey  = G:\_HW_NV_PARA.git\8910FFS\W20.36.2\
+HW:\\
+
 imagesPath = MS_MMI_Main\source\resource\mmi_res_240x320\
 images:\\
 ringPath = MS_MMI_Main\source\resource\Common\RING\
 images:\\
 batNvPath = common\nv_parameters\ProductionParam\
 batNv:\\
-nvPath = SPDE_PRJ\WA07U_F30Z\nvitem\
+nvPath = SPDE_PRJ\WA22U_SW34E_QQVGA\nvitem\
 nv:\\
 
 
@@ -37,6 +40,7 @@ lcdKey  = K220D_QVGA_LCM
 prjPath  = SPDE_PRJ\WA07U_F30Z\
 prj:\\
 
+projectKey   = WA22U_SW34E_QQVGA
 curKey   = UIS8910_ROM_16MB_SS_WA07U_F30Z_USER
 cfgKey   = uis8910_phone_user_base_config
 
