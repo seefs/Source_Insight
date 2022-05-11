@@ -58,7 +58,7 @@ project:G:\wa01u_svn_small_new3,
 72
 project:G:\T1071,
 74
-project:G:\watch_sprd,
+project:G:\wa01u_svn_small_w21,
 76
 project:G:\wa03u_git,
 78
@@ -67,14 +67,22 @@ project:G:\wa03u_git2,
 
 //(8) MTK 项目路径1
 80
-project:E:\60M_11C_EX\trunk,
+project:E:\60M,
 //奇数项, 解决源码+SI目录分开问题, 源码目录单独设置在前一项
 81
-project:E:\_SI4.0\60M_11C_EX.si4project
+project:E:\_SI4.0\61M.si4project
 82
 project:E:\MT61D_ZYF,
 83
 project:E:\_SI4.0\61M_ZYF.si4project
+84
+project:E:\60D_11C,
+85
+project:E:\_SI4.0\60D_11C.si4project
+86
+project:E:\60A_6464,
+87
+project:E:\_SI4.0\60D_11C.si4project
 
 
 

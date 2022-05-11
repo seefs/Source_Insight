@@ -100,6 +100,29 @@ prj:project_{cur}.mk   MMI_MULTI_GREEN_KEY =DUAL 绿键
 [1.4] LCD
 prj:project_{cur}.mk   ST7789
 prj:project_{cur}.mk   ST7735S
+prj:project_{cur}.mk   _USE_3_LINE_2_DATD_ = FALSE  #no use
+
+// 三线一通道
+prj:{cfg}.cfg   LCD_SPI = 3WIRE_9BIT_1DATA
+prj:{cfg}.cfg   SUBLCM_INTERFACE = SPI
+config:uis8910ff_refphone\lcm_cfg_info.c  USE_3_LINE_LCD
+driver:lcd\tft_ST7735S.c  USE_3_LINE_LCD
+// 三线二通道
+prj:{cfg}.cfg   LCD_SPI = 3WIRE_9BIT_2DATA
+prj:{cfg}.cfg   SUBLCM_INTERFACE = SPI
+config:uis8910ff_refphone\lcm_cfg_info.c  TWO_DATA_LINE_LCD
+driver:lcd\tft_ST7735S.c  TWO_DATA_LINE_LCD
+// 四线一通道
+prj:{cfg}.cfg   LCD_SPI = 4WIRE_8BIT_1DATA
+prj:{cfg}.cfg   SUBLCM_INTERFACE = NONE
+config:uis8910ff_refphone\lcm_cfg_info.c  ONE_DATA_LINE_LCD
+driver:lcd\tft_ST7735S.c  TWO_DATA_LINE_LCD
+// 四线二通道
+prj:{cfg}.cfg   LCD_SPI = 4WIRE_8BIT_2DATA
+prj:{cfg}.cfg   SUBLCM_INTERFACE = NONE
+config:uis8910ff_refphone\lcm_cfg_info.c  TWO_DATA_LINE_LCD
+driver:lcd\tft_ST7735S.c  ONE_DATA_LINE_LCD
+
 //
 MS_Customize/source/product/driver/lcd/
 MS_Customize/source/product/driver/lcd/tft_ST7789.c
@@ -291,6 +314,10 @@ MMI_DISPLAY_TRAD_CHINESE_SUPPORT = TRUE
 MMI_LANG_HAN_VECTOR_DEFAULT_ADD_SIMP_LIB = TRUE
 MMISET_EDEFAULT_INPUT_LANGUAGE_TRAD_CN = TRUE
 
+## 关中文     
+prj:project_{cur}.mk  IM_SIMP_CHINESE_SUPPORT = FALSE
+prj:project_{cur}.mk  MMI_DISPLAY_SIMP_CHINESE_SUPPORT = FALSE
+prj:uis8910_phone_base_config.cfg  IM_SIMP_CHINESE_SUPPORT
 
 
 [2.6] 情景模式 音频参数:
@@ -419,10 +446,13 @@ MS_MMI_Main/source/mmi_app/app/setting/h/mmiset_security.h  MMISET_PRIVACY_PROTE
 
 
 [2.13] 音量---------mmienvset_internal.h
-// set vol
+// set vol(ring/msg/call)
 source:mmi_app\app\envset\h\mmienvset_internal.h  MMIENVSET_CALL_RING_VOL_SILENT_MODE
 // multim vol
 source:mmi_app\app\setting\h\mmiset_export.h  MMISET_VOL_DEFAULT_MULTIM
+// 合盖 vol
+Save:node\C\study\Macro_gui_8910.h  __vol__
+
 
 
 [2.14] 电池---------

@@ -27,7 +27,7 @@ Save:node\C\study\Macro_fun_8910.h \[2.1\] lock
 Save:node\C\study\Macro_fun_8910.h \[2.2\] light
 Save:node\C\study\Macro_fun_8910.h \[2.3\] ADN FDN SDN
 Save:node\C\study\Macro_fun_8910.h \[2.4\] Dtmf
-Save:node\C\study\Macro_fun_8910.h \[2.5\] CC--msg
+Save:node\C\study\Macro_fun_8910.h \[2.5\] CC--msg, 静默电话
 Save:node\C\study\Macro_fun_8910.h \[2.6\] SMS--tp input
 Save:node\C\study\Macro_fun_8910.h \[2.7\] cursor
 Save:node\C\study\Macro_fun_8910.h \[2.8\] file
@@ -377,6 +377,19 @@ source:mmi_app\app\audioplayer\c\mmiapwin_main_pda.c  470
 //	AP_AudioSrvCallBack()
 //  APRequestVirtualAudioHandle()
 
+// tts--dial
+//		==>playkeypadtoneTTS
+//		====>simple_tts_dial_broadcast
+
+// tts--ringId
+//		==>MMISET_RING_CALL_KEY_TONE_RING  (not env) (mp3Index/Info) (play/Pri) (same vol)
+//		==>MMISET_RING_TYPE_READDIALKEY (env) (No mp3Index/Info) (Not play/Pri) (same vol)
+
+// tts--vol
+//		==>DIALKEYREAD_VOL (same vol)
+
+
+
 
 [1.16] draw str wchar
 //{
@@ -550,9 +563,10 @@ source:mmi_app\kernel\c\mmi_default.c  CloseAllLight
 [2.4] Dtmf
 //	DefaultDtmf
 
+//
 
 
-[2.5] CC--msg
+[2.5] CC--msg, 静默电话
 //	3529 [dial_tts] play result = 1   
 //	// MMICC_HandlePsMsg                                                                             	                                                                	0:02:16.475  	
 //	5212 ccapp.c:enter function CC_HandlePsMsg(), msg_id = 41365      
@@ -563,6 +577,24 @@ source:mmi_app\kernel\c\mmi_default.c  CloseAllLight
 //	12194 ccapp: CC_HandlePsMsg->APP_MN_SETUP_IND  
 //	12199 CC_CallSetupIndEx  calling_num_present = 1 
 
+
+### 静默电话(拨出)
+//		==>MMICC_HandlePsMsg
+//		====>case^APP_MN_ALERTING_IND                # 收到振铃提示事件的处理
+//		======>CC_CallAlertingInd                    # 2G网络回铃音处理
+//		======>CC_CallEarlyMediaInd                  # volte网络回铃音处理
+//		========>case^MN_CALL_REMOTE_USER_ALERTING   # 收到对端发送来的ALERT消息
+//		==========>MNPHONE_StartVolteCodec           # 可放在接通后调用
+app:cc\c\mmicc_app.c  case^APP_MN_ALERTING_IND
+//	StopLocalNetRing
+//	PlayLocalNetRing  # no use
+//		====>case^APP_MN_CALL_START_IND              # ring
+//		======>CC_CallStartInd                       # 
+//		========>MMICC_ConstructVoiceCodec           # 不要关，关了后都没声音
+//		====>case^APP_MN_SYNC_IND                    # ring, MMISRVAUD_TYPE_VOICE
+//		======>CC_SyncInd                            # 
+//		========>CC_OpenAudioTunnel                  # //bt
+//		===========>MMICC_ConstructVoiceCodec        # no use
 
 
 
@@ -607,11 +639,32 @@ LoadFileToImage
 
 
 
-[2.11] reset
-//
-//	MMISET_CleanUserData
-//
-//	MMISET_ResetFactorySetting();
+[2.11] __reset__
+// Reset
+//		==>MMIAPISET_OpenInputResetPwdWin
+//		====>HandleInputResetFactoryPwd
+//		======>MSG_PROMPTWIN_OK
+//		========>MSG_SET_CLEAN_DATE_IND
+app:setting/c/mmiset_phonewin.c  case^ID_SET_RESET_FACTORY
+app:setting/c/mmiset_phonewin.c  case^MSG_SET_CLEAN_DATE_IND
+//		==>MMISET_CleanUserData
+//		====>MSG_SET_CLEAN_USER_DATA_OVER_IND
+//		======>HandleResetOrCleanDataWaitWin
+//		==>MMISET_ResetFactorySetting
+//		====>MMIAPISET_SetWaitFlag
+//		======>MSG_SET_RESET_NEED_WAIT_IND
+//		====>MMIAPISET_FuncFinishedInd  # 为什么2次
+//		======>MSG_SET_RESET_FACTORY_OVER_IND
+//		==>MMIAPIPHONE_PowerReset
+// Reset--userNV
+//		==>UserNV_MarkReset
+//		==>MMI_ReadNVItem
+//		====>
+common\export\inc\nv_item_id.h  NV_ELECTRIC_GUARANTEE_CARD     #id
+common\export\inc\nv_item_id.h  NV_CUS_FIXNV_DATA_ID           #id  610
+common\export\inc\nv_item_id.h  NV_CUS_FIXNV_DATA_LEN          #len 8
+// Reset--env
+app:setting\c\mmiset_func.c  MMIENVSET_ResetEnvSetSetting
 
 
 [2.12] 小图标
@@ -724,7 +777,7 @@ ATEST_SUPPORT
 
 
 [2.16] sim--显示单卡
-//
+### 显示单卡
 app:phone/c/mmiphone.c  MMIAPIPHONE_GetSimExistedStatus
 //#if 0//defined IDLE_NETWORK_ONE_SIM_SHOW_EXIST_STYLE
 //	if(dual_sys==MN_DUAL_SYS_1)
@@ -749,9 +802,57 @@ app:phone/c/mmiphone.c  MMIAPIPHONE_GetSimExistedNum
 //#endif
 
 
+### __AoledaCard__  (107不可擦除/8910升级可保留)
+// nv  8910/107
+Save:node\C\study\Macro_nv_8910.h __Card__
+
+// card--timer
+//		==>IdleWin_HandleMsg
+//		====>MSG_OPEN_WINDOW
+//		======>checkStartEleGuarCardTimer
+//		      8910:已激活忽略;8小时有卡激活;5分钟测试激活
+//		      107: 6小时未激活; wait sms/call
+app:idle\c\mainapp.c  case^MSG_OPEN_WINDOW
+app:idle\c\mainapp.c  case^MSG_TIMER
+// card--view
+//		==>EngShowGuaranteeCardString
+//		====>NV_ELECTRIC_GUARANTEE_CARD
+// card--reset
+//		==>HandleResetElectircQueryWinMsg
+//		====>resetTimerInfo
+//		====>checkStartEleGuarCardTimer
+// card--test
+//		==>testEleGuarCard      # 5分钟测试激活
+//		====>HandleEleGuarCard  # (第一次指令有效)
+app:eng\c\mmieng_win.c  MMIENG_VIEW_GUANATEECARD_TAB
+// card--sms/call  # 107
+//		==>AOLEDA_call_connected_handle
+//		==>setEleGuaranteeCard
+//		==>setEleCardCreatedInfo
+app:eng\c\mmieng_win.c  void^AOLEDA_call_connected_handle
+
+
+### __SpdeCard__ (不可擦除)
+//		==>initSpdeEleGuaranteeCard
+app:eng\c\mmieng_win.c  void^SEGC_call_connected_handle
+// card--timer
+//		==>IdleWin_HandleMsg
+//		====>MSG_OPEN_WINDOW
+//		======>StartSpdeEleGuarCardTimer
+app:idle\c\mainapp.c  case^MSG_OPEN_WINDOW
+
+
+
 [2.17] usb
-//
+// 107
+// --udisk--test
+//		==>MMIAPIUdisk_HandleUsbCablePlugIn
+//		====>MMIAPIUdisk_OpenUsbOperWindow
+//		==>MMIUDISK_USB_OPER_SELECT_WIN_TAB
+//		====>HandleUsbOperSelectWindow
+//		======>USB_SERVICE_CHARGE
 app:udisk/c/mmiudisk_wintab.c  MMIAPIUdisk_OpenUsbOperWindow
+
 
 
 [2.18] 
@@ -777,7 +878,7 @@ source:mmi_app/app/sms/h/mmisms_app_mst.h
 source:mmi_app/app/sms/c/mmismsapp_main.c  VIET_MST
 
 
-###
+### (便于分析代码)
 // sale--mk
 Save:node\C\project\Macro_cfg_8910.h __sale__
 // sale--str

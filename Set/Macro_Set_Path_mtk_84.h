@@ -8,13 +8,13 @@
 
 0Key  = MTK
 
-imagesPath = plutommi\Customer\Images\K219D_N29A_GZ_CTA\
+imagesPath = plutommi\Customer\Images\X218_E207\
 images:\\
-audioPath = plutommi\Customer\AUDIO\K219D_N29A_GZ_CTA\
+audioPath = plutommi\Customer\AUDIO\X218_E207\
 audio:\\
-featuresPath = plutommi\Customer\CustResource\K219D_N29A_GZ_CTA_MMI\
+featuresPath = plutommi\Customer\CustResource\X218_E207_MMI\
 features:\\
-buildPath = build\K219D_N29A_GZ_CTA\
+buildPath = build\X218_E207\
 build:\\
 batPath = _bat\build
 bat:\\
@@ -28,7 +28,7 @@ boardKey  = X218_E207_BB
 lcdKey  = X218_QQVGA_LCM
 
 ### 2.cur
-curKey = K219D_N29A_GZ_CTA
+curKey = X218_E207
 GSMKey = GPRS
 
 ### 3.copy

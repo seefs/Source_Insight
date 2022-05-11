@@ -9,7 +9,7 @@
 Save:node\C\study\Macro_patch_8910.h \[1.1\] app
 Save:node\C\study\Macro_patch_8910.h \[1.2\] common
 Save:node\C\study\Macro_patch_8910.h \[1.3\] Trace_Log_Buf_Print
-Save:node\C\study\Macro_patch_8910.h \[1.4\] 
+Save:node\C\study\Macro_patch_8910.h \[1.4\] SALES_TRACKER
 Save:node\C\study\Macro_patch_8910.h \[1.5\] 
 Save:node\C\study\Macro_patch_8910.h \[1.6\] 
 Save:node\C\study\Macro_patch_8910.h \[1.7\] 
@@ -99,7 +99,22 @@ MS_MMI_Main/source/mmi_app/common/h/mmi_appmsg.h
 
 
 
-[1.4] 
+[1.4] SALES_TRACKER
+//
+app:cc\c\mmicc_wintab.c  SPDE_SALES_TRACKER_SUPPORT
+app:eng\c\mmieng_main.c  SPDE_SALES_TRACKER_SUPPORT
+app:eng\c\mmieng_win.c  SPDE_SALES_TRACKER_SUPPORT
+app:phone\c\mmiphone_onoff.c  SPDE_SALES_TRACKER_SUPPORT
+app:setting\c\mmiset_func.c  SPDE_SALES_TRACKER_SUPPORT
+app:sms\c\mmismsapp_main.c  SPDE_SALES_TRACKER_SUPPORT
+app:sms\h\mmisms_export.h  SPDE_SALES_TRACKER_SUPPORT
+app:sms\h\mmisms_id.def  SPDE_SALES_TRACKER_SUPPORT
+app:sms\h\mmisms_id.h  SPDE_SALES_TRACKER_SUPPORT
+source:mmi_app\kernel\c\mmi_default.c  SPDE_SALES_TRACKER_SUPPORT
+source:mmi_kernel\include\mmi_default.h  SPDE_SALES_TRACKER_SUPPORT
+source:mmi_kernel\source\c\mmk_timer.c  SPDE_SALES_TRACKER_SUPPORT
+source:mmi_kernel\include\mmk_timer.h  SPDE_SALES_TRACKER_SUPPORT
+common\export\inc\nv_item_id.h  SPDE_SALES_TRACKER_SUPPORT
 
 
 

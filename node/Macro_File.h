@@ -142,6 +142,7 @@ Save:node\ToolsMsg\Macro_Office.h
 
 [2.3] Cmd:
 Save:node\ToolsMsg\Macro_Cmd.h
+Save:node\ToolsMsg\Macro_perl.h
 
 
 [2.4] SVN

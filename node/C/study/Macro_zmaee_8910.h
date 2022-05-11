@@ -78,6 +78,11 @@ MS_MMI_Main\source\mmi_app\app\zmaee\c\zmaee_porting.c  MMI_ZMAEE_MAIN_WIN_ID
 MS_MMI_Main\source\mmi_app\app\zmaee\c\zmaee_watch.c  ZMAEE_IWatch_PowerOff
 
 
+### 开机时按4秒12次，恢复出厂设置
+//		==>HandleMSGKbd
+source:mmi_kernel\source\c\mmk_kbd.c  BM_RED_KEY_RESET
+
+
 
 [1.4] set--led
 //

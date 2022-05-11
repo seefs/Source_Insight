@@ -5,17 +5,18 @@
 Save:node\C\study\Macro_doc_8910.h \[1.1\] Message 切换
 Save:node\C\study\Macro_doc_8910.h \[1.2\] FUN 入口-------------
 Save:node\C\study\Macro_doc_8910.h \[1.3\] //lang
-Save:node\C\study\Macro_doc_8910.h \[1.4\] 移配置
+Save:node\C\study\Macro_doc_8910.h \[1.4\] 配置
 Save:node\C\study\Macro_doc_8910.h \[1.5\] 说明文档
 Save:node\C\study\Macro_doc_8910.h \[1.6\] Win数据
-Save:node\C\study\Macro_doc_8910.h \[1.7\] SALE统计
+Save:node\C\study\Macro_doc_8910.h \[1.7\] tool
 Save:node\C\study\Macro_doc_8910.h \[1.8\] //File-----------------
 Save:node\C\study\Macro_doc_8910.h \[1.9\] test code-------------
 Save:node\C\study\Macro_doc_8910.h \[1.10\] ImageNote
-Save:node\C\study\Macro_doc_8910.h \[1.11\] TextNote
+Save:node\C\study\Macro_doc_8910.h \[1.11\] 
 Save:node\C\study\Macro_doc_8910.h \[1.12\] //FontTool
 Save:node\C\study\Macro_doc_8910.h \[1.13\] build time----------
-Save:node\C\study\Macro_doc_8910.h \[1.14\] 
+Save:node\C\study\Macro_doc_8910.h \[1.14\] apn
+Save:node\C\study\Macro_doc_8910.h \[1.15\] 
 //
 Save:node\C\study\Macro_doc_8910.h \[2.1\] build error
 Save:node\C\study\Macro_doc_8910.h \[2.2\] moids error
@@ -45,11 +46,32 @@ Save:node\C\study\Macro_Spr_Fun.h
 
 
 
-[1.4] 移配置
+[1.4] 配置
+### 6531D移配置
 common\nv_parameters\S036_MB
 MS_Customize\source\product\config\S036_MB
 MS_Customize\SC6530_S036_MB_vm
 version\SC6530_S036_MB_version.c
+
+
+### 8910单软多硬 (row = newV /oldV)
+// prdt
+prj:nvitem/ProductionParam_uix8910.nvm  1393 = 0x5 /0x0
+prj:nvitem/ProductionParam_uix8910.nvm  1403 = 0x7 /0x0
+// rf
+prj:nvitem/RF_nv.nvm  42069 = 0xD013B / 0xD0199
+prj:nvitem/RF_nv.nvm  42130 = 0xD013B / 0xD0199
+// rename
+prj:nvitem/audio_sc6531efm.nvm
+prj:nvitem/audio_sc6531efm_AEC.nvm
+prj:nvitem/
+// ver
+Custom_Copy.bat  project\config_nv
+prj:nvitem/hw_ver00.nv
+prj:nvitem/hw_ver01.nv
+// mk
+prj:uis8910_phone_base_config.cfg  FORCECHANGE_SUPPORT  = TRUE
+prj:uis8910_phone_user_base_config.cfg  FORCECHANGE_SUPPORT  = TRUE
 
 
 
@@ -105,11 +127,15 @@ IMG_RES_SRC_T
 
 
 
-[1.7] SALE统计
-MMIDEFAULT_StartAutoSendSMSTimer        # 默认
-HandleSetSmsAutoSendWindow
-Enter_SMS_APP_AutoSend_SIM1
-MMIDEFAULT_HandleAutoSendSMSTimer        # 处理发送
+[1.7] tool
+//
+down:\\
+// 自动下载
+down:\UpgradeDownload_R25.21.1401\Bin\
+down:\UpgradeDownload_R25.21.1401\Bin\UpgradeDownload.exe
+// 格式化下载
+down:\ResearchDownload_R25.21.1401_\ResearchDownload_R25.21.1401\Bin\
+down:\ResearchDownload_R25.21.1401_\ResearchDownload_R25.21.1401\Bin\\UpgradeDownload.exe
 
 
 
@@ -173,6 +199,9 @@ app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SET_SIM_IMEI_ALL
 "*#119*#", "*#70#",
 // ELECTRIC
 "*#2010#"; "*#0808#"; "*#0809#", 
+// SALES_TRACKER
+app:eng\c\mmieng_main.c  MMIENG_IDLE_SALES_TRACKER_SETTING
+"*#55555#"
 
 // test code
 app:eng/c/mmieng_main.c  UITESTWIN_OpenPhoneTestWin
@@ -227,28 +256,8 @@ build\UIS8910_ROM_16MB_DS_USER_builddir\tmp\mmi_res_240x320_imag.txt IMAGE_PUBWI
 
 
 
-[1.11] TextNote
+[1.11] 
 
-//
-build\{cur}_builddir\tmp\mmi_res_128x128_text.txt TXT_EXTRA_SETTINGS
-build\{cur}_builddir\tmp\mmi_res_128x128_text.txt TXT_SETTINGS_COMMAND
-build\{cur}_builddir\tmp\mmi_res_128x128_text.txt _EMPTY
-build\{cur}_builddir\tmp\mmi_res_128x128_text.txt Delete
-build\{cur}_builddir\tmp\mmi_res_128x128_text.txt Search
-//字符整理:
-// 公式:
-// =IF(ISNUMBER(MATCH(C1,A$1:A$14254,)),INDEX(B$1:B$14254,MATCH(C1,A$1:A$14254,)),"")
-Save:node\C\study\Show_Str_eng.h ,^Select^all,
-Save:node\C\study\Show_Str_eng.h ,^Settings,
-Save:node\C\study\Show_Str_eng.h ,^Once, //TXT_ALARM_MODE_ONCE
-Save:node\C\study\Show_Str_eng.h ,^Daily,//TXT_ALARM_MODE_EVERYDAY
-Save:node\C\study\Show_Str_eng.h ,^Weekly, //TXT_CALENDAR_WEEKLY
-	
-Save:node\C\study\Show_Str_eng.h ,^Close^spea
-Save:node\C\study\Show_Str_eng.h ,^PAUSE,
-//softkey:
-STXT_CANCEL, STXT_STOP, STXT_RETURN, STXT_SAVE, STXT_OPTION, STXT_SELECT, TXT_DELETE, TXT_EDIT
-STXT_OK, TXT_COMMON_CLEAR, 
 
 
 
@@ -277,8 +286,10 @@ MMIAPISET_IsNeedResetDateTime
 
 
 
-[1.14] 
-
+[1.14] apn
+//
+tool_mini:6_res_str\
+tool_mini:6_res_str\res_ntac.xlsx
 
 
 

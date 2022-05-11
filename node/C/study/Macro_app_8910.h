@@ -76,11 +76,6 @@ app:idle\c\mmiidle_cstyle.c  void^DisplayIdleWinSoftkey
 app:idle\c\mmiidle_mstyle.c  void^OutIdleWinContent
 app:idle\c\mmiidle_mstyle.c  void^DisplayIdleWinSoftkey
 
-// LOCK
-app:keylock\c\mmikl_keylock.c  BOOLEAN^MMIKL_HandleKLDispWinMsg
-// LOCK
-app:keylock\c\mmikl_keylock.c  void^DisplayClockCallbackFun
-
 
 // --idle--pos
 app:theme/c/mmidisplay_data_{size}.c  MMI_IDLE_DISPLAY_T^^mmi_idle_display
@@ -93,6 +88,15 @@ app:theme/c/mmidisplay_data_{size}.c  MMI_IDLE_DATE_Y
 app:theme/h/mmi_position.h  MMI_MAIN_TIME_Y
 app:theme/h/mmi_position.h  IDLE_TIME_PIC_WIDTH
 
+
+### LOCK
+//		==>DisplayClockCallbackFun
+//		======>1.DrawAClock
+//		======>2.OutputIdleWinDateKeylock
+//		======>2.OutputIdleWinWeekKeylock
+//		======>3.DisplayDate
+//		====>DisplayMissedEventDC
+app:keylock\c\mmikl_keylock.c  BOOLEAN^MMIKL_HandleKLDispWinMsg
 
 
 
@@ -135,10 +139,11 @@ source:mmi_app\common\c\mmi_menutable_240x320.c  MAINMENU_NINE_MATRIX_STYLE
 // menu--main
 app:mainmenu\c\mmi_mainmenu_data_128x128.c s_mainmenu_item_data
 app:mainmenu\c\mmi_mainmenu_data_128x128.c 570
+app:mainmenu\c\mmi_mainmenu_data_128x160.c s_mainmenu_item_data
 app:mainmenu\c\mmi_mainmenu_data_176x220.c s_mainmenu_item_data
 app:mainmenu\c\mmi_mainmenu_data_240x240.c s_mainmenu_item_data
 app:mainmenu\c\mmi_mainmenu_data_240x320.c s_mainmenu_item_data
-app:mainmenu\c\mmi_mainmenu_data_240x320.c MAINMENU_FLP_STYLE
+//app:mainmenu\c\mmi_mainmenu_data_240x320.c MAINMENU_FLP_STYLE
 
 // menu--main
 app:mainmenu\c\mainmenu_win.c  HandleMainMenuWinMsg
@@ -155,11 +160,13 @@ source:mmi_app\common\c\mmi_menutable_240x320.c GUIMENU_ITEM_T^menu_icon_tools
 
 // menu--palyer
 source:mmi_app\common\c\mmi_menutable_128x128.c  GUIMENU_ITEM_T^menu_icon_player
+source:mmi_app\common\c\mmi_menutable_128x160.c  GUIMENU_ITEM_T^menu_icon_player
 source:mmi_app\common\c\mmi_menutable_176x220.c  GUIMENU_ITEM_T^menu_icon_player
 source:mmi_app\common\c\mmi_menutable_240x320.c  GUIMENU_ITEM_T^menu_icon_player
 
-// menu--settings
+// menu--settings(8910)
 source:mmi_app\common\c\mmi_menutable_128x128.c  GUIMENU_ITEM_T^menu_settings_icon
+source:mmi_app\common\c\mmi_menutable_128x160.c  GUIMENU_ITEM_T^menu_settings_icon
 source:mmi_app\common\c\mmi_menutable_176x220.c  GUIMENU_ITEM_T^menu_settings_icon
 source:mmi_app\common\c\mmi_menutable_240x320.c  GUIMENU_ITEM_T^menu_settings_icon
 // menu--settings(107)
@@ -169,7 +176,8 @@ app:setting\c\mmiset_menutable.c  GUIMENU_ITEM_T^menu_set_phone
 // menu img
 source:mmi_ctrl\source\Menu\c\ctrlmenu_popup.c  check_unsel_img
 source:mmi_ctrl\source\Menu\c\ctrlmenu_sec.c   check_unsel_img
-
+// menu enter
+source:mmi_app\app\mainmenu\c\mainmenu_win.c  case^ID_TOOLS_RECORD
 
 //tone
 
@@ -323,19 +331,23 @@ app:setting\c\mmiset_callwin.c  InitPdaCallOtherSettingsCtrl
 
 
 // Reset
-//
-HandleInputResetFactoryPwd
-MMIENVSET_ResetEnvSetSetting();//
-app:setting\c\mmiset_func.c
-//
-//MMISET_CleanUserData();
+Save:node\C\study\Macro_fun_8910.h  __reset__
+
 
 
 // sos
 
 // set--phone
+//		==>MMIAPISET_EnterPhoneSettingWin
+//		====>MMISET_PHONE_SETTING_WIN_TAB  #128*160
+//		======>HandleSetPhoneSettingWindow
+//		====>MMISET_SET_PHONE_WIN_TAB      #240*320
 app:setting/c/mmiset_phonewin.c  MMISET_PHONE_SETTING_WIN_TAB
+app:setting/c/mmiset_phonewin.c  MMISET_SET_PHONE_WIN_TAB
+// set--phone--240*320
+//		==>MENU_SET_PHONE
 app:setting\c\mmiset_menutable.c  menu_set_phone_setting
+
 // set--phone--time
 app:setting\c\mmiset_datetime.c  HandleSetTimeDateWindow
 
@@ -418,17 +430,26 @@ app:cc\c\mmicc_wintab_custom.c 13839
 app:cc\c\mmicc_wintab_custom.c 23750
 app:cc\c\mmicc_wintab_custom.c 23839
 
-// T107
-app:cc\c\mmicc_wintab.c  MMICC_UpdateCallStatusDisplay
 
+// call--image
+Save:node\C\study\Macro_res_image_8910.h __call__
 
 
 // 流程--来电-MT，
+//		==>MMICC_HandlePsMsg
+//		====>CC_CallAlertingInd
+//		======>CC_CallSetupIndEx  #107
+//		======>CC_CallSetupInd    #8910
+//		========>MMICC_UpdateCallStatusDisplay      #mo mt dis共用
 app:cc\c\mmicc_app.c  case^APP_MN_SETUP_IND
-app:cc\c\mmicc_app.c  void^CC_CallAlertingInd
-app:cc\c\mmicc_app.c  void^CC_CallSetupInd
-app:cc\c\mmicc_wintab_custom.c  MMICC_UpdateCallStatusDisplay
-app:cc\c\mmicc_wintab_custom.c  CC_OpenMtCallWin  
+//		========>MMICC_UpdateCallStatusDisplay
+//		==========>CC_OpenMtCallWin
+//		============>OpenCallingWin
+//		==============>PdaDisplaySingleCallInfoForCommon
+// --107
+app:cc\c\mmicc_wintab.c  MMICC_MT_CALLING_WIN_TAB  MMICC_ANIMATION_WIN_ID
+app:cc\c\mmicc_wintab.c  PdaDisplaySingleCallInfoForCommon  
+// --8910
 app:cc\c\mmicc_wintab_custom.c  MMICC_MT_CALLING_WIN_TAB  MMICC_ANIMATION_WIN_ID
 app:cc\c\mmicc_wintab_custom.c  PdaDisplaySingleCallInfoForCommon  
 
@@ -453,7 +474,17 @@ app:cc\c\mmicc_wintab_custom.c  8454  num
 
 
 // 流程--去电-MO，
-app:cc\c\mmicc_wintab_custom.c  MMICC_UpdateCallStatusDisplay
+//		==>MMICC_ProcessMakeCall  #107
+//		====>ProcessPhoneNumExt
+//		======>MakeCallReqExt
+//		========>MMICC_UpdateCallStatusDisplay
+//		==========>CC_OpenMoCallWin
+//		============>CC_CallStateDisplaying      # 对应 CC_FreeSimStatusSpace
+//		============>MMISUB_SetSubLcdDisplay     # sublcd
+//		============>OpenConnectedWin
+//		==============>PdaDisplaySingleCall
+//		============>DisplayCallAnimPhotoForCommon
+//		========>MMICC_EnableRemoteMute(FALSE)
 app:cc\c\mmicc_wintab_custom.c  CC_HandleCcWinMsg
 app:cc\c\mmicc_wintab_custom.c  MMICC_MO_CONNECTED_WIN_TAB  MMICC_STATUS_WIN_ID
 
@@ -477,18 +508,28 @@ app:cc\c\mmicc_wintab_custom.c  MMICC_STATUS_WIN_ID
 //app:cc\c\mmicc_app.c MMICC_ANIMATION_WIN_ID
 app:cc\c\mmicc_wintab_custom.c 20008
 
-// 107
+// 107 挂断
 //		==>MMICC_HandlePsMsg
 //		====>CC_DisconnectedCall
 //		======>CC_DisconnectedCallByIndex
-//		==>MMICC_OpenDisconnectWin(call_time)
-//		====>PdaDisplayDisconnectWin
-//		======>CC_TimeCountToStr(call_time)
+//		========>MMICC_OpenDisconnectWin(call_time)  #8910在前面
+//		==========>PdaDisplayDisconnectWin
+//		============>CC_TimeCountToStr(call_time)
+//		==========>MMICC_HandleOperAfterCallEnd
+//		============>MMISUB_SetSubLcdDisplay()
 app:cc\c\mmicc_app.c case^APP_MN_CALL_DISCONNECTED_IND
 
 
 // 流程--接听
 app:cc\c\mmicc_main.c  MSG_KEYUP_FLIP  CCApplet_HandleEvent
+// 流程--接听 107
+//		==>MMICC_HandlePsMsg
+//		====>case^APP_MN_SETUP_COMPLETE_CNF
+//		======>CC_SetupCompleteCnf
+//		========>MMICC_VibrateForConnectPrompt
+//		========>MMICC_UpdateCallStatusDisplay
+//		========>case^MMICC_MO_CONNECTED_IND
+//		========>MMICC_UpdateCurrentCallStatus
 
 
 // 112
@@ -502,12 +543,26 @@ app:cc\c\mmicc_wintab_custom.c  6477
 app:cc\c\mmicc_wintab_custom.c  6514
 // 多卡通话--num
 app:cc\c\mmicc_wintab_custom.c  6541
+// 多卡通话--option
+//		==>HandleHoldMenuWinMsg
+//		====>MMICC_HoldCall
+//		======>CC_HoldCall
+
+// 多卡通话--挂断
+//		==>MMICC_HandlePsMsg
+//		====>CC_DisconnectedCall
+//		======>MMICC_UpdateCallStatusDisplay
+//		======>MMICC_OpenDisconnectWin        #8910在前面
+//		======>CC_DisconnectedCallByIndex
+//		======>CC_HandleDisconnectedInMPTY    # s_call_context.call_number -1
+
+
+// 流程--update
+//		==>CC_HandleCcWinMsg
+//		====>MMICC_UpdateCurrentCallStatus
 
 
 
-
-//
-//MMICC_VibrateForConnectPrompt
 
 
 	
@@ -641,6 +696,11 @@ Camera闪光灯:
 app:pic_viewer\c\mmipicview_list.c HandlePicListWinMsg
 app:pic_viewer\c\mmipicview_list.c 696
 // pic--size
+//		==>ICONLIST_GetIconRect
+//		====>ICONLIST_GetRect       #list
+//		====>ICONLIST_GetItemWidth  #item
+//		======>iconlist_ctrl_ptr->theme.icon_item.width
+//		======>MMIPICPREVIEW_LIST_ICON_SIZE
 app:pic_viewer\c\mmipicview_list.c void^SetIconListParam
 //
 app:pic_viewer\c\mmipicview_wintab.c HandlePiclistOptWinMsg
@@ -656,41 +716,48 @@ app:pic_viewer\c\mmipicview_list.c  MMIPICVIEW_TITLE_COLOR
 
 [1.13] record
 // enter
-app:record\c\mmirecord_common_wintab.c  HandleRecordMainPlayWinMsg
-app:record\c\mmirecord_barphone_wintab.c  MMIRECORD_MAINPLAY_WIN_CTRL_TAB
-//	MMK_CreateCtrlByWinTabEx(win_id, MMIRECORD_MAINPLAY_WIN_CTRL_TAB);
-//
-app:record\c\mmirecord_wintab.c  HandleRecordMainPlayWinMsg
-app:record\c\mmirecord_wintab.c  408
-// anim
-app:record\c\mmirecord_barphone_wintab.c  anim_frame_red
-// pos(time, anim)
-app:record\c\mmirecord_barphone_wintab.c  1600
-app:record\c\mmirecord_barphone_wintab.c  544
-// stop
-app:record\c\mmirecord_barphone_wintab.c  DisplayProgress
-app:record\c\mmirecord_barphone_wintab.c  DisplayRecordAllBG
-// Update(107)
-app:record\c\mmirecord_barphone_wintab.c  MMIRECORD_UpdateScreen
+//		==>MMIAPIRECORD_OpenMainWin
+//		====>MMK_StartApplet
+//		======>SPRD_RECORD_APPLET_ID
+//		==>MMIRECORD_RegAppletInfo
+//		====>SPRD_RECORD_APPLET_ID
+//		======>RecordApplet_HandleEvent
+//		========>MMIRECORD_OpenRecordMainWin
+//		==>MMIRECORD_MAINPLAY_WIN_TAB
+//		====>HandleRecordMainPlayWinMsg   ## appMsg
+//		======>MMIRECORD_HandleRecordMainPlayWinMsg
+app:record\c\mmirecord_common_wintab.c  MMI_RESULT_E^HandleRecordMainPlayWinMsg
+//		==>MMK_CreateCtrlByWinTabEx
+//		====>MMIRECORD_MAINPLAY_WIN_CTRL_TAB
+//		==>SetPortraitAndLandscapeFormParam
+//		==>SetFormParam
+app:record\c\mmirecord_barphone_wintab.c  MMIRECORD_HandleRecordMainPlayWinMsg
 
 
-//time
-app:record\c\mmirecord_wintab.c IMAGE_RECORD_NUMBER_0  
-
-// bg
-app:record\c\mmirecord_wintab.c IMAGE_RECORD_NUMBER_BG			  
-app:record\c\mmirecord_wintab.c IMAGE_COMMON_BG			
-app:record\c\mmirecord_wintab.c IMAGE_RECORD_RECORD_PDA_BG   
-// bg-w
-app:record\c\mmirecord_wintab.c IMAGE_RECORD_RECORD_BG   
-app:record\c\mmirecord_wintab.c IMAGE_RECORD_PLAY_BK_BG  
-// anim
-app:record\c\mmirecord_wintab.c IMAGE_RECORD_BG_ANIM_FRAME_1		  
-app:record\c\mmirecord_wintab.c IMAGE_RECORD_PLAY_BTN_UNSEL  
+// record--image
+Save:node\C\study\Macro_res_image_8910.h __record__
+// record--pos
+//	--注意 126*160 从第3组 MAINLCD_SIZE 开始
+app:record\h\mmirecord_position.h  {size}
 
 
+// record--Update(8910)
+//		==>DisplayRecordAllBG
+//		====>need_refresh_bg_y
+//		==>anim_frame_red  ## anim
+app:record\c\mmirecord_barphone_wintab.c  void^MMIRECORD_UpdateScreen
+
+// record--Update(107)
+//		==>DisplayRecordAllBG
+//		====>need_refresh_bg_y
+//		==>DisplayProgress
+app:record\c\mmirecord_barphone_wintab.c  void^MMIRECORD_UpdateScreen
 
 
+// record--init--path
+SetRecordFilePath
+
+ 
 
 
 
@@ -757,31 +824,57 @@ app:fm\c\mmifm_wintab.c  void^MMIFM_HandleHeadsetAction
 
 
 [1.16] vp
-//
+// mk
 prj:project_{cur}.mk  VIDEO_PLAYER_SUPPORT = TRUE
 
 
-// time
-app:videoplayer/c/mmivp_wintable.c  5788
-// set param
-app:videoplayer/c/mmivp_wintable.c  8053
+// enter (8910)
+//		==>MMIAPMAINWIN_Enter
+//		====>MMIMP3_MAIN_PLAY_WIN_TAB
+
+
+// enter (107)
+//		==>MMIAPIVP_MainEntry
+//		====>VP_ValidatePrivacyAppEntry
+//		====>MMIAPIVP_PlayVideoFromVideoPlayerEx
+//		======>MMIAPIVP_EnterVdoPly
+//		========>MMIVP_MAIN_PLAY_WIN_TAB
+//		======>MMIVP_MAIN_PLAY_WIN_TAB_H
+app:videoplayer/c/mmivp_wintable.c  MMIVP_MAIN_PLAY_WIN_TAB_H
+//		==>SetFormParam      #竖屏可切换
+//		====>SetFormParamH
+//		==>SetVPLayoutParam  #横屏不可切换
+app:videoplayer/c/mmivp_wintable.c  MMI_RESULT_E^HandleVPWinMsg
 
 
 // Short
 app:videoplayer/c/mmivp_wintable.c  HandleShortCutMsg
 // Opt
 app:videoplayer/c/mmivp_wintable.c  HandleOptMenuWinMsg
+// softkey
+app:videoplayer/c/mmivp_wintable.c  DisplayVPWinSoftkey
 
 
+// vp--image
+Save:node\C\study\Macro_res_image_8910.h __vp__
+// vp--pos
+//	--
+app:videoplayer\h\mmivp_position.h   {size}
+
+// vp--Update(107)
+//		==>DisplayRecordAllBG
+//		====>need_refresh_bg_y
+//		==>DisplayProgress
+// time
+app:record\c\mmirecord_barphone_wintab.c  void^UpdateVPWin
 
 
-MMIAPMAINWIN_Enter
 
 
 [1.17] mp3
 // enter
-//		==>JoinMainPDAWin      # 240*320
-//		====>MMIMP3_PLAY_WIN_TAB_V
+//		==>JoinMainPDAWin            # 240*320
+//		====>MMIMP3_PLAY_WIN_TAB_V   # win
 app:audioplayer\c\mmiapwin_main.c  MMIAPMAINWIN_Enter
 // enter-- draw
 app:audioplayer\c\mmiapwin_main.c  HandleMp3PlayWinMsg
@@ -807,6 +900,17 @@ app:audioplayer\c\mmiapwin_main_mini.c  435
 
 // bg play
 app:audioplayer\c\mmiap_play.c  MMIAPIMP3_ResumeMp3
+
+// ui--pos--128*160
+//		==>MMIMP3_TIME_FONT          # font
+//		==>MP3_LAYOUT_PREV_RECT_V    # btn
+//		==>MP3_PROGRESS_RECT_V       # progress
+//		==>MP3_TIME_RECT_V           # time
+//		==>MP3_PIC_RECT_V            # bg
+app:audioplayer/h/mmiap_position.h   {size}
+// ui--pos--128*160
+//		==>MMIMP3_TITLE_MARGIN_TOP   # 
+
 
 
 [1.18] alarm
@@ -893,6 +997,12 @@ app:accessory\c\mmicalendar_main.c MMIAPICALEND_OpenCalendarQueryByDate
 //draw:
 app:accessory\c\mmicalendar_main.c
 app:accessory\c\mmischedule.c
+
+
+// calen--sch
+//		==>AppendUserListBoxItem
+//		==>AppendUserListBoxItemData
+app:accessory\c\mmischedule.c  MMI_RESULT_E^HandleSchViewListWinMsg
 
 
 
@@ -997,116 +1107,75 @@ app:heroengine\tts\c\hero_tts_api.c  BLUETOOTH_SUPPORT
 ### idle switch
 
 // env--enter
-//		==>HandleSetPhoneWindow
-app:envset\c\mmienvset.c  MMIENVSET_OpenMainMenuWindow
-// env--set
-app:envset\c\mmienvset_wintab.c  HandleEnvOptMenuWindow
-// env--set-2-ring
-app:setting\c\mmiset_wintab.c  void^EnterRingSettingMenu
+//		==>MMIENVSET_OpenMainMenuWindow  # env
+//		====>HandleEnvSetMainMenuWindow
+app:envset\c\mmienvset_wintab.c MMIENVSET_MAIN_MENU_WIN_TAB
+// env--option
+//		======>OpenEnvOptMenuWin
+//		======>HandleEnvOptMenuWindow
+app:envset\c\mmienvset_wintab.c  MMIENVSET_MAIN_OPT_WIN_TAB
+// env--option--set
+//		======>HandleEnvSetMainMenuWindow
+//		======>MENU_ENVSET_SETTING
+app:envset\c\mmienvset_wintab.c  MMIENVSET_SETTING_OPT_WIN_TAB
+app:setting\h\mmiset_menutable.def  MENU_ENVSET_SETTING
 
+
+// env--option--set--setRing
+//		==>HandleOperationMenu
+//		====>MMISET_EnterRingSettingMenu
+//		======>EnterRingSettingMenu
+//		========>HandleRingMainMenuWindow
+app:setting\c\mmiset_wintab.c  MMISET_ICON_RING_MENU_WIN_TAB
+// env--option--set--setRing--callRing
+//		==>EnvSetRingParam
+app:setting\c\mmiset_wintab.c  MMISET_RING_SELECT_CALL_WIN_TAB
+
+
+// env--option--set--RingVol
+//		==>HandleOperationMenu
+//		====>MMIAPICOM_OpenPanelChildWin
+//		======>HandlePanelWindow
+//		========>AdjustValue
+//		====>SetRingVolumeCB
+//		======>SetAllRingVolParam        # vol str
+//		========>GetEnvSetOptValue
+
+//		======>MMIAPICC_SetCallVolume    # ring, no use
+//		======>MMIAPICC_SetCallVolume    # msg
+//		======>MMIAPICC_SetCallVolume    # call
+app:envset\c\mmienvset_wintab.c  MMIENVSET_ALL_RING_VOL_WIN_TAB
+
+
+
+// env--option--set--RingType
+//		==>MMIAPISET_SetCurRingType
+//		==>MMIENVSET_PlayRingByListItem
+//		==>MMIENVSET_PlayMsgAlarmRingByListItem
+//		==>MMIAPISET_PlayCallRingByVol
+app:envset\c\mmienvset_wintab.c  MMIENVSET_RING_TYPE_WIN_TAB
+
+
+// env--option--set--OtherRing
+//		==>MMIAPISET_SetCurRingType
+app:setting\c\mmiset_wintab.c 822
+app:envset\c\mmienvset_wintab.c  MMIENVSET_OTHER_RING_SET_WIN_TAB
 
 
 // 实际来电铃声  ---------------- 	++++++
 MMISRVMGR_Request
 
-//type new
-app:envset\c\mmienvset.c 6220
-app:envset\c\mmienvset.c 6353
 
-
-//ring--key--4-1-N 才能播放
+// env--option--set--setRing--PlayRing
+//		==>PlayRing
+//		====>MMIAPISET_PreviewRing
+//		======>PlayFixedRing
+//		==>vib
+//		==>timer
 app:setting\c\mmiset_ring.c 1736 PlayRing
-app:setting\c\mmiset_ring.c 5377 MMIAPISET_PreviewRing
-app:setting\c\mmiset_ring.c 1391 PlayFixedRing
-app:envset\c\mmienvset_wintab.c 4102	Save
-app:envset\c\mmienvset_wintab.c 3993	换TYPE
-//	MMIAPISET_SetCurRingType
-app:envset\c\mmienvset.c 6456   KEY_ID
-app:envset\c\mmienvset_wintab.c 6432	WIN_ID
-//	ring id:
-app:envset\c\mmienvset.c 5084    GetRingID
 
 
 
-//vib--one
-app:envset\c\mmienvset_wintab.c 1403	  --vib
-app:envset\c\mmienvset_wintab.c 3915	  --timer
-
-
-//env main
-app:envset\c\mmienvset_wintab.c  1395
-//vib list
-app:envset\c\mmienvset.c 6398
-	
-
-
-//play--type
-MMIENVSET_PlayRingByListItem
-//play--vib
-MMIENVSET_PlayMsgAlarmRingByListItem
-//play--tone
-MMIAPISET_PlayCallRingByVol
-
-
-//vol--alert
-app:setting\c\mmiset_wintab.c 822
-app:setting\c\mmiset_wintab.c 8886
-
-//call type
-//msg type
-//keypad 
-app:envset\c\mmienvset_wintab.c 3695
-app:envset\c\mmienvset_wintab.c 3966 
-
-
-//call ring1
-app:setting\c\mmiset_wintab.c 608
-//call ring2 --ring
-app:setting\c\mmiset_wintab.c 924
-app:setting\c\mmiset_wintab.c 988 ++vol
-
-
-//msg ring
-app:setting\c\mmiset_wintab.c 322
-app:setting\c\mmiset_wintab.c 812
-
-//keypad 
-app:envset\c\mmienvset_wintab.c 4148
-	
-
-//vol
-app:envset\c\mmienvset_wintab.c 4909
-
-MMK_CreateWin
-
-
-
-// bak--不用
-//env main
-app:envset\c\mmienvset_wintab.c MMIENVSET_MAIN_MENU_WIN_TAB
-app:envset\c\mmienvset_wintab.c 1910 handle
-
-
-//opt
-app:envset\c\mmienvset_wintab.c 1400
-app:envset\c\mmienvset_wintab.c 1480
-
-
-//	set edit
-app:envset\c\mmienvset_wintab.c 2862
-
-
-//	nv
-app:envset\c\mmienvset.c 6730
-// item
-app:envset\c\mmienvset.c 3300
-// def nv
-app:envset\c\mmienvset.c 1680
-
-
-project\H9_KLS_F4\resource\mmienvset_internal.h MMISET_CALL_RING
-project\H9_KLS_F4\resource\mmienvset_internal.h MMISET_MSG_RING
-project\H9_KLS_F4\resource\mmienvset_internal.h MMISET_OTHER_RING1
 
 
 

@@ -17,7 +17,7 @@ Save:node\C\study\Macro_gui_8910.h  \[1.12\] title
 Save:node\C\study\Macro_gui_8910.h  \[1.13\] anim --------------所有Construct
 Save:node\C\study\Macro_gui_8910.h  \[1.14\] tmp ---------------
 Save:node\C\study\Macro_gui_8910.h  \[1.15\] layer
-Save:node\C\study\Macro_gui_8910.h  \[1.16\] 
+Save:node\C\study\Macro_gui_8910.h  \[1.16\] vol
 Save:node\C\study\Macro_gui_8910.h  \[1.17\] key
 Save:node\C\study\Macro_gui_8910.h  \[1.18\] Lcd
 Save:node\C\study\Macro_gui_8910.h  \[1.19\] sublcd
@@ -374,6 +374,8 @@ app:fmm/c/mmifmm_sd.c  MMIPUB_OpenProgressWinByTextId  MMIPUB_SOFTKEY_ONE
 app:connection/c/mmiconn_manager_wintab.c
 
 
+
+
 [1.7] form
 //form pos
 //	GUIFORM_GetDisplayMaxWidth
@@ -491,7 +493,8 @@ gui:tab\c\guitab.c  CreateTabTitleCtrl
 //   临时改2个窗口
 app:theme\c\mmitheme_tab.c  MMITHEME_GetTabChildWinTop
 
-
+// align_type
+app:theme\c\mmitheme_title.c  MMITHEME_GetTitleStyle
 
 
 //	//
@@ -698,7 +701,18 @@ MS_MMI_Main\source\mmi_gui\source\graph\c\guigraph.c  2908
 
 
 
-[1.16] 
+[1.16] __vol__
+
+// vol
+//		==>InitDisplayPosition
+//		==>DrawControlPanel
+source:mmi_app\common\c\mmicom_panel.c HandlePanelWindow
+// res
+Save:node\C\study\Macro_res_image_8910.h  __alert__
+
+// 合盖 vol
+source:mmi_app\kernel\c\mmi_default.c  BOOLEAN^DefaultSideKey
+
 
 
 
@@ -953,8 +967,39 @@ ctrl:editbox\c\ctrllistedit.c  MSG_NOTIFY_IM_COMMIT
 //	GUIAPICTRL_SetRect(CTRL_ID, &edit_rect);
 
 
+# form color--alarm
+//		==>theme.active_child.font.color; # 0x001f,蓝, label2 (非 UNIT)
+//		====>                             #  单项
+//		====>GUIFORM_TYPE_TP              #  TP类型 红
+//		==>theme.child.font.color;        # 0xf800,红, label1, init 一次,
+//		====>GUIFORM_PermitChildFontColor #  禁止后 label1为白
+# form font--alarm
+//		==>theme.unit_font.color;         # 0x07ff,青, label2 (UNIT) (default)
+//		====>GUIFORM_STYLE_UNIT           #  非 UNIT label2为红
+ctrl:Form\c\ctrlform_layout.c  GetChildFont
+# form time--alarm
+//		====>                             #  区分高亮
+ctrl:editbox\c\ctrlbaseedit_highlight.c  DisplayHighlightAndStr (高亮黑, 默认白)
+app:theme\c\mmitheme_edit.c  MMITHEME_GetEditTheme
+
+//		====>                             #  label1 区分(高亮黑, 默认白)
+app:theme/c/mmitheme_form.c    highlight_label_child
+ctrl:Form/c/ctrlform.c  void^HandleFormNotifyGetActive
+ctrl:Form/c/ctrlform.c  void^HandleFormNotifyLoseActive
+ctrl:Form/c/ctrlform_layout.c  GUI_FONT_ALL_T^GetChildFont (label1 高亮)
 
 
+# form hl--draw
+//		==>HandleFormNotifyGetActive
+//		====>CTRLFORM_SetChildParam
+//		======>SetOtherChildParam
+//		======>LabelCtrlSetFont   #ctrl_1
+# form hl--draw--bg
+//		====>CTRLFORM_SetParam
+//		======>VTLBASE_SetBg
+//		========>FormCtrlSetBg
+//		======>CTRLFORM_Display
+ctrl:Form\c\ctrlform_layout.c  GetChildFont
 
 
 

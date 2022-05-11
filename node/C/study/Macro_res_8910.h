@@ -60,11 +60,39 @@ prj:version_software_mocor.h     s_version_info
 [1.3] str
 
 //
-//IMG_DC_ICON_PHOTO
-
-
-//
 build\{cur}_builddir\tmp\mmi_res_240X320_text.txt  SUCCESS
+build\{cur}_builddir\tmp\mmi_res_128x128_text.txt TXT_EXTRA_SETTINGS
+
+
+//字符整理:
+// ----excel
+
+// 常用 softkey:
+//	STXT_CANCEL, STXT_STOP, STXT_RETURN, STXT_SAVE, STXT_OPTION, STXT_SELECT, 
+//	TXT_DELETE, TXT_EDIT, STXT_OK, TXT_COMMON_CLEAR, 
+
+
+// 翻译lang
+Save:node\C\rule\Macro_Rule_Han_file.h  70
+Save:node\C\rule\Macro_Rule_Han_file.h  AMHARIC
+// str--LangSetName
+app:setting\c\mmiset_func.c  HEBREW
+// str--LangSetName--部分未转码
+Save:node\C\rule\
+Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_ARABIC_SUPPORT
+Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_RUSSIAN_SUPPORT 
+Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_FRENCH_SUPPORT
+Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_HEBREW_SUPPORT
+Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_AMHARIC_SUPPORT
+// str--columnName(用普通格式, unicode乱码)(AB一样)
+Save:node\C\rule\Macro_Rule_Lang_COLUMN_TABLE1.h  Hebrew
+Save:node\C\rule\Macro_Rule_Lang_COLUMN_TABLE2.h  AMHARIC
+// str--命名规则
+make\perl_script\ResGen\ReadMe.txt  str_table
+make\perl_script\ResGen\ResView.ini  cust_str_table
+//
+prj:project_{cur}.mk   HEBREW
+
 
 
 [1.4] res
@@ -85,6 +113,7 @@ images:\
 
 // ==>image
 Save:node\C\study\Macro_res_image_8910.h
+
 
 // RES_ADD_IMG()
 //    背景使用整图，缩放的背景带花纹或重叠
@@ -107,69 +136,10 @@ Save:set\Macro_Set_Path_sprd_{pro}.h  ring
 ring:\
 
 
-
-// TONE_425HZ
-//MMISRVAUD_Play_BusyTone
-
-
-### sms ring
-//
-HandleSelectMsgRingWindow
-
-// sms one
-//		==>ALERT_NAMES_EX
-//		==>ALERT_NAMES
-app:setting\h\mmiset_export.h  SPDE_MMI_MSG_RING_NUM_ONE
-app:setting\h\mmiset_export.h  SPDE_MMI_MSG_RING_NUM_ONE
-//		==>MMISET_MSG_FIXED_RING_MAX_ITEM   1
-app:setting\c\mmiset_wintab.c  MMI_RESULT_E^^HandleSelectMsgRingWindow
-source:resource\mmi_res_prj_def.h  SPDE_MMI_MSG_RING_NUM_ONE
-//		==>ALERT_NAMES_EX
-//		==>ALERT_NAMES
-app:setting\c\mmiset_ring.c  MMIAPISET_AppendFixedItemsOnly
-//  107
-source:resource\mmi_res_prj_def.h  MMISET_MSGRING_USER_MAX_NUM   2
-source:resource\mmi_res_prj_def.h  MMISET_MMSRING_USER_MAX_NUM   2
-//  8910
-source:resource\mmi_res_prj_def.h  MMISET_ALERT_RING_MAX_NUM_EX  2
-source:resource\mmi_res_prj_def.h  MMISET_ALERT_RING_MAX_NUM     2
+// ==>ring
+Save:node\C\study\Macro_res_ring_8910.h
 
 
-// call one
-//		==>RING_NAMES
-//		==>RING_NAMES_EX
-app:setting\h\mmiset_export.h  SPDE_MMI_CALL_RING_NUM_ONE
-app:setting\h\mmiset_export.h  SPDE_MMI_CALL_RING_NUM_ONE
-//		==>MMISET_RING_FIXED_DEFAUT_NUM   1
-app:setting\c\mmiset_wintab.c  SPDE_MMI_CALL_RING_NUM_ONE
-source:resource\mmi_res_prj_def.h  SPDE_MMI_CALL_RING_NUM_ONE
-//		==>RING_NAMES
-//		==>RING_NAMES_EX
-app:setting\c\mmiset_ring.c  MMIAPISET_AppendFixedItemsOnly
-//  107/8910
-source:resource\mmi_res_prj_def.h  MMISET_RING_USER_MAX_NUM        1
-source:resource\mmi_res_prj_def.h  MMISET_RING_USER_MAX_NUM_EX     2
-
-
-// clock one
-//		==>CLOCK_NAMES
-//		==>CLOCK_NAMES_MAT
-app:setting\h\mmiset_export.h  SPDE_MMI_CLOCK_RING_NUM_ONE
-//		==>MMIALM_RING_FIXED_DEFAULT_NUM   1
-app:accessory\c\mmialarm.c  HandleAlarmRingSelWinMsg
-source:resource\mmi_res_prj_def.h  SPDE_MMI_CLOCK_RING_NUM_ONE
-//		==>CLOCK_NAMES
-//		==>CLOCK_NAMES_MAT
-app:setting\c\mmiset_ring.c  MMIAPISET_GetClockRingName
-//  107/8910
-source:resource\mmi_res_prj_def.h  MMIALM_CLOCK_RING_MAX_NUM        1
-source:resource\mmi_res_prj_def.h  MMIALM_CLOCK_RING_MAX_NUM_MAT    1
-
-
-// mp3
-prj:resource\my_music\
-prj:resource\my_music\mmiap_song_name.h
-prj:resource\my_music\song1.mp3
 
 
 

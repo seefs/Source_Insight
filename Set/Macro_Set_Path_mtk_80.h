@@ -21,7 +21,7 @@ bat:\\
 
 
 ### 1.cfg
-nvKey  = K220_Y19_AUDIO_BB
+nvKey  = K220_C61_AUDIO_BB
 
 boardKey  = K220M_YGW_BB
 
@@ -32,9 +32,9 @@ curKey = K220_C61
 GSMKey = GSM
 
 ### 3.copy
-oldKey = K220_Y07_MOLOO
+oldKey = K220_C61
 
-newKey = K220_Y19_MOLOO
+newKey = K220_C61_OB
 
 ### 4.tmp
 tmpKey = K220_Y01A_MGUO

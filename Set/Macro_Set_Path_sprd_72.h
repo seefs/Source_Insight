@@ -8,13 +8,19 @@
 
 0Key  = 8910
 
-imagesPath = MS_MMI_Main\source\resource\mmi_res_240x320\
+HWPath  = G:\_HW_NV_PARA.git\T107\W20.46.4\
+HW:\\
+downPath  = D:\Desktop\tool\UIS8910_down_tool\wa03u_git\
+down:\\
+
+
+imagesPath = MS_MMI_Main\source\resource\mmi_res_160x128\
 images:\\
 ringPath = MS_MMI_Main\source\resource\Common\RING\
 ring:\\
 batNvPath = common\nv_parameters\ProductionParam\
 batNv:\\
-nvPath = SPDE_PRJ\T5_W53_VIET\CustNV\
+nvPath = SPDE_PRJ\F79T_DERONG\CustNV\
 nv:\\
 
 
@@ -23,22 +29,22 @@ appPath     = MS_MMI_Main\source\mmi_app\app\
 ctrlPath    = MS_MMI_Main\source\mmi_ctrl\source
 guiPath     = MS_MMI_Main\source\mmi_gui\source
 configPath  = MS_Customize\source\product\config
+driverPath = MS_Customize\source\product\driver\
 sensorsPath = MS_Customize\source\product\driver\sensors
-batPath     = _bat\build
-bat:\\
 
 
 ### 1.cfg
 versionKey  = UMS9117_ums9117_barphone_version
-sizeKey  = 240X320
+sizeKey  = 160x128
 lcdKey  = xx
 
 
 ### 2.cur
-prjPath  = SPDE_PRJ\T5_W53_VIET\
+prjPath  = SPDE_PRJ\F79T_DERONG\
 prj:\\
 
-curKey   = ums9117_240X320BAR_48MB_T5_W53_VIET_user
+projectKey   = F79T_DERONG
+curKey   = ums9117_240X320BAR_48MB_F79T_DERONG_user
 cfgKey   = xx
 
 // USER debug

@@ -14,7 +14,7 @@ Save:node\C\study\Macro_nv_8910.h \[1.9\] nv test
 Save:node\C\study\Macro_nv_8910.h \[1.10\] IMEI
 Save:node\C\study\Macro_nv_8910.h \[1.11\] bat_capacity
 Save:node\C\study\Macro_nv_8910.h \[1.12\] custom
-Save:node\C\study\Macro_nv_8910.h \[1.13\] 
+Save:node\C\study\Macro_nv_8910.h \[1.13\] nv_build
 Save:node\C\study\Macro_nv_8910.h \[1.14\] 
 Save:node\C\study\Macro_nv_8910.h \[1.15\] 
 
@@ -240,8 +240,6 @@ chip_drv\chip_module\charge\uix8910\charge_uix8910.c  _CHGMNG_VoltagetoPercentum
 ### 107
 make/perl_script/
 
-// electronic guarantee card
-make/perl_script/UIX8910_128MBIT.xml  0x230
 
 // NV_ALIPAY_ID
 make/perl_script/UIX8910_128MBITX64MBIT_new.xml  0x1B4
@@ -260,15 +258,86 @@ HW:{project}\nv_type_uix8910.nvm  com_data
 
 // static
 HW:{project}\modem_nv_cat1bis_uix8910_static.nvm  9166
+//   0x0: 链路快速释放
+//   0x1: 默认
 
 
-[1.13] 
+### __Card__  电子保卡
+// 8910 升级可保留
+common\export\inc\nv_item_id.h  NV_ELECTRIC_GUARANTEE_CARD  # 560
+make/perl_script/UIX8910_128MBIT.xml  0x230
+HW:{project}\ProductionParam_uix8910.nvm  guarantee  # 560
 
+// 107--不可擦除
+common\export\inc\nv_item_id.h  NV_CUS_FIXNV_DATA_ID  # 610
+common\export\inc\nv_item_id.h  NV_CUS_FIXNV_DATA_LEN # 8
+make\nv_cus_config\nv_cus_config_MAIN\nv_cus_config_xml.mk   customer_card_id.xml
+make\nv_cus_config\nv_cus_config_MAIN\NV_CUS_CONFIG_SETTINGS\customer_card_id.xml  # 610
+HW:{project}\CustNV\customer_card_id.xml
+//SPDE_PRJ\F76T_SUOAI_MID\CustNV\customer_card_id.xml  #默认不用加
+// backup==>0
+make\perl_script\
+make\perl_script\UMS9117.xml  customer_card_id  # 0x262/610
+make\perl_script\pac.pl       UMS9117.xml
+
+// 107--升级会擦除, 格式化会擦除
+common\export\inc\nv_item_id.h  NV_ELECTRIC_GUARANTEE_CARD  # 2851
+make\app_main\app_main.mk  eleGuaranteeCard.xml
+HW:{project}\RDNV\eleGuaranteeCard.xml  # 2851
+
+
+[1.13] nv_build
+
+
+
+// 107手动还原
+PS\nv\export\
+common\nv_parameters\
+//project\config_nv\ums9117\
+//make\nv_cus_config\nv_cus_config_MAIN\
+PS\nv\export\ps\ims\   #bat未加
+
+// 服务器build差异文件
+CustNV/NV_PARAM_TYPE_EXPORT_IMS_CUSTOMER_SETTINGS.xml
+RDNV\bt_rf_config.xml               # 未还原 common\nv_parameters\wcn
+RDNV\multi_langue_cfg.xml
+RDNV\eleGuaranteeCard.xml  #delete
+RDNV\W_download_params_optimize.xml   # 先不管
+RDNV\rd_nvitem.xprj
+
+
+###
+// mk
+prj:project_{cur}.mk   PLATFORM = UMS9117
+prj:project_{cur}.mk   AUDIO_COMMON_EXCHANGE = TRUE
+prj:project_{cur}.mk   RCV_THROUGH_SPK = TRUE    #二合一
+prj:project_{cur}.mk   RCV_THROUGH_SPK = FALSE   #独立
+//
+make\voice\voice.mk  RCV_THROUGH_SPK   #二合一的NV
+PS\build\make\csm.mk  CUST_XML
+
+// 二合一的NV
+prj:CustNV/
+prj:CustNV/audio_arm_rcv_through_spk.xml
+prj:CustNV/audio_dsp_rcv_through_spk.xml
+prj:CustNV/audio_dsp_ex_rcv_through_spk.xml
+prj:CustNV/dsp_codec_config_rcv_through_spk.xml
+// 独立的NV
+prj:CustNV/audio_arm.xml
+prj:CustNV/audio_dsp.xml
+prj:CustNV/audio_dsp_ex.xml
+prj:CustNV/dsp_codec_config.xml
+// 替换二合一默认NV
+common\nv_parameters\audio\UMS9117\
+common\nv_parameters\audio\UMS9117\audio_arm_rcv_through_spk.xml
+//
+HW:{project}\
 
 
 
 [1.14] 
-
+// 
+// 107是nand，8910是nor 两种flash
 
 
 

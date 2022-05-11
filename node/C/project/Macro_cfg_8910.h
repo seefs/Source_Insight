@@ -268,13 +268,40 @@ SPDE_PRJ\K220U_LBR_L691_HS_L51_HQQVGA\uis8910_phone_user_base_config.cfg 160X128
 //	MAINLCD_LOGIC_ANGLE_90
 //	MAINLCD_DEV_SIZE_160X128
 //	MAINLCD_SIZE_160X128
-//	MAINLCD_SIZE_128X128
 //	MMI_RES_DIR_mmi_res_160x128
 
 // MAINLCD
 //	MAINLCD_SIZE_176X220
 //	SPDE_UI_176X220_STYLE
 
+### new add
+// 1.add file
+source:resource\mmi_res_160x128\
+source:winsimulator_tp/skin/
+source:winsimulator_tp/skin/mssim_duallcd_160_128_T.ini
+source:winsimulator_tp/skin/mssim_duallcd_160_128_T.png
+// 2.cfg
+K220SU.bat  160X128
+// 107
+prj:project_{cur}.mk  MAINLCD_DEV_SIZE = 160X128
+prj:project_{cur}.mk  MAINLCD_SIZE = 128X160
+prj:project_{cur}.mk  MMI_RES_DIR = mmi_res_160x128
+prj:project_{cur}.mk  MMI_RES_ORIENT = LANDSCAPE
+prj:project_{cur}.mk  MAINLCD_LOGIC_ANGLE = 90
+// 8910
+prj:{cfg}.cfg  MAINLCD_DEV_SIZE = 160X128
+prj:{cfg}.cfg  MAINLCD_SIZE = 128X160
+prj:{cfg}.cfg  MMI_RES_DIR = mmi_res_160x128
+prj:{cfg}.cfg  MMI_RES_ORIENT = LANDSCAPE
+prj:{cfg}.cfg  MAINLCD_LOGIC_ANGLE = 90
+// 3.cfg
+//	MAINLCD_SIZE_176X220
+//	SPDE_UI_176X220_STYLE
+// 4.mk
+//  160X128
+make/
+make/simulator_main/
+make/simulator_main/simulator_main.mk
 
 
 [1.9] shortcut
@@ -378,23 +405,28 @@ MS_MMI_Main\source\winsimulator_tp\skin
 //IM_ENGINE = NONE
 
 
-[2.2] 
+[2.2] DTMF, Dial, SIM, 天线
 //
 MMI_DIALPANEL_DTMF_SUPPORT
 
 // 还有一个地方
 app:phone\c\mmiphone.c  MMI_RESULT_E^HandleScellRssiInd
 
+// sim热插拔
+MS_Customize\source\product\driver\gpio\gpio_prod.c  GPIO_SIMIntHandler
+
+
 
 
 [2.3] 电子保卡
 
-// 1.本地版
+// 1.本地版(不可擦除)
 prj:project_{cur}.mk   SPDE_ELECTRIC_GUARANTEE_CARD = TRUE
 // nv同网络版
 prj:project_{cur}.mk   NV_CUS_FIXNV_DATA_LEN_128 = TRUE
-//
-app:eng\c\mmieng_win.c  void^SEGC_call_connected_handle
+// card--set
+Save:node\C\study\Macro_fun_8910.h  __SpdeCard__
+
 
 // 2.网络版
 prj:project_{cur}.mk   SPDE_ELECTRIC_GUARANTEE_CARD_V2 = TRUE
@@ -403,10 +435,11 @@ prj:project_{cur}.mk   SPDE_ELECTRIC_GUARANTEE_CARD_V2_USE_LOCAL_TIME = TRUE
 prj:project_{cur}.mk   NV_CUS_FIXNV_DATA_LEN_128 = TRUE
 
 
-// 3.本地版
+// 3.本地版(107不可擦除/8910升级可保留)
 prj:project_{cur}.mk   AOLEDA_ELECTRIC_GUARANTEE_CARD = TRUE
-//
-app:eng\c\mmieng_win.c  void^AOLEDA_call_connected_handle
+// card--set
+Save:node\C\study\Macro_fun_8910.h  __AoledaCard__
+
 
 
 // 4.销量统计
@@ -525,7 +558,11 @@ MS_MMI_Main/source/mmi_app/app/xysdk/h/xysdk_mdu_def.h  TXT_XYSDK_VER_INFO
 //	5、编译的时候会运行项目的bat文件，会把SPDE_PRJ的nv文件和资源文件复制到代码编译中相关目录
 //	6、开始正常的编译
 
-
+// make
+//		==>
+//		====>
+make.bat
+make\make_cmd\
 
 
 [2.13] build 省空间

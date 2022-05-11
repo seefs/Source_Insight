@@ -14,13 +14,13 @@ downPath  = D:\Desktop\tool\UIS8910_down_tool\wa03u_git\
 down:\\
 
 
-imagesPath = MS_MMI_Main\source\resource\mmi_res_160x128\
+imagesPath = MS_MMI_Main\source\resource\mmi_res_240x320\
 images:\\
 ringPath = MS_MMI_Main\source\resource\Common\RING\
 ring:\\
 batNvPath = common\nv_parameters\ProductionParam\
 batNv:\\
-nvPath = SPDE_PRJ\K220U_LBR_L691_HS_L51_HQQVGA\nvitem\
+nvPath = SPDE_PRJ\WA22U_SW34E_QQVGA\nvitem\
 nv:\\
 
 
@@ -37,16 +37,16 @@ bat:\\
 
 ### 1.cfg
 versionKey  = UMS9117_ums9117_barphone_version
-sizeKey  = 160x128
+sizeKey  = 128X128
 lcdKey  = xx
 
 
 ### 2.cur
-prjPath  = SPDE_PRJ\K220U_LBR_L691_HS_L51_HQQVGA\
+prjPath  = SPDE_PRJ\WA22U_SW34E_QQVGA\
 prj:\\
 
-projectKey   = K220U_LBR_L691_HS_L51_HQQVGA
-curKey   = UIS8910_ROM_16MB_DS_USER
+projectKey   = WA22U_SW34E_QQVGA
+curKey   = UIS8910_ROM_16MB_SS_WA22U_SW34E_QQVGA_DEBUG
 cfgKey   = uis8910_phone_user_base_config
 
 // USER debug
