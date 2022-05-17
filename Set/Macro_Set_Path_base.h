@@ -6,50 +6,22 @@
 ### 3.×Ô¶¯Ìæ»»£¬´ý¸Ä
 ###
 
-0Key  = 8910
+0Key  = Base
 
-imagesPath = MS_MMI_Main\source\resource\mmi_res_240x320\
-images:\\
-ringPath = MS_MMI_Main\source\resource\Common\RING\
-images:\\
-batNvPath = common\nv_parameters\ProductionParam\
-batNv:\\
-nvPath = SPDE_PRJ\WA07U_F30Z\nvitem\
-nv:\\
+nodeCPath = node\C\
+nodeC:\\
 
+nodePyPath = node\Pythons\
+nodePy:\\
 
-sourcePath  = MS_MMI_Main\source\
-appPath     = MS_MMI_Main\source\mmi_app\app\
-ctrlPath    = MS_MMI_Main\source\mmi_ctrl\source
-guiPath     = MS_MMI_Main\source\mmi_gui\source
-configPath  = MS_Customize\source\product\config
-sensorsPath = MS_Customize\source\product\driver\sensors
-batPath     = _bat\build
-bat:\\
+studyCPath = nodeC:study\
+studyC:\\
+
+demoCPath = nodeC:{prj}_demo\
+demoC:\\
 
 
-### 1.cfg
-lcdKey  = K220D_QVGA_LCM
-
-
-### 2.cur
-prjPath  = SPDE_PRJ\UIS8910_ROM_16MB_DS_USER\
-prj:\\
-
-curKey   = UIS8910_ROM_16MB_DS_USER
-cfgKey   = us8910_phone_user_base_config
-
-// USER debug
-useKey   = USER
-
-### 3.copy
-oldKey = K220_Y22_MGUO
-
-newKey = K220_Y28_MGUO
-
-### 4.tmp
-tmpKey = K220_Y01A_MGUO
-
-tmpBoardKey = K220M_YGW_BB
+### 1.Key
+prjKey  = project
 
 

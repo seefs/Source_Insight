@@ -462,6 +462,7 @@ macro CtrlW()
 		stop
 	if(!IsSRFile(hbuf))
 	{
+		/*
 		if(IsFileName(hbuf, "Macro_Note_"))
 		{
 			bft = getBft(1)
@@ -477,6 +478,7 @@ macro CtrlW()
 			}
 		}
 		else
+		*/
 		{
 			CloseWnd(hwnd)
 		}

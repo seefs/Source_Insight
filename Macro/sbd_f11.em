@@ -766,6 +766,8 @@ macro NoteHander(hbuf, cNum, prompt)
 
 macro OpenFileHander(hbuf, curPath, cur_row, noteWord, cNum, prompt)
 {
+	oldPath = curPath
+	
 	//1. 文件名转化:
 	//转化"Save:"、区分根目录、添加项目目录、替换"^"为空格
 	curPath = GetTransFileName(hbuf, curPath, cNum)
@@ -778,7 +780,15 @@ macro OpenFileHander(hbuf, curPath, cur_row, noteWord, cNum, prompt)
 	if(GetTransWord(hbuf, curPath, noteWord))
 		return 0
 
-	TestMsg("打开文件: " # CharFromKey(13) # curPath # CharFromKey(13) # noteWord, 2)
+	//test: 0.open, 1.cur, 2,close.
+	TestMsg("打开文件: " # CharFromKey(13) 
+			# oldPath # CharFromKey(13) 
+			# curPath # CharFromKey(13) 
+			# noteWord # CharFromKey(13) 
+			# "cNum: " # cNum # CharFromKey(13) 
+			# "prompt: " # prompt, 
+			2)
+
 	hbuf = OpenExistFile(curPath)
 	
 	if (hbuf != hNil){

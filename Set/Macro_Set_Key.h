@@ -16,7 +16,7 @@
 10alias = 6531D
 10RuleEn = 6531DA
 //
-10 = project:G:\SP6531D,
+10 = G:\SP6531D,
 10key = 6531D
 
 
@@ -24,7 +24,7 @@
 20alias = 6531DB
 20RuleEn = 6531btdialer
 //
-20 = project:F:\6531DA_Btdialer,
+20 = F:\6531DA_Btdialer,
 20key = 6531D
 
 
@@ -33,8 +33,8 @@
 30alias = 6531E
 30RuleEn = 6531E
 //
-30 = project:E:\SPDE6531E,
-30 = project:D:\_SI4.0\6531E.si4project,
+30 = E:\SPDE6531E,
+30 = D:\_SI4.0\6531E.si4project,
 30key = 6531E
 
 
@@ -43,7 +43,7 @@
 40alias = RDA
 40RuleEn = soft
 //
-40 = project:F:\soft,
+40 = F:\soft,
 40key = rda
 
 
@@ -51,8 +51,8 @@
 50alias = 6533
 50RuleEn = 6533
 //
-50 = project:F:\SC6533G\soft,
-50 = project:E:\SC6533G,
+50 = F:\SC6533G\soft,
+50 = E:\SC6533G,
 50key = 6533
 
 
@@ -60,11 +60,11 @@
 60alias = 8910
 60RuleEn = 8910
 //
-60 = project:G:\UIS8910_git,
-62 = project:G:\UIS8910_schcard_git,
-64 = project:G:\wa01u_svn,
-66 = project:G:\wa01u_svn_small_new2,
-68 = project:G:\wa01u_svn_small_new,
+60 = G:\UIS8910_git,
+62 = G:\UIS8910_schcard_git,
+64 = G:\wa01u_svn,
+66 = G:\wa01u_svn_small_new2,
+68 = G:\wa01u_svn_small_new,
 
 60key = 8910
 62key = 8910sch
@@ -79,11 +79,11 @@
 70alias = 8910
 70RuleEn = 8910
 //
-70 = project:G:\wa01u_svn_small_new3,
-72 = project:G:\T1071,
-74 = project:G:\wa01u_svn_small_w21,
-76 = project:G:\wa03u_git,
-78 = project:G:\wa03u_git2,
+70 = G:\wa01u_svn_small_new3,
+72 = G:\T1071,
+74 = G:\wa01u_svn_small_w21,
+76 = G:\wa03u_git,
+78 = G:\wa03u_git2,
 
 72key = 107
 74key = 8910wa21
@@ -95,15 +95,15 @@
 80alias = MTK
 80RuleEn = MTK
 //
-80 = project:E:\60M,
+80 = E:\60M,
 //奇数项, 解决源码+SI目录分开问题, 源码目录单独设置在前一项
-81 = project:E:\_SI4.0\61M.si4project
-82 = project:E:\MT61D_ZYF,
-83 = project:E:\_SI4.0\61M_ZYF.si4project
-84 = project:E:\60D_11C,
-85 = project:E:\_SI4.0\60D_11C.si4project
-86 = project:E:\60A_6464,
-87 = project:E:\_SI4.0\60D_11C.si4project
+81 = E:\_SI4.0\61M.si4project
+82 = E:\MT61D_ZYF,
+83 = E:\_SI4.0\61M_ZYF.si4project
+84 = E:\60D_11C,
+85 = E:\_SI4.0\60D_11C.si4project
+86 = E:\60A_6464,
+87 = E:\_SI4.0\60D_11C.si4project
 
 80key = 61M
 81key = 61M
@@ -121,45 +121,47 @@
 //(9) base -> save
 90alias = base
 90RuleEn = base
+// 不带\SI
+90 = D:\Save,
+90 = D:\_SI4.0\save.si4project,
+90 = D:\save\Source Insight\Projects\Base,
 //
-90 = project:D:\Save,
-
 90key = base
 
 
 //(10) tmp
-100 = project:X:\NoneEmpty,
+100 = X:\NoneEmpty,
 
 
 //(11) tmp
 110
-project:X:\NoneEmpty,
+X:\NoneEmpty,
 111
-project:X:\NoneEmpty,
+X:\NoneEmpty,
 112
-project:X:\NoneEmpty,
+X:\NoneEmpty,
 
 
 //(12) python
 120alias = Pythons
 //
-120 = project:D:\project\GitHub\myPython,
-121 = project:D:\_SI4.0\myPython.si4project,
+120 = D:\project\GitHub\myPython,
+121 = D:\_SI4.0\myPython.si4project,
 
 
 //(13)  tensorflow
-130 = project:D:\project\GitHub\tensorflow,
-131 = project:D:\_SI4.0\tensorflow.si4project,
+130 = D:\project\GitHub\tensorflow,
+131 = D:\_SI4.0\tensorflow.si4project,
 
 
 //(14) 9820E
 140alias = 9820e
 //
-140 = project:F:\9820e,
-141 = project:D:\_SI4.0\9820E_local.si4project,
+140 = F:\9820e,
+141 = D:\_SI4.0\9820E_local.si4project,
 
 // tmp
-150 = project:X:\NoneEmpty,
+150 = X:\NoneEmpty,
 
 
 

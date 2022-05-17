@@ -1,8 +1,6 @@
 
-基础路径设置:
-basePath = Save:Macro\
-base:\\
-base:sbd_test.em  OpenMiniTest
+//
+Save:Macro\sbd_test.em  OpenMiniTest
 
 bakPath = Save:Help\Tmp\target
 bak:\\
@@ -126,7 +124,7 @@ Save:Macro\sbd_f1.em  TreeNum
 
 [1.5] rule goto
 //
-base:sbd_test.em  goto_copy
+Save:Macro\sbd_test.em  goto_copy
 
 
 //		==>Goto                     # 
@@ -226,7 +224,7 @@ cmd: cmd
 
 
 [1.9] search
-base:sbd_test.em  search_bft
+Save:Macro\sbd_test.em  search_bft
 
 //1) 选中(search_version), 再ctrl+E
 //  英文排序测试
@@ -251,7 +249,7 @@ search_bft  statusbar\BaseStatusBar.java
 
 
 [1.10] group 分组
-base:sbd_test.em  sr_group
+Save:Macro\sbd_test.em  sr_group
 
 //1) 选中(sr_group), 再ctrl+E
 //  
@@ -312,7 +310,7 @@ Save:Macro\sbd_ctrl.em  CtrlR
 
 // 不带head路径
 //		==>CtrlR                    #索引跳转
-//		====>NoteHander             #isCmd == 0
+//		====>NoteHander             #isCmd == 0 (pro类)
 //		======>OpenFileHander       #cNum == 5
 //		========>GetTransFileName
 //		==========>getBasePath      #base
@@ -324,7 +322,7 @@ sbd_base.em  getSavePath
 
 // 区分pro路径
 //		==>CtrlR                    #索引跳转
-//		====>NoteHander             #isCmd == 0
+//		====>NoteHander             #isCmd == 5 (Save类)
 //		======>ReAllKeyHead
 //		========>getKeyHead
 //		==========>GetPubPathBuf    #仅部分项目使用配置
@@ -333,15 +331,23 @@ sbd_base.em  getSavePath
 //		========>getCustomKeyHead
 //		==========>getBaseDirNum    #项目都有项目号,项目别名
 //		==========>getBaseKey
-//		======>OpenFileHander       #cNum == 5
-//		========>OpenExistFile
-//		========>NoteScroll
 Save:set\Macro_Set_Path_{pro}.h  curKey
 
 
+// 循环替换
+//  cfg尽量只打开一次
+//		==>CtrlR                    #索引跳转
+//		====>NoteHander             #isCmd == 6 (set类)
+//		======>IsTransHead
+//		========>getKeyHead
+nodeC:Macro_Note_C.h
+nodePy:Macro_Note_Python.h
+studyC:Macro_app_6531E.h
+demoC:Macro_file_qrcode.h           # 默认可以
 
-//定制路径设置: (新加的话参考已有路径)
-// Save:
+
+### 新加特殊键:
+// 参考 Save:
 Save:Macro\sbd_base.em	getSavePath(0)
 Save:Macro\sbd_file.em	"Save:"
 Save:Macro\sbd_f11.em	"Save"
@@ -361,6 +367,10 @@ Save:Macro\sbd_test.em	TestNodeMsg
 
 
 [1.15] path--Set
+// 自定义键
+Macro_Set_Key.h
+// 自定义path
+Macro_Set_Path_base.h
 
 
 
@@ -378,7 +388,7 @@ Save:Cmd_TXT\si_filelist.h
 
 
 [1.17] mode
-base:sbd_test.em  mode_save
+Save:Macro\sbd_test.em  mode_save
 
 //1) 选中(mode_save), 再ctrl+E
 //  
@@ -393,7 +403,7 @@ base:sbd_test.em  mode_save
 
 
 [1.18] String
-base:sbd_test.em  line_value
+Save:Macro\sbd_test.em  line_value
 
 //1) 选中(line_value), 再ctrl+E
 //  
@@ -405,7 +415,7 @@ base:sbd_test.em  line_value
 	
 
 [1.19] Shell
-base:sbd_test.em  shell_cmd
+Save:Macro\sbd_test.em  shell_cmd
 
 //1) 选中(shell_cmd), 再ctrl+E
 //  
@@ -424,7 +434,7 @@ base:sbd_test.em  shell_cmd
 
 
 [1.20] API
-base:sbd_test.em  API_log
+Save:Macro\sbd_test.em  API_log
 
 //1) 选中(API_log), 再ctrl+E
 //  
@@ -786,9 +796,9 @@ cd:tmp       git clone https://github.com/twardoch/ttfdiet
 Save:Macro\sbd_f11.em	"python"
 
 //python
-// 设置双路径
-basePath = D:\project\NLP
-base:\\
+// 设置嵌套路径
+//basePath = D:\project\NLP
+//base:\\
 toolPath = Save:node\Pythons
 tool:\\
 
@@ -837,7 +847,7 @@ root->F
 [3.24] file
 #   --Test文件
 //基础路径设置:
-basePath = F:\6261D_11C_V33
+//basePath = F:\6261D_11C_V33
 //basePath = D:\SVN
 
 //跳转到行号:
@@ -862,7 +872,7 @@ FileSame:Save:Help\Test\Macro_
 
 //1) 基础路径设置:
 //basePath = Save:node\Pythons
-base:\\
+//base:\\
 
 // 1.1.存在basePath, 用 basePath + curPath
 py_test\file_read_a.txt

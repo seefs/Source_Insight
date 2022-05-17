@@ -46,7 +46,9 @@ macro GetPubPathBuf(hbuf)
 	nKey = getBaseKey(n)
 	if(type == 90)
 	{
-		return OpenCache(getKeyConfig(0))
+		SetName = getSetPath(0) # "\\Macro_Set_Path_base.h"
+		setBuf = OpenCache(SetName)
+		return setBuf
 	}
 	else if(type == 80)
 	{

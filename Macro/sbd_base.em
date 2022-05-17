@@ -94,8 +94,12 @@ macro getBasePath(hbuf)
 	//pathName = GetProjName (hprj)
 	proPath = GetProjDir (hprj)
 	
-	ret = CompareEx(proPath, getSavePath(0), 1)//left 包含 right
-	if(ret == 0)
+	// 包含返回0
+	//ret = CompareEx(proPath, getSavePath(0), 1)//left 包含 right
+	n = getBaseType(proPath)
+	type = n/10 *10
+	
+	if(type == 90)
 	{
 		return getSavePath(0)
 	}
@@ -330,7 +334,7 @@ macro SearchNumFromPath(hbufConfig, basePath)
 
 	basePath = ReplaceWord(basePath, "\\", "\\\\") //fRegExp = 1
 	//=[ ]*xxxxx,
-	searchFor = "=[ ]*" # "project:" # basePath # ","
+	searchFor = "=[ ]*" # basePath # ","
 	//SearchInBuf (hbufBase, pattern, lnStart, ichStart, fMatchCase, fRegExp, fWholeWordsOnly)
 	sel = SearchInBuf(hbufConfig, searchFor, 0, 0, 0, 1, 0)
 	if (sel != nil)
