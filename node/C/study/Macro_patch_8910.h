@@ -1,6 +1,8 @@
 
 »ù´¡Â·¾¶ÉèÖÃ:
 //basePath = 
+// bat
+Save:..\patch\
 
 /***********************************************************************/
 
@@ -25,49 +27,52 @@ Save:node\C\study\Macro_patch_8910.h \[1.12\]
 [1.1] app
 
 // 107--audioplayer--full
-MS_MMI_Main\source\mmi_app\app\audioplayer\c\mmiapwin_main_pda.c
+app:audioplayer\c\mmiapwin_main_pda.c
 
 // 107--browser--PIC
-MS_MMI_Main\source\mmi_app\app\browser\c\mmibrowser_wintable.c
-MS_MMI_Main\source\mmi_app\app\browser\control\src\brw_control.c
+app:browser\c\mmibrowser_wintable.c
+app:browser\control\src\brw_control.c
 
 
 // 107--bt--MSG_TEST
-MS_MMI_Main\source\mmi_app\app\bt\c\mmibt_app.c
+app:bt\c\mmibt_app.c
 
 // 107--test--key
-MS_MMI_Main\source\mmi_app\app\eng\c\mmieng_uitestwin.c
+app:eng\c\mmieng_uitestwin.c
 
 // 107--bt--test
-// 107--charge--test
-MS_MMI_Main\source\mmi_app\app\idle\c\mainapp.c
+app:idle\c\mainapp.c  IdleWin_HandleMsg
 
 // 107--idle--bt_id
-MS_MMI_Main\source\mmi_app\app\idle\c\mmiidle_cstyle.c
+app:idle\c\mmiidle_cstyle.c
 
 // 107--idle--tf_show
-MS_MMI_Main\source\mmi_app\app\idle\c\mmiidle_dial.c
+app:idle\c\mmiidle_dial.c
 
 
 // 107--sim1
-MS_MMI_Main\source\mmi_app\app\phone\c\mmiphone.c
+app:phone\c\mmiphone.c
 
 // 107--charge--msg
-MS_MMI_Main\source\mmi_app\app\phone\c\mmiphone_charge.c
+app:phone\c\mmiphone_charge.c
 
 // 107--tts--time
-MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_tts.c
+app:setting\c\mmiset_tts.c
 
 
 // 107/git
 // --udisk--test
 //		==>MMIAPIUdisk_HandleUsbCablePlugIn
 //		====>MMIAPIUdisk_OpenUsbOperWindow
-MS_MMI_Main\source\mmi_app\app\udisk\c\mmiudisk_wintab.c
+app:udisk\c\mmiudisk_wintab.c
 
 
-
-
+### __charge__
+// 8910--idle--charge state
+app:idle\c\mmiidle_mstyle.c
+// 107--idle--charge--test
+app:idle\c\mainapp.c  IdleWin_HandleMsg
+app:idle\c\mainapp.c  MMIPHONE_ChargeHandlePsAndRefMsg
 
 
 
@@ -92,10 +97,13 @@ MS_MMI_Main/source/mmi_app/app/phone/c/mmiphone.c
 MS_MMI_Main/source/mmi_app/common/h/mmi_appmsg.h
 
 // 107
-MS_MMI_Main\source\mmi_app\app\bt\c\mmibt_app.c  Trace_Log_Buf_Print
+app:bt\c\mmibt_app.c  Trace_Log_Buf_Print
 MS_MMI_Main/source/mmi_app/app/fmm/c/mmi_filemgr.c
 MS_MMI_Main/source/mmi_app/app/phone/c/mmiphone.c
 MS_MMI_Main/source/mmi_app/common/h/mmi_appmsg.h
+
+//
+//	Trace_Log_Buf_Print("MMIBT_A2DPCallBackFunc msg_id=%x",  pMsg->msg_id);
 
 
 

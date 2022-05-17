@@ -1,6 +1,4 @@
 
-
-
 //目录
 // 项目选择 编译
 Save:node\C\project\Macro_Note_8910.h \[1.1\] 编译指令
@@ -41,7 +39,7 @@ Save:node\C\project\Macro_Note_8910.h \[2.20\]
 [1.1] 编译指令:
 
 //编译:
-open: project\UIS8910_ROM_16MB_DS_USER\New_common.bat
+//open: project\UIS8910_ROM_16MB_DS_USER\New_common.bat
 
 //编译模块
 make p=UIS8910_ROM_16MB_DS_USER
@@ -74,7 +72,6 @@ build\UIS8910_ROM_16MB_DS_USER_builddir\win\bin\flash_sim.dat
 open tools\DEBUG_TOOL\ResearchDownload\Bin\ResearchDownload.exe
 build\UIS8910_ROM_16MB_DS_USER_builddir\img
 
-F:\6531G_16A_MP_W17.43.4\build\UIS8910_ROM_16MB_DS_USER_builddir\img
 
 
 

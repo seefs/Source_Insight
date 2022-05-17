@@ -1,7 +1,5 @@
 
-
-//目录:
-// 1. 
+//目录
 Save:node\C\study\Macro_nv_8910.h \[1.1\] 充电------------电流
 Save:node\C\study\Macro_nv_8910.h \[1.2\] 充电/放电-------电压(修改放电n%)
 Save:node\C\study\Macro_nv_8910.h \[1.3\] 低电电压

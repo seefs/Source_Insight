@@ -65,10 +65,13 @@ images:common\MMI_RES_DEFAULT\IMAG\Power_on_off\IMAGE_POWER_ON.gif
 
 
 [1.4] charger¹Ø»ú/³äµç¶¯»­
+###   __charge__
+// power--bg--160*128, 160*128, 160*40
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_IDLE_KEYLOCK_TIME_BG
+images:common\MMI_RES_DEFAULT\IMAG\key_lock\
 
-
-
-
+//
+//	IMAGE_IDLE_KEYLOCK_NUM_AM
 
 
 [1.5] Statusicons
@@ -109,8 +112,9 @@ images:common\MMI_RES_DEFAULT\IMAG\QVGA_TIME_BLACK\Idle_time\
 
 // --idle time
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_IDLE_TIME_AM
-//
+// --ºÚµ×°××Ö
 images:common\MMI_RES_DEFAULT\IMAG\Idle_time\
+// --°×µ×ºÚ×Ö
 images:common\MMI_RES_DEFAULT\IMAG\QVGA_TIME_BLACK\Idle_time\
 
 
@@ -122,10 +126,23 @@ images:common\MMI_RES_DEFAULT\IMAG\QVGA_TIME\Idle_time\
 //images:common\MMI_RES_DEFAULT\IMAG\key_lock\
 
 
+// --lock time--diff
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_IDLE_KEYLOCK_NUM_AM_CN
+// --ºÚµ×°××Ö
+images:common\MMI_RES_DEFAULT\IMAG\QVGA_TIME\Idle_time\
+// --°××Ö
+images:common\MMI_RES_DEFAULT\IMAG\key_lock\
+
 
 
 [1.7] Mp3
-//
+
+### __Mp3__
+// new
+images:audioplayer\MMI_RES_DEFAULT\IMAG\L680_new_music\
+// new--vol,26*10
+
+
 // 
 images:audioplayer\MMI_RES_DEFAULT\IMAG\
 

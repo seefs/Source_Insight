@@ -1,7 +1,5 @@
 
-
-// 目录:
-//	 2. 界面
+//目录
 Save:node\C\study\Macro_app_8910.h  \[1.1\] win fun.
 Save:node\C\study\Macro_app_8910.h  \[1.2\] idle, lock
 Save:node\C\study\Macro_app_8910.h  \[1.3\] menu, second
@@ -174,8 +172,8 @@ app:setting\c\mmiset_menutable.c  GUIMENU_ITEM_T^menu_set_phone
 
 
 // menu img
-source:mmi_ctrl\source\Menu\c\ctrlmenu_popup.c  check_unsel_img
-source:mmi_ctrl\source\Menu\c\ctrlmenu_sec.c   check_unsel_img
+ctrl:Menu\c\ctrlmenu_popup.c  check_unsel_img
+ctrl:Menu\c\ctrlmenu_sec.c   check_unsel_img
 // menu enter
 source:mmi_app\app\mainmenu\c\mainmenu_win.c  case^ID_TOOLS_RECORD
 
@@ -184,26 +182,28 @@ source:mmi_app\app\mainmenu\c\mainmenu_win.c  case^ID_TOOLS_RECORD
 
 [1.4] dial
 // Open
-app:idle\c\mmiidle_mstyle.c  MMIAPIIDLE_OpenDialWin
-// dial
-app:idle\c\mmiidle_dial.c  MMIAPIIDLE_EditDialWin
+//		==>MMIAPIIDLE_OpenDialWin
+//		====>MMIAPIIDLE_EditDialWin
+//		======>MMK_CreateWindow   # win
+//		======>InitDialEdit
+//		======>MMK_CreateControl  # softkey
 app:idle\c\mmiidle_dial.c  HandleDialWinMsg
 
 
 // display--分行--平均行间距 
-source:mmi_ctrl\source\editbox\c\ctrlbaseflex_display.c  void^DisplayTextString
-source:mmi_ctrl\source\editbox\c\ctrlbaseflex_display.c  BIG_DIAL_NUM
+ctrl:editbox\c\ctrlbaseflex_display.c  void^DisplayTextString
+ctrl:editbox\c\ctrlbaseflex_display.c  BIG_DIAL_NUM
 // display--分行--取消底部间距，相差1个像素刚好对齐
-source:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  GUI_RECT_T^BASEEDIT_GetClientRect
-source:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  976
+ctrl:editbox\c\ctrlbaseedit_internal.c  GUI_RECT_T^BASEEDIT_GetClientRect
+ctrl:editbox\c\ctrlbaseedit_internal.c  976
 // display--分行--拨号不计算行间距
-source:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  uint16^BASEEDIT_GetLineHeight
-source:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  1023
+ctrl:editbox\c\ctrlbaseedit_internal.c  uint16^BASEEDIT_GetLineHeight
+ctrl:editbox\c\ctrlbaseedit_internal.c  1023
 // display--分行--拨号位置不下移
-source:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  GUI_RECT_T^BASEEDIT_GetLineRect
-source:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  1270
+ctrl:editbox\c\ctrlbaseedit_internal.c  GUI_RECT_T^BASEEDIT_GetLineRect
+ctrl:editbox\c\ctrlbaseedit_internal.c  1270
 // display--分行--超位置
-source:mmi_ctrl\source\editbox\c\ctrlbaseflex_cursor.c  BASEEDIT_GetTopLineOffsetRange
+ctrl:editbox\c\ctrlbaseflex_cursor.c  BASEEDIT_GetTopLineOffsetRange
 
 
 
@@ -214,24 +214,29 @@ app:idle\c\mmiidle_dial.c  MMIAPIIDLE_SwitchEditDialWin
 source:mmi_kernel\include\mmi_theme.h  BIG_DIAL_NUM
 
 // 拨号光标
-source:mmi_ctrl\source\editbox\c\ctrlbaseflex_cursor.c  void^BASEFLEX_DisplayCursor
+ctrl:editbox\c\ctrlbaseflex_cursor.c  void^BASEFLEX_DisplayCursor
 // 拨号光标--set
-source:mmi_ctrl\source\editbox\c\ctrlbaseedit_highlight.c   void^BaseEditCtrlSetHighlight
+ctrl:editbox\c\ctrlbaseedit_highlight.c   void^BaseEditCtrlSetHighlight
 // display--align
-source:mmi_ctrl\source\editbox\c\ctrlbaseedit.c  CTRLBASEEDIT_SetAlign
+ctrl:editbox\c\ctrlbaseedit.c  CTRLBASEEDIT_SetAlign
 // display--bg
-source:mmi_ctrl\source\editbox\c\ctrlbaseedit_internal.c  BASEEDIT_DisplayBg
+ctrl:editbox\c\ctrlbaseedit_internal.c  BASEEDIT_DisplayBg
 
 
 
 [1.5] test
 // test code
-app:eng/c/mmieng_main.c  UITESTWIN_OpenPhoneTestWin
-app:eng/c/mmieng_main.c  UITESTWIN_OpenItemTestWin
-app:eng/c/mmieng_main.c  MMIAPIENG_StartEngineerMenu
+Save:node\C\study\Macro_doc_8910.h  __code__
+
 
 // version
 app:eng/c/mmieng_uitestwin.c  ID_ENG_TEST_SW_VERSION
+// version
+app:eng\c\mmieng_base.c   ShowVersionInfo
+// version--save
+app:eng\c\mmieng_base.c  MMIAPIENG_SaveTestResult
+
+
 // imei
 app:parse\c\mmiparse_dial.c  MMIAPIPARSE_ProcessImeiStr
 // 		MMIAPIPHONE_OpenIMEIDisplayWin();
@@ -241,24 +246,20 @@ app:idle\c\mmiidle_dial.c  MSG_NOTIFY_EDITBOX_UPDATE_STRNUM
 
 
 
-
-// version
-app:eng\c\mmieng_base.c   ShowVersionInfo
-// version--save
-app:eng\c\mmieng_base.c  MMIAPIENG_SaveTestResult
-
-
 // 手机测试
+//		==>UITESTWIN_OpenPhoneTestWin
 app:eng/c/mmieng_uitestwin.c  MMI_RESULT_E^ENGUITestMenuWinHandleMsg
 // 手机测试--menu
 app:eng\c\mmieng_menutable.c  menu_phone_test
 
 // 单项测试
+//		==>UITESTWIN_OpenItemTestWin
 app:eng/c/mmieng_uitestwin.c  MMI_RESULT_E^ENGItemTestMenuWinHandleMsg
 // 单项测试--menu
 app:eng\c\mmieng_menutable.c  menu_phone_item_test
 
 // 串行测试
+//		==>
 app:eng/c/mmieng_uitestwin.c  BOOLEAN^MMIAPIENG_StartUITest
 
 // 测试结果
@@ -266,9 +267,11 @@ app:eng/c/mmieng_uitestwin.c  MMI_RESULT_E^ENGUITestResultWinHandleMsg
 app:eng/c/mmieng_uitestwin.c  int32^GetUITestResultInfo
 
 // 工程模式
+//		==>MMIAPIENG_StartEngineerMenu
 app:eng/c/mmieng_main.c  MMI_RESULT_E^ENGMainMenuWinHandleMsg
 // 工程模式--menu
 app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_eng
+
 
 // MONKEY_TEST
 
@@ -709,7 +712,7 @@ app:pic_viewer\c\mmipicview_wintab.c HandlePreviewOptWinMsg
 // zoom
 app:pic_viewer\c\mmipicview_zoom.c  HandlePicZoomWinMsg
 // title
-source:mmi_ctrl\source\IconList\c\ctrliconlist.c  void^DisplayDelimiter
+ctrl:IconList\c\ctrliconlist.c  void^DisplayDelimiter
 app:pic_viewer\c\mmipicview_list.c  MMIPICVIEW_TITLE_COLOR
 
 
@@ -912,6 +915,10 @@ app:audioplayer/h/mmiap_position.h   {size}
 //		==>MMIMP3_TITLE_MARGIN_TOP   # 
 
 
+// mp3--icon
+Save:node\C\study\Macro_res_image_8910.h __Mp3__
+
+
 
 [1.18] alarm
 # Enter
@@ -1102,6 +1109,10 @@ MS_MMI_Main\source\mmi_app\app\bt\c\mmibt_app.c  MMIBT_A2DPCallBackFunc
 app:heroengine\tts\c\hero_tts_api.c  BLUETOOTH_SUPPORT
 
 
+// bt--nv
+MMIBT_GetBtStatusForIcon
+//    is_poweron = BT_GetState();
+
 
 [1.24] env
 ### idle switch
@@ -1240,18 +1251,24 @@ app:cc\c\mmicc_speeddial.c  CC_HandleSpeedDialEditWinMsg
 
 
 
-
-
-
-
-
-
 [1.29] startup
 // Start
 app:phone\c\mmiphone_onoff.c  MMI_RESULT_E^HandleNormalStartupWindow
 
+// power
+// --8910 要加 RED-close
+//		==>HandleChargeStartupWindow
+//		====>DisplayDayTimeEffert
+//		======>ChargeDisplayDateAndDay
+app:phone\c\mmiphone_charge.c  PHONE_STARTUP_CHARGE_WIN_TAB
+app:phone\c\mmiphone_charge.c  PHONE_STARTUP_CHARGE_OK_WIN_TAB
+
+### power--patch
+Save:node\C\study\Macro_patch_8910.h  __charge__
 
 
+// power--image
+Save:node\C\study\Macro_res_image_8910.h  __charge__
 
 
 [1.30] 

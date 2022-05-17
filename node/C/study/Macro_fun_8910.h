@@ -1,6 +1,5 @@
 
-
-//目录:
+//目录
 // 1. constant
 Save:node\C\study\Macro_fun_8910.h \[1.1\] resource_main
 Save:node\C\study\Macro_fun_8910.h \[1.2\] str, wstr
@@ -100,8 +99,14 @@ make\resource_main\resource_target.mk 42
 #GB Wstr
 //	GUI_GBToWstr
 //	GUI_WstrToGB
+//	GUI_GBKToUTF8 (no exist)
 
+#GB UTF8
+//	GUI_UTF8ToWstr
+//	GUI_WstrToUTF8
 
+#font type
+//	GUI_GetCodeType
 
 
 [1.3] timer, LONG_0
@@ -596,6 +601,15 @@ app:cc\c\mmicc_app.c  case^APP_MN_ALERTING_IND
 //		========>CC_OpenAudioTunnel                  # //bt
 //		===========>MMICC_ConstructVoiceCodec        # no use
 
+
+### 静默电话(拨出)
+source:mmi_app\kernel\c\mmi_default.c  BOOLEAN^DefaultSideKey
+// log:
+// CC_MT_CONNECTING_STATE          # 打进
+// CC_MO_CONNECTING_STATE          # 打出
+// CC_IN_CALL_STATE                # 1 
+// CC_CALL_CONNECTED_STATE         # 接通
+// MMICC_IsExistIncommingCall()    # 打进，未接通
 
 
 [2.6] SMS--tp input

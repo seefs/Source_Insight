@@ -8,7 +8,7 @@ Save:node\Macro_File.h \[1.4\] help--DefaultFile
 Save:node\Macro_File.h \[1.5\] CQ
 Save:node\Macro_File.h \[1.6\] special file
 Save:node\Macro_File.h \[1.7\] 
-Save:node\Macro_File.h \[1.8\] SI Marco dir, test
+Save:node\Macro_File.h \[1.8\] SI test
 Save:node\Macro_File.h \[1.9\] SI Cmd dir
 Save:node\Macro_File.h \[1.10\] 
 Save:node\Macro_File.h \[1.11\] 
@@ -105,8 +105,8 @@ Save:Cmd_TXT\Tmp_Comp_2.h
 
 
 
-[1.8] SI Marco dir, test
-// file, test
+[1.8] SI test
+// 
 Save:Help\Other\Macro_Help_SI.h
 
 

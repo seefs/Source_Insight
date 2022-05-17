@@ -1,6 +1,5 @@
 
-
-// 1. common
+//Ä¿Â¼
 Save:node\C\study\Macro_res_8910.h \[1.1\] ÏîÄ¿ÅäÖÃ
 Save:node\C\study\Macro_res_8910.h \[1.2\] mk, version, nv
 Save:node\C\study\Macro_res_8910.h \[1.3\] str

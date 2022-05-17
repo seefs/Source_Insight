@@ -1,15 +1,13 @@
 
 基础路径设置:
-//basePath = SPDE_PRJ\
-//base:\\
-zmaeePath = SPDE_PRJ\WA07U_F30Z\zmaee
-//zmaeePath = SPDE_PRJ\WA03U_T2_V2\zmaee
-//zmaeePath = SPDE_PRJ\WA03U_T2_HERO\zmaee
+//
+Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
+//
+//zmaeePath = prj:zmaee
+zmaeePath = prj:zmaee_128X128
 zmaee:\\
 
-/***********************************************************************/
-
-//目录[Num][Ca]:
+//目录:
 // 1. 
 Save:node\C\study\Macro_zmaee_8910.h \[1.1\] menu----------删菜单
 Save:node\C\study\Macro_zmaee_8910.h \[1.2\] SENSOR
@@ -72,10 +70,10 @@ zmaee:h\zmaee_watchos_capabilities.h  CAP_LED
 
 [1.3] powerOff
 //
-MS_MMI_Main\source\mmi_app\app\zmaee\c\zmaee_porting.c  MMI_ZMAEE_MAIN_WIN_ID
+app:zmaee\c\zmaee_porting.c  MMI_ZMAEE_MAIN_WIN_ID
 
 //
-MS_MMI_Main\source\mmi_app\app\zmaee\c\zmaee_watch.c  ZMAEE_IWatch_PowerOff
+app:zmaee\c\zmaee_watch.c  ZMAEE_IWatch_PowerOff
 
 
 ### 开机时按4秒12次，恢复出厂设置
@@ -100,11 +98,11 @@ zmaee:c\zmaee_watch.c  int^ZMAEE_IWatch_EntrySystemEx
 make\resource_main\resource_main.mk  __ZMAEE_APP__
 //	SOURCES += zmaee_128X128_mdu_def.h
 
-MS_MMI_Main\source\resource\mmi_res_prj_def.h  __ZMAEE_APP__
+source:resource\mmi_res_prj_def.h  __ZMAEE_APP__
 //	RES_ADD_MODULE(MMI_MODULE_ZMAEE,"\\zmaee_128X128\\zmaee_128X128_mdu_def.h")
 
 //
-MS_MMI_Main/source/mmi_app/app/zmaee_128X128/h/zmaee_128X128_mdu_def.h
+app:zmaee_128X128/h/zmaee_128X128_mdu_def.h
 
 tools_mdu_def.h clock_mdu_def.h bt_mdu_def.h camera_mdu_def.h
 

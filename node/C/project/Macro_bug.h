@@ -1,10 +1,5 @@
 
-
-
-基础路径设置:
-//basePath = 
-base:\\
-
+//目录:
 Save:node\C\project\Macro_bug.h \[1.1\] watch_git
 Save:node\C\project\Macro_bug.h \[1.2\] watch_svn
 Save:node\C\project\Macro_bug.h \[1.3\] 

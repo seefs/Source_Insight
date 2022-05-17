@@ -1,7 +1,5 @@
 
-
-// 目录:
-//   1. 功能点
+//目录
 Save:node\C\study\Macro_gui_8910.h  \[1.1\] display str
 Save:node\C\study\Macro_gui_8910.h  \[1.2\] softkey
 Save:node\C\study\Macro_gui_8910.h  \[1.3\] draw ---------------画图
@@ -158,22 +156,52 @@ MMITHEME_GetSoftKeyTextFont
 
 
 [1.4] statusbar, change
-// statusbar init
+// statusbar init--8910/107
+//		==>MMIAPIIDLE_init
+//		====>SetStatusAreaInfo                     # pos
 app:idle/c/mainapp.c  MMIAPICOM_StatusAreaInit
+//		====>SetStatusBarInfo
+//		======>GUIWIN_AppendStbItemData
+//		======>MMIIDLE_SetSimStatusBarInfo
+//		========>CTRLSTBDATA_SetItemVisible
+//		====>HandleNetworkStatusInd
+//		======>SetGprsInfo                         # sim icon
+//		======>MAIN_SetIdleRoamingState            # sim icon
+//		======>MMIAPICOM_StatusAreaSetVolteState   # sim icon
+//		====>MMIPHONE_HandleNetworkInfoInd
+//		======>MMIIDLE_SetSimStatusBarInfo         # sim icon
+app:idle/c/mainapp.c  MMIDILE_StatusBarInit
+
 
 //动态创建状态条:
 SBD_MMI_DIALWIN_HAS_STATUSBAR
 
-// --statusbar--icon
-source:mmi_ctrl\source\Statusbar\c\ctrlstatusbar.c  DrawStatusBarAllItem
 
-
+// --statusbar--Update
+//		==>GUIWIN_UpdateStb
+//		====>CTRLSTATUSBAR_UpdateCtrl
+//		======>RefreshStatusBar
+//		========>DrawStatusBarCtrl
 // --statusbar--bg
-source:mmi_ctrl\source\Statusbar\c\ctrlstatusbar.c  BOOLEAN^DrawStatusBarBg
+//		==>StatusbarCtrlHandleMsg
+//		====>DrawStatusBarBg
+//		======>DrawStatusBarBgExt
+//		====>DrawStatusBarAllItem
+//		======>
+ctrl:Statusbar\c\ctrlstatusbar.c  BOOLEAN^DrawStatusBarBg
+// 黑色背景重叠需加:
+//  GUIWIN_SetStbState(win_id, GUISTATUSBAR_STATE_USE_LAYER, TRUE);
+
+## icon test:
+//    GUIWIN_SetStbItemIconId(MMI_WIN_ICON_VOLTE, IMAGE_PRIMO_STATUS_VOLTE);
+//    GUIWIN_SetStbItemVisible(MMI_WIN_ICON_VOLTE, FALSE);
+//    GUIWIN_UpdateStb();
 
 
-// init--pos
-source:mmi_app\common\c\mmicom_statusarea.c  void^SetStatusAreaInfo
+### dial status
+// MSG_APP_BACKWARD/MSG_APP_FORWARD
+// MSG_APP_SMS
+app:idle\c\mmiidle_dial.c  HandleDialWinMsg
 
 
 // sim--刷新
@@ -233,8 +261,6 @@ app:phone\c\mmiphone_charge.c   887
 //            MMIAPIENVSET_ResetActModeOtherRingSet();
 
 
-// Draw
-ctrl:Statusbar\c\ctrlstatusbar.c  DrawStatusBarAllItem
 
 
 

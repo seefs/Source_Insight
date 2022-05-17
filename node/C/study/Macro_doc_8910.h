@@ -1,7 +1,5 @@
 
-
 //Ä¿Â¼
-// 1. 
 Save:node\C\study\Macro_doc_8910.h \[1.1\] Message ÇÐ»»
 Save:node\C\study\Macro_doc_8910.h \[1.2\] FUN Èë¿Ú-------------
 Save:node\C\study\Macro_doc_8910.h \[1.3\] //lang
@@ -17,10 +15,9 @@ Save:node\C\study\Macro_doc_8910.h \[1.12\] //FontTool
 Save:node\C\study\Macro_doc_8910.h \[1.13\] build time----------
 Save:node\C\study\Macro_doc_8910.h \[1.14\] apn
 Save:node\C\study\Macro_doc_8910.h \[1.15\] 
-//
-Save:node\C\study\Macro_doc_8910.h \[2.1\] build error
-Save:node\C\study\Macro_doc_8910.h \[2.2\] moids error
-Save:node\C\study\Macro_doc_8910.h \[2.3\] 
+Save:node\C\study\Macro_doc_8910.h \[1.16\] 
+Save:node\C\study\Macro_doc_8910.h \[1.17\] 
+Save:node\C\study\Macro_doc_8910.h \[1.18\] 
 
 
 
@@ -146,7 +143,7 @@ down:\ResearchDownload_R25.21.1401_\ResearchDownload_R25.21.1401\Bin\\UpgradeDow
 
 
 [1.9] test code
-
+### __code__
 
 // SAR
 //app:eng\c\mmieng_base.c  SAR
@@ -157,9 +154,11 @@ app:eng\c\mmieng_base.c  BUILD
 
 
 // Phone
-"#*8378#0#", "*#15963#", "####1111#",
+"#*8378#0#", "*#222#", "*#15963#", "####1111#",
+app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_UI_TEST1
 // UI
 "####1111#", "*#87#", "*#666#",
+app:eng\c\mmieng_main.c  MMIENG_IDLE_FULL_TEST
 // Item
 app:eng\c\mmieng_main.c  MMIENG_IDLE_ITEM_TEST
  "*#777#", "*#66*#", "*#79*#",
@@ -288,6 +287,10 @@ MMIAPISET_IsNeedResetDateTime
 
 [1.14] apn
 //
+Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
+
+//
+tool_mini:\
 tool_mini:6_res_str\
 tool_mini:6_res_str\res_ntac.xlsx
 
@@ -298,22 +301,17 @@ tool_mini:6_res_str\res_ntac.xlsx
 
 
 
-[2.1] 
+[1.16] 
 
 
 
 
-[2.2] 
-
-//
-build\{cur}_builddir\
-build\{cur}_builddir\tmp\mmi_res_128x128_text.txt TXT_SETTINGS_COMMAND
-build\{cur}_builddir\tmp\mmi_res_128x128_text.txt _EMPTY
-build\{cur}_builddir\tmp\mmi_res_128x128_text.txt Delete
+[1.17] 
 
 
 
-[2.3] 
+
+[1.18] 
 
 
 
