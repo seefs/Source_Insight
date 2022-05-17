@@ -564,8 +564,12 @@ macro NoteHander(hbuf, cNum, prompt)
 	// parse "{cur}"
 	if(prompt == 0 && (isCmd == 0 || isCmd == 1 || isCmd == 2 || isCmd == 5 || isCmd == 6 || isCmd == 7))
 	{
+		//替换普通{key}
 		tmpPath = ReAllKeyHead(hbuf, curPath)
+		//替换特殊{key}, 基础路径为""
+		//特殊key有多选，可为空，需单独处理
 		tmpPath = ReCustomKeyHead(hbuf, "", tmpPath)
+		
 		//test: 0.open, 1.cur, 2,close.
 		TestMsg("==ReAllKeyHead==" # CharFromKey(13)
 			  # "curPath" # CharFromKey(13) # "--" # curPath # "--" # CharFromKey(13)

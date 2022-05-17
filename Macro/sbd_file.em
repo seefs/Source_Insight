@@ -6,6 +6,9 @@ _TempFileType(hbuf)
 _TempMakeFile(hbuf)
 _TempOpenFile(hbuf)
 _TempFileFun(hbuf)
+_TempHeadFun(hbuf)
+_TempTransFun(hbuf)
+_TempKeyFile(hbuf)
 _TempCmdFile(hbuf)
 _TempSelect(hbuf)
 **/
@@ -25,16 +28,29 @@ macro GetCfgBuf(mode)
 	
 	return setBuf
 }
+//获取公共KeyBUF
+macro GetPubKeyBuf(mode)
+{
+	SetName = getSetPath(0) # "\\Macro_Set_Key.h"
+	setBuf = OpenCache(SetName)
+	
+	return setBuf
+}
 //获取公共路径BUF
 macro GetPubPathBuf(hbuf)
 {
 	baseName = getBasePath(hbuf)
 	//获取当前工程分类，区分处理
 	n = getBaseType(baseName)
-	if(n == 80 || n == 90)
+	type = n/10 *10
+	nKey = getBaseKey(n)
+	if(type == 90)
 	{
-		n = getBaseDirNum(baseName)
-		SetName = getSetPath(0) # "\\Macro_Set_Path_mtk_" # n # ".h"
+		return OpenCache(getKeyConfig(0))
+	}
+	else if(type == 80)
+	{
+		SetName = getSetPath(0) # "\\Macro_Set_Path_mtk_" # nKey # ".h"
 		if (!IsExistFile(SetName))
 		{
 			SetName = getSetPath(0) # "\\Macro_Set_Path_mtk_.h"
@@ -42,10 +58,9 @@ macro GetPubPathBuf(hbuf)
 		setBuf = OpenCache(SetName)
 		return setBuf
 	}
-	else if(n == 10 || n == 30 || n == 60 || n == 70)
+	else if(type == 10 || type == 30 || type == 60 || type == 70)
 	{
-		n = getBaseDirNum(baseName)
-		SetName = getSetPath(0) # "\\Macro_Set_Path_sprd_" # n # ".h"
+		SetName = getSetPath(0) # "\\Macro_Set_Path_sprd_" # nKey # ".h"
 		if (!IsExistFile(SetName))
 		{
 			SetName = getSetPath(0) # "\\Macro_Set_Path_sprd_.h"
@@ -903,6 +918,10 @@ macro GetTransFileName(hbuf, fName, cNum)
 	return fName
 }
 
+/***********************************************************************/
+/************************** select  **********************************/
+/***********************************************************************/
+//macro _TempHeadFun(hbuf){		_TempHeadFile(hbuf)		}
 macro GetHeadIndex(cur_line)
 {
 	index = FindString(cur_line, " ")
@@ -1049,6 +1068,10 @@ macro ReAllTransHead(hbuf, curPath)
 	return curPath
 }
 
+/***********************************************************************/
+/************************** select  **********************************/
+/***********************************************************************/
+//macro _TempTransFun(hbuf){		_TempHeadFile(hbuf)		}
 macro GetTransWord(hbuf, curPath, noteWord)
 {
 	if(noteWord == "[Path]")
@@ -1131,6 +1154,10 @@ macro GetTransRootDir(fName)
 		return strmid(fName, 0, index + 1)
 	}
 }
+/***********************************************************************/
+/************************** select  **********************************/
+/***********************************************************************/
+//macro _TempKeyFile(hbuf){		_TempHeadFile(hbuf)		}
 macro IsKeySetHead(hbuf, fHead)
 {
 	//不能带有*号，否则会无限替换下去
@@ -1227,6 +1254,11 @@ macro ReAllKeyHead(hbuf, curPath)
 }
 macro getCustomKeyHead(hbuf, fHead)
 {
+	var index
+	var hprj
+	var n
+	var nKey
+		
 	//不能带有*号，否则会无限替换下去
 	index = FindString(fHead, "*")
 	if(index != "X"){
@@ -1235,17 +1267,16 @@ macro getCustomKeyHead(hbuf, fHead)
 	
 	//特殊关键字
 	if(fHead == "pro"){
-		n = 0
 		hprj = GetCurrentProj ()
 		if(hprj>0)
 		{
 			path = GetProjDir (hprj)
 			//n = getBaseType(path)
 			n = getBaseDirNum(path)
+			nKey = getBaseKey(n)
+			return nKey
 		}
-		return n
 	}
-	
 	return ""
 }
 macro ReCustomKeyHead(hbuf, curPathS, curPathE)
@@ -1263,6 +1294,7 @@ macro ReCustomKeyHead(hbuf, curPathS, curPathE)
 		return curPathE
 
 	pathMid = strmid(curPathE, firstS + 1, firstE)
+	//特殊{key}
 	keyVal = getCustomKeyHead(hbuf, pathMid)
 	if (keyVal != "")
 	{
@@ -1279,11 +1311,31 @@ macro ReCustomKeyHead(hbuf, curPathS, curPathE)
 		{
 			pathER = ReCustomKeyHead(hbuf, curPathS # pathS # "", pathE)
 			pathOut = curPathS # pathS # "" # pathE
-			msg("not exist: " # keyVal)
+			msg("key not exist: " # keyVal)
 			return pathOut
 		}
 	}
 	return curPathE
+}
+
+macro getCustomHot(hbuf, fn_idx)
+{
+	var hprj
+	var path
+	var n
+	var nKey
+
+	hprj = GetCurrentProj ()
+	if(hprj>0)
+	{
+		path = GetProjDir (hprj)
+		//type = getBaseType(path)
+		n = getBaseDirNum(path)
+		//nKey = getBaseKey(n)
+		nKey = getBaseOther(n, "Hot" # fn_idx)
+		return nKey
+	}
+	return ""
 }
 /***********************************************************************/
 /************************** select  **********************************/

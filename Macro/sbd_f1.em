@@ -274,49 +274,41 @@ macro Code_Tree(g_ok)
 macro TreeNum(hbuf, key)
 {
 	//_TempHeadF1()
-	//指定默认文件可能为任意目录
-	if (key != 1)
-	{
-		bft = getBft(2)
-	}
-	
+
 	if (key == 1) //数字1
 	{
 		//跳到默认file
 		SetDefaultProject(hbuf)
-//		file = GetGroupItem(bft, 1, "Project", "File")
 	}
 	else if (key == 2) //数字2
 	{
-		file = GetGroupItem(bft, 1, "Project", "File")
+		//后期可拆分出word
+		file = getCustomHot(hbuf, 2)
 		OpenProjectFile(hbuf, file, "", "")
 	}
 	else if (key == 3) //数字3
 	{
-		file = GetGroupItem(bft, 2, "Project", "File")
+		file = getCustomHot(hbuf, 3)
 		OpenProjectFile(hbuf, file, "", "")
 	}
 	else if (key == 4) //数字4
 	{
-		file = GetGroupItem(bft, 3, "Project", "File")
-		word = "MMISET_EDEFAULT_LANGUAGE"
-		OpenProjectFile(hbuf, file, "", word)
+		file = getCustomHot(hbuf, 4)
+		OpenProjectFile(hbuf, file, "", "")
 	}
 	else if (key == 5) //数字5
 	{
-		file1 = GetGroupItem(bft, 4, "Project", "File")
-		file2 = GetGroupItem(bft, 5, "Project", "File")
-		word = "menu_mainmenu_icon"
-		OpenProjectFile(hbuf, file1, file2, word)
+		file = getCustomHot(hbuf, 5)
+		OpenProjectFile(hbuf, file, "", "")
 	}
 	else if (key == 6) //数字6
 	{
-		file = GetGroupItem(bft, 6, "Project", "File")
+		file = getCustomHot(hbuf, 6)
 		OpenProjectFile(hbuf, file, "", "")
 	}
 	else if (key == 7) //数字7
 	{
-		file = GetGroupItem(bft, 7, "Project", "File")
+		file = getCustomHot(hbuf, 7)
 		OpenProjectFile(hbuf, file, "", "")
 	}
 	else if (key == 8) //数字8

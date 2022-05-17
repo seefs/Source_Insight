@@ -8,19 +8,13 @@
 
 0Key  = 8910
 
-HWPath  = G:\_HW_NV_PARA.git\8910FFS\W20.36.2\
-HW:\\
-downPath  = D:\Desktop\tool\UIS8910_down_tool\wa03u_git\
-down:\\
-
-
 imagesPath = MS_MMI_Main\source\resource\mmi_res_240x320\
 images:\\
 ringPath = MS_MMI_Main\source\resource\Common\RING\
-ring:\\
+images:\\
 batNvPath = common\nv_parameters\ProductionParam\
 batNv:\\
-nvPath = SPDE_PRJ\WA22U_SW34E_QQVGA\nvitem\
+nvPath = SPDE_PRJ\WA07U_F30Z\nvitem\
 nv:\\
 
 
@@ -29,36 +23,33 @@ appPath     = MS_MMI_Main\source\mmi_app\app\
 ctrlPath    = MS_MMI_Main\source\mmi_ctrl\source
 guiPath     = MS_MMI_Main\source\mmi_gui\source
 configPath  = MS_Customize\source\product\config
-driverPath = MS_Customize\source\product\driver\
 sensorsPath = MS_Customize\source\product\driver\sensors
 batPath     = _bat\build
 bat:\\
 
 
 ### 1.cfg
-versionKey  = UMS9117_ums9117_barphone_version
-sizeKey  = 128X128
-lcdKey  = xx
+lcdKey  = K220D_QVGA_LCM
 
 
 ### 2.cur
-prjPath  = SPDE_PRJ\WA22U_SW34E_QQVGA\
+prjPath  = SPDE_PRJ\UIS8910_ROM_16MB_DS_USER\
 prj:\\
 
-projectKey   = WA22U_SW34E_QQVGA
-curKey   = UIS8910_ROM_16MB_SS_WA22U_SW34E_QQVGA_DEBUG
-cfgKey   = uis8910_phone_user_base_config
+curKey   = UIS8910_ROM_16MB_DS_USER
+cfgKey   = us8910_phone_user_base_config
 
 // USER debug
 useKey   = USER
 
 ### 3.copy
-oldKey = xx
+oldKey = K220_Y22_MGUO
 
-newKey = xx
+newKey = K220_Y28_MGUO
 
 ### 4.tmp
-tmpKey = xx
+tmpKey = K220_Y01A_MGUO
 
+tmpBoardKey = K220M_YGW_BB
 
 

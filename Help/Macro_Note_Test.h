@@ -35,9 +35,9 @@ Save:Help\Macro_Note_Test.h \[1.9\] F9----------------search
 Save:Help\Macro_Note_Test.h \[1.10\] F10--------------group
 Save:Help\Macro_Note_Test.h \[1.11\] F11--------------Note¿ì½İ¼ü
 Save:Help\Macro_Note_Test.h \[1.12\] F12--------------
-Save:Help\Macro_Note_Test.h \[1.13\] Óï·¨²âÊÔ---------ºóÃæÉ¾³ıµô...
-Save:Help\Macro_Note_Test.h \[1.14\] project
-Save:Help\Macro_Note_Test.h \[1.15\] project path Set
+Save:Help\Macro_Note_Test.h \[1.13\] Base-------------
+Save:Help\Macro_Note_Test.h \[1.14\] Óï·¨²âÊÔ---------ºóÃæÉ¾³ıµô...
+Save:Help\Macro_Note_Test.h \[1.15\] 
 Save:Help\Macro_Note_Test.h \[1.16\] file list
 Save:Help\Macro_Note_Test.h \[1.17\] mode
 Save:Help\Macro_Note_Test.h \[1.18\] String
@@ -91,8 +91,25 @@ Save:Help\Macro_Note_Test.h \[3.30\]
 
 
 
-[1.1] 
+[1.1] tree
+//
 
+//		==>Tree                     # 
+//		====>IsNoteFile             # cNum == 5
+//		======>
+//		====>TreeNum                # key == "0"
+//		======>GetGroupItem         #  key == "2"
+//		====>TreeChar               # key == "a"
+//		========>IsNoSelect         #
+//		==========>GotoHan          #  goto copy
+//		==========>GotoNode         #  goto Node(·ÏÆú¹¦ÄÜ)
+//		========>IsSelect           # 
+//		==========>getBufBft        #  goto Key
+//		============>GotoKey
+//		==========>GotoFile         #  goto MMI_features(·ÏÆú¹¦ÄÜ)
+//		==========>SearchForward    #  goto Search(·ÏÆú¹¦ÄÜ)
+//		======>TwoWordFind          # set == "s"
+Save:Macro\sbd_f1.em  TreeNum
 
 
 [1.2] 
@@ -108,7 +125,34 @@ Save:Help\Macro_Note_Test.h \[3.30\]
 
 
 [1.5] rule goto
+//
 base:sbd_test.em  goto_copy
+
+
+//		==>Goto                     # 
+//		====>NoteHander             # cNum == 5
+//		======>OpenFileHander       #  Ë«Â·¾¶Ìø×ª£ºF5ÏîÄ¿, F6Â·¾¶(·ÏÆú¹¦ÄÜ)
+//		====>SwtichTools            #
+//		======>StartGoto            # set == "g"
+//		========>IsNoSelect         #
+//		==========>GotoHan          #  goto copy
+//		==========>GotoNode         #  goto Node(·ÏÆú¹¦ÄÜ)
+//		========>IsSelect           # 
+//		==========>getBufBft        #  goto Key
+//		============>GotoKey
+//		==========>GotoFile         #  goto MMI_features(·ÏÆú¹¦ÄÜ)
+//		==========>SearchForward    #  goto Search(·ÏÆú¹¦ÄÜ)
+//		======>TwoWordFind          # set == "s"
+Save:Macro\sbd_f5.em  Goto
+
+// Ä£°å²âÊÔ
+//		==>CtrlE                    # Ä£°åÌø×ª
+//		====>OpenMiniTest           # MiniTest == True
+//		======>openNoteFile         # word_1 == "project"
+//		======>GotoHan              # word_1 == "goto_copy"
+//		========>
+Save:Macro\sbd_ctrl.em  CtrlE
+
 	
 //1) Ñ¡ÖĞ(goto_copy), ÔÙctrl+E
 //  ¸´ÖÆ--ÖĞÎÄÌø×ª:
@@ -252,7 +296,60 @@ F5: ´ò¿ªslnÎÄ¼ş/cmdÃüÁî+ÓÒ¼üÕ³Ìù; µ±Ç°ĞĞÒÔset¡¢cmd¡¢make/ctmake/xmake¡¢open¡¢vc¡
 
 
 
-[1.13] Óï·¨²âÊÔ
+[1.13] Base
+//
+Save:Macro\sbd_base.em
+
+// ´øheadÂ·¾¶
+//		==>CtrlR                    #Ë÷ÒıÌø×ª
+//		====>NoteHander             #isCmd == 5 (SaveÀà)
+//		======>OpenFileHander       #cNum == 5
+//		========>GetTransFileName
+//		==========>ReplaceWord      #Ìæ»»
+//		========>OpenExistFile
+//		========>NoteScroll
+Save:Macro\sbd_ctrl.em  CtrlR
+
+// ²»´øheadÂ·¾¶
+//		==>CtrlR                    #Ë÷ÒıÌø×ª
+//		====>NoteHander             #isCmd == 0
+//		======>OpenFileHander       #cNum == 5
+//		========>GetTransFileName
+//		==========>getBasePath      #base
+//		==========>GetProjDir
+//		========>OpenExistFile
+//		========>NoteScroll
+sbd_base.em  getSavePath
+
+
+// Çø·ÖproÂ·¾¶
+//		==>CtrlR                    #Ë÷ÒıÌø×ª
+//		====>NoteHander             #isCmd == 0
+//		======>ReAllKeyHead
+//		========>getKeyHead
+//		==========>GetPubPathBuf    #½ö²¿·ÖÏîÄ¿Ê¹ÓÃÅäÖÃ
+//		============>getBaseType
+//		======>ReCustomKeyHead
+//		========>getCustomKeyHead
+//		==========>getBaseDirNum    #ÏîÄ¿¶¼ÓĞÏîÄ¿ºÅ,ÏîÄ¿±ğÃû
+//		==========>getBaseKey
+//		======>OpenFileHander       #cNum == 5
+//		========>OpenExistFile
+//		========>NoteScroll
+Save:set\Macro_Set_Path_{pro}.h  curKey
+
+
+
+//¶¨ÖÆÂ·¾¶ÉèÖÃ: (ĞÂ¼ÓµÄ»°²Î¿¼ÒÑÓĞÂ·¾¶)
+// Save:
+Save:Macro\sbd_base.em	getSavePath(0)
+Save:Macro\sbd_file.em	"Save:"
+Save:Macro\sbd_f11.em	"Save"
+
+
+
+
+[1.14] Óï·¨²âÊÔ
 //1.ÔËĞĞÓï·¨²âÊÔ
 // --Test¸ñÊ½
 test:SiMro
@@ -262,31 +359,8 @@ Save:Macro\sbd_test.em	TestNodeMsg
 
 
 
-[1.14] project
-//
-//MiniTest = project
-//bftParam = 6531E
-//bftParam = 9820e
-
-//1) ´ò¿ªÏîÄ¿ÎÄ¼ş:
-pls_press_ctrl_e
-
-
-
 
 [1.15] path--Set
-//sbd_base Â·¾¶ÉèÖÃ
-Save:Macro\sbd_base.em
-
-//Macro_Set_Base Â·¾¶ÉèÖÃ
-Save:set\Macro_Set_Base.h
-
-//¶¨ÖÆÂ·¾¶ÉèÖÃ: (ĞÂ¼ÓµÄ»°²Î¿¼ÒÑÓĞÂ·¾¶)
-// Save:
-Save:Macro\sbd_base.em	getSavePath(0)
-Save:Macro\sbd_file.em	"Save:"
-Save:Macro\sbd_f11.em	"Save"
-
 
 
 

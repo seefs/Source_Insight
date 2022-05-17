@@ -8,19 +8,19 @@
 
 0Key  = 8910
 
-HWPath  = G:\_HW_NV_PARA.git\8910FFS\W20.36.2\
+HWPath  = G:\_HW_NV_PARA.git\T107\W20.46.4\
 HW:\\
 downPath  = D:\Desktop\tool\UIS8910_down_tool\wa03u_git\
 down:\\
 
 
-imagesPath = MS_MMI_Main\source\resource\mmi_res_240x320\
+imagesPath = MS_MMI_Main\source\resource\mmi_res_160x128\
 images:\\
 ringPath = MS_MMI_Main\source\resource\Common\RING\
 ring:\\
 batNvPath = common\nv_parameters\ProductionParam\
 batNv:\\
-nvPath = SPDE_PRJ\WA22U_SW34E_QQVGA\nvitem\
+nvPath = SPDE_PRJ\T5_A86_VIET_HQQVGA\CustNV\
 nv:\\
 
 
@@ -31,23 +31,21 @@ guiPath     = MS_MMI_Main\source\mmi_gui\source
 configPath  = MS_Customize\source\product\config
 driverPath = MS_Customize\source\product\driver\
 sensorsPath = MS_Customize\source\product\driver\sensors
-batPath     = _bat\build
-bat:\\
 
 
 ### 1.cfg
 versionKey  = UMS9117_ums9117_barphone_version
-sizeKey  = 128X128
+sizeKey  = 160x128
 lcdKey  = xx
 
 
 ### 2.cur
-prjPath  = SPDE_PRJ\WA22U_SW34E_QQVGA\
+prjPath  = SPDE_PRJ\T5_A86_VIET_HQQVGA\
 prj:\\
 
-projectKey   = WA22U_SW34E_QQVGA
-curKey   = UIS8910_ROM_16MB_SS_WA22U_SW34E_QQVGA_DEBUG
-cfgKey   = uis8910_phone_user_base_config
+projectKey   = T5_A86_VIET_HQQVGA
+curKey   = ums9117_128X160BAR_48MB_T5_A86_VIET_HQQVGA_user
+cfgKey   = xx
 
 // USER debug
 useKey   = USER

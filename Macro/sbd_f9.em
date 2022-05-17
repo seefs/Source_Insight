@@ -15,7 +15,12 @@ macro SearchFile()
 	}
     
 	bft = getBft(1)
-//	bft = getBufBft(hbuf, 1) //只能用一个, 先不改了
+	
+	//只能用一个, 先不改了
+//	baseName = GetBufName(hbuf)
+//	n = getBaseType(baseName)
+//	bft = getBaseOther(n, "Search")
+	
 //	if(bft == "")
 //		stop
 	//bft = "9820e" //test

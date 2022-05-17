@@ -65,12 +65,6 @@ macro CtrlD()
 		CodeAlign(hbuf)
 		stop
 	}
-	//3. Macro_xxx 中 同F10
-	else if(IsNoteFile(hbuf))
-	{
-		NoteGroup(hbuf)
-		stop
-	}
 	//4. .mk .def .mak中 同F10
 	else if(IsMakeFile(hbuf))
 	{

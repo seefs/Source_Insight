@@ -138,31 +138,6 @@ macro OpenMiniTest(hbuf)
 			//StartF9Search(hbuf, bft, "")
 			StartF9Search(hbuf, bft, word_2)
 		}
-		else if(word_1 == "sr_group")
-		{
- 			//F10
- 			//  
-			SrGroup(hbuf)
-			bft = getMacroValue(hbuf, "bftParam", 1)
-			MakeSelGroup(hbuf, bft)
-		}
-		else if(word_1 == "show_menu")
-		{
- 			//F10
- 			//  
-			curItem = GetGroupItem("menu3:tool-a2", 1, "Menu", bft)
-			msg(curItem)
-			iFcurItemile = GetGroupItem("menu3:tool-a2", 2, "Menu", bft)
-			msg(curItem)
-		}
-		else if(word_1 == "group")
-		{
-			//F10
-			bft = getMacroValue(hbuf, "bftParam", 1)
-			//filename = getMacroValue(hbuf, "fileParam", 1)
-			filename = word_2
-			DefaultGroup(filename, bft)
-		}
 		else if(word_1 == "mode_save")
 		{
 			//mode

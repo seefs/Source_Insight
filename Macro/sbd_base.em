@@ -28,8 +28,8 @@ macro getDesktopPath(0)		{	return "E:\\desktop"				}
 
 
 //3) 项目路径列表设置在文件: 打开对应文件手动修改
-//  Save:node\\set\\Macro_Set_Base.h
-macro getPathConfig(0)		{	return getSetPath(0) # "\\Macro_Set_Base.h"				}
+//macro getPathConfig(0)		{	return getSetPath(0) # "\\Macro_Set_Base.h"				}
+macro getKeyConfig(0)		{	return getSetPath(0) # "\\Macro_Set_Key.h"				}
 
 
 //4) Custom project
@@ -207,159 +207,66 @@ macro getBaseType(pathName)
 	type = getBaseDirNum(pathName)
 	return type/10 *10
 }
-macro getBaseFileType(pathName, s)
+macro getBaseKey(n)
 {
-	//s=1~5:按note文件名排序分类;
-	//s=1:Macro_ALL_XXX              搜索所有宏
-	//s=2:Macro_Group_Make_XXX       分组(现在用不上)
-	//	  Macro_Group_Menu_XXX
-	//s=3:Macro_Note_XXX             笔记 
-	//s=4:Macro_Rule_Key_file_XXX    F5--跳转功能
-	//s=5:si_version_XXX             F1->V--搜索版本号
-	type = getBaseType(pathName)
-	if(type == 10 || type == 20 || type == 30)
+	hbufConfig = OpenCache(getKeyConfig(0))
+	return getMacroValue(hbufConfig, n # "Key", 1)
+}
+macro getBaseOther(n, mode)
+{
+	hbufConfig = OpenCache(getKeyConfig(0))
+	return getMacroValue(hbufConfig, n # "mode", 1)
+}
+macro getBft(num)
+{
+	hprj = GetCurrentProj ()
+	if(hprj>0)
 	{
-		if((s == 1 || s == 5) && type == 10)
+		path = GetProjDir (hprj)
+		n = getBaseType(path)
+		
+		if (num == 1)
 		{
-			baseFileType = "6531D"
+			bft = getBaseOther(n, "Search")
 		}
-		else if((s == 1 || s == 5) && type == 20)
+	 	else if(num == 5)
 		{
-			baseFileType = "6531DB"
+			bft = getBaseOther(n, "Ver")
 		}
-		else
+	 	else if(num == 3)
 		{
-			baseFileType = "6531E"
+			bft = getBaseOther(n, "Note")
 		}
+	 	else if(num == 2)
+		{
+			bft = getBaseOther(n, "Make")
+		}
+		
+		if(bft == "")
+			stop
 	}
-	else if(type == 40 || type == 50)
+ 	else
 	{
-		if(s == 5)
-		{
-			baseFileType = ""
-		}
-		else if((s == 3) && type == 40)
-		{
-			baseFileType = "RDA"
-		}
-		else
-		{
-			baseFileType = "6533"
-		}
+		stop
 	}
-	else if(type == 60 || type == 70)
-	{
-		//baseFileType = "7701"
-		baseFileType = "8910"
-	}
-	else if(type == 80)
-	{
-		if(s == 5)
-		{
-			baseFileType = ""
-		}
-		else
-		{
-			baseFileType = "MTK"
-		}
-	}
-	else if(type == 120 || type == 130)
-	{
-		if(s == 3)
-		{
-			//baseFileType = "Python"
-			baseFileType = "Pythons"  //带s用模板2
-		}
-		else
-		{
-			baseFileType = ""
-		}
-	}
-	else if(type == 140)
-	{
-		if(s == 1)
-		{
-			baseFileType = "9820e"
-		}
-		else if(s == 3)	//note
-		{
-			baseFileType = "9820e"
-		}
-		else
-		{
-			baseFileType = ""
-		}
-	}
-	else
-	{
-		if(s == 2 || s == 4)
-		{
-			baseFileType = ""
-		}
-		else
-		{
-			baseFileType = "Base"
-		}
-	}
-	return baseFileType
+	return bft
 }
 
-
-
-//get path
-macro SearchNumFromPath(hbufConfig, basePath)
-{
-	var err
-	err = 0
-	
-	basePath = ReplaceWord(basePath, "\\", "\\\\") //fRegExp = 1
-	searchFor = "^" # "project:" # basePath # ","
-	//SearchInBuf (hbufBase, pattern, lnStart, ichStart, fMatchCase, fRegExp, fWholeWordsOnly)
-	sel = SearchInBuf(hbufConfig, searchFor, 0, 0, 0, 1, 0)
-	if (sel != nil)
-	{
-		row = sel.lnLast
-		return GetBufLine(hbufConfig, row - 1)
-	}
-	else
-	{
-		return err
-	}
-	
-}
 
 //get path Num
 macro SearchPathFromNum(hbufConfig, n)
 {
-	var err
-	err = ""
-
 	if(!isNumber(hbufConfig))
 	{
-		hbufConfig = OpenCache(getPathConfig(0))
+		hbufConfig = OpenCache(getKeyConfig(0))
 	}
 	
-	searchFor = "^" # n # "$"
-	//SearchInBuf (hbufBase, pattern, lnStart, ichStart, fMatchCase, fRegExp, fWholeWordsOnly)
-	sel = SearchInBuf(hbufConfig, searchFor, 0, 0, 0, 1, 0)
-	if (sel != nil)
-	{
-		row = sel.lnLast
-		line = GetBufLine(hbufConfig, row + 1)
-		return strmid(line, strlen("project:"), strlen(line) - 1)
-	}
-	else
-	{
-		return err
-	}
-	
+	return getMacroValue(hbufConfig, n, 1)
 }
 
 //common
 macro getBaseDir(pathName, start)
 {
-	hbufConfig = OpenCache(getPathConfig(0))
-
 	var nlength
 	var i
 	nlength = strlen(pathName)
@@ -387,40 +294,56 @@ macro getBaseDirNum(pathName)
 	var hbufConfig
 	var basePath
 	var i
-	var n
+	var ret
 	var nlength
 	
-	hbufConfig = OpenCache(getPathConfig(0))
+	hbufConfig = OpenCache(getKeyConfig(0))
 	nlength = strlen(pathName)
 	i = 1		//文件名长度
 	
 	while (i < nlength)
 	{
 		ch = pathName[i]
-
-		if(nlength-1 == i)
+		while ("\\" != "@ch@" && i < nlength)
 		{
 			i = i + 1
+			ch = pathName[i]
 		}
-		else if ("\\" != "@ch@")
-		{
-			i = i + 1
-			continue
-		}
-
+		
 		basePath = strmid(pathName, 0, i)
-		n = SearchNumFromPath(hbufConfig, basePath)
-		if(n)
+		ret = SearchNumFromPath(hbufConfig, basePath)
+		if(ret != "")
 		{
-			//单数为只是SI目录, 前一项为真实目录(目录分开)
-			if(n-n/2*2==1)
-			{
-				n = n - 1
-			}
-			return n
+			return ret
 		}
 		i = i + 1
 	}
 	return 0
 }
+
+//get path
+macro SearchNumFromPath(hbufConfig, basePath)
+{
+	var err
+	var lineStr
+	err = ""
+
+	basePath = ReplaceWord(basePath, "\\", "\\\\") //fRegExp = 1
+	//=[ ]*xxxxx,
+	searchFor = "=[ ]*" # "project:" # basePath # ","
+	//SearchInBuf (hbufBase, pattern, lnStart, ichStart, fMatchCase, fRegExp, fWholeWordsOnly)
+	sel = SearchInBuf(hbufConfig, searchFor, 0, 0, 0, 1, 0)
+	if (sel != nil)
+	{
+		lineStr = GetBufLine(hbufConfig, sel.lnLast)
+		mar = GetLineMacro(lineStr)
+		//val = GetLineValue(cur_line)
+		if(mar != "")
+		{
+			return mar
+		}
+	}
+	return err
+}
+
 

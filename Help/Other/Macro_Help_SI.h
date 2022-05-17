@@ -3,11 +3,11 @@
 //basePath = 
 
 
-//Ŀ¼[Num][Ca]:
+//Ŀ¼:
 // 1. 
 Save:Help\Other\Macro_Help_SI.h \[1.1\] marco file
 Save:Help\Other\Macro_Help_SI.h \[1.2\] marco test...
-Save:Help\Other\Macro_Help_SI.h \[1.3\] set save path
+Save:Help\Other\Macro_Help_SI.h \[1.3\] set save path---�޸�
 Save:Help\Other\Macro_Help_SI.h \[1.4\] set work path
 Save:Help\Other\Macro_Help_SI.h \[1.5\] other set
 Save:Help\Other\Macro_Help_SI.h \[1.6\] set cfg path

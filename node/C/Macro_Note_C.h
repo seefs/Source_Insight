@@ -1,13 +1,6 @@
 
-基础路径设置:
-//basePath = 
-//
-Save:node\C
 
-/***********************************************************************/
-
-//目录[Num][Ca]:
-// 1. 
+//目录:
 Save:node\C\Macro_Note_C.h \[1.1\] 安装+配置
 Save:node\C\Macro_Note_C.h \[1.2\] project----------8910 mtk
 Save:node\C\Macro_Note_C.h \[1.3\] ext
@@ -17,7 +10,7 @@ Save:node\C\Macro_Note_C.h \[1.6\] rule
 Save:node\C\Macro_Note_C.h \[1.7\] search
 Save:node\C\Macro_Note_C.h \[1.8\] 
 Save:node\C\Macro_Note_C.h \[1.9\] 
-Save:node\C\Macro_Note_C.h \[1.10\] Test------------功能测试
+Save:node\C\Macro_Note_C.h \[1.10\] 
 
 
 
@@ -171,12 +164,7 @@ Save:node\C\search\Macro_ALL_MTK.h
 
 
 
-[1.10] Test------------功能测试
-//Test
-Save:Help\Macro_Note_Test.h \[2.1\] c语言测试(SprNote,MtkNote)
-
-
-
+[1.10] 
 
 
 
