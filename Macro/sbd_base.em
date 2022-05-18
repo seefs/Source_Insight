@@ -219,7 +219,7 @@ macro getBaseKey(n)
 macro getBaseOther(n, mode)
 {
 	hbufConfig = OpenCache(getKeyConfig(0))
-	return getMacroValue(hbufConfig, n # "mode", 1)
+	return getMacroValue(hbufConfig, n # mode, 1)
 }
 macro getBft(num)
 {
@@ -265,7 +265,9 @@ macro SearchPathFromNum(hbufConfig, n)
 		hbufConfig = OpenCache(getKeyConfig(0))
 	}
 	
-	return getMacroValue(hbufConfig, n, 1)
+	mar = getMacroValue(hbufConfig, n, 1)
+	mar = ReplaceWord(mar, ",", "")
+	return  mar
 }
 
 //common

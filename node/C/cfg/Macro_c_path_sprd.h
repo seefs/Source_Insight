@@ -3,9 +3,9 @@
 // 1. 模板
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.1\] sprd_cur--------
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.2\] mtk_copy
-Save:node\C\cfg\Macro_c_path_sprd.h \[1.3\] mtk_cfg--------nv, board
-Save:node\C\cfg\Macro_c_path_sprd.h \[1.4\] mtk_other------rf
-Save:node\C\cfg\Macro_c_path_sprd.h \[1.5\] mtk_bat
+Save:node\C\cfg\Macro_c_path_sprd.h \[1.3\] //mtk_cfg--------nv, board
+Save:node\C\cfg\Macro_c_path_sprd.h \[1.4\] //mtk_other------rf
+Save:node\C\cfg\Macro_c_path_sprd.h \[1.5\] //mtk_bat
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.6\] //mtk_sbd------
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.7\] other
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.8\] 
@@ -28,48 +28,9 @@ Save:set\Macro_Set_Path_sprd_.h  curKey
 // A86===>自动配置
 curKey = K220_A86
 
+// 从build 中自动配置;从bat默认修改prj(非服务器编译)
+build\
 
-// A86
-make K220_A86 GSM new
-make K220_D33D GSM new
-make K220_C61 GSM new
-
-
-// Y01A
-curKey = K220_Y01A_MGUO
-
-// Y22
-curKey = K220_Y22_MGUO
-curKey = K220_Y22_JMZ
-curKey = K220_Y22_JSZ
-curKey = K220_Y22_MLL
-curKey = K220_Y22_MOLOO
-
-// Y22
-//make K220_Y22_MGUO GSM new
-//make K220_Y22_JMZ GSM new
-//make K220_Y22_JSZ GSM new
-//make K220_Y22_MLL GSM new
-//make K220_Y22_MOLOO GSM new
-
-// L12
-curKey = K220_L12_MGUO
-curKey = K220_L12_JMZ
-curKey = K220_L12_JSZ
-curKey = K220_L12_MLL
-curKey = K220_L12_MOLOO
-
-// Z97
-curKey = K220_Z97_MGUO
-curKey = K220_Z97_JMZ
-curKey = K220_Z97_JSZ
-curKey = K220_Z97_MLL
-curKey = K220_Z97_MOLOO
-
-// V35
-curKey = K220_V97A_WD
-curKey = K220_V88_WD
-curKey = K220_V35_WD
 
 // V35
 make K220_V97A_WD GSM new
@@ -83,7 +44,7 @@ curKey = K220_H660_TX
 
 
 
-[1.2] _mtk_copy_
+[1.2] //_mtk_copy_
 
 ### 从旧项目复制新项目
 // copy: 
@@ -150,75 +111,14 @@ custom\audio\{nv}\
 
 
 [1.3] _mtk_cfg_
-// (1).nv
-Save:set\Macro_Set_Path_sprd_{pro}.h  nvKey
-// 未设置用默认 BOARD_VER
-make/{cur}_{GSM}.mak  BOARD_VER_CUST_AUDIO
-//	BOARD_VER_CUST_AUDIO = K220_Z97_AUDIO_BB
-// 
-//make\custom\custom.mak BOARD_VER_CUST_AUDIO
-//custom\drv\audio\{nv}\
-// --nv
-custom\audio\{nv}\
-// 
-//custom\common\PLUTO_MMI
 
 
-
-// (2).app_macro
-
-Save:set\Macro_Set_Path_sprd_{pro}.h  boardKey
-//
-prj:project_{cur}.mk   LOW_MEMORY_SUPPORT
-//	LOW_MEMORY_SUPPORT = NONE
-//
-make\app_main\app_macro.mk  2904
-
-
-
-
-// (3).lcd
-Save:set\Macro_Set_Path_sprd_{pro}.h  lcdKey
-//
-make/{cur}_{GSM}.mak  LCD_MODULE
-//	LCD_MODULE = K220D_QQVGA_LCM
-
-
-custom\drv\LCD\{lcd}\
-custom\drv\LCD\{lcd}\combo_lcm_ST7735S.c
-
-custom\drv\color\{lcd}\
-custom\drv\color\{lcd}\color_custom.c
-
-// 配置id
-Save:node\C\project\Macro_Note_MTK.h  __LCD__
 
 
 
 
 [1.4] _mtk_other_
 
-// (3).rf
-make/{cur}_{GSM}.mak  RF_MODULE
-//	RF_MODULE = MT6261RF_HS8235L_CUSTOM
-
-
-// (4).consistent
-make/{cur}_{GSM}.mak  COM_DEFS_FOR
-//	COM_DEFS_FOR_MT6261RF_HS8235L_CUSTOM
-//	COM_DEFS_FOR_K220D_QQVGA_LCM
-
-
-// (5).config_account
-custom\common\custom_config_account.c  g_config_account_gprs
-//custom\common\
-//custom\common\config_account_M107_XYZN_S2_4A_WESTERN_F2.h
-
-
-// (6).userprofile
-custom\common\userprofile_nvram_def.h
-//custom\common\
-//custom\common\userprofile_nvram_def_M107_XYZN_S2_4A_WESTERN_F2.h
 
 
 

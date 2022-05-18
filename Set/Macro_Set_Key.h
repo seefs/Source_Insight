@@ -1,15 +1,13 @@
 //
-// (path)注意格式不要多余空格
-// alias:  脚本内部使用
-// key:    文本中使用
-// RuleEn: F5使用
-// Search: F9使用(功能舍弃)
-// ALL:        F10使用(功能舍弃)
-// Group_Make: F10使用(功能舍弃)
-// Group_Menu: F10使用(功能舍弃)
-// Note:       F10使用(功能舍弃)
-// version:    F10使用(功能舍弃)
-// "Hot":      F1使用, spr or mtk
+// 说明: (“=”左右可以有空格)
+// 10:  项目路径 (“,”前不要多余空格)
+// 10alias:  别名, 脚本内部使用
+// 10key:    项目文本中替换使用 (替换 {pro})
+//
+// 10RuleEn: F5使用
+// 10Search: F9使用(功能舍弃)
+// 10Note:       F11使用(功能舍弃)
+// 10Hot2:      F1使用, spr or mtk
 
 
 //(1) 6531DA 项目路径
@@ -96,26 +94,18 @@
 80RuleEn = MTK
 //
 80 = E:\60M,
-//奇数项, 解决源码+SI目录分开问题, 源码目录单独设置在前一项
-81 = E:\_SI4.0\61M.si4project
+80 = E:\_SI4.0\61M.si4project,
 82 = E:\MT61D_ZYF,
-83 = E:\_SI4.0\61M_ZYF.si4project
+82 = E:\_SI4.0\61M_ZYF.si4project,
 84 = E:\60D_11C,
-85 = E:\_SI4.0\60D_11C.si4project
+84 = E:\_SI4.0\60D_11C.si4project,
 86 = E:\60A_6464,
-87 = E:\_SI4.0\60D_11C.si4project
+86 = E:\_SI4.0\60D_11C.si4project,
 
 80key = 61M
-81key = 61M
-
 82key = 61D_ZYF
-83key = 61D_ZYF
-
 84key = 60D_11C
-85key = 60D_11C
-
 86key = 60A
-87key = 60A
 
 
 //(9) base -> save
@@ -146,19 +136,19 @@ X:\NoneEmpty,
 120alias = Pythons
 //
 120 = D:\project\GitHub\myPython,
-121 = D:\_SI4.0\myPython.si4project,
+120 = D:\_SI4.0\myPython.si4project,
 
 
 //(13)  tensorflow
 130 = D:\project\GitHub\tensorflow,
-131 = D:\_SI4.0\tensorflow.si4project,
+130 = D:\_SI4.0\tensorflow.si4project,
 
 
 //(14) 9820E
 140alias = 9820e
 //
 140 = F:\9820e,
-141 = D:\_SI4.0\9820E_local.si4project,
+140 = D:\_SI4.0\9820E_local.si4project,
 
 // tmp
 150 = X:\NoneEmpty,
