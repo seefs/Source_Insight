@@ -1196,6 +1196,7 @@ macro getKeyHead(hbuf, fHead)
 	//get new Key
 	keyVal = getMacroValue(pathBuf, fHead # "Key", 1)
 	if(keyVal != ""){
+		keyVal  = ReAllKeyHead(hbuf, keyVal)  //replace loop
 		return keyVal
 	}
 	
