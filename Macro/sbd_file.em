@@ -41,7 +41,7 @@ macro GetPubPathBuf(hbuf)
 {
 	baseName = getBasePath(hbuf)
 	//获取当前工程分类，区分处理
-	n = getBaseType(baseName)
+	n = getBaseDirNum(baseName)
 	type = n/10 *10
 	nKey = getBaseKey(n)
 	if(type == 90)
