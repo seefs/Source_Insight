@@ -260,14 +260,30 @@ macro getBft(num)
 //get path Num
 macro SearchPathFromNum(hbufConfig, n)
 {
+	var err
+	var lineStr
+	err = ""
+	
 	if(!isNumber(hbufConfig))
 	{
 		hbufConfig = OpenCache(getKeyConfig(0))
 	}
-	
-	mar = getMacroValue(hbufConfig, n, 1)
-	mar = ReplaceWord(mar, ",", "")
-	return  mar
+
+	searchFor = "^" # n # "[ ]*="
+	//SearchInBuf (hbufBase, pattern, lnStart, ichStart, fMatchCase, fRegExp, fWholeWordsOnly)
+	sel = SearchInBuf(hbufConfig, searchFor, 0, 0, 0, 1, 0)
+	if (sel != nil)
+	{
+		lineStr = GetBufLine(hbufConfig, sel.lnLast)
+		//mar = GetLineMacro(lineStr)
+		val = GetLineValue(lineStr)
+		if(val != "")
+		{
+			val = ReplaceWord(val, ",", "")
+			return val
+		}
+	}
+	return err
 }
 
 //common

@@ -12,7 +12,7 @@ Save:node\C\study\Macro_res_8910.h \[1.9\] font
 Save:node\C\study\Macro_res_8910.h \[1.10\] test
 Save:node\C\study\Macro_res_8910.h \[1.11\] OLD_PRELOAD
 Save:node\C\study\Macro_res_8910.h \[1.12\] xx_mdu_def.h
-Save:node\C\study\Macro_res_8910.h \[1.13\] 
+Save:node\C\study\Macro_res_8910.h \[1.13\] lang
 Save:node\C\study\Macro_res_8910.h \[1.14\] 
 Save:node\C\study\Macro_res_8910.h \[1.15\] 
 Save:node\C\study\Macro_res_8910.h \[1.16\] 
@@ -61,26 +61,11 @@ build\{cur}_builddir\tmp\mmi_res_128x128_text.txt TXT_EXTRA_SETTINGS
 //	TXT_DELETE, TXT_EDIT, STXT_OK, TXT_COMMON_CLEAR, 
 
 
-// 翻译lang
-Save:node\C\rule\Macro_Rule_Han_file.h  70
-Save:node\C\rule\Macro_Rule_Han_file.h  AMHARIC
-// str--LangSetName
-app:setting\c\mmiset_func.c  HEBREW
-// str--LangSetName--部分未转码
-Save:node\C\rule\
-Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_ARABIC_SUPPORT
-Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_RUSSIAN_SUPPORT 
-Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_FRENCH_SUPPORT
-Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_HEBREW_SUPPORT
-Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_AMHARIC_SUPPORT
-// str--columnName(用普通格式, unicode乱码)(AB一样)
-Save:node\C\rule\Macro_Rule_Lang_COLUMN_TABLE1.h  Hebrew
-Save:node\C\rule\Macro_Rule_Lang_COLUMN_TABLE2.h  AMHARIC
-// str--命名规则
-make\perl_script\ResGen\ReadMe.txt  str_table
-make\perl_script\ResGen\ResView.ini  cust_str_table
-//
-prj:project_{cur}.mk   HEBREW
+// str--apn
+source:mmi_app\common\h\common_mdu_def.h   plmn_extra_database_str
+//#include "plmn_ts25_database_str_watch_cn.h"
+//#include "plmn_ts25_database_str.h"
+//#include "plmn_extra_database_str.h"
 
 
 
@@ -251,8 +236,28 @@ MS_MMI_Main\source\mmi_app\common\h\common_mdu_def.h  TXT_AUDIO
 
 
 
-[1.13] 
+[1.13] __lang__
 
+// 翻译lang
+Save:node\C\rule\Macro_Rule_Han_file.h  70
+Save:node\C\rule\Macro_Rule_Han_file.h  AMHARIC
+// str--LangSetName
+app:setting\c\mmiset_func.c  HEBREW
+// str--LangSetName--部分未转码
+Save:node\C\rule\
+Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_ARABIC_SUPPORT
+Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_RUSSIAN_SUPPORT 
+Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_FRENCH_SUPPORT
+Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_HEBREW_SUPPORT
+Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_AMHARIC_SUPPORT
+// str--columnName(用普通格式, unicode乱码)(AB一样)
+Save:node\C\rule\Macro_Rule_Lang_COLUMN_TABLE1.h  Hebrew
+Save:node\C\rule\Macro_Rule_Lang_COLUMN_TABLE2.h  AMHARIC
+// str--命名规则
+make\perl_script\ResGen\ReadMe.txt  str_table
+make\perl_script\ResGen\ResView.ini  cust_str_table
+//
+prj:project_{cur}.mk   HEBREW
 
 
 

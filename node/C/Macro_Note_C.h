@@ -75,6 +75,7 @@ Save:node\C\project\Macro_Note_6533.h
 Save:node\C\study\Macro_slide_8910.h
 Save:node\C\study\Macro_zdt_8910.h
 Save:node\C\study\Macro_zmaee_8910.h
+Save:node\C\study\Macro_sch_8910.h
 Save:node\C\study\Macro_socket_8910.h
 Save:node\C\study\Macro_patch_8910.h
 

@@ -3,7 +3,7 @@
 //basePath = 
 
 
-//目录[Num][Ca]:
+//目录:
 //参考标号:
 Save:Help\DefaultFile\Macro_Node_Num.h \[1.1\] 
 Save:Help\DefaultFile\Macro_Node_Num.h \[1.2\] 

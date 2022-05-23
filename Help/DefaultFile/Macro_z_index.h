@@ -2,9 +2,7 @@
 基础路径设置:
 //basePath = 
 
-/***********************************************************************/
-
-//目录[Num][Ca]:
+//目录:
 // 1. 
 Save:Help\DefaultFile\Macro_z_index.h \[1.1\] 
 Save:Help\DefaultFile\Macro_z_index.h \[1.2\] 

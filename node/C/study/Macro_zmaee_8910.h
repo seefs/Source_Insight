@@ -4,7 +4,8 @@
 Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 //
 //zmaeePath = prj:zmaee
-zmaeePath = prj:zmaee_128X128
+//zmaeePath = prj:zmaee_128X128
+zmaeePath = app:zmaee_128X128
 zmaee:\\
 
 //目录:
@@ -19,7 +20,7 @@ Save:node\C\study\Macro_zmaee_8910.h \[1.7\] 热插拨功能
 Save:node\C\study\Macro_zmaee_8910.h \[1.8\] 耗电
 Save:node\C\study\Macro_zmaee_8910.h \[1.9\] Torch
 Save:node\C\study\Macro_zmaee_8910.h \[1.10\] 客户
-Save:node\C\study\Macro_zmaee_8910.h \[1.11\] 
+Save:node\C\study\Macro_zmaee_8910.h \[1.11\] 表盘----------入口
 Save:node\C\study\Macro_zmaee_8910.h \[1.12\] 
 // 2. path
 Save:node\C\study\Macro_zmaee_8910.h \[2.1\] patch
@@ -180,8 +181,34 @@ SPDE_PRJ\WA11U_F31W_QQVGA\       ----华米
 // 电池:400mA,TP,摄像头
 
 
-[1.11] 
+[1.11] 表盘
+// style 3
+Save:node\C\study\Macro_slide_8910.h  __style__
 
+# zmaee--enter
+//		==>HandleNormalStartupWindow
+//		====>s_phone_startup_timer_id
+//		====>PlayPowerOnOffMP4CallBack
+//		======>MMIAPIIDLE_OpenIdleWin
+//		========>ZMAEE_Start_Timer         # 1.ZMAEE
+//		==========ZMAEE_Idel
+//		========>IdleWin_HandleMsg         # 2.idle
+app:idle\c\mainapp.c  MMIAPIIDLE_OpenIdleWin
+//		========>ZMAEE_Create_Wnd
+
+# zmaee--enter
+//		==>ZMAEE_Create_Wnd
+//		====>ZMAEE_WinMsgHandle
+//		======>
+//		========>ZMAEE_Create_Wnd
+zmaee:c\zmaee_porting.c  ZMAEE_Create_Wnd
+
+### --key--idle--long--cancel
+//		======>case MSG_APP_CANCEL
+//		======>case MSG_CTL_CANCEL
+//		======>case MSG_KEYUP_CANCEL
+//		======>case MSG_KEYLONG_CANCEL
+zmaee:c\zmaee_porting.c  MMI_RESULT_E^ZMAEE_WinMsgHandle
 
 
 

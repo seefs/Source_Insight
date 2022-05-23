@@ -15,14 +15,16 @@ Save:node\C\project\Macro_cfg_8910.h \[1.10\] //USB
 Save:node\C\project\Macro_cfg_8910.h \[1.11\] CTA
 Save:node\C\project\Macro_cfg_8910.h \[1.12\] //CALL record
 Save:node\C\project\Macro_cfg_8910.h \[1.13\] simulator
-Save:node\C\project\Macro_cfg_8910.h \[1.14\] 
+Save:node\C\project\Macro_cfg_8910.h \[1.14\] torch
+Save:node\C\project\Macro_cfg_8910.h \[1.15\] 
+Save:node\C\project\Macro_cfg_8910.h \[1.16\] 
 //
 Save:node\C\project\Macro_cfg_8910.h \[2.1\] IM
 Save:node\C\project\Macro_cfg_8910.h \[2.2\] DTMF, Dial, SIM, 天线
 Save:node\C\project\Macro_cfg_8910.h \[2.3\] 电子保卡
 Save:node\C\project\Macro_cfg_8910.h \[2.4\] tihu--------------语音王
 Save:node\C\project\Macro_cfg_8910.h \[2.5\] PLS---------------语音王
-Save:node\C\project\Macro_cfg_8910.h \[2.6\] DIGIT_TONE--------简易版语音王
+Save:node\C\project\Macro_cfg_8910.h \[2.6\] SIMPLIFY_TTS------简易版语音王
 Save:node\C\project\Macro_cfg_8910.h \[2.7\] FM
 Save:node\C\project\Macro_cfg_8910.h \[2.8\] WIFI
 Save:node\C\project\Macro_cfg_8910.h \[2.9\] SS
@@ -30,7 +32,7 @@ Save:node\C\project\Macro_cfg_8910.h \[2.10\] Tool
 Save:node\C\project\Macro_cfg_8910.h \[2.11\] lib--------------
 Save:node\C\project\Macro_cfg_8910.h \[2.12\] build 服务器流程
 Save:node\C\project\Macro_cfg_8910.h \[2.13\] build 省空间
-Save:node\C\project\Macro_cfg_8910.h \[2.14\] spiflash_cfg
+Save:node\C\project\Macro_cfg_8910.h \[2.14\] 
 Save:node\C\project\Macro_cfg_8910.h \[2.15\] marco
 Save:node\C\project\Macro_cfg_8910.h \[2.16\] Lib
 Save:node\C\project\Macro_cfg_8910.h \[2.17\] FLASH (大、/小版本)
@@ -392,8 +394,33 @@ MS_MMI_Main\source\winsimulator_tp\skin
 
 
 
-[1.14] 
+[1.14] torch
 
+// 1.ENG_MANU_TORCH, ENG_MANU_TORCH_PATCH  (软开)
+//		==>ID_ENG_TEST_MANU_TORCH
+//		====>旧
+//		======>(1)上键点亮，下键关闭 (no use)
+//		======>(2)侧边开关
+//		========>ENG_MANU_TORCH_HELP_STR1
+//		====>107新, ENG_MANU_TORCH_107_STYLE
+//		======>(1)上键点亮，下键关闭
+//		========>TORCH_SUPPORT                #软开
+//		======>(2)侧边开关
+//		========>ENG_MANU_TORCH_HELP_STR1     #硬开
+app:eng\c\mmieng_uitestwin.c  case^ID_ENG_TEST_MANU_TORCH
+
+// 2.MMI_TORCH_LED_SUPPORT (手机默认开, 手表默认关)
+//		==>"*#555#"
+//		====>ID_ENG_TORCH_LED_TEST
+//		======>上键点亮，下键关闭
+//		==>单项测试style2 (默认未开)
+//		====>ID_ENG_TEST_TORCH_LED
+//		======>上键点亮，下键关闭
+app:eng\c\mmieng_main.c   case^ID_ENG_TORCH_LED_TEST
+
+// 3.TORCH_SUPPORT (手机默认开, 手表默认关)
+//		==>状态条显示
+//		==>shortcut
 
 
 
@@ -462,7 +489,7 @@ prj:project_{cur}.mk   SPDE_SALES_TRACKER_DEFAULT_OFF
 prj:project_{cur}.mk   SPDE_SALES_TRACKER_SEND_BY_CONFIRM
 
 
-[2.4] 
+[2.4] tihu
 
 //
 prj:project_{cur}.mk  HERO_ENGINE_SUPPORT
@@ -480,11 +507,22 @@ prj:project_{cur}.mk  HERO_ENGINE_TTS_NUM_USE_MP3
 
 
 
-[2.5] 
+[2.5] PLS
 
 
 
-[2.6] 
+[2.6] SIMPLIFY_TTS
+//
+prj:project_{cur}.mk  MMI_SIMPLIFY_TTS
+prj:project_{cur}.mk  MMI_SIMPLIFY_ENV_TTS
+prj:project_{cur}.mk  MMI_READMENU_ENABLE
+prj:project_{cur}.mk  MMI_READDIALKEY_ENABLE
+prj:project_{cur}.mk  MMI_READTIME_ENABLE
+prj:project_{cur}.mk  MMI_READCHARGE_ENABLE
+prj:project_{cur}.mk  MMI_READINCALL_ENABLE
+prj:project_{cur}.mk  MMI_READPB_ENABLE
+
+//
 
 
 
@@ -626,32 +664,7 @@ MMI_APP_REMOVE_SMS_NUM
 
 
 
-[2.14] spiflash_cfg
-// 8910F
-MS_Customize/source/product/config/uis8910ff_refphone/spiflash_cfg.c  FLASH_SIZE_128MBITX64MBIT_NEW
-// 8910s
-MS_Customize/source/product/config/uis8910ff_refphone/spiflash_cfg.c  FLASH_SIZE_128MBIT$
-
-
-
-// SECTOR
-MS_Customize/source/product/config/uis8910ff_refphone/spiflash_cfg.c  MMI_RES_SECTOR_NUM
-MS_Customize/source/product/config/uis8910ff_refphone/spiflash_cfg.c  604
-// 	#define MMI_RES_SECTOR_NUM         70 // 67 //66  60
-// 
-MS_Customize/source/product/config/uis8910ff_refphone/spiflash_cfg.c  UDISK_SIZE
-MS_Customize/source/product/config/uis8910ff_refphone/spiflash_cfg.c  573
-//	#define UDISK_SIZE                 ((UMEM_SECTOR_NUM+4)*FLASH_SECTOR_SIZE)
-
-// 
-MS_Customize/UIX8910_normal.scf  LOAD_KERNEL_IMAGE
-MS_Customize/UIX8910_normal.scf  43
-//	LOAD_KERNEL_IMAGE IMAGE_ENTRY_ADDR 0x00A60000   # ps size
-
-// 
-MS_Customize/source/product/config/uis8910ff_refphone/spiflash_cfg.c  PS_STONE_SECTOR_NUM
-MS_Customize/source/product/config/uis8910ff_refphone/spiflash_cfg.c  646
-//	#define  PS_STONE_SECTOR_NUM		124 // 123 //123
+[2.14] 
 
 
 
@@ -734,6 +747,35 @@ prj:project_{cur}.mk  FLASH_SIZE
 //   FLASH_SIZE = 128MBIT
 //(大版本)
 //   FLASH_SIZE = 128MBITX64MBIT_NEW
+
+###
+// 8910F
+config:\
+config:uis8910ff_refphone/spiflash_cfg.c  FLASH_SIZE_128MBITX64MBIT_NEW
+// 8910s
+config:uis8910ff_refphone/spiflash_cfg.c  FLASH_SIZE_128MBIT$
+
+
+
+// SECTOR
+config:uis8910ff_refphone/spiflash_cfg.c  MMI_RES_SECTOR_NUM
+config:uis8910ff_refphone/spiflash_cfg.c  604
+// 	#define MMI_RES_SECTOR_NUM         70 // 67 //66  60
+// 
+config:uis8910ff_refphone/spiflash_cfg.c  UDISK_SIZE
+config:uis8910ff_refphone/spiflash_cfg.c  573
+//	#define UDISK_SIZE                 ((UMEM_SECTOR_NUM+4)*FLASH_SECTOR_SIZE)
+
+// 
+MS_Customize/UIX8910_normal.scf  LOAD_KERNEL_IMAGE
+MS_Customize/UIX8910_normal.scf  43
+//	LOAD_KERNEL_IMAGE IMAGE_ENTRY_ADDR 0x00A60000   # ps size
+
+// 
+config:uis8910ff_refphone/spiflash_cfg.c  PS_STONE_SECTOR_NUM
+config:uis8910ff_refphone/spiflash_cfg.c  646
+//	#define  PS_STONE_SECTOR_NUM		124 // 123 //123
+
 
 
 [2.18] build map

@@ -635,6 +635,10 @@ MS_MMI_Main/source/mmi_ctrl/source/editbox/c/ctrlbaseflex_cursor.c  void^FillCur
 //	#endif
 
 
+// 
+//		==>BASEFLEX_DisplayCursor
+ctrl:editbox\c\ctrlbaseflex_display.c   BaseFlexCtrlDisplayAll
+
 
 [2.8] file
 //

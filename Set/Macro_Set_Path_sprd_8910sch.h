@@ -34,17 +34,17 @@ sensorsPath = MS_Customize\source\product\driver\sensors
 
 
 ### 1.cfg
-versionKey  = UMS9117_ums9117_barphone_version
+versionKey  = UIX8910_uis8910ff_refphone_version
 
 
 ### 2.cur
 prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
-projectKey   = WA07U_F3X
+projectKey   = X217U_HN
 curKey   = UIS8910_ROM_16MB_SS_{project}_USER
 cfgKey   = uis8910_phone_user_base_config
-sizeKey  = 240X240
+sizeKey  = 128X128
 
 
 ### 3.copy

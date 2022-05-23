@@ -362,6 +362,10 @@ app:spde\c\spde_wintable.c  SpdeMenuDlgEventHandlers
 app:spde\c\spde_wintable.c  watch_mainmenu_key_enter_hdlr
 
 
+### 3.ZMAEE
+// __style__
+Save:node\C\study\Macro_zmaee_8910.h  __ZMAEE__
+
 
 
 [2.3] clock, idle

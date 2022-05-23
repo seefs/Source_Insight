@@ -12,7 +12,7 @@ Save:node\C\study\Macro_res_ring_8910.h \[1.5\] sms
 Save:node\C\study\Macro_res_ring_8910.h \[1.6\] clock
 Save:node\C\study\Macro_res_ring_8910.h \[1.7\] BusyTone
 Save:node\C\study\Macro_res_ring_8910.h \[1.8\] key tone
-Save:node\C\study\Macro_res_ring_8910.h \[1.9\] 
+Save:node\C\study\Macro_res_ring_8910.h \[1.9\] dial tone
 Save:node\C\study\Macro_res_ring_8910.h \[1.10\] 
 Save:node\C\study\Macro_res_ring_8910.h \[1.11\] 
 Save:node\C\study\Macro_res_ring_8910.h \[1.12\] 
@@ -152,7 +152,23 @@ source:resource\mmi_res_prj_def.h  R_CALL_KEY_0_TONE
 source:resource\Common\RING\
 
 
-##
+
+###
+//
+app:setting\c\mmiset_ring.c  case^MMISET_RING_TYPE_KEY
+app:setting\h\mmiset_export.h  R_KEY_1
+source:resource\mmi_res_prj_def.h  R_KEY_1
+//
+source:resource\Common\RING\
+source:resource\Common\RING\R_KEY_1.WAV
+
+
+
+[1.9] dial tone
+
+# ”Ô“ÙÕı
+
+###
 // --set--call--num (mp3 play)
 app:envset\c\mmienvset.c  MMI_READDIALKEY_ENABLE_EX
 app:envset\h\mmienvset_export.h  MMI_READDIALKEY_ENABLE_EX
@@ -167,7 +183,6 @@ app:setting\c\mmiset_callwin.c  MMI_READDIALKEY_ENABLE_EX
 app:setting\c\mmiset_menutable.c  MMI_READDIALKEY_ENABLE_EX      # old_env
 source:mmi_app\common\h\mmi_appmsg.h  MMI_READDIALKEY_ENABLE_EX
 source:resource\mmi_res_prj_def.h  MMI_READDIALKEY_ENABLE_EX
-
 
 ###
 // --dial--input
@@ -218,13 +233,6 @@ app:setting\c\mmiset_nv.c  MMI_READDIALKEY_ENABLE          # nv, new_set
 app:setting\h\mmiset_nv.h  MMI_READDIALKEY_ENABLE
 source:mmi_app\common\h\mmi_id.def  MMI_READDIALKEY_ENABLE
 app:setting\h\set_mdu_def.h  MMI_READDIALKEY_ENABLE
-
-
-
-
-[1.9] 
-
-
 
 
 [1.10] 

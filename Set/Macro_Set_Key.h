@@ -1,12 +1,29 @@
 //
-// 说明: (“=”左右可以有空格)
-// 10:  项目路径 (“,”前不要多余空格)
+// 格式: 
+//      key = val
+//      key = val,
+//   key 从第1个字符开始
+//   “=” 左右可以有空格
+//   “,” 前不要多余空格
+//
+//
+// 类型: 
+//
+// 10,11,12...:  项目路径 
+//   1个key对应1个路径 , 否则不能对比
+//   2个key对应1个路径 , 如 “_SI4.0” 中的路径， 并放最后
+//
 // 10alias:  别名, 脚本内部使用
+// 
 // 10key:    项目文本中替换使用 (替换 {pro})
+//           同一套代码可用同一名称, (svn1, svn2, 都用svn)
 //
 // 10RuleEn: F5使用
+// 
 // 10Search: F9使用(功能舍弃)
+// 
 // 10Note:       F11使用(功能舍弃)
+// 
 // 10Hot2:      F1使用, spr or mtk
 
 
@@ -21,8 +38,8 @@
 //(2) 6531btdialer 项目路径
 20alias = 6531DB
 20RuleEn = 6531btdialer
-//
-20 = F:\6531DA_Btdialer,
+// 注释20, 不显示比较
+//20 = F:\6531DA_Btdialer
 20key = 6531D
 
 
@@ -30,9 +47,9 @@
 //(3) 6531E 项目路径
 30alias = 6531E
 30RuleEn = 6531E
-//
-30 = E:\SPDE6531E,
-30 = D:\_SI4.0\6531E.si4project,
+// 注释30, 不显示比较
+//30 = E:\SPDE6531E,
+//30 = D:\_SI4.0\6531E.si4project,
 30key = 6531E
 
 
@@ -40,17 +57,17 @@
 //(4) soft 项目路径
 40alias = RDA
 40RuleEn = soft
-//
-40 = F:\soft,
+// 注释40, 不显示比较
+//40 = F:\soft,
 40key = rda
 
 
 //(5) 6533 项目路径
 50alias = 6533
 50RuleEn = 6533
-//
-50 = F:\SC6533G\soft,
-50 = E:\SC6533G,
+// 注释50, 不显示比较
+//50 = F:\SC6533G\soft,
+//50 = E:\SC6533G,
 50key = 6533
 
 
@@ -59,35 +76,35 @@
 60RuleEn = 8910
 //
 60 = G:\UIS8910_git,
-62 = G:\UIS8910_schcard_git,
-64 = G:\wa01u_svn,
-66 = G:\wa01u_svn_small_new2,
-68 = G:\wa01u_svn_small_new,
+61 = G:\UIS8910_schcard_git,
+63 = G:\wa01u_svn,
+64 = G:\wa01u_svn_small_new2,
+65 = G:\wa01u_svn_small_new,
+66 = G:\wa01u_svn_small_new3,
+67 = G:\wa01u_svn_small_w21,
 
 60key = 8910
-62key = 8910sch
+61key = 8910sch
 
+63key = 8910wa
 64key = 8910wa
+65key = 8910wa
 66key = 8910wa
-68key = 8910wa
-70key = 8910wa
+67key = 8910wa
 
 
 //(7) 7701, 8910 项目路径
 70alias = 8910
 70RuleEn = 8910
 //
-70 = G:\wa01u_svn_small_new3,
-72 = G:\T1071,
-74 = G:\wa01u_svn_small_w21,
+70 = G:\T1071,
 76 = G:\wa03u_git,
-78 = G:\wa03u_git2,
+77 = G:\wa03u_git2,
 
-72key = 107
-74key = 8910wa21
+70key = 107
 
-76key = 8910wa_git
-78key = 8910wa_git
+76key = 8910wa21
+77key = 8910wa_git
 
 //(8) MTK 项目路径1
 80alias = MTK
@@ -95,10 +112,13 @@
 //
 80 = E:\60M,
 80 = E:\_SI4.0\61M.si4project,
+
 82 = E:\MT61D_ZYF,
 82 = E:\_SI4.0\61M_ZYF.si4project,
+
 84 = E:\60D_11C,
 84 = E:\_SI4.0\60D_11C.si4project,
+
 86 = E:\60A_6464,
 86 = E:\_SI4.0\60D_11C.si4project,
 

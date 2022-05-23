@@ -421,17 +421,17 @@ MMK_DestroyControl(MMICC_CONNECTED_STATE_LABEL_CTRL_ID);
 	
 //
 // ui--font
-app:cc\c\mmicc_wintab_custom.c MMI_CALL_NAME_FONT
+app:cc\c\mmicc_{wintab}.c MMI_CALL_NAME_FONT
 // ui--label(默认)
-app:cc\c\mmicc_wintab_custom.c CC_MAIN_INFO_COMMON_LABEL_TOP_MARGIN
+app:cc\c\mmicc_{wintab}.c CC_MAIN_INFO_COMMON_LABEL_TOP_MARGIN
 // ui--softkey(大屏)
-app:cc\c\mmicc_wintab_custom.c LRBUTTON_WIDTH
+app:cc\c\mmicc_{wintab}.c LRBUTTON_WIDTH
 // ui--icon 59 47 181 169
-app:cc\c\mmicc_wintab_custom.c 24908
+app:cc\c\mmicc_{wintab}.c 24908
 // ui--icon 105 17
-app:cc\c\mmicc_wintab_custom.c 13839
-app:cc\c\mmicc_wintab_custom.c 23750
-app:cc\c\mmicc_wintab_custom.c 23839
+app:cc\c\mmicc_{wintab}.c 13839
+app:cc\c\mmicc_{wintab}.c 23750
+app:cc\c\mmicc_{wintab}.c 23839
 
 
 // call--image
@@ -449,31 +449,29 @@ app:cc\c\mmicc_app.c  case^APP_MN_SETUP_IND
 //		==========>CC_OpenMtCallWin
 //		============>OpenCallingWin
 //		==============>PdaDisplaySingleCallInfoForCommon
-// --107
-app:cc\c\mmicc_wintab.c  MMICC_MT_CALLING_WIN_TAB  MMICC_ANIMATION_WIN_ID
-app:cc\c\mmicc_wintab.c  PdaDisplaySingleCallInfoForCommon  
-// --8910
-app:cc\c\mmicc_wintab_custom.c  MMICC_MT_CALLING_WIN_TAB  MMICC_ANIMATION_WIN_ID
-app:cc\c\mmicc_wintab_custom.c  PdaDisplaySingleCallInfoForCommon  
+app:cc\c\mmicc_{wintab}.c  MMICC_MT_CALLING_WIN_TAB  MMICC_ANIMATION_WIN_ID
+app:cc\c\mmicc_{wintab}.c  PdaDisplaySingleCallInfoForCommon  
 
 
 ### 小屏
 // label--name, num
-app:cc\c\mmicc_wintab_custom.c  MMICC_CONNECTED_SIM_LABEL_CTRL_ID
-app:cc\c\mmicc_wintab_custom.c  8538
+app:cc\c\mmicc_{wintab}.c  MMICC_CONNECTED_SIM_LABEL_CTRL_ID
+app:cc\c\mmicc_{wintab}.c  8538
 // anim--pad--小屏无效
-app:cc\c\mmicc_wintab_custom.c  9453
+app:cc\c\mmicc_{wintab}.c  9453
 
 ### 大屏
 // label--sim, state
-app:cc\c\mmicc_wintab_custom.c  8085  sim, state
+app:cc\c\mmicc_{wintab}.c  8085  sim, state
 // label--time
-app:cc\c\mmicc_wintab_custom.c  8272  time
+app:cc\c\mmicc_{wintab}.c  8272  time
 // label--name, num
-app:cc\c\mmicc_wintab_custom.c  8330  name
-app:cc\c\mmicc_wintab_custom.c  8454  num
+app:cc\c\mmicc_{wintab}.c  8330  name
+app:cc\c\mmicc_{wintab}.c  8454  num
 // label--num
-app:cc\c\mmicc_wintab_custom.c  8454  num
+//		====>CC_MAIN_INFO_NAME_LABEL_TOP
+//		====>CC_MAIN_INFO_STATE_LABEL_TOP
+app:cc\c\mmicc_{wintab}.c  8454  num
 
 
 // 流程--去电-MO，
@@ -488,28 +486,28 @@ app:cc\c\mmicc_wintab_custom.c  8454  num
 //		==============>PdaDisplaySingleCall
 //		============>DisplayCallAnimPhotoForCommon
 //		========>MMICC_EnableRemoteMute(FALSE)
-app:cc\c\mmicc_wintab_custom.c  CC_HandleCcWinMsg
-app:cc\c\mmicc_wintab_custom.c  MMICC_MO_CONNECTED_WIN_TAB  MMICC_STATUS_WIN_ID
+app:cc\c\mmicc_{wintab}.c  CC_HandleCcWinMsg
+app:cc\c\mmicc_{wintab}.c  MMICC_MO_CONNECTED_WIN_TAB  MMICC_STATUS_WIN_ID
 
 
 // 流程--挂断 DIS
 source:mmi_app\kernel\c\mmi_default.c  HandleFlipDown  MSG_KEYDOWN_FLIP
 app:cc\c\mmicc_app.c 4345
-app:cc\c\mmicc_wintab_custom.c  CC_HandleDisconnectWinMsg
-app:cc\c\mmicc_wintab_custom.c  MMICC_OpenDisconnectWin  
+app:cc\c\mmicc_{wintab}.c  CC_HandleDisconnectWinMsg
+app:cc\c\mmicc_{wintab}.c  MMICC_OpenDisconnectWin  
 
-app:cc\c\mmicc_wintab_custom.c  MMICC_MENU_WIN_ID
-app:cc\c\mmicc_wintab_custom.c  MMICC_CALLLIST_WIN_ID
-app:cc\c\mmicc_wintab_custom.c  MMICC_PROCESSING_WIN_ID
-app:cc\c\mmicc_wintab_custom.c  MMICC_ANIMATION_WIN_ID
-app:cc\c\mmicc_wintab_custom.c  MMICC_ADJUSTVOLUME_WIN_ID
+app:cc\c\mmicc_{wintab}.c  MMICC_MENU_WIN_ID
+app:cc\c\mmicc_{wintab}.c  MMICC_CALLLIST_WIN_ID
+app:cc\c\mmicc_{wintab}.c  MMICC_PROCESSING_WIN_ID
+app:cc\c\mmicc_{wintab}.c  MMICC_ANIMATION_WIN_ID
+app:cc\c\mmicc_{wintab}.c  MMICC_ADJUSTVOLUME_WIN_ID
 
-app:cc\c\mmicc_wintab_custom.c  MMICC_HOLDMENU_WIN_ID
-app:cc\c\mmicc_wintab_custom.c  MMICC_STATUS_WIN_ID
+app:cc\c\mmicc_{wintab}.c  MMICC_HOLDMENU_WIN_ID
+app:cc\c\mmicc_{wintab}.c  MMICC_STATUS_WIN_ID
 //app:cc\c\.c  MMIIDLE_DIAL_MENU_WIN_ID
 //app:cc\c\mmicc_app.c MMICC_CALL_WAIT_INDICATOR_WIN_ID
 //app:cc\c\mmicc_app.c MMICC_ANIMATION_WIN_ID
-app:cc\c\mmicc_wintab_custom.c 20008
+app:cc\c\mmicc_{wintab}.c 20008
 
 // 107 挂断
 //		==>MMICC_HandlePsMsg
@@ -536,16 +534,16 @@ app:cc\c\mmicc_main.c  MSG_KEYUP_FLIP  CCApplet_HandleEvent
 
 
 // 112
-app:cc\c\mmicc_wintab_custom.c  MMICC_MENU_EMERGENCY_OPT_WIN_TAB  
+app:cc\c\mmicc_{wintab}.c  MMICC_MENU_EMERGENCY_OPT_WIN_TAB  
 
 
 // 多卡通话
-app:cc\c\mmicc_wintab_custom.c  CustomShowMultiCallList
+app:cc\c\mmicc_{wintab}.c  CustomShowMultiCallList
 // 多卡通话--name + num
-app:cc\c\mmicc_wintab_custom.c  6477
-app:cc\c\mmicc_wintab_custom.c  6514
+app:cc\c\mmicc_{wintab}.c  6477
+app:cc\c\mmicc_{wintab}.c  6514
 // 多卡通话--num
-app:cc\c\mmicc_wintab_custom.c  6541
+app:cc\c\mmicc_{wintab}.c  6541
 // 多卡通话--option
 //		==>HandleHoldMenuWinMsg
 //		====>MMICC_HoldCall

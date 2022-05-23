@@ -14,7 +14,7 @@ Save:node\C\study\Macro_doc_8910.h \[1.11\]
 Save:node\C\study\Macro_doc_8910.h \[1.12\] //FontTool
 Save:node\C\study\Macro_doc_8910.h \[1.13\] build time----------
 Save:node\C\study\Macro_doc_8910.h \[1.14\] apn
-Save:node\C\study\Macro_doc_8910.h \[1.15\] 
+Save:node\C\study\Macro_doc_8910.h \[1.15\] ATEST_SUPPORT
 Save:node\C\study\Macro_doc_8910.h \[1.16\] 
 Save:node\C\study\Macro_doc_8910.h \[1.17\] 
 Save:node\C\study\Macro_doc_8910.h \[1.18\] 
@@ -31,6 +31,121 @@ Save:node\C\study\Macro_Spr_MsgId.h
 
 
 
+
+### --key--dial--down
+//		==>APP_Task
+//		====>MMK_DispatchExtSig                     # KPDSVR
+//		======>MMK_DispatchMSGKbd                   # KPD_DOWN/KPD_UP
+//		========>HandleMSGKbd
+//		==========>MMK_DispMsgToWin
+//		============>MMK_DispMsgToFocusWin
+//		==============>MMK_DispatchToHandle         # WINDOW
+//		================>MMK_RunWinProc             # win_handle
+app:idle\c\mmiidle_dial.c  MMI_RESULT_E^HandleDialWinMsg
+
+
+### --key--dial--long--log
+//	64023 MSG_KEYDOWN_CANCEL
+//	57397 MSG_NOTIFY_EDITBOX_IMSYNC_CURSOR //1~3
+//	e030  MSG_NOTIFY_EDITBOX_UPDATE_STRNUM //1~3
+//	fd17  MSG_KEYPRESSUP_CANCEL
+
+### --key--dial--long
+//		==>APP_Task
+//		====>MMK_DispatchExtSig                     # KPDSVR
+//		======>MMK_DispatchMSGKbd                   # 
+//		========>HandleMSGKbd                       # status:65024, code:23
+//		==========>MMK_DispMsgToWin
+//		============>MMK_DispMsgToFocusWin
+//		==============>MMK_DispatchToHandle         # WINDOW
+//		================>MMK_DefaultProcessWinMsg   # ctrl_handle
+//		==================>MMK_RunCtrlProc
+//		====================>PhoneNumEditCtrlHandleMsg  # IGUICTRL_HandleEvent
+//		======================>BaseFlexCtrlHandleMsg  # MSG_KEYREPEAT_CANCEL
+//		========================>HandleTextCancelKey
+//		==========================>BASEFLEX_DelString
+//		==>APP_Task
+//		====>MMK_DispatchExtSig                     # P_APP
+//		======>MMK_DispatchMSGTimer                 # APP_TIMER_EXPIRY
+//		========>MMK_HandleKeyLongPressTimer        # KBD_TIMER
+//		==========>SaveKeyLongDownStatus
+//		============>is_long_press = TRUE
+//		==========>MMK_DispMsgToWin
+//		============>MMK_DispMsgToFocusWin
+//		==============>MMK_DispatchToHandle         # 
+//		================>MMK_DefaultProcessWinMsg   # ctrl_handle
+//		==================>MMK_RunCtrlProc
+//		====================>PhoneNumEditCtrlHandleMsg  # IGUICTRL_HandleEvent
+//		======================>BaseFlexCtrlHandleMsg  # MSG_KEYLONG_CANCEL
+//		========================>HandleTextCancelLong
+//		========>MMK_HandleKeyRepeatPressTimer      # KEY_REPEATED
+//		==========>MMK_DispMsgToWin
+//		============>MMK_DispMsgToFocusWin
+//		==============>MMK_DispatchToHandle         # WINDOW
+//		================>MMK_RunWinProc             # win_handle
+ctrl:editbox\c\ctrlbaseflex.c  MMI_RESULT_E^BaseFlexCtrlHandleMsg
+//		==========================>AppHandle            # CURSOR
+
+
+
+### --key--timer
+//		========>TimerCallBack
+//		==========>MmiCreateSignal
+//		============>
+//		==============>
+//		==>APP_Task
+//		====>MMK_DispatchExtSig                     # 
+//		======>MMK_DispatchMSGKbd                   # 
+//		========>SaveKeyDownStatus                  # KPD_DOWN
+//		==========>MMK_StartWinTimer                # 1.5s (long) 0.3s (repeat)
+//		============>StartAppTimer
+//		========>HandleMSGKbd
+//		==>APP_Task
+//		====>MMK_DispatchExtSig                     # P_APP
+//		======>MMK_DispatchMSGTimer                 # APP_TIMER_EXPIRY
+//		========>MMK_HandleKeyLongPressTimer        # KBD_TIMER
+//		==========>SaveKeyLongDownStatus
+//		============>is_long_press = TRUE           # ==>longUp msg
+//		==========>HandleMSGKbd
+//		========>MMK_HandleKeyRepeatPressTimer      # KEY_REPEATED
+//		==========>SaveKeyRepeatStatus
+//		==========>MMK_StartWinTimer
+//		==========>HandleMSGKbd
+//		==>APP_Task
+//		====>MMK_DispatchExtSig                     # 
+//		======>MMK_DispatchMSGKbd                   # 
+//		========>SaveKeyUpStatus                    # KPD_UP
+//		==========>MMK_StopTimer
+//		========>HandleMSGKbd
+
+
+### --key--idle--long--ok
+//		======>case MSG_APP_OK      //0
+//		======>case MSG_CTL_OK      //0
+//		======>case MSG_APP_OK      //1
+//		======>case MSG_KEYUP_OK    //1
+//		======>case MSG_KEYLONG_OK  //1
+//		======>case MSG_TIMER       //+ 看着没用
+app:idle\c\mainapp.c  IdleWin_HandleMsg
+//		======>case MSG_APP_OK      //0
+//		======>case MSG_CTL_OK      //0
+//		======>case MSG_KEYUP_OK    //1
+app:idle\c\mmiidle_cstyle.c   MMIIDLE_CommonHandleMsg
+//		======>case MSG_KEYUP_OK    //1
+app:keylock\c\mmikl_keylock.c  MMIKL_HandleKLDispWinMsg
+//		======>case MSG_KEYUP_OK    //1 没用
+source:mmi_app\common\c\mmi_pubwin.c  MMIPUBHandleWinMsg
+
+### --key--idle--long--cancel
+//		======>case MSG_APP_CANCEL
+//		======>case MSG_CTL_CANCEL
+//		======>case MSG_KEYUP_CANCEL
+//		======>case MSG_KEYLONG_CANCEL
+app:idle\c\mainapp.c  IdleWin_HandleMsg
+
+
+
+
 [1.2] FUN 入口
 //	FUN 入口
 Save:node\C\study\Macro_Spr_Fun.h
@@ -39,7 +154,8 @@ Save:node\C\study\Macro_Spr_Fun.h
 
 
 [1.3] 
-
+//
+Save:node\C\study\Macro_res_8910.h __lang__
 
 
 
@@ -296,8 +412,9 @@ tool_mini:6_res_str\res_ntac.xlsx
 
 
 
-[1.15] 
-
+[1.15] ATEST_SUPPORT
+// ATEST 默认不开, 没有项目开
+make\app_main\app_main.mk  ATEST_SUPPORT
 
 
 

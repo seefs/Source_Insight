@@ -292,7 +292,9 @@ app:cc\h\cc_mdu_def.h  IMAGE_CC_CALLING_PHOTO_ANIM
 app:cc\h\cc_mdu_def.h  IMAGE_CC_INCOMING_PHOTO_ANIM
 app:cc\h\cc_mdu_def.h  IMAGE_CC_DISCONNECTED_PHOTO_ANIM
 
-//
+// call--photo--
+app:cc\h\cc_mdu_def.h  IAMGE_CALL_DEFAULT_PHOTO  80X80
+app:cc\h\cc_mdu_def.h  IAMGE_CALL_HOLD_DEFAULT_PHOTO_PDA  50X50
 app:cc\c\mmicc_wintab.c  IMAGE_CC_INCOMING_PHOTO_ANIM
 
 

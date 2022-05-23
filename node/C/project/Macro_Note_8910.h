@@ -182,20 +182,22 @@ make\custom_drv\custom_drv.mk  sensor_gc032A.c
 //
 MS_Customize/source/product/config/ums9117_barphone/sensor_cfg.c
 MS_Customize\source\product\config\uis8910ff_refphone\sensor_cfg.c main_sensor_infor_tab
-//
+// ¶þÐÐ£º
 //	extern const SENSOR_INFO_T g_GC6153_yuv_info;
-//
 //	&g_GC6153_yuv_info,
 
 //
 MS_Customize/source/product/driver/dc/sensor_gc6153.c
-//
-prj:project_{cur}.mk SENSOR_CHIP
 
 //
-//CAMERA_SUPPORT = TRUE                               ### CAMERA Support
-//DC_FLASH_SUPPORT = TRUE
+//prj:project_{cur}.mk SENSOR_CHIP
 
+// 107
+prj:project_{cur}.mk CAMERA_SUPPORT   = TRUE
+prj:project_{cur}.mk DC_FLASH_SUPPORT = TRUE
+// 8910
+prj:{cfg}.cfg CAMERA_SUPPORT     = TRUE
+prj:{cfg}.cfg DC_FLASH_SUPPORT   = TRUE
 
 
 [1.6] TP

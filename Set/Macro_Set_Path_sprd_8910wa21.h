@@ -41,20 +41,19 @@ versionKey  = UMS9117_ums9117_barphone_version
 prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
-projectKey   = WA22U_SW34E_QQVGA
+projectKey   = WA22U_SW40E_QQVGA
 curKey   = UIS8910_ROM_16MB_SS_{project}_USER
 cfgKey   = uis8910_phone_user_base_config
 sizeKey  = 128X128
 
-// USER debug
-useKey   = USER
 
 ### 3.copy
 oldKey = xx
-
 newKey = xx
 
 ### 4.tmp
+wintabKey = wintab
+
 tmpKey = xx
 
 

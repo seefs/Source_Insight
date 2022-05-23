@@ -41,13 +41,13 @@ versionKey  = UMS9117_ums9117_barphone_version
 prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
-projectKey   = T5_A86_VIET_HQQVGA
+projectKey   = F79T_DERONG
+//projectKey   = T5_A86_VIET_HQQVGA
 curKey   = ums9117_{size}BAR_48MB_{project}_user
 cfgKey   = xx
-sizeKey  = 128X128
+sizeKey  = 240X320
+//sizeKey  = 128X128
 
-// USER debug
-useKey   = USER
 
 ### 3.copy
 oldKey = xx
@@ -55,6 +55,8 @@ oldKey = xx
 newKey = xx
 
 ### 4.tmp
+wintabKey = wintab
+
 tmpKey = xx
 
 
