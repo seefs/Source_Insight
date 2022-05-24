@@ -60,4 +60,10 @@ wintabKey = wintab
 tmpKey = xx
 
 
+### 5.build
+simulatorKey = simulator_main
+resource_mainKey = resource_main
+app_mainKey = app_main
+gui_mainKey = gui_main
+
 

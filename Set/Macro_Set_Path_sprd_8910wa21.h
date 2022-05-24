@@ -34,7 +34,7 @@ sensorsPath = MS_Customize\source\product\driver\sensors
 
 
 ### 1.cfg
-versionKey  = UMS9117_ums9117_barphone_version
+versionKey  = UIX8910_uis8910ff_refphone_version
 
 
 ### 2.cur
@@ -57,4 +57,9 @@ wintabKey = wintab
 tmpKey = xx
 
 
+### 5.build
+simulatorKey = simulator_idh
+resource_mainKey = resource_main
+app_mainKey = app_main
+gui_mainKey = gui_main
 

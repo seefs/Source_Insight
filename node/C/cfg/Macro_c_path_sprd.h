@@ -19,7 +19,7 @@ Save:node\C\cfg\Macro_c_path_sprd.h \[1.9\]
 Save:set\
 Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 Save:set\Macro_Set_Path_sprd_.h  curKey
-// --no set
+// --Î´ÉèÖÃÂ·¾¶:
 Save:set\Macro_Set_Key.h
 
 

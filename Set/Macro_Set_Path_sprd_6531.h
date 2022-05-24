@@ -34,17 +34,17 @@ sensorsPath = MS_Customize\source\product\driver\sensors
 
 
 ### 1.cfg
-versionKey  = UIX8910_uis8910ff_refphone_version
+versionKey  = UMS9117_ums9117_barphone_version
 
 
 ### 2.cur
 prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
-projectKey   = WA07U_F3X
-curKey   = UIS8910_ROM_16MB_SS_{project}_USER
-cfgKey   = uis8910_phone_user_base_config
-sizeKey  = 240X240
+projectKey   = K220U_LBR_L691_HS_L51_HQQVGA
+curKey   = UIS8910_ROM_16MB_DS_USER
+cfgKey   = us8910_phone_user_base_config
+sizeKey  = 128X128
 
 
 ### 3.copy
@@ -58,8 +58,10 @@ tmpKey = xx
 
 
 ### 5.build
-simulatorKey = simulator_idh
-resource_mainKey = resource_main
-app_mainKey = app_main
-gui_mainKey = gui_main
+simulatorKey = simulator
+resource_mainKey = resource
+app_mainKey = app
+gui_mainKey = gui
+
+
 

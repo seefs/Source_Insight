@@ -37,40 +37,9 @@ Save:node\C\project\Macro_Note_8910.h \[2.20\]
 
 
 [1.1] 编译指令:
-
-//编译:
-//open: project\UIS8910_ROM_16MB_DS_USER\New_common.bat
-
-//编译模块
-make p=UIS8910_ROM_16MB_DS_USER
-make p=UIS8910_ROM_16MB_DS_USER m=custom_drv
-make p=UIS8910_ROM_16MB_DS_USER image
-
-//或 (1行命令)
-make p=UIS8910_ROM_16MB_DS_USER m=custom_drv update image
-make p=UIS8910_ROM_16MB_DS_USER m=custom_drv update image job=4
-
-//编译资源 (VS接着编译即可)
-make p=UIS8910_ROM_16MB_DS_USER m=resource job=4
-
-
-//其他编模块
-make p=UIS8910_ROM_16MB_DS_USER m=app_main update image
-make p=UIS8910_ROM_16MB_DS_USER m=app_main
-
-
-//模拟器：
-make p=UIS8910_ROM_16MB_DS_USER m=simulator_idh
-vc: build\UIS8910_ROM_16MB_DS_USER_builddir\win\simulator.dsw
-build\UIS8910_ROM_16MB_DS_USER_builddir\win\
-//	改NV删除
-cmd del^build\UIS8910_ROM_16MB_DS_USER_builddir\win\bin\flash_sim.dat
-build\UIS8910_ROM_16MB_DS_USER_builddir\win\bin\flash_sim.dat
-
-
-// spr--下载工具
-open tools\DEBUG_TOOL\ResearchDownload\Bin\ResearchDownload.exe
-build\UIS8910_ROM_16MB_DS_USER_builddir\img
+//
+Save:node\C\cfg\
+Save:node\C\cfg\Macro_c_build.h  __8910__
 
 
 
