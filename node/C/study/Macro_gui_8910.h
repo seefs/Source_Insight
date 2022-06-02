@@ -307,7 +307,8 @@ app:theme\c\mmitheme_list.c   s_item_style_2_2text_and_text_icon_ms
 app:theme\c\mmitheme_list.c   s_item_style_2_text_icon_and_text_ms
 
 
-
+// ctrl--type
+TYPEMNG_IsTypeOf
 
 
 
@@ -1049,6 +1050,11 @@ ctrl:Label\c\ctrllabel.c  LabelDrawString
 //	// bg-form
 //	LabelCtrlSetBg
 //	CTRLFORM_PermitChildBg(MMIMP3_TITLE_FORM_CTRL_ID, FALSE);
+
+
+// label--FORM
+app:theme\c\mmitheme_label.c  MMITHEME_GetLabelTheme
+
 
 
 [1.26] text

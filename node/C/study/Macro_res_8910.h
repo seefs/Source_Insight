@@ -23,13 +23,11 @@ Save:node\C\study\Macro_res_8910.h \[1.20\]
 
 
 
-
 [1.1] 项目配置
 
 ### 设置当前项目
 // --
 Save:node\C\cfg\
-
 Save:node\C\cfg\Macro_c_path_sprd.h  _sprd_cur_
 
 

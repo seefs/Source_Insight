@@ -21,12 +21,15 @@ nv:\\
 
 sourcePath  = MS_MMI_Main\source\
 appPath     = MS_MMI_Main\source\mmi_app\app\
-ctrlPath    = MS_MMI_Main\source\mmi_ctrl\source
-guiPath     = MS_MMI_Main\source\mmi_gui\source
-configPath  = MS_Customize\source\product\config
+commonPath  = MS_MMI_Main\source\mmi_app\common\
+ctrlPath    = MS_MMI_Main\source\mmi_ctrl\source\
+guiPath     = MS_MMI_Main\source\mmi_gui\source\
+configPath  = MS_Customize\source\product\config\
 driverPath = MS_Customize\source\product\driver\
-sensorsPath = MS_Customize\source\product\driver\sensors
+sensorsPath = MS_Customize\source\product\driver\sensors\
 
+zdtPath = MS_MMI_Main\source\mmi_app\app\zdt\
+fzdPath = MS_MMI_Main\source\mmi_app\app\fzd\
 
 ### 1.cfg
 versionKey  = UIX8910_uis8910ff_refphone_version
@@ -36,10 +39,13 @@ versionKey  = UIX8910_uis8910ff_refphone_version
 prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
-projectKey   = X225U_HQVGA
-curKey   = UIS8910_ROM_16MB_DS_USER
-cfgKey   = uis8910_phone_user_base_config
-sizeKey  = 320X240
+
+projectKey   = WA23U_L03
+//curKey   = UIS8910_ROM_16MB_SS_{project}_USER
+curKey   = UIS8910_240x320BAR_16MB_SS_{project}_DEBUG
+//cfgKey   = uis8910_phone_user_base_config
+cfgKey   = uis8910_phone_base_config
+sizeKey  = 128X128
 
 
 ### 3.copy

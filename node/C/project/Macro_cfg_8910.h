@@ -387,14 +387,14 @@ make\simulator_main\simulator_main.mk  SKIN_FILE_NAME
 make\simulator_idh\simulator_idh.mk  SUFFIX
 make\simulator_main\simulator_main.mk  SUFFIX
 // skin file
-MS_MMI_Main\source\winsimulator_tp\skin
+MS_MMI_Main\source\winsimulator_tp\skin\
 //   mssim_duallcd_160_128
 //   mssim_duallcd_160_128_T   90^
 
 
 
 
-[1.14] torch
+[1.14] __torch__
 
 // 1.ENG_MANU_TORCH, ENG_MANU_TORCH_PATCH  (软开)
 //		==>ID_ENG_TEST_MANU_TORCH
@@ -417,6 +417,9 @@ app:eng\c\mmieng_uitestwin.c  case^ID_ENG_TEST_MANU_TORCH
 //		====>ID_ENG_TEST_TORCH_LED
 //		======>上键点亮，下键关闭
 app:eng\c\mmieng_main.c   case^ID_ENG_TORCH_LED_TEST
+//		==>"*#222#"
+//		====>UITestTorchLedTestWinHandleMsg
+app:eng\c\mmieng_uitestwin.c  case^ID_ENG_TEST_TORCH_LED
 
 // 3.TORCH_SUPPORT (手机默认开, 手表默认关)
 //		==>状态条显示
@@ -540,8 +543,19 @@ FM_S_ANT_SUPPORT = FALSE
 
 [2.8] WIFI
 //
-WIFI_SUPPORT = UNISOC_RX                                  ### wifi Support
-WIFI_VENDOR = UNISOC 
+prj:{cfg}.cfg  WIFI_SUPPORT = UNISOC_RX
+prj:{cfg}.cfg  WIFI_VENDOR = UNISOC 
+
+
+// WIFI
+//		==>MMIAPIENG_StartEngineerMenu
+app:eng/c/mmieng_main.c  MMI_RESULT_E^ENGMainMenuWinHandleMsg
+// 单项测试--menu
+app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_eng
+// 单项测试--WIFI
+app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_app_set
+// 单项测试--WIFI--usb
+app:eng/c/mmieng_uitestwin.c  case^ID_ENG_TEST_WIFI
 
 
 

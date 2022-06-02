@@ -95,7 +95,9 @@ MS_Customize/source/product/driver/lcd/tft_ST7789.c
 MS_Customize/source/product/driver/lcd/tft_GC9106.c
 
 // 新屏
+//		==>修改画屏方向: (0x36)0xC8->0xD8
 make\custom_drv\custom_drv.mk  tft_ST7735S.c
+
 //
 MS_Customize\source\product\config\
 MS_Customize\source\product\config\ums9117_barphone\lcm_cfg_info.c LCD_DRV_ID_ST7735S
@@ -146,17 +148,28 @@ SPDE_PRJ\K220U_SHY_517T\uis8910_phone_user_base_config.cfg
 
 
 [1.5] CAM
-// 新CAM
+// 1.新CAM
 make\custom_drv\custom_drv.mk  sensor_gc032A.c
-//
+// 2.
 MS_Customize/source/product/config/ums9117_barphone/sensor_cfg.c
 MS_Customize\source\product\config\uis8910ff_refphone\sensor_cfg.c main_sensor_infor_tab
 // 二行：
 //	extern const SENSOR_INFO_T g_GC6153_yuv_info;
 //	&g_GC6153_yuv_info,
 
-//
+// 3.
+//		==>修改亮度: {0x92, 0x50}
+MS_Customize/source/product/driver/dc/
 MS_Customize/source/product/driver/dc/sensor_gc6153.c
+
+
+// 4.(8910)
+MS_Ref\source\dc\sensor\sensor_drv.c  SENSOR_DRV_ID_GC6133
+//		==>camera_get_cfg
+//		====>g_dcam_cfg_8W_240x320
+MS_Ref/source/dc/dc_common/src/dcamera_cfg.c
+//		====>g_dcam_cfg_8W_240x320
+MS_Ref/source/dc/dc_common/src/dcamera_8W_240x320.c
 
 //
 //prj:project_{cur}.mk SENSOR_CHIP

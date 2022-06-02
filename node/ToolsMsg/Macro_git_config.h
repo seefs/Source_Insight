@@ -18,14 +18,19 @@ Save:node\ToolsMsg\Macro_git_config.h \[1.6\] create SSH key--官网方案
 Save:node\ToolsMsg\Macro_git_config.h \[1.7\] auto psw
 Save:node\ToolsMsg\Macro_git_config.h \[1.8\] git(小乌龟)
 Save:node\ToolsMsg\Macro_git_config.h \[1.9\] gitlab---------------url
-Save:node\ToolsMsg\Macro_git_config.h \[1.10\] 
+Save:node\ToolsMsg\Macro_git_config.h \[1.10\] ppk
 Save:node\ToolsMsg\Macro_git_config.h \[1.11\] 
 Save:node\ToolsMsg\Macro_git_config.h \[1.12\] 
 
+git@git.spdephone.com:8910-developer/MOCOR_20B_W21.12.7_WATCH.git
+save:patch\ssh\git_config_url.h
 
 
 
 [1.1] .git\config
+//
+{save}\.git\
+{save}\.git\config  remote
 
 //[core]
 //	repositoryformatversion = 0
@@ -36,7 +41,7 @@ Save:node\ToolsMsg\Macro_git_config.h \[1.12\]
 //	ignorecase = true
 
 //[remote "origin"]
-//	url = http://xiaojia:123456@192.168.2.148:8080/r/T107_MOCOR_20A_MP_W20.37.2.git
+//	url = ...
 //	fetch = +refs/heads/*:refs/remotes/origin/*
 
 //[branch "master"]
@@ -150,14 +155,13 @@ ssh -Tv git@139.155.19.38
 
 [1.7] auto psw (用方式2)
 // 每次push时自动输入用户名密码
-Save:.git\config  remote
-Save:\..\patch\.git\config  remote
-Save:\..\tool_mini\.git\config  remote
+{save}\.git\
+{save}\.git\config  remote
 
 //### 方式1. config文件
-////编辑：
+//编辑：
 //	url = https://github.com/seefs/Source_Insight/
-////改为
+//改为
 //	url = https://用户名:密码@github.com/seefs/Source_Insight/
 //	url = https://seefs:s0f0s0@github.com/seefs/Source_Insight/
 //	url = http://xiaojia:123456@192.168.2.148:8080/seefs/Source_Insight/
@@ -175,18 +179,12 @@ git remote add origin git@github.com:seefs/Source_Insight.git
 	url = git@github.com:seefs/tool_mini.git
 
 ###
-G:\UIS8910_git\.git\config  remote
-G:\wa03u_git\.git\config  remote
+{8910}\.git\
+{8910}\.git\config  remote
 //编辑：
 	url = http://shshare:8080/r/MOCOR_20B_W20.36.2.git
-	url = http://xiaojia:123456@192.168.2.148:8080/r/MOCOR_20B_W20.36.2.git
-	url = http://xiaojia:123456@192.168.2.148:8080/r/MOCOR_20B_W20.36.2_WATCH.git
 //改为
 	url = git@192.168.2.148:8080/MOCOR_20B_W20.36.2_WATCH.git
-	url = git@192.168.2.148:xiaojia/MOCOR_20B_W20.36.2_WATCH.git
-	url = ssh://hehua@shshare:29418/T107_MOCOR_20A_MP_W20.37.2.git
-	url = ssh://xiaojia@192.168.2.148:8080/MOCOR_20B_W20.36.2_WATCH.git
-	url = ssh://xiaojia@192.168.2.148/MOCOR_20B_W20.36.2_WATCH.git
 
 
 [1.8] git(小乌龟)
@@ -202,38 +200,22 @@ C:\Program Files\Git\usr\bin\ssh.exe
 
 
 [1.9] gitlab
-// url--本地
-[remote "origin"]
- url = git@139.155.19.38:8910-developer/MOCOR_20B_W21.12.7.git
-	url = git@github.com:seefs/tool_mini.git
-
-
-// url--外网1
-http://139.155.19.38/
-//xiaojia   xiaojia123456   xjs0f0s0
-git clone git@139.155.19.38:8910-developer/MOCOR_20B_W21.12.7.git
-git clone git@139.155.19.38:featurephone-hwnv/HW_NV_PARA.git
 //
-//	Cloning into ''... Administrator@s password:
+patch:ssh\
+// 公司用
+patch:ssh\Macro_gitlab_url.h
+// 自己用
+patch:ssh\Macro_github_url.h
+
+
+
+
+[1.10] ppk
 //
-//url = http://xiaojia:123456@192.168.2.148:8080/r/MOCOR_20B_W20.36.2.git
-//
-//url = git@139.155.19.38:8910-developer/MOCOR_20B_W21.12.7.git
-//	puttykeyfile = C:\\Users\\Administrator\\.ssh\\bm2048pub.ppk
-
-
-// url--外网2
-// 搜索框输入"ssh"
-http://git.spdephone.com/
-git clone git@git.spdephone.com:mtk-developer/60A_6464.git
-//
-//url = git@git.spdephone.com:8910-developer/MOCOR_20B_W21.12.7.git
-//	puttykeyfile = C:\\Users\\Administrator\\.ssh\\bm2048pub.ppk
-
-
-
-[1.10] 
-
+{8910}\.git\config  puttykeyfile
+//	
+//[remote "origin"]
+//	 puttykeyfile = C:\\Users\\Administrator\\.ssh\\bm2048pub.ppk
 
 
 [1.11] 

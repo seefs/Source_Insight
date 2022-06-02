@@ -1,22 +1,13 @@
 
 基础路径设置:
 //basePath = 
-resPath = MS_MMI_Main/source/resource/mmi_res_240x240
+//resPath = MS_MMI_Main/source/resource/mmi_res_240x240
+resPath = MS_MMI_Main/source/resource/mmi_res_128x128
 res:\\
-appPath = MS_MMI_Main\source\mmi_app\app
-app:\\
-commonPath = MS_MMI_Main\source\mmi_app\common
-common:\\
-zdtPath = MS_MMI_Main\source\mmi_app\app\zdt
 zdt:\\
-fzdPath = MS_MMI_Main\source\mmi_app\app\fzd
 fzd:\\
 
-
-
-/***********************************************************************/
-
-//目录[Num][Ca]:
+//目录:
 // 1. 
 Save:node\C\study\Macro_slide_8910.h \[1.1\] btn
 Save:node\C\study\Macro_slide_8910.h \[1.2\] list
@@ -150,6 +141,14 @@ CommonWin_GetLayoutByType
 common:c\watch_commonwin_internal.c CommonWin_GetLayoutByType
 
 
+// sms pubwin
+// --img
+res:sms\MMI_RES_DEFAULT\IMAG\watch\
+app:sms\h\sms_mdu_def.h  IMAGE_SMS_NOTE_BG
+//
+app:sms\c\watch_sms_message.c  MMISMS_OpenNoteWin
+
+
 
 
 [1.5] banner
@@ -167,7 +166,7 @@ res:im/MMI_RES_DEFAULT/IMAG/TOUCH/
 
 [1.7] tp
 //
-MS_MMI_Main\source\mmi_kernel\source\c\mmk_tp.c  MMK_DispatchMSGTp
+source:mmi_kernel\source\c\mmk_tp.c  MMK_DispatchMSGTp
 
 
 
@@ -179,6 +178,7 @@ MS_MMI_Main\source\mmi_kernel\source\c\mmk_tp.c  MMK_DispatchMSGTp
 [1.9] anim, common
 // res--anim(charge)
 res:common/MMI_RES_DEFAULT/ANIM/WATCH_INDICATOR_ANIM/
+
 // res--bt, btn bg
 res:common/MMI_RES_DEFAULT/IMAG/Common/
 // res--img
@@ -193,6 +193,9 @@ res:common/MMI_RES_DEFAULT/IMAG/Scrollkey/
 res:clock/MMI_RES_DEFAULT/IMAG/worldclock/
 res:clock/MMI_RES_DEFAULT/IMAG/timer/
 res:clipbrd/MMI_RES_DEFAULT/IMAG/
+
+//
+source:mmi_app\common\h\common_mdu_def.h  image_watch_waitingwin_fullscreen_pic
 
 
 
@@ -349,6 +352,9 @@ app:slidepage\c\watch_slidepage.c  MMI_RESULT_E^HandleSlidePageMsgHook
 // res--menu
 res:spde\MMI_RES_DEFAULT\IMAG\mainmenu
 
+// idle
+app:mainmenu\c\mainmenu_win.c  MMIAPIMENU_CreatMainMenu
+app:spde\c\spde_wintable.c  HandleSPDE_WatchMainMenuWinMsg
 // enter
 app:mainmenu\c\mainmenu_win.c  MMIAPIMENU_CreatMainMenu
 app:spde\c\spde_wintable.c  HandleSPDE_WatchMainMenuWinMsg
@@ -466,6 +472,7 @@ MMISMS_DEFAULT_WORD_NUM, STXT_SMS_TEMP_1_EXT01
 
 // idle sms
 DisplayWinPanelFgAddUnreadInfoNum
+
 
 
 [2.8] record
@@ -634,7 +641,8 @@ app:spde\c\spde_wintable.c  QRCODE_FILE_NAME
 
 [2.15] other app
 // res--menu
-res:common/MMI_RES_DEFAULT/IMAG/Launcher/menu4
+res:/
+res:common/MMI_RES_DEFAULT/IMAG/Launcher/menu4/
 
 // 微聊
 app:launcher\c\watch_launcher_main.c  WatchWCALL_MainWin_Enter
@@ -645,17 +653,17 @@ app:launcher\c\watch_launcher_main.c  WatchWADD_MainWin_Enter
 
 
 // 计步
-res:common/MMI_RES_DEFAULT/IMAG/watch/jibu
+res:common/MMI_RES_DEFAULT/IMAG/watch/jibu/
 app:launcher\c\watch_launcher_main.c  WatchJiBu_MainWin_Enter
 
 
 // 心率
-res:common/MMI_RES_DEFAULT/IMAG/watch/health
+res:common/MMI_RES_DEFAULT/IMAG/watch/health/
 app:launcher\c\watch_launcher_main.c  WatchHR_MainWin_Enter
 
 
 // 体温
-res:common/MMI_RES_DEFAULT/IMAG/watch/health
+res:common/MMI_RES_DEFAULT/IMAG/watch/health/
 app:launcher\c\watch_launcher_main.c  WatchTemp_MainWin_Enter
 
 

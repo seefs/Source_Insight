@@ -13,9 +13,17 @@ Save:node\C\study\Macro_nv_8910.h \[1.10\] IMEI
 Save:node\C\study\Macro_nv_8910.h \[1.11\] bat_capacity
 Save:node\C\study\Macro_nv_8910.h \[1.12\] custom
 Save:node\C\study\Macro_nv_8910.h \[1.13\] nv_build
-Save:node\C\study\Macro_nv_8910.h \[1.14\] 
-Save:node\C\study\Macro_nv_8910.h \[1.15\] 
+Save:node\C\study\Macro_nv_8910.h \[1.14\] nand/nor
+Save:node\C\study\Macro_nv_8910.h \[1.15\] test
+Save:node\C\study\Macro_nv_8910.h \[1.16\] audio_calib_VQE
+Save:node\C\study\Macro_nv_8910.h \[1.17\] 
+Save:node\C\study\Macro_nv_8910.h \[1.18\] 
+Save:node\C\study\Macro_nv_8910.h \[1.19\] 
+Save:node\C\study\Macro_nv_8910.h \[1.20\] 
+Save:node\C\study\Macro_nv_8910.h \[1.21\] 
+Save:node\C\study\Macro_nv_8910.h \[1.22\] 
 
+Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 
 
@@ -144,6 +152,7 @@ SPDE_PRJ/K220U_HYBL_H660A_HTX_LTC/project_UIS8910_ROM_16MB_DS_USER.mk 3IN1
 nv1:audio_calib_VQE.nvm  65
 nv1:audio_calib_VQE.nvm  65
 nv3:audio_calib_VQE.nvm  65
+nv:audio_calib_VQE.nvm  65
 // 2IN1,3IN1
 //    ITEM_CONTENT = 0x2
 // 独立
@@ -333,12 +342,72 @@ HW:{project}\
 
 
 
-[1.14] 
+[1.14] nand/nor
 // 
 // 107是nand，8910是nor 两种flash
 
 
 
-[1.15] 
+[1.15] test
+// usb--实际没有其他使用
+app:eng\c\mmieng_main.c  MMIENG_NV_USB_TEST_SET_SETTING
+
+
+
+[1.16] audio_calib_VQE
+//
+nv:\
+
+
+### 1.实测是这个
+// Headset 耳机
+nv:audio_sc6531efm_AEC.nvm  32
+
+// Handset 听筒
+nv:audio_sc6531efm_AEC.nvm  3967
+
+// Handsfree 免提
+nv:audio_sc6531efm_AEC.nvm  7902
+
+### 2.
+// Headset 耳机
+nv:audio_arm_6531efm.nvm  32
+
+// Handset 听筒
+nv:audio_arm_6531efm.nvm  4333
+
+// Handsfree 免提
+nv:audio_arm_6531efm.nvm  6476
+
+
+
+
+[1.17] 
+
+
+
+
+[1.18] 
+
+
+
+
+[1.19] 
+
+
+
+
+[1.20] 
+
+
+
+
+[1.21] 
+
+
+
+
+[1.22] 
+
 
 

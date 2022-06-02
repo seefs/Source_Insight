@@ -65,6 +65,12 @@ GUI_DisplayBorder
 
 [1.2] idle, lock
 // open
+//		==>MAIN_IDLE_WIN_ID
+//		==>IdleWin_HandleMsg
+//		====>HandleIdleMsg
+//		======>MMIIDLE_MStyleHandleMsg
+//		====>MMIAPIWIFI_Init
+//		====>WatchLAUNCHER_Enter
 app:idle\c\mainapp.c  MMIAPIIDLE_OpenIdleWin
 
 // IDLE--107
@@ -76,6 +82,7 @@ app:idle\c\mmiidle_mstyle.c  void^DisplayIdleWinSoftkey
 
 
 // --idle--pos
+app:theme/c/mmidisplay_data.c
 app:theme/c/mmidisplay_data_{size}.c  MMI_IDLE_DISPLAY_T^^mmi_idle_display
 // --idle--sim
 app:theme/c/mmidisplay_data_{size}.c  MMI_IDLE_COMON_MAIN_LCD_Y_NETWORKNAME
@@ -95,18 +102,40 @@ app:theme/h/mmi_position.h  IDLE_TIME_PIC_WIDTH
 //		======>3.DisplayDate
 //		====>DisplayMissedEventDC
 app:keylock\c\mmikl_keylock.c  BOOLEAN^MMIKL_HandleKLDispWinMsg
-
+//		==>DisplaySSTimerWithImage
+//		======>1.DrawAClock
+app:keylock\c\mmikl_keylock.c  void^DisplayScreenSaverTime( )
 
 
 
 [1.3] menu, second
+// menu
+//		==>CreateMainMenuCtrl                        # init
+//		====>MainmenuCtrlConstruct
+//		======>MatrixMenuInit
+//		========>MatrixMenuInitMenuDetail
+//		==========>MatrixMenuGetInfo
+//		============>MatrixMenuGetNotTitleStyleInfo
+//		============>MatrixMenuGetTitleStyleInfo     # bg rect
+//		==>MainmenuCtrlHandleMsg                     # up/down
+//		====>MatrixMenuHandle
+//		======>HandleMatrixMenuDirectionKey
+//		========>MSG_FULL_PAINT
+//		==>MainmenuCtrlHandleMsg
+//		====>MSG_CTL_PAINT
+
+// menu--one page
+//		==>MatrixMenuDraw
+//		====>MatrixMenuGetTopAndBottomLineIndex    # icon rect
+
+// menu--matrix
+//		==>MatrixMenuDraw
+//		====>HandleMatrixMenuGetIconRect
+
+
 // index
 source:mmi_kernel/include/mmitheme_mainmenu.h  MMITHEME_MAINMENU_CUR_ITEM_INDEX
 source:mmi_kernel/include/mmitheme_mainmenu.h  MAINLCD_SIZE_240X320
-// bg rect
-app:mainmenu\c\mmi_mainmenu_matrix.c  BOOLEAN^MatrixMenuGetTitleStyleInfo
-// icon rect
-app:mainmenu\c\mmi_mainmenu_matrix.c  HandleMatrixMenuGetIconRect
 // draw
 app:mainmenu\c\mmi_mainmenu_matrix.c  MMITHEME_DrawMainmenuItem
 // title
@@ -176,8 +205,10 @@ ctrl:Menu\c\ctrlmenu_popup.c  check_unsel_img
 ctrl:Menu\c\ctrlmenu_sec.c   check_unsel_img
 // menu enter
 source:mmi_app\app\mainmenu\c\mainmenu_win.c  case^ID_TOOLS_RECORD
+source:mmi_app\app\mainmenu\c\mainmenu_win.c  case^ID_ENTERTAIMENT_CAMERA
 
 //tone
+
 
 
 [1.4] dial
@@ -271,10 +302,16 @@ app:eng/c/mmieng_uitestwin.c  int32^GetUITestResultInfo
 app:eng/c/mmieng_main.c  MMI_RESULT_E^ENGMainMenuWinHandleMsg
 // 工程模式--menu
 app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_eng
+// 工程模式--apptest
+app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_app_set
+// 工程模式--apptest--usb
+app:eng/c/mmieng_main.c  case^ID_ENG_USB_TEST_SET
 
+// 老化测试
+app:eng/c/mmieng_uitestwin.c  SPD_ENGINEER_SUPPORT_MONKEY_SET
 
-// MONKEY_TEST
-
+// touch
+Save:node\C\project\Macro_cfg_8910.h  __torch__
 
 
 [1.6] file
@@ -310,8 +347,10 @@ app:fmm\c\mmifmm_mainwin.c HandleMenuOption
 // record
 app:fmm\c\mmifmm_mainwin.c HandleRecordListWinMsg
 
-//FILE
+// FILE
 MMIFMM_HandleOpenFileWin
+// 不进U盘 __UsbMode__
+app:udisk\c\mmiudisk_wintab.c  USB_CONNECT_DEFAULT_CHARGE
 
 
 [1.7] Setting
@@ -463,6 +502,9 @@ app:cc\c\mmicc_{wintab}.c  9453
 ### 大屏
 // label--sim, state
 app:cc\c\mmicc_{wintab}.c  8085  sim, state
+//		==>{158,188}, 96+30+30
+app:cc\h\mmicc_position_{size}.h  CC_MAIN_INFO_TIME_LABEL_TOP
+app:cc\c\mmicc_{wintab}.c  ^^^^
 // label--time
 app:cc\c\mmicc_{wintab}.c  8272  time
 // label--name, num
@@ -471,7 +513,41 @@ app:cc\c\mmicc_{wintab}.c  8454  num
 // label--num
 //		====>CC_MAIN_INFO_NAME_LABEL_TOP
 //		====>CC_MAIN_INFO_STATE_LABEL_TOP
-app:cc\c\mmicc_{wintab}.c  8454  num
+app:cc\c\mmicc_{wintab}.c  CC_MAIN_INFO_NAME_LABEL_TOP
+
+// --cc--bar
+//		==>{0,40}
+// --cc--str--3st--num/state
+//		==>{0,30}
+app:cc\c\mmicc_{wintab}.c  7965
+app:cc\h\mmicc_position_{size}.h  CC_SEC_INFO_NAME_LABEL_TOP
+app:cc\h\mmicc_position_{size}.h  CC_SEC_INFO_STATE_LABEL_TOP
+app:cc\c\mmicc_{wintab}.c  ^^^^MMICC_CONNECTED_HOLD_NAME_LABEL_CTRL_ID
+//		==>{99,127}
+//		==>{219,247}
+//		==>{246,274}
+// --cc--str--num
+//		==>{36,66}
+//		====> 36 = (96)-60-0
+app:cc\h\mmicc_position_{size}.h  CC_MAIN_INFO_NAME_LABEL_TOP
+app:cc\c\mmicc_{wintab}.c  ^^^^MMICC_CONNECTED_NAME_LABEL_CTRL_ID  [2]
+// --cc--str--name
+// --cc--anim--photo
+//		==>{96,161}
+//		====> 96 = (96+30+30)-60-0
+app:cc\h\mmicc_position_{size}.h    CC_MAIN_INFO_ANIM_TOP
+app:cc\c\mmicc_{wintab}.c  void^PdaDisplayCallPhotoForCommon
+// --cc--str--time
+// --cc--str--connect/state
+//		==>{188,218}
+//		====> 188 = (96)+62+30
+app:cc\h\mmicc_position_{size}.h    CC_MAIN_INFO_STATE_LABEL_TOP
+app:cc\c\mmicc_{wintab}.c  ^^^^MMICC_CONNECTED_STATE_LABEL_CTRL_ID
+// --cc--anim--Mo/Mt/Cur/Auto/Opt/Fly
+//		==>{228,268}
+app:cc\h\mmicc_position_{size}.h  CC_MAIN_INFO_BOTTOM_ANIM_TOP
+app:cc\c\mmicc_{wintab}.c  DisplayCallAnimPhotoForCommon
+//		==>{275,319}  #softkey
 
 
 // 流程--去电-MO，
@@ -611,6 +687,10 @@ app:pb\c\mmipb_view.c  void^HandleMainReloadMsg
 app:pb\c\mmipb_view.c  void^HandleOperateReloadList
 
 
+// pb-memory
+app:pb\c\mmipb_view.c  MMI_RESULT_E^^HandleMemDetailWinMsg
+
+
 
 //1.cl-menu
 app:cl\c\Mmicl_wintab.c   MMICL_ICON_MAIN_MENU_WIN_TAB
@@ -638,11 +718,33 @@ InitPdaCallLogListCtrl        CallLog
 
 
 
-
-
 [1.11] camera
 // Win
+//		==>MMIAPIDC_OpenPhotoWin
+//		====>MMIAPIDCSRV_OpenMainWin
+//		======>EntryApplet
+//		========>DCAMERA_GetActualSnapshotMaxResolution
+//		========>EntryMainWin
+//		==========>OpenMainWin
+//		============>StartDCApplet
+//		==============>SPRD_CAMERA_APPLET_ID
+//		==============>MMK_StartApplet
+//		==>RegDCAppletInfo
+//		====>SPRD_CAMERA_APPLET_ID
+//		======>DCApplet_HandleEvent
+//		========>DC_ValidatePrivacyAppEntry
+//		==========>CreateDCWaitWin
+//		==>HandleDCWaitWinMsg
+//		====>InitStartDCActivity
+//		======>InitRunningParameter
+//		====>StartDCActivity
+//		======>MMIDC_OpenDC
+//		========>DCAMERA_Open
+//		======>MMIDC_DC_TAB     ##
 app:camera\c\mmidc_main_wintab.c  MMI_RESULT_E^HandleCameraWinMsg
+//		==>MMIDC_FlowStart
+//		====>StartDCPreview
+//		======>MMIDC_ResetHitTimer  # 定时退出
 // softkey
 app:camera\c\mmidc_full_osd_display.c  MMIDC_DisplaySettingTip
 app:camera\c\mmidc_full_osd_display.c  void^MMIDC_DisplayString
@@ -718,8 +820,8 @@ app:pic_viewer\c\mmipicview_list.c  MMIPICVIEW_TITLE_COLOR
 [1.13] record
 // enter
 //		==>MMIAPIRECORD_OpenMainWin
+//		====>SPRD_RECORD_APPLET_ID
 //		====>MMK_StartApplet
-//		======>SPRD_RECORD_APPLET_ID
 //		==>MMIRECORD_RegAppletInfo
 //		====>SPRD_RECORD_APPLET_ID
 //		======>RecordApplet_HandleEvent
@@ -985,12 +1087,17 @@ app:accessory\c\mmicalc_main.c  MMI_RESULT_E^HandleCalcWinMsg
 [1.20] calendar
 // draw
 app:accessory/c/mmicalendar_main.c  MMI_CALENDAR_CHINESE_JIEQI
-app:accessory/c/mmicalendar_main.c  DrawMonthCalendar
 // pos
 app:accessory/h/mmiacc_position.h 128X128
 
-// Win
 // main
+//		==>DrawMonthCalendar
+//		====>DrawMonthTitle
+//		====>DrawYearTitle
+//		====>DrawLunarDate
+//		====>DrawSchdule
+//		====>DrawWeeks
+//		====>DrawMonthDates
 app:accessory\c\mmicalendar_main.c MMI_RESULT_E^HandleCalendarWinMsg
 // opt
 app:accessory\c\mmicalendar_main.c MMI_RESULT_E^HandleCalendarOptionWinMsg

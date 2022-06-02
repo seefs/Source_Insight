@@ -12,7 +12,6 @@ Save:node\C\cfg\Macro_c_path_sprd.h \[1.8\]
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.9\] 
 
 
-
 [1.1] _sprd_cur_
 // (1).curKey
 // --cur
@@ -23,13 +22,12 @@ Save:set\Macro_Set_Path_sprd_.h  curKey
 Save:set\Macro_Set_Key.h
 
 
-// (2).bak
-// A86===>自动配置
-curKey = 
-
 // 从build 中自动配置;从bat默认修改prj(非服务器编译)
 build\
 
+// 未添加功能:
+//==>最新时间==>自动配置
+//
 
 
 [1.2] //_sprd_copy_

@@ -6,13 +6,8 @@
 
 0Key  = 8910
 
-HWPath  = G:\_HW_NV_PARA.git\8910FFS\W20.36.2\
+HWPath  = HWNV:8910FFS\W21.12.7\
 HW:\\
-downPath  = D:\Desktop\tool\UIS8910_down_tool\wa03u_git\
-down:\\
-tool_miniPath  = D:\save\tool_mini\tool\
-tool_mini:\\
-
 
 imagesPath = MS_MMI_Main\source\resource\mmi_res_{size}\
 images:\\
@@ -41,7 +36,7 @@ versionKey  = UIX8910_uis8910ff_refphone_version
 prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
-projectKey   = WA22U_SW40E_QQVGA
+projectKey   = WA22U_SW34E_QQVGA
 curKey   = UIS8910_ROM_16MB_SS_{project}_USER
 cfgKey   = uis8910_phone_user_base_config
 sizeKey  = 128X128

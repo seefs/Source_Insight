@@ -21,7 +21,10 @@ Save:node\C\study\Macro_zmaee_8910.h \[1.8\] 耗电
 Save:node\C\study\Macro_zmaee_8910.h \[1.9\] Torch
 Save:node\C\study\Macro_zmaee_8910.h \[1.10\] 客户
 Save:node\C\study\Macro_zmaee_8910.h \[1.11\] 表盘----------入口
-Save:node\C\study\Macro_zmaee_8910.h \[1.12\] 
+Save:node\C\study\Macro_zmaee_8910.h \[1.12\] charge
+Save:node\C\study\Macro_zmaee_8910.h \[1.13\] 
+Save:node\C\study\Macro_zmaee_8910.h \[1.14\] 
+Save:node\C\study\Macro_zmaee_8910.h \[1.15\] 
 // 2. path
 Save:node\C\study\Macro_zmaee_8910.h \[2.1\] patch
 Save:node\C\study\Macro_zmaee_8910.h \[2.2\] fota
@@ -133,8 +136,11 @@ SIM_PLUG_IN_SUPPORT
 
 [1.9] Torch
 //
-SPDE_PRJ/WA07U_F30ZL_AMT/zmaee/c/zmaee_watch.c ZMAEETorchWinHandleMsg
-SPDE_PRJ/WA07U_F30ZL_AMT/zmaee/c/zmaee_watch.c 4580
+zmaee:c/zmaee_watch.c  ZMAEETorchWinHandleMsg
+
+
+zmaee:\\
+zmaee:c/zmaee_watch.c  ZMAEETorchWinHandleMsg
 
 
 [1.10] 客户
@@ -212,8 +218,15 @@ zmaee:c\zmaee_porting.c  MMI_RESULT_E^ZMAEE_WinMsgHandle
 
 
 
-[1.12] 
-
+[1.12] charge
+//
+zmaee:c\zmaee_watch.c  ZmaeeDrawChargingInfo
+zmaee:c\zmaee_watch.c  3786
+//	case MSG_FULL_PAINT:
+//		ZmaeeDrawChargingInfo();
+//
+//
+app:phone\c\mmiphone_charge.c  ZMAEE_Watch_OpenChargingWin
 
 
 

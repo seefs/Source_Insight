@@ -1,6 +1,6 @@
 
 //Ä¿Â¼
-Save:node\C\study\Macro_doc_8910.h \[1.1\] Message ÇÐ»»
+Save:node\C\study\Macro_doc_8910.h \[1.1\] Message-------------
 Save:node\C\study\Macro_doc_8910.h \[1.2\] FUN Èë¿Ú-------------
 Save:node\C\study\Macro_doc_8910.h \[1.3\] //lang
 Save:node\C\study\Macro_doc_8910.h \[1.4\] ÅäÖÃ
@@ -22,7 +22,7 @@ Save:node\C\study\Macro_doc_8910.h \[1.18\]
 
 
 
-[1.1] Message ÇÐ»»
+[1.1] Message
 
 //	Message ÇÐ»»
 Save:node\C\study\Macro_Spr_MsgId.h
@@ -30,7 +30,13 @@ Save:node\C\study\Macro_Spr_MsgId.h
 // MMK_WinGrabFocus(MMIWIFI_LIST_WIN_ID);
 
 
-
+//
+// SCI_VK_RIGHT, 7
+// KEY_EXT_Q, 65, 0x41, SCI_VK_Q
+source:winsimulator_tp\skin\mssim_duallcd_320_240_Q.ini  KEY_EXT_Q
+source:winsimulator_tp\skin\mssim_duallcd_320_240_Q.ini  KEY_5
+build\{cur}_builddir\
+build\{cur}_builddir\win\mssim_duallcd_320_240_Q.ini  KEY_EXT_Q
 
 ### --key--dial--down
 //		==>APP_Task
@@ -237,6 +243,14 @@ RES_NODE_DATA_T
 
 IMG_RES_DST_T	 ÏÔÊ¾
 IMG_RES_SRC_T
+
+
+//		==>CTRLBASE_OBJ_T
+//		====>win_handle
+//		====>handle
+//		====>ctrl_id
+//		======>
+//		========>
 
 
 

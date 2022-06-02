@@ -36,7 +36,15 @@ macro GetPubKeyBuf(mode)
 	
 	return setBuf
 }
-//获取公共路径BUF
+//获取公共路径BUF 1
+macro GetCommonPathBuf(hbuf)
+{
+	SetName = getSetPath(0) # "\\Macro_Set_Path_common.h"
+	setBuf = OpenCache(SetName)
+	
+	return setBuf
+}
+//获取公共路径BUF 2
 macro GetPubPathBuf(hbuf)
 {
 	baseName = getBasePath(hbuf)
@@ -211,7 +219,7 @@ macro IsScriptFile(hbuf)
 macro IsNoteFile(hbuf)
 {
 	return (IsFileName(hbuf, "Macro_")||IsFileName(hbuf, "Simple_CTRL_")||IsFileName(hbuf, "bak_")
-		||IsFileName(hbuf, "Log_"))||IsFileName(hbuf, "si_modis_"))
+		||IsFileName(hbuf, "Log_"))
 }
 
 //从右边匹配
@@ -974,6 +982,16 @@ macro IsTransHead(hbuf, fHead)
 		}
 	}
 	
+	//check pub path file
+	pathBuf = GetCommonPathBuf(hbuf)
+	//msg("pathBuf " # pathBuf)
+	if(pathBuf != hNil){
+		headPath = getMacroValue(pathBuf, fHead # "Path", 1)
+		if(headPath != ""){
+			return 3
+		}
+	}
+	
 	return 0
 }
 macro ReTransHead(hbuf, fHead, curPath)
@@ -1020,6 +1038,27 @@ macro ReTransHead(hbuf, fHead, curPath)
 		}
 		
 		pathBuf = GetPubPathBuf(hbuf)
+		if(pathBuf != hNil){
+			headPath = getMacroValue(pathBuf, fHead # "Path", 1)
+			if(headPath != ""){
+				curPath = ReplaceWord(curPath, fHead # ":", headPath # "\\")
+				
+				//for each
+				next = GetHeadIndex(curPath)
+				if (next != "X")
+				{
+					// nextHead----base
+					nextHead = strmid(curPath, 0, next)
+					// 不区分1还是2
+					if(IsTransHead(hbuf, nextHead)>=1) {
+						curPath = ReTransHead(hbuf, nextHead, curPath)
+					}
+				}
+				return curPath
+			}
+		}
+		
+		pathBuf = GetCommonPathBuf(hbuf)
 		if(pathBuf != hNil){
 			headPath = getMacroValue(pathBuf, fHead # "Path", 1)
 			if(headPath != ""){
@@ -1184,7 +1223,7 @@ macro getKeyHead(hbuf, fHead)
 		return ""
 	}
 	
-	//get cfg file
+	//1.get cfg file
 	pathBuf = GetPubPathBuf(hbuf)
 	if(pathBuf == hNil){
 		msg("key: {@fHead@}" # CharFromKey(13)
@@ -1198,6 +1237,30 @@ macro getKeyHead(hbuf, fHead)
 	if(keyVal != ""){
 		keyVal  = ReAllKeyHead(hbuf, keyVal)  //replace loop
 		return keyVal
+	}
+
+	//2.get common cfg
+	pathBuf = GetCommonPathBuf(hbuf)
+	if(pathBuf != hNil){
+		//get new Key
+		keyVal = getMacroValue(pathBuf, fHead # "Key", 1)
+		if(keyVal != ""){
+			keyVal  = ReAllKeyHead(hbuf, keyVal)  //replace loop
+			return keyVal
+		}
+	}
+	
+	//3.get alias
+	hbufConfig = GetPubKeyBuf(hbuf)
+	if(hbufConfig != hNil){
+		//get alias
+		num = SearchNumFromKey(hbufConfig, fHead)
+		if(num != ""){
+			path = SearchPathFromNum(hbufConfig, num)
+			if("" != path){
+				return path
+			}
+		}
 	}
 	
 	return ""

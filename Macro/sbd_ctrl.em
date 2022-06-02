@@ -65,12 +65,6 @@ macro CtrlD()
 		CodeAlign(hbuf)
 		stop
 	}
-	//4. .mk .def .mak中 同F10
-	else if(IsMakeFile(hbuf))
-	{
-		MakeGroup(hbuf)
-		stop
-	}
 	//5. *.em 中 同F10
 	else if(IsMacroFile(hbuf)||IsScriptFile(hbuf))
 	{

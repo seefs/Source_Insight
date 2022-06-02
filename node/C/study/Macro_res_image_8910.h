@@ -108,14 +108,11 @@ images:common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\battery_syle1\
 
 // --time
 source:mmi_app\common\h\common_mdu_def.h  IDLE_BLACK_FONT
-images:common\MMI_RES_DEFAULT\IMAG\QVGA_TIME_BLACK\Idle_time\
-
-// --idle time
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_IDLE_TIME_AM
-// --ºÚµ×°××Ö
-images:common\MMI_RES_DEFAULT\IMAG\Idle_time\
-// --°×µ×ºÚ×Ö
+// --time--black--°×µ×ºÚ×Ö
 images:common\MMI_RES_DEFAULT\IMAG\QVGA_TIME_BLACK\Idle_time\
+// --time--default--ºÚµ×°××Ö
+images:common\MMI_RES_DEFAULT\IMAG\Idle_time\
 
 
 // --lock time
@@ -132,6 +129,10 @@ source:mmi_app\common\h\common_mdu_def.h  IMAGE_IDLE_KEYLOCK_NUM_AM_CN
 images:common\MMI_RES_DEFAULT\IMAG\QVGA_TIME\Idle_time\
 // --°××Ö
 images:common\MMI_RES_DEFAULT\IMAG\key_lock\
+
+// --sim--18*18
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_CUSTOM_SIM1
+images:common\MMI_RES_DEFAULT\IMAG\toolkit\
 
 
 
@@ -175,6 +176,12 @@ source:mmi_app\common\h\common_mdu_def.h  ANIM_PUBWIN_WAIT_PDA
 images:common\MMI_RES_DEFAULT\ANIM\ANIM_PUBWIN_WAIT_PDA\
 // 128*160
 images:common\MMI_RES_DEFAULT\ANIM\ANIM_PUBWIN_WAIT\
+
+// pubwin
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_PUBWIN_BG_LIGHT
+//
+images:common\MMI_RES_DEFAULT\IMAG\Pubwin\BAR\
+
 
 
 [1.12] browser

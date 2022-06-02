@@ -352,7 +352,7 @@ macro SearchNumFromPath(hbufConfig, basePath)
 
 	basePath = ReplaceWord(basePath, "\\", "\\\\") //fRegExp = 1
 	//=[ ]*xxxxx,
-	searchFor = "=[ ]*" # basePath # ","
+	searchFor = "=[ ]*" # basePath # "$"
 	//SearchInBuf (hbufBase, pattern, lnStart, ichStart, fMatchCase, fRegExp, fWholeWordsOnly)
 	sel = SearchInBuf(hbufConfig, searchFor, 0, 0, 0, 1, 0)
 	if (sel != nil)
@@ -368,4 +368,26 @@ macro SearchNumFromPath(hbufConfig, basePath)
 	return err
 }
 
+//get path
+macro SearchNumFromKey(hbufConfig, keyPath)
+{
+	var err
+	var lineStr
+	err = ""
+
+	searchFor = "key[ ]*=[ ]*" # keyPath # "$"
+	//SearchInBuf (hbufBase, pattern, lnStart, ichStart, fMatchCase, fRegExp, fWholeWordsOnly)
+	sel = SearchInBuf(hbufConfig, searchFor, 0, 0, 0, 1, 0)
+	if (sel != nil)
+	{
+		lineStr = GetBufLine(hbufConfig, sel.lnLast)
+		marKey = GetLineMacro(lineStr)
+		if(marKey != "")
+		{
+			mar = ReplaceWord(marKey, "key", "")
+			return mar
+		}
+	}
+	return err
+}
 

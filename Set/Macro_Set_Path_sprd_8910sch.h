@@ -6,13 +6,8 @@
 
 0Key  = 8910
 
-HWPath  = G:\_HW_NV_PARA.git\8910FFS\W20.36.2\
+HWPath  = HWNV:8910FFS\W20.36.2\
 HW:\\
-downPath  = D:\Desktop\tool\UIS8910_down_tool\wa03u_git\
-down:\\
-tool_miniPath  = D:\save\tool_mini\tool\
-tool_mini:\\
-
 
 imagesPath = MS_MMI_Main\source\resource\mmi_res_{size}\
 images:\\

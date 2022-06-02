@@ -98,13 +98,15 @@ MS_MMI_Main/source/mmi_app/common/h/mmi_appmsg.h
 
 // 107
 app:bt\c\mmibt_app.c  Trace_Log_Buf_Print
-MS_MMI_Main/source/mmi_app/app/fmm/c/mmi_filemgr.c
-MS_MMI_Main/source/mmi_app/app/phone/c/mmiphone.c
-MS_MMI_Main/source/mmi_app/common/h/mmi_appmsg.h
+MS_MMI_Main/source/mmi_app/app/fmm/c/mmi_filemgr.c  FILE_LOG_SUPPORT
+MS_MMI_Main/source/mmi_app/app/phone/c/mmiphone.c  FILE_LOG_SUPPORT
+MS_MMI_Main/source/mmi_app/common/h/mmi_appmsg.h  FILE_LOG_SUPPORT
 
 //
 //	Trace_Log_Buf_Print("MMIBT_A2DPCallBackFunc msg_id=%x",  pMsg->msg_id);
 
+// watch--usb mode
+Save:node\C\study\Macro_app_8910.h  __UsbMode__
 
 
 [1.4] SALES_TRACKER
