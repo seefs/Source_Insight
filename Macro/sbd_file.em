@@ -105,6 +105,7 @@ macro getCustPath(0)		{	return 69	}
 macro getCustRow(0)			{	return 72	}
 macro getPyInfo(0)			{	return 75	}
 macro getAndroidInfo(0)			{	return 78	}
+macro getHtmlInfo(0)			{	return 81	}
 //macro getXXInfo(0)			{	return 81	}
 macro getCommentRow(0)			{	return 84	}
 macro getContentsRow(0)			{	return 87	}
@@ -870,6 +871,16 @@ macro GetTransFileName(hbuf, fName, cNum)
 		//1)优先用basePath; 
 		//2)屏蔽设置路径(不用basePath设置); 
 		bPath = getMacroValue(hbuf, getMarBasePath(0), 1) //"basePath"
+		// path嵌套
+		index2 = GetHeadIndex(bPath)
+		if (index2 != "X")
+		{
+			// noteCmd2--->    "base"
+			// curPath---->    "...MoDIS_VC9\MoDIS.sln"
+			noteCmd2 = strmid(bPath, 0, index2)
+			if(IsTransHead(hbuf, noteCmd2)>=1)
+				bPath = ReTransHead(hbuf, noteCmd2, bPath)
+		}
 	}
 	if(bPath == "")
 	{
@@ -916,7 +927,6 @@ macro GetTransFileName(hbuf, fName, cNum)
 	
 	//replace
 	fName = ReplaceWord(fName, "Save:", getSavePath(0) # "\\")
-	fName = ReplaceWord(fName, "App:", getUserPath(0) # "\\")
 	//use "^" as space
 	fName = ReplaceWord(fName, "^", " ")
 	//resolve SI Cache bug.
@@ -1250,16 +1260,13 @@ macro getKeyHead(hbuf, fHead)
 		}
 	}
 	
-	//3.get alias
+	//3.get key
 	hbufConfig = GetPubKeyBuf(hbuf)
 	if(hbufConfig != hNil){
-		//get alias
-		num = SearchNumFromKey(hbufConfig, fHead)
-		if(num != ""){
-			path = SearchPathFromNum(hbufConfig, num)
-			if("" != path){
-				return path
-			}
+		//get path
+		path = getPathFromKey(hbufConfig, fHead)
+		if("" != path){
+			return path
 		}
 	}
 	

@@ -26,7 +26,7 @@ Save:node\ToolsMsg\Macro_git_md.h \[1.17\] 视频
 Save:node\ToolsMsg\Macro_git_md.h \[1.18\] Emoji表情符号
 Save:node\ToolsMsg\Macro_git_md.h \[1.19\] 
 Save:node\ToolsMsg\Macro_git_md.h \[1.20\] 锚点--目录
-Save:node\ToolsMsg\Macro_git_md.h \[1.21\] 
+Save:node\ToolsMsg\Macro_git_md.h \[1.21\] 注释
 Save:node\ToolsMsg\Macro_git_md.h \[1.22\] 
 Save:node\ToolsMsg\Macro_git_md.h \[1.23\] 
 Save:node\ToolsMsg\Macro_git_md.h \[1.24\] 
@@ -374,7 +374,9 @@ Save:node\ToolsMsg\Macro_git_md.h \[1.26\] 其他
 // 功能不好用, 不能带标点符号与空格；也不能来回跳；
 
 
-[1.21] 
+[1.21] 注释
+; xxxx (html不显示)
+: xxxx (html显示)
 
 
 

@@ -13,10 +13,11 @@
 //   1个key对应1个路径  否则不能对比
 //   2个key对应1个路径  如 “_SI4.0” 中的路径， 并放最后
 //
-// 10alias:  别名 脚本内部使用
+// 10alias:  总类别名 脚本内部使用
 // 
 // 10key:    项目文本中替换使用 (替换 {pro})
 //           同一套代码可用同一名称 (svn1 svn2 都用svn)
+//           其他路径也用key
 //
 // 10RuleEn: F5使用
 // 
@@ -134,11 +135,14 @@
 90alias = base
 90RuleEn = base
 // 不带\SI
-90 = D:\Save
+// 区分大小写, 否则save文件不能比较
+90 = D:\save
 90 = D:\_SI4.0\save.si4project
-90 = D:\save\Source Insight\Projects\Base
+90 = D:\save\Source^Insight\Projects\Base
+91 = D:\save\SI_pri
 //
 90key = base
+91key = base_pri
 
 
 //(10) tmp
@@ -156,12 +160,14 @@
 
 
 //(11) tmp
-110
-X:\NoneEmpty
-111
-X:\NoneEmpty
-112
-X:\NoneEmpty
+110alias = other
+// 未使用, 保存在 Macro_set_path_common.h 中更简单
+111 = C:\Program^Files\Beyond^Compare^4\BCompare.exe
+//111 = D:\Program^Files\Beyond^Compare^3\BCompare.exe
+
+111key = BCompare
+
+
 
 
 //(12) python

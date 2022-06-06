@@ -108,6 +108,7 @@ Qualcomm Atheros AR956x wireless network adapter
 // 或者
 --驱动--禁用--启用
 
+// NPcap loopback adapter 没有有效的IP配置
 
 
 
@@ -124,6 +125,11 @@ https://zhuanlan.zhihu.com/p/90731272
 // 关闭IPV6
 // 关闭诊断跟踪服务
 //   service--diagnostic 1/2/3 service
+
+
+// win10 错误报告禁用
+gpedit.msc-->
+
 
 
 [1.9] 电脑变慢
@@ -390,7 +396,7 @@ C:\Program^Files^(x86)\WanNengWBInput\10.0.4.10418
 
 
 // 小狼毫
-Save:node\C\project\Macro_c_list.h  __rime__
+Save:node\C\cfg\Macro_c_list.h  __rime__
 
 
 

@@ -90,6 +90,10 @@ git config [--local|--global|--system] --unset[-all] user.name
 C:\Users\Administrator\.gitconfig
 G:\wa03u_git\.git\config
 
+//
+//持久化存储的账号密码
+.git/.git-credentials
+
 
 [1.2] git config --list ---查看设置
 git config --list
@@ -186,6 +190,12 @@ git pull --upload-pack /path/to/git-upload-pack
 
 //
 git push <remotename> <commit SHA>:<branch>
+
+
+// 两个分支是两个不同的版本，具有不同的提交历史
+// Git :fatal: refusing to merge unrelated histories解决
+git pull origin master --allow-unrelated-histories
+
 
 
 [1.10] git push ------------上传
@@ -561,6 +571,8 @@ git checkout <name>
 
 //4) 切换分支
 git checkout <name>
+git checkout master
+git checkout main
 //切换分支后，在git bash中显示为绿色
 
 //5) 删除分支
@@ -839,6 +851,9 @@ cmd_s:ipconfig /flushdns
 https://www.ipaddress.com/
 https://www.ip-tracker.org/locator/ip-lookup.php
 https://community.spiceworks.com/tools/ip-lookup/
+
+// 提速代理
+//devsidecar
 
 
 [4.11] 

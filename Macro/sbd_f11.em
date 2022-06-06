@@ -877,6 +877,15 @@ macro OpenFileHander(hbuf, curPath, cur_row, noteWord, cNum, prompt)
 				TestMsg("从模板copy文件: " # CharFromKey(13) # cmdStr, 0)
 				ShellOpenCustomCmd(cmdStr)
 			}
+			else if(IsFileType(curPath, ".md"))
+			{
+				//9. 使用空模板
+				strDefFile = getCopyPath(0) # "\\default_file.md"
+				// 演示用，间隔1行
+				cmdStr = "copy " # strDefFile # " " # curPath
+				TestMsg("从模板copy文件: " # CharFromKey(13) # cmdStr, 0)
+				ShellOpenCustomCmd(cmdStr)
+			}
 			else if(prompt > 0)
 			{
 				return 1

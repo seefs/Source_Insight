@@ -4,9 +4,8 @@
 //这样, project->open project->base工程, 就不用添加很多文件了, 只用添加.em的目录
 
 
-//1) Save目录
+//1) Save目录(只能在*.em中设置)
 macro getSavePath(0)		{	return getRootPath(0)						    }
-macro getUserPath(0)		{	return "D:\\Save\\_SI_Cloud"					}
 
 //ShellExecute命令目录
 macro getCmdPath(0)			{	return getSavePath(0) # "\\Cmd"			}
@@ -24,31 +23,17 @@ macro getCopyPath(0)	    {	return getSavePath(0) # "\\Help\\DefaultFile"		}
 macro getLangInfoPath(0)	    {	return getSavePath(0) # "\\Help\\LangInfo"		}
 
 //2) 桌面，创建桌面link
-macro getDesktopPath(0)		{	return "E:\\desktop"				}
+macro getDesktopPath(0)	{  	       return  getToolPathFromKey("", "Desktop")			}
 
-
-//3) 项目路径列表设置在文件: 打开对应文件手动修改
-//macro getPathConfig(0)		{	return getSetPath(0) # "\\Macro_Set_Base.h"				}
-macro getKeyConfig(0)		{	return getSetPath(0) # "\\Macro_Set_Key.h"				}
-
-
-//4) Custom project
-//macro getCustomPath(0)		{	return "D:\\project"				}
-
-
-//5) Tool目录
+//3) Tool目录
 //Cmd
-macro getBComparePath(0)	{	return "\"C:\\Program Files\\Beyond Compare 4\\BCompare.exe\""			}
-//macro getBComparePath(0)	{	return "\"D:\\Program Files (x86)\\Beyond Compare 3\\BCompare.exe\""			}
-
+macro getBComparePath(0)	{  	       return  getToolPathFromKey("", "BCompare")			}
 //VC
-macro getVCPath(0)			{	return "C:\\Program Files (x86)\\Microsoft Visual Studio\\Common\\MSDev98\\Bin\\MSDEV.EXE"		}
-
+macro getVCPath(0)	           {  	   return  getToolPathFromKey("", "VC6")			}
 //VC2008
-macro getVS08Path(0)		{	return "C:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\Common7\\IDE\\devenv.exe"		}
-
+macro getVS08Path(0)           {  	   return  getToolPathFromKey("", "VS08")			}
 //RAR
-macro getRARPath(0)			{	return "\"C:\\Program Files (x86)\\360\\360zip\\360zip.exe\""		}
+macro getRARPath(0)            {  	   return  getToolPathFromKey("", "RAR")			}
 
 
 
@@ -94,8 +79,10 @@ macro getBasePath(hbuf)
 	//pathName = GetProjName (hprj)
 	proPath = GetProjDir (hprj)
 	
-	// 包含返回0
+	// left 包含 right 返回0
 	//ret = CompareEx(proPath, getSavePath(0), 1)//left 包含 right
+	
+	// 检测更多save路径
 	n = getBaseType(proPath)
 	type = n/10 *10
 	
@@ -213,12 +200,12 @@ macro getBaseType(pathName)
 }
 macro getBaseKey(n)
 {
-	hbufConfig = OpenCache(getKeyConfig(0))
+	hbufConfig = GetPubKeyBuf(0)
 	return getMacroValue(hbufConfig, n # "Key", 1)
 }
 macro getBaseOther(n, mode)
 {
-	hbufConfig = OpenCache(getKeyConfig(0))
+	hbufConfig = GetPubKeyBuf(0)
 	return getMacroValue(hbufConfig, n # mode, 1)
 }
 macro getBft(num)
@@ -266,7 +253,7 @@ macro SearchPathFromNum(hbufConfig, n)
 	
 	if(!isNumber(hbufConfig))
 	{
-		hbufConfig = OpenCache(getKeyConfig(0))
+		hbufConfig = GetPubKeyBuf(0)
 	}
 
 	searchFor = "^" # n # "[ ]*="
@@ -319,7 +306,7 @@ macro getBaseDirNum(pathName)
 	var ret
 	var nlength
 	
-	hbufConfig = OpenCache(getKeyConfig(0))
+	hbufConfig = GetPubKeyBuf(0)
 	nlength = strlen(pathName)
 	i = 1		//文件名长度
 	
@@ -368,14 +355,14 @@ macro SearchNumFromPath(hbufConfig, basePath)
 	return err
 }
 
-//get path
-macro SearchNumFromKey(hbufConfig, keyPath)
+//get num
+macro SearchNumFromKey(hbufConfig, keyVal, keyName)
 {
 	var err
 	var lineStr
 	err = ""
 
-	searchFor = "key[ ]*=[ ]*" # keyPath # "$"
+	searchFor = keyName # "[ ]*=[ ]*" # keyVal # "$"
 	//SearchInBuf (hbufBase, pattern, lnStart, ichStart, fMatchCase, fRegExp, fWholeWordsOnly)
 	sel = SearchInBuf(hbufConfig, searchFor, 0, 0, 0, 1, 0)
 	if (sel != nil)
@@ -384,10 +371,70 @@ macro SearchNumFromKey(hbufConfig, keyPath)
 		marKey = GetLineMacro(lineStr)
 		if(marKey != "")
 		{
-			mar = ReplaceWord(marKey, "key", "")
+			mar = ReplaceWord(marKey, keyName, "")
 			return mar
 		}
 	}
 	return err
+}
+
+macro getPathFromKey(hbufConfig, keyVal)
+{
+	var num
+
+	//项目路径 或 其他路径
+	if(!isNumber(hbufConfig))
+	{
+		hbufConfig = GetPubKeyBuf(0)
+	}
+	
+	num = SearchNumFromKey(hbufConfig, keyVal, "key")
+	if(num != ""){
+		path = SearchPathFromNum(hbufConfig, num)
+		if("" != path){
+			return path
+		}
+	}
+	return ""
+}
+
+macro getPathFromAlias(hbufConfig, keyVal)
+{
+	var num
+
+	//总类别名
+	if(!isNumber(hbufConfig))
+	{
+		hbufConfig = GetPubKeyBuf(0)
+	}
+	
+	num = SearchNumFromKey(hbufConfig, keyVal, "alias")
+	if(num != ""){
+		path = SearchPathFromNum(hbufConfig, num)
+		if("" != path){
+			return path
+		}
+	}
+	return ""
+}
+
+macro getToolPathFromKey(hbufConfig, keyVal)
+{
+	var num
+
+	if(!isNumber(hbufConfig))
+	{
+		// cfg保存路径更简单
+		hbufConfig = GetCommonPathBuf(0)
+	}
+	if(hbufConfig != hNil){
+		path = getMacroValue(hbufConfig, keyVal # "Path", 1)
+		if(path != ""){
+			path = ReplaceWord(path, "^", " ")
+			path = ReplaceWord(path, "\\", "\\\\")
+			return "\"" # path # "\""
+		}
+	}
+	return ""
 }
 

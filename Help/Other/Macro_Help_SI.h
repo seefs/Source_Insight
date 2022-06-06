@@ -79,19 +79,43 @@ Save:set\Macro_Set.h 75
 //   1--on, 0--off
 Save:set\Macro_Set.h 78
 
+// show html help
+//   1--on, 0--off
+Save:set\Macro_Set.h 81
+
+//
+Save:Macro\sbd_f12.em  ShowLibHelp
+
+//
+Save:Help\LangInfo\
+Save:Help\LangInfo\Macro_Info_Python.h
+Save:Help\LangInfo\Macro_Info_Html.h
+
+
 
 [1.6] set {pro} path
-// 每个项目独立配置;多个key会遍历所有可能,不存在取key为空
-// {pro}
+// 1.项目号
+// --项目号--代码
 Save:Macro\sbd_f11.em   ReCustomKeyHead
-// {pro}--num--10/20/62
+// --项目号--保存在哪个文件
 Save:Macro\sbd_base.em  getPathConfig(0)
+// --项目号--文件
 Save:set\Macro_Set_Base.h
-// {pro}--num转key map转value, 有map后续才能工作
+// --项目号--{pro}--限制可以转换的类型
 Save:Macro\sbd_file.em  GetPubPathBuf
 //
 Save:set\
 Save:set\Macro_Set_Path_*_*.h
+
+// __cfg__
+// 2.获取项目号
+// --每个项目独立配置;多个key会遍历所有可能,不存在取key为空
+// --S项目暂用save目录作项目目录
+Save:set\
+Save:set\Macro_Set_Path_{pro}.h  curKey
+Save:set\Macro_Set_Path_.h  curKey
+
+
 
 
 
