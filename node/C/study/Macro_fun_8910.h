@@ -626,17 +626,18 @@ source:mmi_app\kernel\c\mmi_default.c  BOOLEAN^DefaultSideKey
 
 
 
-[2.7] cursor
-//
+[2.7] __cursor__
+// 不显示 cursor
 MS_MMI_Main/source/mmi_ctrl/source/editbox/c/ctrlbaseflex_cursor.c  void^FillCursorColor
-//
-//	#ifndef WIN32
-//        GUI_FillRect ();
+//	#ifdef WIN32
 //	#endif
 
 
-// 
-//		==>BASEFLEX_DisplayCursor
+// 不显示 cursor timer
+//		==>TextEditCtrlHandleMsg
+//		====>BASEFLEX_HandleCursorTimer
+//		======>BASEFLEX_DisplayCursor
+//		========>BASEFLEX_StartCursorTimer
 ctrl:editbox\c\ctrlbaseflex_display.c   BaseFlexCtrlDisplayAll
 
 

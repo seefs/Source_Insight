@@ -30,13 +30,6 @@ Save:node\C\study\Macro_Spr_MsgId.h
 // MMK_WinGrabFocus(MMIWIFI_LIST_WIN_ID);
 
 
-//
-// SCI_VK_RIGHT, 7
-// KEY_EXT_Q, 65, 0x41, SCI_VK_Q
-source:winsimulator_tp\skin\mssim_duallcd_320_240_Q.ini  KEY_EXT_Q
-source:winsimulator_tp\skin\mssim_duallcd_320_240_Q.ini  KEY_5
-build\{cur}_builddir\
-build\{cur}_builddir\win\mssim_duallcd_320_240_Q.ini  KEY_EXT_Q
 
 ### --key--dial--down
 //		==>APP_Task
@@ -56,7 +49,7 @@ app:idle\c\mmiidle_dial.c  MMI_RESULT_E^HandleDialWinMsg
 //	e030  MSG_NOTIFY_EDITBOX_UPDATE_STRNUM //1~3
 //	fd17  MSG_KEYPRESSUP_CANCEL
 
-### --key--dial--long
+### --key--dial--longCancel
 //		==>APP_Task
 //		====>MMK_DispatchExtSig                     # KPDSVR
 //		======>MMK_DispatchMSGKbd                   # 
@@ -93,7 +86,7 @@ ctrl:editbox\c\ctrlbaseflex.c  MMI_RESULT_E^BaseFlexCtrlHandleMsg
 //		==========================>AppHandle            # CURSOR
 
 
-
+### __keyStatus__
 ### --key--timer
 //		========>TimerCallBack
 //		==========>MmiCreateSignal
@@ -101,8 +94,11 @@ ctrl:editbox\c\ctrlbaseflex.c  MMI_RESULT_E^BaseFlexCtrlHandleMsg
 //		==============>
 //		==>APP_Task
 //		====>MMK_DispatchExtSig                     # 
-//		======>MMK_DispatchMSGKbd                   # 
-//		========>SaveKeyDownStatus                  # KPD_DOWN
+//		======>MMK_DispatchMSGKbd                   # 这里转换一些特殊值
+//		========>MMIDEFAULT_ConvertKeyCode
+//		==========>[SHIFT]: 
+//		============>96 = 0x60 => {SCI_VK_SHIFT, 0x47} => 0x47 = 71 => KEY_SHIFT
+//		========>SaveKeyDownStatus                  # KPD_DOWN, 多按键不知道支不支持
 //		==========>MMK_StartWinTimer                # 1.5s (long) 0.3s (repeat)
 //		============>StartAppTimer
 //		========>HandleMSGKbd
@@ -286,12 +282,15 @@ app:eng\c\mmieng_base.c  BUILD
 // Phone
 "#*8378#0#", "*#222#", "*#15963#", "####1111#",
 app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_UI_TEST1
+
 // UI
 "####1111#", "*#87#", "*#666#",
 app:eng\c\mmieng_main.c  MMIENG_IDLE_FULL_TEST
+
 // Item
 app:eng\c\mmieng_main.c  MMIENG_IDLE_ITEM_TEST
  "*#777#", "*#66*#", "*#79*#",
+ 
 // Product
 "#*8378#3#",
 // PhoneInfo -- bg
@@ -300,14 +299,17 @@ app:eng\c\mmieng_main.c  MMIENG_IDLE_ITEM_TEST
 "####2222#",
 // Net--mcc,mnc
 "####1040#",
+
 // Engineer
 "#*8378#1#", "*#555#",--mcc,mnc
+
 // Version--Out -- bg
 app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SHOW_VERSION1
 "#*8378#2#", "####0000#", 
 // Version--3
 app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SHOW_VERSION2
 "*#888#",
+
 // Chip
 "#*8378#5#",
 // NV
@@ -318,16 +320,21 @@ app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SHOW_VERSION2
 "#*8378#9#",
 // ALLSVN -- bg
 "#*786837#",
+
 // HW
 app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SHOW_HW_VERSION
 "*#999#", "*#523#",
+
 // IMEI
 app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SET_SIM_IMEI_ALL
 "*#333#", "*#0066#", "*#3184#"; "*#06#",
+
 // Reset
 "*#119*#", "*#70#",
+
 // ELECTRIC
 "*#2010#"; "*#0808#"; "*#0809#", 
+
 // SALES_TRACKER
 app:eng\c\mmieng_main.c  MMIENG_IDLE_SALES_TRACKER_SETTING
 "*#55555#"

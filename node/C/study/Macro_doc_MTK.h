@@ -226,6 +226,9 @@ code:SSCPassEngine.c   __XLS_SALE_CUSTOM_TIME__
 
 
 [1.13] phone time
+// --mk
+make/{cur}_{GSM}.mak  __NEW_DEFAULT_TIME
+
 // powon time
 custom\drv\misc_drv\_Default_BB\MT6261\custom_hw_default.c  DEFAULT_HARDWARE_DAY
 custom\drv\misc_drv\_Default_BB\MT6261\custom_hw_default.c  __NEW_DEFAULT_TIME_20211030_STYLE__

@@ -20,7 +20,7 @@ Save:node\C\study\Macro_zmaee_8910.h \[1.7\] 热插拨功能
 Save:node\C\study\Macro_zmaee_8910.h \[1.8\] 耗电
 Save:node\C\study\Macro_zmaee_8910.h \[1.9\] Torch
 Save:node\C\study\Macro_zmaee_8910.h \[1.10\] 客户
-Save:node\C\study\Macro_zmaee_8910.h \[1.11\] 表盘----------入口
+Save:node\C\study\Macro_zmaee_8910.h \[1.11\] 表盘, 按键-------入口
 Save:node\C\study\Macro_zmaee_8910.h \[1.12\] charge
 Save:node\C\study\Macro_zmaee_8910.h \[1.13\] 
 Save:node\C\study\Macro_zmaee_8910.h \[1.14\] 
@@ -29,7 +29,7 @@ Save:node\C\study\Macro_zmaee_8910.h \[1.15\]
 Save:node\C\study\Macro_zmaee_8910.h \[2.1\] patch
 Save:node\C\study\Macro_zmaee_8910.h \[2.2\] fota
 Save:node\C\study\Macro_zmaee_8910.h \[2.3\] fota url
-Save:node\C\study\Macro_zmaee_8910.h \[2.4\] 
+Save:node\C\study\Macro_zmaee_8910.h \[2.4\] 文件log
 Save:node\C\study\Macro_zmaee_8910.h \[2.5\] 
 Save:node\C\study\Macro_zmaee_8910.h \[2.6\] 
 Save:node\C\study\Macro_zmaee_8910.h \[2.7\] 
@@ -187,7 +187,7 @@ SPDE_PRJ\WA11U_F31W_QQVGA\       ----华米
 // 电池:400mA,TP,摄像头
 
 
-[1.11] 表盘
+[1.11] 表盘, 按键
 // style 3
 Save:node\C\study\Macro_slide_8910.h  __style__
 
@@ -206,7 +206,7 @@ app:idle\c\mainapp.c  MMIAPIIDLE_OpenIdleWin
 //		==>ZMAEE_Create_Wnd
 //		====>ZMAEE_WinMsgHandle
 //		======>
-//		========>ZMAEE_Create_Wnd
+//		========>
 zmaee:c\zmaee_porting.c  ZMAEE_Create_Wnd
 
 ### --key--idle--long--cancel
@@ -215,6 +215,12 @@ zmaee:c\zmaee_porting.c  ZMAEE_Create_Wnd
 //		======>case MSG_KEYUP_CANCEL
 //		======>case MSG_KEYLONG_CANCEL
 zmaee:c\zmaee_porting.c  MMI_RESULT_E^ZMAEE_WinMsgHandle
+zmaee:c\zmaee_porting.c  ZMAEE_KeyPressHandler
+
+
+### --打开下拉状态栏
+//		==>ZMAEE_WatchOs_TopFun
+zmaee:c\zmaee_Watchos.c  ZMAEE_WatchOs_TopFun
 
 
 
@@ -231,8 +237,6 @@ app:phone\c\mmiphone_charge.c  ZMAEE_Watch_OpenChargingWin
 
 
 [1.13] 
-
-
 
 
 [1.14] 
@@ -317,6 +321,8 @@ http://diff.livedevice.com.cn/diffservice/atool/bomeng.html
 
 
 [2.4] 
+//
+Save:node\C\study\Macro_patch_8910.h  __Trace__
 
 
 [2.5] 

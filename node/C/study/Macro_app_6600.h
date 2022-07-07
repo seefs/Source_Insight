@@ -1,35 +1,35 @@
 
 //目录
-Save:node\C\study\Macro_app_8910.h  \[1.1\] win fun.
-Save:node\C\study\Macro_app_8910.h  \[1.2\] idle, lock
-Save:node\C\study\Macro_app_8910.h  \[1.3\] menu, second
-Save:node\C\study\Macro_app_8910.h  \[1.4\] dial
-Save:node\C\study\Macro_app_8910.h  \[1.5\] test, version
-Save:node\C\study\Macro_app_8910.h  \[1.6\] file
-Save:node\C\study\Macro_app_8910.h  \[1.7\] setting
-Save:node\C\study\Macro_app_8910.h  \[1.8\] sms -----------------
-Save:node\C\study\Macro_app_8910.h  \[1.9\] call
-Save:node\C\study\Macro_app_8910.h  \[1.10\] pb, cl, callset
-Save:node\C\study\Macro_app_8910.h  \[1.11\] camera -------------
-Save:node\C\study\Macro_app_8910.h  \[1.12\] pic
-Save:node\C\study\Macro_app_8910.h  \[1.13\] record
-Save:node\C\study\Macro_app_8910.h  \[1.14\] fm
-Save:node\C\study\Macro_app_8910.h  \[1.15\] //ebook
-Save:node\C\study\Macro_app_8910.h  \[1.16\] vp
-Save:node\C\study\Macro_app_8910.h  \[1.17\] mp3
-Save:node\C\study\Macro_app_8910.h  \[1.18\] alarm --------------
-Save:node\C\study\Macro_app_8910.h  \[1.19\] calc
-Save:node\C\study\Macro_app_8910.h  \[1.20\] calendar
-Save:node\C\study\Macro_app_8910.h  \[1.21\] unitconversion
-Save:node\C\study\Macro_app_8910.h  \[1.22\] game
-Save:node\C\study\Macro_app_8910.h  \[1.23\] bt
-Save:node\C\study\Macro_app_8910.h  \[1.24\] env, Profile
-Save:node\C\study\Macro_app_8910.h  \[1.25\] 
-Save:node\C\study\Macro_app_8910.h  \[1.26\] 
-Save:node\C\study\Macro_app_8910.h  \[1.27\] Browser 网络参数
-Save:node\C\study\Macro_app_8910.h  \[1.28\] sos, speed
-Save:node\C\study\Macro_app_8910.h  \[1.29\] startup, charge
-Save:node\C\study\Macro_app_8910.h  \[1.30\]
+Save:node\C\study\Macro_app_6600.h  \[1.1\] win fun.
+Save:node\C\study\Macro_app_6600.h  \[1.2\] idle, lock
+Save:node\C\study\Macro_app_6600.h  \[1.3\] menu, second
+Save:node\C\study\Macro_app_6600.h  \[1.4\] dial
+Save:node\C\study\Macro_app_6600.h  \[1.5\] test, version
+Save:node\C\study\Macro_app_6600.h  \[1.6\] file
+Save:node\C\study\Macro_app_6600.h  \[1.7\] setting
+Save:node\C\study\Macro_app_6600.h  \[1.8\] sms -----------------
+Save:node\C\study\Macro_app_6600.h  \[1.9\] call
+Save:node\C\study\Macro_app_6600.h  \[1.10\] pb, cl, callset
+Save:node\C\study\Macro_app_6600.h  \[1.11\] camera -------------
+Save:node\C\study\Macro_app_6600.h  \[1.12\] pic
+Save:node\C\study\Macro_app_6600.h  \[1.13\] record
+Save:node\C\study\Macro_app_6600.h  \[1.14\] fm
+Save:node\C\study\Macro_app_6600.h  \[1.15\] //ebook
+Save:node\C\study\Macro_app_6600.h  \[1.16\] vp
+Save:node\C\study\Macro_app_6600.h  \[1.17\] mp3
+Save:node\C\study\Macro_app_6600.h  \[1.18\] alarm --------------
+Save:node\C\study\Macro_app_6600.h  \[1.19\] calc
+Save:node\C\study\Macro_app_6600.h  \[1.20\] calendar
+Save:node\C\study\Macro_app_6600.h  \[1.21\] unitconversion
+Save:node\C\study\Macro_app_6600.h  \[1.22\] game
+Save:node\C\study\Macro_app_6600.h  \[1.23\] bt
+Save:node\C\study\Macro_app_6600.h  \[1.24\] env, Profile
+Save:node\C\study\Macro_app_6600.h  \[1.25\] 
+Save:node\C\study\Macro_app_6600.h  \[1.26\] 
+Save:node\C\study\Macro_app_6600.h  \[1.27\] Browser 网络参数
+Save:node\C\study\Macro_app_6600.h  \[1.28\] sos
+Save:node\C\study\Macro_app_6600.h  \[1.29\] startup
+Save:node\C\study\Macro_app_6600.h  \[1.30\]
 	
 
 
@@ -51,8 +51,8 @@ GUI_DisplayBg
 
 // win
 MMK_CreateWin
-MMK_CreateChildWin (, , );
 MMK_CloseWin
+MMK_CreateChildWin (, , );
 
 // list
 GUILIST_AppendItem
@@ -64,75 +64,28 @@ GUI_DisplayBorder
 
 
 [1.2] idle, lock
-// mk--smart
-prj:{cfg}.cfg  MMI_SMART_IDLE_SUPPORT = SMALL_ICON
-prj:{cfg}.cfg  MMI_MSTYLE_SUPPORT = TRUE
-prj:{cfg}.cfg  USE_IMAGE_OPEN = TRUE
-
-
-// open
-//		==>MAIN_IDLE_WIN_ID
-//		==>IdleWin_HandleMsg
+// open (smart)
+//		==>IdleWin_HandleMsg                #app
 //		====>HandleIdleMsg
-//		======>MMIIDLE_MStyleHandleMsg   #
-//		====>MMIAPIWIFI_Init
-//		====>WatchLAUNCHER_Enter
-app:idle\c\mainapp.c  MMIAPIIDLE_OpenIdleWin
-
-// IDLE--107
-app:idle\c\mmiidle_cstyle.c  void^OutIdleWinContent
-app:idle\c\mmiidle_cstyle.c  void^DisplayIdleWinSoftkey
-// IDLE--8910
-//		====>OutputIdleWinTimerWithImage
-//		====>OutputIdleWinDate
-//		====>OutputIdleWinWeek
-//		====>OutputIdleWinLunarDate
-//		====>OutputIdleSimStatusEx
-//		======>MMIAPIPHONE_GetSimAndServiceString
-//		========>g_service_status.plmn.mcc          #模拟器手动修改网格
-//		========>g_service_status.plmn_status
-//		======>DisplaySimStatus
-//		====>DisplayIdleMp3Name
-app:idle\c\mmiidle_mstyle.c  void^OutIdleWinContent
-app:idle\c\mmiidle_mstyle.c  void^DisplayIdleWinSoftkey
-
-
-### idle
-// ==>pos
-Save:node\C\study\Macro_pos_8910.h  __idle__
-// ==>image
-Save:node\C\study\Macro_res_image_8910.h  __idle__
-Save:node\C\study\Macro_res_image_8910.h  __time__
-// ==>font/color
-Save:node\C\study\Macro_res_color_8910.h  __idle__
-
-
-### idle--smart/large
-// open
-//		==>IdleWin_HandleMsg                #
-//		====>InitIdleDisplayMode            # is_show_fm 关闭
-//		==>IdleWin_HandleMsg                # app
-//		====>HandleIdleMsg
-//		======>MMIIDLE_SmartHandleMsg       # idle
-//		========>InitListItem
-//		========>DisplaySmartStyleIdle      # show
+//		======>MMIIDLE_SmartHandleMsg       #idle
+//		========>DisplaySmartStyleIdle
 //		==========>DisplayDate
 //		============>LCD_DisplayIdleString
-//		==========>DisplayShortCut          # --shortcur
-//		============>MMIAPISET_GetIdleShortcut
-//		============>s_shortcut_id          # --ID对齐
-//		==========>DisplayNetname
-//		============>g_service_status
-//		==========>DisplayLineAndSelImg     # --select
-//		==========>SwitchFocusShortCut      # --tips
-//		==========>DisplaySoftkey           # --softkey
-//		============>MMIAPISET_GetIdleStyle
-//		============>GetEnabledFuncKeyShortcutInfo
-//		========>SwitchFocusLine            # --waller
-//		==========>UpdateSmartStyleIdle
-//		======>OpenFocusItemWin             #web
-//		========>MMIAPISET_GetIdleShortcut
-app:idle\c\mmiidle_displaymini.c  MMIIDLE_SmartHandleMsg
+//		==========>DisplayShortCut
+//		==========>DisplayLineAndSelImg
+app:idle\c\mmiidle_display.c  MMIIDLE_SmartHandleMsg
+//		==>IdleWin_HandleMsg                #app
+//		====>case MSG_KEYDOWN_0
+//		======>OpenFuncDialingWin
+//		====>case MSG_CTL_OK
+//		======>MMISET_OpenFuncKeyWin(win_id, MMISET_FUNCKEY_LEFT);
+//		======>GetEnabledFuncKeyShortcutInfo
+//		====>case MSG_APP_CANCEL
+//		======>MMISET_OpenFuncKeyWin(win_id, MMISET_FUNCKEY_RIGHT);
+
+// --image
+Save:node\C\study\Macro_res_image_6600.h  __idle__
+
 
 
 ### LOCK
@@ -143,93 +96,46 @@ app:idle\c\mmiidle_displaymini.c  MMIIDLE_SmartHandleMsg
 //		======>3.DisplayDate
 //		====>DisplayMissedEventDC
 app:keylock\c\mmikl_keylock.c  BOOLEAN^MMIKL_HandleKLDispWinMsg
-//		==>DisplayScreenSaverTime
-//		====>DisplaySSTimerWithImage
+//		==>DisplaySSTimerWithImage
 //		======>1.DrawAClock
 app:keylock\c\mmikl_keylock.c  void^DisplayScreenSaverTime( )
 
 
 
 [1.3] menu, second
-// menu--matrix--mk
-prj:project_{cur}.mk  MAINMENU_4X3_MATRIX_STYLE    = TRUE
-prj:project_{cur}.mk  MAINMENU_SELECT_LAYER_ON_TOP = TRUE  #107
-prj:{cfg}.cfg         UI_MULTILAYER_SUPPORT        = TRUE  #8910
-
-
-// menu--enter
-//		==>MMIAPIMENU_CreatMainMenu
-//		====>MAINMENU_TITLE_ICON_WIN_TAB             # title + 3X3 icon
-//		====>MAINMENU_ICON_WIN_TAB                   # 4X3, icon + title
-app:mainmenu\c\mainmenu_win.c  MAINMENU_ICON_WIN_TAB
-//		==>APP_Init
-//		====>MMIMAINMENU_InitMenuIdArray             # cnt
+// menu
 //		==>CreateMainMenuCtrl                        # init
 //		====>MainmenuCtrlConstruct
 //		======>MatrixMenuInit
 //		========>MatrixMenuInitMenuDetail
 //		==========>MatrixMenuGetInfo
 //		============>MatrixMenuGetNotTitleStyleInfo
-//		============>MatrixMenuGetTitleStyleInfo     # bg rect, row/column
-//		==========>MatrixReadIconMenuItemList
-//		============>MMIMAINMENU_GetMatrixItemList   # cnt
-//		==============>MMIMAINMENU_GetItemCount
+//		============>MatrixMenuGetTitleStyleInfo     # bg rect
 //		==>MainmenuCtrlHandleMsg                     # up/down
 //		====>MatrixMenuHandle
 //		======>HandleMatrixMenuDirectionKey
-//		========>MatrixMenuResetIconDisplay          # reset 多层
-//		==========>HandleMatrixMenuGetIconRect       # select + item
-//		============>MMITHEME_MainmenuIconTextMargin   # 获得文字与图片的间距
-//		==========>MatrixMenuDrawItem...
-//		========>MSG_FULL_PAINT                      # 非多层
-//		========>MatrixMenuDrawActiveIcon            # 多层直接画, 只有一行标题
-//		==========>MatrixMenuDrawHighlightItem       # select + item
-//		============>MatrixMenuDrawItem
-//		==============>MMITHEME_DrawMainmenuItem     # draw
-//		==============>DisplayMenuIcon               # 第1次显示(多层,12宫格)
+//		========>MSG_FULL_PAINT
 //		==>MainmenuCtrlHandleMsg
 //		====>MSG_CTL_PAINT
 
-// menu--layer
-//		==>UILAYER_CreateLayerEx
-//		====>s_item_layer_handle, move layer      # softkey, bg
-//		======>MatrixMenuCreateItemLayer
-//		====>
-//		======>MatrixMenuGetHighLightRect
-//		====>
-//		======>MatrixMenuCreateItemLayer
-
-
-// menu--draw
+// menu--one page
 //		==>MatrixMenuDraw
-//		====>MatrixMenuDrawBg                      # bg
-//		======>.bg_image
 //		====>MatrixMenuGetTopAndBottomLineIndex    # icon rect
+
+// menu--matrix
+//		==>MatrixMenuDraw
 //		====>HandleMatrixMenuGetIconRect
-//		====>MatrixMenuDisplayActiveItemTitle      # title
-//		======>GUIRES_DisplayImg
-
-// menu--select
-//		==>s_mainmenu_item_data[i].active_img_id
-//		====>active_icon.data.icon_id
-//		======>MatrixMenuDrawHighlightItem
-//		======>MatrixMenuDrawItemIcon
 
 
-### menu
-// ==>pos
-Save:node\C\study\Macro_pos_8910.h  __mainmenu__
-// ==>image
-Save:node\C\study\Macro_res_image_8910.h  __mainmenu__
-// ==>font/color
-Save:node\C\study\Macro_res_color_8910.h  __mainmenu__
-
-
-// menu--title
-//		==>MatrixMenuDisplayActiveItemTitle
+// index
+source:mmi_kernel/include/mmitheme_mainmenu.h  MMITHEME_MAINMENU_CUR_ITEM_INDEX
+source:mmi_kernel/include/mmitheme_mainmenu.h  MAINLCD_SIZE_240X320
+// draw
+app:mainmenu\c\mmi_mainmenu_matrix.c  MMITHEME_DrawMainmenuItem
+// title
 source:mmi_service/export/inc/mmi_custom_define.h  MMISET_DEFAULT_MENU_STYLE_E
-
-// menu--prg
+app:mainmenu\c\mmi_mainmenu_matrix.c  MatrixMenuDisplayActiveItemTitle
+// menu softkey, prg
 app:theme/c/mmitheme_mainmenu.c  is_has_button
 app:mainmenu/c/mainmenu_win.c  MAINMENU_ICON_WIN_TAB
 app:mainmenu\c\mmi_mainmenu_matrix.c  ->is_need_prgbox
@@ -339,8 +245,6 @@ ctrl:editbox\c\ctrlbaseflex_cursor.c  BASEEDIT_GetTopLineOffsetRange
 app:idle\c\mmiidle_dial.c  HandleDialWinMsg
 // icon
 source:mmi_kernel\include\mmi_theme.h  BIG_DIAL_NUM
-
-### Dial
 // --image
 Save:node\C\study\Macro_res_image_8910.h  __Dial__
 
@@ -415,12 +319,6 @@ app:eng/c/mmieng_uitestwin.c  SPD_ENGINEER_SUPPORT_MONKEY_SET
 Save:node\C\project\Macro_cfg_8910.h  __torch__
 
 
-### test
-// ==>font/color
-Save:node\C\study\Macro_res_color_8910.h  __test__
-
-
-
 [1.6] file
 // --enter
 app:fmm\c\mmifmm_app.c  MMIFMM_OpenExplorerWin
@@ -429,12 +327,6 @@ app:fmm\c\mmifmm_app.c  MMIAPIFMM_InitFolders
 
 
 // child
-//		==>HandleUdiskChildWindow
-//		====>case^MSG_FULL_PAINT
-//		======>title:
-//		========>label_ctrl_ptr->theme.font.font
-//		======>list:
-//		========>
 app:fmm/c/mmifmm_mainwin.c  MMI_RESULT_E^HandleUdiskChildWindow
 app:fmm/c/mmifmm_mainwin.c  1528
 
@@ -464,17 +356,6 @@ app:fmm\c\mmifmm_mainwin.c HandleRecordListWinMsg
 MMIFMM_HandleOpenFileWin
 // 不进U盘 __UsbMode__
 app:udisk\c\mmiudisk_wintab.c  USB_CONNECT_DEFAULT_CHARGE
-// usb
-app:udisk\c\mmiudisk_wintab.c  MMI_RESULT_E^^HandleUsbOperSelectWindow
-
-
-### file
-// ==>pos
-Save:node\C\study\Macro_pos_8910.h  __file__
-// ==>image
-Save:node\C\study\Macro_res_image_8910.h  __file__
-// ==>font/color
-Save:node\C\study\Macro_res_color_8910.h  __file__
 
 
 [1.7] Setting
@@ -489,7 +370,7 @@ app:setting/c/mmiset_phonewin.c  MMISET_INPUT_RESET_FACTORY_PWD_WIN_TAB
 // cl set
 app:setting\c\mmiset_callwin.c  InitPdaCallOtherSettingsCtrl
 
-MMK_CloseWin
+
 
 // Reset
 Save:node\C\study\Macro_fun_8910.h  __reset__
@@ -512,49 +393,31 @@ app:setting\c\mmiset_menutable.c  menu_set_phone_setting
 // set--phone--time
 app:setting\c\mmiset_datetime.c  HandleSetTimeDateWindow
 
-
-// set--display (form)
-app:setting\c\mmiset_displaywin.c  MMI_RESULT_E^^HandleSetDisplayWindow
-// sec--pin (edit)
-app:phone\c\mmiphone_wintab.c  MMI_RESULT_E^HandlePinInputExceptPhone
-
-
-
-### set
-// ==>pos
-Save:node\C\study\Macro_pos_8910.h  __set_display__
-Save:node\C\study\Macro_pos_8910.h  __set_pin__
+// sec--pin
+HandlePinInputExceptPhone
 
 
 [1.8] sms
-// list--enter
-//		==>MMISMS_EnterSMSMainMenuWin
-//		====>MMISMS_MENUWIN_TAB
+// Enter
+//1.menu 
+app:sms\c\mmisms_mainmenuwin.c  MMISMS_EnterSMSMainMenuWin
+app:sms\c\mmisms_mainmenuwin.c  MMISMS_MENUWIN_TAB
 app:sms\c\mmisms_mainmenuwin.c  HandleSmsMainMenuWinMsg
-
-// --sms--option
+// option
 app:sms\c\mmisms_editsmswin.c  HandleEditMenuWinMsg
-// --sms--option--save  APP_MN_SMS_MEM_FULL_IND
+// option--save  APP_MN_SMS_MEM_FULL_IND
 app:sms\c\mmisms_editsmswin.c  EditSMSWin_SaveSMS
 
-
 //2.edit
-// edit--enter
-//		==>MMISMS_OpenWriteWin
-//		====>MMISMS_WriteNewMessage
-//		======>MMISMS_WriteNewMessageEx
-//		========>MMISMS_EnterSmsEditWin
-//		==========>MMISMS_EDIT_SMS_WIN_TAB
 app:sms\c\mmisms_editsmswin.c  HandleEditSmsWinMsg
-// edit--input pbNum
-//		==>
+app:sms\c\mmisms_mainmenuwin.c  HandleMsgBoxMainWindow
 
 //2.list
 app:sms\c\mmisms_mainmenuwin.c  HandleMsgBoxMainWindow
 
-
 //3.detail
-
+//
+mmismsapp_wintab.c
 
 ### 来短信
 //		==>SMSAPPNewEventCallback
@@ -573,23 +436,19 @@ app:sms\c\mmisms_commonui.c  MMISMS_HandleNewMsgWin
 app:sms\c\mmisms_api.c MMIAPISMS_GetAllUnreadMsgCount
 
 
+
+
 // sms--box
 app:sms\c\mmisms_messageboxwin.c  HandleMsgBoxMainWindow
+app:sms\c\mmisms_messageboxwin.c  4506
 // sms--box--mt
 app:sms\c\mmisms_messageboxwin.c  HandleMtBoxChildWinMsg
 // sms--box--unread
 app:sms\c\mmismsapp_order.c  MMISMS_ListSmsFromOrder
 
+// add data 
+FormListBoxItem
 
-### sms
-// ==>pos
-Save:node\C\study\Macro_pos_8910.h  __sms__
-// ==>image
-Save:node\C\study\Macro_res_image_8910.h  __sms__
-// ==>font/color
-Save:node\C\study\Macro_res_color_8910.h  __sms__
-// ==>im
-Save:node\C\study\Macro_im_8910.h  __input__
 
 
 [1.9] call
@@ -598,15 +457,18 @@ Save:node\C\study\Macro_im_8910.h  __input__
 MMK_DestroyControl(MMICC_CONNECTED_STATE_LABEL_CTRL_ID);
 
 
+	
+//
+// ui--font
+app:cc\c\mmicc_{wintab}.c MMI_CALL_NAME_FONT
+// ui--label(默认)
+app:cc\c\mmicc_{wintab}.c CC_MAIN_INFO_COMMON_LABEL_TOP_MARGIN
+// ui--softkey(大屏)
+app:cc\c\mmicc_{wintab}.c LRBUTTON_WIDTH
 
 
-### call
-// ==>pos
-Save:node\C\study\Macro_pos_8910.h  __call__
-// ==>image
+// call--image
 Save:node\C\study\Macro_res_image_8910.h __call__
-// ==>font/color
-Save:node\C\study\Macro_res_color_8910.h  __call__
 
 
 // 流程--来电-MT，
@@ -623,6 +485,34 @@ app:cc\c\mmicc_app.c  case^APP_MN_SETUP_IND
 app:cc\c\mmicc_{wintab}.c  MMICC_MT_CALLING_WIN_TAB  MMICC_ANIMATION_WIN_ID
 app:cc\c\mmicc_{wintab}.c  PdaDisplaySingleCallInfoForCommon  
 
+
+### 小屏
+// label--name, num
+app:cc\c\mmicc_{wintab}.c  MMICC_CONNECTED_SIM_LABEL_CTRL_ID
+// anim--pad--小屏无效
+app:cc\c\mmicc_{wintab}.c  9453
+
+### 大屏
+app:cc\h\
+
+// --cc--bar
+// --cc--str--3st--num/state
+app:cc\c\mmicc_{wintab}.c  ^^^^MMICC_CONNECTED_HOLD_NAME_LABEL_CTRL_ID
+// --cc--str--num
+app:cc\c\mmicc_{wintab}.c  ^^^^MMICC_CONNECTED_NAME_LABEL_CTRL_ID  [2]
+// --cc--str--name
+// --cc--anim--photo
+app:cc\c\mmicc_{wintab}.c  void^PdaDisplayCallPhotoForCommon
+// --cc--str--time
+app:cc\c\mmicc_{wintab}.c  ^^^^MMICC_CONNECTED_TIME_LABEL_CTRL_ID
+// --cc--str--connect/state
+app:cc\c\mmicc_{wintab}.c  ^^^^MMICC_CONNECTED_STATE_LABEL_CTRL_ID
+// --cc--anim--Mo/Mt/Cur/Auto/Opt/Fly
+app:cc\c\mmicc_{wintab}.c  DisplayCallAnimPhotoForCommon
+
+
+// call--pos
+Save:node\C\study\Macro_pos_8910.h  __call__
 
 
 // 流程--去电-MO，
@@ -642,21 +532,25 @@ app:cc\c\mmicc_{wintab}.c  MMICC_MO_CONNECTED_WIN_TAB  MMICC_STATUS_WIN_ID
 
 
 // 流程--挂断 DIS
-// 关闭这些窗口
+source:mmi_app\kernel\c\mmi_default.c  HandleFlipDown  MSG_KEYDOWN_FLIP
+app:cc\c\mmicc_app.c 4345
+app:cc\c\mmicc_{wintab}.c  CC_HandleDisconnectWinMsg
+app:cc\c\mmicc_{wintab}.c  MMICC_OpenDisconnectWin  
+
 app:cc\c\mmicc_{wintab}.c  MMICC_MENU_WIN_ID
 app:cc\c\mmicc_{wintab}.c  MMICC_CALLLIST_WIN_ID
 app:cc\c\mmicc_{wintab}.c  MMICC_PROCESSING_WIN_ID
 app:cc\c\mmicc_{wintab}.c  MMICC_ANIMATION_WIN_ID
 app:cc\c\mmicc_{wintab}.c  MMICC_ADJUSTVOLUME_WIN_ID
-app:cc\c\mmicc_{wintab}.c  MMICC_HOLDMENU_WIN_ID        #
+
+app:cc\c\mmicc_{wintab}.c  MMICC_HOLDMENU_WIN_ID
 app:cc\c\mmicc_{wintab}.c  MMICC_STATUS_WIN_ID
 //app:cc\c\.c  MMIIDLE_DIAL_MENU_WIN_ID
 //app:cc\c\mmicc_app.c MMICC_CALL_WAIT_INDICATOR_WIN_ID
 //app:cc\c\mmicc_app.c MMICC_ANIMATION_WIN_ID
+app:cc\c\mmicc_{wintab}.c 20008
 
 // 107 挂断
-//		==>HandleFlipDown
-//		====>CC_HandleDisconnectWinMsg
 //		==>MMICC_HandlePsMsg
 //		====>CC_DisconnectedCall
 //		======>CC_DisconnectedCallByIndex
@@ -678,9 +572,7 @@ app:cc\c\mmicc_main.c  MSG_KEYUP_FLIP  CCApplet_HandleEvent
 //		======>MMICC_UpdateCallStatusDisplay
 //		========>case^MMICC_MO_CONNECTED_IND
 //		========>MMICC_UpdateCurrentCallStatus
-// 流程--接听 8910
-//		==>CC_HandleCcAnimWinMsg
-//		====>MMICC_AnswerCall
+
 
 // 112
 app:cc\c\mmicc_{wintab}.c  MMICC_MENU_EMERGENCY_OPT_WIN_TAB  
@@ -721,79 +613,61 @@ app:cc\c\mmicc_{wintab}.c  MMICC_MENU_EMERGENCY_OPT_WIN_TAB
 //		============>OpenConnectedWinByWinTab
 //		==============>CustomDisplayMultiCallInfoForCommon   #show
 //		================>CustomShowMultiCallList    #list
+// --
+MMICC_MULTI_CALL_ANIMATION_LIST_ID
+MMICC_MULTI_CALL_ANIMATION_LIST_ID
+101 202
 
-// 多卡通话--单独通话
-//		==========>HandleCCListWinMsg
-//		============>CustomUpdateConferenceList
-//		==============>IMAGE_CC_AVATAR_UNKNOWN_SMALL
-//		============>CustomUpdateMultiCallListAnim
-//		==========>HandleHoldMenuWinMsg
-//		============>CC_CallList
-//		==============>CTRLLIST_SetBgColor
 
 // 多卡通话--来电
 //		==========>PdaDisplayMultiCall
 //		============>PdaDisplayCallInfoForMultiHoldCall   #show
+
 
 // 流程--update
 //		==>CC_HandleCcWinMsg
 //		====>MMICC_UpdateCurrentCallStatus
 
 
+
+
 	
 [1.10] pb, cl
 // enter
-//		==>MMIMAINMENU_StartPB/EnterPBMainMenuWin
+//		==>MMIMAINMENU_StartPB
 //		====>MMIPB_OpenPbWin
-//		======>MMIPB_OPEN_MAIN_LIST   # type
-//		======>MMIPB_OpenMainWin
-//		========>SPRD_PB_APPLET_ID
-//		========>MMK_StartApplet
-//		==>MMIPB_RegAppletInfo
-//		====>Applet_HandleEvent
-//		======>instance.entry_func
-//		========>MMIPB_OpenPbWin      # func
-//		==========>MMIPB_ENTRY_LIST_WITH_SEARCH_WIN_TAB   # style-2
-//		============>HandleEntryListWithSearchWinMsg
-app:pb\c\mmipb_view.c  MMIPB_ENTRY_LIST_WITH_SEARCH_WIN_TAB  # style-2 (8910)
-app:pb\c\mmipb_view.c  MMIPB_GROUP_ENTRYL_LIST_WIN_TAB
 app:pb\c\Mmipb_view.c  MMIPB_MAIN_WIN_ID
-//		==========>MMIPB_ENTRY_LIST_TAB_WIN_TAB           # style-1
-//		============>HandleEntryListWinMsg
-app:pb\c\mmipb_view.c  MMIPB_ENTRY_LIST_TAB_WIN_TAB          # style-1 (107)
-// init
-//		==>HandleEntryListWithSearchWinMsg
-//		====>empty:
-//		======>CTRLLIST_SetEmptyInfo
-//		====>form:
-//		======>
-//		====>button:
-//		======>
-//		====>edit:
-//		======>MMIPB_SearchWinCreateEditor
-//		========>GUIEDIT_SetStyle(,GUIEDIT_STYLE_SINGLE_DYN_DOWN);
-//		========>CTRLBASEEDIT_SetDeActiveBorderColor(, MMI_DARK_WHITE_COLOR);
-//		====>list:
-//		======>MMIPB_SearchWinCreateList
-//		========>case MMI_PB_RELOAD_SEARCH_LIST_MSG
-//		==========>HandleMainReloadMsg
-//		============>MMIPB_MultiSearch   # 模糊查找
-//		============>MMIPB_ReadContactList
-//		============>SetListItem         # 结果显示
-//		==============>MMIPB_GetListStyle
-//		================>GUIITEM_STYLE_ONE_LINE_BIGICON_TEXT_WITH_MASK_MS
-//		==============>MMIPB_SearchAndAppendItem
-//		================>SetListItemForSearch
+
+// MEM
+//MMIPB_MEMDETAIL_WIN_TAB
+//
+//TXT_COMMON_DETAIL_MEMORY
+//
+app:pb\c\Mmipb_menu.c  PB_OPTMENU_NODE_USED_SPACE
+
+// style-1(107) enter
+app:pb\c\Mmipb_set.c
+app:pb\c\Mmipb_view.c  HandleEntryListWinMsg
+app:pb\c\Mmipb_view.c  MMIPB_ENTRY_LIST_TAB_WIN_TAB
+// style-2
+app:pb\c\Mmipb_view.c  MMIPB_ENTRY_LIST_WITH_SEARCH_WIN_TAB
+
+
+// pb-search
 app:pb\c\mmipb_view.c  HandleEntryListWithSearchWinMsg
+app:pb\c\mmipb_view.c  13437
+// 	GUIEDIT_SetStyle(editor_ctr_id,GUIEDIT_STYLE_SINGLE_DYN_DOWN);
+//  CTRLBASEEDIT_SetDeActiveBorderColor(win_id, edit_id, MMI_DARK_WHITE_COLOR);
 
+// 调整高度:
+//	GUIFORM_SetChildHeight(form_ctr_id, editor_ctr_id, &editor_child_height);
 
-### pb
-// ==>pos
-Save:node\C\study\Macro_pos_8910.h  __pb__
-// ==>image
-Save:node\C\study\Macro_res_image_8910.h  __pb__
+// empty:
+//	CTRLLIST_SetEmptyInfo
 
-
+// pb-edit
+app:pb\c\mmipb_menu.c  MMI_RESULT_E^HandleContactAddEditWinMsg
+// 	GUIEDIT_SetStyle(first_name_ctr_id,GUIEDIT_STYLE_MULTI_DYN_DOWN);
 
 
 // pb-list-search
@@ -805,20 +679,6 @@ app:pb\c\mmipb_view.c  void^HandleOperateReloadList
 // pb-memory
 app:pb\c\mmipb_view.c  MMI_RESULT_E^^HandleMemDetailWinMsg
 
-// MEM
-//MMIPB_MEMDETAIL_WIN_TAB
-//TXT_COMMON_DETAIL_MEMORY
-app:pb\c\Mmipb_menu.c  PB_OPTMENU_NODE_USED_SPACE
-
-// pb-add--simSelect
-app:pb\c\mmipb_menu.c  MMI_RESULT_E^HandleStorageSelectWinMsgList
-// pb-add--edit
-//		==>edit_text:
-//		====>
-//		==>edit_number:
-//		====>
-app:pb\c\mmipb_menu.c  MMI_RESULT_E^HandleContactAddEditWinMsg
-// 	GUIEDIT_SetStyle(first_name_ctr_id,GUIEDIT_STYLE_MULTI_DYN_DOWN);
 
 
 //1.cl-menu
@@ -844,11 +704,6 @@ app:cl\c\mmicl_custom_wintab.c   AppendLogListItem
 // str
 InitPdaCallLogListCtrl        CallLog
 
-### cl
-// ==>pos
-Save:node\C\study\Macro_pos_8910.h  __cl__
-// ==>image
-Save:node\C\study\Macro_res_image_8910.h  __cl__
 
 
 
@@ -879,40 +734,14 @@ app:camera\c\mmidc_main_wintab.c  MMI_RESULT_E^HandleCameraWinMsg
 //		==>MMIDC_FlowStart
 //		====>StartDCPreview
 //		======>MMIDC_ResetHitTimer  # 定时退出
-// cam--Show
-//		==>MMIDC_FlowStart
-//		====>ShowAllOSD
-//		======>softkey:
-//		========>MMIDC_DisplaySoftKey
-//		==========>ShowSoftKey
-//		============>MMIDC_GetLayoutStyle
-//		======>Tip:
-//		========>MMIDC_DisplaySettingTip         (no use)
-//		==========>MMIDC_DisplayString
-//		======>Desk:
-//		========>MMIDC_OpenIconDesktop
-//		==========>DisplayIconDesktop
-//		============>DisplayIconBrightness        (左上)
-//		============>DisplayIconMode              (no use)
-//		============>DisplayIconSensor            (下1)
-//		============>DisplayIconNight             (下2)
-//		============>DisplayIconWhiteBalance      (下3)
-//		============>DisplayIconDelay             (下4)
-//		============>DisplayIconMultiShot         (下5)
-//		====>sizelist:
-//		======>DisplayIconString
-//		========>DisplayIconSize
+// softkey
 app:camera\c\mmidc_full_osd_display.c  MMIDC_DisplaySettingTip
 app:camera\c\mmidc_full_osd_display.c  void^MMIDC_DisplayString
-
-
-### camera
-// ==>pos
-Save:node\C\study\Macro_pos_8910.h  __camera__
-// ==>image
-Save:node\C\study\Macro_res_image_8910.h  __idle__
-// ==>font/color
-Save:node\C\study\Macro_res_color_8910.h  __camera__
+// sizelist
+app:camera\c\mmidc_full_osd_display.c  DisplayIconString
+app:camera\c\mmidc_guiiconbar.c  DisplayIconSize
+// Show
+app:camera\c\mmidc_full_osd_display.c  ShowAllOSD
 
 
 //option 
@@ -981,8 +810,7 @@ app:pic_viewer\c\mmipicview_zoom.c  HandlePicZoomWinMsg
 ctrl:IconList\c\ctrliconlist.c  void^DisplayDelimiter
 app:pic_viewer\c\mmipicview_list.c  MMIPICVIEW_TITLE_COLOR
 
-### pic
-// ==>image
+### pic--image
 Save:node\C\study\Macro_res_image_8910.h __pic__
 
 
@@ -1004,11 +832,11 @@ app:record\c\mmirecord_common_wintab.c  MMI_RESULT_E^HandleRecordMainPlayWinMsg
 app:record\c\mmirecord_barphone_wintab.c  MMIRECORD_HandleRecordMainPlayWinMsg
 
 
-### record
-// ==>pos
-Save:node\C\study\Macro_pos_8910.h  __record__
-// ==>image
+### record--image
 Save:node\C\study\Macro_res_image_8910.h __record__
+// record--pos
+//	--注意 126*160 从第3组 MAINLCD_SIZE 开始
+app:record\h\mmirecord_position.h  {size2}
 
 
 // record--Update
@@ -1074,13 +902,8 @@ app:fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleChannelListWinMsg
 app:fm\c\mmifm_wintab.c  MMIFM_HandleHeadsetButtonAction
 app:fm\c\mmifm_wintab.c  void^MMIFM_HandleHeadsetAction
 
-### fm
-// ==>pos
-Save:node\C\study\Macro_pos_8910.h  __fm__
-// ==>image
+### fm--image
 Save:node\C\study\Macro_res_image_8910.h __fm__
-// ==>font/color
-Save:node\C\study\Macro_res_color_8910.h  __mainmenu__
 
 
 
@@ -1121,11 +944,11 @@ app:videoplayer/c/mmivp_wintable.c  HandleOptMenuWinMsg
 app:videoplayer/c/mmivp_wintable.c  DisplayVPWinSoftkey
 
 
-### vp
-// ==>image
+// vp--image
 Save:node\C\study\Macro_res_image_8910.h __vp__
 // vp--pos
-app:videoplayer\h\mmivp_position.h   {size2}
+//	--
+app:videoplayer\h\mmivp_position.h   {size}
 
 // vp--Update(107)
 //		==>DisplayRecordAllBG
@@ -1141,9 +964,6 @@ app:record\c\mmirecord_barphone_wintab.c  void^UpdateVPWin
 // enter
 //		==>JoinMainPDAWin            # 240*320
 //		====>MMIMP3_PLAY_WIN_TAB_V   # win
-//		======>HandleMainDefaultOpenWinMsg     # open
-//		========>HandleMainWinOpenMsg
-//		==========>MMIAP_DisplayBackgroudImg   # bg
 app:audioplayer\c\mmiapwin_main.c  MMIAPMAINWIN_Enter
 app:audioplayer\c\mmiapwin_main_pda.c  MMIMP3_PLAY_WIN_TAB_V
 app:audioplayer\c\mmiapwin_main_mini.c  MMIMP3_PLAY_WIN_TAB_V
@@ -1167,61 +987,57 @@ app:audioplayer\c\mmiapwin_main.c  HandleMp3PlayWinMsg
 //		========>SetAnimParam           # 设置专辑或默认图
 //		==========>CTRLANIM_SetParam
 // mp3--father--播放
-//		==>btn play/pause
-//		====>MMIMP3_DisplayButton
-//		====>MMIAPIMP3_ResumeMp3
+//		==>btn
 // mp3--fileInfo
 // mp3--process
+
+// enter--mini
+app:audioplayer\c\mmiapwin_main_mini.c  450
+// enter--pda
 //		==>OwnerDrawHandleMsg
 //		====>MMIAP_DrawProgressOwnerDrawCtrl
 //		======>MMIMP3_DisplayProgress
+app:audioplayer\c\mmiapwin_main_pda.c  HandlePDADefaultWinMsg
+// enter--play/pause
+app:audioplayer\c\mmiapwin_common.c  void^MMIMP3_DisplayButton
 
 // 
 app:audioplayer\c\mmiapwin_main.c  HandleMainWinOpenMsg
+// 
+app:audioplayer\c\mmiapwin_common.c  MMI_MUSIC_NEW_STYLE
+// pos--progress
+app:audioplayer\c\mmiapwin_common.c  progress_groove_rect
 // pos (只跑一次)
 app:audioplayer\c\mmiapwin_main_mini.c  435
 
+// bg play
+app:audioplayer\c\mmiap_play.c  MMIAPIMP3_ResumeMp3
+
+// ui_2--pos--128*160
+//		==>MMIMP3_TIME_FONT          # font
+//		==>MP3_LAYOUT_PREV_RECT_V    # btn
+//		==>MP3_PROGRESS_RECT_V       # progress
+//		==>MP3_TIME_RECT_V           # time
+//		==>MP3_PIC_RECT_V            # bg
+app:audioplayer/h/mmiap_position.h   {size}
+// ui--pos--128*160
+//		==>MMIMP3_TITLE_MARGIN_TOP   # 
 
 
-### mp3
-// ==>pos/font
-Save:node\C\study\Macro_pos_8910.h  __Mp3__
-// ==>image
+// mp3--icon
 Save:node\C\study\Macro_res_image_8910.h __Mp3__
 
 
 
 [1.18] alarm
+# Enter
 // Enter
-//		==>MMIAPIALM_OpenMainWin
-//		====>ALARM_MAINWIN_TAB               # style1
-//		======>HandleAlarmMainWinMsg
-//		====>ALARM_LIST_MAINWIN_TAB          # style2 (def)
-//		======>HandleCustomAlarmMainWinMsg
-// alarm--edit
-//		==>ALARM_EDITWIN_TAB
-//		====>HandleAlarmEditWinMsg          # style1
-//		==>ALARM_CUSTOM_EDITWIN_TAB
-//		====>HandleCustomAlarmEditWinMsg    # style2 (def)
-//		======>SetCustomEditTimeWin         # --label color
-//		======>SetCustomEditNameWin
+app:accessory\c\mmialarm.c WINDOW_TABLE(^ALARM_EDITWIN_TAB )
 app:accessory\c\mmialarm.c MMI_RESULT_E^^HandleAlarmEditWinMsg
-// alarm--powerOnOff
-//		==>AUTOPOWER_MAINWIN_TAB
-//		====>HandleAutoPowerOnOffWinMsg
-//		==>POWERONOFF_EDIT_WIN_TAB
-//		====>HandleAlarmEditWinMsg
-//		==>HandleAutoPowerOffExpired
+app:accessory\h\mmialarm_position.h
+//新功能:
 app:accessory\c\mmialarm.c MMI_RESULT_E^HandleAutoPowerOnOffWinMsg
 
-
-### alarm
-// ==>pos
-Save:node\C\study\Macro_pos_8910.h  __alarm__
-// ==>image
-Save:node\C\study\Macro_res_image_8910.h __alarm__
-// ==>font/color
-Save:node\C\study\Macro_res_color_8910.h  __form__
 
 
 # 模拟
@@ -1265,34 +1081,24 @@ app:accessory\c\mmialarm.c  MMI_RESULT_E^HandleEventAliveWinMsg
 //
 source:mmi_app\common\c\mmi_pubwin.c  5352
 
-
-
-
+	
 
 [1.19] calc
 // enter
 //		==>MMIAPICALC_OpenMainWin
 //		====>CALC_WIN_TAB            # win
-//		======>CALC_CTRL_TAB_H         # tab
+//		====>CALC_CTRL_TAB_H         # tab
 app:accessory\c\mmicalc_main.c  MMI_RESULT_E^HandleCalcWinMsg
 app:accessory\c\mmicalc_main.c  CALC_WIN_TAB
 app:accessory\c\mmicalc_main.c  CALC_CTRL_TAB_H
-//		==>HandleCalcWinMsg
-//		====>InitFormWin
-//		======>InitButtonWidthandHeight   # 设置单元间距
-//		======>InitButtonFont             # font/color
-//		====>DisplayCalcBackground
-//		====>DisplayCalcFormulaEx         # 单行/双行
-app:accessory\h\mmicalc_export.h     CALC_LINE_M_STARTX
+//		==>InitFormWin
+//		====>InitButtonWidthandHeight
+//		==>DisplayCalcFormulaEx   # 单行/双行
+app:accessory\h\mmicalc_export.h  CALC_LINE_M_STARTX
 
 // draw
 app:accessory\c\mmicalc_main.c  void^CalcRefreshContent
 app:accessory\c\mmicalc_main.c  void^InitButtonFont
-
-
-### calc
-// ==>image
-Save:node\C\study\Macro_res_image_8910.h __fm__
 
 
 
@@ -1304,26 +1110,23 @@ app:accessory/h/mmiacc_position.h 128X128
 
 // main
 //		==>DrawMonthCalendar
-//		====>DrawMonthTitle  #title 1
-//		====>DrawYearTitle   #title 2
-//		====>DrawLunarDate   #title 3
+//		====>DrawMonthTitle
+//		====>DrawYearTitle
+//		====>DrawLunarDate
 //		====>DrawSchdule
 //		====>DrawWeeks
 //		====>DrawMonthDates
-//		======>DrawBackgroundByRect   #bg
-//		======>DrawMonthDate
-//		======>DrawGrayMonthDate
-//		======>DrawMonthDateRectLine
 app:accessory\c\mmicalendar_main.c MMI_RESULT_E^HandleCalendarWinMsg
 // opt
 app:accessory\c\mmicalendar_main.c MMI_RESULT_E^HandleCalendarOptionWinMsg
 // opt--go to
-//		==>CALENDAR_QUERY_WIN_TAB
-//		====>HandleCalendarQueryWinMsg
 app:accessory\c\mmicalendar_main.c MMIAPICALEND_OpenCalendarQueryByDate
 // list-opt
 //MMK_CreateWin((uint32 *)SCH_LIST_OPTION_WIN_TAB, (ADD_DATA)detail_win_param);
 
+//draw:
+app:accessory\c\mmicalendar_main.c
+app:accessory\c\mmischedule.c
 
 
 // calen--sch
@@ -1331,12 +1134,6 @@ app:accessory\c\mmicalendar_main.c MMIAPICALEND_OpenCalendarQueryByDate
 //		==>AppendUserListBoxItemData
 app:accessory\c\mmischedule.c  MMI_RESULT_E^HandleSchViewListWinMsg
 
-
-### calen
-// ==>pos/font/color
-Save:node\C\study\Macro_pos_8910.h  __calen__
-// ==>image
-Save:node\C\study\Macro_res_image_8910.h __calen__
 
 
 [1.21] unitconversion
@@ -1434,8 +1231,6 @@ MS_MMI_Main\source\mmi_app\app\bt\c\mmibt_app.c  MMIBT_A2DPCallBackFunc
 // bt mode
 app:heroengine\tts\c\hero_tts_api.c  BLUETOOTH_SUPPORT
 
-// bt--set--name
-app:bt\c\mmibt_editwin.c  HandleEditDeviceNameMsg
 
 // bt--nv
 MMIBT_GetBtStatusForIcon
@@ -1531,15 +1326,8 @@ app:setting\c\mmiset_ring.c 1736 PlayRing
 
 [1.27] Browser 网络参数
 // enter
-//		==>MMIBROWSER_Enter
-//		====>MAINMENU:
-//		====>MMIBROWSER_OpenStartPageWin
-//		======>DEFAULT:
-//		======>MMIBROWSER_START_PAGE_WIN_TAB
 app:browser\c\mmibrowser_func.c  MMIBROWSER_Enter
-//		==>InitBrwStartPageWin
-//		====>
-//		======>
+//
 app:browser\c\mmibrowser_wintable.c  MMI_RESULT_E^BrwHandleStartPageWinMsg
 //
 //BrwHandlePopMenuWinMsg
@@ -1560,50 +1348,25 @@ app:browser\c\mmibrowser_func.c  MMIBROWSER_IsOnlyChooseStorage
 //	运营商中apn 信息，需要在 ntac 文件中添加，并且表中 Setting Name 保持一致，
 //	也区分大小写
 
-// browser--set--mainpage
-app:browser\c\mmibrowser_wintable_setting.c  MMI_RESULT_E^BrwHandleSettingHomepageWinMsg
-
-// browser--page
-//		==>HandleQueryExitBrowserWin
-//		====>MMIBROWSER_Exit
-//		======>MMIBROWSER_TidyExistedWin
 
 
-### browser
-// ==>image
-Save:node\C\study\Macro_res_image_8910.h  __browser__
-
-
-
-[1.28] sos, speed
+[1.28] sos
 ## sos
-// mk
+// sos 开关
 prj:project_{cur}.mk  MMI_INDIAN_SOS_SUPPORT
 
 
 // sos--enter
-//		==>HandleMainMenuWinMsg
-//		====>type:
-//		======>HandleSOSTypeSettingsWin
 app:setting\c\mmiset_sos.c  MMIAPISET_EnterSOSSettingWin
 // sos--list
-// sos--sms--edit
 app:setting\c\mmiset_sos.c  HandleSOSMessageEditBoxWinMsg
 
 
 
 ## SPEED
-// mk
-prj:project_{cur}.mk   MMI_SPEEDDIAL_SUPPORT
-
 // 亲情号码
 app:cc\c\mmicc_speeddial.c  HandleSpeedDialSettingsWinMsg
 // 亲情号码--编辑
-//		==>MMIAPICC_OpenSetSpeedDial
-//		====>GetSpeedDialOffset
-//		======>speed_dial_offset = 2
-
-
 app:cc\c\mmicc_speeddial.c  CC_HandleSpeedDialListWinMsg
 // 亲情号码--编辑--num
 app:cc\c\mmicc_speeddial.c  CC_HandleSpeedDialEditWinMsg
@@ -1611,7 +1374,7 @@ app:cc\c\mmicc_speeddial.c  CC_HandleSpeedDialEditWinMsg
 
 
 
-[1.29] startup, charge
+[1.29] startup
 // Start
 app:phone\c\mmiphone_onoff.c  MMI_RESULT_E^HandleNormalStartupWindow
 
@@ -1626,16 +1389,8 @@ app:phone\c\mmiphone_charge.c  PHONE_STARTUP_CHARGE_OK_WIN_TAB
 ### power--patch
 Save:node\C\study\Macro_patch_8910.h  __charge__
 
-###
-//
-app:phone\c\mmiphone_charge.c  DisplayDayTimeEffert
-app:phone\c\mmiphone_charge.c  Charge_TIME_UP_MARGIN
 
-
-### power
-// ==>pos
-Save:node\C\study\Macro_pos_8910.h  __idle__
-// ==>image
+// power--image
 Save:node\C\study\Macro_res_image_8910.h  __charge__
 
 

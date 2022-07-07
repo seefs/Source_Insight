@@ -28,7 +28,7 @@ boardKey  = K220M_YGW_BB
 lcdKey  = K220D_QVGA_SH_LCM
 
 ### 2.cur
-curKey = K220_C61
+curKey = K220B_XW_W03
 GSMKey = GSM
 
 ### 3.copy

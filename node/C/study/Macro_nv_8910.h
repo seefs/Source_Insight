@@ -19,7 +19,7 @@ Save:node\C\study\Macro_nv_8910.h \[1.16\] audio_calib_VQE
 Save:node\C\study\Macro_nv_8910.h \[1.17\] 
 Save:node\C\study\Macro_nv_8910.h \[1.18\] 
 Save:node\C\study\Macro_nv_8910.h \[1.19\] 
-Save:node\C\study\Macro_nv_8910.h \[1.20\] 
+Save:node\C\study\Macro_nv_8910.h \[1.20\] simulator
 Save:node\C\study\Macro_nv_8910.h \[1.21\] 
 Save:node\C\study\Macro_nv_8910.h \[1.22\] 
 
@@ -143,21 +143,35 @@ SPDE_PRJ\K220U_SHY_517T\project_UIS8910_ROM_16MB_DS_USER.mk 3IN1
 
 // 单独听筒
 SPDE_PRJ/K220U_HYBL_H661A/project_UIS8910_240x320BAR_16MB_DS_USER.mk
+//
+prj:project_{cur}.mk   AUDIO_AMP_CLASSK_3IN1_SUPPORT = TRUE
+prj:project_{cur}.mk   AUDIO_AMP_CLASSK_SUPPORT = TRUE
+// 听筒声音太小
+prj:project_{cur}.mk   ENG_EX_MIC_TEST_SUPPORT = TRUE # 回声测试从喇叭出来
+// 听筒调音量，一般不开
+prj:project_{cur}.mk   AUDIO_AMP_CLASSK_SUPPORT  = TRUE
+prj:project_{cur}.mk   AUDIO_AMP_CLASSK_CALL_MODE_SUPPORT = TRUE
+prj:project_{cur}.mk   AUDIO_AMP_EXT_PULL_2_TIME = TRUE
 
 
 // 喇叭听筒二合一
 SPDE_PRJ/K220U_HYBL_H660A_HTX_LTC/project_UIS8910_ROM_16MB_DS_USER.mk 3IN1
+//
+prj:project_{cur}.mk   AUDIO_AMP_CLASSK_3IN1_SUPPORT = TRUE
+prj:project_{cur}.mk   AUDIO_AMP_CLASSK_SUPPORT = TRUE
+
 
 //
 nv1:audio_calib_VQE.nvm  65
-nv1:audio_calib_VQE.nvm  65
+nv2:audio_calib_VQE.nvm  65
 nv3:audio_calib_VQE.nvm  65
 nv:audio_calib_VQE.nvm  65
 // 2IN1,3IN1
 //    ITEM_CONTENT = 0x2
 // 独立
 //    ITEM_CONTENT = 0x0
-
+//
+//reserved为0表示使用内部PA或外部PA接在SPK或RCV上，没有听筒喇叭二合一或三合一
 
 
 [1.7] 充电/放电-------107
@@ -397,9 +411,10 @@ nv:audio_arm_6531efm.nvm  6476
 
 
 
-[1.20] 
-
-
+[1.20] simulator
+//
+source:winsimulator_tp/win_platform/SIM_Set_Files/
+source:winsimulator_tp/win_platform/SIM_Set_Files/SIM1/EF_LOCI.inf
 
 
 [1.21] 

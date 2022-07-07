@@ -17,12 +17,12 @@ Save:node\ToolsMsg\Macro_VC.h \[1.8\] um.dat
 Save:node\ToolsMsg\Macro_VC.h \[1.9\] bridgelayer.cpp
 Save:node\ToolsMsg\Macro_VC.h \[1.10\] VC6LineNumberAddin
 Save:node\ToolsMsg\Macro_VC.h \[1.11\] vc2010
-Save:node\ToolsMsg\Macro_VC.h \[1.12\] 
+Save:node\ToolsMsg\Macro_VC.h \[1.12\] excel patch
 // 2.vs2008
 Save:node\ToolsMsg\Macro_VC.h \[2.1\] 显示行号
 Save:node\ToolsMsg\Macro_VC.h \[2.2\] cl
 Save:node\ToolsMsg\Macro_VC.h \[2.3\] ntdll
-Save:node\ToolsMsg\Macro_VC.h \[2.4\] 
+Save:node\ToolsMsg\Macro_VC.h \[2.4\] regsvr32
 Save:node\ToolsMsg\Macro_VC.h \[2.5\] 
 Save:node\ToolsMsg\Macro_VC.h \[2.6\] 
 Save:node\ToolsMsg\Macro_VC.h \[2.7\] 
@@ -182,8 +182,10 @@ C:\Program^Files^(x86)\Microsoft^Visual^Studio\Common\MSDev98\AddIns
 
 
 
-[1.12] 
-
+[1.12] excel patch
+//
+//360装这个，我跟孙工的电脑excel是这样弄好了
+msvcr100.dll
 
 
 

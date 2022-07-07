@@ -36,7 +36,8 @@ versionKey  = UMS9117_ums9117_barphone_version
 prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
-projectKey   = F79T_DERONG
+// 目录名称自动拼接成mk名称
+projectKey   = S98T_FLP_E535_31
 //projectKey   = T5_A86_VIET_HQQVGA
 curKey   = ums9117_{size}BAR_48MB_{project}_user
 cfgKey   = xx

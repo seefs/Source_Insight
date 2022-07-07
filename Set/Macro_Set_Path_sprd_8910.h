@@ -40,6 +40,7 @@ projectKey   = X225U_HQVGA
 curKey   = UIS8910_ROM_16MB_DS_USER
 cfgKey   = uis8910_phone_user_base_config
 sizeKey  = 320X240
+size2Key  = 240X320
 
 
 ### 3.copy
@@ -47,7 +48,7 @@ oldKey = xx
 newKey = xx
 
 ### 4.tmp
-wintabKey = wintab
+wintabKey = wintab_custom
 
 tmpKey = xx
 

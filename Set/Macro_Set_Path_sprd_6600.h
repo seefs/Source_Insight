@@ -4,7 +4,7 @@
 ### 1.暂时只能手动修改
 ###
 
-0Key  = 8910
+0Key  = 6600
 
 HWPath  = HWNV:8910FFS\W20.36.2\
 HW:\\
@@ -33,13 +33,15 @@ versionKey  = UMS9117_ums9117_barphone_version
 
 
 ### 2.cur
-prjPath  = SPDE_PRJ\{project}\
+//prjPath  = SPDE_PRJ\{project}\
+prjPath  = \
 prj:\\
 
-projectKey   = K220U_LBR_L691_HS_L51_HQQVGA
-curKey   = UIS8910_ROM_16MB_DS_USER
-cfgKey   = us8910_phone_user_base_config
-sizeKey  = 128X128
+projectKey   = sc6600l_w03
+curKey   = sc6600l_w03
+//cfgKey   = 
+sizeKey  = 220X176
+size2Key  = 176X220
 
 
 ### 3.copy

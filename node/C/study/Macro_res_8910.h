@@ -3,7 +3,7 @@
 Save:node\C\study\Macro_res_8910.h \[1.1\] ÏîÄ¿ÅäÖÃ
 Save:node\C\study\Macro_res_8910.h \[1.2\] mk, version, nv
 Save:node\C\study\Macro_res_8910.h \[1.3\] str
-Save:node\C\study\Macro_res_8910.h \[1.4\] res-------
+Save:node\C\study\Macro_res_8910.h \[1.4\] res, color
 Save:node\C\study\Macro_res_8910.h \[1.5\] image
 Save:node\C\study\Macro_res_8910.h \[1.6\] ring, audio
 Save:node\C\study\Macro_res_8910.h \[1.7\] add app
@@ -67,12 +67,37 @@ source:mmi_app\common\h\common_mdu_def.h   plmn_extra_database_str
 
 
 
-[1.4] res
+[1.4] res, color
+### resgen
 //
-//head:res,mmi_res_prj_def.h
-//item:res,mmi_res_prj_def.h
+make\resource_main\resource_main.mk  resgen.pl
+
+// modules
+//		==>resource_main
+UIX8910.modules  resource
+
+//
+make/perl_script/resgen.pl
 
 
+### color_table
+// 8910
+make\resource_main\resource_main.mk  color_table
+// copy:
+//	color_table_black_bg
+//	color_table_white_bg
+
+// 107
+make\resource_main\
+make\resource_main\resource_target.mk  color_table
+
+// cust
+// --ResView.exe
+make\perl_script\ResGen\
+make\perl_script\ResGen\ResView.ini  cust_str_table
+//	;1=cust_color_table.xls
+//
+make\perl_script\perl_pm\
 
 
 
@@ -100,7 +125,6 @@ build\{cur}_builddir\tmp\mmi_res_{size}_imag.txt
 
 
 
-
 [1.6] ring
 // --path
 Save:set\Macro_Set_Path_sprd_{pro}.h  ring
@@ -116,18 +140,24 @@ Save:node\C\study\Macro_res_ring_8910.h
 
 
 [1.7] add app
+//
 MS_MMI_Main\source\mmi_app\kernel\h\mmk_regapp.def  SPDEHTTP_SUPPORT
 //	REG_APP(HTTP_SIGNAL_BEG,	HTTP_SIGNAL_END, &g_spdehttp_app)
+
 MS_MMI_Main\source\mmi_app\kernel\h\mmk_ext_app.h  SPDEHTTP_SUPPORT
 //  extern MMI_APPLICATION_T   g_spdehttp_app;
+
 make\app_main\app_main.mk  SPDEHTTP_SUPPORT
 //	MSRCPATH += $(MMI_DIR)/source/mmi_app/app/spdehttp/c
 //	MINCPATH += $(MMI_DIR)/source/mmi_app/app/spdehttp/h
 //	SOURCES += spdehttp.c
+
 MS_MMI_Main\source\mmi_app\kernel\c\mmimain.c  SPDEHTTP_SUPPORT
 //    MMIAPISPDEHTTP_InitModule();
+
 MS_MMI_Main\source\mmi_app\kernel\h\mmi_applet_table.h   SPDEHTTP_SUPPORT
 //	#define SPRD_SPDEHTTP_APPLET_ID    (SPRD_MMI_GUID_START + 22)
+
 MS_MMI_Main\source\mmi_app\common\h\mmi_appmsg.h   SPDEHTTP_SUPPORT
 //	#define     MSG_SPDEHTTP_TASK_START                     0x1450
 //	#define     MSG_SPDEHTTP_EXCEED_TASK_NUMT               (MSG_SPDEHTTP_TASK_START + 1)
@@ -142,6 +172,7 @@ make\resource_main\resource_main.mk  SPDEHTTP_SUPPORT
 make\resource_main\resource_header.mk  SPDEHTTP_SUPPORT
 //	SRCPATH	+= $(MMI_DIR)/source/mmi_app/app/spdehttp/h
 //	SOURCES	 += spdehttp_mdu_def.h
+
 MS_MMI_Main\source\resource\mmi_res_prj_def.h  SPDEHTTP_SUPPORT
 //	RES_ADD_MODULE(MMI_MODULE_SPDEHTTP,"\\spdehttp\\spdehttp_mdu_def.h")
 
@@ -156,6 +187,10 @@ open tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe
 
 MS_MMI_Main\source\resource\Common\FONT\LANG_FONT_LATIN_12_14_29.lib
 MS_MMI_Main\source\resource\Common\FONT\
+
+// ==>font/color
+Save:node\C\study\Macro_res_color_8910.h  __idle__
+
 
 
 // VIB

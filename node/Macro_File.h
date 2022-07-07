@@ -1,5 +1,5 @@
 
-// File List [Num][Ca]:
+// File:
 // 1. Common notes
 Save:node\Macro_File.h \[1.1\] work file
 Save:node\Macro_File.h \[1.2\] bak file

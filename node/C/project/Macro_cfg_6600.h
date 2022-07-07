@@ -2,43 +2,43 @@
 
 //目录:
 // 1. 
-Save:node\C\project\Macro_cfg_8910.h \[1.1\] AUDIO, TONE
-Save:node\C\project\Macro_cfg_8910.h \[1.2\] PB
-Save:node\C\project\Macro_cfg_8910.h \[1.3\] SMS
-Save:node\C\project\Macro_cfg_8910.h \[1.4\] MMS
-Save:node\C\project\Macro_cfg_8910.h \[1.5\] BROWSER, DL
-Save:node\C\project\Macro_cfg_8910.h \[1.6\] BT
-Save:node\C\project\Macro_cfg_8910.h \[1.7\] RECORD
-Save:node\C\project\Macro_cfg_8910.h \[1.8\] LCD_SIZE---------------
-Save:node\C\project\Macro_cfg_8910.h \[1.9\] shortcut----------menu
-Save:node\C\project\Macro_cfg_8910.h \[1.10\] //USB
-Save:node\C\project\Macro_cfg_8910.h \[1.11\] CTA
-Save:node\C\project\Macro_cfg_8910.h \[1.12\] //CALL record
-Save:node\C\project\Macro_cfg_8910.h \[1.13\] simulator
-Save:node\C\project\Macro_cfg_8910.h \[1.14\] torch
-Save:node\C\project\Macro_cfg_8910.h \[1.15\] 
-Save:node\C\project\Macro_cfg_8910.h \[1.16\] 
+Save:node\C\project\Macro_cfg_6600.h \[1.1\] AUDIO, TONE
+Save:node\C\project\Macro_cfg_6600.h \[1.2\] PB
+Save:node\C\project\Macro_cfg_6600.h \[1.3\] SMS
+Save:node\C\project\Macro_cfg_6600.h \[1.4\] MMS
+Save:node\C\project\Macro_cfg_6600.h \[1.5\] BROWSER, DL
+Save:node\C\project\Macro_cfg_6600.h \[1.6\] BT
+Save:node\C\project\Macro_cfg_6600.h \[1.7\] RECORD
+Save:node\C\project\Macro_cfg_6600.h \[1.8\] LCD_SIZE---------------
+Save:node\C\project\Macro_cfg_6600.h \[1.9\] shortcut----------menu
+Save:node\C\project\Macro_cfg_6600.h \[1.10\] //USB
+Save:node\C\project\Macro_cfg_6600.h \[1.11\] CTA
+Save:node\C\project\Macro_cfg_6600.h \[1.12\] //CALL record
+Save:node\C\project\Macro_cfg_6600.h \[1.13\] simulator
+Save:node\C\project\Macro_cfg_6600.h \[1.14\] torch
+Save:node\C\project\Macro_cfg_6600.h \[1.15\] 
+Save:node\C\project\Macro_cfg_6600.h \[1.16\] 
 //
-Save:node\C\project\Macro_cfg_8910.h \[2.1\] IM
-Save:node\C\project\Macro_cfg_8910.h \[2.2\] DTMF, Dial, SIM, 天线
-Save:node\C\project\Macro_cfg_8910.h \[2.3\] 电子保卡
-Save:node\C\project\Macro_cfg_8910.h \[2.4\] tihu--------------语音王
-Save:node\C\project\Macro_cfg_8910.h \[2.5\] PLS---------------语音王
-Save:node\C\project\Macro_cfg_8910.h \[2.6\] SIMPLIFY_TTS------简易版语音王
-Save:node\C\project\Macro_cfg_8910.h \[2.7\] FM
-Save:node\C\project\Macro_cfg_8910.h \[2.8\] WIFI
-Save:node\C\project\Macro_cfg_8910.h \[2.9\] SS
-Save:node\C\project\Macro_cfg_8910.h \[2.10\] Tool
-Save:node\C\project\Macro_cfg_8910.h \[2.11\] lib--------------
-Save:node\C\project\Macro_cfg_8910.h \[2.12\] build 服务器流程
-Save:node\C\project\Macro_cfg_8910.h \[2.13\] build 省空间
-Save:node\C\project\Macro_cfg_8910.h \[2.14\] 
-Save:node\C\project\Macro_cfg_8910.h \[2.15\] marco
-Save:node\C\project\Macro_cfg_8910.h \[2.16\] Lib
-Save:node\C\project\Macro_cfg_8910.h \[2.17\] FLASH (大、/小版本)
-Save:node\C\project\Macro_cfg_8910.h \[2.18\] build map
-Save:node\C\project\Macro_cfg_8910.h \[2.19\] //bak
-Save:node\C\project\Macro_cfg_8910.h \[2.20\] 
+Save:node\C\project\Macro_cfg_6600.h \[2.1\] IM
+Save:node\C\project\Macro_cfg_6600.h \[2.2\] DTMF, Dial, SIM, 天线
+Save:node\C\project\Macro_cfg_6600.h \[2.3\] 电子保卡
+Save:node\C\project\Macro_cfg_6600.h \[2.4\] tihu--------------语音王
+Save:node\C\project\Macro_cfg_6600.h \[2.5\] PLS---------------语音王
+Save:node\C\project\Macro_cfg_6600.h \[2.6\] SIMPLIFY_TTS------简易版语音王
+Save:node\C\project\Macro_cfg_6600.h \[2.7\] FM
+Save:node\C\project\Macro_cfg_6600.h \[2.8\] WIFI
+Save:node\C\project\Macro_cfg_6600.h \[2.9\] SS
+Save:node\C\project\Macro_cfg_6600.h \[2.10\] Tool
+Save:node\C\project\Macro_cfg_6600.h \[2.11\] lib--------------
+Save:node\C\project\Macro_cfg_6600.h \[2.12\] build 服务器流程
+Save:node\C\project\Macro_cfg_6600.h \[2.13\] build 省空间
+Save:node\C\project\Macro_cfg_6600.h \[2.14\] 
+Save:node\C\project\Macro_cfg_6600.h \[2.15\] marco
+Save:node\C\project\Macro_cfg_6600.h \[2.16\] Lib
+Save:node\C\project\Macro_cfg_6600.h \[2.17\] FLASH (大、/小版本)
+Save:node\C\project\Macro_cfg_6600.h \[2.18\] build map
+Save:node\C\project\Macro_cfg_6600.h \[2.19\] //bak
+Save:node\C\project\Macro_cfg_6600.h \[2.20\] 
 // 其他标号
 Save:Help\\DefaultFile\\Macro_Node_Num.h
 
@@ -50,11 +50,11 @@ Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 // 双听筒
 //	DUAL_RECEIVER_SWITCH_SUPPORT
-SPDE_PRJ/K220U_HYBL_H660A_HTX_LTC/project_UIS8910_ROM_16MB_DS_USER.mk
+SPDE_PRJ/K220U_HYBL_H660A_HTX_LTC/project_UIS6600_ROM_16MB_DS_USER.mk
 
 
 ## TONE
-SPDE_PRJ/K220U_HYBL_H660A/uis8910_phone_user_base_config.cfg  YOUNGTONE_TTS_LIB
+SPDE_PRJ/K220U_HYBL_H660A/uis6600_phone_user_base_config.cfg  YOUNGTONE_TTS_LIB
 // YOUNGTONE_TTS_LIB = MAN
 
 
@@ -74,7 +74,7 @@ MS_MMI_Main\source\mmi_app\app\pb\h\mmipb_nv.h  MMINV_MAX_PHONEBOOK_RECORDS
 //	根据增加的空间（假设为X），调整mem_cfg.c中 MAX_STATIC_SPACE_SIZE 和MAX_SYSTEM_SPACE_SIZE大小，即
 //	MAX_STATIC_SPACE_SIZE大小 + X
 //	MAX_SYSTEM_SPACE_SIZE大小 - X
-MS_Customize\source\product\config\uis8910ff_refphone\mem_cfg.c  252
+MS_Customize\source\product\config\uis6600ff_refphone\mem_cfg.c  252
 
 //每增加100条联系人,APP HEAP增加情况：
 //仅存一个号码：～14K
@@ -145,8 +145,8 @@ MS_MMI_Main\source\mmi_service\export\inc\mmi_custom_define.h  define^MMISMS_MAX
 // 2.调整RUNNINT NV大小。需要相应的flash cfg的配置增大running nv的sector数目
 // 短信息RUNNINT NV增加大小的计算方式为： 调整的数目* sizeof(MN_SMS_MESSAGE_ITEM_T)
 //  100*230/1024 =  22.46
-MS_Customize/source/product/config/uis8910ff_refphone/spiflash_cfg.c  FLASH_SIZE_128MBIT
-MS_Customize/source/product/config/uis8910ff_refphone/spiflash_cfg.c  559
+MS_Customize/source/product/config/uis6600ff_refphone/spiflash_cfg.c  FLASH_SIZE_128MBIT
+MS_Customize/source/product/config/uis6600ff_refphone/spiflash_cfg.c  559
 //		#define  RUNNIN_NV_SECTOR_NUM       11
 
 // 3.调整RAM的大小
@@ -157,9 +157,9 @@ chip_drv\source\prj_win\mem_cfg_win32.c  MAX_STATIC_HEAP_SIZE
 
 // 4.RAM调整(另外一个补丁)
 //  100条 约  12K
-MS_Customize\source\product\config\uis8910ff_refphone\mem_cfg.c  252
+MS_Customize\source\product\config\uis6600ff_refphone\mem_cfg.c  252
 //		MAX_STATIC_SPACE_SIZE大小 + 12K
-MS_Customize\source\product\config\uis8910ff_refphone\mem_cfg.c  259
+MS_Customize\source\product\config\uis6600ff_refphone\mem_cfg.c  259
 //		MAX_SYSTEM_SPACE_SIZE大小 - 12K
 
 //	【说明】上面"+ Y" "- Y"只是保守的修改方法，实际系统可能会有冗余，
@@ -197,7 +197,7 @@ make\app_main\app_macro.mk  MMI_SMS_SECURITYBOX_SUPPORT
 //MMS--107
 prj:project_{cur}.mk  MMS_SMS_IN_1_SUPPORT = TRUE
 
-//MMS--8910
+//MMS--6600
 prj:{cfg}.cfg  MMS_SMS_IN_1_SUPPORT = TRUE
 
 
@@ -214,70 +214,56 @@ MMS_SMS_IN_1_SUPPORT = TRUE                         ### MMS SMS IN 1 Support:
 
 
 [1.5] BROWSER, DL
-// mk--true
-prj:project_{cur}.mk  BROWSER_SUPPORT = TRUE
-prj:project_{cur}.mk  BROWSER_SUPPORT_DORADO = TRUE
-prj:project_{cur}.mk  BROWSER_ALL_RUNNING_SUPPORT = TRUE   # 107
-prj:{cfg}.cfg         BROWSER_ALL_RUNNING_SUPPORT = TRUE   # 8910
-// mk--false
-prj:project_{cur}.mk  BROWSER_OPERA_START_PAGE = FALSE
-prj:project_{cur}.mk  BROWSER_OPERA_FAVORITE_WITH_DEFAULT = FALSE
-
-// 8910      
-prj:project_{cur}.mk  BROWSER_OPERA_START_PAGE = TRUE
-prj:project_{cur}.mk  BROWSER_SEARCH_SUPPORT = FALSE
+// mk
+BROWSER_SUPPORT = TRUE                
+BROWSER_SUPPORT_DORADO = TRUE   
+// 6600      
+BROWSER_OPERA_START_PAGE = TRUE
+DL_SUPPORT = TRUE
 //
-prj:project_{cur}.mk  OPERA_MINI_SUPPORT = VER42
-
-
-
-// browser UI
-BROWSER_INPUT_BIG_FONT_BG_STYLE  = TRUE
-BROWSER_DL_DEFAULT_TCARD         = TRUE
+OPERA_MINI_SUPPORT = VER42
+BROWSER_ALL_RUNNING_SUPPORT = TRUE 
 
 
 // Download
-prj:project_{cur}.mk  DL_SUPPORT    = TRUE   # 107 FALSE
-prj:project_{cur}.mk  OMADL_SUPPORT = TRUE   # 107 FALSE
+DL_SUPPORT = TRUE                                   ###Download Manager Supplier:
+OMADL_SUPPORT = TRUE 
 
 //
-prj:project_{cur}.mk  DATACOUNTER_SUPPORT = TRUE  # 8910才有
+DATACOUNTER_SUPPORT = TRUE
 
 
 
 [1.6] BT
-//BT--107
-prj:project_{cur}.mk  BLUETOOTH_SUPPORT = SPRD_BT
+//
+BLUETOOTH_SUPPORT = SPRD_BT
 
-//BT--8910
-prj:{cfg}.cfg  BLUETOOTH_SUPPORT = SPRD_BT
-prj:project_{cur}.mk  BLUETOOTH_SUPPORT = SPRD_BT
 
 
 [1.7] RECORD
 // MMI_RECORD_SUPPORT
-lib/modem/UIS8910_ROM_16MB_DS_USER/nvitem/RF_calib.nvm
-lib/modem/UIS8910_ROM_16MB_DS_USER/nvitem/RF_nv.nvm
-lib/modem/UIS8910_ROM_16MB_DS_USER/nvitem/audio_arm_6531efm.nvm
-lib/modem/UIS8910_ROM_16MB_DS_USER/nvitem/audio_calib_VQE.nvm
+lib/modem/UIS6600_ROM_16MB_DS_USER/nvitem/RF_calib.nvm
+lib/modem/UIS6600_ROM_16MB_DS_USER/nvitem/RF_nv.nvm
+lib/modem/UIS6600_ROM_16MB_DS_USER/nvitem/audio_arm_6531efm.nvm
+lib/modem/UIS6600_ROM_16MB_DS_USER/nvitem/audio_calib_VQE.nvm
 
 
 
 
 [1.8] Lcd
 // 128*128
-SPDE_PRJ\K220U_L680_QQVGA\uis8910_phone_user_base_config.cfg 128X128
+SPDE_PRJ\K220U_L680_QQVGA\uis6600_phone_user_base_config.cfg 128X128
 
 // 128*160
-SPDE_PRJ\K220U_QQVGA\uis8910_phone_user_base_config.cfg 128X160
+SPDE_PRJ\K220U_QQVGA\uis6600_phone_user_base_config.cfg 128X160
 
 // 128*160H
-SPDE_PRJ\K220U_SHY_S13_HQQVGA\uis8910_phone_user_base_config.cfg 128X160
-SPDE_PRJ\K220U_SHY_S13_HQQVGA\uis8910_phone_user_base_config.cfg MMI_RES_ORIENT
+SPDE_PRJ\K220U_SHY_S13_HQQVGA\uis6600_phone_user_base_config.cfg 128X160
+SPDE_PRJ\K220U_SHY_S13_HQQVGA\uis6600_phone_user_base_config.cfg MMI_RES_ORIENT
 
 // 160*128
-SPDE_PRJ\K220U_QQVGA\uis8910_phone_user_base_config.cfg 160X128
-SPDE_PRJ\K220U_LBR_L691_HS_L51_HQQVGA\uis8910_phone_user_base_config.cfg 160X128
+SPDE_PRJ\K220U_QQVGA\uis6600_phone_user_base_config.cfg 160X128
+SPDE_PRJ\K220U_LBR_L691_HS_L51_HQQVGA\uis6600_phone_user_base_config.cfg 160X128
 
 // LAND
 //	MMI_RES_ORIENT_LANDSCAPE
@@ -304,7 +290,7 @@ prj:project_{cur}.mk  MAINLCD_SIZE = 128X160
 prj:project_{cur}.mk  MMI_RES_DIR = mmi_res_160x128
 prj:project_{cur}.mk  MMI_RES_ORIENT = LANDSCAPE
 prj:project_{cur}.mk  MAINLCD_LOGIC_ANGLE = 90
-// 8910
+// 6600
 prj:{cfg}.cfg  MAINLCD_DEV_SIZE = 160X128
 prj:{cfg}.cfg  MAINLCD_SIZE = 128X160
 prj:{cfg}.cfg  MMI_RES_DIR = mmi_res_160x128
@@ -449,12 +435,6 @@ app:eng\c\mmieng_uitestwin.c  case^ID_ENG_TEST_TORCH_LED
 //IM_ENGINE = NONE
 
 
-### IM
-// ==>im
-Save:node\C\study\Macro_im_8910.h  __input__
-
-
-
 [2.2] DTMF, Dial, SIM, 天线
 //
 MMI_DIALPANEL_DTMF_SUPPORT
@@ -470,12 +450,12 @@ MS_Customize\source\product\driver\gpio\gpio_prod.c  GPIO_SIMIntHandler
 
 [2.3] 电子保卡
 
-// 1.本地版(不可擦除)(107)
+// 1.本地版(不可擦除)
 prj:project_{cur}.mk   SPDE_ELECTRIC_GUARANTEE_CARD = TRUE
 // nv同网络版
 prj:project_{cur}.mk   NV_CUS_FIXNV_DATA_LEN_128 = TRUE
 // card--set
-Save:node\C\study\Macro_fun_8910.h  __SpdeCard__
+Save:node\C\study\Macro_fun_6600.h  __SpdeCard__
 
 
 // 2.网络版
@@ -485,16 +465,16 @@ prj:project_{cur}.mk   SPDE_ELECTRIC_GUARANTEE_CARD_V2_USE_LOCAL_TIME = TRUE
 prj:project_{cur}.mk   NV_CUS_FIXNV_DATA_LEN_128 = TRUE
 
 
-// 3.本地版(107不可擦除/8910升级可保留)
+// 3.本地版(107不可擦除/6600升级可保留)
 prj:project_{cur}.mk   AOLEDA_ELECTRIC_GUARANTEE_CARD = TRUE
 // card--set
-Save:node\C\study\Macro_fun_8910.h  __AoledaCard__
+Save:node\C\study\Macro_fun_6600.h  __AoledaCard__
 
 
 
 // 4.销量统计
 // sale--set
-Save:node\C\study\Macro_fun_8910.h  __sale__
+Save:node\C\study\Macro_fun_6600.h  __sale__
 //
 prj:project_{cur}.mk   SPDE_SALES_TRACKER_SUPPORT 				= TRUE
 prj:project_{cur}.mk   SPDE_SALES_TRACKER_FOR_T5_W53			= TRUE ###时间，接收号码中心号码
@@ -527,12 +507,6 @@ prj:project_{cur}.mk  HERO_ENGINE_CFG_VAR_HANDSETID_SEC
 
 // mp3
 prj:project_{cur}.mk  HERO_ENGINE_TTS_NUM_USE_MP3
-
-// 短视频
-prj:project_{cur}.mk   HERO_ENGINE_STVIDEO_SUPPORT
-
-// 词典
-prj:project_{cur}.mk   HERO_ENGINE_DICTIONARY_SUPPORT
 
 
 
@@ -589,7 +563,7 @@ app:eng/c/mmieng_uitestwin.c  case^ID_ENG_TEST_WIFI
 //MMS--107
 prj:project_{cur}.mk  SCREENSAVER_SUPPORT = TRUE
 
-//MMS--8910
+//MMS--6600
 prj:{cfg}.cfg  SCREENSAVER_SUPPORT = TRUE
 
 
@@ -726,25 +700,25 @@ chip_drv/chip_module/analog/v7
 // baseLib
 prj:project_{cur}.mk  PRODUCT_BASELIB_DIR
 // 分开
-//   PRODUCT_BASELIB_DIR = UIS8910_ROM_16MB_SS_USER
+//   PRODUCT_BASELIB_DIR = UIS6600_ROM_16MB_SS_USER
 
 // binFile
 prj:project_{cur}.mk  MODEM_BIN_FILE
 // 共用
-//   MODEM_BIN_FILE = UIS8910_ROM_16MB_DS_USER
+//   MODEM_BIN_FILE = UIS6600_ROM_16MB_DS_USER
 
 // .a--编模块进这里
-lib\UIS8910_ROM_16MB_SS_USER
+lib\UIS6600_ROM_16MB_SS_USER
 
 // binFile
-lib\modem\UIS8910_ROM_16MB_DS_USER
+lib\modem\UIS6600_ROM_16MB_DS_USER
 
 
 ### w03u
 // baseLib
 prj:project_{cur}.mk PRODUCT_BASELIB_DIR
 // 分开
-//   PRODUCT_BASELIB_DIR = UIS8910_240x320BAR_16MB_SS_USER
+//   PRODUCT_BASELIB_DIR = UIS6600_240x320BAR_16MB_SS_USER
 
 // binFile
 prj:project_{cur}.mk MODEM_BIN_FILE
@@ -752,7 +726,7 @@ prj:project_{cur}.mk MODEM_BIN_FILE
 //   MODEM_BIN_FILE = MODEM_USER
 
 // .a--编模块进这里
-lib\UIS8910_240x320BAR_16MB_SS_USER
+lib\UIS6600_240x320BAR_16MB_SS_USER
 
 // binFile
 lib\modem\MODEM_USER
@@ -760,13 +734,13 @@ lib\modem\MODEM_USER
 
 ### BMWATCH
 // baseLib
-SPDE_PRJ\BMWATCH\project_UIS8910_240x320BAR_16MB_SS_BMWATCH_USER.mk  PRODUCT_BASELIB_DIR
+SPDE_PRJ\BMWATCH\project_UIS6600_240x320BAR_16MB_SS_BMWATCH_USER.mk  PRODUCT_BASELIB_DIR
 // 分开
-//   PRODUCT_BASELIB_DIR = UIS8910_240x320BAR_16MB_SS_USER
+//   PRODUCT_BASELIB_DIR = UIS6600_240x320BAR_16MB_SS_USER
 
 
 // .a--编模块进这里
-lib\UIS8910_240x320BAR_16MB_SS_USER
+lib\UIS6600_240x320BAR_16MB_SS_USER
 
 
 ### T107
@@ -789,31 +763,31 @@ prj:project_{cur}.mk  FLASH_SIZE
 //   FLASH_SIZE = 128MBITX64MBIT_NEW
 
 ###
-// 8910F
+// 6600F
 config:\
-config:uis8910ff_refphone/spiflash_cfg.c  FLASH_SIZE_128MBITX64MBIT_NEW
-// 8910s
-config:uis8910ff_refphone/spiflash_cfg.c  FLASH_SIZE_128MBIT$
+config:uis6600ff_refphone/spiflash_cfg.c  FLASH_SIZE_128MBITX64MBIT_NEW
+// 6600s
+config:uis6600ff_refphone/spiflash_cfg.c  FLASH_SIZE_128MBIT$
 
 
 
 // SECTOR
-config:uis8910ff_refphone/spiflash_cfg.c  MMI_RES_SECTOR_NUM
-config:uis8910ff_refphone/spiflash_cfg.c  604
+config:uis6600ff_refphone/spiflash_cfg.c  MMI_RES_SECTOR_NUM
+config:uis6600ff_refphone/spiflash_cfg.c  604
 // 	#define MMI_RES_SECTOR_NUM         70 // 67 //66  60
 // 
-config:uis8910ff_refphone/spiflash_cfg.c  UDISK_SIZE
-config:uis8910ff_refphone/spiflash_cfg.c  573
+config:uis6600ff_refphone/spiflash_cfg.c  UDISK_SIZE
+config:uis6600ff_refphone/spiflash_cfg.c  573
 //	#define UDISK_SIZE                 ((UMEM_SECTOR_NUM+4)*FLASH_SECTOR_SIZE)
 
 // 
-MS_Customize/UIX8910_normal.scf  LOAD_KERNEL_IMAGE
-MS_Customize/UIX8910_normal.scf  43
+MS_Customize/UIX6600_normal.scf  LOAD_KERNEL_IMAGE
+MS_Customize/UIX6600_normal.scf  43
 //	LOAD_KERNEL_IMAGE IMAGE_ENTRY_ADDR 0x00A60000   # ps size
 
 // 
-config:uis8910ff_refphone/spiflash_cfg.c  PS_STONE_SECTOR_NUM
-config:uis8910ff_refphone/spiflash_cfg.c  646
+config:uis6600ff_refphone/spiflash_cfg.c  PS_STONE_SECTOR_NUM
+config:uis6600ff_refphone/spiflash_cfg.c  646
 //	#define  PS_STONE_SECTOR_NUM		124 // 123 //123
 
 
@@ -824,24 +798,24 @@ tmpPath = build\tmp
 tmp:\\
 
 // 总image
-tmp:UIX8910.map  Region^LOAD_KERNEL_IMAGE
+tmp:UIX6600.map  Region^LOAD_KERNEL_IMAGE
 
 // range 1(rom) (12M 代码/存储)
-tmp:UIX8910.map  Region^ROM_KERNAL_EXEC
+tmp:UIX6600.map  Region^ROM_KERNAL_EXEC
 
 // range 2(ram) (1.45M 代码/断电丢失)
-tmp:UIX8910.map  Region^RAM_RW
+tmp:UIX6600.map  Region^RAM_RW
 
 // range 3(SRAM) (calc size)
-tmp:UIX8910.map  Region^SRAM_RES
+tmp:UIX6600.map  Region^SRAM_RES
 
 // Total
-tmp:UIX8910.map  Total^RO
+tmp:UIX6600.map  Total^RO
 
 // 修改 KERNEL size
 //  (同步改，否则fota差分失败)
-MS_Customize/UIX8910_normal.scf  42
-MS_Customize/UIX8910_normal.scf  277
+MS_Customize/UIX6600_normal.scf  42
+MS_Customize/UIX6600_normal.scf  277
 
 
 

@@ -33,7 +33,10 @@
 10RuleEn = 6531DA
 //
 10 = G:\SP6531D
-10key = 6531D
+11 = E:\W03_Code
+
+10key = 6531
+11key = 6600
 
 
 //(2) 6531btdialer 项目路径
@@ -41,7 +44,7 @@
 20RuleEn = 6531btdialer
 // 注释20 不显示比较
 //20 = F:\6531DA_Btdialer
-20key = 6531D
+20key = 6531DB
 
 
 

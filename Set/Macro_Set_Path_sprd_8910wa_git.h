@@ -53,7 +53,7 @@ oldKey = xx
 newKey = xx
 
 ### 4.tmp
-wintabKey = wintab
+wintabKey = wintab_custom
 
 tmpKey = xx
 

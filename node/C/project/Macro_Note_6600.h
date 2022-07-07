@@ -1,37 +1,37 @@
 
 //目录
 // 项目选择 编译
-Save:node\C\project\Macro_Note_8910.h \[1.1\] 编译指令
-Save:node\C\project\Macro_Note_8910.h \[1.2\] gpio_cfg
-Save:node\C\project\Macro_Note_8910.h \[1.3\] KEY
-Save:node\C\project\Macro_Note_8910.h \[1.4\] LCD
-Save:node\C\project\Macro_Note_8910.h \[1.5\] CAM
-Save:node\C\project\Macro_Note_8910.h \[1.6\] TP
-Save:node\C\project\Macro_Note_8910.h \[1.7\] ECG
-Save:node\C\project\Macro_Note_8910.h \[1.8\] hr
-Save:node\C\project\Macro_Note_8910.h \[1.9\] breathled
-Save:node\C\project\Macro_Note_8910.h \[1.10\] 
+Save:node\C\project\Macro_Note_6600.h \[1.1\] 编译指令
+Save:node\C\project\Macro_Note_6600.h \[1.2\] gpio_cfg
+Save:node\C\project\Macro_Note_6600.h \[1.3\] KEY
+Save:node\C\project\Macro_Note_6600.h \[1.4\] LCD
+Save:node\C\project\Macro_Note_6600.h \[1.5\] CAM
+Save:node\C\project\Macro_Note_6600.h \[1.6\] TP
+Save:node\C\project\Macro_Note_6600.h \[1.7\] ECG
+Save:node\C\project\Macro_Note_6600.h \[1.8\] hr
+Save:node\C\project\Macro_Note_6600.h \[1.9\] breathled
+Save:node\C\project\Macro_Note_6600.h \[1.10\] 
 // 设置
-Save:node\C\project\Macro_Note_8910.h \[2.1\] 
-Save:node\C\project\Macro_Note_8910.h \[2.2\] 颜色---------common_mdu_def.h
-Save:node\C\project\Macro_Note_8910.h \[2.3\] 配置
-Save:node\C\project\Macro_Note_8910.h \[2.4\] fm
-Save:node\C\project\Macro_Note_8910.h \[2.5\] 语言, 字体----mmi_custom_define.h
-Save:node\C\project\Macro_Note_8910.h \[2.6\] 情景模式 音频参数:
-Save:node\C\project\Macro_Note_8910.h \[2.7\] 手电筒
-Save:node\C\project\Macro_Note_8910.h \[2.8\] U盘-----------mmisrvfmm_export.h 
-Save:node\C\project\Macro_Note_8910.h \[2.9\] 版本号--------version_software_mocor.h
-Save:node\C\project\Macro_Note_8910.h \[2.10\] 型号---------bt_cfg.h
-Save:node\C\project\Macro_Note_8910.h \[2.11\] 屏幕，时间---mmidisplay_data.h
-Save:node\C\project\Macro_Note_8910.h \[2.12\] 指令---------mmiset_security.h
-Save:node\C\project\Macro_Note_8910.h \[2.13\] 音量---------mmienvset_internal.h
-Save:node\C\project\Macro_Note_8910.h \[2.14\] 电池---------
-Save:node\C\project\Macro_Note_8910.h \[2.15\] trace
-Save:node\C\project\Macro_Note_8910.h \[2.16\] 扩展项目:
-Save:node\C\project\Macro_Note_8910.h \[2.17\] Build问题
-Save:node\C\project\Macro_Note_8910.h \[2.18\] 
-Save:node\C\project\Macro_Note_8910.h \[2.19\] 
-Save:node\C\project\Macro_Note_8910.h \[2.20\] 
+Save:node\C\project\Macro_Note_6600.h \[2.1\] 
+Save:node\C\project\Macro_Note_6600.h \[2.2\] 颜色---------common_mdu_def.h
+Save:node\C\project\Macro_Note_6600.h \[2.3\] 配置
+Save:node\C\project\Macro_Note_6600.h \[2.4\] fm
+Save:node\C\project\Macro_Note_6600.h \[2.5\] 语言, 字体----mmi_custom_define.h
+Save:node\C\project\Macro_Note_6600.h \[2.6\] 情景模式 音频参数:
+Save:node\C\project\Macro_Note_6600.h \[2.7\] 手电筒
+Save:node\C\project\Macro_Note_6600.h \[2.8\] U盘-----------mmisrvfmm_export.h 
+Save:node\C\project\Macro_Note_6600.h \[2.9\] 版本号--------version_software_mocor.h
+Save:node\C\project\Macro_Note_6600.h \[2.10\] 型号---------bt_cfg.h
+Save:node\C\project\Macro_Note_6600.h \[2.11\] 屏幕，时间---mmidisplay_data.h
+Save:node\C\project\Macro_Note_6600.h \[2.12\] 指令---------mmiset_security.h
+Save:node\C\project\Macro_Note_6600.h \[2.13\] 音量---------mmienvset_internal.h
+Save:node\C\project\Macro_Note_6600.h \[2.14\] 电池---------
+Save:node\C\project\Macro_Note_6600.h \[2.15\] trace
+Save:node\C\project\Macro_Note_6600.h \[2.16\] 扩展项目:
+Save:node\C\project\Macro_Note_6600.h \[2.17\] Build问题
+Save:node\C\project\Macro_Note_6600.h \[2.18\] 
+Save:node\C\project\Macro_Note_6600.h \[2.19\] 
+Save:node\C\project\Macro_Note_6600.h \[2.20\] 
 	
 
 
@@ -39,7 +39,7 @@ Save:node\C\project\Macro_Note_8910.h \[2.20\]
 [1.1] 编译指令:
 //
 Save:node\C\cfg\
-Save:node\C\cfg\Macro_c_build.h  __8910__
+Save:node\C\cfg\Macro_c_build.h  __6600__
 
 
 
@@ -47,65 +47,46 @@ Save:node\C\cfg\Macro_c_build.h  __8910__
 [1.2] gpio_cfg
 //
 make\custom_drv\custom_drv.mk  DRIVER_CONFIG_WA011U
-make\custom_drv\custom_drv.mk  gpio_cfg
 //SOURCES   +=	gpio_cfg_wa022u.c pinmap_cfg_wa022u.c
 
 //
-config:uis8910ff_refphone\
-config:uis8910ff_refphone\pinmap_cfg_x225u.c
+MS_Customize\source\product\config\uis6600ff_refphone\
 
 
 
 [1.3] KEY
-// mk
-prj:project_{cur}.mk   X225U_KEYMAP_STYLE
+//
+config:uis6600ff_refphone\keymap_cfg.c  keymap\[\]
+
+//	23键：
+prj:project_{cur}.mk   _23KEY
 prj:project_{cur}.mk   MMI_MULTI_GREEN_KEY =DUAL 绿键
 
 
-// --key--按键丝印
-//		==>SCI_VK_HOME
-config:uis8910ff_refphone\keymap_cfg.c  keymap\[\]
-config:uis8910ff_refphone\keymap_cfg.c  X225U_KEYMAP_STYLE
-config:uis8910ff_refphone\keymap_cfg.c  SCI_VK_CALENDER
-
-
-### key (im)
-// 详细键值
-Save:node\C\study\Macro_im_8910.h  __keymap__
-// shift
-Save:node\C\study\Macro_doc_8910.h  __keyStatus__
-
-
-
 [1.4] LCD
-// 
 prj:project_{cur}.mk   ST7789
 prj:project_{cur}.mk   ST7735S
 prj:project_{cur}.mk   _USE_3_LINE_2_DATD_ = FALSE  #no use
-// te
-prj:project_{cur}.mk   LCD_FMARK_NOT_SUPPORT
-// 90
-prj:{cfg}.cfg   MAINLCD_LOGIC_ANGLE = 90
 
 // 三线一通道
 prj:{cfg}.cfg   LCD_SPI = 3WIRE_9BIT_1DATA
 prj:{cfg}.cfg   SUBLCM_INTERFACE = SPI
-config:uis8910ff_refphone\lcm_cfg_info.c  USE_3_LINE_LCD
+config:uis6600ff_refphone\lcm_cfg_info.c  USE_3_LINE_LCD
 driver:lcd\tft_ST7735S.c  USE_3_LINE_LCD
 // 三线二通道
 prj:{cfg}.cfg   LCD_SPI = 3WIRE_9BIT_2DATA
 prj:{cfg}.cfg   SUBLCM_INTERFACE = SPI
-config:uis8910ff_refphone\lcm_cfg_info.c  TWO_DATA_LINE_LCD
+config:uis6600ff_refphone\lcm_cfg_info.c  TWO_DATA_LINE_LCD
 driver:lcd\tft_ST7735S.c  TWO_DATA_LINE_LCD
 // 四线一通道
 prj:{cfg}.cfg   LCD_SPI = 4WIRE_8BIT_1DATA
 prj:{cfg}.cfg   SUBLCM_INTERFACE = NONE
-config:uis8910ff_refphone\lcm_cfg_info.c  ONE_DATA_LINE_LCD
+config:uis6600ff_refphone\lcm_cfg_info.c  ONE_DATA_LINE_LCD
 driver:lcd\tft_ST7735S.c  TWO_DATA_LINE_LCD
 // 四线二通道
 prj:{cfg}.cfg   LCD_SPI = 4WIRE_8BIT_2DATA
 prj:{cfg}.cfg   SUBLCM_INTERFACE = NONE
-config:uis8910ff_refphone\lcm_cfg_info.c  TWO_DATA_LINE_LCD
+config:uis6600ff_refphone\lcm_cfg_info.c  TWO_DATA_LINE_LCD
 driver:lcd\tft_ST7735S.c  ONE_DATA_LINE_LCD
 
 //
@@ -120,7 +101,7 @@ make\custom_drv\custom_drv.mk  tft_ST7735S.c
 //
 MS_Customize\source\product\config\
 MS_Customize\source\product\config\ums9117_barphone\lcm_cfg_info.c LCD_DRV_ID_ST7735S
-MS_Customize\source\product\config\uis8910ff_refphone\lcm_cfg_info.c LCD_DRV_ID_ST7735S
+MS_Customize\source\product\config\uis6600ff_refphone\lcm_cfg_info.c LCD_DRV_ID_ST7735S
 // lcd-id
 MS_Customize\export\inc\lcm_cfg.h  LCD_DRV_ID_ST7735S
 // (107)
@@ -162,7 +143,7 @@ make\chip_drv\chip_drv.mk  analog_phy
 //	SUBLCM_INTERFACE = LCM     
 //	SUBLCD_DEV_SIZE  = 128X160  
 //	SUBLCD_SIZE      = 128X160  
-SPDE_PRJ\K220U_SHY_517T\uis8910_phone_user_base_config.cfg
+SPDE_PRJ\K220U_SHY_517T\uis6600_phone_user_base_config.cfg
 
 
 
@@ -171,7 +152,7 @@ SPDE_PRJ\K220U_SHY_517T\uis8910_phone_user_base_config.cfg
 make\custom_drv\custom_drv.mk  sensor_gc032A.c
 // 2.
 MS_Customize/source/product/config/ums9117_barphone/sensor_cfg.c
-MS_Customize\source\product\config\uis8910ff_refphone\sensor_cfg.c main_sensor_infor_tab
+MS_Customize\source\product\config\uis6600ff_refphone\sensor_cfg.c main_sensor_infor_tab
 // 二行：
 //	extern const SENSOR_INFO_T g_GC6153_yuv_info;
 //	&g_GC6153_yuv_info,
@@ -179,11 +160,10 @@ MS_Customize\source\product\config\uis8910ff_refphone\sensor_cfg.c main_sensor_i
 // 3.
 //		==>修改亮度: {0x92, 0x50}
 MS_Customize/source/product/driver/dc/
-MS_Customize/source/product/driver/dc/sensor_gc032A.c
 MS_Customize/source/product/driver/dc/sensor_gc6153.c
 
 
-// 4.(8910)
+// 4.(6600)
 MS_Ref\source\dc\sensor\sensor_drv.c  SENSOR_DRV_ID_GC6133
 //		==>camera_get_cfg
 //		====>g_dcam_cfg_8W_240x320
@@ -197,21 +177,18 @@ MS_Ref/source/dc/dc_common/src/dcamera_8W_240x320.c
 // 107
 prj:project_{cur}.mk CAMERA_SUPPORT   = TRUE
 prj:project_{cur}.mk DC_FLASH_SUPPORT = TRUE
-// 8910
-prj:{cfg}.cfg  CAMERA_SUPPORT     = TRUE
-prj:{cfg}.cfg  DC_FLASH_SUPPORT   = TRUE
-
-// 输出的接口，
-dvp spi mipi这种。
+// 6600
+prj:{cfg}.cfg CAMERA_SUPPORT     = TRUE
+prj:{cfg}.cfg DC_FLASH_SUPPORT   = TRUE
 
 
 [1.6] TP
 // BL6133  CST816S
-project_UIS8910_ROM_16MB_SS_WA07U_USER.mk  CAP_TP_SUPPORT
-uis8910_phone_user_base_config.cfg  CAP_TP_SUPPORT
+project_UIS6600_ROM_16MB_SS_WA07U_USER.mk  CAP_TP_SUPPORT
+uis6600_phone_user_base_config.cfg  CAP_TP_SUPPORT
 //
-SPDE_PRJ\WA07U\project_UIS8910_ROM_16MB_SS_WA07U_USER.mk  CAP_TP_SUPPORT
-SPDE_PRJ\WA07U\uis8910_phone_user_base_config.cfg  CAP_TP_SUPPORT
+SPDE_PRJ\WA07U\project_UIS6600_ROM_16MB_SS_WA07U_USER.mk  CAP_TP_SUPPORT
+SPDE_PRJ\WA07U\uis6600_phone_user_base_config.cfg  CAP_TP_SUPPORT
 //
 
 
@@ -287,7 +264,7 @@ nv_type_4band.nvm	0x10203, 0x1000203,    卡反
 prj:project_{cur}.mk  FM_SUPPORT = TRUE
 prj:project_{cur}.mk  FM_S_ANT_SUPPORT = TRUE
 prj:project_{cur}.mk  FM_VBC   = TRUE
-// 8910
+// 6600
 prj:{cfg}.cfg         FM_SUPPORT       = SPRD_V0    /  NONE
 prj:{cfg}.cfg         FM_VBC_EQ        = TRUE
 prj:{cfg}.cfg         FM_VBC           = TRUE
@@ -299,7 +276,7 @@ prj:project_{cur}.mk  MMI_FM_MENU_SLIM_STYLE  = TRUE
 
 	
 [2.5] 语言, 字体---mmi_custom_define.h 
-// font-8910/107
+// font-6600/107
 source:mmi_service\export\inc\mmi_custom_define.h  MMI_DEFAULT_BIG_FONT
 // font-6531
 MS_MMI\source\mmi_app\custom\h\mmi_custom_define.h MMI_DEFAULT_BIG_FONT
@@ -326,7 +303,7 @@ MMISET_EDEFAULT_INPUT_LANGUAGE_TRAD_CN = TRUE
 ## 关中文     
 prj:project_{cur}.mk  IM_SIMP_CHINESE_SUPPORT = FALSE
 prj:project_{cur}.mk  MMI_DISPLAY_SIMP_CHINESE_SUPPORT = FALSE
-prj:uis8910_phone_base_config.cfg  IM_SIMP_CHINESE_SUPPORT
+prj:uis6600_phone_base_config.cfg  IM_SIMP_CHINESE_SUPPORT
 
 
 [2.6] 情景模式 音频参数:
@@ -443,7 +420,7 @@ mmiphone_onoff.c  SBD_CHANGE_POWER_OFF_TIME_10S
 
 
 // red--长按重启时间
-chip_drv\chip_module\chip\uix8910\chip_phy_uix8910.c  CHIP_PHY_PB1KeyHwRstSet
+chip_drv\chip_module\chip\uix6600\chip_phy_uix6600.c  CHIP_PHY_PB1KeyHwRstSet
 
 
 
@@ -460,7 +437,7 @@ source:mmi_app\app\envset\h\mmienvset_internal.h  MMIENVSET_CALL_RING_VOL_SILENT
 // multim vol
 source:mmi_app\app\setting\h\mmiset_export.h  MMISET_VOL_DEFAULT_MULTIM
 // 合盖 vol
-Save:node\C\study\Macro_gui_8910.h  __vol__
+Save:node\C\study\Macro_gui_6600.h  __vol__
 
 
 
@@ -477,8 +454,8 @@ prj:project_{cur}.mk TRACE_INFO_SUPPORT = TRUE
 prj:project_{cur}.mk PRODUCT_BASELIB_DIR = sc6531_32X32_320X240BAR_QW_ATV_formal_trace
 //
 UART_LOG_SUPPORT
-// 8910
-MODEM_BIN_FILE = UIS8910_ROM_16MB_DS_DEBUG
+// 6600
+MODEM_BIN_FILE = UIS6600_ROM_16MB_DS_DEBUG
 // 107 user打串口
 UART_LOG_SUPPORT
 
@@ -514,8 +491,8 @@ open: tools\DEBUG_TOOL\LOGEL\Bin\ArmLogel.exe
 // NV修改:
 open: tools\DEBUG_TOOL\NVEDITOR\Bin\NVEditor.exe
 // 选择:
-build\UIS8910_ROM_16MB_DS_USER_builddir\img\nvitem\nvitem.prj
-F:\6531G_16A_MP_W17.43.4\build\UIS8910_ROM_16MB_DS_USER_builddir\img\nvitem
+build\UIS6600_ROM_16MB_DS_USER_builddir\img\nvitem\nvitem.prj
+F:\6531G_16A_MP_W17.43.4\build\UIS6600_ROM_16MB_DS_USER_builddir\img\nvitem
 // 设置 Armlog抓取:
 //	dsp_log_switch = 0x0 //
 //	enable_arm_log = 0x1
@@ -642,7 +619,7 @@ build\{cur}_builddir\tmp\app.macro 查看宏是否存在
 //findstr /s /i "Generate" *.log>aaaa.txt
 	
 
-cmd_w: cd build\UIS8910_ROM_16MB_DS_USER_builddir\
+cmd_w: cd build\UIS6600_ROM_16MB_DS_USER_builddir\
 cmd_w: D:&&cd D:\Save\SI\Macro\
 
 

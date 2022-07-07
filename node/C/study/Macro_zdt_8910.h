@@ -328,6 +328,11 @@ app:zdt\c\zdt_yx_net.c  YX_Net_TCPSend( )
 app:zdt\c\zdt_tcp.c  case^ZDT_APP_SIGNAL_TCP_WRITE_START
 
 
+// record
+// ...Ç°ÂÔ
+app:zdt\c\zdt_yx.c   case^ZDT_APP_SIGNAL_YX_RECORD_SEND
+
+
 
 
 [1.10] sms
