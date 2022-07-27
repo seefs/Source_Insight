@@ -40,12 +40,14 @@ prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
 
-projectKey   = WA23U_L03
-//curKey   = UIS8910_ROM_16MB_SS_{project}_USER
-curKey   = UIS8910_240x320BAR_16MB_SS_{project}_DEBUG
-//cfgKey   = uis8910_phone_user_base_config
-cfgKey   = uis8910_phone_base_config
-sizeKey  = 128X128
+//projectKey   = BMWATCH_FS
+projectKey   = WA03U_T6
+curKey   = UIS8910_ROM_16MB_SS_{project}_USER
+//curKey   = UIS8910_240x320BAR_16MB_SS_{project}_USER
+//cfgKey   = uis8910_watch_user_base_config
+cfgKey   = uis8910_phone_user_base_config
+sizeKey  = 240X280
+size2Key  = 240X280
 
 
 ### 3.copy
@@ -61,6 +63,6 @@ tmpKey = xx
 ### 5.build
 simulatorKey = simulator_idh
 resource_mainKey = resource_main
-app_mainKey = app_main
+app_mainKey = app_watch_main
 gui_mainKey = gui_main
 

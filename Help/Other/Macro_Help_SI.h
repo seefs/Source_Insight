@@ -47,10 +47,15 @@ Save:Macro\sbd_file.em  IsTxtFile( )
 
 
 [1.2] marco test...
+//
+Save:Help\
 // 功能测试
 Save:Help\Macro_Note_Test.h
 // 开启测试
 Save:Macro\sbd_test.em  macro^TestMsg
+
+// 批量替换
+Save:Help\Other\Macro_Help_replace.h
 
 
 [1.3] set save path

@@ -21,11 +21,12 @@ nv:\\
 
 sourcePath  = MS_MMI_Main\source\
 appPath     = MS_MMI_Main\source\mmi_app\app\
-ctrlPath    = MS_MMI_Main\source\mmi_ctrl\source
-guiPath     = MS_MMI_Main\source\mmi_gui\source
-configPath  = MS_Customize\source\product\config
+commonPath  = MS_MMI_Main\source\mmi_app\common\
+ctrlPath    = MS_MMI_Main\source\mmi_ctrl\source\
+guiPath     = MS_MMI_Main\source\mmi_gui\source\
+configPath  = MS_Customize\source\product\config\
 driverPath = MS_Customize\source\product\driver\
-sensorsPath = MS_Customize\source\product\driver\sensors
+sensorsPath = MS_Customize\source\product\driver\sensors\
 
 
 ### 1.cfg

@@ -1,3 +1,5 @@
+
+
 ### str_table1.xls
 English, Ó¢Óï
 SIMpleChinese, ¼òÌåÖĞÎÄ

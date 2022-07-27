@@ -35,7 +35,7 @@ Save:node\Pythons\install\Macro_Pythons_Install.h \[2.9\] keras-transformer(no u
 Save:node\Pythons\install\Macro_Pythons_Install.h \[2.10\] input_data
 Save:node\Pythons\install\Macro_Pythons_Install.h \[2.11\] Pycharm
 Save:node\Pythons\install\Macro_Pythons_Install.h \[2.12\] requests
-Save:node\Pythons\install\Macro_Pythons_Install.h \[2.13\] 
+Save:node\Pythons\install\Macro_Pythons_Install.h \[2.13\] googletrans
 Save:node\Pythons\install\Macro_Pythons_Install.h \[2.14\] 
 //	lib
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.1\] pandas
@@ -49,7 +49,8 @@ Save:node\Pythons\install\Macro_Pythons_Install.h \[3.8\] chardet
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.9\] pillow--------imgsize
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.10\] pyyaml-------ttf
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.11\] websocket
-Save:node\Pythons\install\Macro_Pythons_Install.h \[3.12\] 
+Save:node\Pythons\install\Macro_Pythons_Install.h \[3.12\] openpyxl-----excel
+Save:node\Pythons\install\Macro_Pythons_Install.h \[3.13\] 
 //	install
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.1\] install
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.2\] upgrade
@@ -296,22 +297,32 @@ cmd_w: pip install requests
 cmd_w: pip install beautifulsoup4
 
 
+[2.13] googletrans
+// google翻译
+cmd_w: pip install googletrans
+//最新版无法使用
+cmd_w: pip install googletrans==3.1.0a0
+//
+cmd_w: pip show googletrans
+// 3.0.0
 
-[2.13] 
-
-
+// pygoogletranslation
+cmd_w: pip install pygoogletranslation
+// No matching distribution found for tqdm
+// --pip需要升级
+cmd_w: python -m pip install --upgrade pip
 
 
 [2.14] 
 
 
 [3.1] pandas
-python -m pip install matplotlib -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
-python -m pip install numpy -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
-python -m pip install pandas -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
-python -m pip install seaborn scipy  -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+cmd_w: python -m pip install matplotlib -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+cmd_w: python -m pip install numpy -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+cmd_w: python -m pip install pandas -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+cmd_w: python -m pip install seaborn scipy  -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
 
-python -m pip install opencv-python
+cmd_w: python -m pip install opencv-python
 
 
 [3.2] gensim
@@ -408,9 +419,13 @@ cmd_w: pip install
 //	wave
 
 
-[3.12] 
+[3.12] openpyxl
+//
+cmd_w: pip install openpyxl
 
 
+
+[3.13] 
 
 
 

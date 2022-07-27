@@ -1,6 +1,6 @@
 
 //目录
-Save:node\C\study\Macro_doc_8910.h \[1.1\] Message-------------
+Save:node\C\study\Macro_doc_8910.h \[1.1\] Message, keyStatus
 Save:node\C\study\Macro_doc_8910.h \[1.2\] FUN 入口-------------
 Save:node\C\study\Macro_doc_8910.h \[1.3\] //lang
 Save:node\C\study\Macro_doc_8910.h \[1.4\] 配置
@@ -22,12 +22,71 @@ Save:node\C\study\Macro_doc_8910.h \[1.18\]
 
 
 
-[1.1] Message
+[1.1] Message, keyStatus
 
 //	Message 切换
 Save:node\C\study\Macro_Spr_MsgId.h
 //
 // MMK_WinGrabFocus(MMIWIFI_LIST_WIN_ID);
+
+
+### __keyKbd__
+// --虚拟值转实际值
+Save:node\C\study\Macro_im_8910.h   __keySignal__
+//		==>MMK_DispatchMSGKbd
+//		====>MMIDEFAULT_ConvertKeyCode
+//		======>signal_keycode:w/66/0x42/SCI_VK_W
+//		======>key_code:      w/41/0x29/KEY_W
+//		====>KPD_DOWN:
+//		====>HandleMSGKbd
+//		======>MMK_DefaultMSGKbd                    # 背光/按键音/音量键/handset
+//		========>other:
+//		==========>green:
+//		==========>MMIAPICC_SendMsgToApplet(KEY_PRESSED + keycode, PNULL);
+//		==========>end:
+//		==========>MMIAPICC_ReleaseCallByRedkey();
+//		========>DefaultIsRespond
+//		======>GetMultiKeyTPParam
+//		========>cur_key_num:      0
+//		======>MMK_DispMsgToWin                     # 窗口处理
+//		========>MMK_DispMsgToFocusWin
+//		==========>MMK_DispatchToHandle             # --WINDOW
+//		============>WINDOW:
+//		============>MMK_DefaultProcessWinMsg
+//		==============>MMK_RunWinHookProc
+//		================>.MMK_RunCtrlProc
+
+//		============>MMK_RunWinProc                 # --win_handle
+//		==============>.ProcessMsg
+//		==============>CC_HandleCcWinMsg            # --key--kbd--call
+//		============>MMK_ProcSpecialWinMsg          # --win_handle
+//		======>MMK_DefaultMSGKbdLater               # 系统默认处理
+//		========>侧键/earphone/earphone/CAM/ScreenPhoto
+//		======>MMK_HandlePublicKey                  # 
+//		================>
+//		==================>
+//		====================>
+//		======================>
+//		========================>
+//		==========================>
+
+### __keySig__
+// --
+//		==>DispatchSysSig
+//		====>MMICC_HandlePsMsg
+//		======>APP_MN_CALL_DISCONNECTED_IND
+//		========>MmiDestroySignal
+//		============>MmiSendSignal
+//		==============>
+//		================>
+//		==================>
+//		====================>
+//		======================>
+//		========================>
+//		==========================>
+//		============================>
+//		==============================>
+//		================================>
 
 
 

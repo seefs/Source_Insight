@@ -22,7 +22,7 @@ Save:node\C\study\Macro_gui_8910.h  \[1.19\] sublcd
 Save:node\C\study\Macro_gui_8910.h  \[1.20\] font
 Save:node\C\study\Macro_gui_8910.h  \[1.21\] list---------------
 Save:node\C\study\Macro_gui_8910.h  \[1.22\] height-------------滚动条
-Save:node\C\study\Macro_gui_8910.h  \[1.23\] edit, im, pen
+Save:node\C\study\Macro_gui_8910.h  \[1.23\] edit, im, pen, cursor
 Save:node\C\study\Macro_gui_8910.h  \[1.24\] color--------------属性
 Save:node\C\study\Macro_gui_8910.h  \[1.25\] label--------------
 Save:node\C\study\Macro_gui_8910.h  \[1.26\] text---------------
@@ -162,9 +162,11 @@ gui:win\c\Guiwin.c  GUIWIN_SetSoftkeyTextId    8
 
 
 [1.4] statusbar, change
-// statusbar init--8910/107
-//		==>MMIAPIIDLE_init
-//		====>SetStatusAreaInfo                     # pos
+// --statusbar--init--8910/107
+//		==>APP_Init
+//		====>MMIAPIIDLE_init
+//		======>MMIAPICOM_StatusAreaInit
+//		========>SetStatusAreaInfo                 # for--pos
 app:idle/c/mainapp.c  MMIAPICOM_StatusAreaInit
 //		====>SetStatusBarInfo
 //		======>GUIWIN_AppendStbItemData
@@ -177,6 +179,19 @@ app:idle/c/mainapp.c  MMIAPICOM_StatusAreaInit
 //		====>MMIPHONE_HandleNetworkInfoInd
 //		======>MMIIDLE_SetSimStatusBarInfo         # sim icon
 app:idle/c/mainapp.c  MMIDILE_StatusBarInit
+// --statusbar--init--other (__bt_bar__)
+//		====>MMIIDLE_InitWinInfo
+//		======>.bluetooth_state = 3; (修改开机状态栏不显示蓝牙)
+//		====>MMIAPIBT_AppInit
+//		======>MMIBT_GetBtStatusForIcon
+//		======>MMIAPICOM_StatusAreaSetBTStateWhenPoweron         # state=0
+//		====>AppHandleBTMsg
+//		======>BT_CNF: (on/off)
+//		======>MMIBT_GetBtOnOffCnf
+//		========>MMIBT_UpdateBtIdleIcon
+//		==========>MMIAPICOM_StatusAreaSetBTStateWhenPoweron     # state=0
+//		====>lock/LOSE_FOCUS:
+//		======>MMIAPICOM_StatusAreaWithheaderSet
 
 
 //动态创建状态条:
@@ -349,23 +364,106 @@ Save:node\C\study\Macro_pos_8910.h  __pubWin__
 Save:node\C\study\Macro_res_image_8910.h  __pubWin__
 
 
-//弹出窗:
-//DisplayTipsPtr
-//
-//MMIPUB_OpenAlertWarningWin(TXT_INSERT_SIM);
+// --pubwin--Tips (提示)
+//		==========>DisplayTipsPtr
+//		==========>MMITHEME_GetTipsStrInfo
+// --pubwin--alert (Lock)
+//		==>MMIPUB_OpenAlertWinByTextId
+//		====>MMIPUB_OpenAlertWinByTextIdEx
+//		======>OpenAlertWin                 # func, font_color
+//		==>HandleLockPopWinMsg
+//		====>PAINT:
+//		====>MMIPUB_HandleAlertWinMsg
+//		======>MMIPUBHandleWinMsg
+//		========>MMIPUBLayout
+//		========>MMIPUBDisplayWin
+//		==========>DisplayPubWinBg
+//		==========>.anim_id
+//		==========>DisplayPubWinText
+//		==========>DisplayPubWinAnim
+//		============>
+// --pubWin--progress (pb--del)
+//		==>MMIPUB_HandleProgressWinMsg
+//		====>DisplayProgressWin              # PAINT
+//		======>DisplayPubWinText
+//		======>DisplayProgressText
+//		========>MMIPUB_PROGRESS_TEXT_RIGHT  #
+//		====>MMIPUB_UpdateProgressBarEx
+// --pubwin--wait (bt)
+//		==>MMIBT_OpenBluetooth();
+//		====>STR_NOTE_WAITING
+//		==>MMIPUB_OpenWaitWin(1,);
+//		====>OpenWaitWin                     # func
+//		======>
+//		==>HandlePubwinWaitingMsg()
+//		====>MMIPUB_HandleWaitWinMsg
+//		======>MMIPUBHandleWinMsg
+//		======>PAINT:
+//		====>UpdatePubwinScreen
+// --pubwin--wait (fm)
+//		==>MMIPUB_OpenAlertWarningWin(TXT);
+//		====>MMIPUB_OpenAlertWinByTextId
+//		======>MMIPUB_OpenAlertWinByTextIdEx
+//		========>OpenAlertWin
+//		======>DisplayPubWinText
+//		==>HandleDefaultWinMsg(MMIPUB_WAIT_ANIM_CTRL_ID)
+//		======>
+//		========>
+//		==========>
+// --pubwin--alarm
+//		====>DisplayAlarmDialogWin
+//		======>
+//		========>
+//		==========>
+// --pubwin--psw (bt 8910)
+//		==>bt msg:
+//		==>DoOperation
+//		====>MMIBT_CreatePinInputWin
+//		======>OpenPinInputWin();                       # no use, 输入密码
+//		========>MMIPUB_OpenDialogPasswordWinByTextPtr
+//		==========>OpenDialogInputFieldWin              # create input, ctrl id
+//		============>GUIEDIT_TYPE_PASSWORD
+//		============>MMK_CreateControl
+//		==============>MMITHEME_GetPubTheme             # theme bg
+//		==============>MMITHEME_GetPswEditTheme
+//		==============>MMITHEME_GetPwDisplayTheme       # theme color
+//		==========>MMIPUB_HandleDialogInputFieldWinMsg
+//		========>PswEditCtrlConstruct                   # 单独修改 font color
+//		==========>MMITHEME_GetPwDisplayFontFromCtrl (&baseedit_ctrl_ptr->common_theme, base_ctrl_ptr->ctrl_id);
+//		==========>MMIPUB_INPUTFIELD_CTRL_ID
+//		============>
+//		====>MMIBT_GetInputPinReq                       # 本机请求
+//		==>Display_NumericPasskeyInfo                   # 无密码显示
+// --pubwin--psw (bt 107)
+//		======>OpenPinInputWin();                       # no pop
+//		========>MMK_CreatePubEditWin
+//		==========>CreateEditPasswordCtrl
+//		============>ConstructObject
+//		==============>PswEditCtrlConstruct
+//		================>MMITHEME_GetPswEditTheme       # bg color(反了)
+//		================>MMITHEME_GetPwDisplayTheme
+//		==================>
+//		==>HandlePinInputWinMsg                         # msg, ctrl id
+//		====>CTRLBASEEDIT_SetBgColor                    # 单独修改 bg color
+//		====>GUIEDIT_SetFontColor                       # 单独修改 font color
+// --pubwin--send (bt 8910)
+//		==>bt msg:
+//		==>DoOperation
+//		====>SEND:
+//		======>MMIPUB_OpenProgressWaitingIndWinByTextPtr   # 进度条
+// --pubwin--rec (bt 8910)
+//		==>"正在接收文件..." / STR_BT_WAIT_RECEIVE	
+//		==>"全部完成！文件已接收。" / STR_BT_RECEIVE_SUCCESS	
+//		==>"此存储空间已满..." / TXT_CMSBRW_UDISK_FULL_CHANGE_STORE		
+//		==>"正在连接至..." / STR_BT_CONNECTING_TO_EXT01		
+//		==>"已断开。音频已切换至手机。" / STR_BT_AUDIO_PHONE
 
-//提示窗pub：
-//	MMIPUBLayout
-//	MMIPUBDisplayWin
-//	DisplayPubWinText
-//	DrawTextInRect
-//	DrawTextInLine
-//	SPMLAPI_DrawText
+
 
 
 //测试Alert：
 //	MMIAPICL_OpenCallsListWindow(MMICL_CALL_DIALED);
-//	MMIPUB_OpenWaitWin
+//	
 //	Layout
 source:mmi_app\common\c\mmi_pubwin.c void^MMIPUBLayout
 source:mmi_app\common\c\mmi_pubwin.c 4097
@@ -384,29 +482,14 @@ source:mmi_app\common\c\mmi_pubwin.c 4263 title_rect
 // 去掉softkey
 //MMIPUB_SOFTKEY_CUSTOMER  MMIPUB_SOFTKEY_ONE
 
-//	MMIPUB_OpenAlertWinByTextId();
-
-//HandleDefaultWinMsg(MMIPUB_WAIT_ANIM_CTRL_ID)
-
-//wait pub
-//DisplayPubWinText
 
 
-//	提示
-//MMITHEME_GetTipsStrInfo
 
 // pop--格式化
 app:fmm/c/mmifmm_sd.c  MMIPUB_OpenProgressWinByTextId  MMIPUB_SOFTKEY_ONE
 // pop--连接管理--数据漫游
 app:connection/c/mmiconn_manager_wintab.c
 
-// pubWin--pb--del--prg
-//		==>MMIPUB_HandleProgressWinMsg
-//		====>DisplayProgressWin              # PAINT
-//		======>DisplayPubWinText
-//		======>DisplayProgressText
-//		========>MMIPUB_PROGRESS_TEXT_RIGHT  #
-//		====>MMIPUB_UpdateProgressBarEx
 
 
 [1.7] form
@@ -474,6 +557,28 @@ ctrl:editbox\c\ctrlbaseflex_display.c   void^DisplayTextString
 ctrl:Title\c\ctrltitle.c  void^DisplayTitleSubText
 
 
+### CHILD_EDIT_TEXT (sms--edit text)
+//		==>BASEFLEX_AddString
+//		====>BASEFLEX_UpdateDisplay
+//		======>PART:
+//		======>DisplayPart
+//		====>GUI_DisplayBorder
+
+//		==>
+//		====>
+//		======>
+//		========>
+//		==========>
+//		============>
+//		==============>
+//		================>BASEEDIT_UpdateTextBg
+//		==================>BASEEDIT_DisplayBg     # 画2~3行背景,从上一行开始
+//		==================>BASEEDIT_GetLineRect   # 画线, h=1
+//		====================>line_height = 
+// ==>pos
+Save:node\C\study\Macro_pos_8910.h  __EditSms__
+
+
 ### CHILD_LIST (color)
 // alarm--repeat/ring/snooze
 //		==>ListDrawString
@@ -484,12 +589,11 @@ ctrl:Title\c\ctrltitle.c  void^DisplayTitleSubText
 //		==========>THEMELIST_GetContentTextColor    #区分焦点
 //		==========>MMI_WHITE_COLOR
 
-### CHILD_EDIT_TEXT
-// alarm--Name
+### CHILD_EDIT_TEXT (alarm--edit Name)
 //		==>BASEEDIT_DisplayEditExtraArea
 
 
-### EDIT_TEXT (browser--edit page) (color)
+### CHILD_EDIT_TEXT (browser--edit page) (color)
 //		==>MMITHEME_GetTextDisplayTheme
 //		====>.bg.color       # w
 //		==>BaseFlexCtrlDisplayAll
@@ -497,7 +601,7 @@ ctrl:Title\c\ctrltitle.c  void^DisplayTitleSubText
 //		======>GUISTR_DrawTextToLCDInRect
 //		====>GUI_DisplayBorder
 
-### EDIT_TEXT (sos--edit sms) (style2)
+### CHILD_EDIT_TEXT (sos--edit sms) (style2)
 //		==>BaseFlexCtrlDisplayAll
 //		====>BASEEDIT_DisplayBg
 //		======>GUISTR_DrawTextToLCDInRect
@@ -520,6 +624,32 @@ ctrl:Title\c\ctrltitle.c  void^DisplayTitleSubText
 //		==============>
 //		================>
 //		==================>
+
+
+### CHILD_BTN (draw)
+//		====>CTRLFORM_Layout
+//		======>LayoutAllChildCtrl
+//		========>CTRLFORM_CalcAllChild
+//		==========>GetAllChildSpace                 # 3btn 2space
+//		==========>CalculateChildWidthHeight
+//		============>all_child_width = 61           # 有1个空ctrl
+//		============>all_space       = 64           # hor_space*2
+//		============>sbs_width       = 125
+//		========>AdjustFormRelativeRect
+//		==========>ModifyPosByAlign                 # 第1个ctrl,left-1, 更新 relative_rect.right
+//		========>GetChildRelativeRect
+//		==========>GetChildRelativeLeft
+//		============>.relative_rect.right           # 
+//		==>ButtonCtrlHandleMsg
+//		====>PAINT:
+//		====>ButtonDraw
+//		=====>ButtonDrawBg
+//		=====>ButtonDrawFg
+//		=======>.fg_display_x
+//		=======>.rect
+//		=======>GUIRES_DisplayImg
+
+
 
 // form--Calculate (抓断点)
 ctrl:Form\c\ctrlform_calc.c  690
@@ -739,17 +869,6 @@ source:mmi_app\common\c\mmi_multi_variant.c  442
 
 
 
-// cursor
-ctrl:editbox\c\ctrlbaseflex_cursor.c  void^FillCursorColor
-ctrl:editbox\c\ctrlbaseflex_cursor.c  1205
-//	#ifndef WIN32
-//	        GUI_FillRect (
-//	            (const GUI_LCD_DEV_INFO*) &baseedit_ctrl_ptr->edit_layer_info,
-//	            cursor_rect,
-//	            baseedit_ctrl_ptr->common_theme.font.color);
-//	#endif
-
-
 
 // rect
 source:mmi_gui\source\graph\c\guigraph.c  2908
@@ -899,6 +1018,11 @@ app:theme/c/mmitheme_list.c  tag_width     # --check pos2 [39,87], bug
 //		==============>GUIITEM_STATE_DISABLE_MARK   # check
 //		================>mark_left, tag_img_width   # --check pos1 [6,23]
 //		==============>GUIITEM_STATE_HAS_NUM        # num
+//		==========>ListDrawScrollBar
+//		============>GUIPRGBOX_SetPosByPtr
+//		==============>ProgressBarDraw
+//		================>DisplayAutoHideScroll      # 超过15项画这个
+//		================>.thumb_threshold = 5;      # 1页3项*5
 ctrl:ListBox\c\ctrllistbox.c  GUIITEM_STATE_DISABLE_MARK
 
 
@@ -974,7 +1098,7 @@ ctrl:Form\c\ctrlform.c  BOOLEAN^FormConstruct
 //电话本
 
 
-[1.23] edit, im, pen
+[1.23] edit, im, pen, cursor
 // --edit--func
 //		==>
 //		====>GUIEDIT_SetFont(ctrl_id, SONG_FONT_60);
@@ -995,8 +1119,8 @@ ctrl:Form\c\ctrlform.c  BOOLEAN^FormConstruct
 //		======>common_theme.font.color
 
 
+### EDIT_DATE
 // --edit--calendar--time (full)
-// ----EDIT_DATE
 //		==>DateEditCtrlConstruct
 //		====>MMITHEME_GetMsDateEditTheme
 //		==>DateEditCtrlHandleMsg
@@ -1014,10 +1138,35 @@ ctrl:Form\c\ctrlform.c  BOOLEAN^FormConstruct
 //		================>.theme.align
 //		==================>MMITHEME_GetMsDateEditTheme   # theme
 
+### EDIT_TEXT
+// --edit--memo
+
+// --edit--pic--rename (more line)
+//		==>BaseEditCtrlConstruct
+//		====>MMITHEME_GetEditTheme
+//		==>TextEditCtrlHandleMsg
+//		====>BaseEditCtrlHandleMsg              # base
+//		======>PAINT:
+//		======>VTLBASEEDIT_DisplayAll
+//		========>BaseFixedCtrlDisplayAll
+//		==========>BASEEDIT_DisplayBg
+//		==========>GUI_DisplayBorder
+//		==========>BASEEDIT_DisplayHighlight
+//		============>BASEEDIT_DisplayBg
+//		============>DisplayHighlightAndStr
+//		==============>BASEEDIT_GetTextRect     # [43,73]  (标题len少5)
+//		==============>VTLBASEEDIT_GetAlign
+//		================>BASEEDIT_UpdateTextBg
+//		==>DisplayTextString
+//		====>BASEEDIT_GetTextRect
+//		======>BASEEDIT_GetLineRect   # 画线, (多行不带分隔线)
+//		========>.edit_rect           # --[40,199]
+//		========>.common_theme.font.color
+// --edit--alarm--fm ring (标题len少5)
+
 
 // 不显示 cursor
 Save:node\C\study\Macro_fun_8910.h  __cursor__
-
 
 
 
@@ -1038,8 +1187,14 @@ Save:node\C\study\Macro_res_color_8910.h  __form2__
 //工程模式--item9-2-5--黄色边框重叠(可不改)
 //工程模式--item10-21--编辑线(可不改)
 //工程模式--item11-1-1-1--进度条名称深色(可不改)
-//工程模式--item21-2-1-1---编辑4角白点
+//工程模式--item22-2-1-1---编辑4角白点
 
+### EDIT_DIGITAL (eng)
+// MMK_CloseWin
+//		==>MMITHEME_GetEditTheme
+//		====>.bg.shape         = GUI_SHAPE_ROUNDED_RECT
+//		====>换成：GUI_SHAPE_RECT不会有白底
+//		==>HandleFreqEditBoxWinMsg
 
 
 
@@ -1165,6 +1320,17 @@ Save:node\C\study\Macro_pos_8910.h  __text__
 //		======>menu_ctrl_ptr->item_pos_info_ptr[item_index].item_rect
 // menu--theme--height
 app:theme\c\mmitheme_menu.c  MMITHEME_GetSecondMenuTheme
+
+
+// popmenu--draw
+//		==>Paint:
+//		==>HandleMenuPaint
+//		====>CTRLMENU_UpdatePrevPop(0,menu_ctrl_ptr);
+//		======>CTRLMENU_Draw
+//		========>CTRLMENU_DrawPop
+//		==========>DisplayPopupMenu
+app:theme\c\mmitheme_menu.c  MMITHEME_GetPopMenuTheme
+
 
 ### menu
 //  ==>pos

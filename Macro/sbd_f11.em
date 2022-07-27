@@ -354,15 +354,22 @@ macro NoteHander(hbuf, cNum, prompt)
 		else if(noteCmd == "Save" || noteCmd == "App")
 			isCmd = 5
 			
+		//type8: [head],
+		else if(noteCmd == "autoRun")
+			isCmd = 10
+			
 		//type5: [head, path], str1, str2
 		else if(prompt == 0 && strlen(noteCmd)==1)
 			isCmd = 5
 			
-		//命令名转化: 删除空格
-		secondS = GetTransCmdS(cur_line, firstE + 1, len)
-		secondE = GetTransCmdE(cur_line, secondS,     len)
-		thirdS  = GetTransCmdS2(cur_line, secondE + 1, len)
-		thirdE  = GetTransCmdE(cur_line, thirdS,     len)
+		if (isCmd != 10)
+		{
+			//命令名转化: 删除空格
+			secondS = GetTransCmdS(cur_line, firstE + 1, len)
+			secondE = GetTransCmdE(cur_line, secondS,     len)
+			thirdS  = GetTransCmdS2(cur_line, secondE + 1, len)
+			thirdE  = GetTransCmdE(cur_line, thirdS,     len)
+		}
 		
 		if (isCmd == 1)
 			curPath = strmid(cur_line, secondS, secondE)	// head, [path], str1, str2
@@ -503,7 +510,7 @@ macro NoteHander(hbuf, cNum, prompt)
 			curPath = strmid(cur_line, secondS, len)	// head, [path, str1, str2] (路径转换有区别)
 			curPath = ReAllTransHead(hbuf, curPath)
 		}
-		else if (isCmd == 8)
+		else if (isCmd == 8 || isCmd == 10)
 		{
 			curPath = ""                  	    	    // [head, path, str1, str2]
 		}
@@ -528,7 +535,7 @@ macro NoteHander(hbuf, cNum, prompt)
 		{
 			noteWord = GetTransStr(cur_line, thirdS, thirdE)
 		}
-		else if (isCmd == 2 || isCmd == 3 || isCmd == 4 || isCmd == 7 || isCmd == 8)
+		else if (isCmd == 2 || isCmd == 3 || isCmd == 4 || isCmd == 7 || isCmd == 8 || isCmd == 10)
 		{
 			noteWord = ""
 		}
@@ -755,6 +762,10 @@ macro NoteHander(hbuf, cNum, prompt)
 			  # "cmdP2" # CharFromKey(13) # "--" # cmdP2 # "--" # CharFromKey(13)
 			  # "str" # CharFromKey(13) # "--" # str # "--" # CharFromKey(13)
 				, 2)
+	}
+	else if(noteCmd == "autoRun")
+	{
+		NoteAutoRun(hbuf)
 	}
 	else
 	{
@@ -1184,6 +1195,86 @@ macro NoteScroll(hbuf, curPath, noteWord)
 		//8.4 关键词跳转
 		TestMsg("跳转到文件: " # CharFromKey(13) # curPath # CharFromKey(13) #　"内容: " # CharFromKey(13) # noteWord, 2)
 		ScrollCursor(mSel)
+	}
+}
+
+
+macro NoteAutoRun(hbuf)
+{
+	var wrBuf
+	var isLocalVal
+	var baseVal
+	var proNvVal
+	var fileVal
+	var rowVal
+	var itemVal
+	
+	var oldVal
+	var newVal
+	
+	var lnMax
+	var ln
+
+	var cur_line
+	var cur_Wr_line
+	var new_line
+	
+	//get Key
+	isLocalVal = getMacroValue(hbuf, "isLocal" # "Key", 1)
+	baseVal = getMacroValue(hbuf, "base" # "Key", 1)
+	proNvVal = getMacroValue(hbuf, "proNv" # "Key", 1)
+	fileVal = getMacroValue(hbuf, "file" # "Key", 1)
+	rowVal  = getMacroValue(hbuf, "row" # "Key", 1)
+	itemVal  = getMacroValue(hbuf, "item" # "Key", 1)
+	//0xE912
+	oldVal = getMacroValue(hbuf, "old" # "Key", 1)
+	//0xE92
+	newVal = getMacroValue(hbuf, "new" # "Key", 1)
+
+	lnMax = GetBufLineCount(hbuf)
+	sel = MGetWndSel(hbuf)
+	ln = sel.lnFirst + 1 
+	while (ln < lnMax)
+	{
+		cur_line = GetBufLine(hbuf, ln)
+		if (cur_line == "")
+			break
+		if (cur_line != sTrim)
+		{
+			//get Key
+			mar = GetLineMacro(cur_line)
+			val = GetLineValue(cur_line)
+			baseVal = getMacroValue(hbuf, "base" # "Key", 1)
+			if ("path" == mar)
+			{
+				if("1" == isLocalVal)
+					fileName = baseVal # "\\" # val # "\\" # proNvVal # "\\" # fileVal
+				else
+					fileName = baseVal # "\\" # val # "\\" # fileVal
+				//write
+				wrBuf = OpenExistFile(fileName)
+				if (wrBuf != hNil){
+					lnWrMax = GetBufLineCount(wrBuf)
+					if (wrBuf < lnWrMax){
+						cur_Wr_line = GetBufLine(wrBuf, rowVal - 1 )
+						wr_mar = GetLineMacro(cur_Wr_line)
+						wr_val = GetLineValue(cur_Wr_line)
+						if (wr_mar == itemVal && wr_val == oldVal){
+							new_line = ReplaceWord(cur_Wr_line, oldVal, newVal)
+							PutBufLine(wrBuf, rowVal - 1, "@new_line@")
+						}
+					}
+					SaveBuf(wrBuf)
+					CloseBuf(wrBuf)
+				}
+				else
+				{
+					msg("error:" # fileName)
+				}
+			}
+			//msg(cur_Wr_line)
+		}
+		ln = ln + 1
 	}
 }
 

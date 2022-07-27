@@ -1,6 +1,7 @@
 
-基础路径设置:
-//basePath = 
+// --cur
+Save:set\
+Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 
 //目录:
 // 1. 
@@ -25,7 +26,7 @@ Save:node\C\study\Macro_pos_8910.h \[1.18\] pubWin
 Save:node\C\study\Macro_pos_8910.h \[1.19\] text
 Save:node\C\study\Macro_pos_8910.h \[1.20\] banner
 Save:node\C\study\Macro_pos_8910.h \[1.21\] spinner
-Save:node\C\study\Macro_pos_8910.h \[1.22\] 
+Save:node\C\study\Macro_pos_8910.h \[1.22\] watch----------------
 Save:node\C\study\Macro_pos_8910.h \[1.23\] 
 Save:node\C\study\Macro_pos_8910.h \[1.24\] 
 Save:node\C\study\Macro_pos_8910.h \[1.25\] 
@@ -497,25 +498,25 @@ app:record\h\mmirecord_position.h  MMIRECORD_RECORD_RECORD_BG_H_Y
 //		==>MP3_TIME_RECT_V           # time
 //		==>MP3_PIC_RECT_V            # bg
 // ui_1--pos--240*320 (H)
-//		==>title
+//		==>title:
 //		====>hor_title_form_rect
 //		======>MMIMP3_TITLE_BOTTOM_H        # title rect
 //		========>MMIMP3_TITLE_MAIN_HEIGHT_H
 //		====>MMIMP3_LIST_BTN_WIDTH_H        # left/right btn (remove)
 //		====>file_label_rect                # fileinfo (remove)
-//		==>ALBUM
+//		==>ALBUM:
 //		====>album_anim_rect
 //		======>MMIMP3_ALBUM_ANIM_RECT_H     # album rect
 //		========>MMIMP3_PLAY_FORM_TOP_H
-//		==>osd-btn
+//		==>osd-btn:
 //		====>osd_panel_rect
 //		======>MMIMP3_OSD_LABEL_RECT_H      # 
 //		========>MMIMP3_OSD_PANEL_RECT_H
 //		====>MMIMP3_OSD_LABEL_HEIGHT        # ?
 //		====>MMIMP3_OSD_PROGRESS_HEIGHT     # ?
-//		==>osd-process
+//		==>osd-process:
 //		====>dumy_owndraw_height            # 
-//		==>father/play
+//		==>father/play:
 //		====>hor_play_btn_form_rect         # play rect
 //		======>MMIMP3_HOR_PLAY_FORM_RECT
 //		========>MMIMP3_PLAY_FORM_TOP_H
@@ -678,6 +679,18 @@ app:theme\h\mmidisplay_data.h  {size2}   MMI_PASSWORD_EDIT_TOP_MARGIN
 app:theme\h\mmidisplay_data.h  {size2}   MMI_PASSWORD_EDIT_HEIGHT
 
 
+### __EditSms__  (edit sms)
+
+//		==>BASEEDIT_GetLineRect           # 画线, h=1
+//		====>line_height = 28             # --字体高度+2
+//		====>rect        = [54,203] 
+//		====>edit_rect   = [59,198]       # --margin=5
+//		======>28*3=84<144
+//		========>row1:  [59,87]
+//		========>line1: [88,88]           # --bottom错
+//		========>row2:  [87,115]
+//		========>line2: [116,116]
+
 
 [1.18] __pubWin__
 //
@@ -705,7 +718,7 @@ app:theme/h/mmi_position_{size}.h   MMITHEME_PUBWIN_WAIT_RECT
 
 // --pubWin--pos
 source:mmi_app\common\h\mmipub.h  MMIPUB_TEXT_MAX
-// --pubWin--prg
+// --pubWin--prg (右对齐)
 source:mmi_app\common\c\mmi_pubwin.c  MMIPUB_PROGRESS_TEXT_RIGHT
 
 
@@ -764,9 +777,74 @@ source:mmi_app\common\c\mmicom_banner.c  MMI_TEXT_BANNER_TEXT_HEIGHT
 
 
 
-[1.22] 
+[1.22] watch
+### watch--bg
+// bg: (116 X 24)
+//   res_list_bg
+ctrl:ListBox\c\ctrllistbox.c  MMI_WATCH_UI
+ctrl:ListBox\c\ctrllistbox.c  MMI_LIST_ITEM_BG_LEFT_RIGHT_MARGIN
+
+### __setMain__
+// set--main--icon+str
+//		==>GUIITEM_STYLE_1ICON_1STR
+//		====>s_item_style_1icon_1str
+//		======>[13,14,55,56]  36*36
+//		======>[63,10,218,57]
+app:theme/h/mmi_position.h  ^WATCHLIST_ICON_TEXT_LEFT_SPACE     # 13 space
+app:theme/h/mmi_position.h  ^WATCHLIST_ICON_TEXT_TOP_SPACE      # 14
+app:theme/h/mmi_position.h  ^WATCHLIST_ICON_TO_TEXT_SPACE       # 8
+app:theme/h/mmi_position.h  ^WATCHLIST_BG_ICON_TOP_SPACE        # 10
+app:theme/h/mmi_position.h  ^WATCHLIST_BG_ICON_BOTTOM_SPACE     # 57 = 70-13
+app:theme/h/mmi_position.h  ^WATCHLIST_ICON_NORMAL_WIDGH_HEIGHT_SPACE    #42
+app:theme/h/mmi_position.h  ^WATCHLIST_TEXT_WIDGH_MID           # 155
+app:theme/h/mmi_position.h  ^WATCHLIST_ITEM_HEIGHT              # 70
 
 
+### __setBn__
+
+
+### __setBl__
+// set--bl--str
+//		==>GUIITEM_STYLE_1STR_RADIO
+//		====>s_item_style_1str_radio
+//		======>[13,10,168,57]
+app:theme/h/mmi_position.h  ^WATCHLIST_ICON_TEXT_LEFT_SPACE     # 13 space
+
+// set--radio--ic
+app:theme\c\mmitheme_list.c  radio_tag_width                        # 48
+app:theme/h/mmi_position.h  WATCHLIST_RADIO_ICON_WIDTH              # --24
+app:theme/h/mmi_position.h  WATCHLIST_ICON_RIGHT_MARGIN             # --12
+app:theme\c\mmitheme_list.c  toggle_tag_width                       # 56
+app:theme/h/mmi_position.h  WATCHLIST_TOGGLE_ICON_WIDTH             # --32
+
+
+### __setSound__
+// set--sound--str
+//		==>GUIITEM_STYLE_2STR
+//		====>s_item_style_2str
+//		======>[13,10,168,57]
+//		======>[176,10,218,56] 24*24
+//app:theme/h/mmi_position.h  WATCHLIST_TEXT_LEFT_SPACE           # 12
+//app:theme/h/mmi_position.h  WATCHLIST_TEXT_WIDGH_BIG            # 214
+
+// set--sound--str
+//		==>GUIITEM_STYLE_1STR_1ICON
+//		====>s_item_style_1str_1icon
+//		======>[13,10,168,57]
+//		======>[176,10,218,56] 24*24
+app:theme/h/mmi_position.h  WATCHLIST_ICON_TEXT_LEFT_SPACE      # 13 space
+app:theme/h/mmi_position.h  WATCHLIST_TEXT_WIDGH_MID            # 155
+app:theme/h/mmi_position.h  WATCHLIST_ICON_TO_TEXT_SPACE        # 8
+app:theme/h/mmi_position.h  WATCHLIST_ICON_NORMAL_WIDGH_HEIGHT_SPACE   # 42
+
+
+
+
+
+// rect
+app:theme\c\mmitheme_list.c  s_item_style_small_2str
+app:theme\c\mmitheme_list.c  s_item_style_1str_1icon
+//   13+155=168, 168+12+24+12=216
 
 
 [1.23] 

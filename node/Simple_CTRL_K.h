@@ -33,6 +33,7 @@ goto>>>word
 >>>  func;有分号下一个
 goto>>>word
 >>>  下一字符非空格, 下一个空格/tab
+有^就找第2个
 //
 word1 word2, #word3, 下一个搜索
 

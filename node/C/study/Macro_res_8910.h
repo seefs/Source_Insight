@@ -4,16 +4,16 @@ Save:node\C\study\Macro_res_8910.h \[1.1\] 项目配置
 Save:node\C\study\Macro_res_8910.h \[1.2\] mk, version, nv
 Save:node\C\study\Macro_res_8910.h \[1.3\] str
 Save:node\C\study\Macro_res_8910.h \[1.4\] res, color
-Save:node\C\study\Macro_res_8910.h \[1.5\] image
-Save:node\C\study\Macro_res_8910.h \[1.6\] ring, audio
+Save:node\C\study\Macro_res_8910.h \[1.5\] image-----------------
+Save:node\C\study\Macro_res_8910.h \[1.6\] ring, audio-----------
 Save:node\C\study\Macro_res_8910.h \[1.7\] add app
 Save:node\C\study\Macro_res_8910.h \[1.8\] add res
-Save:node\C\study\Macro_res_8910.h \[1.9\] font
+Save:node\C\study\Macro_res_8910.h \[1.9\] font/color------------
 Save:node\C\study\Macro_res_8910.h \[1.10\] test
 Save:node\C\study\Macro_res_8910.h \[1.11\] OLD_PRELOAD
 Save:node\C\study\Macro_res_8910.h \[1.12\] xx_mdu_def.h
-Save:node\C\study\Macro_res_8910.h \[1.13\] lang
-Save:node\C\study\Macro_res_8910.h \[1.14\] 
+Save:node\C\study\Macro_res_8910.h \[1.13\] lang/rule------------
+Save:node\C\study\Macro_res_8910.h \[1.14\] pos------------------
 Save:node\C\study\Macro_res_8910.h \[1.15\] 
 Save:node\C\study\Macro_res_8910.h \[1.16\] 
 Save:node\C\study\Macro_res_8910.h \[1.17\] 
@@ -110,6 +110,8 @@ images:\
 
 // ==>image
 Save:node\C\study\Macro_res_image_8910.h
+// ==>image watch
+Save:node\C\study\Macro_res_image_wa8910.h
 
 
 // RES_ADD_IMG()
@@ -168,6 +170,7 @@ MS_MMI_Main\source\mmi_app\common\h\mmi_appmsg.h   SPDEHTTP_SUPPORT
 
 
 [1.8] add res
+# SPDEHTTP
 make\resource_main\resource_main.mk  SPDEHTTP_SUPPORT
 make\resource_main\resource_header.mk  SPDEHTTP_SUPPORT
 //	SRCPATH	+= $(MMI_DIR)/source/mmi_app/app/spdehttp/h
@@ -177,8 +180,18 @@ MS_MMI_Main\source\resource\mmi_res_prj_def.h  SPDEHTTP_SUPPORT
 //	RES_ADD_MODULE(MMI_MODULE_SPDEHTTP,"\\spdehttp\\spdehttp_mdu_def.h")
 
 
+# memo
+make\resource_main\
+make\resource_main\resource_main.mk  memo     #8910
+make\resource_main\resource_header.mk  memo   #107
+//	SRCPATH	+=  $(MMI_DIR)/source/mmi_app/app/memo/h\
+//	SOURCES	 += memo_mdu_def.h
 
-[1.9] font
+MS_MMI_Main\source\resource\mmi_res_prj_def.h  memo_mdu
+//  RES_ADD_MODULE(MMI_MODULE_MEMO,"\\memo\\memo_mdu_def.h")
+
+
+[1.9] font/color
 //	字库：
 MS_MMI_Main\source\resource\mmi_res_prj_def.h
 MS_MMI_Main\source\resource\Common\FONT
@@ -284,18 +297,21 @@ Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_FRENCH_SUPPORT
 Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_HEBREW_SUPPORT
 Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_AMHARIC_SUPPORT
 // str--columnName(用普通格式, unicode乱码)(AB一样)
-Save:node\C\rule\Macro_Rule_Lang_COLUMN_TABLE1.h  Hebrew
-Save:node\C\rule\Macro_Rule_Lang_COLUMN_TABLE2.h  AMHARIC
+Save:node\C\rule\Macro_Rule_Lang_COLUMN_TABLE1.h  Hebrew     // str_table.xls
+Save:node\C\rule\Macro_Rule_Lang_COLUMN_TABLE2.h  AMHARIC    // str_table1.xls
 // str--命名规则
 make\perl_script\ResGen\ReadMe.txt  str_table
 make\perl_script\ResGen\ResView.ini  cust_str_table
 //
 prj:project_{cur}.mk   HEBREW
+prj:{cfg}.cfg          POLISH = TRUE
 
 
 
-[1.14] 
+[1.14] pos
 
+// ==>pos
+Save:node\C\study\Macro_pos_8910.h  __idle__
 
 
 

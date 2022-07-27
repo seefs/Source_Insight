@@ -5,15 +5,21 @@
 //目录:
 // 1. 
 Save:node\C\study\Macro_im_8910.h \[1.1\] sms--marco
-Save:node\C\study\Macro_im_8910.h \[1.2\] sms--input
+Save:node\C\study\Macro_im_8910.h \[1.2\] sms--input----实际值转IM值
 Save:node\C\study\Macro_im_8910.h \[1.3\] sms--input--switch
 Save:node\C\study\Macro_im_8910.h \[1.4\] edit--show
 Save:node\C\study\Macro_im_8910.h \[1.5\] im + pen
-Save:node\C\study\Macro_im_8910.h \[1.6\] --keymap
-Save:node\C\study\Macro_im_8910.h \[1.7\] --simulator
+Save:node\C\study\Macro_im_8910.h \[1.6\] --keymap------虚拟值转实际值
+Save:node\C\study\Macro_im_8910.h \[1.7\] --simulator---虚拟值
 Save:node\C\study\Macro_im_8910.h \[1.8\] key event
-Save:node\C\study\Macro_im_8910.h \[1.9\] 
-Save:node\C\study\Macro_im_8910.h \[1.10\] 
+Save:node\C\study\Macro_im_8910.h \[1.9\] dial--input
+Save:node\C\study\Macro_im_8910.h \[1.10\] lock--input
+Save:node\C\study\Macro_im_8910.h \[1.11\] menu--input
+Save:node\C\study\Macro_im_8910.h \[1.12\] 
+Save:node\C\study\Macro_im_8910.h \[1.13\] 
+Save:node\C\study\Macro_im_8910.h \[1.14\] 
+Save:node\C\study\Macro_im_8910.h \[1.15\] 
+Save:node\C\study\Macro_im_8910.h \[1.16\] 
 
 
 
@@ -182,7 +188,7 @@ app:im\c\mmiim_im_switching.c  MMI_RESULT_E^HandleSwitchingIMWinMsg
 //		====>BASEEDIT_CreateImCtrl
 //		======>ConstructObject
 //		========>ImConstruct
-//		==========>MMITHEME_IMGetDefaultMethod
+//		==========>MMITHEME_IMGetDefaultMethod        # 改为26key输入法
 //		============>GUIIM_M_PINYIN   (default)
 app:theme\c\mmitheme_im.c  MMITHEME_IMGetDefaultMethod
 
@@ -236,7 +242,7 @@ ctrl:editbox/c/ctrlbaseedit_internal.c  721
 
 
 
-[1.6] __keymap__
+[1.6] __keymap__------虚拟值转实际值
 // keymap
 
 // --key--按键丝印
@@ -264,12 +270,11 @@ CAF\Template\include\caf.h  KEY_HOME
 //		====>97 = 0x61 => SCI_VK_AT_QWERTY
 //		==>[/]:
 //		====>104 = 0x68 => SCI_VK_SLASH
-//		==>[/]: --new
-//		====>34 =  => 
 //		==>[HOME]:
 //		====>41 = 0x29 => SCI_VK_HOME
 MS_Ref\export\inc\dal_keypad.h  SCI_VK_HOME
 
+### __keySignal__
 // --key--与caf对齐
 //		==>KeypadCallBackFunc               # 转按键
 //		====>MMK_CheckKeySingle             # single_code=513, key_code=69
@@ -305,6 +310,7 @@ MS_Ref\export\inc\dal_keypad.h  SCI_VK_HOME
 //		======>0x2C (KEY_T)
 source:mmi_app\kernel\c\mmi_default.c  SCI_VK_IE
 
+
 // --key--按按测试--数字/*#
 //		==>s_qwerty_to_typical_key_convert
 //		==>s_typical_to_qwerty_key_convert
@@ -312,6 +318,7 @@ source:mmi_app\kernel\c\mmi_default.c  SCI_VK_IE
 //		======>0x2B = 43 => { KEY_R, KEY_1 } => 0x08 = 8 => KEY_1
 //		====>[*]:
 //		======>0x2E = 46 => { KEY_U, KEY_STAR } => 0x11 = 17 => KEY_STAR
+source:mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_ConvertQwertyKeyToTypicalKey
 source:mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_ConvertTypicalKeyToQwertyKey
 
 
@@ -374,34 +381,128 @@ build\{cur}_builddir\win\mssim_duallcd_320_240_Q.ini  KEY_EXT_Q
 
 
 
-[1.9] 
+[1.9] dial--input
+//
+## __LONG_0__
+// 	 MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
+source:mmi_ctrl\source\editbox\c\ctrlbaseflex.c
+// (7)LONG 处理
+source:mmi_ctrl\source\editbox\c\ctrlbaseflex.c MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
+source:mmi_ctrl\source\Im\c\ctrlim.c 
+source:mmi_ctrl\include\ctrlim_base.h 
+// switch
+source:mmi_ctrl\source\editbox\c\ctrlphonenumedit.c MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
+source:mmi_ctrl\source\editbox\c\ctrlphonenumedit.c 
+source:mmi_ctrl\source\editbox\c\ctrlphonenumedit.c 
+source:mmi_app\app\idle\c\mainapp.c MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
+source:mmi_app\app\idle\c\mainapp.c 
+source:mmi_app\app\idle\c\mainapp.c 
+source:mmi_app\app\idle\c\mainapp.c 
+source:mmi_app\app\idle\c\mmiidle_dial.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
+source:mmi_app\app\idle\h\mmiidle_export.h 
+source:mmi_app\app\im\c\mmiim_sp_multitap.c 
+source:mmi_app\app\im\c\mmiim_sp_multitap.c 
+// (6)LONG 前
+source:mmi_app\app\im\c\mmiim_sp_multitap.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
+// (3)timer R
+source:mmi_kernel\source\c\mmk_kbd.c 
+// (1)timer S
+// (4)timer R
+source:mmi_kernel\source\c\mmk_kbd.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
+source:mmi_kernel\include\mmk_msg.h 
+// (2)timer
+source:mmi_kernel\source\c\mmk_timer.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
+source:mmi_kernel\include\mmk_timer.h 
+
+//
+## __DOWN_0__
+// --dial--input--text--增加
+//		==>init:
+//		====>ImConstruct
+//		======>Initialize
+//		========>.method:
+//		==========>param_ptr->method_param_ptr->im_def_ptr->method
+//		============>GUIIM_M_Q_123
+//		========>MMIIM_SP_ML_SetMethod
+//		==========>MMIIM_SP_ML26KEY_GetKeyTable
+//		============>s_spim_26key_lang_data
+//		==============>s_26key_table_123
+//		==============>.key_table_ptr
+//		====>BASEEDIT_CreateImCtrl
+//		======>PhoneNumEditCtrlConfigImKey          # 长按键
+//		========>GUIIM_SetCustomKey
+//		==========>SetCustomKey
+//		============>MMIIM_SP_ML26KEY_AllocCustomKb
+//		==============>MMIIM_SP_26KEY_INDEX_MAX     # 77
+//		==============>MMIIM_SP_26KEY_COUNT         # 41
+//		==>ImHandleMsg
+//		====>AppHandle
+//		======>HandleMsg
+//		========>HandleSysMsg                        # abc
+//		==========>TransMsg
+//		============>MMIIM_SP_TransMsg               # basic
+//		==============>MMIIM_PhysicalKeyMsgToImKey
+//		==========>ConvertKey                        # --sp
+//		==========>MMIIM_SP_ML_GetCount
+//		============>.custom_kb_ptr
+//		============>MMIIM_SP_ML26KEY_GetChrCnt
+//		==============>符号:
+//		================>MMIIM_SP_26KEY_COUNT to MMIIM_SP_26KEY_INDEX_MAX
+//		================>s_26key_table_common
+//		==================>{ MMIIM_SP_26KEY_INDEX_DOUBLE_QUOTES, {1, '\"'} },
+//		==================>["]:
+//		==================>56 => 56 => '\"'
+//		==========>MMIIM_SP_ML_GetChar
+//		============>MMIIM_SP_ML26KEY_GetChr
+//		==============>符号:
+//		==============>s_26key_table_abc_lower
+//		================>{ MMIIM_SP_26KEY_INDEX_T, {1, 0x0074} },
+//		================>19 => 0x0074
+//		==========>CommitPackData
+//		============>CTRLIM_SetNotify
+app:im\c\mmiim_sp_multitap.c  BOOLEAN^HandleSysMsg
+//		==>ImHandleMsg
+//		====>AppHandle                # 输入法应用处理
+//		======>DealNotify             # 发放消息
+//		========>GetNotify
+//		==========>.notify_ptr->data->commit_data.commit[0] = 116 = 0x74
+//		========>CommitData
+//		==========>.im_ptr->last_commit.commit[0] = 116
+//		============>CTRLMSG_SendNotifyEx
+//		==============>MMK_RunCtrlProc
+//		================>PhoneNumEditCtrlHandleMsg
+//		==================>BaseFlexCtrlHandleMsg
+//		====================>case MSG_NOTIFY_IM_COMMIT:
+//		======================>BASEFLEX_AddString
+//		==>AddString
+//		========================>BASEFLEX_UpdateDisplay
 
 
 
-
-[1.10] 
-
-
-Save:node\C\study\Macro_im_8910.h \[1.11\] 
-Save:node\C\study\Macro_im_8910.h \[1.12\] 
-Save:node\C\study\Macro_im_8910.h \[1.13\] 
-Save:node\C\study\Macro_im_8910.h \[1.14\] 
-Save:node\C\study\Macro_im_8910.h \[1.15\] 
-Save:node\C\study\Macro_im_8910.h \[1.16\] 
-Save:node\C\study\Macro_im_8910.h \[1.17\] 
-Save:node\C\study\Macro_im_8910.h \[1.18\] 
-Save:node\C\study\Macro_im_8910.h \[1.19\] 
-Save:node\C\study\Macro_im_8910.h \[1.20\] 
-Save:node\C\study\Macro_im_8910.h \[1.21\] 
-Save:node\C\study\Macro_im_8910.h \[1.22\] 
-Save:node\C\study\Macro_im_8910.h \[1.23\] 
-Save:node\C\study\Macro_im_8910.h \[1.24\] 
-Save:node\C\study\Macro_im_8910.h \[1.25\] 
-Save:node\C\study\Macro_im_8910.h \[1.26\] 
+[1.10] lock--input
+### __Emergency__
+// --lock--input
+//		====>MMIAPICC_OpenEmergencyWin
+//		======>MMIAPICC_IsInputEmergencyCall
+//		========>MMIAPICC_IsEmergencyPartNum
+//		==========>SETTINGS_NV_DEFAULT_SIM_ECC
+//		==============>
+//		====>MMIAPICC_IsEmergencyNum
+//		==============>s_emergency_call
+source:mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_ConvertQwertyKeyToTypicalKey
 
 
-[1.11] 
 
+[1.11] menu--input
+// --menu--input
+source:mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_ConvertQwertyKeyToTypicalKey
+
+//		====>
+//		======>
+//		========>
+//		==========>
+//		============>
+//		==============>
 
 
 
@@ -434,6 +535,16 @@ Save:node\C\study\Macro_im_8910.h \[1.26\]
 [1.17] 
 
 
+Save:node\C\study\Macro_im_8910.h \[1.17\] 
+Save:node\C\study\Macro_im_8910.h \[1.18\] 
+Save:node\C\study\Macro_im_8910.h \[1.19\] 
+Save:node\C\study\Macro_im_8910.h \[1.20\] 
+Save:node\C\study\Macro_im_8910.h \[1.21\] 
+Save:node\C\study\Macro_im_8910.h \[1.22\] 
+Save:node\C\study\Macro_im_8910.h \[1.23\] 
+Save:node\C\study\Macro_im_8910.h \[1.24\] 
+Save:node\C\study\Macro_im_8910.h \[1.25\] 
+Save:node\C\study\Macro_im_8910.h \[1.26\] 
 
 
 [1.18] 

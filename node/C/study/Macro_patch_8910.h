@@ -26,6 +26,9 @@ Save:node\C\study\Macro_patch_8910.h \[1.12\]
 
 [1.1] app
 
+// 8910--mmialarm log.
+app:accessory\c\mmialarm.c 
+
 // 107/8910--audioplayer--full
 app:audioplayer\c\mmiapwin_main_pda.c  WIN32
 

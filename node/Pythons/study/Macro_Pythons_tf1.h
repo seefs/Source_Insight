@@ -866,7 +866,7 @@ python_w py_test\import_test\test_path.py
 
 
 [3.8] file_read_write
-py_test\file_read_c.txt
+py_test\
 
 //write
 py_test\file_write.py

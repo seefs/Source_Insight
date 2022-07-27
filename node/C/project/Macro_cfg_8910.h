@@ -59,6 +59,15 @@ SPDE_PRJ/K220U_HYBL_H660A/uis8910_phone_user_base_config.cfg  YOUNGTONE_TTS_LIB
 
 
 [1.2] PB
+// 黑名单
+make\app_main\app_macro.mk  MMI_BLACKLIST_SUPPORT
+// 白名单
+prj:project_{cur}.mk   MMI_WHITELIST_SUPPORT = TRUE
+prj:project_{cur}.mk   MMI_BLACK_AND_WHITE_LIST_ADD_SETTING = TRUE
+
+
+
+
 ## "PB和SMS条数修改.txt"：
 
 //1、将电话簿条目数改为5000条需要按如下步骤调整(假设增加条数为X（=5000 - 版本默认条数）)：
@@ -333,27 +342,39 @@ MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_shortcut.c  GetFunctionKey
 // key web
 MS_MMI_Main\source\mmi_app\app\idle\c\mmiidle_cstyle.c  case^MSG_APP_WEB
 
-### 捷径对齐
+
+### 捷径对齐 # 107
 // id
-MMISET_SHORTCUT_MAX
+MMISET_SHORTCUT_MAX / MMISET_SHORTCUT_TYPE_E
 // txt
 s_shortcut_menu_list_text_id
 // func
 mmiset_shortcut_menu_func_arr
 
-### 快捷键对齐
+
+### 快捷键对齐 # 107 /8910
 // id
-MMISET_SHORTCUT_MAX
+MMISET_SHORTCUT_MAX / MMISET_SHORTCUT_TYPE_E
 // key--txt
 s_shortcut_list_text_id
 // key--func
 OpenSelectedShortcutWin--func_arr
+// smart--idle--short
+app:setting\c\mmiset_shortcut.c  OpenShortcutFunWin
+
+
+
+### mini对齐
+// key--pic/txt
+s_shortcut_id
+
 
 ### 默认/显示
 // default list
 s_shortcut_menu_show_list_text_id
 
-### 编辑
+
+### 编辑 # 107
 // all list
 s_shortcut_menu_edit_list_text_id
 
@@ -389,8 +410,9 @@ make\simulator_main\simulator.ini   MMI_LCD_176_220
 // 
 app:cs\h\mmics_position.h 
 app:dcd\h\mmidcd_position.h 
-// ini(copy)
+// ini(copy)--8910
 make/simulator_idh/simulator_idh.mk  mssim_duallcd_
+// ini(copy)--107
 make/simulator_main/simulator_main.mk  mssim_duallcd_
 
 // skin name
@@ -437,6 +459,10 @@ app:eng\c\mmieng_uitestwin.c  case^ID_ENG_TEST_TORCH_LED
 
 // 3.TORCH_SUPPORT (手机默认开, 手表默认关)
 //		==>状态条显示
+//		==>shortcut
+
+// 4.mainmenu
+//		==>MMIMAINMENU_StartTorch
 //		==>shortcut
 
 
@@ -533,6 +559,25 @@ prj:project_{cur}.mk   HERO_ENGINE_STVIDEO_SUPPORT
 
 // 词典
 prj:project_{cur}.mk   HERO_ENGINE_DICTIONARY_SUPPORT
+//这个文件最后第二个函数就是
+//heroengineapp.c
+
+// 微聊
+prj:project_{cur}.mk  HERO_APP_CHATTER_OPEN = TRUE #微聊定位
+prj:project_{cur}.mk  HERO_APP_CHATTER_OPEN_IN_MAINMENU = TRUE
+prj:project_{cur}.mk  HERO_APP_CHATTER_OPEN_V1 = TRUE  #微聊定位V1 版本带视频通话
+prj:project_{cur}.mk  HERO_VIDEO_CHAT_SUPPORT = TRUE   # 支持视频通话
+prj:project_{cur}.mk  HERO_APP_PUSH_SUPPORT = TRUE #挂后台长连接
+prj:project_{cur}.mk  HERO_APP_CHATTER_OPEN_INROM = TRUE #微聊定位内置
+prj:project_{cur}.mk  HERO_VIDEO_CHAT_CAMERA_SUPPRT = TRUE #支持摄像头
+prj:project_{cur}.mk  HERO_CHATTER_WIFI_SUPPORT=TRUE #微聊定位支持WIFI定位
+prj:project_{cur}.mk  HERO_APP_CHATTER_SET_MSG__DEFAULT_RING=TURE #默认开启铃声提醒
+
+// AI
+prj:project_{cur}.mk  HERO_APP_SMART_OPEN=TRUE # AI 智能语音
+prj:project_{cur}.mk  HERO_APP_SMART_OPEN_INROM = TRUE #语音助手内置
+
+//
 
 
 
@@ -556,15 +601,26 @@ prj:project_{cur}.mk  MMI_READPB_ENABLE
 
 
 [2.7] FM
-//
-FM_SUPPORT = SPRD_V0 
-FM_VBC_EQ = TRUE                                     ###
-FM_VBC = TRUE
-//
-BYD_CUSTOM_FM_TUNNING_STEP = TRUE
-
 // mk
-FM_S_ANT_SUPPORT = FALSE
+prj:{cfg}.cfg  FM_SUPPORT = SPRD_V0 
+prj:{cfg}.cfg  FM_VBC_EQ = TRUE                                     ###
+prj:{cfg}.cfg  FM_VBC = TRUE
+//
+prj:{cfg}.cfg  BYD_CUSTOM_FM_TUNNING_STEP = TRUE
+
+// mk--低噪放
+// --代码里面应该默认会判断插入耳机用耳机的，没插耳机用低噪放的
+// --要是不想用耳机的天线用宏控一下
+prj:project_{cur}.mk  FM_S_ANT_SUPPORT = FALSE  # 天线, eng分开测试
+
+
+// test--fm
+app:eng\c\mmieng_uitestwin.c  MMI_RESULT_E^UITestFmWinHandleMsg
+// --打开低噪放
+//        GPIO_SetFmLNA( 1 );
+// --关闭低噪放
+//        GPIO_SetFmLNA( 0 ); //恢复内置天线的GPIO值
+
 
 
 [2.8] WIFI

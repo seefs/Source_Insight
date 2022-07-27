@@ -112,6 +112,8 @@ driver:lcd\tft_ST7735S.c  ONE_DATA_LINE_LCD
 MS_Customize/source/product/driver/lcd/
 MS_Customize/source/product/driver/lcd/tft_ST7789.c
 MS_Customize/source/product/driver/lcd/tft_GC9106.c
+MS_Customize/source/product/driver/lcd/tft_ILI9342.c
+
 
 // 新屏
 //		==>修改画屏方向: (0x36)0xC8->0xD8
@@ -167,6 +169,10 @@ SPDE_PRJ\K220U_SHY_517T\uis8910_phone_user_base_config.cfg
 
 
 [1.5] CAM
+// mk
+prj:{cfg}.cfg   CAMERA_SUPPORT = TRUE
+
+
 // 1.新CAM
 make\custom_drv\custom_drv.mk  sensor_gc032A.c
 // 2.
@@ -203,6 +209,11 @@ prj:{cfg}.cfg  DC_FLASH_SUPPORT   = TRUE
 
 // 输出的接口，
 dvp spi mipi这种。
+
+// 5.闪光灯电流
+// 60mA
+chip_drv\chip_plf\uix8910\uix8910_reg_analog.h  ANA_FLASH_VALUE
+
 
 
 [1.6] TP

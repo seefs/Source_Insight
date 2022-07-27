@@ -9,7 +9,7 @@ Save:node\C\study\Macro_res_image_8910.h \[1.2\] MainMenu--主菜单图片
 Save:node\C\study\Macro_res_image_8910.h \[1.3\] Wallpaper--壁纸
 Save:node\C\study\Macro_res_image_8910.h \[1.4\] //charger--关机/充电动画
 Save:node\C\study\Macro_res_image_8910.h \[1.5\] Statusicons
-Save:node\C\study\Macro_res_image_8910.h \[1.6\] idle/time--拨号日期锁屏
+Save:node\C\study\Macro_res_image_8910.h \[1.6\] idle/time/dial
 Save:node\C\study\Macro_res_image_8910.h \[1.7\] mp3
 Save:node\C\study\Macro_res_image_8910.h \[1.8\] call
 Save:node\C\study\Macro_res_image_8910.h \[1.9\] alert
@@ -29,10 +29,10 @@ Save:node\C\study\Macro_res_image_8910.h \[1.22\] pb
 Save:node\C\study\Macro_res_image_8910.h \[1.23\] cl------------------sim
 Save:node\C\study\Macro_res_image_8910.h \[1.24\] common--------------
 Save:node\C\study\Macro_res_image_8910.h \[1.25\] pubWin
-Save:node\C\study\Macro_res_image_8910.h \[1.26\] browser
+Save:node\C\study\Macro_res_image_8910.h \[1.26\] browser,bt
 Save:node\C\study\Macro_res_image_8910.h \[1.27\] calen
-Save:node\C\study\Macro_res_image_8910.h \[1.28\] 
-Save:node\C\study\Macro_res_image_8910.h \[1.29\] 
+Save:node\C\study\Macro_res_image_8910.h \[1.28\] memo
+Save:node\C\study\Macro_res_image_8910.h \[1.29\] bt
 Save:node\C\study\Macro_res_image_8910.h \[1.30\] 
 
 
@@ -256,6 +256,10 @@ app:audioplayer\h\audioplayer_mdu_def.h  IMAGE_MP3_PROCESS_SLIDE_REVIEW
 // new--Progress--1X1 不知道什么用
 app:audioplayer\h\audioplayer_mdu_def.h  IMAGE_MP3_PROCESS_REVIEW
 
+// new--play--20X20
+app:audioplayer\h\audioplayer_mdu_def.h  IMAGE_MP3_MUSIC_MAIN_SMALL_PLAY2
+
+
 // old--Progress
 app:audioplayer\h\audioplayer_mdu_def.h  IMAGE_COMMON_PLAYER_PROCESS_SLIDE
 
@@ -277,11 +281,16 @@ app:cc\h\cc_mdu_def.h  IMAGE_CC_DISCONNECTED_PHOTO_ANIM
 app:cc\h\cc_mdu_def.h  IAMGE_CALL_DEFAULT_PHOTO  80X80
 app:cc\h\cc_mdu_def.h  IAMGE_CALL_HOLD_DEFAULT_PHOTO_PDA  50X50
 app:cc\c\mmicc_wintab.c  IMAGE_CC_INCOMING_PHOTO_ANIM
+// call--sim1--122*122--显示不全
+//		==>CC_HandleFlymodeEccWinMsg
+app:cc\h\cc_mdu_def.h  IMAGE_CALLUI_EMERGENCYCALL
+
 
 // call--volte--20*20
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CALLING_VOLTE
 // call--sim1--16*16
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CUSTOM_SIM1_SMALL
+
 
 // --同名
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_SETTINGS_SIM1_ICON
@@ -297,6 +306,10 @@ source:mmi_app\common\h\common_mdu_def.h  IMAGE_SETTINGS_SIM1_ICON
 app:cc\h\cc_mdu_def.h  IMAGE_CC_AVATAR_UNKNOWN_SMALL
 //  --bg--40*40
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_LISTITEM_AVATAR_MASK_RED
+
+// call--bt--30*30
+app:cc\h\cc_mdu_def.h  IMAGE_CALLUI_BT
+app:cc\h\cc_mdu_def.h  IMAGE_CALLUI_BT_BLACK
 
 
 
@@ -324,6 +337,49 @@ source:mmi_app\common\h\common_mdu_def.h  IMAGE_NUMBER_1
 
 // HL image
 gui:listbox/c/guilistbox.c  GUIITEM_DATA_IMAGE_ID
+
+//		==>MMITHEME_GetListStyle
+// vp--opt--replay--radio--18*18
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_RADIOBUTTON_ON_BLUE
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_RADIOBUTTON_OFF_BLUE
+// --marked--18*18
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_CHECKBOX_ON_CHECK
+// --check--18*18 (同上)
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_CHECKBOX_ON
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_CHECKBOX_OFF
+
+// --av_marked--76*76
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_AVATAR_CHECKBOX_ON_CHECK
+// --av_check--76*76
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_AVATAR_CHECKBOX_SELECTED_ICON
+// --av_mask--40*40 (call)
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_LISTITEM_AVATAR_MASK_RED
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_LISTITEM_AVATAR_INITIALS
+
+// --toggle--18*18 (switch)
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TOGGLE_ON
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TOGGLE_OFF
+
+// --6*64
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_LISTITEM_SHORTCUT_64_LEFT_RED
+// --prg--
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_THUMB
+
+
+### __toolkit__
+images:common\MMI_RES_DEFAULT\IMAG\toolkit\
+images:common\MMI_RES_DEFAULT\IMAG\Common\
+
+//		==>MMITHEME_GetPopMenuTheme
+// --radio--18*18
+source:mmi_app\common\h\common_mdu_def.h  (IMAGE_RADIOBUTTON_ON )
+source:mmi_app\common\h\common_mdu_def.h  (IMAGE_RADIOBUTTON_OFF )
+// --check--18*18
+source:mmi_app\common\h\common_mdu_def.h  (IMAGE_CHECKBOX_ON )
+source:mmi_app\common\h\common_mdu_def.h  (IMAGE_CHECKBOX_OFF )
+// --menu--18*18
+source:mmi_app\common\h\common_mdu_def.h  (IMAGE_COMMON_POP_MENU_LEFT )
+
 
 
 ### __file__
@@ -382,6 +438,7 @@ source:mmi_app\common\h\common_mdu_def.h  IMAGE_SECMENU_ICON_SET_SECURITY
 //
 images:record\MMI_RES_DEFAULT\IMAG\
 images:record\MMI_RES_DEFAULT\IMAG\new\
+images:record\MMI_RES_DEFAULT\IMAG\BLACK\
 
 
 ### 8910
@@ -390,8 +447,10 @@ app:record\h\record_mdu_def.h  IMAGE_RECORD_NUMBER_BG
 
 // record--anim--bg--175X156
 app:record\h\record_mdu_def.h  IMAGE_RECORD_INDICATOR
+// record--anim--175X156
 app:record\h\record_mdu_def.h  IMAGE_VOICE_RECORDER_RECORDING_1_NEW
-
+// record--anim--num--10=>4
+app:record\h\mmirecord_wintablel.h  RECORD_ANIMAL_TOTAL_FRAME_NUM
 
 ### 107
 // record--playbg--OSD--20
@@ -440,11 +499,12 @@ app:videoplayer\h\videoplayer_mdu_def.h  IMAGE_VP_PROCESSBAR_BG
 // vp--title--ic--换黑色一套
 app:multim\h\multim_mdu_def.h  IMAGE_COMMON_BTN_REPEAT_OFF
 
-### vp--btn--
-// 2/3/4--ic
+
+### vp--btn--new
+// 2/3/4--
 // --红色mp3_10*10 (err)
 app:audioplayer\h\audioplayer_mdu_def.h  IMAGE_MP3_MUSIC_MAIN_SMALL_PLAY2_GRAY
-// --黑色/白色16*16
+// --黑色/白色16*16 (注意开宏)
 app:multim\h\multim_mdu_def.h  IMAGE_COMMON_BTN_PLAY_GREY
 
 // 1--opt
@@ -465,6 +525,7 @@ app:multim\h\multim_mdu_def.h  IMAGE_COMMON_BTN_RETURN
 
 
 
+
 [1.16] 
 
 [1.17] __set__
@@ -481,9 +542,23 @@ source:mmi_app\common\h\common_mdu_def.h   IMAGE_CONTROL_LIST_CHECK_DISABLED
 //
 images:pic_viewer\MMI_RES_DEFAULT\IMAG\
 
-// pic--def
+// pic--folder--def--54*54
 app:pic_viewer\h\pic_viewer_mdu_def.h   IMAGE_PICVIEW_FOLDER_DEFAULT_ICON_BLACK
 //app:pic_viewer\h\pic_viewer_mdu_def.h   IMAGE_PICVIEW_PIC_ERROR_ICON_BLACK
+
+// pic--bg--1*1
+app:pic_viewer\h\pic_viewer_mdu_def.h   IMAGE_PICVIEW_OSD_BG
+// pic--cam--44*38
+app:pic_viewer\h\pic_viewer_mdu_def.h   IMAGE_PICVIEW_CAMERA_FOLDER
+// pic--xx--70*70(用到了)
+app:pic_viewer\h\pic_viewer_mdu_def.h   IMAGE_GALLERY_ONEDRIVE_DEFAULT_PIC
+// pic--xx--85*85(未用到)
+app:pic_viewer\h\pic_viewer_mdu_def.h   IMAGE_GALLERY_PROMO_PHOTOS
+
+
+// (pos) pic--item--70*70
+app:pic_viewer\h\mmipicview_position.h   MMIPICPREVIEW_LIST_ICON_SIZE
+
 
 
 [1.19] __fm__
@@ -595,6 +670,7 @@ source:mmi_app\common\h\common_mdu_def.h  Number_blue
 images:common\MMI_RES_DEFAULT\IMAG\Pubwin\BAR\
 images:common\MMI_RES_DEFAULT\IMAG\VOL_contrast\
 images:common\MMI_RES_DEFAULT\IMAG\Common\
+images:common\MMI_RES_DEFAULT\ANIM\
 
 // vol--bg--228*220
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_PUBWIN_BG_B
@@ -602,11 +678,20 @@ source:mmi_app\common\h\common_mdu_def.h  IMAGE_PUBWIN_BG_B
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_COMMON_PLAYER_PANEL_BG
 
 
-// mp3--format err--tips--228*120
+// mp3--format err--tips
+// --w--红--228*120
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_COMMON_TIPS_BG2
+// --b--黑--228*120
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_COMMON_TIPS_BG
 
+// anim--bg--30*30
+source:mmi_app\common\h\common_mdu_def.h  ANIM_PUBWIN_WAIT_PDA
 
-[1.26] __browser__
+
+
+[1.26] browser,bt
+
+### __browser__
 //
 images:browser\MMI_RES_DEFAULT\IMAG\
 
@@ -623,6 +708,14 @@ MMI_LIST_ITEM_LEFT_MARGIN
 MMIBROWSER_STARTPAGE_FORM1_HEIGHT
 
 
+### __bt__
+images:common\MMI_RES_DEFAULT\ANIM\AINM_BT_SEARCHING\
+
+// bt--anim--23*24
+source:mmi_app\common\h\common_mdu_def.h  AINM_BT_SEARCHING
+
+
+
 [1.27] __calen__
 //
 images:clock\MMI_RES_DEFAULT\IMAG\Calendar\
@@ -632,7 +725,18 @@ app:accessory\h\clock_mdu_def.h  IMAGE_CLOCK_CALENDAR_BG
 
 
 
-[1.28] 
+[1.28] __memo__
+//
+images:clock\MMI_RES_DEFAULT\IMAG\Calendar\
+
+app:memo\h\memo_mdu_def.h  IMAGE_MEMO_MAIN_BG
+
+// menu--memo--30*30
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_SECMENU_ICON_TOOL_NOTE
+
+
+// menu--hmgs--放大镜
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_SECMENU_ICON_TOOL_HMGS
 
 
 [1.29] 

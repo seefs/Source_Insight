@@ -3,7 +3,7 @@
 // 1. constant
 Save:node\C\study\Macro_fun_8910.h \[1.1\] resource_main
 Save:node\C\study\Macro_fun_8910.h \[1.2\] str, wstr
-Save:node\C\study\Macro_fun_8910.h \[1.3\] timer, LONG_0----
+Save:node\C\study\Macro_fun_8910.h \[1.3\] timer----
 Save:node\C\study\Macro_fun_8910.h \[1.4\] MSG
 Save:node\C\study\Macro_fun_8910.h \[1.5\] NV, init
 Save:node\C\study\Macro_fun_8910.h \[1.6\] Win, Param, id---ID转换
@@ -109,7 +109,7 @@ make\resource_main\resource_target.mk 42
 //	GUI_GetCodeType
 
 
-[1.3] timer, LONG_0
+[1.3] timer
 //	LOCAL uint8 g_test_timer  = 0;
 //	LOCAL void Test_Callback(uint8 timer_id, uint32 param)
 //	{
@@ -126,37 +126,6 @@ make\resource_main\resource_target.mk 42
 app:setting/c/mmiset_func.c  MMIAPISET_GetAutoBoardKeyMS
 source:mmi_app\kernel\c\mmi_default.c  void^MMIDEFAULT_StartAutoKeylockTimer
 
-
-## LONG_0 
-// 	 MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-source:mmi_ctrl\source\editbox\c\ctrlbaseflex.c
-// (7)LONG 处理
-source:mmi_ctrl\source\editbox\c\ctrlbaseflex.c MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-source:mmi_ctrl\source\Im\c\ctrlim.c 
-source:mmi_ctrl\include\ctrlim_base.h 
-// switch
-source:mmi_ctrl\source\editbox\c\ctrlphonenumedit.c MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-source:mmi_ctrl\source\editbox\c\ctrlphonenumedit.c 
-source:mmi_ctrl\source\editbox\c\ctrlphonenumedit.c 
-source:mmi_app\app\idle\c\mainapp.c MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-source:mmi_app\app\idle\c\mainapp.c 
-source:mmi_app\app\idle\c\mainapp.c 
-source:mmi_app\app\idle\c\mainapp.c 
-source:mmi_app\app\idle\c\mmiidle_dial.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-source:mmi_app\app\idle\h\mmiidle_export.h 
-source:mmi_app\app\im\c\mmiim_sp_multitap.c 
-source:mmi_app\app\im\c\mmiim_sp_multitap.c 
-// (6)LONG 前
-source:mmi_app\app\im\c\mmiim_sp_multitap.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-// (3)timer R
-source:mmi_kernel\source\c\mmk_kbd.c 
-// (1)timer S
-// (4)timer R
-source:mmi_kernel\source\c\mmk_kbd.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-source:mmi_kernel\include\mmk_msg.h 
-// (2)timer
-source:mmi_kernel\source\c\mmk_timer.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-source:mmi_kernel\include\mmk_timer.h 
 
 
 
@@ -477,7 +446,7 @@ source:mmi_app\app\audioplayer\c\mmiapwin_main_pda.c  470
 
 
 
-[2.1] lock
+[2.1] __lock__
 //
 source:mmi_app\app\keylock\c\mmikl_keylock.c  MMIAPIKL_LockPhone
 source:mmi_app\app\keylock\c\mmikl_keylock.c  MMIAPIKL_UnlockPhone
@@ -535,10 +504,11 @@ MS_Customize\source\product\driver\gpio\gpio_prod.c  void^GPIO_Set_SubLcd_BackLi
 // 参考动画流程
 source:mmi_app\kernel\c\mmi_default.c  MMI_TURNON_BACKLIGHT_EFFECT_SUPPORT
 //
+//		==>DefaultBackLight
 source:mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_TurnOnBackLight
 //source:mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_TurnOffBackLight
 source:mmi_app\kernel\c\mmi_default.c  CloseAllLight
-
+HandleMSGKbd
 
 
 
@@ -639,6 +609,29 @@ MS_MMI_Main/source/mmi_ctrl/source/editbox/c/ctrlbaseflex_cursor.c  void^FillCur
 //		======>BASEFLEX_DisplayCursor
 //		========>BASEFLEX_StartCursorTimer
 ctrl:editbox\c\ctrlbaseflex_display.c   BaseFlexCtrlDisplayAll
+
+
+// cursor--draw
+ctrl:editbox\c\ctrlbaseflex_cursor.c  void^FillCursorColor
+//#ifdef WIN32
+//	{
+//    	static uint16  test_disable_cursor = 0;
+//		if(test_disable_cursor>0)
+//			return;
+//    }
+//#endif
+
+// cursor--关定时器--没有timer消息
+ctrl:editbox\c\ctrlbaseflex_cursor.c   BASEFLEX_StartCursorTimer
+//#ifdef WIN32
+//	{
+//    	static uint16  test_disable_cursor = 0;
+//		if(test_disable_cursor>0)
+//			return;
+//    }
+//#endif
+
+
 
 
 [2.8] file

@@ -1,22 +1,15 @@
 
-基础路径设置:
-//basePath = 
-//resPath = MS_MMI_Main/source/resource/mmi_res_240x240
-resPath = MS_MMI_Main/source/resource/mmi_res_128x128
-res:\\
-zdt:\\
-fzd:\\
 
 //目录:
 // 1. 
 Save:node\C\study\Macro_slide_8910.h \[1.1\] btn
-Save:node\C\study\Macro_slide_8910.h \[1.2\] list
+Save:node\C\study\Macro_slide_8910.h \[1.2\] 
 Save:node\C\study\Macro_slide_8910.h \[1.3\] switch
 Save:node\C\study\Macro_slide_8910.h \[1.4\] pubwin, wait
 Save:node\C\study\Macro_slide_8910.h \[1.5\] banner
 Save:node\C\study\Macro_slide_8910.h \[1.6\] im
 Save:node\C\study\Macro_slide_8910.h \[1.7\] tp
-Save:node\C\study\Macro_slide_8910.h \[1.8\] 
+Save:node\C\study\Macro_slide_8910.h \[1.8\] status
 Save:node\C\study\Macro_slide_8910.h \[1.9\] anim, common
 Save:node\C\study\Macro_slide_8910.h \[1.10\] make---------------关联宏
 Save:node\C\study\Macro_slide_8910.h \[1.11\] app
@@ -37,7 +30,7 @@ Save:node\C\study\Macro_slide_8910.h \[2.9\] pic-----------------
 Save:node\C\study\Macro_slide_8910.h \[2.10\] camera-------------
 Save:node\C\study\Macro_slide_8910.h \[2.11\] alarm--------------
 Save:node\C\study\Macro_slide_8910.h \[2.12\] stopWatch,counttime
-Save:node\C\study\Macro_slide_8910.h \[2.13\] set----------------
+Save:node\C\study\Macro_slide_8910.h \[2.13\] set----------------设置
 Save:node\C\study\Macro_slide_8910.h \[2.14\] qrcode-------------
 Save:node\C\study\Macro_slide_8910.h \[2.15\] other app----------
 Save:node\C\study\Macro_slide_8910.h \[2.16\] powoff
@@ -66,35 +59,11 @@ res_double_button_transparency
 
 
 
-[1.2] list
-// res--img
-//   24*24
-res:common\MMI_RES_DEFAULT\IMAG\List
-//   24*24  36*36
-res:set/MMI_RES_DEFAULT/IMAG/set_sound/
+[1.2] 
 
 
-// draw
-MS_MMI_Main\source\mmi_ctrl\source\ListBox\c\ctrllistbox.c  ListDrawAllItems
-MS_MMI_Main\source\mmi_ctrl\source\ListBox\c\ctrllistbox.c  6997
-// item: (127, 42)
-// bg: (116 X 24)
-//   res_list_bg
-MS_MMI_Main\source\mmi_ctrl\source\ListBox\c\ctrllistbox.c  3036
-MS_MMI_Main\source\mmi_ctrl\source\ListBox\c\ctrllistbox.c  MMI_LIST_ITEM_BG_LEFT_RIGHT_MARGIN
 
-// icon: (26 X 26)
-//   res_list_bg
-MS_MMI_Main\source\mmi_ctrl\source\ListBox\c\ctrllistbox.c  3375
-// txt: (80 X 30)
-MS_MMI_Main\source\mmi_ctrl\source\ListBox\c\ctrllistbox.c  3354
 
-// rect
-app:theme\c\mmitheme_list.c  s_item_style_small_2str
-app:theme\c\mmitheme_list.c  s_item_style_1str_1icon
-//   13+155=168, 168+12+24+12=216
-// radio rect
-app:theme\c\mmitheme_list.c  radio_tag_width
 
 
 [1.3] switch
@@ -105,17 +74,17 @@ IMAGE_CONTROL_TOGGLE_ON
 
 [1.4] pubwin
 // res--img
-res:common/MMI_RES_DEFAULT/IMAG/Pubwin/BAR/
+images:common/MMI_RES_DEFAULT/IMAG/Pubwin/BAR/
 // wait-fullscreen圆形
-res:common/MMI_RES_DEFAULT/IMAG/Pubwin/BAR/res_camera_ic_waiting.png
+images:common/MMI_RES_DEFAULT/IMAG/Pubwin/BAR/res_camera_ic_waiting.png
 // wait-1line 闹钟弹窗, 倒计时弹窗
-res:common/MMI_RES_DEFAULT/IMAG/Pubwin/BAR/res_watch_waitingwin_1line_tip_bg.png
+images:common/MMI_RES_DEFAULT/IMAG/Pubwin/BAR/res_watch_waitingwin_1line_tip_bg.png
 // 1Line
-res:common/MMI_RES_DEFAULT/IMAG/Pubwin/BAR/res_watch_notewin_1Line_tip_bg.png
+images:common/MMI_RES_DEFAULT/IMAG/Pubwin/BAR/res_watch_notewin_1Line_tip_bg.png
 // 2Line
-res:common/MMI_RES_DEFAULT/IMAG/Pubwin/BAR/res_watch_notewin_2Line_tip_bg.png
+images:common/MMI_RES_DEFAULT/IMAG/Pubwin/BAR/res_watch_notewin_2Line_tip_bg.png
 // query
-res:common/MMI_RES_DEFAULT/IMAG/Pubwin/BAR/res_watch_querywin_1btn_bg.png
+images:common/MMI_RES_DEFAULT/IMAG/Pubwin/BAR/res_watch_querywin_1btn_bg.png
 
 
 // wait
@@ -143,7 +112,7 @@ common:c\watch_commonwin_internal.c CommonWin_GetLayoutByType
 
 // sms pubwin
 // --img
-res:sms\MMI_RES_DEFAULT\IMAG\watch\
+images:sms\MMI_RES_DEFAULT\IMAG\watch\
 app:sms\h\sms_mdu_def.h  IMAGE_SMS_NOTE_BG
 //
 app:sms\c\watch_sms_message.c  MMISMS_OpenNoteWin
@@ -160,7 +129,7 @@ DisplayControlBanner
 
 [1.6] im
 // res--img
-res:im/MMI_RES_DEFAULT/IMAG/TOUCH/
+images:im/MMI_RES_DEFAULT/IMAG/TOUCH/
 
 
 
@@ -170,29 +139,32 @@ source:mmi_kernel\source\c\mmk_tp.c  MMK_DispatchMSGTp
 
 
 
-[1.8] 
-
+[1.8] status
+//
+images:common/MMI_RES_DEFAULT/IMAG/Launcher/
+//
+res_stat_battery_0
 
 
 
 [1.9] anim, common
 // res--anim(charge)
-res:common/MMI_RES_DEFAULT/ANIM/WATCH_INDICATOR_ANIM/
+images:common/MMI_RES_DEFAULT/ANIM/WATCH_INDICATOR_ANIM/
 
 // res--bt, btn bg
-res:common/MMI_RES_DEFAULT/IMAG/Common/
+images:common/MMI_RES_DEFAULT/IMAG/Common/
 // res--img
-res:common/MMI_RES_DEFAULT/IMAG/Edit/Editpad/
-res:common/MMI_RES_DEFAULT/IMAG/Launcher/
-res:common/MMI_RES_DEFAULT/IMAG/List/
-res:common/MMI_RES_DEFAULT/IMAG/Pubwin/BAR/
-res:common/MMI_RES_DEFAULT/IMAG/Scrollkey/
-res:common/MMI_RES_DEFAULT/IMAG/key_lock/effect1/
+images:common/MMI_RES_DEFAULT/IMAG/Edit/Editpad/
+images:common/MMI_RES_DEFAULT/IMAG/Launcher/
+images:common/MMI_RES_DEFAULT/IMAG/List/
+images:common/MMI_RES_DEFAULT/IMAG/Pubwin/BAR/
+images:common/MMI_RES_DEFAULT/IMAG/Scrollkey/
+images:common/MMI_RES_DEFAULT/IMAG/key_lock/effect1/
 // res--img
-res:common/MMI_RES_DEFAULT/IMAG/Scrollkey/
-res:clock/MMI_RES_DEFAULT/IMAG/worldclock/
-res:clock/MMI_RES_DEFAULT/IMAG/timer/
-res:clipbrd/MMI_RES_DEFAULT/IMAG/
+images:common/MMI_RES_DEFAULT/IMAG/Scrollkey/
+images:clock/MMI_RES_DEFAULT/IMAG/worldclock/
+images:clock/MMI_RES_DEFAULT/IMAG/timer/
+images:clipbrd/MMI_RES_DEFAULT/IMAG/
 
 //
 source:mmi_app\common\h\common_mdu_def.h  image_watch_waitingwin_fullscreen_pic
@@ -286,8 +258,8 @@ fzd:c/mmifzd_time.c
 
 [2.1] dropdown
 // res--notification
-res:common/MMI_RES_DEFAULT/IMAG/Launcher/
-res:dropdownwin/MMI_RES_DEFAULT/IMAG/
+images:common/MMI_RES_DEFAULT/IMAG/Launcher/
+images:dropdownwin/MMI_RES_DEFAULT/IMAG/
 
 // enter
 app:launcher\c\watch_launcher_main.c  MMINotifyWin_EnterWin
@@ -310,7 +282,7 @@ app:slidewin\c\watch_slidewin.c  WatchSLIDEWIN_HandleMsgHook
 [2.2] menu
 ### 1.style (LAUNCHER APP)
 // res--menu
-res:common/MMI_RES_DEFAULT/IMAG/Launcher/
+images:common/MMI_RES_DEFAULT/IMAG/Launcher/
 
 // enter (no idle)
 app:idle\c\mainapp.c  WatchLAUNCHER_Enter
@@ -350,7 +322,7 @@ app:slidepage\c\watch_slidepage.c  MMI_RESULT_E^HandleSlidePageMsgHook
 
 ### 2.style (SPDE APP)
 // res--menu
-res:spde\MMI_RES_DEFAULT\IMAG\mainmenu
+images:spde\MMI_RES_DEFAULT\IMAG\mainmenu
 
 // idle
 app:mainmenu\c\mainmenu_win.c  MMIAPIMENU_CreatMainMenu
@@ -376,12 +348,12 @@ Save:node\C\study\Macro_zmaee_8910.h  __ZMAEE__
 
 [2.3] clock, idle
 // res--tool
-//res:clock/MMI_RES_DEFAULT/IMAG/timer/
-//res:clock/MMI_RES_DEFAULT/IMAG/worldclock/
+//images:clock/MMI_RES_DEFAULT/IMAG/timer/
+//images:clock/MMI_RES_DEFAULT/IMAG/worldclock/
 // res--clock
-res:common\MMI_RES_DEFAULT\IMAG\Launcher
+images:common\MMI_RES_DEFAULT\IMAG\Launcher
 // res--time
-res:common\MMI_RES_DEFAULT\IMAG\QVGA_TIME\Idle_time
+images:common\MMI_RES_DEFAULT\IMAG\QVGA_TIME\Idle_time
 
 
 // enter
@@ -404,7 +376,7 @@ MS_MMI_Main\source\mmi_app\app\slidepage\c\watch_slidepage.c  WatchSLIDEPAGE_Des
 
 [2.4] dial
 // res--dial
-res:cc/MMI_RES_DEFAULT/IMAG/cc/watch/dialpad/
+images:cc/MMI_RES_DEFAULT/IMAG/cc/watch/dialpad/
 
 // dial
 app:cc\c\watch_cc_dialpad.c  HandleDialpadWinMsg
@@ -413,8 +385,8 @@ app:cc\c\watch_cc_dialpad.c  HandleDialpadWinMsg
 
 [2.5] call
 // res--call
-res:cc/MMI_RES_DEFAULT/IMAG/cc/watch/notification/
-res:cc/MMI_RES_DEFAULT/IMAG/cc/watch/
+images:cc/MMI_RES_DEFAULT/IMAG/cc/watch/notification/
+images:cc/MMI_RES_DEFAULT/IMAG/cc/watch/
 
 // call
 app:cc/c/watch_cc_view.c  CC_OpenWatchMoCallWin
@@ -425,11 +397,11 @@ app:cc/c/watch_cc_view.c  1755
 
 [2.6] cl, pb
 // res--img
-res:cc/MMI_RES_DEFAULT/IMAG/callog/watch/
-res:cc/MMI_RES_DEFAULT/IMAG/cc/watch/portrait/
-res:cc/MMI_RES_DEFAULT/IMAG/cc/watch/
-res:cc/MMI_RES_DEFAULT/IMAG/cc/watch/volte/
-res:cc/MMI_RES_DEFAULT/IMAG/cc/Mt_lock/
+images:cc/MMI_RES_DEFAULT/IMAG/callog/watch/
+images:cc/MMI_RES_DEFAULT/IMAG/cc/watch/portrait/
+images:cc/MMI_RES_DEFAULT/IMAG/cc/watch/
+images:cc/MMI_RES_DEFAULT/IMAG/cc/watch/volte/
+images:cc/MMI_RES_DEFAULT/IMAG/cc/Mt_lock/
 
 // main
 app:launcher\c\watch_launcher_main.c  HandleLauncherCallWinMsg
@@ -452,7 +424,7 @@ spde_app.c
 
 [2.7] sms
 // res--img
-res:sms/MMI_RES_DEFAULT/IMAG/watch/
+images:sms/MMI_RES_DEFAULT/IMAG/watch/
 
 // enter
 app:launcher\c\watch_launcher_main.c  WatchSMS_MainMenuWin_Enter
@@ -477,8 +449,8 @@ DisplayWinPanelFgAddUnreadInfoNum
 
 [2.8] record
 // res--img
-res:record/MMI_RES_DEFAULT/IMAG/
-res:record/MMI_RES_DEFAULT/ANIM/ANIM_RECORD_PLAY/
+images:record/MMI_RES_DEFAULT/IMAG/
+images:record/MMI_RES_DEFAULT/ANIM/ANIM_RECORD_PLAY/
 
 ## record
 // main
@@ -499,8 +471,8 @@ WatchRec_PlayWin_Query_Callback
 
 [2.9] pic
 // res--img
-res:pb/MMI_RES_DEFAULT/IMAG/contact^portrait/
-res:pic_viewer/MMI_RES_DEFAULT/IMAG/
+images:pb/MMI_RES_DEFAULT/IMAG/contact^portrait/
+images:pic_viewer/MMI_RES_DEFAULT/IMAG/
 //
 app:pic_viewer\c\watch_gallery_main.c  HandleGalleryMainWinMsg
 app:pic_viewer\c\watch_gallery_main.c  Gallery_Pic_HandleMsg
@@ -513,7 +485,7 @@ GallerySetPicBtnParam
 
 [2.10] camera
 // res--img
-res:camera/MMI_RES_DEFAULT/IMAG/WATCH/
+images:camera/MMI_RES_DEFAULT/IMAG/WATCH/
 
 // dc
 Watch_HandleCameraWinMsg
@@ -528,7 +500,7 @@ Watch_HandleCameraWinMsg
 
 [2.11] alarm
 // res--img
-res:set/MMI_RES_DEFAULT/IMAG/set_clock/
+images:set/MMI_RES_DEFAULT/IMAG/set_clock/
 
 // enter
 app:launcher\c\watch_launcher_main.c  Settings_AlarmListWin_Enter
@@ -542,7 +514,7 @@ app:setting\c\watch_set_alarmedit.c  MMISET_ALARM_REPEAT_WIN_TAB
 app:setting\c\watch_set_alarmlist.c  MMISET_ALARM_OPTION_WIN_TAB
 
 // --time
-MS_MMI_Main\source\mmi_ctrl\source\Picker\c\ctrltimepicker.c  TimePickerCtrlHandleMsg
+ctrl:Picker\c\ctrltimepicker.c  TimePickerCtrlHandleMsg
 
 
 
@@ -552,7 +524,7 @@ MS_MMI_Main\source\mmi_ctrl\source\Picker\c\ctrltimepicker.c  TimePickerCtrlHand
 [2.12] stopWatch,counttime
 ### 1.stopWatch
 // res--img
-res:clock/MMI_RES_DEFAULT/IMAG/stopwatch/
+images:clock/MMI_RES_DEFAULT/IMAG/stopwatch/
 
 // enter
 app:launcher\c\watch_launcher_main.c  WatchStopWatch_MainWin_Enter
@@ -588,42 +560,66 @@ app:accessory\c\mmicountedtime_main.c  void^StartArriveDialogWin
 
 
 [2.13] set
-// res--img
-res:set/MMI_RES_DEFAULT/IMAG/screenlock_style/
-res:set/MMI_RES_DEFAULT/IMAG/set_bluetooth/
-res:set/MMI_RES_DEFAULT/IMAG/set_brightness/
-res:set/MMI_RES_DEFAULT/IMAG/set_clock/
-res:set/MMI_RES_DEFAULT/IMAG/set_common/
-res:set/MMI_RES_DEFAULT/IMAG/set_main/
-res:set/MMI_RES_DEFAULT/IMAG/set_sound/
-res:set/MMI_RES_DEFAULT/IMAG/set_volte/
-//res:set/MMI_RES_DEFAULT/IMAG/set_wifi/
-
-// main(list, CallBack)
+// --set--main--(list, CallBack)
+//		==>WatchSET_MainWin_Enter
 app:setting\c\watch_set_main.c  HandleSettingsMainWindow
+// ==>pos
+Save:node\C\study\Macro_pos_8910.h  __setMain__
+// ==>image
+Save:node\C\study\Macro_res_image_wa8910.h  __set__
 
-// 1.bn 亮度(大图标)
+
+// 1.bn 亮度(big ic)
 app:setting\c\watch_set_brightness.c  HandleSettingsBrightnessWindow
 
-// 2.bl 背光时间(rdo)
+
+// 2.bl 背光时间(radioList)
+//		==>Settings_BackLight_Enter
+//		====>init:
+//		======>.s_demo_backlight_list_data
+//		====>WEB:
+//		======>Settings_BackLight_APP_WEB
 app:setting\c\watch_set_backlight.c  HandleSettingsBacklightWindow
+// ==>pos
+Save:node\C\study\Macro_pos_8910.h  __setBl__
+
 
 // 3.sound/next icon
+//		==>HandleMsgCommonRadioListWindow
+//		====>Common_RadioListWin_User_Action
+//		======>_Callback_CallRingSelectWin
 app:setting\c\watch_set_sound.c  HandleSettingsSoundWindow
+// ==>pos
+Save:node\C\study\Macro_pos_8910.h  __setSound__
+// ==>image
+Save:node\C\study\Macro_res_image_wa8910.h  __list__
+
 
 // 4.clock (img)/(rdo)
+//		==>HandleMsgCommonRadioListWindow
+//		====>Common_RadioListWin_User_Action
+//		======>_Callback_ClockModeSelectWin
 app:setting\c\watch_set_clock.c  HandleSettingsClockWindow
 app:launcher\c\watch_launcher_editclockwin.c  WatchLAUNCHER_EditClockWin_Enter
+
 
 // 5.more
 app:setting\c\watch_set_more.c  HandleSettingsMoreWindow
 
 
+//		==>
+//		====>
+//		======>
+//		========>
+//		==========>
+//		============>
+//		==============>
+
 
 [2.14] qrcode
 ### 1.style
 // res--2vm
-res:common/MMI_RES_DEFAULT/IMAG/watch/2vm
+images:common/MMI_RES_DEFAULT/IMAG/watch/2vm
 
 // enter
 app:launcher\c\watch_launcher_main.c  Watch2VM_MainWin_Enter
@@ -632,7 +628,7 @@ app:launcher\c\watch_qrcode_win.c  WATCH_QR_PATH_NAME
 
 ### 2.style
 // res--2vm
-res:spde\MMI_RES_DEFAULT\IMAG\
+images:spde\MMI_RES_DEFAULT\IMAG\
 
 // enter
 app:spde\c\spde_wintable.c  QRCODE_FILE_NAME
@@ -641,8 +637,8 @@ app:spde\c\spde_wintable.c  QRCODE_FILE_NAME
 
 [2.15] other app
 // res--menu
-res:/
-res:common/MMI_RES_DEFAULT/IMAG/Launcher/menu4/
+images:/
+images:common/MMI_RES_DEFAULT/IMAG/Launcher/menu4/
 
 // 微聊
 app:launcher\c\watch_launcher_main.c  WatchWCALL_MainWin_Enter
@@ -653,17 +649,17 @@ app:launcher\c\watch_launcher_main.c  WatchWADD_MainWin_Enter
 
 
 // 计步
-res:common/MMI_RES_DEFAULT/IMAG/watch/jibu/
+images:common/MMI_RES_DEFAULT/IMAG/watch/jibu/
 app:launcher\c\watch_launcher_main.c  WatchJiBu_MainWin_Enter
 
 
 // 心率
-res:common/MMI_RES_DEFAULT/IMAG/watch/health/
+images:common/MMI_RES_DEFAULT/IMAG/watch/health/
 app:launcher\c\watch_launcher_main.c  WatchHR_MainWin_Enter
 
 
 // 体温
-res:common/MMI_RES_DEFAULT/IMAG/watch/health/
+images:common/MMI_RES_DEFAULT/IMAG/watch/health/
 app:launcher\c\watch_launcher_main.c  WatchTemp_MainWin_Enter
 
 

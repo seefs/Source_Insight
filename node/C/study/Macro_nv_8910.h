@@ -16,8 +16,8 @@ Save:node\C\study\Macro_nv_8910.h \[1.13\] nv_build
 Save:node\C\study\Macro_nv_8910.h \[1.14\] nand/nor
 Save:node\C\study\Macro_nv_8910.h \[1.15\] test
 Save:node\C\study\Macro_nv_8910.h \[1.16\] audio_calib_VQE
-Save:node\C\study\Macro_nv_8910.h \[1.17\] 
-Save:node\C\study\Macro_nv_8910.h \[1.18\] 
+Save:node\C\study\Macro_nv_8910.h \[1.17\] hv_nv
+Save:node\C\study\Macro_nv_8910.h \[1.18\] bt_nv
 Save:node\C\study\Macro_nv_8910.h \[1.19\] 
 Save:node\C\study\Macro_nv_8910.h \[1.20\] simulator
 Save:node\C\study\Macro_nv_8910.h \[1.21\] 
@@ -58,7 +58,7 @@ nv:ProductionParam_uix8910.nvm  charge_end_voltage
 nv:ProductionParam_uix8910.nvm  recharge_voltage
 //    ITEM_CONTENT = 0x10CC   // 4.30V
 
-// recharge充电
+// 充电safe电压
 nv:ProductionParam_uix8910.nvm  bat_safety_vol
 //    ITEM_CONTENT = 0x1112   // 4.37V
 
@@ -396,13 +396,41 @@ nv:audio_arm_6531efm.nvm  6476
 
 
 
-[1.17] 
+[1.17] hv_nv
+//
+nv:nv_type_uix8910.nvm  4938
+可以通过查看
+nv_type_uix8910.nvm里面4938行，
+是否有    ITEM_NAME    = nv_ver_flag；如果没有的话，
+可以先用老版本的，然后编译出一个版本后，把build下nv目录的复制回来，
+覆盖一下所有文件，这样能确保是新版本nv工程。
 
 
 
-
-[1.18] 
-
+[1.18] __bt_nv__
+// bt
+// --默认Tcard, 自动向udisk查找
+//		==>MMIBT_OpenIncomingFileWin()
+app:bt\c\mmibt_func.c  MMINV_BT_FILE_LOCATION
+//		==>MMISET_ResetFactorySetting            # set
+//		====>MMIAPIBT_Reset
+//		======>MMIBT_Reset
+//		========>MMIAPIFMM_GetDefaultDisk        # 默认最后一个盘
+//		==>MMIBT_OpenIncomingFileWin             # bt 接收
+//		====>
+//		==>MMIAPISD_HandleSDPlugWaiting          # SD 插入msg
+//		====>SDPLUG_IN:
+//		====>MMIAPIBT_SaveFileLocation
+//		==>APP_Init
+//		====>MMIAPIBT_AppInit
+//		======>MMIBT_SetFileSaveLocation         # init, SD, file path
+//		==>
+//		====>
+//		======>
+//		========>
+//		==========>
+//		============>
+//		==============>
 
 
 
