@@ -1,7 +1,7 @@
 ###
 ### pub cfg
 ### 
-### 1.暂时只能手动修改
+### 1.Configuration of the "8910" directory
 ###
 
 0Key  = 8910
@@ -40,7 +40,8 @@ prj:\\
 projectKey   = X225U_HQVGA
 curKey   = UIS8910_ROM_16MB_DS_USER
 cfgKey   = uis8910_phone_user_base_config
-sizeKey  = 320X240
+sizeNext  = 2
+size1Key  = 320X240
 size2Key  = 240X320
 
 

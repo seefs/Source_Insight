@@ -80,7 +80,8 @@
 60RuleEn = 8910
 //
 60 = G:\UIS8910_git
-61 = G:\UIS8910_schcard_git
+61 = G:\UIS8910_git2
+62 = G:\UIS8910_schcard_git
 63 = G:\wa01u_svn
 64 = G:\wa01u_svn_small_new2
 65 = G:\wa01u_svn_small_new
@@ -88,8 +89,8 @@
 67 = G:\wa01u_svn_small_w21
 
 60key = 8910
-61key = 8910sch
-
+61key = 8910
+62key = 8910sch
 63key = 8910wa
 64key = 8910wa
 65key = 8910wa

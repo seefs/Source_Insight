@@ -1,7 +1,7 @@
 ###
 ### pub cfg
 ### 
-### 1.暂时只能手动修改
+### 1.Configuration of the "8910" directory
 ###
 
 0Key  = 8910
@@ -21,11 +21,12 @@ nv:\\
 
 sourcePath  = MS_MMI_Main\source\
 appPath     = MS_MMI_Main\source\mmi_app\app\
-ctrlPath    = MS_MMI_Main\source\mmi_ctrl\source
-guiPath     = MS_MMI_Main\source\mmi_gui\source
-configPath  = MS_Customize\source\product\config
+commonPath  = MS_MMI_Main\source\mmi_app\common\
+ctrlPath    = MS_MMI_Main\source\mmi_ctrl\source\
+guiPath     = MS_MMI_Main\source\mmi_gui\source\
+configPath  = MS_Customize\source\product\config\
 driverPath = MS_Customize\source\product\driver\
-sensorsPath = MS_Customize\source\product\driver\sensors
+sensorsPath = MS_Customize\source\product\driver\sensors\
 
 
 ### 1.cfg
@@ -37,9 +38,12 @@ prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
 projectKey   = WA22U_SW46E_QQVGA
-curKey   = UIS8910_ROM_16MB_SS_{project}_USER
+curKey   = UIS8910_ROM_16MB_SS_{project}_DEBUG
 cfgKey   = uis8910_phone_user_base_config
-sizeKey  = 128X128
+sizeNext  = 1
+size1Key  = 128X128
+size2Key  = 128X128
+//size1Key  = 240X280
 
 
 ### 3.copy

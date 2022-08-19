@@ -1,7 +1,7 @@
 ###
 ### pub cfg
 ### 
-### 1.暂时只能手动修改
+### 1.Configuration of the "6600" directory
 ###
 
 0Key  = 6600

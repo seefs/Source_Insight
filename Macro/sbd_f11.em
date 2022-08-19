@@ -573,7 +573,7 @@ macro NoteHander(hbuf, cNum, prompt)
 	{
 		//替换普通{key}
 		tmpPath = ReAllKeyHead(hbuf, curPath)
-		//替换特殊{pro}, 基础路径为""
+		//替换特殊{key=pro}, 基础路径为""
 		//特殊key可为空，需单独处理
 		tmpPath = ReCustomKeyHead(hbuf, "", tmpPath)
 		

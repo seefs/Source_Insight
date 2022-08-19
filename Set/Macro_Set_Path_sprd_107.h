@@ -1,7 +1,7 @@
 ###
 ### pub cfg
 ### 
-### 1.暂时只能手动修改
+### 1.Configuration of the "107" directory
 ###
 
 0Key  = 8910
@@ -37,12 +37,13 @@ prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
 // 目录名称自动拼接成mk名称
-projectKey   = S98T_FLP_E535_31
+projectKey   = F79T_DERONG
 //projectKey   = T5_A86_VIET_HQQVGA
 curKey   = ums9117_{size}BAR_48MB_{project}_user
 cfgKey   = xx
-sizeKey  = 240X320
-//sizeKey  = 128X128
+sizeNext  = 2
+size1Key  = 240X320
+size2Key  = 240X320
 
 
 ### 3.copy

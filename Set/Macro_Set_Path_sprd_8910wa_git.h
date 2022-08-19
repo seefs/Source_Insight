@@ -1,7 +1,7 @@
 ###
 ### pub cfg
 ### 
-### 1.暂时只能手动修改
+### 1.Configuration of the "8910" directory
 ###
 
 0Key  = 8910
@@ -41,13 +41,16 @@ prj:\\
 
 
 //projectKey   = BMWATCH_FS
-projectKey   = WA03U_T6
+//projectKey   = WA03U_T6
+projectKey   = WA03U_T6_A_81
 curKey   = UIS8910_ROM_16MB_SS_{project}_USER
 //curKey   = UIS8910_240x320BAR_16MB_SS_{project}_USER
 //cfgKey   = uis8910_watch_user_base_config
 cfgKey   = uis8910_phone_user_base_config
-sizeKey  = 240X280
-size2Key  = 240X280
+sizeNext  = 1
+size1Key  = 240X284
+size2Key  = 240X284
+//size1Key  = 240X280
 
 
 ### 3.copy

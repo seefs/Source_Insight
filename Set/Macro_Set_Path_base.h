@@ -1,9 +1,7 @@
 ###
 ### pub path
 ### 
-### 1.暂时只能手动修改
-### 2.自动增加，待改
-### 3.自动替换，待改
+### 1.Configuration of the "save" directory
 ###
 
 0Key  = Base
@@ -24,4 +22,8 @@ demoC:\\
 ### 1.Key
 prjKey  = project
 
+sizeNext  = 2
+size1Key  = Git2
+size2Key  = Git
+abcKey  = cmd
 

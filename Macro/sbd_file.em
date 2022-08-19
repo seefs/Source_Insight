@@ -1239,6 +1239,9 @@ macro getKeyHead(hbuf, fHead)
 		msg("key: {@fHead@}" # CharFromKey(13)
 		   # "proj is not exist!" # CharFromKey(13) # CharFromKey(13)
 		   # "(Macro_Set_Base.h)")
+		SetName = getSetPath(0) # "\\Macro_Set_Key.h"
+		OpenExistFile(SetName)
+		stop
 		return ""
 	}
 	
@@ -1380,17 +1383,86 @@ macro ReCustomKeyHead(hbuf, curPathS, curPathE)
 		{
 			return pathOut
 		}
-		else
+		
+		// other
+		pathER = ReCustomKeyHead(hbuf, curPathS # pathS # "", pathE)
+		pathOut = curPathS # pathS # "" # pathE
+		msg("key not exist: " # keyVal)
+		return pathOut
+	}
+
+	// next val
+	nextVal = getNextHead(hbuf, pathMid)
+	if (nextVal != "")
+	{
+		pathS  = strmid(curPathE, 0, firstS)
+		pathE  = strmid(curPathE, firstE + 1, len)
+		if (nextVal == "1" || nextVal == "2")
 		{
-			pathER = ReCustomKeyHead(hbuf, curPathS # pathS # "", pathE)
-			pathOut = curPathS # pathS # "" # pathE
-			msg("key not exist: " # keyVal)
-			return pathOut
+			key1Val = getKeyHead(hbuf, pathMid # "1")
+			if (keyVal != "")
+			{
+				pathER = ReCustomKeyHead(hbuf, curPathS # pathS # keyVal, pathE)
+				pathOut = curPathS # pathS # key2Val # pathER
+				pathOutR  = GetTransFileName(hbuf, pathOut, 16)
+				if (IsExistFile(pathOutR))
+				{
+					return pathOut
+				}
+			}
 		}
+		
+		if (nextVal == "2")
+		{
+			key2Val = getKeyHead(hbuf, pathMid # "2")
+			if (key2Val != "")
+			{
+				pathER = ReCustomKeyHead(hbuf, curPathS # pathS # key2Val, pathE)
+				pathOut = curPathS # pathS # key2Val # pathER
+				pathOutR  = GetTransFileName(hbuf, pathOut, 16)
+				if (IsExistFile(pathOutR))
+				{
+					return pathOut
+				}
+			}
+		}
+		
+		// other
+		pathER = ReCustomKeyHead(hbuf, curPathS # pathS # "", pathE)
+		pathOut = curPathS # pathS # "" # pathE
+		msg("key not exist: " # keyVal)
+		return pathOut
 	}
 	return curPathE
 }
 
+macro getNextHead(hbuf, fHead)
+{
+	//不能带有*号，否则会无限替换下去
+	index = FindString(fHead, "*")
+	if(index != "X"){
+		return ""
+	}
+	
+	//1.get cfg file
+	pathBuf = GetPubPathBuf(hbuf)
+	if(pathBuf == hNil){
+		msg("key: {@fHead@}" # CharFromKey(13)
+		   # "proj is not exist!" # CharFromKey(13) # CharFromKey(13)
+		   # "(Macro_Set_Base.h)")
+		SetName = getSetPath(0) # "\\Macro_Set_Key.h"
+		OpenExistFile(SetName)
+		stop
+		return ""
+	}
+	
+	//get next Key
+	nextVal = getMacroValue(pathBuf, fHead # "Next", 1)
+	if(nextVal != ""){
+		return nextVal
+	}
+	return ""
+}
 macro getCustomHot(hbuf, fn_idx)
 {
 	var hprj
