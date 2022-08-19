@@ -105,6 +105,14 @@ ctrl:Softkey/c/ctrlsoftkey.c  void^DrawAllButtons
 //		====>DrawAllButtons
 //		======>DrawButtonText     # 自动用小字体
 ctrl:Softkey/c/ctrlsoftkey.c  void^CalSoftkeyRect
+//softkey--字体写死
+ctrl:Button\c\ctrlbutton.c  SOFTKEY_FONT_SIZE_ADAPT_MODE
+ctrl:Softkey\c\ctrlsoftkey.c  SOFTKEY_FONT_SIZE_ADAPT_MODE
+//softkey--mainmenu--rect
+app:mainmenu\c\mmi_mainmenu_matrix.c  void^MatrixMenuCreateButton
+
+
+
 
 ### softkey
 //  ==>pos
@@ -150,7 +158,7 @@ gui:win\c\Guiwin.c  GUIWIN_SetSoftkeyTextId    8
 // 线：
 //	LCD_DrawLine / LCD_DrawThickLine
 // 矩形：
-//	LCD_FillRect / LCD_DrawRect
+//	LCD_FillRect / LCD_DrawRect / GUI_FillRect
 // 圆：
 //	LCD_FillCircle / LCD_DrawCircle
 // 矩形圆：
@@ -282,8 +290,14 @@ app:phone\c\mmiphone_charge.c   887
 //            MMIAPIENVSET_ResetActModeOtherRingSet();
 
 
-
-
+// 信号
+//		==>HandlePsAndRefMsg
+app:phone\c\mmiphone.c  case^APP_MN_SCELL_RSSI_IND
+//		HandlePsAndRefMsg:receive APP_MN_SCELL_RSSI_IND                                                                                                                 	                                                                	0:23:04.414  	
+//		ipc hisr, status: 0x2,32K:0x2b4351b                                                                                                                             	                                                                	0:23:04.414  	
+//		[MMIPHONE_GetRSSIMap] dual_sys[0] rxlev[10] rat[1]                                                                                                              	                                                                	0:23:04.414  	
+//		[HandleScellRssiInd] line[7228] rxLevel[1]                                                                                                                      	                                                                	0:23:04.414  	
+//		NotifyRxLevelChange rx_level=1, s_notify_rx_level=1, PlmnStatus=3   
 
 
 [1.5] Theme
@@ -701,6 +715,8 @@ app:cc\c\mmicc_wintab_custom.c  MMI_RESULT_E^HandleCallSIMSelectWinMsg
 
 
 [1.11] onoff
+
+### __SECOND_LOGO__
 // 
 MS_Customize/source/common/prod_param.c
 app:envset/c/mmienvset.c
@@ -997,7 +1013,7 @@ ctrl:editbox\c\ctrlbaseflex.c  BaseFlexCtrlSetFont
 //		======>LIST_ResetItemDisp       # pos set
 //		========> + tag_width           # +34, 数字或check
 ctrl:ListBox\c\ctrllist_item.c  LIST_ResetItemDisp
-// list--theme
+// list--theme, init
 //		==>MMK_ParseWinTab
 //		====>CreateListBoxCtrl             # list
 //		======>ConstructObject
@@ -1015,6 +1031,7 @@ app:theme/c/mmitheme_list.c  tag_width     # --check pos2 [39,87], bug
 //		========>ListDraw
 //		==========>ListDrawAllItems
 //		============>ListDrawItem                   # draw
+//		==============>isNeedDrawListItemBG         # bg
 //		==============>GUIITEM_STATE_DISABLE_MARK   # check
 //		================>mark_left, tag_img_width   # --check pos1 [6,23]
 //		==============>GUIITEM_STATE_HAS_NUM        # num
@@ -1280,12 +1297,12 @@ Save:node\C\study\Macro_pos_8910.h  __text__
 [1.28] menu
 //
 // menu--click
-//		==>MainmenuCtrlHandleMsg           # mainmenu
-//		====>MatrixMenuHandle              # web
+//		==>MainmenuCtrlHandleMsg              # mainmenu
+//		====>MatrixMenuHandle                 # web
 //		======>MatrixMenuHandleOkKey
 //		========>MatrixMenuRunItem
 //		==========>MMIMANMENU_EnterPlayer
-// menu--enter
+// menu--enter (eng--net info)                # (static menu)
 //		==>MMK_ParseWinTab
 //		====>CreateMenuCtrl
 //		======>ConstructObject
@@ -1297,7 +1314,15 @@ Save:node\C\study\Macro_pos_8910.h  __text__
 //		==========>ModifyMenuRect
 //		============>CTRLMENU_SecModifyRect
 //		==============>CalculateSecItemRect   # pos
-// menu--enter (sms--switch)
+//		==>MenuHandleMsg
+//		====>WEB:
+//		====>HandleMenuOkKey
+//		======>CTRLMENU_SecHandleOk
+//		======>.is_exist_child
+//		======>CTRLMENU_Draw
+//		========>CTRLMENU_DrawSec
+//		==========>DisplaySecMenuAllItem
+// menu--enter (sms--switch)                  # (dyn menu)
 //		==>CreateIMMenu
 //		====>CTRLMENU_CreatDynamic
 //		======>TYPEMNG_Init

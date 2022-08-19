@@ -304,7 +304,8 @@ MS_Ref\export\inc\dal_keypad.h  SCI_VK_HOME
 
 //		======>CheckKeyMsgNumber
 //		========>s_waiting_key_info.waiting_keycode
-//		==========>MmiSendSignal            # 发送 0x2C
+//		==>KeypadCallBackFunc               # 转按键
+//		====>MmiSendSignal            # 发送 0x2C
 //		==>HandleMSGKbd
 //		====>DefaultIsRespond               # 播报
 //		======>0x2C (KEY_T)

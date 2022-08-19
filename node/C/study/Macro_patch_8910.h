@@ -76,6 +76,15 @@ app:udisk\c\mmiudisk_wintab.c
 app:pb\c\mmipb_view.c  s_mmipb_update_callback
 
 
+// 8910
+// --test--RECEIVER
+app:eng/c/mmieng_uitestwin.c
+app:eng/h/mmieng_id.def
+app:eng/h/mmieng_uitestwin.h
+app:setting/c/mmiset_ring.c
+
+
+
 ### __charge__
 // 8910--idle--charge
 app:idle\c\mmiidle_mstyle.c

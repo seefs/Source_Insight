@@ -113,13 +113,14 @@ MS_Customize/source/product/driver/lcd/
 MS_Customize/source/product/driver/lcd/tft_ST7789.c
 MS_Customize/source/product/driver/lcd/tft_GC9106.c
 MS_Customize/source/product/driver/lcd/tft_ILI9342.c
+MS_Customize/source/product/driver/lcd/tft_GC9308.c
 
 
 // 新屏
 //		==>修改画屏方向: (0x36)0xC8->0xD8
 make\custom_drv\custom_drv.mk  tft_ST7735S.c
 
-//
+// te
 MS_Customize\source\product\config\
 MS_Customize\source\product\config\ums9117_barphone\lcm_cfg_info.c LCD_DRV_ID_ST7735S
 MS_Customize\source\product\config\uis8910ff_refphone\lcm_cfg_info.c LCD_DRV_ID_ST7735S
@@ -158,6 +159,16 @@ make\chip_drv\chip_modules\analog.mk  CONFIG_ANALOG_VER
 //
 make\chip_drv\chip_drv.mk  analog_phy_sc2720.c
 make\chip_drv\chip_drv.mk  analog_phy
+
+//	--刷新帧率
+//		==>
+//		====>divider =8, spi就变成24M了
+//		======>spi_clk=200M/8=25M, 200M/8=25M, 200M/6=33M, 200M/5=40M
+chip_drv\chip_module\lcdc\uix8910\hal_gouda.c  uint32^hal_GoudaUpdateSerialTiming
+//	--双帧率
+prj:project_{cur}.mk   LCD_DUAL_SPI_FREQ_SUPPORT
+//		==>
+MS_Ref\source\lcd\src\lcd_uix8910.c  LCD_DUAL_SPI_FREQ_SUPPORT
 
 
 // SUBLCD
@@ -308,12 +319,25 @@ prj:project_{cur}.mk  FM_S_ANT_SUPPORT = TRUE
 prj:project_{cur}.mk  MMI_FM_NEW_STYLE  = TRUE
 prj:project_{cur}.mk  MMI_FM_MENU_SLIM_STYLE  = TRUE
 
+// 8910 未开
+make\app_main\app_macro.mk  MMI_FM_NEED_HEADSET
+
+
 	
 [2.5] 语言, 字体---mmi_custom_define.h 
 // font-8910/107
 source:mmi_service\export\inc\mmi_custom_define.h  MMI_DEFAULT_BIG_FONT
 // font-6531
 MS_MMI\source\mmi_app\custom\h\mmi_custom_define.h MMI_DEFAULT_BIG_FONT
+//		==>
+prj:project_{pjk1}.mk  SPRDEPHONE_PROJECT_ID  = SC6531_RX5106
+prj:project_{pjk1}.mk  FLASH_SIZE             = 32MBIT
+//		====>
+MS_MMI\source\mmi_kernel\include\MMI_features.h  SPRDEPHONE_PROJECT_ID_SC6531_RX5106
+//		====>
+MS_MMI\source\mmi_kernel\include\mmi_features_rx5106.h  _FONT_
+
+
 // 默认语言:
 source:mmi_service\export\inc\mmi_custom_define.h  MMISET_EDEFAULT_LANGUAGE
 // sms--sim--num
@@ -324,6 +348,8 @@ key:MULTIM,file:mmiset_export.h
 
 // KEYTABLE
 key:KEYTABLE,file:mmiim_sp_ml9key_data.c
+
+
 
 
 ## 繁体

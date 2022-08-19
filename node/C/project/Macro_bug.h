@@ -3,11 +3,12 @@
 Save:node\C\project\Macro_bug.h \[1.1\] watch_git
 Save:node\C\project\Macro_bug.h \[1.2\] watch_svn
 Save:node\C\project\Macro_bug.h \[1.3\] 
-Save:node\C\project\Macro_bug.h \[1.4\] 
+Save:node\C\project\Macro_bug.h \[1.4\] 8910_sch
 Save:node\C\project\Macro_bug.h \[1.5\] 8910
 Save:node\C\project\Macro_bug.h \[1.6\] 107
 Save:node\C\project\Macro_bug.h \[1.7\] MTK
-Save:node\C\project\Macro_bug.h \[1.8\] 
+Save:node\C\project\Macro_bug.h \[1.8\] bat
+Save:node\C\project\Macro_bug.h \[1.9\] lcd
 // tmp
 Save:node\C\project\
 Save:node\C\project\Macro_bug_tmp.h
@@ -77,6 +78,9 @@ SPDE_PLAT_YX_SUPPORT_VOICE
 # 128
 SPDE_PRJ/WA07U_F3Z/zmaee/h/sg_zmaee_app6_rom.h
 
+### wa22u
+//手电筒--上滑
+// w07u--imei不对闹钟卡死
 
 
 [1.3] 
@@ -84,10 +88,22 @@ SPDE_PRJ/WA07U_F3Z/zmaee/h/sg_zmaee_app6_rom.h
 
 
 
-[1.4] 
+[1.4] 8910_sch
+//
+//有几种错误状态：
+//1，没有用户身份证信息；
+//2，没有激活码；
+//3，激活码失效；
+//4, 网络错误,
+具体错误看状态码和error msg,这个代码里有参考
 
 
+//
+//logo红色再加一张
+//加载动画
+//失败画面
 
+Save:node\C\study\Macro_sch_8910.h
 
 
 [1.5] 8910
@@ -105,6 +121,16 @@ SCI_ChangeTimer
 
 
 [1.6] 107
+
+### a86
+//ampm
+//手电筒不亮
+//---音频
+// T5--指令
+// 真横屏？
+
+### f79t
+// 副屏--低电量
 
 # fota
 删了fota 副屏(好像boot是共用的)
@@ -168,6 +194,21 @@ start cmd /k echo Hello, World!
 
 
 
+[1.9] lcd
 
+//SPDE_UI_BT_STYLE
+//SPDE_UI_STYLE
+MMI_SMART_IDLE_SUPPORT_SMALL_ICON
+SPDE_UI_STYLE_BLACK_BG_WHITE_FONT
+SPDE_UI_STYLE_FOCUS_SAME_FONT
+//
+SPDE_UI_320X240_STYLE
+MAINLCD_DEV_SIZE_320X240
+MMI_FONT_NORMAL_26_STYLE
+
+KEYPAD_TYPE_QWERTY_KEYPAD  //SPDE_UI_QWERTY_STYLE
+//SPDE_UI_BT_STYLE
+MMI_RES_ORIENT_LANDSCAPE
+//
 
 

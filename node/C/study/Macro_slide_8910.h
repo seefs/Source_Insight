@@ -499,25 +499,64 @@ Watch_HandleCameraWinMsg
 
 
 [2.11] alarm
-// res--img
-images:set/MMI_RES_DEFAULT/IMAG/set_clock/
+// ==>pos
+Save:node\C\study\Macro_pos_8910.h  __setAlarm__
+// ==>image
+Save:node\C\study\Macro_res_image_wa8910.h  __alarm__
 
 // enter
-app:launcher\c\watch_launcher_main.c  Settings_AlarmListWin_Enter
-// --win (3item,1btn)
-app:setting\c\watch_set_alarmlist.c  MMISET_ALARM_LIST_WIN_TAB
-// --edit time
-app:setting\c\watch_set_alarmedit.c  MMISET_ALARM_EDIT_WIN_TAB
-// --edit mode
-app:setting\c\watch_set_alarmedit.c  MMISET_ALARM_REPEAT_WIN_TAB
-// --option (3item)
-app:setting\c\watch_set_alarmlist.c  MMISET_ALARM_OPTION_WIN_TAB
+// --alarm--list
+//		==>Settings_AlarmListWin_Enter
+//		====>MMISET_ALARM_LIST_WIN_TAB
+//		======>Settings_AlarmList_OPEN_WINDOW
+//		========>.iconRect  (no data)
+//		========>.labelRect (no data)
+//		========>.1btn
+//		======>PAINT:
+//		========>SettingsAlarmListDrawList
+//		========>.listRect {0,0,240,209}
+//		========>.h         210
+app:setting\c\watch_set_alarmlist.c  HandleSettingsAlarmListWindow
+// --alarm--option (3item)
+//		==>Settings_AlarmOptionWin_Enter
+//		====>MMISET_ALARM_OPTION_WIN_TAB
+app:setting\c\watch_set_alarmlist.c  HandleSettingsAlarmOptionWindow
+// --alarm--edit time
+//		==>Settings_AlarmAddWin_Enter
+//		====>MMISET_ALARM_EDIT_WIN_TAB
+//		======>Settings_AlarmEdit_OPEN_WINDOW
+//		========>.editRect  [0,0,240,156]
+//		========>.h         52
+//		========>WatchCOM_Btn_SetPos_2Btn
+//		==========>[150,170,209,229] 60*60
+app:setting\c\watch_set_alarmedit.c  HandleSettingsAlarmEditWindow
+// --alarm--edit mode
+//		==>Settings_AlarmRepeatWin_Enter
+//		====>MMISET_ALARM_REPEAT_WIN_TAB
+//		======>Settings_AlarmRepeat_OPEN_WINDOW
+//		========>.listRect  [0,0,240,156]
+app:setting\c\watch_set_alarmedit.c  HandleSettingsAlarmRepeatWindow
+// --alarm--add
+//		==>_Callback_AlarmRepeatBtnFixed
+//		====>
+//		======>
 
-// --time
+
+// --ctrl--time
 ctrl:Picker\c\ctrltimepicker.c  TimePickerCtrlHandleMsg
 
 
-
+//		==>OpenAlarmAliveWin
+//		====>普通闹钟:
+//		====>Watch_Alarm_AliveWin_Enter      # 激活
+//		======>HandleMsgAlarmAliveWindow
+//		========>OPEN:
+//		========>Alarm_Alive_OPEN_WINDOW
+//		==========>CreatTextTitle
+//		==========>CreatTextContent
+//		==========>AlarmSetButtonCtrlParam
+// --alarm--pos
+app:accessory\c\watch_alarm.c  ALARM_ICON_X
 
 
 
@@ -587,8 +626,15 @@ Save:node\C\study\Macro_pos_8910.h  __setBl__
 // 3.sound/next icon
 //		==>HandleMsgCommonRadioListWindow
 //		====>Common_RadioListWin_User_Action
+//		======>_Callback
+//		==>OK:
+//		====>Settings_CallRingSelectWin_Enter
 //		======>_Callback_CallRingSelectWin
 app:setting\c\watch_set_sound.c  HandleSettingsSoundWindow
+app:setting\c\watch_set_mmsound.c  Settings_MMSoundWin_Enter
+app:setting\c\watch_set_notesound.c  Settings_NoteSoundWin_Enter
+app:setting\c\watch_set_callsound.c  Settings_CallSoundWin_Enter
+
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __setSound__
 // ==>image
@@ -656,6 +702,8 @@ app:launcher\c\watch_launcher_main.c  WatchJiBu_MainWin_Enter
 // 心率
 images:common/MMI_RES_DEFAULT/IMAG/watch/health/
 app:launcher\c\watch_launcher_main.c  WatchHR_MainWin_Enter
+// ==>image
+Save:node\C\study\Macro_res_image_wa8910.h  __hr__
 
 
 // 体温
@@ -670,6 +718,10 @@ app:launcher\c\watch_launcher_editclockwin.c  WatchLAUNCHER_EditClockWin_Enter
 
 // 防走丢
 app:launcher\c\watch_launcher_main.c  WatchAnti_MainWin_Enter
+
+
+// imei
+app:launcher\c\watch_imei_win.c  WatchImei_Enter
 
 
 // test

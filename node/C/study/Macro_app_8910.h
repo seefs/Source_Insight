@@ -79,6 +79,7 @@ prj:{cfg}.cfg  USE_IMAGE_OPEN = TRUE
 //		====>WatchLAUNCHER_Enter
 app:idle\c\mainapp.c  MMIAPIIDLE_OpenIdleWin
 
+### idle--mstyle
 // IDLE--107
 app:idle\c\mmiidle_cstyle.c  void^OutIdleWinContent
 app:idle\c\mmiidle_cstyle.c  void^DisplayIdleWinSoftkey
@@ -95,6 +96,14 @@ app:idle\c\mmiidle_cstyle.c  void^DisplayIdleWinSoftkey
 //		====>DisplayIdleMp3Name
 app:idle\c\mmiidle_mstyle.c  void^OutIdleWinContent
 app:idle\c\mmiidle_mstyle.c  void^DisplayIdleWinSoftkey
+
+
+### idle--time
+//		==>MAIN_HandleSysMsg
+//		====>RTC_MIN:
+//		====>MMIIDLE_MStyleHandleMsg
+//		======>MSG_IDLE_UPDATE_DATETIME:
+//		======>
 
 
 ### idle
@@ -227,7 +236,11 @@ app:mainmenu\c\mainmenu_win.c  MAINMENU_ICON_WIN_TAB
 //		====>active_icon.data.icon_id
 //		======>MatrixMenuDrawHighlightItem
 //		======>MatrixMenuDrawItemIcon
-
+// menu--sms--num
+//		==>MMITHEME_DrawMainmenuItem
+//		====>DrawMenuNumberIcon
+//		======>.cur_cache_info.menu_num
+//		========>GetMenuIconNumber
 
 ### menu
 // ==>pos
@@ -406,10 +419,13 @@ app:eng/c/mmieng_uitestwin.c  MMI_RESULT_E^ENGItemTestMenuWinHandleMsg
 app:eng\c\mmieng_menutable.c  menu_phone_item_test
 
 // 串行测试
-//		==>
+//		==>s_mmieng_test_win_id
+//		==>s_mmieng_test_win_ptr_tab
 app:eng/c/mmieng_uitestwin.c  BOOLEAN^MMIAPIENG_StartUITest
 
 // 测试结果
+//		==>s_all_test_win_id
+//		==>s_all_test_name
 app:eng/c/mmieng_uitestwin.c  MMI_RESULT_E^ENGUITestResultWinHandleMsg
 app:eng/c/mmieng_uitestwin.c  int32^GetUITestResultInfo
 
@@ -418,6 +434,14 @@ app:eng/c/mmieng_uitestwin.c  int32^GetUITestResultInfo
 app:eng/c/mmieng_main.c  MMI_RESULT_E^ENGMainMenuWinHandleMsg
 // 工程模式--menu
 app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_eng
+// 工程模式--menu--netinfo
+app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_net_info_show
+// 工程模式--menu--netinfo--nwcap
+//		==>ENGNetinfoShowWinHandleMsg
+//		====>case^ID_ENG_NW_CAP  (未走)
+//		======>MMIENG_NW_CAP_SHOW_WIN_TAB
+//		========>ENGNWCAPShowWinHandleMsg
+app:eng/c/mmieng_win.c   case^ID_ENG_OUTFIELD_NETWORK_INFORMATION
 // 工程模式--apptest
 app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_app_set
 // 工程模式--apptest--usb
@@ -736,6 +760,8 @@ app:cc\c\mmicc_main.c  MSG_KEYUP_FLIP  CCApplet_HandleEvent
 //		========>need_playring = TRUE;
 //		========>PlayNewCallRing
 //		====>MMICC_AnswerCall
+app:cc\c\mmicc_{wintab}.c  MMI_CALL_SOFTKEY_SILENT_FIX
+
 
 // 112
 app:cc\c\mmicc_{wintab}.c  MMICC_MENU_EMERGENCY_OPT_WIN_TAB  
@@ -794,10 +820,12 @@ app:cc\c\mmicc_{wintab}.c  MMICC_MENU_EMERGENCY_OPT_WIN_TAB
 //		==>CC_HandleCcWinMsg
 //		====>MMICC_UpdateCurrentCallStatus
 
+
 // call--opt--8910
 //		==>MENU:
 //		==>OpenCallMenu          # add note
 //		====>MMICC_HOLDMENU_WIN_TAB
+//		======>HandleHoldMenuWinMsg
 // call--opt--107
 //		==>MENU:
 //		==>OpenCCHoldMenu
@@ -805,7 +833,47 @@ app:cc\c\mmicc_{wintab}.c  MMI_RESULT_E^HandleHoldMenuWinMsg
 //    if ((MMICC_AUDIO_DEV_BT == MMICC_GetCurrentDev()))
 
 
-	
+// call--vib--8910
+//		==>COMPLETE_IND: 接通
+//		====>CC_SetupCompleteInd
+//		======>MMICC_VibrateForConnectPrompt
+//		==>
+//		====>CC_SetupCompleteCnf
+//		======>MMICC_VibrateForConnectPrompt
+//		==>CC_HandleCcAnimWinMsg
+//		====>OPEN:
+//		====>PlayNewCallRing
+//		======>MMIAPICC_StartRingOrVibrate
+
+// call--record--8910
+//		==>CC_HandleCcWinMsg
+//		====>WEB:
+//		====>HandleRecordOpt
+//		======>StartCCRecord
+//		========>MMIRECORDSRV_StartRecord
+//		==========>RequestHandle
+//		====>CANCEL:
+//		======>EnableHandfreeMode
+//		========>softkey:
+//		==========>BM_UpdateLButton_WithText
+
+
+// call--speaker--8910
+//		==>CC_HandleCcWinMsg
+//		====>open:            # 来电
+//		====>STARTTIMER:      # 去电
+//		====>UPDATE_BUTTON:   # 去电
+//		====>MSG_CC_CONNECT_OPEN_WINDOW:
+//		====>MSG_NOTIFY_ANIM_UPDATE_END:
+//		==>HandleCCWinWebMsg
+//		====>MMISRVAUD_ROUTE_SPEAKER
+//		==>HandleCCWinPenOkMsg
+//		====>MMISRVAUD_ROUTE_SPEAKER
+//
+//		if(MMIAPICC_IsHandFree() == FALSE)
+//			EnableHandfreeMode(!MMIAPICC_IsHandFree());
+
+
 [1.10] pb, cl
 // enter
 //		==>MMIMAINMENU_StartPB/EnterPBMainMenuWin
@@ -823,10 +891,49 @@ app:cc\c\mmicc_{wintab}.c  MMI_RESULT_E^HandleHoldMenuWinMsg
 app:pb\c\mmipb_view.c  MMIPB_ENTRY_LIST_WITH_SEARCH_WIN_TAB  # style-2 (8910)
 app:pb\c\mmipb_view.c  MMIPB_GROUP_ENTRYL_LIST_WIN_TAB
 app:pb\c\Mmipb_view.c  MMIPB_MAIN_WIN_ID
-//		==========>MMIPB_ENTRY_LIST_TAB_WIN_TAB           # style-1
-//		============>HandleEntryListWinMsg
+//		==>EnterPBMainMenuWin
+//		====>MMIAPIPB_OpenListAllGroupWin
+//		======>MMIPB_OpenListAllGroupWin
+//		========>MMIPB_OpenMainWin  (list style)
+//		==========>MMIPB_StartApplet
+//		==>MMIPB_RegAppletInfo
+//		====>Applet_HandleEvent
+//		======>instance.entry_func
+//		========>MMIPB_OpenPbWin      # func
+//		==========>MMK_CreateWinByApplet
+//		==========>PbCreateChildWin
 app:pb\c\mmipb_view.c  MMIPB_ENTRY_LIST_TAB_WIN_TAB          # style-1 (107)
+RELOAD_SEARCH
+
 // init
+//		==>HandleEntryListWinMsg
+//		====>OPEN:
+//		======>MMK_SetAtvCtrl              # ==>GET_ACTIVE
+//		==>PbCreateChildWin                # ==>GET_FOCUS
+//		==>HandleMainWinMsg
+//		====>OPEN:                         # open/save ==>RELOAD_SEARCH
+//		==>HandleEntryListWinMsg
+//		====>RELOAD_SEARCH:
+//		======>HandleMainReloadMsg
+//		========>MMIPB_MultiSearch         # 模糊查找/分组/排队分组
+//		==========>MMIPB_SearchQSortList
+//		============>.s_pb_qsort_list      # 字符索引表
+//		============>.s_pb_contact_list    # 索引表
+//		==========>MMIPB_SearchSubStringInList  # 搜号码或姓名
+//		========>MMIPB_ReadContactList     # 把搜索的结果显示出来
+//		============>.contact_list_info
+//		========>SetListItem               # 结果显示
+//		==========>MMIPB_GetListStyle
+//		============>GUIITEM_STYLE_ONE_LINE_BIGICON_TEXT_WITH_MASK_MS
+//		==========>MMIPB_SearchAndAppendItem
+//		============>SetListItemForSearch
+//		========>MMIPB_GetContactListIndex # 当前焦点
+//		==>HandleEntryListWinMsg
+//		====>PAINT:                        # ==>List/CTL_PAINT ==>ITEM_DATA 
+//		====>ITEM_DATA:                    # ==>
+//		======>AppendDyncListItem
+//		======>MMIPB_CONTACTINDEX          # id->data
+
 //		==>HandleEntryListWithSearchWinMsg
 //		====>empty:
 //		======>CTRLLIST_SetEmptyInfo
@@ -838,17 +945,6 @@ app:pb\c\mmipb_view.c  MMIPB_ENTRY_LIST_TAB_WIN_TAB          # style-1 (107)
 //		======>MMIPB_SearchWinCreateEditor
 //		========>GUIEDIT_SetStyle(,GUIEDIT_STYLE_SINGLE_DYN_DOWN);
 //		========>CTRLBASEEDIT_SetDeActiveBorderColor(, MMI_DARK_WHITE_COLOR);
-//		====>list:
-//		======>MMIPB_SearchWinCreateList
-//		========>case MMI_PB_RELOAD_SEARCH_LIST_MSG
-//		==========>HandleMainReloadMsg
-//		============>MMIPB_MultiSearch   # 模糊查找
-//		============>MMIPB_ReadContactList
-//		============>SetListItem         # 结果显示
-//		==============>MMIPB_GetListStyle
-//		================>GUIITEM_STYLE_ONE_LINE_BIGICON_TEXT_WITH_MASK_MS
-//		==============>MMIPB_SearchAndAppendItem
-//		================>SetListItemForSearch
 app:pb\c\mmipb_view.c  HandleEntryListWithSearchWinMsg
 
 
@@ -982,17 +1078,27 @@ Save:node\C\study\Macro_res_image_8910.h  __idle__
 Save:node\C\study\Macro_res_color_8910.h  __camera__
 
 
-//option 
+// --cam--option 
+//		==>MMIDC_OpenPhotoOption
+//		====>add(txt, fun)
+//		====>MMIDC_OpenMoreOption
+//		======>MMIDC_OpenDesktopTipOSD
+//		========>add(ic, focus, fun)
+//		========>MMIDC_SetShowState
+//		==========>OpenDCModeMenu (1)
+//		============>SetVideoMode
+//		============>SetPhotoMode
+// --cam--option--show
+//		==>KeyFunction
+//		====>MMIDC_ShowAllOSD
+//		======>ShowAllOSD
+//		========>.MenuDisplay
+//		==========>MenuDisplayAndTP
+//		============>MMIDC_DisplayBMPMask    #条纹背景
+//		============>_focused_item_index     #rect--item, rect3--bg/str, rect2--RADIO
+//		============>MMIDC_DisplayTitleBackground   #title
+app:camera\c\Mmidc_osd_option.c  MMIDC_OpenPhotoOption
 app:camera\c\Mmidc_osd_option.c  MMIDC_OpenVideoOption
-// menu
-//		InitRunningParameter
-//		MMIDC_OpenPhotoOption
-//		MMIDC_OpenVideoOption
-//		MenuDisplayAndTP
-//		OpenDCModeMenu
-// switch
-//		SetVideoMode
-//		SetPhotoMode
 
 // key
 app:camera\c\mmidc_main_wintab.c  KeyFunction
@@ -1026,21 +1132,53 @@ Camera闪光灯:
 prj:{cfg}.cfg   PIC_VIEWER_SUPPORT = TRUE
 
 // pic--enter
-//		==>HandlePicListWinMsg
-//		====>OpenPicListWin
-//		======>CreatePicListCtrl
-//		========>MMIPICVIEW_VIEW_ICONLIST     # 240*320
-//		==========>SetIconListParam           # --margin
-//		============>MMIPICPREVIEW_LIST_ICON_SIZE
-app:pic_viewer\c\mmipicview_list.c HandlePicListWinMsg
+//		==>MMIAPIPICVIEW_OpenPicViewer
+//		====>MMIPICVIEW_OpenPicViewerWin
+//		======>MMIPICVIEW_LIST_WIN_TAB
+//		======>HandlePicListWinMsg
+//		========>OPEN:
+//		========>OpenPicListWin               # ==>RELOAD
+//		==========>CreatePicListCtrl
+//		============>MMIPICVIEW_VIEW_ICONLIST     # 240*320
+//		==============>SetIconListParam           # --margin
+//		================>MMIPICPREVIEW_LIST_ICON_SIZE
+app:pic_viewer\c\mmipicview_list.c MMI_RESULT_E^HandlePicListWinMsg
 app:pic_viewer\c\mmipicview_list.c void^SetIconListParam
-//		====>AppendPicIconListIcon            # 一次只能加载一个
-//		======>CTRLICONLIST_AppendIcon
-//		========>InsertIcon
-//		==========>ICONLIST_GetIconRect     # size
-//		============>ICONLIST_GetRect       # list
-//		============>ICONLIST_GetItemWidth  # item 分行
-//		==============>iconlist_ctrl_ptr->theme.icon_item.width  #128*160
+//		========>RELOAD:
+//		==========>OpenAlertWin
+//		============>StartLoadPic             # 
+//		==============>MMIAPIFMM_SearchFileInPathAndSort
+//		======>MMK_HandleMmiSig
+//		========>APP_FIND_FILES_END_IND:
+//		==========>MMIAPIFMM_SearchFileCallBack  # ==>LOAD_FINISH
+//		======>HandleLoadPicWinMsg
+//		========>MSG_PICVIEWER_LOAD_FINISH:
+//		==========>FinishLoadPic              # ==>UPDATE
+//		========>UPDATE:
+//		==========>UpdatePicList              # 图片总数
+//		==========>OpenAlertWin
+//		======>IconlistCtrlHandleMsg
+//		========>PAINT:
+//		==========>DisplayIconList            # 重复
+//		========>APPEND_TEXT:
+//		==========>CTRLICONLIST_AppendText    # 更新名称, 实际未使用
+//		======>HandleLoadPicListWinMsg        # Alert
+//		========>LOAD_START:
+//		==========>SetlistOrderInTime         # 分组--107
+//		========>LOAD_END:
+//		==========>
+//		======>IconlistCtrlHandleMsg
+//		========>DISPLAY_IND:
+//		==========>NotifyLoadNextIcon         # 下一个, APPEND_ICON
+//		========>APPEND_ICON:
+//		==========>AppendPicIconListIcon      # 更新icon path
+//		============>CTRLICONLIST_AppendIcon
+//		==============>InsertIcon               # DISPLAY_IND
+//		================>ICONLIST_GetIconRect     # size
+//		==================>ICONLIST_GetRect       # list
+//		==================>ICONLIST_GetItemWidth  # item 分行
+//		====================>iconlist_ctrl_ptr->theme.icon_item.width  #128*160
+//		========>MSG_NOTIFY_UPDATE            # 完了
 
 // pic--opt
 app:pic_viewer\c\mmipicview_wintab.c  HandlePiclistOptWinMsg
@@ -1154,6 +1292,7 @@ app:fm\c\mmifm_wintab.c  void^DisplayMainWindow
 // fm--Record
 app:fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleFmRecordMsg
 // fm--opt
+//		==>s_fm_main_opt_item
 app:fm\c\mmifm_wintab.c  MMI_RESULT_E^^HandleFmChannelOptionMsg
 app:fm\c\mmifm_wintab.c  void^HandleFMAction
 app:fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleFmMainOptionMsg
@@ -1163,8 +1302,48 @@ app:fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleChannelListWinMsg
 // fm--set edit
 // file: Music/FM Radio clips/Radio___J-001.wav
 // fm--Headset
+//		==>MMIFM_Init
+//		====>
+//		==>opt-mode:
+//		====>MMIFM_SwitchAudioDevice
+//		==>main-auto switch: (no use)
+//		====>MMIFM_SwitchAudioDevice
+//		======>
+
+//		==>DefaultHeadsetDetect
+//		====>MMIAPIFM_HeadsetInd  (no use)
+//		======>MMIFM_HandleHeadsetAction
+//		========>MMIFM_CheckAndSwitchFmAnt  (外放)
+//		==========>
+//		============>
+//		==>DefaultHeadsetKey  (BUTTON)
+//		====>
+//		==>DefaultEarphoneKey  (BUTTON)
+//		====>
+//		==>MMK_HandlePublicKey
+//		====>BUTTON:
+//		======>MMK_HandleHeadSetKeyProcess
+//		====>KEYDOWN:
+//		======>
+//		==>gpio_cfg:
+//		====>GPIO_HeadsetDetectIntHandler
+//		======>
+//		========>
 app:fm\c\mmifm_wintab.c  MMIFM_HandleHeadsetButtonAction
 app:fm\c\mmifm_wintab.c  void^MMIFM_HandleHeadsetAction
+// fm--play
+//		==>HandleFmMainMsg
+//		====>WEB:
+//		====>SetFMStartSuspendButtonStatus
+//		======>MMIAPIFM_Pause
+//		========>MMIFM_Pause
+//		==========>FM_PlayStop
+//		======>MMIAPIFM_Resume
+//		========>MMIFM_Play(FALSE)
+//		==========>FM_Open
+//		==========>MMIFM_CheckAndSwitchFmAnt
+//		======>MMIFM_Play(TRUE)
+
 
 ### fm
 // ==>pos
@@ -1350,6 +1529,8 @@ app:audioplayer\c\mmiapwin_main.c  HandleMp3PlayWinMsg
 //		====>MMIAP_DrawProgressOwnerDrawCtrl
 //		======>MMIMP3_DisplayProgress
 
+// mp3--play
+Save:node\C\study\Macro_fun_8910.h  __mp3Play__
 
 // file--app--init
 //		==>APP_Init
@@ -1642,7 +1823,9 @@ app:game\game_snake\c\mmigame_snake_wintab.c
 
 
 [1.23] bt
-// enter
+// --bt--enter
+//		==>MMIAPIBT_OpenMainMenuWin
+//		====>MMIBT_OpenMainMenuWin
 // --bt--open--init once (popup)
 //		==>HandleMainMenuWinMsg (bt)
 //		====>MMIBT_UpdateMainMenu
@@ -1767,25 +1950,33 @@ app:setting\c\mmiset_wintab.c  MMISET_RING_SELECT_CALL_WIN_TAB
 
 // env--option--set--RingVol
 //		==>HandleOperationMenu
-//		====>MMIAPICOM_OpenPanelChildWin
-//		======>HandlePanelWindow
-//		========>AdjustValue
-//		====>SetRingVolumeCB
-//		======>SetAllRingVolParam        # vol str
-//		========>GetEnvSetOptValue
-
-//		======>MMIAPICC_SetCallVolume    # ring, no use
-//		======>MMIAPICC_SetCallVolume    # msg
-//		======>MMIAPICC_SetCallVolume    # call
+//		====>case^ID_ENVSET_RING_VOL:
+//		====>HandleAllRingVolumeWindow
+//		======>WEB:
+//		========>MMIAPICOM_OpenPanelChildWin
+//		==========>HandlePanelWindow
+//		============>AdjustValue
+//		========>SetRingVolumeCB
+//		==========>MMIENVSET_SetCurModeOptValue   # set nv
+//		==========>SetAllRingVolParam        # vol str
+//		============>GetEnvSetOptValue
+//		====>MMIAPICC_SetCallVolume          # call
 app:envset\c\mmienvset_wintab.c  MMIENVSET_ALL_RING_VOL_WIN_TAB
 
 
-
 // env--option--set--RingType
-//		==>MMIAPISET_SetCurRingType
-//		==>MMIENVSET_PlayRingByListItem
-//		==>MMIENVSET_PlayMsgAlarmRingByListItem
-//		==>MMIAPISET_PlayCallRingByVol
+//		==>HandleOperationMenu
+//		====>case^ID_ENVSET_RING_TYPE:
+//		====>HandleRingTypeSetWindow
+//		======>WEB:
+//		========>HandleCallRingTypeWindow
+//		========>HandleMsgRingTypeWindow
+//		========>HandleAlarmRingTypeWindow
+//		==========>HandleAllRingTypeWindow
+//		============>MMIAPISET_SetCurRingType
+//		============>MMIENVSET_PlayRingByListItem
+//		============>MMIENVSET_PlayMsgAlarmRingByListItem
+//		============>MMIAPISET_PlayCallRingByVol
 app:envset\c\mmienvset_wintab.c  MMIENVSET_RING_TYPE_WIN_TAB
 
 
@@ -1802,13 +1993,22 @@ MMISRVMGR_Request
 // env--option--set--setRing--PlayRing
 //		==>PlayRing
 //		====>MMIAPISET_PreviewRing
-//		======>PlayFixedRing
+//		======>PlayFixedRing                      # fun
 //		==>vib
 //		==>timer
-app:setting\c\mmiset_ring.c 1736 PlayRing
+//		==>Tcard:
+//		====>HandleSelectMusicWinMsg (OTHER)
+//		======>MMIAPIFMM_PlayMusicFile
+//		========>MMIAPISET_PlayMusicFile          # fun
+//		==========>MMISRVMGR_Request
+//		==>xx:
+//		========>MMIAPISET_PlayRingByPtr          # fun
+app:setting\c\mmiset_ring.c PlayRing
 
 
-
+### env
+// ==>nv/SDcard
+Save:node\C\study\Macro_nv_8910.h  __env_nv__
 
 
 

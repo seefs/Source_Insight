@@ -192,7 +192,8 @@ app:bt\c\mmibt_app.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT
 prj:project_{cur}.mk  UI_STYLE_THEME_COLOR_NEW    = TRUE
 
 
-### __idle__  # smart
+### __idle__
+### smart
 //		==>date/week (excel)
 //		====>SONG_FONT_17
 //		====>MMI_THEME_IDLE_DATE
@@ -207,6 +208,19 @@ prj:project_{cur}.mk  UI_STYLE_THEME_COLOR_NEW    = TRUE
 //		==>select
 //		====>MMI_THEME_SELECT
 //		======>excel_row_17                    # --»Æ/À¶
+
+### mstyle
+//		==>date/week (excel)
+//		====>mmi_idle_display
+//		====>SONG_FONT_36
+//		====>MMI_THEME_IDLE_DATE
+//		======>excel_row_17                    # --W 17
+//		==>sim
+//		====>MMIIDLE_TEXT_FONT
+//		======>MMI_DEFAULT_SMALL_FONT
+//		====>MMI_THEME_IDLE_NETWORKNAME        # --w small 20
+//		==>softkey
+//		====>MMI_FULLSCREEN_SOFTKEY_TEXT_FONT  # mid 30
 
 
 ### __lock__
@@ -433,6 +447,8 @@ app:theme\h\mmidisplay_data.h   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT
 // lock--sms
 app:keylock\c\mmikl_effectmain.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
 
+// font--watch--20/20/16
+source:mmi_service\export\inc\mmi_custom_define.h   WATCH_DEFAULT_BIG_FONT
 
 
 

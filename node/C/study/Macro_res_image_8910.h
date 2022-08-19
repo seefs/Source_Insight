@@ -55,6 +55,8 @@ source:mmi_app\common\h\common_mdu_def.h  MMI_POWER_ONOFF_ANIM
 images:common\MMI_RES_DEFAULT\IMAG\Power_on_off\
 images:common\MMI_RES_DEFAULT\IMAG\Power_on_off\IMAGE_POWER_ON.gif
 
+//
+Save:node\C\study\Macro_gui_8910.h  __SECOND_LOGO__
 
 
 
@@ -591,6 +593,27 @@ images:common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\
 app:pb\h\pb_mdu_def.h  IMAGE_PHONEBOOK_SIM2MEMORY, IMAGE_SIM2
 // status--sim--18*18
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_SIM2
+
+
+// pb--photo--cam / Tcard / default
+//		==>HandleEntryListWinMsg
+//		====>web:
+//		======>.cur_index => .user_data => .CONTACTINDEX
+//		======>.entry_id => .ContactInfo => .contact_ptr
+//		======>.photo_id_flag & MMIPB_PHOTO_ID_EXIST
+//		======>.custom_photo_ptr
+//		====>SetListItemForSearch
+//		======>.user_data => .list_data
+//		======>.(num_index[i])<<16 | (contact_index)
+//		======>.num_index
+//		========>.0,0,0       # 用于多条联系人模式
+//		======>.contact_index
+//		========>.FindNext
+//		==>HandleEntryDetailWinMsg
+//		====>OPEN:
+//		====>SetEntryDetails
+//		======>MMIPB_ReadPhotoFile
+//		========>
 
 
 [1.23] __cl__

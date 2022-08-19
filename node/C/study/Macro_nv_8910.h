@@ -15,12 +15,12 @@ Save:node\C\study\Macro_nv_8910.h \[1.12\] custom
 Save:node\C\study\Macro_nv_8910.h \[1.13\] nv_build
 Save:node\C\study\Macro_nv_8910.h \[1.14\] nand/nor
 Save:node\C\study\Macro_nv_8910.h \[1.15\] test
-Save:node\C\study\Macro_nv_8910.h \[1.16\] audio_calib_VQE
+Save:node\C\study\Macro_nv_8910.h \[1.16\] audio_calib_VQE---
 Save:node\C\study\Macro_nv_8910.h \[1.17\] hv_nv
 Save:node\C\study\Macro_nv_8910.h \[1.18\] bt_nv
-Save:node\C\study\Macro_nv_8910.h \[1.19\] 
+Save:node\C\study\Macro_nv_8910.h \[1.19\] env_nv
 Save:node\C\study\Macro_nv_8910.h \[1.20\] simulator
-Save:node\C\study\Macro_nv_8910.h \[1.21\] 
+Save:node\C\study\Macro_nv_8910.h \[1.21\] replace-----------
 Save:node\C\study\Macro_nv_8910.h \[1.22\] 
 
 Save:Help\\DefaultFile\\Macro_Node_Num.h
@@ -172,6 +172,14 @@ nv:audio_calib_VQE.nvm  65
 //    ITEM_CONTENT = 0x0
 //
 //reserved为0表示使用内部PA或外部PA接在SPK或RCV上，没有听筒喇叭二合一或三合一
+//
+//请尝试修改audio_calib_VQE.nvm中的
+//  audio_calib_param\CALIB_AUD_ALG\VoiceCallNb[0]\reserved的值来控制
+//reserved为0表示原始接法，没有使用外部PA，没有听筒喇叭二合一或三合一
+//reserved为1表示使用外部PA，外部PA接在HP_R上，没有听筒喇叭二合一或三合一
+//reserved为2表示使用内部PA，有听筒喇叭二合一或三合一
+//reserved为3表示使用外部PA，外部PA接在HP_R上，有听筒喇叭二合一或三合一
+
 
 
 [1.7] 充电/放电-------107
@@ -241,7 +249,7 @@ common\export\inc\nv_item_id.h  NV_IMEI   5
 common\export\inc\nv_item_id.h  NV_IMEI1  377
 common\export\inc\nv_item_id.h  NV_IMEI2  390
 common\export\inc\nv_item_id.h  NV_IMEI3
-// 修改IMEI
+// 修改IMEI1~IMEI4
 common\nv_parameters\nv_type\nv_type_uix8910.nvm
 build\..\nv\nvitem\nv_type_uix8910.nvm
 // 3A25720371833604
@@ -373,7 +381,7 @@ app:eng\c\mmieng_main.c  MMIENG_NV_USB_TEST_SET_SETTING
 nv:\
 
 
-### 1.实测是这个
+### 1. 8910 实测是这个
 // Headset 耳机
 nv:audio_sc6531efm_AEC.nvm  32
 
@@ -434,8 +442,53 @@ app:bt\c\mmibt_func.c  MMINV_BT_FILE_LOCATION
 
 
 
-[1.19] 
-
+[1.19] __env_nv__
+//		==>val
+//		====>mmienvset_default_setting
+//		====>mmienvset_default_setting_ex
+//		====>diff:
+//		======>MMISET_RING_DEFAULT_ID_EX
+//		==>bak:
+//		====>MMK_HandlePublicKey
+//		======>HEADSET_DETECT:(down)
+//		========>MMIAPIENVSET_ReSetAllVolmue
+//		==========>MMIAPIENVSET_SetModeValue         # vol 5
+//		==========>MMIAPIMP3_SetVolume               # vol 5 mp3
+//		==========>MMIFM_AdjustVolumeTP              # vol 5 fm
+//		==========>MMIAPIVP_FSMUpdateCurrentVolNoHandle
+//		============>备份在缓存NV中
+//		======>HEADSET_DETECT:(up)
+//		==========>MMIAPIENVSET_UnReSetAllVolmue()
+//		============>还原NV
+//		==>sys:
+//		====>MMIAPISET_AllInit
+//		======>MMISET_EnvSetInit
+//		========>前模式: 普通环境
+//		========>活动模式: 普通环境
+//		========>当前模式: 前模式 或 活动模式
+//		========>静音状态: 否
+//		========>更多铃声: 
+//		========>上次NV: s_mmienvset_setting_info      # 缓存
+//		========>Enhance: 
+//		======>OtherInit
+//		========>PRODUCT_CODE_Read                   # 部分国家码？
+//		====>MMISET_ResetFactorySetting
+//		======>MMIENVSET_ResetEnvSetSetting          # 用v1, 特殊码用v2
+//		==>set:
+//		====>addMode:
+//		======>HandleEnvOptMenuWindow
+//		========>GetEnvAddIndex
+//		==========>MMIAPIENVSET_GetModeValue
+//		==========>MMIENVSET_InitUserIndexItem       # 用v1
+//		====>MMIENVSET_EnvName_WriteInNV
+//		====>MMIENVSET_GetEnvRealIndex
+//		====>MMIENVSET_CreateMoreRingFile
+//		====>MMIAPIENVSET_ResetActModeOtherRingSet   # 恢复部分默认值
+//		==>bt:
+//		====>MMIBT_OpenHeadsetCnf
+//		======>MMIAPIENVSET_SetBluetoothMode();
+//		====>MMIBT_CloseHeadsetCnf
+//		======>MMIAPIENVSET_UnSetBluetoothMode();
 
 
 
@@ -445,9 +498,23 @@ source:winsimulator_tp/win_platform/SIM_Set_Files/
 source:winsimulator_tp/win_platform/SIM_Set_Files/SIM1/EF_LOCI.inf
 
 
-[1.21] 
+[1.21] replace
 
+// 批量替换
+Save:Help\Other\
+// 替换电池曲线
+Save:Help\Other\Macro_Help_replace.h
+// 替换二合一NV
+Save:Help\Other\Macro_Help_replace_2n1.h
+Save:Help\Other\Macro_Help_replace_2n1_path.h
 
+// tool
+tool_mini:4_翻译字库\
+tool_mini:4_翻译字库\sprd_nv_exist.xlsm
+
+// path
+HW:{project}\
+HWNV:\
 
 
 [1.22] 

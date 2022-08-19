@@ -322,16 +322,17 @@ source:mmi_app\app\audioplayer\c\mmiapwin_main_pda.c  470
 //	//
 //	MMIAPISET_IsPlayingRingType
 //	//Handle
-//	MMIAPISET_PlayRing
-//	PlayRing
-//	PlayFixedRing
-//	MMISRVAUD_GetHandleByName
+//		==>
+//		====>MMIAPISET_PlayRing
+//		======>PlayRing
+//		========>PlayFixedRing
+//		==========>MMISRVAUD_GetHandleByName
 //	//STOP
-//	MMITTS_STOP_CALLBACK
-//	MMIAPISET_StopRing
-//	MMIAPISET_StopAppRing
-//	MMIAPISET_StopAllRing
-//	MMISRVAUD_Stop(MMIAPIALARM_GetPlayHandle());
+//		==>MMITTS_STOP_CALLBACK
+//		====>MMIAPISET_StopRing
+//		======>MMIAPISET_StopAppRing
+//		========>MMIAPISET_StopAllRing
+//		==========>MMISRVAUD_Stop(MMIAPIALARM_GetPlayHandle());
 //	// type
 //	MMIENVSET_SET_OPT_E
 //	MMISET_ALL_RING_TYPE_E
@@ -362,6 +363,15 @@ source:mmi_app\app\audioplayer\c\mmiapwin_main_pda.c  470
 // tts--vol
 //		==>DIALKEYREAD_VOL (same vol)
 
+
+### __mp3Play__
+// --mp3--play
+//		==>
+//		====>MMIAPISET_PlayRing
+//		======>PlayRing
+//		========>PlayFixedRing
+//		==========>MMISRVAUD_GetHandleByName
+// --env--play
 
 
 

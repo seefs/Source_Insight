@@ -4,7 +4,7 @@
 // 1. SI常用问题
 Save:node\ToolsMsg\Macro_SI.h \[1.1\] 文件总数
 Save:node\ToolsMsg\Macro_SI.h \[1.2\] 文件过滤-----------MTK
-Save:node\ToolsMsg\Macro_SI.h \[1.3\] 文件乱码
+Save:node\ToolsMsg\Macro_SI.h \[1.3\] 文件过滤-----------SPDE
 Save:node\ToolsMsg\Macro_SI.h \[1.4\] 通配符替换
 Save:node\ToolsMsg\Macro_SI.h \[1.5\] SI崩溃问题---------
 Save:node\ToolsMsg\Macro_SI.h \[1.6\] 
@@ -42,7 +42,7 @@ Save:node\ToolsMsg\Macro_SI.h \[3.4\]
 //	java: 38179
 
 
-[1.2] 文件过滤
+[1.2] 文件过滤-----------MTK
 ###
 //====同步时，不要点自动添加文件====
 
@@ -77,10 +77,25 @@ Source Insight 导入.c .h搜索会卡, 可只导入java文件
 
 
 
-[1.3] xml翻译文件乱码:
-// 翻译文件UTF-8正常打开
-// 不能改文件格式, 没什么办法
+[1.3] 文件过滤-----------SPDE
 
+# __SI_SPDE__
+### 过滤--107
+// 总数                12364  
+// 剩余                12364  
+// 减少                 0  
+//--------------------------
+// Third-party         488
+// external            170
+// BASE                204
+// SPDE_PRJ           3274 (先输入*.xml, 再输入SPDE_PRJ, 不会删mk)
+// winsimulator_tp     270
+// *.txt               114 
+
+// 过滤---不掉:
+
+
+### 过滤--8910
 
 
 
@@ -99,6 +114,9 @@ C:\Users\Administrator\AppData\Local\Temp
 //	删除以TFX开头的所有临时文件。
 
 
+// xml翻译文件乱码:
+// 翻译文件UTF-8正常打开
+// 不能改文件格式, 没什么办法
 
 
 [1.6] 

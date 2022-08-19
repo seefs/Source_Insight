@@ -27,7 +27,7 @@ Save:node\C\study\Macro_pos_8910.h \[1.19\] text
 Save:node\C\study\Macro_pos_8910.h \[1.20\] banner
 Save:node\C\study\Macro_pos_8910.h \[1.21\] spinner
 Save:node\C\study\Macro_pos_8910.h \[1.22\] watch----------------
-Save:node\C\study\Macro_pos_8910.h \[1.23\] 
+Save:node\C\study\Macro_pos_8910.h \[1.23\] watch gui------------
 Save:node\C\study\Macro_pos_8910.h \[1.24\] 
 Save:node\C\study\Macro_pos_8910.h \[1.25\] 
 Save:node\C\study\Macro_pos_8910.h \[1.26\] 
@@ -381,9 +381,12 @@ app:cc\h\mmicc_position_{size2}.h  CC_SEC_INFO_STATE_LABEL_TOP
 app:cc\h\mmicc_position_{size2}.h  CC_MAIN_INFO_NAME_LABEL_TOP
 
 // --cc--str--name
+//		==>CC_OpenMtCallWin
+//		====>MMICC_GetCallNameStrByIndex
 app:cc\h\mmicc_position_{size2}.h  CC_MAIN_INFO_NAME_LABEL_TOP_H
 
 // --cc--anim--photo
+//		==>PdaDisplayCallPhotoForCommon
 //		==>{96,161}
 //		====> 96 = (96+30+30)-60-0
 app:cc\h\mmicc_position_{size2}.h    CC_MAIN_INFO_ANIM_TOP
@@ -778,11 +781,8 @@ source:mmi_app\common\c\mmicom_banner.c  MMI_TEXT_BANNER_TEXT_HEIGHT
 
 
 [1.22] watch
-### watch--bg
-// bg: (116 X 24)
-//   res_list_bg
-ctrl:ListBox\c\ctrllistbox.c  MMI_WATCH_UI
-ctrl:ListBox\c\ctrllistbox.c  MMI_LIST_ITEM_BG_LEFT_RIGHT_MARGIN
+### watch
+app:theme/h/mmi_position.h  ^WATCHLIST_ITEM_HEIGHT              # 70
 
 ### __setMain__
 // set--main--icon+str
@@ -838,16 +838,46 @@ app:theme/h/mmi_position.h  WATCHLIST_ICON_TO_TEXT_SPACE        # 8
 app:theme/h/mmi_position.h  WATCHLIST_ICON_NORMAL_WIDGH_HEIGHT_SPACE   # 42
 
 
-
-
-
 // rect
 app:theme\c\mmitheme_list.c  s_item_style_small_2str
 app:theme\c\mmitheme_list.c  s_item_style_1str_1icon
 //   13+155=168, 168+12+24+12=216
 
 
-[1.23] 
+### __setAlarm__
+// Alarm--list--icon+2str
+//		==>GUIITEM_STYLE_1ICON_2STR
+//		====>s_item_style_1icon_2str
+//		======>[13,14,55,56]  36*36
+app:theme/h/mmi_position.h  WATCHLIST_ICON_NORMAL_WIDGH_HEIGHT_SPACE   # 42
+
+
+[1.23] watch gui
+//
+### __waList__
+// list--rect.top
+//		==>.top = 1
+ctrl:ListBox\c\ctrllist_item.c  void^LIST_ResetItemPostion
+source:mmi_kernel\include\mmitheme_list.h  MMI_LIST_ITEM_BG_TOP_DOWN_MARGIN
+// list--rect.bottom
+//		==>.bottom = 6
+//		====>.end_item_bottom_margin
+ctrl:ListBox\c\ctrllistbox.c  void^ListCtrlInit
+
+// list--item--bg
+//		==>ListDrawItem
+//		====>.item_rect
+//		====>LIST_CalculateListItemRect ()
+//		==>.margin = 1
+ctrl:ListBox\c\ctrllistbox.c  MMI_LIST_ITEM_BG_LEFT_RIGHT_MARGIN
+source:mmi_kernel\include\mmitheme_list.h  MMI_LIST_ITEM_BG_TOP_DOWN_MARGIN
+
+
+
+
+
+
+
 
 
 

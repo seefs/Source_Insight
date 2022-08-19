@@ -5,21 +5,24 @@
 
 //目录
 // 1. 
-Save:node\C\study\Macro_res_image_wa8910.h \[1.1\] Logo--开关机
-Save:node\C\study\Macro_res_image_wa8910.h \[1.2\] MainMenu--主菜单图片
+Save:node\C\study\Macro_res_image_wa8910.h \[1.1\] //Logo--开关机
+Save:node\C\study\Macro_res_image_wa8910.h \[1.2\] //MainMenu--主菜单图片
 Save:node\C\study\Macro_res_image_wa8910.h \[1.3\] 
 Save:node\C\study\Macro_res_image_wa8910.h \[1.4\] //charger--关机/充电动画
-Save:node\C\study\Macro_res_image_wa8910.h \[1.5\] Statusicons
-Save:node\C\study\Macro_res_image_wa8910.h \[1.6\] idle/time/
-Save:node\C\study\Macro_res_image_wa8910.h \[1.7\] dial
-Save:node\C\study\Macro_res_image_wa8910.h \[1.8\] call
+Save:node\C\study\Macro_res_image_wa8910.h \[1.5\] //Statusicons
+Save:node\C\study\Macro_res_image_wa8910.h \[1.6\] //idle/time/
+Save:node\C\study\Macro_res_image_wa8910.h \[1.7\] //dial
+Save:node\C\study\Macro_res_image_wa8910.h \[1.8\] //call
 Save:node\C\study\Macro_res_image_wa8910.h \[1.9\] pubWin
 Save:node\C\study\Macro_res_image_wa8910.h \[1.10\] list---------
-Save:node\C\study\Macro_res_image_wa8910.h \[1.11\] anim
+Save:node\C\study\Macro_res_image_wa8910.h \[1.11\] //anim
 Save:node\C\study\Macro_res_image_wa8910.h \[1.12\] common
 Save:node\C\study\Macro_res_image_wa8910.h \[1.13\] set
-Save:node\C\study\Macro_res_image_wa8910.h \[1.14\] 
-Save:node\C\study\Macro_res_image_wa8910.h \[1.15\] 
+Save:node\C\study\Macro_res_image_wa8910.h \[1.14\] tool
+Save:node\C\study\Macro_res_image_wa8910.h \[1.15\] app
+Save:node\C\study\Macro_res_image_wa8910.h \[1.16\] 
+Save:node\C\study\Macro_res_image_wa8910.h \[1.17\] 
+Save:node\C\study\Macro_res_image_wa8910.h \[1.18\] 
 
 
 
@@ -266,34 +269,32 @@ app:cc\h\cc_mdu_def.h  IMAGE_CALLUI_BT_BLACK
 
 
 [1.9] __pubWin__
-// vol--bg
-images:common\MMI_RES_DEFAULT\IMAG\VOL_contrast\
-images:common\MMI_RES_DEFAULT\IMAG\VOL_contrast\IMAGE_COMMON_PLAYER_PANEL_BG.png
 
-// lock--bg
-images:common\MMI_RES_DEFAULT\IMAG\Pubwin\BAR\
-images:common\MMI_RES_DEFAULT\IMAG\Pubwin\BAR\IMAGE_PUBWIN_BG.png
-
-//
-images:common\MMI_RES_DEFAULT\IMAG\Pubwin\BAR\
-images:common\MMI_RES_DEFAULT\IMAG\VOL_contrast\
-images:common\MMI_RES_DEFAULT\IMAG\Common\
-images:common\MMI_RES_DEFAULT\ANIM\
-
-// vol--bg--228*220
-source:mmi_app\common\h\common_mdu_def.h  IMAGE_PUBWIN_BG_B
-// vol--bg--228*120
-source:mmi_app\common\h\common_mdu_def.h  IMAGE_COMMON_PLAYER_PANEL_BG
+### __btn__
+images:set/MMI_RES_DEFAULT/IMAG/set_common/
+images:common/MMI_RES_DEFAULT/IMAG/Common/
 
 
-// mp3--format err--tips
-// --w--红--228*120
-source:mmi_app\common\h\common_mdu_def.h  IMAGE_COMMON_TIPS_BG2
-// --b--黑--228*120
-source:mmi_app\common\h\common_mdu_def.h  IMAGE_COMMON_TIPS_BG
+// 1btn--216*48
+//		==>PairDevice (bt)
+//		====>WatchCOM_QueryWin_1Btn_Enter
+source:mmi_app\common\h\common_mdu_def.h  image_watch_single_button
+//		==>CommonWin_GetLayoutByType
+//		====>WATCH_QUERYWIN_BTN_1BTN_RECT
 
-// anim--bg--30*30
-source:mmi_app\common\h\common_mdu_def.h  ANIM_PUBWIN_WAIT_PDA
+// 1btn_2str-- (no use)
+//		==>PHONE_OpenInputPinWindow (pin)
+//		====>WatchCOM_QueryWin_1Btn_With2Str_Enter
+source:mmi_app\common\h\common_mdu_def.h  image_watch_single_button
+//		==>CommonWin_GetLayoutByType
+//		====>WATCH_COMMONWIN_TYPE_QUERY_1BTN_WITH2STR
+
+
+// 2btn--60*60
+app:setting\h\set_mdu_def.h  IMAGE_SET_COM_BTN_FIXED
+//		====>WATCH_QUERYWIN_TEXT_2BTN_RECT
+source:mmi_app\common\h\watch_commonwin_internal.h  WATCH_QUERYWIN_TEXT_2BTN_RECT
+
 
 
 
@@ -330,52 +331,15 @@ images:common\MMI_RES_DEFAULT\IMAG\Pubwin\BAR\
 
 
 [1.12] common
-### __tab__
-images:common\MMI_RES_DEFAULT\IMAG\Tab\
 
-// 
-//	IMAGE_CONTROL_TAB_DEFAULT
-//	IMAGE_TAB_BG
-//	// sms--box--tab
-
-// tab--line--theme
-app:theme\c\mmitheme_tab.c  dividing_line = IMAGE_TAB_LINE
-app:theme\c\mmitheme_tab.c  height_bg_info.img_id = IMAGE_TAB_SELECT1
-
-// tab--line--2*38 (font30)
-source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TAB_SEPARATED_FONT30
-// tab--line--2*30
-source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TAB_SEPARATED
-
-// tab--select--1*32, 1*40 (高度可不改)
-source:mmi_app\common\h\common_mdu_def.h  IMAGE_TAB_SELECT1
-
-// tab--bg--1*40
-source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TAB_DEFAULT_FONT30
-// tab--bg--1*32 (高度要改)
-source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TAB_DEFAULT_B
+### 
 
 
-### __title__
-images:common\MMI_RES_DEFAULT\IMAG\Title\
+### __btn__
+images:set/MMI_RES_DEFAULT/IMAG/set_common/
 
-// title--bg--1*35
-source:mmi_app\common\h\common_mdu_def.h  IMAGE_TITLE_BAR
-// title--bg--1*72
-source:mmi_app\common\h\common_mdu_def.h  IMAGE_TITLE_BAR2
-// title--bg--240*32
-source:mmi_app\common\h\common_mdu_def.h  IMAGE_COMMON_TITLE_BAR
-
-
-### __num__
-images:common\MMI_RES_DEFAULT\IMAG\Number\
-images:common\MMI_RES_DEFAULT\IMAG\Number_blue\
-
-//		====>MMI_LIST_NUM_IMG_BLUE_STYLE       # 选中与数字同时改
-// num--24*24
-source:mmi_app\common\h\common_mdu_def.h  Number_blue
-
-
+// btn--60*60
+app:setting\h\set_mdu_def.h  IMAGE_SET_COM_BTN_CANCEL
 
 
 [1.13] __set__
@@ -395,13 +359,73 @@ images:set/MMI_RES_DEFAULT/IMAG/set_volte/
 // set--main--list--36*36
 app:setting\h\set_mdu_def.h  res_setting_ic_alarm
 
-
-
-[1.14] 
-
+// set--bn--112*112
+app:setting\h\set_mdu_def.h  IMAGE_SET_BRIGHTNESS_INTENSITY_00
 
 
 
-[1.15] 
+[1.14] tool
+
+### __alarm__
+// res--img
+images:set/MMI_RES_DEFAULT/IMAG/set_clock/
+images:common/MMI_RES_DEFAULT/IMAG/Common/
+images:common/MMI_RES_DEFAULT/IMAG/List/
+
+
+// --alarm--list--36*36
+app:setting\h\set_mdu_def.h  IMAGE_SET_ALARM_ON
+
+
+// --alarm--pubwin--76*76
+app:setting\h\set_mdu_def.h  res_clock_ic_clock_ring
+// --alarm--pubwin--55*24  102*48 
+source:mmi_app\common\h\common_mdu_def.h  image_watch_double_button
+// --alarm--pubwin--116*24 216*48 
+source:mmi_app\common\h\common_mdu_def.h  image_watch_single_button
+
+
+### no use
+// --
+source:mmi_app\common\h\common_mdu_def.h  common_list_disp_more
+// --idle--sfk--16*16
+source:mmi_app\common\h\common_mdu_def.h  image_common_swap_delete
+// --240*60
+source:mmi_app\common\h\common_mdu_def.h  image_watch_list_bg
+// --240*80
+source:mmi_app\common\h\common_mdu_def.h  image_watch_list_highlight_bg
+
+
+[1.15] app
+
+### __hr__
+images:common\MMI_RES_DEFAULT\IMAG\watch\
+images:common\MMI_RES_DEFAULT\IMAG\watch\hr\
+// 240*284
+source:mmi_app\common\h\common_mdu_def.h  res_watch_wrists_off
+// 240*280
+source:mmi_app\common\h\common_mdu_def.h  res_watch_hr_begin
+
+
+
+
+
+[1.16] 
+
+
+
+
+[1.17] 
+
+
+
+
+
+
+
+
+
+
+
 
 
