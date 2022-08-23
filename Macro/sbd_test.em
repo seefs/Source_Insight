@@ -1,6 +1,13 @@
-
+//
+// https://www.sourceinsight.com/doc/v3/ag922798.htm
+//
 macro OpenMiniTest(hbuf)
 {
+	var start, next
+	var start2, next2
+	var start3, next3
+	var start4, next4
+	var word_1, word_2, word_3, word_4
 	isTest = getMacroValue(hbuf, "MiniTest", 1)
 	if(isTest != ""){
 		sel = MGetWndSel(hbuf)
@@ -13,11 +20,17 @@ macro OpenMiniTest(hbuf)
 		next2  = GetTransCmdE(cur_line,  start2,    len)
 		start3 = GetTransCmdS2(cur_line, next2 + 1, len)
 		next3  = GetTransCmdE(cur_line,  start3,    len)
+		start4 = GetTransCmdS2(cur_line, next3 + 1, len)
+		next4  = GetTransCmdE(cur_line,  start4,    len)
 		//
 		word_1 = GetTransStr(cur_line, start, next)
 		word_2 = GetTransStr(cur_line, start2, next2)
 		word_3 = GetTransStr(cur_line, start3, next3)
-		TestMsg("word_1 " # word_1 # CharFromKey(13) # "word_2 " # word_2 # CharFromKey(13) # "word_3 " # word_3 # CharFromKey(13), 1)
+		word_4 = GetTransStr(cur_line, start4, next4)
+		TestMsg("word_1 " # word_1 # CharFromKey(13)
+			  # "word_2 " # word_2 # CharFromKey(13)
+			  # "word_3 " # word_3 # CharFromKey(13)
+			  # "word_4 " # word_4 # CharFromKey(13), 1)
 		
 		if(word_1 == "project")
 		{
@@ -205,7 +218,18 @@ macro OpenMiniTest(hbuf)
 			//Shell
  			//  
 			path = "F:\\6531E_16A\\build"
+
+			para1 = word_2
+			para2 = word_3
+			para3 = word_4
+			if(word_2 == "null")
+				para1 = ""
+			if(word_4 == "null")
+				para3 = ""
+			
 			//ShellExecute("open", "cmd.exe", "F:;cd @path@;", "C:\\Windows\\System32", 1)
+			shell_ret = ShellExecute(para1, para2, "", para3, 1)
+			msg ("shell_ret:  ~ [@shell_ret@]  " )
 		}
 		else if(word_1 == "shell_SvnLog")
 		{

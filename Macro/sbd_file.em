@@ -1357,6 +1357,9 @@ macro getCustomKeyHead(hbuf, fHead)
 }
 macro ReCustomKeyHead(hbuf, curPathS, curPathE)
 {
+	var pathOut
+	var pathOutR
+	
 	len = strlen(curPathE)
 	firstS = FindString(curPathE, "{")
 	if (firstS == "X")
@@ -1387,7 +1390,7 @@ macro ReCustomKeyHead(hbuf, curPathS, curPathE)
 		// other
 		pathER = ReCustomKeyHead(hbuf, curPathS # pathS # "", pathE)
 		pathOut = curPathS # pathS # "" # pathE
-		msg("key not exist: " # keyVal)
+		msg("keyVal not exist: " # keyVal # ",")
 		return pathOut
 	}
 
@@ -1400,10 +1403,10 @@ macro ReCustomKeyHead(hbuf, curPathS, curPathE)
 		if (nextVal == "1" || nextVal == "2")
 		{
 			key1Val = getKeyHead(hbuf, pathMid # "1")
-			if (keyVal != "")
+			if (key1Val != "")
 			{
-				pathER = ReCustomKeyHead(hbuf, curPathS # pathS # keyVal, pathE)
-				pathOut = curPathS # pathS # key2Val # pathER
+				pathER = ReCustomKeyHead(hbuf, curPathS # pathS # key1Val, pathE)
+				pathOut = curPathS # pathS # key1Val # pathER
 				pathOutR  = GetTransFileName(hbuf, pathOut, 16)
 				if (IsExistFile(pathOutR))
 				{
@@ -1418,20 +1421,27 @@ macro ReCustomKeyHead(hbuf, curPathS, curPathE)
 			if (key2Val != "")
 			{
 				pathER = ReCustomKeyHead(hbuf, curPathS # pathS # key2Val, pathE)
-				pathOut = curPathS # pathS # key2Val # pathER
-				pathOutR  = GetTransFileName(hbuf, pathOut, 16)
+				pathOut2 = curPathS # pathS # key2Val # pathER
+				pathOutR  = GetTransFileName(hbuf, pathOut2, 16)
 				if (IsExistFile(pathOutR))
 				{
-					return pathOut
+					return pathOut2
 				}
 			}
 		}
 		
 		// other
-		pathER = ReCustomKeyHead(hbuf, curPathS # pathS # "", pathE)
-		pathOut = curPathS # pathS # "" # pathE
-		msg("key not exist: " # keyVal)
-		return pathOut
+		if (key1Val != "")
+		{
+			return pathOut
+		}
+		else
+		{
+			pathER = ReCustomKeyHead(hbuf, curPathS # pathS # "", pathE)
+			pathOut = curPathS # pathS # "" # pathE
+			msg("nextVal not exist: " # nextVal # "," # pathMid # keyVal # ",")
+			return pathOut
+		}
 	}
 	return curPathE
 }

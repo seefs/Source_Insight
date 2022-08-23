@@ -1,6 +1,6 @@
 
 
-//目录[Num][Ca]:
+//目录
 // 1. SI常用问题
 Save:node\ToolsMsg\Macro_SI.h \[1.1\] 文件总数
 Save:node\ToolsMsg\Macro_SI.h \[1.2\] 文件过滤-----------MTK
@@ -12,7 +12,7 @@ Save:node\ToolsMsg\Macro_SI.h \[1.7\] 安装
 Save:node\ToolsMsg\Macro_SI.h \[1.8\] 有趣的格式
 Save:node\ToolsMsg\Macro_SI.h \[1.9\] 
 // 2. 
-Save:node\ToolsMsg\Macro_SI.h \[2.1\] ShellExecute
+Save:node\ToolsMsg\Macro_SI.h \[2.1\] ShellExecute-------
 Save:node\ToolsMsg\Macro_SI.h \[2.2\] 
 Save:node\ToolsMsg\Macro_SI.h \[2.3\] modifier charac-ters
 Save:node\ToolsMsg\Macro_SI.h \[2.4\] path
@@ -22,11 +22,8 @@ Save:node\ToolsMsg\Macro_SI.h \[2.7\] 自定义命令
 Save:node\ToolsMsg\Macro_SI.h \[2.8\] 自定义菜单
 Save:node\ToolsMsg\Macro_SI.h \[2.9\] 常用设置
 Save:node\ToolsMsg\Macro_SI.h \[2.10\] 
-// 3. config_all
-Save:node\ToolsMsg\Macro_SI.h \[3.1\] config_all
-Save:node\ToolsMsg\Macro_SI.h \[3.2\] 
-Save:node\ToolsMsg\Macro_SI.h \[3.3\] 
-Save:node\ToolsMsg\Macro_SI.h \[3.4\] 
+Save:node\ToolsMsg\Macro_SI.h \[2.11\] config_all
+Save:node\ToolsMsg\Macro_SI.h \[2.12\] 
 
 
 
@@ -147,6 +144,11 @@ C:\Users\Administrator\AppData\Local\Temp
 
 $time$
 
+//
+//https://www.sourceinsight.com/pub/languages/
+// --shell--style
+//https://blog.csdn.net/fangye945a/article/details/108706033
+
 
 [1.9] 
 
@@ -159,6 +161,11 @@ $time$
 
 
 [2.1] ShellExecute
+//
+https://www.sourceinsight.com/doc/v4/userguide/index.html#t=Manual%2FMacro_Language%2FShellExecute_sVerb_sFile_sExtraParams_sWorkingDirectory.htm&rhsearch=shell&rhsyns=%20&rhhlterm=shell
+https://www.sourceinsight.com/doc/v4/userguide/index.html#rhhlterm=shell&rhsyns=%20&t=Manual%2FMacro_Language%2FShellExecute_sVerb_sFile_sExtraParams_sWorkingDirectory.htm
+
+
 //	ShellExecute
 //	ShellExecute("", "iexplore", "", "", 1)
 //	ShellExecute("", "iexplore somefile.htm", "", "", 1)
@@ -168,6 +175,23 @@ $time$
 //	ShellExecute("open", "somefile.doc", "", "", 1)
 //	
 //	ShellExecute("explore", "%j", "", "", 1)
+
+// --参数
+// ----p1:Shell 操作
+// ----p2:有效路径, 复杂路径名周围使用双引号
+// ----p3:最终程序参数
+// ----p4:运行目录。如果为空，则使用项目主目录。
+// ----p5:窗口的大小和状态。有效值为：1 = 正常，2 = 最小化，3 = 最大化
+
+
+// --Windows Shell API 文档
+// ShellExecute
+https://docs.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutea
+
+
+// --test
+Save:Help\Macro_Note_Test.h  __Shell__
+
 
 
 [2.2] node 
@@ -301,7 +325,7 @@ $time$
 
 
 
-[3.1] config_all
+[2.11] config_all
 //	1.
 //	微软雅黑
 //	宋体
@@ -385,141 +409,7 @@ $time$
 //	DefaultEncoding="0"
 
 
-[3.2] 
-
-
-[3.3] 
-
-
-[3.4] 
-
-
-[3.5] 
-
-
-[3.6] 
-
-
-[3.7] 
-
-
-[3.8] 
-
-
-[3.9] 
-
-
-[3.10] 
-
-
-
-
-[4.1] 
-
-
-
-
-[4.2] 
-
-
-
-
-[4.3] 
-
-
-
-
-[4.4] 
-
-
-
-
-[4.5] 
-
-
-
-
-[4.6] 
-
-
-
-
-[4.7] 
-
-
-
-
-[4.8] 
-
-
-
-
-[4.9] 
-
-
-
-
-[4.10] 
-
-
-
-
-
-
-[5.1] 
-
-
-
-
-[5.2] 
-
-
-
-
-[5.3] 
-
-
-
-
-[5.4] 
-
-
-
-
-[5.5] 
-
-
-
-
-[5.6] 
-
-
-
-
-[5.7] 
-
-
-
-
-[5.8] 
-
-
-
-
-[5.9] 
-
-
-
-
-[5.10] 
-
-
-
-
-
-
-
-
+[2.12] 
 
 
 

@@ -40,9 +40,9 @@ prj:\\
 projectKey   = WA07U_F3X
 curKey   = UIS8910_ROM_16MB_SS_{project}_USER
 cfgKey   = uis8910_phone_user_base_config
-sizeNext  = 2
-size1Key  = 320X240
-size2Key  = 240X320
+sizeNext  = 1
+size1Key  = 128X128
+size2Key  = 128X128
 
 
 ### 3.copy
