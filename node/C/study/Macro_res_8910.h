@@ -191,6 +191,13 @@ MS_MMI_Main\source\resource\mmi_res_prj_def.h  memo_mdu
 //  RES_ADD_MODULE(MMI_MODULE_MEMO,"\\memo\\memo_mdu_def.h")
 
 
+# pic
+make\app_watch_main\app_watch_main.mk  watch_gallery_main
+//
+app:pic_viewer\h\pic_viewer_mdu_def.h  PIC_VIEWER_SUPPORT
+
+
+
 [1.9] font/color
 //	�ֿ⣺
 MS_MMI_Main\source\resource\mmi_res_prj_def.h

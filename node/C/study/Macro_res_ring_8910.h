@@ -9,7 +9,7 @@ Save:node\C\study\Macro_res_ring_8910.h \[1.2\]
 Save:node\C\study\Macro_res_ring_8910.h \[1.3\] mp3
 Save:node\C\study\Macro_res_ring_8910.h \[1.4\] call
 Save:node\C\study\Macro_res_ring_8910.h \[1.5\] sms
-Save:node\C\study\Macro_res_ring_8910.h \[1.6\] clock
+Save:node\C\study\Macro_res_ring_8910.h \[1.6\] clock, alarm
 Save:node\C\study\Macro_res_ring_8910.h \[1.7\] BusyTone
 Save:node\C\study\Macro_res_ring_8910.h \[1.8\] key tone
 Save:node\C\study\Macro_res_ring_8910.h \[1.9\] dial tone

@@ -2,21 +2,22 @@
 
 //目录:
 // 1. 
-Save:node\C\study\Macro_slide_8910.h \[1.1\] btn
-Save:node\C\study\Macro_slide_8910.h \[1.2\] 
-Save:node\C\study\Macro_slide_8910.h \[1.3\] switch
-Save:node\C\study\Macro_slide_8910.h \[1.4\] pubwin, wait
-Save:node\C\study\Macro_slide_8910.h \[1.5\] banner
-Save:node\C\study\Macro_slide_8910.h \[1.6\] im
+Save:node\C\study\Macro_slide_8910.h \[1.1\] image
+Save:node\C\study\Macro_slide_8910.h \[1.2\] image--gui
+Save:node\C\study\Macro_slide_8910.h \[1.3\] gui
+Save:node\C\study\Macro_slide_8910.h \[1.4\] pubwin, wait, ---
+Save:node\C\study\Macro_slide_8910.h \[1.5\] test
+Save:node\C\study\Macro_slide_8910.h \[1.6\] 
 Save:node\C\study\Macro_slide_8910.h \[1.7\] tp
-Save:node\C\study\Macro_slide_8910.h \[1.8\] status
+Save:node\C\study\Macro_slide_8910.h \[1.8\] down---自动下载
 Save:node\C\study\Macro_slide_8910.h \[1.9\] anim, common
 Save:node\C\study\Macro_slide_8910.h \[1.10\] make---------------关联宏
-Save:node\C\study\Macro_slide_8910.h \[1.11\] app
-Save:node\C\study\Macro_slide_8910.h \[1.12\] log
+Save:node\C\study\Macro_slide_8910.h \[1.11\] app, zdt
+Save:node\C\study\Macro_slide_8910.h \[1.12\] log----------------
 Save:node\C\study\Macro_slide_8910.h \[1.13\] file
-Save:node\C\study\Macro_slide_8910.h \[1.14\] 
-Save:node\C\study\Macro_slide_8910.h \[1.15\] 
+Save:node\C\study\Macro_slide_8910.h \[1.14\] slide--------------异常点击
+Save:node\C\study\Macro_slide_8910.h \[1.15\] slide_list
+Save:node\C\study\Macro_slide_8910.h \[1.16\] 
 //
 Save:node\C\study\Macro_slide_8910.h \[2.1\] dropdown------------下拉消息
 Save:node\C\study\Macro_slide_8910.h \[2.2\] menu----------------主菜单
@@ -35,9 +36,11 @@ Save:node\C\study\Macro_slide_8910.h \[2.14\] qrcode-------------
 Save:node\C\study\Macro_slide_8910.h \[2.15\] other app----------
 Save:node\C\study\Macro_slide_8910.h \[2.16\] powoff
 Save:node\C\study\Macro_slide_8910.h \[2.17\] charge
-Save:node\C\study\Macro_slide_8910.h \[2.18\] tcp
-Save:node\C\study\Macro_slide_8910.h \[2.19\] 
-Save:node\C\study\Macro_slide_8910.h \[2.20\] 
+Save:node\C\study\Macro_slide_8910.h \[2.18\] Tip
+Save:node\C\study\Macro_slide_8910.h \[2.19\] db
+Save:node\C\study\Macro_slide_8910.h \[2.20\] sos
+Save:node\C\study\Macro_slide_8910.h \[2.21\] 
+Save:node\C\study\Macro_slide_8910.h \[2.22\] 
 // 其他标号
 Save:Help\\DefaultFile\\Macro_Node_Num.h
 
@@ -52,24 +55,30 @@ MOCOR_20B_SW_W21.35.4.rar
 
 
 
-[1.1] btn
-// btn bg
-res_single_button_transparency
-res_double_button_transparency
-
-
-
-[1.2] 
-
-
-
-
-
-
-[1.3] switch
+[1.1] image
 //
-IMAGE_CONTROL_TOGGLE_ON
+Save:node\C\study\
+// ==>image
+Save:node\C\study\Macro_res_image_8910.h
+// ==>image watch
+Save:node\C\study\Macro_res_image_wa8910.h
 
+
+
+[1.2] image--gui
+//
+Save:node\C\study\Macro_res_image_wa8910.h  __btn__
+Save:node\C\study\Macro_res_image_wa8910.h  __switch__
+Save:node\C\study\Macro_res_image_wa8910.h  __im__
+
+
+
+
+[1.3] gui
+### banner
+// 5s
+DisplayBanner
+DisplayControlBanner
 
 
 [1.4] pubwin
@@ -88,13 +97,13 @@ images:common/MMI_RES_DEFAULT/IMAG/Pubwin/BAR/res_watch_querywin_1btn_bg.png
 
 
 // wait
-app:launcher\c\watch_launcher_main.c  WatchCOM_WaitingWin_1Line_Enter
+app:launcher\c\watch_comm_test.c  WatchCOM_WaitingWin_1Line_Enter
 // 1Line
-app:launcher\c\watch_launcher_main.c  WatchCOM_NoteWin_1Line_Enter
+app:launcher\c\watch_comm_test.c  WatchCOM_NoteWin_1Line_Enter
 // 2Line
-app:launcher\c\watch_launcher_main.c  WatchCOM_NoteWin_2Line_Enter
+app:launcher\c\watch_comm_test.c  WatchCOM_NoteWin_2Line_Enter
 // query
-app:launcher\c\watch_launcher_main.c  WatchCOM_QueryWin_1Btn_Enter
+app:launcher\c\watch_comm_test.c  WatchCOM_QueryWin_1Btn_Enter
 common:c\watch_commonwin_query.c      WatchCOM_QueryWin_1Btn_With2Str_Enter
 common:c\watch_commonwin_query.c      WatchCOM_QueryWin_2Btn_Enter
 
@@ -120,16 +129,37 @@ app:sms\c\watch_sms_message.c  MMISMS_OpenNoteWin
 
 
 
-[1.5] banner
-// 5s
-DisplayBanner
-DisplayControlBanner
+
+[1.5] test
+// common--msg
+//		==>WatchLAUNCHER_HandleCommonWinMsg
+//		====>key_7
+//		====>WatchTest_Win_Enter
+//		======>HandleMsgTestWindow
+//		========>init:
+//		==========>.watch_test_menu_text
+app:launcher\c\watch_launcher_main.c  WatchLAUNCHER_HandleCommonWinMsg
+app:launcher\c\watch_comm_test.c  HandleMsgTestWindow
+app:launcher\c\watch_comm_test.c  W_TEST_CTRL^+^W_ITEM_3
+// wait--msg
+//		==>WatchCOM_WaitingWin_1Line_Enter
+//		====>Data:
+//		======>WATCH_COMMONWIN_TYPE_WAITING_1LINE
+//		====>Win:
+//		======>HandleMsgWaitingWinWindow
+//		====>Ctrl:
+//		======>Textbox
+// wait--msg--cancel
+//		==>TextHandleMsg
+//		====>CANCEL:
+//		======>CTRLMSG_PostNotify
+//		========>MSG_NOTIFY_CANCEL
 
 
 
-[1.6] im
-// res--img
-images:im/MMI_RES_DEFAULT/IMAG/TOUCH/
+
+
+[1.6] 
 
 
 
@@ -139,11 +169,9 @@ source:mmi_kernel\source\c\mmk_tp.c  MMK_DispatchMSGTp
 
 
 
-[1.8] status
+[1.8] down---自动下载
 //
-images:common/MMI_RES_DEFAULT/IMAG/Launcher/
-//
-res_stat_battery_0
+MS_Ref/source/base/src/run_mode.c  RM_AUTODL_MOD
 
 
 
@@ -235,6 +263,28 @@ app:phone\c\mmiphone.c  MSG_WATCH_LOG_BUF_SAVE
 //
 
 
+### log list
+//
+MS_MMI_Main\source\mmi_app\app\launcher\c\watch_launcher_main.c
+MS_MMI_Main\source\mmi_app\app\slidepage\c\watch_slidepage.c
+MS_MMI_Main\source\mmi_kernel\source\c\mmk_kbd.c
+// 去掉 GET_FOCUS
+MS_MMI_Main/source/mmi_app/app/launcher/c/watch_launcher_main - 副本.c
+// 
+MS_MMI_Main/source/mmi_app/app/launcher/c/watch_temp_win - 副本.c
+// 开log
+MS_MMI_Main/source/mmi_app/app/launcher/h/watch_comm_test - 副本.h
+// menu_page
+MS_MMI_Main/source/mmi_app/app/slidepage/c/watch_slidepage - 副本.c
+MS_MMI_Main/source/mmi_kernel/source/c/mmk_kbd - 副本.c
+
+
+// log:
+//    if (MMIAPIUDISK_UdiskIsRun()&&MMIAPICC_IsVideoCall())
+//    {
+//        return;
+//    }
+
 
 [1.13] file
 ### fzd
@@ -247,21 +297,125 @@ fzd:c/mmifzd_time.c
 
 
 
-[1.14] 
+[1.14] slide
+//
+
+// --按键
+//		==>key--red down: (HandleMSGKbd)
+//		====>Hook
+//		======>(no case)
+//		==>key--cancel down:
+//		====>Hook
+//		====>menu
+//		======>WatchLAUNCHER_HandleCommonWinMsg
+// --关闭
+//		==>msg--CLOSE WINDOW: (1个关闭page都关闭)
+//		====>Hook
+//		====>menu (A/B/C)
+//		======>WatchLAUNCHER_HandleCommonWinMsg
+// --待机
+//		==>HandleLauncherClockWinMsg
+//		====>GET_FOCUS:
+// --开始滑动
+//		==>HandleKeyLeftMsg / HandleKeyRightMsg / TpUp
+//		====>StartAutoSlide
+//		======>start:
+//		======>finish:
+//		========>ProcessAutoSlideFinished
+//		==========>CloseAllDeactivedWinInEntity
+//		======>end:
+//		==========>
+//		============>
+//		==============>
+// --异常点击
+//		==>TP_DOWN
+//		==>key--left:
+//		====>Create_page
+//		======>abc, FOCUS
+//		======>abc, open
+//		======>b, PAINT_13  (没走Hook)
+//		======>b, PAINT_2   (走Hook)
+//		========>异常情况，进主菜单后刷新，马上触发TP按下
+//		========>tp down, drap
+//		========>tp up, slide
+//		==========>watch_setHook (2半页)
+//		==========>ProcessAutoSlideFinished (滑到底)
+//		==========> lose FOCUS, 再删除多余win
+//		======>b, lose FOCUS
+//		======>d, get FOCUS
+//		======>close dial
+//		========>Hook, close
+//		==========>Destory
+
+
+
+[1.15] slide_list
+// --slide--加速度
+//		==>1.默认step=24
+//		==>2.加速度0.5倍, step=24 (不变)
+//		==>3.速度1.5倍, step=65
+//		==>4.时间2.0倍, step=46
+// 其他
+//		==>2.加速度2.0倍, step=16
+//		==>3.速度2.0倍, step=120
+//		==>4.时间1.5倍, step=36
+//
+//		====>MMITHEME_GetFlingFrictionExt
+// --slide--未使用
+//		======>ListHandleTpScroll
+// --slide--1.Timer                  # --到第3步停
+//		==>ListHandleTimer
+//		====>.total_rect_height      # 284
+//		====>.total_item_height      # 497
+//		====>.reach_ori_offset_y     # -213 = 284 - 497
+//		====>.tp_point_ptr->y        # 110
+//		====>.slide_start_point.y    # 96
+//		====>.slide_pre_point.y      # 96
+//		====>.offset_y               # -213
+//		==>ListStartTpMoveTimer
+//		====>.display_style.slide_time    # 25
+// --slide--2.slide                  # --up停
+//		==>ListCtrlHandleMsg
+//		====>TIMER:
+//		====>ListHandleTimer
+//		======>Start:
+//		========>ListStartTpMoveTimer
+//		======>slide:
+//		========>ListHandleSlide     # FLING
+//		==========>FLING:
+//		======>Stop:
+//		========>ListStopFling
+// --slide--3.DrawAnim     
+//		======>ListHandleSlide       # 向上 offset_y= -354
+//		======>ListGetRecoverSpace   # move_space= 141
+//		======>ListDrawAnim          # offset_y= -354
+// --slide--4.Recover                # offset_y= -213
+//		==>ListCtrlHandleMsg
+//		====>LOSE_FOCUS:  还原
+//		======>ListRecoverSlideByOffsetY
 
 
 
 
-[1.15] 
+
+[1.16] 
+
 
 
 
 [2.1] dropdown
-// res--notification
-images:common/MMI_RES_DEFAULT/IMAG/Launcher/
-images:dropdownwin/MMI_RES_DEFAULT/IMAG/
+// ==>image
+Save:node\C\study\Macro_res_image_wa8910.h  __dropdown__
+
 
 // enter
+//		==>Watch_DropDownWin_Enter
+//		====>HandleMsgdropdownWindow
+//		======>
+//		========>
+//		==========>
+//		============>MMINotifyWin_EnterWin
+//		==============>
 app:launcher\c\watch_launcher_main.c  MMINotifyWin_EnterWin
 app:launcher\c\watch_launcher_main.c  WatchLAUNCHER_HandleCommonWinMsg
 
@@ -270,6 +424,12 @@ app:dropdownwin\c\mmidropdownwin_main.c  NotifyWin_HandleWinMsg
 
 
 ###slide win
+//		==>MMINotifyWin_EnterWin
+//		====>NotifyWinInfoEx_Create
+//		====>MMK_CreateWin
+//		====>WatchSLIDEWIN_Init
+//		======>WatchSLIDEWIN_HandleMsgHook  (滑动死机)
+//		========>
 app:slidewin\c\watch_slidewin.c  WatchSLIDEWIN_HandleMsgHook
 //   DOWN->move->time->step->full->status
 // ->FULL->move->time->step->full->status
@@ -290,18 +450,14 @@ app:mainmenu\c\mainmenu_win.c  WatchLAUNCHER_Enter
 
 // (menu item)
 app:slidepage\h\watch_slidepage.h  LAUNCHER_MENU_ID_ALARM
-// --list
+// --list--out
+//		==>WatchLAUNCHER_ClockWin_Enter
+//		====>WatchMainMenu_Enter(0)
 app:launcher\c\watch_launcher_main.c  WatchLAUNCHER_Enter
 // --func--单页
 app:launcher\c\watch_launcher_main.c  HandleLauncherCallWinMsg
 // --func--四宫格
 app:launcher\c\watch_launcher_main.c  WatchLAUNCHER_MENU4_Enter
-
-// (test)
-// common--msg
-app:launcher\c\watch_launcher_main.c  WatchLAUNCHER_HandleCommonWinMsg
-// common--msg (key test)
-app:launcher\c\watch_launcher_main.c  DEBUG_TEST_UI
 
 
 // slide
@@ -390,8 +546,92 @@ images:cc/MMI_RES_DEFAULT/IMAG/cc/watch/
 
 // call
 app:cc/c/watch_cc_view.c  CC_OpenWatchMoCallWin
+app:cc/c/watch_cc_view.c  CC_OpenWatchMtCallWin
 // draw txt
 app:cc/c/watch_cc_view.c  1755
+
+
+// 流程--来电-MT，
+//		==>MMICC_HandlePsMsg
+//		====>ALERTING_IND:
+//		====>CC_CallAlertingInd
+//		======>CC_CallSetupInd    #8910
+//		========>MMICC_UpdateCallStatusDisplay      #mo mt dis共用
+app:cc\c\mmicc_app.c  case^APP_MN_SETUP_IND
+//		==========>MT:
+//		==========>CC_OpenWatchMtCallWin
+app:cc/c/watch_cc_view.c  CC_OpenWatchMtCallWin
+// call--上课免打扰
+//		==>MMICC_HandlePsMsg
+//		====>SETUP_IND:
+//		======>HandleMTCallDisc
+app:cc\c\mmicc_app.c  BOOLEAN^HandleMTCallDisc
+
+
+// 流程--去电-MO，
+//		==>HandleDialpadWinMsg
+//		====>PENOK:
+//		====>WatchAPICC_MakeCall
+//		======>MMIAPICC_MakeCall
+//		========>MMICC_ProcessMakeCall
+//		==========>...
+//		==========>MMICC_UpdateCallStatusDisplay
+//		============>MO:
+//		============>CC_OpenWatchMoCallWin
+app:cc/c/watch_cc_view.c  CC_OpenWatchMoCallWin
+
+
+// 流程--挂断-DIS
+//		==>MMICC_HandlePsMsg
+//		====>CC_DisconnectedCall
+//		======>CC_DisconnectedCallByIndex
+//		========>MMICC_UpdateCallStatusDisplay
+//		==========>DISCONNECTED:
+//		============>sms拒接:
+//		============>WatchCC_SentAndRejected_NoteWin_Enter
+//		============>挂断:
+//		============>WatchCC_CallEnded_NoteWin_Enter
+//		========>MMICC_OpenDisconnectWin(call_time)  #8910在前面
+//		==========>PdaDisplayDisconnectWin
+//		==========>MMICC_HandleOperAfterCallEnd
+app:cc\c\mmicc_app.c case^APP_MN_CALL_DISCONNECTED_IND
+// 流程--挂断-Red
+//		==>CCApplet_HandleEvent
+//		====>RED:
+//		======>MMIAPICC_ReleaseCallByRedkey
+app:cc\c\mmicc_app.c CC_RESULT_E^MMIAPICC_ReleaseCallByRedkey
+
+
+// 流程--接听
+//		==>MMICC_HandlePsMsg
+//		====>COMPLETE_CNF:
+//		====>CC_SetupCompleteCnf
+//		======>MMICC_UpdateCallStatusDisplay
+//		========>CONNECTED_IND:
+//		==========>CC_UpdateWatchMoCallStatus
+//		==========>WatchCC_MoCallingWin_Exit
+//		====>MMICC_AnswerCall
+//		==>WATCHCC_CONNECTED_WIN_TAB
+//		====>HandleCcVoiceCallConnectedWinMsg
+//		======>
+app:cc/c/watch_cc_view.c  CC_UpdateWatchMoCallStatus
+// call--speaker--8910
+//		if(MMIAPICC_IsHandFree() == FALSE)
+//			EnableHandfreeMode(!MMIAPICC_IsHandFree());
+
+
+// call--vib--8910
+//		==>COMPLETE_IND: 接通
+//		====>CC_SetupCompleteInd
+//		======>MMICC_VibrateForConnectPrompt
+//		==>
+//		====>CC_SetupCompleteCnf
+//		======>MMICC_VibrateForConnectPrompt
+//		==>CC_HandleCcAnimWinMsg
+//		====>OPEN:
+//		====>PlayNewCallRing
+//		======>MMIAPICC_StartRingOrVibrate
+
 
 
 
@@ -420,6 +660,11 @@ spde_app.c
 //
 第2套dial风格
 
+
+//		==>WatchLAUNCHER_PBWin_Enter
+//		====>WatchPB_MainWin_Enter
+//		======>
+app:launcher\c\watch_pb_win.c  WatchPB_MainWin_Enter
 
 
 [2.7] sms
@@ -546,6 +791,7 @@ app:setting\c\watch_set_alarmedit.c  HandleSettingsAlarmRepeatWindow
 ctrl:Picker\c\ctrltimepicker.c  TimePickerCtrlHandleMsg
 
 
+// --alarm--激活
 //		==>OpenAlarmAliveWin
 //		====>普通闹钟:
 //		====>Watch_Alarm_AliveWin_Enter      # 激活
@@ -555,9 +801,27 @@ ctrl:Picker\c\ctrltimepicker.c  TimePickerCtrlHandleMsg
 //		==========>CreatTextTitle
 //		==========>CreatTextContent
 //		==========>AlarmSetButtonCtrlParam
+//		========>btn_close:
+//		==========>HandleAlarmBtnRight
+//		========>btn_snooze:
+//		==========>HandleAlarmBtnLeft
+//		==>ring:
+//		====>MMIAPIAlarm_StartRingOrVib
+//		======>StartRingOrVib
+//		========>StartRingForRingOrVib
 // --alarm--pos
 app:accessory\c\watch_alarm.c  ALARM_ICON_X
-
+//		==>FLIP:                       # 参考这个
+//		====>Stop, CloseDelay, CloseWin, CheckEvent
+//		==>OK:                         # 打开
+//		====>CloseAlarmAliveWin
+//		==>WEB:                        # 再响
+//		====>SnoozedAlarm / Stop, SetDelay_F, CheckEvent, CloseWin
+//		==>CANCEL:                     # 停止
+//		====>Stop, CloseDelay, CloseWin, CheckEvent
+//		==>timer_out:
+//		=====>Stop, SetDelay_T, CheckEvent, CloseWin
+app:accessory\c\mmialarm.c  MMI_RESULT_E^HandleEventAliveWinMsg
 
 
 [2.12] stopWatch,counttime
@@ -601,6 +865,8 @@ app:accessory\c\mmicountedtime_main.c  void^StartArriveDialogWin
 [2.13] set
 // --set--main--(list, CallBack)
 //		==>WatchSET_MainWin_Enter
+//		====>init:
+//		======>.s_settings_main_text_list_data
 app:setting\c\watch_set_main.c  HandleSettingsMainWindow
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __setMain__
@@ -624,13 +890,21 @@ Save:node\C\study\Macro_pos_8910.h  __setBl__
 
 
 // 3.sound/next icon
+//		==>Settings_SoundWin_Enter
+//		====>full:
+app:setting\c\watch_set_sound.c  HandleSettingsSoundWindow
 //		==>HandleMsgCommonRadioListWindow
 //		====>Common_RadioListWin_User_Action
 //		======>_Callback
 //		==>OK:
 //		====>Settings_CallRingSelectWin_Enter
 //		======>_Callback_CallRingSelectWin
-app:setting\c\watch_set_sound.c  HandleSettingsSoundWindow
+//  --alarm--setring
+//		==>Settings_AlarmRingSelectWin_Enter
+//		====>.s_sound_alarm_ring_win
+//		====>.s_sound_call_ring_list
+//		======>web:
+//		======>MMIAPIENVSET_SetFixedAlarmRingId
 app:setting\c\watch_set_mmsound.c  Settings_MMSoundWin_Enter
 app:setting\c\watch_set_notesound.c  Settings_NoteSoundWin_Enter
 app:setting\c\watch_set_callsound.c  Settings_CallSoundWin_Enter
@@ -647,6 +921,9 @@ Save:node\C\study\Macro_res_image_wa8910.h  __list__
 //		======>_Callback_ClockModeSelectWin
 app:setting\c\watch_set_clock.c  HandleSettingsClockWindow
 app:launcher\c\watch_launcher_editclockwin.c  WatchLAUNCHER_EditClockWin_Enter
+//  --clock--12/24
+//		==>
+app:setting\c\watch_set_clock.c  Settings_ClockModeSelectWin_Enter
 
 
 // 5.more
@@ -726,6 +1003,16 @@ app:launcher\c\watch_imei_win.c  WatchImei_Enter
 
 // test
 app:launcher\c\watch_comm_test.c  WatchTest_Win_Enter
+// test--win32
+//		==>TRACE_APP_LOGD
+//		====>WATCH_LOG
+//		======>SCI_TRACE_LOW
+// test--phone
+//		==>TRACE_APP_LOGD
+//		====>WATCH_LOG
+//		======>WatchTest_Buf_Print
+//		========>SCI_TRACE_LOW
+app:launcher\h\watch_comm_test.h  WATCH_WINID_LOG_SUPPORT
 
 
 
@@ -739,22 +1026,48 @@ app:phone\c\mmiphone.c  HandleShutDownWinMsg
 app:phone\c\mmiphone_charge.c  MMI_RESULT_E^HandleChargeStartInd
 
 // 开机充电
+//		==>HandleChargeStartInd
+//		====>WatchLAUNCHER_ChargeTip_Enter (短充)
+//		======>WATCH_LAUNCHER_CHARGETIP_WIN_ID
+//		====>WatchLAUNCHER_Charge_Enter (长充)
 app:launcher\c\watch_charge_win.c  HandleLauncherChargeTipWinMsg
 
 // 关机充电
+//		==>HandleChargeStartInd
+//		====>WatchLAUNCHER_Charge_Enter (长充)
+//		======>WATCH_LAUNCHER_CHARGE_WIN_ID
 app:launcher\c\watch_charge_win.c  HandleLauncherChargeWinMsg
 
 
-[2.18] tcp
+[2.18] Tip
 //
 app:launcher\c\
 app:launcher\c\watch_charge_win.c  HandleLauncherChargeTipWinMsg
 
 
-[2.19] 
+[2.19] db
+//
+//		==>QRCode_Check2VMFile
+//		====>WatchBase_Init
+//		======>Watch_DB_Init
+//		========>Watch_DB_SET_ListInit
+//		==========>Watch_DB_SET_Default
 
 
 [2.20] 
+//	--timer--sos
+//		==>MMK_DispatchMSGTimer
+//		====>SOS:
+//		======>bm_iot_card_call_sos_number
+//		========>
+source:mmi_kernel/source/c/mmk_kbd.c  MMK_HandleKeySosTimer
+//	--关机--sos
+//		==>MMK_HandlePublicKey
+//		====>LONG_RED:
+//		====>bm_iot_card_call_sos_number
+//		====>MMIAPIPHONE_PowerOff
+app:phone\c\mmiphone.c   MMIAPIPHONE_PowerOff
+
 
 
 [2.21] 

@@ -109,11 +109,11 @@ config:uis8910ff_refphone\lcm_cfg_info.c  TWO_DATA_LINE_LCD
 driver:lcd\tft_ST7735S.c  ONE_DATA_LINE_LCD
 
 //
-MS_Customize/source/product/driver/lcd/
-MS_Customize/source/product/driver/lcd/tft_ST7789.c
-MS_Customize/source/product/driver/lcd/tft_GC9106.c
-MS_Customize/source/product/driver/lcd/tft_ILI9342.c
-MS_Customize/source/product/driver/lcd/tft_GC9308.c
+driver:lcd/
+driver:lcd/tft_ST7789.c
+driver:lcd/tft_GC9106.c
+driver:lcd/tft_ILI9342.c
+driver:lcd/tft_GC9308.c
 
 
 // 新屏
@@ -129,21 +129,21 @@ MS_Customize\export\inc\lcm_cfg.h  LCD_DRV_ID_ST7735S
 // (107)
 MS_Customize/source/common/lcm_prod.c  ST7735S
 //
-MS_Customize/source/product/driver/lcd/tft_ST7735S.c
+driver:lcd/tft_ST7735S.c
 
 
 //	修改按键黑点：
 MS_Ref\source\lcd\src\lcd.c GC9306_Ex
-MS_Customize\source\product\driver\lcd\tft_GC9300.c GC9300_Ex(void)
+driver:lcd\tft_GC9300.c GC9300_Ex(void)
 
-//	屏亮度/背景电流:
+//	屏亮度/背光电流:
 chip_drv\chip_module\analog\
 //	--6531D
 chip_drv\chip_module\analog\sr1131\analog_phy_sr1131.c  s_ana_bln_sw_tab
 chip_drv\chip_module\analog\sr1131\analog_phy_sr1131.c  s_ana_dev_tab
 //	--6531E
 chip_drv\chip_module\analog\sr1161\analog_phy_sr1161.c s_ana_bln_sw_tab
-//	--t703
+//	--t703/8910
 chip_drv\chip_module\analog\sc2720\analog_phy_sc2720.c  s_ana_bln_sw_tab
 chip_drv\chip_module\analog\sc2720\analog_phy_sc2720.c  s_ana_dev_tab
 //	--t107
@@ -152,7 +152,7 @@ chip_drv\chip_module\analog\v7\analog_phy.c  BLTC_LCM_CURRENT_V
 chip_drv\chip_module\analog\v7\analog_phy.c  s_ana_dev_tab
 //	背景电流 = BLTC_LCM_CURRENT_V
 
-//	--目录
+//	--目录--107
 make\chip_drv\def_config\
 make\chip_drv\def_config\UMS9117.cfg  CONFIG_ANALOG_VER = v7
 make\chip_drv\chip_modules\analog.mk  CONFIG_ANALOG_VER
@@ -187,17 +187,17 @@ prj:{cfg}.cfg   CAMERA_SUPPORT = TRUE
 // 1.新CAM
 make\custom_drv\custom_drv.mk  sensor_gc032A.c
 // 2.
-MS_Customize/source/product/config/ums9117_barphone/sensor_cfg.c
-MS_Customize\source\product\config\uis8910ff_refphone\sensor_cfg.c main_sensor_infor_tab
+config:ums9117_barphone/sensor_cfg.c
+config:uis8910ff_refphone\sensor_cfg.c main_sensor_infor_tab
 // 二行：
 //	extern const SENSOR_INFO_T g_GC6153_yuv_info;
 //	&g_GC6153_yuv_info,
 
 // 3.
 //		==>修改亮度: {0x92, 0x50}
-MS_Customize/source/product/driver/dc/
-MS_Customize/source/product/driver/dc/sensor_gc032A.c
-MS_Customize/source/product/driver/dc/sensor_gc6153.c
+driver:dc/
+driver:dc/sensor_gc032A.c
+driver:dc/sensor_gc6153.c
 
 
 // 4.(8910)
@@ -235,6 +235,17 @@ uis8910_phone_user_base_config.cfg  CAP_TP_SUPPORT
 SPDE_PRJ\WA07U\project_UIS8910_ROM_16MB_SS_WA07U_USER.mk  CAP_TP_SUPPORT
 SPDE_PRJ\WA07U\uis8910_phone_user_base_config.cfg  CAP_TP_SUPPORT
 //
+// tp--cst816s
+driver:tp\src\capacitive_hynitron_cst816s_update.h  TOUCH_KEYPAD_NOT_SUPPORT
+driver:tp\src\tp_cst816s.c  capacitive_hynitron
+// tp--bl6133
+driver:tp\src\tp_bl6133.c  TOUCH_KEYPAD_NOT_SUPPORT
+driver:tp\src\tp_bl6133.c  tp_bl6133_fw
+
+// tp--cancel
+driver:tp\src\
+driver:tp\src\tp_cst816s.c  TOUCH_KEYPAD_NOT_SUPPORT
+driver:tp\src\tp_bl6133.c  TOUCH_KEYPAD_NOT_SUPPORT
 
 
 	
@@ -383,14 +394,6 @@ prj:project_{cur}.mk __SPEAKER_VIB_INTENSITY_WEAK__
 prj:project_{cur}.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = TRUE 三合一同时开
 
 
-// CUSTOMER
-key:CUSTOMER,path:common\nv_parameters\{CONFIG}\{VALUE}
-
-// PRTITION
-key:PRTITION,file:MS_Customize\source\product\config\{CONFIG}\mem_cfg.c
-
-// CONFIG
-key:PRODUCT_CONFIG,path:MS_Customize\source\product\config\{CONFIG}
 
 
 
@@ -424,7 +427,7 @@ prj:project_{cur}.mk MMI_MSD_SUPPORT
 //TXT_MSD_NOTIFY_INFO
 
 // USB
-MS_Customize\source\product\driver\ubot\ubot_cfg_info.c  s_UBOT_StrProduct
+driver:ubot\ubot_cfg_info.c  s_UBOT_StrProduct
 
 // UDISK
 source:mmi_app\app\udisk\h\mmisd_export.h  CUST_CFG_UDISK_DEFAULT_NAME
@@ -479,7 +482,7 @@ MS_Ref/source/base/src/sys_time.c  s_sys_default_date
 mmiphone_onoff.c  SBD_CHANGE_POWER_OFF_TIME_10S
 
 
-// red--长按重启时间
+// red--长按复位时间
 chip_drv\chip_module\chip\uix8910\chip_phy_uix8910.c  CHIP_PHY_PB1KeyHwRstSet
 
 

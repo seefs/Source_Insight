@@ -415,11 +415,30 @@ Save:Macro\sbd_test.em  line_value
 	
 
 [1.19] Shell
+// __Shell__
+//		==>F5
+//		====>CtrlE                    # 模板跳转
+//		======>OpenMiniTest           # MiniTest == True
 Save:Macro\sbd_test.em  shell_cmd
 
 //1) 选中(shell_cmd), 再ctrl+E
-//  
-//		(略)
+shell_cmd  null  iexplore
+//	ShellExecute("", "iexplore", "", "", 1)
+//	ret:0
+
+shell_cmd  open  http://www.somedomain.com
+//	Shell Execute("open", "http://www.somedomain.com", "", "", 1)
+//	ret:1
+
+shell_cmd  find  watch_comm_test.h
+//	ShellExecute("find",  "watch_comm_test.h", "", "", 1)
+//	ret:0
+
+shell_cmd  properties  MS_MMI_Main  G:\wa03u_git2
+shell_cmd  properties  WA11SU.bat  G:\wa03u_git2
+//	ShellExecute("properties",  "watch_comm_test.h", "", "", 1)
+//	ret:0
+
 
 //2) 选中(shell_SvnLog), 再ctrl+E
 //  

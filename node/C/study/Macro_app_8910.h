@@ -25,7 +25,7 @@ Save:node\C\study\Macro_app_8910.h  \[1.22\] game
 Save:node\C\study\Macro_app_8910.h  \[1.23\] bt
 Save:node\C\study\Macro_app_8910.h  \[1.24\] env, Profile
 Save:node\C\study\Macro_app_8910.h  \[1.25\] 
-Save:node\C\study\Macro_app_8910.h  \[1.26\] 
+Save:node\C\study\Macro_app_8910.h  \[1.26\] wifi
 Save:node\C\study\Macro_app_8910.h  \[1.27\] Browser 网络参数
 Save:node\C\study\Macro_app_8910.h  \[1.28\] sos, speed
 Save:node\C\study\Macro_app_8910.h  \[1.29\] startup, charge
@@ -417,6 +417,8 @@ app:eng\c\mmieng_menutable.c  menu_phone_test
 app:eng/c/mmieng_uitestwin.c  MMI_RESULT_E^ENGItemTestMenuWinHandleMsg
 // 单项测试--menu
 app:eng\c\mmieng_menutable.c  menu_phone_item_test
+// 单项测试--gpstest
+app:eng/c/mmieng_uitestwin.c  case^ID_ENG_TEST_GPS
 
 // 串行测试
 //		==>s_mmieng_test_win_id
@@ -446,9 +448,16 @@ app:eng/c/mmieng_win.c   case^ID_ENG_OUTFIELD_NETWORK_INFORMATION
 app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_app_set
 // 工程模式--apptest--usb
 app:eng/c/mmieng_main.c  case^ID_ENG_USB_TEST_SET
+// 工程模式--gpstest
+app:eng/c/mmieng_main.c  case^ID_ENG_GPS
+
 
 // 老化测试
 app:eng/c/mmieng_uitestwin.c  SPD_ENGINEER_SUPPORT_MONKEY_SET
+
+// PC tool
+app:eng/c/mmieng_uitestwin.c  s_pceng_test_win_ptr_tab
+
 
 // touch
 Save:node\C\project\Macro_cfg_8910.h  __torch__
@@ -514,6 +523,7 @@ app:fmm\c\mmifmm_mainwin.c HandleRecordListWinMsg
 MMIFMM_HandleOpenFileWin
 // 不进U盘 __UsbMode__
 app:udisk\c\mmiudisk_wintab.c  USB_CONNECT_DEFAULT_CHARGE
+app:udisk\c\mmiudisk_wintab.c  MMI_WATCH_NEW_STYLE
 // usb
 app:udisk\c\mmiudisk_wintab.c  MMI_RESULT_E^^HandleUsbOperSelectWindow
 
@@ -1457,7 +1467,7 @@ app:videoplayer/c/mmivp_wintable.c  DisplayVPWinSoftkey
 // ==>image
 Save:node\C\study\Macro_res_image_8910.h __vp__
 // vp--pos
-app:videoplayer\h\mmivp_position.h   {size2}
+app:videoplayer\h\mmivp_position.h   {size}
 
 // vp--Update(107)
 //		==>DisplayRecordAllBG
@@ -2017,7 +2027,19 @@ Save:node\C\study\Macro_nv_8910.h  __env_nv__
 
 
 
-[1.26] 
+[1.26] wifi
+
+//		==>WifiHandleListWinMsg
+//		====>WEB:
+//		====>WifiSettingHandleOn
+//		======>MMIWIFI_OpenOnWaitWin
+//		========>MMIWIFI_OPEN_WAIT_WIN_ID
+//		==>MMIWIFI_HandleMsg
+//		====>CNF:
+//		====>WifiHandleManagerMsg
+//		======>MMIWIFI_OpenOnWaitWin
+//		========>MMIWIFI_OPEN_WAIT_WIN_ID
+//		==========>MMK_CloseWin(MMIBT_WAIT_WIN_ID)
 
 
 

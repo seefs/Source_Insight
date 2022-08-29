@@ -1319,14 +1319,18 @@ macro ReAllKeyHead(hbuf, curPath)
 		
 	pathMid = strmid(curPath, firstS + 1, firstE)
 	keyVal = getKeyHead(hbuf, pathMid)
+	pathE  = strmid(curPath, firstE + 1, len)
+	pathE  = ReAllKeyHead(hbuf, pathE)
 	if (keyVal != "")
 	{
 		pathS  = strmid(curPath, 0, firstS)
-		pathE  = strmid(curPath, firstE + 1, len)
-		pathE  = ReAllKeyHead(hbuf, pathE)
 		return pathS # keyVal # pathE
 	}
-	return curPath
+	else
+	{
+		pathS  = strmid(curPath, 0, firstE + 1)
+		return pathS # pathE
+	}
 }
 macro getCustomKeyHead(hbuf, fHead)
 {

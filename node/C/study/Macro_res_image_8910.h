@@ -1,5 +1,4 @@
 
-基础路径设置:
 //basePath = 
 
 //目录
@@ -58,6 +57,7 @@ images:common\MMI_RES_DEFAULT\IMAG\Power_on_off\IMAGE_POWER_ON.gif
 //
 Save:node\C\study\Macro_gui_8910.h  __SECOND_LOGO__
 
+//
 
 
 [1.2] __mainmenu__--主菜单图片
