@@ -14,6 +14,7 @@ ConvPath ".\\..\\..\\node\\S\\project",charset_new
 ConvPath ".\\..\\..\\node\\S\\project\\Doc",charset_new
 ConvPath ".\\..\\..\\node\\S\\projectBank",charset_new
 ConvPath ".\\..\\..\\node\\S\\projectTry",charset_new
+ConvPath ".\\..\\..\\node\\S\\study",charset_new
 ConvPath ".\\..\\..\\node\\S\\World",charset_new
 
 ' Convert a single file:

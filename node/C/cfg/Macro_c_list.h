@@ -147,11 +147,18 @@ cd:tmp: git clone https://github.com/seefs/Personality
 [1.6] __rime__
 //
 cd:tmp: git clone https://github.com/rime/rime-wubi
-//
+
+// cfg
 C:\Program^Files^(x86)\Rime\weasel-0.14.3\data\
-// hotkeys
+// cfg--hotkeys
 C:\Program^Files^(x86)\Rime\weasel-0.14.3\data\default.yaml
-//    - F4
+//  移除 F4
+
+//
+https://rime.im/download/
+//
+// 在输入栏内按F4，会弹出设置，第5项便是繁体转简体。
+
 
 
  

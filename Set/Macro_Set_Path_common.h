@@ -19,6 +19,9 @@ tool_mini:\\
 patchPath  = D:\save\patch\
 patch:\\
 
+pyScriptsPath  = D:\Program^Files\py\Scripts\\
+pyScripts:\\
+
 AppPath  = D:\Save\_SI_Cloud\
 App:\\
 

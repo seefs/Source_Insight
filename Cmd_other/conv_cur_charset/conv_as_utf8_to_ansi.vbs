@@ -14,22 +14,9 @@ ConvPath ".\\..\\..\\node\\android\\project",charset_new
 ConvPath ".\\..\\..\\node\\android\\project_new",charset_new
 ConvPath ".\\..\\..\\node\\android\\study",charset_new
 ConvPath ".\\..\\..\\node\\android\\sys",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\install",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\study",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\tfTUT",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf5_example2",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf11_build_network",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf12_plot_result",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf14_tensorboard",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf15_tensorboard",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf16_classification",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf17_dropout",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\tfTUT\\tf18_CNN2",charset_new
-ConvPath ".\\..\\..\\node\\Pythons\\py_test",charset_new
 
 ' Convert a single file:
 convertct ".\\..\\..\\node\\android\\Macro_Note_as.h",charset_new
-convertct ".\\..\\..\\node\\Pythons\\Macro_Note_Python.h",charset_new
 
 MsgBox "End of character encoding conversion",,"prompt"
   
