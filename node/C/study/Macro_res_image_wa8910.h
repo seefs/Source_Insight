@@ -9,8 +9,8 @@ Save:node\C\study\Macro_res_image_wa8910.h \[1.3\]
 Save:node\C\study\Macro_res_image_wa8910.h \[1.4\] //charger--关机/充电动画
 Save:node\C\study\Macro_res_image_wa8910.h \[1.5\] //Statusicons
 Save:node\C\study\Macro_res_image_wa8910.h \[1.6\] //idle/time/
-Save:node\C\study\Macro_res_image_wa8910.h \[1.7\] //dial
-Save:node\C\study\Macro_res_image_wa8910.h \[1.8\] //call
+Save:node\C\study\Macro_res_image_wa8910.h \[1.7\] zmaee
+Save:node\C\study\Macro_res_image_wa8910.h \[1.8\] zmaee call
 Save:node\C\study\Macro_res_image_wa8910.h \[1.9\] pubWin
 Save:node\C\study\Macro_res_image_wa8910.h \[1.10\] list---------
 Save:node\C\study\Macro_res_image_wa8910.h \[1.11\] //anim
@@ -18,7 +18,7 @@ Save:node\C\study\Macro_res_image_wa8910.h \[1.12\] common
 Save:node\C\study\Macro_res_image_wa8910.h \[1.13\] set
 Save:node\C\study\Macro_res_image_wa8910.h \[1.14\] tool
 Save:node\C\study\Macro_res_image_wa8910.h \[1.15\] app
-Save:node\C\study\Macro_res_image_wa8910.h \[1.16\] 
+Save:node\C\study\Macro_res_image_wa8910.h \[1.16\] charge
 Save:node\C\study\Macro_res_image_wa8910.h \[1.17\] 
 Save:node\C\study\Macro_res_image_wa8910.h \[1.18\] 
 
@@ -79,15 +79,64 @@ app:dropdownwin\h\dropdownwin_mdu_def.h  IMAGE_DROPDOWN_BG
 
 
 
-[1.7] 
+[1.7] dial
+### --zmaee--dial
+images:common/MMI_RES_DEFAULT/IMAG/Bg/
+
+//
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_DIAL_NEW_BG
+
+
+### --zmaee--alarm
+images:common/MMI_RES_DEFAULT/IMAG/Idle_screen/
+//
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_IDLE_SCREEN_ALARM_ICON_NEW
+
+
+### --zmaee--wallpaper
+images:common/MMI_RES_DEFAULT/IMAG/Idle_screen/
+//
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_WALLPAPER_1
+
+###
+images:zmaee\MMI_RES_DEFAULT\IMAG\zmaee/
+//
+app:zmaee\h\zmaee_mdu_def.h  IMG_FWATCH_OS_DEFAULT_QRCODE
 
 
 
+[1.8] zmaee call
 
-[1.8] 
+### __WaCall__ (tp)
+//
+images:cc\MMI_RES_DEFAULT\IMAG\cc\
+images:common/MMI_RES_DEFAULT/IMAG/Dial/
+images:cc\MMI_RES_DEFAULT\IMAG\cc\watch\notification\
+
+// call--挂1--180*56
+app:cc\h\cc_mdu_def.h  IMG_CC_HUNGUP1
+// call--挂2--114*56
+app:cc\h\cc_mdu_def.h  IMG_CC_HUNGUP2
+// call--挂3--104*56
+app:cc\h\cc_mdu_def.h  IMG_CC_HUNGUP3
+// call--接4--104*56
+app:cc\h\cc_mdu_def.h  IMG_CC_HUNGUP4
+
+// call--接0--56*56
+app:cc\h\cc_mdu_def.h  IMG_CC_BOARD
+
+// bg
+//	IMAGE_DIAL_NEW_BG
+
+// del
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_BUTTON_DELKEY_BG_P
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_BUTTON_DELKEY_P
+//source:mmi_app\common\h\common_mdu_def.h  IMAGE_BUTTON_DELKEY_BG_P
 
 
-
+//
+// call--notify--180*56
+app:cc\h\cc_mdu_def.h  IAMGE_CALL_NOTIFY_ENDED
 
 
 [1.9] __pubWin__
@@ -232,7 +281,16 @@ source:mmi_app\common\h\common_mdu_def.h  res_watch_hr_begin
 
 
 
-[1.16] 
+[1.16] charge
+
+### __charge__
+images:common\MMI_RES_DEFAULT\ANIM\WATCH_INDICATOR_ANIM\
+images:common\MMI_RES_DEFAULT\IMAG\Launcher\battery\
+
+// 100*140
+source:mmi_app\common\h\common_mdu_def.h  WATCH_INDICATOR_ANIM
+// 100*140
+source:mmi_app\common\h\common_mdu_def.h  res_battery_ic_charge_100
 
 
 

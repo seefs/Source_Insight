@@ -200,8 +200,22 @@ app:pic_viewer\h\pic_viewer_mdu_def.h  PIC_VIEWER_SUPPORT
 
 [1.9] font/color
 //	字库：
-MS_MMI_Main\source\resource\mmi_res_prj_def.h
-MS_MMI_Main\source\resource\Common\FONT
+//		==>VECTOR:
+//		====>ETRUMP:
+//		======>en:*.ttf
+//		======>cn:Spreadtrum_YH2312F.ttf  (426K)
+//		====>def:
+//		======>en:*.lib   (88K)
+//		======>cn:LANG_FONT_HAN_VECTOR.lib  (2.04M)
+//		==>GRAY:
+//		====>error
+//		======>en:*GRAY.lib
+//		======>cn:LANG_FONT_HAN_GRAY.lib  (1.94M)
+//		==>点阵:
+//		======>en:LANG_FONT_LATIN_BASIC.lib   (173K)
+//		======>cn:LANG_FONT_HAN_GRAY.lib  (4.79M)
+MS_MMI_Main\source\resource\mmi_res_prj_def.h  LANG_FONT_HAN_VECTOR
+MS_MMI_Main\source\resource\Common\FONT\
 open tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe
 
 
@@ -290,6 +304,29 @@ MS_MMI_Main\source\mmi_app\common\h\common_mdu_def.h  TXT_AUDIO
 
 
 [1.13] __lang__
+
+// 繁体
+prj:project_{cur}.mk  IM_SIMP_CHINESE_SUPPORT	= FALSE	          
+prj:project_{cur}.mk  MMI_DISPLAY_SIMP_CHINESE_SUPPORT = FALSE  
+prj:project_{cur}.mk  IM_TRAD_CHINESE_SUPPORT = TRUE            
+prj:project_{cur}.mk  MMI_DISPLAY_TRAD_CHINESE_SUPPORT = TRUE   
+// 繁体
+prj:project_{cur}.mk  MMI_LANG_HAN_VECTOR_DEFAULT_ADD_SIMP_LIB = TRUE
+prj:project_{cur}.mk  WATCH_LANG_HAN_VECTOR_USE_MERGE_SMALL = TRUE
+prj:project_{cur}.mk  MMISET_EDEFAULT_INPUT_LANGUAGE_TRAD_CN = TRUE
+
+// 关中文     
+prj:project_{cur}.mk  IM_SIMP_CHINESE_SUPPORT = FALSE
+prj:project_{cur}.mk  MMI_DISPLAY_SIMP_CHINESE_SUPPORT = FALSE
+prj:{cfg}.cfg  IM_SIMP_CHINESE_SUPPORT
+// 
+prj:project_{cur}.mk  MMI_LANG_HAN_VECTOR_DEFAULT_ADD_SIMP_LIB = TRUE
+prj:project_{cur}.mk  
+
+// 西班牙开2个宏
+prj:{cfg}.cfg  IM_SPANISH_SUPPORT
+prj:{cfg}.cfg  IM_SPANISH_AM_SUPPORT
+
 
 // 翻译lang
 Save:node\C\rule\Macro_Rule_Han_file.h  70

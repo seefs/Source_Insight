@@ -29,8 +29,10 @@ Save:node\C\study\Macro_pos_8910.h \[1.21\] spinner
 Save:node\C\study\Macro_pos_8910.h \[1.22\] watch----------------
 Save:node\C\study\Macro_pos_8910.h \[1.23\] watch gui------------
 Save:node\C\study\Macro_pos_8910.h \[1.24\] 
-Save:node\C\study\Macro_pos_8910.h \[1.25\] 
-Save:node\C\study\Macro_pos_8910.h \[1.26\] 
+Save:node\C\study\Macro_pos_8910.h \[1.25\] Dial
+Save:node\C\study\Macro_pos_8910.h \[1.26\] watch call 
+Save:node\C\study\Macro_pos_8910.h \[1.27\] 
+Save:node\C\study\Macro_pos_8910.h \[1.28\] 
 
 
 
@@ -41,11 +43,6 @@ app:theme/h/
 // bar
 //		==>MMITHEME_GetStatusBarHeight
 app:theme/h/mmi_position_{size}.h  MMI_STATUSBAR_HEIGHT                       # 26
-
-// tab
-//		==>MMITHEME_GetWinTabBothRect
-app:theme/h/mmi_position_{size}.h  MMI_TAB_HEIGHT                             # 35
-app:theme\h\mmidisplay_data.h  {size2}   MMI_TAB_ITEM_DEFAULT_HEIGHT          # 36 //未改
 
 // title
 //		==>MMITHEME_GetWinTitleHeight
@@ -79,6 +76,12 @@ app:theme/h/mmi_position_{size}.h  MMI_FULLSCREEN_SOFTKEY_BAR_HEIGHT
 
 
 ### __tab__
+//		==>MMITHEME_GetWinTabBothRect
+//		====>MMI_TAB_ITEM_DEFAULT_HEIGHT
+//		======>MMITAB_DEFAULT_ITEM_HEIGHT
+app:theme/h/mmi_position_{size}.h  MMI_TAB_HEIGHT                             # 35
+app:theme\h\mmidisplay_data.h  {size}   MMI_TAB_ITEM_DEFAULT_HEIGHT          # 36 //未改
+
 // sms--tab
 //		====>MMITHEME_GetTabStyle (未使用)
 //		======>style_ptr->font			  
@@ -88,11 +91,8 @@ app:theme/h/mmi_position_{size}.h  MMI_FULLSCREEN_SOFTKEY_BAR_HEIGHT
 //		====>CreateTabCtrl
 //		======>MMITHEME_GetWinTabBothRect      # 35
 //		========>MMK_IsWinIncludeTitle         # false
-//		======>
-//		========>
 //		====>CreateTabTitleCtrl
 //		======>title height=27
-//		========>
 // sms--tab--draw
 //		==>DrawCtrl
 //		====>DrawAllTabItems
@@ -108,12 +108,15 @@ app:theme/h/mmi_position_{size}.h  MMI_FULLSCREEN_SOFTKEY_BAR_HEIGHT
 //		========>DrawItemText                  # --画竖线
 //		==========>
 app:theme\c\mmitheme_pos.c  MMITHEME_GetWinTabBothRect
+
+
 //   
 //   临时改2个窗口
 app:theme\c\mmitheme_tab.c  MMITHEME_GetTabChildWinTop
 
 // align_type
 app:theme\c\mmitheme_title.c  MMITHEME_GetTitleStyle
+
 
 
 [1.2] __width__
@@ -190,6 +193,17 @@ app:theme/h/mmi_position_{size}.h  MMI_LIST_ITEM_HEIGHT
 app:theme/h/mmi_position_{size}.h  MMI_LIST_EXTRAS_ITEM_HEIGHT_MS
 app:theme/h/mmi_position_{size}.h  MMI_LIST_PB_QUICK_ACTION_ITEM_TEXT_HEIGHT_MS
 
+### __alarm__
+// alarm--icon+str
+//		==>GUIITEM_STYLE_MULTI_CHOICE_PICKER_TEXT
+//		====>s_item_style_multi_choice_picker_text
+app:theme/h/mmi_position_{size}.h  MMI_CHOICE_PICKER_LIST_ITEM_HEIGHT
+
+### __stopwatch__ (107)
+// alarm--icon+str
+//		==>GUIITEM_STYLE_ONE_LINE_ICON_TWO_TEXT
+//		====>s_item_style_1_icon_text_text
+app:theme/h/mmi_position_{size}.h  MMI_CHOICE_PICKER_LIST_ITEM_HEIGHT
 
 ### __file__
 // file--icon+str
@@ -447,13 +461,24 @@ app:theme/h/mmi_position_{size}.h  MMI_LIST_BIG_ICON_WIDTH_MS
 [1.8] __idle__
 ### mstyle
 // --idle--pos
+//		==>.time.top:
+//		====>MMI_IDLE_TIME_Y             +30  (38*56)
+//		==>.data,week.top:
+//		====>MMI_IDLE_DATE_Y             +30+56 ----font36 / h40
+//		==>.lunar.top:
+//		====>MMI_IDLE_LUNAR_Y            +30+56+40 ----font36 / h39
+//		==>.mp3.top:                     +30+56+78=164 / 165写死 ----font36 / h32
 app:theme/c/mmidisplay_data.c
 app:theme/c/mmidisplay_data_{size}.c  MMI_IDLE_DISPLAY_T^^mmi_idle_display
-// --idle--sim
-app:theme/c/mmidisplay_data_{size}.c  MMI_IDLE_COMON_MAIN_LCD_Y_NETWORKNAME
-// --idle--date,week
-app:theme/c/
-app:theme/c/mmidisplay_data_{size}.c  MMI_IDLE_DATE_Y
+//		==>.sim.top:                     +174 / 212----font36 / h38, h39
+//		====>MMI_IDLE_SIM_STATUS_TOP:    +136 
+//		======>MMI_IDLE_TIME_TOP:           18
+//		======>MMI_IDLE_TIME_HEIGHT:        58
+//		======>MMI_IDLE_DATE_HEIGHT*2:      30
+//		====>MMI_IDLE_INTERVAL_MARGIN:     2  (*2)
+//		====>MMI_IDLE_SIM_STATUS_HEIGHT:  36  (*2)
+//		==>.softkey.top:                 +274 / 277 / 275
+app:theme/me/c/mmidisplay_data_{size}.c  MMI_IDLE_COMON_MAIN_LCD_Y_NETWORKNAME
 // --idle--time
 app:theme/h/mmi_position.h  MMI_MAIN_TIME_Y
 app:theme/h/mmi_position.h  IDLE_TIME_PIC_WIDTH
@@ -515,8 +540,9 @@ app:record\h\mmirecord_position.h  MMIRECORD_RECORD_RECORD_BG_H_Y
 //		====>osd_panel_rect
 //		======>MMIMP3_OSD_LABEL_RECT_H      # 
 //		========>MMIMP3_OSD_PANEL_RECT_H
-//		====>MMIMP3_OSD_LABEL_HEIGHT        # ?
-//		====>MMIMP3_OSD_PROGRESS_HEIGHT     # ?
+//		======>MMIMP3_OSD_BTN_HEIGHT        # 16/0
+//		======>MMIMP3_OSD_PROGRESS_HEIGHT   # 20
+//		======>MMIMP3_OSD_LABEL_HEIGHT      # 22
 //		==>osd-process:
 //		====>dumy_owndraw_height            # 
 //		==>father/play:
@@ -557,22 +583,28 @@ app:accessory\h\mmialarm_position.h
 
 
 [1.13] __calen__
-// calendar--title--[5,31]
-app:accessory\h\mmiacc_position.h  {size2}  CALENDAR_MONTH_TITLE_RECT_H
-// calendar--week--[45,77]
+// calendar--title--[5,+20]
+app:accessory\h\mmiacc_position.h  {size}  CALENDAR_MONTH_TITLE_RECT_H
+// calendar--week--[+20,+16]
 app:accessory\h\mmiacc_position.h  {size2}  CALENDAR_MONTH_LINE0_TOP_H
 app:accessory\h\mmiacc_position.h  {size2}  CALENDAR_MONTH_WEEKLY_Y_H
 // calendar--day--22X6--[77,209]
 app:accessory\h\mmiacc_position.h  {size2}  CALENDAR_BLOCK_HEIGHT_H
 app:accessory\h\mmiacc_position.h  {size2}  CALENDAR_MONTH_ITEM0_LEFT_H
 // calendar--schdule--22X6--[209,205]
-// calendar--softkey--[205,239]
+// calendar--softkey--[205,+28]
 app:theme/h/mmi_position_{size}.h  MMI_FULLSCREEN_SOFTKEY_BAR_HEIGHT
+// calendar--Lunar--[138,+16]
+app:accessory\h\mmiacc_position.h  {size2}  CALENDAR_LUNAR_TITLE_RECT_H
 
 
 // font
+// --title/Lunar--15
+app:accessory\h\mmiacc_position.h  {size}  CALENDAR_MONTH_FONT
+// --week/day--12
+app:accessory\h\mmiacc_position.h  {size}  CALENDAR_DATE_FONT
 // --schdule--17
-app:accessory\h\mmiacc_position.h  {size2}  CALENDAR_SCH_TEXT_FONT
+app:accessory\h\mmiacc_position.h  {size}  CALENDAR_SCH_TEXT_FONT
 
 
 
@@ -887,13 +919,87 @@ source:mmi_kernel\include\mmitheme_list.h  MMI_LIST_ITEM_BG_TOP_DOWN_MARGIN
 
 
 
-[1.25] 
+[1.25] Dial
+### __Dial__ (tp)
+
+// --dial--btn--H--40
+app:idle\c\mmiidle_dial.c  MMIIDLE_DIAL_OFFSET_Y
+// ----bg--38
+app:idle\c\mmiidle_dial.c  MMIIDLE_DIAL_NUMBER_BG_HEIGHT
+// ----line--2
+app:idle\c\mmiidle_dial.c  MMIIDLE_DIAL_LINE_WIDTH
+
+
+// --dial--btn--Y--
+//		==>240-5btn
+app:idle\c\mmiidle_dial.c  MMIIDLE_DIAL_NUMBER_TOP_Y
+
+// --dial--edit--H--38
+app:idle\c\mmiidle_dial.c  MMIIDLE_DIAL_NUMBER_BG_HEIGHT
 
 
 
 
-[1.26] 
+[1.26] watch call 
 
+// ==>image
+Save:node\C\study\Macro_res_image_8910.h __call__
+Save:node\C\study\Macro_res_image_wa8910.h __WaCall__
+
+### __WaCall__ (tp)
+
+// 流程--来电-MT，
+//		==>CC_HandleCcAnimWinMsg
+//		====>OPEN:
+//		======>BM_CC_update_Hangup_Button_inComing(FALSE)
+//		======>BM_CC_update_Accept_Button(FALSE)
+//		========>挂3 + 接4 (底)
+//		====>OwnerDrawDraw:
+//		======>BM_DrawIncomingButtonctrl
+//		========>
+//		====>CallBackFunc:
+//		======>CustomAnimOwnerDrawCallback
+//		========>IMAGE_CC_AVATAR_UNKNOWN
+app:cc\c\mmicc_{wintab}.c  BM_CC_update_Hangup_Button
+
+
+// 流程--去电-MO，
+//		==>CC_HandleCcAnimWinMsg
+//		====>OPEN:
+//		======>BM_CC_update_Hangup_Button_inComing(FALSE)
+//		======>BM_CC_update_Accept_Button(FALSE)
+//		========>挂3 + 接4 (底)
+//		====>OwnerDrawDraw:
+//		======>MMICC_DrawBottomButtonCtrl
+//		========>BM_CC_update_Hangup_Button
+//		==========>挂1 (-60/-30)
+
+
+// 流程--接听
+//		====>OwnerDrawDraw:
+//		======>MMICC_DrawBottomButtonCtrl
+//		========>BM_CC_update_Hangup_Board_inConnectStatsu(FALSE)
+//		========>BM_CC_update_Hangup_Button_inConnectStatsu(FALSE)
+//		==========>挂0 + 接4
+//		====>CallBackFunc:
+//		======>CustomAnimOwnerDrawCallback
+//		========>IMAGE_CC_AVATAR_UNKNOWN
+
+
+// 流程--挂断
+//		==>CC_HandleCcAnimWinMsg
+//		====>TP_PRESS:
+//		======>BM_CC_update_Hangup_Button_inComing
+
+// 头像
+//		==>PdaDisplayCallPhotoForCommon
+
+
+
+[1.27] 
+
+
+[1.28] 
 
 
 

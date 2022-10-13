@@ -72,6 +72,9 @@ make\resource_main\resource_target.mk 42
 //	//
 //	MMIAPICOM_Wstrlen( const wchar* str )
 
+//
+//static uint8  utf8_name[] = {0x55, 0x53, 0x42, 0x20, 0x0};	
+
 
 #GUIEDIT
 // MMK_SendMsg
@@ -122,11 +125,25 @@ make\resource_main\resource_target.mk 42
 //	}
 
 
+//
+SCI_CreatePeriodTimer
+//
+SCI_CreateTimer();
+SCI_DeactiveTimer(ptr);
+SCI_IsTimerActive(ptr);
+SCI_DeleteTimer(ptr);
+//
+SCI_ChangeTimer(ptr);
+SCI_ActiveTimer(ptr);
+
 // 背光, 上锁
 app:setting/c/mmiset_func.c  MMIAPISET_GetAutoBoardKeyMS
 source:mmi_app\kernel\c\mmi_default.c  void^MMIDEFAULT_StartAutoKeylockTimer
 
-
+// timer中无法关闭win:
+//	MMK_DelayUpdateScreen
+//	MMITHEME_SetUpdateDelayCount
+//	MMITHEME_GET_MUTEX
 
 
 
@@ -238,7 +255,7 @@ source:mmi_kernel\source\c\mmk_kbd.c  BOOLEAN^SaveKeyDownStatus
 
 [1.9] sms_member
 // sms_member
-source:mmi_app\app\sms\c\mmisms_editsmswin.c
+app:sms\c\mmisms_editsmswin.c
 //        uint8 i = 0;
 //        uint8 aaaaa = 0;
 //		SMS_HANDLE_T sms_ret = PNULL;
@@ -297,7 +314,12 @@ app_main.mk
 //
 //	SCI_TRACE_LOW("[ccapp]is_handfree = %d", dev);
 
-
+// watch log
+Save:node\C\study\Macro_tihu_8910.h  __log__
+// slide log
+Save:node\C\study\Macro_slide_8910.h  __log__
+// Trace log
+Save:node\C\study\Macro_patch_8910.h  __Trace__
 
 
 [1.13] 
@@ -306,7 +328,7 @@ app_main.mk
 
 [1.14] mp3--show
 // HandlePDADefaultWinMsg
-source:mmi_app\app\audioplayer\c\mmiapwin_main_pda.c  470
+app:audioplayer\c\mmiapwin_main_pda.c  470
 //
 //	#ifdef WIN32
 //		    case MSG_APP_5:
@@ -458,21 +480,18 @@ source:mmi_app\app\audioplayer\c\mmiapwin_main_pda.c  470
 
 [2.1] __lock__
 //
-source:mmi_app\app\keylock\c\mmikl_keylock.c  MMIAPIKL_LockPhone
-source:mmi_app\app\keylock\c\mmikl_keylock.c  MMIAPIKL_UnlockPhone
-//
-source:mmi_app\app\keylock\c\mmikl_keylock.c  1912
-source:mmi_app\app\keylock\c\mmikl_keylock.c  3523
+app:keylock\c\mmikl_keylock.c  MMIAPIKL_LockPhone
+app:keylock\c\mmikl_keylock.c  MMIAPIKL_UnlockPhone
 
 //	MMIKL_SetWinStatus
-//
 //	MMIPUB_OpenAlertWinByTextId
-//
 //	MMIKL_OpenTimeScreenSaverWin
 
 // KeyLock
-source:mmi_app\app\setting\c\mmiset_security.c  MMI_RESULT_E^^HandleSetAutoKeyLockWindow
+app:setting\c\mmiset_security.c  MMI_RESULT_E^^HandleSetAutoKeyLockWindow
 
+//
+app:keylock\c\mmikl_keylock.c  KEYLOCK_PRESS_LSK_UNLOCK
 
 
 [2.2] light
@@ -499,7 +518,7 @@ source:mmi_kernel\source\c\mmk_kbd.c  MMI_FlipKeyHandle
 // kbd msg
 source:mmi_kernel\source\c\mmk_kbd.c  MMIDEFAULT_HandleFlipKey
 // app msg
-source:mmi_app\app\accessory\c\mmialarm.c  MMIDEFAULT_HandleFlipKey
+app:accessory\c\mmialarm.c  MMIDEFAULT_HandleFlipKey
 
 ### gpio msg
 // 1360
@@ -518,7 +537,11 @@ source:mmi_app\kernel\c\mmi_default.c  MMI_TURNON_BACKLIGHT_EFFECT_SUPPORT
 source:mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_TurnOnBackLight
 //source:mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_TurnOffBackLight
 source:mmi_app\kernel\c\mmi_default.c  CloseAllLight
-HandleMSGKbd
+
+
+// 按RED键锁屏进屏保
+app:idle\c\mainapp.c  MMI_KEYLOCK_SCREENSAVER_D11Y_STYLE
+
 
 
 
@@ -799,6 +822,9 @@ ATEST_SUPPORT
 
 
 [2.16] sim--显示单卡
+// code
+Save:node\C\study\Macro_doc_8910.h  __ELECTRIC__
+
 ### 显示单卡
 app:phone/c/mmiphone.c  MMIAPIPHONE_GetSimExistedStatus
 //#if 0//defined IDLE_NETWORK_ONE_SIM_SHOW_EXIST_STYLE
@@ -839,6 +865,8 @@ app:idle\c\mainapp.c  case^MSG_TIMER
 // card--view
 //		==>EngShowGuaranteeCardString
 //		====>NV_ELECTRIC_GUARANTEE_CARD
+//		==>MMIAPIENG_ViewElectircGuanateeCard  # 107
+//		====>getEleGuaranteeCard
 // card--reset
 //		==>HandleResetElectircQueryWinMsg
 //		====>resetTimerInfo
@@ -906,27 +934,27 @@ Save:node\C\project\Macro_cfg_8910.h __sale__
 // sale--str
 source:mmi_app\common\h\common_mdu_def.h  SPDE_SALES_TRACKER_SUPPORT
 // sale--nv, 定时时间/号1/号2; 开关
-source:mmi_app\app\eng\c\mmieng_nv.c  SPDE_SALES_TRACKER_SUPPORT
-source:mmi_app\app\eng\h\mmieng_nv.h  SPDE_SALES_TRACKER_SUPPORT
-source:mmi_app\app\setting\c\mmiset_nv.c  SPDE_SALES_TRACKER_SUPPORT
-source:mmi_app\app\setting\h\mmiset_nv.h   SPDE_SALES_TRACKER_SUPPORT
-source:mmi_app\app\setting\c\mmiset_func.c  SPDE_SALES_TRACKER_SUPPORT
+app:eng\c\mmieng_nv.c  SPDE_SALES_TRACKER_SUPPORT
+app:eng\h\mmieng_nv.h  SPDE_SALES_TRACKER_SUPPORT
+app:setting\c\mmiset_nv.c  SPDE_SALES_TRACKER_SUPPORT
+app:setting\h\mmiset_nv.h   SPDE_SALES_TRACKER_SUPPORT
+app:setting\c\mmiset_func.c  SPDE_SALES_TRACKER_SUPPORT
 // sale--timer
 source:mmi_kernel\include\mmk_timer.h  SPDE_SALES_TRACKER_SUPPORT
 source:mmi_kernel\source\c\mmk_timer.c  SPDE_SALES_TRACKER_SUPPORT
 source:mmi_kernel\include\mmi_default.h  SPDE_SALES_TRACKER_SUPPORT
 //source:mmi_app\kernel\c\mmi_default.c  SPDE_SALES_TRACKER_SUPPORT
 // mst--winId, 询问&成功
-source:mmi_app\app\sms\h\mmisms_id.h  SPDE_SALES_TRACKER_SUPPORT
-source:mmi_app\app\sms\h\mmisms_id.def  SPDE_SALES_TRACKER_SUPPORT
-source:mmi_app\app\eng\h\mmieng_id.h  SPDE_SALES_TRACKER_SUPPORT
-source:mmi_app\app\eng\h\mmieng_id.def  SPDE_SALES_TRACKER_SUPPORT
+app:sms\h\mmisms_id.h  SPDE_SALES_TRACKER_SUPPORT
+app:sms\h\mmisms_id.def  SPDE_SALES_TRACKER_SUPPORT
+app:eng\h\mmieng_id.h  SPDE_SALES_TRACKER_SUPPORT
+app:eng\h\mmieng_id.def  SPDE_SALES_TRACKER_SUPPORT
 // sale--set
-source:mmi_app\app\eng\c\mmieng_win.c  SPDE_SALES_TRACKER_SUPPORT
-source:mmi_app\app\eng\c\mmieng_main.c  SPDE_SALES_TRACKER_SUPPORT
-source:mmi_app\app\eng\h\mmieng_export.h  SPDE_SALES_TRACKER_SUPPORT
+app:eng\c\mmieng_win.c  SPDE_SALES_TRACKER_SUPPORT
+app:eng\c\mmieng_main.c  SPDE_SALES_TRACKER_SUPPORT
+app:eng\h\mmieng_export.h  SPDE_SALES_TRACKER_SUPPORT
 // sale--sms
-source:mmi_app\app\sms\h\mmisms_export.h  SPDE_SALES_TRACKER_SUPPORT
+app:sms\h\mmisms_export.h  SPDE_SALES_TRACKER_SUPPORT
 source:mmi_app/app/sms/c/mmismsapp_main.c  SPDE_SALES_TRACKER_SUPPORT
 // sale--call
 //		==>MMISET_SetSalesTrackerCallTime
@@ -941,7 +969,7 @@ source:mmi_app/app/cc/c/mmicc_wintab.c  SPDE_SALES_TRACKER_SUPPORT
 //		==>SMS_APP_SMSSendCnfCallback()
 //		====>MMIDEFAULT_StartAutoReSendSMSTimer
 //		======>MMIDEFAULT_HandleAutoSendSMSTimer
-source:mmi_app\app\phone\c\mmiphone_onoff.c  SPDE_SALES_TRACKER_SUPPORT
+app:phone\c\mmiphone_onoff.c  SPDE_SALES_TRACKER_SUPPORT
 
 
 

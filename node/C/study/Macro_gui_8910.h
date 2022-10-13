@@ -5,13 +5,13 @@ Save:node\C\study\Macro_gui_8910.h  \[1.2\] softkey
 Save:node\C\study\Macro_gui_8910.h  \[1.3\] draw ---------------画图
 Save:node\C\study\Macro_gui_8910.h  \[1.4\] statusbar, change----
 Save:node\C\study\Macro_gui_8910.h  \[1.5\] theme
-Save:node\C\study\Macro_gui_8910.h  \[1.6\] pubWin  Alert
+Save:node\C\study\Macro_gui_8910.h  \[1.6\] pubWin, Alert
 Save:node\C\study\Macro_gui_8910.h  \[1.7\] form----------------
 Save:node\C\study\Macro_gui_8910.h  \[1.8\] rect
 Save:node\C\study\Macro_gui_8910.h  \[1.9\] timer
 Save:node\C\study\Macro_gui_8910.h  \[1.10\] option
 Save:node\C\study\Macro_gui_8910.h  \[1.11\] onoff
-Save:node\C\study\Macro_gui_8910.h  \[1.12\] title
+Save:node\C\study\Macro_gui_8910.h  \[1.12\] title, tab
 Save:node\C\study\Macro_gui_8910.h  \[1.13\] anim --------------所有Construct
 Save:node\C\study\Macro_gui_8910.h  \[1.14\] tmp ---------------
 Save:node\C\study\Macro_gui_8910.h  \[1.15\] layer
@@ -204,6 +204,10 @@ app:idle/c/mainapp.c  MMIDILE_StatusBarInit
 
 //动态创建状态条:
 SBD_MMI_DIALWIN_HAS_STATUSBAR
+//		==>MMK_IsWinIncludeStatusbar
+//		==>MMK_CreateDefaultControl
+//		====>
+//		======>
 
 
 // --statusbar--Update
@@ -570,6 +574,16 @@ ctrl:editbox\c\ctrlbaseflex_display.c   void^DisplayTextString
 //		======>title_ptr->sub_font
 ctrl:Title\c\ctrltitle.c  void^DisplayTitleSubText
 
+// --form--edit--label--display
+//		==>.is_active
+//		==>MMITHEME_GetAccentId
+//		====>MMITHEME_InitAccentId
+//		==>BaseFlexCtrlDisplayAll
+//		====>GUI_DisplayBorder
+//		==>.name.height
+//		====>.alarm--editName2, BASEEDIT_EXTRA_AREA
+ctrl:editbox\c\ctrlbaseedit_internal.c  BASEEDIT_DisplayEditExtraArea
+
 
 ### CHILD_EDIT_TEXT (sms--edit text)
 //		==>BASEFLEX_AddString
@@ -718,7 +732,7 @@ app:cc\c\mmicc_wintab_custom.c  MMI_RESULT_E^HandleCallSIMSelectWinMsg
 
 ### __SECOND_LOGO__
 // 
-MS_Customize/source/common/prod_param.c
+MS_Customize/source/common/prod_param.c   white
 app:envset/c/mmienvset.c
 app:parse/c/mmiparse_dial.c
 app:phone/c/mmiphone.c
@@ -749,16 +763,44 @@ app:phone/c/mmiphone_onoff.c  MMI_RESULT_E^HandleNormalStartupWindow
 
 
 
-[1.12] title
+[1.12] title, tab
 // title bg:
 
-// 
+// 标题
+//		==>MMITHEME_GetTitleStyle
+//		====>MMI_TITLE_TEXT_FONT             # --w big 30
+//		==>DisplayTitle
+//		====>DisplayTitleBg
+//		====>DisplayScrollTitleByOffset
+//		======>title_ptr->str_style.font
+gui:title\c\Guititle.c  DisplayTitle( )
+// 标题--滚动
+//		====>StartTitleScrollTimer
+//		======>HandleWinTitleTimerMsg
+//		========>HandleWinTitleTimerAsPixelMsg
+//		==========>DisplayScrollTitleByOffset
+//		============>DisplayTitleTextBg        #未画背景
+
+
+### tab
+// tab--不画标题
 //		==> 同时修改 MMI_TAB_HEIGHT
 app:sms/c/mmisms_messageboxwin.c  MMISMS_MSGBOX_MAIN_WIN_TAB
 app:sms\c\mmismsapp_wintab.c MMISMS_MSGBOX_MAIN_WIN_TAB
 //     CREATE_TAB_CTRL(.., GUITAB_STATE_NONEED_SCROLL | GUITAB_STATE_SINGLE_LINE, ..),
 //
 app:cl\c\Mmicl_wintab.c   MMICL_LOG_LIST_WIN_TAB
+//
+app:pb\c\mmipb_view.c  MMIPB_MAIN_WIN_TAB
+// --未验证
+app:browser\c\mmibrowser_wintable.c  MMIBROWSER_BK_AND_HISTORY_WIN_TAB
+//
+app:fmm\c\mmifmm_interface.c  MMIFMM_OPENFILE_WIN_TAB
+app:fmm\c\mmifmm_mainwin.c  MMIFMM_MAIN_WIN_TAB
+//
+app:sms\c\mmisms_settingwin.c  MMISMS_SETTINGS_TAB_WIN_TAB
+//
+app:videoplayer\c\mmivp_wintable.c  MMIVP_LOCALLIST_WIN_TAB
 
 
 ### tab
@@ -767,24 +809,6 @@ Save:node\C\study\Macro_pos_8910.h   __tab__
 // ==>image
 Save:node\C\study\Macro_res_image_8910.h  __tab__
 Save:node\C\study\Macro_res_image_8910.h  __title__
-
-
-
-
-// 标题
-//		==>MMITHEME_GetTitleStyle
-//		====>MMI_TITLE_TEXT_FONT             # --w big 30
-//		==>DisplayTitle
-//		====>DisplayTitleBg
-//		====>DisplayScrollTitleByOffset
-//		======>title_ptr->str_style.fon
-gui:title\c\Guititle.c  DisplayTitle( )
-// 标题--滚动
-//		====>StartTitleScrollTimer
-//		======>HandleWinTitleTimerMsg
-//		========>HandleWinTitleTimerAsPixelMsg
-//		==========>DisplayScrollTitleByOffset
-//		============>DisplayTitleTextBg        #未画背景
 
 
 

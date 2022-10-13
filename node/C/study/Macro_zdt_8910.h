@@ -1,15 +1,6 @@
 
-基础路径设置:
-//basePath = 
-resPath = MS_MMI_Main/source/resource/mmi_res_240x240
-res:\\
-appPath = MS_MMI_Main\source\mmi_app\app
-app:\\
 
-
-/***********************************************************************/
-
-//目录[Num][Ca]:
+//目录:
 // 1. 
 Save:node\C\study\Macro_zdt_8910.h \[1.1\] 
 Save:node\C\study\Macro_zdt_8910.h \[1.2\] menu

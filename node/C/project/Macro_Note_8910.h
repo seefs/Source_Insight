@@ -10,7 +10,7 @@ Save:node\C\project\Macro_Note_8910.h \[1.6\] TP
 Save:node\C\project\Macro_Note_8910.h \[1.7\] ECG
 Save:node\C\project\Macro_Note_8910.h \[1.8\] hr
 Save:node\C\project\Macro_Note_8910.h \[1.9\] breathled
-Save:node\C\project\Macro_Note_8910.h \[1.10\] 
+Save:node\C\project\Macro_Note_8910.h \[1.10\] motionsensor
 // 设置
 Save:node\C\project\Macro_Note_8910.h \[2.1\] 
 Save:node\C\project\Macro_Note_8910.h \[2.2\] 颜色---------common_mdu_def.h
@@ -42,17 +42,46 @@ Save:node\C\cfg\
 Save:node\C\cfg\Macro_c_build.h  __8910__
 
 
+// --set
+Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 
 
 [1.2] gpio_cfg
-//
+// mk
+prj:project_{cur}.mk   DRIVER_CONFIG_WA03U_V2
+
+// --config=wa03u_v2
+Save:set\Macro_Set_Path_sprd_{pro}.h  configKey
+// --config
 make\custom_drv\custom_drv.mk  DRIVER_CONFIG_WA011U
-make\custom_drv\custom_drv.mk  gpio_cfg
-//SOURCES   +=	gpio_cfg_wa022u.c pinmap_cfg_wa022u.c
 
 //
-config:uis8910ff_refphone\
-config:uis8910ff_refphone\pinmap_cfg_x225u.c
+config:
+config:pinmap_cfg_{config}.c
+config:gpio_cfg_{config}.c
+
+
+### 抓串口log
+//		==>mk:
+prj:project_{cur}.mk   UART_LOG_NOT_SUPPORT = 关
+prj:project_{cur}.mk   UBLOX_GPS_SUPPORT = 关
+//		==>pinmap:
+//		====>默认是GPIO，改成跟上面一样uart2模式
+config:pinmap_cfg_{config}.c   PIN_GPIO_20_CFG_REG
+config:pinmap_cfg_{config}.c   PIN_GPIO_21_CFG_REG
+//		====>pm_gpio_default_map
+//			{21  //这两个注释掉
+//			{20  //这两个注释掉
+//		====>默认uart2给GPS用了，也得还原
+config:pinmap_cfg_{config}.c   PIN_GPIO_4_CFG_REG
+config:pinmap_cfg_{config}.c   PIN_GPIO_5_CFG_REG
+//		==>gpio:
+//		====>改成:GPIO_PROD_NUM_INVALID
+//			GPIO_PROD_HEART_LED_ID
+//			GPIO_PROD_TEMP_INT_ID
+config:gpio_cfg_{config}.c  GPIO_PROD_HEART_LED_ID
+//		==>波特率默认是921600，如果不行就改成115200，115200丢log有点多
+MS_Ref\source\base\src\init.c   BAUD_921600
 
 
 
@@ -64,16 +93,23 @@ prj:project_{cur}.mk   MMI_MULTI_GREEN_KEY =DUAL 绿键
 
 // --key--按键丝印
 //		==>SCI_VK_HOME
-config:uis8910ff_refphone\keymap_cfg.c  keymap\[\]
-config:uis8910ff_refphone\keymap_cfg.c  X225U_KEYMAP_STYLE
-config:uis8910ff_refphone\keymap_cfg.c  SCI_VK_CALENDER
+config:keymap_cfg.c  keymap\[\]
+config:keymap_cfg.c  X225U_KEYMAP_STYLE
+config:keymap_cfg.c  SCI_VK_CALENDER
 
 
 ### key (im)
 // 详细键值
 Save:node\C\study\Macro_im_8910.h  __keymap__
-// shift
+// --key--虚拟值转实际值
+Save:node\C\study\Macro_doc_8910.h  __keyKbd__
+// --key--发送信号
+Save:node\C\study\Macro_doc_8910.h  __keySig__
+// --key--保存状态
 Save:node\C\study\Macro_doc_8910.h  __keyStatus__
+// --key--点亮屏/侧键
+Save:node\C\study\Macro_doc_8910.h  __keySlide__
+
 
 
 
@@ -90,29 +126,31 @@ prj:{cfg}.cfg   MAINLCD_LOGIC_ANGLE = 90
 // 三线一通道
 prj:{cfg}.cfg   LCD_SPI = 3WIRE_9BIT_1DATA
 prj:{cfg}.cfg   SUBLCM_INTERFACE = SPI
-config:uis8910ff_refphone\lcm_cfg_info.c  USE_3_LINE_LCD
+config:lcm_cfg_info.c  USE_3_LINE_LCD
 driver:lcd\tft_ST7735S.c  USE_3_LINE_LCD
 // 三线二通道
 prj:{cfg}.cfg   LCD_SPI = 3WIRE_9BIT_2DATA
 prj:{cfg}.cfg   SUBLCM_INTERFACE = SPI
-config:uis8910ff_refphone\lcm_cfg_info.c  TWO_DATA_LINE_LCD
+config:lcm_cfg_info.c  TWO_DATA_LINE_LCD
 driver:lcd\tft_ST7735S.c  TWO_DATA_LINE_LCD
 // 四线一通道
 prj:{cfg}.cfg   LCD_SPI = 4WIRE_8BIT_1DATA
 prj:{cfg}.cfg   SUBLCM_INTERFACE = NONE
-config:uis8910ff_refphone\lcm_cfg_info.c  ONE_DATA_LINE_LCD
+config:lcm_cfg_info.c  ONE_DATA_LINE_LCD
 driver:lcd\tft_ST7735S.c  TWO_DATA_LINE_LCD
 // 四线二通道
 prj:{cfg}.cfg   LCD_SPI = 4WIRE_8BIT_2DATA
 prj:{cfg}.cfg   SUBLCM_INTERFACE = NONE
-config:uis8910ff_refphone\lcm_cfg_info.c  TWO_DATA_LINE_LCD
+config:lcm_cfg_info.c  TWO_DATA_LINE_LCD
 driver:lcd\tft_ST7735S.c  ONE_DATA_LINE_LCD
 
 //
 driver:lcd/
 driver:lcd/tft_ST7789.c
+driver:lcd/tft_st7789v2.c
 driver:lcd/tft_GC9106.c
 driver:lcd/tft_ILI9342.c
+driver:lcd/tft_GC9307.c
 driver:lcd/tft_GC9308.c
 
 
@@ -151,6 +189,7 @@ chip_drv\chip_module\analog\v7\analog_phy.c  s_ana_bln_sw_tab
 chip_drv\chip_module\analog\v7\analog_phy.c  BLTC_LCM_CURRENT_V
 chip_drv\chip_module\analog\v7\analog_phy.c  s_ana_dev_tab
 //	背景电流 = BLTC_LCM_CURRENT_V
+chip_drv\chip_module\analog\analog_phy.h  LCM_V_SW
 
 //	--目录--107
 make\chip_drv\def_config\
@@ -177,6 +216,18 @@ MS_Ref\source\lcd\src\lcd_uix8910.c  LCD_DUAL_SPI_FREQ_SUPPORT
 //	SUBLCD_SIZE      = 128X160  
 SPDE_PRJ\K220U_SHY_517T\uis8910_phone_user_base_config.cfg
 
+// lcd_id
+//		==>_LCM_DevIdIdentify
+//		====>LCM_GetCfgInfo             # 注释掉if打印ID
+//		======>.s_main_lcm_cfg_tab
+//		====>.lcm_dev_id
+//		======>LCD_DRV_ID_ST7789V2
+//		========>.lcm_driver_IC         # test str
+//		====>注释掉if打印ID
+//		==>EngShowHWVersionWinHandleMsg
+//		====>LCD_GetDriverIC
+//		======>LCM_IC_GetInfo           # 增加 default-sprintf
+
 
 
 [1.5] CAM
@@ -188,28 +239,38 @@ prj:{cfg}.cfg   CAMERA_SUPPORT = TRUE
 make\custom_drv\custom_drv.mk  sensor_gc032A.c
 // 2.
 config:ums9117_barphone/sensor_cfg.c
-config:uis8910ff_refphone\sensor_cfg.c main_sensor_infor_tab
+config:sensor_cfg.c main_sensor_infor_tab
 // 二行：
 //	extern const SENSOR_INFO_T g_GC6153_yuv_info;
 //	&g_GC6153_yuv_info,
 
-// 3.
+// 3.方向
 //		==>修改亮度: {0x92, 0x50}
 driver:dc/
 driver:dc/sensor_gc032A.c
 driver:dc/sensor_gc6153.c
+driver:dc/sensor_gc6133.c  Set_GC6133_Preview_Mode
+driver:dc/sensor_bf30a2.c  BF30A2_set_preview_mode
 
 
-// 4.(8910)
+// 4.(8910 8W/30w)
 MS_Ref\source\dc\sensor\sensor_drv.c  SENSOR_DRV_ID_GC6133
 //		==>camera_get_cfg
 //		====>g_dcam_cfg_8W_240x320
-MS_Ref/source/dc/dc_common/src/dcamera_cfg.c
+MS_Ref/source/dc/dc_common/src/dcamera_cfg.c  camera_get_cfg
 //		====>g_dcam_cfg_8W_240x320
 MS_Ref/source/dc/dc_common/src/dcamera_8W_240x320.c
+MS_Ref/source/dc/dc_common/src/dcamera_30W_240x320.c
 
 //
 //prj:project_{cur}.mk SENSOR_CHIP
+
+
+// (8910 GC6133)
+MS_Customize/source/product/driver/dc/sensor_gc6133.c
+MS_Ref/source/dc/dc_common/src/dcamera_8W_240x320.c  SPI_OUT_Y0_U0_Y1_V0
+MS_Ref/source/dc/dc_common/src/dcamera_cfg.c
+MS_Ref/source/dc/sensor/sensor_drv.c  SENSOR_DRV_ID_GC6133
 
 // 107
 prj:project_{cur}.mk CAMERA_SUPPORT   = TRUE
@@ -247,22 +308,54 @@ driver:tp\src\
 driver:tp\src\tp_cst816s.c  TOUCH_KEYPAD_NOT_SUPPORT
 driver:tp\src\tp_bl6133.c  TOUCH_KEYPAD_NOT_SUPPORT
 
+// tp
+make\custom_drv\custom_drv.mk  CAP_TP_SUPPORT
 
-	
+// tp--init
+//		==>BL6133_Initial
+//		====>bl_get_chip_id
+//		======>
+//		======>bl_update_fw
+//		========>bl_update_fw_for_self_ctp
+//		==========>bl_download_fw
+//		============>bl_write_flash
+//		======>bl_i2c_transfer:i2c transfer error___
+//		========>btl fw update start bl_download_fw error retry=2
+
+
 [1.7] ECG
 // 
 
 	
 [1.8] HEART_RATE
-//HEART_RATE_SENSOR_SUPPORT
+// hr
+make\custom_drv\custom_drv.mk  HEART_RATE_SENSOR_SUPPORT
+//
+sensors:bd1662\
+sensors:dummy_hr\
 
-	
+
 [1.9] breathled
 sensors:breathled\led_et6037y.c
 sensors:breathled\led_AW2013.c
 
 
-[1.10] 
+[1.10] motionsensor
+// 计步
+prj:{cfg}.cfg         MOTION_SENSOR_TYPE = QMA7981
+prj:{cfg}.cfg         MOTION_SENSOR_TYPE = QMA6100-TR
+// 
+driver:motionsensor\
+driver:motionsensor\accelerometer\msensor_qmaX981.c
+
+//
+make\custom_drv\custom_drv.mk  QMA7981
+
+
+[1.11] 
+
+
+[1.12] 
 
 
 
@@ -361,20 +454,11 @@ key:MULTIM,file:mmiset_export.h
 key:KEYTABLE,file:mmiim_sp_ml9key_data.c
 
 
+###
+//
+Save:node\C\study\Macro_res_8910.h __lang__
 
 
-## 繁体
-IM_SIMP_CHINESE_SUPPORT	= FALSE	          
-MMI_DISPLAY_SIMP_CHINESE_SUPPORT = FALSE  
-IM_TRAD_CHINESE_SUPPORT = TRUE            
-MMI_DISPLAY_TRAD_CHINESE_SUPPORT = TRUE   
-MMI_LANG_HAN_VECTOR_DEFAULT_ADD_SIMP_LIB = TRUE
-MMISET_EDEFAULT_INPUT_LANGUAGE_TRAD_CN = TRUE
-
-## 关中文     
-prj:project_{cur}.mk  IM_SIMP_CHINESE_SUPPORT = FALSE
-prj:project_{cur}.mk  MMI_DISPLAY_SIMP_CHINESE_SUPPORT = FALSE
-prj:uis8910_phone_base_config.cfg  IM_SIMP_CHINESE_SUPPORT
 
 
 [2.6] 情景模式 音频参数:
@@ -474,7 +558,7 @@ source:mmi_service\export\inc\mmi_custom_define.h  xx  SBD_ALERT_WIN_TIME_PERIOD
 // time--format-12
 source:mmi_app\app\setting\c\mmiset_display.c  MMI_TIME_DISPALY_TYPE_DEFAULT_12
 
-// time--system
+// time--system--107
 MS_Ref/source/base/src/sys_time.c  s_sys_default_date
 
 
@@ -608,6 +692,12 @@ uart抓trace:
 //8 para set->usb log:close (不确定)
 //8 para set->debug (para)->assert:open  (不确定开不开)
 
+//工程模式设置:(8910 user)
+//8 para set->ap log:open
+//8 para set->cp log:open
+//8 para set->usb log:close (不确定)
+//8 para set->debug (para)->assert:open  (不确定开不开)
+
 
 ### 抓trace--压缩空间:
 prj:project_{cur}.mk FM_SUPPORT = NONE 
@@ -616,22 +706,15 @@ prj:project_{cur}.mk PIC_VIEWER_SUPPORT = FALSE
 
 
 // USB--log--ok
---         	10:33:09.907 	--	Start Logging[LittleEndian]                         	----->----                                   	0:05:43.325  	
---         	10:33:09.907 	--	Modem Version: FM_BASE_20A_THIN_MODEM_W20.39.4      	----->----                                   	0:05:43.325  	
---         	10:33:09.907 	--	ParserLib Version: FM_BASE_20A_THIN_MODEM_W20.39.4  	----->----                                   	0:05:43.325  	
---         	10:33:09.907 	--	Tool Version: R9.20.3101.0                          	----->----                                   	0:05:43.325  	
---         	10:27:26.582 	--	Lost 8956 PS packets in channel, SN range:(152804,161759)	----->----                                   	0:00:00.000  	
---         	10:27:26.582 	--	Lost 25 PS packet(s) on CP side                     	----->----                                   	0:00:00.000  	
-163457-1   	10:33:09.907 	--	*Unknown:0x0001                                     	AUDIO->*Unknown:0x0083                       	0:05:43.325  	
+//--         	10:33:09.907 	--	Start Logging[LittleEndian]                         	----->----                                   	0:05:43.325  	
+//--         	10:27:26.582 	--	Lost 8956 PS packets in channel, SN range:(152804,161759)	----->----                                   	0:00:00.000  	
+//--         	10:27:26.582 	--	Lost 25 PS packet(s) on CP side                     	----->----                                   	0:00:00.000  	
 
 // USB--log--err
---         	10:36:07.278 	--	Start Logging[LittleEndian]                         	----->----                                   	0:00:00.000  	
---         	10:36:07.278 	--	Modem Version: FM_BASE_20A_THIN_MODEM_W20.46.4      	----->----                                   	0:00:00.000  	
---         	10:36:07.278 	--	ParserLib Version: FM_BASE_20A_THIN_MODEM_W20.39.4  	----->----                                   	0:00:00.000  	
---         	10:36:07.278 	--	Tool Version: R9.20.3101.0                          	----->----                                   	0:00:00.000  	
---         	10:36:07.278 	--	Lost a PS packet in channel, SN:2243527             	----->----                                   	0:00:00.000  	
---         	10:36:07.278 	--	Lost 5948 PS packets in channel, SN range:(2243579,2249526)	----->----                                   	0:00:00.000  	
---         	10:36:07.278 	--	Lost 1999 PS packets in channel, SN range:(2249528,2251526)	----->----                                   	0:00:00.000  	
+//--         	10:36:07.278 	--	Start Logging[LittleEndian]                         	----->----                                   	0:00:00.000  	
+//--         	10:36:07.278 	--	Lost a PS packet in channel, SN:2243527             	----->----                                   	0:00:00.000  	
+//--         	10:36:07.278 	--	Lost 5948 PS packets in channel, SN range:(2243579,2249526)	----->----                                   	0:00:00.000  	
+//--         	10:36:07.278 	--	Lost 1999 PS packets in channel, SN range:(2249528,2251526)	----->----                                   	0:00:00.000  	
 
 
 
@@ -663,6 +746,9 @@ cmd_s: cd build\{cur}_builddir\log&&findstr /s /i "ERROR" *.log>aaaa.txt&&start 
 build\{cur}_builddir\log\aaaa.txt Error:
 // open cmd:
 cmd: cmd
+
+// --set
+Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 
 
 [2.17] Build问题

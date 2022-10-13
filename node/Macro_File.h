@@ -134,6 +134,10 @@ Save:Help\Other\Macro_Help_cmd.h
 
 [2.1] win
 Save:node\ToolsMsg\Macro_win.h
+//
+Save:node\ToolsMsg\
+Save:node\ToolsMsg\Macro_sprd.h
+Save:node\ToolsMsg\Macro_mtk.h
 
 
 [2.2] Office

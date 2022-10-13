@@ -438,6 +438,9 @@ git format-patch 前提交..后提交
 对方用git am *.patch
 没提交可以用git diff > *.patch不标准
 
+// git-patch
+//
+patch -p1 < sim_int.patch
 
 
 [2.11] git stash

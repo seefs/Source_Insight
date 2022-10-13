@@ -21,14 +21,14 @@ bat:\\
 
 
 ### 1.cfg
-nvKey  = K220_C61_AUDIO_BB
+nvKey  = K220_T3_AUDIO_BB
 
-boardKey  = K220M_YGW_BB
+boardKey  = K220M_T3_BB
 
 lcdKey  = K220D_QVGA_SH_LCM
 
 ### 2.cur
-curKey = K220B_XW_W03
+curKey = K220_SUOAI_T3
 GSMKey = GSM
 
 ### 3.copy

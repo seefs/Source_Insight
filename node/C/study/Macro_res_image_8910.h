@@ -112,6 +112,21 @@ app:wallpaper\h\wallpaper_mdu_def.h  IMAGE_WALLPAPER_DEFAULT
 //		========>anim_ctrl_ptr->display_info.bg->color
 //		======>anim_ctrl_ptr->data_info.img_id
 
+// idle--wallpaper
+//		==>IdleWin_HandleMsg
+//		====>OPEN:
+//		======>MMIAPIIDLE_CreatWallpaperCtrl
+//		========>MMIAPIIDLE_SetInitWallpaper
+//		==========>CreatWallpaperCtrl
+//		======>.wallpaper_info.wallpaper_type
+//		======>GUIWIN_SetStbBgImageId
+// lock--wallpaper
+//		==>MMIKL_HandleKLDispWinMsg
+//		====>FOCUS:
+//		======>MMIKL_CreatWallpaperCtrl
+//		====>SetKeyLockControlParam
+//		======>GUIANIM_SetOwnerDraw
+
 
 
 [1.4] charger关机/充电动画
@@ -127,7 +142,9 @@ images:common\MMI_RES_DEFAULT\IMAG\key_lock\
 [1.5] Statusicons
 // --status
 prj:project_{cur}.mk   MMI_STATUSBAR_ICON_BLACK
+//
 images:common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\
+images:common\MMI_RES_DEFAULT\IMAG\SUBLCD_SIZE_128_160\sub_icon\battery_syle4\
 
 // --status--bg
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_STATUSBAR_BG
@@ -138,7 +155,6 @@ app:theme\c\mmitheme_statusbar.c  IMAGE_STATUS_BAR
 // --bat
 source:mmi_app\common\h\common_mdu_def.h  battery_syle1
 images:common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\battery_syle1\
-
 // --bat--sub
 source:mmi_app\common\h\common_mdu_def.h  SUBIDLE_ICON_BATTERIES_CHARGE1
 images:common\MMI_RES_DEFAULT\IMAG\SUBLCD_SIZE_128_160\sub_icon\
@@ -233,6 +249,7 @@ images:common\MMI_RES_DEFAULT\IMAG\Dial\CallnumS\
 images:audioplayer\MMI_RES_DEFAULT\IMAG\L680_new_music\
 images:audioplayer\MMI_RES_DEFAULT\IMAG\
 images:audioplayer\MMI_RES_DEFAULT\IMAG\new\
+images:multim\MMI_RES_DEFAULT\IMAG\
 
 // mp3--bg--1X1
 app:audioplayer\h\audioplayer_mdu_def.h  IMAGE_MP3_ALBUM_BG
@@ -264,6 +281,8 @@ app:audioplayer\h\audioplayer_mdu_def.h  IMAGE_MP3_MUSIC_MAIN_SMALL_PLAY2
 
 // old--Progress
 app:audioplayer\h\audioplayer_mdu_def.h  IMAGE_COMMON_PLAYER_PROCESS_SLIDE
+// osd--shuffle--28X16
+app:multim\h\multim_mdu_def.h  IMAGE_COMMON_BTN_SHUFFLE_ON
 
 
 
@@ -290,12 +309,19 @@ app:cc\h\cc_mdu_def.h  IMAGE_CALLUI_EMERGENCYCALL
 
 // call--volte--20*20
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CALLING_VOLTE
+// call--hd--20*20
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_CALLING_HD
 // call--sim1--16*16
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CUSTOM_SIM1_SMALL
 
 
 // --同名
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_SETTINGS_SIM1_ICON
+
+// --不清楚什么用
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_PREFERRED_SIM1
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_PREFERRED_SIM2
+
 
 // make call--select--24*24
 //		==>HandleCallSIMSelectWinMsg
@@ -576,6 +602,9 @@ app:fm\h\fm_mdu_def.h  IMAGE_FM_ADJ_BG
 images:tools\MMI_RES_DEFAULT\IMAG\calculator\B\
 // calc--num--bg--1*1
 app:accessory\h\tools_mdu_def.h  IMAGE_CALC_NUMBER_BACKGROUND_BAR
+// calc--char--bg--1*1
+app:accessory\h\tools_mdu_def.h  IMAGE_CALC_OPERATOR_BACKGROUND_BAR
+
 
 
 [1.21] __alarm__
@@ -593,6 +622,9 @@ images:common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\
 app:pb\h\pb_mdu_def.h  IMAGE_PHONEBOOK_SIM2MEMORY, IMAGE_SIM2
 // status--sim--18*18
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_SIM2
+
+//
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_SIM1_BLACK
 
 
 // pb--photo--cam / Tcard / default
@@ -642,6 +674,7 @@ app:cc\h\cc_mdu_def.h  IMAGE_CL_PRE_SIM_1  # 24*24
 [1.24] common
 ### __tab__
 images:common\MMI_RES_DEFAULT\IMAG\Tab\
+images:common\MMI_RES_DEFAULT\IMAG\Title\
 
 // 
 //	IMAGE_CONTROL_TAB_DEFAULT
@@ -649,21 +682,31 @@ images:common\MMI_RES_DEFAULT\IMAG\Tab\
 //	// sms--box--tab
 
 // tab--line--theme
-app:theme\c\mmitheme_tab.c  dividing_line = IMAGE_TAB_LINE
+app:theme\c\mmitheme_tab.c  bg_image_id   = IMAGE_TAB_BG      //240*320
+app:theme\c\mmitheme_tab.c  bg_image_id   = IMAGE_TITLE_BAR2  //128*160
+app:theme\c\mmitheme_tab.c  dividing_line = IMAGE_TAB_LINE    //仅240*320
 app:theme\c\mmitheme_tab.c  height_bg_info.img_id = IMAGE_TAB_SELECT1
 
-// tab--line--2*38 (font30)
+// tab--line--
+//		====>(font30),  2*38 
+//		====>(240*320), 2*30
+//		====>(128*160), 
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TAB_SEPARATED_FONT30
-// tab--line--2*30
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TAB_SEPARATED
 
-// tab--select--1*32, 1*40 (高度可不改)
+// tab--select--(高度可不改)
+//		====>(font30),  1*40
+//		====>(240*320), 1*32 
+//		====>(128*160), 22*22
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_TAB_SELECT1
 
-// tab--bg--1*40
+// tab--bg--(高度要改)
+//		====>(font30),  1*40
+//		====>(240*320), 1*32 
+//		====>(128*160), 
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TAB_DEFAULT_FONT30
-// tab--bg--1*32 (高度要改)
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TAB_DEFAULT_B
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_TITLE_BAR2
 
 
 ### __title__

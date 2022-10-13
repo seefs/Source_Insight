@@ -12,7 +12,7 @@ Save:node\C\study\Macro_res_color_8910.h \[1.5\] win----------
 Save:node\C\study\Macro_res_color_8910.h \[1.6\] test
 Save:node\C\study\Macro_res_color_8910.h \[1.7\] call
 Save:node\C\study\Macro_res_color_8910.h \[1.8\] theme
-Save:node\C\study\Macro_res_color_8910.h \[1.9\] display------
+Save:node\C\study\Macro_res_color_8910.h \[1.9\] display------≥£”√
 Save:node\C\study\Macro_res_color_8910.h \[1.10\] sms
 Save:node\C\study\Macro_res_color_8910.h \[1.11\] set
 Save:node\C\study\Macro_res_color_8910.h \[1.12\] form--------form theme
@@ -284,6 +284,11 @@ app:eng\c\mmieng_base.c  mmi_eng_display
 //		======>item_style_ptr->content[i].font_focus
 //		======>item_style_ptr->content[i].font
 //		======>MMI_LIST_EXPAND_ITEM_FONT       # --w exp/nor 26
+//		======>color:
+//		========>.text_style.font_color
+//		==========>
+//		============>
+//		==============>
 //		==>softkey                             # --f40 –¥À¿
 Save:node\C\study\Macro_pos_8910.h   __list__
 

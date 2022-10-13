@@ -328,10 +328,19 @@ source:mmi_app\app\mainmenu\c\mainmenu_win.c  case^ID_ENTERTAIMENT_CAMERA
 [1.4] dial
 // Open
 //		==>MMIAPIIDLE_OpenDialWin
-//		====>MMIAPIIDLE_EditDialWin
-//		======>MMK_CreateWindow   # win
-//		======>InitDialEdit
-//		======>MMK_CreateControl  # softkey
+//		====>MMIAPIIDLE_EditDialWin(key5)
+//		======>phone:
+//		========>MMK_CreateWindow   # win
+//		========>InitDialEdit
+//		========>MMK_CreateControl  # softkey
+//		======>tp:
+//		========>MMIIDLE_DIAL_WIN_TAB
+//		==========>MMIAPIIDLE_GetNumMsgId
+//		========>OPEN:
+//		==========>CreateCtrlOfDialWin
+//		============>CreateDialPanel
+//		==============>UpdateDialCoordinate (btn)
+//		==============>CreateNumberButtons (edit)
 app:idle\c\mmiidle_dial.c  HandleDialWinMsg
 
 
@@ -367,6 +376,8 @@ app:idle\c\mmiidle_dial.c  HandleDialWinMsg
 source:mmi_kernel\include\mmi_theme.h  BIG_DIAL_NUM
 
 ### Dial
+// ==>pos
+Save:node\C\study\Macro_pos_8910.h  __Dial__
 // --image
 Save:node\C\study\Macro_res_image_8910.h  __Dial__
 // --down0
@@ -519,11 +530,32 @@ app:fmm\c\mmifmm_mainwin.c HandleMenuOption
 // record
 app:fmm\c\mmifmm_mainwin.c HandleRecordListWinMsg
 
+// U盘名称
+//		==>APP_Init
+//		====>MMIAPI_InitUdiskRenameFlag
+//		====>MMIAPIFMM_SetDeviceLabel
+//		==>MMISET_CleanUserData
+//		====>MMIAPI_SetUdiskRenameFlag
+//		==>sd:
+//		====>MMIAPISD_Init
+//		======>MMIAPI_SetUdiskRenameFlag
+//		========>set:UDISK, name2
+//		==>udisk:
+//		====>MMIAPISD_Init
+//		======>MMIAPI_SetUdiskRenameFlag
+//		========>set:UDISK, name2
+
+
 // FILE
 MMIFMM_HandleOpenFileWin
 // 不进U盘 __UsbMode__
 app:udisk\c\mmiudisk_wintab.c  USB_CONNECT_DEFAULT_CHARGE
 app:udisk\c\mmiudisk_wintab.c  MMI_WATCH_NEW_STYLE
+// 默认进U盘 
+app:udisk\c\mmiudisk_wintab.c  is_SetOn!=USB_SERVICE_MAX
+//	add:
+//		is_SetOn = USB_SERVICE_UDISK;
+
 // usb
 app:udisk\c\mmiudisk_wintab.c  MMI_RESULT_E^^HandleUsbOperSelectWindow
 
@@ -571,14 +603,23 @@ app:setting/c/mmiset_phonewin.c  MMISET_INPUT_RESET_FACTORY_PWD_WIN_TAB
 app:setting\c\mmiset_callwin.c  InitPdaCallOtherSettingsCtrl
 // cl set--set Name
 app:setting\c\mmiset_callwin.c  MMI_RESULT_E^HandleEditSimNameWindow
+// cl set--set time
+app:setting\c\mmiset_callwin.c  MMI_RESULT_E^HandleSetMinuteReminderEditWindow
 // fly--open
 app:setting\c\mmiset_callwin.c  HandleFlyModeOpenPhoneWindow
-
+// set--connect
+//		==>HandleConnectionMenuWinMsg
+//		====>InitPdaConnectionMainListCtrl
+//		==>MMIAPISET_OpenNetWorkTypeWin
+//		====>HandleNetworkTypeWindow
+app:connection\c\mmiconn_manager_wintab.c  MMIAPICONNECTION_OpenMenuWin
 
 
 // Reset
 Save:node\C\study\Macro_fun_8910.h  __reset__
 
+// set--short
+Save:node\C\project\Macro_cfg_8910.h  __shortcut__
 
 
 // sos
@@ -686,8 +727,10 @@ MMK_DestroyControl(MMICC_CONNECTED_STATE_LABEL_CTRL_ID);
 ### call
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __call__
+Save:node\C\study\Macro_pos_8910.h  __WaCall__
 // ==>image
 Save:node\C\study\Macro_res_image_8910.h __call__
+Save:node\C\study\Macro_res_image_wa8910.h __WaCall__
 // ==>font/color
 Save:node\C\study\Macro_res_color_8910.h  __call__
 // ==>键
@@ -707,7 +750,6 @@ app:cc\c\mmicc_app.c  case^APP_MN_SETUP_IND
 //		==============>PdaDisplaySingleCallInfoForCommon
 app:cc\c\mmicc_{wintab}.c  MMICC_MT_CALLING_WIN_TAB  MMICC_ANIMATION_WIN_ID
 app:cc\c\mmicc_{wintab}.c  PdaDisplaySingleCallInfoForCommon  
-
 
 
 // 流程--去电-MO，
@@ -774,6 +816,8 @@ app:cc\c\mmicc_{wintab}.c  MMI_CALL_SOFTKEY_SILENT_FIX
 
 
 // 112
+//		==>MMIAPICC_IsEmergencyNum
+//		====>if(0 == strcmp(tele_num, "112"))     # 进112界面
 app:cc\c\mmicc_{wintab}.c  MMICC_MENU_EMERGENCY_OPT_WIN_TAB  
 
 
@@ -883,6 +927,9 @@ app:cc\c\mmicc_{wintab}.c  MMI_RESULT_E^HandleHoldMenuWinMsg
 //		if(MMIAPICC_IsHandFree() == FALSE)
 //			EnableHandfreeMode(!MMIAPICC_IsHandFree());
 
+// call--助听功能--8910
+app:cc\c\mmicc_{wintab}.c  MMI_IDLE_8_KEY_LONG_TO_HANDHOLD  
+
 
 [1.10] pb, cl
 // enter
@@ -912,8 +959,9 @@ app:pb\c\Mmipb_view.c  MMIPB_MAIN_WIN_ID
 //		========>MMIPB_OpenPbWin      # func
 //		==========>MMK_CreateWinByApplet
 //		==========>PbCreateChildWin
+//		============>MMIPB_CreateAllContactTabWin
 app:pb\c\mmipb_view.c  MMIPB_ENTRY_LIST_TAB_WIN_TAB          # style-1 (107)
-RELOAD_SEARCH
+
 
 // init
 //		==>HandleEntryListWinMsg
@@ -1198,11 +1246,14 @@ app:pic_viewer\c\mmipicview_zoom.c  HandlePicZoomWinMsg
 // title
 ctrl:IconList\c\ctrliconlist.c  void^DisplayDelimiter
 app:pic_viewer\c\mmipicview_list.c  MMIPICVIEW_TITLE_COLOR
+// pic--view
+app:pic_viewer\c\mmipicview_preview.c  MMI_RESULT_E^HandlePicPreviewWinMsg
 // pic--item--details
 app:pic_viewer\c\mmipicview_wintab.c  HandlePicDetailWinMsg
 // pic--item--rename
 app:pic_viewer\c\mmipicview_wintab.c  HandlePicRenameWinMsg
 
+DrawSetlistItem
 
 
 ### pic
@@ -1426,11 +1477,16 @@ prj:project_{cur}.mk  VIDEO_PLAYER_SUPPORT = TRUE
 //		======>MMIAPIVP_EnterVdoPly
 //		========>MMIVP_MAIN_PLAY_WIN_TAB
 //		======>MMIVP_MAIN_PLAY_WIN_TAB_H
+app:videoplayer/c/mmivp_wintable.c  MMIVP_MAIN_PLAY_WIN_TAB_V
 app:videoplayer/c/mmivp_wintable.c  MMIVP_MAIN_PLAY_WIN_TAB_H
 //		==>SetFormParam      #竖屏可切换
+//		====>SetFormParamV
+//		======>.owndraw.v_space   #播放画面离标题间距/5
+//		======>.process.v_space   #进度条离播放画面间距/5
 //		====>SetFormParamH
 //		==>SetVPLayoutParam  #横屏不可切换
 app:videoplayer/c/mmivp_wintable.c  MMI_RESULT_E^HandleVPWinMsg
+app:videoplayer/c/mmivp_wintable.c  void^SetFormParamH
 // vp--play
 //		==>PlayOrPause
 //		====>VideoPlayerResume
@@ -1576,8 +1632,12 @@ Save:node\C\study\Macro_res_image_8910.h __Mp3__
 //		==>MMIAPIALM_OpenMainWin
 //		====>ALARM_MAINWIN_TAB               # style1
 //		======>HandleAlarmMainWinMsg
+//		========>ALARM_EDITWIN_TAB
+//		========>.GUIFORM_STYLE_UNIT
 //		====>ALARM_LIST_MAINWIN_TAB          # style2 (def)
 //		======>HandleCustomAlarmMainWinMsg
+//		========>ALARM_CUSTOM_EDITWIN_TAB
+//		========>.GUIEDIT_STYLE_MULTI_DYN_DOWN
 // alarm--edit
 //		==>ALARM_EDITWIN_TAB
 //		====>HandleAlarmEditWinMsg          # style1
@@ -1691,6 +1751,18 @@ source:mmi_app\common\c\mmi_pubwin.c  5352
 
 
 
+### 秒表/STOPWATCH
+//		==>HandleSecMenuStaticMsg
+//		====>ID_CLOCK:
+//		======>MMIAPI_OpenTimerWin
+//		========>HandleStopWatchWinMsg
+
+
+
+### STOPWATCH
+// ==>pos
+Save:node\C\study\Macro_pos_8910.h  __stopwatch__
+
 
 
 [1.19] calc
@@ -1704,6 +1776,7 @@ app:accessory\c\mmicalc_main.c  CALC_CTRL_TAB_H
 //		==>HandleCalcWinMsg
 //		====>InitFormWin
 //		======>InitButtonWidthandHeight   # 设置单元间距
+//		========>height.add_data          # --btn.H
 //		======>InitButtonFont             # font/color
 //		====>DisplayCalcBackground
 //		====>DisplayCalcFormulaEx         # 单行/双行
@@ -1724,6 +1797,12 @@ app:accessory\c\mmicalc_main.c  CALC_CTRL_TAB_H
 app:accessory\h\mmicalc_export.h     CALC_LINE_M_STARTX
 
 // draw
+//		====>line1:符号
+//		======>ACC_CALC_DISPLAY_M_SYMBOL
+//		====>line2:data1
+//		======>ACC_CALC_DISPLAY_FIRST_OPERAND
+//		====>line3:data2
+//		======>ACC_CALC_DISPLAY_MEMORY_DATA/ACC_CALC_DISPLAY_RESULT
 app:accessory\c\mmicalc_main.c  void^CalcRefreshContent
 app:accessory\c\mmicalc_main.c  void^InitButtonFont
 
@@ -1749,7 +1828,7 @@ app:accessory/h/mmiacc_position.h 128X128
 //		==>DrawMonthCalendar
 //		====>DrawMonthTitle  #title 1
 //		====>DrawYearTitle   #title 2
-//		====>DrawLunarDate   #title 3
+//		====>DrawLunarDate   #title 3, font15
 //		====>DrawSchdule
 //		====>DrawWeeks
 //		====>DrawMonthDates
@@ -1931,7 +2010,15 @@ MMIBT_GetBtStatusForIcon
 
 [1.24] env
 ### idle switch
+//		==>IdleWin_HandleMsg
+//		====>HASH:
+//		==>APP_Init
+//		====>MMIAPISET_AllInit
+//		======>MMISET_EnvSetInit
+//		========>s_mmienvset_pre_active_mode  # 没有读NV
 
+
+### env
 // env--enter
 //		==>MMIENVSET_OpenMainMenuWindow  # env
 //		====>HandleEnvSetMainMenuWindow

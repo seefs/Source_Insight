@@ -5,10 +5,10 @@ Save:Macro\sbd_test.em  OpenMiniTest
 bakPath = Save:Help\Tmp\target
 bak:\\
 
-// 显示log级别(testParam)
+// --显示log级别(testParam)
 //   1: 显示少量log
-//   2: 显示多数log
 testParam = 1
+//   2: 显示多数log
 //testParam = 2
 
 
@@ -16,10 +16,8 @@ testParam = 1
 MiniTest = True
 
 
-/***********************************************************************/
 
-
-//目录[Num][Ca]:
+//目录:
 // 1.FN
 Save:Help\Macro_Note_Test.h \[1.1\] F1----------------tree
 Save:Help\Macro_Note_Test.h \[1.2\] F2----------------
@@ -123,9 +121,6 @@ Save:Macro\sbd_f1.em  TreeNum
 
 
 [1.5] rule goto
-//
-Save:Macro\sbd_test.em  goto_copy
-
 
 //		==>Goto                     # 
 //		====>NoteHander             # cNum == 5
@@ -153,6 +148,7 @@ Save:Macro\sbd_ctrl.em  CtrlE
 
 	
 //1) 选中(goto_copy), 再ctrl+E
+Save:Macro\sbd_test.em  goto_copy
 //  复制--中文跳转:
 goto_copy  越
 goto_copy  越南
@@ -164,6 +160,7 @@ goto_copy  泰
 //		THAI
 
 //2) 选中(goto_select), 再ctrl+E
+Save:Macro\sbd_test.em  goto_select
 //  选中--英文跳转:
 goto_select  GC6133 (file)
 goto_select  USB
@@ -171,20 +168,25 @@ goto_select  PRODUCT_CONFIG (path)
 goto_select  CUSTOMER
 
 //3) 选中(rule_cn_soft), 再ctrl+E
+Save:Macro\sbd_test.em  rule_cn_soft
 //  批量测试中文排序的准确性
 //		(略)
 
 //4) 选中(rule_en_soft), 再ctrl+E
+Save:Macro\sbd_test.em  rule_en_soft
 //  批量测试英文排序的准确性
 //		(略)
 
 //5) 选中(rule_cn_find), 再ctrl+E
+Save:Macro\sbd_test.em  rule_cn_find
 //  查找中文跳转
 //		(略)
 
 //6) 选中(rule_en_find), 再ctrl+E
+Save:Macro\sbd_test.em  rule_en_find
 //  查找英文跳转
 //		(略)
+
 
 
 [1.6] rule soft
@@ -273,10 +275,30 @@ group  mmialarm.c
 
 
 [1.11] Note快捷键--
-快捷键[Ca]:
 F11:打开/关闭笔记
 F2: 打开选择的路径/文件; 文件名+扩展名
 F5: 打开sln文件/cmd命令+右键粘贴; 当前行以set、cmd、make/ctmake/xmake、open、vc、vs08开头; 默认打开文件+关键字(行)
+
+### goto_word
+//1) 带空格跳转
+Save:Help\Other\Macro_Help_note.h  BOOLEAN^MMI_BB
+
+//2) 带空格跳转
+Save:Help\Other\Macro_Help_note.h  BOOLEAN^MMI_BB
+
+
+//
+goto>>>word
+>>>  func;有分号下一个
+goto>>>word
+>>>  下一字符非空格, 下一个空格/tab
+有^就找第2个
+//
+word1 word2, #word3, 下一个搜索
+
+//
+app:accessory\h\mmiacc_position.h  {size}  CALENDAR_MONTH_TITLE_RECT_H
+
 
 
 [1.12] 

@@ -247,12 +247,25 @@ zdt:c\zdt_tcp.c sci_sock_recv
 
 
 [1.12] log
+### __log__
 ### zdt
 zdt:c\zdt_app.c  MMIZDT_AppInit
 zdt:c\zdt_app.c  MMIZDT_InitModule
 //
-common:h\mmi_appmsg.h  MSG_USRE_LOG_BUF_SAVE
-app:phone\c\mmiphone.c  MSG_USRE_LOG_BUF_SAVE
+common:h\mmi_appmsg.h  MSG_WATCH_LOG_BUF_SAVE
+app:phone\c\mmiphone.c  MSG_WATCH_LOG_BUF_SAVE
+//		==>1:
+//		==>Trace_BUF_Save
+//		====>WatchTest_Get_FileName
+//		======>UserFile_WriteExt
+//		==>2:
+//		==>WatchTest_Log_Save
+//		====>WatchTest_Get_FileName
+//		======>UserFile_WriteExt
+
+
+### tihu
+Save:node\C\study\Macro_tihu_8910.h \[1.19\] log
 
 
 ### fzd
@@ -284,6 +297,8 @@ MS_MMI_Main/source/mmi_kernel/source/c/mmk_kbd - 副本.c
 //    {
 //        return;
 //    }
+
+
 
 
 [1.13] file
@@ -494,6 +509,9 @@ app:spde\c\spde_wintable.c  SPDE_MAINMENU_STAT_E;
 app:spde\c\spde_wintable.c  SpdeMenuDlgEventHandlers
 // func
 app:spde\c\spde_wintable.c  watch_mainmenu_key_enter_hdlr
+// res
+app:spde\h\spde_mdu_def.h  IMAGE_SPDE_ALARM_CLOCK
+
 
 
 ### 3.ZMAEE
@@ -1025,6 +1043,10 @@ app:phone\c\mmiphone.c  HandleShutDownWinMsg
 // enter
 app:phone\c\mmiphone_charge.c  MMI_RESULT_E^HandleChargeStartInd
 
+// ==>image
+Save:node\C\study\Macro_res_image_wa8910.h  __charge__
+
+
 // 开机充电
 //		==>HandleChargeStartInd
 //		====>WatchLAUNCHER_ChargeTip_Enter (短充)
@@ -1032,7 +1054,7 @@ app:phone\c\mmiphone_charge.c  MMI_RESULT_E^HandleChargeStartInd
 //		====>WatchLAUNCHER_Charge_Enter (长充)
 app:launcher\c\watch_charge_win.c  HandleLauncherChargeTipWinMsg
 
-// 关机充电
+// 关机充电 / 长充
 //		==>HandleChargeStartInd
 //		====>WatchLAUNCHER_Charge_Enter (长充)
 //		======>WATCH_LAUNCHER_CHARGE_WIN_ID

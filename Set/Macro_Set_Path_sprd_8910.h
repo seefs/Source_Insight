@@ -24,7 +24,7 @@ appPath     = MS_MMI_Main\source\mmi_app\app\
 commonPath  = MS_MMI_Main\source\mmi_app\common\
 ctrlPath    = MS_MMI_Main\source\mmi_ctrl\source\
 guiPath     = MS_MMI_Main\source\mmi_gui\source\
-configPath  = MS_Customize\source\product\config\
+configPath  = MS_Customize\source\product\config\uis8910ff_refphone\
 driverPath = MS_Customize\source\product\driver\
 sensorsPath = MS_Customize\source\product\driver\sensors\
 
@@ -40,6 +40,9 @@ prj:\\
 projectKey   = X225U_HQVGA
 curKey   = UIS8910_ROM_16MB_DS_USER
 cfgKey   = uis8910_phone_user_base_config
+//sizeNext  = 1
+//size1Key  = 240X320
+//size2Key  = 240X320
 sizeNext  = 2
 size1Key  = 320X240
 size2Key  = 240X320

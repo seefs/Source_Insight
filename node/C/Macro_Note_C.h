@@ -71,8 +71,10 @@ Save:node\C\project\Macro_Note_6533.h
 
 [1.3] ext
 // ext
+Save:node\C\study\
 Save:node\C\study\Macro_slide_8910.h
 Save:node\C\study\Macro_zdt_8910.h
+Save:node\C\study\Macro_tihu_8910.h
 Save:node\C\study\Macro_zmaee_8910.h
 Save:node\C\study\Macro_sch_8910.h
 Save:node\C\study\Macro_socket_8910.h

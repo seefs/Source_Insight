@@ -11,7 +11,7 @@ Save:node\C\study\Macro_nv_8910.h \[1.8\] nv define
 Save:node\C\study\Macro_nv_8910.h \[1.9\] nv test
 Save:node\C\study\Macro_nv_8910.h \[1.10\] IMEI
 Save:node\C\study\Macro_nv_8910.h \[1.11\] bat_capacity
-Save:node\C\study\Macro_nv_8910.h \[1.12\] custom
+Save:node\C\study\Macro_nv_8910.h \[1.12\] custom---------链路
 Save:node\C\study\Macro_nv_8910.h \[1.13\] nv_build
 Save:node\C\study\Macro_nv_8910.h \[1.14\] nand/nor
 Save:node\C\study\Macro_nv_8910.h \[1.15\] test
@@ -141,10 +141,12 @@ SPDE_PRJ\K220U_HYBL_H660A\project_UIS8910_ROM_16MB_DS_USER.mk 3IN1
 SPDE_PRJ\K220U_SHY_517T\project_UIS8910_ROM_16MB_DS_USER.mk 3IN1
 
 
-// 单独听筒
-SPDE_PRJ/K220U_HYBL_H661A/project_UIS8910_240x320BAR_16MB_DS_USER.mk
+
+
+### 单独听筒
+SPDE_PRJ/K220U_HYBL_H661A/project_UIS8910_240x320BAR_16MB_DS_USER.mk  3IN1
 //
-prj:project_{cur}.mk   AUDIO_AMP_CLASSK_3IN1_SUPPORT = TRUE
+prj:project_{cur}.mk   AUDIO_AMP_CLASSK_3IN1_SUPPORT = FALSE  #关
 prj:project_{cur}.mk   AUDIO_AMP_CLASSK_SUPPORT = TRUE
 // 听筒声音太小
 prj:project_{cur}.mk   ENG_EX_MIC_TEST_SUPPORT = TRUE # 回声测试从喇叭出来
@@ -154,13 +156,16 @@ prj:project_{cur}.mk   AUDIO_AMP_CLASSK_CALL_MODE_SUPPORT = TRUE
 prj:project_{cur}.mk   AUDIO_AMP_EXT_PULL_2_TIME = TRUE
 
 
-// 喇叭听筒二合一
+### 喇叭听筒二合一
 SPDE_PRJ/K220U_HYBL_H660A_HTX_LTC/project_UIS8910_ROM_16MB_DS_USER.mk 3IN1
 //
 prj:project_{cur}.mk   AUDIO_AMP_CLASSK_3IN1_SUPPORT = TRUE
 prj:project_{cur}.mk   AUDIO_AMP_CLASSK_SUPPORT = TRUE
 
-
+//
+hw:
+nv:audio_calib_VQE.nvm  65
+HW:{project}\audio_calib_VQE.nvm  65
 //
 nv1:audio_calib_VQE.nvm  65
 nv2:audio_calib_VQE.nvm  65
@@ -289,6 +294,13 @@ HW:{project}\nv_type_uix8910.nvm  com_data
 HW:{project}\modem_nv_cat1bis_uix8910_static.nvm  9166
 //   0x0: 链路快速释放
 //   0x1: 默认
+//
+//修改链路保持时间 (8910_基站交互时间
+//1、长连接时，链路需要保持10秒，是协议的要求。移动也一直在查不满足协议的情况；
+//2、非正式的方法，改小链路保持秒数的nv值，用来减少功耗。
+//方法1：通过AT指令修改  at+rrcrel=数字（0-20）  步距是0.5秒
+//方法2：通过修改默认nv值来改小秒数，modem_nv_cat1bis_uix8910_static.nvm里面的一个值，改为0-20某个数
+//3、多测试，可能会影响到呼通率，特别是动态环境下，比如路测这种。
 
 
 ### __Card__  电子保卡

@@ -21,11 +21,12 @@ nv:\\
 
 sourcePath  = MS_MMI_Main\source\
 appPath     = MS_MMI_Main\source\mmi_app\app\
-ctrlPath    = MS_MMI_Main\source\mmi_ctrl\source
-guiPath     = MS_MMI_Main\source\mmi_gui\source
-configPath  = MS_Customize\source\product\config
+commonPath  = MS_MMI_Main\source\mmi_app\common\
+ctrlPath    = MS_MMI_Main\source\mmi_ctrl\source\
+guiPath     = MS_MMI_Main\source\mmi_gui\source\
+configPath  = MS_Customize\source\product\config\ums9117_barphone\
 driverPath = MS_Customize\source\product\driver\
-sensorsPath = MS_Customize\source\product\driver\sensors
+sensorsPath = MS_Customize\source\product\driver\sensors\
 
 
 ### 1.cfg
@@ -37,13 +38,16 @@ prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
 // 目录名称自动拼接成mk名称
-projectKey   = F79T_DERONG
-//projectKey   = T5_A86_VIET_HQQVGA
+projectKey   = T5_A82WD_VIET
+//projectKey   = F79T_DERONG
+//projectKey   = S98T_JL_F15_2
+//projectKey   = S89T_BYD_L66A_IN
 curKey   = ums9117_{size}BAR_48MB_{project}_user
 cfgKey   = xx
-sizeNext  = 2
-size1Key  = 240X320
-size2Key  = 240X320
+sizeNext  = 1
+size1Key  = 128X160
+//size1Key  = 240X320
+//size2Key  = 240X320
 
 
 ### 3.copy

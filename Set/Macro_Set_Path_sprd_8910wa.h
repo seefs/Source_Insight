@@ -24,13 +24,14 @@ appPath     = MS_MMI_Main\source\mmi_app\app\
 commonPath  = MS_MMI_Main\source\mmi_app\common\
 ctrlPath    = MS_MMI_Main\source\mmi_ctrl\source\
 guiPath     = MS_MMI_Main\source\mmi_gui\source\
-configPath  = MS_Customize\source\product\config\
+configPath  = MS_Customize\source\product\config\uis8910ff_refphone\
 driverPath = MS_Customize\source\product\driver\
 sensorsPath = MS_Customize\source\product\driver\sensors\
 
 
 ### 1.cfg
 versionKey  = UIX8910_uis8910ff_refphone_version
+configKey  = wa03u_v2
 
 
 ### 2.cur

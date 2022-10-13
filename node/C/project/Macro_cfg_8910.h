@@ -330,7 +330,7 @@ make/simulator_main/simulator_main.mk
 
 
 [1.9] shortcut
-// shortcut
+// __shortcut__
 MS_MMI_Main/source/mmi_app/app/setting/c/mmiset_shortcut.c  ->direction_shortcut
 
 // fun 4
@@ -362,6 +362,13 @@ OpenSelectedShortcutWin--func_arr
 // smart--idle--short
 app:setting\c\mmiset_shortcut.c  OpenShortcutFunWin
 
+// short--menu
+//		==>HandleSetShortcutWindow
+//		====>SetShortcutSetlistParam
+//		======>.s_shortcut_list_text_id
+//		========>MMISETLIST_CreateWin
+//		====>SaveAllShortcutSettings
+//		======>SetShortcutInfo
 
 
 ### mini对齐
@@ -395,6 +402,12 @@ prj:project_{cur}.mk  MMI_PREFER_PLMN_SUPPORT
 app:setting/c/mmiset_callwin.c  BOOLEAN^MMIAPISET_HandlePreferNetworkListCnf
 
 
+// 单软多硬
+prj:{cfg}.cfg  FORCECHANGE_SUPPORT  = TRUE
+prj:{cfg}.cfg  DELTA_NV_CONFIG_PATH = delta_nv   
+//
+prj:{cfg}.cfg  DELTA_NV_BIN_SUPPORT = TRUE         
+prj:{cfg}.cfg  DELTA_NV_PATITION_SUPPORT = TRUE
 
 
 [1.12] 
@@ -444,6 +457,9 @@ MS_MMI_Main\source\winsimulator_tp\skin\
 //		======>(2)侧边开关
 //		========>ENG_MANU_TORCH_HELP_STR1     #硬开
 app:eng\c\mmieng_uitestwin.c  case^ID_ENG_TEST_MANU_TORCH
+//		========>TXT_ENG_TORCHNOTE_HELP_STR1   #硬开
+//		========>TXT_ENG_TORCHNOTE             #软开 1line
+//		========>TXT_ENG_TORCH_TEST            #软开 2line
 
 // 2.MMI_TORCH_LED_SUPPORT (手机默认开, 手表默认关)
 //		==>"*#555#"
@@ -754,9 +770,15 @@ WAV_SUPPORT = TRUE
 // H264
 prj:{cfg}.cfg H264_DEC_SUPPORT = TRUE
 
+// CALENDAR 一共45K
+prj:{cfg}.cfg SMS_CHAT_SUPPORT = TRUE
+prj:{cfg}.cfg CALENDAR_SUPPORT = TRUE
+// FDN 不点空间
+prj:{cfg}.cfg PIC_ZOOM_SUPPORT = TRUE
+prj:{cfg}.cfg FDN_SUPPORT = TRUE
 
 // SMS
-MMI_APP_REMOVE_SMS_NUM
+prj:project_{cur}.mk   MMI_APP_REMOVE_SMS_NUM = TRUE
 
 
 
@@ -844,6 +866,10 @@ prj:project_{cur}.mk  FLASH_SIZE
 //(大版本)
 //   FLASH_SIZE = 128MBITX64MBIT_NEW
 
+//
+prj:project_{cur}.mk  WATCH_FS_FLASH_STYLE_
+
+
 ###
 // 8910F
 config:\
@@ -899,6 +925,12 @@ tmp:UIX8910.map  Total^RO
 MS_Customize/UIX8910_normal.scf  42
 MS_Customize/UIX8910_normal.scf  277
 
+
+//
+build\{cur}_builddir\tmp\link_UIX8910_uis8910ff_refphone_vm.scf  LOAD_KERNEL_IMAGE
+// 0x00870000
+build\{cur}_builddir\tmp\link_UIX8910_uis8910ff_refphone_vm.scf  LOAD_FLASH_B_DFILE
+// 0x60B60000
 
 
 [2.19] 

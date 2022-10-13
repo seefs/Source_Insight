@@ -53,6 +53,7 @@ Save:node\ToolsMsg\Macro_Office.h  \[4.3\]
 
 
 [1.3] apk 资源检查
+### 资源检查
 //	项目目录下执行 java -jar AndroidUnusedResources1.6.2.jar
 //	批文件 "@echo off  
 //	for /f ""delims="" %%i in (del.txt) do move ""%%i"" d:\unuse\  "
@@ -66,7 +67,7 @@ Save:node\ToolsMsg\Macro_Office.h  \[4.3\]
 //	
 //	
 //	
-//	清理<string>
+### 清理<string>
 //	查找：  \<string name="[!>]{1,}\> 替换：	<string>
 //	去参 查找：  \<xliff:g id="LABEL"\>%[0-9]$s\</xliff:g\> 替换：	{N}
 //	去空格 查找：  ^13[　 ^13^t]{1,} 替换：  ^p
@@ -80,23 +81,23 @@ Save:node\ToolsMsg\Macro_Office.h  \[4.3\]
 //	查找：  ^13[!※^13]{1,}^13 替换：  ^p^p
 //	查找：  ^13[!※^13]{1,}※ 替换：  ^p※
 //	查找：  ※[!※^13]{1,}^13 替换：  ※^p
-//	清理<color>
+### 清理<color>
 //	取首 查找：  (\<color name="[!>]{1,}\>)[!^13]{1,} 替换：  \1
 //	取res名 查找：  \<color name="([!>]{1,})\> 替换：  \1
 //	取res名 查找：  ["/]{1,}^13 替换：	^p
-//	清理<dimen>
+### 清理<dimen>
 //	取首 查找：  (\<dimen name="[!>]{1,}\>)[!^13]{1,} 替换：  \1
 //	取res名 查找：  \<dimen name="([!>]{1,})\> 替换：  \1
 //	取res名 查找：  ["/]{1,}^13 替换：	^p
 //	清注释
-//	文档整理
+### 文档整理
 //	清除日志 查找：	^#^#-^#^# ^#^#:^#^#:^#^#.^#^#^#: 替换：	08-12 09:41:27.509: 
 //	清除日志 查找：	D/path(^#^#^#^#^#): 替换：  D/path(14571): 
-//	清理<logcat>
+### 清理<logcat>
 //	去杂项 查找：  centername="([!"]{1,})" fontColor="([!"]{1,})" 替换：  
 //	去杂项 查找：  state1="([!"]{1,})" state2="([!"]{1,})" stateDetailed="([!"]{1,})" tem1="([!"]{1,})" tem2="([!"]{1,})" temNow="([!"]{1,})" 替换：  
 //	去杂项 查找：  windState="([!"]{1,})" windDir="([!"]{1,})" windPower="([!"]{1,})" humidity="([!"]{1,})" time="([!"]{1,})" 替换：  
-//	清理<JSON>
+### 清理<JSON>
 //	换省头 查找：  \<([a-z]{1,}) dn="day"\> 替换：  {"sheng":"\1","data":[
 //	换省尾 查找：  \</([a-z]{1,})\> 替换：  ]},
 //	换城市头尾 查找：  \<city([!/]{1,})/\> 替换：  {\1}

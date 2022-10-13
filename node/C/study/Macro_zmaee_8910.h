@@ -3,9 +3,9 @@
 //
 Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 //
-//zmaeePath = prj:zmaee
+zmaeePath = prj:zmaee
 //zmaeePath = prj:zmaee_128X128
-zmaeePath = app:zmaee_128X128
+//zmaeePath = app:zmaee_128X128
 zmaee:\\
 
 //目录:
@@ -22,18 +22,15 @@ Save:node\C\study\Macro_zmaee_8910.h \[1.9\] Torch
 Save:node\C\study\Macro_zmaee_8910.h \[1.10\] 客户
 Save:node\C\study\Macro_zmaee_8910.h \[1.11\] 表盘, 按键-------入口
 Save:node\C\study\Macro_zmaee_8910.h \[1.12\] charge
-Save:node\C\study\Macro_zmaee_8910.h \[1.13\] 
-Save:node\C\study\Macro_zmaee_8910.h \[1.14\] 
+Save:node\C\study\Macro_zmaee_8910.h \[1.13\] 音量
+Save:node\C\study\Macro_zmaee_8910.h \[1.14\] version, IMEI
+Save:node\C\study\Macro_zmaee_8910.h \[1.15\] sensor
 Save:node\C\study\Macro_zmaee_8910.h \[1.15\] 
-// 2. path
-Save:node\C\study\Macro_zmaee_8910.h \[2.1\] patch
-Save:node\C\study\Macro_zmaee_8910.h \[2.2\] fota
-Save:node\C\study\Macro_zmaee_8910.h \[2.3\] fota url
-Save:node\C\study\Macro_zmaee_8910.h \[2.4\] 文件log
-Save:node\C\study\Macro_zmaee_8910.h \[2.5\] 
-Save:node\C\study\Macro_zmaee_8910.h \[2.6\] 
-Save:node\C\study\Macro_zmaee_8910.h \[2.7\] 
-Save:node\C\study\Macro_zmaee_8910.h \[2.8\] 
+Save:node\C\study\Macro_zmaee_8910.h \[1.16\] 
+Save:node\C\study\Macro_zmaee_8910.h \[1.17\] patch
+Save:node\C\study\Macro_zmaee_8910.h \[1.18\] 
+Save:node\C\study\Macro_zmaee_8910.h \[1.19\] log
+Save:node\C\study\Macro_zmaee_8910.h \[1.20\] 
 
 
 
@@ -87,6 +84,8 @@ source:mmi_kernel\source\c\mmk_kbd.c  BM_RED_KEY_RESET
 
 
 [1.4] set--led
+
+### led
 //
 zmaee:c\zmaee_watch.c  int^ZMAEE_IWatch_EntrySystemEx
 //		case ZMAEE_SYSTEM_EV_GET_LED_ON_OFF:  //获取LED开关(返回 1:开启0:关闭)
@@ -95,6 +94,12 @@ zmaee:c\zmaee_watch.c  int^ZMAEE_IWatch_EntrySystemEx
 //		case ZMAEE_SYSTEM_EV_SET_LED_ON_OFF: //设置LED开关(wParam:1:开启0:关闭)
 //			SetLedSwitchType((wParam==1)?TRUE:FALSE);
 //			break;
+
+### lang
+//
+zmaee:c\zmaee_watchos.c  ZMAEE_IWatchOs_SetCurrentLanguage
+
+
 
 
 [1.5] make--res
@@ -238,17 +243,28 @@ app:phone\c\mmiphone_charge.c  ZMAEE_Watch_OpenChargingWin
 
 [1.13] 
 
-
-[1.14] 
-
+// ring
 
 
+[1.14] version, IMEI
+// w48
+// 8672 7609 0905 009
 
-[1.15] 
+
+
+[1.15] motionsensor
+// 计步
+zmaee:c\zmaee_watch.c  ZMAEE_IWatch_GetStepNum
+//		==>MSensor_ioctl
 
 
 
-[2.1] patch
+[1.16] 
+
+
+
+
+[1.17] patch
 // 90拍照
 MS_Ref/source/isp_service/src/isp_service_uix8910.c
 lib/UIS8910_240x320BAR_16MB_SS_DEBUG/img_proc.a
@@ -264,77 +280,21 @@ lib/UIS8910_ROM_16MB_SS_USER/img_proc.a
 
 
 
-[2.2] fota
-// addr
-Third-party\rsfota\rsupdate\src\rs_ua_porting.c  rs_fota_addr
 
-## fota--adups
-//
-SPDE_PRJ\S98T_FLP_E535_31\adups_define.h
-//
-fdl_bootloader/fota_bootloader/src/tf_display.c
-//
-//adups_net_start_get_new_version()
-//// 下载进度
-//ADUPS_get_download_percent()
-//// 升级进度
-//adups_patch_ratio
-//// state//版本号
-//GetMainStates
-//// 
-Third-party\adups\hal\src\adups_device.c  adups_get_device_version()
-
-
-## fota--rs
-// 1、下载检测：开机一分半，24小时周期
-Third-party\rsfota\rsdl\porting\UIS8910\src\rs_param.c  rs_u32^rs_cb_get_first_check_cycle()
-//	return (90*1000);//量产出货阶段配置参数
-
-Third-party\rsfota\rsdl\porting\UIS8910\src\rs_param.c  rs_u32^rs_cb_get_auto_check_cycle()
-//	return (24*60*60*1000);//量产出货阶段配置参数
-
-
-// 2、安装检测：2-5点，30分钟周期，如果检测有，不继续检测
-Third-party\rsfota\rsdl\porting\UIS8910\src\rs_param.c  rs_bool^rs_sys_localtime_fit_for_install
-Third-party\rsfota\rsdl\porting\UIS8910\src\rs_param.c  INSTALL_TIME_END_CLOCK
-//	#define INSTALL_TIME_START_CLOCK  22 // 2
-//	#define INSTALL_TIME_END_CLOCK  1823  //5
-//	#define INSTALL_AUTO_CYCLE_TIME  (30*60*1000) //(2*60*60*1000) //2小时
-
-
-// 3、安装时间：检测有包后，会在2-5点，随机一个时间
+[1.18] 
 
 
 
-[2.3] fota url
-// OTA后台
-https://fota.redstone.net.cn/
-//	用户名 bomengAdmin
-//	密码 bomeng@2020w
 
-
-//差分后台
-http://diff.livedevice.com.cn/diffservice/atool/bomeng.html
-//	用户名 bomengAdmin
-//	密码 bomeng@2020w
-
-
-
-[2.4] 
+[1.19] log
 //
 Save:node\C\study\Macro_patch_8910.h  __Trace__
 
 
-[2.5] 
 
 
-[2.6] 
+[1.20] 
 
-
-[2.7] 
-
-
-[2.8] 
 
 
 

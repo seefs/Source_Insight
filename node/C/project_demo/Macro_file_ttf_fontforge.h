@@ -149,10 +149,14 @@ maxbearingY: 上移, 未压缩--4, 压缩--2
 // 最终使用
 //LANG_FONT_HAN_TRAD_TW_VECTOR_SMALL_FTOOL_NS_BY4
 // 步骤:
-MS_MMI_Main\source\resource\Common\FONT\Zouk TTF\NotoSans.ttf + 
+// --置和恢字明显区别
+MS_MMI_Main\source\resource\Common\FONT\Zouk TTF\NotoSans.ttf +
+// --恢字阴影多一点
+MS_MMI_Main\source\resource\Common\FONT\Zouk TTF\NotoSansCJKsc-Regular.ttc +
 tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe + 
 tools\DEBUG_TOOL\FONTTOOL\Bin\Han_merge_small.ini + 
 导入时maxbearingY设置为4(上移4解决显示超边界问题)
+应该要选矢量flag
 
 
 ### 使用循环
