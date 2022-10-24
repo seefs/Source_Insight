@@ -470,7 +470,7 @@ app:eng/c/mmieng_uitestwin.c  SPD_ENGINEER_SUPPORT_MONKEY_SET
 app:eng/c/mmieng_uitestwin.c  s_pceng_test_win_ptr_tab
 
 
-// touch
+// torch
 Save:node\C\project\Macro_cfg_8910.h  __torch__
 
 
@@ -501,6 +501,19 @@ app:fmm/c/mmifmm_mainwin.c  1528
 app:fmm/c/mmifmm_mainwin.c  MMIFMM_CombineFullFileName
 // dev list
 app:fmm/c/mmifmm_mainwin.c  HandleFmmListWinMsg
+
+// opt
+//		==>HandleUdiskChildWindow
+//		====>MENU:
+//		====>HandleCreatePopMenuOpt
+//		======>MMIFMM_OpenMeunPubWin
+//		========>MENU_FMM_NORMAL_LIST_OPT
+//		==========>.menu_fmm_normal_list_opt
+app:fmm\h\mmifmm_menutable.def  MENU_FMM_NORMAL_LIST_OPT
+// opt--memory
+//		========>MENU_FMM_MEMORY_OPT
+//		==========>.menu_fmm_memory_opt
+
 // opt--format
 app:fmm/c/mmifmm_mainwin.c  MMI_RESULT_E^HandleFmmMainDetailMenuMsg
 
@@ -656,6 +669,7 @@ Save:node\C\study\Macro_pos_8910.h  __set_pin__
 // list--enter
 //		==>MMISMS_EnterSMSMainMenuWin
 //		====>MMISMS_MENUWIN_TAB
+//		======>InitPdaSmsMainListCtrl
 app:sms\c\mmisms_mainmenuwin.c  HandleSmsMainMenuWinMsg
 
 // --sms--option
@@ -664,7 +678,7 @@ app:sms\c\mmisms_editsmswin.c  HandleEditMenuWinMsg
 app:sms\c\mmisms_editsmswin.c  EditSMSWin_SaveSMS
 
 
-//2.edit
+//2.edit, Ð´¶ÌÐÅ
 // edit--enter
 //		==>MMISMS_OpenWriteWin
 //		====>MMISMS_WriteNewMessage
@@ -675,8 +689,26 @@ app:sms\c\mmisms_editsmswin.c  HandleEditSmsWinMsg
 // edit--input pbNum
 //		==>
 
-//2.list
+//2.sms--list
 app:sms\c\mmisms_mainmenuwin.c  HandleMsgBoxMainWindow
+// sms--list--mt
+//		==>FOCUS:
+//		====>MMISMS_LoadSmsListFromOrder
+//		======>MMISMS_ListSmsFromOrder
+//		========>MMISMS_BOX_MT:
+//		==========>FormListFromLinkhead    # format
+//		==>DATA:
+//		====>MMISMS_SetListItemData
+//		======>MMISMS_GetSmsInfoFromOrder
+//		======>FormListBoxItem             # time
+app:sms\c\mmisms_messageboxwin.c  HandleMtBoxChildWinMsg
+// sms--list--fail
+//		==>FOCUS:
+//		====>MMISMS_LoadSmsListFromOrder
+//		======>MMISMS_AppendEmptyStr2List
+app:sms\c\mmisms_messageboxwin.c  HandleSendFailBoxChildWinMsg
+// sms--list--unread
+app:sms\c\mmismsapp_order.c  MMISMS_ListSmsFromOrder
 
 
 //3.detail
@@ -699,13 +731,6 @@ app:sms\c\mmisms_commonui.c  MMISMS_HandleNewMsgWin
 app:sms\c\mmisms_api.c MMIAPISMS_GetAllUnreadMsgCount
 
 
-// sms--box
-app:sms\c\mmisms_messageboxwin.c  HandleMsgBoxMainWindow
-// sms--box--mt
-app:sms\c\mmisms_messageboxwin.c  HandleMtBoxChildWinMsg
-// sms--box--unread
-app:sms\c\mmismsapp_order.c  MMISMS_ListSmsFromOrder
-
 
 ### sms
 // ==>pos
@@ -716,6 +741,7 @@ Save:node\C\study\Macro_res_image_8910.h  __sms__
 Save:node\C\study\Macro_res_color_8910.h  __sms__
 // ==>im
 Save:node\C\study\Macro_im_8910.h  __input__
+
 
 
 [1.9] call
@@ -1757,11 +1783,16 @@ source:mmi_app\common\c\mmi_pubwin.c  5352
 //		======>MMIAPI_OpenTimerWin
 //		========>HandleStopWatchWinMsg
 
-
-
 ### STOPWATCH
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __stopwatch__
+
+
+### µ¹¼ÆÊ±/countedtime
+//		==>FLIP:
+//		====>MMIDEFAULT_HandleFlipKey
+//		======>
+app:accessory\c\mmicountedtime_main.c  MMIAPICT_HandleCountedTimeArriveWin
 
 
 

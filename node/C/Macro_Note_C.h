@@ -63,8 +63,6 @@ Save:node\C\project\Macro_Note_6533.h
 // 7701
 Save:node\C\project\Macro_Note_7701.h
 
-// Base
-Save:node\C\project\Macro_Note_6533.h
 
 
 

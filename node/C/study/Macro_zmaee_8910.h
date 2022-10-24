@@ -250,12 +250,20 @@ app:phone\c\mmiphone_charge.c  ZMAEE_Watch_OpenChargingWin
 // w48
 // 8672 7609 0905 009
 
+//
+//FA28 歆歌   FA31 展易丰  FA01 阿拉町   
+// 如果渠道号搞错了 手表就注册不了了
 
 
 [1.15] motionsensor
 // 计步
+//		==>ZMAEE_IWatch_GetStepNum
+//		====>ZMAEE_IWatch_GetStepNum
+//		======>MSensor_Open
+//		======>MSensor_ioctl/Get
+//		======>MSensor_ioctl/clean
+//		======>MSensor_Close
 zmaee:c\zmaee_watch.c  ZMAEE_IWatch_GetStepNum
-//		==>MSensor_ioctl
 
 
 

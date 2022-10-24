@@ -219,6 +219,7 @@ app:idle\c\mainapp.c  IdleWin_HandleMsg
 //		========>.is_halt       # 拦截
 //		========>.halt_back     # 预处理
 //		========>MMIDEFAULT_TurnOnBackLight
+//		==========>MMIDEFAULT_TurnOnLCDBackLight
 //		====>DefaultIsRespond   # 是否响应
 //		======>.s_is_down_keystatus_backlight_on
 //		==>MMK_DefaultMSGKbdLater
@@ -226,6 +227,11 @@ app:idle\c\mainapp.c  IdleWin_HandleMsg
 //		========>.!is_key_lock  # 翻盖不锁屏
 //		========>MMIDEFAULT_TurnOnBackLight
 //		========>.is_halt       # 音量调节
+### --半亮
+//		==>APP_Task
+//		====>MMK_DispatchExtSig
+//		======>MMK_DispatchMSGTimer
+//		========>MMIDEFAULT_HandleBackLightOver
 ### --灭屏
 //		==>CloseAllLight
 //		========>MMIDEFAULT_TurnOffBackLight
@@ -235,6 +241,17 @@ source:mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_TurnOnBackLight
 //		====>MMK_HandlePublicKey
 //		======>GPIO_SIG1:
 //		========>MMIAPI_FM_ONOFF
+### --flip
+//		==>MMK_DefaultMSGKbd
+//		====>DefaultFlip        # 
+//		======>
+//		==>MSG_KEYDOWN_FLIP:    # 合盖
+//		====>recode = FALSE     # 走 bg mp3
+//		======>MMIDEFAULT_HandleFlipKey
+//		====>do()               # 不会走 MSG_APP_CANCEL
+//		====>MMK_PostMsg(MSG_APP_CANCEL)
+//		======>play mp3
+app:accessory\c\mmicountedtime_main.c  MMIAPICT_HandleCountedTimeArriveWin
 
 
 

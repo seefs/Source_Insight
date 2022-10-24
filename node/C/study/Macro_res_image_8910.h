@@ -131,12 +131,18 @@ app:wallpaper\h\wallpaper_mdu_def.h  IMAGE_WALLPAPER_DEFAULT
 
 [1.4] charger关机/充电动画
 ###   __charge__
+images:common\MMI_RES_DEFAULT\IMAG\key_lock\
 // power--bg--160*128, 160*128, 160*40
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_IDLE_KEYLOCK_TIME_BG
-images:common\MMI_RES_DEFAULT\IMAG\key_lock\
 
 //
 //	IMAGE_IDLE_KEYLOCK_NUM_AM
+
+###  __sublcd__
+images:common\MMI_RES_DEFAULT\IMAG\SUBLCD_SIZE_128_160\StatusbarIcon\
+// bg--128*160
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_SUBLCD_ICON_BACKGROUND
+
 
 
 [1.5] Statusicons

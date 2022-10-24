@@ -11,6 +11,8 @@ Save:node\C\project\Macro_Note_8910.h \[1.7\] ECG
 Save:node\C\project\Macro_Note_8910.h \[1.8\] hr
 Save:node\C\project\Macro_Note_8910.h \[1.9\] breathled
 Save:node\C\project\Macro_Note_8910.h \[1.10\] motionsensor
+Save:node\C\project\Macro_Note_8910.h \[1.11\] 
+Save:node\C\project\Macro_Note_8910.h \[1.12\] 
 // …Ë÷√
 Save:node\C\project\Macro_Note_8910.h \[2.1\] 
 Save:node\C\project\Macro_Note_8910.h \[2.2\] —’…´---------common_mdu_def.h
@@ -453,6 +455,8 @@ key:MULTIM,file:mmiset_export.h
 // KEYTABLE
 key:KEYTABLE,file:mmiim_sp_ml9key_data.c
 
+// ¡¡∂»
+source:mmi_service\export\inc\mmi_custom_define.h  MMISET_EDEFAULT_CONTRAST
 
 ###
 //

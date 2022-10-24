@@ -99,7 +99,16 @@ app:phone\c\mmiphone_charge.c   PHONE_STARTUP_CHARGE_WIN_TAB
 // 107--idle--charge--test
 app:idle\c\mainapp.c  IdleWin_HandleMsg
 app:idle\c\mainapp.c  MMIPHONE_ChargeHandlePsAndRefMsg
-
+// --107 win32, 小屏充电
+//		==>HandleChargeStartInd
+//		====>win32 修改开机方式
+//		====>MMIAPIPHONE_SetStartUpCondition(STARTUP_CHARGE)
+//		==>MMIAPIPHONE_ChargeInit
+//		====>记录开机方式
+//		==>HandleChargeFinsh
+app:phone\c\mmiphone_charge.c   MMIAPIPHONE_ChargeInit
+// 小屏
+Save:node\C\study\Macro_gui_8910.h  __sublcd__
 
 
 
@@ -123,6 +132,7 @@ chip_drv/chip_module/charge/uix8910/charge_uix8910.c  Trace_Log_Buf_Print
 app:bt\c\mmibt_app.c  Trace_Log_Buf_Print
 
 // __Trace__
+// SCI_TRACE_LOW
 MS_MMI_Main/source/mmi_app/app/fmm/c/mmi_filemgr.c  FILE_LOG_SUPPORT
 MS_MMI_Main/source/mmi_app/app/phone/c/mmiphone.c  FILE_LOG_SUPPORT
 MS_MMI_Main/source/mmi_app/common/h/mmi_appmsg.h  FILE_LOG_SUPPORT

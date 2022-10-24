@@ -64,8 +64,8 @@ make\app_main\app_macro.mk  MMI_BLACKLIST_SUPPORT
 // 白名单
 prj:project_{cur}.mk   MMI_WHITELIST_SUPPORT = TRUE
 prj:project_{cur}.mk   MMI_BLACK_AND_WHITE_LIST_ADD_SETTING = TRUE
-
-
+//		==>HandleMTCallDisc
+//		====>CC_MTCallWhiteFireWall
 
 
 ## "PB和SMS条数修改.txt"：
@@ -457,9 +457,13 @@ MS_MMI_Main\source\winsimulator_tp\skin\
 //		======>(2)侧边开关
 //		========>ENG_MANU_TORCH_HELP_STR1     #硬开
 app:eng\c\mmieng_uitestwin.c  case^ID_ENG_TEST_MANU_TORCH
+//		====>8910
 //		========>TXT_ENG_TORCHNOTE_HELP_STR1   #硬开
 //		========>TXT_ENG_TORCHNOTE             #软开 1line
 //		========>TXT_ENG_TORCH_TEST            #软开 2line
+//		====>107
+//		========>TXT_ENG_TORCHNOTE_HELP_STR1   #硬开
+//		========>TXT_ENG_TORCHNOTE             #软开
 
 // 2.MMI_TORCH_LED_SUPPORT (手机默认开, 手表默认关)
 //		==>"*#555#"

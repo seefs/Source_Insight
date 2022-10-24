@@ -216,6 +216,7 @@ app:bmiotcard\c\bmiotcardadapter.c  handle_msg_callback
 //		====>bm_iot_card_server_start_imp
 //		======>Handle:
 //		======>bm_iot_card_socket
+//		========>.Node.recvBuf                          # 2048
 //		========>.Node.callback
 //		==========>bm_iot_card_connect_event_callback   # ¼ûºó
 //		========>.magicCode
@@ -266,6 +267,8 @@ app:bmiotcard\c\bmiotcardsocket.c  bm_iot_card_connect_imp
 //5.connect--Thread
 //		==>.socketThreadId
 //		====>bm_iot_card_socket_thread_callback
+//		======>connect:
+//		======>send:
 //		======>recv:
 //		========>bm_iot_card_recv_signal_from_thread
 //		==========>sig_connect:
@@ -302,8 +305,10 @@ app:zdt\c\zdt_net.c  ZDT_Net_HandlePdpRetryTimer
 [1.8] receive
 
 //--receive
-//		==>bm_iot_card_socket_read_imp
-//		====>.data_ind:
+//		==>bm_iot_card_socket_read_imp                  # Thread
+//		====>bm_iot_card_socket_recv
+//		======>.recv_len
+//		====>.data_ind:                                 # notify
 //		======>bm_iot_card_connect_on_server_data
 //		========>bm_iot_card_decode_recv_pkg            # ½âÎö
 //		==========>cmd3:
@@ -447,22 +452,9 @@ app:zdt\c\zdt_yx_net.c  YX_API_Net_Reset
 app:zdt\c\zdt_yx_net.c  YX_Heart_TimeStop
 
 
+//
+Save:node\C\study\Macro_slide_8910.h  __sos__
 
-
-// 1.sos
-// [rec/send]
-// net-sms-sos (no use)
-app:zdt\c\zdt_yx_net.c  YX_API_SMS_SendSOS
-// rec-sos
-app:zdt\c\zdt_yx_net.c  YX_Net_ReceiveHandle
-app:zdt\c\zdt_yx_net.c  "SOS"
-app:zdt\c\zdt_yx_net.c  YX_Net_Receive_SOSSMS
-
-
-// 2.bat
-app:zdt\c\zdt_yx_net.c  YX_Net_ReceiveHandle
-// net-set-bat
-app:zdt\c\zdt_yx_net.c  YX_Net_Receive_LOWBAT
 
 
 
@@ -588,7 +580,7 @@ app:launcher\h\watch_comm_test.h  WATCH_WINID_LOG_SUPPORT
 app:udisk/c/mmiudisk_wintab.c  USB_CONNECT_DEFAULT_CHARGE
 app:launcher\c\watch_comm_net.c  WATCH_ALL_LOG_SUPPORT
 //
-
+app:launcher\c\watch_comm_test.c  WATCH_ALL_LOG_SUPPORT
 
 
 [1.20] 

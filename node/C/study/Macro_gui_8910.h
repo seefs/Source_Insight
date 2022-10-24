@@ -8,7 +8,7 @@ Save:node\C\study\Macro_gui_8910.h  \[1.5\] theme
 Save:node\C\study\Macro_gui_8910.h  \[1.6\] pubWin, Alert
 Save:node\C\study\Macro_gui_8910.h  \[1.7\] form----------------
 Save:node\C\study\Macro_gui_8910.h  \[1.8\] rect
-Save:node\C\study\Macro_gui_8910.h  \[1.9\] timer
+Save:node\C\study\Macro_gui_8910.h  \[1.9\] //timer
 Save:node\C\study\Macro_gui_8910.h  \[1.10\] option
 Save:node\C\study\Macro_gui_8910.h  \[1.11\] onoff
 Save:node\C\study\Macro_gui_8910.h  \[1.12\] title, tab
@@ -159,6 +159,7 @@ gui:win\c\Guiwin.c  GUIWIN_SetSoftkeyTextId    8
 //	LCD_DrawLine / LCD_DrawThickLine
 // 矩形：
 //	LCD_FillRect / LCD_DrawRect / GUI_FillRect
+//	LCD_FillArgbRect
 // 圆：
 //	LCD_FillCircle / LCD_DrawCircle
 // 矩形圆：
@@ -996,17 +997,46 @@ source:mmi_app\kernel\c\mmi_default.c  BOOLEAN^DefaultSideKey
 
 
 
-[1.19] sublcd
+[1.19] __sublcd__
 //
-// Bat
+// sublcd--Bat
 //		==>MMIAPIPHONE_GetBatCapacity
 app:idle\c\mmi_subwintab.c  uint8^MMISUB_GetBatteryLevel
-// sim
+// sublcd--sim
 app:idle\c\mmi_subwintab.c  void^DisplaySubLcdIconOneLine
-// show(mp3,fm,sms,call)
+// sublcd--content
+//		==>MMISUB_SetSubLcdDisplay(SUB_CONTENT_CHARGE_OFF)
+// sublcd--show(mp3,fm,sms,call)
+//		==>开机
+//		====>DisplaySubLcdDateOrStr
+//		==>关机
+//		====>MMISUB_DisplayIdlePic        # bg
+//		====>DisplaySubLcdDateOrStr       # data/charge
+//		====>DisplaySubLcdTime4ChargeOff  # time
+//		====>DisplaySubLcdWeek            # week
+//		==>来电
+//		====>CC_OpenMtCallWin
+//		======>.prompt_str_array
+//		==>滚动
+//		<====DisplayCycleText
+//		<======DisplaySubLcdLunarDate
+//		<======DisplayTextByPtr
+//		<==========MP3: 第1行   //SUB_LINE_1_Y
+//		<==========ALARM: 第1行
+//		<==========COUNTEDTIME: 第1行
+//		<==========FM: 第1行
+//		<==========CALL1: 第1行
+//		<========DisplaySubLcdDate: (no use)
+//		<======DisplayTextByWithFontPtr
+//		<========DisplaySubLcdDateOrStr:
+//		<========CALL: 第2行
+//		<========SMS: 第2行
+//		<========MISSED: 第2行
+//		<========default: 第2行
 app:idle\c\mmi_subwintab.c  void^MMISUB_UpdateDisplaySubLcd
 
-
+// ==>image
+Save:node\C\study\Macro_res_image_8910.h __sublcd__
 
 
 [1.20] font

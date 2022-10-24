@@ -39,7 +39,7 @@ Save:node\C\study\Macro_slide_8910.h \[2.17\] charge
 Save:node\C\study\Macro_slide_8910.h \[2.18\] Tip
 Save:node\C\study\Macro_slide_8910.h \[2.19\] db
 Save:node\C\study\Macro_slide_8910.h \[2.20\] sos
-Save:node\C\study\Macro_slide_8910.h \[2.21\] 
+Save:node\C\study\Macro_slide_8910.h \[2.21\] wps
 Save:node\C\study\Macro_slide_8910.h \[2.22\] 
 // 其他标号
 Save:Help\\DefaultFile\\Macro_Node_Num.h
@@ -254,6 +254,9 @@ zdt:c\zdt_app.c  MMIZDT_InitModule
 //
 common:h\mmi_appmsg.h  MSG_WATCH_LOG_BUF_SAVE
 app:phone\c\mmiphone.c  MSG_WATCH_LOG_BUF_SAVE
+app:fmm\c\mmi_filemgr.c  FILE_LOG_SUPPORT
+// 20480 发送一次
+app:launcher\c\watch_comm_test.c  MSG_WATCH_LOG_BUF_SAVE
 //		==>1:
 //		==>Trace_BUF_Save
 //		====>WatchTest_Get_FileName
@@ -584,6 +587,8 @@ app:cc/c/watch_cc_view.c  CC_OpenWatchMtCallWin
 //		====>SETUP_IND:
 //		======>HandleMTCallDisc
 app:cc\c\mmicc_app.c  BOOLEAN^HandleMTCallDisc
+app:cc/c/watch_cc_view.c  MMICC_UpdateCallStatusDisplay
+
 
 
 // 流程--去电-MO，
@@ -991,6 +996,30 @@ app:launcher\c\watch_launcher_main.c  WatchWADD_MainWin_Enter
 
 // 计步
 images:common/MMI_RES_DEFAULT/IMAG/watch/jibu/
+//		==>问题
+//		====>NV项fota好像有问题
+//		====>1秒1次，改长要加隔天清0
+//		==>时间
+//		====>计步详情:5秒一次
+//		====>计步:20秒一次
+//		====>温度:180秒第一次，3分
+//		====>温度:1800秒一次，30分
+//		====>学生:60秒第一次，1分
+//		====>学生:600秒一次，10分
+//		====>心率:3600秒一次，60分
+//		==>Jibu_DisplayStep
+//		====>WATCH_Get_JIBU_Step
+//		======>.step_time.step
+//		==>HandleLauncherClockWinMsg
+//		====>OPEN:
+//		======>Watch_BM_GET
+//		========>Watch_BM_HandleTimer
+//		==========>MSensor_ioctl
+//		==========>WATCH_Set_JIBU_Step
+//		==>.qmax981_ioctl
+//		====>.qmax981_GetVector
+//		======>.qmaX981_read_stepcounter
+//		========>Watch_BM_HandleTimer
 app:launcher\c\watch_launcher_main.c  WatchJiBu_MainWin_Enter
 
 
@@ -1076,7 +1105,7 @@ app:launcher\c\watch_charge_win.c  HandleLauncherChargeTipWinMsg
 //		==========>Watch_DB_SET_Default
 
 
-[2.20] 
+[2.20] __sos__
 //	--timer--sos
 //		==>MMK_DispatchMSGTimer
 //		====>SOS:
@@ -1092,7 +1121,26 @@ app:phone\c\mmiphone.c   MMIAPIPHONE_PowerOff
 
 
 
-[2.21] 
+[2.21] wps
+// 主菜单按-7
+
+// 屏蔽短信
+//		==>MMISMS_ShowNewMsgPrompt
+app:sms\c\mmisms_commonui.c  SPD_ENGINEER_SUPPORT_MONKEY_SET
+
+//		==>MMIAPISMSCB_OpenCBList
+app:sms\c\mmisms_mainmenuwin.c  case^MMISMS_MAIN_MENU_NODE_BROADCAST
+
+//
+app:launcher\c\watch_comm_test.c  __pws__
+//
+//	小区广播主要代码都在 mmismscb_wintab.c 和 mmismscb_control.c
+//	接受小区广播位置在 MMIAPISMSCB_HandleCBMsgInd 和 MMIAPISMSCB_HandleMarcoCBMsgInd
+//	小区广播讯息有保存的話会存在 Cell broadcast 的inbox里
+//	从模拟器即可追查代码流程
+
+//警讯通知
+// HandleSmsETWSReadWindow
 
 
 [2.22] 
