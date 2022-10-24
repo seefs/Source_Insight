@@ -116,6 +116,19 @@ Qualcomm Atheros AR956x wireless network adapter
 // 显示--我的电脑
 个性化--主题--桌面图标设置
 
+// 显卡
+
+// win10屏幕不能设置分辨率
+设置--系统--关于--设备管理器--显示适配器
+win+R--dxdiag 诊断工具 显示
+//inter(R)UHD Graphics 下载
+
+// 显卡驱动安装失败
+https://www.somode.com/course/24701.html
+// 技嘉显卡驱动官网
+https://www.gigabyte.cn/Graphics-Card
+// 技嘉B660M GAMING DDR4显卡驱动
+
 
 
 [1.8] win10磁盘100%
