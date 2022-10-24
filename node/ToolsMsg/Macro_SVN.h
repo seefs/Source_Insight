@@ -57,7 +57,7 @@ C:\Users\Administrator\AppData\Roaming\Subversion\config
 // list
 *.o *.lo *.la *.al .libs  *.so.[0-9]*  *.pyc *.pyo __pycache__ *.rej *~ #*# .#* .*.swp .DS_Store [Tt]humbs.db
 
-
+// version
 
 
 

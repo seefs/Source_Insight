@@ -8,7 +8,7 @@
 // 1.vc
 Save:node\ToolsMsg\Macro_VC.h \[1.1\] 安装
 Save:node\ToolsMsg\Macro_VC.h \[1.2\] Incredibuild
-Save:node\ToolsMsg\Macro_VC.h \[1.3\] 
+Save:node\ToolsMsg\Macro_VC.h \[1.3\] visual sourcesafe login
 Save:node\ToolsMsg\Macro_VC.h \[1.4\] 重新安装VC
 Save:node\ToolsMsg\Macro_VC.h \[1.5\] office
 Save:node\ToolsMsg\Macro_VC.h \[1.6\] VC6.0 死机
@@ -18,6 +18,8 @@ Save:node\ToolsMsg\Macro_VC.h \[1.9\] bridgelayer.cpp
 Save:node\ToolsMsg\Macro_VC.h \[1.10\] VC6LineNumberAddin
 Save:node\ToolsMsg\Macro_VC.h \[1.11\] vc2010
 Save:node\ToolsMsg\Macro_VC.h \[1.12\] excel patch
+Save:node\ToolsMsg\Macro_VC.h \[1.13\] .NET Framework/resview
+Save:node\ToolsMsg\Macro_VC.h \[1.14\] 
 // 2.vs2008
 Save:node\ToolsMsg\Macro_VC.h \[2.1\] 显示行号
 Save:node\ToolsMsg\Macro_VC.h \[2.2\] cl
@@ -65,6 +67,10 @@ VC
 //
 agent setting-->network-->coordinator
 192.168.0.66
+//
+
+// An error occurred while preparing for build/clean 
+//
 
 
 [1.3] visual sourcesafe login
@@ -98,7 +104,20 @@ C:\Program Files (x86)\Microsoft Visual Studio
 //http://www.filediag.com/files/npptools.dll.html
 
 
-
+//
+//无法创建一个dcom用户账号来注册
+//
+// 如果你不使用Visual Studio Analyzer，
+//可以在安装时选择Custom，然后在Enterprise Tools中清除掉Visual Studio Analyzer
+//
+//
+//安装慢
+//在xxxx中清除掉ole, 
+//(Enterprise Tools 前一项) (第1小项)
+//
+//
+//apemreg.exe可能未正确安装
+//
 
 [1.6] VC6.0 死机
 // VC6.0 死机
@@ -171,8 +190,18 @@ e:\projects\8910_z\ms_mmi_main\source\winsimulator_tp\win_platform\msdevbridge\b
 
 
 [1.10] VC6LineNumberAddin
-//
-C:\Program^Files^(x86)\Microsoft^Visual^Studio\Common\MSDev98\AddIns
+// 1. copy
+C:\Program^Files^(x86)\Microsoft^Visual^Studio\Common\MSDev98\AddIns\
+// VC6LineNumberAddin.dll
+H:\Desktop\tool\file_down\4^soft^tool\6^vc\VC6LineNumberAddin\
+
+// 2. 双击注册
+//	VC6LineNumberAddin.reg				(xp)
+//	VC6LineNumberAddin_X64.reg		(win7_64)
+
+// 3. 启用
+//打开vc6，菜单栏：Tools -> customize -> Add-ins and Macro Files
+//选中VC6LineNumber Developer Studio Add-in
 
 
 
@@ -187,10 +216,38 @@ C:\Program^Files^(x86)\Microsoft^Visual^Studio\Common\MSDev98\AddIns
 //360装这个，我跟孙工的电脑excel是这样弄好了
 msvcr100.dll
 
+// 32
+C:\Windows\system32\
+// 64
+C:\Windows\SysWOW64\
 
 
-[1.13] 
 
+[1.13] .NET Framework/resview
+//
+make/perl_script/ResGen/
+make/perl_script/ResGen/resview.exe
+//
+SxsTrace Trace -logfile:SxsTrace.etl
+//
+SxsTrace Parse -logfile:SxsTrace.etl -outfile:C:\SxsTrace.txt
+
+//
+//无法解析参考 Microsoft.VC90.MFC,processorArchitecture=“amd64”,publicKeyToken=“1fc8b3b9a1e18e3b”,type=“win32”,version=“9.0.21022.8”
+
+//由于应用程序是在64位环境下编译，到64位环境下找不到对应的C++库导致。
+//解决：下载对应的运行环境Microsoft Visual C++ 2008 Redistributable Package (x64)即可
+//下载地址：http://www.downza.cn/soft/20816.html
+// --360微软VC++运行库合集
+
+
+//系统执行修复操作，然后查看效果。(无异常)
+Dism /Online /Cleanup-Image /ScanHealth
+//这条命令将扫描全部系统文件并和官方系统文件对比，扫描计算机中的不一致情况。
+Dism /Online /Cleanup-Image /CheckHealth
+//这条命令必须在前一条命令执行完以后，发现系统文件有损坏时使用。
+DISM /Online /Cleanup-image /RestoreHealth
+//这条命令是把那些不同的系统文件还原成官方系统源文件。
 
 
 

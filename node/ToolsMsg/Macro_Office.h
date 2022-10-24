@@ -5,7 +5,7 @@
 Save:node\ToolsMsg\Macro_Office.h  \[1.1\] copy
 Save:node\ToolsMsg\Macro_Office.h  \[1.2\] ren
 Save:node\ToolsMsg\Macro_Office.h  \[1.3\] apk 资源检查
-Save:node\ToolsMsg\Macro_Office.h  \[1.4\] 
+Save:node\ToolsMsg\Macro_Office.h  \[1.4\] 激活
 Save:node\ToolsMsg\Macro_Office.h  \[1.5\] 
 Save:node\ToolsMsg\Macro_Office.h  \[1.6\] 
 Save:node\ToolsMsg\Macro_Office.h  \[1.7\] 
@@ -23,21 +23,7 @@ Save:node\ToolsMsg\Macro_Office.h  \[2.7\] 表格2---------
 Save:node\ToolsMsg\Macro_Office.h  \[2.8\] 表格3---------
 Save:node\ToolsMsg\Macro_Office.h  \[2.9\] 表格4---------
 Save:node\ToolsMsg\Macro_Office.h  \[2.10\] 表格5---------中值判断-自动if
-//  3.  word
-Save:node\ToolsMsg\Macro_Office.h  \[3.1\] 
-Save:node\ToolsMsg\Macro_Office.h  \[3.2\] 
-Save:node\ToolsMsg\Macro_Office.h  \[3.3\] 
-Save:node\ToolsMsg\Macro_Office.h  \[3.4\] 
-Save:node\ToolsMsg\Macro_Office.h  \[3.5\] 
-Save:node\ToolsMsg\Macro_Office.h  \[3.6\] 
-Save:node\ToolsMsg\Macro_Office.h  \[3.7\] 
-Save:node\ToolsMsg\Macro_Office.h  \[3.8\] 
-Save:node\ToolsMsg\Macro_Office.h  \[3.9\] 
-Save:node\ToolsMsg\Macro_Office.h  \[3.10\] 
-//  
-Save:node\ToolsMsg\Macro_Office.h  \[4.1\] 
-Save:node\ToolsMsg\Macro_Office.h  \[4.2\] 
-Save:node\ToolsMsg\Macro_Office.h  \[4.3\] 
+
 
 
 
@@ -106,9 +92,9 @@ Save:node\ToolsMsg\Macro_Office.h  \[4.3\]
 //	换间隔 查找：  }^p{ 替换：  },^p{
 
 
-[1.4] 
-
-
+[1.4] 激活
+//
+https://jingyan.baidu.com/article/154b463199ef6868cb8f416f.html
 
 
 [1.5] 
@@ -359,145 +345,6 @@ Save:node\ToolsMsg\Macro_Office.h  \[4.3\]
 //	
 //	4位8个：1*10，2*10=20次，平均2.5次
 //	4位16个：1*10，2*10，3*10，4*10=100次，平均6.25次
-
-
-
-
-[3.1] 
-
-
-[3.2] 
-
-
-[3.3] 
-
-
-[3.4] 
-
-
-[3.5] 
-
-
-[3.6] 
-
-
-[3.7] 
-
-
-[3.8] 
-
-
-[3.9] 
-
-
-[3.10] 
-
-
-
-
-[4.1] 
-
-
-
-
-[4.2] 
-
-
-
-
-[4.3] 
-
-
-
-
-[4.4] 
-
-
-
-
-[4.5] 
-
-
-
-
-[4.6] 
-
-
-
-
-[4.7] 
-
-
-
-
-[4.8] 
-
-
-
-
-[4.9] 
-
-
-
-
-[4.10] 
-
-
-
-
-
-
-[5.1] 
-
-
-
-
-[5.2] 
-
-
-
-
-[5.3] 
-
-
-
-
-[5.4] 
-
-
-
-
-[5.5] 
-
-
-
-
-[5.6] 
-
-
-
-
-[5.7] 
-
-
-
-
-[5.8] 
-
-
-
-
-[5.9] 
-
-
-
-
-[5.10] 
-
-
-
-
-
 
 
 

@@ -101,10 +101,15 @@ ssh-keygen -t rsa -C "xiaojia"
 ssh-keygen -t ed25519 -C "xiaojia_bm@163.com"
 ssh-keygen -t rsa -b 2048 -C "xiaojia_bm@163.com"
 // .ssh file
+C:\Users\seefs\.ssh\
+C:\Users\{user}\.ssh\
 C:\Users\Administrator\.ssh
 C:\Users\Administrator\.ssh\id_rsa.pub
 C:\Users\Administrator\.ssh\id_gitlab.pub
 C:\Users\Administrator\.ssh\id_github.pub
+//
+J:\Users\Administrator\.ssh\
+C:\Users\Administrator\.ssh\id_rsa.pub
 // 复制该密钥
 // 打开github
 https://github.com/settings/keys
@@ -194,8 +199,19 @@ git remote add origin git@github.com:seefs/Source_Insight.git
 //TortoiseGit--》Settings（设置）--》Network（网络）
 
 //将SSH client指向xxx （我的Git工具安装E盘）
-C:\Program^Files\Git\usr\bin\ssh.exe
+C:\Program^Files\Git\usr\bin\
 C:\Program Files\Git\usr\bin\ssh.exe
+
+// 新电脑不设置会出现：
+//couldn't load this key (SSH-2 public key (OpenSSH format)) 
+
+
+// 默认
+C:\Program Files\TortoiseGit\bin\TortoiseGitPlink.exe
+//putty 报错
+// no supported authentication methods available (server sent:publickey...)
+
+
 
 
 
@@ -203,15 +219,38 @@ C:\Program Files\Git\usr\bin\ssh.exe
 //
 patch:ssh\
 // 公司用
+// --win10改了用户名 Administrator/seefs
 patch:ssh\Macro_gitlab_url.h
 // 自己用
+// --自己用 tmp04/id_github, 其他用 bm2048
+// --tmp04 报错
 patch:ssh\Macro_github_url.h
+
+
+// 新电脑
+//	Load key "/c/Users/seefs/.ssh/tmp04": invalid format
+//	git@github.com: Permission denied (publickey).
+//
+https://blog.csdn.net/qq_40047019/article/details/122898308
+//
+ssh-agent -s
+//	SSH_AUTH_SOCK=/tmp/ssh-NrsndLFrMOsx/agent.1117; export SSH_AUTH_SOCK;
+//	SSH_AGENT_PID=1118; export SSH_AGENT_PID;
+//	echo Agent pid 1118;
+ssh-add ~/.ssh/tmp04
+// --err1
+//Could not open a connection to your authentication agent.
+// 先执行如下命令
+ssh-agent bash
+// --err2
+Error loading key "/c/Users/seefs/.ssh/tmp04": invalid format
+// 换 id_github
 
 
 
 
 [1.10] ppk
-//
+// 
 {8910}\.git\config  puttykeyfile
 //	
 //[remote "origin"]
@@ -239,54 +278,6 @@ patch:ssh\Macro_github_url.h
 
 
 [1.15] 
-
-
-
-[2.1] 
-
-
-[2.2] 
-
-
-[2.3] 
-
-
-[2.4] 
-
-
-[2.5] 
-
-
-[2.6] 
-
-
-[2.7] 
-
-
-[2.8] 
-
-
-[2.9] 
-
-
-[2.10] 
-
-
-
-[2.11] 
-
-
-[2.12] 
-
-
-[2.13] 
-
-
-[2.14] 
-
-
-[2.15] 
-
 
 
 
