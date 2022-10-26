@@ -129,6 +129,12 @@ SPDE_PLAT_YX_SUPPORT_VOICE
 // res--IMAGE_TEMPORARY_BOOTUP
 
 
+
+// __t6C__
+// 
+http://120.79.91.216:10088/my_view_page.php
+
+
 [1.3] watch_svn
 #bug
 //ÃðÆÁ--³¤°´RED--Ê§Ð§

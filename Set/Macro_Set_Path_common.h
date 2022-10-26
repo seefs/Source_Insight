@@ -33,7 +33,10 @@ BComparePath  = C:\Program^Files\Beyond^Compare^4\BCompare.exe
 BComparePath  = C:\Program^Files\Beyond^Compare^4\BCompare.exe
 
 VC6Path   =  C:\Program^Files^(x86)\Microsoft^Visual^Studio\Common\MSDev98\Bin\MSDEV.EXE
+pVC6Path  =  C:\Program^Files^(x86)\Microsoft^Visual^Studio\Common\MSDev98\Bin\
 VS08Path  =  C:\Program^Files^(x86)\Microsoft^Visual^Studio^9.0\Common7\IDE\devenv.exe
+pVS08Path =  C:\Program^Files^(x86)\Microsoft^Visual^Studio^9.0\Common7\IDE\
 RARPath   =  C:\Program^Files^(x86)\360\360zip\360zip.exe
-	
+
 DesktopPath   =  E:\\desktop
+file_downPath   =  H:\Desktop\tool\file_down

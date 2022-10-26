@@ -17,7 +17,7 @@ Save:node\ToolsMsg\Macro_git_config.h \[1.5\] create SSH key
 Save:node\ToolsMsg\Macro_git_config.h \[1.6\] create SSH key--官网方案
 Save:node\ToolsMsg\Macro_git_config.h \[1.7\] auto psw
 Save:node\ToolsMsg\Macro_git_config.h \[1.8\] git(小乌龟)
-Save:node\ToolsMsg\Macro_git_config.h \[1.9\] gitlab---------------url
+Save:node\ToolsMsg\Macro_git_config.h \[1.9\] gitlab---------------url, 换电脑
 Save:node\ToolsMsg\Macro_git_config.h \[1.10\] ppk
 Save:node\ToolsMsg\Macro_git_config.h \[1.11\] 
 Save:node\ToolsMsg\Macro_git_config.h \[1.12\] 

@@ -14,12 +14,16 @@ Save:Help\Macro_Note_Test.h
 
 Save:Help\Tmp
 
-Save:node\android\study\Macro_android_debug.h
 
 
-/***********************************************************************/
+//
+Shutdown -s -t 1200
 
 
-xiaojia   123456  git ук╨е
+
+
+
+
+
 
 

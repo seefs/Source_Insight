@@ -441,6 +441,9 @@ MS_MMI_Main\source\winsimulator_tp\skin\
 //   mssim_duallcd_160_128_T   90^
 
 
+// vs2010--lib
+make\simulator_main\simulator_main.mk  devps
+// 
 
 
 [1.14] __torch__

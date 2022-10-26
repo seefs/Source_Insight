@@ -6,7 +6,7 @@
 
 //目录[Num][Ca]:
 // 1.vc
-Save:node\ToolsMsg\Macro_VC.h \[1.1\] 安装
+Save:node\ToolsMsg\Macro_VC.h \[1.1\] 安装、卸载
 Save:node\ToolsMsg\Macro_VC.h \[1.2\] Incredibuild
 Save:node\ToolsMsg\Macro_VC.h \[1.3\] visual sourcesafe login
 Save:node\ToolsMsg\Macro_VC.h \[1.4\] 重新安装VC
@@ -19,7 +19,8 @@ Save:node\ToolsMsg\Macro_VC.h \[1.10\] VC6LineNumberAddin
 Save:node\ToolsMsg\Macro_VC.h \[1.11\] vc2010
 Save:node\ToolsMsg\Macro_VC.h \[1.12\] excel patch
 Save:node\ToolsMsg\Macro_VC.h \[1.13\] .NET Framework/resview
-Save:node\ToolsMsg\Macro_VC.h \[1.14\] 
+Save:node\ToolsMsg\Macro_VC.h \[1.14\] env
+Save:node\ToolsMsg\Macro_VC.h \[1.15\] DLL
 // 2.vs2008
 Save:node\ToolsMsg\Macro_VC.h \[2.1\] 显示行号
 Save:node\ToolsMsg\Macro_VC.h \[2.2\] cl
@@ -37,7 +38,7 @@ Save:node\ToolsMsg\Macro_VC.h \[2.12\]
 
 
 
-[1.1] 安装
+[1.1] 安装、卸载
 VC
 //	Visual Studio 6.0	 安装：
 //			1、product id：全写111...
@@ -59,7 +60,33 @@ VC
 //	设置不再显示
 
 
+//
+//无法创建一个dcom用户账号来注册
+//
+// 如果你不使用Visual Studio Analyzer，
+//可以在安装时选择Custom，然后在Enterprise Tools中清除掉Visual Studio Analyzer
+//--Enterprise Tools
+//--Visual Studio Analyzer
+//
+//安装慢,取消：
+//--Data Access(Enterprise Tools 前一项) 
+//--ADO,RDS and OLE DB providers(第1小项)
+//
+//--tool
+//--ole/com object viewer
+//
+//apemreg.exe可能未正确安装
+//
 
+//
+//	User breakpoint called from code at 0x77921ee2
+
+// 卸载
+pVC6:\
+pVS08:\
+file_down:\
+file_down:\4^soft^tool\6^vc\vc\VC6.0\pvc6\
+//	unins000
 
 
 
@@ -104,20 +131,6 @@ C:\Program Files (x86)\Microsoft Visual Studio
 //http://www.filediag.com/files/npptools.dll.html
 
 
-//
-//无法创建一个dcom用户账号来注册
-//
-// 如果你不使用Visual Studio Analyzer，
-//可以在安装时选择Custom，然后在Enterprise Tools中清除掉Visual Studio Analyzer
-//
-//
-//安装慢
-//在xxxx中清除掉ole, 
-//(Enterprise Tools 前一项) (第1小项)
-//
-//
-//apemreg.exe可能未正确安装
-//
 
 [1.6] VC6.0 死机
 // VC6.0 死机
@@ -208,6 +221,19 @@ H:\Desktop\tool\file_down\4^soft^tool\6^vc\VC6LineNumberAddin\
 [1.11] vc2010
 //
 之前有提过CQ，是可以支持的，有个指令，你们可以查下
+//
+make p=xxx m=s.. VS2010=1 -j4
+// 密码：yuuu
+http://pan.baidu.com/s/1bpB6szl
+// 破解
+https://blog.csdn.net/weixin_39381833/article/details/78078343
+//
+//	[Product Key]
+//	YCFHQ9DWCYDKV88T2TMHG7BHP
+
+
+//vs2010禁用安全检查
+// ---
 
 
 
@@ -251,14 +277,56 @@ DISM /Online /Cleanup-image /RestoreHealth
 
 
 
-[1.14] 
+[1.14] env
+### win10
+cmd:sysdm.cpl
+// 或者，关于--高级系统设置
+
+### vc6.0 (tool--option--dir)
+//--include
+//	C:\Program Files (x86)\Microsoft Visual Studio\VC98\atl\include
+//	C:\Program Files (x86)\Microsoft Visual Studio\VC98\mfc\include
+//	C:\Program Files (x86)\Microsoft Visual Studio\VC98\include
+//--lib
+//	C:\Program Files (x86)\Microsoft Visual Studio\VC98\mfc\lib
+//	C:\Program Files (x86)\Microsoft Visual Studio\VC98\lib
+//--MSDevDir (默认无)
+//	C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98
+//--path
+//	C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools\WinNT
+//	C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin
+//	C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools
+//	C:\Program Files (x86)\Microsoft Visual Studio\VC98\bin
+
+### vs2010 (实际不用，软件内置)
+//--include
+//	C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include
+//--lib
+//	C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\lib
+//	C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib
+//--VS100COMNTOOLS
+//	C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools\
+//--MSDevDir (默认无)
+//	C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98
+//--path
+//	C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin
+//	C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE
+//	C:\Windows\Microsoft.NET\Framework\v3.5
+//	C:\Windows\Microsoft.NET\Framework\v2.0.50727
+//	C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\Tools
+//	C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\vcpackages
 
 
 
-
-[1.15] 
-
-
+[1.15] DLL
+### vc++6.0 
+//--project--setting--常规
+//----msdevkernel:不使用MFC
+//------否则报错: __imp__KillTimer@8
+//----其他:使用MFC作为静态链接库
+//------正常
+//----其他:使用MFC做为共享的DLL
+//------报错: 运行时检查 __RTC_Shutdown __RTC_InitBase
 
 
 [2.1] 显示行号

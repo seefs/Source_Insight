@@ -344,8 +344,9 @@ sensors:breathled\led_AW2013.c
 
 [1.10] motionsensor
 // 计步
+// --w03型号: QMA7981，只要CA7的 都是7981
+// --w48型号: QMA6100-TR，RP1 RP2 是6100P，RB1 RB2 是6100
 prj:{cfg}.cfg         MOTION_SENSOR_TYPE = QMA7981
-prj:{cfg}.cfg         MOTION_SENSOR_TYPE = QMA6100-TR
 // 
 driver:motionsensor\
 driver:motionsensor\accelerometer\msensor_qmaX981.c

@@ -79,6 +79,10 @@ macro GetPubPathBuf(hbuf)
 		return setBuf
 	}
 	
+	msg("cfg null: " # CharFromKey(13)
+	   # baseName # CharFromKey(13) # CharFromKey(13)
+	   # nKey)
+	
 	return hNil
 }
 
@@ -1233,7 +1237,7 @@ macro getKeyHead(hbuf, fHead)
 		return ""
 	}
 	
-	//1.get cfg file
+	//1.get cfg file, 每个项目一个cfg
 	pathBuf = GetPubPathBuf(hbuf)
 	if(pathBuf == hNil){
 		msg("key: {@fHead@}" # CharFromKey(13)

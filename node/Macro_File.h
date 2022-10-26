@@ -134,6 +134,7 @@ Save:Help\Other\Macro_Help_cmd.h
 
 [2.1] win
 Save:node\ToolsMsg\Macro_win.h
+Save:node\ToolsMsg\Macro_win10.h
 //
 Save:node\ToolsMsg\
 Save:node\ToolsMsg\Macro_sprd.h
@@ -155,7 +156,7 @@ Save:node\ToolsMsg\Macro_svn.h
 
 [2.5] Beyond Compare
 C:\Users\Administrator\AppData\Roaming\Scooter^Software\Beyond^Compare^4
-C:\Users\YJ\AppData\Roaming\Scooter^Software\Beyond^Compare^4
+C:\Users\seefs\AppData\Roaming\Scooter^Software\Beyond^Compare^4
 //   BCmp:
 Save:node\ToolsMsg\Macro_Bcomp.h
 
