@@ -102,6 +102,14 @@ Save:node\C\study\Macro_im_8910.h   __keySignal__
 app:idle\c\mmiidle_dial.c  MMI_RESULT_E^HandleDialWinMsg
 
 
+### --key--dial--red
+//		========>HandleMSGKbd
+//		============>BaseFlexCtrlHandleMsg
+//		===============>RED:
+//		================>.is_handle_red_key
+//		========>GUIEDIT_SetHandleRedKey(FALSE, _CTRL_ID);  # 禁用
+
+
 ### --key--dial--long--log
 //	64023 MSG_KEYDOWN_CANCEL
 //	57397 MSG_NOTIFY_EDITBOX_IMSYNC_CURSOR //1~3
@@ -531,6 +539,7 @@ MMIAPISET_IsNeedResetDateTime
 
 
 [1.14] apn
+### 8910
 //
 Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 
@@ -538,6 +547,19 @@ Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 tool_mini:\
 tool_mini:6_res_str\
 tool_mini:6_res_str\res_ntac.xlsx
+
+//
+MS_MMI_Main\source\resource\Common\DATA\
+
+
+
+### __107_apn__
+//
+PS\nv\operator_delta\operator_config_all\
+// 所有支持运营商的索引
+PS\nv\operator_delta\operator_config_all\Index.xml
+// 107 apn
+Save:node\C\study\Macro_doc_apn107.h
 
 
 

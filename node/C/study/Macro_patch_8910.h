@@ -115,7 +115,7 @@ Save:node\C\study\Macro_gui_8910.h  __sublcd__
 
 [1.2] common
 // 107--res--_WAIT
-MS_MMI_Main\source\mmi_app\common\h\common_mdu_def.h
+common:h\common_mdu_def.h
 
 
 // 107--res--tts
@@ -133,9 +133,9 @@ app:bt\c\mmibt_app.c  Trace_Log_Buf_Print
 
 // __Trace__
 // SCI_TRACE_LOW
-MS_MMI_Main/source/mmi_app/app/fmm/c/mmi_filemgr.c  FILE_LOG_SUPPORT
-MS_MMI_Main/source/mmi_app/app/phone/c/mmiphone.c  FILE_LOG_SUPPORT
-MS_MMI_Main/source/mmi_app/common/h/mmi_appmsg.h  FILE_LOG_SUPPORT
+app:fmm/c/mmi_filemgr.c  FILE_LOG_SUPPORT
+app:phone/c/mmiphone.c  FILE_LOG_SUPPORT
+common:h/mmi_appmsg.h  FILE_LOG_SUPPORT
 
 // 
 //	Trace_Log_Buf_Print("MMIBT_A2DPCallBackFunc msg_id=%x",  pMsg->msg_id);

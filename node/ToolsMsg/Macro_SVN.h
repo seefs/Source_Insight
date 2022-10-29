@@ -14,23 +14,10 @@ Save:node\ToolsMsg\Macro_svn.h \[1.5\] svn.exe
 Save:node\ToolsMsg\Macro_svn.h \[1.6\] revert test
 Save:node\ToolsMsg\Macro_svn.h \[1.7\] help
 Save:node\ToolsMsg\Macro_svn.h \[1.8\] SVN test
-Save:node\ToolsMsg\Macro_svn.h \[1.9\] 
+Save:node\ToolsMsg\Macro_svn.h \[1.9\] url-----------换电脑
 Save:node\ToolsMsg\Macro_svn.h \[1.10\] 
 Save:node\ToolsMsg\Macro_svn.h \[1.11\] 
-Save:node\ToolsMsg\Macro_svn.h \[1.12\] 
-//
-Save:node\ToolsMsg\Macro_svn.h \[2.1\] svn error
-Save:node\ToolsMsg\Macro_svn.h \[2.2\] 
-Save:node\ToolsMsg\Macro_svn.h \[2.3\] 
-Save:node\ToolsMsg\Macro_svn.h \[2.4\] 
-Save:node\ToolsMsg\Macro_svn.h \[2.5\] 
-Save:node\ToolsMsg\Macro_svn.h \[2.6\] 
-Save:node\ToolsMsg\Macro_svn.h \[2.7\] 
-Save:node\ToolsMsg\Macro_svn.h \[2.8\] 
-Save:node\ToolsMsg\Macro_svn.h \[2.9\] 
-Save:node\ToolsMsg\Macro_svn.h \[2.10\] 
-Save:node\ToolsMsg\Macro_svn.h \[2.11\] 
-Save:node\ToolsMsg\Macro_svn.h \[2.12\] 
+Save:node\ToolsMsg\Macro_svn.h \[1.12\] svn error
 // 其他标号
 Save:Help\\DefaultFile\\Macro_Node_Num.h
 
@@ -167,8 +154,11 @@ F:\11CW1352MP_MT6261DM\custom\codegen\FARSIGHTED61M_CN_11C_BB\codegen_M107_XYZN_
 
 
 
-[1.9] 
-
+[1.9] url
+//
+patch:ssh\
+// --
+patch:ssh\Macro_svn_url.h
 
 
 
@@ -181,7 +171,16 @@ F:\11CW1352MP_MT6261DM\custom\codegen\FARSIGHTED61M_CN_11C_BB\codegen_M107_XYZN_
 
 
 
-[1.12] 
+[1.12] svn error
+1.svn error:	
+post of '/svn/!svn/me':500 internal server error
+svn 500错误 500 Internal Server Error response to POST request
+//	打开VisualSVN Server GUI。
+//	右键单击左侧导航窗格根目录下的“VisualSVN Server（域）”，然后选择“属性”。
+//	在“常规”选项卡下，您将看到“自动调整权限”复选框。
+//	A.如果未选中此项，请选中它并单击“应用”。 这将停止并重新启动VisualSVN服务，并应解决此问题。
+//	B.如果选中此项，请取消选中并单击“应用”。 这将停止并重新启动Visual SVN服务。 
+//	完成后，重新检查该选项并再次单击“应用”。 重新启动服务后，现在应该解决该问题。
 
 
 
@@ -197,63 +196,6 @@ F:\11CW1352MP_MT6261DM\custom\codegen\FARSIGHTED61M_CN_11C_BB\codegen_M107_XYZN_
 
 
 [1.15] 
-
-
-
-[2.1] svn error
-1.svn error:	
-post of '/svn/!svn/me':500 internal server error
-svn 500错误 500 Internal Server Error response to POST request
-//	打开VisualSVN Server GUI。
-//	右键单击左侧导航窗格根目录下的“VisualSVN Server（域）”，然后选择“属性”。
-//	在“常规”选项卡下，您将看到“自动调整权限”复选框。
-//	A.如果未选中此项，请选中它并单击“应用”。 这将停止并重新启动VisualSVN服务，并应解决此问题。
-//	B.如果选中此项，请取消选中并单击“应用”。 这将停止并重新启动Visual SVN服务。 
-//	完成后，重新检查该选项并再次单击“应用”。 重新启动服务后，现在应该解决该问题。
-
-
-[2.2] 
-
-
-[2.3] 
-
-
-[2.4] 
-
-
-[2.5] 
-
-
-[2.6] 
-
-
-[2.7] 
-
-
-[2.8] 
-
-
-[2.9] 
-
-
-[2.10] 
-
-
-
-[2.11] 
-
-
-[2.12] 
-
-
-[2.13] 
-
-
-[2.14] 
-
-
-[2.15] 
-
 
 
 

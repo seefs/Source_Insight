@@ -29,7 +29,7 @@ Save:node\C\study\Macro_gui_8910.h  \[1.26\] text---------------
 Save:node\C\study\Macro_gui_8910.h  \[1.27\] prgbox-------------进度条
 Save:node\C\study\Macro_gui_8910.h  \[1.28\] menu
 Save:node\C\study\Macro_gui_8910.h  \[1.29\] owndraw------------
-Save:node\C\study\Macro_gui_8910.h  \[1.30\]
+Save:node\C\study\Macro_gui_8910.h  \[1.30\] Banner
 
 
 
@@ -58,6 +58,7 @@ Save:node\C\study\Macro_gui_8910.h  \[1.30\]
 // GetFontHeight
 
 // GUIRES_DisplayImg
+
 
 
 [1.2] Softkey
@@ -96,10 +97,13 @@ ctrl:Softkey/c/ctrlsoftkey.c  void^DrawAllButtons
 //softkey--rect/draw
 //		==>...
 //		====>MMITHEME_GetSoftKeyTextFont
+//		====>MMITHEME_GetSoftkeyStyle
 //		==>ParseWinTab
 //		====>DrawAllButtons
 //		======>ConstructObject
 //		========>GUISOFTKEY_Init  # set Font
+//		==========>.font          # 中
+//		==========>.small_font    # 左右
 //		==>DrawSoftkey
 //		====>CalSoftkeyRect       # 字体微调 rect 
 //		====>DrawAllButtons
@@ -1439,7 +1443,17 @@ ctrl:OwnerDraw\c\ctrlownerdraw.c  void^OwnerDrawDraw^( )
 
 
 
-[1.30] 
+[1.30] Banner
+//
+//		==>MMIAPICOM_OpenBannerWin
+//		====>InitControlPara
+//		======>.s_banner_para.banner_rect
+//		========>MMI_TEXT_BANNER_H_MARGE
+//		====>DrawControlBanner
+//		======>TEXT:
+//		========>.banner_rect
+//		========>.text1_rect   # 删除相册
+//		========>.text2_rect
 
 
 

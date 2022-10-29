@@ -75,6 +75,8 @@ make\resource_main\resource_target.mk 42
 //
 //static uint8  utf8_name[] = {0x55, 0x53, 0x42, 0x20, 0x0};	
 
+//MMIAPICOM_CustomGenerateReplaceStr
+
 
 #GUIEDIT
 // MMK_SendMsg

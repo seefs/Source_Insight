@@ -743,6 +743,13 @@ Save:node\C\study\Macro_res_color_8910.h  __sms__
 Save:node\C\study\Macro_im_8910.h  __input__
 
 
+//4.pws
+// 台湾版加预警系统
+prj:project_{cur}.mk  REMOVE_CB_FEATURE = FALSE
+prj:project_{cur}.mk  MMI_ETWS_SUPPORT = TRUE
+// 107默認開
+make\app_main\release_app_macro.mk  MMI_ETWS_SUPPORT
+
 
 [1.9] call
 
@@ -1279,7 +1286,10 @@ app:pic_viewer\c\mmipicview_wintab.c  HandlePicDetailWinMsg
 // pic--item--rename
 app:pic_viewer\c\mmipicview_wintab.c  HandlePicRenameWinMsg
 
-DrawSetlistItem
+// pic--view
+//		==>DrawItemText (title)
+//		====>MMITHEME_GetSetlistStyle
+ctrl:Setlist\c\ctrlsetlist.c  void^DrawSetlistItem
 
 
 ### pic

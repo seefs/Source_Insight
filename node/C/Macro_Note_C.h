@@ -8,7 +8,7 @@ Save:node\C\Macro_Note_C.h \[1.4\] list
 Save:node\C\Macro_Note_C.h \[1.5\] other
 Save:node\C\Macro_Note_C.h \[1.6\] rule
 Save:node\C\Macro_Note_C.h \[1.7\] search
-Save:node\C\Macro_Note_C.h \[1.8\] 
+Save:node\C\Macro_Note_C.h \[1.8\] tool-------------
 Save:node\C\Macro_Note_C.h \[1.9\] 
 Save:node\C\Macro_Note_C.h \[1.10\] 
 
@@ -154,8 +154,9 @@ Save:node\C\search\Macro_ALL_MTK.h
 
 
 
-[1.8] 
-
+[1.8] tool
+// SI--ÎÄ¼þ¹ýÂË
+Save:node\ToolsMsg\Macro_SI.h  __SI_SPDE__
 
 
 

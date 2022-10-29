@@ -21,7 +21,10 @@ Save:node\C\study\Macro_nv_8910.h \[1.18\] bt_nv
 Save:node\C\study\Macro_nv_8910.h \[1.19\] env_nv
 Save:node\C\study\Macro_nv_8910.h \[1.20\] simulator
 Save:node\C\study\Macro_nv_8910.h \[1.21\] replace-----------
-Save:node\C\study\Macro_nv_8910.h \[1.22\] 
+Save:node\C\study\Macro_nv_8910.h \[1.22\] apn
+Save:node\C\study\Macro_nv_8910.h \[1.23\] 
+Save:node\C\study\Macro_nv_8910.h \[1.24\] 
+Save:node\C\study\Macro_nv_8910.h \[1.25\] 
 
 Save:Help\\DefaultFile\\Macro_Node_Num.h
 
@@ -529,7 +532,22 @@ HW:{project}\
 HWNV:\
 
 
-[1.22] 
+[1.22] apn
+//
+Save:node\C\study\Macro_doc_8910.h  __107_apn__
+// t6b
+//1. 滑动卡顿（T6-B内单已经解决）
+//2. 台灣大物聯網卡無法上網使用（APN:twm.iot） 
+
+
+[1.23] 
+
+
+[1.24] 
+
+
+[1.25] 
+
 
 
 
