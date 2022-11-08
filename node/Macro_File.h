@@ -189,9 +189,12 @@ Save:node\ToolsMsg\Macro_Image.h
 
 
 [2.11] vc
-// vc
+// vc6
 Save:node\ToolsMsg\Macro_VC.h
-
+// vs2008
+Save:node\ToolsMsg\Macro_VS2008.h
+// vs2010
+Save:node\ToolsMsg\Macro_VS2010.h
 
 
 

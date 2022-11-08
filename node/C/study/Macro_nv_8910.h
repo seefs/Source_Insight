@@ -20,7 +20,7 @@ Save:node\C\study\Macro_nv_8910.h \[1.17\] hv_nv
 Save:node\C\study\Macro_nv_8910.h \[1.18\] bt_nv
 Save:node\C\study\Macro_nv_8910.h \[1.19\] env_nv
 Save:node\C\study\Macro_nv_8910.h \[1.20\] simulator
-Save:node\C\study\Macro_nv_8910.h \[1.21\] replace-----------
+Save:node\C\study\Macro_nv_8910.h \[1.21\] replace_nv--------
 Save:node\C\study\Macro_nv_8910.h \[1.22\] apn
 Save:node\C\study\Macro_nv_8910.h \[1.23\] 
 Save:node\C\study\Macro_nv_8910.h \[1.24\] 
@@ -513,7 +513,7 @@ source:winsimulator_tp/win_platform/SIM_Set_Files/
 source:winsimulator_tp/win_platform/SIM_Set_Files/SIM1/EF_LOCI.inf
 
 
-[1.21] replace
+[1.21] replace_nv
 
 // 批量替换
 Save:Help\Other\
@@ -535,6 +535,8 @@ HWNV:\
 [1.22] apn
 //
 Save:node\C\study\Macro_doc_8910.h  __107_apn__
+// 107 apn
+Save:node\C\study\Macro_doc_apn107.h
 // t6b
 //1. 滑动卡顿（T6-B内单已经解决）
 //2. 台灣大物聯網卡無法上網使用（APN:twm.iot） 

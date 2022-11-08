@@ -371,7 +371,7 @@ app:bmiotcard\c\bmiotservercontrol.c  int^bm_iot_card_cmd_set_love_number( )
 //		======>.pHourDate
 //		========>.date: 0
 app:launcher\c\watch_comm_net.c  user_notice_check_class_time
-
+WatchNotice_is_run
 
 //		==>
 //		====>

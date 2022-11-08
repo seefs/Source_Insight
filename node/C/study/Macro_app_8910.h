@@ -448,6 +448,7 @@ app:eng/c/mmieng_main.c  MMI_RESULT_E^ENGMainMenuWinHandleMsg
 // 工程模式--menu
 app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_eng
 // 工程模式--menu--netinfo
+//   (*#555#==>4==>6==>2)
 app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_net_info_show
 // 工程模式--menu--netinfo--nwcap
 //		==>ENGNetinfoShowWinHandleMsg
@@ -742,13 +743,9 @@ Save:node\C\study\Macro_res_color_8910.h  __sms__
 // ==>im
 Save:node\C\study\Macro_im_8910.h  __input__
 
-
-//4.pws
-// 台湾版加预警系统
-prj:project_{cur}.mk  REMOVE_CB_FEATURE = FALSE
-prj:project_{cur}.mk  MMI_ETWS_SUPPORT = TRUE
-// 107默認開
-make\app_main\release_app_macro.mk  MMI_ETWS_SUPPORT
+//
+Save:node\C\project\Macro_cfg_8910.h  __MMS__
+Save:node\C\project\Macro_cfg_8910.h  __CB__
 
 
 [1.9] call

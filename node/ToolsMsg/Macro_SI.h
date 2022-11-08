@@ -86,7 +86,7 @@ Source Insight 导入.c .h搜索会卡, 可只导入java文件
 // external            170
 // ARM                 164
 // BASE                204
-// SPDE_PRJ           3274 (先输入*.xml, 再输入SPDE_PRJ, 不会删mk)
+// SPDE_PRJ           3274 (先输入*.xml, 再输入 SPDE_PRJ, 不会删mk)
 // winsimulator_tp     270
 // *.txt               114 
 

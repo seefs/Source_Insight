@@ -678,6 +678,16 @@ LoadFileToImage
 // select_sim
 //	MMIAPISET_GetFlyMode()
 
+### rxlevel_step
+//		==>HandleNetworkStatusInd
+//		====>MAIN_SetIdleRxLevel
+//		======>0
+//		==>HandleScellRssiInd
+//		====>.srri_ind.rxlev       
+//		======>.g_service_rxlev_map  # 107
+//		======>MMIPHONE_GetRSSIMap   # 8910
+app:phone\c\mmiphone.c  HandleScellRssiInd
+
 
 
 [2.10] Sleep

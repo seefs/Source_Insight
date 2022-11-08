@@ -13,6 +13,8 @@ imagesPath = MS_MMI_Main\source\resource\mmi_res_{size}\
 images:\\
 ringPath = MS_MMI_Main\source\resource\Common\RING\
 ring:\\
+DATAPath = MS_MMI_Main\source\resource\Common\DATA\
+FONTPath = MS_MMI_Main\source\resource\Common\FONT\
 batNvPath = common\nv_parameters\ProductionParam\
 batNv:\\
 nvPath = SPDE_PRJ\{project}\nvitem\
@@ -22,8 +24,12 @@ nv:\\
 sourcePath  = MS_MMI_Main\source\
 appPath     = MS_MMI_Main\source\mmi_app\app\
 commonPath  = MS_MMI_Main\source\mmi_app\common\
+appkernelPath   = MS_MMI_Main\source\mmi_app\kernel\
 ctrlPath    = MS_MMI_Main\source\mmi_ctrl\source\
 guiPath     = MS_MMI_Main\source\mmi_gui\source\
+kernelPath  = MS_MMI_Main\source\mmi_kernel\source\
+servicePath = MS_MMI_Main\source\mmi_service\source\
+resourcePath= MS_MMI_Main\source\resource\
 configPath  = MS_Customize\source\product\config\uis8910ff_refphone\
 driverPath = MS_Customize\source\product\driver\
 sensorsPath = MS_Customize\source\product\driver\sensors\
@@ -39,6 +45,7 @@ prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
 //projectKey   = BMWATCH_FS_22
+projectKey   = WA22U_SW34E_QQVGA
 //projectKey   = WA22U_SW46E_QQVGA
 //projectKey   = WA22U_SW40E_QQVGA
 //projectKey   = WA22U_SW42E_QQVGA
@@ -46,15 +53,15 @@ prj:\\
 //projectKey   = WA03U_T6_B
 //projectKey   = WA03U_T6_B_81
 //projectKey   = WA03U_T6_B_EN
-projectKey   = WA22U_W48E
+//projectKey   = WA22U_W48E
 // --DEBUG --USER
 curKey   = UIS8910_ROM_16MB_SS_{project}_DEBUG
 //curKey   = UIS8910_240x320BAR_16MB_SS_{project}_USER
 cfgKey   = uis8910_phone_user_base_config
 sizeNext  = 1
-//size1Key  = 128X128
+size1Key  = 128X128
 //size1Key  = 240X240
-size1Key  = 240X280
+//size1Key  = 240X280
 //size1Key  = 240X284
 //size2Key  = 128X128
 
@@ -71,6 +78,7 @@ tmpKey = xx
 
 ### 5.build
 simulatorKey = simulator_idh
+simulator10Key = simulator_main
 resource_mainKey = resource_main
 app_mainKey = app_main
 gui_mainKey = gui_main

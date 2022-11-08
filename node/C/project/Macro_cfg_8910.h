@@ -5,7 +5,7 @@
 Save:node\C\project\Macro_cfg_8910.h \[1.1\] AUDIO, TONE
 Save:node\C\project\Macro_cfg_8910.h \[1.2\] PB
 Save:node\C\project\Macro_cfg_8910.h \[1.3\] SMS
-Save:node\C\project\Macro_cfg_8910.h \[1.4\] MMS
+Save:node\C\project\Macro_cfg_8910.h \[1.4\] MMS, CB
 Save:node\C\project\Macro_cfg_8910.h \[1.5\] BROWSER, DL
 Save:node\C\project\Macro_cfg_8910.h \[1.6\] BT
 Save:node\C\project\Macro_cfg_8910.h \[1.7\] RECORD
@@ -29,10 +29,10 @@ Save:node\C\project\Macro_cfg_8910.h \[2.7\] FM
 Save:node\C\project\Macro_cfg_8910.h \[2.8\] WIFI
 Save:node\C\project\Macro_cfg_8910.h \[2.9\] SS
 Save:node\C\project\Macro_cfg_8910.h \[2.10\] Tool
-Save:node\C\project\Macro_cfg_8910.h \[2.11\] lib--------------
+Save:node\C\project\Macro_cfg_8910.h \[2.11\] lib--------------第3方
 Save:node\C\project\Macro_cfg_8910.h \[2.12\] build 服务器流程
 Save:node\C\project\Macro_cfg_8910.h \[2.13\] build 省空间
-Save:node\C\project\Macro_cfg_8910.h \[2.14\] 
+Save:node\C\project\Macro_cfg_8910.h \[2.14\] build time
 Save:node\C\project\Macro_cfg_8910.h \[2.15\] marco
 Save:node\C\project\Macro_cfg_8910.h \[2.16\] Lib
 Save:node\C\project\Macro_cfg_8910.h \[2.17\] FLASH (大、/小版本)
@@ -201,24 +201,25 @@ make\app_main\app_macro.mk  MMI_SMS_SECURITYBOX_SUPPORT
 
 
 
-[1.4] MMS
-
-//MMS--107
+[1.4] MMS, CB
+### __MMS__
+//--107
 prj:project_{cur}.mk  MMS_SMS_IN_1_SUPPORT = TRUE
-
-//MMS--8910
+prj:project_{cur}.mk  MMS_SUPPORT = DORADO
+//--8910
 prj:{cfg}.cfg  MMS_SMS_IN_1_SUPPORT = TRUE
+prj:project_{cur}.mk  MMS_SUPPORT = DORADO
+
+// 关闭彩信功能可以透过合入patch（需要向我司申请）, 关闭MMS_SUPPORT宏，合入之后另外编版本测试即可
 
 
-
-//
-MMS_SUPPORT = DORADO
-//
-MMS_SMS_IN_1_SUPPORT = TRUE                         ### MMS SMS IN 1 Support:
-
-
-## 关闭彩信功能可以透过合入patch（需要向我司申请）, 关闭MMS_SUPPORT宏，合入之后另外编版本测试即可
-
+### __CB__
+//4.pws
+// 台湾版加预警系统
+prj:project_{cur}.mk  REMOVE_CB_FEATURE = FALSE
+prj:project_{cur}.mk  MMI_ETWS_SUPPORT = TRUE
+// 107默認開
+make\app_main\release_app_macro.mk  MMI_ETWS_SUPPORT
 
 
 
@@ -789,8 +790,9 @@ prj:project_{cur}.mk   MMI_APP_REMOVE_SMS_NUM = TRUE
 
 
 
-[2.14] 
-
+[2.14] build time
+// build time
+Save:node\ToolsMsg\Macro_win10.h  __Buildtime__
 
 
 [2.15] marco
@@ -807,6 +809,7 @@ chip_drv/chip_module/analog/v7
 
 
 [2.16] Lib
+
 ### w07U
 // baseLib
 prj:project_{cur}.mk  PRODUCT_BASELIB_DIR
@@ -819,10 +822,11 @@ prj:project_{cur}.mk  MODEM_BIN_FILE
 //   MODEM_BIN_FILE = UIS8910_ROM_16MB_DS_USER
 
 // .a--编模块进这里
-lib\UIS8910_ROM_16MB_SS_USER
+lib\UIS8910_ROM_16MB_SS_USER\
 
 // binFile
-lib\modem\UIS8910_ROM_16MB_DS_USER
+lib\modem\UIS8910_ROM_16MB_DS_USER\
+lib\modem\UIS8910_ROM_16MB_DS_USER\
 
 
 ### w03u
@@ -837,10 +841,10 @@ prj:project_{cur}.mk MODEM_BIN_FILE
 //   MODEM_BIN_FILE = MODEM_USER
 
 // .a--编模块进这里
-lib\UIS8910_240x320BAR_16MB_SS_USER
+lib\UIS8910_240x320BAR_16MB_SS_USER\
 
 // binFile
-lib\modem\MODEM_USER
+lib\modem\MODEM_USER\
 
 
 ### BMWATCH
@@ -851,18 +855,16 @@ SPDE_PRJ\BMWATCH\project_UIS8910_240x320BAR_16MB_SS_BMWATCH_USER.mk  PRODUCT_BAS
 
 
 // .a--编模块进这里
-lib\UIS8910_240x320BAR_16MB_SS_USER
+lib\UIS8910_240x320BAR_16MB_SS_USER\
 
 
 ### T107
 // baseLib
 SPDE_PRJ\S98T_FLP_E535_31\project_ums9117_240X320BAR_48MB_S98T_FLP_E535_31_user.mk  PRODUCT_BASELIB_DIR
 SPDE_PRJ\S98T_FLP_E535_31\project_ums9117_240X320BAR_48MB_S98T_FLP_E535_31_debug.mk  PRODUCT_BASELIB_DIR
-//
-lib\ums9117_240X320BAR_48MB_CAT1_rel
-lib\ums9117_240X320BAR_48MB_CAT1
-
-
+// user/debug
+lib\ums9117_240X320BAR_48MB_CAT1_rel\
+lib\ums9117_240X320BAR_48MB_CAT1\
 
 
 [2.17] FLASH
@@ -880,19 +882,19 @@ prj:project_{cur}.mk  WATCH_FS_FLASH_STYLE_
 ###
 // 8910F
 config:\
-config:uis8910ff_refphone/spiflash_cfg.c  FLASH_SIZE_128MBITX64MBIT_NEW
+config:spiflash_cfg.c  FLASH_SIZE_128MBITX64MBIT_NEW
 // 8910s
-config:uis8910ff_refphone/spiflash_cfg.c  FLASH_SIZE_128MBIT$
+config:spiflash_cfg.c  FLASH_SIZE_128MBIT$
 
 
 
 // SECTOR
-config:uis8910ff_refphone/spiflash_cfg.c  MMI_RES_SECTOR_NUM
-config:uis8910ff_refphone/spiflash_cfg.c  604
+config:spiflash_cfg.c  MMI_RES_SECTOR_NUM
+config:spiflash_cfg.c  604
 // 	#define MMI_RES_SECTOR_NUM         70 // 67 //66  60
 // 
-config:uis8910ff_refphone/spiflash_cfg.c  UDISK_SIZE
-config:uis8910ff_refphone/spiflash_cfg.c  573
+config:spiflash_cfg.c  UDISK_SIZE
+config:spiflash_cfg.c  573
 //	#define UDISK_SIZE                 ((UMEM_SECTOR_NUM+4)*FLASH_SECTOR_SIZE)
 
 // 
@@ -901,8 +903,8 @@ MS_Customize/UIX8910_normal.scf  43
 //	LOAD_KERNEL_IMAGE IMAGE_ENTRY_ADDR 0x00A60000   # ps size
 
 // 
-config:uis8910ff_refphone/spiflash_cfg.c  PS_STONE_SECTOR_NUM
-config:uis8910ff_refphone/spiflash_cfg.c  646
+config:spiflash_cfg.c  PS_STONE_SECTOR_NUM
+config:spiflash_cfg.c  646
 //	#define  PS_STONE_SECTOR_NUM		124 // 123 //123
 
 

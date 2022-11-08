@@ -222,6 +222,15 @@ open tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe
 MS_MMI_Main\source\resource\Common\FONT\LANG_FONT_LATIN_12_14_29.lib
 MS_MMI_Main\source\resource\Common\FONT\
 
+
+// »»×Ö¿â
+MS_Customize/source/product/config/uis8910ff_refphone/spiflash_cfg.c
+MS_Customize/UIX8910_normal.scf
+MS_MMI_Main/source/resource/mmi_res_prj_def.h
+
+
+
+
 // ==>font/color
 Save:node\C\study\Macro_res_color_8910.h  __idle__
 

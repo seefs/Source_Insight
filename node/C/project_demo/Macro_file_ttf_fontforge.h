@@ -10,6 +10,14 @@ base:\\
 AsFile:base:
 
 
+# step
+//1.字频-range---裁剪
+//2.字频-output--生成code
+//3.font-sprd----生成0_1
+//4.font-calc----生成range
+//5.font-sprd----生成ini
+
+
 # 脚本
 C:\Program^Files^(x86)\FontForgeBuilds\bin\
 C:\Program^Files^(x86)\FontForgeBuilds\fontforge-console.bat
@@ -144,19 +152,19 @@ fontforge -script pe/scriptclear_mnoV.pe AAA_FONT_CN.sfd ".sfd"
 // 对比效果
 86B0: NS>DEF>NSST=NSTT
 // 属性
-FBBx FBBy: 字体的宽度和高度(defW=16, 90%W=14)
-maxbearingY: 上移, 未压缩--4, 压缩--2
+//FBBx FBBy: 字体的宽度和高度(defW=16, 90%W=14)
+//maxbearingY: 上移, 未压缩--4, 压缩--2
 // 最终使用
 //LANG_FONT_HAN_TRAD_TW_VECTOR_SMALL_FTOOL_NS_BY4
 // 步骤:
-// --置和恢字明显区别
+// --"置"和"恢"字明显区别, 这个字库有问题
 MS_MMI_Main\source\resource\Common\FONT\Zouk TTF\NotoSans.ttf +
 // --恢字阴影多一点
 MS_MMI_Main\source\resource\Common\FONT\Zouk TTF\NotoSansCJKsc-Regular.ttc +
 tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe + 
 tools\DEBUG_TOOL\FONTTOOL\Bin\Han_merge_small.ini + 
-导入时maxbearingY设置为4(上移4解决显示超边界问题)
-应该要选矢量flag
+//导入时maxbearingY设置为4(上移4解决显示超边界问题)
+//应该要选矢量flag
 
 
 ### 使用循环

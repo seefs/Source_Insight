@@ -754,7 +754,6 @@ source:mmi_app/kernel/c/mmimain.c  SECOND_LOGO
 source:mmi_app/kernel/c/mmimain.c  InitMMIModule
 
 
-
 //
 app:phone/c/mmiphone_onoff.c  MMISET_RING_TYPE_POWER
 //
@@ -765,6 +764,8 @@ app:phone/c/mmiphone_onoff.c  MMI_RESULT_E^HandlePowerOffWindow
 // on
 app:phone/c/mmiphone_onoff.c  MMI_RESULT_E^HandleNormalStartupWindow
 
+
+// 哪些能导出来:logo可以，gif不行
 
 
 

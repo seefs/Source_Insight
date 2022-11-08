@@ -19,7 +19,7 @@ Save:node\C\cfg\Macro_c_list.h \[1.3\] TTF
 Save:node\C\cfg\Macro_c_list.h \[1.4\] //TTF edit
 Save:node\C\cfg\Macro_c_list.h \[1.5\] fontforge
 Save:node\C\cfg\Macro_c_list.h \[1.6\] rime------- ‰»Î∑®
-Save:node\C\cfg\Macro_c_list.h \[1.7\] 
+Save:node\C\cfg\Macro_c_list.h \[1.7\] audio
 Save:node\C\cfg\Macro_c_list.h \[1.8\] 
 Save:node\C\cfg\Macro_c_list.h \[1.9\] 
 Save:node\C\cfg\Macro_c_list.h \[1.10\] 
@@ -163,8 +163,9 @@ https://rime.im/download/
 
  
 
-[1.7] 
-
+[1.7] audio
+// py--audio
+Save:node\Pythons\project\Macro_audio.h
 
 
 

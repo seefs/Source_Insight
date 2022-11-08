@@ -58,8 +58,8 @@ Save:node\ToolsMsg\Macro_git.h \[4.7\] git config ----------配置别名
 Save:node\ToolsMsg\Macro_git.h \[4.8\] git config ----------单个用户配置-----配置文件
 Save:node\ToolsMsg\Macro_git.h \[4.9\] git config ----------提示输入用户名和密码
 Save:node\ToolsMsg\Macro_git.h \[4.10\] hosts ---------------解决下载慢
-Save:node\ToolsMsg\Macro_git.h \[4.11\] 
-Save:node\ToolsMsg\Macro_git.h \[4.12\] 打开Git调试日志记录
+Save:node\ToolsMsg\Macro_git.h \[4.11\] git rm -r --cached
+Save:node\ToolsMsg\Macro_git.h \[4.12\] git setting
 Save:node\ToolsMsg\Macro_git.h \[4.13\] 
 Save:node\ToolsMsg\Macro_git.h \[4.14\] git-upload-pack
 Save:node\ToolsMsg\Macro_git.h \[4.15\] 
@@ -859,10 +859,15 @@ https://community.spiceworks.com/tools/ip-lookup/
 //devsidecar
 
 
-[4.11] 
+[4.11] git rm -r --cached
+//
+//	Git\bin\git  rm -r --cached lib
+//	Git\bin\git  add .
+//	Git\bin\git  commit -m 'update .gitignore'   //windows 使用的命令是  
 
 
-[4.12] 打开Git调试日志记录
+[4.12] git setting
+### 打开Git调试日志记录
 // 在执行Git命令之前，请在命令行中执行以下操作：
 set GIT_TRACE_PACKET=1
 set GIT_TRACE=1

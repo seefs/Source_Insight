@@ -13,6 +13,8 @@ imagesPath = MS_MMI_Main\source\resource\mmi_res_{size}\
 images:\\
 ringPath = MS_MMI_Main\source\resource\Common\RING\
 ring:\\
+DATAPath = MS_MMI_Main\source\resource\Common\DATA\
+FONTPath = MS_MMI_Main\source\resource\Common\FONT\
 batNvPath = common\nv_parameters\ProductionParam\
 batNv:\\
 nvPath = SPDE_PRJ\{project}\nvitem\
@@ -22,8 +24,12 @@ nv:\\
 sourcePath  = MS_MMI_Main\source\
 appPath     = MS_MMI_Main\source\mmi_app\app\
 commonPath  = MS_MMI_Main\source\mmi_app\common\
+appkernelPath   = MS_MMI_Main\source\mmi_app\kernel\
 ctrlPath    = MS_MMI_Main\source\mmi_ctrl\source\
 guiPath     = MS_MMI_Main\source\mmi_gui\source\
+kernelPath  = MS_MMI_Main\source\mmi_kernel\source\
+servicePath = MS_MMI_Main\source\mmi_service\source\
+resourcePath= MS_MMI_Main\source\resource\
 configPath  = MS_Customize\source\product\config\uis8910ff_refphone\
 driverPath = MS_Customize\source\product\driver\
 sensorsPath = MS_Customize\source\product\driver\sensors\
@@ -37,15 +43,15 @@ versionKey  = UIX8910_uis8910ff_refphone_version
 prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
-projectKey   = X225U_HQVGA
+projectKey   = K220U_MRD_X12_2In1_V11_QVGA
+//projectKey   = X225U_HQVGA
 curKey   = UIS8910_ROM_16MB_DS_USER
 cfgKey   = uis8910_phone_user_base_config
-//sizeNext  = 1
-//size1Key  = 240X320
+sizeNext  = 1
+size1Key  = 240X320
+//sizeNext  = 2
+//size1Key  = 320X240
 //size2Key  = 240X320
-sizeNext  = 2
-size1Key  = 320X240
-size2Key  = 240X320
 
 
 ### 3.copy

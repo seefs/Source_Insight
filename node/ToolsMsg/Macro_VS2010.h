@@ -5,16 +5,16 @@
 //目录:
 // 1. vc2010
 Save:node\ToolsMsg\Macro_VS2010.h \[1.1\] 安装、卸载
-Save:node\ToolsMsg\Macro_VS2010.h \[1.2\] error
-Save:node\ToolsMsg\Macro_VS2010.h \[1.3\] 
+Save:node\ToolsMsg\Macro_VS2010.h \[1.2\] error build
+Save:node\ToolsMsg\Macro_VS2010.h \[1.3\] error run
 Save:node\ToolsMsg\Macro_VS2010.h \[1.4\] 
 Save:node\ToolsMsg\Macro_VS2010.h \[1.5\] pageheap
 Save:node\ToolsMsg\Macro_VS2010.h \[1.6\] Windbg--gflags
-Save:node\ToolsMsg\Macro_VS2010.h \[1.7\] 
-Save:node\ToolsMsg\Macro_VS2010.h \[1.8\] 
-Save:node\ToolsMsg\Macro_VS2010.h \[1.9\] 
-Save:node\ToolsMsg\Macro_VS2010.h \[1.10\] 
-Save:node\ToolsMsg\Macro_VS2010.h \[1.11\] 
+Save:node\ToolsMsg\Macro_VS2010.h \[1.7\] Application Verifier
+Save:node\ToolsMsg\Macro_VS2010.h \[1.8\] WinDbg
+Save:node\ToolsMsg\Macro_VS2010.h \[1.9\] Dependencies------查看依赖dll
+Save:node\ToolsMsg\Macro_VS2010.h \[1.10\] build
+Save:node\ToolsMsg\Macro_VS2010.h \[1.11\] set
 Save:node\ToolsMsg\Macro_VS2010.h \[1.12\] 
 // 其他标号
 Save:Help\\DefaultFile\\Macro_Node_Num.h
@@ -40,7 +40,8 @@ https://blog.csdn.net/weixin_39381833/article/details/78078343
 // ---
 
 
-
+// 激活
+//YCFHQ-9DWCY-DKV88-T2TMH-G7BHP
 
 
 
@@ -59,15 +60,42 @@ ms_mmi_main\source\winsimulator_tp\win_platform\msdevkernel\h\stdafx.h
 //	#pragma comment(lib, "devps.lib")
 //	#endif
 
+### ntdll.dll
+//	“MSDev.exe”: 已加载“G:\T1072\build\ums9117_240X320BAR_48MB_S89T_BYD_L66A_IN_debug_builddir\win\bin\MSDev.exe”，Cannot find or open the PDB file
+//	“MSDev.exe”: 已加载“C:\Windows\SysWOW64\ntdll.dll”，Cannot find or open the PDB file
 
 
-[1.3] 
+### 
+//MSDev.exe 中的 0x1187037f (msdevkernel.dll) 处有未经处理的异常: 
+
+### 
+// 0xC0000005: 执行位置 0x 00000000
+Appkernel:c\mmi_resource.c  ResFree
+
+
+[1.3] error run
+
+### 周围的堆栈已损坏
+Run-Time Check Failure #2 - Stack around the variable 'top_offset' was corrupted.
+//
+app:sms\c\mmismscb_wintab.c  void^InitCBChannelList
+
+
+###
+// 	msdevkernel.dll!LIST_DEL()  行 125 + 0xb 字节	C
+
+
+
+
+
+
+
+
 
 
 
 
 [1.4] 
-
 
 
 
@@ -156,17 +184,51 @@ open:D:\Program^Files^(x86)\Windows^Kits\10\Debuggers\x64\Windbg.exe
 
 
 
-[1.9] 
+[1.9] Dependencies------查看依赖dll
+//
+https://blog.csdn.net/tomoca/article/details/118678684
+//
+H:\Desktop\tool\file_down\_debug\depends22_x64\
+// 不是真缺
+api-ms-win-core-apiquery-l1-1-0.dll
+//
+//这是缺少vs2010的runtime库
+
+
+### 
+c:windows\syswow64\
+
+
+
+### win8，win7系统经常出现软件不运行，
+// 提示：api-ms-win-crt-runtime-l1-1-0.dll 丢失
+https://zhuanlan.zhihu.com/p/161848796
 
 
 
 
-[1.10] 
+[1.10] build
+// Option
+make\perl_script\perl_pm\CreateDSP\createDSP.pm  Get_VS_2010_File_Name_Compile_Option
+//
+make\perl_script\create_dsp.pl  VS2010
 
 
 
-[1.11] 
+[1.11] set
 
+
+### 解决方法 vs2010：(无效)
+//	首先打开菜单项目->项目属性页 
+//	1。选择配置属性->链接器->调试->生成调试信息改为是 
+//	2。选择配置属性->C/C++->常规->调试信息格式改为用于“编辑并继续”的程序数据库(/ZI) 
+//	3。选择配置属性->C/C++->优化->优化改为禁用(/Od) 
+
+
+###
+磁盘上已存在名为“D:\soft\wa01u_w21_svn2\MS_MMI_Main\source\winsimulator_tp\win_platform\MSDevBridge\MSDevBridge_Mod.vcxproj”的文件。
+
+是否覆盖项目及其导入的属性表?
 
 
 

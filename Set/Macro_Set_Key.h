@@ -1,31 +1,39 @@
 //
 // 格式: 
-//      key = val
-//      key = val
-//   key 从第1个字符开始
-//   “=” 左右可以有空格
-//   “” 前不要多余空格
+// __xxx = val
+//
+// 格式说明: 
+// __: 数字，前面不要空格
+// xxx: 可以是 key alias...
+// =: 左右可以有空格
+// val: 后面不要空格
 //
 //
-// 类型: 
+// 使用说明: 
+// __alias = val
+//   大类，别名
+//           大类脚本内部使用，别名可外部使用( {8910}\... )
+// __RuleEn = val
+//   大类，文件别名
+//           (F5使用)
 //
-// 101112...:  项目路径 
-//   1个key对应1个路径  否则不能对比
-//   2个key对应1个路径  如 “_SI4.0” 中的路径， 并放最后
-//
-// 10alias:  总类别名 脚本内部使用
+// __ = val
+//   小类，项目路径 (列出每个路径)
 // 
-// 10key:    项目文本中替换使用 (替换 {pro})
-//           同一套代码可用同一名称 (svn1 svn2 都用svn)
-//           其他路径也用key
-//
-// 10RuleEn: F5使用
+// __key = val
+//   小类，配置别名 (同一套代码可共用)
+//           别名内部替换用 ({pro})
+//           别名共用，仅第1个能对比，次要的放最后(如 “_SI4.0”)
 // 
-// 10Search: F9使用(功能舍弃)
+// __Search = val
+//           F9使用 (功能舍弃)
 // 
-// 10Note:       F11使用(功能舍弃)
+// __Note = val
+//           F11使用 (功能舍弃)
 // 
-// 10Hot2:      F1使用 spr or mtk
+// __Hot2 = val
+//           F1使用 spr or mtk
+// 
 
 
 //(1) 6531DA 项目路径
@@ -83,34 +91,38 @@
 61 = G:\UIS8910_git2
 62 = G:\UIS8910_schcard_git
 63 = G:\wa01u_svn
-64 = G:\wa01u_svn_small_new2
 65 = G:\wa01u_svn_small_new
 66 = G:\wa01u_svn_small_new3
 67 = G:\wa01u_svn_small_w21
+68 = D:\soft\wa01u_w21_svn2
 
 60key = 8910
 61key = 8910
 62key = 8910sch
 63key = 8910wa
-64key = 8910wa
 65key = 8910wa
 66key = 8910wa
 67key = 8910wa21
+68key = 8910wa21D
 
 
 //(7) 7701 8910 项目路径
 70alias = 8910
 70RuleEn = 8910
 //
-70 = G:\T1071
-71 = E:\T107old
+70 = G:\T1072
+71 = G:\T1071
+72 = E:\T107old
+73 = D:\soft\T1073
 76 = G:\wa03u_git
 77 = G:\wa03u_git2
 
 70key = 107
-71key = 107Old
+71key = 107
+72key = 107Old
+73key = 107D
 
-76key = 8910wa21
+76key = 8910wa_git
 77key = 8910wa_git
 
 //(8) MTK 项目路径1

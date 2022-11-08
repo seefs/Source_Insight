@@ -42,15 +42,16 @@ prj:\\
 
 
 //projectKey   = BMWATCH_FS
-projectKey   = BMWATCH_FS_22
+//projectKey   = BMWATCH_FS_22
 //projectKey   = WA03U_T6_A_81
-//projectKey   = WA03U_T6_JYC
+projectKey   = WA03U_T6_JYC
 curKey   = UIS8910_ROM_16MB_SS_{project}_USER
 //curKey   = UIS8910_ROM_16MB_SS_{project}_DEBUG
 //curKey   = UIS8910_240x320BAR_16MB_SS_{project}_USER
 //cfgKey   = uis8910_watch_user_base_config
 cfgKey   = uis8910_phone_user_base_config
 sizeNext  = 1
+//size1Key  = 128X128
 size1Key  = 240X284
 //size2Key  = 240X284
 //size1Key  = 240X280

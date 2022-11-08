@@ -38,26 +38,51 @@ Save:node\C\study\Macro_res_image_8910.h \[1.30\]
 
 
 [1.1] Logo--开关机
+//
+prj:project_{cur}.mk   MMI_POWER_ONOFF_ANIM    # 动画
+prj:project_{cur}.mk   NOKIA_POWERONOFF_PATCH  # nv
+prj:project_{cur}.mk   SECOND_LOGO
+prj:project_{cur}.mk   FOUR_LOGO
 
-// logo
+
+### logo
 prj:resource\logo\
 images:\
-images:IMAGE_TEMPORARY_BOOTUP_DEFAULT.bmp
+
+//		==>.bmp/default
+source:resource/mmi_res_prj_def.h  IMAGE_TEMPORARY_BOOTUP_DEFAULT
+//		==>.bmp
+source:resource/mmi_res_prj_def.h  LOGO_S2
+
+
+### startup
 images:common\MMI_RES_DEFAULT\IMAG\startup\
-images:common\MMI_RES_DEFAULT\IMAG\startup\IMAGE_TEMPORARY_BOOTUP_DEFAULT.png
-
-// gif
-app:phone\c\mmiphone_onoff.c  MMI_POWER_ONOFF_ANIM
-// --128*160 默认加载 gif
-// MMI_LOW_MEMORY_RESOURCE  # 应该是默认定义
-source:mmi_app\common\h\common_mdu_def.h  MMI_POWER_ONOFF_ANIM
 images:common\MMI_RES_DEFAULT\IMAG\Power_on_off\
-images:common\MMI_RES_DEFAULT\IMAG\Power_on_off\IMAGE_POWER_ON.gif
-
-//
 Save:node\C\study\Macro_gui_8910.h  __SECOND_LOGO__
+// --png/default
+source:mmi_app/common/h/common_mdu_def.h  IMAGE_TEMPORARY_BOOTUP_DEFAULT
+// --png
+source:mmi_app/common/h/common_mdu_def.h  IMAGE_POWER_ON_NM
+// --gif/default
+source:resource/mmi_res_prj_def.h  IMAGE_POWER_ON
+// --gif
+source:resource/mmi_res_prj_def.h  MORE_LOGO
 
-//
+//		==>info
+app:phone\c\mmiphone_onoff.c  MMI_POWER_ONOFF_ANIM
+
+
+
+### ring
+source:resource\Common\RING\
+Save:node\C\study\Macro_res_ring_8910.h  __power__
+
+//		==>.mp3
+source:resource/mmi_res_prj_def.h  R_POWER_NCN_ON
+//		==>ID
+app:setting\h\mmiset_export.h  MMI_POWER_RING_ITEM1_ON_ID
+//		==>info
+app:setting\c\mmiset_ring.c   MMI_POWER_RING_ITEM1_ON_ID
 
 
 [1.2] __mainmenu__--主菜单图片
@@ -170,10 +195,12 @@ source:mmi_app\common\h\common_mdu_def.h  IMAGE_IDLE_BLACKLIST_STATUSBAR_ICON
 images:common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\
 images:common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\IMAGE_IDLE_TITLE_ICON_SD.png
 
-// --sim
+// --sim--8910
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_IDLE_ICON_NO_SIM1
 images:common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\battery_syle1\
 
+// 假信号
+Save:node\C\study\Macro_fun_8910.h  rxlevel_step
 
 
 [1.6] time----拨号日期锁屏

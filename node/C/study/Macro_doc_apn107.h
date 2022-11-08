@@ -64,6 +64,10 @@ S89T目前是我昨天发的三个问题。其中一个EVS问题是不支持，
 这个不是强制要求，可以先不管；
 另一个 不回落3G的问题，改了之后，我编了版本，台湾反馈没有效果，提的cq是SPCSS01070420，
 可以关注下状态，如果有要配合的，就配合弄一下。等下我把改的nv提交一下 
+//
+SPCSS01072982 ：跟XCAP问题
+SPCSS01072886 ：跟SMS over IMS问题
+相关CQ：SPCSS01070420
 
 ###
 //
@@ -73,6 +77,14 @@ F76T外单客户，新报了一个运营商的老问题，美国的tmobile，
 问题视频和log也都上传了。
 把你们拉进客户的群了“彭总展意丰索爱服务群”
 
+ 
+### log--apn
+// apn
+mmipdp info MMIAPIPDP_Active: priority:3, app_handler:0x27, apn:Internet, dual_sys:0
+// mcc--mcc
+roaming status: 0, net isroaming: 0, net mcc: 466, sim mcc: 466
+// hostbyname
+tcpip: sci_async_gethostbyname - url(xcap.ims.taiwanmobile.com), timeout(4000 ms), netid(81c8070c)
 
 
 

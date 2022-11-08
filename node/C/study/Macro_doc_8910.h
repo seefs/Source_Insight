@@ -549,18 +549,34 @@ tool_mini:6_res_str\
 tool_mini:6_res_str\res_ntac.xlsx
 
 //
-MS_MMI_Main\source\resource\Common\DATA\
+resource:Common\DATA\
+// tools
+{8910}\tools\DEBUG_TOOL\ResBOCA\ResBOCA_R1.19.0501\Bin\
+{8910wa21}\MS_MMI_Main\source\resource\Common\DATA\
+{8910wa_git}\MS_MMI_Main\source\resource\Common\DATA\
 
 
+### 107
+// 分段加载
+prj:project_{cur}.mk  DATA_ACCOUNT_USE_SPLIT_FILE = TRUE
 
-### __107_apn__
-//
+// __107_apn__
 PS\nv\operator_delta\operator_config_all\
 // 所有支持运营商的索引
 PS\nv\operator_delta\operator_config_all\Index.xml
 // 107 apn
 Save:node\C\study\Macro_doc_apn107.h
-
+//
+resource:Common\DATA\
+// apn_list_BigThan_300_LessThan_430.ntac
+// apn_list_BigThan_430.ntac
+// apn_list_LessThan_300.ntac
+// 资料
+https://unisupport.unisoc.com/file/index?fileid=31001
+// aosp--apn有点旧
+http://aospxref.com/
+http://aospxref.com/android-13.0.0_r3/xref/device/generic/goldfish/data/etc/apns-conf.xml
+http://aospxref.com/android-13.0.0_r3/xref/device/sample/etc/apns-full-conf.xml
 
 
 [1.15] ATEST_SUPPORT

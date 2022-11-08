@@ -1322,6 +1322,7 @@ macro ReAllKeyHead(hbuf, curPath)
 		return curPath
 		
 	pathMid = strmid(curPath, firstS + 1, firstE)
+	//²éÕÒÅäÖÃÎÄ¼ş
 	keyVal = getKeyHead(hbuf, pathMid)
 	pathE  = strmid(curPath, firstE + 1, len)
 	pathE  = ReAllKeyHead(hbuf, pathE)

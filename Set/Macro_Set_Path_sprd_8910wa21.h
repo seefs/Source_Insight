@@ -43,6 +43,7 @@ prj:\\
 //projectKey   = WA22U_SW40E_QQVGA
 //projectKey   = WA22U_SW42E_QQVGA
 //projectKey   = WA22U_W59E_QQVGA
+//projectKey   = WA03U_T6_B
 //projectKey   = WA03U_T6_B_81
 //projectKey   = WA03U_T6_B_EN
 projectKey   = WA22U_W48E
@@ -70,6 +71,7 @@ tmpKey = xx
 
 ### 5.build
 simulatorKey = simulator_idh
+simulator10Key = simulator_main
 resource_mainKey = resource_main
 app_mainKey = app_main
 gui_mainKey = gui_main

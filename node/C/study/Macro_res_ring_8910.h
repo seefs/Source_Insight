@@ -32,7 +32,7 @@ Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 
 
-[1.1] power
+[1.1] __power__
 // power
 source:resource\Common\RING\
 source:resource\Common\RING\Startup.mid

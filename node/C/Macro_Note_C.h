@@ -3,7 +3,7 @@
 //Ä¿Â¼:
 Save:node\C\Macro_Note_C.h \[1.1\] °²×°+ÅäÖÃ
 Save:node\C\Macro_Note_C.h \[1.2\] project----------8910 mtk
-Save:node\C\Macro_Note_C.h \[1.3\] ext
+Save:node\C\Macro_Note_C.h \[1.3\] ext,third
 Save:node\C\Macro_Note_C.h \[1.4\] list
 Save:node\C\Macro_Note_C.h \[1.5\] other
 Save:node\C\Macro_Note_C.h \[1.6\] rule
@@ -67,7 +67,7 @@ Save:node\C\project\Macro_Note_7701.h
 
 
 
-[1.3] ext
+[1.3] ext,third
 // ext
 Save:node\C\study\
 Save:node\C\study\Macro_slide_8910.h
@@ -77,6 +77,8 @@ Save:node\C\study\Macro_zmaee_8910.h
 Save:node\C\study\Macro_sch_8910.h
 Save:node\C\study\Macro_socket_8910.h
 Save:node\C\study\Macro_patch_8910.h
+// third
+Save:node\C\study\Macro_patch_third.h
 
 
 
