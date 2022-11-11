@@ -743,9 +743,27 @@ Save:node\C\study\Macro_res_color_8910.h  __sms__
 // ==>im
 Save:node\C\study\Macro_im_8910.h  __input__
 
+
+### MMS
 //
 Save:node\C\project\Macro_cfg_8910.h  __MMS__
+
+
+### CB
+//
 Save:node\C\project\Macro_cfg_8910.h  __CB__
+//
+Save:node\C\study\Macro_doc_cb8910.h
+
+
+
+
+
+
+
+
+
+
 
 
 [1.9] call
