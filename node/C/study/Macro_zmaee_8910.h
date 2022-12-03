@@ -3,9 +3,9 @@
 //
 Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 //
-zmaeePath = prj:zmaee
+//zmaeePath = prj:zmaee
 //zmaeePath = prj:zmaee_128X128
-//zmaeePath = app:zmaee_128X128
+zmaeePath = app:zmaee_128X128
 zmaee:\\
 
 //目录:
@@ -16,7 +16,7 @@ Save:node\C\study\Macro_zmaee_8910.h \[1.3\] powerOff
 Save:node\C\study\Macro_zmaee_8910.h \[1.4\] set---led
 Save:node\C\study\Macro_zmaee_8910.h \[1.5\] make--res
 Save:node\C\study\Macro_zmaee_8910.h \[1.6\] mulit
-Save:node\C\study\Macro_zmaee_8910.h \[1.7\] 热插拨功能
+Save:node\C\study\Macro_zmaee_8910.h \[1.7\] sim
 Save:node\C\study\Macro_zmaee_8910.h \[1.8\] 耗电
 Save:node\C\study\Macro_zmaee_8910.h \[1.9\] Torch
 Save:node\C\study\Macro_zmaee_8910.h \[1.10\] 客户
@@ -25,8 +25,7 @@ Save:node\C\study\Macro_zmaee_8910.h \[1.12\] charge
 Save:node\C\study\Macro_zmaee_8910.h \[1.13\] 音量
 Save:node\C\study\Macro_zmaee_8910.h \[1.14\] version, IMEI
 Save:node\C\study\Macro_zmaee_8910.h \[1.15\] sensor
-Save:node\C\study\Macro_zmaee_8910.h \[1.15\] 
-Save:node\C\study\Macro_zmaee_8910.h \[1.16\] 
+Save:node\C\study\Macro_zmaee_8910.h \[1.16\] tcp---------active
 Save:node\C\study\Macro_zmaee_8910.h \[1.17\] patch
 Save:node\C\study\Macro_zmaee_8910.h \[1.18\] 
 Save:node\C\study\Macro_zmaee_8910.h \[1.19\] log
@@ -124,18 +123,24 @@ tools_mdu_def.h clock_mdu_def.h bt_mdu_def.h camera_mdu_def.h
 
 
 
-[1.7] 热插拨功能
+[1.7] sim
+### 热插拨功能
 //
 SIM_PLUG_IN_SUPPORT
 
 
+### apn
+// apn: cmnet
+// mcc mnc: 460 02
+// type: 0
+
 
 [1.8] 耗电
 //
-关于耗电目前是这么几步来排查：
-1、不插卡的功情况，排除驱动干扰
-2、去掌盟的功耗情况
-3、加掌盟的，单2g/单4g网络情况
+//关于耗电目前是这么几步来排查：
+//1、不插卡的功情况，排除驱动干扰
+//2、去掌盟的功耗情况
+//3、加掌盟的，单2g/单4g网络情况
 
 
 
@@ -267,8 +272,15 @@ zmaee:c\zmaee_watch.c  ZMAEE_IWatch_GetStepNum
 
 
 
-[1.16] 
+[1.16] tcp---------active
+//		==>ZMAEE_INetMgr_ActiveDataLink
+//		====>.apn_idx_arr           # apn数组
+//		====>.setting_item_ptr      # apn上网项
+//		====>.setting_item_ptr.apn  # apn
+zmaee:c\zmaee_net.c  ZMAEE_INetMgr_ActiveDataLink
 
+// ==>apn
+Save:node\C\study\Macro_doc_apn8910.h
 
 
 

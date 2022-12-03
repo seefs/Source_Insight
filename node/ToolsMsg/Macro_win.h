@@ -10,7 +10,7 @@ Save:node\ToolsMsg\Macro_win.h \[1.6\] 网卡win10
 Save:node\ToolsMsg\Macro_win.h \[1.7\] 显示设置
 Save:node\ToolsMsg\Macro_win.h \[1.8\] win10磁盘100%
 Save:node\ToolsMsg\Macro_win.h \[1.9\] 电脑变慢
-Save:node\ToolsMsg\Macro_win.h \[1.10\] Excel
+Save:node\ToolsMsg\Macro_win.h \[1.10\] 
 // 2. 开发
 Save:node\ToolsMsg\Macro_win.h \[2.1\] ResOver
 Save:node\ToolsMsg\Macro_win.h \[2.2\] Incredibuild
@@ -165,9 +165,7 @@ tools\DEBUG_TOOL\AudioCalibrator\Equalizer\TI ADC\parameter-data.files
 D:\Desktop\tool\wa03u_git\ResearchDownload_R25.21.1401\ResearchDownload_R25.21.1401\Bin\
 
 
-[1.10] Excel
-//
-msvcr100.dll
+[1.10] 
 
 
 

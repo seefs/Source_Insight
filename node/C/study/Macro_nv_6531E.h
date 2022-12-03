@@ -1,30 +1,30 @@
 
 //目录
-Save:node\C\study\Macro_nv_8910.h \[1.1\] 充电------------电流
-Save:node\C\study\Macro_nv_8910.h \[1.2\] 充电/放电-------电压(修改放电n%)
-Save:node\C\study\Macro_nv_8910.h \[1.3\] 低电电压
-Save:node\C\study\Macro_nv_8910.h \[1.4\] charge_end_voltage 高压电池
-Save:node\C\study\Macro_nv_8910.h \[1.5\] PA
-Save:node\C\study\Macro_nv_8910.h \[1.6\] 2IN1,3IN1
-Save:node\C\study\Macro_nv_8910.h \[1.7\] 充电/放电-------107
-Save:node\C\study\Macro_nv_8910.h \[1.8\] nv define
-Save:node\C\study\Macro_nv_8910.h \[1.9\] nv test
-Save:node\C\study\Macro_nv_8910.h \[1.10\] IMEI
-Save:node\C\study\Macro_nv_8910.h \[1.11\] bat_capacity
-Save:node\C\study\Macro_nv_8910.h \[1.12\] custom---------链路
-Save:node\C\study\Macro_nv_8910.h \[1.13\] nv_build
-Save:node\C\study\Macro_nv_8910.h \[1.14\] nand/nor
-Save:node\C\study\Macro_nv_8910.h \[1.15\] test
-Save:node\C\study\Macro_nv_8910.h \[1.16\] audio_calib_VQE---
-Save:node\C\study\Macro_nv_8910.h \[1.17\] hv_nv
-Save:node\C\study\Macro_nv_8910.h \[1.18\] bt_nv
-Save:node\C\study\Macro_nv_8910.h \[1.19\] env_nv
-Save:node\C\study\Macro_nv_8910.h \[1.20\] simulator
-Save:node\C\study\Macro_nv_8910.h \[1.21\] replace_nv--------
-Save:node\C\study\Macro_nv_8910.h \[1.22\] apn
-Save:node\C\study\Macro_nv_8910.h \[1.23\] _readme
-Save:node\C\study\Macro_nv_8910.h \[1.24\] 
-Save:node\C\study\Macro_nv_8910.h \[1.25\] 
+Save:node\C\study\Macro_nv_6531E.h \[1.1\] 充电------------电流
+Save:node\C\study\Macro_nv_6531E.h \[1.2\] 充电/放电-------电压(修改放电n%)
+Save:node\C\study\Macro_nv_6531E.h \[1.3\] 低电电压
+Save:node\C\study\Macro_nv_6531E.h \[1.4\] charge_end_voltage 高压电池
+Save:node\C\study\Macro_nv_6531E.h \[1.5\] PA
+Save:node\C\study\Macro_nv_6531E.h \[1.6\] 2IN1,3IN1
+Save:node\C\study\Macro_nv_6531E.h \[1.7\] 充电/放电-------107
+Save:node\C\study\Macro_nv_6531E.h \[1.8\] nv define
+Save:node\C\study\Macro_nv_6531E.h \[1.9\] nv test
+Save:node\C\study\Macro_nv_6531E.h \[1.10\] IMEI
+Save:node\C\study\Macro_nv_6531E.h \[1.11\] bat_capacity
+Save:node\C\study\Macro_nv_6531E.h \[1.12\] custom---------链路
+Save:node\C\study\Macro_nv_6531E.h \[1.13\] nv_build
+Save:node\C\study\Macro_nv_6531E.h \[1.14\] nand/nor
+Save:node\C\study\Macro_nv_6531E.h \[1.15\] test
+Save:node\C\study\Macro_nv_6531E.h \[1.16\] audio_calib_VQE---
+Save:node\C\study\Macro_nv_6531E.h \[1.17\] hv_nv
+Save:node\C\study\Macro_nv_6531E.h \[1.18\] bt_nv
+Save:node\C\study\Macro_nv_6531E.h \[1.19\] env_nv
+Save:node\C\study\Macro_nv_6531E.h \[1.20\] simulator
+Save:node\C\study\Macro_nv_6531E.h \[1.21\] replace_nv--------
+Save:node\C\study\Macro_nv_6531E.h \[1.22\] apn
+Save:node\C\study\Macro_nv_6531E.h \[1.23\] 
+Save:node\C\study\Macro_nv_6531E.h \[1.24\] 
+Save:node\C\study\Macro_nv_6531E.h \[1.25\] 
 
 Save:Help\\DefaultFile\\Macro_Node_Num.h
 
@@ -32,15 +32,15 @@ Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 [1.1] 充电--电流
 // 标准电流
-nv:ProductionParam_uix8910.nvm  standard_current_type
+nv:ProductionParam_uix6531E.nvm  standard_current_type
 //    ITEM_CONTENT = 0x1F4   // 500
 
 // 非标准电流
-nv:ProductionParam_uix8910.nvm  nonstandard_current_type
+nv:ProductionParam_uix6531E.nvm  nonstandard_current_type
 //    ITEM_CONTENT = 0x1C2   // 450
 
 // usb口电流
-nv:ProductionParam_uix8910.nvm  usb_current_type
+nv:ProductionParam_uix6531E.nvm  usb_current_type
 //    ITEM_CONTENT = 0x1C2   // 450
 
 // num:
@@ -54,25 +54,25 @@ nv:ProductionParam_uix8910.nvm  usb_current_type
 
 [1.2] 充电/放电电压
 // 充电截止电压
-nv:ProductionParam_uix8910.nvm  charge_end_voltage
+nv:ProductionParam_uix6531E.nvm  charge_end_voltage
 //    ITEM_CONTENT = 0x1112   // 4.37V
 
 // recharge充电
-nv:ProductionParam_uix8910.nvm  recharge_voltage
+nv:ProductionParam_uix6531E.nvm  recharge_voltage
 //    ITEM_CONTENT = 0x10CC   // 4.30V
 
 // 充电safe电压
-nv:ProductionParam_uix8910.nvm  bat_safety_vol
+nv:ProductionParam_uix6531E.nvm  bat_safety_vol
 //    ITEM_CONTENT = 0x1112   // 4.37V
 
 
 //# 充电时 电池%的换算 是依据chg_bat_tab
-//#   8910没有用到chg_bat_tab
-//nv:ProductionParam_uix8910.nvm  ^chg_bat_tab[0]
+//#   6531E没有用到chg_bat_tab
+//nv:ProductionParam_uix6531E.nvm  ^chg_bat_tab[0]
 //    ITEM_CONTENT = 0x10F2   // 4.338V
 
 // 放电时 电池%的换算 是依据dischg_bat_tab
-nv:ProductionParam_uix8910.nvm  dischg_bat_tab[0]
+nv:ProductionParam_uix6531E.nvm  dischg_bat_tab[0]
 //    ITEM_CONTENT = 0x10F2   // 4.338V
 
 
@@ -82,16 +82,16 @@ nv:ProductionParam_uix8910.nvm  dischg_bat_tab[0]
 
 [1.3] 低电电压
 // warn
-nv:ProductionParam_uix8910.nvm  voltage_warning
+nv:ProductionParam_uix6531E.nvm  voltage_warning
 //    ITEM_CONTENT = 0xE2D   // 3629
 
 // shutdown
-nv:ProductionParam_uix8910.nvm  voltage_shutdown
+nv:ProductionParam_uix6531E.nvm  voltage_shutdown
 //    ITEM_CONTENT = 0xCE4   // 3300
 
 //
 // 0%
-nv:ProductionParam_uix8910.nvm  dischg_bat_tab\[11\]
+nv:ProductionParam_uix6531E.nvm  dischg_bat_tab\[11\]
 //    ITEM_CONTENT = 0xD3E
 
 
@@ -102,9 +102,6 @@ nv:ProductionParam_uix8910.nvm  dischg_bat_tab\[11\]
 //	charge_end_voltage设置4.29,  实际最大充电电压能到4.20
 //	charge_end_voltage设置4.37,  实际最大充电电压能到4.28
 //	charge_end_voltage设置4.434, 实际最大充电电压能到4.342
-
-// ovp 6.5V
-nv:ProductionParam_uix8910.nvm  ovp
 
 
 
@@ -130,27 +127,27 @@ nv:audio_calib_VQE.nvm  audio_calib
 //1、用我司发布的正式patch的modem替换贵司所用的modem
 //2、注释掉AP端所有关于外部PA的代码，也就是关闭USE_EXT_PA宏
 //3、修改NVM参数audio_calib_param\CALIB_AUD_ALG\VoiceCallNb[0]\reserved=1或者3（如果是二合一或者三合一设为3，不是二合一或者三合一设为1）
-//4、修改NVM参数audio_calib_param\CALIB_AUD_ALG\VoiceCallNb[3]\reserved=2（该参数是贵司区分其他客户的标志，必须设为2，贵司8910所有产品，只要使用外部PA，都需要设为2）
+//4、修改NVM参数audio_calib_param\CALIB_AUD_ALG\VoiceCallNb[3]\reserved=2（该参数是贵司区分其他客户的标志，必须设为2，贵司6531E所有产品，只要使用外部PA，都需要设为2）
 
 
 
 [1.6] 2IN1,3IN1
-// select prj--8910
+// select prj--6531E
 nv1Path = SPDE_PRJ\K220U_HYBL_H661A\nvitem
 nv2Path = SPDE_PRJ\K220U_HYBL_H660A_HTX_LTC\nvitem
 nv3Path = SPDE_PRJ\K220U_HYBL_H660A\nvitem
 nv:\\
 
 // 3IN1
-SPDE_PRJ\K220U_HYBL_H660A\project_UIS8910_ROM_16MB_DS_USER.mk 3IN1
+SPDE_PRJ\K220U_HYBL_H660A\project_UIS6531E_ROM_16MB_DS_USER.mk 3IN1
 // 
-SPDE_PRJ\K220U_SHY_517T\project_UIS8910_ROM_16MB_DS_USER.mk 3IN1
+SPDE_PRJ\K220U_SHY_517T\project_UIS6531E_ROM_16MB_DS_USER.mk 3IN1
 
 
 
 
 ### 单独听筒
-SPDE_PRJ/K220U_HYBL_H661A/project_UIS8910_240x320BAR_16MB_DS_USER.mk  3IN1
+SPDE_PRJ/K220U_HYBL_H661A/project_UIS6531E_240x320BAR_16MB_DS_USER.mk  3IN1
 //
 prj:project_{cur}.mk   AUDIO_AMP_CLASSK_3IN1_SUPPORT = FALSE  #关
 prj:project_{cur}.mk   AUDIO_AMP_CLASSK_SUPPORT = TRUE
@@ -163,7 +160,7 @@ prj:project_{cur}.mk   AUDIO_AMP_EXT_PULL_2_TIME = TRUE
 
 
 ### 喇叭听筒二合一
-SPDE_PRJ/K220U_HYBL_H660A_HTX_LTC/project_UIS8910_ROM_16MB_DS_USER.mk 3IN1
+SPDE_PRJ/K220U_HYBL_H660A_HTX_LTC/project_UIS6531E_ROM_16MB_DS_USER.mk 3IN1
 //
 prj:project_{cur}.mk   AUDIO_AMP_CLASSK_3IN1_SUPPORT = TRUE
 prj:project_{cur}.mk   AUDIO_AMP_CLASSK_SUPPORT = TRUE
@@ -205,63 +202,45 @@ prj:RDNV\production_param_T.xml  charge_end_current
 prj:RDNV\production_param_T.xml  dischg_bat_tab
 
 
-### __charge__
-// 107
-// 充电满条件:
-// Vbat>-VChargeEnd and Current<IChargeEnd
-//		==>CHGMNG_CHARGING:
-//		====>.module_state.bat_statistic_vol  //
-//		====>.module_state.charging_current   //85mA
-//		==>init
-//		====>CHG_PHY_SetChargeEndVolt         //范围4.2V~4.5V
-chip_drv\chip_module\charge\charge.c  _CHGMNG_VoltagetoPercentum
-//   CHGMNG_STOP_VPROG  //85mA退出
-
-
-// 8910
-//ovp
-chip_drv\chip_module\charge\uix8910\charge_uix8910.c  1732
-//		====>.PULSE_PERIOD  //10次X(10秒~50秒)充电结束
-
 
 [1.8] nv define
 // 1.nv id
 common\export\inc\nv_item_id.h  NV_PROD_PARAM
 //  NV_PROD_PARAM                     = 400,
 //
-nv:ProductionParam_uix8910.nvm  production_param_T
+nv:ProductionParam_uix6531E.nvm  production_param_T
 //
 MS_Customize\export\inc\nv_productionparam_type.h  PROD_PARAM_tag
 //  96bytes === 48 id
 
 
 // 2.bt_config--401
-nv:ProductionParam_uix8910.nvm  bt_config
+nv:ProductionParam_uix6531E.nvm  bt_config
 //
 MS_Customize\export\inc\bt_cfg.h  BT_SPRD_NV_PARAM
 
 // bt_sprd
-nv:ProductionParam_uix8910.nvm  3651
+nv:ProductionParam_uix6531E.nvm  3651
 // 362->361->340
 
 
 // 3.
 // gps_config--403
-nv:ProductionParam_uix8910.nvm  gps_config
+nv:ProductionParam_uix6531E.nvm  gps_config
 // tv_rssi_comp--404
-nv:ProductionParam_uix8910.nvm  tv_rssi_comp
+nv:ProductionParam_uix6531E.nvm  tv_rssi_comp
 // multi_langue_cfg--405
-nv:ProductionParam_uix8910.nvm  multi_langue_cfg
+nv:ProductionParam_uix6531E.nvm  multi_langue_cfg
 // wifi_config--409
-nv:ProductionParam_uix8910.nvm  wifi_config
+nv:ProductionParam_uix6531E.nvm  wifi_config
 // engine_test_result--431
-nv:ProductionParam_uix8910.nvm  engine_test_result
+nv:ProductionParam_uix6531E.nvm  engine_test_result
 // bt_sprd--442
-nv:ProductionParam_uix8910.nvm  bt_sprd
+nv:ProductionParam_uix6531E.nvm  bt_sprd
 // fm_config--451
-nv:ProductionParam_uix8910.nvm  fm_config
+nv:ProductionParam_uix6531E.nvm  fm_config
 // e_guarantee_card--560
-nv:ProductionParam_uix8910.nvm  e_guarantee_card
+nv:ProductionParam_uix6531E.nvm  e_guarantee_card
 
 
 
@@ -279,8 +258,8 @@ common\export\inc\nv_item_id.h  NV_IMEI1  377
 common\export\inc\nv_item_id.h  NV_IMEI2  390
 common\export\inc\nv_item_id.h  NV_IMEI3
 // 修改IMEI1~IMEI4
-common\nv_parameters\nv_type\nv_type_uix8910.nvm
-build\..\nv\nvitem\nv_type_uix8910.nvm
+common\nv_parameters\nv_type\nv_type_uix6531E.nvm
+build\..\nv\nvitem\nv_type_uix6531E.nvm
 // 3A25720371833604
 //
 // A352273017386340
@@ -290,7 +269,7 @@ build\..\nv\nvitem\nv_type_uix8910.nvm
 
 [1.11] bat_capacity
 // bat
-chip_drv\chip_module\charge\uix8910\charge_uix8910.c  _CHGMNG_VoltagetoPercentum
+chip_drv\chip_module\charge\uix6531E\charge_uix6531E.c  _CHGMNG_VoltagetoPercentum
 
 
 
@@ -300,38 +279,38 @@ make/perl_script/
 
 
 // NV_ALIPAY_ID
-make/perl_script/UIX8910_128MBITX64MBIT_new.xml  0x1B4
+make/perl_script/UIX6531E_128MBITX64MBIT_new.xml  0x1B4
 
 
-### 8910
+### 6531E
 nv:\\
 HW:\
 // sim
-HW:{project}\nv_type_uix8910.nvm  sim_card_number
+HW:{project}\nv_type_uix6531E.nvm  sim_card_number
 //	0x1
 
 //
-HW:{project}\nv_type_uix8910.nvm  com_data
+HW:{project}\nv_type_uix6531E.nvm  com_data
 //	0xFF
 
 // static
-HW:{project}\modem_nv_cat1bis_uix8910_static.nvm  9166
+HW:{project}\modem_nv_cat1bis_uix6531E_static.nvm  9166
 //   0x0: 链路快速释放
 //   0x1: 默认
 //
-//修改链路保持时间 (8910_基站交互时间
+//修改链路保持时间 (6531E_基站交互时间
 //1、长连接时，链路需要保持10秒，是协议的要求。移动也一直在查不满足协议的情况；
 //2、非正式的方法，改小链路保持秒数的nv值，用来减少功耗。
 //方法1：通过AT指令修改  at+rrcrel=数字（0-20）  步距是0.5秒
-//方法2：通过修改默认nv值来改小秒数，modem_nv_cat1bis_uix8910_static.nvm里面的一个值，改为0-20某个数
+//方法2：通过修改默认nv值来改小秒数，modem_nv_cat1bis_uix6531E_static.nvm里面的一个值，改为0-20某个数
 //3、多测试，可能会影响到呼通率，特别是动态环境下，比如路测这种。
 
 
 ### __Card__  电子保卡
-// 8910 升级可保留
+// 6531E 升级可保留
 common\export\inc\nv_item_id.h  NV_ELECTRIC_GUARANTEE_CARD  # 560
-make/perl_script/UIX8910_128MBIT.xml  0x230
-HW:{project}\ProductionParam_uix8910.nvm  guarantee  # 560
+make/perl_script/UIX6531E_128MBIT.xml  0x230
+HW:{project}\ProductionParam_uix6531E.nvm  guarantee  # 560
 
 // 107--不可擦除
 common\export\inc\nv_item_id.h  NV_CUS_FIXNV_DATA_ID  # 610
@@ -402,7 +381,7 @@ HW:{project}\
 
 [1.14] nand/nor
 // 
-// 107是nand，8910是nor 两种flash
+// 107是nand，6531E是nor 两种flash
 
 
 
@@ -417,7 +396,7 @@ app:eng\c\mmieng_main.c  MMIENG_NV_USB_TEST_SET_SETTING
 nv:\
 
 
-### 1. 8910 实测是这个
+### 1. 6531E 实测是这个
 // Headset 耳机
 nv:audio_sc6531efm_AEC.nvm  32
 
@@ -442,9 +421,9 @@ nv:audio_arm_6531efm.nvm  6476
 
 [1.17] hv_nv
 //
-nv:nv_type_uix8910.nvm  4938
+nv:nv_type_uix6531E.nvm  4938
 可以通过查看
-nv_type_uix8910.nvm里面4938行，
+nv_type_uix6531E.nvm里面4938行，
 是否有    ITEM_NAME    = nv_ver_flag；如果没有的话，
 可以先用老版本的，然后编译出一个版本后，把build下nv目录的复制回来，
 覆盖一下所有文件，这样能确保是新版本nv工程。
@@ -555,8 +534,8 @@ HWNV:\
 
 [1.22] apn
 //
-Save:node\C\study\Macro_doc_8910.h  __8910_apn__
-Save:node\C\study\Macro_doc_8910.h  __107_apn__
+Save:node\C\study\Macro_doc_6531E.h  __6531E_apn__
+Save:node\C\study\Macro_doc_6531E.h  __107_apn__
 // 107 apn
 Save:node\C\study\Macro_doc_apn107.h
 // t6b
@@ -564,9 +543,7 @@ Save:node\C\study\Macro_doc_apn107.h
 //2. 台灣大物聯網卡無法上網使用（APN:twm.iot） 
 
 
-[1.23] _readme
-// UMS9117
-_readme.txt  UMS9117_NEW
+[1.23] 
 
 
 [1.24] 

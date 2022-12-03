@@ -9,6 +9,8 @@ test:\\
 //py
 pyPath = Save:node\Pythons
 py:\\
+// --设置路径:
+Save:set\Macro_Set_Path_common.h  pyScripts
 
 
 /***********************************************************************/
@@ -49,7 +51,8 @@ Save:node\Pythons\install\Macro_Pythons_Install.h \[3.9\] pillow--------imgsize
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.10\] pyyaml-------ttf
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.11\] websocket
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.12\] openpyxl-----excel
-Save:node\Pythons\install\Macro_Pythons_Install.h \[3.13\] 
+Save:node\Pythons\install\Macro_Pythons_Install.h \[3.13\] cv2
+Save:node\Pythons\install\Macro_Pythons_Install.h \[3.14\] PIL
 //	install
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.1\] install
 Save:node\Pythons\install\Macro_Pythons_Install.h \[4.2\] upgrade
@@ -403,6 +406,7 @@ cmd_w: pip install fonttools
 [3.11] websocket
 //
 cmd_w: pip show websocket
+// Version: 0.2.1
 // 都装
 cmd_w: pip install websocket
 cmd_w: pip install websocket-client 
@@ -424,8 +428,19 @@ cmd_w: pip install openpyxl
 
 
 
-[3.13] 
+[3.13] cv2
+//
+cmd_w: pip show cv2
+//（如果只用主模块，使用这个命令安装）
+cmd_w: pip install opencv-python
+//（如果需要用主模块和contrib模块，使用这个命令安装）
+cmd_w: pip install opencv-contrib-python
 
+
+
+[3.14] PIL
+//
+cmd_w: pip install pillow
 
 
 	

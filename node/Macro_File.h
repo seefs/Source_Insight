@@ -135,6 +135,9 @@ Save:Help\Other\Macro_Help_cmd.h
 [2.1] win
 Save:node\ToolsMsg\Macro_win.h
 Save:node\ToolsMsg\Macro_win10.h
+Save:node\ToolsMsg\Macro_win_dll.h
+Save:node\ToolsMsg\Macro_win_soft.h
+
 //
 Save:node\ToolsMsg\
 Save:node\ToolsMsg\Macro_sprd.h
@@ -163,6 +166,8 @@ Save:node\ToolsMsg\Macro_Bcomp.h
 
 [2.6] SecureCRT
 Save:node\ToolsMsg\Macro_SecureCRT.h
+// ÏòÈÕ¿û
+Save:node\ToolsMsg\Macro_Sunlogin.h
 
 
 [2.7] git
@@ -195,7 +200,6 @@ Save:node\ToolsMsg\Macro_VC.h
 Save:node\ToolsMsg\Macro_VS2008.h
 // vs2010
 Save:node\ToolsMsg\Macro_VS2010.h
-
 
 
 [2.12] 

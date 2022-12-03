@@ -6,7 +6,7 @@
 
 0Key  = 8910
 
-HWPath  = HWNV:8910FFS\W20.36.2\
+HWPath  = HWNV:8910FFS\W21.12.7\
 HW:\\
 
 imagesPath = MS_MMI_Main\source\resource\mmi_res_{size}\
@@ -37,19 +37,22 @@ sensorsPath = MS_Customize\source\product\driver\sensors\
 
 ### 1.cfg
 versionKey  = UIX8910_uis8910ff_refphone_version
-configKey  = wa03u_v2
 
 
 ### 2.cur
-prjPath  = SPDE_PRJ\{project}\
-prj:\\
+//prjPath  = SPDE_PRJ\{project}\
+prjPath  = ./
+//prj:\\
 
-projectKey   = WA07U_F3X
-curKey   = UIS8910_ROM_16MB_SS_{project}_USER
-cfgKey   = uis8910_phone_user_base_config
+//projectKey   = UIS8910_ROM_16MB_DS_DEBUG
+//projectKey   = 
+curKey   = UIS8910_ROM_16MB_DS_DEBUG
+cfgKey   = uis8910_phone_base_config
 sizeNext  = 1
-size1Key  = 128X128
-size2Key  = 128X128
+size1Key  = 240X320
+//sizeNext  = 2
+//size1Key  = 320X240
+//size2Key  = 240X320
 
 
 ### 3.copy

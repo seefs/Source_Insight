@@ -81,6 +81,7 @@ F76T外单客户，新报了一个运营商的老问题，美国的tmobile，
 ### log--apn
 // apn
 mmipdp info MMIAPIPDP_Active: priority:3, app_handler:0x27, apn:Internet, dual_sys:0
+mmipdp info MMIAPIPDP_Active: priority:3, app_handler:0x27, apn:hos, dual_sys:0
 // mcc--mcc
 roaming status: 0, net isroaming: 0, net mcc: 466, sim mcc: 466
 // hostbyname

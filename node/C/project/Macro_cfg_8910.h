@@ -344,7 +344,7 @@ MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_shortcut.c  GetFunctionKey
 MS_MMI_Main\source\mmi_app\app\idle\c\mmiidle_cstyle.c  case^MSG_APP_WEB
 
 
-### 捷径对齐 # 107
+### 设置捷径对齐 # 107
 // id
 MMISET_SHORTCUT_MAX / MMISET_SHORTCUT_TYPE_E
 // txt
@@ -353,7 +353,7 @@ s_shortcut_menu_list_text_id
 mmiset_shortcut_menu_func_arr
 
 
-### 快捷键对齐 # 107 /8910
+### 快捷方向键软键对齐 # 107 /8910
 // id
 MMISET_SHORTCUT_MAX / MMISET_SHORTCUT_TYPE_E
 // key--txt
@@ -372,17 +372,19 @@ app:setting\c\mmiset_shortcut.c  OpenShortcutFunWin
 //		======>SetShortcutInfo
 
 
-### mini对齐
-// key--pic/txt
+### mini对齐 (未使用)
+// key--pic/txt    # idle (2个, mini的应该对齐)
 s_shortcut_id
+// key--pic        # short (107前面没对齐)
+s_shortcut_list_img_id
 
 
-### 默认/显示
+### 默认值/显示 (不用对齐)
 // default list
 s_shortcut_menu_show_list_text_id
 
 
-### 编辑 # 107
+### 编辑 # 107 (不用对齐)
 // all list
 s_shortcut_menu_edit_list_text_id
 
@@ -640,7 +642,7 @@ prj:project_{cur}.mk  FM_S_ANT_SUPPORT = FALSE  # 天线, eng分开测试
 
 // test--fm
 app:eng\c\mmieng_uitestwin.c  MMI_RESULT_E^UITestFmWinHandleMsg
-// --打开低噪放
+// --打开低噪放 / 用天线
 //        GPIO_SetFmLNA( 1 );
 // --关闭低噪放
 //        GPIO_SetFmLNA( 0 ); //恢复内置天线的GPIO值
@@ -694,15 +696,16 @@ MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_menutable.c  FOTA_SUPPORT_ADUPS
 
 
 // xmly--
-mk: XYSDK_SUPPORT
+prj:project_{cur}.mk  XYSDK_SUPPORT
 // 案号:\n  XMLY133
 MS_MMI_Main/source/mmi_app/app/xysdk/h/xysdk_mdu_def.h  TXT_XYSDK_VER_INFO
 
 
-// xmly--
-mk: XYSDK_SUPPORT
-// 案号:\n  XMLY133
-MS_MMI_Main/source/mmi_app/app/xysdk/h/xysdk_mdu_def.h  TXT_XYSDK_VER_INFO
+
+// zfb
+prj:project_{cur}.mk   ALIIOT_SUPPORT = TRUE
+// 
+Save:node\C\study\Macro_patch_third.h  zfb_107
 
 
 
@@ -789,6 +792,13 @@ prj:{cfg}.cfg FDN_SUPPORT = TRUE
 prj:project_{cur}.mk   MMI_APP_REMOVE_SMS_NUM = TRUE
 
 
+// SALES_SUPPORT
+sales.c,7K
+// MMI_VCARD_SUPPORT, 联系人
+mmivcard.c,5K
+
+
+
 
 [2.14] build time
 // build time
@@ -868,6 +878,7 @@ lib\ums9117_240X320BAR_48MB_CAT1\
 
 
 [2.17] FLASH
+### 8910
 
 prj:project_{cur}.mk  FLASH_SIZE
 //(小版本)
@@ -885,7 +896,6 @@ config:\
 config:spiflash_cfg.c  FLASH_SIZE_128MBITX64MBIT_NEW
 // 8910s
 config:spiflash_cfg.c  FLASH_SIZE_128MBIT$
-
 
 
 // SECTOR
@@ -906,6 +916,9 @@ MS_Customize/UIX8910_normal.scf  43
 config:spiflash_cfg.c  PS_STONE_SECTOR_NUM
 config:spiflash_cfg.c  646
 //	#define  PS_STONE_SECTOR_NUM		124 // 123 //123
+
+
+### 107
 
 
 

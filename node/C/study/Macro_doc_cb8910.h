@@ -34,6 +34,8 @@
 
 // 标题和
 app:sms\c\mmismscb_control.c  s_cmas_pws_channel_info
+//
+app:sms\h\mmisms_export.h  CB_PWS_MCC
 
 typedef struct
 {
@@ -62,8 +64,6 @@ typedef struct
 //		========>AppendCBMsgListItem  # from mcc
 //		========>HandleSmsCBReadWindow
 
-//
-//InitCBChannelList
 
 ### enter
 //#ifdef WIN32
@@ -113,7 +113,17 @@ app:sms\c\mmismscb_wintab.c  MMI_RESULT_E^HandleSmsCBLanguageListWindow
 //		==========>AddCBChannel
 //		============>AddCBChannelListItem
 //		==============>MMISMSCB_Reset
+//		====>MMISMSCB_Get_ETWS_Channel_Ptr   # 24条
 app:sms\c\mmismscb_wintab.c  MMI_RESULT_E^HandleSmsCBChannelListWindow
+//		==>open
+//		====>InitCB_ETWSChannel
+//		======>GetCMASChannelTable           # mcc
+//		======>.s_etws_channel_list          # 24条
+//		====>.etws_alert_num                 # 0条
+//		====>InitCBChannelList               # show list
+//		======>.s_etws_channel_list          # 
+//		==>MMISMSCB_Init
+//		====>
 
 
 

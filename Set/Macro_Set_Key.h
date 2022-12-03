@@ -10,16 +10,17 @@
 //
 //
 // 使用说明: 
+// __ = val
+//   小类，项目路径 (列出每个路径)
+//           编号重复也可以用，可能
+// 
 // __alias = val
 //   大类，别名
-//           大类脚本内部使用，别名可外部使用( {8910}\... )
+//           大类，脚本内部使用，val 别名可外部使用( {8910}\... )
 // __RuleEn = val
 //   大类，文件别名
 //           (F5使用)
 //
-// __ = val
-//   小类，项目路径 (列出每个路径)
-// 
 // __key = val
 //   小类，配置别名 (同一套代码可共用)
 //           别名内部替换用 ({pro})
@@ -33,6 +34,9 @@
 // 
 // __Hot2 = val
 //           F1使用 spr or mtk
+//
+// {0}
+//           在配置中设置
 // 
 
 
@@ -60,8 +64,7 @@
 30alias = 6531E
 30RuleEn = 6531E
 // 注释30 不显示比较
-//30 = E:\SPDE6531E
-//30 = D:\_SI4.0\6531E.si4project
+30 = E:\soft\6531E
 30key = 6531E
 
 
@@ -87,23 +90,27 @@
 60alias = 8910
 60RuleEn = 8910
 //
-60 = G:\UIS8910_git
-61 = G:\UIS8910_git2
+60 = G:\UIS8910_git2
+61 = G:\UIS8910_git
 62 = G:\UIS8910_schcard_git
 63 = G:\wa01u_svn
 65 = G:\wa01u_svn_small_new
 66 = G:\wa01u_svn_small_new3
 67 = G:\wa01u_svn_small_w21
 68 = D:\soft\wa01u_w21_svn2
+69 = E:\8910_w21base
+69 = E:\8910_w22base
+69 = G:\watch_sprd
 
 60key = 8910
-61key = 8910
+61key = 8910B
 62key = 8910sch
 63key = 8910wa
 65key = 8910wa
 66key = 8910wa
 67key = 8910wa21
 68key = 8910wa21D
+69key = 8910B
 
 
 //(7) 7701 8910 项目路径
@@ -114,6 +121,7 @@
 71 = G:\T1071
 72 = E:\T107old
 73 = D:\soft\T1073
+74 = E:\T107base
 76 = G:\wa03u_git
 77 = G:\wa03u_git2
 
@@ -121,6 +129,7 @@
 71key = 107
 72key = 107Old
 73key = 107D
+74key = 107B
 
 76key = 8910wa_git
 77key = 8910wa_git

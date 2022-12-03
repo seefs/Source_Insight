@@ -19,18 +19,20 @@ tool_mini:\\
 patchPath  = D:\save\patch\
 patch:\\
 
-pyScriptsPath  = D:\Program^Files\py\Scripts\\
+pyScriptsPath  = C:\Users\seefs\AppData\Local\Programs\Python\Python310\Scripts\
 pyScripts:\\
 
 AppPath  = D:\Save\_SI_Cloud\
 App:\\
+	
+codePath  = D:\project\
+code:\\
 
 
 ### tool path:
 
 BComparePath  = C:\Program^Files\Beyond^Compare^4\BCompare.exe
 //BComparePath  = D:\Program^Files\Beyond^Compare^3\BCompare.exe
-BComparePath  = C:\Program^Files\Beyond^Compare^4\BCompare.exe
 
 VC6Path   =  C:\Program^Files^(x86)\Microsoft^Visual^Studio\Common\MSDev98\Bin\MSDEV.EXE
 pVC6Path  =  C:\Program^Files^(x86)\Microsoft^Visual^Studio\Common\MSDev98\Bin\

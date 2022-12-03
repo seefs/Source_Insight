@@ -19,7 +19,7 @@ Save:set\
 Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 Save:set\Macro_Set_Path_sprd_.h  curKey
 // --未设置路径/重设路径:
-Save:set\Macro_Set_Key.h
+Save:set\Macro_Set_Key.h  8910$
 
 
 // 从build 中自动配置;从bat默认修改prj(非服务器编译)

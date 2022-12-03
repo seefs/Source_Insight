@@ -31,16 +31,6 @@ app:accessory\c\mmialarm.c
 
 // 107/8910--audioplayer--full
 app:audioplayer\c\mmiapwin_main_pda.c  WIN32
-//--mp3--show
-// HandlePDADefaultWinMsg
-app:audioplayer\c\mmiapwin_main_pda.c  470
-//
-//	#ifdef WIN32
-//		    case MSG_APP_5:
-//		        SetMp3CtrlParam(win_id);
-//		        break;
-//	#endif
-
 
 // 107--browser--PIC
 app:browser\c\mmibrowser_wintable.c
@@ -148,7 +138,6 @@ app:phone/c/mmiphone.c  FILE_LOG_SUPPORT
 common:h/mmi_appmsg.h  FILE_LOG_SUPPORT
 
 // 
-//void Trace_Log_Buf_Print(const char *pszFmt, ...)
 //	Trace_Log_Buf_Print("MMIBT_A2DPCallBackFunc msg_id=%x",  pMsg->msg_id);
 
 // watch--usb mode

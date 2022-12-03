@@ -211,7 +211,10 @@ C:\Program Files\TortoiseGit\bin\TortoiseGitPlink.exe
 //putty ±¨´í
 // no supported authentication methods available (server sent:publickey...)
 
-
+### error
+//
+//too many files to display
+https://gitlab.com/tortoisegit/tortoisegit/-/issues/3878
 
 
 

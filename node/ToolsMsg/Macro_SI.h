@@ -75,6 +75,11 @@ Source Insight 导入.c .h搜索会卡, 可只导入java文件
 
 
 [1.3] 文件过滤-----------SPDE
+// 最小的文件
+tool_mini:1_filelist\
+// 临时文件，方便对比检查
+code:\txt\si\
+
 
 # __SI_SPDE__
 ### 过滤--107

@@ -1,25 +1,25 @@
 
 //目录
-Save:node\C\study\Macro_res_8910.h \[1.1\] 项目配置
-Save:node\C\study\Macro_res_8910.h \[1.2\] mk, version, nv
-Save:node\C\study\Macro_res_8910.h \[1.3\] str
-Save:node\C\study\Macro_res_8910.h \[1.4\] res, color
-Save:node\C\study\Macro_res_8910.h \[1.5\] image-----------------
-Save:node\C\study\Macro_res_8910.h \[1.6\] ring, audio-----------
-Save:node\C\study\Macro_res_8910.h \[1.7\] add app
-Save:node\C\study\Macro_res_8910.h \[1.8\] add res
-Save:node\C\study\Macro_res_8910.h \[1.9\] font/color------------
-Save:node\C\study\Macro_res_8910.h \[1.10\] test
-Save:node\C\study\Macro_res_8910.h \[1.11\] OLD_PRELOAD
-Save:node\C\study\Macro_res_8910.h \[1.12\] xx_mdu_def.h
-Save:node\C\study\Macro_res_8910.h \[1.13\] lang/rule------------
-Save:node\C\study\Macro_res_8910.h \[1.14\] pos------------------
-Save:node\C\study\Macro_res_8910.h \[1.15\] load...
-Save:node\C\study\Macro_res_8910.h \[1.16\] 
-Save:node\C\study\Macro_res_8910.h \[1.17\] 
-Save:node\C\study\Macro_res_8910.h \[1.18\] 
-Save:node\C\study\Macro_res_8910.h \[1.19\] 
-Save:node\C\study\Macro_res_8910.h \[1.20\] 
+Save:node\C\study\Macro_res_6531E.h \[1.1\] 项目配置
+Save:node\C\study\Macro_res_6531E.h \[1.2\] mk, version, nv
+Save:node\C\study\Macro_res_6531E.h \[1.3\] str
+Save:node\C\study\Macro_res_6531E.h \[1.4\] res, color
+Save:node\C\study\Macro_res_6531E.h \[1.5\] image-----------------
+Save:node\C\study\Macro_res_6531E.h \[1.6\] ring, audio-----------
+Save:node\C\study\Macro_res_6531E.h \[1.7\] add app
+Save:node\C\study\Macro_res_6531E.h \[1.8\] add res
+Save:node\C\study\Macro_res_6531E.h \[1.9\] font/color------------
+Save:node\C\study\Macro_res_6531E.h \[1.10\] test
+Save:node\C\study\Macro_res_6531E.h \[1.11\] OLD_PRELOAD
+Save:node\C\study\Macro_res_6531E.h \[1.12\] xx_mdu_def.h
+Save:node\C\study\Macro_res_6531E.h \[1.13\] lang/rule------------
+Save:node\C\study\Macro_res_6531E.h \[1.14\] pos------------------
+Save:node\C\study\Macro_res_6531E.h \[1.15\] load...
+Save:node\C\study\Macro_res_6531E.h \[1.16\] 
+Save:node\C\study\Macro_res_6531E.h \[1.17\] 
+Save:node\C\study\Macro_res_6531E.h \[1.18\] 
+Save:node\C\study\Macro_res_6531E.h \[1.19\] 
+Save:node\C\study\Macro_res_6531E.h \[1.20\] 
 
 
 

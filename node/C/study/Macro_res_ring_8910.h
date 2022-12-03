@@ -12,13 +12,13 @@ Save:node\C\study\Macro_res_ring_8910.h \[1.5\] sms
 Save:node\C\study\Macro_res_ring_8910.h \[1.6\] clock, alarm
 Save:node\C\study\Macro_res_ring_8910.h \[1.7\] BusyTone
 Save:node\C\study\Macro_res_ring_8910.h \[1.8\] key tone
-Save:node\C\study\Macro_res_ring_8910.h \[1.9\] dial tone
-Save:node\C\study\Macro_res_ring_8910.h \[1.10\] 
-Save:node\C\study\Macro_res_ring_8910.h \[1.11\] 
-Save:node\C\study\Macro_res_ring_8910.h \[1.12\] 
+Save:node\C\study\Macro_res_ring_8910.h \[1.9\] dial tone------简版语音王
+Save:node\C\study\Macro_res_ring_8910.h \[1.10\] time----------简版语音王
+Save:node\C\study\Macro_res_ring_8910.h \[1.11\] menu----------简版语音王
+Save:node\C\study\Macro_res_ring_8910.h \[1.12\] pb------------简版语音王
 Save:node\C\study\Macro_res_ring_8910.h \[1.13\] 
-Save:node\C\study\Macro_res_ring_8910.h \[1.14\] 
-Save:node\C\study\Macro_res_ring_8910.h \[1.15\] 
+Save:node\C\study\Macro_res_ring_8910.h \[1.14\] Pause/Resume
+Save:node\C\study\Macro_res_ring_8910.h \[1.15\] tts
 Save:node\C\study\Macro_res_ring_8910.h \[1.16\] 
 Save:node\C\study\Macro_res_ring_8910.h \[1.17\] 
 Save:node\C\study\Macro_res_ring_8910.h \[1.18\] 
@@ -142,7 +142,7 @@ source:resource\mmi_res_prj_def.h  MMIALM_CLOCK_RING_MAX_NUM_MAT    1
 
 [1.8] key tone
 
-# 语音王
+### 语音王
 // id
 app:envset\h\mmienvset_export.h  MMI_READDIALKEY_V909L_STYLE
 // 语言
@@ -166,7 +166,19 @@ source:resource\Common\RING\R_KEY_1.WAV
 
 [1.9] dial tone
 
-# 语音王
+### 语音王
+// wav
+//--16bit mp3转8bit mono wav (直接转比8bit.mp3中转效果好)(单声道)
+//--(中转 只有部分数字比旧音源好, 更好的音源:2 3 5 6 8)
+//--再转.h
+//--wav数组16bit mono 换成 8bit mono 的不死机
+//		==>AddString
+//		====>playkeypadtoneTTS
+//		======>.keycode
+//		======>simple_tts_dial_broadcast
+//		========>simple_tts_GetNumberResour
+//		==========>.s_simplettsNumberRes
+app:setting\c\mmiset_ring.c  s_simplettsNumberRes
 
 ###
 // --set--call--num (mp3 play)
@@ -235,17 +247,73 @@ source:mmi_app\common\h\mmi_id.def  MMI_READDIALKEY_ENABLE
 app:setting\h\set_mdu_def.h  MMI_READDIALKEY_ENABLE
 
 
-[1.10] 
+[1.10] time
+// (mp3)报时时间间隔不能改小，只能从音源控制
+
+### 语音王
+// --自动报时/按键报时
+//		==>playAutoTellTimeTTS
+//		====>PlayTellTime
+//		======>simple_tts_time_play
+app:idle\c\mainapp.c  MMI_READTIME_ENABLE
+// --按键报时
+//		==>playTellTimeTTS
+app:setting\c\mmiset_shortcut.c  SHORTCUT_SUPPORT_SIMPLIFY_TTS_MENU
+
+
+// 播报冲突
+// --停止
+//	StopTellTime(); // auto or shortcur
+// --不进 (特殊需求播报时不进xmly)
+//	if(!is_time_read)
+//
+// --后台运行喜马拉雅, 暂停喜马拉雅, 开始报时
+// --前台运行+喜马拉雅未播放, 不报时
+// --前台运行+喜马拉雅播放中, 暂停喜马拉雅, 开始报时
+//
+// --咪咕音乐不支持后台运行, 也会导致产生大量流量, 是其他厂家要求的
+
+
+// time
+source:resource\Common\RING\
+source:resource\Common\RING\R_TIME_am.mp3
+
+// time--mp3
+source:resource\mmi_res_prj_def.h  R_TIME_am
+
+// time--id
+app:setting\h\mmiset_export.h  MMI_POWER_RING_START_ID = R_POWER_1
+//		==>HandleNormalStartupWindow
+//		====>PlayDefaultPowerOnOffAnimation
+//		======>MMISET_RING_TYPE_POWER
+app:setting\c\mmiset_ring.c   MMI_POWER_RING_START_ID
 
 
 
-[1.11] 
+[1.11] menu
+// menu
+source:resource\Common\RING\
+source:resource\Common\RING\MENU_ALIIOT.mp3
+
+// menu--mp3
+source:resource\mmi_res_prj_def.h  MENU_ALIIOT
+//
+source:resource\mmi_res_prj_def.h  charger_connected
+source:resource\mmi_res_prj_def.h  charger_removed
+source:resource\mmi_res_prj_def.h  low_power
+
+//		==>HandleTextToSpeech
+//		====>playMenuTTS
+//		======>MMIAPISET_PlayRing  //MMISET_RING_TYPE_READMENU
 
 
 
-
-[1.12] 
-
+[1.12] pb
+//
+//		==>MMIPB_ReadNumber
+//		====>TTSPlayPBNumber  //MMISET_RING_TYPE_READPB
+//		======>GetRingID
+//		========>Get_pb_read_number_select()
 
 
 
@@ -254,12 +322,111 @@ app:setting\h\set_mdu_def.h  MMI_READDIALKEY_ENABLE
 
 
 
-[1.14] 
+
+[1.14] Pause/Resume
+### FM
+//		==>MMISRVMGR_Request
+//		====>SrvCmdFunc
+//		======>REQ:
+//		======>REQ:
+//		========>SrvCreate
+//		==========>SWITCH:
+//		==========>SwitchActiveSrv
+//		============>MMISRVAUD_LinkTravel
+//		==============>func:
+//		==============>PauseAudioAndNotify
+//		================>SrvNotifyClient
+//		==================>notify
+//		==================>PlayCallBack     #fm
+//		====================>FM_PlayStop
+
+
+### RECORD
+//		==>HandleRecordMainPlayWinMsg
+//		====>MMIRECORD_RequestVirtualHandle
+//		======>MMISRVAUD_ReqVirtualHandle("RECORDER", MMISRVAUD_PRI_NORMAL)
+//		====>MMIRECORD_FreeVirtualHandle
+//		======>MMISRVAUD_FreeVirtualHandle("RECORDER")
+
+### tts time
+//		==>simple_tts_start_time_play()
+//		====>MMISRVMGR_Request(STR_SRV_AUD_NAME, &req, &audio_srv)  //HIGH
+//		==>simple_tts_stop_time_play()
+//		====>MMISRVMGR_Free(s_tts_test_play_time_handle)
+
+### cc
+//		==>MMICC_ConstructAudioHandle()
+//		====>MMISRVMGR_Request(STR_SRV_AUD_NAME, &req, &audio_srv)  //HIGH
+//		==>MMICC_DestroyAudioHandle()
+//		====>MMISRVMGR_Free(s_audio_status.audio_handle);
+//		==>AP_AudioSrvCallBack()
+//		====>APRequestVirtualAudioHandle()
+
+
+### migu
+//
+Save:node\C\study\Macro_patch_third.h  __migu__
+
+
+### xmly
+// 完全是库，做不了暂停
+Save:node\C\study\Macro_patch_third.h  __xmly__
+
+###
+//		==>MMISRVAUD_Pause
+//		==>MMISRVAUD_Resume
 
 
 
+[1.15] tts
+//tts
+//	PlayTellTime()
+//	//
+//	MMIAPISET_IsPlayingRingType
+//	//Handle
+//		==>
+//		====>MMIAPISET_PlayRing
+//		======>PlayRing
+//		========>PlayFixedRing
+//		==========>MMISRVAUD_GetHandleByName
+//	//STOP
+//		==>MMITTS_STOP_CALLBACK
+//		====>MMIAPISET_StopRing
+//		======>MMIAPISET_StopAppRing
+//		========>MMIAPISET_StopAllRing
+//		==========>MMISRVAUD_Stop(MMIAPIALARM_GetPlayHandle());
+//	// type
+//	MMIENVSET_SET_OPT_E
+//	MMISET_ALL_RING_TYPE_E
+//	MMIENVSET_SETTING_T
 
-[1.15] 
+//tts
+//	playAutoTellTimeTTS()----time
+//	playTellTimeTTS()--------time
+//	TTSPlayPBNumber()--------pb
+//  TTSPlayInCallNumber()----cc
+//	playkeypadtoneTTS()------key
+//  PlayFixedRing()----------
+//
+
+
+// tts--ringId
+//		==>MMISET_RING_CALL_KEY_TONE_RING  (not env) (mp3Index/Info) (play/Pri) (same vol)
+//		==>MMISET_RING_TYPE_READDIALKEY (env) (No mp3Index/Info) (Not play/Pri) (same vol)
+
+// tts--vol
+//		==>DIALKEYREAD_VOL (same vol)
+
+
+
+### __mp3Play__
+// --mp3--play
+//		==>
+//		====>MMIAPISET_PlayRing
+//		======>PlayRing
+//		========>PlayFixedRing
+//		==========>MMISRVAUD_GetHandleByName
+// --env--play
 
 
 

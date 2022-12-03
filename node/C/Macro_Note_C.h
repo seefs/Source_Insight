@@ -76,8 +76,8 @@ Save:node\C\study\Macro_tihu_8910.h
 Save:node\C\study\Macro_zmaee_8910.h
 Save:node\C\study\Macro_sch_8910.h
 Save:node\C\study\Macro_socket_8910.h
+// patch
 Save:node\C\study\Macro_patch_8910.h
-// third
 Save:node\C\study\Macro_patch_third.h
 
 
@@ -159,7 +159,8 @@ Save:node\C\search\Macro_ALL_MTK.h
 [1.8] tool
 // SI--ÎÄ¼þ¹ýÂË
 Save:node\ToolsMsg\Macro_SI.h  __SI_SPDE__
-
+// base
+Save:node\ToolsMsg\Macro_sprd.h  __Basebuild__
 
 
 [1.9] 

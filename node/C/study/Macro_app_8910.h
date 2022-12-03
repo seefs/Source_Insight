@@ -382,6 +382,8 @@ Save:node\C\study\Macro_pos_8910.h  __Dial__
 Save:node\C\study\Macro_res_image_8910.h  __Dial__
 // --down0
 Save:node\C\study\Macro_im_8910.h  __DOWN_0__
+// ==>font/color
+Save:node\C\study\Macro_res_color_8910.h  s_theme_font_color_arry_ex
 
 
 // 拨号光标
@@ -455,6 +457,7 @@ app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_net_info_show
 //		====>case^ID_ENG_NW_CAP  (未走)
 //		======>MMIENG_NW_CAP_SHOW_WIN_TAB
 //		========>ENGNWCAPShowWinHandleMsg
+//		====>MMIAPICONNECTION_OpenMenuWin
 app:eng/c/mmieng_win.c   case^ID_ENG_OUTFIELD_NETWORK_INFORMATION
 // 工程模式--apptest
 app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_app_set
@@ -621,12 +624,20 @@ app:setting\c\mmiset_callwin.c  MMI_RESULT_E^HandleEditSimNameWindow
 app:setting\c\mmiset_callwin.c  MMI_RESULT_E^HandleSetMinuteReminderEditWindow
 // fly--open
 app:setting\c\mmiset_callwin.c  HandleFlyModeOpenPhoneWindow
+
 // set--connect
 //		==>HandleConnectionMenuWinMsg
 //		====>InitPdaConnectionMainListCtrl
+//		======>.s_network_type_select  # 3, 不要2g单模
+//		======>TXT_COMMON_WWW_ACCOUNT  # sim卡接入点
+//		======>TXT_GPRS_SERVICE        # 数据业务
 //		==>MMIAPISET_OpenNetWorkTypeWin
 //		====>HandleNetworkTypeWindow
+//		==>InitVodafoneApnList
 app:connection\c\mmiconn_manager_wintab.c  MMIAPICONNECTION_OpenMenuWin
+// ==>apn
+Save:node\C\study\Macro_doc_apn8910.h
+Save:node\C\study\Macro_doc_apn107.h
 
 
 // Reset
@@ -750,7 +761,7 @@ Save:node\C\project\Macro_cfg_8910.h  __MMS__
 
 
 ### CB
-//
+// mk
 Save:node\C\project\Macro_cfg_8910.h  __CB__
 //
 Save:node\C\study\Macro_doc_cb8910.h
@@ -1205,6 +1216,9 @@ Save:node\C\study\Macro_res_color_8910.h  __camera__
 //		============>MMIDC_DisplayTitleBackground   #title
 app:camera\c\Mmidc_osd_option.c  MMIDC_OpenPhotoOption
 app:camera\c\Mmidc_osd_option.c  MMIDC_OpenVideoOption
+// --cam--option--set
+//		==>MMIDC_OpenSettingWin
+app:camera\c\mmidc_window_option.c  HandleDCSettingWinMsg
 
 // key
 app:camera\c\mmidc_main_wintab.c  KeyFunction
@@ -2299,16 +2313,13 @@ app:eng/c/mmieng_uitestwin.c  BOOLEAN^ENGUITestChargingWinHandleMsg
 // --chip bat:
 // ----连线开机:
 chip_drv\chip_module\charge\uix8910\charge_uix8910.c  _CHGMNG_VoltagetoPercentum
+chip_drv\chip_module\charge\charge.c  _CHGMNG_VoltagetoPercentum
 // --sublcd bat:
 //		==>MMIAPIPHONE_GetBatCapacity
 app:idle\c\mmi_subwintab.c  uint8^MMISUB_GetBatteryLevel
 // --zmaee bat:
 //		==>ZMAEE_IWatch_GetBatteryPercent
 app:zmaee_128X128\c\zmaee_watch.c  ZMAEE_IWatch_GetBatteryPercent
-
-
-### power--patch
-Save:node\C\study\Macro_patch_8910.h  __charge__
 
 
 ###
@@ -2322,6 +2333,11 @@ app:phone\c\mmiphone_charge.c  Charge_TIME_UP_MARGIN
 Save:node\C\study\Macro_pos_8910.h  __idle__
 // ==>image
 Save:node\C\study\Macro_res_image_8910.h  __charge__
+// ==>nv 充电条件
+Save:node\C\study\Macro_nv_8910.h  __charge__
+// ==>patch 模拟器power界面
+Save:node\C\study\Macro_patch_8910.h  __charge__
+
 
 
 [1.30] 

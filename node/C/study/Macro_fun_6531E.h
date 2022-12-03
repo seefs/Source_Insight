@@ -1,47 +1,47 @@
 
 //目录
 // 1. constant
-Save:node\C\study\Macro_fun_8910.h \[1.1\] resource_main
-Save:node\C\study\Macro_fun_8910.h \[1.2\] str, wstr
-Save:node\C\study\Macro_fun_8910.h \[1.3\] timer----
-Save:node\C\study\Macro_fun_8910.h \[1.4\] MSG
-Save:node\C\study\Macro_fun_8910.h \[1.5\] NV, init
-Save:node\C\study\Macro_fun_8910.h \[1.6\] Win, Param, id---ID转换
-Save:node\C\study\Macro_fun_8910.h \[1.7\] #define----------宏套宏
-Save:node\C\study\Macro_fun_8910.h \[1.8\] RED
-Save:node\C\study\Macro_fun_8910.h \[1.9\] sms_member
-Save:node\C\study\Macro_fun_8910.h \[1.10\] //popup
-Save:node\C\study\Macro_fun_8910.h \[1.11\] make------------
-Save:node\C\study\Macro_fun_8910.h \[1.12\] debug, trace
-Save:node\C\study\Macro_fun_8910.h \[1.13\] 
-Save:node\C\study\Macro_fun_8910.h \[1.14\] 
-Save:node\C\study\Macro_fun_8910.h \[1.15\] 
-Save:node\C\study\Macro_fun_8910.h \[1.16\] draw str wchar
-Save:node\C\study\Macro_fun_8910.h \[1.17\] time------------时间
-Save:node\C\study\Macro_fun_8910.h \[1.18\] key, handle
-Save:node\C\study\Macro_fun_8910.h \[1.19\] Rect
-Save:node\C\study\Macro_fun_8910.h \[1.20\]
+Save:node\C\study\Macro_fun_6531E.h \[1.1\] resource_main
+Save:node\C\study\Macro_fun_6531E.h \[1.2\] str, wstr
+Save:node\C\study\Macro_fun_6531E.h \[1.3\] timer----
+Save:node\C\study\Macro_fun_6531E.h \[1.4\] MSG
+Save:node\C\study\Macro_fun_6531E.h \[1.5\] NV, init
+Save:node\C\study\Macro_fun_6531E.h \[1.6\] Win, Param, id---ID转换
+Save:node\C\study\Macro_fun_6531E.h \[1.7\] #define----------宏套宏
+Save:node\C\study\Macro_fun_6531E.h \[1.8\] RED
+Save:node\C\study\Macro_fun_6531E.h \[1.9\] sms_member
+Save:node\C\study\Macro_fun_6531E.h \[1.10\] //popup
+Save:node\C\study\Macro_fun_6531E.h \[1.11\] make------------
+Save:node\C\study\Macro_fun_6531E.h \[1.12\] debug, trace
+Save:node\C\study\Macro_fun_6531E.h \[1.13\] 
+Save:node\C\study\Macro_fun_6531E.h \[1.14\] mp3-------------刷新
+Save:node\C\study\Macro_fun_6531E.h \[1.15\] tts
+Save:node\C\study\Macro_fun_6531E.h \[1.16\] draw str wchar
+Save:node\C\study\Macro_fun_6531E.h \[1.17\] time------------时间
+Save:node\C\study\Macro_fun_6531E.h \[1.18\] key, handle
+Save:node\C\study\Macro_fun_6531E.h \[1.19\] Rect
+Save:node\C\study\Macro_fun_6531E.h \[1.20\]
 // 2.func
-Save:node\C\study\Macro_fun_8910.h \[2.1\] lock
-Save:node\C\study\Macro_fun_8910.h \[2.2\] light
-Save:node\C\study\Macro_fun_8910.h \[2.3\] ADN FDN SDN
-Save:node\C\study\Macro_fun_8910.h \[2.4\] Dtmf
-Save:node\C\study\Macro_fun_8910.h \[2.5\] CC--msg, 静默电话
-Save:node\C\study\Macro_fun_8910.h \[2.6\] SMS--tp input
-Save:node\C\study\Macro_fun_8910.h \[2.7\] cursor
-Save:node\C\study\Macro_fun_8910.h \[2.8\] file
-Save:node\C\study\Macro_fun_8910.h \[2.9\] select_sim
-Save:node\C\study\Macro_fun_8910.h \[2.10\] Sleep
-Save:node\C\study\Macro_fun_8910.h \[2.11\] reset----------重启
-Save:node\C\study\Macro_fun_8910.h \[2.12\] 小图标
-Save:node\C\study\Macro_fun_8910.h \[2.13\] Browser--------默认PIC
-Save:node\C\study\Macro_fun_8910.h \[2.14\] BT-------------msg
-Save:node\C\study\Macro_fun_8910.h \[2.15\] Test-----------key id
-Save:node\C\study\Macro_fun_8910.h \[2.16\] sim--显示单卡
-Save:node\C\study\Macro_fun_8910.h \[2.17\] usb
-Save:node\C\study\Macro_fun_8910.h \[2.18\] //bat
-Save:node\C\study\Macro_fun_8910.h \[2.19\] sms mst, sale
-Save:node\C\study\Macro_fun_8910.h \[2.20\] 
+Save:node\C\study\Macro_fun_6531E.h \[2.1\] lock
+Save:node\C\study\Macro_fun_6531E.h \[2.2\] light
+Save:node\C\study\Macro_fun_6531E.h \[2.3\] ADN FDN SDN
+Save:node\C\study\Macro_fun_6531E.h \[2.4\] Dtmf
+Save:node\C\study\Macro_fun_6531E.h \[2.5\] CC--msg, 静默电话
+Save:node\C\study\Macro_fun_6531E.h \[2.6\] SMS--tp input
+Save:node\C\study\Macro_fun_6531E.h \[2.7\] cursor
+Save:node\C\study\Macro_fun_6531E.h \[2.8\] file
+Save:node\C\study\Macro_fun_6531E.h \[2.9\] select_sim
+Save:node\C\study\Macro_fun_6531E.h \[2.10\] Sleep
+Save:node\C\study\Macro_fun_6531E.h \[2.11\] reset----------重启
+Save:node\C\study\Macro_fun_6531E.h \[2.12\] 小图标
+Save:node\C\study\Macro_fun_6531E.h \[2.13\] Browser--------默认PIC
+Save:node\C\study\Macro_fun_6531E.h \[2.14\] BT-------------msg
+Save:node\C\study\Macro_fun_6531E.h \[2.15\] Test-----------key id
+Save:node\C\study\Macro_fun_6531E.h \[2.16\] sim--显示单卡
+Save:node\C\study\Macro_fun_6531E.h \[2.17\] usb
+Save:node\C\study\Macro_fun_6531E.h \[2.18\] //bat
+Save:node\C\study\Macro_fun_6531E.h \[2.19\] sms mst, sale
+Save:node\C\study\Macro_fun_6531E.h \[2.20\] 
 // 其他标号
 Save:Help\\DefaultFile\\Macro_Node_Num.h
 
@@ -51,7 +51,7 @@ Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 [1.1] resource_main
 // /res/*.txt
-// --8910
+// --6531E
 make\resource_main\resource_main.mk  450
 // --t701
 make\resource_main\resource_target.mk 42
@@ -317,21 +317,85 @@ app_main.mk
 //	SCI_TRACE_LOW("[ccapp]is_handfree = %d", dev);
 
 // watch log
-Save:node\C\study\Macro_tihu_8910.h  __log__
+Save:node\C\study\Macro_tihu_6531E.h  __log__
 // slide log
-Save:node\C\study\Macro_slide_8910.h  __log__
+Save:node\C\study\Macro_slide_6531E.h  __log__
 // Trace log
-Save:node\C\study\Macro_patch_8910.h  __Trace__
+Save:node\C\study\Macro_patch_6531E.h  __Trace__
 
 
 [1.13] 
 
 
 
-[1.14] 
+[1.14] mp3--show
+// HandlePDADefaultWinMsg
+app:audioplayer\c\mmiapwin_main_pda.c  470
+//
+//	#ifdef WIN32
+//		    case MSG_APP_5:
+//		        SetMp3CtrlParam(win_id);
+//		        break;
+//	#endif
 
 
-[1.15] 
+
+[1.15] tts
+//tts
+//	PlayTellTime()
+//	//
+//	MMIAPISET_IsPlayingRingType
+//	//Handle
+//		==>
+//		====>MMIAPISET_PlayRing
+//		======>PlayRing
+//		========>PlayFixedRing
+//		==========>MMISRVAUD_GetHandleByName
+//	//STOP
+//		==>MMITTS_STOP_CALLBACK
+//		====>MMIAPISET_StopRing
+//		======>MMIAPISET_StopAppRing
+//		========>MMIAPISET_StopAllRing
+//		==========>MMISRVAUD_Stop(MMIAPIALARM_GetPlayHandle());
+//	// type
+//	MMIENVSET_SET_OPT_E
+//	MMISET_ALL_RING_TYPE_E
+//	MMIENVSET_SETTING_T
+
+//tts
+//	playAutoTellTimeTTS()----time
+//	playTellTimeTTS()--------time
+//	TTSPlayPBNumber()--------pb
+//  TTSPlayInCallNumber()----cc
+//	playkeypadtoneTTS()------key
+//  PlayFixedRing()----------
+//
+//cc
+//	MMICC_ConstructAudioHandle ()
+//	MMICC_DestroyAudioHandle ()
+//	AP_AudioSrvCallBack()
+//  APRequestVirtualAudioHandle()
+
+// tts--dial
+//		==>playkeypadtoneTTS
+//		====>simple_tts_dial_broadcast
+
+// tts--ringId
+//		==>MMISET_RING_CALL_KEY_TONE_RING  (not env) (mp3Index/Info) (play/Pri) (same vol)
+//		==>MMISET_RING_TYPE_READDIALKEY (env) (No mp3Index/Info) (Not play/Pri) (same vol)
+
+// tts--vol
+//		==>DIALKEYREAD_VOL (same vol)
+
+
+### __mp3Play__
+// --mp3--play
+//		==>
+//		====>MMIAPISET_PlayRing
+//		======>PlayRing
+//		========>PlayFixedRing
+//		==========>MMISRVAUD_GetHandleByName
+// --env--play
 
 
 
@@ -621,7 +685,7 @@ LoadFileToImage
 //		==>HandleScellRssiInd
 //		====>.srri_ind.rxlev       
 //		======>.g_service_rxlev_map  # 107
-//		======>MMIPHONE_GetRSSIMap   # 8910
+//		======>MMIPHONE_GetRSSIMap   # 6531E
 app:phone\c\mmiphone.c  HandleScellRssiInd
 
 
@@ -771,7 +835,7 @@ ATEST_SUPPORT
 
 [2.16] sim--显示单卡
 // code
-Save:node\C\study\Macro_doc_8910.h  __ELECTRIC__
+Save:node\C\study\Macro_doc_6531E.h  __ELECTRIC__
 
 ### 显示单卡
 app:phone/c/mmiphone.c  MMIAPIPHONE_GetSimExistedStatus
@@ -798,15 +862,15 @@ app:phone/c/mmiphone.c  MMIAPIPHONE_GetSimExistedNum
 //#endif
 
 
-### __AoledaCard__  (107不可擦除/8910升级可保留)
-// nv  8910/107
-Save:node\C\study\Macro_nv_8910.h __Card__
+### __AoledaCard__  (107不可擦除/6531E升级可保留)
+// nv  6531E/107
+Save:node\C\study\Macro_nv_6531E.h __Card__
 
 // card--timer
 //		==>IdleWin_HandleMsg
 //		====>MSG_OPEN_WINDOW
 //		======>checkStartEleGuarCardTimer
-//		      8910:已激活忽略;8小时有卡激活;5分钟测试激活
+//		      6531E:已激活忽略;8小时有卡激活;5分钟测试激活
 //		      107: 6小时未激活; wait sms/call
 app:idle\c\mainapp.c  case^MSG_OPEN_WINDOW
 app:idle\c\mainapp.c  case^MSG_TIMER
@@ -878,7 +942,7 @@ source:mmi_app/app/sms/c/mmismsapp_main.c  VIET_MST
 
 ### (便于分析代码)
 // sale--mk
-Save:node\C\project\Macro_cfg_8910.h __sale__
+Save:node\C\project\Macro_cfg_6531E.h __sale__
 // sale--str
 source:mmi_app\common\h\common_mdu_def.h  SPDE_SALES_TRACKER_SUPPORT
 // sale--nv, 定时时间/号1/号2; 开关

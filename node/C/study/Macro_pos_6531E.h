@@ -380,14 +380,13 @@ source:mmi_kernel/include/mmitheme_mainmenu_{size2}.h  MENUICON_FOCUSITEM_W
 app:cc\c\mmicc_{wintab}.c  8085  sim, state
 //		==>{158,188}, 96+30+30
 app:cc\h\
-app:cc\h\mmicc_position.h  CC_SEC_INFO_NAME_LABEL_TOP
 
 // --cc--bar
 //		==>{0,40}
 
 // --cc--str--3st--num/state
 //		==>{0,30}
-app:cc\h\mmicc_position_{size}.h  CC_SEC_INFO_NAME_LABEL_TOP
+app:cc\h\mmicc_position_{size2}.h  CC_SEC_INFO_NAME_LABEL_TOP
 app:cc\h\mmicc_position_{size2}.h  CC_SEC_INFO_STATE_LABEL_TOP
 
 // --cc--str--num

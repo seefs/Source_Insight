@@ -45,7 +45,8 @@ prj:\\
 
 projectKey   = K220U_MRD_X12_2In1_V11_QVGA
 //projectKey   = X225U_HQVGA
-curKey   = UIS8910_ROM_16MB_DS_USER
+// --DEBUG --USER
+curKey   = UIS8910_ROM_16MB_DS_DEBUG
 cfgKey   = uis8910_phone_user_base_config
 sizeNext  = 1
 size1Key  = 240X320
@@ -66,6 +67,7 @@ tmpKey = xx
 
 ### 5.build
 simulatorKey = simulator_idh
+simulator10Key = simulator_main
 resource_mainKey = resource_main
 app_mainKey = app_main
 gui_mainKey = gui_main

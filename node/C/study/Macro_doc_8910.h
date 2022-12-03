@@ -10,7 +10,7 @@ Save:node\C\study\Macro_doc_8910.h \[1.7\] tool
 Save:node\C\study\Macro_doc_8910.h \[1.8\] //File-----------------
 Save:node\C\study\Macro_doc_8910.h \[1.9\] test code-------------
 Save:node\C\study\Macro_doc_8910.h \[1.10\] ImageNote
-Save:node\C\study\Macro_doc_8910.h \[1.11\] 
+Save:node\C\study\Macro_doc_8910.h \[1.11\] arm log
 Save:node\C\study\Macro_doc_8910.h \[1.12\] //FontTool
 Save:node\C\study\Macro_doc_8910.h \[1.13\] build time----------
 Save:node\C\study\Macro_doc_8910.h \[1.14\] apn
@@ -251,14 +251,18 @@ source:mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_TurnOnBackLight
 //		========>MMIAPI_FM_ONOFF
 ### --flip
 //		==>MMK_DefaultMSGKbd
-//		====>DefaultFlip        # 
+//		====>DefaultFlip          # 
 //		======>
-//		==>MSG_KEYDOWN_FLIP:    # 合盖
-//		====>recode = FALSE     # 走 bg mp3
-//		======>MMIDEFAULT_HandleFlipKey
-//		====>do()               # 不会走 MSG_APP_CANCEL
-//		====>MMK_PostMsg(MSG_APP_CANCEL)
-//		======>play mp3
+//		==>MMK_HandlePublicKey
+//		====>MSG_KEYDOWN_FLIP:    # 合盖
+//		======>HandleFlipDown     # 返回idle
+//		====>MSG_KEYDOWN_FLIP:    # 合盖
+//		======>recode = FALSE     # 返回FALSE 走bg mp3
+//		========>MMIDEFAULT_HandleFlipKey
+//		======>do()               # 不会走 MSG_APP_CANCEL
+//		======>MMK_PostMsg(MSG_APP_CANCEL)
+//		========>play mp3         #
+//		==>MSG_KEYUP_FLIP:        # 返回FALSE 解决响铃时开盖不亮屏 (不记得什么原因)
 app:accessory\c\mmicountedtime_main.c  MMIAPICT_HandleCountedTimeArriveWin
 
 
@@ -508,8 +512,20 @@ build\UIS8910_ROM_16MB_DS_USER_builddir\tmp\mmi_res_240x320_imag.txt IMAGE_PUBWI
 
 
 
-[1.11] 
-
+[1.11] arm log
+//
+//	客户您好，
+//
+//	请帮忙再提供一份log，需要修改一下nv: AUDIO\AUDIO_ARM\Handsfree\AudioStructure\reserve\reserve[63]=0x131D
+//	测试前还需发送AT指令：
+//	DSP侧dump开关：
+//	开：
+//	AT+SPDSPOP=2
+//	AT+SPDSP=65535,0,0,4096
+//	nv修改和at是开启arm 和 dsp的通话语音dump，语音数据会发送到log里。log抓完后重放一下log，
+//	然后分别点击 Tool -> audio Arm Transfer -> Transfer 和 Tool -> audio DSP Transfer -> Transfer 
+//	会解析出两个*.pcm文件夹 说明log抓取成功。
+//	谢谢！
 
 
 
@@ -548,12 +564,16 @@ tool_mini:\
 tool_mini:6_res_str\
 tool_mini:6_res_str\res_ntac.xlsx
 
-//
-resource:Common\DATA\
 // tools
 {8910}\tools\DEBUG_TOOL\ResBOCA\ResBOCA_R1.19.0501\Bin\
+// data
+resource:Common\DATA\
 {8910wa21}\MS_MMI_Main\source\resource\Common\DATA\
 {8910wa_git}\MS_MMI_Main\source\resource\Common\DATA\
+
+// __8910_apn__
+Save:node\C\study\Macro_doc_apn8910.h
+
 
 
 ### 107
@@ -573,7 +593,7 @@ resource:Common\DATA\
 // apn_list_LessThan_300.ntac
 // 资料
 https://unisupport.unisoc.com/file/index?fileid=31001
-// aosp--apn有点旧
+// android aosp--apn有点旧
 http://aospxref.com/
 http://aospxref.com/android-13.0.0_r3/xref/device/generic/goldfish/data/etc/apns-conf.xml
 http://aospxref.com/android-13.0.0_r3/xref/device/sample/etc/apns-full-conf.xml
@@ -592,24 +612,35 @@ prj:project_{cur}.mk  ABUP_FOTA_SUPPORT_TCARD = FALSE
 
 ### fota--adups--107
 //
+//		==>BLOCK  128
 SPDE_PRJ\S98T_FLP_E535_31\adups_define.h
 //
 fdl_bootloader/fota_bootloader/src/tf_display.c
-//
-//adups_net_start_get_new_version()
-//// 下载进度
-//ADUPS_get_download_percent()
-//// 升级进度
-//adups_patch_ratio
-//// state//版本号
-//GetMainStates
-//// 
+//		==>adups_net_start_get_new_version()
+//		==>ADUPS_get_download_percent()  # 下载进度
+//		==>adups_patch_ratio             # 升级进度
+//		==>GetMainStates                 # state//版本号
 Third-party\adups\hal\src\adups_device.c  adups_get_device_version()
 
 
 // addr
 Third-party\rsfota\rsupdate\src\rs_ua_porting.c  rs_fota_addr
+// 1.差分平台 > 创建项目
+// 2.编译版本 v01 v02
+// 3.制作差分包，自动部署
+//		==>BLOCK  128 (不能改)
+//		==>目标    v2
+//		==>前置    v1
+//		==>RAM    3072 (不能改)
+// 4.设备imei更新
 
+// copy NV
+make\perl_script\adups.pl  img_deltanv_src
+
+
+### fota
+// ==>密码
+patch:ssh\Macro_user_psw.h  __abup__
 
 
 [1.17] fota----------rs
@@ -624,18 +655,9 @@ prj:project_{cur}.mk  FOTA_SUPPORT_REDSTONE_NAME_T6B = TRUE
 prj:project_{cur}.mk  FOTA_SUPPORT = NONE
 
 
-### fota url
-// OTA后台
-http://fota.redstone.net.cn/Home/Index/login
-https://fota.redstone.net.cn/
-//	用户名 bomengAdmin
-//	密码 bomeng@2020w
-
-
-//差分后台
-http://diff.livedevice.com.cn/diffservice/atool/bomeng.html
-//	用户名 bomengAdmin
-//	密码 bomeng@2020w
+### fota
+// ==>密码
+patch:ssh\Macro_user_psw.h  __redstone__
 
 
 ### fota--8910

@@ -7,7 +7,7 @@
 Save:node\ToolsMsg\Macro_VS2010.h \[1.1\] 安装、卸载
 Save:node\ToolsMsg\Macro_VS2010.h \[1.2\] error build
 Save:node\ToolsMsg\Macro_VS2010.h \[1.3\] error run
-Save:node\ToolsMsg\Macro_VS2010.h \[1.4\] 
+Save:node\ToolsMsg\Macro_VS2010.h \[1.4\] code
 Save:node\ToolsMsg\Macro_VS2010.h \[1.5\] pageheap
 Save:node\ToolsMsg\Macro_VS2010.h \[1.6\] Windbg--gflags
 Save:node\ToolsMsg\Macro_VS2010.h \[1.7\] Application Verifier
@@ -43,6 +43,18 @@ https://blog.csdn.net/weixin_39381833/article/details/78078343
 // 激活
 //YCFHQ-9DWCY-DKV88-T2TMH-G7BHP
 
+
+// framework
+// --v2.0.50727
+// --v3.5
+// --v4.8(有更高版本装不上)
+//	Windows XP装3.5、4.0Q;
+//	Windows 7 SP1装4.79;
+//	Windows 8装3.5、4.6.1;
+//	Windows 8.1装3.5、4.7;
+//	Windows 10装3.5、4.7;
+//	Windows 10 1703装3.5;
+https://go.microsoft.com/fwlink/?linkid=0
 
 
 [1.2] error
@@ -85,17 +97,25 @@ app:sms\c\mmismscb_wintab.c  void^InitCBChannelList
 // 	msdevkernel.dll!LIST_DEL()  行 125 + 0xb 字节	C
 
 
+### 不能调试
+// 前几天我的vs2010突然不能调试了。后来找了很多的解决方案都不能解决问题。
+//	1. 删除所有的bin, debug
+//	2. 重建工程。
+//	3. 重新安装Silverlight的开发包。
+//	还是不行。最后是删除了
+//	C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files
+//	下面的所有临时文件。
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\xxx\ #没这个文件
 
 
 
 
 
+[1.4] code
 
-
-
-
-
-[1.4] 
+// simulator param
+MS_MMI_Main\source\winsimulator_tp\win_platform\MSDevBridge\MSDevBridge_Mod.dsp
 
 
 

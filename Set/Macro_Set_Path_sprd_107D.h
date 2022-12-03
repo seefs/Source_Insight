@@ -44,15 +44,16 @@ prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
 // 目录名称自动拼接成mk名称
-projectKey   = S89T_BYD_L66A_IN
-//projectKey   = S98T_FLP_E535_31
+//projectKey   = S89T_BYD_L66A_IN
+projectKey   = S98T_FLP_E535_31
+//projectKey   = S98T_FLP_E535_C
 //projectKey   = T5_A82WD_VIET
 //projectKey   = F79T_DERONG
 //projectKey   = F76T_SUOAI_V909L
 //projectKey   = S98T_JL_F15_2
 //projectKey   = S89T_BYD_L66A_IN
-// --debug --user
-curKey   = ums9117_{size}BAR_48MB_{project}_debug
+// --_debug --_user
+curKey   = ums9117_{size}BAR_48MB_{project}_user
 cfgKey   = xx
 sizeNext  = 1
 //size1Key  = 128X160
