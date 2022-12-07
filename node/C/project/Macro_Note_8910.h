@@ -112,6 +112,8 @@ config:keymap_cfg.c  SCI_VK_CALENDER
 ### key (im)
 // 详细键值
 Save:node\C\study\Macro_im_8910.h  __keymap__
+//
+Save:node\C\study\Macro_im_8910.h  __LONG_0__
 // --key--虚拟值转实际值
 Save:node\C\study\Macro_doc_8910.h  __keyKbd__
 // --key--发送信号

@@ -125,6 +125,13 @@ app:sms\c\mmismscb_wintab.c  MMI_RESULT_E^HandleSmsCBChannelListWindow
 //		==>MMISMSCB_Init
 //		====>
 
+### read
+//		==>HandlePsMsg
+//		====>SMSCB:
+//		======>MMIAPISMSCB_HandleCBMsgInd
+//		========>MMISMSCB_OpenCLASS0Win
+app:sms\c\mmismscb_wintab.c  MMI_RESULT_E^HandleSmsCBClass0ReadWindow
+
 
 
 

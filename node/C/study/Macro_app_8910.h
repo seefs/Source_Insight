@@ -1080,6 +1080,8 @@ app:pb\c\mmipb_view.c  void^HandleMainReloadMsg
 // pb-list-delete
 app:pb\c\mmipb_view.c  void^HandleOperateReloadList
 
+// pb-detail
+app:pb\c\mmipb_view.c  MMI_RESULT_E^HandleEntryDetailWinMsg
 
 // pb-memory
 app:pb\c\mmipb_view.c  MMI_RESULT_E^^HandleMemDetailWinMsg
@@ -2321,6 +2323,10 @@ app:idle\c\mmi_subwintab.c  uint8^MMISUB_GetBatteryLevel
 // --zmaee bat:
 //		==>ZMAEE_IWatch_GetBatteryPercent
 app:zmaee_128X128\c\zmaee_watch.c  ZMAEE_IWatch_GetBatteryPercent
+
+
+### power--patch
+Save:node\C\study\Macro_patch_8910.h  __charge__
 
 
 ###

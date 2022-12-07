@@ -385,35 +385,48 @@ build\{cur}_builddir\win\mssim_duallcd_320_240_Q.ini  KEY_EXT_Q
 [1.9] dial--input
 //
 ## __LONG_0__
-// 	 MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-source:mmi_ctrl\source\editbox\c\ctrlbaseflex.c
-// (7)LONG 处理
-source:mmi_ctrl\source\editbox\c\ctrlbaseflex.c MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-source:mmi_ctrl\source\Im\c\ctrlim.c 
-source:mmi_ctrl\include\ctrlim_base.h 
-// switch
-source:mmi_ctrl\source\editbox\c\ctrlphonenumedit.c MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-source:mmi_ctrl\source\editbox\c\ctrlphonenumedit.c 
-source:mmi_ctrl\source\editbox\c\ctrlphonenumedit.c 
+// (0) 其他
+//		==>IdleWin_HandleMsg
+//		====>MMIAPIIDLE_OpenDialWin  # 长按进拨号
 source:mmi_app\app\idle\c\mainapp.c MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-source:mmi_app\app\idle\c\mainapp.c 
-source:mmi_app\app\idle\c\mainapp.c 
-source:mmi_app\app\idle\c\mainapp.c 
-source:mmi_app\app\idle\c\mmiidle_dial.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-source:mmi_app\app\idle\h\mmiidle_export.h 
-source:mmi_app\app\im\c\mmiim_sp_multitap.c 
-source:mmi_app\app\im\c\mmiim_sp_multitap.c 
-// (6)LONG 前
-source:mmi_app\app\im\c\mmiim_sp_multitap.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-// (3)timer R
-source:mmi_kernel\source\c\mmk_kbd.c 
-// (1)timer S
-// (4)timer R
+source:mmi_app\app\idle\c\mmiidle_dial.c    Is_DIAL_WIN_FOCUS
+source:mmi_app\app\idle\h\mmiidle_export.h  Is_DIAL_WIN_FOCUS
+// (1)(3)
+//		==>HandleMSGKbd
+//		====>Is_DIAL_WIN_FOCUS  Is_IDLE_WIN_FOCUS
+//		====>Is_DIAL_WIN_FOCUS  Is_IDLE_WIN_FOCUS
+//		======>MMK_StartTimer  MMK_StopTimer
+//		========>...
+//		==========>MMK_HandleKeylong0
+//		============>HandleMSGKbd       # 反复发 LONG 消息，注意短信会不停输入0
 source:mmi_kernel\source\c\mmk_kbd.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-source:mmi_kernel\include\mmk_msg.h 
 // (2)timer
-source:mmi_kernel\source\c\mmk_timer.c  MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
-source:mmi_kernel\include\mmk_timer.h 
+//		==>MMK_HandleKeylong0
+source:mmi_kernel\source\c\mmk_timer.c  MMI_KEYLONG0_TIMER_ID
+source:mmi_kernel\include\mmk_timer.h   MMI_KEYLONG0_TIMER_ID
+// (4) input 处理
+//		==>HandleSysMsg
+//		====>MMIIM_SP_KEY_0  Is_DIAL_WIN_FOCUS
+//		======>GUIIM_SetNotify
+source:mmi_app\app\im\c\mmiim_sp_multitap.c  GUIIM_NOTIFY_LONG0_SWITCH
+source:mmi_ctrl\include\ctrlim_base.h        GUIIM_NOTIFY_LONG0_SWITCH
+//		======>GUICTRL_SendNotifyEx
+source:mmi_ctrl\source\Im\c\ctrlim.c   MSG_NOTIFY_IM_LONG_0
+source:mmi_kernel\include\mmk_msg.h    MSG_NOTIFY_IM_LONG_0
+//		======>BaseFlexCtrlHandleMsg
+//		========>GUIEDIT_InsertString
+source:mmi_ctrl\source\editbox\c\ctrlbaseflex.c MSG_NOTIFY_IM_LONG_0
+// (5) check
+//		==>PhoneNumEditCtrlHandleMsg
+//		====>IM_COMMIT:
+//		======>BASEFLEX_AddString
+//		========>BASEFLEX_CheckEditString
+//		==========>PhoneNumEditCtrlIsStringValid  # 禁用pw开始
+//		========>VTLBASEEDIT_ConfigImKey
+//		==========>PhoneNumEditCtrlConfigImKey    # 取消短按切换, 快速输入0
+source:mmi_ctrl\source\editbox\c\ctrlphonenumedit.c MMI_PLUS_P_W_INPUT_LONG_0_KEY_STYLE
+// (6)LONG 处理
+source:mmi_app\app\idle\c\mmiidle_dial.c    Is_DIAL_WIN_FOCUS
 
 //
 ## __DOWN_0__
