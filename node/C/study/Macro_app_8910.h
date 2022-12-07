@@ -634,7 +634,8 @@ app:setting\c\mmiset_callwin.c  HandleFlyModeOpenPhoneWindow
 //		==>MMIAPISET_OpenNetWorkTypeWin
 //		====>HandleNetworkTypeWindow
 //		==>InitVodafoneApnList
-app:connection\c\mmiconn_manager_wintab.c  MMIAPICONNECTION_OpenMenuWin
+//app:connection\c\mmiconn_manager_wintab.c  MMIAPICONNECTION_OpenMenuWin
+app:connection\c\mmiconn_manager_wintab.c  InitPdaConnectionMainListCtrl
 // ==>apn
 Save:node\C\study\Macro_doc_apn8910.h
 Save:node\C\study\Macro_doc_apn107.h

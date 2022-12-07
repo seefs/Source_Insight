@@ -242,8 +242,8 @@ prj:project_{cur}.mk  OPERA_MINI_SUPPORT = VER42
 
 
 // browser UI
-BROWSER_INPUT_BIG_FONT_BG_STYLE  = TRUE
-BROWSER_DL_DEFAULT_TCARD         = TRUE
+prj:project_{cur}.mk  BROWSER_INPUT_BIG_FONT_BG_STYLE  = TRUE
+prj:project_{cur}.mk  BROWSER_DL_DEFAULT_TCARD         = TRUE
 
 
 // Download
@@ -623,7 +623,7 @@ prj:project_{cur}.mk  MMI_READINCALL_ENABLE
 prj:project_{cur}.mk  MMI_READPB_ENABLE
 
 //
-
+Save:node\C\study\Macro_res_ring_8910.h  __time__
 
 
 [2.7] FM

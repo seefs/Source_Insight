@@ -247,7 +247,7 @@ source:mmi_app\common\h\mmi_id.def  MMI_READDIALKEY_ENABLE
 app:setting\h\set_mdu_def.h  MMI_READDIALKEY_ENABLE
 
 
-[1.10] time
+[1.10] __time__
 // (mp3)报时时间间隔不能改小，只能从音源控制
 
 ### 语音王
@@ -305,7 +305,7 @@ source:resource\mmi_res_prj_def.h  low_power
 //		==>HandleTextToSpeech
 //		====>playMenuTTS
 //		======>MMIAPISET_PlayRing  //MMISET_RING_TYPE_READMENU
-
+source:mmi_app\app\setting\c\mmiset_ring.c  MMISET_RING_TYPE_READMENU
 
 
 [1.12] pb

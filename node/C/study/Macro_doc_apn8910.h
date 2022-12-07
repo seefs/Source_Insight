@@ -50,6 +50,7 @@ app:phone\h\plmn_ts25_database_enum.h  PLMN_204_04
 // --zmaee (第3次)
 
 
-
+### 首选sim卡
+//  if (dual_sys != MMIAPISET_GetDataSimFromNV())
 
 

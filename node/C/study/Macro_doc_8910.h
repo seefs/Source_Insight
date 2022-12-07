@@ -708,6 +708,21 @@ prj:project_{cur}.mk  SPDE_FOTA_REMOVE_PROGRESS = TRUE
 prj:project_{cur}.mk  SPDE_FOTA_TIP_USE_GRAY_IMG = TRUE
 
 
+### 分区
+// --rs_fota_size, 不包括头部
+//flash_size=0x01000000
+//sect_size=0x00010000
+//ps_addr=0x60020000
+//rs_fota_addr=0x60630000
+//rs_fota_size=0x00100000
+//fota_bootloader_addr=0x60730000
+//cp_addr=0x60B30000
+//cp_size=0x00300000
+//mmi_res=0x60760000
+//mmi_res_size=0x003D0000
+
+
+
 
 [1.18] 
 
