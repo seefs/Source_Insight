@@ -27,7 +27,7 @@ Save:node\ToolsMsg\Macro_SI.h  __SI_MTK__
 [1.2] 8910 mtk
 Save:node\C\project\
 
-// 8910
+// __8910__
 Save:node\C\project\Macro_Note_8910.h
 Save:node\C\project\Macro_cfg_8910.h
 Save:node\C\study\
@@ -38,7 +38,7 @@ Save:node\C\study\Macro_doc_8910.h
 Save:node\C\study\Macro_res_8910.h
 Save:node\C\study\Macro_nv_8910.h
 
-// mtk
+// __mtk__
 Save:node\C\project\Macro_Note_MTK.h
 Save:node\C\project\Macro_cfg_MTK.h
 Save:node\C\study\
@@ -49,18 +49,17 @@ Save:node\C\study\Macro_doc_MTK.h
 Save:node\C\study\Macro_res_MTK.h
 Save:node\C\study\Macro_nv_MTK.h
 
-// 6531E
+// __6531E__
 Save:node\C\project\Macro_Note_6531E.h
 Save:node\C\study\Macro_doc_6531E.h
-Save:node\C\study\Macro_modis_6531E.h
 
-// 6533
+// __6533__
 Save:node\C\project\Macro_Note_6533.h
 
-// RDA
+// __RDA__
 Save:node\C\project\Macro_Note_6533.h
 
-// 7701
+// __7701__
 Save:node\C\project\Macro_Note_7701.h
 
 

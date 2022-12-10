@@ -116,12 +116,18 @@ All Time consuming: 496 seconds!
 All Time consuming: 366 seconds!
 // 改电源没效果
 All Time consuming: 364 seconds!
+// -G-job12-j12：(卸载驱动精灵)
+All Time consuming: 131 seconds!
+// -G-job12-j12：(手表)
+All Time consuming: 292 seconds!
 
 ### 107
 // -E-job12-j12：
 All Time consuming: 771 seconds!
 // -G-job12-j12：(有更新git)
 All Time consuming: 1113 seconds!
+// -G-job12-j12：(卸载驱动精灵)
+All Time consuming: 466 seconds!
 
 
 [1.8] win10慢

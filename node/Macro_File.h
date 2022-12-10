@@ -1,93 +1,82 @@
 
 // File:
 // 1. Common notes
-Save:node\Macro_File.h \[1.1\] work file
-Save:node\Macro_File.h \[1.2\] bak file
-Save:node\Macro_File.h \[1.3\] help--Node Num
-Save:node\Macro_File.h \[1.4\] help--DefaultFile
-Save:node\Macro_File.h \[1.5\] CQ
-Save:node\Macro_File.h \[1.6\] special file
-Save:node\Macro_File.h \[1.7\] 
-Save:node\Macro_File.h \[1.8\] SI Marco dir, test
-Save:node\Macro_File.h \[1.9\] SI Cmd dir
-Save:node\Macro_File.h \[1.10\] 
-Save:node\Macro_File.h \[1.11\] 
+Save:node\Macro_File.h \[1.1\] node-----------工作文件
+Save:node\Macro_File.h \[1.2\] tmp------------未使用文件
+Save:node\Macro_File.h \[1.3\] help-----------编号/默认文件
+Save:node\Macro_File.h \[1.4\] special--------特殊文件
+Save:node\Macro_File.h \[1.5\] SI Marco/test--宏文件
+Save:node\Macro_File.h \[1.6\] Cmd------------
+Save:node\Macro_File.h \[1.7\] Win/Office-----系统
+Save:node\Macro_File.h \[1.8\] Svn/Git/BComp--版本
+Save:node\Macro_File.h \[1.9\] SI/Vim---------编辑
+Save:node\Macro_File.h \[1.10\] vc------------编译
+Save:node\Macro_File.h \[1.11\] Image
 Save:node\Macro_File.h \[1.12\] 
-// 2. tools
-Save:node\Macro_File.h \[2.1\] win
-Save:node\Macro_File.h \[2.2\] Office
-Save:node\Macro_File.h \[2.3\] Cmd
-Save:node\Macro_File.h \[2.4\] SVN
-Save:node\Macro_File.h \[2.5\] Beyond Compare
-Save:node\Macro_File.h \[2.6\] SecureCRT
-Save:node\Macro_File.h \[2.7\] git
-Save:node\Macro_File.h \[2.8\] SI
-Save:node\Macro_File.h \[2.9\] vim
-Save:node\Macro_File.h \[2.10\] Image
-Save:node\Macro_File.h \[2.11\] vc
-Save:node\Macro_File.h \[2.12\] 
 
 
 
-[1.1] work file
-//1) android:
+[1.1] node
+### android
 Save:node\android\Macro_Note_as.h
 Save:node\android\project\Macro_Note_9820e.h
 
-//2) MTK SPR:
-Save:node\C\Macro_Note_C.h
-//	MTK, modis
-Save:node\C\study\Macro_modis_MTK.h
-Save:node\C\project\Macro_Note_MTK.h
-//	6531E, modis
-Save:node\C\study\Macro_modis_6531E.h
-Save:node\C\project\Macro_Note_6531E.h
-//	7701, modis
-Save:node\C\project\Macro_Note_7701.h
+### MTK
+Save:node\C\Macro_Note_C.h  __mtk__
 
-//3) Pythons:
+### SPRD
+Save:node\C\Macro_Note_C.h  __8910__
+Save:node\C\Macro_Note_C.h  __6531E__
+
+### Pythons
 Save:node\Pythons\Macro_Note_Python.h
 
-//4) other:
-Save:node\Project\Macro_A_Nav.h
+### other
+Save:node\
 
 
-[1.2] bak file
-//	bak(未整理, 未改)
-Save:Help\bak\Macro_tmp.h
+[1.2] tmp
+patch:node\
+
+### bak(未整理, 未改)
+patch:node\bak\
+patch:node\Macro_node_bak.h
+
+### tmp
+patch:node\tmp\
+patch:node\Macro_node_tmp.h
+
+### patch
+patch:\
+patch:node\Macro_node_patch.h
+
+### psw
+//
+patch:ssh\Macro_user_psw.h
+patch:ssh\Macro_user_psw.h  __CQ__
 
 
-[1.3] help--Node Num
+[1.3] help
+### Num
 //参考标号:
 //  2个\\是为了不被替换
 Save:Help\\DefaultFile\\Macro_Node_Num.h
 
-
-[1.4] help--DefaultFile
+### default file
 //样板文件:
 Save:Help\DefaultFile\Macro_z_index.h
 Save:Help\DefaultFile\Macro_z_null.h
 Save:Help\DefaultFile\Macro_z_null.py
 //样板文件-(更多序号+):
 Save:Help\DefaultFile\Macro_z_index_2.h
-//Info文件:
+
+### Info file
+// 自定义帮忙文档
 Save:Help\LangInfo\Macro_Info_Android.h
 Save:Help\LangInfo\Macro_Info_Python.h
 
 
-[1.5] CQ
-//禅道 展讯 MTK
-//1) 禅道:
-http://192.168.2.252/zentao/my/
-//2) 展讯:
-http://222.66.158.139:2008/cqweb/#
-//   9820e:
-https://isupport.spreadtrum.com/iSupport/apply/faq_list#tab-
-//3) MTK:
-https://online.mediatek.com
-
-
-[1.6] special file
+[1.4] special
 //1) Nv Msg
 Save:Set\Macro_Val.h
 //2) Key Msg
@@ -99,29 +88,87 @@ Save:Cmd_TXT\Tmp_Comp_1.h
 Save:Cmd_TXT\Tmp_Comp_2.h
 
 
-
-[1.7] 
-
-
-
-
-[1.8] SI Marco dir, test
-// file, test
-Save:Help\Other\Macro_Help_SI.h
+[1.5] SI Marco/test
+// Marco file
+Save:Help\Other\Macro_Help_SI.h  __marco__
+// test
+Save:Help\Other\Macro_Help_SI.h  __test__
 
 
-[1.9] SI Cmd dir
-//
+[1.6] Cmd
+// Cmd Help
 Save:Help\Other\Macro_Help_cmd.h
+// 命令
+Save:node\ToolsMsg\Macro_Cmd.h
+Save:node\ToolsMsg\Macro_perl.h
 
 
-[1.10] 
+[1.7] Win/Office
+### Win
+Save:node\ToolsMsg\Macro_win.h
+Save:node\ToolsMsg\Macro_win10.h
+Save:node\ToolsMsg\Macro_win_dll.h
+Save:node\ToolsMsg\Macro_win_soft.h
+
+### sprd/mtk tool
+Save:node\ToolsMsg\
+Save:node\ToolsMsg\Macro_sprd.h
+Save:node\ToolsMsg\Macro_mtk.h
+
+### Office
+Save:node\ToolsMsg\Macro_Office.h
+
+
+### Script Manager
+// 用户脚本管理器
+Save:node\ToolsMsg\Macro_Script.h
+
+###
+// SecureCRT
+Save:node\ToolsMsg\Macro_SecureCRT.h
+// 向日葵
+Save:node\ToolsMsg\Macro_Sunlogin.h
+
+
+[1.8] Svn/Git
+### SVN
+Save:node\ToolsMsg\Macro_svn.h
+
+### git
+Save:node\ToolsMsg\Macro_git.h
+Save:node\ToolsMsg\Macro_git_md.h
+Save:node\ToolsMsg\Macro_git_config.h
+Save:node\ToolsMsg\Macro_git_app.h
+
+### Beyond Compare
+// 删除后解除锁定
+C:\Users\Administrator\AppData\Roaming\Scooter^Software\Beyond^Compare^4
+C:\Users\seefs\AppData\Roaming\Scooter^Software\Beyond^Compare^4
+//   BCmp:
+Save:node\ToolsMsg\Macro_Bcomp.h
+
+
+[1.9] SI/Vim
+### SI
+Save:node\ToolsMsg\Macro_SI.h
+
+### Vim
+Save:node\ToolsMsg\Macro_vim.h
+
+
+[1.10] vc
+// vc6
+Save:node\ToolsMsg\Macro_VC.h
+// vs2008
+Save:node\ToolsMsg\Macro_VS2008.h
+// vs2010
+Save:node\ToolsMsg\Macro_VS2010.h
 
 
 
-
-[1.11] 
-
+[1.11] Image
+//
+Save:node\ToolsMsg\Macro_Image.h
 
 
 
@@ -132,76 +179,6 @@ Save:Help\Other\Macro_Help_cmd.h
 
 
 
-[2.1] win
-Save:node\ToolsMsg\Macro_win.h
-Save:node\ToolsMsg\Macro_win10.h
-Save:node\ToolsMsg\Macro_win_dll.h
-Save:node\ToolsMsg\Macro_win_soft.h
 
-//
-Save:node\ToolsMsg\
-Save:node\ToolsMsg\Macro_sprd.h
-Save:node\ToolsMsg\Macro_mtk.h
-
-
-[2.2] Office
-Save:node\ToolsMsg\Macro_Office.h
-
-
-[2.3] Cmd:
-Save:node\ToolsMsg\Macro_Cmd.h
-Save:node\ToolsMsg\Macro_perl.h
-
-
-[2.4] SVN
-Save:node\ToolsMsg\Macro_svn.h
-
-
-[2.5] Beyond Compare
-C:\Users\Administrator\AppData\Roaming\Scooter^Software\Beyond^Compare^4
-C:\Users\seefs\AppData\Roaming\Scooter^Software\Beyond^Compare^4
-//   BCmp:
-Save:node\ToolsMsg\Macro_Bcomp.h
-
-
-[2.6] SecureCRT
-Save:node\ToolsMsg\Macro_SecureCRT.h
-// 向日葵
-Save:node\ToolsMsg\Macro_Sunlogin.h
-
-
-[2.7] git
-Save:node\ToolsMsg\Macro_git.h
-Save:node\ToolsMsg\Macro_git_md.h
-Save:node\ToolsMsg\Macro_git_config.h
-Save:node\ToolsMsg\Macro_git_app.h
-
-
-[2.8] SI
-Save:node\ToolsMsg\Macro_SI.h
-
-
-[2.9] vim
-Save:node\ToolsMsg\Macro_vim.h
-
-
-
-
-[2.10] Image
-Save:node\ToolsMsg\Macro_Image.h
-
-
-
-
-[2.11] vc
-// vc6
-Save:node\ToolsMsg\Macro_VC.h
-// vs2008
-Save:node\ToolsMsg\Macro_VS2008.h
-// vs2010
-Save:node\ToolsMsg\Macro_VS2010.h
-
-
-[2.12] 
 
 

@@ -243,6 +243,119 @@ make/{cur}_{GSM}.mak   ATA_SUPPORT
 make/{cur}_{GSM}.mak   __ATA_AUTO_TEST__
 // COM_DEFS += __ATA_AUTO_TEST__
 
+make\Option.mak  __ATA_SUPPORT__
+//
+make/{cur}_{GSM}.mak   WIFI_SUPPORT = NONE
+make/{cur}_{GSM}.mak   BLUETOOTH_SUPPORT = BTMTK_MT6261
+make/{cur}_{GSM}.mak   GAS_SUPPORT = TRUE
+make/{cur}_{GSM}.mak   ISP_SUPPORT = TRUE
+//
+Save:node\C\project\Macro_Note_MTK.h  __CAM__
+//
+custom\drv\YUV_sensor\
+custom\drv\YUV_sensor\{board}\{cur}\GC032A_SERIAL\
+custom\drv\YUV_sensor\{board}\{cur}\BF3A01_SERIAL\
+//
+custom\drv\YUV_sensor\{board}\{cur}\GC032A_SERIAL\image_sensor_GC032A_SERIAL.h
+
+### 文档 step
+// --step1:
+custom\drv\YUV_sensor\{board}\{cur}\GC032A_SERIAL\image_sensor_GC032A_SERIAL.c  GC032A_SERIALSensor
+//	kal_bool FirstPv;
+//	kal_bool OutTestPattern;
+// --step2:
+custom\drv\YUV_sensor\{board}\{cur}\GC032A_SERIAL\image_sensor_GC032A_SERIAL.c  GC032A_SERIALSensorOpen
+//	GC032A_SERIALSensor.OutTestPattern = KAL_FALSE;
+// --step3:
+custom\drv\YUV_sensor\{board}\{cur}\GC032A_SERIAL\image_sensor_GC032A_SERIAL.c  GC032A_SERIALPreview
+//	if (GC032A_SERIALSensor.OutTestPattern)
+//	{
+//		CamWriteCmosSensor(0x0028, 0xD000);
+//		CamWriteCmosSensor(0x002A, 0xB054);
+//		CamWriteCmosSensor(0x0F12, 0x0001);
+//	}
+// --step4:
+custom\drv\YUV_sensor\{board}\{cur}\GC032A_SERIAL\image_sensor_GC032A_SERIAL.c  MM_ERROR_CODE_ENUM^GC032A_SERIALSensorFeatureCtrl
+//#if defined(__CATS_SUPPORT__)
+//  case CAL_FEATURE_CAMERA_SENSOR_OUTPUT_TEST_PATTERN:
+//			 GC032A_SERIALSensor.OutTestPattern = (kal_bool)((P_IMAGE_SENSOR_COMM_DATA_STRUCT)In)->FeatureValue;
+//			 break;
+//#endif  
+// --step5:
+//#if defined(__CATS_SUPPORT__)
+//coust unsigned char CATSTestPattern[] = {0};
+//#endif
+//
+
+### 已有 step
+// --step4:
+hal\camera\cal\src\cal_feature_ctrl.c  __CATS_SUPPORT__
+hal\camera\cal\src\cal_feature_ctrl.c  CATS_FEATURE_COMPARE_TEST_PATTERN
+//        #if (defined(__CATS_SUPPORT__)||defined(__ATA_SUPPORT__))
+//            case CAL_FEATURE_CAMERA_SENOSR_OUTPUT_TEST_PATTERN:
+//            {
+//                IMAGE_SENSOR_COMM_DATA_STRUCT SensorCommData;
+//                
+//                SensorCommData.FeatureValue = pFeatureIn->FeatureSetValue;
+//                ErrorCode = pfImageSensor->SensorFeatureCtrl(pFeatureIn->FeatureId, &SensorCommData, NULL, 0, NULL);                        
+//                break;
+//            }
+//
+//            case CAL_FEATURE_CAMERA_GET_TEST_PATTERN:
+//            {
+//                IMAGE_SENSOR_COMM_DATA_STRUCT SensorCommData;
+//
+//                ErrorCode = pfImageSensor->SensorFeatureCtrl(pFeatureIn->FeatureId, NULL, &SensorCommData, 0, NULL);
+//                pFeatureOut->FeatureCurrentValue = SensorCommData.FeatureValue;
+//                break;
+//            }
+//        #endif
+media\camera\include\cam_main.h  __CATS_SUPPORT__
+//		========>CATSFeatureGetSensorID
+//		========>CATSSaveFileDebug
+//		========>CATSFeatureGetPatternFormat
+//		========>CATSFeatureGetTestPattern
+//		========>CATSFeatureCompareTestPattern
+//		========>CATSFeatureCameraPreview
+//		========>CATSFeatureCameraCapture
+media\camera\src\cam_msg_handler.c  __CATS_SUPPORT__
+//		==>custom_cmd_table
+//		====>custom_em_test_camera_req(2,90)
+custom\common\ps\customer_at_command.c  __CATS_SUPPORT__
+//		======>custom_em_test_camera_req  # 读ID或拍照
+// --读ID
+//		========>CATSInit
+//		========>CATSFeatureCtrl
+//		========>CATSDeinit
+// --拍照-测试/比较
+// ----比较，384=12*16*2，18*21+6
+custom\common\ps\custom_em.c  __CATS_SUPPORT__
+//		==>IspYuvHISR
+hal\camera\isp\src\isp_isr.c  __CATS_SUPPORT__
+// --比较
+//		==>Req:
+//		====>CATSFeatureCtrl
+//		======>CATSFeatureGetTestPattern  # 拍照
+//		========>.frame_buffer
+//		========>.frame_buffer1_p
+//		========>.FrameBuffAddr1
+//		========>.pMdpPara
+//		========>.pScenarioCtrlPara
+//		==========>CalCtrl
+//		============>CalScenarioCtrl
+//		==============>CalPreviewCtrl  # CAL_CTRL_CODE_START
+//		==============>"C:\\Pattern.yuv"
+//		==============>...
+//		======>CATSFeatureCompareTestPattern   # 获取测试分区
+//		========>CalCtrl
+//		==========>CalFeatureCtrl  # CAL_FEATURE_CAMERA_GET_TEST_PATTERN
+//		============>.SensorFeatureCtrl
+//		==============>
+media\camera\src\cam_msg_handler.c  CATS_FEATURE_COMPARE_TEST_PATTERN
+// 加过的项目
+custom/drv/YUV_sensor/K220_BB/K220_GZ_N43K_NEWMAN/GC6153_SERIAL/image_sensor_GC6153_SERIAL.c  CATSTestPattern_
+custom\drv\YUV_sensor\{board}\{cur}\GC032A_SERIAL\image_sensor_GC032A_SERIAL.c  CATSTestPattern_GC032A
+
 
 
 [1.12] CALL record

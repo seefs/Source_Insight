@@ -31,6 +31,7 @@ Save:Help\Other\Macro_Help_SI.h \[2.8\]
 
 
 [1.1] marco file
+### __marco__
 //1) path:
 Save:Macro\
 //2) f1~f12:
@@ -47,6 +48,7 @@ Save:Macro\sbd_file.em  IsTxtFile( )
 
 
 [1.2] marco test...
+### __test__
 //
 Save:Help\
 // π¶ƒ‹≤‚ ‘

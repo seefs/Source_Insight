@@ -19,7 +19,7 @@ Save:node\C\study\Macro_res_ring_8910.h \[1.12\] pb------------ºÚ∞Ê”Ô“ÙÕı
 Save:node\C\study\Macro_res_ring_8910.h \[1.13\] 
 Save:node\C\study\Macro_res_ring_8910.h \[1.14\] Pause/Resume
 Save:node\C\study\Macro_res_ring_8910.h \[1.15\] tts
-Save:node\C\study\Macro_res_ring_8910.h \[1.16\] 
+Save:node\C\study\Macro_res_ring_8910.h \[1.16\] other
 Save:node\C\study\Macro_res_ring_8910.h \[1.17\] 
 Save:node\C\study\Macro_res_ring_8910.h \[1.18\] 
 Save:node\C\study\Macro_res_ring_8910.h \[1.19\] 
@@ -432,13 +432,39 @@ Save:node\C\study\Macro_patch_third.h  __xmly__
 
 
 
-[1.16] 
+[1.16] other
 
+// DL--mp3
+source:resource\mmi_res_prj_def.h  R_DL_1
+
+// DC--mp3
+source:resource\mmi_res_prj_def.h  R_DC_1
+
+// TONE--mp3
+source:resource\mmi_res_prj_def.h  TONE_425HZ
+
+// BAT--mp3
+source:resource\mmi_res_prj_def.h  R_BAT_1
+
+// RECORD--mp3
+source:resource\mmi_res_prj_def.h  R_RECORD_ON
+
+// SMS/CLOCK--mp3
+source:resource\mmi_res_prj_def.h  R_CLOCK_1
+
+// ALERT--mp3
+source:resource\mmi_res_prj_def.h  R_ALERT_1
+
+// OPER--mp3--∆‰À˚¡Â…˘
+source:resource\mmi_res_prj_def.h  (R_OPER_CALL_1
+
+// POWER--mp3
+source:resource\mmi_res_prj_def.h  R_POWER_1
 
 
 
 [1.17] 
-
+//
 
 
 

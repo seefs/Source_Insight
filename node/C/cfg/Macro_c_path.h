@@ -25,70 +25,9 @@ Save:set\Macro_Set_Path_mtk_{pro}.h  curKey
 Save:set\Macro_Set_Path_mtk_.h  curKey
 // --每个项目一个配置
 Save:set\Macro_Set_Base.h  80 / 82 / 84
+// --cam path 用
+make/{cur}_{GSM}.mak PRJ_NAME = F209_KW_S77
 
-// (2).bak
-// A86===>自动配置
-curKey = K220_BH_G20
-curKey = K220_C61
-curKey = X218_E207
-curKey = K220_Y22_BOSS
-curKey = K220_Y28_MGUO
-curKey = K220_V992
-curKey = K220_D58
-curKey = K220_D36A
-
-
-
-// A86
-make K220_A86 GSM new
-make K220_D33D GSM new
-make K220_C61 GSM new
-
-
-// Y01A
-curKey = K220_Y01A_MGUO
-
-// Y22
-curKey = K220_Y22_MGUO
-curKey = K220_Y22_JMZ
-curKey = K220_Y22_JSZ
-curKey = K220_Y22_MLL
-curKey = K220_Y22_MOLOO
-
-// Y22
-//make K220_Y22_MGUO GSM new
-//make K220_Y22_JMZ GSM new
-//make K220_Y22_JSZ GSM new
-//make K220_Y22_MLL GSM new
-//make K220_Y22_MOLOO GSM new
-
-// L12
-curKey = K220_L12_MGUO
-curKey = K220_L12_JMZ
-curKey = K220_L12_JSZ
-curKey = K220_L12_MLL
-curKey = K220_L12_MOLOO
-
-// Z97
-curKey = K220_Z97_MGUO
-curKey = K220_Z97_JMZ
-curKey = K220_Z97_JSZ
-curKey = K220_Z97_MLL
-curKey = K220_Z97_MOLOO
-
-// V35
-curKey = K220_V97A_WD
-curKey = K220_V88_WD
-curKey = K220_V35_WD
-
-// V35
-make K220_V97A_WD GSM new
-//make K220_V88_WD GSM new
-make K220_V35_WD GSM new
-
-
-// 61D
-curKey = K220_H660_TX
 
 
 
@@ -164,6 +103,7 @@ custom\audio\{nv}\
 Save:set\Macro_Set_Path_mtk_{pro}.h  nvKey
 // 未设置用默认 BOARD_VER
 make/{cur}_{GSM}.mak  BOARD_VER_CUST_AUDIO
+make/{cur}_{GSM}.mak  BOARD_VER
 //	BOARD_VER_CUST_AUDIO = K220_Z97_AUDIO_BB
 // 
 //make\custom\custom.mak BOARD_VER_CUST_AUDIO

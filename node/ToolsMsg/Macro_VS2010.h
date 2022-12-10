@@ -16,6 +16,9 @@ Save:node\ToolsMsg\Macro_VS2010.h \[1.9\] Dependencies------查看依赖dll
 Save:node\ToolsMsg\Macro_VS2010.h \[1.10\] build
 Save:node\ToolsMsg\Macro_VS2010.h \[1.11\] set
 Save:node\ToolsMsg\Macro_VS2010.h \[1.12\] 
+Save:node\ToolsMsg\Macro_VS2010.h \[1.13\] 模拟器联网
+Save:node\ToolsMsg\Macro_VS2010.h \[1.14\] 
+Save:node\ToolsMsg\Macro_VS2010.h \[1.15\] 
 // 其他标号
 Save:Help\\DefaultFile\\Macro_Node_Num.h
 
@@ -246,9 +249,9 @@ make\perl_script\create_dsp.pl  VS2010
 
 
 ###
-磁盘上已存在名为“D:\soft\wa01u_w21_svn2\MS_MMI_Main\source\winsimulator_tp\win_platform\MSDevBridge\MSDevBridge_Mod.vcxproj”的文件。
+//磁盘上已存在名为“D:\soft\wa01u_w21_svn2\MS_MMI_Main\source\winsimulator_tp\win_platform\MSDevBridge\MSDevBridge_Mod.vcxproj”的文件。
 
-是否覆盖项目及其导入的属性表?
+//是否覆盖项目及其导入的属性表?
 
 
 
@@ -269,9 +272,15 @@ make\perl_script\create_dsp.pl  VS2010
 https://go.microsoft.com/fwlink/?LinkId=691209
 
 
-[1.13] 
+[1.13] 模拟器联网
+//
+如果展讯模拟器不能联网，去网上下载一个 WinPcap（winpcap(windows packet capture)是windows平台下一个免费，公共的网络访问系统）
 
+点击打开链接 。
 
+就可以了。。。
+//
+//https://www.onlinedown.net/soft/2685.htm
 
 
 [1.14] BoundsChecker

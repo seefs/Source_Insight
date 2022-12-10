@@ -46,8 +46,8 @@ Save:set\Macro_Set_Path_mtk_.h  curKey
 
 
 //特殊宏:
-make/{cur}_GSM.mak REF_LIST_BRANCH  翻译
-make/{cur}_GSM.mak CUSTOM_DEVICE
+make/{cur}_{GSM}.mak REF_LIST_BRANCH  翻译
+make/{cur}_{GSM}.mak CUSTOM_DEVICE
 custom/system/FARSIGHTED61M_CN_11C_BB/custom_MemoryDevice_K220_L12_MGUO.h __MMI_SUPER_BATTERY__
 
 
@@ -115,30 +115,30 @@ CFG_MMI_MULTITAP_KEY_0
 
 [1.4] __LCD__
 //
-make/{cur}_GSM.mak  LCD_MODULE
+make/{cur}_{GSM}.mak  LCD_MODULE
 //	LCD_MODULE = K220D_QQVGA_LCM
 //
-make/{cur}_GSM.mak  COM_DEFS_FOR_ xxx_LCM
+make/{cur}_{GSM}.mak  COM_DEFS_FOR_ xxx_LCM
 //	COM_DEFS_FOR_K220D_D188A_QQVGA_LCM = COLOR_LCD K220D_QQVGA_LCM TFT_MAINLCD
 
 //
-//make/{cur}_GSM.mak CUSTOMER_NAME = M107
-//make/{cur}_GSM.mak _COMBO_LCM = ST7735S GC9106	  屏设置
+//make/{cur}_{GSM}.mak CUSTOMER_NAME = M107
+//make/{cur}_{GSM}.mak _COMBO_LCM = ST7735S GC9106	  屏设置
 //
-make/{cur}_GSM.mak SYNC_LCM_SUPPORT 			  屏设置 TE脚
+make/{cur}_{GSM}.mak SYNC_LCM_SUPPORT 			  屏设置 TE脚
 //make\{cur}_GSM.mak 2_DATA_LANE_LCM 		  屏 三线/四线
 
 
 // 横屏
-make/{cur}_GSM.mak BOARD_VER
+make/{cur}_{GSM}.mak BOARD_VER
 //	BOARD_VER = K220_L12_BB
-make/{cur}_GSM.mak MAIN_LCD_SIZE
+make/{cur}_{GSM}.mak MAIN_LCD_SIZE
 //	MAIN_LCD_SIZE = 160X128
-make/{cur}_GSM.mak LCM_ROTATE_SUPPORT
+make/{cur}_{GSM}.mak LCM_ROTATE_SUPPORT
 //	LCM_ROTATE_SUPPORT = TRUE
-make/{cur}_GSM.mak MAIN_LCM_SCANLINE_ROTATION
+make/{cur}_{GSM}.mak MAIN_LCM_SCANLINE_ROTATION
 //	MAIN_LCM_SCANLINE_ROTATION = TRUE
-make/{cur}_GSM.mak LCM_SCANLINE_ROTATION_SUPPORT
+make/{cur}_{GSM}.mak LCM_SCANLINE_ROTATION_SUPPORT
 //	LCM_SCANLINE_ROTATION_SUPPORT = TRUE
 
 //
@@ -169,40 +169,66 @@ custom/drv/misc_drv/_Default_BB/MT6261/uem_gpio.c  __DRV_DELAY_ON_LED__
 
 
 [1.5] CAM
-// 摄像头设置(开)
-make/{cur}_GSM.mak CMOS_SENSOR = GC6133_SERIAL
-make/{cur}_GSM.mak SENSOR_TYPE = YUV
-make/{cur}_GSM.mak FLAVOR = NONE
-make/{cur}_GSM.mak SWITCHABLE_FEATURE_2ND = GEMINI
-make/{cur}_GSM.mak ISP_SUPPORT = TRUE
+### __CAM__
+// 摄像头设置(开/关)
+make/{cur}_{GSM}.mak SENSOR_TYPE = YUV / RAW / JPEG / NONE
+make/{cur}_{GSM}.mak CMOS_SENSOR = GC032A_SERIAL / NONE
+make/{cur}_{GSM}.mak FLAVOR = NONE
+make/{cur}_{GSM}.mak SWITCHABLE_FEATURE_2ND = GEMINI
+make/{cur}_{GSM}.mak ISP_SUPPORT = TRUE
 // 摄像头设置(关)
-make/{cur}_GSM.mak CMOS_SENSOR = NONE
-make/{cur}_GSM.mak SENSOR_TYPE = NONE
-make/{cur}_GSM.mak FLAVOR = NO_CAM / GEMINI_2_NO_CAM / GEMINI_2_SIM_OFF(gprs)
-make/{cur}_GSM.mak SWITCHABLE_FEATURE_2ND = FLAVOR
-make/{cur}_GSM.mak ISP_SUPPORT = FALSE
+make/{cur}_{GSM}.mak FLAVOR = NO_CAM / GEMINI_2_NO_CAM / GEMINI_2_SIM_OFF(gprs)
+make/{cur}_{GSM}.mak SWITCHABLE_FEATURE_2ND = FLAVOR
+make/{cur}_{GSM}.mak ISP_SUPPORT = FALSE
+//	COM_DEFS += YUV_MAIN_CAMERA
+// --非 _DIRECT 定义：
+//  COM_DEFS += DIRECT_V2_MAIN_CAMERA
+make/{cur}_{GSM}.mak PLATFORM = MT6261
+
+
+// 摄像头2
+make/{cur}_{GSM}.mak CMOS_SENSOR_BAK1 = BF3A01_SERIAL
+//	COM_DEFS += YUV_BAK1_CAMERA
+// --非 _DIRECT 定义：
+//	COM_DEFS += DIRECT_V2_BAK1_CAMERA
+// --好像要定义:
+make/{cur}_{GSM}.mak LENS_MODULE_BAK1 = NONE
+make/{cur}_{GSM}.mak BACKUP_SENSOR_SUPPORT = TRUE
+
+
+// --path:
+make/{cur}_{GSM}.mak NEW_SENSOR_CODE_FOLDER = TRUE
+make/{cur}_{GSM}.mak PRJ_NAME = F209_KW_S77
+// --new:
+custom\drv\YUV_sensor\{board}\{cur}\GC032A_SERIAL\
+custom\drv\YUV_sensor\{board}\{cur}\BF3A01_SERIAL\
+// --old:
+custom\drv\YUV_sensor\GC6133_SERIAL\
+
+
 // 双摄
-make/{cur}_GSM.mak DUAL_CAMERA_SUPPORT = FALSE
-make/{cur}_GSM.mak CMOS_SENSOR_BAK1 = SP0821_SERIAL
-//make/{cur}_GSM.mak CMOS_SENSOR_SUB = NONE
-//make/{cur}_GSM.mak CMOS_SENSOR_SUB_BAK1 = NONE
+make/{cur}_{GSM}.mak DUAL_CAMERA_SUPPORT = FALSE
+make/{cur}_{GSM}.mak CMOS_SENSOR_SUB = NONE
+make/{cur}_{GSM}.mak CMOS_SENSOR_SUB_BAK1 = NONE
+
 // 视频录像
-make/{cur}_GSM.mak VIDEO_PLAYER_RECORDER_W_DCM = ENABLE
+make/{cur}_{GSM}.mak VIDEO_PLAYER_RECORDER_W_DCM = ENABLE
+
 
 // 关CAM报错:
-	MJPG_ENCODE = FALSE
-	CMOS_SENSOR = BF3A02_SERIAL  #NONE
-	SENSOR_TYPE = YUV #NONE
-	ISP_SUPPORT = FALSE
+//	MJPG_ENCODE = FALSE
+//	CMOS_SENSOR = BF3A02_SERIAL  #NONE
+//	SENSOR_TYPE = YUV #NONE
+//	ISP_SUPPORT = FALSE
 // 关CAM报错:
-	Reading custom_data succeeded.
-	Start to parse the custom NVRAM DATA!
-	make: *** [.\build\M115_JGW_D2_X191_F2\gprs\MT6261r\codegen_dep\cgen_cfg.det] Error 253
+//	Reading custom_data succeeded.
+//	Start to parse the custom NVRAM DATA!
+//	make: *** [.\build\M115_JGW_D2_X191_F2\gprs\MT6261r\codegen_dep\cgen_cfg.det] Error 253
 
 
 //
-make/{cur}_GSM.mak FLASHLIGHT_TYPE				  闪光灯
-make/{cur}_GSM.mak CUSTOM_OPTION 			  	  自定义宏
+make/{cur}_{GSM}.mak FLASHLIGHT_TYPE				  闪光灯
+make/{cur}_{GSM}.mak CUSTOM_OPTION 			  	  自定义宏
 
 
 [1.6] 
@@ -285,15 +311,15 @@ make/{cur}_GSM.mak CUSTOM_OPTION 			  	  自定义宏
 
 [2.3] 配置, 主题
 //	modis: 手电筒:
-make/{cur}_GSM.mak __KM_ELECTRIC_TORCH__			手电筒
+make/{cur}_{GSM}.mak __KM_ELECTRIC_TORCH__			手电筒
 
 //	modis: 充电宝:
-make/{cur}_GSM.mak __SBD_CHARGING_TREASURE_SWITCH__ 充电宝
+make/{cur}_{GSM}.mak __SBD_CHARGING_TREASURE_SWITCH__ 充电宝
 //	充电宝图标
 projects\M107\K220_L12_MGUO\Images\MainLCD\IdleScreen\StatusIcons\SI_CHARGING.png
 
 // 马达
-make/{cur}_GSM.mak  __NO_VIBRATOR__
+make/{cur}_{GSM}.mak  __NO_VIBRATOR__
 
 //	按键配置:
 open:custom\drv\Drv_Tool\DrvGen.exe
@@ -314,18 +340,18 @@ projects\M107\K220_L12_MGUO\Resource\Themecomponents.h #define^img_menuitem_sing
 
 [2.4] fm
 //
-make/{cur}_GSM.mak  FM_RADIO_CHIP
+make/{cur}_{GSM}.mak  FM_RADIO_CHIP
 //	FM_RADIO_CHIP = MT6261FM
 //	FM_RADIO_CHIP = NONE
 //
-make/{cur}_GSM.mak  FM_RADIO_HW_SEARCH
+make/{cur}_{GSM}.mak  FM_RADIO_HW_SEARCH
 //	FM_RADIO_HW_SEARCH = TRUE
 //
-make/{cur}_GSM.mak  FM_RADIO_I2S_PATH
+make/{cur}_{GSM}.mak  FM_RADIO_I2S_PATH
 //	FM_RADIO_I2S_PATH = TRUE
 
 //	FM--headset
-make/{cur}_GSM.mak  __MMI_FM_NO_HEADSET__
+make/{cur}_{GSM}.mak  __MMI_FM_NO_HEADSET__
 //	COM_DEFS	+= __MMI_FM_NO_HEADSET__               	# 不支持耳机
 //	COM_DEFS	+= __PLUGOUT_DEFAULT__        			# 不支持耳机须开此宏
 
@@ -336,16 +362,16 @@ features:MMI_features_switch{cur}.h  CFG_MMI_FM_RADIO_BIND_EARPHONE
 
 ### old
 //	FM:
-make/{cur}_GSM.mak  FM_RADIO_RECORD
+make/{cur}_{GSM}.mak  FM_RADIO_RECORD
 //	EZFM:
-make/{cur}_GSM.mak  SBD_EZFM_SUPPORT 
-make/{cur}_GSM.mak  EASY_FM
+make/{cur}_{GSM}.mak  SBD_EZFM_SUPPORT 
+make/{cur}_{GSM}.mak  EASY_FM
 features:MMI_features_switch{cur}.h  CFG_MMI_FM_RADIO_BIND_EARPHONE
 //	FM 天线:
-make/{cur}_GSM.mak  INTERNAL_ANTENNAL_SUPPORT
+make/{cur}_{GSM}.mak  INTERNAL_ANTENNAL_SUPPORT
 
 //	EZFM:
-//make/{cur}_GSM.mak __KM_EASY_FM__
+//make/{cur}_{GSM}.mak __KM_EASY_FM__
 features:MMI_features_switch{cur}.h  CFG_MMI_FM_RADIO_BIND_EARPHONE
 
 
@@ -400,12 +426,12 @@ plutommi\mmi\Inc\ProcedureConfig.h KM_MMI_FRM_PROC_ID_MOBILE_TRACKER
 NVRAM_PROFILES_ACTIVATED 情景模式默认NV	
 
 //	K类: K类设置不同可能开不了机
-make/{cur}_GSM.mak CLASSK_CHARGEPUMP_SUPPORT
-make/{cur}_GSM.mak SBD_EXTERNAL_AMPLIFIER_CLASSK
+make/{cur}_{GSM}.mak CLASSK_CHARGEPUMP_SUPPORT
+make/{cur}_{GSM}.mak SBD_EXTERNAL_AMPLIFIER_CLASSK
 	
 //	省电模式:
-make/{cur}_GSM.mak __MMI_SUPER_BATTERY__
-make/{cur}_GSM.mak __KM_MMI_PROFILE_RETRENCH__
+make/{cur}_{GSM}.mak __MMI_SUPER_BATTERY__
+make/{cur}_{GSM}.mak __KM_MMI_PROFILE_RETRENCH__
 
 
 ###	情景默认等级:
@@ -506,8 +532,8 @@ plutommi/mmi/ScrLocker/ScrLockerRes/ScrLocker.res <MENU^id="MENU_ID_SLK_TIME_SET
 plutommi/mmi/ScrLocker/ScrLockerSrc/ScrLockerSetting.c #define^MMI_SLK_SET_SELECTION_DEFAULT
 
 // 按键灯时间
-make/{cur}_GSM.mak  __MMI_KEY_BACKLITE_STYLE__
-make/{cur}_GSM.mak  __MMI_KEY_BACKLITE_STYLE_07_TO_19_HOUR__
+make/{cur}_{GSM}.mak  __MMI_KEY_BACKLITE_STYLE__
+make/{cur}_{GSM}.mak  __MMI_KEY_BACKLITE_STYLE_07_TO_19_HOUR__
 //
 plutommi\mmi\gpio\gpiores\PhnsetGpio.res  __MMI_KEY_BACKLITE_STYLE_07_TO_19_HOUR__
 

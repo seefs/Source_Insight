@@ -378,6 +378,13 @@ plutommi\Framework\GUI\GUI_INC\gui_switch.h  __K220_L12__
 
 // lcd
 custom\common\hal_public\lcd_sw_inc.h  LCD_WIDTH
+//		==>
+//		====>
+//		======>
+//		========>
+//		==========>
+//		============>
+//		==============>
 
 
 

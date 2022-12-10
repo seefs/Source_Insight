@@ -85,7 +85,9 @@ app:lebao\h\lebao_mdu_def.h  lebao_get_volume
 // --log
 app:lebao\applib\base\inc\
 app:lebao\applib\base\inc\port_cfg.h_bak
-
+//
+Save:node\C\study\Macro_patch_8910.h  __Trace__
+//	Trace_Log_Buf_Print("MMIBT_A2DPCallBackFunc msg_id=%x",  pMsg->msg_id);
 
 
 [1.3] xmly_107

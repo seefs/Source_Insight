@@ -1,35 +1,45 @@
 ###
 ### pub path
 ### 
-### 1.暂时只能手动修改
-### 2.自动增加，待改
-### 3.自动替换，待改
+### 1.Configuration of the "MTK" directory
 ###
 
 0Key  = MTK
 
-imagesPath = plutommi\Customer\Images\K220_G20_Z\
+imagesPath = plutommi\Customer\Images\{cur}\
 images:\\
-audioPath = plutommi\Customer\AUDIO\K220_G20_Z\
+audioPath = plutommi\Customer\AUDIO\{cur}\
 audio:\\
-featuresPath = plutommi\Customer\CustResource\K220_G20_Z_MMI\
+featuresPath = plutommi\Customer\CustResource\{cur}_MMI\
 features:\\
-buildPath = build\K220_G20_Z\
+buildPath = build\{cur}\
 build:\\
 batPath = _bat\build
 bat:\\
 
 
 ### 1.cfg
-nvKey  = K220_D58_AUDIO_BB
+//nvKey  = K220_D58_AUDIO_BB
+nvKey  = F209_KW_BB
 
-boardKey  = K220_G20_BB
 
-lcdKey  = K220_QVGA_LCM
+boardKey  = F209_KW_BB
+
+lcdKey  = F209_KW_LCM
 
 ### 2.cur
-curKey = K220_G20_Z
-GSMKey = GSM
+//curKey = F209_KW_S77
+//curKey = K220_BH_G20
+//curKey = K220_C61
+//curKey = X218_E207
+//curKey = K220_Y22_BOSS
+//curKey = K220_Y28_MGUO
+//curKey = K220_V992
+//curKey = K220_D58
+//curKey = K220_D36A
+curKey = F209_KW_S77
+// GSM GPRS
+GSMKey = GPRS
 
 ### 3.copy
 oldKey = K220_D58
@@ -41,11 +51,5 @@ tmpKey = K220_Y01A_MGUO
 
 tmpBoardKey = K220M_YGW_BB
 
-### 5.mk info bak
-bak1Key = K220_A86
-
-bak1Key = K220_Y01A_JMZ
-
-bak3Key = K220_Y01A_JMZ
 
 
