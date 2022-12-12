@@ -7,12 +7,12 @@
 // 1. 
 Save:Help\Other\Macro_Help_SI.h \[1.1\] marco file
 Save:Help\Other\Macro_Help_SI.h \[1.2\] marco test...
-Save:Help\Other\Macro_Help_SI.h \[1.3\] set save path---修改
-Save:Help\Other\Macro_Help_SI.h \[1.4\] set work path
+Save:Help\Other\Macro_Help_SI.h \[1.3\] set save-------修改
+Save:Help\Other\Macro_Help_SI.h \[1.4\] 
 Save:Help\Other\Macro_Help_SI.h \[1.5\] other set
-Save:Help\Other\Macro_Help_SI.h \[1.6\] set cfg path
-Save:Help\Other\Macro_Help_SI.h \[1.7\] 
-Save:Help\Other\Macro_Help_SI.h \[1.8\] 
+Save:Help\Other\Macro_Help_SI.h \[1.6\] set key--------项目路径
+Save:Help\Other\Macro_Help_SI.h \[1.7\] set common-----工具路径
+Save:Help\Other\Macro_Help_SI.h \[1.8\] 备注
 Save:Help\Other\Macro_Help_SI.h \[1.9\] 
 Save:Help\Other\Macro_Help_SI.h \[1.10\] 
 Save:Help\Other\Macro_Help_SI.h \[1.11\] 
@@ -61,7 +61,9 @@ Save:Help\Other\Macro_Help_replace.h
 
 
 [1.3] set save path
-// 1) 改变Save路径, 宏命令才能正常使用:
+### __set__
+// 1) 改变Save路径
+// --用的固定路径，必须改，否则宏命令用不了:
 Save:Macro\sbd_base.em	getSavePath(0)
 Save:Macro\sbd_root_path.em  getRootPath(0)
 
@@ -69,15 +71,13 @@ Save:Macro\sbd_root_path.em  getRootPath(0)
 Save:Help\Other\Macro_Help_SI.h
 
 
-[1.4] set work path
-//1) 工程路径编号
-Save:set\Macro_Set_Base.h
-
-//2) 项目路径缴存(替换)
-Save:set\Macro_Set_Note.h
+[1.4] 
 
 
 [1.5] other set
+//
+// 最好移到项目配置文件下
+//
 // show python help
 //   1--on, 0--off
 Save:set\Macro_Set.h 75
@@ -100,40 +100,133 @@ Save:Help\LangInfo\Macro_Info_Html.h
 
 
 
-[1.6] set {pro} path
-// 1.项目号
-// --项目号--代码
-Save:Macro\sbd_f11.em   ReCustomKeyHead
-// --项目号--保存在哪个文件
-Save:Macro\sbd_base.em  getPathConfig(0)
-// --项目号--文件
-Save:set\Macro_Set_Base.h
-// --项目号--{pro}--限制可以转换的类型
-Save:Macro\sbd_file.em  GetPubPathBuf
+[1.6] set key
 //
-Save:set\
-Save:set\Macro_Set_Path_*_*.h
 
-// __cfg__
-// 2.获取项目号
-// --每个项目独立配置;多个key会遍历所有可能,不存在取key为空
-// --S项目暂用save目录作项目目录
+### __cfg__
 Save:set\
 Save:set\Macro_Set_Path_{pro}.h  curKey
+// --多个key会遍历所有可能 (没啥用，只是语法上保持不报错)
+Save:set\Macro_Set_Path_{pro}_{pro}.h  curKey
+// --不存在取key为空
 Save:set\Macro_Set_Path_.h  curKey
 
 
+### __key__
+// 每个项目独立配置: 
+Save:set\Macro_Set_Key.h
+
+// S项目暂用save目录作项目目录
+Save:set\Macro_Set_Key.h  base_pri
+
+// 也可以外部调用路径
+Save:set\Macro_Set_Key.h  101key
+{HW}\\
+
+
+[1.7] set common
+// --差异 放 cur Path;
+// --tool 放 Common;
+// --共用 放 Key;
+Save:set\Macro_Set_Common.h   downPath
+//
+HWNV:\\
 
 
 
-[1.7] 
+[1.8] 备注
+
+### 获取key--{0}/常用键
+//		==>getKeyHead
+//		====>GetPubPathBuf
+//		======>'Macro_Set_Path_base.h'
+//		====>GetCommonPathBuf
+//		======>'Macro_Set_Common.h'
+//		====>GetPubKeyBuf
+//		======>'Macro_Set_Key.h'
+Save:Macro\sbd_f11.em   ReAllKeyHead
 
 
+### 获取key--8910 path外部使用
+//		==>getKeyHead
+//		====>getPathFromKey
+//		======>SearchNumFromKey
+//		======>SearchPathFromNum
+//		========>'8910' -> '60' -> path
+{8910}:\
 
 
-[1.8] 
+### 获取key--tool
+//		==>NoteHander
+//		====>getVS08Path(0)
+//		======>getToolPathFromKey("", "VS08")
+//		========>'VS08' -> path
 
 
+### 获取key--Alias/项目键
+//		==>getPathFromAlias   #  (未使用)
+Macro\sbd_base.em  getPathFromAlias
+//		==>BCompare
+//		====>getBaseOther(curtype, "alias")
+//		======>'6531D' -> 'MS_MMI'
+//		==>getCustomHot(hbuf, 2)
+//		====>getBaseType
+//		====>getBaseOther(n, "alias")
+//		====>getBaseOther(curtype, "Hot")
+//		======>"Hot2" -> path
+
+
+### 获取Num/代码键
+//		==>BCompare
+//		====>getBaseDirNum
+//		======>SearchNumFromPath
+//		==>GetPubPathBuf
+//		====>getBaseDirNum
+//		==>getCustomKeyHead
+//		====>getBaseDirNum
+//		====>getBaseKey
+//		======>"pro" -> "60" -> "8910"
+Save:Macro\sbd_f11.em   ReCustomKeyHead
+
+
+### 获取Num
+//		==>Item_2
+//		====>Item_Tree(2)
+//		======>Code_Tree(2-12)
+//		========>TreeNum(hbuf, 2)
+//		==========>"work" -> "tree" -> 1 -> 2
+//		==>Tree()  # f1-2
+//		====>TreeNum(hbuf, 2)
+//		======>getCustomHot(hbuf, 2)
+
+
+### 获取project
+//		==>OpenPath
+//		====>getProjectPath
+//		======>getBaseDirNum
+//		========>"选中" -> "\\target"       # 过时了，移到cfg里
+//		==>ShowMacro
+//		====>OpenSelMakeFile
+//		======>OpenMakeFile
+//		========>getProjectPath
+//		==========>"SR" -> "mk"    # 有一点点用
+//		==>getBaseType
+//		====>getBaseDirNum
+
+
+### 获取 tag1
+//		==>ShowMarcoFromFile
+//		====>getBaseOther(n, "tag1")
+
+
+### 
+//		==>
+//		====>
+//		======>
+//		========>
+//		==========>
+//		============>
+//		==============>
 
 
 [1.9] 

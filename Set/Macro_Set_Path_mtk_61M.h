@@ -40,6 +40,7 @@ newKey = K220_C61_OB
 tmpKey = K220_Y01A_MGUO
 
 tmpBoardKey = K220M_YGW_BB
+spdePrjKey = make
 
 ### 5.mk info bak
 bak1Key = K220_A86

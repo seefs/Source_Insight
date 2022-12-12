@@ -137,12 +137,6 @@ macro OpenMiniTest(hbuf)
 			msg ("test AddRule")
 			AddRule(hbuf)
 		}
-		else if(word_1 == "search_version")
-		{
- 			//F9
- 			//  ËÑË÷°æ±¾ºÅ
-			SearchVersion(hbuf)
-		}
 		else if(word_1 == "search_bft")
 		{
  			//F9

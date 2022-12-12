@@ -1,48 +1,57 @@
 //
-// 格式: 
-// __xxx = val
+// 格式: (以99举例) 
+// 99xxx = val
 //
 // 格式说明: 
-// __: 数字，前面不要空格
+// 99: 数字，前面不要空格
 // xxx: 可以是 key alias...
 // =: 左右可以有空格
 // val: 后面不要空格
 //
 //
-// 使用说明: 
-// __ = val
-//   小类，项目路径 (列出每个路径)
-//           编号重复也可以用，可能
+// 使用说明:(以98 99举例) 
+// 98 = path1
+// 99 = path2
+//   小类，项目路径列表。所有项目都要添加，否则没有配置文件‘跳转’功能用不了
+//           ;编号重复也可以用，可能部分功能有影响
+//           ;类似项目号放一起，10个以内，超过要改代码兼容。
 // 
-// __alias = val
-//   大类，别名
-//           大类，脚本内部使用，val 别名可外部使用( {8910}\... )
-// __RuleEn = val
-//   大类，文件别名
-//           (F5使用)
+// 90alias = val
+//   类别名，用于脚本内部判断类别。
+//           ;也可外部当作路径使用( {8910}\... )，匹配path1
+// 90RuleEn = val
+//           ;文件别名 (F5使用)
+// 90tag1 = SPRD or RDA or MTK or base
+//           ;(F12使用)
+// 90tag2 = val2
 //
-// __key = val
-//   小类，配置别名 (同一套代码可共用)
-//           别名内部替换用 ({pro})
-//           别名共用，仅第1个能对比，次要的放最后(如 “_SI4.0”)
+// 98key = val1
+// 99key = val2 (同一套代码可共用别名)
+//   小类，配置别名
+//           ;外部一般用于打开配置文件，用‘pro’替换配置名 ({pro})
+//           ;共用别名时，仅第1个能对比，次要的别名放最后(如 “_SI4.0”)
 // 
-// __Search = val
-//           F9使用 (功能舍弃)
+// sourcePath  = MS_MMI\source\
+// curKey = project1
+//   路径缩写，替换 (具体cfg中设置)
 // 
-// __Note = val
-//           F11使用 (功能舍弃)
+// 99Note = val
+//           ;F11使用 (功能舍弃)
 // 
-// __Hot2 = val
-//           F1使用 spr or mtk
+// 99Hot2 = val
+//           ;F1使用 spr or mtk
 //
 // {0}
-//           在配置中设置
+//           ;在配置中设置
 // 
+// 总流程: 名称-->左类别-->右配置，临时-->左系统-->右项目，索引-->左缩写-->右替换
+//         项目-->模板/临时2-->配置
 
 
 //(1) 6531DA 项目路径
 10alias = 6531D
 10RuleEn = 6531DA
+10tag1 = SPRD
 //
 10 = G:\SP6531D
 11 = E:\W03_Code
@@ -54,6 +63,7 @@
 //(2) 6531btdialer 项目路径
 20alias = 6531DB
 20RuleEn = 6531btdialer
+20tag1 = SPRD
 // 注释20 不显示比较
 //20 = F:\6531DA_Btdialer
 20key = 6531DB
@@ -63,6 +73,7 @@
 //(3) 6531E 项目路径
 30alias = 6531E
 30RuleEn = 6531E
+30tag1 = SPRD
 // 注释30 不显示比较
 30 = E:\soft\6531E
 30key = 6531E
@@ -72,6 +83,7 @@
 //(4) soft 项目路径
 40alias = RDA
 40RuleEn = soft
+40tag1 = RDA
 // 注释40 不显示比较
 //40 = F:\soft
 40key = rda
@@ -80,6 +92,7 @@
 //(5) 6533 项目路径
 50alias = 6533
 50RuleEn = 6533
+50tag1 = RDA
 // 注释50 不显示比较
 //50 = F:\SC6533G\soft
 //50 = E:\SC6533G
@@ -89,6 +102,7 @@
 //(6) 7701 8910 项目路径
 60alias = 8910
 60RuleEn = 8910
+60tag1 = SPRD
 //
 60 = G:\UIS8910_git2
 61 = G:\UIS8910_git
@@ -116,6 +130,7 @@
 //(7) 7701 8910 项目路径
 70alias = 8910
 70RuleEn = 8910
+70tag1 = SPRD
 //
 70 = G:\T1072
 71 = G:\T1071
@@ -137,6 +152,7 @@
 //(8) MTK 项目路径1
 80alias = MTK
 80RuleEn = MTK
+80tag1 = MTK
 //
 80 = E:\60M
 80 = E:\_SI4.0\61M.si4project
@@ -159,6 +175,7 @@
 //(9) base -> save
 90alias = base
 90RuleEn = base
+90tag1 = base
 // 不带\SI
 // 区分大小写, 否则save文件不能比较
 90 = D:\save
@@ -172,7 +189,7 @@
 
 //(10) tmp
 100alias = tmp
-//
+// 估计外部用的少，common里也可以设置
 101 = G:\_HW_NV_PARA.git
 102 = D:\save\patch
 103 = D:\save\SI
@@ -184,15 +201,14 @@
 104key = toolM
 
 
-//(11) tmp
-110alias = other
-// 未使用, 保存在 Macro_set_path_common.h 中更简单
-111 = C:\Program^Files\Beyond^Compare^4\BCompare.exe
-//111 = D:\Program^Files\Beyond^Compare^3\BCompare.exe
+//(11) 8910DM
+110alias = 8910DM
+110RuleEn = 8910
+110tag1 = SPRD
+// 
+110 = E:\soft\8910DM
 
-111key = BCompare
-
-
+111key = 8910DM
 
 
 //(12) python
@@ -200,11 +216,11 @@
 //
 120 = D:\project\GitHub\myPython
 120 = D:\_SI4.0\myPython.si4project
+121 = D:\project\GitHub\tensorflow
+121 = D:\_SI4.0\tensorflow.si4project
 
 
-//(13)  tensorflow
-130 = D:\project\GitHub\tensorflow
-130 = D:\_SI4.0\tensorflow.si4project
+//(13)  
 
 
 //(14) 9820E
@@ -228,19 +244,19 @@
 
 
 #### Hot test
-60Hot1 = \\resource\\version_software_mocor.h
-60Hot2 = \\resource\\common_mdu_def.h
-60Hot3 = \\resource\\mmi_custom_define.hMMISET_EDEFAULT_LANGUAGE
-60Hot4 = \\resource\\mmi_menutable_128x160.cmenu_mainmenu_icon
-60Hot5 = \\resource\\mmi_menutable_240x320.cmenu_mainmenu_icon
-60Hot6 = \\resource\\mmienvset_internal.h
-60Hot7 = \\resource\\RING
+8910Hot1 = \\resource\\version_software_mocor.h
+8910Hot2 = \\resource\\common_mdu_def.h
+8910Hot3 = \\resource\\mmi_custom_define.hMMISET_EDEFAULT_LANGUAGE
+8910Hot4 = \\resource\\mmi_menutable_128x160.cmenu_mainmenu_icon
+8910Hot5 = \\resource\\mmi_menutable_240x320.cmenu_mainmenu_icon
+8910Hot6 = \\resource\\mmienvset_internal.h
+8910Hot7 = \\resource\\RING
 
-80Hot1 = M107\\M107_XYZN_S2_4A_WESTERN_F2
-80Hot2 = M107\\M107_XYZN_S2_4A_WESTERN_F2\\M107_XYZN_S2_4A_WESTERN_F2_GPRS.mak
-80Hot3 = M107\\M107_XYZN_S2_4A_WESTERN_F2\\Verno_M107_XYZN_S2_4A_WESTERN_F2.bld
-80Hot4 = M107\\M107_XYZN_S2_4A_WESTERN_F2\\Resource\\MMI_features_switchPLUTO.h
-80Hot5 = M107\\M107_XYZN_S2_4A_WESTERN_F2\\Resource\\ref_list.txt
-80Hot6 = M107\\M107_XYZN_S2_4A_WESTERN_F2\\Resource\\custom_MemoryDevice.h
+MTKHot1 = M107\\M107_XYZN_S2_4A_WESTERN_F2
+MTKHot2 = M107\\M107_XYZN_S2_4A_WESTERN_F2\\M107_XYZN_S2_4A_WESTERN_F2_GPRS.mak
+MTKHot3 = M107\\M107_XYZN_S2_4A_WESTERN_F2\\Verno_M107_XYZN_S2_4A_WESTERN_F2.bld
+MTKHot4 = M107\\M107_XYZN_S2_4A_WESTERN_F2\\Resource\\MMI_features_switchPLUTO.h
+MTKHot5 = M107\\M107_XYZN_S2_4A_WESTERN_F2\\Resource\\ref_list.txt
+MTKHot6 = M107\\M107_XYZN_S2_4A_WESTERN_F2\\Resource\\custom_MemoryDevice.h
 
 

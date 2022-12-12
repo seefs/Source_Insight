@@ -456,26 +456,7 @@ macro CtrlW()
 		stop
 	if(!IsSRFile(hbuf))
 	{
-		/*
-		if(IsFileName(hbuf, "Macro_Note_"))
-		{
-			bft = getBft(1)
-			if(bft == "9820e")
-			{
-				//msg("无法关闭, 按空格键取消")
-			}
-			else
-			{
-				lnTop = GetWndVertScroll(hwnd);
-				SaveMode(getWndVertRow(0), "@lnTop@")
-				close
-			}
-		}
-		else
-		*/
-		{
-			CloseWnd(hwnd)
-		}
+		CloseWnd(hwnd)
 	}
 	/*
 	else

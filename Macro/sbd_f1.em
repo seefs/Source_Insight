@@ -429,10 +429,6 @@ macro TreeChar(hbuf, key)
 	{
 		//
 	}
-	else if (key == 118) //×ÖÄ¸V  search version
-	{
-		SearchVersion(hbuf)
-	}
 	else if (key == 119) //×ÖÄ¸W  close windows
 	{
 		WindowsCloseStyleOne(hbuf)

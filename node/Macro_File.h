@@ -1,11 +1,11 @@
 
 // File:
 // 1. Common notes
-Save:node\Macro_File.h \[1.1\] node-----------工作文件
-Save:node\Macro_File.h \[1.2\] tmp------------未使用文件
+Save:node\Macro_File.h \[1.1\] node-----------记录文件
+Save:node\Macro_File.h \[1.2\] tmp------------备用文件
 Save:node\Macro_File.h \[1.3\] help-----------编号/默认文件
-Save:node\Macro_File.h \[1.4\] special--------特殊文件
-Save:node\Macro_File.h \[1.5\] SI Marco/test--宏文件
+Save:node\Macro_File.h \[1.4\] common---------共用文件
+Save:node\Macro_File.h \[1.5\] SI Marco-------宏文件
 Save:node\Macro_File.h \[1.6\] Cmd------------
 Save:node\Macro_File.h \[1.7\] Win/Office-----系统
 Save:node\Macro_File.h \[1.8\] Svn/Git/BComp--版本
@@ -36,6 +36,7 @@ Save:node\
 
 
 [1.2] tmp
+// 未使用的代码，比较杂乱，移走了
 patch:node\
 
 ### bak(未整理, 未改)
@@ -51,7 +52,7 @@ patch:\
 patch:node\Macro_node_patch.h
 
 ### psw
-//
+// 
 patch:ssh\Macro_user_psw.h
 patch:ssh\Macro_user_psw.h  __CQ__
 
@@ -71,28 +72,32 @@ Save:Help\DefaultFile\Macro_z_null.py
 Save:Help\DefaultFile\Macro_z_index_2.h
 
 ### Info file
-// 自定义帮忙文档
+// 自定义帮助文档
 Save:Help\LangInfo\Macro_Info_Android.h
 Save:Help\LangInfo\Macro_Info_Python.h
 
 
-[1.4] special
+[1.4] common
 //1) Nv Msg
 Save:Set\Macro_Val.h
 //2) Key Msg
+// --功能说明
 Save:node\Simple_CTRL_K.h
 //3) CTRL_B
+// --入口
 Save:node\Simple_CTRL_B.h
 //4) Bcmp Tmp File
 Save:Cmd_TXT\Tmp_Comp_1.h
 Save:Cmd_TXT\Tmp_Comp_2.h
 
 
-[1.5] SI Marco/test
+[1.5] SI Marco
 // Marco file
 Save:Help\Other\Macro_Help_SI.h  __marco__
 // test
 Save:Help\Other\Macro_Help_SI.h  __test__
+// 路径设置
+Save:Help\Other\Macro_Help_SI.h  __set__
 
 
 [1.6] Cmd

@@ -95,43 +95,17 @@ macro getBasePath(hbuf)
 		return proPath
 	}
 }
-macro getProjectPath(pathName)
+macro getProjectPath(hbuf)
 {
-	// n == 10: 6531DA
-	// n == 20: 6531DB
-	// n == 30: 6531E
-	// n == 40: soft
-	// n == 50: 6533
-	// n == 60: 7701
-	// n == 70: 7701
-	// n == 80: MTK
-	n = getBaseDirNum(pathName)
-	basePath = SearchPathFromNum("", n)
-	
-	//获取目录 6531E/project, 不考虑 C:
-	//待改成getBaseProjectEx+"/project"
-	if(n<10){ //0
-		return basePath
-	}
-	else if(n<40){ //10,20,30
-		return basePath # "\\project"
-	}
-	else if(n<60){ //40,50
-		return basePath # "\\target"
-	}
-	else if(n<70){ //40,50
-		return basePath # "\\target"
-	}
-	else if(n<80){
-		return basePath # "\\project"
-	}
-	else if(n==80){
-		return basePath # "\\make"
-	}
-	else if(n<90){
-		return basePath # "\\project"
+	var n
+	prjPath = getKeyHead(hbuf, "prj")
+	if(prjPath != ""){
+		return prjPath
 	}
 	else{
+		pathName = GetBufName(hbuf)
+		n = getBaseDirNum(pathName)
+		basePath = SearchPathFromNum("", n)
 		return basePath
 	}
 }
@@ -187,14 +161,7 @@ macro getCurProjectName(pathName)
 }
 macro getBaseType(pathName)
 {
-	// n == 10: 6531DA
-	// n == 20: 6531DB
-	// n == 30: 6531E
-	// n == 40: soft
-	// n == 50: 6533
-	// n == 60: 7701
-	// n == 70: 7701
-	// n == 80: MTK
+	// n == 10 or 20, 30...
 	type = getBaseDirNum(pathName)
 	return type/10 *10
 }
@@ -208,41 +175,6 @@ macro getBaseOther(n, mode)
 	hbufConfig = GetPubKeyBuf(0)
 	return getMacroValue(hbufConfig, n # mode, 1)
 }
-macro getBft(num)
-{
-	hprj = GetCurrentProj ()
-	if(hprj>0)
-	{
-		path = GetProjDir (hprj)
-		n = getBaseType(path)
-		
-		if (num == 1)
-		{
-			bft = getBaseOther(n, "Search")
-		}
-	 	else if(num == 5)
-		{
-			bft = getBaseOther(n, "Ver")
-		}
-	 	else if(num == 3)
-		{
-			bft = getBaseOther(n, "Note")
-		}
-	 	else if(num == 2)
-		{
-			bft = getBaseOther(n, "Make")
-		}
-		
-		if(bft == "")
-			stop
-	}
- 	else
-	{
-		stop
-	}
-	return bft
-}
-
 
 //get path Num
 macro SearchPathFromNum(hbufConfig, n)

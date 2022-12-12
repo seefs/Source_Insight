@@ -51,13 +51,13 @@ C:\Program Files\TortoiseSVN\bin\TortoiseProc.exe
 
 
 // BCompare
-Save:set\Macro_Set_Path_common.h  BCompare
+Save:set\Macro_Set_Common.h  BCompare
 
 
 [1.5] soft
 // Python
 Save:set\
-Save:set\Macro_Set_Path_common.h  pyScripts
+Save:set\Macro_Set_Common.h  pyScripts
 
 
 

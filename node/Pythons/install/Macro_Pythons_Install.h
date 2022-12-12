@@ -10,7 +10,7 @@ test:\\
 pyPath = Save:node\Pythons
 py:\\
 // --…Ë÷√¬∑æ∂:
-Save:set\Macro_Set_Path_common.h  pyScripts
+Save:set\Macro_Set_Common.h  pyScripts
 
 
 /***********************************************************************/

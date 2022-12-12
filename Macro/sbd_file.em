@@ -39,7 +39,7 @@ macro GetPubKeyBuf(mode)
 //获取公共路径BUF 1
 macro GetCommonPathBuf(hbuf)
 {
-	SetName = getSetPath(0) # "\\Macro_Set_Path_common.h"
+	SetName = getSetPath(0) # "\\Macro_Set_Common.h"
 	setBuf = OpenCache(SetName)
 	
 	return setBuf
@@ -48,17 +48,23 @@ macro GetCommonPathBuf(hbuf)
 macro GetPubPathBuf(hbuf)
 {
 	baseName = getBasePath(hbuf)
-	//获取当前工程分类，区分处理
+	//用代码键, 也用项目键
 	n = getBaseDirNum(baseName)
 	type = n/10 *10
 	nKey = getBaseKey(n)
-	if(type == 90)
+	
+	curTag = getBaseOther(type, "tag1")
+	if(curTag == "SPRD" || curTag == "RDA")
 	{
-		SetName = getSetPath(0) # "\\Macro_Set_Path_base.h"
+		SetName = getSetPath(0) # "\\Macro_Set_Path_sprd_" # nKey # ".h"
+		if (!IsExistFile(SetName))
+		{
+			SetName = getSetPath(0) # "\\Macro_Set_Path_sprd_.h"
+		}
 		setBuf = OpenCache(SetName)
 		return setBuf
 	}
-	else if(type == 80)
+	else if(curTag == "MTK")
 	{
 		SetName = getSetPath(0) # "\\Macro_Set_Path_mtk_" # nKey # ".h"
 		if (!IsExistFile(SetName))
@@ -68,13 +74,9 @@ macro GetPubPathBuf(hbuf)
 		setBuf = OpenCache(SetName)
 		return setBuf
 	}
-	else if(type == 10 || type == 30 || type == 60 || type == 70)
+	else if(curTag == "base")
 	{
-		SetName = getSetPath(0) # "\\Macro_Set_Path_sprd_" # nKey # ".h"
-		if (!IsExistFile(SetName))
-		{
-			SetName = getSetPath(0) # "\\Macro_Set_Path_sprd_.h"
-		}
+		SetName = getSetPath(0) # "\\Macro_Set_Path_base.h"
 		setBuf = OpenCache(SetName)
 		return setBuf
 	}
@@ -723,8 +725,7 @@ macro OpenSelMakeFile(hbuf)
 }
 macro OpenMakeFile(hbuf, file)
 {
-	pathName = GetBufName(hbuf)
-	projectPath = getProjectPath(pathName)
+	projectPath = getProjectPath(hbuf)
 	//hbuf = OpenCache("@projectPath@\\@file@\\project_@file@.mk")	//或者target.		
 	//setCurrentBuf(hbuf)
 	hbuf = OpenExistFile("@projectPath@\\@file@\\project_@file@.mk")	//或者target.
@@ -1356,8 +1357,9 @@ macro getCustomKeyHead(hbuf, fHead)
 		if(hprj>0)
 		{
 			path = GetProjDir (hprj)
-			//n = getBaseType(path)
+			//用代码号, 每个代码一个号
 			n = getBaseDirNum(path)
+			//用代码键
 			nKey = getBaseKey(n)
 			return nKey
 		}
@@ -1493,10 +1495,11 @@ macro getCustomHot(hbuf, fn_idx)
 	if(hprj>0)
 	{
 		path = GetProjDir (hprj)
-		//type = getBaseType(path)
-		n = getBaseDirNum(path)
-		//nKey = getBaseKey(n)
-		nKey = getBaseOther(n, "Hot" # fn_idx)
+		//用项目号, 不用代码号
+		n = getBaseType(path)
+		//用项目键
+		pro = getBaseOther(n, "alias")
+		nKey = getBaseOther(pro, "Hot" # fn_idx)
 		return nKey
 	}
 	return ""

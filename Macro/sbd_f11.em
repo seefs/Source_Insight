@@ -75,27 +75,30 @@ macro Note()
 	else
 	{
 		isSaveRow = 1
-		bft = getBft(3)
-//		if(bft == "")
-//			stop
-
-		openNoteFile(hbuf, bft, isSaveRow)
+		noteName = getKeyHead(hbuf, "note")
+		if(noteName != "")
+			openNoteFile(hbuf, noteName, isSaveRow)
 	}
 }
 
-macro openNoteFile(hbuf, bft, isSaveRow)
+macro openNoteFile(hbuf, noteName, isSaveRow)
 {
-	if(bft == "Pythons")
+	basePro = getBasePath(hbuf)
+	//用项目号, 不用代码号
+	n = getBaseType(basePro)
+	//用项目键
+	pro = getBaseOther(n, "alias")
+	if(pro == "Pythons")
 	{
-		mFile = getProjectPythons(0) # "\\Macro_Note_@bft@.h"
+		mFile = getProjectPythons(0) # "\\" # noteName
 	}
-	else if(bft == "9820e")
+	else if(pro == "9820e")
 	{
-		mFile = getProjectAndroid(0) # "\\Macro_Note_@bft@.h"
+		mFile = getProjectAndroid(0) # "\\" # noteName
 	}
 	else
 	{
-		mFile = getProjectC(0) # "\\Macro_Note_@bft@.h"
+		mFile = getProjectC(0) # "\\" # noteName
 	}
 	
 	if(IsFileName(hbuf, mFile))

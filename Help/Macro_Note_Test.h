@@ -234,14 +234,15 @@ Save:Macro\sbd_test.em  search_bft
 
 //2) 选中(search_bft), 再ctrl+E
 //  打开参数(bftParam)
-//bftParam = 6531E
+//bftParam = Macro_ALL_6531E.h
 //  命令:
 search_bft  MAINMENU
 search_bft  EXTRA
 
 //3) 选中(search_bft), 再ctrl+E
 //  打开参数(bftParam)
-//bftParam = 9820e
+//bftParam = Macro_ALL_9820e.h 
+//bftParam = Macro_ALL_6533.h
 //  命令:
 search_bft  lcd/lcd_st7789v2_spi.c
 search_bft  values\config.xml
@@ -267,7 +268,7 @@ show_menu
 //	 3) sr文件中: 快捷键打开文件/文件互关 (略)
 //	 4) 其他:
 // 打开参数(bftParam)
-bftParam = 6531E
+//bftParam = Macro_ALL_6531E.h
 命令:
 group  mmiidle_cstyle.c
 group  mmialarm.c
@@ -468,7 +469,7 @@ shell_cmd  properties  WA11SU.bat  G:\wa03u_git2
 	
 //3) 选中(shell_SvnDiff), 再ctrl+E
 //	打开参数(bftParam, fileParam), 
-//bftParam = 6531E
+//bftParam = Macro_ALL_6531E.h
 //fileParam = mmiidle_cstyle.c
 //fileParam = mmialarm.c
 
