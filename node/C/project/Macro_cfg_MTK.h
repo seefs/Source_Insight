@@ -235,7 +235,7 @@ custom\drv\misc_drv\_Default_BB\MT6261\chr_parameter.h  __CHR_CHARGE_CURRENT_300
 
 
 
-[1.11] ATA
+[1.11] __ATA__
 //
 make/{cur}_{GSM}.mak   ATA_SUPPORT
 // ATA_SUPPORT = TRUE
@@ -352,6 +352,7 @@ hal\camera\isp\src\isp_isr.c  __CATS_SUPPORT__
 //		============>.SensorFeatureCtrl
 //		==============>
 media\camera\src\cam_msg_handler.c  CATS_FEATURE_COMPARE_TEST_PATTERN
+media\camera\src\cam_msg_handler.c  CATSFeatureCompareTestPattern
 // 加过的项目
 custom/drv/YUV_sensor/K220_BB/K220_GZ_N43K_NEWMAN/GC6153_SERIAL/image_sensor_GC6153_SERIAL.c  CATSTestPattern_
 custom\drv\YUV_sensor\{board}\{cur}\GC032A_SERIAL\image_sensor_GC032A_SERIAL.c  CATSTestPattern_GC032A

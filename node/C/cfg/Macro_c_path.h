@@ -44,11 +44,11 @@ Save:set\Macro_Set_Path_mtk_{pro}.h  oldKey
 ===================copy_start===================
 // (1).mk/bld
 // --mk
-cp make/{old}_GSM.mak make/{new}_GSM.mak
+cp make/{old}_{GSM}.mak make/{new}_{GSM}.mak
 // --bld
 cp make/Verno_{old}.bld make/Verno_{new}.bld
 // --mk name
-make/{new}_GSM.mak    PRJ_NAME
+make/{new}_{GSM}.mak    PRJ_NAME
 make/Verno_{new}.bld  VERNO
 
 
@@ -167,7 +167,13 @@ custom\drv\color\{lcd}\color_custom.c
 Save:node\C\project\Macro_Note_MTK.h  __LCD__
 
 
-// (4).system
+// (4).cam
+// --
+custom\drv\YUV_sensor\{board}\{cur}\
+custom\drv\YUV_sensor\{board}\{cur}\GC032A_SERIAL\
+
+
+// (5).system
 //
 custom\system\K2M_BB\
 custom\system\{board}\

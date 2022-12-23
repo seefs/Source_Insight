@@ -230,6 +230,9 @@ make/{cur}_{GSM}.mak VIDEO_PLAYER_RECORDER_W_DCM = ENABLE
 make/{cur}_{GSM}.mak FLASHLIGHT_TYPE				  闪光灯
 make/{cur}_{GSM}.mak CUSTOM_OPTION 			  	  自定义宏
 
+// 自动测试
+Save:node\C\project\Macro_cfg_MTK.h __ATA__
+
 
 [1.6] 
 
@@ -648,9 +651,10 @@ build:log\mmi_framework.log Error:
 build:log\mmi_app.log Error:
 build:log\mmi_core.log Error:
 build:log\custom.log Error:
-build:log\ckImgSize.log Error:
+build:log\ckImgSize.log Error:         超空间
 build:log\mmi_service.log Error:
 build:log\resgen.log Error:
+build:log\resgen_mtk_resgenerator_run.log Error:
 build:log\resgen_mtk_resgenerator_make.log Error:
 build:log\resgen_xml_parse.log Error:
 build:log\conn_app.log Error:
@@ -668,7 +672,9 @@ build:log\vivaConfig.log Error:     #RAM超 把0x003B6000改小
 
 build:gprs\MT6261r\pregen_dep\emigen.det
 
-
+//
+MoDIS_VC9\createMoDIS.pl  513
+build:log\gen_modis.log  xx
 
 
 [2.18] 

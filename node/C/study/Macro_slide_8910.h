@@ -493,7 +493,6 @@ app:slidepage\c\watch_slidepage.c  SlidePageDrapTimerOut
 app:slidepage\c\watch_slidepage.c  MMI_RESULT_E^HandleSlidePageMsgHook
 
 
-
 ### 2.style (SPDE APP)
 // res--menu
 images:spde\MMI_RES_DEFAULT\IMAG\mainmenu

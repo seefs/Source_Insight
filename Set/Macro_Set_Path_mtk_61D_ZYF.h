@@ -23,26 +23,21 @@ bat:\\
 nvKey  = F209_KW_BB
 
 
-boardKey  = F209_KW_BB
+boardKey  = X228_BB
 
-lcdKey  = F209_KW_LCM
+lcdKey  = F55_GZ_N37_LCM
 
 ### 2.cur
+curKey = F55M_GZ_N37E_XL
+//curKey = X223_KEWEI_X15_MUL
 //curKey = F209_KW_S77
-//curKey = K220_BH_G20
-//curKey = K220_C61
-//curKey = X218_E207
-//curKey = K220_Y22_BOSS
-//curKey = K220_Y28_MGUO
-//curKey = K220_V992
-//curKey = K220_D58
-//curKey = K220_D36A
-curKey = F209_KW_S77
+//curKey = X228_M1
 // GSM GPRS
-GSMKey = GPRS
+GSMKey = GSM
 
 ### 3.copy
-oldKey = K220_D58
+//oldKey = X223_KEWEI_X15_MUL_gprs
+oldKey = {cur}
 
 newKey = K220_D58_WJK
 

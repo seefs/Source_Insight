@@ -869,43 +869,21 @@ SPDE_PRJ\BMWATCH\project_UIS6531E_240x320BAR_16MB_SS_BMWATCH_USER.mk  PRODUCT_BA
 lib\UIS6531E_240x320BAR_16MB_SS_USER\
 
 
-### T107
-// baseLib
-SPDE_PRJ\S98T_FLP_E535_31\project_ums9117_240X320BAR_48MB_S98T_FLP_E535_31_user.mk  PRODUCT_BASELIB_DIR
-SPDE_PRJ\S98T_FLP_E535_31\project_ums9117_240X320BAR_48MB_S98T_FLP_E535_31_debug.mk  PRODUCT_BASELIB_DIR
-// user/debug
-lib\ums9117_240X320BAR_48MB_CAT1_rel\
-lib\ums9117_240X320BAR_48MB_CAT1\
 
 
 [2.17] FLASH
-
-prj:project_{cur}.mk  FLASH_SIZE
-//(小版本)
-//   FLASH_SIZE = 128MBIT
-//(大版本)
-//   FLASH_SIZE = 128MBITX64MBIT_NEW
-
-//
-prj:project_{cur}.mk  WATCH_FS_FLASH_STYLE_
+// 6531EF
+prj:{cfg}.cfg          FLASH_SIZE = 32MBIT
+//prj:{cfg}.cfg          FLASH_SIZE = 128MBIT
+//prj:{cfg}.cfg          FLASH_SIZE = 128MBITX64MBIT_NEW
 
 
 ###
-// 6531EF
-config:\
-config:spiflash_cfg.c  FLASH_SIZE_128MBITX64MBIT_NEW
-// 6531Es
-config:spiflash_cfg.c  FLASH_SIZE_128MBIT$
-
-
-
 // SECTOR
 config:spiflash_cfg.c  MMI_RES_SECTOR_NUM
-config:spiflash_cfg.c  604
 // 	#define MMI_RES_SECTOR_NUM         70 // 67 //66  60
 // 
 config:spiflash_cfg.c  UDISK_SIZE
-config:spiflash_cfg.c  573
 //	#define UDISK_SIZE                 ((UMEM_SECTOR_NUM+4)*FLASH_SECTOR_SIZE)
 
 // 
@@ -915,9 +893,14 @@ MS_Customize/UIX6531E_normal.scf  43
 
 // 
 config:spiflash_cfg.c  PS_STONE_SECTOR_NUM
-config:spiflash_cfg.c  646
 //	#define  PS_STONE_SECTOR_NUM		124 // 123 //123
 
+
+###
+prj:{cfg}.cfg          VM_SUPPORT = TRUE
+prj:{cfg}.cfg          BZP_SUPPORT = TRUE
+config:mem_cfg.c  VIR_RESOURCE_STRAT_ADDR
+MS_Customize/source/common/mem_prod.c 109
 
 
 [2.18] build map
@@ -960,10 +943,6 @@ build\tmp
 
 
 [2.20] 
-//
-CUSTOMER = SE828_2IN1_ZYM
-PRODUCT_CONFIG = SE828_MB
-PRODUCT_BASELIB_DIR = sc6531efm_32X32_320X240BAR_AB
-//
-make\version\version.mk  PRODUCT_CONFIG
+
+
 

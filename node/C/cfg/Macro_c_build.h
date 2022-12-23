@@ -1,5 +1,42 @@
 
 
+### __6531E__
+
+cmd: cmd
+
+
+编译:
+open: project\H9_KLS_F4\New_common.bat
+
+
+编译模块
+make p=H9_KLS_F4 m=custom_drv
+make p=H9_KLS_F4 image
+
+或 (1行命令)
+make p=H9_KLS_F4 m=custom_drv update image
+make p=H9_KLS_F4 m=custom_drv update image job=4
+
+编译资源 (VS接着编译即可)
+make p=H9_KLS_F4 m=resource job=4
+
+
+其他编模块
+make p=H9_KLS_F4 m=app update image
+make p=H9_KLS_F4 m=app
+
+
+模拟器：
+make p=H9_KLS_F4 m=simulator
+vc: build\H9_KLS_F4_builddir\win\simulator.dsw
+build\H9_KLS_F4_builddir\win\
+//	改NV删除
+cmd del^build\H9_KLS_F4_builddir\win\bin\flash_sim.dat
+build\H9_KLS_F4_builddir\win\bin\flash_sim.dat
+
+
+
+
 ### __8910__
 
 //编译:

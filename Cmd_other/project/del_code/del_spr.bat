@@ -4,29 +4,38 @@
 set start=%time%
  
 cd ./
+
+echo \%0...
 rd /s/q ARM
 rd /s/q BASE
 rd /s/q CAF
 rd /s/q char_lib
+echo %%10...
 rd /s/q chip_drv
 rd /s/q CMMB
 rd /s/q common
+echo %%20...
 rd /s/q connectivity
 rd /s/q DAPS
 rd /s/q external
+
+echo %%30...
 rd /s/q fdl_bootloader
 rd /s/q halo_rec
 rd /s/q lib\modem
 rd /s/q lib\UIS8910_ROM_16MB_DS_DEBUG
 rd /s/q lib
+echo %%40...
 rd /s/q make
 rd /s/q MS_Customize
+echo %%50...
 rd /s/q MS_MMI_Main\source\mmi_app\app\accessory
 rd /s/q MS_MMI_Main\source\mmi_app\app\audioplayer
 rd /s/q MS_MMI_Main\source\mmi_app\app\fmm
 rd /s/q MS_MMI_Main\source\mmi_app\app\game
 rd /s/q MS_MMI_Main\source\mmi_app\app\ia_java
 rd /s/q MS_MMI_Main\source\mmi_app\app\im
+echo %%60...
 rd /s/q MS_MMI_Main\source\mmi_app\app\myriad_java
 rd /s/q MS_MMI_Main\source\mmi_app\app\operamini4
 rd /s/q MS_MMI_Main\source\mmi_app\app\operamini6
@@ -34,6 +43,7 @@ rd /s/q MS_MMI_Main\source\mmi_app\app\sms
 rd /s/q MS_MMI_Main\source\mmi_app\app\theme
 rd /s/q MS_MMI_Main\source\mmi_app\app\widget
 rd /s/q MS_MMI_Main\source\mmi_app\app\
+echo %%70...
 rd /s/q MS_MMI_Main\source\mmi_ctrl
 rd /s/q MS_MMI_Main\source\winsimulator_tp\win_platform\SIM_Set_Files\SIM1
 rd /s/q MS_MMI_Main\source\winsimulator_tp\win_platform\SIM_Set_Files\SIM2
@@ -41,6 +51,7 @@ rd /s/q MS_MMI_Main\source\winsimulator_tp\win_platform\SIM_Set_Files\SIM3
 rd /s/q MS_MMI_Main\source\winsimulator_tp\win_platform\SIM_Set_Files\SIM4
 rd /s/q MS_MMI_Main\source\winsimulator_tp\
 rd /s/q MS_MMI_Main\source\resource\Common
+echo %%80...
 rd /s/q MS_MMI_Main\source\resource\mmi_res_128x160\common\MMI_RES_DEFAULT\IMAG\StatusbarIcon
 rd /s/q MS_MMI_Main\source\resource\mmi_res_128x160\common\MMI_RES_DEFAULT\IMAG\status_area
 rd /s/q MS_MMI_Main\source\resource\mmi_res_128x160\common\MMI_RES_DEFAULT\IMAG\multi_sys
@@ -93,6 +104,7 @@ rd /s/q MS_MMI_Main\source\resource\mmi_res_240x320\wallpaper
 rd /s/q MS_MMI_Main\source\resource\mmi_res_240x320\weather
 rd /s/q MS_MMI_Main\source\resource\mmi_res_240x320\
 rd /s/q MS_MMI_Main\source\resource\
+echo %%90...
 rd /s/q MS_MMI_Main\
 rd /s/q MS_Ref
 rd /s/q nes
@@ -107,6 +119,9 @@ rd /s/q tcard_resource
 rd /s/q Third-party
 rd /s/q tools
 rd /s/q version
+
+echo %%100...
+
 
 :: get time
 cmd /c %*

@@ -2212,8 +2212,6 @@ Save:node\C\study\Macro_nv_8910.h  __env_nv__
 //		======>MMIBROWSER_START_PAGE_WIN_TAB
 app:browser\c\mmibrowser_func.c  MMIBROWSER_Enter
 //		==>InitBrwStartPageWin
-//		====>
-//		======>
 app:browser\c\mmibrowser_wintable.c  MMI_RESULT_E^BrwHandleStartPageWinMsg
 //
 //BrwHandlePopMenuWinMsg

@@ -1,20 +1,18 @@
 ###
 ### pub path
 ### 
-### 1.暂时只能手动修改
-### 2.自动增加，待改
-### 3.自动替换，待改
+### 1.Configuration of the "MTK" directory
 ###
 
 0Key  = MTK
 
-imagesPath = plutommi\Customer\Images\K220_C61\
+imagesPath = plutommi\Customer\Images\{cur}\
 images:\\
-audioPath = plutommi\Customer\AUDIO\K220_C61\
+audioPath = plutommi\Customer\AUDIO\{cur}\
 audio:\\
-featuresPath = plutommi\Customer\CustResource\K220_C61_MMI\
+featuresPath = plutommi\Customer\CustResource\{cur}_MMI\
 features:\\
-buildPath = build\K220_C61\
+buildPath = build\{cur}\
 build:\\
 batPath = _bat\build
 bat:\\
@@ -28,11 +26,13 @@ boardKey  = K220M_T3_BB
 lcdKey  = K220D_QVGA_SH_LCM
 
 ### 2.cur
-curKey = K220_SUOAI_T3
+curKey = K220_D36A_CX
+// GSM GPRS
 GSMKey = GSM
 
 ### 3.copy
-oldKey = K220_C61
+//oldKey = K220_C61
+oldKey = {cur}
 
 newKey = K220_C61_OB
 
@@ -40,13 +40,5 @@ newKey = K220_C61_OB
 tmpKey = K220_Y01A_MGUO
 
 tmpBoardKey = K220M_YGW_BB
-spdePrjKey = make
-
-### 5.mk info bak
-bak1Key = K220_A86
-
-bak1Key = K220_Y01A_JMZ
-
-bak3Key = K220_Y01A_JMZ
 
 

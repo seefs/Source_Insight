@@ -109,9 +109,7 @@ images:\
 
 
 // ==>image
-Save:node\C\study\Macro_res_image_8910.h
-// ==>image watch
-Save:node\C\study\Macro_res_image_wa8910.h
+Save:node\C\study\Macro_res_image_6531E.h
 
 
 // RES_ADD_IMG()
@@ -119,6 +117,12 @@ Save:node\C\study\Macro_res_image_wa8910.h
 //  IMG_CMP_PNG_ARGB                   -------正常
 //  IMG_CMP_PNG_ARGB |SABM_HOR_STRETCH -------重叠
 //  IMG_CMP_PNG_SABM_RLE |SABM_HOR_STRETCH ---带花纹
+
+
+//删除默认多余动画
+IMAGE_RECORD_BG_ANIM_FRAME_1
+MS_MMI\source\resource\mmi_res_128x160\record\MMI_RES_DEFAULT\IMAG
+MS_MMI\source\resource\mmi_res_128x160\record\MMI_RES_DEFAULT\ANIM\ANIM_RECORD_PLAY
 
 
 ###

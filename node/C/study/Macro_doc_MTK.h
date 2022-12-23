@@ -228,6 +228,7 @@ code:SSCPassEngine.c   __XLS_SALE_CUSTOM_TIME__
 [1.13] phone time
 // --mk
 make/{cur}_{GSM}.mak  __NEW_DEFAULT_TIME
+make/{cur}_{GSM}.mak  __NEW_DEFAULT_TIME_20211030_STYLE__
 
 // powon time
 custom\drv\misc_drv\_Default_BB\MT6261\custom_hw_default.c  DEFAULT_HARDWARE_DAY
@@ -466,6 +467,9 @@ media\audio\src\aud_player_modis.c  kal_int32^_aud_player_modis_get
 # 13.FLAVOR
 // 换库(61D 模拟器编不过)
 Save:node\C\project\Macro_cfg_MTK.h  __FLAVOR__
+
+//
+//把 \S01\gprs\KAL_TRACE_OUTPUT\NONE\GEMINI\2，复制过去就行了
 
 
 # 14.font ASSERT

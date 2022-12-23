@@ -808,6 +808,11 @@ plutommi\Framework\GUI\GUI_SRC\gui_slide_bar.c  gui_slide_bar_create
 // set--phone--other--remove lcd
 plutommi\Customer\CustResource\CustCoordinates.c  coordinate_set88_1_item
 plutommi\mmi\Setting\SettingSrc\PhnsetGPIO.c  N_ITEMS
+//		==>mmi_phset_gpio_entry_backlite_timeout
+//		====>mmi_phset_gpio_entry_backlite
+//		======>ShowCategory88Screen
+//		========>set_slide_control_category_history
+//		==========>
 
 // set--timeformat
 plutommi\mmi\Setting\SettingSrc\DateAndTime.c  EntryPhnsetSetFormat

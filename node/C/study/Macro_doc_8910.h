@@ -596,6 +596,18 @@ Third-party\rsfota\rsupdate\src\rs_ua_porting.c  rs_fota_addr
 make\perl_script\adups.pl  img_deltanv_src
 
 
+// 1.主屏副屏都显示到主屏上了
+// 107是nand
+fdl_bootloader\tf_fdl\src\tf_main_nand.c  TF_PM_Init
+// 2.显示进度条
+Third-party\adups\hal\src\adups_bl_main.c  adups_patch_ratio
+//	TF_ShowProgress(ratio,100);//zgq add
+fdl_bootloader\bootloader\src\boot1_main.c  TF_SetLcdBackLight
+//	TF_SetLcdBackLight (FALSE, 0x0);
+//	TF_LedParamInit();
+
+
+
 ### fota
 // ==>密码
 patch:ssh\Macro_user_psw.h  __abup__

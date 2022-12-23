@@ -1,792 +1,696 @@
 
-//basePath = E:\desktop\H9_KLS_F4\mmi_res_128x160
-//basePath = F:\6531G_16A_MP_W17.43.4
-basePath = F:\6531G_SX
-toolPath = E:\desktop\H9_KLS_F4\mmi_res_128x160
-
-
-// 6531E [Num][Ca]:
-// 1. 
-Save:node\C\study\Macro_doc_6531E.h \[1.1\] ImageNote
-Save:node\C\study\Macro_doc_6531E.h \[1.2\] TextNote
-Save:node\C\study\Macro_doc_6531E.h \[1.3\] BugNote
-Save:node\C\study\Macro_doc_6531E.h \[1.4\] GuiNote
-Save:node\C\study\Macro_doc_6531E.h \[1.5\] RingNote
-// 2. 
-Save:node\C\study\Macro_doc_6531E.h \[2.1\] MsgIdNote
-Save:node\C\study\Macro_doc_6531E.h \[2.2\] WinNote
-// 3. 
-Save:node\C\study\Macro_doc_6531E.h \[3.1\] ToolNote
-Save:node\C\study\Macro_doc_6531E.h \[3.2\] FmNote
-Save:node\C\study\Macro_doc_6531E.h \[3.3\] AlarmNote
-Save:node\C\study\Macro_doc_6531E.h \[3.4\] CalendarNote
-Save:node\C\study\Macro_doc_6531E.h \[3.5\] EnvNote
-Save:node\C\study\Macro_doc_6531E.h \[3.6\] RecNote
-	
+//目录
+Save:node\C\study\Macro_doc_6531E.h \[1.1\] Message, keyStatus
+Save:node\C\study\Macro_doc_6531E.h \[1.2\] FUN 入口-------------
+Save:node\C\study\Macro_doc_6531E.h \[1.3\] //lang
+Save:node\C\study\Macro_doc_6531E.h \[1.4\] 配置
+Save:node\C\study\Macro_doc_6531E.h \[1.5\] 说明文档
+Save:node\C\study\Macro_doc_6531E.h \[1.6\] Win数据
+Save:node\C\study\Macro_doc_6531E.h \[1.7\] tool
+Save:node\C\study\Macro_doc_6531E.h \[1.8\] //File-----------------
+Save:node\C\study\Macro_doc_6531E.h \[1.9\] test code-------------
+Save:node\C\study\Macro_doc_6531E.h \[1.10\] ImageNote
+Save:node\C\study\Macro_doc_6531E.h \[1.11\] arm log
+Save:node\C\study\Macro_doc_6531E.h \[1.12\] //FontTool
+Save:node\C\study\Macro_doc_6531E.h \[1.13\] build time----------
+Save:node\C\study\Macro_doc_6531E.h \[1.14\] 
+Save:node\C\study\Macro_doc_6531E.h \[1.15\] ATEST_SUPPORT
+Save:node\C\study\Macro_doc_6531E.h \[1.16\] fota----------adups
+Save:node\C\study\Macro_doc_6531E.h \[1.17\] fota----------rs
+Save:node\C\study\Macro_doc_6531E.h \[1.18\] 
 
 
 
 
-/***********************************************************************/
+[1.1] Message, keyStatus
 
-[1.1] ImageNote
+//	Message 切换
+Save:node\C\study\Macro_Spr_MsgId.h
+//
+// MMK_WinGrabFocus(MMIWIFI_LIST_WIN_ID);
+
+
+### __keyKbd__
+// --虚拟值转实际值
+Save:node\C\study\Macro_im_8910.h   __keySignal__
+//		==>MMK_DispatchMSGKbd
+//		====>MMIDEFAULT_ConvertKeyCode
+//		======>signal_keycode:w/66/0x42/SCI_VK_W
+//		======>key_code:      w/41/0x29/KEY_W
+//		====>KPD_DOWN:
+//		====>HandleMSGKbd
+//		======>MMK_DefaultMSGKbd                    # 背光/按键音/音量键/handset
+//		========>other:
+//		==========>green:
+//		==========>MMIAPICC_SendMsgToApplet(KEY_PRESSED + keycode, PNULL);
+//		==========>end:
+//		==========>MMIAPICC_ReleaseCallByRedkey();
+//		========>DefaultIsRespond
+//		======>GetMultiKeyTPParam
+//		========>cur_key_num:      0
+//		======>MMK_DispMsgToWin                     # 窗口处理
+//		========>MMK_DispMsgToFocusWin
+//		==========>MMK_DispatchToHandle             # --WINDOW
+//		============>WINDOW:
+//		============>MMK_DefaultProcessWinMsg
+//		==============>MMK_RunWinHookProc
+//		================>.MMK_RunCtrlProc
+
+//		============>MMK_RunWinProc                 # --win_handle
+//		==============>.ProcessMsg
+//		==============>CC_HandleCcWinMsg            # --key--kbd--call
+//		============>MMK_ProcSpecialWinMsg          # --win_handle
+//		======>MMK_DefaultMSGKbdLater               # 系统默认处理
+//		========>侧键/earphone/earphone/CAM/ScreenPhoto
+//		======>MMK_HandlePublicKey                  # 
+//		================>
+//		==================>
+//		====================>
+//		======================>
+//		========================>
+//		==========================>
+
+### __keySig__
+// --
+//		==>DispatchSysSig
+//		====>MMICC_HandlePsMsg
+//		======>APP_MN_CALL_DISCONNECTED_IND
+//		========>MmiDestroySignal
+//		============>MmiSendSignal
+//		==============>
+//		================>
+//		==================>
+//		====================>
+//		======================>
+//		========================>
+//		==========================>
+//		============================>
+//		==============================>
+//		================================>
+
+
+
+### --key--dial--down
+//		==>APP_Task
+//		====>MMK_DispatchExtSig                     # KPDSVR
+//		======>MMK_DispatchMSGKbd                   # KPD_DOWN/KPD_UP
+//		========>HandleMSGKbd
+//		==========>MMK_DispMsgToWin
+//		============>MMK_DispMsgToFocusWin
+//		==============>MMK_DispatchToHandle         # WINDOW
+//		================>MMK_RunWinProc             # win_handle
+app:idle\c\mmiidle_dial.c  MMI_RESULT_E^HandleDialWinMsg
+
+
+### --key--dial--red
+//		========>HandleMSGKbd
+//		============>BaseFlexCtrlHandleMsg
+//		===============>RED:
+//		================>.is_handle_red_key
+//		========>GUIEDIT_SetHandleRedKey(FALSE, _CTRL_ID);  # 禁用
+
+
+### --key--dial--long--log
+//	64023 MSG_KEYDOWN_CANCEL
+//	57397 MSG_NOTIFY_EDITBOX_IMSYNC_CURSOR //1~3
+//	e030  MSG_NOTIFY_EDITBOX_UPDATE_STRNUM //1~3
+//	fd17  MSG_KEYPRESSUP_CANCEL
+
+### --key--dial--longCancel
+//		==>APP_Task
+//		====>MMK_DispatchExtSig                     # KPDSVR
+//		======>MMK_DispatchMSGKbd                   # 
+//		========>HandleMSGKbd                       # status:65024, code:23
+//		==========>MMK_DispMsgToWin
+//		============>MMK_DispMsgToFocusWin
+//		==============>MMK_DispatchToHandle         # WINDOW
+//		================>MMK_DefaultProcessWinMsg   # ctrl_handle
+//		==================>MMK_RunCtrlProc
+//		====================>PhoneNumEditCtrlHandleMsg  # IGUICTRL_HandleEvent
+//		======================>BaseFlexCtrlHandleMsg  # MSG_KEYREPEAT_CANCEL
+//		========================>HandleTextCancelKey
+//		==========================>BASEFLEX_DelString
+//		==>APP_Task
+//		====>MMK_DispatchExtSig                     # P_APP
+//		======>MMK_DispatchMSGTimer                 # APP_TIMER_EXPIRY
+//		========>MMK_HandleKeyLongPressTimer        # KBD_TIMER
+//		==========>SaveKeyLongDownStatus
+//		============>is_long_press = TRUE
+//		==========>MMK_DispMsgToWin
+//		============>MMK_DispMsgToFocusWin
+//		==============>MMK_DispatchToHandle         # 
+//		================>MMK_DefaultProcessWinMsg   # ctrl_handle
+//		==================>MMK_RunCtrlProc
+//		====================>PhoneNumEditCtrlHandleMsg  # IGUICTRL_HandleEvent
+//		======================>BaseFlexCtrlHandleMsg  # MSG_KEYLONG_CANCEL
+//		========================>HandleTextCancelLong
+//		========>MMK_HandleKeyRepeatPressTimer      # KEY_REPEATED
+//		==========>MMK_DispMsgToWin
+//		============>MMK_DispMsgToFocusWin
+//		==============>MMK_DispatchToHandle         # WINDOW
+//		================>MMK_RunWinProc             # win_handle
+ctrl:editbox\c\ctrlbaseflex.c  MMI_RESULT_E^BaseFlexCtrlHandleMsg
+//		==========================>AppHandle            # CURSOR
+
+
+### __keyStatus__
+### --key--timer
+//		========>TimerCallBack
+//		==========>MmiCreateSignal
+//		============>
+//		==============>
+//		==>APP_Task
+//		====>MMK_DispatchExtSig                     # 
+//		======>MMK_DispatchMSGKbd                   # 这里转换一些特殊值
+//		========>MMIDEFAULT_ConvertKeyCode
+//		==========>[SHIFT]: 
+//		============>96 = 0x60 => {SCI_VK_SHIFT, 0x47} => 0x47 = 71 => KEY_SHIFT
+//		========>SaveKeyDownStatus                  # KPD_DOWN, 多按键不知道支不支持
+//		==========>MMK_StartWinTimer                # 1.5s (long) 0.3s (repeat)
+//		============>StartAppTimer
+//		========>HandleMSGKbd
+//		==>APP_Task
+//		====>MMK_DispatchExtSig                     # P_APP
+//		======>MMK_DispatchMSGTimer                 # APP_TIMER_EXPIRY
+//		========>MMK_HandleKeyLongPressTimer        # KBD_TIMER
+//		==========>SaveKeyLongDownStatus
+//		============>is_long_press = TRUE           # ==>longUp msg
+//		==========>HandleMSGKbd
+//		========>MMK_HandleKeyRepeatPressTimer      # KEY_REPEATED
+//		==========>SaveKeyRepeatStatus
+//		==========>MMK_StartWinTimer
+//		==========>HandleMSGKbd
+//		==>APP_Task
+//		====>MMK_DispatchExtSig                     # 
+//		======>MMK_DispatchMSGKbd                   # 
+//		========>SaveKeyUpStatus                    # KPD_UP
+//		==========>MMK_StopTimer
+//		========>HandleMSGKbd
+
+
+### --key--idle--long--ok
+//		======>case MSG_APP_OK      //0
+//		======>case MSG_CTL_OK      //0
+//		======>case MSG_APP_OK      //1
+//		======>case MSG_KEYUP_OK    //1
+//		======>case MSG_KEYLONG_OK  //1
+//		======>case MSG_TIMER       //+ 看着没用
+app:idle\c\mainapp.c  IdleWin_HandleMsg
+//		======>case MSG_APP_OK      //0
+//		======>case MSG_CTL_OK      //0
+//		======>case MSG_KEYUP_OK    //1
+app:idle\c\mmiidle_cstyle.c   MMIIDLE_CommonHandleMsg
+//		======>case MSG_KEYUP_OK    //1
+app:keylock\c\mmikl_keylock.c  MMIKL_HandleKLDispWinMsg
+//		======>case MSG_KEYUP_OK    //1 没用
+source:mmi_app\common\c\mmi_pubwin.c  MMIPUBHandleWinMsg
+
+### --key--idle--long--cancel
+//		======>case MSG_APP_CANCEL
+//		======>case MSG_CTL_CANCEL
+//		======>case MSG_KEYUP_CANCEL
+//		======>case MSG_KEYLONG_CANCEL
+app:idle\c\mainapp.c  IdleWin_HandleMsg
+
+
+### __keySlide__
+//		==>HandleMSGKbd
+//		====>MMK_DefaultMSGKbd        # 背光/按键音/音量键/handset
+//		====>MMK_DispMsgToWin         # 窗口
+//		====>MMK_DefaultMSGKbdLater   # 后处理
+//		====>MMK_HandlePublicKey      # 公共处理
+//		====>MMIBT_HandleBTKey        # BT
+### --点亮屏/vol
+//		==>MMK_DefaultMSGKbd
+//		====>DefaultBackLight   # 背光处理
+//		======>KEY_PRESSED:
+//		========>.is_halt       # 拦截
+//		========>.halt_back     # 预处理
+//		========>MMIDEFAULT_TurnOnBackLight
+//		==========>MMIDEFAULT_TurnOnLCDBackLight
+//		====>DefaultIsRespond   # 是否响应
+//		======>.s_is_down_keystatus_backlight_on
+//		==>MMK_DefaultMSGKbdLater
+//		====>DefaultSideKey     # 侧键处理/vol
+//		========>.!is_key_lock  # 翻盖不锁屏
+//		========>MMIDEFAULT_TurnOnBackLight
+//		========>.is_halt       # 音量调节
+### --半亮
+//		==>APP_Task
+//		====>MMK_DispatchExtSig
+//		======>MMK_DispatchMSGTimer
+//		========>MMIDEFAULT_HandleBackLightOver
+### --灭屏
+//		==>CloseAllLight
+//		========>MMIDEFAULT_TurnOffBackLight
+source:mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_TurnOnBackLight
+### --fm
+//		==>HandleMSGKbd
+//		====>MMK_HandlePublicKey
+//		======>GPIO_SIG1:
+//		========>MMIAPI_FM_ONOFF
+### --flip
+//		==>MMK_DefaultMSGKbd
+//		====>DefaultFlip          # 
+//		======>
+//		==>MMK_HandlePublicKey
+//		====>MSG_KEYDOWN_FLIP:    # 合盖
+//		======>HandleFlipDown     # 返回idle
+//		====>MSG_KEYDOWN_FLIP:    # 合盖
+//		======>recode = FALSE     # 返回FALSE 走bg mp3
+//		========>MMIDEFAULT_HandleFlipKey
+//		======>do()               # 不会走 MSG_APP_CANCEL
+//		======>MMK_PostMsg(MSG_APP_CANCEL)
+//		========>play mp3         #
+//		==>MSG_KEYUP_FLIP:        # 返回FALSE 解决响铃时开盖不亮屏 (不记得什么原因)
+app:accessory\c\mmicountedtime_main.c  MMIAPICT_HandleCountedTimeArriveWin
+
+
+
+[1.2] FUN 入口
+//	FUN 入口
+Save:node\C\study\Macro_Spr_Fun.h
+
+
+
+
+[1.3] 
+//
+Save:node\C\study\Macro_res_8910.h __lang__
+
+
+
+[1.4] 配置
+### 6531D移配置
+common\nv_parameters\S036_MB
+MS_Customize\source\product\config\S036_MB
+MS_Customize\SC6530_S036_MB_vm
+version\SC6530_S036_MB_version.c
+
+
+//
+CUSTOMER = SE828_2IN1_ZYM
+PRODUCT_CONFIG = SE828_MB
+PRODUCT_BASELIB_DIR = sc6531efm_32X32_320X240BAR_AB
+//
+make\version\version.mk  PRODUCT_CONFIG
+
+
+### 8910单软多硬 (row = newV /oldV)
+// prdt
+prj:nvitem/ProductionParam_uix8910.nvm  1393 = 0x5 /0x0
+prj:nvitem/ProductionParam_uix8910.nvm  1403 = 0x7 /0x0
+// rf
+prj:nvitem/RF_nv.nvm  42069 = 0xD013B / 0xD0199
+prj:nvitem/RF_nv.nvm  42130 = 0xD013B / 0xD0199
+// rename
+prj:nvitem/audio_sc6531efm.nvm
+prj:nvitem/audio_sc6531efm_AEC.nvm
+prj:nvitem/
+// ver
+Custom_Copy.bat  project\config_nv
+prj:nvitem/hw_ver00.nv
+prj:nvitem/hw_ver01.nv
+// mk
+prj:uis8910_phone_base_config.cfg  FORCECHANGE_SUPPORT  = TRUE
+prj:uis8910_phone_user_base_config.cfg  FORCECHANGE_SUPPORT  = TRUE
+
+
+
+
+[1.5] 说明文档
+SC6530平台_application_notes.doc				  ###  宏说明			   
+Universe手机使用说明.docx 					   ###	手机使用说明
+Build_Environment_Manual.doc ###  编译环境
+
+
+
+
+[1.6] Win数据
+//
+VIRTUAL_WIN_ID
+//
+MMI_BASE_NODE_T    # 可以转 WINDOW_NODE
+MMI_HANDLE_NODE_T
+MMI_TREE_NODE_T    HANDLE
+MMI_HANDLE_T		HANDLE_NODE + APPLET_NODE	 #应用
+
+MMI_WINDOW_T		
+MMI_WINDOW_NODE_T		 NODE + WINDOW + HANDLE
+MMI_WINDOW_TABLE_CREATE_T	 参数
+MMI_WINDOW_CREATE_T 	   参数
+MMI_APPLET_NODE_T		 
+MMI_ZORDER_SYSTEM_T
+MMI_ZORDER_NODE_T		 WINDOW_NODE + ……
+
+MMI_APPLET_SYSTEM_T
+
+MMI_CTRL_NODE_T
+MMI_CONTROL_CREATE_T	参数
+
+MMI_MESSAGE_PTR_T 
+CAF_GUID_T			 module_manager
+GUIMENU_GROUP_T
+
+GUI_POINT_T
+GUI_RECT_T
+MMI_WIN_ID_T
+MMI_IMAGE_ID_T
+GUI_LCD_DEV_INFO
+IMG_RES_SRC_T		 显示图片
+CAF_GUID_T	  
+MMI_MODINFO_NODE_T	  kernel模块的信息
+CAF_RES_T
+CAF_HANDLE_T
+RES_NODE_DATA_T
+
+IMG_RES_DST_T	 显示
+IMG_RES_SRC_T
+
+
+//		==>CTRLBASE_OBJ_T
+//		====>win_handle
+//		====>handle
+//		====>ctrl_id
+//		======>
+//		========>
+
+
+
+[1.7] tool
+//
+down:\\
+// 自动下载
+down:\UpgradeDownload_R25.21.1401\Bin\
+down:\UpgradeDownload_R25.21.1401\Bin\UpgradeDownload.exe
+// 格式化下载
+down:\ResearchDownload_R25.21.1401_\ResearchDownload_R25.21.1401\Bin\
+down:\ResearchDownload_R25.21.1401_\ResearchDownload_R25.21.1401\Bin\\UpgradeDownload.exe
+
+
+
+
+[1.8] 
+
+
+
+
+[1.9] test code
+### __code__
+
+// SAR
+//app:eng\c\mmieng_base.c  SAR
+
+// BUILD
+app:eng\c\mmieng_base.c  BUILD
+
+
+
+// Phone
+"#*8378#0#", "*#222#", "*#15963#", "####1111#",
+app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_UI_TEST1
+
+// UI
+"####1111#", "*#87#", "*#666#",
+app:eng\c\mmieng_main.c  MMIENG_IDLE_FULL_TEST
+
+// Item
+app:eng\c\mmieng_main.c  MMIENG_IDLE_ITEM_TEST
+ "*#777#", "*#66*#", "*#79*#",
+ 
+// Product
+"#*8378#3#",
+// PhoneInfo -- bg
+"#*8378#4#",
+// SN
+"####2222#",
+// Net--mcc,mnc
+"####1040#",
+
+// Engineer
+"#*8378#1#", "*#555#",--mcc,mnc
+
+// Version--Out -- bg
+app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SHOW_VERSION1
+"#*8378#2#", "####0000#", 
+// Version--3
+app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SHOW_VERSION2
+"*#888#",
+
+// Chip
+"#*8378#5#",
+// NV
+"#*786646468#",
+// Monkey
+"#*8378#8#",
+// TFload
+"#*8378#9#",
+// ALLSVN -- bg
+"#*786837#",
+
+// HW
+app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SHOW_HW_VERSION
+"*#999#", "*#523#",
+
+// IMEI
+app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SET_SIM_IMEI_ALL
+"*#333#", "*#0066#", "*#3184#"; "*#06#",
+
+// Reset
+"*#119*#", "*#70#",
+
+// __ELECTRIC__
+"*#2010#"; "*#0808#"; "*#0809#", 
+app:eng\c\mmieng_main.c  MMIENG_ELECTRIC_GUARNTEE_CARD_RESET
+
+// SALES_TRACKER
+app:eng\c\mmieng_main.c  MMIENG_IDLE_SALES_TRACKER_SETTING
+"*#55555#"
+
+// test code
+app:eng/c/mmieng_main.c  UITESTWIN_OpenPhoneTestWin
+//    {
+//         "#1#",
+//         MMIENG_IDLE_DIAL_NUM_UI_TEST2, //func id
+//         PARS_MANUFACTURE_TEST,         //无使用
+//         MMIAPIENG_StartUITest
+//    }
+
+### 
+//--v--time,data,vol
+//MMIENG_IDLE_DIAL_NUM_PHONE_INFO
+//--v--mk--sw--hide
+//MMIENG_IDLE_DIAL_NUM_SW_VERSION
+//--v--8910--outV, HW closed
+//MMIENG_IDLE_DIAL_NUM_SHOW_VERSION1,
+//--v--8910--outV, HW closed
+//MMIENG_IDLE_DIAL_NUM_SHOW_VERSION2,
+//--l--no use
+//MMIENG_IDLE_DIAL_NUM_MONKEY_TEST_AUTOSET,
+//--t--nv error
+//MMIENG_IDLE_DIAL_NUM_NV_COUNTING,
+//--x--no use
+//MMIENG_IDLE_DIAL_NUM_AUDIO_DEMO,
+//MMIENG_IDLE_DIAL_NUM_VIDEO_DEMO,
+//MMIENG_IDLE_DIAL_NUM_MEDIA_DEMO,
+//--x--no use
+//MMIENG_IDLE_DIAL_NUM_AUTO_LOG,
+//MMIENG_IDLE_DIAL_NUM_LOG_OFF,
+//--wa01u, mk,
+//MMIENG_IDLE_DIAL_NUM_SHOW_VERSION3, //显示更多版本信息
+
+
+
+[1.10] ImageNote
 
 //查看图标是否存在
 Save:node\C\study\Show_Pic_dir.h IMAGE_PUBWIN_QUERY
 Save:node\C\study\Show_Pic_dir.h IMAGE_PUBWIN_SUCCESS  
-Tool:common\MMI_RES_DEFAULT\IMAG\Pubwin\PDA
+//
+images:common\MMI_RES_DEFAULT\IMAG\Pubwin\PDA
 
-Tool:clock\MMI_RES_DEFAULT\IMAG\Alarm\IMAGE_CLOCK_ALARM_ALERT.png
-Tool:clock\MMI_RES_DEFAULT\IMAG\Alarm
-
-
-Save:node\C\study\Show_Pic_dir.h IMAGE_CHECK_SELECTED_ICON        
-Save:node\C\study\Show_Pic_dir.h IMAGE_CHECK_UNSELECTED_ICON      
-Save:node\C\study\Show_Pic_dir.h IMAGE_CHECK_UNSELECTED_ICON_GRAY 
-Save:node\C\study\Show_Pic_dir.h IMAGE_CHECK_SELECTED_ICON 
-Save:node\C\study\Show_Pic_dir.h IMAGE_COMMON_SOFTKEY_OK_ICON 
-Save:node\C\study\Show_Pic_dir.h IMAGE_CONTROL_POPWIN_SUCCESS 
-Save:node\C\study\Show_Pic_dir.h IMAGE_FM_PAUSE_DEFAULT 
-Save:node\C\study\Show_Pic_dir.h IMAGE_NUMBER_9
-Save:node\C\study\Show_Pic_dir.h IMAGE_IDLE_TITLE_ICON_EARPHONE
-Save:node\C\study\Show_Pic_dir.h EARPHONE
-Save:node\C\study\Show_Pic_dir.h IMAGE_CONTROL_POPWIN_FAIL
-Save:node\C\study\Show_Pic_dir.h IMAGE_CLOCK_CALENDAR_DEFAULT
-Save:node\C\study\Show_Pic_dir.h IMAGE_CLOCK_ALARM_WEEK_DISABLED
-
-
-//str,新加图标:
-project\H9_KLS_F4\resource\common_mdu_def.h SBD_H9_KLS_FM
-//str,旧图标:
-project\H9_KLS_F4\resource\common_mdu_def.h IMAGE_IDLE_TITLE_ICON_EARPHONE
-project\H9_KLS_F4\resource\common_mdu_def.h IMAGE_NUMBER_HL_1
-
-Tool:common\MMI_RES_DEFAULT\IMAG\Number\IMAGE_NUMBER_9.png
-Tool:common\MMI_RES_DEFAULT\IMAG\Number\
-	
-
-IMAGE_CONTROL_LIST_CHECK_DEFAULT
-
-MS_MMI\source\mmi_app\app\fm\h\fm_mdu_def.h SBD_H9_KLS_FM
-
-
-
-//打开图标文件位置
-Tool:common\MMI_RES_DEFAULT\IMAG\Softkey\IMAGE_SOFTKEY_BG.png
-Tool:common\MMI_RES_DEFAULT\IMAG\Softkey\
-Tool:common\MMI_RES_DEFAULT\IMAG\StatusbarIcon
-Tool:common\MMI_RES_DEFAULT\IMAG\Common
-Tool:fm\MMI_RES_DEFAULT\IMAG\IMAGE_FM_PAUSE_DEFAULT.png
-Tool:fm\MMI_RES_DEFAULT\IMAG\
-Tool:common\MMI_RES_DEFAULT\IMAG\Number\IMAGE_NUMBER_9.png
-Tool:common\MMI_RES_DEFAULT\IMAG\Number\
-Tool:common\MMI_RES_DEFAULT\IMAG\StatusbarIcon\IMAGE_IDLE_TITLE_ICON_EARPHONE.png
-Tool:common\MMI_RES_DEFAULT\IMAG\StatusbarIcon\
-
-
-//IMAGE_CHECK_SELECTED_ICON
-Tool:common\MMI_RES_DEFAULT\IMAG\List\IMAGE_CONTROL_LIST_CHECK_PRESSED.png
-//IMAGE_CHECK_UNSELECTED_ICON
-Tool:common\MMI_RES_DEFAULT\IMAG\List\IMAGE_CONTROL_LIST_CHECK_DEFAULT.png
-//IMAGE_CHECK_UNSELECTED_ICON_GRAY
-Tool:common\MMI_RES_DEFAULT\IMAG\List\IMAGE_CONTROL_LIST_CHECK_UNSELECTED_ICON_GRAY.png
-
-
-Tool:common\MMI_RES_DEFAULT\IMAG\Title\Common
-
-//title
-Tool:common\MMI_RES_DEFAULT\IMAG\Common
-
-
-pic:IMAGE_TITLE_BAR,\common\MMI_RES_DEFAULT\IMAG\Title\Common\IMAGE_TITLE_BAR.png
-pic:IMAGE_TITLE_BAR2,\common\MMI_RES_DEFAULT\IMAG\Title\IMAGE_TITLE_BAR2.png
-
+images:clock\MMI_RES_DEFAULT\IMAG\Alarm\IMAGE_CLOCK_ALARM_ALERT.png
+images:clock\MMI_RES_DEFAULT\IMAG\Alarm
 
 
 
 //查看图标是否存在
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_imag.txt IMAGE_PUBWIN_QUERY
-
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_imag.txt IMAGE_COMMON_BG
-//build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_imag.txt IMAGE_MAINMENU_BG
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_imag.txt IMAGE_IDLE_TITLE_ICON_CLOCK
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_imag.txt IMAGE_FM_ADJ_BG
-	
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_imag.txt IMAGE_IDLE_TITLE_ICON_SILENT
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_imag.txt IMAGE_IDLE_TITLE_ICON
-	
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_imag.txt IMAGE_FM_AJUST_PLAY
-
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_imag.txt ALARM_WEEK
-
-
-//删除默认多余动画
-IMAGE_RECORD_BG_ANIM_FRAME_1
-MS_MMI\source\resource\mmi_res_128x160\record\MMI_RES_DEFAULT\IMAG
-MS_MMI\source\resource\mmi_res_128x160\record\MMI_RES_DEFAULT\ANIM\ANIM_RECORD_PLAY
+build\UIS8910_ROM_16MB_DS_USER_builddir\tmp\mmi_res_240x320_imag.txt IMAGE_PUBWIN_QUERY
 
 
 
-/***********************************************************************/
-[1.2] TextNote
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_text.txt _ALL
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_text.txt exists
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_text.txt _EMPTY
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_text.txt Delete
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_text.txt Search
-//字符整理:
-// 公式:
-// =IF(ISNUMBER(MATCH(C1,A$1:A$14254,)),INDEX(B$1:B$14254,MATCH(C1,A$1:A$14254,)),"")
-Save:node\C\study\Show_Str_eng.h ,^Select^all,
-Save:node\C\study\Show_Str_eng.h ,^Settings,
-Save:node\C\study\Show_Str_eng.h ,^Once, //TXT_ALARM_MODE_ONCE
-Save:node\C\study\Show_Str_eng.h ,^Daily,//TXT_ALARM_MODE_EVERYDAY
-Save:node\C\study\Show_Str_eng.h ,^Weekly, //TXT_CALENDAR_WEEKLY
-	
-Save:node\C\study\Show_Str_eng.h ,^Close^spea
-Save:node\C\study\Show_Str_eng.h ,^PAUSE,
-Save:node\C\study\Show_Str_eng.h ,^Reminder,
-Save:node\C\study\Show_Str_eng.h ,^Frequency,
-Save:node\C\study\Show_Str_eng.h ,^Reminder^time,
-Save:node\C\study\Show_Str_eng.h ,^Repeat,
-Save:node\C\study\Show_Str_eng.h ,^Cancel,
-Save:node\C\study\Show_Str_eng.h ,^Stop,
-Save:node\C\study\Show_Str_eng.h ,^Back,
-Save:node\C\study\Show_Str_eng.h ,^Save,
-Save:node\C\study\Show_Str_eng.h ,^Change,
-Save:node\C\study\Show_Str_eng.h ,^Option,
-Save:node\C\study\Show_Str_eng.h ,^This^channel,
-Save:node\C\study\Show_Str_eng.h ,^Insert^memory,
-Save:node\C\study\Show_Str_eng.h ,^Empty,
-//softkey:
-STXT_CANCEL, STXT_STOP, STXT_RETURN, STXT_SAVE, STXT_OPTION, STXT_SELECT, TXT_DELETE, TXT_EDIT
-STXT_OK, TXT_COMMON_CLEAR, 
-//str,新加图标:
-project\H9_KLS_F4\resource\common_mdu_def.h SBD_H9_KLS_FM
 
-//clander
-Save:node\C\study\Show_Str_eng.h ,^View, TXT_VIEW
-//Save:node\C\study\Show_Str_eng.h ,^Go^to, TXT_CALENDAR_TO_DATE
-Save:node\C\study\Show_Str_eng.h ,^Monday, TXT_MONDAY
-Save:node\C\study\Show_Str_eng.h ,^Sunday, TXT_SUNDAY
-Save:node\C\study\Show_Str_eng.h ,^Save, STXT_SAVE
-Save:node\C\study\Show_Str_eng.h ,^Today, TXT_TODAY
-Save:node\C\study\Show_Str_eng.h ,^Date, TXT_DATE
-Save:node\C\study\Show_Str_eng.h ,^Go^to, TXT_CALENDAR_TO_DATE
-	
+[1.11] arm log
+//
+//	客户您好，
+//
+//	请帮忙再提供一份log，需要修改一下nv: AUDIO\AUDIO_ARM\Handsfree\AudioStructure\reserve\reserve[63]=0x131D
+//	测试前还需发送AT指令：
+//	DSP侧dump开关：
+//	开：
+//	AT+SPDSPOP=2
+//	AT+SPDSP=65535,0,0,4096
+//	nv修改和at是开启arm 和 dsp的通话语音dump，语音数据会发送到log里。log抓完后重放一下log，
+//	然后分别点击 Tool -> audio Arm Transfer -> Transfer 和 Tool -> audio DSP Transfer -> Transfer 
+//	会解析出两个*.pcm文件夹 说明log抓取成功。
+//	谢谢！
 
-//alarm
-Save:node\C\study\Show_Str_eng.h ,^Melody, TXT_ENG_UIMELODY_TITLE
-Save:node\C\study\Show_Str_eng.h ,^multiple,
-Save:node\C\study\Show_Str_eng.h ,^Alert^tone,
-Save:node\C\study\Show_Str_eng.h ,^Change,
-//profiles
-Save:node\C\study\Show_Str_eng.h ,^Meeting, TXT_ENVSET_MEETING
-Save:node\C\study\Show_Str_eng.h ,^volume, TXT_ENVSET_MEETING
-Save:node\C\study\Show_Str_eng.h ,^Confirm, 
-Save:node\C\study\Show_Str_eng.h ,^Snooze, 
-Save:node\C\study\Show_Str_eng.h ,^Alarm, 
-//memo
-Save:node\C\study\Show_Str_eng.h ,^Delete^all, 
-Save:node\C\study\Show_Str_eng.h ,^date, 
+
+
+
+[1.12] 
 	
 
 
-/***********************************************************************/
-[1.3] BugNote
-
-//样机BUG--未播放可以--REC;
-//低电量问题
-
-
-// file: Music/FM Radio clips/Radio___J-001.wav
-
-
-
-
 
-#if 1//def WIN32
-{
-MMI_STRING_T  confirmStr = {0};
-//			confirmStr.wstr_ptr = new_file_name;
-//			confirmStr.wstr_len = MMIAPICOM_Wstrlen(new_file_name);
-confirmStr.wstr_ptr = buffer_ptr;
-confirmStr.wstr_len = MMIAPICOM_Wstrlen(buffer_ptr);
- MMIPUB_OpenAlertWinByTextPtr(PNULL, &confirmStr, PNULL, PNULL, PNULL, PNULL,MMIPUB_SOFTKEY_ONE, PNULL);
-}
-#endif
-
-
-
-/***********************************************************************/
-[1.4] GuiNote
-
-
-GUIANIM_SetCtrlRect(MMIFM_FREQUENCY_BAR_CTRL_ID, &anim_rect);
-
-
-
-
-//Calendar主题字体颜色:
-// 1.数字白蓝红+框白+BG绿绿+角蓝,
-// 2.数字黑蓝红+框黄+BG浅浅+角蓝,
-// 3.数字白蓝红+框白+BG绿绿+角蓝,
-
-//alarm主题字体颜色:
-// 1.数字白蓝红+框白+BG绿绿+角蓝,
-// 2.数字黑蓝红+框黄+BG浅浅+角蓝,
-// 3.数字白蓝红+框白+BG绿绿+角蓝,
-
-//childwin:
-// title:   bg蓝+font白, bg浅黄+font黑, bg浅蓝+font白, 
-// setlist: bg白+icon黑, bg黄  +icon白, bg白  +icon黑, 
-// softkey: 黑
-
-//FM主题字体颜色:
-// 1.选中bg蓝+font白,form-bg白+font黑, vol蓝+rec/name白+sch白+chl黑    ,
-// 2.选中bg黄+font白,form-bg黄+font白, vol白+rec/name黄+sch黑+chl白,
-// 3.选中bg深+font白,form-bg白+font黑, vol深+rec/name白+sch白+chl黑,
-//         ---->MMI_THEME_POPMENU_BG    蓝白深
-//         ---->MMI_THEME_FORM_BG       白黄白
-//         ---->MMI_THEME_LABEL_FONT    白黑白
-//         ---->~MMI_THEME_LABEL_FONT   黑白黑
-//         ---->MMI_THEME_CUSTOM_BG  ~  
-//    MMITHEME_GetCurThemeFontColor(MMI_THEME_CUSTOM_BG)
-//黄色:  #99740e
-#ifdef SBD_THEME_COLOR_H9_KLS
-	MMI_THEME_CUSTOM_BG,
-#endif
-
-//rect: bar_bg{0,31,128,44, H=14} week{0,34,128,41, H=8}
-//      title_btn {4,17,8,41, H=9} {123,17,127,41, H=9}
-//      day_W = 18*7+2 = 126+2  day_H=6*(8+2+3)+3*5+1+1=95
-//      day_all_bg{1,45,127,140, H=14}
-//	  day_item_r0 {1,48,127,60}, H=13, day_item_r1 {1,64,127,76}, H=13, space=3
-
-//search icon:(6,101,121,   )str:(6,127,121,144,h=10,top=8)bg:(0,115,127,144,h=30)
-//search icon:(6,126,121,131)str:(6,102,121,111,h=10,top=8)bg:(0, 94,127,143,h=50)
-//search...  TXT_COMMON_SEARCHING
-
-
-//alarm
-list:13+16+38+38+38+16=159, 
-	font->cur ->[29 67 106 140]
-	font->样机->[29 67 107 144] ,font=16+16+3
-	font->12->  [29 68 107 134]
-	font->9 ->  [29 65 101 134]
-list-ctrl:
-	label:16+1=17,  setlist:18,    sum=17+18+3=38    58
-	label:16+2=18,  edit: 17+2=19, sum=18+19+3=40
-	label:16+1=17,  setlist:18,    sum=17+18+1=37
-	
-	label:16+1=17,  btn:19,        sum=17+19+1=37
-	label:16+1=17,  type:19,       sum=17+19+1=37  (无week38)
-	label:16+2=18,  tone:17,       sum=18+17+3=38 20+18
-	
-	label:16+1=17,  vol:19,        sum=17+19+1=37   102->104
-	label:16+2=18,  sno:19,        sum=18+19+1=38
-	label:16+2=18,  pow:19,        sum=18+19+1=38  (无week38)
-tone-item:13+1,17+1
-week-item:(17*14)
-	w=5+14*7+3*6=10+98+18+3+4=128,   cur:8,14,3, h
-	h=3+10+4+17+2=36,
-vol-item: (88*15)
-	w=13+88+4+7+12+4=13+88+27=128
-	h=3+10+7+15+2=37,
-
-//mmi_pubwin
-// h=title_17 + margin_4 + 17 + margin_13 + txt_10 + margin_4 + txt_10 + margin_4
-//	alert_rect: image
-//	title_rect: text
-//	bg_rect
-
-
-//env list:
-//[0,1] <1,18> [19,21] <22,39>
-
-
-rec:
-//anim: (47,23,80,50),h=28;bottom space=1; 图片少2像素;
-//		space--h8--(51,58)
-//name: (0,59,128,71),h=13;chg.
-//name: (0,57,128,72),h=16;只能用16号窄字;
-//		space--h4--(72,75)
-//rec:	(16,76,127,88),h=13;chg.
-//rec:	(16,74,127,89),h=16;只能用16号窄字;
-//icon: (5,78,12,75),h=8;
-//		space--h20--(89,108)
-//scrl: (0,109,128,112),h=4;
-//		space--h1--(113,113)
-//ptm:	(1,114,63,127),h=13;chg.
-//ptm:	(64,114,127,127),h=13;chg.
-//ptm:	(1,114,63,130),h=16;只能用16号窄字;
-//ptm:	(64,114,127,130),h=16;只能用16号窄字;
-
-old:
-//anim: (45 39 81 62) record_record_bg_x
-//bg1:	(0 20 128 99) record_num_bg_x
-//bg2:	(0 25 128 93) 
-//time: (33 105 98 114) record_time_x
-//scrbg:(3 118 128 138) play_bg_x
-//scrl: (3 120 128 124) progress_bg_x
-//ptm:	(2 132 128 140) play_time_label_x
 
 
-	
-/***********************************************************************/
-[1.5] RingNote
-	
-//查看图标是否存在
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_ring.txt R_ALARM_1
+[1.13] build time
 
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_ring.txt R_CALL_1
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_ring.txt R_SMS_1
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_ring.txt R_POWER_1
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_ring.txt R_KEY_LOUND_2
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_ring.txt R_KEY_2
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_ring.txt R_TP_KEYLOCK
-build\H9_KLS_F4_builddir\tmp\mmi_res_128x160_ring.txt R_DL_1
-	
-	
+// 默认出厂日期
+prj:project_{cur}.mk   DEFAULT_FACTORY_YEAR_MONTH_DAY
 
+// DisplaySystemDate
+app:setting\c\mmiset_datetime.c DEFAULT_FACTORY_YEAR_MONTH_DAY
+// DisplaySystemDate
+app:setting\c\mmiset_display.c DEFAULT_FACTORY_YEAR_MONTH_DAY
+// DisplaySystemDate
+app:setting\c\mmiset_func.c DEFAULT_FACTORY_YEAR_MONTH_DAY
+MMIAPISET_GetCurrentDateStr
+RestoreDataTimeFactorySetting
+MMIAPISET_IsNeedResetDateTime
 
-/***********************************************************************/
-[2.1] MsgIdNote
 
-Save:node\C\study\Show_Msg_ID.h MSG_APP_1
-Save:node\C\study\Show_Msg_ID.h MSG_APP_OK
-Save:node\C\study\Show_Msg_ID.h MSG_KEYDOWN_1
 
-//Save:node\C\study\Show_Msg_ID.h MsgId=61505,
-//Save:node\C\study\Show_Msg_ID.h MsgId=61479,
-Save:node\C\study\Show_Msg_ID.h MsgId=61475,
-//Save:node\C\study\Show_Msg_ID.h MsgId=61480,
-//Save:node\C\study\Show_Msg_ID.h MsgId=61470,
-//Save:node\C\study\Show_Msg_ID.h MsgId=61480,
-//Save:node\C\study\Show_Msg_ID.h MsgId=61482,
-Save:node\C\study\Show_Msg_ID.h MsgId=65027,
-Save:node\C\study\Show_Msg_ID.h MsgId=64003,
-Save:node\C\study\Show_Msg_ID.h MsgId=64256,
-Save:node\C\study\Show_Msg_ID.h MsgId=64017,MSG_KEYDOWN_STAR
-Save:node\C\study\Show_Msg_ID.h MsgId=65041,MSG_KEYREPEAT_STAR
-Save:node\C\study\Show_Msg_ID.h MsgId=64273,MSG_KEYUP_STAR
-Save:node\C\study\Show_Msg_ID.h MSG_KEYLONG_STAR, 64529
-//pub
-Save:node\C\study\Show_Msg_ID.h MsgId=61479, KEY_AT
-Save:node\C\study\Show_Msg_ID.h MsgId=61477,
-Save:node\C\study\Show_Msg_ID.h MsgId=61480,
-//left right
-Save:node\C\study\Show_Msg_ID.h MsgId=64003,
-Save:node\C\study\Show_Msg_ID.h MsgId=64257, MSG_KEYUP_UP
-Save:node\C\study\Show_Msg_ID.h MsgId=64258, MSG_KEYUP_DOWN
-Save:node\C\study\Show_Msg_ID.h MsgId=64259,
-Save:node\C\study\Show_Msg_ID.h MsgId=57364,
+[1.14] 
 
-	
-Save:node\C\study\Show_Msg_ID.h MsgId=61474,
-Save:node\C\study\Show_Msg_ID.h MsgId=61479,
-Save:node\C\study\Show_Msg_ID.h MsgId=64283,
-		
-Save:node\C\study\Show_Msg_ID.h MsgId=65025,  MSG_KEYREPEAT_UP
-Save:node\C\study\Show_Msg_ID.h MsgId=61475,
-Save:node\C\study\Show_Msg_ID.h MsgId=64257,  MSG_KEYUP_UP
 
+[1.15] ATEST_SUPPORT
+// ATEST 默认不开, 没有项目开
+make\app_main\app_main.mk  ATEST_SUPPORT
 
 
 
+[1.16] fota----------adups
+// mk
+prj:project_{cur}.mk  ABUP_FOTA_SUPPORT_TCARD = FALSE
 
 
-MSG_APP_1, MSG_KEYDOWN_1, MsgId=64008,
+### fota--adups--107
+//
+//		==>BLOCK  128
+SPDE_PRJ\S98T_FLP_E535_31\adups_define.h
+//
+fdl_bootloader/fota_bootloader/src/tf_display.c
+//		==>adups_net_start_get_new_version()
+//		==>ADUPS_get_download_percent()  # 下载进度
+//		==>adups_patch_ratio             # 升级进度
+//		==>GetMainStates                 # state//版本号
+Third-party\adups\hal\src\adups_device.c  adups_get_device_version()
 
 
-KEY_PLAYANDSTOP
-MSG_KERNEL_START
+// addr
+Third-party\rsfota\rsupdate\src\rs_ua_porting.c  rs_fota_addr
+// 1.差分平台 > 创建项目
+// 2.编译版本 v01 v02
+// 3.制作差分包，自动部署
+//		==>BLOCK  128 (不能改)
+//		==>目标    v2
+//		==>前置    v1
+//		==>RAM    3072 (不能改)
+// 4.设备imei更新
 
+// copy NV
+make\perl_script\adups.pl  img_deltanv_src
 
-/***********************************************************************/
-[2.2] WinNote
-MS_MMI/source/mmi_app/app/fm/h/mmifm_id.def  SBD_H9_KLS_FM
-MS_MMI/source/mmi_app/app/fm/h/mmifm_id.h  SBD_H9_KLS_FM
 
+### fota
+// ==>密码
+patch:ssh\Macro_user_psw.h  __abup__
 
 
+[1.17] fota----------rs
+// mk--8910
+prj:{cfg}.cfg  FOTA_SUPPORT = REDSTONE
+// mk--8910--大内存
+prj:{cfg}.cfg  FOTA_SUPPORT_REDSTONE_FLASH_B = TRUE
+// mk--107
+prj:project_{cur}.mk  FOTA_SUPPORT = REDSTONE
+prj:project_{cur}.mk  FOTA_SUPPORT_REDSTONE_NAME_T6B = TRUE
+// mk
+prj:project_{cur}.mk  FOTA_SUPPORT = NONE
 
-//NvNote
-MS_MMI/source/mmi_app/app/fm/c/mmifm_nv.c
-MS_MMI/source/mmi_app/app/fm/h/mmifm_nv.h
 
+### fota
+// ==>密码
+patch:ssh\Macro_user_psw.h  __redstone__
 
 
-//ResNote
-MS_MMI/source/mmi_app/app/fm/h/mmifm_position.h  SBD_H9_KLS_FM
-MS_MMI/source/mmi_app/app/fm/h/fm_mdu_def.h  SBD_H9_KLS_FM
-MS_MMI/source/mmi_app/app/fm/h/mmifm_internal.h SBD_H9_KLS_FM
+### fota--8910
+// 获取型号
+Third-party\rsfota\rsdl\porting\UIS8910\src\rs_param.c  get_OEMDevice
 
+// 1、下载检测：
+// --开机一分半
+Third-party\rsfota\rsdl\porting\UIS8910\src\rs_param.c  rs_u32^rs_cb_get_first_check_cycle()
+//	return (90*1000);//量产出货阶段配置参数
 
+// --24小时周期
+Third-party\rsfota\rsdl\porting\UIS8910\src\rs_param.c  rs_u32^rs_cb_get_auto_check_cycle()
+//	return (24*60*60*1000);//量产出货阶段配置参数
 
-/***********************************************************************/
-[3.1] ToolNote
 
+// 2、安装检测：2-5点，30分钟周期，如果检测有，不继续检测
+Third-party\rsfota\rsdl\porting\UIS8910\src\rs_param.c  rs_bool^rs_sys_localtime_fit_for_install
+Third-party\rsfota\rsdl\porting\UIS8910\src\rs_param.c  INSTALL_TIME_END_CLOCK
+//	#define INSTALL_TIME_START_CLOCK  22 // 2
+//	#define INSTALL_TIME_END_CLOCK  1823  //5
+//	#define INSTALL_AUTO_CYCLE_TIME  (30*60*1000) //(2*60*60*1000) //2小时
 
 
+// 3、安装时间：检测有包后，会在2-5点，随机一个时间
 
-GUIRES_DisplayImg
-MS_MMI\source\mmi_app\common\c\mmicom_panel.c  MAINLCD_SIZE_68X96
 
+### fota--lcd
+//
+MS_Customize/source/product/config/uis8910ff_refphone/lcm_cfg_info.c  LCD_DRV_ID_NV3030B
+fdl_bootloader/fota_bootloader/src/tf_lcd/src/tf_lcmcfg.c  LCD_DRV_ID_NV3030B
+Third-party/rsfota/rsdl/porting/UIS8910/src/rs_param.c  INSTALL_TIME_START_CLOCK
+fdl_bootloader/nor_bootloader/src/fdl_main.c  flash_size
+make/fota_bootloader/fota_bootloader.mk  tft_NV3030B
+make/perl_script/UIX8910_128MBIT.xml  FOTA_BOOTLOADER
+make/perl_script/UIX8910_128MBITX64MBIT_new.xml  FOTA_BOOTLOADER
 
-MS_MMI\source\mmi_app\app\accessory\c\mmicalc_main.c 
-MS_MMI\source\mmi_app\app\accessory\h\mmicalc_export.h 
 
+###
+// 下载时显示进度
+prj:project_{cur}.mk  BM_FOTA_SHOW_PROGRESS = FALSE
 
+// 
+prj:project_{cur}.mk  SPDE_FOTA_TIP = TRUE
+// 移除进度条
+prj:project_{cur}.mk  SPDE_FOTA_REMOVE_PROGRESS = TRUE
+// 下载中用图片
+prj:project_{cur}.mk  SPDE_FOTA_TIP_USE_GRAY_IMG = TRUE
 
-MS_MMI\source\mmi_app\app\accessory\c\mmialarm.c 
-MS_MMI\source\mmi_app\app\accessory\h\mmialarm_position.h 
 
-MS_MMI\source\mmi_app\app\accessory\h\mmiacc_position.h 
+### 分区
+// --rs_fota_size, 不包括头部
+//flash_size=0x01000000
+//sect_size=0x00010000
+//ps_addr=0x60020000
+//rs_fota_addr=0x60630000
+//rs_fota_size=0x00100000
+//fota_bootloader_addr=0x60730000
+//cp_addr=0x60B30000
+//cp_size=0x00300000
+//mmi_res=0x60760000
+//mmi_res_size=0x003D0000
 
 
-MS_MMI\source\mmi_app\app\phone\c\mmiphone_charge.c 
 
-//other tool:
-Save:node\C\study\Macro_doc_6531E.h FmNote
-Save:node\C\study\Macro_doc_6531E.h AlarmNote
 
-
-
-
-/***********************************************************************/
-[3.2] FmNote
-
-
-
-//opt
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^^HandleFmChannelOptionMsg
-//opt--action
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  void^HandleFMAction
-	
-// 所有set channel
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMIFM_SetCurrrentChannel
-
-
-
-//set
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleCustomSettingWinMsg
-//set edit
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleCustomEditBoxWinMsg
-// file: Music/FM Radio clips/Radio___J-001.wav
-
-
-
-
-//Display:
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  void^^DisplayMainWindow
-//Record
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleFmRecordMsg
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleFMCustomRecordAction
-//Record test
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleFMCustomRecordActionTest
-	
-
-	
-//新功能:
-//struct
-//MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  case^MMIFM_CUSTOM_ONOFF
-//MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  uint32^s_fm_custom_channel_play_opt_item
-//channel list
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleCustomChannelListWinMsg
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  void^ReadCustomOpenChannelsListBox
-//channel list sel
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleCustomChannelSelectListWinMsg
-//channel opt
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleFmCustomChannelOptionMsg
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  void^CreateCustomChannelOptionMenu
-//channel Action
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  void^HandleFMCustomAction
-	
-
-//旧功能:
-//option
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleFmMainOptionMsg
-//channel list
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleChannelListWinMsg
-//Handle
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMI_RESULT_E^HandleFmMainMsg
-//  Headset
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  MMIFM_HandleHeadsetButtonAction
-MS_MMI\source\mmi_app\app\fm\c\mmifm_wintab.c  void^MMIFM_HandleHeadsetAction
-
-
-
-/***********************************************************************/
-[3.3] AlarmNote
-alarm
-
-
-
-//alarm
-MS_MMI\source\mmi_app\app\accessory\c\mmialarm.c WINDOW_TABLE(^ALARM_EDITWIN_TAB )
-MS_MMI\source\mmi_app\app\accessory\c\mmialarm.c MMI_RESULT_E^^HandleAlarmEditWinMsg
-MS_MMI\source\mmi_app\app\accessory\h\mmialarm_position.h
-//新功能:
-MS_MMI\source\mmi_app\app\accessory\c\mmialarm.c MMI_RESULT_E^HandleAutoPowerOnOffWinMsg
-
-
-//BUG:
-// 未录: 按键音 短信 开关机
-// edit->time->am->mid key
-// btn_ring 不滚动
-// 闹钟ring 外放
-// 状态条背景 同主题
-// tone h-2;vol+2;up-2;
-// 重新打开弹窗
-// 按键音与来电铃声重叠
-//	sel ring -》red.
-// tone->option
-
-MS_MMI\source\mmi_app\app\accessory\c\mmialarm.c 4788
-OpenAlarmAliveWin
-//过期事件
-OpenPastSchEventWin
-
-
-
-//test
-OpenAlarmAliveWin
-HandleEventAliveWinMsg
-
-//alarm
-MS_MMI\source\mmi_app\app\accessory\c\mmialarm.c WINDOW_TABLE(^ALARM_EDITWIN_TAB )
-MS_MMI\source\mmi_app\app\accessory\c\mmialarm.c MMI_RESULT_E^^HandleAlarmEditWinMsg
-MS_MMI\source\mmi_app\app\accessory\h\mmialarm_position.h
-
-
-/***********************************************************************/
-[3.4] CalendarNote
-calendar
-
-//未完成功能: 
-//日期跳转(有个弹窗多选输入法), 日期范围提示, 1-9快捷键日期跳转, 输入法相关(添加符号风格, 切换后还原默认输入法), 几个控件问题
-
-//main
-MS_MMI\source\mmi_app\app\accessory\c\mmicalendar_main.c MMI_RESULT_E^HandleCalendarWinMsg
-//opt
-MS_MMI\source\mmi_app\app\accessory\c\mmicalendar_main.c MMI_RESULT_E^HandleCalendarOptionWinMsg
-	MMK_CreateWin((uint32 *)CALENDAR_OPTION_WIN_TAB, (ADD_DATA)is_weekly);
-//go to
-MS_MMI\source\mmi_app\app\accessory\c\mmicalendar_main.c MMIAPICALEND_OpenCalendarQueryByDate
-//list-opt
-MMK_CreateWin((uint32 *)SCH_LIST_OPTION_WIN_TAB, (ADD_DATA)detail_win_param);
-
-//draw:
-//DrawMonthCalendar
-	//DrawLunarDateOrWeek
-	DrawFocusDates
-		DrawMonthDate //画当天, 或一月30天
-	DrawMonthTitle( calendar_ctrl_ptr );
-		DrawTitleBtn
-	DrawMonthDates( calendar_ctrl_ptr );
-		DrawGrayMonthDate( calendar_ctrl_ptr ); //两边不画
-	DrawWeeks
-	DrawBackground
-		DrawWeekBg
-
-	GetDateRect
-		DrawSchdule
-
-MS_MMI\source\mmi_app\app\accessory\c\mmicalendar_main.c
-MS_MMI\source\mmi_app\app\accessory\c\mmischedule.c  12769 ++  list
-MS_MMI\source\mmi_app\app\accessory\c\mmischedule.c  12445 ++  edit
-
-
-/***********************************************************************/
-[3.5] EnvNote
-Env
-
-// Env 改不动的问题: 
-//	 按键音录制的有杂音; 半透明;长按上键手电筒
-
-//不严重问题:
-//	 分卡 SBD_H9_KLS_PROFILE_SIM_NV
-//	 RES_ADD_STRING(TXT_ALARM_PLAY_IN_SLIENT, "Play sound in Silent profile?")
-//	   offline---功能待改 
-//	 拨号音: 音量实际调不了; 
-//			 beep菜单中, 按键音、beep声都没反应;
-//			 拨号音按键音共用, 一关都关, 测试不了未改;
-
-
-//其他待改+BUG:
-// key_wav 最大5格;
-// call ring.mp3 都大一倍
-// vol play--上下键移动了背景;
-
-//功能问题:
-//	   s---没有key tone+拨号间--功能待改
-//	   menu--beep--少2响 --------------------------	 #####	  ++++++
-// 最后3项有waiting...
-//	 检查各种key tone
-
-
-
-// 实际来电铃声  ---------------- 	++++++
-MMISRVMGR_Request
-
-//type new
-MS_MMI\source\mmi_app\app\envset\c\mmienvset.c 6220
-MS_MMI\source\mmi_app\app\envset\c\mmienvset.c 6353
-
-
-//ring--key--4-1-N 才能播放
-MS_MMI\source\mmi_app\app\setting\c\mmiset_ring.c 1736 PlayRing
-MS_MMI\source\mmi_app\app\setting\c\mmiset_ring.c 5377 MMIAPISET_PreviewRing
-MS_MMI\source\mmi_app\app\setting\c\mmiset_ring.c 1391 PlayFixedRing
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 4102	Save
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 3993	换TYPE
-//	MMIAPISET_SetCurRingType
-MS_MMI\source\mmi_app\app\envset\c\mmienvset.c 6456   KEY_ID
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 6432	WIN_ID
-//	ring id:
-MS_MMI\source\mmi_app\app\envset\c\mmienvset.c 5084    GetRingID
-
-
-
-//vib--one
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 1403	  --vib
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 3915	  --timer
-
-
-//env main
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c  1395
-//vib list
-MS_MMI\source\mmi_app\app\envset\c\mmienvset.c 6398
-	
-
-
-//play--type
-MMIENVSET_PlayRingByListItem
-//play--vib
-MMIENVSET_PlayMsgAlarmRingByListItem
-//play--tone
-MMIAPISET_PlayCallRingByVol
-
-
-//vol--alert
-MS_MMI\source\mmi_app\app\setting\c\mmiset_wintab.c 822
-MS_MMI\source\mmi_app\app\setting\c\mmiset_wintab.c 8886
-
-//call type
-//msg type
-//keypad 
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 3695
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 3966 
-
-
-//call ring1
-MS_MMI\source\mmi_app\app\setting\c\mmiset_wintab.c 608
-//call ring2 --ring
-MS_MMI\source\mmi_app\app\setting\c\mmiset_wintab.c 924
-MS_MMI\source\mmi_app\app\setting\c\mmiset_wintab.c 988 ++vol
-
-
-//msg ring
-MS_MMI\source\mmi_app\app\setting\c\mmiset_wintab.c 322
-MS_MMI\source\mmi_app\app\setting\c\mmiset_wintab.c 812
-
-//keypad 
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 4148
-	
-
-//vol
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 4909
-
-MMK_CreateWin
-
-
-
-// bak--不用
-//env main
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c MMIENVSET_MAIN_MENU_WIN_TAB
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 1910 handle
-
-
-//opt
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 1400
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 1480
-
-
-//	set edit
-MS_MMI\source\mmi_app\app\envset\c\mmienvset_wintab.c 2862
-
-
-//	nv
-MS_MMI\source\mmi_app\app\envset\c\mmienvset.c 6730
-// item
-MS_MMI\source\mmi_app\app\envset\c\mmienvset.c 3300
-// def nv
-MS_MMI\source\mmi_app\app\envset\c\mmienvset.c 1680
-
-
-project\H9_KLS_F4\resource\mmienvset_internal.h MMISET_CALL_RING
-project\H9_KLS_F4\resource\mmienvset_internal.h MMISET_MSG_RING
-project\H9_KLS_F4\resource\mmienvset_internal.h MMISET_OTHER_RING1
-
-/***********************************************************************/
-[3.6] RecNote
-Rec
-
-
-
-//time
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c IMAGE_RECORD_NUMBER_0  
-
-// bg
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c IMAGE_RECORD_NUMBER_BG			  
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c IMAGE_COMMON_BG			
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c IMAGE_RECORD_RECORD_PDA_BG   
-// bg-w
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c IMAGE_RECORD_RECORD_BG   
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c IMAGE_RECORD_PLAY_BK_BG  
-// anim
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c IMAGE_RECORD_BG_ANIM_FRAME_1		  
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c IMAGE_RECORD_PLAY_BTN_UNSEL  
-
-
-//draw
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 2137 soft
-//status
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 954	web
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 2994	canel + Alert
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 4100	stop
-//重新播放+
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 4088	ok
-//canel + query
-//canel + close
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 995
-//red + query
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 1032
-//timeout 
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 1067
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 3567
-
-
-
-//main
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 867
-//opt
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 3622
-//set
-MS_MMI\source\mmi_app\app\record\c\mmirecord_wintab.c 6842
-//file
-MS_MMI\source\mmi_app\app\record\c\mmirecord.c 2084  ++ path
-
-//save
-MS_MMI\source\mmi_app\app\record\c\mmirecord.c 865
-
-
-
-
-
-
-
+[1.18] 
 
 
 

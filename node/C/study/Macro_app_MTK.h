@@ -859,6 +859,11 @@ pb:PhoneBookSrc/PhoneBookEditor.c mmi_phb_entry_view_contact_entry_inline_tab_0
 srv_phb_get_image
 srv_phb_oplib_get_contact_info
 
+// enter
+//		==>mmi_phb_idle_launch
+//		====>mmi_phb_launch_init
+//		======>mmi_phb_launch_pre_entry
+//		========>mmi_phb_launch_entry
 // pb--option
 plutommi\mmi\PhoneBook\PhoneBookRes\phonebook.res  MITEM101_PBOOK_VIEW_OPTIONS
 // pb--option--hide
