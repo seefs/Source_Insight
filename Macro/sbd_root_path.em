@@ -7,7 +7,11 @@ macro getRootPath(0)
 	if(curVer == nil)
 	{
 		curVer = GetEnv("SI_VER")
-		if(curVer != "WIN10" && curVer != "WIN7")
+		if(curVer == "" || curVer == nil)
+		{
+			curVer = "WIN7"
+		}
+		else if(curVer != "WIN10" && curVer != "WIN7")
 		{
 			if(!IsExistFile("\\\\tsclient\\D\\save\\SI\\Set\\Macro_Set.h"))
 			{
