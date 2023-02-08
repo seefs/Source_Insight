@@ -86,9 +86,22 @@ macro getBasePath(hbuf)
 	n = getBaseType(proPath)
 	type = n/10 *10
 	
+	//test: 0.open, 1.cur, 2,close.
+	TestMsg("--Trans--" # CharFromKey(13)
+		  # "--n:" #  n # CharFromKey(13)
+		  # "--type:" #  type # CharFromKey(13)
+		  # "--proPath:" #  proPath # CharFromKey(13)
+		  # "--Same:" #  getBaseOther(type, "Same") # CharFromKey(13)
+			, 2)
+
 	if(type == 90)
 	{
 		return getSavePath(0)
+	}
+	else if(getBaseOther(type, "Same")!="")
+	{
+		// ¹²Ïí»ù´¡Ä¿Â¼
+		return SearchPathFromNum(nil, type)
 	}
 	else
 	{

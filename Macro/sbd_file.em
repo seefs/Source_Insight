@@ -80,6 +80,18 @@ macro GetPubPathBuf(hbuf)
 		setBuf = OpenCache(SetName)
 		return setBuf
 	}
+	else // "hexo"
+	{
+		if (nKey != nil)
+		{
+			SetName = getSetPath(0) # "\\Macro_Set_Path_" # nKey # ".h"
+			if (IsExistFile(SetName))
+			{
+				setBuf = OpenCache(SetName)
+				return setBuf
+			}
+		}
+	}
 	
 	msg("cfg null: " # CharFromKey(13)
 	   # "baseName: " # baseName # CharFromKey(13)
@@ -225,6 +237,12 @@ macro IsScriptFile(hbuf)
 	//# as Comment
 	fName = GetFileName(GetBufName(hbuf))
 	return IsFileType(fName, ".py") || IsFileType(fName, ".make") || IsFileType(fName, ".properties")
+}
+
+macro IsMdFile(hbuf)
+{
+	fName = GetFileName(GetBufName(hbuf))
+	return IsFileType(fName, ".md")
 }
 
 macro IsNoteFile(hbuf)
@@ -827,6 +845,12 @@ macro GetTransFileName(hbuf, fName, cNum)
 	//   F11,    cNum=16 cmd_w python_w 编译指令是相对目录(不用完整路径); 只替换"Save:"、"^"
 	//   F11,    cNum=17 不替换"/",如 git
 	//   F11,    cNum=4  cmd_s 编译指令; 屏蔽设置路径(不用basePath设置); 
+
+	//test: 0.open, 1.cur, 2,close.
+	TestMsg("--Trans--" # CharFromKey(13)
+		  # "--fName--" # CharFromKey(13) # fName # CharFromKey(13)
+		  # "--cNum--" # CharFromKey(13) # cNum # CharFromKey(13)
+			, 2)
 	
 	//路径+文件名替换:
 	bPath = ""

@@ -389,7 +389,7 @@ macro CtrlR()
 	prompt = 100
 	//a.marco file
 	//b.normal file
-	if(IsNoteFile(hbuf))
+	if(IsNoteFile(hbuf) || IsMdFile(hbuf))
 		prompt = 0
 	else if(ReadMode(getContentsRow(0))>0)
 		prompt = 1

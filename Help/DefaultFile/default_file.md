@@ -9,7 +9,7 @@ tags:
 categories: 
 - 天书
 nav: 天书
-image: 
+image: post/link/icon.png
 ---
 
 

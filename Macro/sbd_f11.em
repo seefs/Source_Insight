@@ -301,6 +301,17 @@ macro NoteHander(hbuf, cNum, prompt)
 	cur_line = GetBufLine(hbuf, sel.lnFirst )
 	cur_row = sel.lnFirst
 
+	// .md格式注释
+	if(LFindString(cur_line, "[//]: #") != "X")
+	{
+		cur_sel_left  = FindString( cur_line, "\(" )
+		cur_sel_right = FindString( cur_line, "\)" )
+		if(cur_sel_left != "X" && cur_sel_right != "X")
+		{
+			cur_line = strmid(cur_line, cur_sel_left + 1, cur_sel_right)
+		}
+	}
+	
 	//删除行首空格
 	firstS = StartWS(cur_line, 0 )
 	if (firstS == "X")
@@ -602,6 +613,7 @@ macro NoteHander(hbuf, cNum, prompt)
 	//test: 0.open, 1.cur, 2,close.
 	TestMsg("==Note==" # CharFromKey(13)
 		  # "isCmd" # CharFromKey(13) # "--" # isCmd # "--" # CharFromKey(13)
+		  # "prompt" # CharFromKey(13) # "--" # prompt # "--" # CharFromKey(13)
 		  # "noteCmd" # CharFromKey(13) # "--" # noteCmd # "--" # CharFromKey(13)
 		  # "curPath" # CharFromKey(13) # "--" # curPath # "--" # CharFromKey(13)
 		  # "noteWord" # CharFromKey(13) # "--" # noteWord # "--" # CharFromKey(13)
