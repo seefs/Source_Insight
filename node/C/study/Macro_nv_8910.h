@@ -1,21 +1,21 @@
 
 //目录
-Save:node\C\study\Macro_nv_8910.h \[1.1\] 充电------------电流
-Save:node\C\study\Macro_nv_8910.h \[1.2\] 充电/放电-------电压(修改放电n%)
-Save:node\C\study\Macro_nv_8910.h \[1.3\] 低电电压
-Save:node\C\study\Macro_nv_8910.h \[1.4\] charge_end_voltage 高压电池
+Save:node\C\study\Macro_nv_8910.h \[1.1\] charge---------充电相关
+Save:node\C\study\Macro_nv_8910.h \[1.2\] sim------------sim相关
+Save:node\C\study\Macro_nv_8910.h \[1.3\] audio----------audio相关
+Save:node\C\study\Macro_nv_8910.h \[1.4\] mmi------------common相关
 Save:node\C\study\Macro_nv_8910.h \[1.5\] PA
-Save:node\C\study\Macro_nv_8910.h \[1.6\] 2IN1,3IN1
-Save:node\C\study\Macro_nv_8910.h \[1.7\] 充电/放电-------107
+Save:node\C\study\Macro_nv_8910.h \[1.6\] 
+Save:node\C\study\Macro_nv_8910.h \[1.7\] 
 Save:node\C\study\Macro_nv_8910.h \[1.8\] nv define
 Save:node\C\study\Macro_nv_8910.h \[1.9\] nv test
-Save:node\C\study\Macro_nv_8910.h \[1.10\] IMEI
-Save:node\C\study\Macro_nv_8910.h \[1.11\] bat_capacity
+Save:node\C\study\Macro_nv_8910.h \[1.10\] 
+Save:node\C\study\Macro_nv_8910.h \[1.11\] 
 Save:node\C\study\Macro_nv_8910.h \[1.12\] custom---------链路
 Save:node\C\study\Macro_nv_8910.h \[1.13\] nv_build
 Save:node\C\study\Macro_nv_8910.h \[1.14\] nand/nor
 Save:node\C\study\Macro_nv_8910.h \[1.15\] test
-Save:node\C\study\Macro_nv_8910.h \[1.16\] audio_calib_VQE---
+Save:node\C\study\Macro_nv_8910.h \[1.16\] 
 Save:node\C\study\Macro_nv_8910.h \[1.17\] hv_nv
 Save:node\C\study\Macro_nv_8910.h \[1.18\] bt_nv
 Save:node\C\study\Macro_nv_8910.h \[1.19\] env_nv
@@ -23,89 +23,70 @@ Save:node\C\study\Macro_nv_8910.h \[1.20\] simulator
 Save:node\C\study\Macro_nv_8910.h \[1.21\] replace_nv--------
 Save:node\C\study\Macro_nv_8910.h \[1.22\] apn
 Save:node\C\study\Macro_nv_8910.h \[1.23\] _readme
-Save:node\C\study\Macro_nv_8910.h \[1.24\] 
+Save:node\C\study\Macro_nv_8910.h \[1.24\] thir_nv
 Save:node\C\study\Macro_nv_8910.h \[1.25\] 
+Save:node\C\study\Macro_nv_8910.h \[1.26\] 
 
 Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 
 
-[1.1] 充电--电流
-// 标准电流
-nv:ProductionParam_uix8910.nvm  standard_current_type
-//    ITEM_CONTENT = 0x1F4   // 500
-
-// 非标准电流
-nv:ProductionParam_uix8910.nvm  nonstandard_current_type
-//    ITEM_CONTENT = 0x1C2   // 450
-
-// usb口电流
-nv:ProductionParam_uix8910.nvm  usb_current_type
-//    ITEM_CONTENT = 0x1C2   // 450
-
-// num:
-//	450	1C2
-//	500	1F4
-//	600	258
-//	700	2BC
-//	630	276
+[1.1] 充电
+// 充电相关
+Save:node\C\study\Macro_nv_charge8910.h
 
 
-
-[1.2] 充电/放电电压
-// 充电截止电压
-nv:ProductionParam_uix8910.nvm  charge_end_voltage
-//    ITEM_CONTENT = 0x1112   // 4.37V
-
-// recharge充电
-nv:ProductionParam_uix8910.nvm  recharge_voltage
-//    ITEM_CONTENT = 0x10CC   // 4.30V
-
-// 充电safe电压
-nv:ProductionParam_uix8910.nvm  bat_safety_vol
-//    ITEM_CONTENT = 0x1112   // 4.37V
+[1.2] sim
+// sim相关
+Save:node\C\study\Macro_nv_sim8910.h  __IMEI__
+Save:node\C\study\Macro_nv_sim8910.h  __ECC__
 
 
-//# 充电时 电池%的换算 是依据chg_bat_tab
-//#   8910没有用到chg_bat_tab
-//nv:ProductionParam_uix8910.nvm  ^chg_bat_tab[0]
-//    ITEM_CONTENT = 0x10F2   // 4.338V
-
-// 放电时 电池%的换算 是依据dischg_bat_tab
-nv:ProductionParam_uix8910.nvm  dischg_bat_tab[0]
-//    ITEM_CONTENT = 0x10F2   // 4.338V
+### sim lock
+// sim lock
+common\export\inc\nv_item_id.h  NV_SIMLOCK_CFG_ID   5
+// cfg
+Save:node\C\study\Macro_nv_simlock107.h
 
 
+[1.3] audio
+// audio相关
+Save:node\C\study\Macro_nv_audio8910.h
 
 
+[1.4] mmi
+// common--IMSI
+source:mmi_app\common\h\mmi_nv.h MMINV_PHONE_IMSI
+// IMSI--指令
+//		==>HandleSimReadyInd
+//		====>StoreSimReadyStatus  # 只是保存，没其他地方用
+app:phone\c\mmiphone.c  MMINV_PHONE_IMSI
+// 显示 IMSI--未使用
+//		==>SpdeShowServingCellInfo
+//		====>ShowServingUECapInfo / ShowServingCellInfo
+app:eng\c\mmieng_win.c  pNetInfo.nwCapabilityLte
 
 
-[1.3] 低电电压
-// warn
-nv:ProductionParam_uix8910.nvm  voltage_warning
-//    ITEM_CONTENT = 0xE2D   // 3629
+### IMSI
+// 没找到 id=3200 的nv
+PS\nv\internal\ps\common\NV_PARAM_TYPE_IMSI[1].xml  NV_PARAM_TYPE_IMSI1 id="2004"
 
-// shutdown
-nv:ProductionParam_uix8910.nvm  voltage_shutdown
-//    ITEM_CONTENT = 0xCE4   // 3300
+### 定义 MMI_MODULE_COMMON
+//		==>MACRO_RES_PRJ_TYPE
+//		====>MACRO_RES_PRJ_MODULE    # 保留宏定义
+//		======>RES_ADD_MODULE        # id=0
+source:mmi_app\kernel\h\mmi_module.h  MMI_MODULE_COMMON
 
-//
-// 0%
-nv:ProductionParam_uix8910.nvm  dischg_bat_tab\[11\]
-//    ITEM_CONTENT = 0xD3E
-
-
-
-[1.4] charge_end_voltage 高压电池
-//
-//	测试了3个版本
-//	charge_end_voltage设置4.29,  实际最大充电电压能到4.20
-//	charge_end_voltage设置4.37,  实际最大充电电压能到4.28
-//	charge_end_voltage设置4.434, 实际最大充电电压能到4.342
-
-// ovp 6.5V
-nv:ProductionParam_uix8910.nvm  ovp
-
+### nv list
+//		==>MMI_RegModuleNv
+//		====>.s_mmi_nv_len
+MS_MMI_Main\source\mmi_app\kernel\c\mmi_modu_main.c  MMI_RegModuleNv
+//		==>MMI_WriteNVItem
+//		====>.true_item_id           # item_top项
+//		======>MMI_UINV_USER_BASE    # 1个
+// 最大项 500+2400=2900?
+common\export\inc\nv_item_id.h  MN_NV_TD_USER_BASE   3200 ~ 3200+2800  # 107
+common\export\inc\nv_item_id.h  MN_NV_USER_BASE      500  ~            # 8910
 
 
 [1.5] PA
@@ -134,94 +115,11 @@ nv:audio_calib_VQE.nvm  audio_calib
 
 
 
-[1.6] 2IN1,3IN1
-// select prj--8910
-nv1Path = SPDE_PRJ\K220U_HYBL_H661A\nvitem
-nv2Path = SPDE_PRJ\K220U_HYBL_H660A_HTX_LTC\nvitem
-nv3Path = SPDE_PRJ\K220U_HYBL_H660A\nvitem
-nv:\\
-
-// 3IN1
-SPDE_PRJ\K220U_HYBL_H660A\project_UIS8910_ROM_16MB_DS_USER.mk 3IN1
-// 
-SPDE_PRJ\K220U_SHY_517T\project_UIS8910_ROM_16MB_DS_USER.mk 3IN1
+[1.6] 
 
 
 
-
-### 单独听筒
-SPDE_PRJ/K220U_HYBL_H661A/project_UIS8910_240x320BAR_16MB_DS_USER.mk  3IN1
-//
-prj:project_{cur}.mk   AUDIO_AMP_CLASSK_3IN1_SUPPORT = FALSE  #关
-prj:project_{cur}.mk   AUDIO_AMP_CLASSK_SUPPORT = TRUE
-// 听筒声音太小
-prj:project_{cur}.mk   ENG_EX_MIC_TEST_SUPPORT = TRUE # 回声测试从喇叭出来
-// 听筒调音量，一般不开
-prj:project_{cur}.mk   AUDIO_AMP_CLASSK_SUPPORT  = TRUE
-prj:project_{cur}.mk   AUDIO_AMP_CLASSK_CALL_MODE_SUPPORT = TRUE
-prj:project_{cur}.mk   AUDIO_AMP_EXT_PULL_2_TIME = TRUE
-
-
-### 喇叭听筒二合一
-SPDE_PRJ/K220U_HYBL_H660A_HTX_LTC/project_UIS8910_ROM_16MB_DS_USER.mk 3IN1
-//
-prj:project_{cur}.mk   AUDIO_AMP_CLASSK_3IN1_SUPPORT = TRUE
-prj:project_{cur}.mk   AUDIO_AMP_CLASSK_SUPPORT = TRUE
-
-//
-hw:
-nv:audio_calib_VQE.nvm  65
-HW:{project}\audio_calib_VQE.nvm  65
-//
-nv1:audio_calib_VQE.nvm  65
-nv2:audio_calib_VQE.nvm  65
-nv3:audio_calib_VQE.nvm  65
-nv:audio_calib_VQE.nvm  65
-// 2IN1,3IN1
-//    ITEM_CONTENT = 0x2
-// 独立
-//    ITEM_CONTENT = 0x0
-//
-//reserved为0表示使用内部PA或外部PA接在SPK或RCV上，没有听筒喇叭二合一或三合一
-//
-//请尝试修改audio_calib_VQE.nvm中的
-//  audio_calib_param\CALIB_AUD_ALG\VoiceCallNb[0]\reserved的值来控制
-//reserved为0表示原始接法，没有使用外部PA，没有听筒喇叭二合一或三合一
-//reserved为1表示使用外部PA，外部PA接在HP_R上，没有听筒喇叭二合一或三合一
-//reserved为2表示使用内部PA，有听筒喇叭二合一或三合一
-//reserved为3表示使用外部PA，外部PA接在HP_R上，有听筒喇叭二合一或三合一
-
-
-
-[1.7] 充电/放电-------107
-//  production_param
-prj:RDNV\production_param_T.xml
-// OCV 
-
-// 充电截止电压
-prj:RDNV\
-prj:RDNV\production_param_T.xml  charge_end_current
-// 放电时
-prj:RDNV\production_param_T.xml  dischg_bat_tab
-
-
-### __charge__
-// 107
-// 充电满条件:
-// Vbat>-VChargeEnd and Current<IChargeEnd
-//		==>CHGMNG_CHARGING:
-//		====>.module_state.bat_statistic_vol  //
-//		====>.module_state.charging_current   //85mA
-//		==>init
-//		====>CHG_PHY_SetChargeEndVolt         //范围4.2V~4.5V
-chip_drv\chip_module\charge\charge.c  _CHGMNG_VoltagetoPercentum
-//   CHGMNG_STOP_VPROG  //85mA退出
-
-
-// 8910
-//ovp
-chip_drv\chip_module\charge\uix8910\charge_uix8910.c  1732
-//		====>.PULSE_PERIOD  //10次X(10秒~50秒)充电结束
+[1.7] 
 
 
 [1.8] nv define
@@ -272,25 +170,13 @@ nv:ProductionParam_uix8910.nvm  e_guarantee_card
 
 
 
-[1.10] IMEI
-// nv id-imei
-common\export\inc\nv_item_id.h  NV_IMEI   5
-common\export\inc\nv_item_id.h  NV_IMEI1  377
-common\export\inc\nv_item_id.h  NV_IMEI2  390
-common\export\inc\nv_item_id.h  NV_IMEI3
-// 修改IMEI1~IMEI4
-common\nv_parameters\nv_type\nv_type_uix8910.nvm
-build\..\nv\nvitem\nv_type_uix8910.nvm
-// 3A25720371833604
-//
-// A352273017386340
+[1.10] 
 
 
 
 
-[1.11] bat_capacity
-// bat
-chip_drv\chip_module\charge\uix8910\charge_uix8910.c  _CHGMNG_VoltagetoPercentum
+
+[1.11] 
 
 
 
@@ -412,31 +298,7 @@ app:eng\c\mmieng_main.c  MMIENG_NV_USB_TEST_SET_SETTING
 
 
 
-[1.16] audio_calib_VQE
-//
-nv:\
-
-
-### 1. 8910 实测是这个
-// Headset 耳机
-nv:audio_sc6531efm_AEC.nvm  32
-
-// Handset 听筒
-nv:audio_sc6531efm_AEC.nvm  3967
-
-// Handsfree 免提
-nv:audio_sc6531efm_AEC.nvm  7902
-
-### 2.
-// Headset 耳机
-nv:audio_arm_6531efm.nvm  32
-
-// Handset 听筒
-nv:audio_arm_6531efm.nvm  4333
-
-// Handsfree 免提
-nv:audio_arm_6531efm.nvm  6476
-
+[1.16] 
 
 
 
@@ -499,7 +361,7 @@ app:bt\c\mmibt_func.c  MMINV_BT_FILE_LOCATION
 //		==>sys:
 //		====>MMIAPISET_AllInit
 //		======>MMISET_EnvSetInit
-//		========>前模式: 普通环境
+//		========>前模式: 普通环境                           # 全局env
 //		========>活动模式: 普通环境
 //		========>当前模式: 前模式 或 活动模式
 //		========>静音状态: 否
@@ -520,11 +382,24 @@ app:bt\c\mmibt_func.c  MMINV_BT_FILE_LOCATION
 //		====>MMIENVSET_GetEnvRealIndex
 //		====>MMIENVSET_CreateMoreRingFile
 //		====>MMIAPIENVSET_ResetActModeOtherRingSet   # 恢复部分默认值
+//		==>switch:
+//		====>GetEnvSetOptValue
+//		======>GetModeValue
+//		====>HandleEnvSetMainMenuWindow
+//		======>MMIENVSET_SetCurModeId((uint8)real_id);
+//		======>envset_mode = MMIENVSET_GetCurModeId();
+//		========>MMIAPIENVSET_ActiveMode(envset_mode);
+//		========>MMIENVSET_SetPreActiveMode(active_mode_id);   
+//		==========>SetActiveModeId
 //		==>bt:
 //		====>MMIBT_OpenHeadsetCnf
 //		======>MMIAPIENVSET_SetBluetoothMode();
 //		====>MMIBT_CloseHeadsetCnf
 //		======>MMIAPIENVSET_UnSetBluetoothMode();
+
+// NV可能是这个
+rdnv:\
+rdnv:NV_PARAM_TYPE_SIM_CFG[1].xml  profile_download_bytes
 
 
 
@@ -554,11 +429,12 @@ HWNV:\
 
 
 [1.22] apn
-//
-Save:node\C\study\Macro_doc_8910.h  __8910_apn__
-Save:node\C\study\Macro_doc_8910.h  __107_apn__
-// 107 apn
+// apn
+Save:node\C\study\
+Save:node\C\study\Macro_res_8910.h  __8910_apn__
+Save:node\C\study\Macro_res_8910.h  __107_apn__
 Save:node\C\study\Macro_doc_apn107.h
+Save:node\C\study\Macro_doc_apn8910.h
 // t6b
 //1. 滑动卡顿（T6-B内单已经解决）
 //2. 台灣大物聯網卡無法上網使用（APN:twm.iot） 
@@ -569,11 +445,15 @@ Save:node\C\study\Macro_doc_apn107.h
 _readme.txt  UMS9117_NEW
 
 
-[1.24] 
+[1.24] thir_nv
+// 支付宝
+make\\perl_script\\UMS9117.xml  Ali_DATA
+common\export\inc\nv_item_id.h  Ali_DATA
 
 
 [1.25] 
 
 
+[1.26] 
 
 

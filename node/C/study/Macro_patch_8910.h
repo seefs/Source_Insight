@@ -151,8 +151,31 @@ common:h/mmi_appmsg.h  FILE_LOG_SUPPORT
 //void Trace_Log_Buf_Print(const char *pszFmt, ...)
 //	Trace_Log_Buf_Print("MMIBT_A2DPCallBackFunc msg_id=%x",  pMsg->msg_id);
 
+### 有些地方不能加log(未完全开机)
+
+### 替换
+// --替换
+//		SCI_TRACE_ID(TRACE_TOOL_CONVERT,xxx,(uint8*)"");
+//		SCI_TRACE_ID(TRACE_TOOL_CONVERT,xxx,(uint8*)"ddd",enqueued, store, count);
+//		Trace_Log_Buf_Print(xxx);
+// --UE中
+//		From: SCI_TRACE_ID\(.*,(.*),(.*)\);
+//		TO  : Trace_Log_Buf_Print(\1);
+// --SI中
+//		From: SCI_TRACE_ID(.*,\(.*\),\((uint8\*)""\));
+//		TO  : Trace_Log_Buf_Print(\1);
+//		From: SCI_TRACE_ID(.*,\(.*\),\((uint8\*)".*"\),\(.*\));
+//		TO  : Trace_Log_Buf_Print(\1, \3);
+//		From: SCI_TRACE_ID(.*,\(.*\),\(.*\));
+//		TO  : Trace_Log_Buf_Print(\1);
+
+
+
+### 其他
 // watch--usb mode
 Save:node\C\study\Macro_app_8910.h  __UsbMode__
+// 通配符替换
+Save:node\ToolsMsg\Macro_SI.h  __replace__
 
 
 [1.4] SALES_TRACKER

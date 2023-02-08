@@ -27,21 +27,16 @@ Save:node\Simple_CTRL_K.h unfinished:
 //
 patch:...
 --对比当前项目文件
-
-//
-F2--在note中打开；用 f7-f2打开当前
-
-//
 f7--c--对比补丁中的文件，自动分类
 
+//
+exist_file.pl
 
-// c,多选？冲突...
-make {cur} GSM new
-make {cur} GSM new
+
 //
-mk-->ctrl+D, F12->lcd info
-//
-加入指定项目文件--->si
+file 604 word, 从604行开始搜索
+
+F5,note跳mk,其他跳patch
 
 //
 ctrl+R, 空行默认跳:mk--_T5

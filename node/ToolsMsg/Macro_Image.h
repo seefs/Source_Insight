@@ -1,13 +1,8 @@
 
-基础路径设置:
-//basePath = 
-
-/***********************************************************************/
-
-//目录[Num][Ca]:
+//目录
 // 1. 
-Save:node\ToolsMsg\Macro_Image.h \[1.1\] coreldraw 修改移动步长
-Save:node\ToolsMsg\Macro_Image.h \[1.2\] 
+Save:node\ToolsMsg\Macro_Image.h \[1.1\] coreldraw
+Save:node\ToolsMsg\Macro_Image.h \[1.2\] mv
 Save:node\ToolsMsg\Macro_Image.h \[1.3\] 
 Save:node\ToolsMsg\Macro_Image.h \[1.4\] 
 Save:node\ToolsMsg\Macro_Image.h \[1.5\] 
@@ -19,7 +14,7 @@ Save:node\ToolsMsg\Macro_Image.h \[1.10\]
 Save:node\ToolsMsg\Macro_Image.h \[1.11\] 
 Save:node\ToolsMsg\Macro_Image.h \[1.12\] 
 //
-Save:node\ToolsMsg\Macro_Image.h \[2.1\] 
+Save:node\ToolsMsg\Macro_Image.h \[2.1\] mp3
 Save:node\ToolsMsg\Macro_Image.h \[2.2\] 
 Save:node\ToolsMsg\Macro_Image.h \[2.3\] 
 Save:node\ToolsMsg\Macro_Image.h \[2.4\] 
@@ -37,11 +32,19 @@ Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 
 
-[1.1] coreldraw 修改移动步长
+[1.1] coreldraw
+###  修改移动步长
 
 
+### 激活
+C:\Documents and Settings\All Users\Application Data\Corel\CorelDRAW Graphics Suite X5
+DR15.dta
 
-[1.2] 
+
+[1.2] mv
+//	MAV剪切
+//	DirectWAVMP3Splitter
+
 
 
 
@@ -109,7 +112,10 @@ Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 
 
-[2.1] 
+[2.1] mp3
+//	HA_GoldWaveHZ
+//	压缩：
+//	保存->格式
 
 
 [2.2] 

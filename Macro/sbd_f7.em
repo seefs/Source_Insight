@@ -16,17 +16,16 @@ macro Tools()
 	if(key<97)
 		key = key + 32	//Ð¡Ð´->´óÐ´
 
-	if (key == 97) 		 		 //×ÖÄ¸A     ¹«¹²±Ê¼Ç
+	if (key == 97) 		 		 //chr-A     patch(File)
 	{
-		mFile = getNodePath(0) # "\\Tmp_Common.h"
-		OpenExistFile(mFile)
+		BComparePatch(0)
 		return
 	}
-	else if (key == 98) 		 //×ÖÄ¸B    tools: F5--Goto    F6--BComp,   ²¢ÉèÖÃBeyond Compare±È½ÏÂ·¾¶
+	else if (key == 98) 		 //chr-B    tools: F5--Goto    F6--BComp,   ²¢ÉèÖÃBeyond Compare±È½ÏÂ·¾¶
 	{
 		BComSetPath("")
 	}
-	else if (key == 99) //×ÖÄ¸C
+	else if (key == 99)          //chr-C
 	{
 		if (hbuf != 0)
 		{
@@ -35,34 +34,32 @@ macro Tools()
 		}
 		return
 	}
-	else if (key == 102) //×ÖÄ¸F
+	else if (key == 100) 		 //chr-D     patch(Dir)
 	{
-		//file list
-		OpenExistFile(getNodePath(0) # "\\Macro_File.h")
-		return
+		BComparePatch(1)
 	}
-	else if (key == 103) //×ÖÄ¸G  tools: F5--Goto    F6--Rule
+	else if (key == 103) 		 //chr-G  tools: F5--Goto    F6--Rule
 	{
 	}
-	else if (key == 105) //×ÖÄ¸i
+	else if (key == 105) 		 //chr-i
 	{
 	    SvnCommit(key)
 		return
 	}
-	else if (key == 112) //×ÖÄ¸P
+	else if (key == 112) 		 //chr-P
 	{
 		hbufClip = GetBufHandle("Clipboard")
 		openbuf(hbufClip)
 		setCurrentBuf(hbufClip)
 		return
 	}
-	else if (key == 114) //×ÖÄ¸R
+	else if (key == 114) 		 //chr-R
 	{
 		if (hbuf != 0)
 			AddRule(hbuf)
 		return
 	}
-	else if (key == 116) //×ÖÄ¸T
+	else if (key == 116) 		 //chr-T
 	{
 		if (hbuf != 0)
 		{
@@ -71,17 +68,17 @@ macro Tools()
 		}
 		return
 	}
-	else if (key == 117) //×ÖÄ¸u
+	else if (key == 117) 		 //chr-u
 	{
 	    SvnUpdate(key)
 		return
 	}
-	else if (key == 118) //×ÖÄ¸v
+	else if (key == 118) 		 //chr-v
 	{
 	    BCompareSel(key)
 		return
 	}
-	else if (key == 120) //×ÖÄ¸X
+	else if (key == 120) 		 //chr-X
 	{
 	    DeleteMkComment(key)
 		return
@@ -119,9 +116,10 @@ macro SwtichTools(cmd)
 			TwoWordFind(0)
 			return 0
 		}
-		else if(val == "b")		//Goto -- BComp
+		else if(val == "b")		//Goto -- Patch
 		{
-			return 1
+			BComparePatch(0)
+			return 0
 		}
 		else if(val == "n")		//Goto -- Goto Service
 		{
@@ -167,18 +165,18 @@ macro ShowToolsMode(mode)
 	toolsMsg = toolsMsg # "---switch-----------------"   # CharFromKey(13)
 	toolsMsg = toolsMsg # "G: F5--Goto    F6--Rule"  # CharFromKey(13)
 	toolsMsg = toolsMsg # "S: F5--Search  F6--AddParam"   # CharFromKey(13)
-	toolsMsg = toolsMsg # "B: F5--Goto    F6--BComp"   # CharFromKey(13)
+	toolsMsg = toolsMsg # "B: F5--Patch   F6--BComp"   # CharFromKey(13)
 	toolsMsg = toolsMsg # "---no switch--------------"   # CharFromKey(13)
 	toolsMsg = toolsMsg # "U: Svn Update"   # CharFromKey(13)
-	toolsMsg = toolsMsg # "I  : Svn Commit"   # CharFromKey(13)
-	toolsMsg = toolsMsg # "C: Svn Log(Cur File)"   # CharFromKey(13)
-	toolsMsg = toolsMsg # "T: Svn Commit(Cur File)"   # CharFromKey(13)
+	toolsMsg = toolsMsg # "I  : Svn Commit(Dir)"   # CharFromKey(13)
+	toolsMsg = toolsMsg # "C: Svn Log(File)"   # CharFromKey(13)
+	toolsMsg = toolsMsg # "T: Svn Commit(File)"   # CharFromKey(13)
 	toolsMsg = toolsMsg # "R: Rule       (once)"   # CharFromKey(13)
 	toolsMsg = toolsMsg # "V: BComp Select  (1,2)"   # CharFromKey(13)
+	toolsMsg = toolsMsg # "A: BComp patch(File)"   # CharFromKey(13)
+	toolsMsg = toolsMsg # "D: BComp patch(Dir)"   # CharFromKey(13)
 	toolsMsg = toolsMsg # "X: Del SR #.."   # CharFromKey(13)
 	toolsMsg = toolsMsg # "P: Open Clipboard"   # CharFromKey(13)
-	toolsMsg = toolsMsg # "F: Edit File List"   # CharFromKey(13)
-	toolsMsg = toolsMsg # "A: Edit Common Note"   # CharFromKey(13)
 	//toolsMsg = toolsMsg # "C: Color"   # CharFromKey(13)
 	msg ("@toolsMsg@")
 }

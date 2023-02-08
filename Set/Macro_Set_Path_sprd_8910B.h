@@ -42,11 +42,12 @@ versionKey  = UIX8910_uis8910ff_refphone_version
 ### 2.cur
 //prjPath  = SPDE_PRJ\{project}\
 prjPath  = ./
-//prj:\\
+prj:\\
 
-//projectKey   = UIS8910_ROM_16MB_DS_DEBUG
+projectKey   = xxx
 //projectKey   = 
-curKey   = UIS8910_ROM_16MB_DS_DEBUG
+//curKey   = UIS8910_ROM_16MB_DS_DEBUG
+curKey   = UIS8910_ROM_128x160_16MB_DS_DEBUG
 cfgKey   = uis8910_phone_base_config
 sizeNext  = 1
 size1Key  = 240X320

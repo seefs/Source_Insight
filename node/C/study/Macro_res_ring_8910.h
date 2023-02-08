@@ -37,8 +37,10 @@ Save:Help\\DefaultFile\\Macro_Node_Num.h
 source:resource\Common\RING\
 source:resource\Common\RING\Startup.mid
 
-// power--mp3
+// power--mp3--8910
 source:resource\mmi_res_prj_def.h  MMI_POWER_USE_MP3
+// power--mp3--107
+source:resource\mmi_res_prj_def.h  R_POWER_ONOFF
 
 // power--id
 app:setting\h\mmiset_export.h  MMI_POWER_RING_START_ID = R_POWER_1

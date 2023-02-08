@@ -34,8 +34,8 @@ Save:node\C\study\Macro_slide_8910.h \[2.12\] stopWatch,counttime
 Save:node\C\study\Macro_slide_8910.h \[2.13\] set----------------设置
 Save:node\C\study\Macro_slide_8910.h \[2.14\] qrcode-------------
 Save:node\C\study\Macro_slide_8910.h \[2.15\] other app----------
-Save:node\C\study\Macro_slide_8910.h \[2.16\] powoff
-Save:node\C\study\Macro_slide_8910.h \[2.17\] charge
+Save:node\C\study\Macro_slide_8910.h \[2.16\] system app---------
+Save:node\C\study\Macro_slide_8910.h \[2.17\] powoff, charge
 Save:node\C\study\Macro_slide_8910.h \[2.18\] Tip
 Save:node\C\study\Macro_slide_8910.h \[2.19\] db
 Save:node\C\study\Macro_slide_8910.h \[2.20\] sos
@@ -45,13 +45,6 @@ Save:node\C\study\Macro_slide_8910.h \[2.22\]
 Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 
-//
-@Jefe?展讯新推送过来一个8910 手表代码版本，需要就下载一下
-链接：https://pan.baidu.com/s/1NxS3ceKx_f9zpCGEJ_9bTQ 
-提取码：ydo7 
-
-何华:
-MOCOR_20B_SW_W21.35.4.rar
 
 
 
@@ -267,8 +260,17 @@ app:launcher\c\watch_comm_test.c  MSG_WATCH_LOG_BUF_SAVE
 //		======>UserFile_WriteExt
 
 
-### tihu
-Save:node\C\study\Macro_tihu_8910.h \[1.19\] log
+### 其他
+// tihu
+Save:node\C\study\Macro_tihu_8910.h  __log__
+// zmaee
+Save:node\C\study\Macro_zmaee_8910.h   __log__
+// trace
+Save:node\C\study\Macro_fun_8910.h  __debug__
+// Trace log
+Save:node\C\study\Macro_patch_8910.h  __Trace__
+// usb mode
+Save:node\C\study\Macro_app_8910.h  __UsbMode__
 
 
 ### fzd
@@ -495,7 +497,7 @@ app:slidepage\c\watch_slidepage.c  MMI_RESULT_E^HandleSlidePageMsgHook
 
 ### 2.style (SPDE APP)
 // res--menu
-images:spde\MMI_RES_DEFAULT\IMAG\mainmenu
+images:spde\MMI_RES_DEFAULT\IMAG\mainmenu\
 
 // idle
 app:mainmenu\c\mainmenu_win.c  MMIAPIMENU_CreatMainMenu
@@ -1043,8 +1045,10 @@ app:launcher\c\watch_launcher_editclockwin.c  WatchLAUNCHER_EditClockWin_Enter
 app:launcher\c\watch_launcher_main.c  WatchAnti_MainWin_Enter
 
 
-// imei
-app:launcher\c\watch_imei_win.c  WatchImei_Enter
+
+// timer
+app:launcher\c\
+app:launcher\c\watch_comm_timer.c
 
 
 // test
@@ -1062,12 +1066,45 @@ app:launcher\h\watch_comm_test.h  WATCH_WINID_LOG_SUPPORT
 
 
 
-[2.16] powoff
+[2.16] system app
+### stopwatch
+app:accessory\c\watch_stopwatch.c
+
+
+### calendar
+//		==>MMIAPICALEND_OpenMainWin
+//		====>CALENDAR_DETAIL_WIN_TAB
+// ==>image
+Save:node\C\study\Macro_res_image_wa8910.h  __calendar__
+
+
+### imei
+app:launcher\c\watch_imei_win.c  WatchImei_Enter
+// ==>image
+Save:node\C\study\Macro_res_image_wa8910.h  __calendar__
+
+
+### cam
+//		==>CAPTURE_SUCCESS:
+//		====>Save
+//		======>dc_flow.Save
+//		======>MMIDC_SavePhotos
+//		======>MMIDC_GetMaxPhotoFileSize
+//		======>.max_file_size 2826
+//		==>InitDCImageInfo
+app:camera\c\mmidc_main_wintab.c  MMI_RESULT_E^HandleCameraWinMsg
+
+//
+Save:node\C\study\Macro_pos_8910.h  __camera__
+
+
+[2.17] powoff, charge
+### powoff
 //
 app:phone\c\mmiphone.c  HandleShutDownWinMsg
 
 
-[2.17] charge
+### charge
 // enter
 app:phone\c\mmiphone_charge.c  MMI_RESULT_E^HandleChargeStartInd
 
@@ -1075,18 +1112,26 @@ app:phone\c\mmiphone_charge.c  MMI_RESULT_E^HandleChargeStartInd
 Save:node\C\study\Macro_res_image_wa8910.h  __charge__
 
 
-// 开机充电
+### 开机充电
 //		==>HandleChargeStartInd
 //		====>WatchLAUNCHER_ChargeTip_Enter (短充)
 //		======>WATCH_LAUNCHER_CHARGETIP_WIN_ID
 //		====>WatchLAUNCHER_Charge_Enter (长充)
 app:launcher\c\watch_charge_win.c  HandleLauncherChargeTipWinMsg
 
-// 关机充电 / 长充
+
+### 关机充电 / 长充
 //		==>HandleChargeStartInd
 //		====>WatchLAUNCHER_Charge_Enter (长充)
 //		======>WATCH_LAUNCHER_CHARGE_WIN_ID
 app:launcher\c\watch_charge_win.c  HandleLauncherChargeWinMsg
+
+
+### 灭屏10分钟关机
+// 1.直接关机
+source:mmi_app\kernel\c\mmi_default.c  void^MMIDEFAULT_StartDormancyTimer
+// 2.没有用长时间定时器
+app:launcher\c\watch_comm_timer.c  StartNoteTimer
 
 
 [2.18] Tip

@@ -574,10 +574,14 @@ macro NoteHander(hbuf, cNum, prompt)
 	// parse "{cur}"
 	if(prompt == 0 && (isCmd == 0 || isCmd == 1 || isCmd == 2 || isCmd == 5 || isCmd == 6 || isCmd == 7))
 	{
-		//替换普通{key}
+		//替换普通key:
+		//  {0},{cur}--项目设置
+		//  {Admin}----公共设置
+		//  {HW}-------路径设置--从键值反向查找键路径
 		tmpPath = ReAllKeyHead(hbuf, curPath)
-		//替换特殊{key=pro}, 基础路径为""
-		//特殊key可为空，需单独处理
+		
+		//替换特殊key: {pro}, base路径为""; 特殊key可为空，需单独处理
+		//替换多型Next: {size}, next=2时检查2个路径是否存在
 		tmpPath = ReCustomKeyHead(hbuf, "", tmpPath)
 		
 		//test: 0.open, 1.cur, 2,close.

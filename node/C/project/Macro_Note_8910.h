@@ -127,33 +127,34 @@ Save:node\C\study\Macro_doc_8910.h  __keySlide__
 
 
 [1.4] LCD
-// 
-prj:project_{cur}.mk   ST7789
-prj:project_{cur}.mk   ST7735S
-prj:project_{cur}.mk   _USE_3_LINE_2_DATD_ = FALSE  #no use
-// te
-prj:project_{cur}.mk   LCD_FMARK_NOT_SUPPORT
-// 90
+// 8910
+prj:{cfg}.cfg   SUBLCD_DEV_SIZE  = 128X160
+prj:{cfg}.cfg   SUBLCD_SIZE      = 128X160
 prj:{cfg}.cfg   MAINLCD_LOGIC_ANGLE = 90
+// 107
+//prj:project_{cur}.mk   ST7789
+//prj:project_{cur}.mk   ST7735S
+//prj:project_{cur}.mk   _USE_3_LINE_2_DATD_ = FALSE  #no use
+prj:project_{cur}.mk   MAINLCM_INTERFACE = SPI    # LCM or SPI
+prj:project_{cur}.mk   SUBLCM_INTERFACE  = SPI    # LCM or SPI
+prj:project_{cur}.mk   LCD_FMARK_NOT_SUPPORT      # te
+prj:project_{cur}.mk   MAINLCD_LOGIC_ANGLE = 90   # 90度
+
 
 // 三线一通道
 prj:{cfg}.cfg   LCD_SPI = 3WIRE_9BIT_1DATA
-prj:{cfg}.cfg   SUBLCM_INTERFACE = SPI
 config:lcm_cfg_info.c  USE_3_LINE_LCD
 driver:lcd\tft_ST7735S.c  USE_3_LINE_LCD
 // 三线二通道
 prj:{cfg}.cfg   LCD_SPI = 3WIRE_9BIT_2DATA
-prj:{cfg}.cfg   SUBLCM_INTERFACE = SPI
 config:lcm_cfg_info.c  TWO_DATA_LINE_LCD
 driver:lcd\tft_ST7735S.c  TWO_DATA_LINE_LCD
 // 四线一通道
 prj:{cfg}.cfg   LCD_SPI = 4WIRE_8BIT_1DATA
-prj:{cfg}.cfg   SUBLCM_INTERFACE = NONE
 config:lcm_cfg_info.c  ONE_DATA_LINE_LCD
 driver:lcd\tft_ST7735S.c  TWO_DATA_LINE_LCD
 // 四线二通道
 prj:{cfg}.cfg   LCD_SPI = 4WIRE_8BIT_2DATA
-prj:{cfg}.cfg   SUBLCM_INTERFACE = NONE
 config:lcm_cfg_info.c  TWO_DATA_LINE_LCD
 driver:lcd\tft_ST7735S.c  ONE_DATA_LINE_LCD
 
@@ -183,6 +184,7 @@ MS_Customize/source/common/lcm_prod.c  ST7735S
 driver:lcd/tft_ST7735S.c
 
 
+### 其他调试
 // 修改按键黑点：
 MS_Ref\source\lcd\src\lcd.c GC9306_Ex
 driver:lcd\tft_GC9300.c GC9300_Ex(void)
@@ -223,11 +225,6 @@ prj:project_{cur}.mk   LCD_DUAL_SPI_FREQ_SUPPORT
 MS_Ref\source\lcd\src\lcd_uix8910.c  LCD_DUAL_SPI_FREQ_SUPPORT
 
 
-// SUBLCD
-// SUBLCM_INTERFACE = LCM     
-// SUBLCD_DEV_SIZE  = 128X160  
-// SUBLCD_SIZE      = 128X160  
-SPDE_PRJ\K220U_SHY_517T\uis8910_phone_user_base_config.cfg
 
 // lcd_id
 //  ==>_LCM_DevIdIdentify
@@ -244,20 +241,25 @@ SPDE_PRJ\K220U_SHY_517T\uis8910_phone_user_base_config.cfg
 
 
 [1.5] CAM
-// mk
-prj:{cfg}.cfg   CAMERA_SUPPORT = TRUE
+// 8910
+prj:{cfg}.cfg  CAMERA_SUPPORT     = TRUE
+prj:{cfg}.cfg  DC_FLASH_SUPPORT   = TRUE
+// 107
+prj:project_{cur}.mk CAMERA_SUPPORT   = TRUE
+prj:project_{cur}.mk DC_FLASH_SUPPORT = TRUE
+prj:{cfg}.cfg  DC_FLASH_SUPPORT   = TRUE
+// 7701
+prj:project_{cur}.mk SENSOR_CHIP
 
 
-// 1.新CAM
+### 新CAM
+// 1.mk
 make\custom_drv\custom_drv.mk  sensor_gc032A.c
-// 2.
-config:sensor_cfg.c
-config:sensor_cfg.c main_sensor_infor_tab
-// 二行：
-// extern const SENSOR_INFO_T g_GC6153_yuv_info;
-// &g_GC6153_yuv_info,
-
-// 3.方向
+// 2.arr (要加 extern引用)
+config:sensor_cfg.c  main_sensor_infor_tab
+config:sensor_cfg.c  sub_sensor_infor_tab
+// 3.c文件
+//  ==>方向
 //  ==>修改亮度: {0x92, 0x50}
 driver:dc/
 driver:dc/sensor_gc032A.c
@@ -265,36 +267,25 @@ driver:dc/sensor_gc6153.c
 driver:dc/sensor_gc6133.c  Set_GC6133_Preview_Mode
 driver:dc/sensor_bf30a2.c  BF30A2_set_preview_mode
 driver:dc/sensor_bf20a6.c
+//  ==>ID
+driver:dc/sensor_gc6133.c  _Identify
 
 
-// 4.(8910 8W/30w)
-MS_Ref\source\dc\sensor\sensor_drv.c  SENSOR_DRV_ID_GC6133
-//  ==>camera_get_cfg
-//  ====>g_dcam_cfg_8W_240x320
-MS_Ref/source/dc/dc_common/src/dcamera_cfg.c  camera_get_cfg
-//  ====>g_dcam_cfg_8W_240x320
-MS_Ref/source/dc/dc_common/src/dcamera_8W_240x320.c
-MS_Ref/source/dc/dc_common/src/dcamera_30W_240x320.c
+### 其他调试
+// ==>通过ID区分8W/30w
+Save:node\C\study\Macro_doc_cam8910.h   __Ref__
+// ==>配置分辨统治
+//Save:node\C\study\Macro_doc_cam8910.h   __init__
+Save:node\C\study\Macro_doc_cam8910.h   __cfg__
+// ==>预览 保存
+//Save:node\C\study\Macro_doc_cam8910.h   __Preview__
+//Save:node\C\study\Macro_doc_cam8910.h   __snapshot__
+//Save:node\C\study\Macro_doc_cam8910.h   __video__
 
-//
-//prj:project_{cur}.mk SENSOR_CHIP
-
-
-// (8910 GC6133)
-MS_Customize/source/product/driver/dc/sensor_gc6133.c
-MS_Ref/source/dc/dc_common/src/dcamera_8W_240x320.c  SPI_OUT_Y0_U0_Y1_V0
-MS_Ref/source/dc/dc_common/src/dcamera_cfg.c
-MS_Ref/source/dc/sensor/sensor_drv.c  SENSOR_DRV_ID_GC6133
-
-// 107
-prj:project_{cur}.mk CAMERA_SUPPORT   = TRUE
-prj:project_{cur}.mk DC_FLASH_SUPPORT = TRUE
-// 8910
-prj:{cfg}.cfg  CAMERA_SUPPORT     = TRUE
-prj:{cfg}.cfg  DC_FLASH_SUPPORT   = TRUE
 
 // 输出的接口，
 dvp spi mipi这种。
+
 
 // 5.闪光灯电流
 // 60mA
@@ -384,8 +375,8 @@ make\custom_drv\custom_drv.mk  QMA7981
 [2.2] 颜色---------common_mdu_def.h
 // 新加 COLOR_RES_CUSTOM_BG
 ms_mmi_main/source/mmi_app/common/h/common_mdu_def.h       COLOR_RES_PUBWIN_BG
-source:mmi_app\app\theme\c\mmi_theme.c     COLOR_RES_PUBWIN_BG
-source:mmi_app\app\theme\c\mmi_theme.c MMI_THEME_PUBWIN_BG
+app:theme\c\mmi_theme.c     COLOR_RES_PUBWIN_BG
+app:theme\c\mmi_theme.c MMI_THEME_PUBWIN_BG
 
 //
 source:resource\Common\RING\
@@ -550,7 +541,7 @@ prj:project_{cur}.mk MMI_MSD_SUPPORT
 driver:ubot\ubot_cfg_info.c  s_UBOT_StrProduct
 
 // UDISK
-source:mmi_app\app\udisk\h\mmisd_export.h  CUST_CFG_UDISK_DEFAULT_NAME
+app:udisk\h\mmisd_export.h  CUST_CFG_UDISK_DEFAULT_NAME
 
 // UA
 //key:UA,file:mmibrowser_wintable.c
@@ -570,10 +561,10 @@ MS_Customize\export\inc\bt_cfg.h  BLUETOOTH_NAME_FLP_E535
 [2.11] 屏幕，时间---------mmidisplay_data.h
 
 // TITLE
-source:mmi_app\app\theme\h\mmidisplay_data.h  MMI_TITLE_TEXT_FONT
+app:theme\h\mmidisplay_data.h  MMI_TITLE_TEXT_FONT
 
 // softkey
-source:mmi_app\app\theme\h\mmidisplay_data.h  MMI_FULLSCREEN_SOFTKEY_TEXT_FONT
+app:theme\h\mmidisplay_data.h  MMI_FULLSCREEN_SOFTKEY_TEXT_FONT
 
 // 背光亮度
 chip_drv/chip_module/analog/sr1131/analog_phy_sr1131.c
@@ -584,7 +575,7 @@ source:mmi_service\export\inc\mmi_custom_define.h  MMISET_EDEFAULT_BACKLIGHT_TIM
 source:mmi_service\export\inc\mmi_custom_define.h  MMISET_EDEFAULT_KEYBOARD_LIGHT_TIME
 
 // time--KEYLOCK
-source:mmi_app\app\setting\h\mmiset_func.h  DEFAULT_KEYLOCK_TIME_15S_SETTING
+app:setting\h\mmiset_func.h  DEFAULT_KEYLOCK_TIME_15S_SETTING
 // 解锁提示框
 MS_MMI_Main/source/mmi_app/app/idle/c/mainapp.c  iTimeOut  KEYLOCK_LSK_TIME
 
@@ -592,14 +583,23 @@ MS_MMI_Main/source/mmi_app/app/idle/c/mainapp.c  iTimeOut  KEYLOCK_LSK_TIME
 // time--ALERT
 source:mmi_service\export\inc\mmi_custom_define.h  xx  SBD_ALERT_WIN_TIME_PERIOD_1S
 // time--format-12
-source:mmi_app\app\setting\c\mmiset_display.c  MMI_TIME_DISPALY_TYPE_DEFAULT_12
+app:setting\c\mmiset_display.c  MMI_TIME_DISPALY_TYPE_DEFAULT_12
 
-// time--system--107
+// 系统时间
 MS_Ref/source/base/src/sys_time.c  s_sys_default_date
+app:setting/c/mmiset_func.c  MMISET_DEFAULT_SYS_DATE  #8910实际不需要改这个
+// 编译时间
+source:mmi_service\export\inc\mmi_custom_define.h  MMISET_DEFAULT_SYS_DATE
+build\{cur}_builddir\tmp\buildtime.h  PROJECT_BUILD_YEAR
 
+// 长按时间
+source:mmi_kernel\include\mmi_theme.h  MMI_KBD_LONG_KEY_VALUE
+source:mmi_kernel\include\mmi_theme.h  MMI_KBD_START_REPEAT_KEY_VALUE
+//source:mmi_kernel\include\mmi_theme.h  MMI_KBD_LONG_RED_KEY_VALUE
+//source:mmi_kernel\include\mmi_theme.h  MMI_KBD_LONG_SUB_KEY_VALUE
 
-// POWER
-mmiphone_onoff.c  SBD_CHANGE_POWER_OFF_TIME_10S
+// 开关机时间
+app:phone\c\mmiphone_onoff.c  PHONE_STARTUP_DURING_TIME
 
 
 // red--长按复位时间
@@ -618,9 +618,9 @@ MS_MMI_Main/source/mmi_app/app/setting/h/mmiset_security.h  MMISET_PRIVACY_PROTE
 
 [2.13] 音量---------mmienvset_internal.h
 // set vol(ring/msg/call)
-source:mmi_app\app\envset\h\mmienvset_internal.h  MMIENVSET_CALL_RING_VOL_SILENT_MODE
+app:envset\h\mmienvset_internal.h  MMIENVSET_CALL_RING_VOL_SILENT_MODE
 // multim vol
-source:mmi_app\app\setting\h\mmiset_export.h  MMISET_VOL_DEFAULT_MULTIM
+app:setting\h\mmiset_export.h  MMISET_VOL_DEFAULT_MULTIM
 // 合盖 vol
 Save:node\C\study\Macro_gui_8910.h  __vol__
 
@@ -632,19 +632,24 @@ Save:node\C\study\Macro_gui_8910.h  __vol__
 
 
 [2.15] trace
-prj:project_{cur}.mk  RELEASE_INFO = FALSE
+// 107--uart
+prj:project_{cur}.mk  UART_LOG_SUPPORT = FALSE
+// 107--usb
 prj:project_{cur}.mk RELEASE_INFO = FALSE
 prj:project_{cur}.mk MEMORY_DEBUG_SUPPORT = TRUE
 prj:project_{cur}.mk TRACE_INFO_SUPPORT = TRUE
 prj:project_{cur}.mk PRODUCT_BASELIB_DIR = sc6531_32X32_320X240BAR_QW_ATV_formal_trace
-//
-UART_LOG_SUPPORT
 // 8910
-MODEM_BIN_FILE = UIS8910_ROM_16MB_DS_DEBUG
-// 107 user打串口
-UART_LOG_SUPPORT
+prj:{cfg}.cfg   RELEASE_INFO = FALSE
+prj:{cfg}.cfg   MEMORY_DEBUG_SUPPORT = TRUE
+prj:{cfg}.cfg   TRACE_INFO_SUPPORT = TRUE
+//prj:{cfg}.cfg   PRODUCT_BASELIB_DIR = sc6531_32X32_320X240BAR_QW_ATV_formal_trace
+prj:project_{cur}.mk MODEM_BIN_FILE = UIS8910_ROM_16MB_DS_DEBUG
 
-抓trace:
+
+
+### usb
+// --6531
 open: tools\DEBUG_TOOL\CHANNELSERVER\Bin\ChannelServer.exe
 // 1) 连接USB线, 选择 USB LOG的选项
 // 2) Channel Server Configure:
@@ -662,8 +667,11 @@ open: tools\DEBUG_TOOL\CHANNELSERVER\Bin\ChannelServer.exe
 // 1. 驱动不同, 可能显示 SPRD Diag(COM12)
 // 2. 一直不出log, 还原svn后可能正常
 
-
+// 6531
 open: tools\DEBUG_TOOL\LOGEL\Bin\ArmLogel.exe
+// 8910
+open: tools\DEBUG_TOOL\ArmLogel\Bin\ArmLogel.exe
+open: tools\DEBUG_TOOL\ArmTracer\Bin\ArmLogel.exe
 // 1) 插入USB线，选择USB LOG的选项
 // 2) 运行 ArmLogel.exe
 // 3) 菜单选项LOG下面一行的最左边的DLL图标；
@@ -676,8 +684,8 @@ open: tools\DEBUG_TOOL\LOGEL\Bin\ArmLogel.exe
 // NV修改:
 open: tools\DEBUG_TOOL\NVEDITOR\Bin\NVEditor.exe
 // 选择:
+build\UIS8910_ROM_16MB_DS_USER_builddir\img\nvitem\
 build\UIS8910_ROM_16MB_DS_USER_builddir\img\nvitem\nvitem.prj
-F:\6531G_16A_MP_W17.43.4\build\UIS8910_ROM_16MB_DS_USER_builddir\img\nvitem
 // 设置 Armlog抓取:
 // dsp_log_switch = 0x0 //
 // enable_arm_log = 0x1
@@ -697,11 +705,7 @@ F:\6531G_16A_MP_W17.43.4\build\UIS8910_ROM_16MB_DS_USER_builddir\img\nvitem
 // com_data = 0xFF               (USB:0xFF, 相同)
 // com_debug_baud_rate = 0x70800 (USB:0x1C200,展迅没说这个要改)
 
-
-// NV下载(用这个旧版的):
-open: tools\DEBUG_TOOL\ResearchDownload\Bin\ResearchDownload.exe
-// 只选中: FDL1, FDL1, NV
-// replace NV bin:
+// 改完NV，只下载NV
 build\PS102_DJTX_G182_W25G2_F1_builddir\img\nvitem\nvitem.bin
 // 或者 CUSTOMER = PS102_KLS_2IN1
 common\nv_parameters\PS102_MB\PS102_KLS_2IN1\nv_type\nv_type_4band.nvm =^com_debug    //ITEM_NAME 0x1
@@ -711,9 +715,15 @@ common\nv_parameters\PS102_MB\PS102_KLS_2IN1\nv_type\....     nvm =^DSP_log_swit
 
 
 USB抓trace:
-//工程模式设置:
+//工程模式设置:(6531)
 //8 para set->arm log:open
 //8 para set->dsp log:open
+//8 para set->usb log:open
+//8 para set->debug->debug alert:open  (不确定开不开)
+
+//工程模式设置:(8910)
+//8 para set->ap log:open
+//8 para set->cp log:close
 //8 para set->usb log:open
 //8 para set->debug->debug alert:open  (不确定开不开)
 
@@ -737,10 +747,6 @@ uart抓trace:
 //8 para set->debug (para)->assert:open  (不确定开不开)
 
 
-### 抓trace--压缩空间:
-prj:project_{cur}.mk FM_SUPPORT = NONE 
-prj:project_{cur}.mk VIDEO_PLAYER_SUPPORT = FALSE
-prj:project_{cur}.mk PIC_VIEWER_SUPPORT = FALSE
 
 
 // USB--log--ok
@@ -757,14 +763,16 @@ prj:project_{cur}.mk PIC_VIEWER_SUPPORT = FALSE
 
 
 
---------------------------------------------------
-//CE 蓝牙定频版本:
+### CE 蓝牙定频版本:
 make/{cur}_{GSM}.mak PRODUCT_BASELIB_DIR = sc6531efm_32X32_320X240BAR_AB_CE
 make/{cur}_{GSM}.mak BT_NONSIG_SUPPORT = TRUE
 
 
 
 
+### 
+// 省空间
+Save:node\C\study\Macro_Spr_mem.h  __trace__
 
 
 
@@ -809,6 +817,8 @@ build\{cur}_builddir\log\resource_main.log ERROR
 build\{cur}_builddir\log\caf_templete.log ERROR
 build\{cur}_builddir\tmp/SC6531EFM.def 宏
 build\{cur}_builddir\tmp\app.macro 查看宏是否存在
+
+build\{cur}_builddir\log\fota_bootloader.log ERROR
  
 
 //cmd:
@@ -820,12 +830,6 @@ cmd_w: cd build\UIS8910_ROM_16MB_DS_USER_builddir\
 cmd_w: D:&&cd D:\Save\SI\Macro\
 
 
-//1 超空间:
-//~ 2个游戏    12K
-//~ 一条APN记录占用0.163kb。3000~
-//
-//2 编译时间
-//gettime.pl
 
 
 [2.18] 

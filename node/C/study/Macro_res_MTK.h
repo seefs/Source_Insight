@@ -30,17 +30,20 @@ Save:node\C\study\Macro_res_MTK.h \[1.20\]
 
 ### 设置当前项目
 // --images / audio / features / build
-Save:node\C\cfg\Macro_c_path.h  _mtk_cur_
+Save:node\C\cfg\
+Save:node\C\cfg\Macro_c_path_mtk.h  _mtk_cur_
 
 // --nv / board / lcd
-Save:node\C\cfg\Macro_c_path.h  _mtk_cfg_
+Save:node\C\cfg\Macro_c_path_mtk.h  _mtk_cfg_
 
-// set cur project other -- no use
-//Save:node\C\cfg\Macro_c_path.h  _mtk_other_
+// 其他 (no use)
+// --rf / account
+//Save:node\C\cfg\Macro_c_path_mtk.h  _mtk_other_
+
 
 ### 新项目
 // create new project
-Save:node\C\cfg\Macro_c_path.h  _mtk_copy_
+Save:node\C\cfg\Macro_c_path_mtk.h  _mtk_copy_
 
 
 

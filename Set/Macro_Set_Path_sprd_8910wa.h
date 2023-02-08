@@ -5,6 +5,7 @@
 ###
 
 0Key  = 8910
+1Key  = wa03u_git
 
 HWPath  = HWNV:8910FFS\W20.36.2\
 HW:\\

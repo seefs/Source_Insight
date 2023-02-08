@@ -5,10 +5,10 @@
 //目录:
 // 1. 
 Save:node\ToolsMsg\Macro_Script.h \[1.1\] 安装、卸载
-Save:node\ToolsMsg\Macro_Script.h \[1.2\] 
-Save:node\ToolsMsg\Macro_Script.h \[1.3\] 
-Save:node\ToolsMsg\Macro_Script.h \[1.4\] 
-Save:node\ToolsMsg\Macro_Script.h \[1.5\] 
+Save:node\ToolsMsg\Macro_Script.h \[1.2\] Tampermonkey
+Save:node\ToolsMsg\Macro_Script.h \[1.3\] LastPass
+Save:node\ToolsMsg\Macro_Script.h \[1.4\] 谷歌镜像
+Save:node\ToolsMsg\Macro_Script.h \[1.5\] vpn
 Save:node\ToolsMsg\Macro_Script.h \[1.6\] 
 Save:node\ToolsMsg\Macro_Script.h \[1.7\] 
 Save:node\ToolsMsg\Macro_Script.h \[1.8\] 
@@ -45,7 +45,7 @@ dwz.cn/1hN8UcAP
 一个密码管理器。LastPass中的密码由一个主密码保护，并在本地加密，可同步到任意浏览器。LastPass还支持自动填表、随机密码生成和密码分享。同类型的还有1Password。
 
 
-[1.4] 
+[1.4] 谷歌镜像
 // 谷歌镜像
 https://meledee.com/2022/05/4013.html
 
@@ -54,7 +54,9 @@ https://googlehnzyc.azurewebsites.net/
 
 
 
-[1.5] 
+[1.5] vpn
+//
+C:\Users\gongsi\AppData\Local\Google\Chrome\User Data\Default\Extensions
 
 
 

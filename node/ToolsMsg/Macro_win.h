@@ -10,7 +10,9 @@ Save:node\ToolsMsg\Macro_win.h \[1.6\] 网卡win10
 Save:node\ToolsMsg\Macro_win.h \[1.7\] 显示设置
 Save:node\ToolsMsg\Macro_win.h \[1.8\] win10磁盘100%
 Save:node\ToolsMsg\Macro_win.h \[1.9\] 电脑变慢
-Save:node\ToolsMsg\Macro_win.h \[1.10\] 
+Save:node\ToolsMsg\Macro_win.h \[1.10\] Game
+Save:node\ToolsMsg\Macro_win.h \[1.11\] 
+Save:node\ToolsMsg\Macro_win.h \[1.12\] 
 // 2. 开发
 Save:node\ToolsMsg\Macro_win.h \[2.1\] ResOver
 Save:node\ToolsMsg\Macro_win.h \[2.2\] Incredibuild
@@ -20,24 +22,10 @@ Save:node\ToolsMsg\Macro_win.h \[2.5\] VC
 Save:node\ToolsMsg\Macro_win.h \[2.6\] ResearchDownload
 Save:node\ToolsMsg\Macro_win.h \[2.7\] set_path 备份
 Save:node\ToolsMsg\Macro_win.h \[2.8\] Usb
-Save:node\ToolsMsg\Macro_win.h \[2.9\] 
+Save:node\ToolsMsg\Macro_win.h \[2.9\] InputMethod 输入法, 小狼毫
 Save:node\ToolsMsg\Macro_win.h \[2.10\] 
-// 3. 工具
-Save:node\ToolsMsg\Macro_win.h \[3.1\] mp3
-Save:node\ToolsMsg\Macro_win.h \[3.2\] SecureCRT 连接设置
-Save:node\ToolsMsg\Macro_win.h \[3.3\] UE
-Save:node\ToolsMsg\Macro_win.h \[3.4\] mv
-Save:node\ToolsMsg\Macro_win.h \[3.5\] vpn
-Save:node\ToolsMsg\Macro_win.h \[3.6\] CorelDRAW
-Save:node\ToolsMsg\Macro_win.h \[3.7\] Game
-Save:node\ToolsMsg\Macro_win.h \[3.8\] InputMethod 输入法, 小狼毫
-Save:node\ToolsMsg\Macro_win.h \[3.9\] postman
-Save:node\ToolsMsg\Macro_win.h \[3.10\] 
-// 
-Save:node\ToolsMsg\Macro_win.h \[4.1\] 
-Save:node\ToolsMsg\Macro_win.h \[4.2\] nexus 6P
-Save:node\ToolsMsg\Macro_win.h \[4.3\] 
-
+Save:node\ToolsMsg\Macro_win.h \[2.11\] 
+Save:node\ToolsMsg\Macro_win.h \[2.12\] 
 
 
 
@@ -165,9 +153,22 @@ tools\DEBUG_TOOL\AudioCalibrator\Equalizer\TI ADC\parameter-data.files
 D:\Desktop\tool\wa03u_git\ResearchDownload_R25.21.1401\ResearchDownload_R25.21.1401\Bin\
 
 
-[1.10] 
+[1.10] Game
+//war3分辨率--1920*1080
+regedit
+HEY_CURRENT_USER
+	software
+		Blizzard Entertainment
+			video
+				reswidth
+				resheight
 
 
+
+[1.11] 
+
+
+[1.12] 
 
 
 [2.1] ResOver
@@ -318,80 +319,7 @@ C:\Users\Administrator\AppData\Roaming\Subversion\config
 C:\Windows\inf\setupapi.dev.log
 
 
-[2.9] 
-
-
-[2.10] 
-
-
-
-
-[3.1] mp3
-//	HA_GoldWaveHZ
-//	压缩：
-//	保存->格式
-
-
-[3.2] SecureCRT 连接设置
-//	1 telnet连接
-//	2 串口连接, serial
-//		com2,115200
-//	
-
-
-[3.3] UE
-//	文件关联
-//	高级-配置-应用程序布局-其他-勾选在启动时检查并显示文件关联-重新启动UltraEdit
-
-
-// UE 卸载
-D:\Program^Files^(x86)\IDM^Computer^Solutions
-C:/Users/YJ/AppData/Roaming
-C:/Users/YJ/AppData/Roaming/IDMComp
-C:/Program^Files^(x86)/InstallShield^Installation^Information
-C:/ProgramData/
-C:/ProgramData/IDMComp
-
-//
-regedit
-//  IDM
-
-
-
-[3.4] mv
-//	MAV剪切
-//	DirectWAVMP3Splitter
-
-
-
-[3.5] vpn
-//
-C:\Users\gongsi\AppData\Local\Google\Chrome\User Data\Default\Extensions
-
-
-[3.6] CorelDRAW
-// 激活
-C:\Documents and Settings\All Users\Application Data\Corel\CorelDRAW Graphics Suite X5
-DR15.dta
-
-
-
-
-
-[3.7] Game
-//war3分辨率--1920*1080
-regedit
-HEY_CURRENT_USER
-	software
-		Blizzard Entertainment
-			video
-				reswidth
-				resheight
-				
-
-
-
-[3.8] InputMethod
+[2.9] InputMethod
 // InputMethod 去广告
 // 1) 首先从官网下载并安装最新的万能五笔软件
 // 2) 打开
@@ -410,168 +338,14 @@ C:\Program^Files^(x86)\WanNengWBInput\10.0.4.10418
 Save:node\C\cfg\Macro_c_list.h  __rime__
 
 
+[2.10] 
 
 
-[3.9] postman
 
-//
-https://www.postman.com/collections/1e8f06e4b595a38c05bb
+[2.11] 
 
 
-
-[3.10] 
-
-
-
-
-[4.1] 
-
-
-
-
-[4.2] nexus 6P
-//	1, adb reboot bootloader
-//	fastboot flashing unlock
-//	
-//	2，fastboot flash recovery E:\root\twrp-3.0.0-1-angler(for mhc19i).img
-//	  .(刷入TWRP RECOVERY, TWRP带多工具的RECOVERY);
-//	
-//	3,	进入recovery模式（adb reboot recovery)在这个新RECOVERY中选择放到手机里的BETA-SuperSU-v2.67-20160121175247.zip (TWRP里的RECOVERY-->INSTALL)刷入重起就会有SUPERSU工具。
-//	
-//	adb push E:\root\BETA-SuperSU-v2.67-20160121175247.zip	/sdcard
-//	
-//	4，其它APK通过个请求权限。
-//	再装个root_exploerer.apk搞定。
-//	
-//	
-//	google文章
-//	http://forum.xda-developers.com/nexus-6p/general/guides-how-to-guides-beginners-t3206928
-//	
-//	
-//	刷机：
-//	1	 设置-关于手机-系统更新-检测新版本，本地安装可能没有；
-//	2	 recovery 模式，安装ota-zip；安装前，或安装后清除；清除后数据还在？
-//	3	 recovery 模式，adb sideload update.zip，不行
-	
-	
-//anger刷机
-//	1 ota升级，(不用备份，数据、应用不清除)
-//	固件下载：
-//	1.1 vpn连接 －〉 使用迅雷下载
-//	1.2 设置-关于手机-系统更新，如果没有检测到就去你手机的论坛下载最新的增量包或者全量包，在系统更新里选择本地安装
-//
-//	2 线刷
-//	2.0 进入开发者选项，打开OEM解锁和USB调试
-//	    adb push F:\file\root\BETA-SuperSU-v2.67-20160121175247.zip  /sdcard
-//	2.1, adb reboot bootloader
-//	    fastboot flashing unlock
-//	2.2，fastboot flash recovery F:\file\root\twrp-3.0.1-0-angler.img  .(刷入TWRP RECOVERY, TWRP带多工具的RECOVERY);
-//	2.3,  进入recovery模式（adb reboot recovery)在这个新RECOVERY中选择放到手机里的BETA-SuperSU-v2.67-20160121175247.zip (TWRP里的RECOVERY-->INSTALL)刷入重起就会有SUPERSU工具。
-//	2.4，其它APK通过个请求权限。
-//	    再装个root_exploerer.apk搞定。
-//
-//	3 升级工具，（开不了机）
-
-
-
-
-[4.3] 
-
-
-
-
-[4.4] 
-
-
-
-
-[4.5] 
-
-
-
-
-[4.6] 
-
-
-
-
-[4.7] 
-
-
-
-
-[4.8] 
-
-
-
-
-[4.9] 
-
-
-
-
-[4.10] 
-
-
-
-
-
-
-[5.1] 
-
-
-
-
-[5.2] 
-
-
-
-
-[5.3] 
-
-
-
-
-[5.4] 
-
-
-
-
-[5.5] 
-
-
-
-
-[5.6] 
-
-
-
-
-[5.7] 
-
-
-
-
-[5.8] 
-
-
-
-
-[5.9] 
-
-
-
-
-[5.10] 
-
-
-
-
-
-
-
-
-
+[2.12] 
 
 
 

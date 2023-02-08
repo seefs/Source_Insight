@@ -324,6 +324,7 @@ source:mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_ConvertTypicalKeyToQwertyKey
 
 
 
+
 [1.7] __simulator__
 // --common
 //		==>[KEY_OK]:
@@ -504,6 +505,10 @@ app:im\c\mmiim_sp_multitap.c  BOOLEAN^HandleSysMsg
 //		====>MMIAPICC_IsEmergencyNum
 //		==============>s_emergency_call
 source:mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_ConvertQwertyKeyToTypicalKey
+
+//
+//		====>s_cc_nw_ecc_num_list_ptr
+source:mmi_app\app\phone\c\mmiphone.c  s_cc_nw_ecc_num_list_ptr
 
 
 

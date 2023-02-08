@@ -113,6 +113,9 @@ make\resource_main\resource_target.mk 42
 #font type
 //	GUI_GetCodeType
 
+#4bit to 8bit
+//MMIAPICOM_BcdToStr
+
 
 [1.3] timer
 //	LOCAL uint8 g_test_timer  = 0;
@@ -313,6 +316,7 @@ app_main.mk
 
 
 [1.12] debug, trace
+### __debug__
 //
 //	SCI_TRACE_LOW("[ccapp]is_handfree = %d", dev);
 

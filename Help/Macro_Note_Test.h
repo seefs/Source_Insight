@@ -1,15 +1,15 @@
 
-//
-Save:Macro\sbd_test.em  OpenMiniTest
-
+### 配置
+// path
 bakPath = Save:Help\Tmp\target
 bak:\\
 
-// --显示log级别(testParam)
-//   1: 显示少量log
-testParam = 1
-//   2: 显示多数log
-//testParam = 2
+// 显示log级别
+testParam = 0  //不要log
+//testParam = 1  //显示少量log
+//testParam = 2  //显示多数log
+// 代码备注
+Save:Help\Other\Macro_Help_SI.h  __log__
 
 
 //  当前文件作为测试文件:
@@ -56,9 +56,9 @@ Save:Help\Macro_Note_Test.h \[3.1\] cmd系列-----------7类
 Save:Help\Macro_Note_Test.h \[3.2\] 
 Save:Help\Macro_Note_Test.h \[3.3\] open(exe)---------1类
 Save:Help\Macro_Note_Test.h \[3.4\] 
-Save:Help\Macro_Note_Test.h \[3.5\] setPath
-Save:Help\Macro_Note_Test.h \[3.6\] setProPath
-Save:Help\Macro_Note_Test.h \[3.7\] sethistory
+Save:Help\Macro_Note_Test.h \[3.5\] //setPath
+Save:Help\Macro_Note_Test.h \[3.6\] //setProPath
+Save:Help\Macro_Note_Test.h \[3.7\] //sethistory
 Save:Help\Macro_Note_Test.h \[3.8\] cp, RAR
 Save:Help\Macro_Note_Test.h \[3.9\] make--------------2类
 Save:Help\Macro_Note_Test.h \[3.10\] ctmake
@@ -389,11 +389,8 @@ Save:Macro\sbd_test.em	TestNodeMsg
 
 
 
-[1.15] path--Set
-// 自定义键
-Macro_Set_Key.h
-// 自定义path
-Macro_Set_Path_base.h
+[1.15] 
+
 
 
 
@@ -439,9 +436,9 @@ Save:Macro\sbd_test.em  line_value
 
 [1.19] Shell
 // __Shell__
-//		==>F5
-//		====>CtrlE                    # 模板跳转
-//		======>OpenMiniTest           # MiniTest == True
+//		==>CtrlE                    # 模板跳转
+//		====>OpenMiniTest           # MiniTest == True
+//		==>F5?
 Save:Macro\sbd_test.em  shell_cmd
 
 //1) 选中(shell_cmd), 再ctrl+E
@@ -668,7 +665,7 @@ cmd_w: D:&&cd D:\Save\SI\Macro\
 
 # 5) cmd
 //	打开基础路径的弹窗 + 粘贴(不通用)
-cmd: ping dl.google.com
+cmd_w: ping dl.google.com
 
 
 

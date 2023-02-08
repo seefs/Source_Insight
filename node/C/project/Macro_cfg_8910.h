@@ -5,7 +5,7 @@
 Save:node\C\project\Macro_cfg_8910.h \[1.1\] AUDIO, TONE
 Save:node\C\project\Macro_cfg_8910.h \[1.2\] PB
 Save:node\C\project\Macro_cfg_8910.h \[1.3\] SMS
-Save:node\C\project\Macro_cfg_8910.h \[1.4\] MMS, CB
+Save:node\C\project\Macro_cfg_8910.h \[1.4\] MMS, CB, CL
 Save:node\C\project\Macro_cfg_8910.h \[1.5\] BROWSER, DL
 Save:node\C\project\Macro_cfg_8910.h \[1.6\] BT
 Save:node\C\project\Macro_cfg_8910.h \[1.7\] RECORD
@@ -30,14 +30,14 @@ Save:node\C\project\Macro_cfg_8910.h \[2.8\] WIFI
 Save:node\C\project\Macro_cfg_8910.h \[2.9\] SS
 Save:node\C\project\Macro_cfg_8910.h \[2.10\] Tool
 Save:node\C\project\Macro_cfg_8910.h \[2.11\] lib--------------第3方
-Save:node\C\project\Macro_cfg_8910.h \[2.12\] build 服务器流程
-Save:node\C\project\Macro_cfg_8910.h \[2.13\] build 省空间
-Save:node\C\project\Macro_cfg_8910.h \[2.14\] build time
+Save:node\C\project\Macro_cfg_8910.h \[2.12\] 
+Save:node\C\project\Macro_cfg_8910.h \[2.13\] 
+Save:node\C\project\Macro_cfg_8910.h \[2.14\] 
 Save:node\C\project\Macro_cfg_8910.h \[2.15\] marco
 Save:node\C\project\Macro_cfg_8910.h \[2.16\] Lib
 Save:node\C\project\Macro_cfg_8910.h \[2.17\] FLASH (大、/小版本)
 Save:node\C\project\Macro_cfg_8910.h \[2.18\] build map
-Save:node\C\project\Macro_cfg_8910.h \[2.19\] //bak
+Save:node\C\project\Macro_cfg_8910.h \[2.19\] 
 Save:node\C\project\Macro_cfg_8910.h \[2.20\] 
 // 其他标号
 Save:Help\\DefaultFile\\Macro_Node_Num.h
@@ -62,6 +62,7 @@ SPDE_PRJ/K220U_HYBL_H660A/uis8910_phone_user_base_config.cfg  YOUNGTONE_TTS_LIB
 // 黑名单
 make\app_main\app_macro.mk  MMI_BLACKLIST_SUPPORT
 // 白名单
+make\app_main\app_macro.mk  MMI_WHITELIST_SUPPORT
 prj:project_{cur}.mk   MMI_WHITELIST_SUPPORT = TRUE
 prj:project_{cur}.mk   MMI_BLACK_AND_WHITE_LIST_ADD_SETTING = TRUE
 //		==>HandleMTCallDisc
@@ -77,6 +78,8 @@ MS_MMI_Main\source\mmi_service\export\inc\mmipb_common.h  MMIPB_NV_MAX_RECORD_NU
 
 MS_MMI_Main\source\mmi_app\app\pb\h\mmipb_nv.h  MMINV_MAX_PHONEBOOK_RECORDS
 //		#define MMINV_MAX_PHONEBOOK_RECORDS     MMIPB_NV_MAX_RECORD_NUM
+MS_MMI_Main\source\mmi_app\app\pb\h\mmipb_nv.h  MMINV_PHONEBOOK_MAIN_LAST_ENTRY  #107
+
 
 //b、增加的RAM调整
 //	每增加100条联系人，大概增加约24K的STATIC heap空间，因此，增加的空间为(24*X/100)
@@ -201,7 +204,7 @@ make\app_main\app_macro.mk  MMI_SMS_SECURITYBOX_SUPPORT
 
 
 
-[1.4] MMS, CB
+[1.4] MMS, CB, CL
 ### __MMS__
 //--107
 prj:project_{cur}.mk  MMS_SMS_IN_1_SUPPORT = TRUE
@@ -222,11 +225,17 @@ prj:project_{cur}.mk  MMI_ETWS_SUPPORT = TRUE
 make\app_main\release_app_macro.mk  MMI_ETWS_SUPPORT
 
 
+### __CL__
+// 条数 80+20 (107)
+app:cl\h\mmicl_internal.h  MMICL_RECORD_TOTAL_NUM
+
 
 [1.5] BROWSER, DL
 // mk--true
 prj:project_{cur}.mk  BROWSER_SUPPORT = TRUE
-prj:project_{cur}.mk  BROWSER_SUPPORT_DORADO = TRUE
+prj:project_{cur}.mk  BROWSER_SUPPORT_DORADO = TRUE    # 浏览器1 同时开3会有2个浏览器
+prj:project_{cur}.mk  OPERA_MINI_SUPPORT     = VER6    # 浏览器2
+prj:project_{cur}.mk  OPERA_MINI_SUPPORT     = VER42   # 浏览器3
 prj:project_{cur}.mk  BROWSER_ALL_RUNNING_SUPPORT = TRUE   # 107
 prj:{cfg}.cfg         BROWSER_ALL_RUNNING_SUPPORT = TRUE   # 8910
 // mk--false
@@ -244,15 +253,33 @@ prj:project_{cur}.mk  OPERA_MINI_SUPPORT = VER42
 // browser UI
 prj:project_{cur}.mk  BROWSER_INPUT_BIG_FONT_BG_STYLE  = TRUE
 prj:project_{cur}.mk  BROWSER_DL_DEFAULT_TCARD         = TRUE
+prj:project_{cur}.mk  BROWSER_IN_TOOLMENU              = TRUE # 整理编译报错 107
 
 
 // Download
 prj:project_{cur}.mk  DL_SUPPORT    = TRUE   # 107 FALSE
 prj:project_{cur}.mk  OMADL_SUPPORT = TRUE   # 107 FALSE
+//
+prj:project_{cur}.mk  AUTO_DOWNLOAD_SUPPORT = TRUE   # 107 TRUE
+
 
 //
 prj:project_{cur}.mk  DATACOUNTER_SUPPORT = TRUE  # 8910才有
 
+
+// 关DORADO: CSS_SUPPORT 没开不用管
+Makefile.verify  CSS_SUPPORT -> BROWSER_SUPPORT_DORADO
+
+// 关于内存提示 SPCSS00992465
+//	因T117项目内存受限，所以给dorado游览器划分的内存为4MB，另外可处理的网页最大size为1MB，
+//	当收到的网页数据大小超过1MB，在处理网页解析SSL的时候内存申请buffer失败，提示网页太大，
+//	当4MB内存用完后就会提示内存不足。
+
+// SPCSS01103989
+//Dorado浏览器在产品规格中配置最大可使用内存为1.5M，不支持js解析
+
+###
+patch:node\bug\Macro_bug_107.h  __BROWSER__
 
 
 [1.6] BT
@@ -389,7 +416,10 @@ s_shortcut_menu_show_list_text_id
 // all list
 s_shortcut_menu_edit_list_text_id
 
+
 // edit-menu
+//		==>MMIAPISET_EnterShortCutMenuWin
+//		====>HandleShortCutSetMenuWindow
 app:setting\c\mmiset_phonewin.c  MMI_RESULT_E^HandleShortCutSetMenuWindow
 
 
@@ -774,100 +804,13 @@ Save:node\C\study\Macro_patch_third.h  zfb_107
 
 
 
-[2.12] build 服务器
-//
-//	Jenkins服务器上，我们自己git工程编译过程是这样，大家也可以了解下：
-//	1、jenkins的对代码的更新处理
-//	2、我们增加加了 git clean 操作
-//	3、我们增加更新 HW_NV_PARA的操作，HW_NV_PARA放在服务器单独另一个目录
-//	4、copy HW_NV_PARA这个目录的相关文件到SPDE_PRJ对应项目的nv目录中
-//	5、编译的时候会运行项目的bat文件，会把SPDE_PRJ的nv文件和资源文件复制到代码编译中相关目录
-//	6、开始正常的编译
+[2.12] 
 
-// make
-//		==>
-//		====>
-make.bat
-make\make_cmd\
-
-
-[2.13] build 省空间
-//
-build\tmp\
-build\tmp\app_main.macro
-build\tmp\app_main.macro.nv
-//
-build\tmp\error.txt
-
-
-请问贵司目前缺少多少空间?
-
-//BLUETOOTH_SUPPORT = NONE
-// 可以关这些
-build\tmp\app_main.macro  BT_NONSIG_SUPPORT = TRUE                             ### Nosig support
-build\tmp\app_main.macro  BT_BQB_SUPPORT = TRUE                                ### BQB SUPPORT
-build\tmp\app_main.macro  BT_OPP_SUPPORT = TRUE                                ### Switch Of OPP Profile Support
-build\tmp\app_main.macro  BT_FTS_SUPPORT = TRUE                                ### Switch Of FTP Server Profile Support
-build\tmp\app_main.macro  BT_HFG_SUPPORT = TRUE                                ### Switch Of Hand Free Gateway Profile Support
-build\tmp\app_main.macro  BT_A2DP_SUPPORT = TRUE                              ### Switch Of A2DP Profile Support
-build\tmp\app_main.macro  MP3_A2DP_SUPPORT = TRUE                              ### MP3 Support Bluetooth Stereo:
-build\tmp\app_main.macro  WAV_A2DP_SUPPORT = TRUE                              ### WAV Support Bluetooth Stereo:
-build\tmp\app_main.macro  AMR_A2DP_SUPPORT = TRUE                              ### AMR_DSP Support Bluetooth Stereo:
-build\tmp\app_main.macro  MIDI_A2DP_SUPPORT = TRUE                             ### MIDI Support Bluetooth Stereo:
-build\tmp\app_main.macro  AAC_A2DP_SUPPORT = TRUE                              ### AAC Support Bluetooth Stereo:
-
-//另外 audio codec支持部分看贵司需求
-build\tmp\app_main.macro  MP3_SUPPORT = TRUE                                   ### MP3 Decoder Support:
-build\tmp\app_main.macro  AAC_SUPPORT = TRUE                                   ### AAC Decoder Support:
-build\tmp\app_main.macro  AMR_SUPPORT = TRUE                                   ### AMR Decoder Support:
+[2.13]  
 
 
 
-
-// BT
-prj:{cfg}.cfg  BT_NONSIG_SUPPORT = TRUE   
-prj:{cfg}.cfg  BT_BQB_SUPPORT = TRUE      
-prj:{cfg}.cfg  BT_OPP_SUPPORT = TRUE      
-prj:{cfg}.cfg  BT_FTS_SUPPORT = TRUE      
-prj:{cfg}.cfg  BT_HFG_SUPPORT = TRUE      
-prj:{cfg}.cfg  BT_A2DP_SUPPORT = TRUE     
-prj:{cfg}.cfg  MP3_A2DP_SUPPORT = TRUE    
-prj:{cfg}.cfg  WAV_A2DP_SUPPORT = TRUE    
-prj:{cfg}.cfg  AMR_A2DP_SUPPORT = TRUE    
-prj:{cfg}.cfg  MIDI_A2DP_SUPPORT = TRUE   
-prj:{cfg}.cfg  AAC_A2DP_SUPPORT = TRUE    
-
-// MP3
-prj:{cfg}.cfg MP3_SUPPORT = TRUE
-prj:{cfg}.cfg AAC_SUPPORT = TRUE
-prj:{cfg}.cfg AMR_SUPPORT = TRUE
-WAV_SUPPORT = TRUE
-
-// H264
-prj:{cfg}.cfg H264_DEC_SUPPORT = TRUE
-
-// CALENDAR 一共45K
-prj:{cfg}.cfg SMS_CHAT_SUPPORT = TRUE
-prj:{cfg}.cfg CALENDAR_SUPPORT = TRUE
-// FDN 不点空间
-prj:{cfg}.cfg PIC_ZOOM_SUPPORT = TRUE
-prj:{cfg}.cfg FDN_SUPPORT = TRUE
-
-// SMS
-prj:project_{cur}.mk   MMI_APP_REMOVE_SMS_NUM = TRUE
-
-
-// SALES_SUPPORT
-sales.c,7K
-// MMI_VCARD_SUPPORT, 联系人
-mmivcard.c,5K
-
-
-
-
-[2.14] build time
-// build time
-Save:node\ToolsMsg\Macro_win10.h  __Buildtime__
+[2.14] 
 
 
 [2.15] marco
@@ -944,25 +887,15 @@ lib\ums9117_240X320BAR_48MB_CAT1\
 
 [2.17] FLASH
 ### 8910
+prj:project_{cur}.mk  FLASH_SIZE = 128MBITX64MBIT_NEW   # 大版本
+prj:project_{cur}.mk  FLASH_SIZE = 128MBIT              # 小版本
+// 分区
+prj:project_{cur}.mk  _FLASH_STYLE_
 
-prj:project_{cur}.mk  FLASH_SIZE
-//(小版本)
-//   FLASH_SIZE = 128MBIT
-//(大版本)
-//   FLASH_SIZE = 128MBITX64MBIT_NEW
-
-//
-prj:project_{cur}.mk  WATCH_FS_FLASH_STYLE_
-
-
-###
-// 8910F
+// 修改分区
 config:\
-config:spiflash_cfg.c  FLASH_SIZE_128MBITX64MBIT_NEW
-// 8910s
-config:spiflash_cfg.c  FLASH_SIZE_128MBIT$
-
-
+config:spiflash_cfg.c  FLASH_SIZE_128MBITX64MBIT_NEW    //大版本
+config:spiflash_cfg.c  FLASH_SIZE_128MBIT$              //小版本
 // SECTOR
 config:spiflash_cfg.c  MMI_RES_SECTOR_NUM
 config:spiflash_cfg.c  604
@@ -983,7 +916,12 @@ config:spiflash_cfg.c  646
 //	#define  PS_STONE_SECTOR_NUM		124 // 123 //123
 
 
-### 107
+// fota分区小可能报错
+fdl_bootloader\nor_bootloader\src\nor_bootloader_fota_uix8910.scf  0xB800
+
+
+
+### 107 分区
 
 
 
@@ -1022,7 +960,6 @@ build\{cur}_builddir\tmp\link_UIX8910_uis8910ff_refphone_vm.scf  LOAD_FLASH_B_DF
 
 [2.19] 
 
-build\tmp
 
 
 

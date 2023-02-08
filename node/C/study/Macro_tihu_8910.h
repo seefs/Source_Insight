@@ -14,7 +14,7 @@ Save:node\C\study\Macro_tihu_8910.h \[1.9\] send------------get
 Save:node\C\study\Macro_tihu_8910.h \[1.10\] --sms
 Save:node\C\study\Macro_tihu_8910.h \[1.11\] --heart、sos
 Save:node\C\study\Macro_tihu_8910.h \[1.12\] --loc
-Save:node\C\study\Macro_tihu_8910.h \[1.13\] time-----------轮询
+Save:node\C\study\Macro_tihu_8910.h \[1.13\] 
 Save:node\C\study\Macro_tihu_8910.h \[1.14\] 
 Save:node\C\study\Macro_tihu_8910.h \[1.15\] 
 Save:node\C\study\Macro_tihu_8910.h \[1.16\] api------------接口
@@ -455,6 +455,10 @@ app:zdt\c\zdt_yx_net.c  YX_Heart_TimeStop
 //
 Save:node\C\study\Macro_slide_8910.h  __sos__
 
+// sos弹窗
+//		==>bm_iot_card_call_sos_number
+//		====>watch_func_note_insert_sim
+
 
 
 
@@ -529,16 +533,7 @@ app:zdt\c\zdt_yx.c  case^ZDT_APP_SIGNAL_YX_LBS_CHANGE
 
 
 
-[1.13] time--轮询
-// app-user-time
-app:zdt\c\zdt_app.c  MMIZDT_CheckTimerStart()
-// app-user-time-msg
-app:zdt\c\zdt_app.c  case^ZDT_APP_SIGNAL_CHECK_TIME
-//  周期1分钟: am, pm, jp,
-app:zdt\c\zdt_app.c  MMIZDT_HandleCheckTimer
-app:zdt\c\zdt_yx_net.c  YX_Net_TimerCheck( )
-//
-app:zdt\c\zdt_yx_net.c  MMIZDT_Net_Reset
+[1.13] 
 
 
 
@@ -575,12 +570,22 @@ bm_iot_card_set_love_number
 //
 ### __log__
 //
-app:bmiotcard\h\bmiotcardadapter.h  WATCH_ALL_LOG_SUPPORT
-app:launcher\h\watch_comm_test.h  WATCH_WINID_LOG_SUPPORT
 app:udisk/c/mmiudisk_wintab.c  USB_CONNECT_DEFAULT_CHARGE
-app:launcher\c\watch_comm_net.c  WATCH_ALL_LOG_SUPPORT
 //
 app:launcher\c\watch_comm_test.c  WATCH_ALL_LOG_SUPPORT
+// log--总开关
+app:launcher\h\watch_comm_test.h  WATCH_WINID_LOG_SUPPORT
+// log--单项开关
+app:bmiotcard/h/bmiotcardadapter.h  WATCH_ALL_LOG_SUPPORT
+app:launcher\c\watch_comm_net.c  WATCH_ALL_LOG_SUPPORT
+
+
+### 其他
+// slide
+Save:node\C\study\Macro_slide_8910.h  __log__
+// trace
+Save:node\C\study\Macro_fun_8910.h  __debug__
+
 
 
 [1.20] 

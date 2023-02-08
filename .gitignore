@@ -5,4 +5,6 @@ Cmd_TXT/si_filelist.h
 Cmd_TXT/si_log.h
 Set/Macro_Set.h
 Set/Macro_Set_Base.h
+node/S/Info*
+node/S/Macro_Note_S.h
 

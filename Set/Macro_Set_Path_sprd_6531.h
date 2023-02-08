@@ -30,23 +30,29 @@ guiPath     = MS_MMI\source\mmi_gui\source
 kernelPath  = MS_MMI\source\mmi_kernel\source\
 servicePath = MS_MMI\source\mmi_service\source\
 resourcePath= MS_MMI\source\resource\
-configPath  = MS_Customize\source\product\config
+configPath  = MS_Customize\source\product\config\{product}\
 driverPath = MS_Customize\source\product\driver\
-sensorsPath = MS_Customize\source\product\driver\sensors
+sensorsPath = MS_Customize\source\product\driver\sensors\
 
 
 ### 1.cfg
 versionKey  = UMS9117_ums9117_barphone_version
+//customerKey = SE295_SPEED_2IN1
+productKey  = fp6500_bar_x93_qcif
+baseLibKey  = sc6500_32X32_128X160BAR_QW_formal_x93
+platformKey = SC6530
 
 
 ### 2.cur
 prjPath  = .\
 prj:\\
 
-projectKey   = K220U_LBR_L691_HS_L51_HQQVGA
-curKey   = UIS8910_ROM_16MB_DS_USER
-cfgKey   = us8910_phone_user_base_config
-sizeNext  = 2
+
+//projectKey   = project_sc6500_32X32_176X220BAR_X93_BERX
+projectKey   = sc6500_32X32_176X220BAR_X93_BERX
+curKey   = sc6500_32X32_176X220BAR_X93_BERX
+cfgKey   = xx
+sizeNext  = 1
 size1Key  = 128X128
 size2Key  = 128X128
 
@@ -59,10 +65,6 @@ newKey = xx
 wintabKey = wintab
 
 tmpKey = xx
-
-pjk0Key  = RX5106_ATV_D50_BONTEL_AR_FR_PO_CTC
-pjk1Key  = sc6531_32X32_240X320BAR_{pjk0}
-pjk2Key  = project_{pjk1}.mk
 
 
 ### 5.build

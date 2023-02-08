@@ -30,6 +30,8 @@ Save:node\C\study\Macro_gui_8910.h  \[1.27\] prgbox-------------½ø¶ÈÌõ
 Save:node\C\study\Macro_gui_8910.h  \[1.28\] menu
 Save:node\C\study\Macro_gui_8910.h  \[1.29\] owndraw------------
 Save:node\C\study\Macro_gui_8910.h  \[1.30\] Banner
+Save:node\C\study\Macro_gui_8910.h  \[1.31\] 
+Save:node\C\study\Macro_gui_8910.h  \[1.32\] 
 
 
 
@@ -273,6 +275,10 @@ source:mmi_app/common/h/common_mdu_def.h  IMAGE_IDLE_TITLE_ICON_BATTERY6
 chip_drv/source/prj_win/charge.c  void^send_msg_to_client
 
 
+### Statusicons
+// ==>image
+Save:node\C\study\Macro_res_image_8910.h  __status__
+Save:node\C\study\Macro_res_image_8910.h  __bat__
 
 
 // set

@@ -307,10 +307,16 @@ lib/UIS8910_ROM_16MB_SS_USER/img_proc.a
 
 
 [1.19] log
+### __log__
 //
 Save:node\C\study\Macro_patch_8910.h  __Trace__
 
 
+### ÆäËû
+// slide
+Save:node\C\study\Macro_slide_8910.h  __log__
+// trace
+Save:node\C\study\Macro_fun_8910.h  __debug__
 
 
 [1.20] 

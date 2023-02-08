@@ -1,18 +1,18 @@
 
 //目录[Num][Ca]:
 // 1. 模板
-Save:node\C\cfg\Macro_c_path.h \[1.1\] mtk_cur--------
-Save:node\C\cfg\Macro_c_path.h \[1.2\] mtk_copy
-Save:node\C\cfg\Macro_c_path.h \[1.3\] mtk_cfg--------nv, board
-Save:node\C\cfg\Macro_c_path.h \[1.4\] mtk_other------rf
-Save:node\C\cfg\Macro_c_path.h \[1.5\] mtk_bat
-Save:node\C\cfg\Macro_c_path.h \[1.6\] //mtk_sbd------
-Save:node\C\cfg\Macro_c_path.h \[1.7\] other
-Save:node\C\cfg\Macro_c_path.h \[1.8\] 
-Save:node\C\cfg\Macro_c_path.h \[1.9\] 
-Save:node\C\cfg\Macro_c_path.h \[1.10\] 
-Save:node\C\cfg\Macro_c_path.h \[1.11\] 
-Save:node\C\cfg\Macro_c_path.h \[1.12\] 
+Save:node\C\cfg\Macro_c_path_mtk.h \[1.1\] mtk_cur--------
+Save:node\C\cfg\Macro_c_path_mtk.h \[1.2\] mtk_copy
+Save:node\C\cfg\Macro_c_path_mtk.h \[1.3\] mtk_cfg--------nv, board
+Save:node\C\cfg\Macro_c_path_mtk.h \[1.4\] mtk_other------rf
+Save:node\C\cfg\Macro_c_path_mtk.h \[1.5\] mtk_bat
+Save:node\C\cfg\Macro_c_path_mtk.h \[1.6\] //mtk_sbd------
+Save:node\C\cfg\Macro_c_path_mtk.h \[1.7\] other
+Save:node\C\cfg\Macro_c_path_mtk.h \[1.8\] 
+Save:node\C\cfg\Macro_c_path_mtk.h \[1.9\] 
+Save:node\C\cfg\Macro_c_path_mtk.h \[1.10\] 
+Save:node\C\cfg\Macro_c_path_mtk.h \[1.11\] 
+Save:node\C\cfg\Macro_c_path_mtk.h \[1.12\] 
 
 
 
@@ -99,7 +99,7 @@ custom\audio\{nv}\
 
 
 [1.3] _mtk_cfg_
-// (1).nv
+// (1).__nv__
 Save:set\Macro_Set_Path_mtk_{pro}.h  nvKey
 // 未设置用默认 BOARD_VER
 make/{cur}_{GSM}.mak  BOARD_VER_CUST_AUDIO
@@ -115,7 +115,7 @@ custom\audio\{nv}\
 
 
 
-// (2).board
+// (2).__board__
 Save:set\Macro_Set_Path_mtk_{pro}.h  boardKey
 //
 make/{cur}_{GSM}.mak  BOARD_VER
@@ -150,7 +150,7 @@ custom\system\{board}\custom_MemoryDevice.h  NOR_BOOTING_NAND_FS_SIZE
 
 
 
-// (3).lcd
+// (3).__lcd__
 Save:set\Macro_Set_Path_mtk_{pro}.h  lcdKey
 //
 make/{cur}_{GSM}.mak  LCD_MODULE
@@ -167,13 +167,13 @@ custom\drv\color\{lcd}\color_custom.c
 Save:node\C\project\Macro_Note_MTK.h  __LCD__
 
 
-// (4).cam
+// (4).__cam__
 // --
 custom\drv\YUV_sensor\{board}\{cur}\
 custom\drv\YUV_sensor\{board}\{cur}\GC032A_SERIAL\
 
 
-// (5).system
+// (5).__system__
 //
 custom\system\K2M_BB\
 custom\system\{board}\

@@ -82,6 +82,10 @@ macro GetPubPathBuf(hbuf)
 	}
 	
 	msg("cfg null: " # CharFromKey(13)
+	   # "baseName: " # baseName # CharFromKey(13)
+	   # "n: " # n # CharFromKey(13)
+	   # "type: " # type # CharFromKey(13)
+	   # "tag1: " # curTag # CharFromKey(13)
 	   # baseName # CharFromKey(13) # CharFromKey(13)
 	   # nKey)
 	
@@ -935,7 +939,8 @@ macro GetTransFileName(hbuf, fName, cNum)
 	//use "^" as space
 	fName = ReplaceWord(fName, "^", " ")
 	//resolve SI Cache bug.
-	fName = ReplaceWord(fName, "\\\\", "\\")
+	if( "X" == LFindStringExt( fName, "\\\\", 2))
+		fName = ReplaceWord(fName, "\\\\", "\\")
 	if(cNum != 17)
 		fName = ReplaceWord(fName, "/", "\\")
 //	msg(fName)
@@ -1238,7 +1243,7 @@ macro getKeyHead(hbuf, fHead)
 		return ""
 	}
 	
-	//1.get cfg file, 每个项目一个cfg
+	//1.get project cfg
 	pathBuf = GetPubPathBuf(hbuf)
 	if(pathBuf == hNil){
 		msg("key: {@fHead@}" # CharFromKey(13)
@@ -1268,7 +1273,7 @@ macro getKeyHead(hbuf, fHead)
 		}
 	}
 	
-	//3.get key
+	//3.get num key
 	hbufConfig = GetPubKeyBuf(hbuf)
 	if(hbufConfig != hNil){
 		//get path
@@ -1384,7 +1389,7 @@ macro ReCustomKeyHead(hbuf, curPathS, curPathE)
 		return curPathE
 
 	pathMid = strmid(curPathE, firstS + 1, firstE)
-	//特殊{key}
+	//特殊key: {pro}
 	keyVal = getCustomKeyHead(hbuf, pathMid)
 	if (keyVal != "")
 	{
@@ -1405,7 +1410,7 @@ macro ReCustomKeyHead(hbuf, curPathS, curPathE)
 		return pathOut
 	}
 
-	// next val
+	// 多型Next: {size}, next=2时检查2个路径是否存在
 	nextVal = getNextHead(hbuf, pathMid)
 	if (nextVal != "")
 	{

@@ -1,18 +1,18 @@
 
 //目录
-Save:node\C\study\Macro_res_8910.h \[1.1\] 项目配置
-Save:node\C\study\Macro_res_8910.h \[1.2\] mk, version, nv
+Save:node\C\study\Macro_res_8910.h \[1.1\] project
+Save:node\C\study\Macro_res_8910.h \[1.2\] mk, version
 Save:node\C\study\Macro_res_8910.h \[1.3\] str
-Save:node\C\study\Macro_res_8910.h \[1.4\] res, color
+Save:node\C\study\Macro_res_8910.h \[1.4\] res, color1
 Save:node\C\study\Macro_res_8910.h \[1.5\] image-----------------
 Save:node\C\study\Macro_res_8910.h \[1.6\] ring, audio-----------
 Save:node\C\study\Macro_res_8910.h \[1.7\] add app
 Save:node\C\study\Macro_res_8910.h \[1.8\] add res
-Save:node\C\study\Macro_res_8910.h \[1.9\] font/color------------
+Save:node\C\study\Macro_res_8910.h \[1.9\] font/color2------------
 Save:node\C\study\Macro_res_8910.h \[1.10\] test
 Save:node\C\study\Macro_res_8910.h \[1.11\] OLD_PRELOAD
 Save:node\C\study\Macro_res_8910.h \[1.12\] xx_mdu_def.h
-Save:node\C\study\Macro_res_8910.h \[1.13\] lang/rule------------
+Save:node\C\study\Macro_res_8910.h \[1.13\] lang/rule------------翻译表
 Save:node\C\study\Macro_res_8910.h \[1.14\] pos------------------
 Save:node\C\study\Macro_res_8910.h \[1.15\] load res...
 Save:node\C\study\Macro_res_8910.h \[1.16\] apn
@@ -23,13 +23,18 @@ Save:node\C\study\Macro_res_8910.h \[1.20\]
 
 
 
-[1.1] 项目配置
+[1.1] project
+// --设置当前项目
+Save:set\
+Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 
-### 设置当前项目
-// --
+// --其他设置
 Save:node\C\cfg\
 Save:node\C\cfg\Macro_c_path_sprd.h  _sprd_cur_
-
+// --__key__
+Save:Help\Other\Macro_Help_SI.h  __key__
+// --__Common__
+Save:Help\Other\Macro_Help_SI.h  __Common__
 
 
 
@@ -232,6 +237,8 @@ MS_MMI_Main/source/resource/mmi_res_prj_def.h  WATCH_LANG_HAN_VECTOR_3241
 //
 Makefile.verify  VECTOR_FONT
 
+//
+// RGB8882RGB565(rgb888)
 
 // ==>font/color
 Save:node\C\study\Macro_res_color_8910.h  __idle__
@@ -372,7 +379,7 @@ Save:node\C\study\Macro_pos_8910.h  __idle__
 
 [1.15] load
 ### 107
-// --load
+// --__load__
 //		==>APP_Task
 //		====>MMK_LoadStaticModInfo
 //		====>MMIRES_ResourceInit
@@ -399,14 +406,15 @@ Save:node\C\study\Macro_pos_8910.h  __idle__
 
 
 [1.16] apn
-### 8910
-//
-Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
-
 //
 tool_mini:\
 tool_mini:6_res_str\
 tool_mini:6_res_str\res_ntac.xlsx
+
+
+### __8910_apn__
+//
+Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 
 // tools
 {8910}\tools\DEBUG_TOOL\ResBOCA\ResBOCA_R1.19.0501\Bin\
@@ -414,22 +422,24 @@ tool_mini:6_res_str\res_ntac.xlsx
 resource:Common\DATA\
 {8910wa21}\MS_MMI_Main\source\resource\Common\DATA\
 {8910wa_git}\MS_MMI_Main\source\resource\Common\DATA\
-
-// __8910_apn__
+// 
 Save:node\C\study\Macro_doc_apn8910.h
 
 
-
-### 107
+### __107_apn__
+// tools
+tools\Common\ResBOCA\Bin\
 // 分段加载
 prj:project_{cur}.mk  DATA_ACCOUNT_USE_SPLIT_FILE = TRUE
 
-// __107_apn__
+// 
 PS\nv\operator_delta\operator_config_all\
 // 所有支持运营商的索引
 PS\nv\operator_delta\operator_config_all\Index.xml
 // 107 apn
 Save:node\C\study\Macro_doc_apn107.h
+// 107 volte
+Save:node\C\study\Macro_doc_volte107.h
 //
 resource:Common\DATA\
 // apn_list_BigThan_300_LessThan_430.ntac

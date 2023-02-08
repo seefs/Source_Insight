@@ -28,12 +28,12 @@ boardKey  = X228_BB
 lcdKey  = F55_GZ_N37_LCM
 
 ### 2.cur
-curKey = F55M_GZ_N37E_XL
+//curKey = F55M_GZ_N37E_XL
 //curKey = X223_KEWEI_X15_MUL
 //curKey = F209_KW_S77
-//curKey = X228_M1
+curKey = X228_M1
 // GSM GPRS
-GSMKey = GSM
+GSMKey = GPRS
 
 ### 3.copy
 //oldKey = X223_KEWEI_X15_MUL_gprs

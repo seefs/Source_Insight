@@ -2,21 +2,21 @@
 
 //目录
 // 1. SI常用问题
-Save:node\ToolsMsg\Macro_SI.h \[1.1\] 文件总数
-Save:node\ToolsMsg\Macro_SI.h \[1.2\] 文件过滤-----------MTK
-Save:node\ToolsMsg\Macro_SI.h \[1.3\] 文件过滤-----------SPDE
+Save:node\ToolsMsg\Macro_SI.h \[1.1\] 安装/设置
+Save:node\ToolsMsg\Macro_SI.h \[1.2\] 项目文件与过滤
+Save:node\ToolsMsg\Macro_SI.h \[1.3\] 搜索
 Save:node\ToolsMsg\Macro_SI.h \[1.4\] 通配符替换
 Save:node\ToolsMsg\Macro_SI.h \[1.5\] SI崩溃问题---------
 Save:node\ToolsMsg\Macro_SI.h \[1.6\] 
-Save:node\ToolsMsg\Macro_SI.h \[1.7\] 安装
+Save:node\ToolsMsg\Macro_SI.h \[1.7\] 
 Save:node\ToolsMsg\Macro_SI.h \[1.8\] 有趣的格式
 Save:node\ToolsMsg\Macro_SI.h \[1.9\] 
-// 2. 
+// 2. 设置
 Save:node\ToolsMsg\Macro_SI.h \[2.1\] ShellExecute-------
-Save:node\ToolsMsg\Macro_SI.h \[2.2\] 
+Save:node\ToolsMsg\Macro_SI.h \[2.2\] node
 Save:node\ToolsMsg\Macro_SI.h \[2.3\] modifier charac-ters
-Save:node\ToolsMsg\Macro_SI.h \[2.4\] path
-Save:node\ToolsMsg\Macro_SI.h \[2.5\] 搜索
+Save:node\ToolsMsg\Macro_SI.h \[2.4\] system path
+Save:node\ToolsMsg\Macro_SI.h \[2.5\] 
 Save:node\ToolsMsg\Macro_SI.h \[2.6\] SI3.5插件
 Save:node\ToolsMsg\Macro_SI.h \[2.7\] 自定义命令
 Save:node\ToolsMsg\Macro_SI.h \[2.8\] 自定义菜单
@@ -28,92 +28,149 @@ Save:node\ToolsMsg\Macro_SI.h \[2.12\]
 
 
 
-[1.1] 文件总数
-//f1->G 显示项目中一种文件类型数量, 空行显示文件总数
-//	mk
-//	//==>
-//	mk: 5373
+[1.1] 安装/设置
+### SI4.0 安装
+//	1) 安装包文件、步骤:
+//		安装包\sourceinsight4084-setup.exe         # 安装exe
+//		安装包\sourceinsight4.exe                  # 替换安装目录下的文件
+//		安装包\si4.pediy.lic                       # 打开exe 导入证书
+
+//	2) Setting路径
+//	  1、保存配置、修改默认Setting路径
+//		Options -> Style properties->Load->E:\save\Source Insight\SettingsXml
+//		Options -> Preferences -> Folders->E:\save\Source Insight
 //
-//	java
-//	//==>
-//	java: 38179
-
-
-[1.2] 文件过滤-----------MTK
-###
-//====同步时，不要点自动添加文件====
-
-# __SI_JAVA__
+//	  2、批处理:
+//		project->add project Files->E:\save\SI3.5->同步文件
+//		project->add project Files->E:\save\SI4.0->同步文件    # 同时打开运行批处理有问题
 //
-Source Insight 导入.c .h搜索会卡, 可只导入java文件
+//	  3、其他:
+//		用.h, .txt颜色单一
 
 
-# __SI_MTK__
-// 过滤:
-//----------------------------------------------
-//                  61M         60D        60D
-// 总数               000       25981        000
-// 剩余               000       22807        000
-// 减少               000        3174        000
-//----------------------------------------------
-//  \tst\           142         000        000
-// *CustResDef.h    000         920        000
-// *.txt            000        1448        000
-// *ref_list.txt    820         915        000
-// *.html           820         000        000
-// *.xml            200         807        000
-// *.hpp            200         000        000
+### 下载并覆盖配置文件
+// 配置:
+//   字体、编码、布局;
+//	 快捷键，菜单;
+// 下载命令:
+git clone https://github.com/seefs/Source_Insight_4_0_cfg
 
-// 过滤---不掉:
-// *Themecomponents.h K1*_MMM
-//    Themecomponents.h K99M_F02_PHILIPS_EH_MMI
-// *ThemeRes.c
+// 更新后覆盖这个目录
+...\Save\Source Insight 4.0\Settings
+// (举例)
 
 
-// 过滤--61M_zyf:
+### 同步宏文件
+// 同步:
+//   初次配置需要同步
+//   修改宏文件，新加函数也要同步，否则报函数找不到
+// 步骤:
+//   切换到base project下：
+//		菜单 -> project -> 打开project -> base project 
+//   添加宏文件:
+//		菜单 -> project -> 添加或移除项目文件 -> 添加
+//		...\Macro，选所有文件, 
+//   其他文件不用添加
+//   同步:
+//		菜单--project -> 同步文件
+// 验证
+//   宏配置OK，检查快捷键是否能用:
+//		ctrl+b, 即打开临时文件--simple_tmp_b.h
+//		f2, 打开当前目录
 
 
+### 设置宏文件
+// Save 路径设置
+Save:Help\Other\Macro_Help_SI.h  __set__
 
-[1.3] 文件过滤-----------SPDE
-// 最小的文件
+
+[1.2] 项目文件与过滤
+### 查看所有文件
+// __filelist__
+// --删除
+//		用"remove all file",不卡
+// --查看所有文件，
+//		直接多择"project list.."，win10可能卡死
+//		用"remove spe..",一般不卡; 如果卡死，用ref-Remove_File命令
+// --调试--所有ref-命令，
+Save:Help\Other\Macro_Help_filelist.h  __ref__
+// --调试--所有sys-命令，
+Save:Help\Other\Macro_Help_filelist.h  __sys__
+// --调试--所有func-命令，
+Save:Help\Other\Macro_Help_filelist.h  __func__
+// --调试--显示文件总数
+Save:Help\Other\Macro_Help_filelist.h  __cnt__
+
+
+### 统计
+// 统计文件类型数量
 tool_mini:1_filelist\
-// 临时文件，方便对比检查
+tool_mini:1_filelist\get_file_type.xlsm
+
+// 分类汇总
+code:\txt\si\_count_t107.txt
+code:\txt\si\_count_8910.txt
+code:\txt\si\_count_mtk_zyf.txt
+
+
+### 文件过滤
+//====同步时，不要点自动添加文件====
+// 临时文件
 code:\txt\si\
+code:\txt\si\_readme.txt  _8910_
+code:\txt\si\_readme.txt  _107_
+code:\txt\si\_readme.txt  __MTK__
+
+// 导出文件列表
+// --UE通配符替换
+// --UE通配符--打开正则--perl: 替换路径格式
+//		From: (.*)\((.*)\)
+//		TO  : \2\\\1
+// 导入文件列表
+// --MTK
+// --SPRD
+code:\txt\si\t107_cur.txt  //16215
+code:\txt\si\t107_all.txt  //13754
+// --JAVA
+//		Source Insight 导入.c .h搜索会卡, 可只导入java文件
+
+// 自动显示dc目录下多少个文件
+// 自动导入当前项目文件列表
 
 
-# __SI_SPDE__
-### 过滤--107
-// 总数                12364  
-// 剩余                12364  
-// 减少                 0  
-//--------------------------
-// Third-party         488
-// external            170
-// ARM                 164
-// BASE                204
-// SPDE_PRJ           3274 (先输入*.xml, 再输入 SPDE_PRJ, 不会删mk)
-// winsimulator_tp     270
-// *.txt               114 
+[1.3] 搜索
+### 搜索
+//	lookup refercences:
+//		1、Simple String
+//		2、Regular Expression
+//		3、Keyword Expression
+//		4、Look Up Reference	 SI4.0用不了
+//	search result option:
+//		1、Include name of container function of clase    不搜索miss文件
 
-// 过滤---不掉:
-
-
-### 过滤--8910
-
+### 搜索速度
+// 1.减6000个xml文件：10s=>2s
 
 
 [1.4] 通配符替换
-//	old:
-//	\(.*\)、
-//	new:
-//	[1.\1] 
-//	// .*, .*, .* 分别 \1, \2, \3
+// __replace__
+### UE通配符
+// --UE通配符--打开正则--perl: 替换路径格式
+//		From: (.*)\((.*)\)
+//		TO  : \2\\\1
+
+### SI通配符
+//		From: \(.*\)、
+//		TO  : [1.\1] 
+// .*, .*, .* 分别 \1, \2, \3
 
 
 
 
 [1.5] SI崩溃问题
-C:\Users\Administrator\AppData\Local\Temp
+//
+C:\Users\Administrator\
+C:\Users\{Admin}\AppData\Local\Temp\
 //	删除以TFX开头的所有临时文件。
 
 
@@ -122,28 +179,19 @@ C:\Users\Administrator\AppData\Local\Temp
 // 不能改文件格式, 没什么办法
 
 
+// win10文件列表死机：
+// 更新最新版本 [还是死机]
+
+
+// source insight 一直 checking for modified files导致卡顿 [未验证]
+Option → Preferences → General → Background synchronization every [] minutes，取消该选项
+
+
+
 [1.6] 
 
 
-
-
-[1.7] 安装
-//	安装
-//	1 安装 sourceinsight4084-setup.exe
-//	2 用sourceinsight4.exe替换安装目录下的文件
-//	3 打开sourceinsight4.exe，导入证书si4.pediy.lic
-
-//Setting路径
-//	1、保存配置、修改默认Setting路径
-//	Options -> Style properties->Load->E:\save\Source Insight\SettingsXml
-//	Options -> Preferences -> Folders->E:\save\Source Insight
-//
-//	2、批处理:
-//	project->add project Files->E:\save\SI3.5->同步文件
-//	project->add project Files->E:\save\SI4.0->同步文件    # 同时打开运行批处理有问题
-//
-//	3、其他:
-//	用.h, .txt颜色单一
+[1.7] 
 
 
 [1.8] 有趣的格式
@@ -179,7 +227,8 @@ https://www.sourceinsight.com/doc/v4/userguide/index.html#rhhlterm=shell&rhsyns=
 //	ShellExecute("explore", "C :\Documents and Settings", "", "", 1)
 //	ShellExecute("open", "http://www.somedomain.com", "", "", 1)
 //	ShellExecute("open", "somefile.doc", "", "", 1)
-//	
+
+//%j 无法识别
 //	ShellExecute("explore", "%j", "", "", 1)
 
 // --参数
@@ -201,6 +250,7 @@ Save:Help\Macro_Note_Test.h  __Shell__
 
 
 [2.2] node 
+### __node__
 //	**** **** ***** node ***** **** *****
 //	 Character Expands to																						Example 		   
 //	%f		   full path name of the current file * 												c:\myproj\file.c
@@ -231,21 +281,16 @@ Save:Help\Macro_Note_Test.h  __Shell__
 //	%m		   for all modified files %f%m
 
 
-[2.4] path 
-	
+[2.4] system path 
+// 预定义路径变量
 //	***** **** ***** path ***** **** *****
-//	%APPDATA_DIR% %DESKTOP_DIR% %LOCAL_APPDATA_DIR% %MYDOCUMENTS_DIR% %PROGRAM_DIR% %PROGRAMFILES_DIR% %PROGRAMFILESX86_DIR% %PROJECT_DATA_DIR% %PROJECT_SOURCE_DIR% %PROJECT_NAM%E %SHARED_DOCUMENTS_DIR% %SOURCEINSIGHT_USER_DIR% %TEMP_DIR% %WINDOWS_DIR%
+//	%APPDATA_DIR% %DESKTOP_DIR% %LOCAL_APPDATA_DIR% %MYDOCUMENTS_DIR% 
+//  %PROGRAM_DIR% %PROGRAMFILES_DIR% %PROGRAMFILESX86_DIR% %PROJECT_DATA_DIR% 
+//  %PROJECT_SOURCE_DIR% %PROJECT_NAM%E %SHARED_DOCUMENTS_DIR% 
+//  %SOURCEINSIGHT_USER_DIR% %TEMP_DIR% %WINDOWS_DIR%
 
 
-[2.5] 搜索
-//	***** **** ***** 搜索 ***** **** *****
-//	lookup refercences:
-//		1、Simple String
-//		2、Regular Expression
-//		3、Keyword Expression
-//		4、Look Up Reference	 SI4.0用不了
-//	search result option:
-//		1、Include name of container function of clase    不搜索miss文件
+[2.5] 
 
 
 [2.6] SI3.5插件

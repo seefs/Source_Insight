@@ -28,7 +28,7 @@ Save:node\ToolsMsg\Macro_VC.h \[1.16\]
 
 
 [1.1] 安装、卸载
-VC
+### VC
 //	Visual Studio 6.0	 安装：
 //			1、product id：全写111...
 //			2、file may be corrupt：取消（按多次）
@@ -49,8 +49,7 @@ VC
 //	设置不再显示
 
 
-//
-//无法创建一个dcom用户账号来注册
+### 无法创建一个dcom用户账号来注册
 //
 // 如果你不使用Visual Studio Analyzer，
 //可以在安装时选择Custom，然后在Enterprise Tools中清除掉Visual Studio Analyzer
@@ -67,15 +66,23 @@ VC
 //apemreg.exe可能未正确安装
 //
 
-//
+### 
 //	User breakpoint called from code at 0x77921ee2
 
-// 卸载
+
+### 卸载
 pVC6:\
 pVS08:\
 file_down:\
 file_down:\4^soft^tool\6^vc\vc\VC6.0\pvc6\
 //	unins000
+
+
+### 修改VC6.0堆栈的大小
+//	Project——Settings——选 msdevkernel.dll
+//	——选项卡 Link——分类 output——Stack allocations——Reserve
+//	Reserve → virtual memory, 默认大小是1M=0x100000
+//	Commit → physical memory, 应该小于Reserve
 
 
 

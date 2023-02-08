@@ -8,9 +8,9 @@ Save:node\C\study\Macro_res_image_wa8910.h \[1.2\] //MainMenu--主菜单图片
 Save:node\C\study\Macro_res_image_wa8910.h \[1.3\] 
 Save:node\C\study\Macro_res_image_wa8910.h \[1.4\] //charger--关机/充电动画
 Save:node\C\study\Macro_res_image_wa8910.h \[1.5\] //Statusicons
-Save:node\C\study\Macro_res_image_wa8910.h \[1.6\] //idle/time/
-Save:node\C\study\Macro_res_image_wa8910.h \[1.7\] zmaee
-Save:node\C\study\Macro_res_image_wa8910.h \[1.8\] zmaee call
+Save:node\C\study\Macro_res_image_wa8910.h \[1.6\] idle/test
+Save:node\C\study\Macro_res_image_wa8910.h \[1.7\] dial
+Save:node\C\study\Macro_res_image_wa8910.h \[1.8\] call
 Save:node\C\study\Macro_res_image_wa8910.h \[1.9\] pubWin
 Save:node\C\study\Macro_res_image_wa8910.h \[1.10\] list---------
 Save:node\C\study\Macro_res_image_wa8910.h \[1.11\] //anim
@@ -64,6 +64,8 @@ app:dropdownwin\h\dropdownwin_mdu_def.h  IMAGE_DROPDOWN_BG
 
 
 
+
+
 [1.4] 
 
 
@@ -71,8 +73,15 @@ app:dropdownwin\h\dropdownwin_mdu_def.h  IMAGE_DROPDOWN_BG
 
 
 
-[1.6] 
+[1.6] idle/test
 
+### imei
+images:common\MMI_RES_DEFAULT\IMAG\Edit\Editpad\
+
+// --72*32
+// ----80+(32+5)*4=228
+// ----80+(44+5)*4=276
+source:mmi_app\common\h\common_mdu_def.h  IAMGE_EDITPAD_OK
 
 
 
@@ -82,9 +91,14 @@ app:dropdownwin\h\dropdownwin_mdu_def.h  IMAGE_DROPDOWN_BG
 [1.7] dial
 ### --zmaee--dial
 images:common/MMI_RES_DEFAULT/IMAG/Bg/
+images:common/MMI_RES_DEFAULT/IMAG/Dial/
 
 //
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_DIAL_NEW_BG
+// del--74*44
+// del--74*38
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_BUTTON_DELKEY_BG_P
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_BUTTON_DELKEY_P
 
 
 ### --zmaee--alarm
@@ -105,12 +119,13 @@ app:zmaee\h\zmaee_mdu_def.h  IMG_FWATCH_OS_DEFAULT_QRCODE
 
 
 
-[1.8] zmaee call
+
+
+[1.8] call
 
 ### __WaCall__ (tp)
 //
 images:cc\MMI_RES_DEFAULT\IMAG\cc\
-images:common/MMI_RES_DEFAULT/IMAG/Dial/
 images:cc\MMI_RES_DEFAULT\IMAG\cc\watch\notification\
 
 // call--挂1--180*56
@@ -124,14 +139,6 @@ app:cc\h\cc_mdu_def.h  IMG_CC_HUNGUP4
 
 // call--接0--56*56
 app:cc\h\cc_mdu_def.h  IMG_CC_BOARD
-
-// bg
-//	IMAGE_DIAL_NEW_BG
-
-// del
-source:mmi_app\common\h\common_mdu_def.h  IMAGE_BUTTON_DELKEY_BG_P
-source:mmi_app\common\h\common_mdu_def.h  IMAGE_BUTTON_DELKEY_P
-//source:mmi_app\common\h\common_mdu_def.h  IMAGE_BUTTON_DELKEY_BG_P
 
 
 //
@@ -265,6 +272,21 @@ source:mmi_app\common\h\common_mdu_def.h  image_common_swap_delete
 source:mmi_app\common\h\common_mdu_def.h  image_watch_list_bg
 // --240*80
 source:mmi_app\common\h\common_mdu_def.h  image_watch_list_highlight_bg
+
+
+### __calendar__
+//
+images:clock\MMI_RES_DEFAULT\IMAG\Calendar\
+images:common/MMI_RES_DEFAULT/IMAG/Common/
+// --17*9
+source:mmi_app\app\accessory\h\clock_mdu_def.h  IMAGE_CALENDAR_BM_DOWN_ARROR
+// --28*28
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_CALENDAR_HIGHLIGHT
+// --1*1
+source:mmi_app\app\accessory\h\clock_mdu_def.h  IMAGE_CLOCK_CALENDAR_DEFAULT
+source:mmi_app\app\accessory\h\clock_mdu_def.h  IMAGE_CLOCK_CALENDAR_GREEN_DEFAULT
+source:mmi_app\app\accessory\h\clock_mdu_def.h  IMAGE_CALENDAR_FOCUSED_TODAY_RED
+
 
 
 [1.15] app

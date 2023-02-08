@@ -799,6 +799,10 @@ make\Codegen.mak  genmoduleinfo:
 //	$(error ...)
 
 
+// 加载.c文件
+make\custom\custom.mak  FOLDER_LIST
+make\custom\custom.mak  INC_DIR
+
 
 编译问题:
 // 1) mk:
@@ -836,6 +840,7 @@ tools\NVRAMStatistic\include\custom_option.txt
 
 ### mem--cfg
 // 可以省 37.6K(加150内存), 28K(加150内存)
+// 13.7K(加50内存)
 plutommi/mmi/Resource/MemoryRes.c  __MMI_K220_Z97_MEM_STYLE__
 plutommi/mmi/Resource/MemoryRes.c  g_applib_mem_ap_pool
 //

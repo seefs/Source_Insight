@@ -21,5 +21,10 @@ python_w yuv2rgb_2.py
 // ת24λbmp
 python_w tobmp24.py
 
+// ת8λpng
+python_w topng8.py
+python_w topng16.py
+//python_w topng24.py
+python_w topng32.py
 
 

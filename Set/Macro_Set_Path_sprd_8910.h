@@ -5,6 +5,7 @@
 ###
 
 0Key  = 8910
+1Key  = wa03u_git
 
 HWPath  = HWNV:8910FFS\W21.12.7\
 HW:\\
@@ -43,16 +44,17 @@ versionKey  = UIX8910_uis8910ff_refphone_version
 prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
-projectKey   = K220U_MRD_X12_2In1_V11_QVGA
-//projectKey   = X225U_HQVGA
+//projectKey   = K220U_MRD_X12_2In1_V11_QVGA
+projectKey   = X225U_HQVGA
 // --DEBUG --USER
 curKey   = UIS8910_ROM_16MB_DS_DEBUG
 cfgKey   = uis8910_phone_user_base_config
-sizeNext  = 1
-size1Key  = 240X320
-//sizeNext  = 2
-//size1Key  = 320X240
-//size2Key  = 240X320
+//sizeNext  = 1
+//size1Key  = 128X128
+//size1Key  = 240X320
+sizeNext  = 2
+size1Key  = 320X240
+size2Key  = 240X320
 
 
 ### 3.copy

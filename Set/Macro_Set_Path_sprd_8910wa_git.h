@@ -5,11 +5,13 @@
 ###
 
 0Key  = 8910
+1Key  = wa03u_git
 
 HWPath  = HWNV:8910FFS\W21.12.7\
 HW:\\
 
-imagesPath = MS_MMI_Main\source\resource\mmi_res_{size}\
+imagesPath = MS_MMI_Main\source\resource\mmi_res_{size}_hero\
+//imagesPath = MS_MMI_Main\source\resource\mmi_res_{size}\
 images:\\
 ringPath = MS_MMI_Main\source\resource\Common\RING\
 ring:\\
@@ -47,20 +49,21 @@ prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
 
-projectKey   = K220U_L680_QQVGA
+//projectKey   = K220U_L680_QQVGA
 //projectKey   = BMWATCH_FS
-//projectKey   = BMWATCH_FS_22
+projectKey   = BMWATCH_FS_22
 //projectKey   = WA03U_T6_A_81
 //projectKey   = WA03U_T6_JYC
 //projectKey   = WA03U_T6_C
 
-curKey   = UIS8910_ROM_16MB_DS_USER
+//curKey   = UIS8910_ROM_16MB_DS_USER
 //curKey   = UIS8910_ROM_16MB_SS_{project}_USER
-//curKey   = UIS8910_ROM_16MB_SS_{project}_DEBUG
+curKey   = UIS8910_ROM_16MB_SS_{project}_DEBUG
 //curKey   = UIS8910_240x320BAR_16MB_SS_{project}_USER
 
 //cfgKey   = uis8910_watch_user_base_config
-cfgKey   = uis8910_phone_user_base_config
+//cfgKey   = uis8910_phone_user_base_config
+cfgKey   = uis8910_phone_base_config
 
 sizeNext  = 1
 size1Key  = 128X128
@@ -83,6 +86,7 @@ tmpKey = xx
 simulatorKey = simulator_idh
 simulator10Key = simulator_main
 resource_mainKey = resource_main
-app_mainKey = app_watch_main
+//app_mainKey = app_watch_main
+app_mainKey = app_main
 gui_mainKey = gui_main
 

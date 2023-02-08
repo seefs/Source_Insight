@@ -13,13 +13,15 @@ Save:node\C\cfg\Macro_c_path_sprd.h \[1.9\]
 
 
 [1.1] _sprd_cur_
-// (1).curKey
-// --cur
+// --设置当前项目
+// ----替换:{cur} -> xxx_USER
 Save:set\
 Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 Save:set\Macro_Set_Path_sprd_.h  curKey
 // --设置新路径:
+// ----替换:{pro} -> 60key -> 8910
 Save:set\Macro_Set_Key.h  8910$
+
 
 
 
@@ -91,11 +93,15 @@ prj:project_{cur}.mk   CUSTOMER       = SE295_SPEED_2IN1
 prj:{cfg}.cfg          PRODUCT_CONFIG = SE295_MB
 prj:{cfg}.cfg     PRODUCT_BASELIB_DIR = sc6531efm_32X32_320X240BAR_AB
 prj:{cfg}.cfg          PLATFORM       = SC6531EFM
-// --Key
+// --Key--6531E
 Save:set\Macro_Set_Path_sprd_{pro}.h  customerKey
 Save:set\Macro_Set_Path_sprd_{pro}.h  productKey
 Save:set\Macro_Set_Path_sprd_{pro}.h  baseLibKey
 Save:set\Macro_Set_Path_sprd_{pro}.h  platformKey
+// --Key--6531D
+prj:project_{cur}.mk   PRODUCT_CONFIG       = fp6500_bar_x93_qcif
+prj:project_{cur}.mk   PRODUCT_BASELIB_DIR = sc6500_32X32_128X160BAR_QW_formal_x93
+prj:project_{cur}.mk   PLATFORM       = SC6530
 
 // --old mk
 //prj:project_{cur}.mk   CUSTOMER       = NONE
@@ -116,6 +122,7 @@ make\nv_parameter\nv_parameter.mk  sc6531efm_bar
 // --cur
 MS_Customize\source\product\config\
 MS_Customize\source\product\config\{product}\
+config:\
 // --
 make\custom_drv\custom_drv.mk  PRODUCT_CONFIG
 
@@ -138,6 +145,7 @@ make\version\version.mk  PRODUCT_CONFIG
 
 
 
+
 [1.4] _sprd_other_
 // (1).lib
 // --mk
@@ -148,14 +156,16 @@ make\app\app.mk  SPRD_CUSTOMER
 Makefile  SPRD_CUSTOMER
 
 
-// (2).128*160
+// (2).res
+// --res
+prj:{cfg}.cfg          MMI_RES_DIR = mmi_res_240x284_hero
+Save:set\Macro_Set_Path_sprd_{pro}.h   imagesPath
+// --6531 mini
 prj:{cfg}.cfg          MMI_RES_DIR = mmi_res_240x320_mini
-//
-Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 
 
 
-// (2).分区
+// (3).分区
 prj:{cfg}.cfg          MULTI_BIN_SUPPORT = TRUE
 
 

@@ -5,6 +5,7 @@
 ###
 
 0Key  = 8910
+1Key  = wa22u_new
 
 HWPath  = HWNV:8910FFS\W21.12.7\
 HW:\\
@@ -48,20 +49,21 @@ prj:\\
 //projectKey   = WA22U_SW46E_QQVGA
 //projectKey   = WA22U_SW40E_QQVGA
 //projectKey   = WA22U_SW42E_QQVGA
-projectKey   = WA22U_W59E_QQVGA
+//projectKey   = WA22U_W59E_QQVGA
 //projectKey   = WA03U_T6_B
 //projectKey   = WA03U_T6_B_HERO
-//projectKey   = WA03U_T6_B_EN
+projectKey   = WA03U_T6_B_EN
 //projectKey   = WA22U_W48E
 // --DEBUG --USER
-curKey   = UIS8910_ROM_16MB_SS_{project}_USER
+//curKey   = UIS8910_ROM_16MB_SS_{project}_USER
+curKey   = UIS8910_ROM_16MB_SS_{project}_DEBUG
 //curKey   = UIS8910_240x320BAR_16MB_SS_{project}_USER
 cfgKey   = uis8910_phone_user_base_config
 sizeNext  = 1
-size1Key  = 128X128
+//size1Key  = 128X128
 //size1Key  = 240X240
 //size1Key  = 240X280
-//size1Key  = 240X284
+size1Key  = 240X284
 //size2Key  = 128X128
 
 

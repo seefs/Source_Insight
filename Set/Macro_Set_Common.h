@@ -1,12 +1,9 @@
 ###
-### pub path
-### 
-### 1.暂时只能手动修改
-### 2.自动增加，待改
-### 3.自动替换，待改
+### 公共设置/工具路径
 ###
 
 
+### 其他路径:
 HWNVPath  = G:\_HW_NV_PARA.git\
 HWNV:\\
 	
@@ -19,8 +16,6 @@ tool_mini:\\
 patchPath  = D:\save\patch\
 patch:\\
 
-pyScriptsPath  = C:\Users\seefs\AppData\Local\Programs\Python\Python310\Scripts\
-pyScripts:\\
 
 AppPath  = D:\Save\_SI_Cloud\
 App:\\
@@ -29,8 +24,12 @@ codePath  = D:\project\
 code:\\
 
 
-### tool path:
+### 安装路径:
+pyScriptsPath  = C:\Users\seefs\AppData\Local\Programs\Python\Python310\Scripts\
+pyScripts:\\
 
+
+### 工具路径:
 BComparePath  = C:\Program^Files\Beyond^Compare^4\BCompare.exe
 //BComparePath  = D:\Program^Files\Beyond^Compare^3\BCompare.exe
 
@@ -40,5 +39,29 @@ VS08Path  =  C:\Program^Files^(x86)\Microsoft^Visual^Studio^9.0\Common7\IDE\deve
 pVS08Path =  C:\Program^Files^(x86)\Microsoft^Visual^Studio^9.0\Common7\IDE\
 RARPath   =  C:\Program^Files^(x86)\360\360zip\360zip.exe
 
-DesktopPath   =  E:\\desktop
-file_downPath   =  H:\Desktop\tool\file_down
+
+### 桌面路径:
+DesktopPath   =  H:\\desktop
+//DesktopPath   =  D:\\desktop
+file_downPath   =  Desktop:tool\file_down
+
+SPRD_T107Path   =  Desktop:SPRD_T107
+SPRD_8910Path   =  Desktop:SPRD_8910
+SPRD_6531Path   =  Desktop:SPRD_6531
+SPRD_6531EPath  =  Desktop:SPRD_6531E
+MTKPath         =  Desktop:MTK
+soft            =  Desktop:soft
+tool            =  Desktop:tool
+
+### 系统路径:
+StartPath    =  C:\ProgramData\Microsoft\Windows\Start^Menu
+StartPAPath  =  C:\ProgramData\Microsoft\Windows\Start^Menu\Programs\Administrative^Tools
+
+
+
+### 公共设置
+//AdminKey   = Administrator
+AdminKey   = seefs
+tNumKey = Disable
+
+

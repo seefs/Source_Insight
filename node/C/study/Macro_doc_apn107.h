@@ -45,14 +45,16 @@ PS\nv\operator_delta\operator_config_all\Index.xml  mcc="460"
 //        <Item mcc="460" mnc="13"/>
 
 // 8910少5、15
+PS\nv\operator_delta\operator_config_all\CN_CMCC_S.nv
+PS\nv\operator_delta\operator_config_all\CN_CMCC_P.nv
 
 
 ### 466
 // TW_TWM
 PS\nv\operator_delta\operator_config_all\Index.xml  mcc="466"
 // 名字映射的文件
-PS\nv\operator_delta\operator_config_all\TW_TWM_P.nv
 PS\nv\operator_delta\operator_config_all\TW_TWM_S.nv
+PS\nv\operator_delta\operator_config_all\TW_TWM_P.nv
 
 //
 关于这个回落问题，实际上是牵涉到volte或ims参数的问题。
@@ -88,4 +90,30 @@ roaming status: 0, net isroaming: 0, net mcc: 466, sim mcc: 466
 tcpip: sci_async_gethostbyname - url(xcap.ims.taiwanmobile.com), timeout(4000 ms), netid(81c8070c)
 
 
+### 425 以色列/巴勒斯坦
+// IL_Partner
+PS\nv\operator_delta\operator_config_all\Index.xml  mcc="425"
+// 名字映射的文件
+PS\nv\operator_delta\operator_config_all\IL_Partner_P.nv
+PS\nv\operator_delta\operator_config_all\IL_Partner_S.nv
+
+
+### 以色列
+// 
+PS\nv\operator_delta\operator_config_all\Index.xml  mcc="515"
+PS\nv\operator_delta\operator_config_all\Index.xml  mcc="260"
+PS\nv\operator_delta\operator_config_all\Index.xml  mcc="310"
+PS\nv\operator_delta\operator_config_all\Index.xml  mcc="222"
+
+
+### 259/15 摩尔多瓦
+//
+PS\nv\operator_delta\operator_config_all\Index.xml  mcc="259"
+//
+
+
+
+
+###
+https://www.cnblogs.com/neo-java/p/6830319.html
 

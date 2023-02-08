@@ -18,7 +18,7 @@ Save:node\C\study\Macro_pos_8910.h \[1.10\] Mp3
 Save:node\C\study\Macro_pos_8910.h \[1.11\] fm
 Save:node\C\study\Macro_pos_8910.h \[1.12\] alarm
 Save:node\C\study\Macro_pos_8910.h \[1.13\] calen
-Save:node\C\study\Macro_pos_8910.h \[1.14\] camera
+Save:node\C\study\Macro_pos_8910.h \[1.14\] camera, pic
 Save:node\C\study\Macro_pos_8910.h \[1.15\] charge
 Save:node\C\study\Macro_pos_8910.h \[1.16\] form-----------------
 Save:node\C\study\Macro_pos_8910.h \[1.17\] edit-----------------
@@ -301,6 +301,8 @@ app:theme/h/mmi_position_{size}.h  MMI_LIST_ITEM_SELECT_ICON_WIDTH
 app:theme\c\mmitheme_list.c   MMI_LIST_BIG_FONT_WIDTH
 app:theme/h/mmi_position_{size}.h  MMI_LIST_TEXT_LEFT_SPACE
 app:theme/h/mmi_position_{size}.h  MMI_LIST_RIGHT_SPACE
+
+
 
 
 
@@ -610,8 +612,18 @@ app:accessory\h\mmiacc_position.h  {size}  CALENDAR_SCH_TEXT_FONT
 
 
 
-[1.14] __camera__
+[1.14] camera, pic
+### __camera__
 // camera--IconSize
+
+### __pic__
+//		==>get:
+//		====>GetImgDisplayRect
+//		======>GUIANIM_GetImgWidthAndHeight
+//		========>.img_width   210
+//		========>.img_height  280
+ctrl:anim\c\ctrlanim_display.c  GUIANIM_Display( )
+
 
 
 [1.15] __charge__

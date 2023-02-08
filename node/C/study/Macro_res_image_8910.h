@@ -14,7 +14,7 @@ Save:node\C\study\Macro_res_image_8910.h \[1.8\] call
 Save:node\C\study\Macro_res_image_8910.h \[1.9\] alert
 Save:node\C\study\Macro_res_image_8910.h \[1.10\] list, file
 Save:node\C\study\Macro_res_image_8910.h \[1.11\] anim
-Save:node\C\study\Macro_res_image_8910.h \[1.12\] browser
+Save:node\C\study\Macro_res_image_8910.h \[1.12\] 
 Save:node\C\study\Macro_res_image_8910.h \[1.13\] sec_menu
 Save:node\C\study\Macro_res_image_8910.h \[1.14\] record--------------非common模块
 Save:node\C\study\Macro_res_image_8910.h \[1.15\] vp
@@ -99,7 +99,7 @@ images:common\MMI_RES_DEFAULT\IMAG\mainmenu_matrix9\
 // -- 107
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_MAINMENU_ICON_BROWSER
 // -- 8910 4X3
-//		==>CUR_MDU_FOLDER
+//		==>CUR_MDU_FOLDER          # mainmenu_matrix12
 //		====>ListHandleKeyDown
 //		======>ListMoveToNextItem
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_MAINMENU_ICON_ENV
@@ -174,16 +174,18 @@ source:mmi_app\common\h\common_mdu_def.h  IMAGE_SUBLCD_ICON_BACKGROUND
 // --status
 prj:project_{cur}.mk   MMI_STATUSBAR_ICON_BLACK
 //
+images:common\MMI_RES_DEFAULT\IMAG\StatusbarIcon\
 images:common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\
 images:common\MMI_RES_DEFAULT\IMAG\SUBLCD_SIZE_128_160\sub_icon\battery_syle4\
 
+### __status__
 // --status--bg
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_STATUSBAR_BG
 images:\common\MMI_RES_DEFAULT\IMAG\Statusbar\
 //
 app:theme\c\mmitheme_statusbar.c  IMAGE_STATUS_BAR
 
-// --bat
+### __bat__
 source:mmi_app\common\h\common_mdu_def.h  battery_syle1
 images:common\MMI_RES_DEFAULT\IMAG\StatusbarIcon_Black\battery_syle1\
 // --bat--sub
@@ -466,12 +468,7 @@ images:common\MMI_RES_DEFAULT\IMAG\Pubwin\BAR\
 
 
 
-[1.12] browser
-//--browser--bar--bg
-app:browser\h\browser_mdu_def.h  IMAGE_BROWSER_SEARCH_BAR_BG
-app:browser\h\browser_mdu_def.h  IMAGE_BROWSER_STARTPAGE_LABEL_BG
-//--36==>40, 30==>32
-images:browser\MMI_RES_DEFAULT\IMAG\input_new\
+[1.12] 
 
 
 
@@ -805,6 +802,13 @@ app:browser\h\browser_mdu_def.h   IMAGE_BROWSER_SEARCH_BAR_BG
 // 同时改 label 高度
 MMI_LIST_ITEM_LEFT_MARGIN
 MMIBROWSER_STARTPAGE_FORM1_HEIGHT
+
+
+//--browser--bar--bg
+app:browser\h\browser_mdu_def.h  IMAGE_BROWSER_SEARCH_BAR_BG
+app:browser\h\browser_mdu_def.h  IMAGE_BROWSER_STARTPAGE_LABEL_BG
+//--36==>40, 30==>32
+images:browser\MMI_RES_DEFAULT\IMAG\input_new\
 
 
 ### __bt__

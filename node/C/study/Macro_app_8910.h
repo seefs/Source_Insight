@@ -81,6 +81,12 @@ app:idle\c\mainapp.c  MMIAPIIDLE_OpenIdleWin
 
 ### idle--mstyle
 // IDLE--107
+//		==>MMIIDLE_CommonHandleMsg
+//		====>UP:
+//		======>MMIAPISET_OpenDirectionKeyWin
+//		==>IdleWin_HandleMsg
+//		====>CANCEL:
+//		======>MMIAPISET_OpenFuncKeyWin
 app:idle\c\mmiidle_cstyle.c  void^OutIdleWinContent
 app:idle\c\mmiidle_cstyle.c  void^DisplayIdleWinSoftkey
 // IDLE--8910
@@ -648,8 +654,6 @@ Save:node\C\study\Macro_fun_8910.h  __reset__
 Save:node\C\project\Macro_cfg_8910.h  __shortcut__
 
 
-// sos
-
 // set--phone
 //		==>MMIAPISET_EnterPhoneSettingWin
 //		====>MMISET_PHONE_SETTING_WIN_TAB  #128*160
@@ -1196,7 +1200,15 @@ Save:node\C\study\Macro_pos_8910.h  __camera__
 Save:node\C\study\Macro_res_image_8910.h  __idle__
 // ==>font/color
 Save:node\C\study\Macro_res_color_8910.h  __camera__
+// ==>驱动
+Save:node\C\study\Macro_doc_cam8910.h
 
+// --cam--switch 
+//		==>OpenDC
+//		====>MMIDC_SetDCameraSensorID, 0：后摄，1：前摄
+//		==>MMIENG_ForEngWinMsg
+//		====>GetSensorNumber
+//		======>ENG_DC_Preview
 
 // --cam--option 
 //		==>MMIDC_OpenPhotoOption
@@ -1234,18 +1246,26 @@ app:camera\c\mmidc_main_wintab.c  KeyFunction
 //DC
 //		GetPhonePhotoSizeList
 
+// --cam--default--107
+//		==>MMIAPIDC_Setting_SetFactoryValue
+//		====>.photo_size = PHOTO_SIZE_240X320; 
+//		==>MMIDC_InitSwitchSensorParameter
+//		====>.photo_size = PHOTO_SIZE_240X320; 
+app:camera\c\mmidc_setting.c  MMIAPIDC_Setting_SetFactoryValue
+app:camera\c\mmidc_setting.c  MMIDC_InitSwitchSensorParameter
+// --cam--default--8910
+//		====>.photo_size = PHOTO_SIZE_320X240
+app:camera\c\mmidc_setting.c  MMIDC_Setting_GetNVDefaultValue
+//		====>.video_size = VIDEO_SIZE_320X240
+app:camera\c\mmidc_setting.c  CheckVideoSize
+//		====>MMIAPIDC_SetPhotoSize
+app:camera\c\mmidc_setting.c  MMIDC_InitScreenMode
 
-// LCD_ANGLE_90
-app:camera\c\mmidc_main_wintab.c  755
-app:camera\c\mmidc_setting.c  3682
+
 
 
 //Camera分辨率:
 Camera闪光灯:
-
-
-
-
 
 
 
@@ -1264,7 +1284,7 @@ prj:{cfg}.cfg   PIC_VIEWER_SUPPORT = TRUE
 //		==========>CreatePicListCtrl
 //		============>MMIPICVIEW_VIEW_ICONLIST     # 240*320
 //		==============>SetIconListParam           # --margin
-//		================>MMIPICPREVIEW_LIST_ICON_SIZE
+//		================>.MMIPICPREVIEW_LIST_ICON_SIZE
 app:pic_viewer\c\mmipicview_list.c MMI_RESULT_E^HandlePicListWinMsg
 app:pic_viewer\c\mmipicview_list.c void^SetIconListParam
 //		========>RELOAD:
@@ -1309,6 +1329,7 @@ app:pic_viewer\c\mmipicview_wintab.c  HandlePreviewOptWinMsg
 // zoom
 app:pic_viewer\c\mmipicview_zoom.c  HandlePicZoomWinMsg
 // title
+//  显示分隔符
 ctrl:IconList\c\ctrliconlist.c  void^DisplayDelimiter
 app:pic_viewer\c\mmipicview_list.c  MMIPICVIEW_TITLE_COLOR
 // pic--view
@@ -1319,14 +1340,23 @@ app:pic_viewer\c\mmipicview_wintab.c  HandlePicDetailWinMsg
 app:pic_viewer\c\mmipicview_wintab.c  HandlePicRenameWinMsg
 
 // pic--view
-//		==>DrawItemText (title)
-//		====>MMITHEME_GetSetlistStyle
+//		==>SetPreviewTitleOsd
+//		====>DrawItemText (title)
+//		======>MMITHEME_GetSetlistStyle
+//		==>AnimCtrlHandleMsg
+//		====>PAINT:
+//		====>GUIANIM_Display
+//		======>GIF:
+//		========>DisplayGifImg
+//		======>JPG:
+//		========>DisplayImgExceptGif
+//		==========>GUIIMG_DisplayBmp
 ctrl:Setlist\c\ctrlsetlist.c  void^DrawSetlistItem
 
 
 ### pic
 // ==>pos
-//Save:node\C\study\Macro_pos_8910.h  __pic__
+Save:node\C\study\Macro_pos_8910.h  __pic__
 // ==>image
 Save:node\C\study\Macro_res_image_8910.h __pic__
 
@@ -1839,6 +1869,9 @@ app:accessory\c\mmicountedtime_main.c  MMIAPICT_HandleCountedTimeArriveWin
 
 
 [1.19] calc
+// mk
+prj:{cfg}.cfg  CALCULATOR_SUPPORT = TRUE 
+
 // enter
 //		==>MMIAPICALC_OpenMainWin
 //		====>CALC_WIN_TAB            # win
@@ -1892,6 +1925,9 @@ Save:node\C\study\Macro_res_image_8910.h __calc__
 
 
 [1.20] calendar
+// mk
+prj:{cfg}.cfg  CALENDAR_SUPPORT = TRUE 
+
 // draw
 app:accessory/c/mmicalendar_main.c  MMI_CALENDAR_CHINESE_JIEQI
 // pos
@@ -1925,6 +1961,10 @@ app:accessory\c\mmicalendar_main.c MMIAPICALEND_OpenCalendarQueryByDate
 //		==>AppendUserListBoxItem
 //		==>AppendUserListBoxItemData
 app:accessory\c\mmischedule.c  MMI_RESULT_E^HandleSchViewListWinMsg
+
+
+// jewish 犹太日历
+MS_MMI_Main\source\mmi_app\app\accessory\c
 
 
 ### calen
@@ -1995,13 +2035,31 @@ app:game\game_snake\c\mmigame_snake_wintab.c
 //		========>HIDE:
 //		========>SetBtVisibility
 //		==========>MMIPUB_OpenWaitWin
-// --bt--search (popup)
-//		==>OpenInquireDeviceListWin
-//		====>MMIBT_INQUIRED_DEV_LIST_WIN_TAB
-//		======>HandleInquiredDevListWinMsg
-//		========>DoOperation
-//		==========>MMIPUB_OpenWaitWin
 app:bt\c\mmibt_mainwin.c  MMI_RESULT_E^^^HandleMainMenuWinMsg
+// --bt--search (popup)
+//		==>PAIRES:
+//		====>OpenInquireDeviceListWin
+//		======>MMIBT_INQUIRED_DEV_LIST_WIN_TAB
+//		========>HandleInquiredDevListWinMsg
+//		==========>DoOperation
+//		============>MMIPUB_OpenWaitWin
+// --bt--search stop
+//		==>CANCEL:
+//		====>BT_CancelSearch()
+//		==>PAIRES: 配对
+//		====>MMIBT_SetOpertor(MMIBT_OPC_NOT_CHANGE, MMIBT_OPC_PAIR);  
+//		==>PAIRES: option--配对的代码少，好看点
+//		====>BT_PairDevice(&s_pin_request_info.addr);
+app:bt\c\mmibt_inquireddevice.c  HandleInquiryOptMenuWinMsg
+//		==>PAIRES ok:
+//		====>MMIBT_GetPairComCnf()
+//		====>WatchBtMain_ProcessBtPsMsg()
+//		==>确认密码:
+//		====>Display_NumericPasskeyInfo()
+//		==>输入密码:
+//		====>OpenPinInputWin()
+//		====>HandlePinInputWinMsg()
+
 
 // --bt--popwin
 //		==>OpenPinInputWin         # 连接密码
@@ -2077,7 +2135,15 @@ app:bt\c\mmibt_editwin.c  HandleEditDeviceNameMsg
 MMIBT_GetBtStatusForIcon
 //    is_poweron = BT_GetState();
 
-//
+// 分享
+// --url--通过短信
+//		==>ID_POPUP_MENU_SEND_URL
+//		====>MMIBROWSER_SendUrlContentBySms
+// --pb--通过email/bt
+//		==>MMIPB_OPERATE_TYPE_MULTI_SHARE
+//		====>SendMultiVcard
+//		======>MMIAPIBT_SendMultiFile
+
 
 
 
@@ -2263,6 +2329,7 @@ app:setting\c\mmiset_sos.c  MMIAPISET_EnterSOSSettingWin
 app:setting\c\mmiset_sos.c  HandleSOSMessageEditBoxWinMsg
 
 // 紧急号码--好像未使用
+//    "112", "911"
 app:cc\c\mmicc_app.c  s_emergency_call
 // 112
 Save:node\C\study\Macro_im_8910.h  __Emergency__

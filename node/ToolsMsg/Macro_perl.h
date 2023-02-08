@@ -9,8 +9,8 @@
 Save:node\ToolsMsg\Macro_perl.h \[1.1\] tool
 Save:node\ToolsMsg\Macro_perl.h \[1.2\] cmd
 Save:node\ToolsMsg\Macro_perl.h \[1.3\] str
-Save:node\ToolsMsg\Macro_perl.h \[1.4\] 
-Save:node\ToolsMsg\Macro_perl.h \[1.5\] 
+Save:node\ToolsMsg\Macro_perl.h \[1.4\] arr
+Save:node\ToolsMsg\Macro_perl.h \[1.5\] 编译报错
 Save:node\ToolsMsg\Macro_perl.h \[1.6\] 
 Save:node\ToolsMsg\Macro_perl.h \[1.7\] 
 Save:node\ToolsMsg\Macro_perl.h \[1.8\] 
@@ -104,9 +104,11 @@ foreach $key (@array){
 
 
 
-[1.5] 
+[1.5] 编译报错
 
-
+// 应用程序无法正常启动(0xc0000142)
+Make: GNU make utility to maintain groups of programs
+// 只能重启
 
 
 

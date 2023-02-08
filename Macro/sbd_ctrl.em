@@ -175,17 +175,18 @@ macro CtrlT()
 	var mar
 	var val
 	isNote = IsNoteFile(hbuf)
+	// 替换TRUE/FALSE 或复制val，或加=True
 	if(IsMakeFile(hbuf) || isNote)
 	{
-		//选择宏，或没有选择:
-		//  替换或复制，或加=True
 		sSelState = "More"
 		sel = MGetWndSel(hbuf)
+		// 未多选
 		if(sel.lnFirst == sel.lnLast)
 		{
 			cur_line = GetBufLine(hbuf, sel.lnFirst )
 			mar = GetLineMacro(cur_line)
 			val = GetLineValue(cur_line)
+			// 选择宏=>Macro, 选择其他=>Yes, 没有选择=>YesNo
 			sSelState = GetSingleSelectState(cur_line, sel, mar)
 		}
 		if(sSelState == "No" || sSelState == "Macro")
@@ -216,8 +217,9 @@ macro CtrlT()
 				strNew = strmid(cur_line,0,index) # reVal # strmid(cur_line, index+strlen(val), strlen(cur_line))
 				PutBufLine(hbuf, sel.lnFirst, strNew);
 			}
-			else if(IsNumber (val))
+			else if(IsNumber (val) && getKeyHead(hbuf, "tNum") != "Disable")
 			{
+				//查找项目配置，不为Disable，再查找变量配置
 				reVal = ReadMode(getCommentRow(0))
 				if(reVal != 0 && val != 0)
 					reVal = 0;
@@ -615,6 +617,30 @@ macro CtrlU()
 }
 macro CtrlI()
 {
+	var row
+	var rMax
+	
+	var iStart
+	var iEnd
+	
+	var str1
+	var str2
+	var str3
+	var str4
+	
+	var hwnd
+	var hbuf
+	var sel
+	
+	var cur_line
+	var len
+	var iKl
+	var iKr
+	var strAll
+	var ch
+	var searchStr
+	var sel2
+	
 	hwnd = GetCurrentWnd()
 	if (hwnd == 0)
 		stop
@@ -624,87 +650,95 @@ macro CtrlI()
 	
 	sel = MGetWndSel(hbuf)
 	row = sel.lnFirst
-	cur_line = GetBufLine(hbuf, row)
-	len = strlen(cur_line)
+	rMax = sel.lnLast
 	
-	//转格式:
-	//  sprd_apps.mk (customize/customer_cfg/sp6820a/res)
-	//->customize/customer_cfg/sp6820a/res/sprd_apps.mk
-	iKl = FindString( cur_line, "(" )
-	iKr = FindString( cur_line, ")" )
-	if(iKl != "X" && iKr != "X")
+	while (row <= rMax)
 	{
-		if(IsSingleSelect(sel))
-		{
-			iStart = sel.ichFirst
-			iEnd   = sel.ichLim 
-		}
-		else
-		{
-			iStart = 0
-			iEnd = 0
-		}
-		//msg(iKl # " " # iKr # " " # iStart # " " # iEnd # " " # len)
-		str1 = strmid(cur_line, 0, iStart)
-		str2 = strmid(cur_line, iKl + 1, iKr)
-		str3 = strmid(cur_line, iStart, iKl)
-		str4 = strmid(cur_line, iKr + 1, len)
+		cur_line = GetBufLine(hbuf, row)
+		len = strlen(cur_line)
 		
-		strAll = str1 # str2 # "\\" # str3 # str4
-		PutBufLine(hbuf, row, strAll)
-		SaveBuf(hbuf)
-		stop
-	}
-	//转格式:
-	//  4.7.22
-	//->[4.7.22]
-	//功能有点问题: -会作为.匹配; 错误匹配可能要手动选择下一个标号
-	iKl = FindString( cur_line, "." )
-	if(iKl != "X")
-	{
-		if(IsSingleSelect(sel))
+		//转格式:
+		//  sprd_apps.mk (xxx)
+		//->xxx//sprd_apps.mk
+		iKl = FindString( cur_line, "(" )
+		iKr = FindString( cur_line, ")" )
+		if(iKl != "X" && iKr != "X")
 		{
-			iStart = sel.ichFirst
-			iEnd   = sel.ichLim 
-			if(iStart>0)
-				ch   = strmid(cur_line, iStart - 1, iStart)
-			if(ch != "[")
+			if(IsSingleSelect(sel))
 			{
-				//msg(iKl # " " # iKr # " " # iStart # " " # iEnd # " " # len)
-				str1 = strmid(cur_line, 0, iStart)
-				chEnd   = strmid(cur_line, iEnd - 1, iEnd)
-				if(chEnd == ".")
-					str2 = strmid(cur_line, iStart, iEnd - 1)
-				else
-					str2 = strmid(cur_line, iStart, iEnd)
-				str3 = strmid(cur_line, iEnd, len)
-				strAll = str1 # "[" # str2 # "]" # str3
-				PutBufLine(hbuf, row, strAll)
-				SaveBuf(hbuf)
-				sel.ichLim = sel.ichLim + 2
-				//SetWndSel(hwnd, sel)
-			}
-			
-			//查找下一个标号
-			sel.lnFirst = sel.lnFirst + 1
-		}
-		{
-			//查找下一个标号
-			//searchStr = "\\[[0-9.]+\\]"
-			searchStr = "[0-9]+\.[0-9\.]+"
-			sel2 = SearchInBuf(hbuf, searchStr, sel.lnFirst, 0, TRUE, TRUE, FALSE)
-			if (sel2 != "")
-			{
-				SetWndSel(hwnd, sel2)
+				iStart = sel.ichFirst
+				iEnd   = sel.ichLim 
 			}
 			else
 			{
-				SetWndSel(hwnd, sel)
+				iStart = 0
+				iEnd = 0
+			}
+			//msg(iKl # " " # iKr # " " # iStart # " " # iEnd # " " # len)
+			str1 = strmid(cur_line, 0, iStart)
+			str2 = strmid(cur_line, iKl + 1, iKr)
+			str3 = strmid(cur_line, iStart, iKl)
+			str4 = strmid(cur_line, iKr + 1, len)
+			
+			strAll = str1 # str2 # "\\" # str3 # str4
+			PutBufLine(hbuf, row, strAll)
+			SaveBuf(hbuf)
+		}
+		else
+		{
+			//转格式:
+			//  4.7.22
+			//->[4.7.22]
+			//功能有点问题: -会作为.匹配; 错误匹配可能要手动选择下一个标号
+			iKl = FindString( cur_line, "." )
+			if(iKl != "X")
+			{
+				if(IsSingleSelect(sel))
+				{
+					iStart = sel.ichFirst
+					iEnd   = sel.ichLim 
+					if(iStart>0)
+						ch   = strmid(cur_line, iStart - 1, iStart)
+					if(ch != "[")
+					{
+						//msg(iKl # " " # iKr # " " # iStart # " " # iEnd # " " # len)
+						str1 = strmid(cur_line, 0, iStart)
+						chEnd   = strmid(cur_line, iEnd - 1, iEnd)
+						if(chEnd == ".")
+							str2 = strmid(cur_line, iStart, iEnd - 1)
+						else
+							str2 = strmid(cur_line, iStart, iEnd)
+						str3 = strmid(cur_line, iEnd, len)
+						strAll = str1 # "[" # str2 # "]" # str3
+						PutBufLine(hbuf, row, strAll)
+						SaveBuf(hbuf)
+						sel.ichLim = sel.ichLim + 2
+						//SetWndSel(hwnd, sel)
+					}
+					
+					//查找下一个标号
+					sel.lnFirst = sel.lnFirst + 1
+				}
+				{
+					//查找下一个标号
+					//searchStr = "\\[[0-9.]+\\]"
+					searchStr = "[0-9]+\.[0-9\.]+"
+					sel2 = SearchInBuf(hbuf, searchStr, sel.lnFirst, 0, TRUE, TRUE, FALSE)
+					if (sel2 != "")
+					{
+						SetWndSel(hwnd, sel2)
+					}
+					else
+					{
+						SetWndSel(hwnd, sel)
+					}
+				}
 			}
 		}
-		stop
-	}
 	
+		//
+		row = row + 1
+	}
 }
 macro CtrlN()
 {

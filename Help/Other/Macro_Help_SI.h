@@ -7,74 +7,75 @@
 // 1. 
 Save:Help\Other\Macro_Help_SI.h \[1.1\] marco file
 Save:Help\Other\Macro_Help_SI.h \[1.2\] marco test...
-Save:Help\Other\Macro_Help_SI.h \[1.3\] set save-------修改
-Save:Help\Other\Macro_Help_SI.h \[1.4\] 
-Save:Help\Other\Macro_Help_SI.h \[1.5\] other set
-Save:Help\Other\Macro_Help_SI.h \[1.6\] set key--------项目路径
-Save:Help\Other\Macro_Help_SI.h \[1.7\] set common-----工具路径
-Save:Help\Other\Macro_Help_SI.h \[1.8\] 备注
-Save:Help\Other\Macro_Help_SI.h \[1.9\] 
+Save:Help\Other\Macro_Help_SI.h \[1.3\] set save-------宏路径设置
+Save:Help\Other\Macro_Help_SI.h \[1.4\] data set-------常量设置
+Save:Help\Other\Macro_Help_SI.h \[1.5\] set cfg--------项目设置
+Save:Help\Other\Macro_Help_SI.h \[1.6\] set key--------路径设置
+Save:Help\Other\Macro_Help_SI.h \[1.7\] set common-----公共设置/工具路径
+Save:Help\Other\Macro_Help_SI.h \[1.8\] 代码备注--key
+Save:Help\Other\Macro_Help_SI.h \[1.9\] 代码备注--log
 Save:Help\Other\Macro_Help_SI.h \[1.10\] 
 Save:Help\Other\Macro_Help_SI.h \[1.11\] 
 Save:Help\Other\Macro_Help_SI.h \[1.12\] 
-// 2. SI4.0安装步骤
-Save:Help\Other\Macro_Help_SI.h \[2.1\] SI4.0安装步骤
-Save:Help\Other\Macro_Help_SI.h \[2.2\] 更新配置文件
-Save:Help\Other\Macro_Help_SI.h \[2.3\] 初次配置需要同步, 更新新功能也可能要同步(否则报函数找不到)
-Save:Help\Other\Macro_Help_SI.h \[2.4\] 设置保存目录
-Save:Help\Other\Macro_Help_SI.h \[2.5\] 验证配置OK
-Save:Help\Other\Macro_Help_SI.h \[2.6\] 
-Save:Help\Other\Macro_Help_SI.h \[2.7\] 
-Save:Help\Other\Macro_Help_SI.h \[2.8\] 
 
 
 
 
 [1.1] marco file
 ### __marco__
-//1) path:
 Save:Macro\
-//2) f1~f12:
+//1) f1~f12:
 Save:Macro\sbd_f1.em
 Save:Macro\sbd_f2.em
 Save:Macro\sbd_f7.em
 Save:Macro\sbd_f10.em  macro^NoteGroup
 Save:Macro\sbd_f11.em  macro^NoteHander
 Save:Macro\sbd_ctrl.em
-//3) tool:
+//2) tool:
 Save:Macro\a_String.em
-//4) file style:
+//3) 文件类型
 Save:Macro\sbd_file.em  IsTxtFile( )
 
 
 [1.2] marco test...
-### __test__
-//
 Save:Help\
+
+### __test__
 // 功能测试
 Save:Help\Macro_Note_Test.h
-// 开启测试
-Save:Macro\sbd_test.em  macro^TestMsg
 
-// 批量替换
+// 批量替换--nv
 Save:Help\Other\Macro_Help_replace.h
 
+// 项目文件/调试命令
+Save:node\ToolsMsg\Macro_SI.h  __filelist__
+Save:Help\Other\Macro_Help_filelist.h
 
-[1.3] set save path
-### __set__
-// 1) 改变Save路径
-// --用的固定路径，必须改，否则宏命令用不了:
+
+[1.3] set save
+### __save__
+// 1) 改变Save路径 (必须改，否则宏命令用不了)
+// --入口:
 Save:Macro\sbd_base.em	getSavePath(0)
+// --直接编辑路径:
 Save:Macro\sbd_root_path.em  getRootPath(0)
+// --或者自动设置:
+Save:Cmd_other\
+Save:Cmd_other\first_set_path.bat
+// --区分版本
+Save:Help\Other\Macro_Help_filelist.h  __SiVer__
 
-// 2) 首次安装步骤:
-Save:Help\Other\Macro_Help_SI.h
+// 2) 其他设置:
+Save:node\C\cfg\
+// --sprd--key
+Save:node\C\cfg\Macro_c_path_sprd.h
+// --mtk--key
+Save:node\C\cfg\Macro_c_path_mtk.h
 
 
-[1.4] 
 
-
-[1.5] other set
+[1.4] data set
+### __data__
 //
 // 最好移到项目配置文件下
 //
@@ -99,60 +100,69 @@ Save:Help\LangInfo\Macro_Info_Python.h
 Save:Help\LangInfo\Macro_Info_Html.h
 
 
-
-[1.6] set key
-//
-
+[1.5] set cfg--------项目设置
 ### __cfg__
+// 项目设置(每个项目独立配置)
 Save:set\
 Save:set\Macro_Set_Path_{pro}.h  curKey
-// --多个key会遍历所有可能 (没啥用，只是语法上保持不报错)
+
+// --普通key
+// ----{0},{cur}
+// --特殊key
+// ----{pro}
+// ------多个pro会遍历所有可能 (没啥用，只是语法上保持不报错)
+// ------pro不存在时，取pro为空
+// --多类型key
+// ----{Next}
+// ------next=2时检查2个路径是否存在
 Save:set\Macro_Set_Path_{pro}_{pro}.h  curKey
-// --不存在取key为空
-Save:set\Macro_Set_Path_.h  curKey
+Save:set\Macro_Set_Path_sprd_.h  curKey
 
 
+[1.6] set key--------路径设置
 ### __key__
-// 每个项目独立配置: 
+// 路径设置
 Save:set\Macro_Set_Key.h
 
-// S项目暂用save目录作项目目录
+// --{91}
+// ----S项目暂用save目录作项目目录
 Save:set\Macro_Set_Key.h  base_pri
 
-// 也可以外部调用路径
+// --{HW}
+// ----从键值反向查找键路径
 Save:set\Macro_Set_Key.h  101key
 {HW}\\
 
 
-[1.7] set common
-// --差异 放 cur Path;
-// --tool 放 Common;
-// --共用 放 Key;
-Save:set\Macro_Set_Common.h   downPath
-//
-HWNV:\\
+[1.7] set common-----公共设置/工具路径
+### __Common__
+// 其他路径
+Save:set\Macro_Set_Common.h   HWNVPath
+
+// 工具路径
+Save:set\Macro_Set_Common.h   BComparePath
+
+// 公共设置
+Save:set\Macro_Set_Common.h   AdminKey
 
 
 
-[1.8] 备注
+[1.8] 代码备注
+// 应该可以同步配置，项目设置优先
 
 ### 获取key--{0}/常用键
 //		==>getKeyHead
-//		====>GetPubPathBuf
+//		====>GetPubPathBuf                # 项目设置
 //		======>'Macro_Set_Path_base.h'
-//		====>GetCommonPathBuf
+//		====>GetCommonPathBuf             # 公共设置
 //		======>'Macro_Set_Common.h'
 //		====>GetPubKeyBuf
-//		======>'Macro_Set_Key.h'
+//		======>'Macro_Set_Key.h'          # 路径设置 xxkey_8910 => path
+//		======>getPathFromKey
+//		========>SearchNumFromKey
+//		========>SearchPathFromNum
 Save:Macro\sbd_f11.em   ReAllKeyHead
-
-
-### 获取key--8910 path外部使用
-//		==>getKeyHead
-//		====>getPathFromKey
-//		======>SearchNumFromKey
-//		======>SearchPathFromNum
-//		========>'8910' -> '60' -> path
+//
 {8910}:\
 
 
@@ -229,8 +239,22 @@ Save:Macro\sbd_f11.em   ReCustomKeyHead
 //		==============>
 
 
-[1.9] 
+[1.9] 代码备注--log
+// 返回测试
+Save:Help\Other\Macro_Help_SI.h   __test__
 
+### __log__
+// 显示log级别
+//testParam = 0  //不要log
+//testParam = 1  //显示少量log
+//testParam = 2  //显示多数log
+// log
+Save:Macro\sbd_test.em  macro^TestMsg
+
+
+//  当前文件作为测试文件:
+//MiniTest = True
+Save:Macro\sbd_test.em  MiniTest
 
 
 
@@ -262,67 +286,23 @@ Save:Macro\sbd_f11.em   ReCustomKeyHead
 
 
 
-[2.1] SI4.0安装步骤
-
-	1) 安装包文件:
-		SI4.0安装包\si4.pediy.lic
-		SI4.0安装包\sourceinsight4.exe
-		SI4.0安装包\sourceinsight4084-setup.exe
-
-	2) 安装步骤:
-		1 安装 sourceinsight4084-setup.exe
-		2 用sourceinsight4.exe替换安装目录下的文件
-			D:\Program Files (x86)\Source Insight 4.0\sourceinsight4.exe
-		3 打开sourceinsight4.exe，导入证书si4.pediy.lic
-
-	3) SI4.0默认配置, 需要改字体、编码、布局..
-		//具体查看:
-		//SI4.0安装使用.txt
+[2.1] 
 
 
-[2.2] 更新配置文件
-#    配置文件 下载命令:
-git clone https://github.com/seefs/Source_Insight_4_0_cfg
-
-#    更新后覆盖这个目录
-#    已设置好快捷键，字体，菜单
-...\Save\Source Insight 4.0\Settings
-#    (举例)
+[2.2] 
 	
 	
 
 
-[2.3] 初次配置需要同步, 更新新功能也可能要同步(否则报函数找不到)
-
-菜单--project -> 打开project -> base project 
-切换到base project下：
-
-###添加宏文件:
-菜单--project -> 添加或移除项目文件 -> 添加
-...\Macro
-
-选所有文件, 
-其他文件不用添加
-
-
-###同步:
-菜单--project -> 同步文件
+[2.3] 
 
 
 
-[2.4] 设置保存目录
-运行:
-...\Cmd_other\first_set_path.bat
-
-或者直接编辑:
-...\Save\SI_db\Macro\sbd_root_path.em
+[2.4] 
 	
 
 
-[2.5] 验证配置OK
-###快捷键
-ctrl+b, 即打开临时文件--simple_tmp_b.h
-f2, 打开当前目录
+[2.5] 
 
 
 [2.6] 

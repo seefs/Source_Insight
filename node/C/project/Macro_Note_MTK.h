@@ -604,6 +604,23 @@ Save:node\C\project\Macro_Note_MTK.h  __call_vol__
 
 
 [2.15] trace
+// usb口--(只能开1个)
+make/{cur}_{GSM}.mak  SPDE_TRACE_TO_USB_UART_SUPPORT = TRUE
+// 串口
+make/{cur}_{GSM}.mak  COM_DEFS +=__CUSTOM_TRACE_TO_UART__
+
+//
+make\Option.mak  __CUSTOM_TRACE_TO_USB_UART__   # usb口
+make\Option.mak  __CUSTOM_TRACE_TO_UART__       # 串口
+make\Option.mak  __CUSTOM_TRACE_SUPPORT__
+make\Option.mak  __CUSTOM_TRACE_TO_PC_CONSOLE__ # 可不开
+// file
+Save:node\C\cfg\Macro_c_path_mtk.h  __board__
+custom\system\{board}\
+custom\system\{board}\custom_util.c #从有的项目移过来
+custom\system\{board}\custom_util.h
+
+
 ### 利用Catcher抓取真机上的LOG
 // *#555#
 //device-->set uart-->uart-->usb port->usb model

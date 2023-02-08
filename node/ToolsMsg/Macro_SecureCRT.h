@@ -1,9 +1,13 @@
 
-/***********************************************************************/
-/************************** SecureCRT **********************************/
-/***********************************************************************/
+###
+SecureCRT 连接设置
+//	1 telnet连接
+//	2 串口连接, serial
+//		com2,115200
+//	
 
-SecureCRT:
+
+### SecureCRT
 open: C:\Program^Files\VanDyke^Software\Clients\SecureCRT.exe
 open: E:\desktop\工具\2  桌面快捷方式2\SecureCRT.exe
 
@@ -13,11 +17,7 @@ git config --global user.name xiaoj
 git config --global user.email jia.xiao@sz-speed.cn
 
 
-
-/***********************************************************************/
-/*********************** SecureCRT 常用 ********************************/
-/***********************************************************************/
-
+### SecureCRT 常用
 
 1 SecureCRT乱码：
 
@@ -26,9 +26,7 @@ git config --global user.email jia.xiao@sz-speed.cn
 点击Options --> 选择Session Options --> 点击Appearance。将字符编码设置为UTF-8格式。
 
 
-/***********************************************************************/
-/********************************* find ********************************/
-/***********************************************************************/
+### find
 
 find ./ -name "*.mk"| xargs grep "OPTR_SPEC_SEG_DEF"
 find ./ -name "*.mk"| xargs grep "PRODUCT_PROPERTY_OVERRIDES"

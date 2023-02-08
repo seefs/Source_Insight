@@ -12,7 +12,7 @@ Save:node\C\study\Macro_doc_8910.h \[1.9\] test code-------------
 Save:node\C\study\Macro_doc_8910.h \[1.10\] ImageNote
 Save:node\C\study\Macro_doc_8910.h \[1.11\] arm log
 Save:node\C\study\Macro_doc_8910.h \[1.12\] //FontTool
-Save:node\C\study\Macro_doc_8910.h \[1.13\] build time----------
+Save:node\C\study\Macro_doc_8910.h \[1.13\] build/time----------
 Save:node\C\study\Macro_doc_8910.h \[1.14\] 
 Save:node\C\study\Macro_doc_8910.h \[1.15\] ATEST_SUPPORT
 Save:node\C\study\Macro_doc_8910.h \[1.16\] fota----------adups
@@ -537,7 +537,7 @@ build\UIS8910_ROM_16MB_DS_USER_builddir\tmp\mmi_res_240x320_imag.txt IMAGE_PUBWI
 
 
 
-[1.13] build time
+[1.13] build/time
 
 // 默认出厂日期
 prj:project_{cur}.mk   DEFAULT_FACTORY_YEAR_MONTH_DAY
@@ -552,6 +552,59 @@ MMIAPISET_GetCurrentDateStr
 RestoreDataTimeFactorySetting
 MMIAPISET_IsNeedResetDateTime
 
+
+### Jenkins服务器
+//	Jenkins服务器上，我们自己git工程编译过程是这样，大家也可以了解下：
+//	1、jenkins的对代码的更新处理
+//	2、我们增加加了 git clean 操作
+//	3、我们增加更新 HW_NV_PARA的操作，HW_NV_PARA放在服务器单独另一个目录
+//	4、copy HW_NV_PARA这个目录的相关文件到SPDE_PRJ对应项目的nv目录中
+//	5、编译的时候会运行项目的bat文件，会把SPDE_PRJ的nv文件和资源文件复制到代码编译中相关目录
+//	6、开始正常的编译
+
+
+### make
+//		==>
+//		====>
+make.bat
+make\make_cmd\
+
+
+### 编译时间
+//gettime.pl
+
+
+### 省空间
+//
+Save:node\C\study\Macro_Spr_mem.h
+
+
+### build time
+// build time
+Save:node\ToolsMsg\Macro_win10.h  __Buildtime__
+
+
+### 显示log
+//.PHONY:all
+//all: 
+//ifneq ($(strip $(NVITEM_DIR)), )
+//	@echo ____CWR:$(strip $(NVITEM_DIR))____
+//endif
+//ifneq ($(strip $(CWR)), )
+//	@echo ____CWR:$(strip $(CWR))____
+//endif
+
+
+### 区分win7
+//	ifeq ($(strip $(CUR_SYS)), WIN7)
+//		# 无法加copy #$(COPY_FILE)
+//	else
+//		MSRCPATH +=  build/$(PROJECT)_builddir/tmp
+//	endif
+make\app_main\app_main.mk  _ui_special_effect_table
+//
+Save:Cmd_other\add_env\
+Save:Cmd_other\add_env\Custom_set_env.bat
 
 
 [1.14] 
@@ -600,6 +653,15 @@ make\perl_script\adups.pl  img_deltanv_src
 // 107是nand
 fdl_bootloader\tf_fdl\src\tf_main_nand.c  TF_PM_Init
 // 2.显示进度条
+//		==>main ()
+//		====>.test()
+//		====>AUDPSProcedure
+//		======>adups_patch_ratio(0)   # 实际不是0%
+//		======>adups_patch_ratio(100)
+//		========>
+//		==========>
+//		============>
+//		==============>
 Third-party\adups\hal\src\adups_bl_main.c  adups_patch_ratio
 //	TF_ShowProgress(ratio,100);//zgq add
 fdl_bootloader\bootloader\src\boot1_main.c  TF_SetLcdBackLight
@@ -614,20 +676,21 @@ patch:ssh\Macro_user_psw.h  __abup__
 
 
 [1.17] fota----------rs
-// mk--8910
-prj:{cfg}.cfg  FOTA_SUPPORT = REDSTONE
-// mk--8910--大内存
-prj:{cfg}.cfg  FOTA_SUPPORT_REDSTONE_FLASH_B = TRUE
-// mk--107
-prj:project_{cur}.mk  FOTA_SUPPORT = REDSTONE
-prj:project_{cur}.mk  FOTA_SUPPORT_REDSTONE_NAME_T6B = TRUE
 // mk
-prj:project_{cur}.mk  FOTA_SUPPORT = NONE
+// --8910
+prj:{cfg}.cfg  FOTA_SUPPORT = REDSTONE
+prj:{cfg}.cfg  FOTA_SUPPORT_REDSTONE_NAME_T6B = TRUE
+prj:{cfg}.cfg  FOTA_SUPPORT_REDSTONE_FLASH_B = TRUE      # 大内存
+// --107
+prj:project_{cur}.mk  FOTA_SUPPORT = REDSTONE
+prj:project_{cur}.mk  FOTA_SUPPORT = NONE      # 关
 
 
 ### fota
 // ==>密码
 patch:ssh\Macro_user_psw.h  __redstone__
+// fota_file
+Save:node\C\study\Macro_patch_third.h  __fota_file__
 
 
 ### fota--8910
@@ -655,18 +718,19 @@ Third-party\rsfota\rsdl\porting\UIS8910\src\rs_param.c  INSTALL_TIME_END_CLOCK
 // 3、安装时间：检测有包后，会在2-5点，随机一个时间
 
 
-### fota--lcd
-//
+### fota--lcd驱动
+// --lcd
 MS_Customize/source/product/config/uis8910ff_refphone/lcm_cfg_info.c  LCD_DRV_ID_NV3030B
 fdl_bootloader/fota_bootloader/src/tf_lcd/src/tf_lcmcfg.c  LCD_DRV_ID_NV3030B
 Third-party/rsfota/rsdl/porting/UIS8910/src/rs_param.c  INSTALL_TIME_START_CLOCK
 fdl_bootloader/nor_bootloader/src/fdl_main.c  flash_size
 make/fota_bootloader/fota_bootloader.mk  tft_NV3030B
+// --NV未配升级会死机
 make/perl_script/UIX8910_128MBIT.xml  FOTA_BOOTLOADER
 make/perl_script/UIX8910_128MBITX64MBIT_new.xml  FOTA_BOOTLOADER
 
 
-###
+### 显示
 // 下载时显示进度
 prj:project_{cur}.mk  BM_FOTA_SHOW_PROGRESS = FALSE
 
@@ -678,7 +742,7 @@ prj:project_{cur}.mk  SPDE_FOTA_REMOVE_PROGRESS = TRUE
 prj:project_{cur}.mk  SPDE_FOTA_TIP_USE_GRAY_IMG = TRUE
 
 
-### 分区
+### 分区给fota后台, 同一个分区的软件可以共用
 // --rs_fota_size, 不包括头部
 //flash_size=0x01000000
 //sect_size=0x00010000

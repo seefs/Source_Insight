@@ -320,8 +320,10 @@ macro getPathFromKey(hbufConfig, keyVal)
 		hbufConfig = GetPubKeyBuf(0)
 	}
 	
+	//从值反向查找键
 	num = SearchNumFromKey(hbufConfig, keyVal, "key")
 	if(num != ""){
+		//从键查找路径
 		path = SearchPathFromNum(hbufConfig, num)
 		if("" != path){
 			return path

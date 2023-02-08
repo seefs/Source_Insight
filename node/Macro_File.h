@@ -2,16 +2,16 @@
 // File:
 // 1. Common notes
 Save:node\Macro_File.h \[1.1\] node-----------记录文件
-Save:node\Macro_File.h \[1.2\] tmp------------备用文件
+Save:node\Macro_File.h \[1.2\] patch/bak------备用文件
 Save:node\Macro_File.h \[1.3\] help-----------编号/默认文件
 Save:node\Macro_File.h \[1.4\] common---------共用文件
-Save:node\Macro_File.h \[1.5\] SI Marco-------宏文件
-Save:node\Macro_File.h \[1.6\] Cmd------------
+Save:node\Macro_File.h \[1.5\] Marco/test-----宏文件/调试/设置
+Save:node\Macro_File.h \[1.6\] Cmd------------bat
 Save:node\Macro_File.h \[1.7\] Win/Office-----系统
-Save:node\Macro_File.h \[1.8\] Svn/Git/BComp--版本
-Save:node\Macro_File.h \[1.9\] SI/Vim---------编辑
+Save:node\Macro_File.h \[1.8\] Svn/Git--------版本
+Save:node\Macro_File.h \[1.9\] SI/BComp-------编辑
 Save:node\Macro_File.h \[1.10\] vc------------编译
-Save:node\Macro_File.h \[1.11\] Image
+Save:node\Macro_File.h \[1.11\] 
 Save:node\Macro_File.h \[1.12\] 
 
 
@@ -35,7 +35,7 @@ Save:node\Pythons\Macro_Note_Python.h
 Save:node\
 
 
-[1.2] tmp
+[1.2] patch
 // 未使用的代码，比较杂乱，移走了
 patch:node\
 
@@ -46,6 +46,10 @@ patch:node\Macro_node_bak.h
 ### tmp
 patch:node\tmp\
 patch:node\Macro_node_tmp.h
+
+### bug
+patch:node\bug\
+patch:node\Macro_node_bug.h
 
 ### patch
 patch:\
@@ -92,12 +96,23 @@ Save:Cmd_TXT\Tmp_Comp_2.h
 
 
 [1.5] SI Marco
+### __Help__
 // Marco file
 Save:Help\Other\Macro_Help_SI.h  __marco__
 // test
 Save:Help\Other\Macro_Help_SI.h  __test__
+
+// 宏路径设置
+Save:Help\Other\Macro_Help_SI.h  __save__
+// 常量设置
+Save:Help\Other\Macro_Help_SI.h  __data__
+// 项目设置
+Save:Help\Other\Macro_Help_SI.h  __cfg__
 // 路径设置
-Save:Help\Other\Macro_Help_SI.h  __set__
+Save:Help\Other\Macro_Help_SI.h  __key__
+// 公共设置/工具路径
+Save:Help\Other\Macro_Help_SI.h  __Common__
+
 
 
 [1.6] Cmd
@@ -113,7 +128,7 @@ Save:node\ToolsMsg\Macro_perl.h
 Save:node\ToolsMsg\Macro_win.h
 Save:node\ToolsMsg\Macro_win10.h
 Save:node\ToolsMsg\Macro_win_dll.h
-Save:node\ToolsMsg\Macro_win_soft.h
+Save:node\ToolsMsg\Macro_win_soft.h  __Hyper_V__
 
 ### sprd/mtk tool
 Save:node\ToolsMsg\
@@ -125,7 +140,7 @@ Save:node\ToolsMsg\Macro_Office.h
 
 
 ### Script Manager
-// 用户脚本管理器
+// 用户脚本管理器/谷歌镜像
 Save:node\ToolsMsg\Macro_Script.h
 
 ###
@@ -133,6 +148,13 @@ Save:node\ToolsMsg\Macro_Script.h
 Save:node\ToolsMsg\Macro_SecureCRT.h
 // 向日葵
 Save:node\ToolsMsg\Macro_Sunlogin.h
+
+### Vim
+Save:node\ToolsMsg\Macro_vim.h
+
+
+### 音视频
+Save:node\ToolsMsg\Macro_Image.h
 
 
 [1.8] Svn/Git
@@ -145,20 +167,22 @@ Save:node\ToolsMsg\Macro_git_md.h
 Save:node\ToolsMsg\Macro_git_config.h
 Save:node\ToolsMsg\Macro_git_app.h
 
+
+[1.9] SI
+### SI
+// tool
+Save:node\ToolsMsg\Macro_SI.h
+// 返回 help--查看宏说明
+Save:node\Macro_File.h  __Help__
+
+
 ### Beyond Compare
+// 公共设置
+Save:set\Macro_Set_Common.h   AdminKey
 // 删除后解除锁定
-C:\Users\Administrator\AppData\Roaming\Scooter^Software\Beyond^Compare^4
-C:\Users\seefs\AppData\Roaming\Scooter^Software\Beyond^Compare^4
+C:\Users\{Admin}\AppData\Roaming\Scooter^Software\Beyond^Compare^4
 //   BCmp:
 Save:node\ToolsMsg\Macro_Bcomp.h
-
-
-[1.9] SI/Vim
-### SI
-Save:node\ToolsMsg\Macro_SI.h
-
-### Vim
-Save:node\ToolsMsg\Macro_vim.h
 
 
 [1.10] vc
@@ -171,9 +195,7 @@ Save:node\ToolsMsg\Macro_VS2010.h
 
 
 
-[1.11] Image
-//
-Save:node\ToolsMsg\Macro_Image.h
+[1.11] 
 
 
 

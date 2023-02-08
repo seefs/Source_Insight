@@ -5,6 +5,7 @@
 ###
 
 0Key  = 8910
+1Key  = wa03u_git
 
 HWPath  = HWNV:T107\W20.46.4\
 HW:\\
@@ -46,8 +47,10 @@ prj:\\
 
 // 目录名称自动拼接成mk名称
 //projectKey   = S89T_BYD_A9
-projectKey   = S89T_BYD_L66A_IN
+//projectKey   = S89T_BYD_L66A_IN
 //projectKey   = S98T_FLP_E535_31
+projectKey   = S98T_FLP_E535_C
+//projectKey   = S98T_JL_F13
 //projectKey   = S98T_JL_F15_2
 //projectKey   = T5_A82WD_VIET
 //projectKey   = F55T_E2412L

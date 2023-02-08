@@ -211,7 +211,7 @@ macro OpenMiniTest(hbuf)
 		{
 			//Shell
  			//  
-			path = "F:\\6531E_16A\\build"
+			//path = "F:\\6531E_16A\\build"
 
 			para1 = word_2
 			para2 = word_3
@@ -224,6 +224,128 @@ macro OpenMiniTest(hbuf)
 			//ShellExecute("open", "cmd.exe", "F:;cd @path@;", "C:\\Windows\\System32", 1)
 			shell_ret = ShellExecute(para1, para2, "", para3, 1)
 			msg ("shell_ret:  ~ [@shell_ret@]  " )
+		}
+		else if(word_1 == "ref")
+		{
+			if(word_2 == "TestMsgX")
+			{
+				msg ("传X清零")
+				TestMsg("传X清零", "X")
+			}
+			else if(word_2 == "Add_and_Remove_Project_Files")
+				Add_and_Remove_Project_Files
+				
+			else if(word_2 == "Remove_File")
+				Remove_File
+				
+			else if(word_2 == "Remove_Project")
+				Remove_Project
+				
+			else if(word_2 == "Delete")
+			{
+				//Delete
+			}
+			else if(word_2 == "Delete_All_Clips")
+				Delete_All_Clips
+				
+			else if(word_2 == "Delete_Character")
+				Delete_Character
+				
+			else if(word_2 == "Delete_Clip")
+			{
+				//Delete_Clip
+			}
+			else if(word_2 == "Delete_File")
+				Delete_File
+				
+			else if(word_2 == "Delete_Line")
+				Delete_Line
+
+			else
+				msg ("not found:  ~ [@word_2@]" )
+		}
+		else if(word_1 == "func")
+		{
+			var hprj
+			hprj = GetCurrentProj ()
+			
+			if(word_2 == "AddFileToProj")
+			{
+				AddFileToProj(hprj, word_3)
+			}
+			else if(word_2 == "RemoveFileFromProj")
+			{
+				RemoveFileFromProj(hprj, word_3)
+			}
+			else if(word_2 == "GetReg")
+			{
+				msg ("GetReg: " # GetReg(word_3) )
+			}
+			else if(word_2 == "SetReg")
+			{
+				SetReg(word_3, word_4)
+				msg ("SetReg: " # SetReg(word_3) )
+			}
+			else if(word_2 == "GetEnv")
+			{
+				msg ("GetEnv: " # GetEnv(word_3) )
+			}
+			else if(word_2 == "PutEnv")
+			{
+				PutEnv(word_3, word_4)
+				msg ("PutEnv: " # GetEnv(word_3) )
+			}
+			else if(word_2 == "RunCmd")
+			{
+				msg ("RunCmd: " # RunCmd(word_3) )
+			}
+			else if(word_2 == "RunCmdLine")
+			{
+				msg ("RunCmdLine: " # RunCmdLine(word_3, word_4, 0) )
+			}
+			else if(word_2 == "GetProEnvInfo")
+			{
+				Rec = nil  // initializes as an empty string
+				Rec = GetProgramEnvironmentInfo ()
+				if(word_3 == "null")
+					msg ("GetProEnvInfo: " # Rec )
+				else
+					msg ("GetProEnvInfo: @word_3@ " # Rec.ProgramDir )
+			}
+			else
+			{
+				msg ("not found:  ~ [@word_2@]" )
+			}
+		}
+		else if(word_1 == "sys")
+		{
+			if(word_2 == "TestMsgX")
+			{
+				msg ("传X清零")
+				TestMsg("传X清零", "X")
+			}
+			else if(word_2 == "%f")
+			{
+				//举例
+//				msg ("note: [%f]" )
+//				msg ("note: [%a]" )
+//				msg ("note: [%o]" )
+//				msg ("note: " # PROGRAM_DIR )
+				msg ("note: " # "%APPDATA_DIR%" )
+				
+				msg ("note: " # %APPDATA_DIR% )
+			}
+			else if(word_2 == "note")
+			{
+				if(word_3 != "null")
+				{
+					msg ("note: [@word_3@]" )
+				}
+			}
+			else
+			{
+				msg ("not found:  ~ [@word_2@]" )
+			}
 		}
 		else if(word_1 == "shell_SvnLog")
 		{
