@@ -32,7 +32,7 @@ Save:node\C\study\Macro_fun_8910.h \[2.7\] cursor
 Save:node\C\study\Macro_fun_8910.h \[2.8\] file
 Save:node\C\study\Macro_fun_8910.h \[2.9\] select_sim
 Save:node\C\study\Macro_fun_8910.h \[2.10\] Sleep
-Save:node\C\study\Macro_fun_8910.h \[2.11\] reset----------重启
+Save:node\C\study\Macro_fun_8910.h \[2.11\] 
 Save:node\C\study\Macro_fun_8910.h \[2.12\] 小图标
 Save:node\C\study\Macro_fun_8910.h \[2.13\] Browser--------默认PIC
 Save:node\C\study\Macro_fun_8910.h \[2.14\] BT-------------msg
@@ -636,32 +636,7 @@ app:phone\c\mmiphone.c  HandleScellRssiInd
 
 
 
-[2.11] __reset__
-// Reset
-//		==>MMIAPISET_OpenInputResetPwdWin
-//		====>HandleInputResetFactoryPwd
-//		======>MSG_PROMPTWIN_OK
-//		========>MSG_SET_CLEAN_DATE_IND
-app:setting/c/mmiset_phonewin.c  case^ID_SET_RESET_FACTORY
-app:setting/c/mmiset_phonewin.c  case^MSG_SET_CLEAN_DATE_IND
-//		==>MMISET_CleanUserData
-//		====>MSG_SET_CLEAN_USER_DATA_OVER_IND
-//		======>HandleResetOrCleanDataWaitWin
-//		==>MMISET_ResetFactorySetting
-//		====>MMIAPISET_SetWaitFlag
-//		======>MSG_SET_RESET_NEED_WAIT_IND
-//		====>MMIAPISET_FuncFinishedInd  # 为什么2次
-//		======>MSG_SET_RESET_FACTORY_OVER_IND
-//		==>MMIAPIPHONE_PowerReset
-// Reset--userNV
-//		==>UserNV_MarkReset
-//		==>MMI_ReadNVItem
-//		====>
-common\export\inc\nv_item_id.h  NV_ELECTRIC_GUARANTEE_CARD     #id
-common\export\inc\nv_item_id.h  NV_CUS_FIXNV_DATA_ID           #id  610
-common\export\inc\nv_item_id.h  NV_CUS_FIXNV_DATA_LEN          #len 8
-// Reset--env
-app:setting\c\mmiset_func.c  MMIENVSET_ResetEnvSetSetting
+[2.11] 
 
 
 [2.12] 小图标

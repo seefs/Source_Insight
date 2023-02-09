@@ -89,6 +89,8 @@ app:setting\c\mmiset_ring.c   MMI_POWER_RING_ITEM1_ON_ID
 
 // -- 107
 images:common\MMI_RES_DEFAULT\IMAG\mainmenu_page\
+// -- 107--3X4
+images:common\MMI_RES_DEFAULT\IMAG\mainmenu_slim\
 // -- 8910--page
 images:common\MMI_RES_DEFAULT\IMAG\main_menu\
 // -- 8910--4X3

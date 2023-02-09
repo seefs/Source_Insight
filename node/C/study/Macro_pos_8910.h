@@ -73,6 +73,7 @@ s_item_style_no_bigicon_text_and_text_with_mask_ms
 // softkey
 //		==>MMITHEME_GetSoftkeyRect(0)
 app:theme/h/mmi_position_{size}.h  MMI_FULLSCREEN_SOFTKEY_BAR_HEIGHT
+app:theme/h/mmi_position.h  MMI_FULLSCREEN_SOFTKEY_BAR_HEIGHT
 
 
 ### __tab__

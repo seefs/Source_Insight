@@ -10,7 +10,7 @@ Save:node\C\project\Macro_cfg_8910.h \[1.5\] BROWSER, DL
 Save:node\C\project\Macro_cfg_8910.h \[1.6\] BT
 Save:node\C\project\Macro_cfg_8910.h \[1.7\] RECORD
 Save:node\C\project\Macro_cfg_8910.h \[1.8\] LCD_SIZE---------------
-Save:node\C\project\Macro_cfg_8910.h \[1.9\] shortcut----------menu
+Save:node\C\project\Macro_cfg_8910.h \[1.9\] 
 Save:node\C\project\Macro_cfg_8910.h \[1.10\] //USB
 Save:node\C\project\Macro_cfg_8910.h \[1.11\] CTA
 Save:node\C\project\Macro_cfg_8910.h \[1.12\] //CALL record
@@ -358,69 +358,7 @@ make/simulator_main/
 make/simulator_main/simulator_main.mk
 
 
-[1.9] shortcut
-// __shortcut__
-MS_MMI_Main/source/mmi_app/app/setting/c/mmiset_shortcut.c  ->direction_shortcut
-
-// fun 4
-MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_shortcut.c  OpenSelectedShortcutWin
-// key 4
-MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_shortcut.c  GetDirectionKey
-// key 2
-MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_shortcut.c  GetFunctionKey
-// key web
-MS_MMI_Main\source\mmi_app\app\idle\c\mmiidle_cstyle.c  case^MSG_APP_WEB
-
-
-### 设置捷径对齐 # 107
-// id
-MMISET_SHORTCUT_MAX / MMISET_SHORTCUT_TYPE_E
-// txt
-s_shortcut_menu_list_text_id
-// func
-mmiset_shortcut_menu_func_arr
-
-
-### 快捷方向键软键对齐 # 107 /8910
-// id
-MMISET_SHORTCUT_MAX / MMISET_SHORTCUT_TYPE_E
-// key--txt
-s_shortcut_list_text_id
-// key--func
-OpenSelectedShortcutWin--func_arr
-// smart--idle--short
-app:setting\c\mmiset_shortcut.c  OpenShortcutFunWin
-
-// short--menu
-//		==>HandleSetShortcutWindow
-//		====>SetShortcutSetlistParam
-//		======>.s_shortcut_list_text_id
-//		========>MMISETLIST_CreateWin
-//		====>SaveAllShortcutSettings
-//		======>SetShortcutInfo
-
-
-### mini对齐 (未使用)
-// key--pic/txt    # idle (2个, mini的应该对齐)
-s_shortcut_id
-// key--pic        # short (107前面没对齐)
-s_shortcut_list_img_id
-
-
-### 默认值/显示 (不用对齐)
-// default list
-s_shortcut_menu_show_list_text_id
-
-
-### 编辑 # 107 (不用对齐)
-// all list
-s_shortcut_menu_edit_list_text_id
-
-
-// edit-menu
-//		==>MMIAPISET_EnterShortCutMenuWin
-//		====>HandleShortCutSetMenuWindow
-app:setting\c\mmiset_phonewin.c  MMI_RESULT_E^HandleShortCutSetMenuWindow
+[1.9] 
 
 
 

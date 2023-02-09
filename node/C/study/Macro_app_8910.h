@@ -9,7 +9,7 @@ Save:node\C\study\Macro_app_8910.h  \[1.6\] file, path
 Save:node\C\study\Macro_app_8910.h  \[1.7\] setting
 Save:node\C\study\Macro_app_8910.h  \[1.8\] sms -----------------
 Save:node\C\study\Macro_app_8910.h  \[1.9\] call
-Save:node\C\study\Macro_app_8910.h  \[1.10\] pb, cl, callset
+Save:node\C\study\Macro_app_8910.h  \[1.10\] pb, cl
 Save:node\C\study\Macro_app_8910.h  \[1.11\] camera -------------
 Save:node\C\study\Macro_app_8910.h  \[1.12\] pic
 Save:node\C\study\Macro_app_8910.h  \[1.13\] record
@@ -185,70 +185,13 @@ prj:project_{cur}.mk  MAINMENU_SELECT_LAYER_ON_TOP = TRUE  #107
 prj:{cfg}.cfg         UI_MULTILAYER_SUPPORT        = TRUE  #8910
 
 
-// menu--enter
-//		==>MMIAPIMENU_CreatMainMenu
-//		====>MAINMENU_TITLE_ICON_WIN_TAB             # title + 3X3 icon
-//		====>MAINMENU_ICON_WIN_TAB                   # 4X3, icon + title
-app:mainmenu\c\mainmenu_win.c  MAINMENU_ICON_WIN_TAB
-//		==>APP_Init
-//		====>MMIMAINMENU_InitMenuIdArray             # cnt
-//		==>CreateMainMenuCtrl                        # init
-//		====>MainmenuCtrlConstruct
-//		======>MatrixMenuInit
-//		========>MatrixMenuInitMenuDetail
-//		==========>MatrixMenuGetInfo
-//		============>MatrixMenuGetNotTitleStyleInfo
-//		============>MatrixMenuGetTitleStyleInfo     # bg rect, row/column
-//		==========>MatrixReadIconMenuItemList
-//		============>MMIMAINMENU_GetMatrixItemList   # cnt
-//		==============>MMIMAINMENU_GetItemCount
-//		==>MainmenuCtrlHandleMsg                     # up/down
-//		====>MatrixMenuHandle
-//		======>HandleMatrixMenuDirectionKey
-//		========>MatrixMenuResetIconDisplay          # reset 多层
-//		==========>HandleMatrixMenuGetIconRect       # select + item
-//		============>MMITHEME_MainmenuIconTextMargin   # 获得文字与图片的间距
-//		==========>MatrixMenuDrawItem...
-//		========>MSG_FULL_PAINT                      # 非多层
-//		========>MatrixMenuDrawActiveIcon            # 多层直接画, 只有一行标题
-//		==========>MatrixMenuDrawHighlightItem       # select + item
-//		============>MatrixMenuDrawItem
-//		==============>MMITHEME_DrawMainmenuItem     # draw
-//		==============>DisplayMenuIcon               # 第1次显示(多层,12宫格)
-//		==>MainmenuCtrlHandleMsg
-//		====>MSG_CTL_PAINT
-
-// menu--layer
-//		==>UILAYER_CreateLayerEx
-//		====>s_item_layer_handle, move layer      # softkey, bg
-//		======>MatrixMenuCreateItemLayer
-//		====>
-//		======>MatrixMenuGetHighLightRect
-//		====>
-//		======>MatrixMenuCreateItemLayer
-
-
-// menu--draw
-//		==>MatrixMenuDraw
-//		====>MatrixMenuDrawBg                      # bg
-//		======>.bg_image
-//		====>MatrixMenuGetTopAndBottomLineIndex    # icon rect
-//		====>HandleMatrixMenuGetIconRect
-//		====>MatrixMenuDisplayActiveItemTitle      # title
-//		======>GUIRES_DisplayImg
-
-// menu--select
-//		==>s_mainmenu_item_data[i].active_img_id
-//		====>active_icon.data.icon_id
-//		======>MatrixMenuDrawHighlightItem
-//		======>MatrixMenuDrawItemIcon
-// menu--sms--num
-//		==>MMITHEME_DrawMainmenuItem
-//		====>DrawMenuNumberIcon
-//		======>.cur_cache_info.menu_num
-//		========>GetMenuIconNumber
-
 ### menu
+// ==>app
+Save:node\C\study\Macro_app_8910menu.h  __Creat__
+Save:node\C\study\Macro_app_8910menu.h  __onePage__
+Save:node\C\study\Macro_app_8910menu.h  __matrix__
+Save:node\C\study\Macro_app_8910menu.h  __title__
+Save:node\C\study\Macro_app_8910menu.h  
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __mainmenu__
 // ==>image
@@ -256,31 +199,6 @@ Save:node\C\study\Macro_res_image_8910.h  __mainmenu__
 // ==>font/color
 Save:node\C\study\Macro_res_color_8910.h  __mainmenu__
 
-
-// menu--title
-//		==>MatrixMenuDisplayActiveItemTitle
-source:mmi_service/export/inc/mmi_custom_define.h  MMISET_DEFAULT_MENU_STYLE_E
-
-// menu--prg
-app:theme/c/mmitheme_mainmenu.c  is_has_button
-app:mainmenu/c/mainmenu_win.c  MAINMENU_ICON_WIN_TAB
-app:mainmenu\c\mmi_mainmenu_matrix.c  ->is_need_prgbox
-
-// menu--one page
-app:mainmenu\c\mainmenu_win.c  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
-source:mmi_kernel\include\mmitheme_mainmenu.h  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
-app:mainmenu\c\mmi_mainmenu_data_128x128.c  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
-app:mainmenu\c\mmi_mainmenu_data_240X320.c  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
-app:mainmenu\c\mmi_mainmenu_matrix.c  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
-source:mmi_app\common\c\mmi_menutable_240x320.c  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
-
-// menu--matrix
-source:mmi_app\app\theme\c\mmitheme_mainmenu.c  MAINMENU_NINE_MATRIX_STYLE
-source:mmi_kernel\include\mmitheme_mainmenu.h  MAINMENU_NINE_MATRIX_STYLE
-source:mmi_service\export\inc\mmi_custom_define.h  MAINMENU_NINE_MATRIX_STYLE
-app:mainmenu\c\mmi_mainmenu_data_240X320.c  MAINMENU_NINE_MATRIX_STYLE
-app:mainmenu\c\mmi_mainmenu_matrix.c  MAINMENU_NINE_MATRIX_STYLE
-source:mmi_app\common\c\mmi_menutable_240x320.c  MAINMENU_NINE_MATRIX_STYLE
 
 
 // menu--main
@@ -292,11 +210,6 @@ app:mainmenu\c\mmi_mainmenu_data_240x240.c s_mainmenu_item_data
 app:mainmenu\c\mmi_mainmenu_data_240x320.c s_mainmenu_item_data
 //app:mainmenu\c\mmi_mainmenu_data_240x320.c MAINMENU_FLP_STYLE
 
-// menu--main
-app:mainmenu\c\mainmenu_win.c  HandleMainMenuWinMsg
-// menu--second
-app:mainmenu\c\mainmenu_win.c  HandleSecMenuStaticMsg
-app:mainmenu\c\mainmenu_win.c  3353
 
 // menu--tools
 source:mmi_app\common\c\mmi_menutable_128x128.c  MAINMENU_ONE_ICON_ONE_PAGE_STYLE
@@ -320,14 +233,6 @@ source:mmi_app\common\c\mmi_menutable_240x320.c  GUIMENU_ITEM_T^menu_settings_ic
 app:setting\c\mmiset_menutable.c  GUIMENU_ITEM_T^menu_set_phone
 
 
-// menu img
-ctrl:Menu\c\ctrlmenu_popup.c  check_unsel_img
-ctrl:Menu\c\ctrlmenu_sec.c   check_unsel_img
-// menu enter
-source:mmi_app\app\mainmenu\c\mainmenu_win.c  case^ID_TOOLS_RECORD
-source:mmi_app\app\mainmenu\c\mainmenu_win.c  case^ID_ENTERTAIMENT_CAMERA
-
-//tone
 
 
 
@@ -621,62 +526,20 @@ PromptSuccessWin
 //
 app:setting/c/mmiset_phonewin.c  MMISET_INPUT_RESET_FACTORY_PWD_WIN_TAB
 
-
-// cl set
-app:setting\c\mmiset_callwin.c  InitPdaCallOtherSettingsCtrl
-// cl set--set Name
-app:setting\c\mmiset_callwin.c  MMI_RESULT_E^HandleEditSimNameWindow
-// cl set--set time
-app:setting\c\mmiset_callwin.c  MMI_RESULT_E^HandleSetMinuteReminderEditWindow
-// fly--open
-app:setting\c\mmiset_callwin.c  HandleFlyModeOpenPhoneWindow
-
-// set--connect
-//		==>HandleConnectionMenuWinMsg
-//		====>InitPdaConnectionMainListCtrl
-//		======>.s_network_type_select  # 3, 不要2g单模
-//		======>TXT_COMMON_WWW_ACCOUNT  # sim卡接入点
-//		======>TXT_GPRS_SERVICE        # 数据业务
-//		==>MMIAPISET_OpenNetWorkTypeWin
-//		====>HandleNetworkTypeWindow
-//		==>InitVodafoneApnList
-//app:connection\c\mmiconn_manager_wintab.c  MMIAPICONNECTION_OpenMenuWin
-app:connection\c\mmiconn_manager_wintab.c  InitPdaConnectionMainListCtrl
-// ==>apn
-Save:node\C\study\Macro_doc_apn8910.h
-Save:node\C\study\Macro_doc_apn107.h
-
-
-// Reset
-Save:node\C\study\Macro_fun_8910.h  __reset__
-
-// set--short
-Save:node\C\project\Macro_cfg_8910.h  __shortcut__
-
-
-// set--phone
-//		==>MMIAPISET_EnterPhoneSettingWin
-//		====>MMISET_PHONE_SETTING_WIN_TAB  #128*160
-//		======>HandleSetPhoneSettingWindow
-//		====>MMISET_SET_PHONE_WIN_TAB      #240*320
-app:setting/c/mmiset_phonewin.c  MMISET_PHONE_SETTING_WIN_TAB
-app:setting/c/mmiset_phonewin.c  MMISET_SET_PHONE_WIN_TAB
-// set--phone--240*320
-//		==>MENU_SET_PHONE
-app:setting\c\mmiset_menutable.c  menu_set_phone_setting
-
-// set--phone--time
-app:setting\c\mmiset_datetime.c  HandleSetTimeDateWindow
-
-
 // set--display (form)
 app:setting\c\mmiset_displaywin.c  MMI_RESULT_E^^HandleSetDisplayWindow
 // sec--pin (edit)
 app:phone\c\mmiphone_wintab.c  MMI_RESULT_E^HandlePinInputExceptPhone
 
 
-
 ### set
+// ==>app
+Save:node\C\study\Macro_app_8910set.h  __phone__
+Save:node\C\study\Macro_app_8910set.h  __callset__
+Save:node\C\study\Macro_app_8910set.h  __connect__
+Save:node\C\study\Macro_app_8910set.h  __reset__
+Save:node\C\study\Macro_app_8910set.h  __shortcut__
+Save:node\C\study\Macro_app_8910set.h  
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __set_display__
 Save:node\C\study\Macro_pos_8910.h  __set_pin__
@@ -1027,50 +890,14 @@ app:pb\c\Mmipb_view.c  MMIPB_MAIN_WIN_ID
 app:pb\c\mmipb_view.c  MMIPB_ENTRY_LIST_TAB_WIN_TAB          # style-1 (107)
 
 
-// init
-//		==>HandleEntryListWinMsg
-//		====>OPEN:
-//		======>MMK_SetAtvCtrl              # ==>GET_ACTIVE
-//		==>PbCreateChildWin                # ==>GET_FOCUS
-//		==>HandleMainWinMsg
-//		====>OPEN:                         # open/save ==>RELOAD_SEARCH
-//		==>HandleEntryListWinMsg
-//		====>RELOAD_SEARCH:
-//		======>HandleMainReloadMsg
-//		========>MMIPB_MultiSearch         # 模糊查找/分组/排队分组
-//		==========>MMIPB_SearchQSortList
-//		============>.s_pb_qsort_list      # 字符索引表
-//		============>.s_pb_contact_list    # 索引表
-//		==========>MMIPB_SearchSubStringInList  # 搜号码或姓名
-//		========>MMIPB_ReadContactList     # 把搜索的结果显示出来
-//		============>.contact_list_info
-//		========>SetListItem               # 结果显示
-//		==========>MMIPB_GetListStyle
-//		============>GUIITEM_STYLE_ONE_LINE_BIGICON_TEXT_WITH_MASK_MS
-//		==========>MMIPB_SearchAndAppendItem
-//		============>SetListItemForSearch
-//		========>MMIPB_GetContactListIndex # 当前焦点
-//		==>HandleEntryListWinMsg
-//		====>PAINT:                        # ==>List/CTL_PAINT ==>ITEM_DATA 
-//		====>ITEM_DATA:                    # ==>
-//		======>AppendDyncListItem
-//		======>MMIPB_CONTACTINDEX          # id->data
-
-//		==>HandleEntryListWithSearchWinMsg
-//		====>empty:
-//		======>CTRLLIST_SetEmptyInfo
-//		====>form:
-//		======>
-//		====>button:
-//		======>
-//		====>edit:
-//		======>MMIPB_SearchWinCreateEditor
-//		========>GUIEDIT_SetStyle(,GUIEDIT_STYLE_SINGLE_DYN_DOWN);
-//		========>CTRLBASEEDIT_SetDeActiveBorderColor(, MMI_DARK_WHITE_COLOR);
-app:pb\c\mmipb_view.c  HandleEntryListWithSearchWinMsg
-
-
 ### pb
+// ==>app
+Save:node\C\study\Macro_app_8910pb.h  __init__
+Save:node\C\study\Macro_app_8910pb.h  __detail__
+Save:node\C\study\Macro_app_8910pb.h  __memory__
+Save:node\C\study\Macro_app_8910pb.h  __add__
+Save:node\C\study\Macro_app_8910pb.h  __pbBak__
+Save:node\C\study\Macro_app_8910pb.h  
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __pb__
 // ==>image
@@ -1079,32 +906,7 @@ Save:node\C\study\Macro_res_image_8910.h  __pb__
 
 
 
-// pb-list-search
-app:pb\c\mmipb_view.c  void^HandleMainReloadMsg
-// pb-list-delete
-app:pb\c\mmipb_view.c  void^HandleOperateReloadList
-
-// pb-detail
-app:pb\c\mmipb_view.c  MMI_RESULT_E^HandleEntryDetailWinMsg
-
-// pb-memory
-app:pb\c\mmipb_view.c  MMI_RESULT_E^^HandleMemDetailWinMsg
-
-// MEM
-//MMIPB_MEMDETAIL_WIN_TAB
-//TXT_COMMON_DETAIL_MEMORY
-app:pb\c\Mmipb_menu.c  PB_OPTMENU_NODE_USED_SPACE
-
-// pb-add--simSelect
-app:pb\c\mmipb_menu.c  MMI_RESULT_E^HandleStorageSelectWinMsgList
-// pb-add--edit
-//		==>edit_text:
-//		====>
-//		==>edit_number:
-//		====>
-app:pb\c\mmipb_menu.c  MMI_RESULT_E^HandleContactAddEditWinMsg
-// 	GUIEDIT_SetStyle(first_name_ctr_id,GUIEDIT_STYLE_MULTI_DYN_DOWN);
-
+### cl
 
 //1.cl-menu
 app:cl\c\Mmicl_wintab.c   MMICL_ICON_MAIN_MENU_WIN_TAB
