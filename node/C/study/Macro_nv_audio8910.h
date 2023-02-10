@@ -1,7 +1,7 @@
 
 //目录:
 Save:node\C\study\Macro_nv_audio8910.h \[1.1\] audio_calib_VQE
-Save:node\C\study\Macro_nv_audio8910.h \[1.2\] 2IN1,3IN1
+Save:node\C\study\Macro_nv_audio8910.h \[1.2\] PA,2IN1,3IN1
 Save:node\C\study\Macro_nv_audio8910.h \[1.3\] 
 Save:node\C\study\Macro_nv_audio8910.h \[1.4\] 
 Save:node\C\study\Macro_nv_audio8910.h \[1.5\] 
@@ -45,7 +45,8 @@ nv:audio_arm_6531efm.nvm  6476
 
 
 
-[1.2] 2IN1,3IN1
+[1.2] PA,2IN1,3IN1
+### __PA8910__
 // select prj--8910
 nv1Path = SPDE_PRJ\K220U_HYBL_H661A\nvitem
 nv2Path = SPDE_PRJ\K220U_HYBL_H660A_HTX_LTC\nvitem
@@ -103,6 +104,29 @@ nv:audio_calib_VQE.nvm  65
 //reserved为3表示使用外部PA，外部PA接在HP_R上，有听筒喇叭二合一或三合一
 
 
+### __PA107__
+//
+audio_calib_VQE.nvm中的audio_calib_param\CALIB_AUD_ALG\VoiceCallNb[0]\reserved
+//
+nv:audio_calib_VQE.nvm  audio_calib
+
+//
+//	reserved为0表示原始接法，没有使用外部PA，没有听筒喇叭二合一或三合一
+//	reserved为1表示使用外部PA，外部PA接在HP_R上，没有听筒喇叭二合一或三合一
+//	reserved为2表示使用内部PA，有听筒喇叭二合一或三合一
+//	reserved为3表示使用外部PA，外部PA接在HP_R上，有听筒喇叭二合一或三合一
+//
+//	AUDIO_AMP_CLASSK_SUPPORT  = TRUE
+//	AUDIO_AMP_CLASSK_3IN1_SUPPORT  = TRUE
+
+
+//
+//把外部PA恢复到CP端控制
+//请在现有版本基础上进行如下配置：
+//1、用我司发布的正式patch的modem替换贵司所用的modem
+//2、注释掉AP端所有关于外部PA的代码，也就是关闭USE_EXT_PA宏
+//3、修改NVM参数audio_calib_param\CALIB_AUD_ALG\VoiceCallNb[0]\reserved=1或者3（如果是二合一或者三合一设为3，不是二合一或者三合一设为1）
+//4、修改NVM参数audio_calib_param\CALIB_AUD_ALG\VoiceCallNb[3]\reserved=2（该参数是贵司区分其他客户的标志，必须设为2，贵司8910所有产品，只要使用外部PA，都需要设为2）
 
 
 

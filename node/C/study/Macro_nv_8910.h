@@ -4,28 +4,24 @@ Save:node\C\study\Macro_nv_8910.h \[1.1\] charge---------充电相关
 Save:node\C\study\Macro_nv_8910.h \[1.2\] sim------------sim相关
 Save:node\C\study\Macro_nv_8910.h \[1.3\] audio----------audio相关
 Save:node\C\study\Macro_nv_8910.h \[1.4\] mmi------------common相关
-Save:node\C\study\Macro_nv_8910.h \[1.5\] PA
-Save:node\C\study\Macro_nv_8910.h \[1.6\] 
+Save:node\C\study\Macro_nv_8910.h \[1.5\] nv define
+Save:node\C\study\Macro_nv_8910.h \[1.6\] replace_nv--------
 Save:node\C\study\Macro_nv_8910.h \[1.7\] 
-Save:node\C\study\Macro_nv_8910.h \[1.8\] nv define
+Save:node\C\study\Macro_nv_8910.h \[1.8\] 
 Save:node\C\study\Macro_nv_8910.h \[1.9\] nv test
-Save:node\C\study\Macro_nv_8910.h \[1.10\] 
-Save:node\C\study\Macro_nv_8910.h \[1.11\] 
+Save:node\C\study\Macro_nv_8910.h \[1.10\] Card-----------电子保卡
+Save:node\C\study\Macro_nv_8910.h \[1.11\] thir_nv
 Save:node\C\study\Macro_nv_8910.h \[1.12\] custom---------链路
 Save:node\C\study\Macro_nv_8910.h \[1.13\] nv_build
 Save:node\C\study\Macro_nv_8910.h \[1.14\] nand/nor
 Save:node\C\study\Macro_nv_8910.h \[1.15\] test
-Save:node\C\study\Macro_nv_8910.h \[1.16\] 
+Save:node\C\study\Macro_nv_8910.h \[1.16\] apn
 Save:node\C\study\Macro_nv_8910.h \[1.17\] hv_nv
-Save:node\C\study\Macro_nv_8910.h \[1.18\] bt_nv
-Save:node\C\study\Macro_nv_8910.h \[1.19\] env_nv
+Save:node\C\study\Macro_nv_8910.h \[1.18\] 
+Save:node\C\study\Macro_nv_8910.h \[1.19\] 
 Save:node\C\study\Macro_nv_8910.h \[1.20\] simulator
-Save:node\C\study\Macro_nv_8910.h \[1.21\] replace_nv--------
-Save:node\C\study\Macro_nv_8910.h \[1.22\] apn
-Save:node\C\study\Macro_nv_8910.h \[1.23\] _readme
-Save:node\C\study\Macro_nv_8910.h \[1.24\] thir_nv
-Save:node\C\study\Macro_nv_8910.h \[1.25\] 
-Save:node\C\study\Macro_nv_8910.h \[1.26\] 
+Save:node\C\study\Macro_nv_8910.h \[1.21\] 
+Save:node\C\study\Macro_nv_8910.h \[1.22\] 
 
 Save:Help\\DefaultFile\\Macro_Node_Num.h
 
@@ -52,6 +48,9 @@ Save:node\C\study\Macro_nv_simlock107.h
 [1.3] audio
 // audio相关
 Save:node\C\study\Macro_nv_audio8910.h
+// PA,3IN1,2IN1
+Save:node\C\study\Macro_nv_audio8910.h  __PA8910__
+Save:node\C\study\Macro_nv_audio8910.h  __PA107__
 
 
 [1.4] mmi
@@ -89,77 +88,61 @@ common\export\inc\nv_item_id.h  MN_NV_TD_USER_BASE   3200 ~ 3200+2800  # 107
 common\export\inc\nv_item_id.h  MN_NV_USER_BASE      500  ~            # 8910
 
 
-[1.5] PA
-//
-audio_calib_VQE.nvm中的audio_calib_param\CALIB_AUD_ALG\VoiceCallNb[0]\reserved
-//
-nv:audio_calib_VQE.nvm  audio_calib
+[1.5] nv define
 
-//
-//	reserved为0表示原始接法，没有使用外部PA，没有听筒喇叭二合一或三合一
-//	reserved为1表示使用外部PA，外部PA接在HP_R上，没有听筒喇叭二合一或三合一
-//	reserved为2表示使用内部PA，有听筒喇叭二合一或三合一
-//	reserved为3表示使用外部PA，外部PA接在HP_R上，有听筒喇叭二合一或三合一
-//
-//	AUDIO_AMP_CLASSK_SUPPORT  = TRUE
-//	AUDIO_AMP_CLASSK_3IN1_SUPPORT  = TRUE
-
-
-//
-//把外部PA恢复到CP端控制
-//请在现有版本基础上进行如下配置：
-//1、用我司发布的正式patch的modem替换贵司所用的modem
-//2、注释掉AP端所有关于外部PA的代码，也就是关闭USE_EXT_PA宏
-//3、修改NVM参数audio_calib_param\CALIB_AUD_ALG\VoiceCallNb[0]\reserved=1或者3（如果是二合一或者三合一设为3，不是二合一或者三合一设为1）
-//4、修改NVM参数audio_calib_param\CALIB_AUD_ALG\VoiceCallNb[3]\reserved=2（该参数是贵司区分其他客户的标志，必须设为2，贵司8910所有产品，只要使用外部PA，都需要设为2）
-
-
-
-[1.6] 
-
-
-
-[1.7] 
-
-
-[1.8] nv define
 // 1.nv id
 common\export\inc\nv_item_id.h  NV_PROD_PARAM
 //  NV_PROD_PARAM                     = 400,
-//
 nv:ProductionParam_uix8910.nvm  production_param_T
 //
 MS_Customize\export\inc\nv_productionparam_type.h  PROD_PARAM_tag
 //  96bytes === 48 id
 
 
-// 2.bt_config--401
-nv:ProductionParam_uix8910.nvm  bt_config
-//
-MS_Customize\export\inc\bt_cfg.h  BT_SPRD_NV_PARAM
+// tool相关
+Save:node\C\study\Macro_nv_tool8910.h  __init__
+// bt
+Save:node\C\study\Macro_nv_tool8910.h  __bt__
+Save:node\C\study\Macro_nv_tool8910.h  __bt_nv__
+// gps
+Save:node\C\study\Macro_nv_tool8910.h  __gps__
+// env
+Save:node\C\study\Macro_nv_tool8910.h  __env_nv__
 
-// bt_sprd
-nv:ProductionParam_uix8910.nvm  3651
-// 362->361->340
 
 
-// 3.
-// gps_config--403
-nv:ProductionParam_uix8910.nvm  gps_config
-// tv_rssi_comp--404
-nv:ProductionParam_uix8910.nvm  tv_rssi_comp
-// multi_langue_cfg--405
-nv:ProductionParam_uix8910.nvm  multi_langue_cfg
-// wifi_config--409
-nv:ProductionParam_uix8910.nvm  wifi_config
-// engine_test_result--431
-nv:ProductionParam_uix8910.nvm  engine_test_result
-// bt_sprd--442
-nv:ProductionParam_uix8910.nvm  bt_sprd
-// fm_config--451
-nv:ProductionParam_uix8910.nvm  fm_config
-// e_guarantee_card--560
-nv:ProductionParam_uix8910.nvm  e_guarantee_card
+
+
+[1.6] replace_nv
+
+// 批量替换
+Save:Help\Other\
+// 替换电池曲线
+Save:Help\Other\Macro_Help_replace.h
+// 替换二合一NV
+Save:Help\Other\Macro_Help_replace_2n1.h
+Save:Help\Other\Macro_Help_replace_2n1_path.h
+
+// tool
+tool_mini:4_翻译字库\
+tool_mini:4_翻译字库\sprd_nv_exist.xlsm
+
+// path
+HW:{project}\
+HWNV:\
+
+
+
+[1.7] 
+
+
+[1.8] 
+
+
+
+
+
+
 
 
 
@@ -170,13 +153,45 @@ nv:ProductionParam_uix8910.nvm  e_guarantee_card
 
 
 
-[1.10] 
+[1.10] __Card__
+
+
+### __Card__  电子保卡
+// 8910 升级可保留
+common\export\inc\nv_item_id.h  NV_ELECTRIC_GUARANTEE_CARD  # 560
+make/perl_script/UIX8910_128MBIT.xml  0x230
+HW:{project}\ProductionParam_uix8910.nvm  guarantee  # 560
+
+// 107--不可擦除
+common\export\inc\nv_item_id.h  NV_CUS_FIXNV_DATA_ID  # 610
+common\export\inc\nv_item_id.h  NV_CUS_FIXNV_DATA_LEN # 8
+make\nv_cus_config\nv_cus_config_MAIN\nv_cus_config_xml.mk   customer_card_id.xml
+make\nv_cus_config\nv_cus_config_MAIN\NV_CUS_CONFIG_SETTINGS\customer_card_id.xml  # 610
+HW:{project}\CustNV\customer_card_id.xml
+//SPDE_PRJ\F76T_SUOAI_MID\CustNV\customer_card_id.xml  #默认不用加
+// backup==>0
+make\perl_script\
+make\perl_script\UMS9117.xml  customer_card_id  # 0x262/610
+make\perl_script\pac.pl       UMS9117.xml
+
+// 107--升级会擦除, 格式化会擦除
+common\export\inc\nv_item_id.h  NV_ELECTRIC_GUARANTEE_CARD  # 2851
+make\app_main\app_main.mk  eleGuaranteeCard.xml
+HW:{project}\RDNV\eleGuaranteeCard.xml  # 2851
 
 
 
+[1.11] thir_nv
+// 支付宝
+make\\perl_script\\UMS9117.xml  Ali_DATA
+common\export\inc\nv_item_id.h  Ali_DATA
 
+// NV_ALIPAY_ID
+make/perl_script/UIX8910_128MBITX64MBIT_new.xml  0x1B4
 
-[1.11] 
+### _readme
+// UMS9117
+_readme.txt  UMS9117_NEW
 
 
 
@@ -185,8 +200,6 @@ nv:ProductionParam_uix8910.nvm  e_guarantee_card
 make/perl_script/
 
 
-// NV_ALIPAY_ID
-make/perl_script/UIX8910_128MBITX64MBIT_new.xml  0x1B4
 
 
 ### 8910
@@ -213,28 +226,6 @@ HW:{project}\modem_nv_cat1bis_uix8910_static.nvm  9166
 //3、多测试，可能会影响到呼通率，特别是动态环境下，比如路测这种。
 
 
-### __Card__  电子保卡
-// 8910 升级可保留
-common\export\inc\nv_item_id.h  NV_ELECTRIC_GUARANTEE_CARD  # 560
-make/perl_script/UIX8910_128MBIT.xml  0x230
-HW:{project}\ProductionParam_uix8910.nvm  guarantee  # 560
-
-// 107--不可擦除
-common\export\inc\nv_item_id.h  NV_CUS_FIXNV_DATA_ID  # 610
-common\export\inc\nv_item_id.h  NV_CUS_FIXNV_DATA_LEN # 8
-make\nv_cus_config\nv_cus_config_MAIN\nv_cus_config_xml.mk   customer_card_id.xml
-make\nv_cus_config\nv_cus_config_MAIN\NV_CUS_CONFIG_SETTINGS\customer_card_id.xml  # 610
-HW:{project}\CustNV\customer_card_id.xml
-//SPDE_PRJ\F76T_SUOAI_MID\CustNV\customer_card_id.xml  #默认不用加
-// backup==>0
-make\perl_script\
-make\perl_script\UMS9117.xml  customer_card_id  # 0x262/610
-make\perl_script\pac.pl       UMS9117.xml
-
-// 107--升级会擦除, 格式化会擦除
-common\export\inc\nv_item_id.h  NV_ELECTRIC_GUARANTEE_CARD  # 2851
-make\app_main\app_main.mk  eleGuaranteeCard.xml
-HW:{project}\RDNV\eleGuaranteeCard.xml  # 2851
 
 
 [1.13] nv_build
@@ -298,7 +289,16 @@ app:eng\c\mmieng_main.c  MMIENG_NV_USB_TEST_SET_SETTING
 
 
 
-[1.16] 
+[1.16] apn
+// apn
+Save:node\C\study\
+Save:node\C\study\Macro_res_8910.h  __8910_apn__
+Save:node\C\study\Macro_res_8910.h  __107_apn__
+Save:node\C\study\Macro_doc_apn107.h
+Save:node\C\study\Macro_doc_apn8910.h
+// t6b
+//1. 滑动卡顿（T6-B内单已经解决）
+//2. 台灣大物聯網卡無法上網使用（APN:twm.iot） 
 
 
 
@@ -313,93 +313,11 @@ nv_type_uix8910.nvm里面4938行，
 
 
 
-[1.18] __bt_nv__
-// bt
-// --默认Tcard, 自动向udisk查找
-//		==>MMIBT_OpenIncomingFileWin()
-app:bt\c\mmibt_func.c  MMINV_BT_FILE_LOCATION
-//		==>MMISET_ResetFactorySetting            # set
-//		====>MMIAPIBT_Reset
-//		======>MMIBT_Reset
-//		========>MMIAPIFMM_GetDefaultDisk        # 默认最后一个盘
-//		==>MMIBT_OpenIncomingFileWin             # bt 接收
-//		====>
-//		==>MMIAPISD_HandleSDPlugWaiting          # SD 插入msg
-//		====>SDPLUG_IN:
-//		====>MMIAPIBT_SaveFileLocation
-//		==>APP_Init
-//		====>MMIAPIBT_AppInit
-//		======>MMIBT_SetFileSaveLocation         # init, SD, file path
-//		==>
-//		====>
-//		======>
-//		========>
-//		==========>
-//		============>
-//		==============>
+[1.18] 
 
 
 
-[1.19] __env_nv__
-//		==>val
-//		====>mmienvset_default_setting
-//		====>mmienvset_default_setting_ex
-//		====>diff:
-//		======>MMISET_RING_DEFAULT_ID_EX
-//		==>bak:
-//		====>MMK_HandlePublicKey
-//		======>HEADSET_DETECT:(down)
-//		========>MMIAPIENVSET_ReSetAllVolmue
-//		==========>MMIAPIENVSET_SetModeValue         # vol 5
-//		==========>MMIAPIMP3_SetVolume               # vol 5 mp3
-//		==========>MMIFM_AdjustVolumeTP              # vol 5 fm
-//		==========>MMIAPIVP_FSMUpdateCurrentVolNoHandle
-//		============>备份在缓存NV中
-//		======>HEADSET_DETECT:(up)
-//		==========>MMIAPIENVSET_UnReSetAllVolmue()
-//		============>还原NV
-//		==>sys:
-//		====>MMIAPISET_AllInit
-//		======>MMISET_EnvSetInit
-//		========>前模式: 普通环境                           # 全局env
-//		========>活动模式: 普通环境
-//		========>当前模式: 前模式 或 活动模式
-//		========>静音状态: 否
-//		========>更多铃声: 
-//		========>上次NV: s_mmienvset_setting_info      # 缓存
-//		========>Enhance: 
-//		======>OtherInit
-//		========>PRODUCT_CODE_Read                   # 部分国家码？
-//		====>MMISET_ResetFactorySetting
-//		======>MMIENVSET_ResetEnvSetSetting          # 用v1, 特殊码用v2
-//		==>set:
-//		====>addMode:
-//		======>HandleEnvOptMenuWindow
-//		========>GetEnvAddIndex
-//		==========>MMIAPIENVSET_GetModeValue
-//		==========>MMIENVSET_InitUserIndexItem       # 用v1
-//		====>MMIENVSET_EnvName_WriteInNV
-//		====>MMIENVSET_GetEnvRealIndex
-//		====>MMIENVSET_CreateMoreRingFile
-//		====>MMIAPIENVSET_ResetActModeOtherRingSet   # 恢复部分默认值
-//		==>switch:
-//		====>GetEnvSetOptValue
-//		======>GetModeValue
-//		====>HandleEnvSetMainMenuWindow
-//		======>MMIENVSET_SetCurModeId((uint8)real_id);
-//		======>envset_mode = MMIENVSET_GetCurModeId();
-//		========>MMIAPIENVSET_ActiveMode(envset_mode);
-//		========>MMIENVSET_SetPreActiveMode(active_mode_id);   
-//		==========>SetActiveModeId
-//		==>bt:
-//		====>MMIBT_OpenHeadsetCnf
-//		======>MMIAPIENVSET_SetBluetoothMode();
-//		====>MMIBT_CloseHeadsetCnf
-//		======>MMIAPIENVSET_UnSetBluetoothMode();
-
-// NV可能是这个
-rdnv:\
-rdnv:NV_PARAM_TYPE_SIM_CFG[1].xml  profile_download_bytes
+[1.19] 
 
 
 
@@ -409,46 +327,16 @@ source:winsimulator_tp/win_platform/SIM_Set_Files/
 source:winsimulator_tp/win_platform/SIM_Set_Files/SIM1/EF_LOCI.inf
 
 
-[1.21] replace_nv
-
-// 批量替换
-Save:Help\Other\
-// 替换电池曲线
-Save:Help\Other\Macro_Help_replace.h
-// 替换二合一NV
-Save:Help\Other\Macro_Help_replace_2n1.h
-Save:Help\Other\Macro_Help_replace_2n1_path.h
-
-// tool
-tool_mini:4_翻译字库\
-tool_mini:4_翻译字库\sprd_nv_exist.xlsm
-
-// path
-HW:{project}\
-HWNV:\
+[1.21] 
 
 
-[1.22] apn
-// apn
-Save:node\C\study\
-Save:node\C\study\Macro_res_8910.h  __8910_apn__
-Save:node\C\study\Macro_res_8910.h  __107_apn__
-Save:node\C\study\Macro_doc_apn107.h
-Save:node\C\study\Macro_doc_apn8910.h
-// t6b
-//1. 滑动卡顿（T6-B内单已经解决）
-//2. 台灣大物聯網卡無法上網使用（APN:twm.iot） 
+[1.22] 
 
 
-[1.23] _readme
-// UMS9117
-_readme.txt  UMS9117_NEW
+[1.23] 
 
 
-[1.24] thir_nv
-// 支付宝
-make\\perl_script\\UMS9117.xml  Ali_DATA
-common\export\inc\nv_item_id.h  Ali_DATA
+[1.24] 
 
 
 [1.25] 

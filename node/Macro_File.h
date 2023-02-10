@@ -180,6 +180,7 @@ Save:node\Macro_File.h  __Help__
 // 公共设置
 Save:set\Macro_Set_Common.h   AdminKey
 // 删除后解除锁定
+C:\Users\
 C:\Users\{Admin}\AppData\Roaming\Scooter^Software\Beyond^Compare^4
 //   BCmp:
 Save:node\ToolsMsg\Macro_Bcomp.h

@@ -89,6 +89,7 @@ app:setting\c\mmiset_ring.c   MMI_POWER_RING_ITEM1_ON_ID
 
 // -- 107
 images:common\MMI_RES_DEFAULT\IMAG\mainmenu_page\
+images:common\MMI_RES_DEFAULT\IMAG\mainmenu\
 // -- 107--3X4
 images:common\MMI_RES_DEFAULT\IMAG\mainmenu_slim\
 // -- 8910--page
@@ -125,6 +126,10 @@ app:mainmenu\c\mmi_mainmenu_matrix.c  font_info.font                     #softke
 // mainmenu color
 app:mainmenu\c\mmi_mainmenu_matrix.c  MatrixMenuDisplayActiveItemTitle   #title color
 
+// memo
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_MAINMENU_ICON_NOTE
+// asp
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_MAINMENU_ICON_CALL_RECORD
 
 
 [1.3] Wallpaper--±ÚÖ½

@@ -5,7 +5,7 @@ Save:node\C\study\Macro_fun_8910.h \[1.1\] resource_main
 Save:node\C\study\Macro_fun_8910.h \[1.2\] str, wstr
 Save:node\C\study\Macro_fun_8910.h \[1.3\] timer----
 Save:node\C\study\Macro_fun_8910.h \[1.4\] MSG
-Save:node\C\study\Macro_fun_8910.h \[1.5\] NV, init
+Save:node\C\study\Macro_fun_8910.h \[1.5\] 
 Save:node\C\study\Macro_fun_8910.h \[1.6\] Win, Param, id---ID×ª»»
 Save:node\C\study\Macro_fun_8910.h \[1.7\] #define----------ºêÌ×ºê
 Save:node\C\study\Macro_fun_8910.h \[1.8\] RED
@@ -162,26 +162,7 @@ MMK_SendMsg(VIRTUAL_WIN_ID, MSG_ALM_ALERTING_END, PNULL);
 
 
 
-[1.5] NV
-// SMS
-//	MMINV_MAX_SMS_RECORDS
-//	 PB
-//	NV_PHONE_BOOK_MAIN
-//	NV_PHONE_BOOK_LND_LAST_ENTRY
-
-//
-//	MMISET_ResetFactorySetting()
-//	MMISET_CleanUserData()
-
-//
-//	MMIAPIENG_RegNv
-
-
-// init
-//	MMIAPISET_AllInit
-
-// usernv
-s_mmi_usernv_len
+[1.5] 
 
 
 [1.6] Win Param

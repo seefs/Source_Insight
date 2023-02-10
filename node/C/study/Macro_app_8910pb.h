@@ -123,70 +123,95 @@ app:pb\c\mmipb_view.c  void^HandleMainReloadMsg
 
 
 [1.7] __pbBak__
+// --auto backup test
+//		==>*#18#, 暗码测试
+//		==>MMIPB_TestAutoBackup
+//		====>MMIPB_OpenMainWin             # list_type 分支
+//		==>MMIPB_OpenPbWin                 # Applet.entry, 创建 instance
+//		====>.function_type                # function_type--bak_open--创建 分支
+//		====>PbCreateChildWin              # ...走不到
+app:pb\c\mmipb_export.c  MMIAPIPB_OpenAutoBackupWin
+//		==>MMIPB_StartAutoBackup
+//		====>
+// --auto backup--exit
+//		==>HandleExportContactResult       # function_type--不更新
+//		====>s_mmipb_update_callback       # 保存一次会关闭
+//		======>MMIPB_CloseApplet
 
-// MEM
+// --auto backup set
+app:pb\c\Mmipb_menu.c  PB_OPTMENU_NODE_AUTO_BACKUP
+//
+app:pb\h\mmipb_id.def  MMIPB_AUTO_BACKUP_WIN_ID
 
-// pb-memory
-//		==>MMIPB_MEMDETAIL_WIN_TAB
-app:pb\c\mmipb_view.c  MMI_RESULT_E^^HandleMemDetailWinMsg
-
-
-//		========>.s_pb_main_opt_item
-//		==========>PB_OPTMENU_NODE_ADDNEW
-//		======>.s_pb_menu
-//		========>.index  # 获取txt,func,Enable
-//		==========>AddMenuEnable
+//
+app:idle/c/mainapp.c  MMIEnvActivateTimeCheck
 
 
-
+### 参考
 //import
 app:pb\c\Mmipb_menu.c  PB_OPTMENU_NODE_VCARD_IMPORT_CONTACT
-
-
-
-//		==>
+//		==>MMIPB_LoadVCardFromDir
 //		====>
 //		======>
-//		========>
-//		==========>
-//		============>
-//		==============>
-
-
-
-
-
-
+//		==>HandlePBPsMsg
+//		====>.READ_CNF:
+//		====>SaveContact
+//		======>MMIPB_UpdateContact
 
 
 //export
 app:pb\c\Mmipb_menu.c  PB_OPTMENU_NODE_VCARD_EXPORT_CONTACT
-
-
-
-
-//		==>
-//		====>
-//		======>
-//		========>
-//		==========>
-//		============>
-//		==============>
-
-
-
-//auto backup
-app:pb\c\Mmipb_menu.c  PB_OPTMENU_NODE_AUTO_BACKUP
-
-MS_MMI_Main\source\mmi_app\app\pb\h\mmipb_id.def  MMIPB_AUTO_BACKUP_WIN_ID
+//		==>MMIPB_OpenOperationSelectWin             # 打开选择窗口
+//		====>MMIPB_EnterPbTabOptMenu
+//		==>HandlePbOptMenuWinMsg
+//		====>CreatePbOptMenu
+//		======>GetMenuArrAddress
+//		========>.s_pb_operate_sel_opt_item
+//		======>.MMI_PB_OPERATE_OK
+//		==>AddCheckItemToOperateList                # 创建 sel_node
+//		====>MMIPB_HandleOperateSelCallBack
+//		======>SelectExportFolder
+//		======>FolderSelectionCallBack
+//		========>MMIPB_ExportContactAsynForPB       # 保存
+//		==>MMIPB_ExportNextVcardAsyn
+//		====>.filename
+//		====>.MMIAPIVCARD_GetVcardDefaultFileName
+//		======>MMIPB_WriteAsyn
+//		==>.next
+//		====>HandleExportContactResult              # 需要 handle
+//		======>MMIPB_ExportNextVcardAsyn
 
 
 // 一键备份
 //		==>MMIAPIIKB_OpenMainWin
-//		====>
-//		======>
-//		========>
+//		====>.backup
+//		======>.s_ui_backup_list
+//		========>BackupSelItems
+//		==========>StartBackupItems
+//		============>MMIIKB_GetCurBaseDir    # 存储路径_D_dir_0205_
+//		============>MMIAPIFMM_CreateDir
+//		====>.restore
+//		======>InitRestoreSelItemList
+//		========>IKeyBackup_GetPackContentNumber
+//		====>.task
+//		======>IKeyBackup_StartIKBHandlerTask
+//		========>IKBBackupAllItems           # 状态
+//		==========>BackupCircleTask
+//		====>.process
+//		======>MMIAPIIKB_RegTypeFunc
+//		========>MMIPB_InitApp
+//		========>ikeybackup_register
+//		==========>ikeybackupcallback        # 获取全部联系人
+//		==========>ikeyrestore_callback
 
+// 接口
+//		==>MMIPB_GetContactNumberNum
+//		==>MMIAPIPB_GetPhoneContactCount
+//		==>MMIAPIPB_GetAllSimContactCount
+//		====>MMIPB_GetContactCount
+//		======>
+//		==>MMIAPIPB_GetPBRecordNumFromNV
+//		====>MMIPB_GetContactStorageInfo
 
 
 

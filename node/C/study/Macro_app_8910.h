@@ -859,7 +859,7 @@ app:cc\c\mmicc_{wintab}.c  MMI_IDLE_8_KEY_LONG_TO_HANDHOLD
 
 
 [1.10] pb, cl
-// enter
+// enter--8910
 //		==>MMIMAINMENU_StartPB/EnterPBMainMenuWin
 //		====>MMIPB_OpenPbWin
 //		======>MMIPB_OPEN_MAIN_LIST   # type
@@ -875,6 +875,8 @@ app:cc\c\mmicc_{wintab}.c  MMI_IDLE_8_KEY_LONG_TO_HANDHOLD
 app:pb\c\mmipb_view.c  MMIPB_ENTRY_LIST_WITH_SEARCH_WIN_TAB  # style-2 (8910)
 app:pb\c\mmipb_view.c  MMIPB_GROUP_ENTRYL_LIST_WIN_TAB
 app:pb\c\Mmipb_view.c  MMIPB_MAIN_WIN_ID
+
+// enter--107
 //		==>EnterPBMainMenuWin
 //		====>MMIAPIPB_OpenListAllGroupWin
 //		======>MMIPB_OpenListAllGroupWin
