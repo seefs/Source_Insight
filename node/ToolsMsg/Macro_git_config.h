@@ -216,6 +216,9 @@ C:\Program Files\TortoiseGit\bin\TortoiseGitPlink.exe
 //too many files to display
 https://gitlab.com/tortoisegit/tortoisegit/-/issues/3878
 
+### …Ë÷√git path
+Save:Cmd_other\add_env\
+Save:Cmd_other\add_env\set_env_git_path.bat
 
 
 [1.9] gitlab
@@ -261,7 +264,6 @@ Error loading key "/c/Users/seefs/.ssh/tmp04": invalid format
 
 
 [1.11] 
-
 
 
 
