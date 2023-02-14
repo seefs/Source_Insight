@@ -1654,17 +1654,19 @@ source:mmi_app\common\c\mmi_pubwin.c  5352
 
 
 ### 秒表/STOPWATCH
+prj:project_{cur}.mk  STOPWATCH_SUPPORT = TRUE
 //		==>HandleSecMenuStaticMsg
 //		====>ID_CLOCK:
 //		======>MMIAPI_OpenTimerWin
 //		========>HandleStopWatchWinMsg
 
-### STOPWATCH
+### 秒表/STOPWATCH
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __stopwatch__
 
 
 ### 倒计时/countedtime
+prj:project_{cur}.mk  COUNTEDTIME_SUPPORT = TRUE
 //		==>FLIP:
 //		====>MMIDEFAULT_HandleFlipKey
 //		======>
@@ -1768,7 +1770,7 @@ app:accessory\c\mmischedule.c  MMI_RESULT_E^HandleSchViewListWinMsg
 
 
 // jewish 犹太日历
-MS_MMI_Main\source\mmi_app\app\accessory\c
+app:accessory\c
 
 
 ### calen
@@ -1911,7 +1913,7 @@ MS_Ref/source/autotest_device/src/autotest_device.c  1904
 //	DIS:A2DP:ID_STATUS_A2DP_DISCONNECTED,CallBack:ID_STATUS_CM_VISIBLE_RES
 
 // msg
-MS_MMI_Main\source\mmi_app\app\bt\c\mmibt_app.c  MMIBT_A2DPCallBackFunc
+app:bt\c\mmibt_app.c  MMIBT_A2DPCallBackFunc
 // 1.CON
 //	10090008  ID_STATUS_A2DP_CONNECTED
 //	100a0008  ID_STATUS_AVRCP_CONNECT_COMPLETE

@@ -30,7 +30,7 @@ Save:node\C\study\Macro_gui_8910.h  \[1.27\] prgbox-------------½ø¶ÈÌõ
 Save:node\C\study\Macro_gui_8910.h  \[1.28\] menu
 Save:node\C\study\Macro_gui_8910.h  \[1.29\] owndraw------------
 Save:node\C\study\Macro_gui_8910.h  \[1.30\] Banner
-Save:node\C\study\Macro_gui_8910.h  \[1.31\] 
+Save:node\C\study\Macro_gui_8910.h  \[1.31\] Tip
 Save:node\C\study\Macro_gui_8910.h  \[1.32\] 
 
 
@@ -1464,9 +1464,15 @@ ctrl:OwnerDraw\c\ctrlownerdraw.c  void^OwnerDrawDraw^( )
 
 
 
-[1.31] 
-
-
+[1.31] Tip
+//
+app:pb\c\mmipb_view.c  MMIPB_ENTRY_LIST_TAB_WIN_TAB
+app:pb\c\mmipb_view.c  WIN_TIPS
+source:mmi_app\kernel\h\window_parse.h  MMK_CREATE_TIPS
+source:mmi_app\kernel\c\window_parse.c  MMK_CREATE_TIPS
+source:mmi_app\kernel\c\window_parse.c  CreateTipsCtrl
+app:theme\c\mmitheme_tips.c  MMITHEME_GetTipsCtrlId
+ctrl:Tips\c\ctrltips.c CTRLTIPS_GetTipsValid
 
 
 
