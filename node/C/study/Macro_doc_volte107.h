@@ -4,10 +4,19 @@
 //VoLTE 白名单对应文件
 app:phone\h\ims_toggle_mnc_table.h   242  // 460
 app:phone\h\ims_toggle_mnc_table.h   250  // 466
-app:phone\h\ims_toggle_mnc_table.h   xxx  // 425
-app:phone\h\ims_toggle_mnc_table.h   xxx  // 259
-app:phone\h\ims_toggle_mnc_table.h   242  // 
-app:phone\h\ims_toggle_mnc_table.h   242  // 
+app:phone\h\ims_toggle_mnc_table.h   222  // 425
+app:phone\h\ims_toggle_mnc_table.h   95   // 310
+app:phone\h\ims_toggle_mnc_table.h   76   // 259
+app:phone\h\ims_toggle_mnc_table.h   33   // 222
+app:phone\h\ims_toggle_mnc_table.h   xxx  // 
+
+
+
+
+
+
+
+
 
 
 // --SPCSS01115780

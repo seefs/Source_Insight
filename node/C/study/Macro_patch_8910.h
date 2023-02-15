@@ -153,7 +153,7 @@ common:h/mmi_appmsg.h  FILE_LOG_SUPPORT
 
 ### 有些地方不能加log(未完全开机)
 
-### 替换
+### 替换 UE中/SI中
 // --替换
 //		SCI_TRACE_ID(TRACE_TOOL_CONVERT,xxx,(uint8*)"");
 //		SCI_TRACE_ID(TRACE_TOOL_CONVERT,xxx,(uint8*)"ddd",enqueued, store, count);

@@ -270,6 +270,8 @@ app:phone\c\mmiphone_charge.c  ZMAEE_Watch_OpenChargingWin
 //		======>MSensor_Close
 zmaee:c\zmaee_watch.c  ZMAEE_IWatch_GetStepNum
 
+### cam
+app:video_talk_adapter\c\video_send_demo.c  zy_avc_async_init
 
 
 [1.16] tcp---------active

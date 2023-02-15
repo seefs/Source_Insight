@@ -8,8 +8,9 @@
 
 
 ### nv build
-//  _DeltaNV添加说明.txt
-// 
+PS\nv\operator_delta\operator_config_all\
+PS\nv\operator_delta\operator_config_all\_DeltaNV添加说明.txt
+
 PS\nv\internal\ps\common\h\
 PS\nv\internal\ps\common\h\COMMON_LIST.h
 //
@@ -19,8 +20,8 @@ build\[project_name]_builddir\img目录生成[projectname]_deltanv.bin
 PS\nv\export\ps\common\
 
 // 包含所有可动态加载参数的默认值
-Default_P.nv
-Default_S.nv
+PS\nv\operator_delta\operator_config_all\Default_P.nv
+PS\nv\operator_delta\operator_config_all\Default_S.nv
 
 
 ### 460
@@ -94,6 +95,9 @@ tcpip: sci_async_gethostbyname - url(xcap.ims.taiwanmobile.com), timeout(4000 ms
 // IL_Partner
 PS\nv\operator_delta\operator_config_all\Index.xml  mcc="425"
 // 名字映射的文件
+PS\nv\operator_delta\operator_config_all\
+PS\nv\operator_delta\operator_config_all\IL_Cellcom_P.nv
+PS\nv\operator_delta\operator_config_all\IL_Cellcom_S.nv
 PS\nv\operator_delta\operator_config_all\IL_Partner_P.nv
 PS\nv\operator_delta\operator_config_all\IL_Partner_S.nv
 
@@ -105,13 +109,36 @@ PS\nv\operator_delta\operator_config_all\Index.xml  mcc="260"
 PS\nv\operator_delta\operator_config_all\Index.xml  mcc="310"
 PS\nv\operator_delta\operator_config_all\Index.xml  mcc="222"
 
+// cp
+apnPath = PS\nv\operator_delta\operator_config_all\
+apn:test\
+
+cp apn:test\test_P.nv apn:test\IL_GolanTelecom_P.nv
+cp apn:test\test_P.nv apn:test\IL_RamiLevi_P.nv
+cp apn:test\test_P.nv apn:test\IL_Widely_P.nv
+cp apn:test\test_P.nv apn:test\IL_019_P.nv
+cp apn:test\test_P.nv apn:test\IL_K_SIM_P.nv
+cp apn:test\test_S.nv apn:test\IL_GolanTelecom_S.nv
+cp apn:test\test_S.nv apn:test\IL_RamiLevi_S.nv
+cp apn:test\test_S.nv apn:test\IL_Widely_S.nv
+cp apn:test\test_S.nv apn:test\IL_019_S.nv
+cp apn:test\test_S.nv apn:test\IL_K_SIM_S.nv
+
 
 ### 259/15 摩尔多瓦
 //
 PS\nv\operator_delta\operator_config_all\Index.xml  mcc="259"
-//
+// L4默认配置满足需求，无需更新
+PS\nv\operator_delta\operator_config_all\
+PS\nv\operator_delta\operator_config_all\MD_IDC_P.nv
+PS\nv\operator_delta\operator_config_all\MD_IDC_S.nv
 
-
+// precondition? 
+// sip_PreconditionEnabledOnActive? 
+// resourceAlwaysReady? 
+// ConfPreconditionEnabled? 
+// heldToneEnable? 
+PS_NV_PARAMS\NV_PARAM_TYPE_PLMN_DELTA_NV\ims_plmn_nvinfo\sip_preconditionEnabled=0
 
 
 ###

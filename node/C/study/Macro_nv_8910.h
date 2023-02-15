@@ -5,8 +5,8 @@ Save:node\C\study\Macro_nv_8910.h \[1.2\] sim------------sim相关
 Save:node\C\study\Macro_nv_8910.h \[1.3\] audio----------audio相关
 Save:node\C\study\Macro_nv_8910.h \[1.4\] mmi------------common相关
 Save:node\C\study\Macro_nv_8910.h \[1.5\] nv define
-Save:node\C\study\Macro_nv_8910.h \[1.6\] replace_nv--------
-Save:node\C\study\Macro_nv_8910.h \[1.7\] 
+Save:node\C\study\Macro_nv_8910.h \[1.6\] 
+Save:node\C\study\Macro_nv_8910.h \[1.7\] apn
 Save:node\C\study\Macro_nv_8910.h \[1.8\] 
 Save:node\C\study\Macro_nv_8910.h \[1.9\] nv test
 Save:node\C\study\Macro_nv_8910.h \[1.10\] Card-----------电子保卡
@@ -15,7 +15,7 @@ Save:node\C\study\Macro_nv_8910.h \[1.12\] custom---------链路
 Save:node\C\study\Macro_nv_8910.h \[1.13\] nv_build
 Save:node\C\study\Macro_nv_8910.h \[1.14\] nand/nor
 Save:node\C\study\Macro_nv_8910.h \[1.15\] test
-Save:node\C\study\Macro_nv_8910.h \[1.16\] apn
+Save:node\C\study\Macro_nv_8910.h \[1.16\] replace_nv--------
 Save:node\C\study\Macro_nv_8910.h \[1.17\] hv_nv
 Save:node\C\study\Macro_nv_8910.h \[1.18\] 
 Save:node\C\study\Macro_nv_8910.h \[1.19\] 
@@ -113,27 +113,22 @@ Save:node\C\study\Macro_nv_tool8910.h  __env_nv__
 
 
 
-[1.6] replace_nv
-
-// 批量替换
-Save:Help\Other\
-// 替换电池曲线
-Save:Help\Other\Macro_Help_replace.h
-// 替换二合一NV
-Save:Help\Other\Macro_Help_replace_2n1.h
-Save:Help\Other\Macro_Help_replace_2n1_path.h
-
-// tool
-tool_mini:4_翻译字库\
-tool_mini:4_翻译字库\sprd_nv_exist.xlsm
-
-// path
-HW:{project}\
-HWNV:\
+[1.6] 
 
 
 
-[1.7] 
+[1.7] apn
+// apn
+Save:node\C\study\
+Save:node\C\study\Macro_res_8910.h  __8910_apn__
+Save:node\C\study\Macro_res_8910.h  __107_apn__
+Save:node\C\study\Macro_doc_apn107.h
+Save:node\C\study\Macro_doc_apn8910.h
+// t6b
+//1. 滑动卡顿（T6-B内单已经解决）
+//2. 台灣大物聯網卡無法上網使用（APN:twm.iot） 
+
+
 
 
 [1.8] 
@@ -289,16 +284,23 @@ app:eng\c\mmieng_main.c  MMIENG_NV_USB_TEST_SET_SETTING
 
 
 
-[1.16] apn
-// apn
-Save:node\C\study\
-Save:node\C\study\Macro_res_8910.h  __8910_apn__
-Save:node\C\study\Macro_res_8910.h  __107_apn__
-Save:node\C\study\Macro_doc_apn107.h
-Save:node\C\study\Macro_doc_apn8910.h
-// t6b
-//1. 滑动卡顿（T6-B内单已经解决）
-//2. 台灣大物聯網卡無法上網使用（APN:twm.iot） 
+[1.16] replace_nv
+
+// 批量替换
+Save:Help\Other\
+// 替换电池曲线
+Save:Help\Other\Macro_Help_replace.h
+// 替换二合一NV
+Save:Help\Other\Macro_Help_replace_2n1.h
+Save:Help\Other\Macro_Help_replace_2n1_path.h
+
+// tool
+tool_mini:4_翻译字库\
+tool_mini:4_翻译字库\sprd_nv_exist.xlsm
+
+// path
+HW:{project}\
+HWNV:\
 
 
 

@@ -400,6 +400,8 @@ images:common\MMI_RES_DEFAULT\IMAG\Pubwin\BAR\IMAGE_PUBWIN_BG.png
 ### __list__
 images:common\MMI_RES_DEFAULT\IMAG\Number\
 images:common\MMI_RES_DEFAULT\IMAG\List\
+images:common\MMI_RES_DEFAULT\IMAG\Common\
+
 
 // 24*24
 // 18*18
@@ -434,6 +436,9 @@ source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TOGGLE_OFF
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_LISTITEM_SHORTCUT_64_LEFT_RED
 // --prg--
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_THUMB
+
+//
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_COMMON_TIPS_BG
 
 
 ### __toolkit__

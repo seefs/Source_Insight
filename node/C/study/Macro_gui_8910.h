@@ -1146,6 +1146,7 @@ app:setting/c/mmiset_phonewin.c  AppendPdaPhoneSettingsItem1Line
 //    	item_t.item_style    = GUIITEM_STYLE_ONE_LINE_TEXT;
 //	#endif
 
+### list--tips
 
 
 

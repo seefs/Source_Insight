@@ -2,9 +2,8 @@
 基础路径设置:
 //basePath = 
 
-/***********************************************************************/
 
-//目录[Num][Ca]:
+//目录:
 // 1. 
 Save:node\ToolsMsg\Macro_git_md.h \[1.1\] 标题
 Save:node\ToolsMsg\Macro_git_md.h \[1.2\] 换行, 分隔线

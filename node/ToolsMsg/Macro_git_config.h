@@ -1,14 +1,6 @@
 
-基础路径设置:
-basePath = G:\T1073\
-base:\\
-cfgPath = Save:Help\Model\
-cfg:\\
 
-/***********************************************************************/
-
-//目录[Num][Ca]:
-// 1. 
+//目录:
 Save:node\ToolsMsg\Macro_git_config.h \[1.1\] .git\config
 Save:node\ToolsMsg\Macro_git_config.h \[1.2\] git postBuffer------Git缓存值
 Save:node\ToolsMsg\Macro_git_config.h \[1.3\] 
@@ -22,8 +14,6 @@ Save:node\ToolsMsg\Macro_git_config.h \[1.10\] ppk
 Save:node\ToolsMsg\Macro_git_config.h \[1.11\] 
 Save:node\ToolsMsg\Macro_git_config.h \[1.12\] 
 
-git@git.spdephone.com:8910-developer/MOCOR_20B_W21.12.7_WATCH.git
-save:patch\ssh\git_config_url.h
 
 
 
@@ -264,6 +254,7 @@ Error loading key "/c/Users/seefs/.ssh/tmp04": invalid format
 
 
 [1.11] 
+
 
 
 

@@ -3,14 +3,13 @@
 basePath = Save:
 base:\\
 
-/***********************************************************************/
 
 其他问题：
 reset 后不能提交
 diff HEAD
 
 
-//目录[Num][Ca]:
+//目录:
 // 1. git 常用
 Save:node\ToolsMsg\Macro_git.h \[1.1\] git config ----------设置账户(需要和github账户设置一致)
 Save:node\ToolsMsg\Macro_git.h \[1.2\] git config --list ---查看设置

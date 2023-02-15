@@ -14,7 +14,7 @@ Save:node\C\study\Macro_tihu_8910.h \[1.9\] send------------get
 Save:node\C\study\Macro_tihu_8910.h \[1.10\] --sms
 Save:node\C\study\Macro_tihu_8910.h \[1.11\] --heart¡¢sos
 Save:node\C\study\Macro_tihu_8910.h \[1.12\] --loc
-Save:node\C\study\Macro_tihu_8910.h \[1.13\] 
+Save:node\C\study\Macro_tihu_8910.h \[1.13\] power
 Save:node\C\study\Macro_tihu_8910.h \[1.14\] 
 Save:node\C\study\Macro_tihu_8910.h \[1.15\] 
 Save:node\C\study\Macro_tihu_8910.h \[1.16\] api------------½Ó¿Ú
@@ -533,7 +533,11 @@ app:zdt\c\zdt_yx.c  case^ZDT_APP_SIGNAL_YX_LBS_CHANGE
 
 
 
-[1.13] 
+[1.13] power
+//
+BM_WATCH_NOSIM_POWEROFF
+//
+app:idle\c\mainapp.c  WatchTimer_Init
 
 
 

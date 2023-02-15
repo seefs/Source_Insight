@@ -108,6 +108,7 @@ tool_mini:1_filelist\
 tool_mini:1_filelist\get_file_type.xlsm
 
 // ·ÖÀà»ã×Ü
+code:\txt\si\
 code:\txt\si\_count_t107.txt
 code:\txt\si\_count_8910.txt
 code:\txt\si\_count_mtk_zyf.txt

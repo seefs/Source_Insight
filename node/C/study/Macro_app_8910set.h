@@ -5,10 +5,10 @@ Save:node\C\study\Macro_app_8910set.h \[1.2\] callset
 Save:node\C\study\Macro_app_8910set.h \[1.3\] connect
 Save:node\C\study\Macro_app_8910set.h \[1.4\] reset
 Save:node\C\study\Macro_app_8910set.h \[1.5\] shortcut
-Save:node\C\study\Macro_app_8910set.h \[1.6\] 
-Save:node\C\study\Macro_app_8910set.h \[1.7\] 
-Save:node\C\study\Macro_app_8910set.h \[1.8\] 
-Save:node\C\study\Macro_app_8910set.h \[1.9\] 
+Save:node\C\study\Macro_app_8910set.h \[1.6\] startup
+Save:node\C\study\Macro_app_8910set.h \[1.7\] charge
+Save:node\C\study\Macro_app_8910set.h \[1.8\] envSet
+Save:node\C\study\Macro_app_8910set.h \[1.9\] envPlay
 Save:node\C\study\Macro_app_8910set.h \[1.10\] 
 Save:node\C\study\Macro_app_8910set.h \[1.11\] 
 Save:node\C\study\Macro_app_8910set.h \[1.12\] 
@@ -25,12 +25,16 @@ Save:node\C\study\Macro_app_8910set.h \[1.12\]
 //		====>MMISET_SET_PHONE_WIN_TAB      #240*320
 app:setting/c/mmiset_phonewin.c  MMISET_PHONE_SETTING_WIN_TAB
 app:setting/c/mmiset_phonewin.c  MMISET_SET_PHONE_WIN_TAB
+
 // set--phone--240*320
 //		==>MENU_SET_PHONE
 app:setting\c\mmiset_menutable.c  menu_set_phone_setting
 
 // set--phone--time
 app:setting\c\mmiset_datetime.c  HandleSetTimeDateWindow
+
+// set--lang
+HandleSetLanguageInputContentWindow 	 //输入语言
 
 
 [1.2] __callset__
@@ -97,9 +101,11 @@ app:setting/c/mmiset_phonewin.c  case^MSG_SET_CLEAN_DATE_IND
 //		==>MMISET_ResetFactorySetting
 //		====>MMIAPISET_SetWaitFlag
 //		======>MSG_SET_RESET_NEED_WAIT_IND
-//		====>MMIAPISET_FuncFinishedInd  # 为什么2次
+//		====>MMIAPISET_FuncFinishedInd        # 为什么2次
 //		======>MSG_SET_RESET_FACTORY_OVER_IND
-//		==>MMIAPIPHONE_PowerReset
+//		==>MMIAPIPHONE_PowerReset             # 重启, 参考alarm关record
+//		==>MMIAPIPHONE_PowerOffEx             # 重启, 优先用这个
+//		==>MMIAPIPHONE_PowerOff               # 重启
 // Reset--userNV
 //		==>UserNV_MarkReset
 //		==>MMI_ReadNVItem
@@ -109,6 +115,9 @@ common\export\inc\nv_item_id.h  NV_CUS_FIXNV_DATA_ID           #id  610
 common\export\inc\nv_item_id.h  NV_CUS_FIXNV_DATA_LEN          #len 8
 // Reset--env
 app:setting\c\mmiset_func.c  MMIENVSET_ResetEnvSetSetting
+
+//
+app:setting/c/mmiset_phonewin.c  MMISET_INPUT_RESET_FACTORY_PWD_WIN_TAB
 
 
 
@@ -179,24 +188,154 @@ app:setting\c\mmiset_phonewin.c  MMI_RESULT_E^HandleShortCutSetMenuWindow
 
 
 
-[1.6] 
+[1.6] __startup__
+// Start
+//		==>HandleNormalStartupWindow
+//		====>.PHONE_STARTUP_DURING_TIME     # time1
+//		==>HandleStartupOperatorLogoWindow
+//		====>.display_info                  # 8910 logo bg
+//		==>HandlePowerOffWindow
+//		====>.PHONE_POWER_OFF_DURING_TIME   # time2
+//		==>PlayDefaultPowerOnOffAnimation
+//		====>.data_info                     # 8910 logo bg
+app:phone\c\mmiphone_onoff.c  MMI_RESULT_E^HandleNormalStartupWindow
+// ring
+app:phone\c\mmiphone_onoff.c  PHONE_STARTUP_DURING_TIME
+app:phone\c\mmiphone_onoff.c  PHONE_POWER_OFF_DURING_TIME
+// ring
+Save:node\C\study\Macro_res_ring_8910.h  __power__
+
+
+// power
+// --8910 要加 RED-close
+//		==>HandleChargeStartupWindow
+//		====>DisplayDayTimeEffert
+//		======>ChargeDisplayDateAndDay
+// --8910 charge msg
+//		==>HandleChargeStartInd
+app:phone\c\mmiphone_charge.c  PHONE_STARTUP_CHARGE_WIN_TAB
+app:phone\c\mmiphone_charge.c  PHONE_STARTUP_CHARGE_OK_WIN_TAB
 
 
 
+[1.7] __charge__
 
-[1.7] 
+// 
+// --充电测试信息:
+// ----state:high
+// ----type:usb
+// ----charging:225 ma
+// ----voltage:3755 mv
+// --添加xx%:
+// ----percent:50 %
+app:eng/c/mmieng_uitestwin.c  BOOLEAN^ENGUITestChargingWinHandleMsg
+// --chip bat:
+// ----连线开机:
+chip_drv\chip_module\charge\uix8910\charge_uix8910.c  _CHGMNG_VoltagetoPercentum
+chip_drv\chip_module\charge\charge.c  _CHGMNG_VoltagetoPercentum
+// --sublcd bat:
+//		==>MMIAPIPHONE_GetBatCapacity
+app:idle\c\mmi_subwintab.c  uint8^MMISUB_GetBatteryLevel
+// --zmaee bat:
+//		==>ZMAEE_IWatch_GetBatteryPercent
+app:zmaee_128X128\c\zmaee_watch.c  ZMAEE_IWatch_GetBatteryPercent
+
+
+### power--patch
+Save:node\C\study\Macro_patch_8910.h  __charge__
+
+
+###
+//
+app:phone\c\mmiphone_charge.c  DisplayDayTimeEffert
+app:phone\c\mmiphone_charge.c  Charge_TIME_UP_MARGIN
+
+
+### power
+// ==>pos
+Save:node\C\study\Macro_pos_8910.h  __idle__
+// ==>image
+Save:node\C\study\Macro_res_image_8910.h  __charge__
+// ==>nv 充电条件
+Save:node\C\study\Macro_nv_8910.h  __charge__
+// ==>patch 模拟器power界面
+Save:node\C\study\Macro_patch_8910.h  __charge__
 
 
 
-
-[1.8] 
-
+[1.8] __envSet__
 
 
+// env--option--set--OtherRing
+//		==>MMIAPISET_SetCurRingType
+app:setting\c\mmiset_wintab.c 822
+app:envset\c\mmienvset_wintab.c  MMIENVSET_OTHER_RING_SET_WIN_TAB
 
-[1.9] 
+
+// env--option--set--setRing
+//		==>HandleOperationMenu
+//		====>MMISET_EnterRingSettingMenu
+//		======>EnterRingSettingMenu
+//		========>HandleRingMainMenuWindow
+app:setting\c\mmiset_wintab.c  MMISET_ICON_RING_MENU_WIN_TAB
+// env--option--set--setRing--callRing
+//		==>EnvSetRingParam
+app:setting\c\mmiset_wintab.c  MMISET_RING_SELECT_CALL_WIN_TAB
 
 
+// env--option--set--RingVol
+//		==>HandleOperationMenu
+//		====>case^ID_ENVSET_RING_VOL:
+//		====>HandleAllRingVolumeWindow
+//		======>WEB:
+//		========>MMIAPICOM_OpenPanelChildWin
+//		==========>HandlePanelWindow
+//		============>AdjustValue
+//		========>SetRingVolumeCB
+//		==========>MMIENVSET_SetCurModeOptValue   # set nv
+//		==========>SetAllRingVolParam        # vol str
+//		============>GetEnvSetOptValue
+//		====>MMIAPICC_SetCallVolume          # call
+app:envset\c\mmienvset_wintab.c  MMIENVSET_ALL_RING_VOL_WIN_TAB
+
+
+// env--option--set--RingType
+//		==>HandleOperationMenu
+//		====>case^ID_ENVSET_RING_TYPE:
+//		====>HandleRingTypeSetWindow
+//		======>WEB:
+//		========>HandleCallRingTypeWindow
+//		========>HandleMsgRingTypeWindow
+//		========>HandleAlarmRingTypeWindow
+//		==========>HandleAllRingTypeWindow
+//		============>MMIAPISET_SetCurRingType
+//		============>MMIENVSET_PlayRingByListItem
+//		============>MMIENVSET_PlayMsgAlarmRingByListItem
+//		============>MMIAPISET_PlayCallRingByVol
+app:envset\c\mmienvset_wintab.c  MMIENVSET_RING_TYPE_WIN_TAB
+
+
+
+[1.9] __envPlay__
+
+// env--option--set--setRing--PlayRing
+//		==>PlayRing
+//		====>MMIAPISET_PreviewRing
+//		======>PlayFixedRing                      # fun
+//		==>vib
+//		==>timer
+//		==>Tcard:
+//		====>HandleSelectMusicWinMsg (OTHER)
+//		======>MMIAPIFMM_PlayMusicFile
+//		========>MMIAPISET_PlayMusicFile          # fun
+//		==========>MMISRVMGR_Request
+//		==>xx:
+//		========>MMIAPISET_PlayRingByPtr          # fun
+app:setting\c\mmiset_ring.c PlayRing
+
+
+// 实际来电铃声  ---------------- 	++++++
+MMISRVMGR_Request
 
 
 [1.10] 

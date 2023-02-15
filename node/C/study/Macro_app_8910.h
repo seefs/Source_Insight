@@ -24,11 +24,11 @@ Save:node\C\study\Macro_app_8910.h  \[1.21\] unitconversion
 Save:node\C\study\Macro_app_8910.h  \[1.22\] game
 Save:node\C\study\Macro_app_8910.h  \[1.23\] bt
 Save:node\C\study\Macro_app_8910.h  \[1.24\] env, Profile
-Save:node\C\study\Macro_app_8910.h  \[1.25\] 
+Save:node\C\study\Macro_app_8910.h  \[1.25\] other --------------
 Save:node\C\study\Macro_app_8910.h  \[1.26\] wifi
 Save:node\C\study\Macro_app_8910.h  \[1.27\] Browser 网络参数
 Save:node\C\study\Macro_app_8910.h  \[1.28\] sos, speed
-Save:node\C\study\Macro_app_8910.h  \[1.29\] startup, charge
+Save:node\C\study\Macro_app_8910.h  \[1.29\] 
 Save:node\C\study\Macro_app_8910.h  \[1.30\]
 	
 
@@ -519,12 +519,6 @@ Save:node\C\study\Macro_res_color_8910.h  __file__
 
 
 [1.7] Setting
-//
-HandleSetLanguageInputContentWindow 	 //输入语言
-//设置-情景模式
-PromptSuccessWin
-//
-app:setting/c/mmiset_phonewin.c  MMISET_INPUT_RESET_FACTORY_PWD_WIN_TAB
 
 // set--display (form)
 app:setting\c\mmiset_displaywin.c  MMI_RESULT_E^^HandleSetDisplayWindow
@@ -539,6 +533,8 @@ Save:node\C\study\Macro_app_8910set.h  __callset__
 Save:node\C\study\Macro_app_8910set.h  __connect__
 Save:node\C\study\Macro_app_8910set.h  __reset__
 Save:node\C\study\Macro_app_8910set.h  __shortcut__
+Save:node\C\study\Macro_app_8910set.h  __startup__     # 开关机
+Save:node\C\study\Macro_app_8910set.h  __charge__      # 充电
 Save:node\C\study\Macro_app_8910set.h  
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __set_display__
@@ -1672,6 +1668,8 @@ prj:project_{cur}.mk  COUNTEDTIME_SUPPORT = TRUE
 //		======>
 app:accessory\c\mmicountedtime_main.c  MMIAPICT_HandleCountedTimeArriveWin
 
+###
+Save:node\C\study\
 
 
 [1.19] calc
@@ -1831,6 +1829,12 @@ app:game\game_snake\c\mmigame_snake_wintab.c
 
 
 [1.23] bt
+// mk
+//		==>BT_PHONE_INDEX_CONTACT
+prj:project_{cur}.mk  BT_PBAP_SUPPORT  同步联系人 功能注释了
+
+
+.mk
 // --bt--enter
 //		==>MMIAPIBT_OpenMainMenuWin
 //		====>MMIBT_OpenMainMenuWin
@@ -1979,83 +1983,19 @@ app:envset\c\mmienvset_wintab.c  MMIENVSET_SETTING_OPT_WIN_TAB
 app:setting\h\mmiset_menutable.def  MENU_ENVSET_SETTING
 
 
-// env--option--set--setRing
-//		==>HandleOperationMenu
-//		====>MMISET_EnterRingSettingMenu
-//		======>EnterRingSettingMenu
-//		========>HandleRingMainMenuWindow
-app:setting\c\mmiset_wintab.c  MMISET_ICON_RING_MENU_WIN_TAB
-// env--option--set--setRing--callRing
-//		==>EnvSetRingParam
-app:setting\c\mmiset_wintab.c  MMISET_RING_SELECT_CALL_WIN_TAB
-
-
-// env--option--set--RingVol
-//		==>HandleOperationMenu
-//		====>case^ID_ENVSET_RING_VOL:
-//		====>HandleAllRingVolumeWindow
-//		======>WEB:
-//		========>MMIAPICOM_OpenPanelChildWin
-//		==========>HandlePanelWindow
-//		============>AdjustValue
-//		========>SetRingVolumeCB
-//		==========>MMIENVSET_SetCurModeOptValue   # set nv
-//		==========>SetAllRingVolParam        # vol str
-//		============>GetEnvSetOptValue
-//		====>MMIAPICC_SetCallVolume          # call
-app:envset\c\mmienvset_wintab.c  MMIENVSET_ALL_RING_VOL_WIN_TAB
-
-
-// env--option--set--RingType
-//		==>HandleOperationMenu
-//		====>case^ID_ENVSET_RING_TYPE:
-//		====>HandleRingTypeSetWindow
-//		======>WEB:
-//		========>HandleCallRingTypeWindow
-//		========>HandleMsgRingTypeWindow
-//		========>HandleAlarmRingTypeWindow
-//		==========>HandleAllRingTypeWindow
-//		============>MMIAPISET_SetCurRingType
-//		============>MMIENVSET_PlayRingByListItem
-//		============>MMIENVSET_PlayMsgAlarmRingByListItem
-//		============>MMIAPISET_PlayCallRingByVol
-app:envset\c\mmienvset_wintab.c  MMIENVSET_RING_TYPE_WIN_TAB
-
-
-// env--option--set--OtherRing
-//		==>MMIAPISET_SetCurRingType
-app:setting\c\mmiset_wintab.c 822
-app:envset\c\mmienvset_wintab.c  MMIENVSET_OTHER_RING_SET_WIN_TAB
-
-
-// 实际来电铃声  ---------------- 	++++++
-MMISRVMGR_Request
-
-
-// env--option--set--setRing--PlayRing
-//		==>PlayRing
-//		====>MMIAPISET_PreviewRing
-//		======>PlayFixedRing                      # fun
-//		==>vib
-//		==>timer
-//		==>Tcard:
-//		====>HandleSelectMusicWinMsg (OTHER)
-//		======>MMIAPIFMM_PlayMusicFile
-//		========>MMIAPISET_PlayMusicFile          # fun
-//		==========>MMISRVMGR_Request
-//		==>xx:
-//		========>MMIAPISET_PlayRingByPtr          # fun
-app:setting\c\mmiset_ring.c PlayRing
-
-
 ### env
+// ==>app
+Save:node\C\study\Macro_app_8910set.h  __envSet__
+Save:node\C\study\Macro_app_8910set.h  __envPlay__
+Save:node\C\study\Macro_app_8910set.h  
 // ==>nv/SDcard
 Save:node\C\study\Macro_nv_8910.h  __env_nv__
 
 
 
-[1.25] 
-
+[1.25] other
+### other
+Save:node\C\study\Macro_app_8910other.h  __TASK__
 
 
 
@@ -2160,61 +2100,7 @@ app:cc\c\mmicc_speeddial.c  CC_HandleSpeedDialEditWinMsg
 
 
 
-[1.29] startup, charge
-// Start
-app:phone\c\mmiphone_onoff.c  MMI_RESULT_E^HandleNormalStartupWindow
-
-// power
-// --8910 要加 RED-close
-//		==>HandleChargeStartupWindow
-//		====>DisplayDayTimeEffert
-//		======>ChargeDisplayDateAndDay
-// --8910 charge msg
-//		==>HandleChargeStartInd
-app:phone\c\mmiphone_charge.c  PHONE_STARTUP_CHARGE_WIN_TAB
-app:phone\c\mmiphone_charge.c  PHONE_STARTUP_CHARGE_OK_WIN_TAB
-
-
-// 
-// --充电测试信息:
-// ----state:high
-// ----type:usb
-// ----charging:225 ma
-// ----voltage:3755 mv
-// --添加xx%:
-// ----percent:50 %
-app:eng/c/mmieng_uitestwin.c  BOOLEAN^ENGUITestChargingWinHandleMsg
-// --chip bat:
-// ----连线开机:
-chip_drv\chip_module\charge\uix8910\charge_uix8910.c  _CHGMNG_VoltagetoPercentum
-chip_drv\chip_module\charge\charge.c  _CHGMNG_VoltagetoPercentum
-// --sublcd bat:
-//		==>MMIAPIPHONE_GetBatCapacity
-app:idle\c\mmi_subwintab.c  uint8^MMISUB_GetBatteryLevel
-// --zmaee bat:
-//		==>ZMAEE_IWatch_GetBatteryPercent
-app:zmaee_128X128\c\zmaee_watch.c  ZMAEE_IWatch_GetBatteryPercent
-
-
-### power--patch
-Save:node\C\study\Macro_patch_8910.h  __charge__
-
-
-###
-//
-app:phone\c\mmiphone_charge.c  DisplayDayTimeEffert
-app:phone\c\mmiphone_charge.c  Charge_TIME_UP_MARGIN
-
-
-### power
-// ==>pos
-Save:node\C\study\Macro_pos_8910.h  __idle__
-// ==>image
-Save:node\C\study\Macro_res_image_8910.h  __charge__
-// ==>nv 充电条件
-Save:node\C\study\Macro_nv_8910.h  __charge__
-// ==>patch 模拟器power界面
-Save:node\C\study\Macro_patch_8910.h  __charge__
+[1.29] 
 
 
 

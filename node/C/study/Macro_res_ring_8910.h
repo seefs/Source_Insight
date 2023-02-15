@@ -51,6 +51,7 @@ app:setting\c\mmiset_ring.c   MMI_POWER_RING_START_ID
 
 // power--8S
 app:phone\c\mmiphone_onoff.c  MMI_POWER_TIME_8S
+app:phone\c\mmiphone_onoff.c  PHONE_STARTUP_DURING_TIME
 
 // power--vol
 app:envset\h\mmienvset_internal.h  MMIENVSET_POWER_RING_VOL_STANDARD_MODE
