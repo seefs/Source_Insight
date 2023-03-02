@@ -2,12 +2,15 @@
 
 ### VoLTE
 //VoLTE 白名单对应文件
-app:phone\h\ims_toggle_mnc_table.h   242  // 460
-app:phone\h\ims_toggle_mnc_table.h   250  // 466
-app:phone\h\ims_toggle_mnc_table.h   222  // 425
-app:phone\h\ims_toggle_mnc_table.h   95   // 310
-app:phone\h\ims_toggle_mnc_table.h   76   // 259
-app:phone\h\ims_toggle_mnc_table.h   33   // 222
+app:phone\h\ims_toggle_mnc_table.h   242  // mcc 460
+app:phone\h\ims_toggle_mnc_table.h   250  // mcc 466
+app:phone\h\ims_toggle_mnc_table.h   222  // mcc 425
+app:phone\h\ims_toggle_mnc_table.h   95   // mcc 310
+app:phone\h\ims_toggle_mnc_table.h   76   // mcc 259
+app:phone\h\ims_toggle_mnc_table.h   33   // mcc 222
+app:phone\h\ims_toggle_mnc_table.h   xxx  // 
+app:phone\h\ims_toggle_mnc_table.h   xxx  // 
+app:phone\h\ims_toggle_mnc_table.h   xxx  // 
 app:phone\h\ims_toggle_mnc_table.h   xxx  // 
 
 

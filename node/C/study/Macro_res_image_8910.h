@@ -349,6 +349,11 @@ app:cc\c\mmicc_wintab.c  IMAGE_CC_INCOMING_PHOTO_ANIM
 app:cc\h\cc_mdu_def.h  IMAGE_CALLUI_EMERGENCYCALL
 
 
+// call--rec
+images:common\MMI_RES_DEFAULT\IMAG\StatusbarIcon\
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_RECORD_ICON_CALL_RECORD_ON
+
+
 // call--volte--20*20
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CALLING_VOLTE
 // call--hd--20*20

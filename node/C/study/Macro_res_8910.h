@@ -64,12 +64,18 @@ build\{cur}_builddir\tmp\mmi_res_128x128_text.txt TXT_EXTRA_SETTINGS
 //	TXT_DELETE, TXT_EDIT, STXT_OK, TXT_COMMON_CLEAR, 
 
 
+### 
 // str--apn
+source:mmi_app\common\h\
 source:mmi_app\common\h\common_mdu_def.h   plmn_extra_database_str
-//#include "plmn_ts25_database_str_watch_cn.h"
-//#include "plmn_ts25_database_str.h"
-//#include "plmn_extra_database_str.h"
-
+// str--apn--watch--替换为null
+source:mmi_app\common\h\plmn_ts25_database_str_watch_cn.h
+// str--apn
+source:mmi_app\common\h\plmn_ts25_database_str.h  TXT_NET_886
+// str--apn ex
+source:mmi_app\common\h\plmn_extra_database_str.h
+// ID 对应
+Save:node\C\study\Macro_doc_apn8910.h  __strApn__
 
 
 [1.4] res, color
@@ -422,8 +428,10 @@ Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 resource:Common\DATA\
 {8910wa21}\MS_MMI_Main\source\resource\Common\DATA\
 {8910wa_git}\MS_MMI_Main\source\resource\Common\DATA\
-// 
+// 8910 apn str
 Save:node\C\study\Macro_doc_apn8910.h
+// 8910 volte/白名单
+//Save:node\C\study\Macro_doc_volte8910.h
 
 
 ### __107_apn__
@@ -438,7 +446,7 @@ PS\nv\operator_delta\operator_config_all\
 PS\nv\operator_delta\operator_config_all\Index.xml
 // 107 apn
 Save:node\C\study\Macro_doc_apn107.h
-// 107 volte
+// 107 volte/白名单
 Save:node\C\study\Macro_doc_volte107.h
 //
 resource:Common\DATA\

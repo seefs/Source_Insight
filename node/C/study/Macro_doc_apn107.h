@@ -1,4 +1,19 @@
 
+//目录:
+Save:node\C\study\Macro_doc_apn107.h \[1.1\] 460
+Save:node\C\study\Macro_doc_apn107.h \[1.2\] 466
+Save:node\C\study\Macro_doc_apn107.h \[1.3\] 425 以色列/巴勒斯坦
+Save:node\C\study\Macro_doc_apn107.h \[1.4\] 259 摩尔多瓦
+Save:node\C\study\Macro_doc_apn107.h \[1.5\] 
+Save:node\C\study\Macro_doc_apn107.h \[1.6\] 
+Save:node\C\study\Macro_doc_apn107.h \[1.7\] 
+Save:node\C\study\Macro_doc_apn107.h \[1.8\] 
+Save:node\C\study\Macro_doc_apn107.h \[1.9\] 
+Save:node\C\study\Macro_doc_apn107.h \[1.10\] 
+Save:node\C\study\Macro_doc_apn107.h \[1.11\] 
+Save:node\C\study\Macro_doc_apn107.h \[1.12\] 
+
+
 ### 新增运营商delta nv
 // --SIM(HPLMN)相关NV项
 // "国家名称缩写_运营商名称_S.nv"
@@ -24,7 +39,9 @@ PS\nv\operator_delta\operator_config_all\Default_P.nv
 PS\nv\operator_delta\operator_config_all\Default_S.nv
 
 
-### 460
+
+[1.1] 460
+
 // CN_CMCC
 PS\nv\operator_delta\operator_config_all\Index.xml  mcc="460"
 // CMNET
@@ -50,7 +67,9 @@ PS\nv\operator_delta\operator_config_all\CN_CMCC_S.nv
 PS\nv\operator_delta\operator_config_all\CN_CMCC_P.nv
 
 
-### 466
+
+
+[1.2] 466
 // TW_TWM
 PS\nv\operator_delta\operator_config_all\Index.xml  mcc="466"
 // 名字映射的文件
@@ -91,7 +110,8 @@ roaming status: 0, net isroaming: 0, net mcc: 466, sim mcc: 466
 tcpip: sci_async_gethostbyname - url(xcap.ims.taiwanmobile.com), timeout(4000 ms), netid(81c8070c)
 
 
-### 425 以色列/巴勒斯坦
+
+[1.3] 425 以色列/巴勒斯坦
 // IL_Partner
 PS\nv\operator_delta\operator_config_all\Index.xml  mcc="425"
 // 名字映射的文件
@@ -102,10 +122,11 @@ PS\nv\operator_delta\operator_config_all\IL_Partner_P.nv
 PS\nv\operator_delta\operator_config_all\IL_Partner_S.nv
 
 
+
 ### 以色列
 // 
-PS\nv\operator_delta\operator_config_all\Index.xml  mcc="515"
-PS\nv\operator_delta\operator_config_all\Index.xml  mcc="260"
+PS\nv\operator_delta\operator_config_all\Index.xml  mcc="515"   # 错了，记得还原
+PS\nv\operator_delta\operator_config_all\Index.xml  mcc="260"   # 错了，记得还原
 PS\nv\operator_delta\operator_config_all\Index.xml  mcc="310"
 PS\nv\operator_delta\operator_config_all\Index.xml  mcc="222"
 
@@ -114,19 +135,28 @@ apnPath = PS\nv\operator_delta\operator_config_all\
 apn:test\
 
 cp apn:test\test_P.nv apn:test\IL_GolanTelecom_P.nv
-cp apn:test\test_P.nv apn:test\IL_RamiLevi_P.nv
-cp apn:test\test_P.nv apn:test\IL_Widely_P.nv
-cp apn:test\test_P.nv apn:test\IL_019_P.nv
-cp apn:test\test_P.nv apn:test\IL_K_SIM_P.nv
 cp apn:test\test_S.nv apn:test\IL_GolanTelecom_S.nv
+cp apn:test\test_P.nv apn:test\IL_RamiLevi_P.nv
 cp apn:test\test_S.nv apn:test\IL_RamiLevi_S.nv
+cp apn:test\test_P.nv apn:test\IL_Widely_P.nv
 cp apn:test\test_S.nv apn:test\IL_Widely_S.nv
+cp apn:test\test_P.nv apn:test\IL_019_P.nv
 cp apn:test\test_S.nv apn:test\IL_019_S.nv
+cp apn:test\test_P.nv apn:test\IL_K_SIM_P.nv
 cp apn:test\test_S.nv apn:test\IL_K_SIM_S.nv
+cp apn:test\test_P.nv apn:test\IL_Annatel_P.nv
+cp apn:test\test_S.nv apn:test\IL_Annatel_S.nv
 
 
-### 259/15 摩尔多瓦
-//
+// apnStr
+app:phone\h\
+app:phone\h\plmn_ts25_database_enum.h  PLMN_425_
+app:phone\h\plmn_ts25_database_table.h  PLMN_425_
+source:mmi_app\common\h\plmn_ts25_database_str.h  TXT_NET_887
+
+
+[1.4] 259 摩尔多瓦
+// 259/15
 PS\nv\operator_delta\operator_config_all\Index.xml  mcc="259"
 // L4默认配置满足需求，无需更新
 PS\nv\operator_delta\operator_config_all\
@@ -143,4 +173,121 @@ PS_NV_PARAMS\NV_PARAM_TYPE_PLMN_DELTA_NV\ims_plmn_nvinfo\sip_preconditionEnabled
 
 ###
 https://www.cnblogs.com/neo-java/p/6830319.html
+
+
+
+[1.5] 259 印度
+//404 10
+PS\nv\operator_delta\operator_config_all\Index.xml  mcc="404"
+//
+PS\nv\operator_delta\operator_config_all\IN_Airtel_P.nv
+PS\nv\operator_delta\operator_config_all\IN_Airtel_S.nv
+
+
+
+
+
+
+
+
+
+
+[1.6] 
+
+
+
+
+[1.7] 
+
+
+
+
+[1.8] 
+
+
+
+
+[1.9] 
+
+
+
+
+[1.10] 
+
+
+
+[1.11] 
+
+
+
+
+[1.12] 
+
+
+
+
+[1.13] 
+
+
+
+
+[1.14] 
+
+
+
+
+[1.15] 
+
+
+
+[2.1] 
+
+
+[2.2] 
+
+
+[2.3] 
+
+
+[2.4] 
+
+
+[2.5] 
+
+
+[2.6] 
+
+
+[2.7] 
+
+
+[2.8] 
+
+
+[2.9] 
+
+
+[2.10] 
+
+
+
+[2.11] 
+
+
+[2.12] 
+
+
+[2.13] 
+
+
+[2.14] 
+
+
+[2.15] 
+
+
+
+
+
+
 

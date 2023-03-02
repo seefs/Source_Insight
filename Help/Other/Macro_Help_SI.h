@@ -48,7 +48,7 @@ Save:Help\Macro_Note_Test.h
 Save:Help\Other\Macro_Help_replace.h
 
 // 项目文件/调试命令
-Save:node\ToolsMsg\Macro_SI.h  __filelist__
+//Save:node\ToolsMsg\Macro_SI.h  __filelist__
 Save:Help\Other\Macro_Help_filelist.h
 
 
@@ -62,7 +62,7 @@ Save:Macro\sbd_root_path.em  getRootPath(0)
 // --或者自动设置:
 Save:Cmd_other\
 Save:Cmd_other\first_set_path.bat
-// --区分版本
+// --环境变量--区分版本
 Save:Help\Other\Macro_Help_filelist.h  __SiVer__
 
 // 2) 其他设置:

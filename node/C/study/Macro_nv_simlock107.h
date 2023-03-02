@@ -1,27 +1,29 @@
 
 // nv备份
-Desktop:\SPRD_T107\X332\sim_lock_nv\
+Desktop:SPRD_T107\X332\sim_lock_nv\
+Desktop:SPRD_T107\X332\sim_lock_nv\_simlock_list.h
+
 // imsi备份:
 //  -:-----=====-----
 //  1:460012348652788 联通
 //  1:460077958813372 移动
 
+// nvTool从手机导入NV
+Save:node\C\study\Macro_nv_8910.h  __nvTool__
+
+// FAQ:
+//  29919_SIMLOCK安全方案配置说明V1.2.pdf
+
 
 ### 3.1 配置总开关及锁类型
 rdnv:\
 rdnv:NV_PARAM_TYPE_SIM_CFG[1].xml  is_support_gsm_only
-// 网络锁 改成 运营商锁
-//  0x0f ==> 0x35
-// 网络锁 改成 用户锁+运营商锁+网络锁
-//  0x0f ==> 0xAB
-// 只开联通网络锁--test_ok
-//  0x0f ==> 0xB
-// 只开联通用户锁_or_移动网络锁--test
-//  0x0f ==> 0x8B
-
-//
-PS\nv\internal\ps\common\
-PS\nv\internal\ps\common\NV_PARAM_TYPE_SIM_CFG[1].xml  is_support_gsm_only
+// 0x0f--------默认,网络锁(3卡)----------------
+// 0xB---------网络锁(联通)--------------------ok
+// 0x35--------运营商锁------------------------
+// 0x83--------用户锁--------------------------
+// 0x8B--------用户锁(联通)_or_网络锁(移动)----ok
+// 0xAB--------用户锁+运营商锁+网络锁----------
 
 
 
@@ -29,20 +31,22 @@ PS\nv\internal\ps\common\NV_PARAM_TYPE_SIM_CFG[1].xml  is_support_gsm_only
 nv:\
 //   锁1~锁4
 nv:NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  sim_lock_status
-//   锁5
-nv:NV_SIM_LOCK_USER_DATA_ID.xml  sim_lock_status
-// 网络锁 改成 运营商锁
-//  0x0 ==> 0x4
-// 网络锁 改成 用户锁+运营商锁+网络锁
-//  0x0 ==> 0x15
-// 只开联通网络锁--test
-//  0x0 ==> 0x1
-// 只开联通用户锁_or_移动网络锁--test
-//  0x0 ==> 0x8
+// 0x0---------默认,无锁-----------------------------
+// 0x1---------网络锁--------------------------------err
+// 0x4---------运营商锁------------------------------err
+// 0x10--------用户锁--------------------------------err
+// 0x100-------网络锁--------------------------------ok (估计无用设置)
+// 0x100-------用户锁(联通)_or_网络锁(移动)----------ok
+// 0x100-------用户锁+运营商锁+网络锁----------------
 
-//
-PS\nv\export\ps\mn\
-PS\nv\export\ps\mn\NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  sim_lock_status
+//   锁5 (实际解锁)
+nv:NV_SIM_LOCK_USER_DATA_ID.xml  sim_lock_status
+// 0x0---------默认,无锁-----------------------------
+// 0x1---------网络锁--------------------------------ok
+// 0x4---------运营商锁------------------------------
+// 0x10--------用户锁--------------------------------
+// 0x11--------用户锁(联通)_or_网络锁(移动)----------ok
+// 0x15--------用户锁+运营商锁+网络锁----------------
 
 
 
@@ -51,62 +55,67 @@ PS\nv\export\ps\mn\NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  sim_lock_status
 //    白名单的总个数
 //    XML 配置白名单时，MCC 配置非零的数据。如果某类型锁没开启，XML 该类型锁白名单项不要填写内
 nv:NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  network_locks            ->numLocks
+// 0x0---------默认--------------------------------------
+// 0x1---------网络锁+1个apn-----------------------------ok
+// 0xC---------网络锁+12个apn----------------------------
 nv:NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  network_subset_locks     ->numLocks
 nv:NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  sp_locks , sp_locks->sp  ->numLocks
 nv:NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  corporate_locks          ->numLocks
-// 锁1改成 1个
-//  0x0 ==> 0x1
-// 锁1改成 12个
-//  0x0 ==> 0xC
-// 只开联通网络锁--test
-//  0x0 ==> 0x1
-// 只开联通用户锁_or_移动网络锁--test
-//  0x0 ==> 0x1
 
-// 修改mcc mnc
-//			<ITEM name="locks[0]" type="STRUCT" type_name="PLMN_T" varname="locks0" desc="item of of network lock list">
-//				<ITEM name="mcc" type="uint16" varname="mcc" value="0x1A9" desc="mcc"/>
-//				<ITEM name="mnc" type="uint16" varname="mnc" value="0x02" desc="mnc"/>
-//				<ITEM name="mnc_digit_num" type="uint16" varname="mnc_digit_num" value="0x0" desc="mnc digit number"/>
-//			</ITEM>
-
-
-// 黑名单不用配
-//nv:NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  network_blacklist_locks
+// 修改 mcc-mnc-num
+nv:NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  network_locks            ->locks[0]
+// 0x1A9,0x02,0x02---------默认--------------------------------------
+// 0x1CC,0x0,0x02----------移动--------------------------------------
+// 0x1CC,0x02,0x02---------移动--------------------------------------
+// 0x1CC,0x07,0x02---------移动--------------------------------------
+// 0x1CC,0x01,0x02---------联通--------------------------------------ok
 
 
 //   锁5
-nv:NV_SIM_LOCK_USER_DATA_ID.xml  user_locks
-//nv:NV_SIM_LOCK_USER_DATA_ID.xml  encrypted_crc0
-//PS\nv\export\ps\mn\NV_SIM_LOCK_USER_DATA_ID.xml  user_locks
-//  修改
-// numLocks 0x0 ==> 0x3
-// imsi_len 0x0 ==> 0x8
+nv:NV_SIM_LOCK_USER_DATA_ID.xml  user_locks    ->numLocks
+// 0x1---------用户锁+1个imsi-----------------------------ok
+
+// 修改 imsi_len - imsi_val(最多128个)
+nv:NV_SIM_LOCK_USER_DATA_ID.xml  user_locks    ->locks[0]
+//   locks[0].imsi_len = 8-----------------------------------------imsi：前8位为46001234
+//   locks[0].imsi_val[0] = 0x49-----------------------------------第1位9用不上
+//   locks[0].imsi_val[1] = 0x06-----------------------------------
+//   locks[0].imsi_val[2] = 0x10-----------------------------------
+//   locks[0].imsi_val[3] = 0x32-----------------------------------
+//   locks[0].imsi_val[3] = 0xf4-----------------------------------
 
 
-// 配置两卡白名单独立控
+
+//### 黑名单不用配
+//nv:NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  network_blacklist_locks
+
+
+//### 配置两卡白名单独立控
 //   ==> “sim1_locks”配置说明参考 3.8 
 
 
 ### 3.4 配置密码类型
 // “control_key_type”用来定义解锁密码的算法。
 nv:NV_SIM_LOCK_NV_CONTROL_KEY_ID.xml  control_key_type
-//  control_key_type=4 是安全方案，是部署时自动生成的。 表示使用随机密码。相关取得解锁码的方法请参考下列文档
-//    https://unisupport.unisoc.com/file/index?fileid=29656
-// 0x0 ==> 0x4
-//
-//  control_key_type=3 密码无需存储。密码长度为8位。
-//   密码由IMEI1根据如下算法生成：
-//   IMEI每相邻两位相加取个位，前14位IMEI可算出7位的密码，第8位取IMEI的第1位。
-//   例如：IMEI:352273017386340，该算法的密码为：84010473
-// 0x0 ==> 0x3
+// 0x0---------默认-----------------------------------------------
+// 0x3---------密码无需存储。密码长度为8位。----------------------ok
+//			   密码由IMEI1根据如下算法生成：
+//			   IMEI每相邻两位相加取个位，前14位IMEI可算出7位的密码，第8位取IMEI的第1位。
+//			   例如：IMEI:352273017386340，该算法的密码为：84010473
+// 0x4---------安全方案，是部署时自动生成的------------------------
+//			   表示使用随机密码。相关取得解锁码的方法请参考下列文档
+//			   https://unisupport.unisoc.com/file/index?fileid=29656
+// SPCSS01112904
+//   SimLock生产流程介绍 V1.1.pdf
+//   安全方案太麻烦
 
 
-### 3.5 配置解锁功能关闭
+//### 3.5 配置解锁功能关闭
 // 不改
-nv:NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  dummy3 .bit2  1(bit7,…,bit0)
-// 置 4 表示关闭解锁功能
-// 0x0 ==> 0x4
+//nv:NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  dummy3 .bit2  1(bit7,…,bit0)
+// 0x0--------默认,可以解锁-----------------
+// 0x4--------关闭解锁----------------------
+
 // 不要同时修改：非 SIMLOCK+关闭解锁 会导致所有卡都不能用。
 // SIMLOCK 0x0f ==> 0x00;  dummy3 0x0 ==> 0x4
 
@@ -114,37 +123,38 @@ nv:NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  dummy3 .bit2  1(bit7,…,bit0)
 ### 3.6 配置最大解锁次数限制
 // 默认最大解锁次数为 10 次，输错至最大解锁次数后会进入永久锁卡状态
 nv:NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  max_num_trials
-// 不限制解锁次数
-// 0xA ==> 0x7FFFFFFF
+// 0xA-----------默认-----------------------
+// 0x7FFFFFFF----不限制解锁次数-------------ok
 
 
 
-### 3.7 配置五种锁的关系
+### 3.7 配置五种锁的关系(综合)
 //   锁1~锁4
 nv:NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  dummy3 .bit3  1(bit7,…,bit0)
-// 与 改 或
-// 0x0 ==> 0x8
+// 0x0--------------默认,与-----------------------
+// 0x8--------------或----------------------------
+// 0x208------------IMSI的前8位+或----------------ok
+//			  第1位9不要，所有2^9=0x200
+// 0x808------------IMSI的前10位+或----------------
+// 0x80C------------IMSI的前10位+或+关锁-----------
 
-//   锁5--文档没说最好也改
+//   锁5--文档没说要改
 nv:NV_SIM_LOCK_USER_DATA_ID.xml  dummy3
+// 0x0--------------默认--------------------------不改
 
 
 
-// 有点复杂，看文档...
 
-
-
-### 3.8 配置两卡白名单独立控制
+//### 3.8 配置两卡白名单独立控制
 // 待定, 太复杂不改
 //   锁1~锁4
 nv:NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  dummy3 .bit4  1(bit7,…,bit0)
-//  共用 改 独立
-// 0x0 ==> 0x10
-//  不支持解锁，卡 1 卡 2 白名单相互独立配置
-// 0x0 ==> 0x14
+// 0x0--------默认,共用-----------------
+// 0x10-------独立----------------------
+// 0x14-------独立+不支持解锁----------------------
 
 //   锁5--文档没说最好也改
-nv:NV_SIM_LOCK_USER_DATA_ID.xml  dummy3 .bit4
+//nv:NV_SIM_LOCK_USER_DATA_ID.xml  dummy3 .bit4
 
 
 // 白名单独立时
@@ -166,18 +176,17 @@ nv:NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  numLocks
 nv:NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  dummy4
 
 // V5.0
-//? PS_NV_PARAMS -> SIM_LOCK_CUSTOMIZE_DATA.dummy4 = 0，IMEI1 参与保护
-//? PS_NV_PARAMS -> SIM_LOCK_CUSTOMIZE_DATA.dummy4 = 1，IMEI2 参与保护
-//? PS_NV_PARAMS -> SIM_LOCK_CUSTOMIZE_DATA.dummy4 = 2，IMEI3 参与保护
-//? PS_NV_PARAMS -> SIM_LOCK_CUSTOMIZE_DATA.dummy4 = 3，IMEI4 参与保护
-//? PS_NV_PARAMS -> SIM_LOCK_CUSTOMIZE_DATA.dummy4 = 4，IMEI1 和 IMEI2 参与保护
+// PS_NV_PARAMS -> SIM_LOCK_CUSTOMIZE_DATA.dummy4 = 0，IMEI1 参与保护
+// PS_NV_PARAMS -> SIM_LOCK_CUSTOMIZE_DATA.dummy4 = 1，IMEI2 参与保护
+// PS_NV_PARAMS -> SIM_LOCK_CUSTOMIZE_DATA.dummy4 = 2，IMEI3 参与保护
+// PS_NV_PARAMS -> SIM_LOCK_CUSTOMIZE_DATA.dummy4 = 3，IMEI4 参与保护
+// PS_NV_PARAMS -> SIM_LOCK_CUSTOMIZE_DATA.dummy4 = 4，IMEI1 和 IMEI2 参与保护
 //（仅 CP 版本 FM_BASE_17C_W21.11.2 及以前版本）
 
 
 // V5.1 和 V5.2
 nv:NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  dummy4
-// IMEI 保护改在 Simba 工具上配置
-// 改 V5.2
+//  版本信息 改为 V5.2, IMEI 保护改在 Simba 工具上配置
 // 0x0 ==> 0xc0000000
 
 //   锁5--文档没说最好也改
@@ -188,11 +197,13 @@ nv:NV_SIM_LOCK_USER_DATA_ID.xml  dummy4
 ### 3.10 配置一次性解锁多重锁
 //
 nv:NV_SIM_LOCK_CUSTOMIZE_DATA_ID.xml  dummy1
-// 逐层解锁 改 一次性解锁
-// 0x0 ==> 0x1
+// 0x0---------默认，逐层解锁-------------------------------------
+// 0x1---------一次性解锁-----------------------------------------ok
 
 //   锁5--文档没说最好也改
 nv:NV_SIM_LOCK_USER_DATA_ID.xml  dummy1
+// 0x0---------默认，逐层解锁-------------------------------------
+// 0x1---------一次性解锁-----------------------------------------ok
 
 
 
@@ -303,6 +314,18 @@ file_down:_tool\WriteIMEI_R19.0.0001\
 
 // _apn-doc
 SPRD_T107:_apn\
+
+
+### SIMLockServer
+// tool--34557 Simlock部署的Server端
+https://unisupport.unisoc.com/tool/index
+
+
+
+
+
+
+
 
 
 

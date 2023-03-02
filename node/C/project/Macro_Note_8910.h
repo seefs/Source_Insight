@@ -394,6 +394,12 @@ prj:project_{cur}.mk _CAMER
 //prj:project_{cur}.mk __SBD_RF_TWO_BAND_SUPPORT__
 //prj:project_{cur}.mk SBD_RF_TWO_BAND_SUPPORT
 
+// 频段-用mk方式
+prj:project_{cur}.mk  WCDMA_BANDS_SUPPORT = BAND_1_5_8
+prj:project_{cur}.mk  TDD_BANDS_SUPPORT = BAND_38_39_40_41   #LTE TDD band
+prj:project_{cur}.mk  FDD_BANDS_SUPPORT = BAND_1_3_5_8  # LTE FDD Band
+// 频段-用nv方式(不要加mk)
+Save:node\C\study\Macro_nv_sim8910.h  __BAND__
 
 // 不带马达：
 //prj:project_{cur}.mk __HHT_REMOVE_VIBRA__ =TRUE

@@ -2,7 +2,7 @@
 //目录:
 Save:node\C\study\Macro_nv_audio8910.h \[1.1\] audio_calib_VQE
 Save:node\C\study\Macro_nv_audio8910.h \[1.2\] PA,2IN1,3IN1
-Save:node\C\study\Macro_nv_audio8910.h \[1.3\] 
+Save:node\C\study\Macro_nv_audio8910.h \[1.3\] Copy107
 Save:node\C\study\Macro_nv_audio8910.h \[1.4\] 
 Save:node\C\study\Macro_nv_audio8910.h \[1.5\] 
 Save:node\C\study\Macro_nv_audio8910.h \[1.6\] 
@@ -131,7 +131,80 @@ nv:audio_calib_VQE.nvm  audio_calib
 
 
 
-[1.3] 
+[1.3] __Copy107__
+
+
+nv_build
+
+// 107手动还原
+PS\nv\export\
+common\nv_parameters\
+//project\config_nv\ums9117\
+//make\nv_cus_config\nv_cus_config_MAIN\
+PS\nv\export\ps\ims\   #bat未加
+
+// 服务器build差异文件
+CustNV/NV_PARAM_TYPE_EXPORT_IMS_CUSTOMER_SETTINGS.xml
+RDNV\bt_rf_config.xml               # 未还原 common\nv_parameters\wcn
+RDNV\multi_langue_cfg.xml
+RDNV\eleGuaranteeCard.xml  #delete
+RDNV\W_download_params_optimize.xml   # 先不管
+RDNV\rd_nvitem.xprj
+
+
+###
+// mk
+prj:project_{cur}.mk   PLATFORM = UMS9117
+prj:project_{cur}.mk   AUDIO_COMMON_EXCHANGE = TRUE
+//
+prj:project_{cur}.mk   RCV_THROUGH_SPK = TRUE    #二合一
+prj:project_{cur}.mk   RCV_THROUGH_SPK = FALSE   #独立
+prj:project_{cur}.mk   SPK_THROUGH_HPR = FALSE
+//
+make\voice\voice.mk  RCV_THROUGH_SPK   #二合一的NV
+PS\build\make\csm.mk  CUST_XML
+
+// 二合一的NV
+prj:CustNV/
+prj:CustNV/audio_arm_rcv_through_spk.xml
+prj:CustNV/audio_dsp_rcv_through_spk.xml
+prj:CustNV/audio_dsp_ex_rcv_through_spk.xml
+prj:CustNV/dsp_codec_config_rcv_through_spk.xml
+// 独立的NV
+prj:CustNV/audio_arm.xml
+prj:CustNV/audio_dsp.xml
+prj:CustNV/audio_dsp_ex.xml
+prj:CustNV/dsp_codec_config.xml
+// 替换二合一默认NV
+common\nv_parameters\audio\UMS9117\
+common\nv_parameters\audio\UMS9117\audio_arm_rcv_through_spk.xml
+//
+HW:{project}\
+
+
+###
+prj:CustNV/cvs_param_info.xml
+
+
+###
+prj:CustNV/NV_REF_PARAMETER.xml
+//
+make\refbase\refbase.mk  NV_REF_PARAMETER
+//
+common/nv_parameters/refbase/NV_REF_PARAMETER.xml
+
+###
+PS\nv\export\rf_NemoL_T117_3595D\common\Common_AFC_MIPI\AFC_cali_config.xml
+
+
+### LTE
+
+nv:LTE_NV_EUTRA_CUSTOMER_SETTINGS.xml  numOfEUTRATDDBand  -> 0x2
+
+PS\nv\export\ps\las\LTE_NV_EUTRA_CUSTOMER_SETTINGS.xml
+
+
+
 
 
 

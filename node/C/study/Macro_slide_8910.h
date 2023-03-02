@@ -267,7 +267,7 @@ Save:node\C\study\Macro_tihu_8910.h  __log__
 Save:node\C\study\Macro_zmaee_8910.h   __log__
 // trace
 Save:node\C\study\Macro_fun_8910.h  __debug__
-// Trace log
+// Trace log--Ìæ»»log´úÂë
 Save:node\C\study\Macro_patch_8910.h  __Trace__
 // usb mode
 Save:node\C\study\Macro_app_8910.h  __UsbMode__

@@ -8,7 +8,23 @@
 //这些都要检查.
 
 
+### ID 对应
+// ID 对应
+Save:node\C\study\Macro_res_8910.h  __strApn__
 
+
+### 425
+//
+app:phone\h\
+app:phone\h\plmn_ts25_database_enum.h  PLMN_425_09
+app:phone\h\plmn_ts25_database_enum.h  PLMN_425_19
+app:phone\h\plmn_ts25_database_table.h  PLMN_425_09
+app:phone\h\plmn_ts25_database_table.h  PLMN_425_19
+source:mmi_app\common\h\plmn_ts25_database_str.h  TXT_NET_891A
+source:mmi_app\common\h\plmn_ts25_database_str.h  TXT_NET_894A
+
+
+### 460
 // 移动148号段
 // 缺少 PLMN_460_13
 app:phone\h\plmn_ts25_database_enum.h  PLMN_460_11
@@ -17,7 +33,7 @@ app:phone\h\plmn_ts25_database_table.h  PLMN_460_11
 //    460,11,STR_OPERATOR_CHN_CT,PLMN_460_11,
 
 
-
+### 204
 app:phone\h\plmn_ts25_database_enum.h  PLMN_204_04
 
 

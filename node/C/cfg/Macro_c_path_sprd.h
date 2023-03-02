@@ -5,7 +5,7 @@ Save:node\C\cfg\Macro_c_path_sprd.h \[1.1\] sprd_cur--------
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.2\] sprd_copy-------
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.3\] sprd_cfg--------nv, driver
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.4\] sprd_other------lib
-Save:node\C\cfg\Macro_c_path_sprd.h \[1.5\] //sprd_bat
+Save:node\C\cfg\Macro_c_path_sprd.h \[1.5\] sprd_cfg--------107nv
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.6\] //sprd_sbd------
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.7\] other
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.8\] 
@@ -169,15 +169,12 @@ prj:{cfg}.cfg          MMI_RES_DIR = mmi_res_240x320_mini
 prj:{cfg}.cfg          MULTI_BIN_SUPPORT = TRUE
 
 
-[1.5] _sprd_bat_
-// (1).curKey
-Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
-//	set proP1={cur}
-
-// (2).bak
-Save:set\Macro_Set_Path_sprd_{pro}.h  boardKey
-make/{cur}_{GSM}.mak  BOARD_VER
-//	set proC1={board}
+[1.5] sprd_cfg--------107nv
+### __107NV__
+// lte
+Save:set\Macro_Set_Path_sprd_{pro}.h  lteKey
+// LTE_RF_TYPE = NemoL_T117_3595D
+prj:project_{cur}.mk   LTE_RF_TYPE
 
 
 

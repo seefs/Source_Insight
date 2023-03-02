@@ -3,7 +3,7 @@
 //目录:
 // 1. 
 Save:node\C\project\Macro_cfg_8910.h \[1.1\] AUDIO, TONE
-Save:node\C\project\Macro_cfg_8910.h \[1.2\] PB
+Save:node\C\project\Macro_cfg_8910.h \[1.2\] //PB
 Save:node\C\project\Macro_cfg_8910.h \[1.3\] SMS
 Save:node\C\project\Macro_cfg_8910.h \[1.4\] MMS, CB, CL
 Save:node\C\project\Macro_cfg_8910.h \[1.5\] BROWSER, DL
@@ -58,87 +58,7 @@ SPDE_PRJ/K220U_HYBL_H660A/uis8910_phone_user_base_config.cfg  YOUNGTONE_TTS_LIB
 // YOUNGTONE_TTS_LIB = MAN
 
 
-[1.2] PB
-// 黑名单
-make\app_main\app_macro.mk  MMI_BLACKLIST_SUPPORT
-// 白名单
-make\app_main\app_macro.mk  MMI_WHITELIST_SUPPORT
-prj:project_{cur}.mk   MMI_WHITELIST_SUPPORT = TRUE
-prj:project_{cur}.mk   MMI_BLACK_AND_WHITE_LIST_ADD_SETTING = TRUE
-//		==>HandleMTCallDisc
-//		====>CC_MTCallWhiteFireWall
-
-
-## "PB和SMS条数修改.txt"：
-
-//1、将电话簿条目数改为5000条需要按如下步骤调整(假设增加条数为X（=5000 - 版本默认条数）)：
-//a、修改条目, 均设置为5000
-MS_MMI_Main\source\mmi_service\export\inc\mmipb_common.h  MMIPB_NV_MAX_RECORD_NUM
-//		#define MMIPB_NV_MAX_RECORD_NUM     200 //500 
-
-MS_MMI_Main\source\mmi_app\app\pb\h\mmipb_nv.h  MMINV_MAX_PHONEBOOK_RECORDS
-//		#define MMINV_MAX_PHONEBOOK_RECORDS     MMIPB_NV_MAX_RECORD_NUM
-MS_MMI_Main\source\mmi_app\app\pb\h\mmipb_nv.h  MMINV_PHONEBOOK_MAIN_LAST_ENTRY  #107
-
-
-//b、增加的RAM调整
-//	每增加100条联系人，大概增加约24K的STATIC heap空间，因此，增加的空间为(24*X/100)
-//	根据增加的空间（假设为X），调整mem_cfg.c中 MAX_STATIC_SPACE_SIZE 和MAX_SYSTEM_SPACE_SIZE大小，即
-//	MAX_STATIC_SPACE_SIZE大小 + X
-//	MAX_SYSTEM_SPACE_SIZE大小 - X
-MS_Customize\source\product\config\uis8910ff_refphone\mem_cfg.c  252
-
-//每增加100条联系人,APP HEAP增加情况：
-//仅存一个号码：～14K
-//存两个号码：  ～16K
-//...
-//
-//因此，总增加RAM：(14 + 2*（K - 1）) * X / 100  -- K为号码数（见宏MMIPB_MAX_NV_PHONE_NUM@mmi_custom_define.h定义）
-
-//【说明】上面"+ X" "- X"只是保守的修改方法，实际系统可能会有冗余，MAX_SYSTEM_SPACE_SIZE可能调整的大小会小一些。可以适当微调(以50K为单位)，只要编译不报RAM超即可。
-
-//因此，如果增加的条数大，会导致系统空间变小，影响browser/camera等大内存应用（风险！！！）
-
-//c、flash 调整
-//请见下面《Flash 配置相关说明》
-//
-//d、修改后编译代码，进入手机进工程模式->Running NV Counting，查看MMI running NV item num，如果该值远远小于MAX_MMI_NV_USER_ITEM_NUM(@mmi_nv.h)定义的值，
-//则不需要做下面步骤的调整，否则，需要做后续的调整。
-//
-//e、修改MAX_MMI_NV_USER_ITEM_NUM(@mmi_nv.h):MAX_MMI_NV_USER_ITEM_NUM值为（MAX_MMI_NV_USER_ITEM_NUM + X）
-//
-//f、修改NV_MAX_ID（mem_cfg.c）：NV_MAX_ID值为（NV_MAX_ID + X）
-//
-//g、修改MAX_NV_USER_ITEM_NUM(@nv_item_id.h):MAX_NV_USER_ITEM_NUM值为（MAX_NV_USER_ITEM_NUM + X）
-//
-//h、需要申请更新两个库文件umem.a及efs.a
-//   MAX_NV_USER_ITME_NUM-->NV_UDISK_BASE-->umem.a
-//   NV_MAX_ID-->LAST_NV_ITEM-->efs.a  
-//
-//注：efs中NV最大总条数<0x3fff(16383)：
-//    1、查看EFS_ItemInit（@efs_item.c）语句:SCI_ASSERT(EFS_MAX_NV_ITEM < ITEM_MASK_ID)
-//    2、#define ITEM_MASK_ID 0x3FFF
-//-------------------------------------------------------------------------
-
-
-## Flash 配置相关说明(客户量产前建议的必查项)：
-//	对于runing nv的修改（修改手机中短信条数/Pb条数/增加应用NV项等）：
-//	1、通过相关宏修改手机短信条数
-//	2、a、修改后编译代码，进入手机进工程模式->Running NV Counting，查看All running NV size的值（假设定义为all_running_nv_size）
-//	   b、查看对应的spiflash_cfg.c文件中running nv配置的大小：(RUNNIN_NV_SECTOR_NUM*FLASH_SECTOR_SIZE)
-//	   c、必须满足(RUNNIN_NV_SECTOR_NUM*FLASH_SECTOR_SIZE) >= all_running_nv_size + FLASH_SECTOR_SIZE
-//
-//	spi flash各个区块的关系（大小定义见对应工程的spiflash_cfg.c）
-//	     (RUNNIN_NV_SECTOR_NUM*FLASH_SECTOR_SIZE) + FIXED_NV_SIZE + (UMEM_SECTOR_NUM*FLASH_SECTOR_SIZE) + PS BIN SIZE(工程的*stone.bin文件：resource+ps code经压缩后文件大小) <= PHY_FLASH_SIZE（物理flash的大小，单位Bytes）
-//	    注：上面等式每项NV的大小要Sector对齐（没有达到1个Sector大小，以1个Sector大小计算）
-//
-//	【注意】前面公式中宏对应于非镁光Flash，对于镁光Flash，需要查看和修改对应“*_B”的宏
-//	（如：RUNNIN_NV_SECTOR_NUM_B等等，而不是RUNNIN_NV_SECTOR_NUM）
-
-## 其他 
-make\app_main\release_app_macro.mk  MMIPB_MAX_COUNT_200
-
-
+[1.2] 
 
 [1.3] SMS
 
@@ -289,6 +209,9 @@ prj:project_{cur}.mk  BLUETOOTH_SUPPORT = SPRD_BT
 //BT--8910
 prj:{cfg}.cfg  BLUETOOTH_SUPPORT = SPRD_BT
 prj:project_{cur}.mk  BLUETOOTH_SUPPORT = SPRD_BT
+
+// 禁用对方机器发送蓝牙文件
+prj:project_{cur}.mk  BT_OPP_SUPPORT = TRUE
 
 
 

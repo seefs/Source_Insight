@@ -709,14 +709,18 @@ app:pb\c\mmipb_view.c  MMIPB_ENTRY_LIST_TAB_WIN_TAB          # style-1 (107)
 // ==>app
 Save:node\C\study\Macro_app_8910pb.h  __init__
 Save:node\C\study\Macro_app_8910pb.h  __detail__
-Save:node\C\study\Macro_app_8910pb.h  __memory__  #option
+Save:node\C\study\Macro_app_8910pb.h  __memory__     # option
 Save:node\C\study\Macro_app_8910pb.h  __add__
 Save:node\C\study\Macro_app_8910pb.h  __pbBak__
+Save:node\C\study\Macro_app_8910pb.h  __pbNumMax__   # PB和SMS条数修改
+Save:node\C\study\Macro_app_8910pb.h  __blacklist__  # 黑名单/白名单
+Save:node\C\study\Macro_app_8910pb.h  __pbName__
 Save:node\C\study\Macro_app_8910pb.h  
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __pb__
 // ==>image
 Save:node\C\study\Macro_res_image_8910.h  __pb__
+
 
 
 
@@ -1485,8 +1489,8 @@ prj:project_{cur}.mk  COUNTEDTIME_SUPPORT = TRUE
 //		======>
 app:accessory\c\mmicountedtime_main.c  MMIAPICT_HandleCountedTimeArriveWin
 
-###
-Save:node\C\study\
+### WORLD_CLOCK
+prj:project_{cur}.mk  WORLD_CLOCK_SUPPORT = TRUE
 
 
 [1.19] calc
@@ -1777,7 +1781,7 @@ MMIBT_GetBtStatusForIcon
 [1.24] env
 ### idle switch
 //		==>IdleWin_HandleMsg
-//		====>HASH:
+//		====>MSG_KEYLONG_HASH:
 //		==>APP_Init
 //		====>MMIAPISET_AllInit
 //		======>MMISET_EnvSetInit

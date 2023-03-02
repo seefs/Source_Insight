@@ -54,8 +54,8 @@ soft            =  Desktop:soft
 tool            =  Desktop:tool
 
 ### ÏµÍ³Â·¾¶:
-StartPath    =  C:\ProgramData\Microsoft\Windows\Start^Menu
-StartPAPath  =  C:\ProgramData\Microsoft\Windows\Start^Menu\Programs\Administrative^Tools
+StartMenuPath    =  C:\ProgramData\Microsoft\Windows\Start^Menu
+StartProPath  =  C:\ProgramData\Microsoft\Windows\Start^Menu\Programs\Administrative^Tools
 
 
 

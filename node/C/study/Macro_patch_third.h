@@ -8,7 +8,7 @@ Save:node\C\study\Macro_patch_third.h \[1.1\] zfb_107
 Save:node\C\study\Macro_patch_third.h \[1.2\] migu_107
 Save:node\C\study\Macro_patch_third.h \[1.3\] xmly_107
 Save:node\C\study\Macro_patch_third.h \[1.4\] fota_file
-Save:node\C\study\Macro_patch_third.h \[1.5\] 
+Save:node\C\study\Macro_patch_third.h \[1.5\] bt
 Save:node\C\study\Macro_patch_third.h \[1.6\] 
 Save:node\C\study\Macro_patch_third.h \[1.7\] 
 Save:node\C\study\Macro_patch_third.h \[1.8\] 
@@ -179,9 +179,13 @@ code:\txt\fota\rs_8910_git.txt  xxx
 
 
 
-[1.5] 
-
-
+[1.5] bt
+### 
+//SPCSS01123086
+//如沟通，pbap sever不支持，client需要升级到MOCOR_20A_MP_W22.04.6_P5取有开pbap的工程，
+//如果你做手机的话，client应该也没什么用，请知悉
+//
+//重新更正下：拨号器功能没有
 
 
 [1.6] 

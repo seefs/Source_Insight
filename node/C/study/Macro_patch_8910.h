@@ -1,13 +1,5 @@
 
-基础路径设置:
-//basePath = 
-// bat
-Save:..\patch\
-
-/***********************************************************************/
-
-//目录[Num][Ca]:
-// 1. 
+//目录:
 Save:node\C\study\Macro_patch_8910.h \[1.1\] app
 Save:node\C\study\Macro_patch_8910.h \[1.2\] common
 Save:node\C\study\Macro_patch_8910.h \[1.3\] Trace_Log_Buf_Print
@@ -63,7 +55,7 @@ app:idle\c\mmiidle_cstyle.c
 app:idle\c\mmiidle_dial.c
 
 
-// 107--sim1
+// 107--sim1--显示单卡
 app:phone\c\mmiphone.c
 
 // 107--charge--msg

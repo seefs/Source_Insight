@@ -492,6 +492,13 @@ app:eng/c/mmieng_main.c  UITESTWIN_OpenPhoneTestWin
 //MMIENG_IDLE_DIAL_NUM_SHOW_VERSION3, //显示更多版本信息
 
 
+### 暗码查看
+// 密码6~8位
+//		==>####8888#，暗码, simlock
+//		==>语言切换
+app:parse\c\mmiparse_dial.c  MMIAPISET_ParseSIMLockSwitchString
+
+
 
 [1.10] ImageNote
 
