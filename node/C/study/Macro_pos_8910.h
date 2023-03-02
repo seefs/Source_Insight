@@ -334,39 +334,39 @@ app:theme\c\mmitheme_menu.c  MMITHEME_POPUPMENU_TEXT_LINE_HEIGHT
 // mainmenu--index--8910
 source:mmi_kernel/include/mmitheme_mainmenu.h  MMITHEME_MAINMENU_CUR_ITEM_INDEX
 // mainmenu--index--107
-source:mmi_kernel/include/mmitheme_mainmenu_{size2}.h  MMITHEME_ICON_MENU_DEFAULT_INDEX
+source:mmi_kernel/include/mmitheme_mainmenu_{size}.h  MMITHEME_ICON_MENU_DEFAULT_INDEX
 
 
 // mainmenu--item 总区域(多层一定要改)
 //		==>MMITHEME_MENU_ITEM_WIDTH / MMITHEME_MENU_ITEM_HEIGHT
 //		====>4X3, w, 80
-source:mmi_kernel/include/mmitheme_mainmenu_{size2}.h  MMITHEME_TITLE_ICONMENU_ITEM_WIDTH_V
+source:mmi_kernel/include/mmitheme_mainmenu_{size}.h  MMITHEME_TITLE_ICONMENU_ITEM_WIDTH_V
 //		====>4X3, h, (40+28)
-source:mmi_kernel/include/mmitheme_mainmenu_{size2}.h  MMITHEME_TITLE_ICONMENU_ITEM_HEIGHT_V
+source:mmi_kernel/include/mmitheme_mainmenu_{size}.h  MMITHEME_TITLE_ICONMENU_ITEM_HEIGHT_V
 //		====>好像未使用
-source:mmi_kernel/include/mmitheme_mainmenu_{size2}.h  MMITHEME_TITLE_ICONMENU_ITEM_HEIGHT_H
+source:mmi_kernel/include/mmitheme_mainmenu_{size}.h  MMITHEME_TITLE_ICONMENU_ITEM_HEIGHT_H
 //		====>margin
-source:mmi_kernel/include/mmitheme_mainmenu_{size2}.h  MMITHEME_TITLE_ICONMENU_TOP_MARGIN_H
-source:mmi_kernel/include/mmitheme_mainmenu_{size2}.h  MMITHEME_ICONMENU_TOP_MARGIN_H
+source:mmi_kernel/include/mmitheme_mainmenu_{size}.h  MMITHEME_TITLE_ICONMENU_TOP_MARGIN_H
+source:mmi_kernel/include/mmitheme_mainmenu_{size}.h  MMITHEME_ICONMENU_TOP_MARGIN_H
 //		====>icon, text, margin 应该 >1
 //		======>MMITHEME_ICONMENU_ICON_TEXT_MARGIN
-source:mmi_kernel/include/mmitheme_mainmenu_{size2}.h  MMITHEME_ICONMENU_ICON_TEXT_MARGIN_H
+source:mmi_kernel/include/mmitheme_mainmenu_{size}.h  MMITHEME_ICONMENU_ICON_TEXT_MARGIN_H
 
 // mainmenu--item 总区域(init)
-source:mmi_kernel/include/mmitheme_mainmenu_{size2}.h  MMITHEME_ICONMENU_ITEM_HEIGHT_H
+source:mmi_kernel/include/mmitheme_mainmenu_{size}.h  MMITHEME_ICONMENU_ITEM_HEIGHT_H
 
 
 // mainmenu--icon/text
 //		====>45X40       # item转icon区域
-source:mmi_kernel/include/mmitheme_mainmenu_{size2}.h  MENUICON_HEIGHT
-source:mmi_kernel/include/mmitheme_mainmenu_{size2}.h  MENUTEXT_HEIGHT
+source:mmi_kernel/include/mmitheme_mainmenu_{size}.h  MENUICON_HEIGHT
+source:mmi_kernel/include/mmitheme_mainmenu_{size}.h  MENUTEXT_HEIGHT
 
 
 // mainmenu--HighLight--Rect
 //		==>MatrixMenuGetHighLightRect
 //		====>focus_item_w
 //		======>MMITHEME_GetMainMenuTheme
-source:mmi_kernel/include/mmitheme_mainmenu_{size2}.h  MENUICON_FOCUSITEM_W
+source:mmi_kernel/include/mmitheme_mainmenu_{size}.h  MENUICON_FOCUSITEM_W
 
 
 // mainmenu--item--bg
@@ -391,49 +391,49 @@ app:cc\h\mmicc_position.h  CC_SEC_INFO_NAME_LABEL_TOP
 // --cc--str--3st--num/state
 //		==>{0,30}
 app:cc\h\mmicc_position_{size}.h  CC_SEC_INFO_NAME_LABEL_TOP
-app:cc\h\mmicc_position_{size2}.h  CC_SEC_INFO_STATE_LABEL_TOP
+app:cc\h\mmicc_position_{size}.h  CC_SEC_INFO_STATE_LABEL_TOP
 
 // --cc--str--num
 //		==>{36,66}
 //		====> 36 = (96)-60-0
-app:cc\h\mmicc_position_{size2}.h  CC_MAIN_INFO_NAME_LABEL_TOP
+app:cc\h\mmicc_position_{size}.h  CC_MAIN_INFO_NAME_LABEL_TOP
 
 // --cc--str--name
 //		==>CC_OpenMtCallWin
 //		====>MMICC_GetCallNameStrByIndex
-app:cc\h\mmicc_position_{size2}.h  CC_MAIN_INFO_NAME_LABEL_TOP_H
+app:cc\h\mmicc_position_{size}.h  CC_MAIN_INFO_NAME_LABEL_TOP_H
 
 // --cc--anim--photo
 //		==>PdaDisplayCallPhotoForCommon
 //		==>{96,161}
 //		====> 96 = (96+30+30)-60-0
-app:cc\h\mmicc_position_{size2}.h    CC_MAIN_INFO_ANIM_TOP
+app:cc\h\mmicc_position_{size}.h    CC_MAIN_INFO_ANIM_TOP
 
 // --cc--str--time
-app:cc\h\mmicc_position_{size2}.h  CC_MAIN_INFO_TIME_LABEL_TOP
-app:cc\h\mmicc_position_{size2}.h    CC_MAIN_INFO_TIME_LABEL_TOP_H
+app:cc\h\mmicc_position_{size}.h  CC_MAIN_INFO_TIME_LABEL_TOP
+app:cc\h\mmicc_position_{size}.h    CC_MAIN_INFO_TIME_LABEL_TOP_H
 
 // --cc--str--connect/state
 //		==>{188,218}
 //		====> 188 = (96)+62+30
-app:cc\h\mmicc_position_{size2}.h    CC_MAIN_INFO_STATE_LABEL_TOP
+app:cc\h\mmicc_position_{size}.h    CC_MAIN_INFO_STATE_LABEL_TOP
 
 // --cc--anim--Mo/Mt/Cur/Auto/Opt/Fly
 //		==>{228,268}
 
 // --cc--muilt--state/name/num
-app:cc\h\mmicc_position_{size2}.h  CC_SEC_INFO_NAME_LABEL_TOP_H
-app:cc\h\mmicc_position_{size2}.h  CC_SEC_INFO_NUM_LABEL_TOP_H
-app:cc\h\mmicc_position_{size2}.h  CC_SEC_INFO_STATE_LABEL_TOP_H
+app:cc\h\mmicc_position_{size}.h  CC_SEC_INFO_NAME_LABEL_TOP_H
+app:cc\h\mmicc_position_{size}.h  CC_SEC_INFO_NUM_LABEL_TOP_H
+app:cc\h\mmicc_position_{size}.h  CC_SEC_INFO_STATE_LABEL_TOP_H
 
 
 // --cc--softkey
-app:cc\h\mmicc_position_{size2}.h  CC_MAIN_INFO_BOTTOM_ANIM_TOP
+app:cc\h\mmicc_position_{size}.h  CC_MAIN_INFO_BOTTOM_ANIM_TOP
 //		==>{275,319}  #softkey
 
 
 // --cc--volte
-app:cc\h\mmicc_position_{size2}.h  CC_MAIN_INFO_BOTTOM_ANIM_TOP
+app:cc\h\mmicc_position_{size}.h  CC_MAIN_INFO_BOTTOM_ANIM_TOP
 
 
 
@@ -507,7 +507,7 @@ app:idle\h\mmiidle_display.h   MMIIDLE_TP_LINE2
 //	----1.MMI_GUI_STYLE_TYPICAL
 //	----2.MMI_PDA_SUPPORT
 //	----3.else
-app:record\h\mmirecord_position.h  {size2}
+app:record\h\mmirecord_position.h  {size}
 
 // record--
 //		==>anim
@@ -553,7 +553,7 @@ app:record\h\mmirecord_position.h  MMIRECORD_RECORD_RECORD_BG_H_Y
 //		====>hor_play_btn_form_rect         # play rect
 //		======>MMIMP3_HOR_PLAY_FORM_RECT
 //		========>MMIMP3_PLAY_FORM_TOP_H
-app:audioplayer/h/mmiap_position.h   {size2}
+app:audioplayer/h/mmiap_position.h   {size}
 // ui--pos--128*160
 //		==>MMIMP3_TITLE_MARGIN_TOP   # 
 
@@ -590,16 +590,16 @@ app:accessory\h\mmialarm_position.h
 // calendar--title--[5,+20]
 app:accessory\h\mmiacc_position.h  {size}  CALENDAR_MONTH_TITLE_RECT_H
 // calendar--week--[+20,+16]
-app:accessory\h\mmiacc_position.h  {size2}  CALENDAR_MONTH_LINE0_TOP_H
-app:accessory\h\mmiacc_position.h  {size2}  CALENDAR_MONTH_WEEKLY_Y_H
+app:accessory\h\mmiacc_position.h  {size}  CALENDAR_MONTH_LINE0_TOP_H
+app:accessory\h\mmiacc_position.h  {size}  CALENDAR_MONTH_WEEKLY_Y_H
 // calendar--day--22X6--[77,209]
-app:accessory\h\mmiacc_position.h  {size2}  CALENDAR_BLOCK_HEIGHT_H
-app:accessory\h\mmiacc_position.h  {size2}  CALENDAR_MONTH_ITEM0_LEFT_H
+app:accessory\h\mmiacc_position.h  {size}  CALENDAR_BLOCK_HEIGHT_H
+app:accessory\h\mmiacc_position.h  {size}  CALENDAR_MONTH_ITEM0_LEFT_H
 // calendar--schdule--22X6--[209,205]
 // calendar--softkey--[205,+28]
 app:theme/h/mmi_position_{size}.h  MMI_FULLSCREEN_SOFTKEY_BAR_HEIGHT
 // calendar--Lunar--[138,+16]
-app:accessory\h\mmiacc_position.h  {size2}  CALENDAR_LUNAR_TITLE_RECT_H
+app:accessory\h\mmiacc_position.h  {size}  CALENDAR_LUNAR_TITLE_RECT_H
 
 
 // font
@@ -697,9 +697,9 @@ app:phone\c\mmiphone_wintab.c   MMIPHONE_PIN_PUK_REMAIN_HEIGHT
 
 //		==>GetPinPukEditRect
 // --set--pin--edit--top--20 #间距
-app:theme\h\mmidisplay_data.h  {size2}   MMI_PASSWORD_EDIT_TOP_MARGIN_H (_H应该未使用)
+app:theme\h\mmidisplay_data.h  {size}   MMI_PASSWORD_EDIT_TOP_MARGIN_H (_H应该未使用)
 // --set--pin--edit--h--36
-app:theme\h\mmidisplay_data.h  {size2}   MMI_PASSWORD_EDIT_HEIGHT
+app:theme\h\mmidisplay_data.h  {size}   MMI_PASSWORD_EDIT_HEIGHT
 
 // 用第1组
 app:phone\c\mmiphone_wintab.c   MMI_PIN_INPUT_USE_T107_STYLE
@@ -718,14 +718,14 @@ app:setting\c\mmiset_callwin.c   SET_MINUTE_REMINDER_LABLE_HEIGHT
 
 //		==>MMIAPISET_GetPwEditRect
 // --setcall--edit--top--2 #间距
-app:theme\h\mmidisplay_data.h  {size2}   MMI_NUMBER_EDIT_TOP_MARGIN
+app:theme\h\mmidisplay_data.h  {size}   MMI_NUMBER_EDIT_TOP_MARGIN
 // --setcall--edit--h--36
-app:theme\h\mmidisplay_data.h  {size2}   MMI_NUMBER_EDIT_TOP_MARGIN
+app:theme\h\mmidisplay_data.h  {size}   MMI_NUMBER_EDIT_TOP_MARGIN
 
 //		==>MMIAPISET_SetPwBg (不够就删了)
 // --setcall--img--35+20+36=91, 实际35+1+40+2+36=114  # 共用
-app:theme\h\mmidisplay_data.h  {size2}   MMI_PASSWORD_EDIT_TOP_MARGIN
-app:theme\h\mmidisplay_data.h  {size2}   MMI_PASSWORD_EDIT_HEIGHT
+app:theme\h\mmidisplay_data.h  {size}   MMI_PASSWORD_EDIT_TOP_MARGIN
+app:theme\h\mmidisplay_data.h  {size}   MMI_PASSWORD_EDIT_HEIGHT
 
 
 ### __EditSms__  (edit sms)

@@ -6,7 +6,7 @@ Save:node\C\study\Macro_app_8910pb.h \[1.3\] memory
 Save:node\C\study\Macro_app_8910pb.h \[1.4\] add
 Save:node\C\study\Macro_app_8910pb.h \[1.5\] delete
 Save:node\C\study\Macro_app_8910pb.h \[1.6\] search
-Save:node\C\study\Macro_app_8910pb.h \[1.7\] pbBak
+Save:node\C\study\Macro_app_8910pb.h \[1.7\] pbBak, instance
 Save:node\C\study\Macro_app_8910pb.h \[1.8\] 
 Save:node\C\study\Macro_app_8910pb.h \[1.9\] 
 Save:node\C\study\Macro_app_8910pb.h \[1.10\] 
@@ -27,20 +27,7 @@ Save:node\C\study\Macro_app_8910pb.h \[1.12\]
 //		====>OPEN:                         # open/save ==>RELOAD_SEARCH
 //		==>HandleEntryListWinMsg
 //		====>RELOAD_SEARCH:
-//		======>HandleMainReloadMsg
-//		========>MMIPB_MultiSearch         # 模糊查找/分组/排队分组
-//		==========>MMIPB_SearchQSortList
-//		============>.s_pb_qsort_list      # 字符索引表
-//		============>.s_pb_contact_list    # 索引表
-//		==========>MMIPB_SearchSubStringInList  # 搜号码或姓名
-//		========>MMIPB_ReadContactList     # 把搜索的结果显示出来
-//		============>.contact_list_info
-//		========>SetListItem               # 结果显示
-//		==========>MMIPB_GetListStyle
-//		============>GUIITEM_STYLE_ONE_LINE_BIGICON_TEXT_WITH_MASK_MS
-//		==========>MMIPB_SearchAndAppendItem
-//		============>SetListItemForSearch
-//		========>MMIPB_GetContactListIndex # 当前焦点
+//		======>HandleMainReloadMsg         # 参考后面的search
 //		==>HandleEntryListWinMsg
 //		====>PAINT:                        # ==>List/CTL_PAINT ==>ITEM_DATA 
 //		====>ITEM_DATA:                    # ==>
@@ -60,6 +47,8 @@ Save:node\C\study\Macro_app_8910pb.h \[1.12\]
 //		========>CTRLBASEEDIT_SetDeActiveBorderColor(, MMI_DARK_WHITE_COLOR);
 app:pb\c\mmipb_view.c  HandleEntryListWithSearchWinMsg
 
+//
+app:pb\c\mmipb_view.c  MMIPB_CONTACT_DISPLAY_ALL
 
 
 [1.2] __detail__
@@ -86,6 +75,8 @@ app:pb\c\Mmipb_menu.c  PB_OPTMENU_NODE_USED_SPACE
 //		====>CreatePbOptMenu
 //		======>GetMenuArrAddress
 //		========>.s_pb_main_opt_item
+//		========>.s_pb_main_empty_opt_item
+//		========>.s_pb_detail_basic_opt_item
 //		==========>PB_OPTMENU_NODE_ADDNEW
 //		======>.s_pb_menu
 //		========>.index  # 获取txt,func,Enable
@@ -116,8 +107,22 @@ app:pb\c\mmipb_view.c  void^HandleOperateReloadList
 
 [1.6] search
 
-
 // pb-list-search
+//		==>MMIPB_SearchSubStringInList         # 全字查找
+//		==>MMIPB_MultiSearch                   # 模糊查找/分组/排队分组
+//		====>MMIPB_CleanVisibleTable(group)    # --清除标记
+//		====>MMIPB_SearchQSortList             # --添加标记/分组
+//		======>.s_pb_qsort_list                # 字符索引表
+//		======>.s_pb_contact_list              # 索引表
+//		====>MMIPB_SearchSubStringInList  # 搜号码或姓名
+//		==>MMIPB_ReadContactList               # 把搜索的结果显示出来
+//		======>.contact_list_info
+//		==>SetListItem                         # 结果显示
+//		====>MMIPB_GetListStyle
+//		======>GUIITEM_STYLE_ONE_LINE_BIGICON_TEXT_WITH_MASK_MS
+//		====>MMIPB_SearchAndAppendItem
+//		======>SetListItemForSearch
+//		==>MMIPB_GetContactListIndex           # 当前焦点
 app:pb\c\mmipb_view.c  void^HandleMainReloadMsg
 
 
@@ -126,8 +131,8 @@ app:pb\c\mmipb_view.c  void^HandleMainReloadMsg
 // --auto backup test
 //		==>*#18#, 暗码测试
 //		==>MMIPB_TestAutoBackup
-//		====>MMIPB_OpenMainWin             # list_type 分支
-//		==>MMIPB_OpenPbWin                 # Applet.entry, 创建 instance
+//		====>MMIPB_OpenMainWin             # list_type 分支, 创建 instance
+//		==>MMIPB_OpenPbWin                 # Applet.entry
 //		====>.function_type                # function_type--bak_open--创建 分支
 //		====>PbCreateChildWin              # ...走不到
 app:pb\c\mmipb_export.c  MMIAPIPB_OpenAutoBackupWin

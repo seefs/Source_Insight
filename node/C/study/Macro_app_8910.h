@@ -87,6 +87,16 @@ app:idle\c\mainapp.c  MMIAPIIDLE_OpenIdleWin
 //		==>IdleWin_HandleMsg
 //		====>CANCEL:
 //		======>MMIAPISET_OpenFuncKeyWin
+//		====>OutputIdleWinNetworkName
+//		======>MMIAPIPHONE_GetSimAndServiceString
+//		========>MMIPHONE_GetNetworkNameString
+//		========>MMIAPIPHONE_GetServiceStatus
+//		==========>.g_service_status
+//		========>MMIPHONE_GetAciString
+//		==========>.s_network_acitable
+//		========>MMIPHONE_CatAciOpnSpnString
+//		==========>SelectOPNString
+//		==========>.s_network_name
 app:idle\c\mmiidle_cstyle.c  void^OutIdleWinContent
 app:idle\c\mmiidle_cstyle.c  void^DisplayIdleWinSoftkey
 // IDLE--8910
@@ -520,8 +530,6 @@ Save:node\C\study\Macro_res_color_8910.h  __file__
 
 [1.7] Setting
 
-// set--display (form)
-app:setting\c\mmiset_displaywin.c  MMI_RESULT_E^^HandleSetDisplayWindow
 // sec--pin (edit)
 app:phone\c\mmiphone_wintab.c  MMI_RESULT_E^HandlePinInputExceptPhone
 
@@ -535,6 +543,8 @@ Save:node\C\study\Macro_app_8910set.h  __reset__
 Save:node\C\study\Macro_app_8910set.h  __shortcut__
 Save:node\C\study\Macro_app_8910set.h  __startup__     # 开关机
 Save:node\C\study\Macro_app_8910set.h  __charge__      # 充电
+Save:node\C\study\Macro_app_8910set.h  __privacy__
+Save:node\C\study\Macro_app_8910set.h  __display__
 Save:node\C\study\Macro_app_8910set.h  
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __set_display__
@@ -634,20 +644,21 @@ Save:node\C\study\Macro_doc_cb8910.h
 
 
 
-
-
-
-
-
-
-
 [1.9] call
-
-// 销毁softkey？
-MMK_DestroyControl(MMICC_CONNECTED_STATE_LABEL_CTRL_ID);
-
-
 ### call
+// ==>app
+Save:node\C\study\Macro_app_8910call.h  __init__
+Save:node\C\study\Macro_app_8910call.h  __MT__           # 来电
+Save:node\C\study\Macro_app_8910call.h  __MO__           # 去电
+Save:node\C\study\Macro_app_8910call.h  __DIS__          # 挂断
+Save:node\C\study\Macro_app_8910call.h  __Ans__          # 接听
+Save:node\C\study\Macro_app_8910call.h  __112__          # 112
+Save:node\C\study\Macro_app_8910call.h  __Multi__        # 多卡通话
+Save:node\C\study\Macro_app_8910call.h  __opt__          # opt
+Save:node\C\study\Macro_app_8910call.h  __vib__          # vib
+Save:node\C\study\Macro_app_8910call.h  __record__       # record
+Save:node\C\study\Macro_app_8910call.h  __speaker__      # speaker
+Save:node\C\study\Macro_app_8910call.h  __other__
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __call__
 Save:node\C\study\Macro_pos_8910.h  __WaCall__
@@ -658,200 +669,6 @@ Save:node\C\study\Macro_res_image_wa8910.h __WaCall__
 Save:node\C\study\Macro_res_color_8910.h  __call__
 // ==>键
 Save:node\C\study\Macro_doc_8910.h  __keyKbd__
-
-
-// 流程--来电-MT，
-//		==>MMICC_HandlePsMsg
-//		====>CC_CallAlertingInd
-//		======>CC_CallSetupIndEx  #107
-//		======>CC_CallSetupInd    #8910
-//		========>MMICC_UpdateCallStatusDisplay      #mo mt dis共用
-app:cc\c\mmicc_app.c  case^APP_MN_SETUP_IND
-//		========>MMICC_UpdateCallStatusDisplay
-//		==========>CC_OpenMtCallWin
-//		============>OpenCallingWin
-//		==============>PdaDisplaySingleCallInfoForCommon
-app:cc\c\mmicc_{wintab}.c  MMICC_MT_CALLING_WIN_TAB  MMICC_ANIMATION_WIN_ID
-app:cc\c\mmicc_{wintab}.c  PdaDisplaySingleCallInfoForCommon  
-
-
-// 流程--去电-MO，
-//		==>MMICC_ProcessMakeCall  #107
-//		====>ProcessPhoneNumExt
-//		======>MakeCallReqExt
-//		========>MMICC_UpdateCallStatusDisplay
-//		==========>CC_OpenMoCallWin
-//		============>CC_CallStateDisplaying      # 对应 CC_FreeSimStatusSpace
-//		============>MMISUB_SetSubLcdDisplay     # sublcd
-//		============>OpenConnectedWin
-//		==============>PdaDisplaySingleCall
-//		============>DisplayCallAnimPhotoForCommon
-//		========>MMICC_EnableRemoteMute(FALSE)
-app:cc\c\mmicc_{wintab}.c  CC_HandleCcWinMsg
-app:cc\c\mmicc_{wintab}.c  MMICC_MO_CONNECTED_WIN_TAB  MMICC_STATUS_WIN_ID
-
-
-// 流程--挂断 DIS
-// 关闭这些窗口
-app:cc\c\mmicc_{wintab}.c  MMICC_MENU_WIN_ID
-app:cc\c\mmicc_{wintab}.c  MMICC_CALLLIST_WIN_ID
-app:cc\c\mmicc_{wintab}.c  MMICC_PROCESSING_WIN_ID
-app:cc\c\mmicc_{wintab}.c  MMICC_ANIMATION_WIN_ID
-app:cc\c\mmicc_{wintab}.c  MMICC_ADJUSTVOLUME_WIN_ID
-app:cc\c\mmicc_{wintab}.c  MMICC_HOLDMENU_WIN_ID        #
-app:cc\c\mmicc_{wintab}.c  MMICC_STATUS_WIN_ID
-//app:cc\c\.c  MMIIDLE_DIAL_MENU_WIN_ID
-//app:cc\c\mmicc_app.c MMICC_CALL_WAIT_INDICATOR_WIN_ID
-//app:cc\c\mmicc_app.c MMICC_ANIMATION_WIN_ID
-
-// 107 挂断
-//		==>HandleFlipDown
-//		====>CC_HandleDisconnectWinMsg
-//		==>MMICC_HandlePsMsg
-//		====>CC_DisconnectedCall
-//		======>CC_DisconnectedCallByIndex
-//		========>MMICC_OpenDisconnectWin(call_time)  #8910在前面
-//		==========>PdaDisplayDisconnectWin
-//		============>CC_TimeCountToStr(call_time)
-//		==========>MMICC_HandleOperAfterCallEnd
-//		============>MMISUB_SetSubLcdDisplay()
-app:cc\c\mmicc_app.c case^APP_MN_CALL_DISCONNECTED_IND
-
-
-// 流程--接听
-app:cc\c\mmicc_main.c  MSG_KEYUP_FLIP  CCApplet_HandleEvent
-// 流程--接听 107
-//		==>MMICC_HandlePsMsg
-//		====>case^APP_MN_SETUP_COMPLETE_CNF
-//		====>CC_SetupCompleteCnf
-//		======>MMICC_VibrateForConnectPrompt
-//		======>MMICC_UpdateCallStatusDisplay
-//		========>case^MMICC_MO_CONNECTED_IND
-//		========>MMICC_UpdateCurrentCallStatus
-// 流程--接听 8910
-//		==>CC_HandleCcAnimWinMsg
-//		====>GUIWIN_SeSoftkeytButtonTextId     # 静音模式不显示静音
-//		======>MMIAPICC_IsMtCallPlayingRing
-//		========>need_playring = TRUE;
-//		========>PlayNewCallRing
-//		====>MMICC_AnswerCall
-app:cc\c\mmicc_{wintab}.c  MMI_CALL_SOFTKEY_SILENT_FIX
-
-
-// 112
-//		==>MMIAPICC_IsEmergencyNum
-//		====>if(0 == strcmp(tele_num, "112"))     # 进112界面
-app:cc\c\mmicc_{wintab}.c  MMICC_MENU_EMERGENCY_OPT_WIN_TAB  
-
-
-// 多卡通话--option
-//		==>HandleHoldMenuWinMsg
-//		====>MMICC_HoldCall
-//		======>CC_HoldCall
-
-// 多卡通话--挂断
-//		==>MMICC_HandlePsMsg
-//		====>CC_DisconnectedCall
-//		======>MMICC_UpdateCallStatusDisplay
-//		======>MMICC_OpenDisconnectWin        #8910在前面
-//		======>CC_DisconnectedCallByIndex
-//		======>CC_HandleDisconnectedInMPTY    # s_call_context.call_number -1
-
-// 多卡通话--接听
-//		==>MMICC_HandlePsMsg
-//		====>case^APP_MN_SETUP_COMPLETE_CNF
-//		====>CC_SetupCompleteCnf
-//		======>MMICC_UpdateCallStatusDisplay
-//		========>case^MMICC_MO_CONNECTED_IND
-//		========>MMICC_UpdateCurrentCallStatus
-//		==========>CustomCreateAndDisplayMultiCall
-//		==========>DisplayCallInfoForMulti
-//		============>CustomShowMultiCallList    #list
-
-// 多卡通话--会议电话
-//		========>MMICC_UpdateCurrentCallStatus
-//		==========>PdaDisplaySingleCall
-//		============>PdaDisplayMPTYCallInfoForCommon
-
-// 多卡通话--拨出
-//		========>MMICC_UpdateCallStatusDisplay
-//		==========>CC_OpenMoCallWin
-//		============>OpenConnectedWinByWinTab
-//		==============>CustomDisplayMultiCallInfoForCommon   #show
-//		================>CustomShowMultiCallList    #list
-
-// 多卡通话--单独通话
-//		==========>HandleCCListWinMsg
-//		============>CustomUpdateConferenceList
-//		==============>IMAGE_CC_AVATAR_UNKNOWN_SMALL
-//		============>CustomUpdateMultiCallListAnim
-//		==========>HandleHoldMenuWinMsg
-//		============>CC_CallList
-//		==============>CTRLLIST_SetBgColor
-
-// 多卡通话--来电
-//		==========>PdaDisplayMultiCall
-//		============>PdaDisplayCallInfoForMultiHoldCall   #show
-
-// 流程--update
-//		==>CC_HandleCcWinMsg
-//		====>MMICC_UpdateCurrentCallStatus
-
-
-// call--opt--8910
-//		==>MENU:
-//		==>OpenCallMenu          # add note
-//		====>MMICC_HOLDMENU_WIN_TAB
-//		======>HandleHoldMenuWinMsg
-// call--opt--107
-//		==>MENU:
-//		==>OpenCCHoldMenu
-app:cc\c\mmicc_{wintab}.c  MMI_RESULT_E^HandleHoldMenuWinMsg  
-//    if ((MMICC_AUDIO_DEV_BT == MMICC_GetCurrentDev()))
-
-
-// call--vib--8910
-//		==>COMPLETE_IND: 接通
-//		====>CC_SetupCompleteInd
-//		======>MMICC_VibrateForConnectPrompt
-//		==>
-//		====>CC_SetupCompleteCnf
-//		======>MMICC_VibrateForConnectPrompt
-//		==>CC_HandleCcAnimWinMsg
-//		====>OPEN:
-//		====>PlayNewCallRing
-//		======>MMIAPICC_StartRingOrVibrate
-
-// call--record--8910
-//		==>CC_HandleCcWinMsg
-//		====>WEB:
-//		====>HandleRecordOpt
-//		======>StartCCRecord
-//		========>MMIRECORDSRV_StartRecord
-//		==========>RequestHandle
-//		====>CANCEL:
-//		======>EnableHandfreeMode
-//		========>softkey:
-//		==========>BM_UpdateLButton_WithText
-
-
-// call--speaker--8910
-//		==>CC_HandleCcWinMsg
-//		====>open:            # 来电
-//		====>STARTTIMER:      # 去电
-//		====>UPDATE_BUTTON:   # 去电
-//		====>MSG_CC_CONNECT_OPEN_WINDOW:
-//		====>MSG_NOTIFY_ANIM_UPDATE_END:
-//		==>HandleCCWinWebMsg
-//		====>MMISRVAUD_ROUTE_SPEAKER
-//		==>HandleCCWinPenOkMsg
-//		====>MMISRVAUD_ROUTE_SPEAKER
-//
-//		if(MMIAPICC_IsHandFree() == FALSE)
-//			EnableHandfreeMode(!MMIAPICC_IsHandFree());
-
-// call--助听功能--8910
-app:cc\c\mmicc_{wintab}.c  MMI_IDLE_8_KEY_LONG_TO_HANDHOLD  
 
 
 [1.10] pb, cl
@@ -892,7 +709,7 @@ app:pb\c\mmipb_view.c  MMIPB_ENTRY_LIST_TAB_WIN_TAB          # style-1 (107)
 // ==>app
 Save:node\C\study\Macro_app_8910pb.h  __init__
 Save:node\C\study\Macro_app_8910pb.h  __detail__
-Save:node\C\study\Macro_app_8910pb.h  __memory__
+Save:node\C\study\Macro_app_8910pb.h  __memory__  #option
 Save:node\C\study\Macro_app_8910pb.h  __add__
 Save:node\C\study\Macro_app_8910pb.h  __pbBak__
 Save:node\C\study\Macro_app_8910pb.h  

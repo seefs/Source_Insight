@@ -154,9 +154,12 @@ app:im\c\mmiim_cstar.c  BOOLEAN^HandleSysMsg
 //		============>MMIIM_SwitchingCreateWin
 //		==============>.lang = MMIAPIIM_GetLanguage() = 1
 //		================>InitIMDisplayValues
-//		==================>s_simpchs_im_name_list,  cnt 2 (cur)
-//		==================>s_abc_im_name_list,      cnt 3
-//		==================>s_123_im_name_list,      cnt 1
+//		==================>case _ENGLISH:
+//		====================>s_english_im_name_list,  cnt 
+//		==================>case _ENGLISH:
+//		====================>s_simpchs_im_name_list,  cnt 2 (cur)
+//		====================>s_abc_im_name_list,      cnt 3
+//		====================>s_123_im_name_list,      cnt 1
 //		================>MMIIM_SWITCH_IM_WIN_TAB
 //		==>OnIMClicked                               # select
 //		====>s_im_def
@@ -187,6 +190,7 @@ app:im\c\mmiim_im_switching.c  MMI_RESULT_E^HandleSwitchingIMWinMsg
 //		====>ACTIVE:
 //		====>BASEEDIT_CreateImCtrl
 //		======>ConstructObject
+//		========>...
 //		========>ImConstruct
 //		==========>MMITHEME_IMGetDefaultMethod        # 改为26key输入法
 //		============>GUIIM_M_PINYIN   (default)

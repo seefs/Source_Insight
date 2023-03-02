@@ -9,8 +9,8 @@ Save:node\C\study\Macro_app_8910set.h \[1.6\] startup
 Save:node\C\study\Macro_app_8910set.h \[1.7\] charge
 Save:node\C\study\Macro_app_8910set.h \[1.8\] envSet
 Save:node\C\study\Macro_app_8910set.h \[1.9\] envPlay
-Save:node\C\study\Macro_app_8910set.h \[1.10\] 
-Save:node\C\study\Macro_app_8910set.h \[1.11\] 
+Save:node\C\study\Macro_app_8910set.h \[1.10\] privacy
+Save:node\C\study\Macro_app_8910set.h \[1.11\] display
 Save:node\C\study\Macro_app_8910set.h \[1.12\] 
 
 
@@ -41,8 +41,8 @@ HandleSetLanguageInputContentWindow 	 //ÊäÈëÓïÑÔ
 
 //		==>MMIAPISET_OpenCallSettingsWindow
 //		====>HandleCallSettingsWindow
-//		======>
-//		========>
+//		======>init:
+//		========>InitPdaCallSettingsCtrl
 //		==========>
 //		============>
 //		==============>
@@ -119,23 +119,27 @@ app:setting\c\mmiset_func.c  MMIENVSET_ResetEnvSetSetting
 //
 app:setting/c/mmiset_phonewin.c  MMISET_INPUT_RESET_FACTORY_PWD_WIN_TAB
 
+### phone psw
+//		==>InitPhonePwd
+//		====>.MMISET_PRIVACY_PROTECT_INIT_PWD  1234
+app:setting\c\mmiset_security.c  MMISET_IsCorrectPrivacyProtectPwd
 
 
 [1.5] __shortcut__
 // 
-MS_MMI_Main/source/mmi_app/app/setting/c/mmiset_shortcut.c  ->direction_shortcut
+app:setting/c/mmiset_shortcut.c  ->direction_shortcut
 
 // fun 4
-MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_shortcut.c  OpenSelectedShortcutWin
+app:setting\c\mmiset_shortcut.c  OpenSelectedShortcutWin
 // key 4
-MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_shortcut.c  GetDirectionKey
+app:setting\c\mmiset_shortcut.c  GetDirectionKey
 // key 2
-MS_MMI_Main\source\mmi_app\app\setting\c\mmiset_shortcut.c  GetFunctionKey
+app:setting\c\mmiset_shortcut.c  GetFunctionKey
 // key web
-MS_MMI_Main\source\mmi_app\app\idle\c\mmiidle_cstyle.c  case^MSG_APP_WEB
+app:idle\c\mmiidle_cstyle.c  case^MSG_APP_WEB
 
 
-### ÉèÖÃ½Ý¾¶¶ÔÆë # 107
+### ½Ý¾¶²Ëµ¥(²»°üÀ¨½Ý¾¶edit)¶ÔÆë # 107
 // id
 MMISET_SHORTCUT_MAX / MMISET_SHORTCUT_TYPE_E
 // txt
@@ -149,18 +153,26 @@ mmiset_shortcut_menu_func_arr
 MMISET_SHORTCUT_MAX / MMISET_SHORTCUT_TYPE_E
 // key--txt
 s_shortcut_list_text_id
-// key--func
-OpenSelectedShortcutWin--func_arr
-// smart--idle--short
+// key--func_arr
+app:setting\c\mmiset_shortcut.c  OpenSelectedShortcutWin
+// smart--idle--short   # 8910
 app:setting\c\mmiset_shortcut.c  OpenShortcutFunWin
 
-// short--menu
+
+// short--menu--main
 //		==>HandleSetShortcutWindow
 //		====>SetShortcutSetlistParam
 //		======>.s_shortcut_list_text_id
 //		========>MMISETLIST_CreateWin
 //		====>SaveAllShortcutSettings
 //		======>SetShortcutInfo
+app:setting\c\mmiset_shortcut.c  HandleSetShortcutWindow
+//
+
+
+### short
+// ==>image
+Save:node\C\study\Macro_res_image_8910.h  __short__
 
 
 ### mini¶ÔÆë (Î´Ê¹ÓÃ)
@@ -338,11 +350,20 @@ app:setting\c\mmiset_ring.c PlayRing
 MMISRVMGR_Request
 
 
-[1.10] 
+[1.10] __privacy__
+//
+app:setting\c\mmiset_security.c  HandleSelectPrivacyProtectWindow
 
 
 
-[1.11] 
+
+[1.11] __display__
+// set--display (form)
+//		==>
+//		====>
+app:setting\c\mmiset_displaywin.c  MMI_RESULT_E^^HandleSetDisplayWindow
+
+
 
 
 

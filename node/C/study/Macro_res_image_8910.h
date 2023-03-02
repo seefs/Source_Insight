@@ -606,6 +606,13 @@ images:common\MMI_RES_DEFAULT\IMAG\List\
 source:mmi_app\common\h\common_mdu_def.h   IMAGE_CONTROL_LIST_CHECK_DISABLED
 
 
+### __short__
+//
+images:set\MMI_RES_DEFAULT\IMAG\Phone_setting\
+//
+app:setting\h\set_mdu_def.h   IMAGE_SET_DIRKEY_RIGHT
+
+
 
 [1.18] __pic__
 
