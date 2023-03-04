@@ -589,7 +589,7 @@ MS_MMI_Main/source/mmi_app/app/idle/c/mainapp.c  iTimeOut  KEYLOCK_LSK_TIME
 // time--ALERT
 source:mmi_service\export\inc\mmi_custom_define.h  xx  SBD_ALERT_WIN_TIME_PERIOD_1S
 // time--format-12
-app:setting\c\mmiset_display.c  MMI_TIME_DISPALY_TYPE_DEFAULT_12
+Save:node\C\study\Macro_app_8910set.h  __timeFormat__
 
 // 系统时间
 MS_Ref/source/base/src/sys_time.c  s_sys_default_date

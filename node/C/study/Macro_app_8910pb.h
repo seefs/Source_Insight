@@ -2,8 +2,8 @@
 //目录:
 Save:node\C\study\Macro_app_8910pb.h \[1.1\] init
 Save:node\C\study\Macro_app_8910pb.h \[1.2\] detail
-Save:node\C\study\Macro_app_8910pb.h \[1.3\] memory
-Save:node\C\study\Macro_app_8910pb.h \[1.4\] add
+Save:node\C\study\Macro_app_8910pb.h \[1.3\] add
+Save:node\C\study\Macro_app_8910pb.h \[1.4\] memory
 Save:node\C\study\Macro_app_8910pb.h \[1.5\] delete
 Save:node\C\study\Macro_app_8910pb.h \[1.6\] search
 Save:node\C\study\Macro_app_8910pb.h \[1.7\] pbBak, instance
@@ -12,6 +12,20 @@ Save:node\C\study\Macro_app_8910pb.h \[1.9\] blacklist
 Save:node\C\study\Macro_app_8910pb.h \[1.10\] 
 Save:node\C\study\Macro_app_8910pb.h \[1.11\] 
 Save:node\C\study\Macro_app_8910pb.h \[1.12\] 
+Save:node\C\study\Macro_app_8910pb.h \[1.13\] 
+Save:node\C\study\Macro_app_8910pb.h \[1.14\] clMain
+Save:node\C\study\Macro_app_8910pb.h \[1.15\] clInit    #50记录
+Save:node\C\study\Macro_app_8910pb.h \[1.16\] clDeltail
+Save:node\C\study\Macro_app_8910pb.h \[1.17\] 
+Save:node\C\study\Macro_app_8910pb.h \[1.18\] 
+Save:node\C\study\Macro_app_8910pb.h \[1.19\] 
+Save:node\C\study\Macro_app_8910pb.h \[1.20\] 
+Save:node\C\study\Macro_app_8910pb.h \[1.21\] 
+Save:node\C\study\Macro_app_8910pb.h \[1.22\] 
+Save:node\C\study\Macro_app_8910pb.h \[1.23\] 
+Save:node\C\study\Macro_app_8910pb.h \[1.24\] 
+Save:node\C\study\Macro_app_8910pb.h \[1.25\] 
+Save:node\C\study\Macro_app_8910pb.h \[1.26\] 
 
 
 
@@ -54,11 +68,64 @@ app:pb\c\mmipb_view.c  MMIPB_CONTACT_DISPLAY_ALL
 [1.2] __detail__
 
 // pb-detail
+//		==>SetEntryDetails
+//		====>.icon && name
+//		======>AppendListItemDetail
+//		====>.num
+//		=======>MMIPB_SetContacItem
+//		========>AppendListNumberItem
+//		====>.group
+//		========>
+//		==========>
+//		============>
+//		==============>
 app:pb\c\mmipb_view.c  MMI_RESULT_E^HandleEntryDetailWinMsg
 
 
 
-[1.3] __memory__
+MMK_CloseWin
+
+
+[1.3] __add__
+
+MMIPB_MAX_NV_PHONE_NUM
+
+// 默认2个联系人
+app:pb\c\mmipb_menu.c  case^MMIPB_LISTBOX_INDEX_NUMBER_MOBILE        # 107
+// 增加5个联系人
+app:pb\c\mmipb_menu.c  case^MMIPB_LISTBOX_INDEX_NUMBER_OFFICE        # 107
+
+
+// pb-add--simSelect
+app:pb\c\mmipb_menu.c  MMI_RESULT_E^HandleStorageSelectWinMsgList
+// pb-add
+//		==>InitContactEditItems
+//		====>.photo
+//		====>.name
+//		=======>...
+//		========>GUILIST_AppendItem
+//		====>.num
+//		=======>SetContactAddOrEditItem
+//		====>.group
+//		========>
+//		====>.ring
+app:pb\c\mmipb_menu.c  MMI_RESULT_E^HandleContactAddWinMsg        # 107
+app:pb\c\mmipb_menu.c  MMI_RESULT_E^HandleContactAddEditWinMsg
+// 	GUIEDIT_SetStyle(first_name_ctr_id,GUIEDIT_STYLE_MULTI_DYN_DOWN);
+// pb-add--edit
+//		==>edit_text:
+//		====>
+//		==>edit_number:
+//		====>
+
+// im
+//		==>SetInputBox
+//		====>GUIEDIT_SetIm,
+//		====>CTRLBASEEDIT_SetIm
+app:im\c\mmiim_im_switching.c  MMIIM_REMOVE_ABC_STYLE
+
+
+[1.4] __memory__
 
 
 // pb-memory
@@ -81,21 +148,6 @@ app:pb\c\Mmipb_menu.c  PB_OPTMENU_NODE_USED_SPACE
 //		======>.s_pb_menu
 //		========>.index  # 获取txt,func,Enable
 //		==========>AddMenuEnable
-
-
-
-[1.4] __add__
-
-
-// pb-add--simSelect
-app:pb\c\mmipb_menu.c  MMI_RESULT_E^HandleStorageSelectWinMsgList
-// pb-add--edit
-//		==>edit_text:
-//		====>
-//		==>edit_number:
-//		====>
-app:pb\c\mmipb_menu.c  MMI_RESULT_E^HandleContactAddEditWinMsg
-// 	GUIEDIT_SetStyle(first_name_ctr_id,GUIEDIT_STYLE_MULTI_DYN_DOWN);
 
 
 [1.5] 
@@ -240,6 +292,7 @@ app:pb\h\mmipb_nv.h  MMINV_PHONEBOOK_MAIN_LAST_ENTRY  #107
 //	MAX_STATIC_SPACE_SIZE大小 + X
 //	MAX_SYSTEM_SPACE_SIZE大小 - X
 MS_Customize\source\product\config\uis8910ff_refphone\mem_cfg.c  252
+MS_Customize\source\product\config\ums9117_barphone\mem_cfg.c  252
 
 //每增加100条联系人,APP HEAP增加情况：
 //仅存一个号码：～14K
@@ -311,6 +364,9 @@ prj:project_{cur}.mk   MMI_BLACK_AND_WHITE_LIST_ADD_SETTING = TRUE
 //		==>20,40,30
 source:mmi_service\export\inc\mmipb_common.h  MMIPB_NAME_MAX_LEN
 
+### sim pb num
+//		==>300+100
+source:mmi_service\export\inc\mmipb_common.h  MMIPB_SIM_MAX_RECORD_NUM
 
 
 [1.11] 
@@ -328,12 +384,139 @@ source:mmi_service\export\inc\mmipb_common.h  MMIPB_NAME_MAX_LEN
 
 
 
-[1.14] 
+[1.14] __clMain__
+//
+//1.cl-menu
+app:cl\c\Mmicl_{wintab}.c   MMICL_ICON_MAIN_MENU_WIN_TAB
+// cl--menu(240)
+app:cc\c\mmicc_menutable.c GUIMENU_ITEM_T^menu_cl
+
+
+//2.cl-list
+// cl--title
+app:cl\c\Mmicl_{wintab}.c   HandleLogListWindow
+### __clNum__
+
+// str
+InitPdaCallLogListCtrl        CallLog
+
+
+
+[1.15] __clInit__
+
+// cl list--(107)
+app:cl\c\Mmicl_{wintab}.c   AppendLogListItem
+
+// cl--read
+//		==>MMICL_ReadNV
+//		====>MMICL_ReadAllNV
+//		====>MMICL_RECORD_TOTAL_NUM     # 80+20=100
+//		======>80 40, 看起来uint8最大数只能256-20
+source:mmi_service\export\inc\mmi_custom_define.h  MMICL_RECORD_MAX_NUM
+// cl--write 实际NV
+//		==>MMICL_WriteNV
+//		====>.header
+//		====>.record
+//		======>50000+28~38
+//		========>EFS_NvitemWrite
+//		========>应该用的是RAM: 107 不好算
+source:mmi_app\kernel\h\mmi_modu_main.h  MMIUSERNV_CL_CALL_ALL_CONTENT_BEGIN 2
+//		======>0~9
+source:mmi_app\app\cl\h\mmicl_internal.h  MMICL_RECORD_NVITEM_COUNT
+//		==>CC_DisconnectedCallByIndex
+//		====>MMIAPICL_RecordCallInfo(, calllog_type, cl_info )   # 模拟时调用这个
+//		======>AddNewCallInfo
+//		========>AddNewDetailCallInfo
+//		========>MMICL_WriteNV(MMICL_CALL_ALL, arraycall_info)
+app:cc\c\mmicc_app.c   CC_DisconnectedCall(msg_id, )
+
+
+// cl--Init
+//		==>SetLogListItem
+//		====>.arraycall_info
+//		======>MMICL_GetRecordInfo
+//		====>AppendLogListItem
+//		======>.sim_name_str
+//		======>.name_number_str
+//		======>.time_str
+//		======>...
+//		=======>GUILIST_AppendItem
+//		======>
+//		========>
+//		==========>
+//		============>
+app:cl\c\Mmicl_{wintab}.c   HandleCallLogChildWindow
+
+
+//		==>
+//		====>
+//		======>
+//		========>
+//		==========>
+//		============>
 
 
 
 
-[1.15] 
+[1.16] __clDeltail__
+
+//3.cl-deltail
+//		==>从号码获取姓名
+app:cl\c\Mmicl_{wintab}.c   InitLogListDetailContactItem
+// cl deltail--调显示位置
+app:cl/c/Mmicl_{wintab}.c   AppendLogListDetailItem
+// cl list--(107)
+app:cl\c\Mmicl_{wintab}.c   AppendLogListItem
+
+
+
+
+[1.17] __clTab__
+
+
+
+
+[1.18] 
+
+
+
+
+[1.19] 
+
+
+
+
+[1.20] 
+
+
+
+
+[1.21] 
+
+
+
+
+[1.22] 
+
+
+
+
+[1.23] 
+
+
+
+
+[1.24] 
+
+
+
+
+[1.25] 
+
+
+
+
+[1.26] 
 
 
 

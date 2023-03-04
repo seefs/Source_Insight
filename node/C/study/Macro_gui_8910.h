@@ -582,8 +582,7 @@ ctrl:editbox/c/ctrlbaseedit_internal.c  BASEEDIT_DisplayEditExtraArea
 ctrl:editbox\c\ctrlbaseflex_display.c   void^DisplayTextString
 // --form--edit--im/pen--display  (font)
 //		====>DisplayTitleSubText
-//		======>title_ptr->sub_font
-ctrl:Title\c\ctrltitle.c  void^DisplayTitleSubText
+//		======>...
 
 // --form--edit--label--display
 //		==>.is_active
@@ -1200,6 +1199,16 @@ ctrl:Form\c\ctrlform.c  BOOLEAN^FormConstruct
 //		======>common_theme.bg
 //		====>DisplayTextString
 //		======>common_theme.font.color
+
+//
+//		==>DisplayTitleSubText
+//		====>.sub_str
+//		======>CTRLTITLE_SetSubTextByPtr
+//		====>title_ptr->sub_font
+//		======>
+//		==>BaseFlexCtrlDisplayLeftNum
+//		====>CTRLIM_ImGetText
+ctrl:Title\c\ctrltitle.c  void^DisplayTitleSubText
 
 
 ### EDIT_DATE

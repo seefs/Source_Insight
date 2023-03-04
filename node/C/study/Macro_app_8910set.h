@@ -18,6 +18,7 @@ Save:node\C\study\Macro_app_8910set.h \[1.12\]
 
 [1.1] __phone__
 
+### phone
 // set--phone
 //		==>MMIAPISET_EnterPhoneSettingWin
 //		====>MMISET_PHONE_SETTING_WIN_TAB  #128*160
@@ -30,11 +31,24 @@ app:setting/c/mmiset_phonewin.c  MMISET_SET_PHONE_WIN_TAB
 //		==>MENU_SET_PHONE
 app:setting\c\mmiset_menutable.c  menu_set_phone_setting
 
-// set--phone--time
+
+### phone--time
+// __timeFormat__
 app:setting\c\mmiset_datetime.c  HandleSetTimeDateWindow
 
+// 时间显示格式 12/24
+app:setting\c\mmiset_func.c  MMIAPISET_SetTimeDisplayType
+// 日期显示格式 
+app:setting\c\mmiset_func.c  MMIAPISET_SetDateDisplayType
+//		==>MMISET_InitDateDisplayType
+//		====>.s_date_display_type
+source:mmi_service\export\inc\mmi_custom_define.h  MMISET_DEFAULT_DATE_YMD
+
+
+### phone--lang
 // set--lang
 HandleSetLanguageInputContentWindow 	 //输入语言
+
 
 
 [1.2] __callset__
@@ -362,6 +376,11 @@ app:setting\c\mmiset_security.c  HandleSelectPrivacyProtectWindow
 //		==>
 //		====>
 app:setting\c\mmiset_displaywin.c  MMI_RESULT_E^^HandleSetDisplayWindow
+
+
+
+// set--display--idle
+app:setting\c\mmiset_displaywin.c  MMI_RESULT_E^^HandleSetIdleDisplayWindow
 
 
 

@@ -708,7 +708,7 @@ app:pb\c\mmipb_view.c  MMIPB_ENTRY_LIST_TAB_WIN_TAB          # style-1 (107)
 ### pb
 // ==>app
 Save:node\C\study\Macro_app_8910pb.h  __init__
-Save:node\C\study\Macro_app_8910pb.h  __detail__
+Save:node\C\study\Macro_app_8910pb.h  __detail__     #
 Save:node\C\study\Macro_app_8910pb.h  __memory__     # option
 Save:node\C\study\Macro_app_8910pb.h  __add__
 Save:node\C\study\Macro_app_8910pb.h  __pbBak__
@@ -723,38 +723,17 @@ Save:node\C\study\Macro_res_image_8910.h  __pb__
 
 
 
-
-
 ### cl
-
-//1.cl-menu
-app:cl\c\Mmicl_wintab.c   MMICL_ICON_MAIN_MENU_WIN_TAB
-// cl--menu(240)
-app:cc\c\mmicc_menutable.c GUIMENU_ITEM_T^menu_cl
-
-//2.cl-list
-// cl--title
-app:cl\c\Mmicl_wintab.c   HandleLogListWindow
-app:cl\c\Mmicl_wintab.c   HandleCallLogChildWindow
-
-//3.cl-deltail
-//		==>从号码获取姓名
-app:cl\c\Mmicl_wintab.c   InitLogListDetailContactItem
-// cl deltail--调显示位置
-app:cl/c/Mmicl_wintab.c  AppendLogListDetailItem
-// cl list--(107)
-app:cl\c\Mmicl_wintab.c   AppendLogListItem
-//
-app:cl\c\mmicl_custom_wintab.c   AppendLogListItem
-
-// str
-InitPdaCallLogListCtrl        CallLog
-
-### cl
+// ==>app
+Save:node\C\study\Macro_app_8910pb.h  __clMain__
+Save:node\C\study\Macro_app_8910pb.h  __clInit__    #50条记录
+Save:node\C\study\Macro_app_8910pb.h  __clDeltail__
+Save:node\C\study\Macro_app_8910pb.h  __clTab__
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __cl__
 // ==>image
 Save:node\C\study\Macro_res_image_8910.h  __cl__
+
 
 
 
@@ -984,7 +963,7 @@ Save:node\C\study\Macro_res_image_8910.h __pic__
 
 [1.13] record
 // enter
-//		==>MMIAPIRECORD_OpenMainWin
+//		==>MMIAPIRECORD_OpenMainWin             # 8910
 //		====>SPRD_RECORD_APPLET_ID
 //		====>MMK_StartApplet
 //		======>MMIRECORD_RegAppletInfo
@@ -994,6 +973,7 @@ Save:node\C\study\Macro_res_image_8910.h __pic__
 //		==>MMIRECORD_MAINPLAY_WIN_TAB
 //		====>HandleRecordMainPlayWinMsg   ## appMsg
 //		======>MMIRECORD_HandleRecordMainPlayWinMsg
+//		==>MMIRECORD_OpenMainWin                # 107
 app:record\c\mmirecord_common_wintab.c  MMI_RESULT_E^HandleRecordMainPlayWinMsg
 //		========>MMK_CreateCtrlByWinTabEx
 //		==========>MMIRECORD_MAINPLAY_WIN_CTRL_TAB
@@ -1588,11 +1568,10 @@ app:accessory\c\mmicalendar_main.c MMIAPICALEND_OpenCalendarQueryByDate
 app:accessory\c\mmischedule.c  MMI_RESULT_E^HandleSchViewListWinMsg
 
 
-// jewish 犹太日历
-app:accessory\c
-
 
 ### calen
+// ==>app
+Save:node\C\study\Macro_app_8910other.h  __jewish__   #犹太日历
 // ==>pos/font/color
 Save:node\C\study\Macro_pos_8910.h  __calen__
 // ==>image

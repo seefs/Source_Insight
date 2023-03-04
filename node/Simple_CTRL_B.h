@@ -6,7 +6,6 @@ Save:node\Macro_History.h
 Save:node\Macro_Future.h
 Save:node\Macro_Memory.h
 Save:node\Macro_tmp.h
-patch:ssh\Macro_user_psw.h
 
 //C
 Save:node\C\Macro_Note_C.h
@@ -34,25 +33,12 @@ Save:Help\Macro_Note_Test.h   goto_word
 /***********************************************************************/
 
 
-//
-// 259-15的internet/ims, 
 
 
-// 杀毒
-
-//定时激活--翻译
-//定时激活--要不要加条件，减步骤
 
 
-// 查看 svn--git--多国翻译是否超时
 
 
-//
-//volte参数过来，给一次提个CQ出个版本
-
-
-//
-//加移动lock 460 01
 
 
 
