@@ -112,16 +112,20 @@ config:keymap_cfg.c  SCI_VK_CALENDER
 ### key (im)
 // 详细键值
 Save:node\C\study\Macro_im_8910.h  __keymap__
-//
+// --sms/im/input
 Save:node\C\study\Macro_im_8910.h  __LONG_0__
+Save:node\C\study\Macro_im_8910.h  __simulator__
+Save:node\C\study\Macro_im_8910.h  __menuInput__
 // --key--虚拟值转实际值
-Save:node\C\study\Macro_doc_8910.h  __keyKbd__
+Save:node\C\study\Macro_doc_8910key.h  __keyKbd__
 // --key--发送信号
-Save:node\C\study\Macro_doc_8910.h  __keySig__
+Save:node\C\study\Macro_doc_8910key.h  __keySig__
 // --key--保存状态
-Save:node\C\study\Macro_doc_8910.h  __keyStatus__
+Save:node\C\study\Macro_doc_8910key.h  __keyStatus__
 // --key--点亮屏/侧键
-Save:node\C\study\Macro_doc_8910.h  __keySlide__
+Save:node\C\study\Macro_doc_8910key.h  __keySlide__
+// --key--SOS
+Save:node\C\study\Macro_doc_8910key.h  __keySOS__
 
 
 
@@ -250,6 +254,11 @@ prj:project_{cur}.mk DC_FLASH_SUPPORT = TRUE
 prj:{cfg}.cfg  DC_FLASH_SUPPORT   = TRUE
 // 7701
 prj:project_{cur}.mk SENSOR_CHIP
+
+
+### 双摄像头(默认单)：
+//prj:project_{cur}.mk SBD_DUAL_CAMERA_SUPPORT
+prj:project_{cur}.mk _CAMER
 
 
 ### 新CAM
@@ -385,20 +394,8 @@ source:resource\Common\RING\
 
 
 [2.3] 配置
-// 双摄像头(默认单)：
-//prj:project_{cur}.mk SBD_DUAL_CAMERA_SUPPORT
-prj:project_{cur}.mk _CAMER
 
-
-// 四频 / 2频设置;开就是2频：
-//prj:project_{cur}.mk __SBD_RF_TWO_BAND_SUPPORT__
-//prj:project_{cur}.mk SBD_RF_TWO_BAND_SUPPORT
-
-// 频段-用mk方式
-prj:project_{cur}.mk  WCDMA_BANDS_SUPPORT = BAND_1_5_8
-prj:project_{cur}.mk  TDD_BANDS_SUPPORT = BAND_38_39_40_41   #LTE TDD band
-prj:project_{cur}.mk  FDD_BANDS_SUPPORT = BAND_1_3_5_8  # LTE FDD Band
-// 频段-用nv方式(不要加mk)
+// 频段-用mk/nv
 Save:node\C\study\Macro_nv_sim8910.h  __BAND__
 
 // 不带马达：
@@ -407,6 +404,8 @@ prj:project_{cur}.mk  ELT_NO_VIBRATOR
 prj:project_{cur}.mk  VIRTUAL_VIBRATE_FUNC
 prj:project_{cur}.mk  REMOVE_VIBRA_AND_RING  # tts
 prj:project_{cur}.mk  VIBRATE_DRIVER_VOLT_3_0V
+// 107
+prj:project_{cur}.mk
 
 
 // 双卡：
@@ -485,42 +484,26 @@ Save:node\C\study\Macro_res_8910.h __lang__
 
 
 
-[2.6] 情景模式 音频参数:
-// 外置K类功放：
-prj:project_{cur}.mk __HHT_EXT_AMPLIFIER_CLASS_K__ = TRUE
+[2.6] 音频
 
-// 软件2合1：FALSE是喇叭听筒独立(硬件二合一)，分开是软件2合1
-prj:project_{cur}.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = FALSE
-prj:project_{cur}.mk SBD_EARPIECE_SPEAK_USE_ONE
-prj:project_{cur}.mk CUSTOMER = S039_JX_2IN1                  # 二合一的音频（带K类的音频不同）
-\audio\audio_dsp_codec_6531.nvm    0x6C0/硬件2合1;    0x638/软件2合1
-
-// 三合一：
-prj:project_{cur}.mk CUS_ADD_SHAKE= TRUE  三合一喇叭宏        
-prj:project_{cur}.mk VIRTUAL_VIBRATE_FUNC
-prj:project_{cur}.mk __SPEAKER_VIB_INTENSITY_WEAK__
-prj:project_{cur}.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = TRUE 三合一同时开
-
-
-### 107
-// 独立听筒
-prj:project_{cur}.mk  AUDIO_EXT_PA= TRUE
-prj:project_{cur}.mk  RCV_THROUGH_SPK= FALSE
-// 听筒二合一
-prj:project_{cur}.mk  AUDIO_EXT_PA= FALSE
-prj:project_{cur}.mk  SPK_THROUGH_HPR= FALSE
-prj:project_{cur}.mk  RCV_THROUGH_SPK= TRUE
+// 二合一/三合一
+Save:node\C\study\Macro_nv_audio8910.h  __107_2N1__
+Save:node\C\study\Macro_nv_audio8910.h  __8910_2N1__
+Save:node\C\study\Macro_nv_audio8910.h  __8910_3N1__
+Save:node\C\study\Macro_nv_audio6531E.h  __6531_K__
 
 
 
 
 [2.7] 手电筒
 // 手电筒
-prj:project_{cur}.mk HHT_ADD_TORCHLIGHT= TRUE
-prj:project_{cur}.mk SBD_ADD_TORCHLIGHT    #6531E
- 
+prj:project_{cur}.mk  TORCH_SUPPORT = TRUE
+prj:project_{cur}.mk  MMI_MENU_TORCH_SUPPORT = TRUE
+prj:project_{cur}.mk  ENG_MANU_TORCH = TRUE
+
 // 闪光灯
-prj:project_{cur}.mk DC_FLASH_SUPPORT= TRUE
+prj:project_{cur}.mk  DC_FLASH_SUPPORT = TRUE
+prj:project_{cur}.mk  CAMERA_FLASH_AS_TORCH = TRUE
 
 
 [2.8] 
@@ -644,7 +627,7 @@ prj:project_{cur}.mk  UART_LOG_SUPPORT = FALSE
 prj:project_{cur}.mk RELEASE_INFO = FALSE
 prj:project_{cur}.mk MEMORY_DEBUG_SUPPORT = TRUE
 prj:project_{cur}.mk TRACE_INFO_SUPPORT = TRUE
-prj:project_{cur}.mk PRODUCT_BASELIB_DIR = sc6531_32X32_320X240BAR_QW_ATV_formal_trace
+//prj:project_{cur}.mk PRODUCT_BASELIB_DIR = ums9117_240X320BAR_48MB_CAT1
 // 8910
 prj:{cfg}.cfg   RELEASE_INFO = FALSE
 prj:{cfg}.cfg   MEMORY_DEBUG_SUPPORT = TRUE
@@ -751,21 +734,6 @@ uart抓trace:
 //8 para set->cp log:open
 //8 para set->usb log:close (不确定)
 //8 para set->debug (para)->assert:open  (不确定开不开)
-
-
-
-
-// USB--log--ok
-//--          10:33:09.907  -- Start Logging[LittleEndian]                          ----->----                                    0:05:43.325   
-//--          10:27:26.582  -- Lost 8956 PS packets in channel, SN range:(152804,161759) ----->----                                    0:00:00.000   
-//--          10:27:26.582  -- Lost 25 PS packet(s) on CP side                      ----->----                                    0:00:00.000   
-
-// USB--log--err
-//--          10:36:07.278  -- Start Logging[LittleEndian]                          ----->----                                    0:00:00.000   
-//--          10:36:07.278  -- Lost a PS packet in channel, SN:2243527              ----->----                                    0:00:00.000   
-//--          10:36:07.278  -- Lost 5948 PS packets in channel, SN range:(2243579,2249526) ----->----                                    0:00:00.000   
-//--          10:36:07.278  -- Lost 1999 PS packets in channel, SN range:(2249528,2251526) ----->----                                    0:00:00.000   
-
 
 
 

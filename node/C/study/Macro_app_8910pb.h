@@ -278,7 +278,7 @@ app:pb\c\Mmipb_menu.c  PB_OPTMENU_NODE_VCARD_EXPORT_CONTACT
 
 //1、将电话簿条目数改为5000条需要按如下步骤调整(假设增加条数为X（=5000 - 版本默认条数）)：
 //a、修改条目, 均设置为5000
-MS_MMI_Main\source\mmi_service\export\inc\mmipb_common.h  MMIPB_NV_MAX_RECORD_NUM
+source:mmi_service\export\inc\mmipb_common.h  MMIPB_NV_MAX_RECORD_NUM
 //		#define MMIPB_NV_MAX_RECORD_NUM     200 //500 
 
 app:pb\h\mmipb_nv.h  MMINV_MAX_PHONEBOOK_RECORDS
@@ -361,12 +361,30 @@ prj:project_{cur}.mk   MMI_BLACK_AND_WHITE_LIST_ADD_SETTING = TRUE
 
 
 [1.10] __pbName__
+//
+prj:project_{cur}.mk   MMI_PB_NAME_LEN_ = TRUE
+
+
+### 联系人名称长度
 //		==>20,40,30
 source:mmi_service\export\inc\mmipb_common.h  MMIPB_NAME_MAX_LEN
+
 
 ### sim pb num
 //		==>300+100
 source:mmi_service\export\inc\mmipb_common.h  MMIPB_SIM_MAX_RECORD_NUM
+
+
+### 联系人号码数
+//		==>2,5
+//		==>2000x5超空间
+source:mmi_service\export\inc\mmi_custom_define.h  MMIPB_MAX_NV_PHONE_NUM
+
+//		==>EFS_NvitemWrite
+//		==>应该用的是RAM: 107 不好算
+source:mmi_app\kernel\h\mmi_modu_main.h  MMIUSERNV_PHONEBOOK_MAIN_LAST_ENTRY 2
+//		==>MMI_ReadNVItem, 不会读cl+pb
+source:mmi_app\kernel\h\mmi_modu_main.h  s_mmi_usernv_len
 
 
 [1.11] 

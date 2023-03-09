@@ -1,5 +1,5 @@
 ###
-### pub path
+### pub cfg, for test
 ### 
 ### 1.Configuration of the "save" directory
 ###
@@ -27,3 +27,6 @@ size1Key  = Git2
 size2Key  = Git
 abcKey  = cmd
 
+
+### 4.tmp
+tNumKey = Disable

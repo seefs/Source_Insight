@@ -15,13 +15,13 @@ b
 SE039_SXJY_D700_VORTEX_F3
 
 ### 18.BCompare target(3344表示33与44互相比较)
-6070
+3079
 
 ### 21.tree  (未使用)
 project
 
 ### 24.SR Mode  (CTRL + D : search head 删除相同头部的行)
-resource
+project
 
 ### 27.last command (未使用)
 CtrlW
@@ -51,7 +51,7 @@ IM
 E:\6531E_20180113\tmp
 
 ### 54.note row(第2次打开同一行, F11关闭note会修改这里)
-30
+318
 
 ### 57.
 
@@ -66,10 +66,10 @@ E:\Desktop\SGIT\Git_NB
 2
 
 ### 69.default project path
-D:\Save\SI\node\Simple_CTRL_K.h
+E:\60M\plutommi\Framework\GUI\GUI_SRC\gui_single_line_inputs.c
 
 ### 72.default project path
-60
+1569
 
 ### 75.show python help(0 or 1)
 0

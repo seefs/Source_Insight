@@ -785,31 +785,39 @@ fdl_bootloader\nor_bootloader\src\nor_bootloader_fota_uix8910.scf  0xB800
 ### 107 分区
 
 
+### 并口flash
+prj:project_{cur}.mk  SPI_NAND_FLASH -> FALSE  # 并口flash，死机log
+prj:project_{cur}.mk  SPI_NAND_FLASH -> TRUE   # 串口flash
+
+
 
 [2.18] build map
 //
 tmpPath = build\tmp
 tmp:\\
 
+
 // 总image
-tmp:UIX8910.map  Region^LOAD_KERNEL_IMAGE
+tmp:{UIX8910}.map  Region^LOAD_KERNEL_IMAGE -------8910/107
 
 // range 1(rom) (12M 代码/存储)
-tmp:UIX8910.map  Region^ROM_KERNAL_EXEC
+tmp:{UIX8910}.map  Region^ROM_KERNAL_EXEC ---------8910
 
 // range 2(ram) (1.45M 代码/断电丢失)
-tmp:UIX8910.map  Region^RAM_RW
+tmp:{UIX8910}.map  Region^RAM_RW ------------------107/107
 
-// range 3(SRAM) (calc size)
-tmp:UIX8910.map  Region^SRAM_RES
+// range 3(SRAM) (calc size) ----------------------107 
+tmp:{UIX8910}.map  Region^SRAM_RES
 
 // Total
-tmp:UIX8910.map  Total^RO
+tmp:{UIX8910}.map  Total^RO
 
 // 修改 KERNEL size
 //  (同步改，否则fota差分失败)
+MS_Customize/
 MS_Customize/UIX8910_normal.scf  42
 MS_Customize/UIX8910_normal.scf  277
+MS_Customize/UMS9117_ums9117_barphone.scf  4
 
 
 //

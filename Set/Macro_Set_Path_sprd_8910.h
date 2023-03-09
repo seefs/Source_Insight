@@ -38,6 +38,7 @@ sensorsPath = MS_Customize\source\product\driver\sensors\
 
 ### 1.cfg
 versionKey  = UIX8910_uis8910ff_refphone_version
+configKey  = S89T
 
 
 ### 2.cur
@@ -63,8 +64,7 @@ newKey = xx
 
 ### 4.tmp
 wintabKey = wintab_custom
-
-tmpKey = xx
+UIX8910Key = UIX8910
 
 
 ### 5.build

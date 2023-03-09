@@ -254,6 +254,10 @@ SPDE_PRJ\K220U_SHY_517T\uis8910_phone_user_base_config.cfg
 // mk
 prj:{cfg}.cfg   CAMERA_SUPPORT = TRUE
 
+// 双摄像头(默认单)：
+//prj:project_{cur}.mk SBD_DUAL_CAMERA_SUPPORT
+prj:project_{cur}.mk _CAMER
+
 
 // 1.新CAM
 make\custom_drv\custom_drv.mk  sensor_gc032A.c
@@ -401,11 +405,6 @@ source:resource\Common\RING\
 
 
 [2.3] 配置
-// 双摄像头(默认单)：
-//prj:project_{cur}.mk SBD_DUAL_CAMERA_SUPPORT
-prj:project_{cur}.mk _CAMER
-
-
 // 四频 / 2频设置;开就是2频：
 //prj:project_{cur}.mk __SBD_RF_TWO_BAND_SUPPORT__
 //prj:project_{cur}.mk SBD_RF_TWO_BAND_SUPPORT
@@ -417,6 +416,8 @@ prj:project_{cur}.mk  ELT_NO_VIBRATOR
 prj:project_{cur}.mk  VIRTUAL_VIBRATE_FUNC
 prj:project_{cur}.mk  REMOVE_VIBRA_AND_RING  # tts
 prj:project_{cur}.mk  VIBRATE_DRIVER_VOLT_3_0V
+// 107
+prj:project_{cur}.mk  VIB
 
 
 // 双卡：
@@ -489,31 +490,13 @@ Save:node\C\study\Macro_res_8910.h __lang__
 
 
 
-[2.6] 情景模式 音频参数:
-// 外置K类功放：
-prj:project_{cur}.mk __HHT_EXT_AMPLIFIER_CLASS_K__ = TRUE
+[2.6] 音频
 
-// 软件2合1：FALSE是喇叭听筒独立(硬件二合一)，分开是软件2合1
-prj:project_{cur}.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = FALSE
-prj:project_{cur}.mk SBD_EARPIECE_SPEAK_USE_ONE
-prj:project_{cur}.mk CUSTOMER = S039_JX_2IN1                  # 二合一的音频（带K类的音频不同）
-\audio\audio_dsp_codec_6531.nvm    0x6C0/硬件2合1;    0x638/软件2合1
-
-// 三合一：
-prj:project_{cur}.mk CUS_ADD_SHAKE= TRUE  三合一喇叭宏        
-prj:project_{cur}.mk VIRTUAL_VIBRATE_FUNC
-prj:project_{cur}.mk __SPEAKER_VIB_INTENSITY_WEAK__
-prj:project_{cur}.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = TRUE 三合一同时开
-
-
-### 107
-// 独立听筒
-prj:project_{cur}.mk  AUDIO_EXT_PA= TRUE
-prj:project_{cur}.mk  RCV_THROUGH_SPK= FALSE
-// 听筒二合一
-prj:project_{cur}.mk  AUDIO_EXT_PA= FALSE
-prj:project_{cur}.mk  SPK_THROUGH_HPR= FALSE
-prj:project_{cur}.mk  RCV_THROUGH_SPK= TRUE
+// 二合一/三合一
+Save:node\C\study\Macro_nv_audio8910.h  __107_2N1__
+Save:node\C\study\Macro_nv_audio8910.h  __8910_2N1__
+Save:node\C\study\Macro_nv_audio8910.h  __8910_3N1__
+Save:node\C\study\Macro_nv_audio6531E.h  __6531_K__
 
 
 
@@ -633,7 +616,6 @@ Save:node\C\study\Macro_gui_8910.h  __vol__
 
 
 [2.15] trace
-prj:project_{cur}.mk  RELEASE_INFO = FALSE
 prj:project_{cur}.mk RELEASE_INFO = FALSE
 prj:project_{cur}.mk MEMORY_DEBUG_SUPPORT = TRUE
 prj:project_{cur}.mk TRACE_INFO_SUPPORT = TRUE

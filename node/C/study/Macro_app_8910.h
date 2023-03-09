@@ -1873,8 +1873,11 @@ app:setting\c\mmiset_sos.c  MMIAPISET_EnterSOSSettingWin
 // sos--list
 // sos--sms--edit
 app:setting\c\mmiset_sos.c  HandleSOSMessageEditBoxWinMsg
+//
+Save:node\C\study\Macro_doc_8910key.h  __keySOS__
 
-// 紧急号码--好像未使用
+
+### 紧急号码--好像未使用
 //    "112", "911"
 app:cc\c\mmicc_app.c  s_emergency_call
 // 112

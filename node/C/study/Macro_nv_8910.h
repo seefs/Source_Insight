@@ -4,13 +4,13 @@ Save:node\C\study\Macro_nv_8910.h \[1.1\] charge---------充电相关
 Save:node\C\study\Macro_nv_8910.h \[1.2\] sim------------sim相关
 Save:node\C\study\Macro_nv_8910.h \[1.3\] audio----------audio相关
 Save:node\C\study\Macro_nv_8910.h \[1.4\] mmi------------common相关
-Save:node\C\study\Macro_nv_8910.h \[1.5\] nv define
+Save:node\C\study\Macro_nv_8910.h \[1.5\] nv define------tool/app相关
 Save:node\C\study\Macro_nv_8910.h \[1.6\] nvTool
 Save:node\C\study\Macro_nv_8910.h \[1.7\] apn
 Save:node\C\study\Macro_nv_8910.h \[1.8\] 
 Save:node\C\study\Macro_nv_8910.h \[1.9\] nv test
 Save:node\C\study\Macro_nv_8910.h \[1.10\] Card-----------电子保卡
-Save:node\C\study\Macro_nv_8910.h \[1.11\] thir_nv
+Save:node\C\study\Macro_nv_8910.h \[1.11\] thir_nv,107
 Save:node\C\study\Macro_nv_8910.h \[1.12\] 
 Save:node\C\study\Macro_nv_8910.h \[1.13\] 
 Save:node\C\study\Macro_nv_8910.h \[1.14\] nand/nor
@@ -33,13 +33,17 @@ Save:node\C\study\Macro_nv_charge8910.h
 
 
 [1.2] sim
-// sim相关
+// sim相关--107
+Save:node\C\study\Macro_nv_sim107.h  __IMEI__
+Save:node\C\study\Macro_nv_sim107.h  __ECC__      # copy sim nv
+Save:node\C\study\Macro_nv_sim107.h  __BAND__
+Save:node\C\study\Macro_nv_sim107.h  __REG__
+Save:node\C\study\Macro_nv_sim107.h  __custom__
+Save:node\C\study\Macro_nv_sim107.h  
+// sim相关--8910
 Save:node\C\study\Macro_nv_sim8910.h  __IMEI__
-Save:node\C\study\Macro_nv_sim8910.h  __ECC__      # copy sim nv
-Save:node\C\study\Macro_nv_sim8910.h  __BAND__
-Save:node\C\study\Macro_nv_sim8910.h  __REG__
 Save:node\C\study\Macro_nv_sim8910.h  __4G__
-Save:node\C\study\Macro_nv_sim8910.h  __comData__  # 链路
+Save:node\C\study\Macro_nv_sim8910.h  __slot__  # 链路
 Save:node\C\study\Macro_nv_sim8910.h  
 Save:node\C\study\Macro_nv_sim8910.h  
 
@@ -49,6 +53,7 @@ Save:node\C\study\Macro_nv_sim8910.h
 common\export\inc\nv_item_id.h  NV_SIMLOCK_CFG_ID   5
 // cfg
 Save:node\C\study\Macro_nv_simlock107.h
+
 
 
 [1.3] audio
@@ -131,15 +136,14 @@ Save:node\C\study\Macro_nv_tool8910.h  __env_nv__
 
 
 [1.7] apn
-// apn
-Save:node\C\study\
+// apn-edit
 Save:node\C\study\Macro_res_8910.h  __8910_apn__   # apn str
 Save:node\C\study\Macro_res_8910.h  __107_apn__
+// apn-list
 Save:node\C\study\Macro_doc_apn107.h
 Save:node\C\study\Macro_doc_apn8910.h
 // t6b
-//1. 滑动卡顿（T6-B内单已经解决）
-//2. 台灣大物聯網卡無法上網使用（APN:twm.iot） 
+// 台灣大物聯網卡無法上網使用（APN:twm.iot） 
 
 //
 虚拟运营商需要提供：

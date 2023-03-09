@@ -15,7 +15,7 @@ Save:node\C\study\Macro_res_8910.h \[1.12\] xx_mdu_def.h
 Save:node\C\study\Macro_res_8910.h \[1.13\] lang/rule------------翻译表
 Save:node\C\study\Macro_res_8910.h \[1.14\] pos------------------
 Save:node\C\study\Macro_res_8910.h \[1.15\] load res...
-Save:node\C\study\Macro_res_8910.h \[1.16\] apn
+Save:node\C\study\Macro_res_8910.h \[1.16\] 
 Save:node\C\study\Macro_res_8910.h \[1.17\] 
 Save:node\C\study\Macro_res_8910.h \[1.18\] 
 Save:node\C\study\Macro_res_8910.h \[1.19\] 
@@ -63,17 +63,7 @@ build\{cur}_builddir\tmp\mmi_res_128x128_text.txt TXT_EXTRA_SETTINGS
 //	STXT_CANCEL, STXT_STOP, STXT_RETURN, STXT_SAVE, STXT_OPTION, STXT_SELECT, 
 //	TXT_DELETE, TXT_EDIT, STXT_OK, TXT_COMMON_CLEAR, 
 
-
-### 
-// str--apn
-source:mmi_app\common\h\
-source:mmi_app\common\h\common_mdu_def.h   plmn_extra_database_str
-// str--apn--watch--替换为null
-source:mmi_app\common\h\plmn_ts25_database_str_watch_cn.h
-// str--apn
-source:mmi_app\common\h\plmn_ts25_database_str.h  TXT_NET_886
-// str--apn ex
-source:mmi_app\common\h\plmn_extra_database_str.h
+###
 // ID 对应
 Save:node\C\study\Macro_doc_apn8910.h  __strApn__
 
@@ -350,6 +340,11 @@ prj:project_{cur}.mk
 // 西班牙开2个宏
 prj:{cfg}.cfg  IM_SPANISH_SUPPORT
 prj:{cfg}.cfg  IM_SPANISH_AM_SUPPORT
+
+###
+// def
+Save:node\C\study\Macro_res_8910lang.h  __def__
+Save:node\C\study\Macro_res_8910lang.h __lang__
 
 
 // 翻译lang

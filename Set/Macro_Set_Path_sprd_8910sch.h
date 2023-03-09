@@ -5,6 +5,7 @@
 ###
 
 0Key  = 8910
+1Key  = wa03u_git
 
 HWPath  = HWNV:8910FFS\W20.36.2\
 HW:\\
@@ -13,6 +14,8 @@ imagesPath = MS_MMI_Main\source\resource\mmi_res_{size}\
 images:\\
 ringPath = MS_MMI_Main\source\resource\Common\RING\
 ring:\\
+DATAPath = MS_MMI_Main\source\resource\Common\DATA\
+FONTPath = MS_MMI_Main\source\resource\Common\FONT\
 batNvPath = common\nv_parameters\ProductionParam\
 batNv:\\
 nvPath = SPDE_PRJ\{project}\nvitem\
@@ -22,8 +25,12 @@ nv:\\
 sourcePath  = MS_MMI_Main\source\
 appPath     = MS_MMI_Main\source\mmi_app\app\
 commonPath  = MS_MMI_Main\source\mmi_app\common\
+appkernelPath   = MS_MMI_Main\source\mmi_app\kernel\
 ctrlPath    = MS_MMI_Main\source\mmi_ctrl\source\
 guiPath     = MS_MMI_Main\source\mmi_gui\source\
+kernelPath  = MS_MMI_Main\source\mmi_kernel\source\
+servicePath = MS_MMI_Main\source\mmi_service\source\
+resourcePath= MS_MMI_Main\source\resource\
 configPath  = MS_Customize\source\product\config\uis8910ff_refphone\
 driverPath = MS_Customize\source\product\driver\
 sensorsPath = MS_Customize\source\product\driver\sensors\
@@ -52,12 +59,12 @@ newKey = xx
 
 ### 4.tmp
 wintabKey = wintab_custom
-
-tmpKey = xx
+UIX8910Key = UIX8910
 
 
 ### 5.build
 simulatorKey = simulator_idh
+simulator10Key = simulator_main
 resource_mainKey = resource_main
 app_mainKey = app_main
 gui_mainKey = gui_main

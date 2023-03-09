@@ -105,6 +105,14 @@ nv:audio_calib_VQE.nvm  65
 
 
 ### __PA107__
+// 
+prj:project_{cur}.mk   AUDIO_EXT_RCV_PA                 = TRUE # 
+prj:project_{cur}.mk   AUDIO_EXT_PA                     = TRUE # 外K
+prj:project_{cur}.mk   AUDIO_AMP_EXT_CLASSK_SUPPORT     = TRUE # 外K
+prj:project_{cur}.mk   AUDIO_AMP_EXT_CLASSK_SUPPORT_NEW = TRUE # 外K
+prj:project_{cur}.mk                                           # 内置D类
+// 
+
 //
 audio_calib_VQE.nvm中的audio_calib_param\CALIB_AUD_ALG\VoiceCallNb[0]\reserved
 //
@@ -152,7 +160,7 @@ RDNV\W_download_params_optimize.xml   # 先不管
 RDNV\rd_nvitem.xprj
 
 
-###
+###  __107_2N1__
 // mk
 prj:project_{cur}.mk   PLATFORM = UMS9117
 prj:project_{cur}.mk   AUDIO_COMMON_EXCHANGE = TRUE
@@ -180,6 +188,24 @@ common\nv_parameters\audio\UMS9117\
 common\nv_parameters\audio\UMS9117\audio_arm_rcv_through_spk.xml
 //
 HW:{project}\
+
+
+###  __8910_2N1__
+// 独立听筒
+prj:project_{cur}.mk  AUDIO_EXT_PA= TRUE
+prj:project_{cur}.mk  RCV_THROUGH_SPK= FALSE
+// 听筒二合一
+prj:project_{cur}.mk  AUDIO_EXT_PA= FALSE
+prj:project_{cur}.mk  SPK_THROUGH_HPR= FALSE
+prj:project_{cur}.mk  RCV_THROUGH_SPK= TRUE
+
+
+###  __8910_3N1__
+// 三合一：
+prj:project_{cur}.mk CUS_ADD_SHAKE= TRUE  三合一喇叭宏        
+prj:project_{cur}.mk VIRTUAL_VIBRATE_FUNC
+prj:project_{cur}.mk __SPEAKER_VIB_INTENSITY_WEAK__
+prj:project_{cur}.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = TRUE 三合一同时开
 
 
 ###

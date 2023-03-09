@@ -4,8 +4,8 @@ Save:node\C\study\Macro_doc_apn107.h \[1.1\] 460
 Save:node\C\study\Macro_doc_apn107.h \[1.2\] 466
 Save:node\C\study\Macro_doc_apn107.h \[1.3\] 425 以色列/巴勒斯坦
 Save:node\C\study\Macro_doc_apn107.h \[1.4\] 259 摩尔多瓦
-Save:node\C\study\Macro_doc_apn107.h \[1.5\] 
-Save:node\C\study\Macro_doc_apn107.h \[1.6\] 
+Save:node\C\study\Macro_doc_apn107.h \[1.5\] 404 印度
+Save:node\C\study\Macro_doc_apn107.h \[1.6\] 220
 Save:node\C\study\Macro_doc_apn107.h \[1.7\] 
 Save:node\C\study\Macro_doc_apn107.h \[1.8\] 
 Save:node\C\study\Macro_doc_apn107.h \[1.9\] 
@@ -176,7 +176,7 @@ https://www.cnblogs.com/neo-java/p/6830319.html
 
 
 
-[1.5] 259 印度
+[1.5] 404 印度
 //404 10
 PS\nv\operator_delta\operator_config_all\Index.xml  mcc="404"
 //
@@ -186,14 +186,8 @@ PS\nv\operator_delta\operator_config_all\IN_Airtel_S.nv
 
 
 
-
-
-
-
-
-
-[1.6] 
-
+[1.6] 220
+// 22005 有个3G补丁
 
 
 

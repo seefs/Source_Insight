@@ -5,6 +5,7 @@
 ###
 
 0Key  = 8910
+1Key  = wa03u_git
 
 HWPath  = HWNV:8910FFS\W21.12.7\
 HW:\\
@@ -37,6 +38,7 @@ sensorsPath = MS_Customize\source\product\driver\sensors\
 
 ### 1.cfg
 versionKey  = UIX8910_uis8910ff_refphone_version
+configKey  = S89T
 
 
 ### 2.cur
@@ -62,8 +64,7 @@ newKey = xx
 
 ### 4.tmp
 wintabKey = wintab_custom
-
-tmpKey = xx
+UIX8910Key = UIX8910
 
 
 ### 5.build

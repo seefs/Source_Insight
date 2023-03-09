@@ -63,6 +63,7 @@ Save:node\C\study\Macro_gui_8910.h  __SECOND_LOGO__
 source:mmi_app/common/h/common_mdu_def.h  IMAGE_TEMPORARY_BOOTUP_DEFAULT
 // --png
 source:mmi_app/common/h/common_mdu_def.h  IMAGE_POWER_ON_NM
+source:mmi_app/common/h/common_mdu_def.h  IMAGE_POWER_OFF
 // --gif/default
 source:resource/mmi_res_prj_def.h  IMAGE_POWER_ON
 // --gif

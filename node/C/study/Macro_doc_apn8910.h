@@ -1,19 +1,23 @@
 
-### MVNO
-//配置MVNO APN账户对应的PHONE_PLMN_NAME_E枚举值。
-//特别注意：
-//1.MVNO APN账户需要配置在ntac中最前面;
-//2.这里需要和ntac配置一一对应，顺序也必须保持一致;
-//
-//这些都要检查.
+//目录:
+Save:node\C\study\Macro_doc_apn8910.h \[1.1\] 425
+Save:node\C\study\Macro_doc_apn8910.h \[1.2\] 460
+Save:node\C\study\Macro_doc_apn8910.h \[1.3\] 466
+Save:node\C\study\Macro_doc_apn8910.h \[1.4\] 204
+Save:node\C\study\Macro_doc_apn8910.h \[1.5\] 
+Save:node\C\study\Macro_doc_apn8910.h \[1.6\] 
+Save:node\C\study\Macro_doc_apn8910.h \[1.7\] 
+Save:node\C\study\Macro_doc_apn8910.h \[1.8\] 
+Save:node\C\study\Macro_doc_apn8910.h \[1.9\] 
+Save:node\C\study\Macro_doc_apn8910.h \[1.10\] 
+Save:node\C\study\Macro_doc_apn8910.h \[1.11\] 
+Save:node\C\study\Macro_doc_apn8910.h \[1.12\] MVNO
+Save:node\C\study\Macro_doc_apn8910.h \[1.13\] strApn-----ID 对应
+Save:node\C\study\Macro_doc_apn8910.h \[1.14\] 
 
 
-### ID 对应
-// ID 对应
-Save:node\C\study\Macro_res_8910.h  __strApn__
 
-
-### 425
+[1.1] 425
 //
 app:phone\h\
 app:phone\h\plmn_ts25_database_enum.h  PLMN_425_09
@@ -24,7 +28,7 @@ source:mmi_app\common\h\plmn_ts25_database_str.h  TXT_NET_891A
 source:mmi_app\common\h\plmn_ts25_database_str.h  TXT_NET_894A
 
 
-### 460
+[1.2] 460
 // 移动148号段
 // 缺少 PLMN_460_13
 app:phone\h\plmn_ts25_database_enum.h  PLMN_460_11
@@ -33,7 +37,61 @@ app:phone\h\plmn_ts25_database_table.h  PLMN_460_11
 //    460,11,STR_OPERATOR_CHN_CT,PLMN_460_11,
 
 
-### 204
+### SPCSS01079131
+//		移动148号段
+//
+//		APN参数（2G）
+//		<apn carrier="CMMTM"
+//
+//		        mcc="460"
+//
+//		        mnc="13"
+//
+//		        apn="cmmtm"
+//
+//		        type="default,xcap,hipri,supl"
+//
+//
+//		移动148号段
+//		APN参数（4G）
+//		<apn carrier="CMIOT"
+//
+//		        mcc="460"
+//
+//		        mnc="13"
+//
+//		        apn="cmiot"
+//
+//		        type="default,xcap,hipri,supl"
+//		--------------------------------
+//		设置如下：
+//		460    13    8    cmiot
+//		460    13    8    cmmtm
+
+
+
+//您好，我的意思是第2条APN会被忽略，如何兼容？
+//设置如下：
+//460    13    8    cmiot        （第1条Account Type为8）
+//460    13    8    cmmtm     （第2条会被忽略）
+
+
+//	你好,
+//	 
+//	配置MVNO APN账户对应的PHONE_PLMN_NAME_E枚举值。
+//	特别注意：
+//	1.MVNO APN账户需要配置在ntac中最前面;
+//	2.这里需要和ntac配置一一对应，顺序也必须保持一致;
+//
+//	这些都要检查.
+
+
+
+[1.3] 466
+
+
+
+[1.4] 204
 app:phone\h\plmn_ts25_database_enum.h  PLMN_204_04
 
 
@@ -68,5 +126,83 @@ app:phone\h\plmn_ts25_database_enum.h  PLMN_204_04
 
 ### 首选sim卡
 //  if (dual_sys != MMIAPISET_GetDataSimFromNV())
+
+
+
+
+
+[1.5] 
+
+
+
+
+
+[1.6] 
+
+
+
+
+[1.7] 
+
+
+
+
+[1.8] 
+
+
+
+
+[1.9] 
+
+
+
+
+[1.10] 
+
+
+
+[1.11] 
+
+
+
+
+[1.12] __MVNO__
+
+### MVNO
+//配置MVNO APN账户对应的PHONE_PLMN_NAME_E枚举值。
+//特别注意：
+//1.MVNO APN账户需要配置在ntac中最前面;
+//2.这里需要和ntac配置一一对应，顺序也必须保持一致;
+//
+//这些都要检查.
+
+
+
+
+
+[1.13] __strApn__
+### 
+// str--apn
+source:mmi_app\common\h\
+source:mmi_app\common\h\common_mdu_def.h   plmn_extra_database_str
+// str--apn--watch--替换为null
+source:mmi_app\common\h\plmn_ts25_database_str_watch_cn.h
+// str--apn
+source:mmi_app\common\h\plmn_ts25_database_str.h  TXT_NET_886
+// str--apn ex
+source:mmi_app\common\h\plmn_extra_database_str.h
+// ID 对应
+Save:node\C\study\Macro_doc_apn8910.h  __strApn__
+
+
+
+
+[1.14] 
+
+
+
+
+[1.15] 
+
 
 

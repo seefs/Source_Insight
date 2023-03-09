@@ -20,6 +20,8 @@ batNvPath = common\nv_parameters\ProductionParam\
 batNv:\\
 nvPath = SPDE_PRJ\{project}\CustNV\
 nv:\\
+rdnvPath = SPDE_PRJ\{project}\RDNV\
+rdnv:\\
 
 
 sourcePath  = MS_MMI_Main\source\
@@ -39,6 +41,7 @@ sensorsPath = MS_Customize\source\product\driver\sensors\
 ### 1.cfg
 versionKey  = UMS9117_ums9117_barphone_version
 configKey  = S89T
+lteKey      = NemoL_T117_3595D
 
 
 ### 2.cur
@@ -48,14 +51,16 @@ prj:\\
 // 目录名称自动拼接成mk名称
 //projectKey   = S89T_BYD_A9
 //projectKey   = S89T_BYD_L66A_IN
+//projectKey   = S89T_BYD_A9_2_4G
 //projectKey   = S98T_FLP_E535_31
-projectKey   = S98T_FLP_E535_C
+//projectKey   = S98T_FLP_E535_C
 //projectKey   = S98T_JL_F13
 //projectKey   = S98T_JL_F15_2
 //projectKey   = T5_A82WD_VIET
 //projectKey   = F55T_E2412L
 //projectKey   = F79T_DERONG
 //projectKey   = F76T_SUOAI_V909L
+projectKey   = X229T_BYD_D200
 // --_debug --_user
 curKey   = ums9117_{size}BAR_48MB_{project}_user
 cfgKey   = xx
@@ -67,13 +72,11 @@ size1Key  = 240X320
 
 ### 3.copy
 oldKey = xx
-
 newKey = xx
 
 ### 4.tmp
 wintabKey = wintab
-
-tmpKey = xx
+UIX8910Key = UMS9117
 
 
 ### 5.build

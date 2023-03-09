@@ -7,14 +7,14 @@
 Save:node\C\study\Macro_im_8910.h \[1.1\] sms--marco
 Save:node\C\study\Macro_im_8910.h \[1.2\] sms--input----实际值转IM值
 Save:node\C\study\Macro_im_8910.h \[1.3\] sms--input--switch
-Save:node\C\study\Macro_im_8910.h \[1.4\] edit--show
+Save:node\C\study\Macro_im_8910.h \[1.4\] sms--edit--show
 Save:node\C\study\Macro_im_8910.h \[1.5\] im + pen
 Save:node\C\study\Macro_im_8910.h \[1.6\] --keymap------虚拟值转实际值
 Save:node\C\study\Macro_im_8910.h \[1.7\] --simulator---虚拟值
-Save:node\C\study\Macro_im_8910.h \[1.8\] key event
+Save:node\C\study\Macro_im_8910.h \[1.8\] 
 Save:node\C\study\Macro_im_8910.h \[1.9\] dial--input
 Save:node\C\study\Macro_im_8910.h \[1.10\] lock--input
-Save:node\C\study\Macro_im_8910.h \[1.11\] menu--input
+Save:node\C\study\Macro_im_8910.h \[1.11\] menuInput
 Save:node\C\study\Macro_im_8910.h \[1.12\] 
 Save:node\C\study\Macro_im_8910.h \[1.13\] 
 Save:node\C\study\Macro_im_8910.h \[1.14\] 
@@ -251,9 +251,10 @@ ctrl:editbox/c/ctrlbaseedit_internal.c  721
 
 // --key--按键丝印
 //		==>SCI_VK_HOME
-config:uis8910ff_refphone\keymap_cfg.c  keymap\[\]
-config:uis8910ff_refphone\keymap_cfg.c  X225U_KEYMAP_STYLE
-config:uis8910ff_refphone\keymap_cfg.c  SCI_VK_CALENDER
+config:keymap_cfg.c  keymap\[\]
+config:keymap_cfg.c  X225U_KEYMAP_STYLE
+config:keymap_cfg.c  SCI_VK_CALENDER
+config:keymap_cfg.c  keymap\[\]
                                
 
 // --key--消息按键值
@@ -516,7 +517,7 @@ source:mmi_app\app\phone\c\mmiphone.c  s_cc_nw_ecc_num_list_ptr
 
 
 
-[1.11] menu--input
+[1.11] __menuInput__
 // --menu--input
 source:mmi_app\kernel\c\mmi_default.c  MMIDEFAULT_ConvertQwertyKeyToTypicalKey
 

@@ -5,6 +5,7 @@
 ###
 
 0Key  = 8910
+1Key  = wa03u_git
 
 HWPath  = HWNV:T107\W20.46.4\
 HW:\\
@@ -39,6 +40,8 @@ sensorsPath = MS_Customize\source\product\driver\sensors\
 
 ### 1.cfg
 versionKey  = UMS9117_ums9117_barphone_version
+configKey  = S89T
+lteKey      = NemoL_T117_3595D
 
 
 ### 2.cur
@@ -59,13 +62,11 @@ size1Key  = 240X320
 
 ### 3.copy
 oldKey = xx
-
 newKey = xx
 
 ### 4.tmp
 wintabKey = wintab
-
-tmpKey = xx
+UIX8910Key = UMS9117
 
 
 ### 5.build

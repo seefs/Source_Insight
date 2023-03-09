@@ -131,6 +131,7 @@
 70alias = 8910
 70RuleEn = 8910
 70tag1 = SPRD
+
 //
 70 = G:\T1072
 71 = G:\T1071
@@ -139,15 +140,19 @@
 74 = E:\T107base
 76 = G:\wa03u_git
 77 = G:\wa03u_git2
+78 = E:\soft\8910GHR
+79 = D:\soft\T107_X212T
+
 
 70key = 107
 71key = 107
 72key = 107Old
 73key = 107D
 74key = 107B
-
 76key = 8910wa_git
 77key = 8910wa_git
+78key = 8910B
+79key = 107O
 
 //(8) MTK 项目路径1
 80alias = MTK
@@ -182,9 +187,15 @@
 90 = D:\_SI4.0\save.si4project
 90 = D:\save\Source^Insight\Projects\Base
 91 = D:\save\SI_pri
+92 = \\tsclient\D\save
+92 = \\tsclient\D\_SI4.0\save.si4project
+92 = \\tsclient\D\save\Source^Insight_sub\Projects\Base
+93 = \\tsclient\D\save\SI_pri
 //
 90key = base
 91key = base_pri
+92key = base
+93key = base_pri
 
 
 //(10) tmp
@@ -229,9 +240,26 @@
 140 = F:\9820e
 140 = D:\_SI4.0\9820E_local.si4project
 
-// tmp
-150 = X:\NoneEmpty
 
+//(15) hexo 项目路径
+150alias = hexo
+150RuleEn = hexo
+150Same = hexo
+150Cfg = null
+//
+150 = D:\project\S\hexo.git\hexo-blog-geektutu
+151 = D:\project\S\hexo.git\hexo-blog-geektutu_old
+152 = D:\project\S\hexo.git\hexo-theme-geektutu
+153 = D:\project\S\hexo.git\seefs.github.io
+154 = D:\project\S\hexo.git\seefs.github.io_master
+155 = D:\project\S\hexo.git\seets.github.io_main
+
+150key = hexo
+151key = hexo
+152key = hexo
+153key = hexo
+154key = hexo
+155key = hexo
 
 
 //

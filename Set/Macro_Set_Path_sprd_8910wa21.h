@@ -50,13 +50,14 @@ prj:\\
 //projectKey   = WA22U_SW40E_QQVGA
 //projectKey   = WA22U_SW42E_QQVGA
 //projectKey   = WA22U_W59E_QQVGA
+projectKey   = WA22U_W59E_4G_QQVGA
+//projectKey   = WA22U_W48E
 //projectKey   = WA03U_T6_B
 //projectKey   = WA03U_T6_B_HERO
-projectKey   = WA03U_T6_B_EN
-//projectKey   = WA22U_W48E
+//projectKey   = WA03U_T6_B_EN
 // --DEBUG --USER
-//curKey   = UIS8910_ROM_16MB_SS_{project}_USER
-curKey   = UIS8910_ROM_16MB_SS_{project}_DEBUG
+curKey   = UIS8910_ROM_16MB_SS_{project}_USER
+//curKey   = UIS8910_ROM_16MB_SS_{project}_DEBUG
 //curKey   = UIS8910_240x320BAR_16MB_SS_{project}_USER
 cfgKey   = uis8910_phone_user_base_config
 sizeNext  = 1
@@ -73,8 +74,9 @@ newKey = xx
 
 ### 4.tmp
 wintabKey = wintab_custom
-
-tmpKey = xx
+UIX8910Key = UIX8910
+ROMKey = UIS8910_ROM_16MB_DS_USER
+//ROMKey = UIS8910_ROM_16MB_DS_DEBUG
 
 
 ### 5.build

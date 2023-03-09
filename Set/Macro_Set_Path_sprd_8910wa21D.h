@@ -5,6 +5,7 @@
 ###
 
 0Key  = 8910
+1Key  = wa22u_new
 
 HWPath  = HWNV:8910FFS\W21.12.7\
 HW:\\
@@ -72,8 +73,7 @@ newKey = xx
 
 ### 4.tmp
 wintabKey = wintab_custom
-
-tmpKey = xx
+UIX8910Key = UIX8910
 
 
 ### 5.build
