@@ -20,7 +20,7 @@ Save:node\C\study\Macro_res_ring_8910.h \[1.13\]
 Save:node\C\study\Macro_res_ring_8910.h \[1.14\] Pause/Resume
 Save:node\C\study\Macro_res_ring_8910.h \[1.15\] tts
 Save:node\C\study\Macro_res_ring_8910.h \[1.16\] other
-Save:node\C\study\Macro_res_ring_8910.h \[1.17\] 
+Save:node\C\study\Macro_res_ring_8910.h \[1.17\] asp
 Save:node\C\study\Macro_res_ring_8910.h \[1.18\] 
 Save:node\C\study\Macro_res_ring_8910.h \[1.19\] 
 Save:node\C\study\Macro_res_ring_8910.h \[1.20\] 
@@ -466,9 +466,17 @@ source:resource\mmi_res_prj_def.h  R_POWER_1
 
 
 
-[1.17] 
+[1.17] __asp__
 //
+source:resource\Common\RING\
 
+// power--mp3
+source:resource\mmi_res_prj_def.h  R_ASP_1
+
+// power--id
+app:setting\h\mmiset_export.h  MMI_ASP_RING_START_ID = R_ASP_1
+//		==>MMI_ASP_RING_START_ID
+app:setting\c\mmiset_ring.c   MMISET_RING_TYPE_ASP
 
 
 [1.18] 

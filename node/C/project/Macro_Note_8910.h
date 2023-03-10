@@ -396,7 +396,8 @@ source:resource\Common\RING\
 [2.3] 配置
 
 // 频段-用mk/nv
-Save:node\C\study\Macro_nv_sim8910.h  __BAND__
+Save:node\C\study\Macro_nv_sim8910.h  __IMEI__
+Save:node\C\study\Macro_nv_sim107.h   __BAND__
 
 // 不带马达：
 //prj:project_{cur}.mk __HHT_REMOVE_VIBRA__ =TRUE

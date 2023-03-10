@@ -659,6 +659,7 @@ Save:node\C\study\Macro_app_8910call.h  __vib__          # vib
 Save:node\C\study\Macro_app_8910call.h  __record__       # record
 Save:node\C\study\Macro_app_8910call.h  __speaker__      # speaker
 Save:node\C\study\Macro_app_8910call.h  __other__
+Save:node\C\study\Macro_app_8910asp.h  __asp__
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __call__
 Save:node\C\study\Macro_pos_8910.h  __WaCall__
