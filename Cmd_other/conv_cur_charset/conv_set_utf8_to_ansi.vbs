@@ -1,12 +1,12 @@
 
 
-charset_old = "GB2312"
-charset_new = "UTF-8"
+charset_old = "UTF-8"
+charset_new = "GB2312"
 
 
 ' Convert the entire directory, there can be no non-existent folders:
-ConvPath ".\\..\\..\\Macro",charset_new
 
+ConvPath ".\\..\\..\\Set",charset_new
 
 
 MsgBox "End of character encoding conversion",,"prompt"

@@ -5,20 +5,8 @@ charset_new = "GB2312"
 
 
 ' Convert the entire directory, there can be no non-existent folders:
-ConvPath ".\\..\\..\\Help",charset_new
-ConvPath ".\\..\\..\\Help\\LangInfo",charset_new
-ConvPath ".\\..\\..\\Help\\Other",charset_new
 ConvPath ".\\..\\..\\Macro",charset_new
-ConvPath ".\\..\\..\\node",charset_new
-ConvPath ".\\..\\..\\node\\ToolsMsg",charset_new
 
-ConvPath ".\\..\\..\\Set",charset_new
-
-' Convert a single file:
-convertct ".\\..\\..\\Help\\DefaultFile\\Macro_Node_Num.h",charset_new
-convertct ".\\..\\..\\Help\\DefaultFile\\Macro_z_index.h",charset_new
-convertct ".\\..\\..\\Help\\DefaultFile\\Macro_z_null.h",charset_new
-convertct ".\\..\\..\\node\\Simple_CTRL_B.h",charset_new
 
 
 MsgBox "End of character encoding conversion",,"prompt"

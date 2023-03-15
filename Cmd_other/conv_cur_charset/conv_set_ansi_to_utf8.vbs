@@ -5,7 +5,8 @@ charset_new = "UTF-8"
 
 
 ' Convert the entire directory, there can be no non-existent folders:
-ConvPath ".\\..\\..\\Macro",charset_new
+
+ConvPath ".\\..\\..\\Set",charset_new
 
 
 
