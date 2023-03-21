@@ -169,6 +169,10 @@ CAF\Template\include\caf.h  MSG_USER_START
 //   MMK_GetFocusWinId()
 //   MMK_GetActiveCtrlId(MMK_GetFocusWinId());
 
+// Parent
+//  MMK_CloseParentWin(MMISMS_CB_SETTING_WIN_ID);
+//  MMK_GetParentWinHandle(win_id);
+
 
 [1.5] 
 

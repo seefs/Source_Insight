@@ -3,19 +3,19 @@
 Save:node\C\study\Macro_res_8910.h \[1.1\] project
 Save:node\C\study\Macro_res_8910.h \[1.2\] mk, version
 Save:node\C\study\Macro_res_8910.h \[1.3\] str
-Save:node\C\study\Macro_res_8910.h \[1.4\] res, color1
+Save:node\C\study\Macro_res_8910.h \[1.4\] res/excel
 Save:node\C\study\Macro_res_8910.h \[1.5\] image-----------------
 Save:node\C\study\Macro_res_8910.h \[1.6\] ring, audio-----------
 Save:node\C\study\Macro_res_8910.h \[1.7\] add app
 Save:node\C\study\Macro_res_8910.h \[1.8\] add res
-Save:node\C\study\Macro_res_8910.h \[1.9\] font/color2------------
-Save:node\C\study\Macro_res_8910.h \[1.10\] test
+Save:node\C\study\Macro_res_8910.h \[1.9\] color
+Save:node\C\study\Macro_res_8910.h \[1.10\] //test
 Save:node\C\study\Macro_res_8910.h \[1.11\] OLD_PRELOAD
 Save:node\C\study\Macro_res_8910.h \[1.12\] xx_mdu_def.h
-Save:node\C\study\Macro_res_8910.h \[1.13\] lang/rule------------翻译表
+Save:node\C\study\Macro_res_8910.h \[1.13\] lang/rule------------字库语言
 Save:node\C\study\Macro_res_8910.h \[1.14\] pos------------------
 Save:node\C\study\Macro_res_8910.h \[1.15\] load res...
-Save:node\C\study\Macro_res_8910.h \[1.16\] 
+Save:node\C\study\Macro_res_8910.h \[1.16\] apn
 Save:node\C\study\Macro_res_8910.h \[1.17\] 
 Save:node\C\study\Macro_res_8910.h \[1.18\] 
 Save:node\C\study\Macro_res_8910.h \[1.19\] 
@@ -24,17 +24,15 @@ Save:node\C\study\Macro_res_8910.h \[1.20\]
 
 
 [1.1] project
-// --设置当前项目
+
+### 设置当前项目
 Save:set\
 Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 
-// --其他设置
+
+### 其他设置
 Save:node\C\cfg\
 Save:node\C\cfg\Macro_c_path_sprd.h  _sprd_cur_
-// --__key__
-Save:Help\Other\Macro_Help_SI.h  __key__
-// --__Common__
-Save:Help\Other\Macro_Help_SI.h  __Common__
 
 
 
@@ -68,7 +66,7 @@ build\{cur}_builddir\tmp\mmi_res_128x128_text.txt TXT_EXTRA_SETTINGS
 Save:node\C\study\Macro_doc_apn8910.h  __strApn__
 
 
-[1.4] res, color
+[1.4] res/excel
 ### resgen
 //
 make\resource_main\resource_main.mk  resgen.pl
@@ -137,6 +135,10 @@ ring:\
 
 // ==>ring
 Save:node\C\study\Macro_res_ring_8910.h
+// ==>goto跳转
+Save:node\C\study\Macro_res_ring_8910.h  __VIB__
+Save:node\C\study\Macro_res_ring_8910.h  __RING__
+
 
 
 
@@ -144,10 +146,10 @@ Save:node\C\study\Macro_res_ring_8910.h
 
 [1.7] add app
 //
-MS_MMI_Main\source\mmi_app\kernel\h\mmk_regapp.def  SPDEHTTP_SUPPORT
+source:mmi_app\kernel\h\mmk_regapp.def  SPDEHTTP_SUPPORT
 //	REG_APP(HTTP_SIGNAL_BEG,	HTTP_SIGNAL_END, &g_spdehttp_app)
 
-MS_MMI_Main\source\mmi_app\kernel\h\mmk_ext_app.h  SPDEHTTP_SUPPORT
+source:mmi_app\kernel\h\mmk_ext_app.h  SPDEHTTP_SUPPORT
 //  extern MMI_APPLICATION_T   g_spdehttp_app;
 
 make\app_main\app_main.mk  SPDEHTTP_SUPPORT
@@ -155,13 +157,13 @@ make\app_main\app_main.mk  SPDEHTTP_SUPPORT
 //	MINCPATH += $(MMI_DIR)/source/mmi_app/app/spdehttp/h
 //	SOURCES += spdehttp.c
 
-MS_MMI_Main\source\mmi_app\kernel\c\mmimain.c  SPDEHTTP_SUPPORT
+source:mmi_app\kernel\c\mmimain.c  SPDEHTTP_SUPPORT
 //    MMIAPISPDEHTTP_InitModule();
 
-MS_MMI_Main\source\mmi_app\kernel\h\mmi_applet_table.h   SPDEHTTP_SUPPORT
+source:mmi_app\kernel\h\mmi_applet_table.h   SPDEHTTP_SUPPORT
 //	#define SPRD_SPDEHTTP_APPLET_ID    (SPRD_MMI_GUID_START + 22)
 
-MS_MMI_Main\source\mmi_app\common\h\mmi_appmsg.h   SPDEHTTP_SUPPORT
+source:mmi_app\common\h\mmi_appmsg.h   SPDEHTTP_SUPPORT
 //	#define     MSG_SPDEHTTP_TASK_START                     0x1450
 //	#define     MSG_SPDEHTTP_EXCEED_TASK_NUMT               (MSG_SPDEHTTP_TASK_START + 1)
 
@@ -177,7 +179,7 @@ make\resource_main\resource_header.mk  SPDEHTTP_SUPPORT
 //	SRCPATH	+= $(MMI_DIR)/source/mmi_app/app/spdehttp/h
 //	SOURCES	 += spdehttp_mdu_def.h
 
-MS_MMI_Main\source\resource\mmi_res_prj_def.h  SPDEHTTP_SUPPORT
+source:resource\mmi_res_prj_def.h  SPDEHTTP_SUPPORT
 //	RES_ADD_MODULE(MMI_MODULE_SPDEHTTP,"\\spdehttp\\spdehttp_mdu_def.h")
 
 
@@ -188,7 +190,7 @@ make\resource_main\resource_header.mk  memo   #107
 //	SRCPATH	+=  $(MMI_DIR)/source/mmi_app/app/memo/h\
 //	SOURCES	 += memo_mdu_def.h
 
-MS_MMI_Main\source\resource\mmi_res_prj_def.h  memo_mdu
+source:resource\mmi_res_prj_def.h  memo_mdu
 //  RES_ADD_MODULE(MMI_MODULE_MEMO,"\\memo\\memo_mdu_def.h")
 
 
@@ -199,64 +201,13 @@ app:pic_viewer\h\pic_viewer_mdu_def.h  PIC_VIEWER_SUPPORT
 
 
 
-[1.9] font/color
-//	字库：
-//		==>VECTOR:
-//		====>ETRUMP:
-//		======>en:*.ttf
-//		======>cn:Spreadtrum_YH2312F.ttf  (426K)
-//		====>def:
-//		======>en:*.lib   (88K)
-//		======>cn:LANG_FONT_HAN_VECTOR.lib  (2.04M)
-//		==>GRAY:
-//		====>error
-//		======>en:*GRAY.lib
-//		======>cn:LANG_FONT_HAN_GRAY.lib  (1.94M)
-//		==>点阵:
-//		======>en:LANG_FONT_LATIN_BASIC.lib   (173K)
-//		======>cn:LANG_FONT_HAN_GRAY.lib  (4.79M)
-MS_MMI_Main\source\resource\mmi_res_prj_def.h  LANG_FONT_HAN_VECTOR
-MS_MMI_Main\source\resource\Common\FONT\
-open tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe
-
-
-MS_MMI_Main\source\resource\Common\FONT\LANG_FONT_LATIN_12_14_29.lib
-MS_MMI_Main\source\resource\Common\FONT\
-
-
-// 换字库
-MS_Customize/source/product/config/uis8910ff_refphone/spiflash_cfg.c  WATCH_LANG_HAN_VECTOR_3241
-MS_Customize/UIX8910_normal.scf
-MS_MMI_Main/source/resource/mmi_res_prj_def.h  WATCH_LANG_HAN_VECTOR_3241
-
-
-//
-Makefile.verify  VECTOR_FONT
+[1.9] color
 
 //
 // RGB8882RGB565(rgb888)
 
 // ==>font/color
 Save:node\C\study\Macro_res_color_8910.h  __idle__
-
-
-
-// VIB
-key:VIB,file:mmi_res_prj_def.h
-
-// FONT
-key:FONT,file:mmi_res_prj_def.h
-
-
-// RING
-key:RING,file:mmi_res_prj_def.h
-
-
-// LANG
-key:LANG,file:mmi_res_prj_def.h
-
-// IM
-key:IM,file:mmi_res_prj_def.h
 
 
 
@@ -280,12 +231,12 @@ make\preload_app\preload_app.mk  51
 //	browser_manager_mdu_def.h	browser
 //	browser_mdu_def.h	browser
 // camera
-MS_MMI_Main\source\mmi_app\app\camera\h\camera_mdu_def.h  IMG_DC_ICON_PHOTO
+source:mmi_app\app\camera\h\camera_mdu_def.h  IMG_DC_ICON_PHOTO
 // cc
 //	cc_mdu_def.h
 //	clock_mdu_def.h	clock
 //	common_mdu_def.h	common
-MS_MMI_Main\source\mmi_app\common\h\common_mdu_def.h  TXT_AUDIO
+source:mmi_app\common\h\common_mdu_def.h  TXT_AUDIO
 //	connection_mdu_def.h	connection
 //	datacounter_mdu_def.h	dataCounter
 //	dl_mdu_def.h	dl
@@ -317,36 +268,21 @@ MS_MMI_Main\source\mmi_app\common\h\common_mdu_def.h  TXT_AUDIO
 
 
 
-[1.13] __lang__
+[1.13] lang/rule
 
-// 繁体
-prj:project_{cur}.mk  IM_SIMP_CHINESE_SUPPORT	= FALSE	          
-prj:project_{cur}.mk  MMI_DISPLAY_SIMP_CHINESE_SUPPORT = FALSE  
-prj:project_{cur}.mk  IM_TRAD_CHINESE_SUPPORT = TRUE            
-prj:project_{cur}.mk  MMI_DISPLAY_TRAD_CHINESE_SUPPORT = TRUE   
-// 繁体
-prj:project_{cur}.mk  MMI_LANG_HAN_VECTOR_DEFAULT_ADD_SIMP_LIB = TRUE
-prj:project_{cur}.mk  WATCH_LANG_HAN_VECTOR_USE_MERGE_SMALL = TRUE
-prj:project_{cur}.mk  MMISET_EDEFAULT_INPUT_LANGUAGE_TRAD_CN = TRUE
-
-// 关中文     
-prj:project_{cur}.mk  IM_SIMP_CHINESE_SUPPORT = FALSE
-prj:project_{cur}.mk  MMI_DISPLAY_SIMP_CHINESE_SUPPORT = FALSE
-prj:{cfg}.cfg  IM_SIMP_CHINESE_SUPPORT
-// 
-prj:project_{cur}.mk  MMI_LANG_HAN_VECTOR_DEFAULT_ADD_SIMP_LIB = TRUE
-prj:project_{cur}.mk  
-
-// 西班牙开2个宏
-prj:{cfg}.cfg  IM_SPANISH_SUPPORT
-prj:{cfg}.cfg  IM_SPANISH_AM_SUPPORT
-
-###
-// def
-Save:node\C\study\Macro_res_8910lang.h  __def__
-Save:node\C\study\Macro_res_8910lang.h __lang__
+### __lang__
+// 开宏
+Save:node\C\study\Macro_res_8910lang.h  __def__      #默认语言
+Save:node\C\study\Macro_res_8910lang.h  __search__   #--语言
+Save:node\C\study\Macro_res_8910lang.h  __FONT__     #--lib
+// 需要开多个宏
+Save:node\C\study\Macro_res_8910lang.h  __CN__       # 简体/繁体
+Save:node\C\study\Macro_res_8910lang.h  __SPAN__     # 西班牙
+//
+Save:node\C\study\Macro_res_8910lang.h  __tool__     # 修改字库
 
 
+### __rule__
 // 翻译lang
 Save:node\C\rule\Macro_Rule_Han_file.h  70
 Save:node\C\rule\Macro_Rule_Han_file.h  AMHARIC
@@ -362,7 +298,7 @@ Save:node\C\rule\Macro_Rule_Lang_NAME.h  IM_AMHARIC_SUPPORT
 // str--columnName(用普通格式, unicode乱码)(AB一样)
 Save:node\C\rule\Macro_Rule_Lang_COLUMN_TABLE1.h  Hebrew     // str_table.xls
 Save:node\C\rule\Macro_Rule_Lang_COLUMN_TABLE2.h  AMHARIC    // str_table1.xls
-// str--命名规则
+// str-excel--命名规则
 make\perl_script\ResGen\ReadMe.txt  str_table
 make\perl_script\ResGen\ResView.ini  cust_str_table
 //
@@ -421,8 +357,8 @@ Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 {8910}\tools\DEBUG_TOOL\ResBOCA\ResBOCA_R1.19.0501\Bin\
 // data
 resource:Common\DATA\
-{8910wa21}\MS_MMI_Main\source\resource\Common\DATA\
-{8910wa_git}\MS_MMI_Main\source\resource\Common\DATA\
+{8910wa21}\source:resource\Common\DATA\
+{8910wa_git}\source:resource\Common\DATA\
 // 8910 apn str
 Save:node\C\study\Macro_doc_apn8910.h
 // 8910 volte/白名单

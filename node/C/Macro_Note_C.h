@@ -5,7 +5,7 @@ Save:node\C\Macro_Note_C.h \[1.1\] 安装+配置
 Save:node\C\Macro_Note_C.h \[1.2\] project----------8910 mtk
 Save:node\C\Macro_Note_C.h \[1.3\] ext,third
 Save:node\C\Macro_Note_C.h \[1.4\] list
-Save:node\C\Macro_Note_C.h \[1.5\] other
+Save:node\C\Macro_Note_C.h \[1.5\] //other
 Save:node\C\Macro_Note_C.h \[1.6\] rule
 Save:node\C\Macro_Note_C.h \[1.7\] search
 Save:node\C\Macro_Note_C.h \[1.8\] tool-------------
@@ -86,7 +86,7 @@ Save:node\C\study\Macro_patch_third.h
 
 [1.4] list
 // 蓝牙
-Save:node\C\project\Macro_Note_Nordic.h
+//Save:node\C\project\Macro_Note_Nordic.h
 // ref list
 Save:node\C\cfg\Macro_c_list.h
 
@@ -96,32 +96,6 @@ Save:node\C\cfg\Macro_c_list.h
 // other--no use
 Save:node\C\study\Macro_Spr_Fun.h
 Save:node\C\study\Macro_Spr_MsgId.h
-
-//version
-// 版本号快速查询
-Save:node\C\group\
-Save:node\C\group\si_version_6531D.h
-Save:node\C\group\si_version_6531DB.h
-Save:node\C\group\si_version_6531e.h
-Save:node\C\group\si_version_7701.h
-Save:node\C\group\si_version_Base.h
-
-
-//Group
-// 1.快捷键跳转到宏
-// 2.快捷键打开文件 (功能没用，不如文件目录好用)
-// 3.文件互关
-Save:node\C\group\Macro_Group_Make_6531E.h
-Save:node\C\group\Macro_Group_Make_6533.h
-Save:node\C\group\Macro_Group_Make_7701.h
-Save:node\C\group\Macro_Group_Make_MTK.h
-Save:node\C\group\Macro_Group_Menu_6531E.h
-Save:node\C\group\Macro_Group_Menu_6533.h
-Save:node\C\group\Macro_Group_Menu_7701.h
-Save:node\C\group\Macro_Group_Menu_MTK.h
-Save:node\C\group\Macro_Group_Project_File.h
-
-
 
 
 
@@ -145,6 +119,7 @@ Save:node\C\project\Macro_Note_Short.h
 
 
 [1.7] search
+Save:node\C\search\
 Save:node\C\search\Macro_ALL_6531D.h
 Save:node\C\search\Macro_ALL_6531DB.h
 Save:node\C\search\Macro_ALL_6531E.h

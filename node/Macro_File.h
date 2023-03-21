@@ -1,6 +1,5 @@
 
-// File:
-// 1. Common notes
+// File
 Save:node\Macro_File.h \[1.1\] node-----------记录文件
 Save:node\Macro_File.h \[1.2\] patch/bak------补丁/备用文件
 Save:node\Macro_File.h \[1.3\] help-----------编号/默认文件

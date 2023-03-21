@@ -6,28 +6,13 @@ Save:node\ToolsMsg\Macro_Image.h \[1.2\] mv
 Save:node\ToolsMsg\Macro_Image.h \[1.3\] 
 Save:node\ToolsMsg\Macro_Image.h \[1.4\] 
 Save:node\ToolsMsg\Macro_Image.h \[1.5\] 
-Save:node\ToolsMsg\Macro_Image.h \[1.6\] 
-Save:node\ToolsMsg\Macro_Image.h \[1.7\] 
+Save:node\ToolsMsg\Macro_Image.h \[1.6\] mp3
+Save:node\ToolsMsg\Macro_Image.h \[1.7\] mpeg to wav
 Save:node\ToolsMsg\Macro_Image.h \[1.8\] 
 Save:node\ToolsMsg\Macro_Image.h \[1.9\] 
 Save:node\ToolsMsg\Macro_Image.h \[1.10\] 
 Save:node\ToolsMsg\Macro_Image.h \[1.11\] 
 Save:node\ToolsMsg\Macro_Image.h \[1.12\] 
-//
-Save:node\ToolsMsg\Macro_Image.h \[2.1\] mp3
-Save:node\ToolsMsg\Macro_Image.h \[2.2\] 
-Save:node\ToolsMsg\Macro_Image.h \[2.3\] 
-Save:node\ToolsMsg\Macro_Image.h \[2.4\] 
-Save:node\ToolsMsg\Macro_Image.h \[2.5\] 
-Save:node\ToolsMsg\Macro_Image.h \[2.6\] 
-Save:node\ToolsMsg\Macro_Image.h \[2.7\] 
-Save:node\ToolsMsg\Macro_Image.h \[2.8\] 
-Save:node\ToolsMsg\Macro_Image.h \[2.9\] 
-Save:node\ToolsMsg\Macro_Image.h \[2.10\] 
-Save:node\ToolsMsg\Macro_Image.h \[2.11\] 
-Save:node\ToolsMsg\Macro_Image.h \[2.12\] 
-// 其他标号
-Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 
 
@@ -64,13 +49,23 @@ DR15.dta
 
 
 
-[1.6] 
+[1.6] mp3
+//	HA_GoldWaveHZ
+//	压缩：
+//	保存->格式
 
 
 
 
-[1.7] 
 
+[1.7] mpeg to wav
+### amr-to-mp3
+https://cloudconvert.com/amr-to-mp3
+
+
+
+//### mp4-to-mp3
+//https://www.aconvert.com/cn/audio/mp4-to-mp3/
 
 
 
@@ -110,55 +105,6 @@ DR15.dta
 
 [1.15] 
 
-
-
-[2.1] mp3
-//	HA_GoldWaveHZ
-//	压缩：
-//	保存->格式
-
-
-[2.2] 
-
-
-[2.3] 
-
-
-[2.4] 
-
-
-[2.5] 
-
-
-[2.6] 
-
-
-[2.7] 
-
-
-[2.8] 
-
-
-[2.9] 
-
-
-[2.10] 
-
-
-
-[2.11] 
-
-
-[2.12] 
-
-
-[2.13] 
-
-
-[2.14] 
-
-
-[2.15] 
 
 
 

@@ -64,6 +64,7 @@ batNv:\\
 //	value="0x04"  即为4G only
 lib\modem\{ROM}\nvitem\
 lib\modem\{ROM}\nvitem/modem_nv_cat1bis_uix8910_static.nvm   defaultRat
+lib\modem\{ROM1}\nvitem/modem_nv_cat1bis_uix8910_static.nvm   defaultRat
 //
 lib\modem\{ROM}\nvitem/modem_nv_cat1bis_uix8910_card2_static.nvm   defaultRat
 
@@ -73,9 +74,9 @@ nv:modem_nv_cat1bis_uix8910_static.nvm   defaultRat
 nv:modem_nv_cat1bis_uix8910_card2_static.nvm   defaultRat
 
 
-// SPCSS01123748
+// SPCSS01123748/SPCSS00883216
 //同时贵司需要关注MMI/AT中可能存在的修改配置的菜单/命令
-
+// SPCSS01134008
 
 [1.7] 
 nv:\\

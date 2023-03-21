@@ -1,7 +1,6 @@
 
 
-// File List [Num][Ca]:
-// 1. 常用笔记
+// History:
 Save:node\Macro_History.h \[1.1\] android
 Save:node\Macro_History.h \[1.2\] C
 Save:node\Macro_History.h \[1.3\] Pythons
@@ -12,8 +11,6 @@ Save:node\Macro_History.h \[1.7\]
 Save:node\Macro_History.h \[1.8\] 
 Save:node\Macro_History.h \[1.9\] 
 Save:node\Macro_History.h \[1.10\] bak file
-//样板文件:
-Save:node\Macro_History.h
 
 
 [1.1] android

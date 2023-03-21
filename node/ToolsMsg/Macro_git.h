@@ -94,6 +94,14 @@ G:\wa03u_git\.git\config
 .git/.git-credentials
 
 
+### safe.directory
+// 多win10账号共享
+git config --global --add safe.directory 'D:\save\SI'
+//
+patch:ssh\Macro_github_url.h  __safe__
+patch:ssh\Macro_gitlab_url.h  __safe__
+
+
 [1.2] git config --list ---查看设置
 git config --list
 //user.name=xiaoj

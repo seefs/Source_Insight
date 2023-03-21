@@ -194,29 +194,15 @@ MS_Ref\source\lcd\src\lcd.c GC9306_Ex
 driver:lcd\tft_GC9300.c GC9300_Ex(void)
 
 // 屏亮度/背光电流:
+// --set
+Save:node\C\cfg\Macro_c_path_sprd.h  __ANALOG__
 chip_drv\chip_module\analog\
-// --6531D
-chip_drv\chip_module\analog\sr1131\analog_phy_sr1131.c  s_ana_bln_sw_tab
-chip_drv\chip_module\analog\sr1131\analog_phy_sr1131.c  s_ana_dev_tab
-// --6531E
-chip_drv\chip_module\analog\sr1161\analog_phy_sr1161.c s_ana_bln_sw_tab
-// --t703/8910
-chip_drv\chip_module\analog\sc2720\analog_phy_sc2720.c  s_ana_bln_sw_tab
-chip_drv\chip_module\analog\sc2720\analog_phy_sc2720.c  s_ana_dev_tab
-// --t107
-chip_drv\chip_module\analog\v7\analog_phy.c  s_ana_bln_sw_tab
-chip_drv\chip_module\analog\v7\analog_phy.c  BLTC_LCM_CURRENT_V
-chip_drv\chip_module\analog\v7\analog_phy.c  s_ana_dev_tab
+chip_drv\chip_module\analog\{analog}\{analog_phy}.c  s_ana_bln_sw_tab     # 背光亮度
+chip_drv\chip_module\analog\{analog}\{analog_phy}.c  BLTC_LCM_CURRENT_V
+chip_drv\chip_module\analog\{analog}\{analog_phy}.c  s_ana_dev_tab
 // 背景电流 = BLTC_LCM_CURRENT_V
 chip_drv\chip_module\analog\analog_phy.h  LCM_V_SW
 
-// --目录--107
-make\chip_drv\def_config\
-make\chip_drv\def_config\UMS9117.cfg  CONFIG_ANALOG_VER = v7
-make\chip_drv\chip_modules\analog.mk  CONFIG_ANALOG_VER
-//
-make\chip_drv\chip_drv.mk  analog_phy_sc2720.c
-make\chip_drv\chip_drv.mk  analog_phy
 
 // --刷新帧率
 //  ==>
@@ -637,112 +623,17 @@ prj:{cfg}.cfg   TRACE_INFO_SUPPORT = TRUE
 prj:project_{cur}.mk MODEM_BIN_FILE = UIS8910_ROM_16MB_DS_DEBUG
 
 
-
-### usb
-// --6531
-open: tools\DEBUG_TOOL\CHANNELSERVER\Bin\ChannelServer.exe
-// 1) 连接USB线, 选择 USB LOG的选项
-// 2) Channel Server Configure:
-//  MS: Type: UART
-//     Port:  SPRD U2S Diag(COM12) ---------------- 要改 
-//                         (COM12是连接USB的端口)
-//     BaudRate:115200 ---------------------------- 要改 
-//     Endian: self adaptive
-//  
-//  WinSocket Server:
-//     Port: 36666 
-//     Timeout: 3 (s)
-// 3) Connect MSSim;channel的图标将有谈绿色的更成翠绿色
-// 其他:
-// 1. 驱动不同, 可能显示 SPRD Diag(COM12)
-// 2. 一直不出log, 还原svn后可能正常
-
-// 6531
-open: tools\DEBUG_TOOL\LOGEL\Bin\ArmLogel.exe
-// 8910
-open: tools\DEBUG_TOOL\ArmLogel\Bin\ArmLogel.exe
-open: tools\DEBUG_TOOL\ArmTracer\Bin\ArmLogel.exe
-// 1) 插入USB线，选择USB LOG的选项
-// 2) 运行 ArmLogel.exe
-// 3) 菜单选项LOG下面一行的最左边的DLL图标；
-// 4) DLL图标变化后，点击第二个图标Connect;
-// 5) 点击第五个图标Logging
-// 6) 点击点击第五个图标Stop
-// 7) 点击log保存图标
-
-
-// NV修改:
-open: tools\DEBUG_TOOL\NVEDITOR\Bin\NVEditor.exe
-// 选择:
-build\UIS8910_ROM_16MB_DS_USER_builddir\img\nvitem\
-build\UIS8910_ROM_16MB_DS_USER_builddir\img\nvitem\nvitem.prj
-// 设置 Armlog抓取:
-// dsp_log_switch = 0x0 //
-// enable_arm_log = 0x1
-// com_debug =  0;    //0xFF
-// arm_log_uart_id = 0x1 //
-// dsp_log_uart_id = 0x0 //
-
-// 设置 Dsplog抓取:
-// dsp_log_switch = 0x1 //
-// enable_arm_log = 0x1
-// com_debug = 0;    //0xFF
-// arm_log_uart_id = 0x0 //
-// dsp_log_uart_id = 0x1 //
-
-
-// 不用改:
-// com_data = 0xFF               (USB:0xFF, 相同)
-// com_debug_baud_rate = 0x70800 (USB:0x1C200,展迅没说这个要改)
-
-// 改完NV，只下载NV
-build\PS102_DJTX_G182_W25G2_F1_builddir\img\nvitem\nvitem.bin
-// 或者 CUSTOMER = PS102_KLS_2IN1
-common\nv_parameters\PS102_MB\PS102_KLS_2IN1\nv_type\nv_type_4band.nvm =^com_debug    //ITEM_NAME 0x1
-common\nv_parameters\PS102_MB\PS102_KLS_2IN1\nv_type\nv_type_4band.nvm =^com_debug_baud_rate //ITEM_NAME 0x70800
-common\nv_parameters\PS102_MB\PS102_KLS_2IN1\nv_type\....     nvm =^DSP_log_switch   //ITEM_NAME 0x0
-//File—>Save Image，File—>Save Project
-
-
-USB抓trace:
-//工程模式设置:(6531)
-//8 para set->arm log:open
-//8 para set->dsp log:open
-//8 para set->usb log:open
-//8 para set->debug->debug alert:open  (不确定开不开)
-
-//工程模式设置:(8910)
-//8 para set->ap log:open
-//8 para set->cp log:close
-//8 para set->usb log:open
-//8 para set->debug->debug alert:open  (不确定开不开)
-
-//工程模式设置:(107)
-//8 para set->arm log:open
-//8 para set->dsp log:usb
-//8 para set->usb log:close
-//8 para set->debug->alert:debug
-
-uart抓trace:
-//工程模式设置:
-//8 para set->arm log:open
-//8 para set->dsp log:open
-//8 para set->usb log:close (不确定)
-//8 para set->debug (para)->assert:open  (不确定开不开)
-
-//工程模式设置:(8910 user)
-//8 para set->ap log:open
-//8 para set->cp log:open
-//8 para set->usb log:close (不确定)
-//8 para set->debug (para)->assert:open  (不确定开不开)
-
+### trace
+//
+Save:node\C\project\Macro_Note_8910trace.h  __USB__
+Save:node\C\project\Macro_Note_8910trace.h  __uart__
+Save:node\C\project\Macro_Note_8910trace.h  __SIM__
+//Save:node\C\project\Macro_Note_8910trace.h  __SIM__
 
 
 ### CE 蓝牙定频版本:
-make/{cur}_{GSM}.mak PRODUCT_BASELIB_DIR = sc6531efm_32X32_320X240BAR_AB_CE
-make/{cur}_{GSM}.mak BT_NONSIG_SUPPORT = TRUE
-
-
+prj:project_{cur}.mk  PRODUCT_BASELIB_DIR = sc6531efm_32X32_320X240BAR_AB_CE
+prj:project_{cur}.mk  BT_NONSIG_SUPPORT = TRUE
 
 
 ### 

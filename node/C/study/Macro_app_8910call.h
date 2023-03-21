@@ -1,17 +1,19 @@
 
 //目录:
 Save:node\C\study\Macro_app_8910call.h \[1.1\] init
-Save:node\C\study\Macro_app_8910call.h \[1.2\] MT
-Save:node\C\study\Macro_app_8910call.h \[1.3\] MO
-Save:node\C\study\Macro_app_8910call.h \[1.4\] DIS
-Save:node\C\study\Macro_app_8910call.h \[1.5\] Ans
+Save:node\C\study\Macro_app_8910call.h \[1.2\] MT -----------来电
+Save:node\C\study\Macro_app_8910call.h \[1.3\] MO -----------去电
+Save:node\C\study\Macro_app_8910call.h \[1.4\] DIS ----------挂断
+Save:node\C\study\Macro_app_8910call.h \[1.5\] Ans ----------接听
 Save:node\C\study\Macro_app_8910call.h \[1.6\] 112
-Save:node\C\study\Macro_app_8910call.h \[1.7\] Multi
+Save:node\C\study\Macro_app_8910call.h \[1.7\] Multi---------多卡通话
 Save:node\C\study\Macro_app_8910call.h \[1.8\] opt
-Save:node\C\study\Macro_app_8910call.h \[1.9\] 
-Save:node\C\study\Macro_app_8910call.h \[1.10\] 
-Save:node\C\study\Macro_app_8910call.h \[1.11\] 
-Save:node\C\study\Macro_app_8910call.h \[1.12\] 
+Save:node\C\study\Macro_app_8910call.h \[1.9\] vib
+Save:node\C\study\Macro_app_8910call.h \[1.10\] record
+Save:node\C\study\Macro_app_8910call.h \[1.11\] speaker
+Save:node\C\study\Macro_app_8910call.h \[1.12\] other
+Save:node\C\study\Macro_app_8910call.h \[1.13\] asp----------
+Save:node\C\study\Macro_app_8910call.h \[1.14\] 
 // 其他标号
 Save:Help\\DefaultFile\\Macro_Node_Num.h
 
@@ -267,7 +269,8 @@ app:cc\c\mmicc_{wintab}.c  MMI_RESULT_E^HandleHoldMenuWinMsg
 app:cc\c\mmicc_{wintab}.c  MMI_IDLE_8_KEY_LONG_TO_HANDHOLD 
 
 
-[1.13] 
+[1.13] __asp__
+//
 
 
 

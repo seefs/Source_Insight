@@ -3,7 +3,7 @@
 Save:node\C\study\Macro_nv_sim107.h \[1.1\] IMEI
 Save:node\C\study\Macro_nv_sim107.h \[1.2\] ECC, nv copy
 Save:node\C\study\Macro_nv_sim107.h \[1.3\] precondition
-Save:node\C\study\Macro_nv_sim107.h \[1.4\] BAND
+Save:node\C\study\Macro_nv_sim107.h \[1.4\] BAND, nv copy
 Save:node\C\study\Macro_nv_sim107.h \[1.5\] REG
 Save:node\C\study\Macro_nv_sim107.h \[1.6\] //4G
 Save:node\C\study\Macro_nv_sim107.h \[1.7\] custom
@@ -75,7 +75,7 @@ nv:NV_PARAM_TYPE_EXPORT_NAS_CUSTOMER_SETTINGS.xml
 PS\nv\internal\ps\was\NV_PARAM_TYPE_PREV_UMTS_FDD_RA_CAPABILITY.xml
 //
 rdnv:NV_PARAM_TYPE_PREV_UMTS_FDD_RA_CAPABILITY.xml  268
-//
+// 编的时候被覆盖
 PS\nv\config_nv\ps\was.nv  dpcch_dtx_supported
 
 // 
@@ -100,10 +100,21 @@ nv:gsm_Antenna_switch_RFGPIO_config_logic.xml
 
 ### IMS
 // 实际一致，只是加了0x
-PS\nv\export\ps\ims\/
-PS\nv\export\ps\ims\/NV_PARAM_TYPE_EXPORT_IMS_CUSTOMER_SETTINGS.xml
+PS\nv\export\ps\ims\
+PS\nv\export\ps\ims\NV_PARAM_TYPE_EXPORT_IMS_CUSTOMER_SETTINGS.xml
 //
 nv:NV_PARAM_TYPE_EXPORT_IMS_CUSTOMER_SETTINGS.xml  140
+
+
+### 3-NV_PARAM
+//
+PS\nv\export\ps\mn\NV_PARAM_TYPE_EXPORT_MN_CUSTOMER_SETTINGS.xml
+//
+nv:NV_PARAM_TYPE_EXPORT_MN_CUSTOMER_SETTINGS.xml
+PS\nv\export\ps\mn\
+// 编的时候被覆盖
+PS\nv\config_nv\ps\MN.nv   multi_rat_mode
+
 
 
 ### simlock
@@ -158,7 +169,7 @@ nv:LTE_NV_EUTRA_CUSTOMER_SETTINGS.xml  numOfEUTRAFDDBand  -> 0x4
 // 4G:B1/3/5/8/40/41
 
 
-### gsm (gas 2G相关)
+### 1-gsm (gas 2G相关)
 nv:NV_PARAM_TYPE_EXPORT_GAS_CUSTOMER_SETTINGS.xml  gsm_band_select  -> 0xc
 //		0x0:EGSM900;
 //		0x1:DCS1800;
@@ -176,7 +187,7 @@ nv:NV_PARAM_TYPE_EXPORT_GAS_CUSTOMER_SETTINGS.xml  gsm_band_select  -> 0xc
 //		0xd:DCS_PCS;
 //		0xe:GSM850_DCS_PCS
 
-### was 不用改 (was 3G相关)
+### 2-was 不用改 (was 3G相关)
 nv:NV_PARAM_TYPE_EXPORT_WAS_CUSTOMER_SETTINGS.xml
 //	value="0x1"
 //	value="0x2"

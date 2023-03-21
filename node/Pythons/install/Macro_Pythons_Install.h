@@ -399,8 +399,11 @@ cmd_w: pip install fontforge
 cmd_w: pip install python-fontforge
 cmd_w: pip install fontforge==1.0
 cmd_w: pip install python-fontforge
+cmd_w: pip install python3-fontforge
 cmd_w: pip install fonttools
 
+cmd_w: python -m pip install --upgrade python3-fontforge
+cmd_w: python -m pip install --upgrade pip
 
 
 [3.11] websocket

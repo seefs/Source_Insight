@@ -22,8 +22,8 @@ Save:node\C\study\Macro_res_ring_8910.h \[1.15\] tts
 Save:node\C\study\Macro_res_ring_8910.h \[1.16\] other
 Save:node\C\study\Macro_res_ring_8910.h \[1.17\] asp
 Save:node\C\study\Macro_res_ring_8910.h \[1.18\] 
-Save:node\C\study\Macro_res_ring_8910.h \[1.19\] 
-Save:node\C\study\Macro_res_ring_8910.h \[1.20\] 
+Save:node\C\study\Macro_res_ring_8910.h \[1.19\] VIB
+Save:node\C\study\Macro_res_ring_8910.h \[1.20\] RING
 Save:node\C\study\Macro_res_ring_8910.h \[1.21\] 
 Save:node\C\study\Macro_res_ring_8910.h \[1.22\] 
 // ÆäËû±êºÅ
@@ -484,13 +484,18 @@ app:setting\c\mmiset_ring.c   MMISET_RING_TYPE_ASP
 
 
 
-[1.19] 
+[1.19] __VIB__
+// VIB
+key:VIB,file:mmi_res_prj_def.h
 
 
 
 
-[1.20] 
 
+[1.20] __RING__
+
+// RING
+key:RING,file:mmi_res_prj_def.h
 
 
 

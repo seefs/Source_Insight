@@ -5,20 +5,14 @@ basePath = D:\project\C
 base:\\
 tmpPath = base:tmp
 tmp:\\
-tmp2Path = base:tmp2
-tmp2:\\
 
-
-/***********************************************************************/
-
-//目录[Num][Ca]:
-// 1. 
-Save:node\C\cfg\Macro_c_list.h \[1.1\] qrcode
+//目录:
+Save:node\C\cfg\Macro_c_list.h \[1.1\] qrcode---------二维码
 Save:node\C\cfg\Macro_c_list.h \[1.2\] 
 Save:node\C\cfg\Macro_c_list.h \[1.3\] TTF
 Save:node\C\cfg\Macro_c_list.h \[1.4\] //TTF edit
 Save:node\C\cfg\Macro_c_list.h \[1.5\] fontforge
-Save:node\C\cfg\Macro_c_list.h \[1.6\] rime-------输入法
+Save:node\C\cfg\Macro_c_list.h \[1.6\] rime-----------输入法
 Save:node\C\cfg\Macro_c_list.h \[1.7\] audio
 Save:node\C\cfg\Macro_c_list.h \[1.8\] 
 Save:node\C\cfg\Macro_c_list.h \[1.9\] 
@@ -49,7 +43,7 @@ G:\wa03u_git\MS_MMI_Main\source\mmi_app\app\qrencode_2\c
 
 
 
-[1.3] TTF
+[1.3] __TTF__
 # sprd ttf
 // 细字体, 接近T107:
 //	FONT\SimSun.ttf
@@ -60,7 +54,11 @@ G:\wa03u_git\MS_MMI_Main\source\mmi_app\app\qrencode_2\c
 // 正常字体, 接近8910:
 //	FONT\Zouk TTF\NotoSansCJKtc-Regular.ttc
 
+
 # windows ttf
+// ttc文件是ttf文件的集成文件
+// 比如simsun.ttc是“宋体、新宋体、宋体-PUA”三种字体的集合
+C:\Windows\Fonts\
 
 
 # 字库厂商
@@ -122,16 +120,20 @@ Save:node\C\project_demo\Macro_file_ttf_ttf_to_png.h
 
 
 
-[1.5] fontforge
+[1.5] __fontforge__
 
 // fontforge
 Useful = True
 //	
 cd:tmp: git clone https://github.com/fontforge/fontforge
 // 输出编码,  清除
-Save:node\C\project_demo\Macro_file_ttf_fontforge.h
-Save:node\C\project_demo\Macro_file_ttf_fontforge.h  __MTK__
+Save:node\C\project_demo\
+Save:node\C\project_demo\Macro_file_fontforge_scripting.h
+Save:node\C\project_demo\Macro_file_fontforge_mtk.h
+Save:node\C\project_demo\Macro_file_fontforge_sprd.h
 
+// exe
+https://fontforge.org/en-US/downloads/
 
 // ttc 转化ttf 工具
 //https://transfonter.org/ttc-unpack

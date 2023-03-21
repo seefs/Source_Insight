@@ -727,20 +727,28 @@ app:cc\h\cc_mdu_def.h  IMAGE_CL_PRE_SIM_1  # 24*24
 
 
 [1.24] common
-### __tab__
-images:common\MMI_RES_DEFAULT\IMAG\Tab\
-images:common\MMI_RES_DEFAULT\IMAG\Title\
-
-// 
-//	IMAGE_CONTROL_TAB_DEFAULT
-//	IMAGE_TAB_BG
-//	// sms--box--tab
-
-// tab--line--theme
+### tab/title theme
+// tab--line
+//		==>IMAGE_TAB_BG
+//		====>IMAGE_CONTROL_TAB_DEFAULT
 app:theme\c\mmitheme_tab.c  bg_image_id   = IMAGE_TAB_BG      //240*320
 app:theme\c\mmitheme_tab.c  bg_image_id   = IMAGE_TITLE_BAR2  //128*160
 app:theme\c\mmitheme_tab.c  dividing_line = IMAGE_TAB_LINE    //仅240*320
 app:theme\c\mmitheme_tab.c  height_bg_info.img_id = IMAGE_TAB_SELECT1
+
+//		==>MMITHEME_GetTitleStyle
+//		====>.IMAGE_COMMON_TITLE_BAR   #注释了
+//		====>.IMAGE_TITLE_BAR
+//		======>.IMAGE_TITLE_BAR.bmp    #107
+app:theme\c\mmitheme_title.c  MMITHEME_GetTitleStyle
+
+
+### __tab__
+images:common\MMI_RES_DEFAULT\IMAG\Tab\
+images:common\MMI_RES_DEFAULT\IMAG\Title\
+
+// tab--sms--box
+//		==>IMAGE_TAB_BG
 
 // tab--line--
 //		==>(font30),  2*38 
@@ -762,6 +770,8 @@ source:mmi_app\common\h\common_mdu_def.h  IMAGE_TAB_SELECT1
 //		==>(128*160), 
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TAB_DEFAULT_FONT30
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TAB_DEFAULT_B
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TAB_DEFAULT
+// tab--bg--1*72
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_TITLE_BAR2
 
 
@@ -769,11 +779,10 @@ source:mmi_app\common\h\common_mdu_def.h  IMAGE_TITLE_BAR2
 images:common\MMI_RES_DEFAULT\IMAG\Title\
 
 // title--bg--1*35
-source:mmi_app\common\h\common_mdu_def.h  IMAGE_TITLE_BAR
-// title--bg--1*72
-source:mmi_app\common\h\common_mdu_def.h  IMAGE_TITLE_BAR2
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_TITLE_BAR.bmp
 // title--bg--240*32
-source:mmi_app\common\h\common_mdu_def.h  IMAGE_COMMON_TITLE_BAR
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_COMMON_TITLE_BAR   // 普通效果/注释了
+
 
 
 ### __num__

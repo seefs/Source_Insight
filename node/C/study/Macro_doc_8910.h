@@ -53,24 +53,6 @@ MS_Customize\SC6530_S036_MB_vm
 version\SC6530_S036_MB_version.c
 
 
-### 8910µ¥Èí¶àÓ² (row = newV /oldV)
-// prdt
-prj:nvitem/ProductionParam_uix8910.nvm  1393 = 0x5 /0x0
-prj:nvitem/ProductionParam_uix8910.nvm  1403 = 0x7 /0x0
-// rf
-prj:nvitem/RF_nv.nvm  42069 = 0xD013B / 0xD0199
-prj:nvitem/RF_nv.nvm  42130 = 0xD013B / 0xD0199
-// rename
-prj:nvitem/audio_sc6531efm.nvm
-prj:nvitem/audio_sc6531efm_AEC.nvm
-prj:nvitem/
-// ver
-Custom_Copy.bat  project\config_nv
-prj:nvitem/hw_ver00.nv
-prj:nvitem/hw_ver01.nv
-// mk
-prj:uis8910_phone_base_config.cfg  FORCECHANGE_SUPPORT  = TRUE
-prj:uis8910_phone_user_base_config.cfg  FORCECHANGE_SUPPORT  = TRUE
 
 
 
@@ -262,7 +244,11 @@ app:eng/c/mmieng_main.c  UITESTWIN_OpenPhoneTestWin
 //		==>####8888#£¬°µÂë, simlock
 //		==>ÓïÑÔÇÐ»»
 app:parse\c\mmiparse_dial.c  MMIAPISET_ParseSIMLockSwitchString
+//		==>IMEI; "*#06#",
+app:parse\c\mmiparse_dial.c  MMIAPIPARSE_ProcessImeiStr
 
+### reset
+Save:node\C\study\Macro_app_8910set.h  __reset__
 
 
 [1.10] ImageNote

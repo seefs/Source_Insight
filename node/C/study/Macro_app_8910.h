@@ -512,6 +512,22 @@ app:sms\c\mmisms_commonui.c  MMISMS_HandleNewMsgWin
 app:sms\c\mmisms_api.c MMIAPISMS_GetAllUnreadMsgCount
 
 
+//4.mst--107
+//		==>
+app:sms\c\mmismsapp_main.c  Handle_MST_1_MainMenuWindow
+app:sms\h\mmisms_app_mst.h  MMI_SMS_MST_APP_MENU_NODE_0
+app:sms\h\mmisms_id.h  MMI_SMS_MST_APP_0_CTRL_ID
+
+
+//6.sales
+//		==>
+Save:node\C\project\Macro_cfg_8910.h __sale__
+
+
+//5.voicemail
+//		==>460    ,11
+app:sms\h\sms_voicemailnoromaing.h  100
+
 
 ### sms
 // ==>pos

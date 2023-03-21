@@ -101,6 +101,8 @@ Save:node\C\study\Macro_doc_apn107.h
 
 
 [1.4] __reset__
+// init
+//		==>MMIAPISET_AllInit
 
 // Reset
 //		==>MMIAPISET_OpenInputResetPwdWin

@@ -1,10 +1,9 @@
 
 //目录:
-// 1. 模板
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.1\] sprd_cur--------
-Save:node\C\cfg\Macro_c_path_sprd.h \[1.2\] sprd_copy-------
-Save:node\C\cfg\Macro_c_path_sprd.h \[1.3\] sprd_cfg--------nv, driver
-Save:node\C\cfg\Macro_c_path_sprd.h \[1.4\] sprd_other------lib
+Save:node\C\cfg\Macro_c_path_sprd.h \[1.2\] sprd_copy-------6531E
+Save:node\C\cfg\Macro_c_path_sprd.h \[1.3\] sprd_cfg--------6531E--nv, driver
+Save:node\C\cfg\Macro_c_path_sprd.h \[1.4\] sprd_other------6531E--lib
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.5\] sprd_cfg--------107nv
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.6\] //sprd_sbd------
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.7\] other
@@ -13,24 +12,45 @@ Save:node\C\cfg\Macro_c_path_sprd.h \[1.9\]
 
 
 [1.1] _sprd_cur_
-// --设置当前项目
-// ----替换:{cur} -> xxx_USER
 Save:set\
+
+### 添加项目路径(Key)
+// 转换:
+//		==>G:\UIS8910_git
+//		====>61
+//		====>{61key,   8910B}   # 配置 key
+//		====>{60alias, 8910}    # 类别 alias
+Save:set\Macro_Set_Key.h  8910$
+// 其他key:
+Save:Help\Other\Macro_Help_SI.h  __key__
+
+
+### 设置当前项目(path)
+// 转换:
+//		==>ums9117_{size}BAR_48MB_{project}_user
+//		====>{cur}
 Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 Save:set\Macro_Set_Path_sprd_.h  curKey
-// --设置新路径:
-// ----替换:{pro} -> 60key -> 8910
-Save:set\Macro_Set_Key.h  8910$
+// 其他path:
+//		==>MS_MMI_Main\source\
+//		====>source:
+Save:set\Macro_Set_Path_sprd_{pro}.h  sourcePath
 
 
+### 工具路径(Common)
+// 转换:
+//		==>H:\\desktop
+//		====>Desktop:
+Save:set\Macro_Set_Common.h   DesktopPath
+// 其他Common:
+Save:Help\Other\Macro_Help_SI.h  __Common__
 
 
-// 从build 中自动配置;从bat默认修改prj(非服务器编译)
-build\
+### 自动配置
+// --新加1个bat
+// --从build获取最新目录
+// --配置cur+user
 
-// 未添加功能:
-//==>最新时间==>自动配置
-//
 
 
 [1.2] _sprd_copy_
@@ -169,12 +189,39 @@ prj:{cfg}.cfg          MMI_RES_DIR = mmi_res_240x320_mini
 prj:{cfg}.cfg          MULTI_BIN_SUPPORT = TRUE
 
 
+
 [1.5] sprd_cfg--------107nv
 ### __107NV__
 // lte
 Save:set\Macro_Set_Path_sprd_{pro}.h  lteKey
 // LTE_RF_TYPE = NemoL_T117_3595D
 prj:project_{cur}.mk   LTE_RF_TYPE
+
+
+### __ANALOG__
+// lte
+//		==>
+Save:set\Macro_Set_Path_sprd_{pro}.h  lteKey
+Save:set\Macro_Set_Path_sprd_{pro}.h  analogKey
+Save:set\Macro_Set_Path_sprd_{pro}.h  analog_phyKey
+
+
+// --目录--107
+make\chip_drv\def_config\
+make\chip_drv\def_config\UMS9117.cfg  CONFIG_ANALOG_VER = v7
+make\chip_drv\chip_modules\analog.mk  CONFIG_ANALOG_VER
+//
+//make\chip_drv\chip_drv.mk  analog_phy_sc2720.c
+//make\chip_drv\chip_drv.mk  analog_phy
+
+// --6531D
+//chip_drv\chip_module\analog\sr1131\analog_phy_sr1131.c
+// --6531E
+//chip_drv\chip_module\analog\sr1161\analog_phy_sr1161.c
+// --t703/8910
+//chip_drv\chip_module\analog\sc2720\analog_phy_sc2720.c
+// --t107
+//chip_drv\chip_module\analog\v7\analog_phy.c
 
 
 

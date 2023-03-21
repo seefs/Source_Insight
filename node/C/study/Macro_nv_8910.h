@@ -7,7 +7,7 @@ Save:node\C\study\Macro_nv_8910.h \[1.4\] mmi------------common相关
 Save:node\C\study\Macro_nv_8910.h \[1.5\] nv define------tool/app相关
 Save:node\C\study\Macro_nv_8910.h \[1.6\] nvTool
 Save:node\C\study\Macro_nv_8910.h \[1.7\] apn
-Save:node\C\study\Macro_nv_8910.h \[1.8\] 
+Save:node\C\study\Macro_nv_8910.h \[1.8\] hw_ver00-------单软多硬
 Save:node\C\study\Macro_nv_8910.h \[1.9\] nv test
 Save:node\C\study\Macro_nv_8910.h \[1.10\] Card-----------电子保卡
 Save:node\C\study\Macro_nv_8910.h \[1.11\] thir_nv,107
@@ -168,15 +168,51 @@ Save:node\C\study\Macro_doc_apn8910.h
 
 
 
-[1.8] 
+[1.8] 单软多硬
+
+### 8910单软多硬 (row = newV /oldV)
+// prdt
+prj:nvitem/ProductionParam_uix8910.nvm  1393 = 0x5 /0x0
+prj:nvitem/ProductionParam_uix8910.nvm  1403 = 0x7 /0x0
+// rf
+prj:nvitem/RF_nv.nvm  42069 = 0xD013B / 0xD0199
+prj:nvitem/RF_nv.nvm  42130 = 0xD013B / 0xD0199
+// rename
+prj:nvitem/audio_sc6531efm.nvm
+prj:nvitem/audio_sc6531efm_AEC.nvm
+prj:nvitem/
+// ver
+Custom_Copy.bat  project\config_nv
+prj:nvitem/hw_ver00.nv
+prj:nvitem/hw_ver01.nv
+// mk
+prj:uis8910_phone_base_config.cfg  FORCECHANGE_SUPPORT  = TRUE
+prj:uis8910_phone_user_base_config.cfg  FORCECHANGE_SUPPORT  = TRUE
 
 
+### 107单软多硬
+//
+//prj:project_{cur}.mk   CONFIG_BOARD_ID
 
+//
+https://unisupport.unisoc.com/faq/getFaqDetialView?id=75469
+//
+// 1.deltaNV--base NV, 配置最多的band配置，选择为base NV
+// 2.deltaNV命名依次为hw_ver00、hw_ver01~hw_ver07 
+//   软件默认最多支持8种配置
+// 3.差分配置，为hw_ver01
+// 4.NV_calibration/校准参数，不允许导入到deltaNV; 将calibration项全部删除
+// 5.nv_ver_flag=0,1
+prj:ConfigNV/
+prj:ConfigNV/hw_ver00.nv  nv_type\REF_PARAMETER\nv_ver_flag=0
+prj:ConfigNV/hw_ver01.nv  nv_type\REF_PARAMETER\nv_ver_flag=1
+prj:ConfigNV/hw_ver02.nv  nv_type\REF_PARAMETER\nv_ver_flag=1
+...
+// 6.单软多硬 deltaNV.bin制作
+// 用NV tool或者NV editor, merge deltaNV, 路径 ConfigNV/
 
-
-
-
-
+// copy
+project\config_nv\ums9117\
 
 
 

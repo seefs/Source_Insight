@@ -1,11 +1,5 @@
 ﻿
-
-基础路径设置:
-//basePath = 
-
-/***********************************************************************/
-
-//目录[Num][Ca]:
+//目录:
 // 1. 
 Save:node\Pythons\Macro_Note_Python.h \[1.1\] 安装环境
 Save:node\Pythons\Macro_Note_Python.h \[1.2\] 
