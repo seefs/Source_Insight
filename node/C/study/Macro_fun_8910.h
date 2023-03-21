@@ -158,8 +158,16 @@ source:mmi_app\common\h\mmi_appmsg.h  MSG_SET_RESET_NEED_WAIT_IND
 //
 MMK_SendMsg(VIRTUAL_WIN_ID, MSG_ALM_ALERTING_END, PNULL);
 
+//
+CAF\Template\include\caf.h  MSG_USER_START
 
 
+### Focus
+// 估计用于窗口属性
+//   MMK_GetFocusWinHandle
+// 
+//   MMK_GetFocusWinId()
+//   MMK_GetActiveCtrlId(MMK_GetFocusWinId());
 
 
 [1.5] 

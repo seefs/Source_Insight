@@ -291,13 +291,10 @@ Save:node\C\study\Macro_patch_8910.h  __charge__
 
 [1.8] __envSet__
 
-
-// env--option--set--OtherRing
-//		==>MMIAPISET_SetCurRingType
-app:setting\c\mmiset_wintab.c 822
-app:envset\c\mmienvset_wintab.c  MMIENVSET_OTHER_RING_SET_WIN_TAB
+### env--rename
 
 
+### env--setRing
 // env--option--set--setRing
 //		==>HandleOperationMenu
 //		====>MMISET_EnterRingSettingMenu
@@ -309,6 +306,7 @@ app:setting\c\mmiset_wintab.c  MMISET_ICON_RING_MENU_WIN_TAB
 app:setting\c\mmiset_wintab.c  MMISET_RING_SELECT_CALL_WIN_TAB
 
 
+### env--RingVol
 // env--option--set--RingVol
 //		==>HandleOperationMenu
 //		====>case^ID_ENVSET_RING_VOL:
@@ -325,6 +323,7 @@ app:setting\c\mmiset_wintab.c  MMISET_RING_SELECT_CALL_WIN_TAB
 app:envset\c\mmienvset_wintab.c  MMIENVSET_ALL_RING_VOL_WIN_TAB
 
 
+### env--RingType
 // env--option--set--RingType
 //		==>HandleOperationMenu
 //		====>case^ID_ENVSET_RING_TYPE:
@@ -340,6 +339,11 @@ app:envset\c\mmienvset_wintab.c  MMIENVSET_ALL_RING_VOL_WIN_TAB
 //		============>MMIAPISET_PlayCallRingByVol
 app:envset\c\mmienvset_wintab.c  MMIENVSET_RING_TYPE_WIN_TAB
 
+
+### env--OtherRing
+// env--option--set--OtherRing
+//		==>MMIAPISET_SetCurRingType
+app:envset\c\mmienvset_wintab.c  MMIENVSET_OTHER_RING_SET_WIN_TAB
 
 
 [1.9] __envPlay__

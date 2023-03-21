@@ -1,7 +1,7 @@
 
 //目录
 Save:node\C\study\Macro_gui_8910.h  \[1.1\] display str
-Save:node\C\study\Macro_gui_8910.h  \[1.2\] softkey
+Save:node\C\study\Macro_gui_8910.h  \[1.2\] softkey/Button
 Save:node\C\study\Macro_gui_8910.h  \[1.3\] draw ---------------画图
 Save:node\C\study\Macro_gui_8910.h  \[1.4\] statusbar, change----
 Save:node\C\study\Macro_gui_8910.h  \[1.5\] theme
@@ -24,14 +24,14 @@ Save:node\C\study\Macro_gui_8910.h  \[1.21\] list---------------
 Save:node\C\study\Macro_gui_8910.h  \[1.22\] height-------------滚动条
 Save:node\C\study\Macro_gui_8910.h  \[1.23\] edit, im, pen, cursor
 Save:node\C\study\Macro_gui_8910.h  \[1.24\] color--------------属性
-Save:node\C\study\Macro_gui_8910.h  \[1.25\] label--------------
+Save:node\C\study\Macro_gui_8910.h  \[1.25\] label/setlist------
 Save:node\C\study\Macro_gui_8910.h  \[1.26\] text---------------
 Save:node\C\study\Macro_gui_8910.h  \[1.27\] prgbox-------------进度条
-Save:node\C\study\Macro_gui_8910.h  \[1.28\] menu
+Save:node\C\study\Macro_gui_8910.h  \[1.28\] menu/menuSec
 Save:node\C\study\Macro_gui_8910.h  \[1.29\] owndraw------------
 Save:node\C\study\Macro_gui_8910.h  \[1.30\] Banner
 Save:node\C\study\Macro_gui_8910.h  \[1.31\] Tip
-Save:node\C\study\Macro_gui_8910.h  \[1.32\] 
+Save:node\C\study\Macro_gui_8910.h  \[1.32\] base
 
 
 
@@ -59,11 +59,11 @@ Save:node\C\study\Macro_gui_8910.h  \[1.32\]
 // --Height
 // GetFontHeight
 
-// GUIRES_DisplayImg
+// GUIRES_DisplayImg/DisplayImg
 
 
 
-[1.2] Softkey
+[1.2] Softkey/Button
 
 // 中间softkey
 gui:win/c/guiwin.c  GUIWIN_SeSoftkeytButtonIconId
@@ -110,6 +110,7 @@ ctrl:Softkey/c/ctrlsoftkey.c  void^DrawAllButtons
 //		====>CalSoftkeyRect       # 字体微调 rect 
 //		====>DrawAllButtons
 //		======>DrawButtonText     # 自动用小字体
+//		========>.font/GetTextFont
 ctrl:Softkey/c/ctrlsoftkey.c  void^CalSoftkeyRect
 //softkey--字体写死
 ctrl:Button\c\ctrlbutton.c  SOFTKEY_FONT_SIZE_ADAPT_MODE
@@ -118,6 +119,10 @@ ctrl:Softkey\c\ctrlsoftkey.c  SOFTKEY_FONT_SIZE_ADAPT_MODE
 app:mainmenu\c\mmi_mainmenu_matrix.c  void^MatrixMenuCreateButton
 
 
+### Button
+//		==>ButtonDraw
+//		====>ButtonDrawText
+//		======>.font
 
 
 ### softkey
@@ -138,9 +143,6 @@ source:mmi_gui\include\guisoftkey.h  GUISOFTKEY_SetButtonIconId
 app:theme\c\mmitheme_softkey.c  MMITHEME_GetSoftkeyStyle
 
 
-//常见修改
-source:mmi_app\common\c\mmi_setlist_win.c TXT_COMMON_OK
-app:theme\c\mmitheme_list.c TXT_COMMON_OK
 
 
 // 软键
@@ -718,6 +720,9 @@ ctrl:Form\c\ctrlform_calc.c  690
 Save:node\C\study\Macro_pos_8910.h  __form__
 // ==>font/color
 Save:node\C\study\Macro_res_color_8910.h  __form__
+// label--FORM
+Save:node\C\study\Macro_res_color_8910.h  __formFont__
+Save:node\C\study\Macro_res_color_8910.h  __formColor__
 
 
 [1.8] Rect
@@ -775,6 +780,7 @@ app:phone/c/mmiphone_onoff.c  MMI_RESULT_E^HandleNormalStartupWindow
 
 
 [1.12] title, tab
+### title
 // title bg:
 
 // 标题
@@ -784,13 +790,20 @@ app:phone/c/mmiphone_onoff.c  MMI_RESULT_E^HandleNormalStartupWindow
 //		====>DisplayTitleBg
 //		====>DisplayScrollTitleByOffset
 //		======>title_ptr->str_style.font
-gui:title\c\Guititle.c  DisplayTitle( )
+//		====>DisplayTitleText
+//		======>.font
+//		======>GetTitleTextStyle
+gui:title\c\Guititle.c  DisplayTitle( )      # 8910
+ctrl:Title\c\ctrltitle.c  DisplayTitle( )    # 107
 // 标题--滚动
 //		====>StartTitleScrollTimer
 //		======>HandleWinTitleTimerMsg
 //		========>HandleWinTitleTimerAsPixelMsg
 //		==========>DisplayScrollTitleByOffset
 //		============>DisplayTitleTextBg        #未画背景
+// title--pubwin
+//		==>MMIPUBDisplayWin
+//		====>DisplayTitleText
 
 
 ### tab
@@ -1095,16 +1108,29 @@ app:theme/c/mmitheme_list.c  tag_width     # --check pos2 [39,87], bug
 //		========>ListDraw
 //		==========>ListDrawAllItems
 //		============>ListDrawItem                   # draw
-//		==============>isNeedDrawListItemBG         # bg
-//		==============>GUIITEM_STATE_DISABLE_MARK   # check
-//		================>mark_left, tag_img_width   # --check pos1 [6,23]
-//		==============>GUIITEM_STATE_HAS_NUM        # num
+//		==============>.bg 8910
+//		================>isNeedDrawListItemBG
+//		==============>.split
+//		==============>.group
+//		==============>.mark
+//		================>GUIITEM_STATE_DISABLE_MARK   # check
+//		==================>mark_left, tag_img_width   # --check pos1 [6,23]
+//		==============>.number icon
+//		================>GUIITEM_STATE_HAS_NUM        # num
+//		==============>.content
+//		================>ListDrawString
+//		==================>...
 //		==========>ListDrawScrollBar
 //		============>GUIPRGBOX_SetPosByPtr
 //		==============>ProgressBarDraw
 //		================>DisplayAutoHideScroll      # 超过15项画这个
 //		================>.thumb_threshold = 5;      # 1页3项*5
 ctrl:ListBox\c\ctrllistbox.c  GUIITEM_STATE_DISABLE_MARK
+//		====>PubListWinInit
+//		======>.font
+//		====>ListDrawString
+//		======>.font
+
 
 
 ### list
@@ -1211,7 +1237,7 @@ ctrl:Form\c\ctrlform.c  BOOLEAN^FormConstruct
 ctrl:Title\c\ctrltitle.c  void^DisplayTitleSubText
 
 
-### EDIT_DATE
+### edit_date/edit_time
 // --edit--calendar--time (full)
 //		==>DateEditCtrlConstruct
 //		====>MMITHEME_GetMsDateEditTheme
@@ -1224,7 +1250,8 @@ ctrl:Title\c\ctrltitle.c  void^DisplayTitleSubText
 //		==========>GUI_DisplayBorder
 //		==========>BASEEDIT_DisplayHighlight
 //		============>BASEEDIT_DisplayBg
-//		============>DisplayHighlightAndStr
+//		============>DisplayHighlightAndStr     # draw
+//		==============>.font
 //		==============>BASEEDIT_GetTextRect     # [43,73]
 //		==============>VTLBASEEDIT_GetAlign
 //		================>.theme.align
@@ -1320,7 +1347,7 @@ Save:node\C\study\Macro_res_color_8910.h  __form__
 
 
 [1.25] label
-//	--label
+### label
 //CREATE_LABEL_CTRL(GUILABEL_ALIGN_LEFT, CTRL_ID),
 //GUILABEL_SetText(MMIENG_UITEST_LABEL_CTRL_ID, &text, FALSE);
 
@@ -1337,12 +1364,21 @@ Save:node\C\study\Macro_res_color_8910.h  __form__
 //		==========>LabelCtrlSetBg
 //		============>CTRLFORM_PermitChildBg(MMIMP3_TITLE_FORM_CTRL_ID, FALSE);
 //		======>LabelDrawString
+//		========>.font
 ctrl:Label\c\ctrllabel.c  LabelDrawString
 
 
 // label--FORM
-app:theme\c\mmitheme_label.c  MMITHEME_GetLabelTheme
+Save:node\C\study\Macro_res_color_8910.h  __formFont__
+Save:node\C\study\Macro_res_color_8910.h  __formColor__
 
+
+### setlist
+//		==>DrawItemText
+//		====>.font
+//常见修改
+source:mmi_app\common\c\mmi_setlist_win.c TXT_COMMON_OK
+app:theme\c\mmitheme_list.c TXT_COMMON_OK
 
 
 [1.26] text
@@ -1395,8 +1431,7 @@ Save:node\C\study\Macro_pos_8910.h  __text__
 //		======>CTRLMENU_SecHandleOk
 //		======>.is_exist_child
 //		======>CTRLMENU_Draw
-//		========>CTRLMENU_DrawSec
-//		==========>DisplaySecMenuAllItem
+//		========>...
 // menu--enter (sms--switch)                  # (dyn menu)
 //		==>CreateIMMenu
 //		====>CTRLMENU_CreatDynamic
@@ -1414,10 +1449,7 @@ Save:node\C\study\Macro_pos_8910.h  __text__
 //		============>DisplayOneItem
 //		==============>DisplayHighlightItemBg
 //		==============>DisplaySecMenuItem
-//		==>DisplaySecMenuItem
-//		====>DisplaySecMenuItemIcon
-//		====>DisplaySecMenuItemText
-//		======>menu_ctrl_ptr->item_pos_info_ptr[item_index].item_rect
+//		================>...
 // menu--theme--height
 app:theme\c\mmitheme_menu.c  MMITHEME_GetSecondMenuTheme
 
@@ -1436,12 +1468,14 @@ app:theme\c\mmitheme_menu.c  MMITHEME_GetPopMenuTheme
 //  ==>pos
 Save:node\C\study\Macro_pos_8910.h  __menu__
 
-// menuSec
-//	DisplaySecMenuItemText	  7
-//	DisplaySecMenuItem	   6
-//	DisplayOneItem	   6
-//	DisplaySecMenuAllItem	  6
-//			DisplaySecosource:mmi_gui\source\menu\c\Guimenu.c 
+
+### menuSec
+//		==>DisplaySecMenuItem
+//		====>DisplaySecMenuItemIcon
+//		====>DisplaySecMenuItemText
+//		======>.cur_item_font/item_font
+//		======>menu_ctrl_ptr->item_pos_info_ptr[item_index].item_rect
+app:theme\c\mmitheme_menu.c  MMITHEME_GetSecondMenuTheme
 
 
 [1.29] owndraw
@@ -1486,9 +1520,26 @@ ctrl:Tips\c\ctrltips.c CTRLTIPS_GetTipsValid
 
 
 
-[1.32] 
+[1.32] base
 
+// TYPEMNG_Register
+//	.vtbl_init_func----OBJECT_VTBL_PTR
+//	.vtbl_tbl_ptr------CTRLBASE_VTBL_T/OBJECT_VTBL_T  #基类型
+//	LabelInitVtbl
+//	.child_ctrl_ptr----IGUICTRL_T
+//	.IGUICTRL_T--------vtbl_ptr/CTRLLABEL_VTBL_T      #所有类型表相同
 
+// IGUICTRL_SetFont
+
+//IGUICTRL_T_VTBL
+// CtrlClassNew
+//	.vtbl_ptr----s_ctrl_vtbl
+// IGUICTRL_T
+//	.vtbl_ptr----
+
+// CAF_INTERFACE ---- 定义结构体
+CAF\Template\include\cafcontrol.h  CAF_INTERFACE
+// IGUICTRL_T ------- 控件base
 
 
 [1.33] 

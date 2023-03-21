@@ -1,23 +1,19 @@
 
-基础路径设置:
-//basePath = 
-
 //目录:
-// 1. 
 Save:node\C\study\Macro_res_color_8910.h \[1.1\] multi--------
-Save:node\C\study\Macro_res_color_8910.h \[1.2\] common
-Save:node\C\study\Macro_res_color_8910.h \[1.3\] gui----------
-Save:node\C\study\Macro_res_color_8910.h \[1.4\] tool---------
+Save:node\C\study\Macro_res_color_8910.h \[1.2\] common-------bg img
+Save:node\C\study\Macro_res_color_8910.h \[1.3\] gui----------color
+Save:node\C\study\Macro_res_color_8910.h \[1.4\] gui----------font
 Save:node\C\study\Macro_res_color_8910.h \[1.5\] win----------
-Save:node\C\study\Macro_res_color_8910.h \[1.6\] test
+Save:node\C\study\Macro_res_color_8910.h \[1.6\] tool---------
 Save:node\C\study\Macro_res_color_8910.h \[1.7\] call
-Save:node\C\study\Macro_res_color_8910.h \[1.8\] theme
+Save:node\C\study\Macro_res_color_8910.h \[1.8\] theme--------softkey/title
 Save:node\C\study\Macro_res_color_8910.h \[1.9\] display------常用
 Save:node\C\study\Macro_res_color_8910.h \[1.10\] sms
 Save:node\C\study\Macro_res_color_8910.h \[1.11\] set
 Save:node\C\study\Macro_res_color_8910.h \[1.12\] form--------form theme
 Save:node\C\study\Macro_res_color_8910.h \[1.13\] form2-------ctrl theme
-Save:node\C\study\Macro_res_color_8910.h \[1.14\] 
+Save:node\C\study\Macro_res_color_8910.h \[1.14\] test---------测试模式
 Save:node\C\study\Macro_res_color_8910.h \[1.15\] 
 
 
@@ -179,11 +175,49 @@ ctrl:Menu\c\ctrlmenu_sec.c  SPDE_UI_STYLE_BLACK_BG_WHITE_FONT
 
 
 
-[1.4] __tool__
-//
-app:browser\c\mmibrowser_wintable.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
-// tool--bt--107(theme)
-app:bt\c\mmibt_app.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
+[1.4] gui----------font
+### gui--font
+// gui--menusec (多媒体)
+//		==>title
+//		====>MMITHEME_GetTitleStyle
+//		======>MMI_TITLE_TEXT_FONT             # --big 30  (调整26)
+//		==>item
+//		====>MMITHEME_GetSecondMenuTheme
+//		======>MMI_LIST_DEFAULT_ITEM_FONT      # --def/nor 26
+//		==>softkey
+//		====>MMITHEME_GetSoftkeyStyle
+//		======>MMI_FULLSCREEN_SOFTKEY_TEXT_FONT  # --nor 26  (中sfk)
+//		====>GUISOFTKEY_Init
+//		======>button_arr[LEFT_BUTTON].font      # --f40 写死    (调整26)
+// gui--list
+//		==>title                               # --big 30
+//		==>item
+//		====>ListGetTextStyle
+//		======>.font
+//		========>.TEXT_STYLE
+//		==========>GUILIST_SetTextFont         # --font
+//		==========>MMI_LIST_EXPAND_ITEM_FONT   # --w exp/nor 26
+//		========>.content_font
+//		==========>item_style_ptr->content[i].font_focus
+//		==========>item_style_ptr->content[i].font
+//		======>.color
+//		========>.TEXT_COLOR
+//		==========>.text_style.font_color      # 仅form
+//		========>.content_color
+//		==========>
+// gui--list--pubwin
+//		====>PubListWinInit
+//		======>.pubwin_theme.normal_font
+//		==>softkey                             # --f40 写死
+Save:node\C\study\Macro_pos_8910.h   __list__
+
+// gui--popmenu
+//		==>MMITHEME_GetOptionsMenuTheme        # --small 20
+//		==>PopmenuDisplayItemText
+//		====>text_color              # 焦点 !same --B
+//		====>MMI_THEME_POPMENU       # 非焦点
+//		======>excel_row_3           # --W
+
 
 
 
@@ -236,12 +270,13 @@ source:mmi_kernel/include/mmitheme_mainmenu_{size2}.h  MMITHEME_MAINMENU_TEXT_FO
 
 // mainmenu--softkey 多层
 //		==>MatrixMenuCreateButton
-//		====>SONG_FONT_18                     # --custom 18  (调整22)
-//		====>MMITHEME_GetSoftKeyTextFont      # --mid 30
-//		======>MMI_FULLSCREEN_SOFTKEY_TEXT_FONT
-//		========>MMI_DEFAULT_BIG_FONT   
-//		======>MatrixMenuDrawHandleButton
-//		====>~MMI_THEME_MAINMENU_FONT         # --w
+//		====>.font
+//		======>MMITHEME_GetSoftKeyTextFont      # --mid 30
+//		========>MMI_FULLSCREEN_SOFTKEY_TEXT_FONT
+//		==========>MMI_DEFAULT_BIG_FONT
+//		========>SONG_FONT_18                   # --custom 18  (调整22)
+//		========>MatrixMenuDrawHandleButton
+//		======>~MMI_THEME_MAINMENU_FONT         # --w
 // mainmenu--softkey 非多层
 //		==>MatrixMenuSetSoftkey
 //		======>                           # 临时修改字体区域
@@ -256,64 +291,14 @@ source:mmi_kernel/include/mmitheme_mainmenu_{size2}.h  MMITHEME_MAINMENU_TEXT_FO
 //		======>excel_row_4                    # --B (加反色)
 
 
-### __test__
-//		==>bg
-//		====>EngShow3ResultWinHandleMsg
-//		======>mmi_eng_display.bkgd_color
-app:eng\c\mmieng_base.c  mmi_eng_display
 
 
-
-### gui--font
-// gui--menusec (多媒体)
-//		==>title
-//		====>MMITHEME_GetTitleStyle
-//		======>MMI_TITLE_TEXT_FONT             # --big 30  (调整26)
-//		==>item
-//		====>MMITHEME_GetSecondMenuTheme
-//		======>MMI_LIST_DEFAULT_ITEM_FONT      # --def/nor 26
-//		==>softkey
-//		====>MMITHEME_GetSoftkeyStyle
-//		======>MMI_FULLSCREEN_SOFTKEY_TEXT_FONT  # --nor 26  (中sfk)
-//		====>GUISOFTKEY_Init
-//		======>button_arr[LEFT_BUTTON].font      # --f40 写死    (调整26)
-// gui--list
-//		==>title                               # --big 30
-//		==>item
-//		====>ListGetTextStyle
-//		======>item_style_ptr->content[i].font_focus
-//		======>item_style_ptr->content[i].font
-//		======>MMI_LIST_EXPAND_ITEM_FONT       # --w exp/nor 26
-//		======>color:
-//		========>.text_style.font_color
-//		==========>
-//		============>
-//		==============>
-//		==>softkey                             # --f40 写死
-Save:node\C\study\Macro_pos_8910.h   __list__
-
-// gui--popmenu
-//		==>MMITHEME_GetOptionsMenuTheme        # --small 20
-//		==>PopmenuDisplayItemText
-//		====>text_color              # 焦点 !same --B
-//		====>MMI_THEME_POPMENU       # 非焦点
-//		======>excel_row_3           # --W
-
-
-
-[1.6] __test__
-// test--(theme)
-app:eng\c\mmieng_base.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
-app:eng\c\mmieng_base.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
-app:eng\c\mmieng_base.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
-app:eng\c\mmieng_base.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
-app:eng\c\mmieng_base.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
+[1.6]  __tool__
 //
-app:eng\c\mmieng_uitestwin.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
-app:eng\c\mmieng_uitestwin.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
-app:eng\c\mmieng_uitestwin.c  SPDE_UI_STYLE_BLACK_BG_WHITE_FONT  
-//
-app:eng\c\mmieng_win.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
+app:browser\c\mmibrowser_wintable.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
+// tool--bt--107(theme)
+app:bt\c\mmibt_app.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
+
 
 
 
@@ -577,6 +562,7 @@ app:fm\c\mmifm_wintab.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT
 // --日历
 // --unit
 
+
 ### __form__
 // form--test
 //		====>0x07ff,青; 0xf800,红; 
@@ -597,28 +583,59 @@ app:fm\c\mmifm_wintab.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT
 //	                                         # --白 (默认)
 // form--init2
 //		==>MMITHEME_ModifyFormTheme
+//		==>.active_child.font
+//		====>CTRLFORM_SetActiveChildTheme
+app:theme\c\mmitheme_label.c  MMITHEME_GetLabelTheme
+// __formFont__
+//		==>.is_permit_font                   # get
+//		====>GetChildFont
+//		======>.ctrl_font                    # 控件类型, ctrl_1--18/16
+//		======>.active_child/child
+//		======>GUIFORM_TYPE_TP               # --TP类型, ctrl_2--14/13
+//		========>.unit_font.font
+//		====>set...
+//		======>LabelCtrlSetFont              # --label
+//		======>SetFont                       # --setlist
+//		======>ButtonCtrlSetFont             # --button/softkey
+//		======>TextCtrlSetFont               # --text
+//		======>BaseEditCtrlSetFont           # --edit/edittime/editdate
+//		======>BaseFlexCtrlSetFont           # --edit/dial_image
+//		======>SetDropdownlistFont           # --Dropdown
+//		======>ListSetTextFont               # --listbox
+//		====>set...其他
+//		======>MMIPUBSetButton               # --pub/softkey
+//		======>CTRLPNEDIT_SetFontEx          # --edit/dial_image
+// __formColor__
+//		====>GetChildFont
+//		======>.active_child/child
+//		========>theme.child.font.color
+//		========>theme.active_child.font.color
+//	                                         # --0x001f,蓝, label2 (非 UNIT)
+//	                                         # --单项
+//		======>GUIFORM_TYPE_TP               # --TP类型 红
+// __formDraw__
+//		====>draw...
+//		======>LabelDrawString               # --label
+//		======>DrawItemText                  # --setlist
+//		======>DrawButtonText                # --softkey-common
+//		======>ButtonDrawText                # --button/softkey
+//		======>DisplayTextString             # --text/edit/dial_image
+//		======>DisplayHighlightAndStr        # --edit/edittime/editdate
+//		======>SetDropdownlistFont           # --Dropdown
+//		======>ListDrawString                # --listbox
+//		======>DisplayTitleText              # --title
 
 
-// form--非焦点
+// form--非焦点/焦点
 //		==>HandleFormNotifyLoseActive
-//		====>is_permit_font              # --true, 允许
-//		======>GetChildFont
-//		========>theme.active_child.font.color
-//	                                     # 
-// form--焦点
 //		==>HandleFormNotifyGetActive
-//		====>is_permit_font              # --true, 允许
-//		======>GetChildFont
-//		========>theme.active_child.font.color
-//	                                     # --0x001f,蓝, label2 (非 UNIT)
-//	                                     # --单项
-//		========>GUIFORM_TYPE_TP         # --TP类型 红
-//		======>LabelCtrlSetFont          # ctrl_1
 // form--bg--焦点
 //		====>CTRLFORM_SetParam
 //		======>VTLBASE_SetBg
 //		========>FormCtrlSetBg
 //		======>CTRLFORM_Display
+app:theme\c\mmitheme_form.c  MMI_DEFAULT_SMALL_FONT
+
 
 // form--time
 // --冲突界面:
@@ -644,9 +661,27 @@ app:theme\c\mmitheme_edit.c  MMITHEME_GetEditTheme
 
 
 
-[1.14] 
+[1.14] __test__
+// test--(theme)
+app:eng\c\mmieng_base.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
+app:eng\c\mmieng_base.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
+app:eng\c\mmieng_base.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
+app:eng\c\mmieng_base.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
+app:eng\c\mmieng_base.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
+//
+app:eng\c\mmieng_uitestwin.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
+app:eng\c\mmieng_uitestwin.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT 
+app:eng\c\mmieng_uitestwin.c  SPDE_UI_STYLE_BLACK_BG_WHITE_FONT  
+//
+app:eng\c\mmieng_win.c   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT
 
 
+
+### __test__
+//		==>bg
+//		====>EngShow3ResultWinHandleMsg
+//		======>mmi_eng_display.bkgd_color
+app:eng\c\mmieng_base.c  mmi_eng_display
 
 
 

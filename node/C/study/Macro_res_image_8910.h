@@ -743,22 +743,23 @@ app:theme\c\mmitheme_tab.c  dividing_line = IMAGE_TAB_LINE    //仅240*320
 app:theme\c\mmitheme_tab.c  height_bg_info.img_id = IMAGE_TAB_SELECT1
 
 // tab--line--
-//		====>(font30),  2*38 
-//		====>(240*320), 2*30
-//		====>(128*160), 
+//		==>(font30),  2*38 
+//		==>(240*320), 2*30
+//		==>(128*160), 
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TAB_SEPARATED_FONT30
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TAB_SEPARATED
 
 // tab--select--(高度可不改)
-//		====>(font30),  1*40
-//		====>(240*320), 1*32 
-//		====>(128*160), 22*22
+//		==>(font30),  1*40
+//		==>(240*320), 1*32 
+//		==>(128*160), 22*22
+//		====>IMAGE_CONTROL_TAB_HIGHLIGHT
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_TAB_SELECT1
 
 // tab--bg--(高度要改)
-//		====>(font30),  1*40
-//		====>(240*320), 1*32 
-//		====>(128*160), 
+//		==>(font30),  1*40
+//		==>(240*320), 1*32 
+//		==>(128*160), 
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TAB_DEFAULT_FONT30
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TAB_DEFAULT_B
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_TITLE_BAR2
@@ -783,6 +784,15 @@ images:common\MMI_RES_DEFAULT\IMAG\Number_blue\
 // num--24*24
 source:mmi_app\common\h\common_mdu_def.h  Number_blue
 
+
+// draw
+//		==>DrawCtrl
+//		====>.bg_image_id     #
+//		==>DrawDividingLine
+//		====>.dividing_line
+//		==>DrawSelectBg
+//		====>.bg_image_id     # 清背景
+//		====>.height_bg_info.img_id
 
 
 
