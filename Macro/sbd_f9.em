@@ -19,7 +19,7 @@ macro SearchFile()
 		StartF9Search(hbuf, searchName, "")
 }
 
-macro StartF9Search(hbuf, file, filename_key)
+macro StartF9Search(hbuf, searchKey, filename_key)
 {
 	next = 0
 	
@@ -27,7 +27,7 @@ macro StartF9Search(hbuf, file, filename_key)
 	{
 		close
 	}
-	else if(bft == "9820e")
+	else if(searchKey == "9820e")
 	{
 		sel = MGetWndSel(hbuf)
 		if(filename_key == "")
@@ -43,7 +43,7 @@ macro StartF9Search(hbuf, file, filename_key)
 			}
 			else
 			{
-				hbuf = OpenExistFile(getSearchAndroid(0) # file)
+				hbuf = OpenExistFile(getSearchAndroid(0) # searchKey)
 				stop
 			}
 		}
@@ -53,15 +53,15 @@ macro StartF9Search(hbuf, file, filename_key)
 		{
 			strEx = strmid(filename_key, fI + 1, strlen(filename_key))
 			if(strEx == "c" || strEx == "h" || strEx == "java" || strEx == "mk" || strEx == "xml" || strEx == "xml" )
-				file = "\\Macro_ALL_@bft@_" # toupper (strEx) # ".h"
+				file = "\\Macro_ALL_@searchKey@_" # toupper (strEx) # ".h"
 			else if(strEx == "jpg" || strEx == "png" || strEx == "bmp" || strEx == "jif")
-				file = "\\Macro_ALL_@bft@_" # "JPG_PNG" # ".h"
+				file = "\\Macro_ALL_@searchKey@_" # "JPG_PNG" # ".h"
 			else
-				file = "\\Macro_ALL_@bft@_OTHER.h"
+				file = "\\Macro_ALL_@searchKey@_OTHER.h"
 		}
 		else
 		{
-			file = "\\Macro_ALL_@bft@_OTHER.h"
+			file = "\\Macro_ALL_@searchKey@_OTHER.h"
 		}
 		
 		hSbuf = OpenCache(getSearchAndroid(0) # file)
@@ -120,7 +120,15 @@ macro StartF9Search(hbuf, file, filename_key)
 	}
 	else
 	{
-		hbuf = OpenExistFile(getSearchC(0) # file)
+		//先打开文件名(功能没用)
+		path = getPathFromKey(Nil, searchKey)
+		hbuf = OpenExistFile(path # "\\" # filename_key)
+		if (hNil == hbuf)
+		{
+			//再搜索文件名
+			file = "\\Macro_ALL_@searchKey@.h"
+			hbuf = OpenExistFile(getSearchC(0) # "\\" # file)
+		}
 	}
 	
 }

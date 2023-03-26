@@ -56,12 +56,13 @@ tool            =  Desktop:tool
 ### 系统路径:
 StartMenuPath    =  C:\ProgramData\Microsoft\Windows\Start^Menu
 StartProPath  =  C:\ProgramData\Microsoft\Windows\Start^Menu\Programs\Administrative^Tools
-
+SDriversPath    =  C:\Windows\System32\drivers\
 
 
 ### 公共设置
 //AdminKey   = Administrator
 AdminKey   = seefs
 tNumKey = Disable
+dGroupKey = 目录
 
 

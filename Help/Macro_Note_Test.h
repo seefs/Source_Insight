@@ -28,12 +28,12 @@ Save:Help\Macro_Note_Test.h \[1.6\] F6----------------rule soft
 Save:Help\Macro_Note_Test.h \[1.7\] F7----------------SVN--Test
 Save:Help\Macro_Note_Test.h \[1.8\] F8----------------
 Save:Help\Macro_Note_Test.h \[1.9\] F9----------------search
-Save:Help\Macro_Note_Test.h \[1.10\] F10--------------group
+Save:Help\Macro_Note_Test.h \[1.10\] F10--------------
 Save:Help\Macro_Note_Test.h \[1.11\] F11--------------Note快捷键
 Save:Help\Macro_Note_Test.h \[1.12\] F12--------------
 Save:Help\Macro_Note_Test.h \[1.13\] Base-------------
 Save:Help\Macro_Note_Test.h \[1.14\] 语法测试---------后面删除掉...
-Save:Help\Macro_Note_Test.h \[1.15\] 
+Save:Help\Macro_Note_Test.h \[1.15\] file w/r
 Save:Help\Macro_Note_Test.h \[1.16\] file list
 Save:Help\Macro_Note_Test.h \[1.17\] mode
 Save:Help\Macro_Note_Test.h \[1.18\] String
@@ -145,8 +145,10 @@ Save:Macro\sbd_f5.em  Goto
 //		======>GotoHan              # word_1 == "goto_copy"
 //		========>
 Save:Macro\sbd_ctrl.em  CtrlE
+// 打开hot
+project  1
 
-	
+
 //1) 选中(goto_copy), 再ctrl+E
 Save:Macro\sbd_test.em  goto_copy
 //  复制--中文跳转:
@@ -166,6 +168,7 @@ goto_select  GC6133 (file)
 goto_select  USB
 goto_select  PRODUCT_CONFIG (path)
 goto_select  CUSTOMER
+goto_select  rule_test
 
 //3) 选中(rule_cn_soft), 再ctrl+E
 Save:Macro\sbd_test.em  rule_cn_soft
@@ -228,50 +231,31 @@ cmd: cmd
 [1.9] search
 Save:Macro\sbd_test.em  search_bft
 
-//1) 选中(search_version), 再ctrl+E
-//  英文排序测试
-//		(略)
-
-//2) 选中(search_bft), 再ctrl+E
-//  打开参数(bftParam)
-//bftParam = Macro_ALL_6531E.h
+//1) 选中(search), 再ctrl+E
+//  打开file(没什么用)
 //  命令:
-search_bft  MAINMENU
-search_bft  EXTRA
+search  si\Set\Macro_Val.h
+search  statusbar\BaseStatusBar.java 
 
-//3) 选中(search_bft), 再ctrl+E
-//  打开参数(bftParam)
-//bftParam = Macro_ALL_9820e.h 
-//bftParam = Macro_ALL_6533.h
+
+//2) 选中(search), 再ctrl+E
+//  内置参数: searchKey = Macro_ALL_base.h
 //  命令:
-search_bft  lcd/lcd_st7789v2_spi.c
-search_bft  values\config.xml
-search_bft  statusbar\BaseStatusBar.java 
-search_bft  statusbar\BaseStatusBar.java 
+search  MAINMENU
+search  EXTRA
+
+
+//3) 选中(search), 再ctrl+E
+//  补充文件名
+//  内置参数: searchKey = Macro_ALL_9820e.h
+//  内置参数: searchKey = Macro_ALL_6533.h
+//  命令:
+search  statusbar\BaseStatusBar.java 
 
 
 
-[1.10] group 分组
-Save:Macro\sbd_test.em  sr_group
+[1.10] 
 
-//1) 选中(sr_group), 再ctrl+E
-//  
-sr_group
-
-//2) 选中(show_menu), 再ctrl+E
-//  
-show_menu
-	
-//3) 选中(group), 再ctrl+E
-//	 1) mk文件中: 快捷键跳转到宏 (略)
-//	 2) em文件中: 显示列表 (略)
-//	 3) sr文件中: 快捷键打开文件/文件互关 (略)
-//	 4) 其他:
-// 打开参数(bftParam)
-//bftParam = Macro_ALL_6531E.h
-命令:
-group  mmiidle_cstyle.c
-group  mmialarm.c
 
 
 
@@ -389,9 +373,10 @@ Save:Macro\sbd_test.em	TestNodeMsg
 
 
 
-[1.15] 
-
-
+[1.15] file w/r
+### __fileWR__
+//
+Save:node\S\soft\help\Macro_S_Test.h __init__
 
 
 [1.16] file list
@@ -429,9 +414,6 @@ Save:Macro\sbd_test.em  line_value
 //  
 //		(略)
 
-//2) 选中(string_translate), 再ctrl+E
-//  
-//		(略)
 	
 
 [1.19] Shell

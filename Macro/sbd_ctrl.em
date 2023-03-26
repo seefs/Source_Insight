@@ -59,22 +59,14 @@ macro CtrlD()
 			ich =  ich + 1
 		}
 	}
-	//6. other file、Simple_CTRL_xxx中 空格对齐(下一条判断条件包含这个)
-	else if(IsFileName(hbuf, "Simple_CTRL_B"))
+	else if(getMacroValue(hbuf, "dUrl", 1) == "TRUE")
 	{
-		CodeAlign(hbuf)
+		ShowCsvCfg(hbuf)
 		stop
 	}
-	//5. *.em 中 同F10
-	else if(IsMacroFile(hbuf)||IsScriptFile(hbuf))
-	{
-		ShowMacroGroup(hbuf)
-		stop
-	}
-	//6. other file、Simple_CTRL_xxx中 空格对齐
 	else
 	{
-		CodeAlign(hbuf)
+		Group()
 		stop
 	}
 }
@@ -125,6 +117,12 @@ macro CtrlE()
 	if(hbuf > 0) {
 		if(IsNoteFile(hbuf))
 		{
+			if(getMacroValue(hbuf, "dUrl", 1) == "TRUE")
+			{
+				if(GoCsvPath(hbuf))
+				return
+			}
+		
 			//内向模式, 跳转到模板项目
 			mode = getMacroValue(hbuf, "Inward", 1)
 			if(mode == "True" || mode == "TRUE"){
@@ -175,6 +173,12 @@ macro CtrlT()
 	var mar
 	var val
 	isNote = IsNoteFile(hbuf)
+	if(isNote && getMacroValue(hbuf, "dUrl", 1) == "TRUE")
+	{
+		if(SwitchCsvValue(hbuf))
+			return
+	}
+	
 	// 替换TRUE/FALSE 或复制val，或加=True
 	if(IsMakeFile(hbuf) || isNote)
 	{
@@ -395,6 +399,12 @@ macro CtrlR()
 		prompt = 1
 	if(prompt != 100)
 	{
+		if(getMacroValue(hbuf, "dUrl", 1) == "TRUE")
+		{
+			if(GoCsvUrl(hbuf))
+				return
+		}
+		
 		//1. 多行命令
 		//  逐行处理，忘了怎么用
 		sel = MGetWndSel(hbuf)

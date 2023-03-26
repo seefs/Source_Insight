@@ -34,9 +34,12 @@ macro OpenMiniTest(hbuf)
 		
 		if(word_1 == "project")
 		{
-			bft = getMacroValue(hbuf, "bftParam", 1)
 			isSaveRow = 1
-			openNoteFile(hbuf, bft, isSaveRow)
+			if(word_2 != "null")
+			{
+				Hot = getCustomHot(hbuf, word_2)
+				openNoteFile(hbuf, Hot, isSaveRow)
+			}
 		}
 		else if(word_1 == "goto_copy")
 		{
@@ -59,16 +62,14 @@ macro OpenMiniTest(hbuf)
 		else if(word_1 == "goto_select")
 		{
  			//F5
- 			//  选中宏，mk文件中,          打开/跳转到对应的文件/宏
-			cur_line = GetBufLine(hbuf, sel.lnFirst )
-			if(strlen(cur_line) < sel.ichLim)
-				sel.ichLim = sel.ichLim - 1
-			if(sel.ichFirst == sel.ichLim || 4095 == sel.ichLim)
-				stop
-			cur_sel = strmid(cur_line, sel.ichFirst, sel.ichLim)
-			
-			bft = "6531E"
-			GotoKey(hbuf, bft, cur_sel)
+			if(strlen(word_2) > 0)
+			{
+				baseName = GetBufName(hbuf)
+				n = getBaseType(baseName)
+				ruleKey = getBaseOther(n, "RuleEn")
+				
+				GotoKey(hbuf, ruleKey, word_2)
+			}
 		}
 		else if(word_1 == "rule_cn_soft")
 		{
@@ -137,13 +138,12 @@ macro OpenMiniTest(hbuf)
 			msg ("test AddRule")
 			AddRule(hbuf)
 		}
-		else if(word_1 == "search_bft")
+		else if(word_1 == "search")
 		{
  			//F9
- 			//  
-			bft = getMacroValue(hbuf, "bftParam", 1)
-			//StartF9Search(hbuf, bft, "")
-			StartF9Search(hbuf, bft, word_2)
+			searchName = getKeyHead(hbuf, "search")
+			if(searchName != "")
+				StartF9Search(hbuf, searchName, word_2)
 		}
 		else if(word_1 == "mode_save")
 		{
@@ -172,40 +172,30 @@ macro OpenMiniTest(hbuf)
 			val = cat(basePro, "\\@val_f@_MB\\@val@")
 			msg ("val:  ~ [@val@]  " )
 		}
-		else if(word_1 == "string_translate")
+		else if(word_1 == "cvs_read")
 		{
-			//String
- 			//  
-			//path = "F:\\11CW1352MP_BLEPHONE61D_11C_V33\\projects\\M107\\M107_XYZN_S2_4A_NEDADJ_F6\\Resource"
-			path = "E:\\desktop\\test"
-			
-			file = "sub_1.txt"
-			
-		//	logfile = "z_translate_log.txt"
-		//	hbufLog = OpenCache(path # "\\" # logfile)
-		//	EmptyCache(hbufLog)
+			path = word_2
+			file = word_3
+			row  = word_4
 
-			listfile = "z_translate_list.txt"
-			hbuflist = OpenCache(path # "\\" # listfile)
+			hbufcvs = OpenCache(path # "\\" # file)
+			lnMax = GetBufLineCount(hbufcvs)
+			if(word_4 == "null")
+				row = lnMax-1
 
-			//不必要分很多文件; 估计有特殊字符Si无法保存
-			
-		//	TranslateDir(path # "\\sub_1.txt", hbuflist)
-		//	TranslateDir(path # "\\sub_2.txt", hbuflist)
-		//	TranslateDir(path # "\\sub_3.txt", hbuflist) //error
-		//	TranslateDir(path # "\\sub_4.txt", hbuflist) //error
-		//	TranslateDir(path # "\\sub_5.txt", hbuflist)
-		//	TranslateDir(path # "\\sub_6.txt", hbuflist)
-			TranslateDir(path # "\\sub_7.txt", hbuflist)
-		//	TranslateDir(path # "\\sub_8.txt", hbuflist)
-		//	TranslateDir(path # "\\sub_9.txt", hbuflist)
-		//	TranslateDir(path # "\\sub_10.txt", hbuflist)
-		//	TranslateDir(path # "\\sub_11.txt", hbuflist)
-		//	TranslateDir(path # "\\sub_12.txt", hbuflist)
-		//	TranslateDir(path # "\\sub_13.txt", hbuflist)
-		//	TranslateDir(path # "\\sub_14.txt", hbuflist)
+			if(lnMax > 0)
+			{
+				cur_line = GetBufLine(hbufcvs, row )
+				len = strlen(cur_line)
+				if(len > 0)
+				{
+					index = NextWS( cur_line, 0)
+					mar = strmid(cur_line, index+1, len)
+					msg ("mar:  ~ @mar@" )
+				}
+			}
 
-			CloseBuf(hbuflist)
+			CloseBuf(hbufcvs)
 		}
 		else if(word_1 == "shell_cmd")
 		{
@@ -983,7 +973,7 @@ macro TestMsg(msgStr, num)
 		else
 			counter = test + 1
 	}
-	if(num < counter)
+	if(num < counter || (IsDebug(0) && num == 3))
 	{
 		//testParam=0: num=0------时打印, 默认
 		//testParam=1: num=0/1----时打印

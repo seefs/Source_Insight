@@ -1002,6 +1002,11 @@ macro GetHeadIndex(cur_line)
 }
 macro IsTransHead(hbuf, fHead)
 {
+	var pathBuf
+	var headPath1
+	var headPath2
+	var headPath3
+	
 	//不能带有*号，否则会无限替换下去
 	index = FindString(fHead, "*")
 	if(index != "X"){
@@ -1009,8 +1014,8 @@ macro IsTransHead(hbuf, fHead)
 	}
 	
 	//check cur file
-	headPath = getMacroValue(hbuf, fHead # "Path", 1)
-	if(headPath != ""){
+	headPath1 = getMacroValue(hbuf, fHead # "Path", 1)
+	if(headPath1 != ""){
 		//tag:1 ==> save pub path file
 		//SaveMode(getNoteBasePath(0), "@lnVar@")
 		return 1
@@ -1020,8 +1025,8 @@ macro IsTransHead(hbuf, fHead)
 	pathBuf = GetPubPathBuf(hbuf)
 	//msg("pathBuf " # pathBuf)
 	if(pathBuf != hNil){
-		headPath = getMacroValue(pathBuf, fHead # "Path", 1)
-		if(headPath != ""){
+		headPath2 = getMacroValue(pathBuf, fHead # "Path", 1)
+		if(headPath2 != ""){
 			return 2
 		}
 	}
@@ -1030,8 +1035,8 @@ macro IsTransHead(hbuf, fHead)
 	pathBuf = GetCommonPathBuf(hbuf)
 	//msg("pathBuf " # pathBuf)
 	if(pathBuf != hNil){
-		headPath = getMacroValue(pathBuf, fHead # "Path", 1)
-		if(headPath != ""){
+		headPath3 = getMacroValue(pathBuf, fHead # "Path", 1)
+		if(headPath3 != ""){
 			return 3
 		}
 	}
@@ -1196,6 +1201,16 @@ macro GetTransCmdS2(cur_line, index, len)
 {
 	//下一个非空
 	start = StartWS(cur_line, index)
+	if (start == "X")
+	{
+		start = len
+	}
+	return start
+}
+macro GetTransCmdS3(cur_line, index, len)
+{
+	//csv下一个非空
+	start = StartWS2(cur_line, index)
 	if (start == "X")
 	{
 		start = len

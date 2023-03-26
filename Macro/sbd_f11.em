@@ -96,6 +96,10 @@ macro openNoteFile(hbuf, noteName, isSaveRow)
 	{
 		mFile = getProjectAndroid(0) # "\\" # noteName
 	}
+	else if(pro == "base")
+	{
+		mFile = getSavePath(0) # "\\" # noteName
+	}
 	else
 	{
 		mFile = getProjectC(0) # "\\" # noteName

@@ -140,7 +140,7 @@ macro StartWS( string, first )
     
     while( i < len )
     {
-        if( string[i] == " " || string[i] == "	"  || string[i] == "," )
+        if( string[i] == " " || string[i] == "	"  || string[i] == ","  || string[i] == "#" )
     		i = i + 1
 		else
 		    break
@@ -152,6 +152,26 @@ macro StartWS( string, first )
 	    return i
 }
 
+// Returns the index of the first non whitespace character
+// Search starts at offset specified by 'first'
+macro StartWS2( string, first )
+{
+    len = strlen( string )
+    i = first
+    
+    while( i < len )
+    {
+        if( string[i] == " " || string[i] == "	" )
+    		i = i + 1
+		else
+		    break
+    }
+
+	if( i >= len )
+		return "X"
+	else
+	    return i
+}
 
 // Finds the next whitespace character in the passed in string.
 // Search starts at offset specified by 'first'

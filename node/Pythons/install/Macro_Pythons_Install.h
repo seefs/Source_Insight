@@ -164,7 +164,7 @@ open: C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe
 C:\Users\Administrator\AppData\Local\Programs\Python\Python36\
 cmd_w: path
 //自定义路径
-D:\Program^Files\py\py310\
+Save:node\S\cfg\Macro_s_path.h  __PY__
 
 
 //验证 Python

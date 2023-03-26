@@ -20,7 +20,7 @@ Save:node\Pythons\Macro_Note_Python.h \[2.5\] word
 Save:node\Pythons\Macro_Note_Python.h \[2.6\] audio
 Save:node\Pythons\Macro_Note_Python.h \[2.7\] google翻译
 Save:node\Pythons\Macro_Note_Python.h \[2.8\] yuv2rgb
-Save:node\Pythons\Macro_Note_Python.h \[2.9\] 
+Save:node\Pythons\Macro_Note_Python.h \[2.9\] bookmark
 Save:node\Pythons\Macro_Note_Python.h \[2.10\] 
 
 
@@ -168,7 +168,23 @@ Save:node\Pythons\project\Macro_yuv2rgb.h
 
 
 
-[2.9] 
+[2.9] bookmark
+Save:node\Pythons\py_tool\
+
+
+// Bookmarks
+C:\Users\Administrator\AppData\Local\Google\Chrome\User^Data\Default\
+
+// chrome.exe
+C:\Program^Files\Google\Chrome\Application\
+
+// json
+Save:node\Pythons\study\Macro_Pythons_tf1.h \[4.3\] json
+
+//
+Save:node\Pythons\py_tool\bookmark_read.py
+python_w Save:node\Pythons\py_tool\bookmark_read.py
+
 
 
 [2.10] 

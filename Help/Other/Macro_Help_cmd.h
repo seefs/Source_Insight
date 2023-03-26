@@ -1,10 +1,5 @@
 
-基础路径设置:
-//basePath = 
-
-
-//目录[Num][Ca]:
-// 1. 
+//目录:
 Save:Help\Other\Macro_Help_cmd.h \[1.1\] Cmd file
 Save:Help\Other\Macro_Help_cmd.h \[1.2\] Cmd unzip
 Save:Help\Other\Macro_Help_cmd.h \[1.3\] Cmd Compare

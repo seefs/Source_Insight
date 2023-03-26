@@ -928,7 +928,15 @@ list2 = copy.deepcopy(list)
 
 
 [4.3] json
+py_test\
 
+//dump
+py_test\data_json.py
+python_w py_test\data_json.py
+
+//loads
+//py_test\data_json.py
+//python_w py_test\data_json.py
 
 
 

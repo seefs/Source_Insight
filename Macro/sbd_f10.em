@@ -10,35 +10,52 @@ macro Group()
     	hbuf = OpenDefaultSR(hbuf)
     	stop
 	}
-	//日志功能
-	if(IsNoteFile(hbuf))
+	
+	if(IsFileName(hbuf, "Simple_CTRL_B"))
 	{
-		//如显示 索引 组
+		CodeAlign(hbuf)
+		stop
+	}
+	else if(IsMakeFile(hbuf))
+	{
+		//*.mk 中 同F12
+		ShowMacro()
+		stop
+	}
+	else if(IsNoteFile(hbuf))
+	{
+		//跳到目录
 		NoteGroup(hbuf)
 		stop
 	}
-	
-//	if(IsMakeFile(hbuf))
-//	{
-//		//如显示 lcd 组, 后期考虑多值替换
-//		//显示分组, 修改配置（功能无用, 固定文件笔记更好）
-//		MakeGroup(hbuf)
-//	}
-//	else 
-	if(IsMacroFile(hbuf))
+	else if(IsMacroFile(hbuf)||IsScriptFile(hbuf))
 	{
 		//如显示 func 组
 		ShowMacroGroup(hbuf)
+		stop
 	}
-//	else if(IsSRFile(hbuf))
-//	{
-//		SrGroup(hbuf)
-//	}
-	
-	//
-	// 功能废弃,后期考虑mcr分类
+	else
+	{
+		//空格对齐
+		CodeAlign(hbuf)
+		stop
+	}
 }
 
+macro NoteGroup(hbuf)
+{
+	mGroup = getKeyHead(hbuf, "dGroup")
+	if(mGroup != "")
+	{
+		mSel = SearchInBuf(hbuf, "^@mGroup@", 0, 0, 0, 0, 0)
+		if (mSel != "")
+		{
+			ScrollCursor(mSel)
+			return 1
+		}
+	}
+	return 0
+}
 macro GetNumFromKey(key, count)
 {
 	if (key >= 49 && key <= 57 && (key - 48) <= count)
