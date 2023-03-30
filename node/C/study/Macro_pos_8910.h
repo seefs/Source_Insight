@@ -200,6 +200,11 @@ app:theme/h/mmi_position_{size}.h  MMI_LIST_PB_QUICK_ACTION_ITEM_TEXT_HEIGHT_MS
 //		====>s_item_style_multi_choice_picker_text
 app:theme/h/mmi_position_{size}.h  MMI_CHOICE_PICKER_LIST_ITEM_HEIGHT
 
+//		==>GUIITEM_STYLE_THREE_LINE_TEXT_ICON      (107)
+//		====>s_item_style_3_text_and_text_and_text_icon
+app:theme/h/mmi_position_{size}.h  MMI_LIST_DOUBLE_LINE_ITEM_HEIGHT
+
+
 ### __stopwatch__ (107)
 // alarm--icon+str
 //		==>GUIITEM_STYLE_ONE_LINE_ICON_TWO_TEXT

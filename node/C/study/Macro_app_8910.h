@@ -890,6 +890,9 @@ app:record\c\mmirecord_common_wintab.c  MMI_RESULT_E^HandleRecordMainPlayWinMsg
 //		========>MMK_CreateCtrlByWinTabEx
 //		==========>MMIRECORD_MAINPLAY_WIN_CTRL_TAB
 app:record\c\mmirecord_barphone_wintab.c  MMIRECORD_HandleRecordMainPlayWinMsg
+// record--option
+//		==>MMIRECORD_LoadRecordMenu
+app:record\c\mmirecord_common_wintab.c  OpenOptionMenuWin
 
 // record--start
 //		==>HandleWebKeyMsg

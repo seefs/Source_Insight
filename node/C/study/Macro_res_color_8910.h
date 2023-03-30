@@ -593,6 +593,8 @@ app:theme\c\mmitheme_label.c  MMITHEME_GetLabelTheme
 //		======>.active_child/child
 //		======>GUIFORM_TYPE_TP               # --TPÀàĞÍ, ctrl_2--14/13
 //		========>.unit_font.font
+//		====>get...
+//		======>LabelCtrlGetFont              # --label
 //		====>set...
 //		======>LabelCtrlSetFont              # --label
 //		======>SetFont                       # --setlist

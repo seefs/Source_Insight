@@ -54,6 +54,7 @@ app:cc\c\mmicc_{wintab}.c  PdaDisplaySingleCallInfoForCommon
 
 
 // Á÷³Ì--update
+//		==>CC_HandleCcAnimWinMsg
 //		==>CC_HandleCcWinMsg
 //		====>MMICC_UpdateCurrentCallStatus
 

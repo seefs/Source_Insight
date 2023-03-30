@@ -1,7 +1,7 @@
 
 //目录:
 Save:node\C\study\Macro_app_8910other.h \[1.1\] TASK
-Save:node\C\study\Macro_app_8910other.h \[1.2\] 
+Save:node\C\study\Macro_app_8910other.h \[1.2\] jewish
 Save:node\C\study\Macro_app_8910other.h \[1.3\] 
 Save:node\C\study\Macro_app_8910other.h \[1.4\] 
 Save:node\C\study\Macro_app_8910other.h \[1.5\] 
@@ -34,9 +34,21 @@ prj:project_{cur}.mk  MMI_TASK_MANAGER    = TRUE
 app:accessory\c
 app:accessory\c\mmicalendar_jewish_main.c  HandleJewishCalendarMainWinMsg
 
-// jewish show
+//		==>IMAGE_DLS_SUMMER 夏
+//		==>IMAGE_DLS_WINTER 冬
+images:clock\MMI_RES_DEFAULT\IMAG\JEWISH_CALENDAR\
+
+
+// jewish show--节日
 //		==>DrawJewishCalendarDetail
 //		====>
+// jewish show--月份
+//		==>DrawMonthCalendar
+//		====>DrawMonthTitle
+//		======>MMICALENDAR_IsHebrewLeapYear
+//		====>DrawMonthDates
+//		======>MMICALENDAR_Number2Gematria
+
 
 //		==>日历转换为犹太日历
 //		====>MMICALENDAR_Gregorian2Jewish
