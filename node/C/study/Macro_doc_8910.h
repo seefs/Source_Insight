@@ -3,7 +3,7 @@
 Save:node\C\study\Macro_doc_8910.h \[1.1\] Message, keyStatus
 Save:node\C\study\Macro_doc_8910.h \[1.2\] FUN 入口-------------
 Save:node\C\study\Macro_doc_8910.h \[1.3\] //lang
-Save:node\C\study\Macro_doc_8910.h \[1.4\] 配置
+Save:node\C\study\Macro_doc_8910.h \[1.4\] 
 Save:node\C\study\Macro_doc_8910.h \[1.5\] 说明文档
 Save:node\C\study\Macro_doc_8910.h \[1.6\] Win数据
 Save:node\C\study\Macro_doc_8910.h \[1.7\] tool
@@ -45,12 +45,7 @@ Save:node\C\study\Macro_res_8910.h __lang__
 
 
 
-[1.4] 配置
-### 6531D移配置
-common\nv_parameters\S036_MB
-MS_Customize\source\product\config\S036_MB
-MS_Customize\SC6530_S036_MB_vm
-version\SC6530_S036_MB_version.c
+[1.4] 
 
 
 

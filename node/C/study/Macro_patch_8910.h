@@ -160,6 +160,13 @@ common:h/mmi_appmsg.h  FILE_LOG_SUPPORT
 //		TO  : Trace_Log_Buf_Print(\1, \3);
 //		From: SCI_TRACE_ID(.*,\(.*\),\(.*\));
 //		TO  : Trace_Log_Buf_Print(\1);
+//
+// --Ìæ»»
+//		SCI_TraceLow("bl_i2c_transfer:i2c transfer error___\n");
+//		SCI_TraceLow("[BL6133] bl_i2c_transfer:i2c transfer error___\n");
+// --SIÖÐ
+//		From: SCI_TraceLow("\(.*\));
+//		TO  : SCI_TraceLow("[BL6133] \1);
 
 
 

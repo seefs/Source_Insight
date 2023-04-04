@@ -7,7 +7,7 @@ Save:node\C\study\Macro_nv_sim107.h \[1.4\] BAND, nv copy
 Save:node\C\study\Macro_nv_sim107.h \[1.5\] REG
 Save:node\C\study\Macro_nv_sim107.h \[1.6\] //4G
 Save:node\C\study\Macro_nv_sim107.h \[1.7\] custom
-Save:node\C\study\Macro_nv_sim107.h \[1.8\] 
+Save:node\C\study\Macro_nv_sim107.h \[1.8\] plmn_while_list
 Save:node\C\study\Macro_nv_sim107.h \[1.9\] 
 Save:node\C\study\Macro_nv_sim107.h \[1.10\] 
 Save:node\C\study\Macro_nv_sim107.h \[1.11\] 
@@ -168,6 +168,8 @@ nv:LTE_NV_EUTRA_CUSTOMER_SETTINGS.xml  numOfEUTRAFDDBand  -> 0x4
 // WCDMA:850.900.2100MHZ
 // 4G:B1/3/5/8/40/41
 
+PS\nv\config_nv\ps\LAS.nv  _BANDS_
+
 
 ### 1-gsm (gas 2G相关)
 nv:NV_PARAM_TYPE_EXPORT_GAS_CUSTOMER_SETTINGS.xml  gsm_band_select  -> 0xc
@@ -196,11 +198,14 @@ nv:NV_PARAM_TYPE_EXPORT_WAS_CUSTOMER_SETTINGS.xml
 
 
 [1.5] __REG__
-### [FAQ111795]客户更新NV后不能注册VOLTE自查方法？
-//	NV与版本不匹配的特征：
-//	CP Log中终端发给网络的IMS注册消息REGISTER的Security-Client头域的端口port-c和port-s都是0，如下所示：
-//	[IMS]:msg -> REGISTER
-//	[IMS]:Security-Client: ...;port-c=0;port-s=0,...
+
+### CQ list
+// sim CQ list
+Save:node\C\study\Macro_nv_sim107CQ.h  __Volte__
+Save:node\C\study\Macro_nv_sim107CQ.h  __Call__
+Save:node\C\study\Macro_nv_sim107CQ.h  __DTMF__
+
+
 
 
 
@@ -217,9 +222,14 @@ make/perl_script/
 
 
 
-[1.8] 
+[1.8] __plmn_while_list__
+//
+rdnv:\
 
+PS\nv\operator_delta\NV_PARAM_TYPE_IMS_ISIM_SETTINGS.xml
 
+// 改成默认关
+//		====>MMIAPIENG_IsWhitelistEnable
 
 
 [1.9] 

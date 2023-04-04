@@ -1,7 +1,7 @@
 
 //目录:
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.1\] sprd_cur--------
-Save:node\C\cfg\Macro_c_path_sprd.h \[1.2\] sprd_copy-------6531E
+Save:node\C\cfg\Macro_c_path_sprd.h \[1.2\] sprd_copy-------6531E移配置
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.3\] sprd_cfg--------6531E--nv, driver
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.4\] sprd_other------6531E--lib
 Save:node\C\cfg\Macro_c_path_sprd.h \[1.5\] sprd_cfg--------107nv
@@ -54,6 +54,13 @@ Save:Help\Other\Macro_Help_SI.h  __Common__
 
 
 [1.2] _sprd_copy_
+
+### 6531D移配置
+common\nv_parameters\{oldNV}_MB
+MS_Customize\source\product\config\{oldNV}_MB
+MS_Customize\SC6530_{oldNV}_MB_vm
+version\SC6530_{oldNV}_MB_version.c
+
 
 ### 从旧项目复制新项目
 // copy: 

@@ -14,7 +14,8 @@ app:phone\h\ims_toggle_mnc_table.h   xxx  //
 app:phone\h\ims_toggle_mnc_table.h   xxx  // 
 
 
-
+//
+Save:node\C\study\Macro_nv_sim107.h  __plmn_while_list__
 
 
 

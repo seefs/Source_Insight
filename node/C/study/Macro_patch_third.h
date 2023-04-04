@@ -13,7 +13,7 @@ Save:node\C\study\Macro_patch_third.h \[1.6\]
 Save:node\C\study\Macro_patch_third.h \[1.7\] 
 Save:node\C\study\Macro_patch_third.h \[1.8\] 
 Save:node\C\study\Macro_patch_third.h \[1.9\] 
-Save:node\C\study\Macro_patch_third.h \[1.10\] 
+Save:node\C\study\Macro_patch_third.h \[1.10\] 批处理
 Save:node\C\study\Macro_patch_third.h \[1.11\] 
 Save:node\C\study\Macro_patch_third.h \[1.12\] 
 // 其他标号
@@ -208,7 +208,29 @@ code:\txt\fota\rs_8910_git.txt  xxx
 
 
 
-[1.10] 
+[1.10] 批处理
+
+### replace_nv
+// 批量替换
+Save:Help\Other\
+// 1.替换电池曲线
+Save:Help\Other\Macro_Help_replace.h
+// 2.替换二合一NV
+Save:Help\Other\Macro_Help_replace_2n1.h
+Save:Help\Other\Macro_Help_replace_2n1_path.h
+
+// tool
+tool_mini:4_翻译字库\
+tool_mini:4_翻译字库\sprd_nv_exist.xlsm
+
+// path
+HW:{project}\
+HWNV:\
+
+
+### search_macro
+//
+Save:Help\Other\Macro_Help_search.h
 
 
 

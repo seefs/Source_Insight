@@ -32,7 +32,7 @@ Save:node\C\study\Macro_res_image_8910.h \[1.26\] browser,bt
 Save:node\C\study\Macro_res_image_8910.h \[1.27\] calen
 Save:node\C\study\Macro_res_image_8910.h \[1.28\] memo
 Save:node\C\study\Macro_res_image_8910.h \[1.29\] bt
-Save:node\C\study\Macro_res_image_8910.h \[1.30\] 
+Save:node\C\study\Macro_res_image_8910.h \[1.30\] 小图标
 
 
 
@@ -64,6 +64,8 @@ source:mmi_app/common/h/common_mdu_def.h  IMAGE_TEMPORARY_BOOTUP_DEFAULT
 // --png
 source:mmi_app/common/h/common_mdu_def.h  IMAGE_POWER_ON_NM
 source:mmi_app/common/h/common_mdu_def.h  IMAGE_POWER_OFF
+// --gif--107-mid
+source:mmi_app/common/h/common_mdu_def.h  POWER_ONOFF_MID
 // --gif/default
 source:resource/mmi_res_prj_def.h  IMAGE_POWER_ON
 // --gif
@@ -246,6 +248,7 @@ source:mmi_app\common\h\common_mdu_def.h  IMAGE_IDLE_MIDDLE_SOFTKEY_ICON
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_COMMON_SELECTED_BAR
 
 
+
 // __time__
 source:mmi_app\common\h\common_mdu_def.h  IDLE_BLACK_FONT
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_IDLE_TIME_AM
@@ -407,6 +410,17 @@ images:common\MMI_RES_DEFAULT\IMAG\Pubwin\BAR\IMAGE_PUBWIN_BG.png
 images:common\MMI_RES_DEFAULT\IMAG\Number\
 images:common\MMI_RES_DEFAULT\IMAG\List\
 images:common\MMI_RES_DEFAULT\IMAG\Common\
+images:common\MMI_RES_DEFAULT\IMAG\Prgbox\
+
+// bg
+//		==>...
+app:theme\c\mmitheme_menu.c  IMAGE_COMMON_SELECTED_BAR
+// bar
+//		==>DisplayScrollBar
+//		====>.scroll_bar_id
+//		======>IMAGE_SCROLL_VER_BAR
+//		======>IMAGE_SCROLL_VER_BAR_2
+app:theme\c\mmitheme_prgbox.c  scroll_bar_id
 
 
 // 24*24
@@ -441,7 +455,11 @@ source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_TOGGLE_OFF
 // --6*64
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_LISTITEM_SHORTCUT_64_LEFT_RED
 // --prg--
+//		====>.thumb_img_id
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_THUMB
+//		====>.scroll_bar_id
+//		======>IMAGE_SCROLL_VER_BAR
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_CONTROL_VER_BAR
 
 //
 source:mmi_app\common\h\common_mdu_def.h  IMAGE_COMMON_TIPS_BG
@@ -890,6 +908,14 @@ source:mmi_app\common\h\common_mdu_def.h  IMAGE_SECMENU_ICON_TOOL_HMGS
 
 
 
-[1.30] 
+[1.30] 小图标
 
+//
+//	bt-search
+//	bt-list
+//	www-mark
+//	mp3--list
+//	select-sim
+// 不改
+//	pb-edit
 

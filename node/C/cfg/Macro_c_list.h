@@ -128,9 +128,10 @@ Useful = True
 cd:tmp: git clone https://github.com/fontforge/fontforge
 // 输出编码,  清除
 Save:node\C\project_demo\
-Save:node\C\project_demo\Macro_file_fontforge_scripting.h
-Save:node\C\project_demo\Macro_file_fontforge_mtk.h
-Save:node\C\project_demo\Macro_file_fontforge_sprd.h
+Save:node\C\project_demo\Macro_file_fontforge_scripting.h   # 语法
+Save:node\C\project_demo\Macro_file_fontforge_mtk.h         # 生成code
+Save:node\C\project_demo\Macro_file_fontforge_sprd.h        # 生成code/lib
+Save:node\C\project_demo\Macro_file_fontforge_view.h        # 其他ttf
 
 // exe
 https://fontforge.org/en-US/downloads/

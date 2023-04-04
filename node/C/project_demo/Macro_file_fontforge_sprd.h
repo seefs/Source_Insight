@@ -43,8 +43,6 @@ fontforge -script pe/scriptfile_code.pe AAA_FONT_CN.ttf>_log_CN_ALL.txt
 //	   ttf--bdf--FontForge--ttf--3501
 //	   ttf--bdf--all--FontForge--ttf/sfd--13496(max 65509)
 
-// 希伯来 cnt: 87--.lib先转成.bdf
-fontforge -script pe/scriptfile_code.pe ttf_sprd/HEBREW_VECTOR.bdf>ttf_sprd/_log_HEBREW_VECTOR.txt
 
 
 ### 清除 (pe格式用ansi, 不能用utf8)
@@ -93,7 +91,8 @@ fontforge -script pe/scriptclear_mnoV.pe AAA_FONT_CN.sfd ".sfd"
 86B0: NS>DEF>NSST=NSTT
 // 属性
 //FBBx FBBy: 字体的宽度和高度(defW=16, 90%W=14)
-//maxbearingY: 上移, 未压缩--4, 压缩--2
+//maxbearingY-未压缩: 上移4(最优)
+//maxbearingY---压缩: 上移2(最优)
 // 最终使用
 //LANG_FONT_HAN_TRAD_TW_VECTOR_SMALL_FTOOL_NS_BY4
 // 步骤:
@@ -107,8 +106,12 @@ tools\DEBUG_TOOL\FONTTOOL\Bin\Han_merge_small.ini +
 //应该要选矢量flag
 
 
-
-
+// SPCSS01127227
+//		矢量字体的大小和宽度是依照算法计算出来的，有阴影应该是原始 ttf 字库不合适造成, 。建议更换 ttf 字库.
+//		目前工具能调整矢量字体部分:  
+//		“Max Brearing Y Delta”―― 调整字符上下偏移，取值范围
+//		“Shrink Percent[50%-100%]” ―― 字型高度缩小的百分比[50-100]
+//		“Compress”               ――  轮廓和符合字型数据压缩
 
 
 

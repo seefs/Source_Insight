@@ -151,6 +151,7 @@ config:lcm_cfg_info.c  USE_3_LINE_LCD
 driver:lcd\tft_ST7735S.c  USE_3_LINE_LCD
 // 三线二通道
 prj:{cfg}.cfg   LCD_SPI = 3WIRE_9BIT_2DATA
+prj:{cfg}.cfg   SPI_DATA2_SEL = CD
 config:lcm_cfg_info.c  TWO_DATA_LINE_LCD
 driver:lcd\tft_ST7735S.c  TWO_DATA_LINE_LCD
 // 四线一通道
@@ -170,6 +171,7 @@ driver:lcd/tft_GC9106.c
 driver:lcd/tft_ILI9342.c
 driver:lcd/tft_GC9307.c
 driver:lcd/tft_GC9308.c
+driver:lcd/tft_GC9107.c
 
 
 // 新屏
@@ -322,6 +324,9 @@ make\custom_drv\custom_drv.mk  CAP_TP_SUPPORT
 //  ======>bl_i2c_transfer:i2c transfer error___
 //  ========>btl fw update start bl_download_fw error retry=2
 
+// 强制升级
+driver:tp\src\tp_bl6133.c  isBlank^=^1
+
 
 [1.7] ECG
 // 
@@ -421,6 +426,8 @@ prj:project_{cur}.mk  DUAL_RECEIVER_SWITCH_SUPPORT
 prj:project_{cur}.mk  FM_SUPPORT = TRUE
 prj:project_{cur}.mk  FM_S_ANT_SUPPORT = TRUE
 prj:project_{cur}.mk  FM_VBC   = TRUE
+// 107 插入耳机走长天线，拔出耳机 走短天线
+prj:project_{cur}.mk  MMI_FM_HEADSET_USE_SHORT_ANT
 // 8910
 prj:{cfg}.cfg         FM_SUPPORT       = SPRD_V0    /  NONE
 prj:{cfg}.cfg         FM_VBC_EQ        = TRUE

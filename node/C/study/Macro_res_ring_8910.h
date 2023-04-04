@@ -50,6 +50,8 @@ app:setting\h\mmiset_export.h  MMI_POWER_RING_START_ID = R_POWER_1
 app:setting\c\mmiset_ring.c   MMI_POWER_RING_START_ID
 
 // power--8S
+//		==>play:
+//		====>.MMISET_RING_TYPE_POWER
 app:phone\c\mmiphone_onoff.c  MMI_POWER_TIME_8S
 app:phone\c\mmiphone_onoff.c  PHONE_STARTUP_DURING_TIME
 
@@ -64,12 +66,22 @@ app:envset\h\mmienvset_internal.h  MMIENVSET_POWER_RING_VOL_STANDARD_MODE
 
 
 [1.3] mp3
+// mp3-8910
+prj:resource\my^music\
+prj:resource\my^music\mmiap_song_name.h
 
-// mp3
+// mp3-107
 prj:resource\my_music\
 prj:resource\my_music\mmiap_song_name.h
 prj:resource\my_music\song1.mp3
 
+
+//
+//		==>filetest           # 文件不存在时, 从ring copy
+//		====>num:1~3
+//		====>path:"D:\\My Music\\" + L"test" + AUDIO_TYPE_MP3
+app:audioplayer\c\mmiapwin_main.c  test_song_check
+source:resource\mmi_res_prj_def.h  R_AP_TEST_SONG_2
 
 
 [1.4] call

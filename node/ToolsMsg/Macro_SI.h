@@ -165,6 +165,9 @@ code:\txt\si\t107_all.txt  //13754
 //		TO  : [1.\1] 
 // .*, .*, .* ·Ö±ð \1, \2, \3
 
+### trace replace
+// Trace log--Ìæ»»log´úÂë
+Save:node\C\study\Macro_patch_8910.h  __Trace__
 
 
 

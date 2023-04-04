@@ -3,7 +3,7 @@
 Save:node\C\study\Macro_nv_audio8910.h \[1.1\] audio_calib_VQE
 Save:node\C\study\Macro_nv_audio8910.h \[1.2\] PA,2IN1,3IN1
 Save:node\C\study\Macro_nv_audio8910.h \[1.3\] Copy107
-Save:node\C\study\Macro_nv_audio8910.h \[1.4\] 
+Save:node\C\study\Macro_nv_audio8910.h \[1.4\] CLASSAB
 Save:node\C\study\Macro_nv_audio8910.h \[1.5\] 
 Save:node\C\study\Macro_nv_audio8910.h \[1.6\] 
 Save:node\C\study\Macro_nv_audio8910.h \[1.7\] 
@@ -198,6 +198,9 @@ prj:project_{cur}.mk  RCV_THROUGH_SPK= FALSE
 prj:project_{cur}.mk  AUDIO_EXT_PA= FALSE
 prj:project_{cur}.mk  SPK_THROUGH_HPR= FALSE
 prj:project_{cur}.mk  RCV_THROUGH_SPK= TRUE
+prj:{cfg}.cfg  AUDIO_EXT_PA= FALSE
+prj:{cfg}.cfg  SPK_THROUGH_HPR= FALSE
+prj:{cfg}.cfg  RCV_THROUGH_SPK= TRUE
 
 
 ###  __8910_3N1__
@@ -206,7 +209,8 @@ prj:project_{cur}.mk CUS_ADD_SHAKE= TRUE  三合一喇叭宏
 prj:project_{cur}.mk VIRTUAL_VIBRATE_FUNC
 prj:project_{cur}.mk __SPEAKER_VIB_INTENSITY_WEAK__
 prj:project_{cur}.mk __HHT_EARPIECE_SPEAK_USE_ONE__ = TRUE 三合一同时开
-
+//
+prj:{cfg}.cfg  CUS_ADD_SHAKE = UNISOC 
 
 ###
 prj:CustNV/cvs_param_info.xml
@@ -235,8 +239,36 @@ PS\nv\export\ps\las\LTE_NV_EUTRA_CUSTOMER_SETTINGS.xml
 
 
 
-[1.4] 
+[1.4] __CLASSAB__
+//CLASSD改为CLASSAB方法如下：
+//把armvb_as.c中的AUD_SPKPA_TYPE_T g_spkpatype = AUD_INPUT_TYPE_CLASSD;
+//（大约在346行）修改为AUD_SPKPA_TYPE_T g_spkpatype = AUD_SPKPA_TYPE_CLASSAB;即可。
 
+//  AUDIO_AMP_EXT_INTERNAL_AB
+MS_Ref\source\aud_dev\src\armvb_as.c  346
+
+//
+AUDIO_AMP_CLASSK_3IN1_SUPPORT= TRUE
+AUDIO_AMP_CLASSK_SUPPORT  = TRUE
+AUDIO_AMP_CLASSK_CALL_MODE_SUPPORT = TRUE
+AUDIO_AMP_EXT_PULL_2_TIME = TRUE
+AUDIO_AMP_EXT_INTERNAL_AB = TRUE
+
+//
+MS_Ref\source\aud_dev\src\audio_cp.c  AUDIO_CP_bbatPcmPlayStart
+
+###
+prj:project_{cur}.mk   AUDIO_AMP_CLASSK_SUPPORT = TRUE
+prj:project_{cur}.mk   AUDIO_AMP_CLASSK_3IN1_SUPPORT = TRUE
+
+
+// ExtPa patch
+MS_Ref\source\aud_dev\src\audio_cp.c  AUDIO_AMP_CLASSK_SUPPORT
+// ExtPa patch--展讯-未使用
+MS_Ref\source\aud_dev\src\audio_cp.c  USE_EXT_PA
+
+//
+MS_Customize\source\product\driver\gpio\gpio_prod.c  AUDIO_AMP_EXT_PULL_2_TIME
 
 
 

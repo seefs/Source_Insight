@@ -153,8 +153,10 @@ prj:{cfg}.cfg  IM_SPANISH_AM_SUPPORT
 ### tool
 source:resource\Common\FONT\
 // 8910
+tools\DEBUG_TOOL\FONTTOOL\Bin\
 open tools\DEBUG_TOOL\FONTTOOL\Bin\FontTool.exe
 // 107
+tools\Common\FONTTOOL\Bin\
 open tools\Common\FONTTOOL\Bin\FontTool.exe
 
 // SPCSS01127227
@@ -187,8 +189,9 @@ Save:node\C\cfg\Macro_c_list.h  __TTF__
 
 ### Ï£²®À´
 //
-source:resource\Common\FONT\test\
+source:resource\Common\FONT\
 source:resource\mmi_res_prj_def.h  LANG_FONT_HEBREW_VECTOR
+source:resource\mmi_res_prj_def.h  LANG_FONT_LATIN_BASIC_VECTOR
 // ×ÖÄ¸±í - Ï£²®À´Óï
 https://mylanguages.org/zh/hebrew_alphabet.php
 

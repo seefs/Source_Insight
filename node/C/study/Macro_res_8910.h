@@ -275,10 +275,10 @@ source:mmi_app\common\h\common_mdu_def.h  TXT_AUDIO
 Save:node\C\study\Macro_res_8910lang.h  __def__      #默认语言
 Save:node\C\study\Macro_res_8910lang.h  __search__   #--语言
 Save:node\C\study\Macro_res_8910lang.h  __FONT__     #--lib
-// 需要开多个宏
+// 1个语言需要开多个宏
 Save:node\C\study\Macro_res_8910lang.h  __CN__       # 简体/繁体
 Save:node\C\study\Macro_res_8910lang.h  __SPAN__     # 西班牙
-//
+// 修改字库
 Save:node\C\study\Macro_res_8910lang.h  __tool__     # 修改字库
 
 

@@ -178,12 +178,22 @@ app:udisk\c\mmiudisk_wintab.c  MMI_RESULT_E^^HandleUsbOperSelectWindow
 
 
 
-[1.7] 
+[1.7] file
+//
+LoadFileToImage
 
 
 
 
-[1.8] 
+[1.8] usb
+// 107
+// --udisk--test
+//		==>MMIAPIUdisk_HandleUsbCablePlugIn
+//		====>MMIAPIUdisk_OpenUsbOperWindow
+//		==>MMIUDISK_USB_OPER_SELECT_WIN_TAB
+//		====>HandleUsbOperSelectWindow
+//		======>USB_SERVICE_CHARGE
+app:udisk/c/mmiudisk_wintab.c  MMIAPIUdisk_OpenUsbOperWindow
 
 
 

@@ -4,18 +4,18 @@
 Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 //
 //zmaeePath = prj:zmaee
-//zmaeePath = prj:zmaee_128X128
-zmaeePath = app:zmaee_128X128
+zmaeePath = prj:zmaee_128X128
+//zmaeePath = app:zmaee_128X128
 zmaee:\\
 
 //目录:
 // 1. 
 Save:node\C\study\Macro_zmaee_8910.h \[1.1\] menu----------删菜单
-Save:node\C\study\Macro_zmaee_8910.h \[1.2\] SENSOR
+Save:node\C\study\Macro_zmaee_8910.h \[1.2\] sensor
 Save:node\C\study\Macro_zmaee_8910.h \[1.3\] powerOff
 Save:node\C\study\Macro_zmaee_8910.h \[1.4\] set---led
 Save:node\C\study\Macro_zmaee_8910.h \[1.5\] make--res
-Save:node\C\study\Macro_zmaee_8910.h \[1.6\] mulit
+Save:node\C\study\Macro_zmaee_8910.h \[1.6\] mulit---------视频通话
 Save:node\C\study\Macro_zmaee_8910.h \[1.7\] sim
 Save:node\C\study\Macro_zmaee_8910.h \[1.8\] 耗电
 Save:node\C\study\Macro_zmaee_8910.h \[1.9\] Torch
@@ -24,7 +24,7 @@ Save:node\C\study\Macro_zmaee_8910.h \[1.11\] 表盘, 按键-------入口
 Save:node\C\study\Macro_zmaee_8910.h \[1.12\] charge
 Save:node\C\study\Macro_zmaee_8910.h \[1.13\] 音量
 Save:node\C\study\Macro_zmaee_8910.h \[1.14\] version, IMEI
-Save:node\C\study\Macro_zmaee_8910.h \[1.15\] sensor
+Save:node\C\study\Macro_zmaee_8910.h \[1.15\] 4g/5G
 Save:node\C\study\Macro_zmaee_8910.h \[1.16\] tcp---------active
 Save:node\C\study\Macro_zmaee_8910.h \[1.17\] patch
 Save:node\C\study\Macro_zmaee_8910.h \[1.18\] 
@@ -49,7 +49,7 @@ zmaee:h\zmaee_watchos_menu.h  sg_zmaee_fwatch_shortcuts_ui
 
 
 
-[1.2] SENSOR
+[1.2] sensor
 // 心率
 zmaee:h\zmaee_watchos_capabilities.h  HEART_RATE
 
@@ -65,6 +65,20 @@ zmaee:h\zmaee_watchos_capabilities.h  WIFI
 
 // LED
 zmaee:h\zmaee_watchos_capabilities.h  CAP_LED
+
+
+// 计步--motionsensor
+//		==>ZMAEE_IWatch_GetStepNum
+//		====>ZMAEE_IWatch_GetStepNum
+//		======>MSensor_Open
+//		======>MSensor_ioctl/Get
+//		======>MSensor_ioctl/clean
+//		======>MSensor_Close
+zmaee:c\zmaee_watch.c  ZMAEE_IWatch_GetStepNum
+
+
+### cam
+app:video_talk_adapter\c\video_send_demo.c  zy_avc_async_init
 
 
 
@@ -260,18 +274,9 @@ app:phone\c\mmiphone_charge.c  ZMAEE_Watch_OpenChargingWin
 // 如果渠道号搞错了 手表就注册不了了
 
 
-[1.15] motionsensor
-// 计步
-//		==>ZMAEE_IWatch_GetStepNum
-//		====>ZMAEE_IWatch_GetStepNum
-//		======>MSensor_Open
-//		======>MSensor_ioctl/Get
-//		======>MSensor_ioctl/clean
-//		======>MSensor_Close
-zmaee:c\zmaee_watch.c  ZMAEE_IWatch_GetStepNum
-
-### cam
-app:video_talk_adapter\c\video_send_demo.c  zy_avc_async_init
+[1.15] 4g/5G
+//
+zmaee:c\zmaee_watch.c  ZMAEE_SYSTEM_EV_GET_5G
 
 
 [1.16] tcp---------active

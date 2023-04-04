@@ -8,7 +8,7 @@ Save:node\C\study\Macro_fun_8910.h \[1.4\] MSG
 Save:node\C\study\Macro_fun_8910.h \[1.5\] 
 Save:node\C\study\Macro_fun_8910.h \[1.6\] Win, Param, id---ID转换
 Save:node\C\study\Macro_fun_8910.h \[1.7\] #define----------宏套宏
-Save:node\C\study\Macro_fun_8910.h \[1.8\] RED
+Save:node\C\study\Macro_fun_8910.h \[1.8\] 
 Save:node\C\study\Macro_fun_8910.h \[1.9\] sms_member
 Save:node\C\study\Macro_fun_8910.h \[1.10\] //popup
 Save:node\C\study\Macro_fun_8910.h \[1.11\] make------------
@@ -29,17 +29,17 @@ Save:node\C\study\Macro_fun_8910.h \[2.4\] Dtmf
 Save:node\C\study\Macro_fun_8910.h \[2.5\] CC--msg, 静默电话
 Save:node\C\study\Macro_fun_8910.h \[2.6\] SMS--tp input
 Save:node\C\study\Macro_fun_8910.h \[2.7\] cursor
-Save:node\C\study\Macro_fun_8910.h \[2.8\] file
+Save:node\C\study\Macro_fun_8910.h \[2.8\] 
 Save:node\C\study\Macro_fun_8910.h \[2.9\] select_sim
 Save:node\C\study\Macro_fun_8910.h \[2.10\] Sleep
 Save:node\C\study\Macro_fun_8910.h \[2.11\] 
-Save:node\C\study\Macro_fun_8910.h \[2.12\] 小图标
+Save:node\C\study\Macro_fun_8910.h \[2.12\] 
 Save:node\C\study\Macro_fun_8910.h \[2.13\] Browser--------默认PIC
 Save:node\C\study\Macro_fun_8910.h \[2.14\] BT-------------msg
 Save:node\C\study\Macro_fun_8910.h \[2.15\] Test-----------key id
 Save:node\C\study\Macro_fun_8910.h \[2.16\] sim--显示单卡
-Save:node\C\study\Macro_fun_8910.h \[2.17\] usb
-Save:node\C\study\Macro_fun_8910.h \[2.18\] //bat
+Save:node\C\study\Macro_fun_8910.h \[2.17\] 
+Save:node\C\study\Macro_fun_8910.h \[2.18\] 
 Save:node\C\study\Macro_fun_8910.h \[2.19\] sms mst, sale
 Save:node\C\study\Macro_fun_8910.h \[2.20\] 
 // 其他标号
@@ -242,13 +242,8 @@ source:mmi_kernel_sys\source\c\mmk_window.c  ^CreateWin( )
 
 
 
-[1.8] RED
-// down
-source:mmi_kernel\source\c\mmk_kbd.c  BOOLEAN^SaveKeyDownStatus
-//          if(KEY_RED == key_code) 
-//			{
-//	            StartSOSLongEventTimer();
-//			}
+[1.8] 
+
 
 
 [1.9] sms_member
@@ -602,9 +597,7 @@ ctrl:editbox\c\ctrlbaseflex_cursor.c   BASEFLEX_StartCursorTimer
 
 
 
-[2.8] file
-//
-LoadFileToImage
+[2.8] 
 
 
 [2.9] select_sim
@@ -632,15 +625,7 @@ app:phone\c\mmiphone.c  HandleScellRssiInd
 [2.11] 
 
 
-[2.12] 小图标
-//
-//	bt-search
-//	bt-list
-//	www-mark
-//	mp3--list
-//	select-sim
-// 不改
-//	pb-edit
+[2.12] 
 
 
 
@@ -813,15 +798,7 @@ app:idle\c\mainapp.c  case^MSG_OPEN_WINDOW
 
 
 
-[2.17] usb
-// 107
-// --udisk--test
-//		==>MMIAPIUdisk_HandleUsbCablePlugIn
-//		====>MMIAPIUdisk_OpenUsbOperWindow
-//		==>MMIUDISK_USB_OPER_SELECT_WIN_TAB
-//		====>HandleUsbOperSelectWindow
-//		======>USB_SERVICE_CHARGE
-app:udisk/c/mmiudisk_wintab.c  MMIAPIUdisk_OpenUsbOperWindow
+[2.17] 
 
 
 

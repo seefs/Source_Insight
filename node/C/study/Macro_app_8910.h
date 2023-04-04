@@ -380,6 +380,10 @@ app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_net_info_show
 //		========>ENGNWCAPShowWinHandleMsg
 //		====>MMIAPICONNECTION_OpenMenuWin
 app:eng/c/mmieng_win.c   case^ID_ENG_OUTFIELD_NETWORK_INFORMATION
+// 工程模式--menu--telephony--plmn_white_list
+//		==>EngTelephonyOpenInfoWin
+//		====>MMIAPIENG_IsWhitelistEnable
+app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_eng_telephony_all
 // 工程模式--apptest
 app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_app_set
 // 工程模式--apptest--usb
@@ -745,6 +749,9 @@ app:camera\c\Mmidc_osd_option.c  MMIDC_OpenPhotoOption
 app:camera\c\Mmidc_osd_option.c  MMIDC_OpenVideoOption
 // --cam--option--set
 //		==>MMIDC_OpenSettingWin
+//		====>.
+//		==>MMIAPIDC_Setting_SetFactoryValue
+//		====>.pref_photo_storage_dev, MMI_DEVICE_SDCARD 应该写死
 app:camera\c\mmidc_window_option.c  HandleDCSettingWinMsg
 
 // key

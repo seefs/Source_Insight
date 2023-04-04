@@ -8,22 +8,20 @@ Save:node\C\study\Macro_nv_8910.h \[1.5\] nv define------tool/app相关
 Save:node\C\study\Macro_nv_8910.h \[1.6\] nvTool
 Save:node\C\study\Macro_nv_8910.h \[1.7\] apn
 Save:node\C\study\Macro_nv_8910.h \[1.8\] hw_ver00-------单软多硬
-Save:node\C\study\Macro_nv_8910.h \[1.9\] nv test
+Save:node\C\study\Macro_nv_8910.h \[1.9\] test
 Save:node\C\study\Macro_nv_8910.h \[1.10\] Card-----------电子保卡
 Save:node\C\study\Macro_nv_8910.h \[1.11\] thir_nv,107
 Save:node\C\study\Macro_nv_8910.h \[1.12\] 
 Save:node\C\study\Macro_nv_8910.h \[1.13\] 
 Save:node\C\study\Macro_nv_8910.h \[1.14\] nand/nor
-Save:node\C\study\Macro_nv_8910.h \[1.15\] test
-Save:node\C\study\Macro_nv_8910.h \[1.16\] replace_nv--------
-Save:node\C\study\Macro_nv_8910.h \[1.17\] hv_nv
+Save:node\C\study\Macro_nv_8910.h \[1.15\] 
+Save:node\C\study\Macro_nv_8910.h \[1.16\] 
+Save:node\C\study\Macro_nv_8910.h \[1.17\] 
 Save:node\C\study\Macro_nv_8910.h \[1.18\] 
 Save:node\C\study\Macro_nv_8910.h \[1.19\] 
 Save:node\C\study\Macro_nv_8910.h \[1.20\] simulator
 Save:node\C\study\Macro_nv_8910.h \[1.21\] 
 Save:node\C\study\Macro_nv_8910.h \[1.22\] 
-
-Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 
 
@@ -37,7 +35,7 @@ Save:node\C\study\Macro_nv_charge8910.h
 Save:node\C\study\Macro_nv_sim107.h  __IMEI__
 Save:node\C\study\Macro_nv_sim107.h  __ECC__      # copy sim nv
 Save:node\C\study\Macro_nv_sim107.h  __BAND__
-Save:node\C\study\Macro_nv_sim107.h  __REG__
+Save:node\C\study\Macro_nv_sim107.h  __REG__      # sim CQ list
 Save:node\C\study\Macro_nv_sim107.h  __custom__
 Save:node\C\study\Macro_nv_sim107.h  
 // sim相关--8910
@@ -60,7 +58,10 @@ Save:node\C\study\Macro_nv_simlock107.h
 // audio相关
 Save:node\C\study\Macro_nv_audio8910.h
 // PA,3IN1,2IN1
+//  8910
 Save:node\C\study\Macro_nv_audio8910.h  __PA8910__
+Save:node\C\study\Macro_nv_audio8910.h  __CLASSAB__
+//  107
 Save:node\C\study\Macro_nv_audio8910.h  __PA107__
 Save:node\C\study\Macro_nv_audio8910.h  __Copy107__  # copy audio nv
 
@@ -170,6 +171,16 @@ Save:node\C\study\Macro_doc_apn8910.h
 
 [1.8] 单软多硬
 
+### hw_nv 版本
+//
+nv:nv_type_uix8910.nvm  4938
+可以通过查看
+nv_type_uix8910.nvm里面4938行，
+是否有    ITEM_NAME    = nv_ver_flag；如果没有的话，
+可以先用老版本的，然后编译出一个版本后，把build下nv目录的复制回来，
+覆盖一下所有文件，这样能确保是新版本nv工程。
+
+
 ### 8910单软多硬 (row = newV /oldV)
 // prdt
 prj:nvitem/ProductionParam_uix8910.nvm  1393 = 0x5 /0x0
@@ -192,6 +203,12 @@ prj:uis8910_phone_user_base_config.cfg  FORCECHANGE_SUPPORT  = TRUE
 
 ### 107单软多硬
 //
+prj:project_{cur}.mk   HW_VERSION_ADAPTIVE_V2    = TRUE
+prj:project_{cur}.mk   FORCECHANGE_SUPPORT       = TRUE #
+prj:project_{cur}.mk   DELTA_NV_PATITION_SUPPORT = TRUE
+prj:project_{cur}.mk   DELTA_NV_CONFIG_PATH      = ums9117
+prj:project_{cur}.mk   DELTA_NV_BIN_SUPPORT      = TRUE
+prj:project_{cur}.mk   DELTA_NV_OPERATOR         = TRUE
 //prj:project_{cur}.mk   CONFIG_BOARD_ID
 
 //
@@ -219,6 +236,8 @@ project\config_nv\ums9117\
 [1.9] nv test
 // MMI_GetAllModuleSumNvSize(void)
 
+// usb--实际没有其他使用
+app:eng\c\mmieng_main.c  MMIENG_NV_USB_TEST_SET_SETTING
 
 
 [1.10] __Card__
@@ -278,40 +297,15 @@ _readme.txt  UMS9117_NEW
 
 
 
-[1.15] test
-// usb--实际没有其他使用
-app:eng\c\mmieng_main.c  MMIENG_NV_USB_TEST_SET_SETTING
+[1.15] 
 
 
 
-[1.16] replace_nv
-
-// 批量替换
-Save:Help\Other\
-// 替换电池曲线
-Save:Help\Other\Macro_Help_replace.h
-// 替换二合一NV
-Save:Help\Other\Macro_Help_replace_2n1.h
-Save:Help\Other\Macro_Help_replace_2n1_path.h
-
-// tool
-tool_mini:4_翻译字库\
-tool_mini:4_翻译字库\sprd_nv_exist.xlsm
-
-// path
-HW:{project}\
-HWNV:\
+[1.16] 
 
 
 
-[1.17] hv_nv
-//
-nv:nv_type_uix8910.nvm  4938
-可以通过查看
-nv_type_uix8910.nvm里面4938行，
-是否有    ITEM_NAME    = nv_ver_flag；如果没有的话，
-可以先用老版本的，然后编译出一个版本后，把build下nv目录的复制回来，
-覆盖一下所有文件，这样能确保是新版本nv工程。
+[1.17] 
 
 
 
