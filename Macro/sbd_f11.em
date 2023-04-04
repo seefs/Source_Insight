@@ -1224,6 +1224,8 @@ macro NoteScroll(hbuf, curPath, noteWord)
 
 macro NoteAutoRun(hbuf)
 {
+	var autoMode
+	//
 	var wrBuf
 	var isLocalVal
 	var baseVal
@@ -1242,21 +1244,35 @@ macro NoteAutoRun(hbuf)
 	var cur_Wr_line
 	var new_line
 	
-	//get Key
-	isLocalVal = getMacroValue(hbuf, "isLocal" # "Key", 1)
-	baseVal = getMacroValue(hbuf, "base" # "Key", 1)
-	proNvVal = getMacroValue(hbuf, "proNv" # "Key", 1)
-	fileVal = getMacroValue(hbuf, "file" # "Key", 1)
-	rowVal  = getMacroValue(hbuf, "row" # "Key", 1)
-	itemVal  = getMacroValue(hbuf, "item" # "Key", 1)
-	//0xE912
-	oldVal = getMacroValue(hbuf, "old" # "Key", 1)
-	//0xE92
-	newVal = getMacroValue(hbuf, "new" # "Key", 1)
-
+	autoMode = getMacroValue(hbuf, "autoMode", 1)
 	lnMax = GetBufLineCount(hbuf)
 	sel = MGetWndSel(hbuf)
 	ln = sel.lnFirst + 1 
+	
+	//param
+	if (autoMode == "replace")
+	{
+		//get Key
+		isLocalVal = getMacroValue(hbuf, "isLocal" # "Key", 1)
+		baseVal = getMacroValue(hbuf, "base" # "Key", 1)
+		proNvVal = getMacroValue(hbuf, "proNv" # "Key", 1)
+		fileVal = getMacroValue(hbuf, "file" # "Key", 1)
+		rowVal  = getMacroValue(hbuf, "row" # "Key", 1)
+		itemVal  = getMacroValue(hbuf, "item" # "Key", 1)
+		//0xE912
+		oldVal = getMacroValue(hbuf, "old" # "Key", 1)
+		//0xE92
+		newVal = getMacroValue(hbuf, "new" # "Key", 1)
+	}
+	else if (autoMode == "search")
+	{
+		fileVal = getTXTPath(0) # "\\si_result.h"
+		wrBuf = OpenExistFile(fileVal)
+		if (wrBuf == hNil){
+	    	stop
+		}
+	}
+
 	while (ln < lnMax)
 	{
 		cur_line = GetBufLine(hbuf, ln)
@@ -1267,37 +1283,54 @@ macro NoteAutoRun(hbuf)
 			//get Key
 			mar = GetLineMacro(cur_line)
 			val = GetLineValue(cur_line)
-			baseVal = getMacroValue(hbuf, "base" # "Key", 1)
-			if ("path" == mar)
+			if (autoMode == "replace")
 			{
-				if("1" == isLocalVal)
-					fileName = baseVal # "\\" # val # "\\" # proNvVal # "\\" # fileVal
-				else
-					fileName = baseVal # "\\" # val # "\\" # fileVal
-				//write
-				wrBuf = OpenExistFile(fileName)
-				if (wrBuf != hNil){
-					lnWrMax = GetBufLineCount(wrBuf)
-					if (wrBuf < lnWrMax){
-						cur_Wr_line = GetBufLine(wrBuf, rowVal - 1 )
-						wr_mar = GetLineMacro(cur_Wr_line)
-						wr_val = GetLineValue(cur_Wr_line)
-						if (wr_mar == itemVal && wr_val == oldVal){
-							new_line = ReplaceWord(cur_Wr_line, oldVal, newVal)
-							PutBufLine(wrBuf, rowVal - 1, "@new_line@")
-						}
-					}
-					SaveBuf(wrBuf)
-					CloseBuf(wrBuf)
-				}
-				else
+				if ("path" == mar)
 				{
-					msg("error:" # fileName)
+					if("1" == isLocalVal)
+						fileName = baseVal # "\\" # val # "\\" # proNvVal # "\\" # fileVal
+					else
+						fileName = baseVal # "\\" # val # "\\" # fileVal
+					//write
+					wrBuf = OpenExistFile(fileName)
+					if (wrBuf != hNil){
+						lnWrMax = GetBufLineCount(wrBuf)
+						if (wrBuf < lnWrMax){
+							cur_Wr_line = GetBufLine(wrBuf, rowVal - 1 )
+							wr_mar = GetLineMacro(cur_Wr_line)
+							wr_val = GetLineValue(cur_Wr_line)
+							if (wr_mar == itemVal && wr_val == oldVal){
+								new_line = ReplaceWord(cur_Wr_line, oldVal, newVal)
+								PutBufLine(wrBuf, rowVal - 1, "@new_line@")
+							}
+						}
+						SaveBuf(wrBuf)
+						CloseBuf(wrBuf)
+					}
+					else
+					{
+						msg("error:" # fileName)
+					}
+				}
+				//msg(cur_Wr_line)
+			}
+			else if (autoMode == "search")
+			{
+				if ("word" == mar)
+				{
+					AppendBufLine(wrBuf, "---- @val@")
+					SearchForRefs(wrBuf, val, 0)
 				}
 			}
-			//msg(cur_Wr_line)
+
 		}
 		ln = ln + 1
+	}
+	
+	if (autoMode == "search")
+	{
+		SetCurrentBuf(wrBuf)       // put search results in a window
+		SetBufDirty(wrBuf, FALSE); // don't bother asking to save
 	}
 }
 

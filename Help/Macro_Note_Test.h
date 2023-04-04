@@ -45,7 +45,7 @@ Save:Help\Macro_Note_Test.h \[2.1\] ctrl+B
 Save:Help\Macro_Note_Test.h \[2.2\] ctrl+T
 Save:Help\Macro_Note_Test.h \[2.3\] ctrl+D------------索引
 Save:Help\Macro_Note_Test.h \[2.4\] ctrl+C
-Save:Help\Macro_Note_Test.h \[2.5\] 
+Save:Help\Macro_Note_Test.h \[2.5\] ctrl+R
 Save:Help\Macro_Note_Test.h \[2.6\] 
 Save:Help\Macro_Note_Test.h \[2.7\] 
 Save:Help\Macro_Note_Test.h \[2.8\] 
@@ -121,7 +121,7 @@ Save:Macro\sbd_f1.em  TreeNum
 
 
 [1.5] rule goto
-
+### __goto__
 //		==>Goto                     # 
 //		====>NoteHander             # cNum == 5
 //		======>OpenFileHander       #  双路径跳转：F5项目, F6路径(废弃功能)
@@ -270,19 +270,6 @@ Save:Help\Other\Macro_Help_note.h  BOOLEAN^MMI_BB
 
 //2) 带空格跳转
 Save:Help\Other\Macro_Help_note.h  BOOLEAN^MMI_BB
-
-
-//
-goto>>>word
->>>  func;有分号下一个
-goto>>>word
->>>  下一字符非空格, 下一个空格/tab
-有^就找第2个
-//
-word1 word2, #word3, 下一个搜索
-
-//
-app:accessory\h\mmiacc_position.h  {size}  CALENDAR_MONTH_TITLE_RECT_H
 
 
 
@@ -479,7 +466,14 @@ Save:Macro\sbd_test.em  API_log
 Save:Macro\sbd_ctrl.em  CtrlB
 Save:Macro\sbd_f12.em  ShowNoteHelp
 
-//1) 显示提示信息--py/android语法
+### ctrl+B功能
+// 1.显示帮助--py/html/android语法(如果设置打开)
+// 2.显示图片路径(sprd)
+// 3.显示宏是否定义(mtk/sprd)
+// 4.打开或关闭临时文件, 作一些记录
+
+
+### 1.1.显示提示信息--py/android语法
 // --Test--Python
 range		(选中后->ctrlB->提示)
 reduce_sum	(选中后->ctrlB->提示)
@@ -488,7 +482,7 @@ reduce_0	(选中后->ctrlB->不存在, 打开临时文件)
 implement	(选中后->ctrlB->提示)
 
 
-//2) py和android说明均有, 可设置为只显示android:
+### 1.2.py和android说明均有, 可设置为只显示android:
 // --Test
 compile
 // --set py info(0 or 1):
@@ -497,14 +491,14 @@ Save:set\Macro_Set.h 75
 Save:set\Macro_Set.h 78
 
 
-//3) Lib对照表, (特殊格式, 带'.'时不搜索'::')
+### 1.3.Lib对照表, (特殊格式, 带'.'时不搜索'::')
 Save:Help\LangInfo\Macro_Info_Android_Lib.h
 // --Test
 implementation 'com.android.support:appcompat-v7:25.+'
 implementation 'com.android.support:support-v4:25.+'
 
 
-//4) Info位置
+### 1.4.Info位置
 //   搜索关键字:
 Save:Help\LangInfo\Macro_Info_Android.h  classpath::
 Save:Help\LangInfo\Macro_Info_Python.h
@@ -520,34 +514,6 @@ Save:Help\Tmp\Tmp_Test.h
 
 [2.3] ctrl+D索引
 MtkNote
-
-//主要索引:
-ctrl+D->ctrl+S:
-ctrl+D->ctrl+C:
-ctrl+D->ctrl+F:
-ctrl+D->ctrl+V:
-ctrl+D->ctrl+B:
-	
-ctrl+D->ctrl+A:
-ctrl+D->ctrl+T:
-ctrl+D->ctrl+R:
-ctrl+D->ctrl+G:
-	
-//分模块索引:
-ctrl+D->M:
-ctrl+D->K:
-ctrl+D->R:
-ctrl+D->S:
-ctrl+D->...:
-
-
-//显示分页
-//  ctrlDD后, 多次ctrlD, 不过没有显示总页数，或者:
-//  ctrlD3, 显示第1页
-//  ctrlD4, 显示第2页
-//  ctrlD5, 显示第3页
-//  ctrlD6, 显示第4页
-Save:Help\DefaultFile\Macro_Node_Num.h
 
 //手动制作索引
 //  ctrlU, 添加编号
@@ -573,7 +539,28 @@ Save:Help\Tmp\Tmp_space_K220_V35_WD.h
 
 
 
-[2.5] 
+[2.5] ctrl+R
+//  代码位置
+Save:Macro\sbd_ctrl.em  CtrlR
+
+
+### ctrl+R功能
+// 1.非笔记, 打开下一个搜索结果
+// 2.笔记,     跳转目录或文件
+//   2.1 跳转目录。
+//   2.2 跳转文件。
+
+### 2.2.1 func();有分号goto下一个
+//
+Save:Help\Tmp\Tmp_goto.c  ShowServingUE
+
+
+### 2.2.2 word1 word2, #word3, 下一个搜索
+
+
+### 2.2.3 604 word, 从604行开始搜索
+app:accessory\h\mmiacc_position.h  {size}  CALENDAR_MONTH_TITLE_RECT_H
+//
 
 
 [2.6] 
@@ -886,6 +873,10 @@ Save:Help\Test\Tmp_Test.h
 //搜索文件，并直接打开保存文件
 FileSame:Save:Help\Test\Macro_
 
+
+### exist file
+//
+exist_file.pl
 
 
 

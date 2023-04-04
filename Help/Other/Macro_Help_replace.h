@@ -1,4 +1,7 @@
 
+// 当前为搜索模式
+autoMode = replace
+
 
 isLocalkey = 1
 //basekey = G:\_HW_NV_PARA.git\8910FFS\W21.12.7

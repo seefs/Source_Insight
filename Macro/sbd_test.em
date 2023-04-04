@@ -307,6 +307,44 @@ macro OpenMiniTest(hbuf)
 				msg ("not found:  ~ [@word_2@]" )
 			}
 		}
+		else if(word_1 == "reAll")
+		{
+			if(word_2 == "SetSourceLink")
+			{
+				hbufSource  = hbuf
+				lnSource    = getMacroValue(hbuf, "lnSource", 1)
+				target_file = getMacroValue(hbuf, "target_file", 1)
+				lnTarget    = getMacroValue(hbuf, "lnTarget", 1)
+				//创建一个新的源链接
+				SetSourceLink (hbufSource, lnSource, target_file, lnTarget)
+			}
+			else if(word_2 == "SearchForRefs")
+			{
+				target_word = getMacroValue(hbuf, "target_word", 1)
+				//
+				hbufRef = NewBuf("TouchRefs") // create output buffer
+				if (hbufRef == 0)
+				    stop
+
+				SearchForRefs(hbufRef, target_word, TRUE)
+				SetCurrentBuf(hbufRef)       // put search results in a window
+				SetBufDirty(hbufRef, FALSE); // don't bother asking to save
+				Stop  
+			}
+			else if(word_2 == "LoadSearchPattern")
+			{
+				pattern = getMacroValue(hbuf, "pattern", 1)
+				//
+				sRet = LoadSearchPattern(pattern, 1, 1, 1)
+			}
+			else if(word_2 == "Delete_Clip")
+			{
+				//Delete_Clip
+				Run_Macro
+			}
+			else
+				msg ("not found:  ~ [@word_2@]" )
+		}
 		else if(word_1 == "sys")
 		{
 			if(word_2 == "TestMsgX")
