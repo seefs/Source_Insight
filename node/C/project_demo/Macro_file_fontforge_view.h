@@ -48,7 +48,9 @@ fontforge -script pe/scriptfile_code.pe ttf_sprd_HEBREW/_x332_bdf/LANG_FONT_HEBR
 
 
 
-
-
+### FontTool.exe 其他问题
+// 1.导入DMF,再保存DMF, lib不能用; 只能从ttf/ttc导入,再保存DMF
+// 2.导入ttf时编辑font=16以外数值无效, 重新打开lib都是16号字
+// 3.先用FontForge导出为ttc,再导入DMF, 空间小很多
 
 

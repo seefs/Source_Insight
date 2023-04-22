@@ -14,7 +14,7 @@ macro Note()
     	hbuf = OpenDefaultSR(hbuf)
     	stop
 	}
-	
+
 	sel = MGetWndSel(hbuf)
 	isN = FALSE  //选择->显示备注 功能用途不大，改为只有mk,mak,def文件可用
 	if(IsMakeFile(hbuf))
@@ -24,13 +24,13 @@ macro Note()
 	if (isN && IsSingleSelect(sel))
 	{
 		//1. 选择整个宏,     显示、添加宏说明
-		//2. 选择部分关键词,    显示、添加词说明; 
+		//2. 选择部分关键词,    显示、添加词说明;
 		cur_line = GetBufLine(hbuf, sel.lnFirst )
 		if(strlen(cur_line) < sel.ichLim)
 			sel.ichLim = sel.ichLim - 1
 		if(sel.ichFirst == sel.ichLim || 4095 == sel.ichLim)
 			stop
-			
+
 		cur_sel = strmid(cur_line, sel.ichFirst, sel.ichLim)
 		if(cur_sel == GetWholeMacro(cur_line, sel))
 		{
@@ -59,7 +59,7 @@ macro Note()
 			line = GetBufLine(hbuf, i)
 			iMacro = GetLineMacro(line)
 			iNote = GetMediumNote(iMacro)
-			
+
 			if(iNote != "")
 			{
 				nTxt = nTxt # iNote # CharFromKey(13)
@@ -104,7 +104,7 @@ macro openNoteFile(hbuf, noteName, isSaveRow)
 	{
 		mFile = getProjectC(0) # "\\" # noteName
 	}
-	
+
 	if(IsFileName(hbuf, mFile))
 	{
 		if(isSaveRow == 0)
@@ -148,7 +148,7 @@ macro LongNote(hbuf, key)
 	{
 		grMsg = "Add Long Note, Macro: @key@" # CharFromKey(13)
 		ntStr = Ask("@grMsg@")
-		
+
 		ntRule = OpenCache(getNodePath(0) # "\\note\\Macro_Note_Long.h")
 		ntStr = "key:@key@,@ntStr@"
 		AppendBufLine(ntRule, "@ntStr@")
@@ -170,10 +170,10 @@ macro GetLongNote(key)
 	{
 		line = GetBufLine(mBuf, mSel.lnFirst )
 		ilen = strlen(line)
-		
-		ich = SplitMacro(line, ",", 0, ilen)		
+
+		ich = SplitMacro(line, ",", 0, ilen)
 		nTxt   = strmid(line, ich + 1, ilen) # CharFromKey(13)
-		
+
 		mSel = SearchInBuf(mBuf, mKey, mSel.lnLast+1, 0, 0, 0, 0)
 	}
 	CloseBuf(mBuf)
@@ -186,7 +186,7 @@ macro GetMediumNote(key)
 	mFile = getNodePath(0) # "\\note\\Macro_Note_Short.h"
 	mBuf = OpenCache(mFile)
 	nTxt = ""
-	
+
 	klen = strlen(key)
 	iStart = 0
 	ichKey = SplitMacro(key, "_", iStart, klen)
@@ -201,14 +201,14 @@ macro GetMediumNote(key)
 			ikey = strmid(key, iStart, klen)
 		}
 		iStart = ichKey + 1
-		
+
 		mKey = "key:" # ikey # ","
 		mSel = SearchInBuf(mBuf, mKey, 0, 0, FALSE, FALSE, FALSE)
 		if (mSel != "")
 		{
 			line = GetBufLine(mBuf, mSel.lnFirst )
 			ilen = strlen(line)
-			
+
 			ich = SplitMacro(line, ",", 0, ilen)
 			if (ich > 0)
 			{
@@ -241,7 +241,7 @@ macro ShortNote(hbuf, key)
 		grMsg = "Add Short Note, Macro: @key@" # CharFromKey(13)
 		ntStr = Ask("@grMsg@")
 		tabStr = CharFromKey(9)
-		
+
 		ntRule = OpenCache(getNodePath(0) # "\\note\\Macro_Note_Short.h")
 		ntStr = "key:@key@,@tabStr@@ntStr@"
 		AppendBufLine(ntRule, "@ntStr@")
@@ -263,7 +263,7 @@ macro GetShortNote(key)
 	{
 		line = GetBufLine(mBuf, mSel.lnFirst )
 		ilen = strlen(line)
-		
+
 		ich = SplitMacro(line, ",", 0, ilen)
 		if (ich > 0)
 		{
@@ -278,15 +278,15 @@ macro GetShortNote(key)
 macro NoteHander(hbuf, cNum, prompt)
 {
 	// cmd = 4, 5 or 6
-	
+
 	var cur_line
 	var noteCmd
 	var noteWord
 	var rootPath //根路径, cmd cd到这个目录
 	var curPath
 	var lastStr
-	
-	//举例: 
+
+	//举例:
 	// 1.命令名称 + 2.路径 + 3.关键字 + 4.备注
 	var firstS
 	var firstE
@@ -294,13 +294,13 @@ macro NoteHander(hbuf, cNum, prompt)
 	var secondE
 	var thirdS
 	var thirdE
-	
+
 	var cur_row
 	var isCmd
-	
+
 	//显示log, 记录清除
 	TestMsg("传X清零", "X")
-	
+
 	sel = MGetWndSel(hbuf)
 	cur_line = GetBufLine(hbuf, sel.lnFirst )
 	cur_row = sel.lnFirst
@@ -315,7 +315,7 @@ macro NoteHander(hbuf, cNum, prompt)
 			cur_line = strmid(cur_line, cur_sel_left + 1, cur_sel_right)
 		}
 	}
-	
+
 	//删除行首空格
 	firstS = StartWS(cur_line, 0 )
 	if (firstS == "X")
@@ -332,20 +332,20 @@ macro NoteHander(hbuf, cNum, prompt)
 		isCmd = 0
 
 		//普通文本禁止了和路径无关的操作(prompt)
-		
+
 		//type6: [head, path], str1, str2 (priority)
 		if(IsTransHead(hbuf, noteCmd)>=1)
 			isCmd = 6
-			
+
 		//type6: [head, path, str1, str2] (key save)
 		else if(prompt == 0 && IsKeySetHead(hbuf, noteCmd)>=1)
 			isCmd = 8
-			
+
 		//type1:  head, [path], str1, str2
 		else if(prompt == 0 && (noteCmd == "open"  || noteCmd == "test"
 			 || noteCmd == "cp" || noteCmd == "cprow" || noteCmd == "RAR"))
 			isCmd = 1
-			
+
 		//type1:  head, [path], str1, str2
 		else if(prompt == 0 && (noteCmd == "replace")
 			isCmd = 9
@@ -353,33 +353,33 @@ macro NoteHander(hbuf, cNum, prompt)
 		//type2: [head, path, str1, str2] (only copy)
 		else if(prompt == 0 && (noteCmd == "make" || noteCmd == "ctmake" || noteCmd == "xmake"))
 			isCmd = 2
-			
+
 		//type3: head, [path, str1, str2]
 		else if(prompt == 0 && (noteCmd == "vc" || noteCmd == "vs08"))
 			isCmd = 3
-			
+
 		//type4: head, path, [str1, str2]
 		else if(prompt == 0 && (noteCmd == "python" || noteCmd == "python_w" || noteCmd == "FileSame" || noteCmd == "AsFile"  || noteCmd == "EcFile"
 			 || noteCmd == "cd" || noteCmd == "cd_i"))
 			isCmd = 4
-			
+
 		//type7: head, [path, str1, str2]
 		else if(noteCmd == "cmd_f" || noteCmd == "cmd_w" || noteCmd == "cmd_s")
 			isCmd = 7
-			
+
 		//type5: [head, path], str1, str2
 		//  add all replace words:
 		else if(noteCmd == "Save" || noteCmd == "App")
 			isCmd = 5
-			
+
 		//type8: [head],
 		else if(noteCmd == "autoRun")
 			isCmd = 10
-			
+
 		//type5: [head, path], str1, str2
 		else if(prompt == 0 && strlen(noteCmd)==1)
 			isCmd = 5
-			
+
 		if (isCmd != 10)
 		{
 			//命令名转化: 删除空格
@@ -388,7 +388,7 @@ macro NoteHander(hbuf, cNum, prompt)
 			thirdS  = GetTransCmdS2(cur_line, secondE + 1, len)
 			thirdE  = GetTransCmdE(cur_line, thirdS,     len)
 		}
-		
+
 		if (isCmd == 1)
 			curPath = strmid(cur_line, secondS, secondE)	// head, [path], str1, str2
 		else if (isCmd == 9)
@@ -427,7 +427,7 @@ macro NoteHander(hbuf, cNum, prompt)
 			// cur_line--> "cd:tmp:xx\ git clone https://github.com/Rukey7/MvpApp"
 			// curPath--->    "tmp:xx\ git clone https://github.com/Rukey7/MvpApp"
 			// secondE--->    "tmp"
-			// 
+			//
 			// cur_line--> "python_w tool:xiaoshuo\test_split.py"
 			// curPath--->    "tool:xiaoshuo\test_split.py"
 			// secondE--->    "tool"
@@ -446,7 +446,7 @@ macro NoteHander(hbuf, cNum, prompt)
 					// fourS------>    "git ..."
 					// rootPath--->    "c:\AA"
 					// curPath---->    "git clone https://github.com/Rukey7/MvpApp"
-					// 
+					//
 					// thirdE----->    "....py"
 					// fourS------>    ""
 					// rootPath--->    "c:\AA"
@@ -467,7 +467,7 @@ macro NoteHander(hbuf, cNum, prompt)
 						}
 						tmpPath = curPath
 						curPath  = strmid(curPath, fourS, lenP)
-						
+
 						//test: 0.open, 1.cur, 2,close.
 						TestMsg("--curPath--" # CharFromKey(13) # curPath # CharFromKey(13)
 							  # "--rootPath--" # CharFromKey(13) # rootPath # CharFromKey(13)
@@ -492,7 +492,7 @@ macro NoteHander(hbuf, cNum, prompt)
 						}
 						tmpPath = curPath
 						curPath  = strmid(curPath, secondE+1, thirdE)
-						
+
 						//test: 0.open, 1.cur, 2,close.
 						TestMsg("--curPath--" # CharFromKey(13) # curPath # CharFromKey(13)
 							  # "--rootPath--" # CharFromKey(13) # rootPath # CharFromKey(13)
@@ -537,7 +537,7 @@ macro NoteHander(hbuf, cNum, prompt)
 			curPath = noteCmd						    // [head], path, str1, str2
 			noteCmd = ""
 		}
-			
+
 		//goto word and Select
 		//获取关键词(剩余词)
 		//  防止超边界
@@ -585,7 +585,7 @@ macro NoteHander(hbuf, cNum, prompt)
 		noteCmd = ""
 		noteWord = ""
 	}
-		
+
 	// parse "{cur}"
 	if(prompt == 0 && (isCmd == 0 || isCmd == 1 || isCmd == 2 || isCmd == 5 || isCmd == 6 || isCmd == 7))
 	{
@@ -594,26 +594,26 @@ macro NoteHander(hbuf, cNum, prompt)
 		//  {Admin}----公共设置
 		//  {HW}-------路径设置--从键值反向查找键路径
 		tmpPath = ReAllKeyHead(hbuf, curPath)
-		
+
 		//替换特殊key: {pro}, base路径为""; 特殊key可为空，需单独处理
 		//替换多型Next: {size}, next=2时检查2个路径是否存在
 		tmpPath = ReCustomKeyHead(hbuf, "", tmpPath)
-		
+
 		//test: 0.open, 1.cur, 2,close.
 		TestMsg("==ReAllKeyHead==" # CharFromKey(13)
 			  # "curPath" # CharFromKey(13) # "--" # curPath # "--" # CharFromKey(13)
 			  # "out" # CharFromKey(13) # "--" # tmpPath # "--" # CharFromKey(13)
 				, 2)
-				
+
 		if(tmpPath != "")
 			curPath = tmpPath
-			
+
 		tmpPath = ReAllKeyHead(hbuf, noteWord)
 		if(tmpPath != "")
 			noteWord = tmpPath
-			
+
 	}
-	
+
 	//test: 0.open, 1.cur, 2,close.
 	TestMsg("==Note==" # CharFromKey(13)
 		  # "isCmd" # CharFromKey(13) # "--" # isCmd # "--" # CharFromKey(13)
@@ -634,8 +634,8 @@ macro NoteHander(hbuf, cNum, prompt)
 	//python:  运行cmd命令
 	//ctmake:  不运行cmd命令, 只复制
 	//xmake:   不运行cmd命令, 只复制
-	//vc:      
-	//vs08:    
+	//vc:
+	//vs08:
 	//cp:      复制文件
 	//cd:tmp: git ...
 	//cd_i:tmp: git ...
@@ -658,7 +658,7 @@ macro NoteHander(hbuf, cNum, prompt)
 		//文件名转化:
 		//转化"Save:"、区分根目录、添加项目目录、替换"^"为空格
 		curPath = GetTransFileName(hbuf, curPath, cNum)
-		
+
 		//open tools or file
 		NoteOpenFile(hbuf, curPath, noteWord)
 	}
@@ -682,13 +682,13 @@ macro NoteHander(hbuf, cNum, prompt)
 	}
 	else if(noteCmd == "python" || noteCmd == "python_w")
 	{
-		//python: 
+		//python:
 		TestMsg(noteCmd # CharFromKey(13) # rootPath # CharFromKey(13) # curPath, 2)
 		NotePythonCmd(hbuf, noteCmd, rootPath, curPath)
 	}
 	else if(noteCmd == "cd" || noteCmd == "cd_i")
 	{
-		//cd: 
+		//cd:
 		//	cd:tmp: git clone https://github.com/xxx
 		TestMsg(noteCmd # CharFromKey(13) # rootPath # CharFromKey(13) # curPath, 2)
 		NoteCmdCd(hbuf, noteCmd, rootPath, curPath)
@@ -698,7 +698,7 @@ macro NoteHander(hbuf, cNum, prompt)
 		msgStr = curPath
 		TestNodeMsg(msgStr)
 	}
-	//type2: 
+	//type2:
 	else if(noteCmd == "make")
 	{
 		//make...
@@ -712,7 +712,7 @@ macro NoteHander(hbuf, cNum, prompt)
 		SetClipSimpleString(curPath)
 		TestMsg("ctmake" # CharFromKey(13) # curPath, 2)
 	}
-	//type3: 
+	//type3:
 	else if(noteCmd == "vc")
 	{
 		vcPath = getVCPath(0)
@@ -733,7 +733,7 @@ macro NoteHander(hbuf, cNum, prompt)
 	}
 	else if(noteCmd == getMarBasePath(0)) //"basePath"
 	{
-		//android service path: basePath = F:\9820e 
+		//android service path: basePath = F:\9820e
 		lnVar = GetLineValue(cur_line)
 		SaveMode(getNoteBasePath(0), "@lnVar@")
 		pmsg = "Set Ok : " # CharFromKey(13) # lnVar
@@ -801,11 +801,11 @@ macro NoteHander(hbuf, cNum, prompt)
 macro OpenFileHander(hbuf, curPath, cur_row, noteWord, cNum, prompt)
 {
 	oldPath = curPath
-	
+
 	//1. 文件名转化:
 	//转化"Save:"、区分根目录、添加项目目录、替换"^"为空格
 	curPath = GetTransFileName(hbuf, curPath, cNum)
-	
+
 	//2. 显示完整文件名: 以"..."结尾
 	if(NoteShowLikeFile(hbuf, curPath, cur_row, cNum, 0))
 		return 0
@@ -815,20 +815,20 @@ macro OpenFileHander(hbuf, curPath, cur_row, noteWord, cNum, prompt)
 		return 0
 
 	//test: 0.open, 1.cur, 2,close.
-	TestMsg("打开文件: " # CharFromKey(13) 
-			# oldPath # CharFromKey(13) 
-			# curPath # CharFromKey(13) 
-			# noteWord # CharFromKey(13) 
-			# "cNum: " # cNum # CharFromKey(13) 
-			# "prompt: " # prompt, 
+	TestMsg("打开文件: " # CharFromKey(13)
+			# oldPath # CharFromKey(13)
+			# curPath # CharFromKey(13)
+			# noteWord # CharFromKey(13)
+			# "cNum: " # cNum # CharFromKey(13)
+			# "prompt: " # prompt,
 			2)
 
 	hbuf = OpenExistFile(curPath)
-	
+
 	if (hbuf != hNil){
 		if(noteWord == "")
 			return 0
-			
+
 		//4. 默认先搜索一次行首, 再普通搜索(无通配符); 带$搜索行尾
 		NoteScroll(hbuf, curPath, noteWord)
 	}
@@ -938,15 +938,15 @@ macro NoteCopyFile(hbuf, cmdP1, cmdP2, cNum)
 {
 	cmdP1 = ReAllTransHead(hbuf, cmdP1)
 	cmdP2 = ReAllTransHead(hbuf, cmdP2)
-	
-	TestMsg("copy (file1->file2):" # CharFromKey(13) # cmdP1  
+
+	TestMsg("copy (file1->file2):" # CharFromKey(13) # cmdP1
 			# CharFromKey(13) # cmdP2 # "", 1)
-			
+
 	//文件名转化:
 	//转化"Save:"、区分根目录、添加项目目录、替换"^"为空格
 	cmdPath1 = GetTransFileName(hbuf, cmdP1, 0)
 	cmdPath2 = GetTransFileName(hbuf, cmdP2, 0)
-	
+
 	cmdStr = "copy " # cmdPath1 # " " # cmdPath2
 	//msg(cmdStr)
 
@@ -957,8 +957,8 @@ macro NoteCopyRowFile(hbuf, cmdP1, cmdP2, cNum)
 {
 	cmdP1 = ReAllTransHead(hbuf, cmdP1)
 	cmdP2 = ReAllTransHead(hbuf, cmdP2)
-	
-	TestMsg("copy row (file1->file2):" # CharFromKey(13) # cmdP1  
+
+	TestMsg("copy row (file1->file2):" # CharFromKey(13) # cmdP1
 			# CharFromKey(13) # cmdP2 # "", 1)
 
 	//文件名转化:
@@ -995,7 +995,7 @@ macro NoteCopyRowFile(hbuf, cmdP1, cmdP2, cNum)
 			AppendBufLine(tarBuf, line)
 			ln =  ln + 1
 		}
-		
+
 		SaveBuf(tarBuf)
 		CloseBuf(tarBuf)
 		CloseBuf(srcBuf)
@@ -1037,7 +1037,7 @@ macro NoteOpenFile(hbuf, curPath, noteWord)
 	else
 	{
 		vcbuf = OpenExistFile(curPath)
-			
+
 		if (vcbuf != hNil){
 			if (noteWord != "")
 			{
@@ -1057,18 +1057,18 @@ macro NoteCurCmd(hbuf, noteCmd, curPath)
 //    只替换"Save:"、"^"
 //    其他路径之前已替换
 	curPath = GetTransFileName(hbuf, curPath, 17)
-	
+
 //	cmd_s用项目路径, 屏蔽设置路径(不用basePath设置)
 //	  (可能没有cmd文件)
 	if(noteCmd == "cmd_s")
 		newPath = GetTransFileName(hbuf, "", 4)
 	else
 		newPath = GetTransFileName(hbuf, "", 0)
-		
+
 //	根目录, 用于切换目录
 	cmdRoot = GetTransRootDir(newPath)
 //	TestMsg("curPath: " # CharFromKey(13) # curPath # CharFromKey(13) # newPath, 0)
-	
+
 	SetClipSimpleString(curPath)
 
 	//cmdStr = cmdRoot # "&&cd " # newPath # "&&echo " # newPath # "^>" # curPath # "&&" # curPath # "&&pause"
@@ -1101,7 +1101,7 @@ macro NotePythonCmd(hbuf, noteCmd, rootPath, curPath)
 	curPath = GetTransFileName(hbuf, curPath, 16)
 	if(noteCmd == "python_w")
 		SetClipSimpleString("python " # curPath)
-		
+
 	if(rootPath != "")
 		newPath = GetTransFileName(hbuf, rootPath, 0)
 	else
@@ -1128,18 +1128,18 @@ macro NoteCmdCd(hbuf, noteCmd, rootPath, curPath)
 	// 原参数:
 	// rootPath: D:\project\Android\\
 	// curPath : git clone https://github.com/web3j/web3j
-	
+
 	// curPath : git clone https://github.com/web3j/web3j
 	curPath = GetTransFileName(hbuf, curPath, 17)
 	if(noteCmd == "cd")
 		SetClipSimpleString(curPath)
-		
+
 	// newPath : D:\project\Android\
 	if(rootPath != "")
 		newPath = GetTransFileName(hbuf, rootPath, 0)
 	else
 		newPath = GetTransFileName(hbuf, "", 0)
-		
+
 	// cmdRoot : D:
 	cmdRoot = GetTransRootDir(newPath)
 
@@ -1225,36 +1225,44 @@ macro NoteScroll(hbuf, curPath, noteWord)
 macro NoteAutoRun(hbuf)
 {
 	var autoMode
-	//
-	var wrBuf
+	// extern param
 	var isLocalVal
 	var baseVal
 	var proNvVal
+	var patchVal
 	var fileVal
 	var rowVal
 	var itemVal
-	
+
 	var oldVal
 	var newVal
-	
+
+	// cur
 	var lnMax
 	var ln
-
 	var cur_line
+
+	// op
+	var wrBuf
+	var lnWrMax
+	var wln
+	var fileName
 	var cur_Wr_line
 	var new_line
-	
+
+
 	autoMode = getMacroValue(hbuf, "autoMode", 1)
 	lnMax = GetBufLineCount(hbuf)
 	sel = MGetWndSel(hbuf)
-	ln = sel.lnFirst + 1 
-	
+	ln = sel.lnFirst + 1
+
 	//param
 	if (autoMode == "replace")
 	{
 		//get Key
 		isLocalVal = getMacroValue(hbuf, "isLocal" # "Key", 1)
 		baseVal = getMacroValue(hbuf, "base" # "Key", 1)
+		//as local
 		proNvVal = getMacroValue(hbuf, "proNv" # "Key", 1)
 		fileVal = getMacroValue(hbuf, "file" # "Key", 1)
 		rowVal  = getMacroValue(hbuf, "row" # "Key", 1)
@@ -1272,6 +1280,16 @@ macro NoteAutoRun(hbuf)
 	    	stop
 		}
 	}
+	else if (autoMode == "merge")
+	{
+		//get Key
+		isLocalVal = getMacroValue(hbuf, "isLocal" # "Key", 1)
+		baseVal = getMacroValue(hbuf, "base" # "Key", 1)
+		//as local
+		proNvVal = getMacroValue(hbuf, "proNv" # "Key", 1)
+		fileVal = getMacroValue(hbuf, "file" # "Key", 1)
+		patchVal = getMacroValue(hbuf, "patch" # "Key", 1)
+	}
 
 	while (ln < lnMax)
 	{
@@ -1280,9 +1298,12 @@ macro NoteAutoRun(hbuf)
 			break
 		if (cur_line != sTrim)
 		{
+			wln = 0
 			//get Key
 			mar = GetLineMacro(cur_line)
 			val = GetLineValue(cur_line)
+
+			//fun1:
 			if (autoMode == "replace")
 			{
 				if ("path" == mar)
@@ -1314,6 +1335,7 @@ macro NoteAutoRun(hbuf)
 				}
 				//msg(cur_Wr_line)
 			}
+			//fun2:
 			else if (autoMode == "search")
 			{
 				if ("word" == mar)
@@ -1322,11 +1344,112 @@ macro NoteAutoRun(hbuf)
 					SearchForRefs(wrBuf, val, 0)
 				}
 			}
+			//fun3:
+			else if (autoMode == "merge")
+			{
+				if ("path" == mar)
+				{
+					if("1" == isLocalVal)
+						fileName = baseVal # "\\" # val # "\\" # proNvVal # "\\" # fileVal
+					else
+						fileName = baseVal # "\\" # val # "\\" # fileVal
+
+					//write
+					wrBuf = OpenExistFile(fileName)
+					if (wrBuf != hNil){
+						lnWrMax = GetBufLineCount(wrBuf)
+
+						if (1)
+						{
+						//op: delete
+//						DeleteNvmIdRange(wrBuf, 12817, 12817)  //replace one
+//						DeleteNvmIdRange(wrBuf, 5738, 5738)    //replace one
+//						DeleteNvmIdRange(wrBuf, 4759, 4775)    //size20->size3
+//						DeleteNvmIdRange(wrBuf, 4642, 4654)    //size26->size13
+//						DeleteNvmIdRange(wrBuf, 3018, 3019)    //size9->size7
+
+
+						//op: insert
+//						if (!IsExistNvmName(wrBuf, "lte_ns04_ampr")){
+//							AddNvmFileToLast(wrBuf, 3009, patchVal, "RF_nv_patch1.nvm")
+//						}
+//						if (!IsExistNvmName(wrBuf, "LTE_MDLL_DYN")){
+//							AddNvmFileToLast(wrBuf, 4627, patchVal, "RF_nv_patch2.nvm")  //4632 ~ 4659
+//						}
+//						if (!IsExistNvmName(wrBuf, "LTE_FLT_BWTUN")){
+//							AddNvmFileToLast(wrBuf, 4754, patchVal, "RF_nv_patch3.nvm")  //4774 ~ 4836
+//						}
+//						if (!IsExistNvmName(wrBuf, "GSM_TX_GPIO_PA_INIT")){
+//							AddNvmFileToLast(wrBuf, 5737, patchVal, "RF_nv_patch4.nvm")
+//						}
+//						if (!IsExistNvmName(wrBuf, "gsm_stub_flag")){
+//							AddNvmFileToLast(wrBuf, 12816, patchVal, "RF_nv_patch5.nvm")
+//						}
+
+
+						//op: auto id
+//						UpdateNvmAutoIdRange(wrBuf, 30187, 3010, 3017, 3016, 0, 2694, 0)              // 到 delete1 中断 / 从 patch1 后开始
+//						UpdateNvmAutoIdRange(wrBuf, 30267, 3020, 3055, 3024, 0, 2694, 0)              //  +层 中断
+//						UpdateNvmAutoIdRange(wrBuf, 30628, 3056, 4627, 3060, 0, 2693, 0)              // 到 patch2 中断 / 从层开始
+//						UpdateNvmAutoIdRange(wrBuf, 46895, 4628, 4641, 4660, 0, 3056, 3060)           // 到 delete2 中断 / 从 patch2 后开始
+
+//						UpdateNvmAutoIdRange(wrBuf, 47035, 4655, 4754, 4674, 0, 3056, 3060)           // 到 patch3 中断 / 从 delete2 后开始
+//						UpdateNvmAutoIdRange(wrBuf, 48690, 4755, 4758, 4837, 0, 3056, 3060)           // 到 delete3 中断 / 从 patch3 后开始 (size3)
+//						UpdateNvmAutoIdRange(wrBuf, 48730, 4776, 5737, 4841, 0, 2693, 0)              // 到 patch4 中断 / 从 delete3 后开始
+//						UpdateNvmAutoIdRange(wrBuf, 58382, 5739, 5746, 5806, 0, 2693, 0)              // +层 中断 / 从 delete4 后开始 (删1个) 
+
+//						UpdateNvmAutoIdRange(wrBuf, 58462, 5747, 11670, 5814, 0, 0, 0)                // base0,一次弄不完
+
+//						UpdateNvmAutoIdRange(wrBuf, 117775, 11671, 11672, 11738, 0, 11666, 11733)     //  +层 中断
+//						UpdateNvmAutoIdRange(wrBuf, 117795, 11673, 11772, 11740, 0, 11644, 11711)     //  +层 中断
+//						UpdateNvmAutoIdRange(wrBuf, 118796, 11773, 12329, 11840, 0, 5747, 5814)       //  +层 中断
+//						UpdateNvmAutoIdRange(wrBuf, 124369, 12330, 12816, 12397, 0, 0, 0)             // 到 patch5 中断 / 从层开始
+//						UpdateNvmAutoIdRange(wrBuf, 129278, 12818, 13057, 12885, 0, 12330, 12397)     // 到结束 / 从 delete5 后开始 (删1个) 
+
+						//op: array size
+						UpdateNvmArraySizeById(wrBuf, 3016, 9, 7)
+						UpdateNvmArraySizeById(wrBuf, 4660, 26, 13)
+						UpdateNvmArraySizeById(wrBuf, 4837, 20, 3)
+						UpdateNvmArraySizeById(wrBuf, 5783, 20, 19)
+						UpdateNvmArraySizeById(wrBuf, 12837, 47, 46)
+						}
+
+						if (1)
+						{
+						//op: delete
+//						DeleteNvmIdRange(wrBuf, 960, 961)  //replace one
+
+						//op: insert
+//						if (!IsExistNvmName(wrBuf, "inactiveTimer")){
+//							AddNvmFileToLast(wrBuf, 910, patchVal, "uix8910_static_nv_patch1.nvm")
+//						}
+
+						//op: auto id
+//						UpdateNvmAutoIdRange(wrBuf, 9177, 911, 959, 913, 0, 612, 0)              // 到删除范围1停止
+
+						//op: array size
+//						UpdateNvmArraySizeById(wrBuf, 913, 50, 48)
+						}
+
+//						if (1)
+//						{
+//						}
+						
+						SaveBuf(wrBuf)
+						CloseBuf(wrBuf)
+					}
+					else
+					{
+						msg("error:" # fileName)
+					}
+				}
+				//msg(cur_Wr_line)
+			}
 
 		}
 		ln = ln + 1
 	}
-	
+
 	if (autoMode == "search")
 	{
 		SetCurrentBuf(wrBuf)       // put search results in a window

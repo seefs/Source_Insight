@@ -47,8 +47,12 @@ Save:Help\Macro_Note_Test.h
 // 批量替换--nv
 Save:Help\Other\Macro_Help_replace.h
 
+// 批量合并
+Save:Help\Other\Macro_Help_merge.h
+
 // 批量搜索
 Save:Help\Other\Macro_Help_search.h
+
 
 // 项目文件统计/调试命令
 //Save:node\ToolsMsg\Macro_SI.h  __filelist__
