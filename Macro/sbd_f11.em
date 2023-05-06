@@ -1355,6 +1355,7 @@ macro NoteAutoRun(hbuf)
 						fileName = baseVal # "\\" # val # "\\" # fileVal
 
 					//write
+					SetReg("auto_fileName", fileName)
 					wrBuf = OpenExistFile(fileName)
 					if (wrBuf != hNil){
 						lnWrMax = GetBufLineCount(wrBuf)
@@ -1388,11 +1389,12 @@ macro NoteAutoRun(hbuf)
 
 
 						//op: auto id
+						//  func(hbuf, lnStart, fromI, toI, newfromI, newtoI, parentfromI, parenttoI)
 //						UpdateNvmAutoIdRange(wrBuf, 30187, 3010, 3017, 3016, 0, 2694, 0)              // 到 delete1 中断 / 从 patch1 后开始
 //						UpdateNvmAutoIdRange(wrBuf, 30267, 3020, 3055, 3024, 0, 2694, 0)              //  +层 中断
 //						UpdateNvmAutoIdRange(wrBuf, 30628, 3056, 4627, 3060, 0, 2693, 0)              // 到 patch2 中断 / 从层开始
 //						UpdateNvmAutoIdRange(wrBuf, 46895, 4628, 4641, 4660, 0, 3056, 3060)           // 到 delete2 中断 / 从 patch2 后开始
-
+//
 //						UpdateNvmAutoIdRange(wrBuf, 47035, 4655, 4754, 4674, 0, 3056, 3060)           // 到 patch3 中断 / 从 delete2 后开始
 //						UpdateNvmAutoIdRange(wrBuf, 48690, 4755, 4758, 4837, 0, 3056, 3060)           // 到 delete3 中断 / 从 patch3 后开始 (size3)
 //						UpdateNvmAutoIdRange(wrBuf, 48730, 4776, 5737, 4841, 0, 2693, 0)              // 到 patch4 中断 / 从 delete3 后开始
@@ -1407,11 +1409,11 @@ macro NoteAutoRun(hbuf)
 //						UpdateNvmAutoIdRange(wrBuf, 129278, 12818, 13057, 12885, 0, 12330, 12397)     // 到结束 / 从 delete5 后开始 (删1个) 
 
 						//op: array size
-						UpdateNvmArraySizeById(wrBuf, 3016, 9, 7)
-						UpdateNvmArraySizeById(wrBuf, 4660, 26, 13)
-						UpdateNvmArraySizeById(wrBuf, 4837, 20, 3)
-						UpdateNvmArraySizeById(wrBuf, 5783, 20, 19)
-						UpdateNvmArraySizeById(wrBuf, 12837, 47, 46)
+//						UpdateNvmArraySizeById(wrBuf, 3016, 9, 7)
+//						UpdateNvmArraySizeById(wrBuf, 4660, 26, 13)
+//						UpdateNvmArraySizeById(wrBuf, 4837, 20, 3)
+//						UpdateNvmArraySizeById(wrBuf, 5783, 20, 19)
+//						UpdateNvmArraySizeById(wrBuf, 12837, 47, 46)
 						}
 
 						if (1)
