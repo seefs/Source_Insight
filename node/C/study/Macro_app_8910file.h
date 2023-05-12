@@ -46,10 +46,11 @@ app:fmm/c/mmifmm_mainwin.c  HandleFmmListWinMsg
 // opt
 //		==>HandleUdiskChildWindow
 //		====>MENU:
-//		====>HandleCreatePopMenuOpt
+//		====>HandleCreatePopMenuOpt    # Ñ¡Ôñmenu
 //		======>MMIFMM_OpenMeunPubWin
 //		========>MENU_FMM_NORMAL_LIST_OPT
 //		==========>.menu_fmm_normal_list_opt
+//		==========>.menu_fmm_music_list_opt
 app:fmm\h\mmifmm_menutable.def  MENU_FMM_NORMAL_LIST_OPT
 // opt--memory
 //		========>MENU_FMM_MEMORY_OPT

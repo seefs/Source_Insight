@@ -90,13 +90,13 @@ app:idle\c\mainapp.c  MMIAPIIDLE_OpenIdleWin
 //		====>OutputIdleWinNetworkName
 //		======>MMIAPIPHONE_GetSimAndServiceString
 //		========>MMIPHONE_GetNetworkNameString
-//		========>MMIAPIPHONE_GetServiceStatus
-//		==========>.g_service_status
-//		========>MMIPHONE_GetAciString
-//		==========>.s_network_acitable
-//		========>MMIPHONE_CatAciOpnSpnString
-//		==========>SelectOPNString
-//		==========>.s_network_name
+//		==========>MMIAPIPHONE_GetServiceStatus
+//		============>.g_service_status
+//		==========>MMIPHONE_GetAciString
+//		============>.s_network_acitable
+//		==========>MMIPHONE_CatAciOpnSpnString
+//		============>SelectOPNString
+//		============>.s_network_name
 app:idle\c\mmiidle_cstyle.c  void^OutIdleWinContent
 app:idle\c\mmiidle_cstyle.c  void^DisplayIdleWinSoftkey
 // IDLE--8910
@@ -430,12 +430,10 @@ Save:node\C\study\Macro_res_color_8910.h  __file__
 
 [1.7] Setting
 
-// sec--pin (edit)
-app:phone\c\mmiphone_wintab.c  MMI_RESULT_E^HandlePinInputExceptPhone
-
 ### set
 // ==>app
 Save:node\C\study\Macro_app_8910set.h  __phone__
+Save:node\C\study\Macro_app_8910set.h  __display__
 Save:node\C\study\Macro_app_8910set.h  __callset__
 Save:node\C\study\Macro_app_8910set.h  __connect__
 Save:node\C\study\Macro_app_8910set.h  __reset__
@@ -443,7 +441,7 @@ Save:node\C\study\Macro_app_8910set.h  __shortcut__
 Save:node\C\study\Macro_app_8910set.h  __startup__     # 开关机
 Save:node\C\study\Macro_app_8910set.h  __charge__      # 充电
 Save:node\C\study\Macro_app_8910set.h  __privacy__
-Save:node\C\study\Macro_app_8910set.h  __display__
+Save:node\C\study\Macro_app_8910set.h  __psw__
 Save:node\C\study\Macro_app_8910set.h  
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __set_display__
@@ -938,6 +936,8 @@ Save:node\C\study\Macro_res_image_8910.h __record__
 //		======>DisplayProgress
 app:record\c\mmirecord_barphone_wintab.c  void^MMIRECORD_UpdateScreen
 
+// record--save
+//		==>MMIAPIRECORD_GetRecordStorage
 
 // record--init--path
 SetRecordFilePath

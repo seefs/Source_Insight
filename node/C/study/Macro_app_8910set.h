@@ -1,17 +1,19 @@
 
 //目录:
 Save:node\C\study\Macro_app_8910set.h \[1.1\] phone
-Save:node\C\study\Macro_app_8910set.h \[1.2\] callset
-Save:node\C\study\Macro_app_8910set.h \[1.3\] connect
-Save:node\C\study\Macro_app_8910set.h \[1.4\] reset
+Save:node\C\study\Macro_app_8910set.h \[1.2\] display
+Save:node\C\study\Macro_app_8910set.h \[1.3\] callset
+Save:node\C\study\Macro_app_8910set.h \[1.4\] connect
 Save:node\C\study\Macro_app_8910set.h \[1.5\] shortcut
 Save:node\C\study\Macro_app_8910set.h \[1.6\] startup
 Save:node\C\study\Macro_app_8910set.h \[1.7\] charge
 Save:node\C\study\Macro_app_8910set.h \[1.8\] envSet
 Save:node\C\study\Macro_app_8910set.h \[1.9\] envPlay
 Save:node\C\study\Macro_app_8910set.h \[1.10\] privacy
-Save:node\C\study\Macro_app_8910set.h \[1.11\] display
-Save:node\C\study\Macro_app_8910set.h \[1.12\] 
+Save:node\C\study\Macro_app_8910set.h \[1.11\] reset
+Save:node\C\study\Macro_app_8910set.h \[1.12\] psw
+Save:node\C\study\Macro_app_8910set.h \[1.13\] 
+Save:node\C\study\Macro_app_8910set.h \[1.14\] 
 
 
 
@@ -47,12 +49,36 @@ source:mmi_service\export\inc\mmi_custom_define.h  MMISET_DEFAULT_DATE_YMD
 
 ### phone--lang
 // set--lang
-HandleSetLanguageInputContentWindow 	 //输入语言
+app:setting\c\mmiset_phonewin.c  HandleSetLanguageContentWindow
+// 输入语言
+app:setting\c\mmiset_phonewin.c  HandleSetLanguageInputContentWindow
+
+
+[1.2] __display__
+### set--display (form)
+//		==>
+//		====>
+app:setting\c\mmiset_displaywin.c  MMI_RESULT_E^^HandleSetDisplayWindow
 
 
 
-[1.2] __callset__
+### set--display--idle
+app:setting\c\mmiset_displaywin.c  MMI_RESULT_E^^HandleSetIdleDisplayWindow
 
+
+### set--display--wallpaper
+//		==>SetWallPaperParam               # form--init
+//		==>MMIAPISET_SetWallpaper          # form--ok
+//		====>HandleSetWallpaperWindow      #  选静态或文件
+app:setting\c\mmiset_wallpaper.c  HandleSetStaticWallpaperWinMsg
+
+
+
+
+
+[1.3] __callset__
+
+// callset
 //		==>MMIAPISET_OpenCallSettingsWindow
 //		====>HandleCallSettingsWindow
 //		======>init:
@@ -61,6 +87,8 @@ HandleSetLanguageInputContentWindow 	 //输入语言
 //		============>
 //		==============>
 
+// callset--dual sim
+app:setting\c\mmiset_callwin.c  HandleMultiSimSettingWindow
 
 // callset--other
 app:setting\c\mmiset_callwin.c  InitPdaCallOtherSettingsCtrl
@@ -81,7 +109,7 @@ app:setting\c\mmiset_callwin.c  HandleFlyModeOpenPhoneWindow
 //		==============>
 
 
-[1.3] __connect__
+[1.4] __connect__
 
 // set--connect
 //		==>HandleConnectionMenuWinMsg
@@ -99,46 +127,6 @@ Save:node\C\study\Macro_doc_apn8910.h
 Save:node\C\study\Macro_doc_apn107.h
 
 
-
-[1.4] __reset__
-// init
-//		==>MMIAPISET_AllInit
-
-// Reset
-//		==>MMIAPISET_OpenInputResetPwdWin
-//		====>HandleInputResetFactoryPwd
-//		======>MSG_PROMPTWIN_OK
-//		========>MSG_SET_CLEAN_DATE_IND
-app:setting/c/mmiset_phonewin.c  case^ID_SET_RESET_FACTORY
-app:setting/c/mmiset_phonewin.c  case^MSG_SET_CLEAN_DATE_IND
-//		==>MMISET_CleanUserData
-//		====>MSG_SET_CLEAN_USER_DATA_OVER_IND
-//		======>HandleResetOrCleanDataWaitWin
-//		==>MMISET_ResetFactorySetting
-//		====>MMIAPISET_SetWaitFlag
-//		======>MSG_SET_RESET_NEED_WAIT_IND
-//		====>MMIAPISET_FuncFinishedInd        # 为什么2次
-//		======>MSG_SET_RESET_FACTORY_OVER_IND
-//		==>MMIAPIPHONE_PowerReset             # 重启, 参考alarm关record
-//		==>MMIAPIPHONE_PowerOffEx             # 重启, 优先用这个
-//		==>MMIAPIPHONE_PowerOff               # 重启
-// Reset--userNV
-//		==>UserNV_MarkReset
-//		==>MMI_ReadNVItem
-//		====>
-common\export\inc\nv_item_id.h  NV_ELECTRIC_GUARANTEE_CARD     #id
-common\export\inc\nv_item_id.h  NV_CUS_FIXNV_DATA_ID           #id  610
-common\export\inc\nv_item_id.h  NV_CUS_FIXNV_DATA_LEN          #len 8
-// Reset--env
-app:setting\c\mmiset_func.c  MMIENVSET_ResetEnvSetSetting
-
-//
-app:setting/c/mmiset_phonewin.c  MMISET_INPUT_RESET_FACTORY_PWD_WIN_TAB
-
-### phone psw
-//		==>InitPhonePwd
-//		====>.MMISET_PRIVACY_PROTECT_INIT_PWD  1234
-app:setting\c\mmiset_security.c  MMISET_IsCorrectPrivacyProtectPwd
 
 
 [1.5] __shortcut__
@@ -302,6 +290,8 @@ Save:node\C\study\Macro_patch_8910.h  __charge__
 //		====>MMISET_EnterRingSettingMenu
 //		======>EnterRingSettingMenu
 //		========>HandleRingMainMenuWindow
+//		==>.ring
+//		====>MMISET_AppendFixedCallRingItem
 app:setting\c\mmiset_wintab.c  MMISET_ICON_RING_MENU_WIN_TAB
 // env--option--set--setRing--callRing
 //		==>EnvSetRingParam
@@ -377,24 +367,67 @@ app:setting\c\mmiset_security.c  HandleSelectPrivacyProtectWindow
 
 
 
-[1.11] __display__
-// set--display (form)
-//		==>
+[1.11] __reset__
+// init
+//		==>MMIAPISET_AllInit
+
+// Reset
+//		==>MMIAPISET_OpenInputResetPwdWin
+//		====>HandleInputResetFactoryPwd
+//		======>MSG_PROMPTWIN_OK
+//		========>MSG_SET_CLEAN_DATE_IND
+app:setting/c/mmiset_phonewin.c  case^ID_SET_RESET_FACTORY
+app:setting/c/mmiset_phonewin.c  case^MSG_SET_CLEAN_DATE_IND
+//		==>MMISET_CleanUserData
+//		====>MSG_SET_CLEAN_USER_DATA_OVER_IND
+//		======>HandleResetOrCleanDataWaitWin
+//		==>MMISET_ResetFactorySetting
+//		====>MMIAPISET_SetWaitFlag
+//		======>MSG_SET_RESET_NEED_WAIT_IND
+//		====>MMIAPISET_FuncFinishedInd        # 为什么2次
+//		======>MSG_SET_RESET_FACTORY_OVER_IND
+//		==>MMIAPIPHONE_PowerReset             # 重启, 参考alarm关record
+//		==>MMIAPIPHONE_PowerOffEx             # 重启, 优先用这个
+//		==>MMIAPIPHONE_PowerOff               # 重启
+// Reset--userNV
+//		==>UserNV_MarkReset
+//		==>MMI_ReadNVItem
 //		====>
-app:setting\c\mmiset_displaywin.c  MMI_RESULT_E^^HandleSetDisplayWindow
+common\export\inc\nv_item_id.h  NV_ELECTRIC_GUARANTEE_CARD     #id
+common\export\inc\nv_item_id.h  NV_CUS_FIXNV_DATA_ID           #id  610
+common\export\inc\nv_item_id.h  NV_CUS_FIXNV_DATA_LEN          #len 8
+// Reset--env
+app:setting\c\mmiset_func.c  MMIENVSET_ResetEnvSetSetting
+
+//
+app:setting/c/mmiset_phonewin.c  MMISET_INPUT_RESET_FACTORY_PWD_WIN_TAB
+
+### phone psw
+//		==>InitPhonePwd
+//		====>.MMISET_PRIVACY_PROTECT_INIT_PWD  1234
+app:setting\c\mmiset_security.c  MMISET_IsCorrectPrivacyProtectPwd
 
 
 
-// set--display--idle
-app:setting\c\mmiset_displaywin.c  MMI_RESULT_E^^HandleSetIdleDisplayWindow
+[1.12] __psw__
+// sec
+//		==>HandleSecuritySetWindow
+//		====>MMISMS_PDA_SECURITY_SETTINGS_PHONE_LOCK:
+//		======>MMK_CreatePubEditWin
+
+// sec--lock
+//		==>HandleInputPwdWindow
+//		====>check:
+//		====>PHONE_CODE_LEN_IS_IN_RANGE
+//		====>MMISET_IsCorrectPowerOnPwd
+//		==>start:
+//		====>MMIAPIPHONE_NormalInit
+//		======>MMIAPISET_OpenPowerOnPwdWin
 
 
 
-
-
-
-[1.12] 
-
+// sec--pin (edit)
+app:phone\c\mmiphone_wintab.c  MMI_RESULT_E^HandlePinInputExceptPhone
 
 
 

@@ -793,6 +793,8 @@ app:phone/c/mmiphone_onoff.c  MMI_RESULT_E^HandleNormalStartupWindow
 //		====>DisplayTitleText
 //		======>.font
 //		======>GetTitleTextStyle
+//		====>DisplayTitleSubText             # sub
+//		======>...
 gui:title\c\Guititle.c  DisplayTitle( )      # 8910
 ctrl:Title\c\ctrltitle.c  DisplayTitle( )    # 107
 // ±êÌâ--¹ö¶¯
@@ -1230,6 +1232,9 @@ ctrl:Form\c\ctrlform.c  BOOLEAN^FormConstruct
 //		==>DisplayTitleSubText
 //		====>.sub_str
 //		======>CTRLTITLE_SetSubTextByPtr
+//		======>BaseFlexCtrlDisplayLeftNum
+//		========>CTRLIM_ImGetText
+//		==========>.s_im_text_cfg               # "Abc"
 //		====>title_ptr->sub_font
 //		======>
 //		==>BaseFlexCtrlDisplayLeftNum
