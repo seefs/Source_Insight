@@ -2,7 +2,7 @@
 //目录:
 Save:node\C\study\Macro_app_8910other.h \[1.1\] TASK
 Save:node\C\study\Macro_app_8910other.h \[1.2\] jewish
-Save:node\C\study\Macro_app_8910other.h \[1.3\] 
+Save:node\C\study\Macro_app_8910other.h \[1.3\] browser
 Save:node\C\study\Macro_app_8910other.h \[1.4\] 
 Save:node\C\study\Macro_app_8910other.h \[1.5\] 
 Save:node\C\study\Macro_app_8910other.h \[1.6\] 
@@ -93,8 +93,58 @@ app:accessory\c\mmicalendar_main.c  MMIAPICALENDAR_OpenJewishCalMainWin
 
 
 
-[1.3] 
+[1.3] __browser__
 
+### BROWSER, DL
+// mk--true
+prj:project_{cur}.mk  BROWSER_SUPPORT = TRUE
+prj:project_{cur}.mk  BROWSER_SUPPORT_DORADO = TRUE    # 浏览器1 同时开OPERA会有2个浏览器
+prj:project_{cur}.mk  OPERA_MINI_SUPPORT     = VER6    # 浏览器2
+prj:project_{cur}.mk  OPERA_MINI_SUPPORT     = VER42   # 浏览器3
+prj:project_{cur}.mk  BROWSER_ALL_RUNNING_SUPPORT = TRUE   # 107
+prj:{cfg}.cfg         BROWSER_ALL_RUNNING_SUPPORT = TRUE   # 8910
+// mk--false
+prj:project_{cur}.mk  BROWSER_OPERA_START_PAGE = FALSE
+prj:project_{cur}.mk  BROWSER_OPERA_FAVORITE_WITH_DEFAULT = FALSE
+
+// 8910      
+prj:project_{cur}.mk  BROWSER_OPERA_START_PAGE = TRUE
+prj:project_{cur}.mk  BROWSER_SEARCH_SUPPORT = FALSE
+//
+prj:project_{cur}.mk  OPERA_MINI_SUPPORT = VER42
+
+
+
+// browser UI
+prj:project_{cur}.mk  BROWSER_INPUT_BIG_FONT_BG_STYLE  = TRUE
+prj:project_{cur}.mk  BROWSER_DL_DEFAULT_TCARD         = TRUE
+prj:project_{cur}.mk  BROWSER_IN_TOOLMENU              = TRUE # 整理编译报错 107
+
+
+// Download
+prj:project_{cur}.mk  DL_SUPPORT    = TRUE   # 107 FALSE
+prj:project_{cur}.mk  OMADL_SUPPORT = TRUE   # 107 FALSE
+//
+prj:project_{cur}.mk  AUTO_DOWNLOAD_SUPPORT = TRUE   # 107 TRUE
+
+
+//
+prj:project_{cur}.mk  DATACOUNTER_SUPPORT = TRUE  # 8910才有
+
+
+// 关DORADO: CSS_SUPPORT 没开不用管
+Makefile.verify  CSS_SUPPORT -> BROWSER_SUPPORT_DORADO
+
+// 关于内存提示 SPCSS00992465
+//	因T117项目内存受限，所以给dorado游览器划分的内存为4MB，另外可处理的网页最大size为1MB，
+//	当收到的网页数据大小超过1MB，在处理网页解析SSL的时候内存申请buffer失败，提示网页太大，
+//	当4MB内存用完后就会提示内存不足。
+
+// SPCSS01103989
+//Dorado浏览器在产品规格中配置最大可使用内存为1.5M，不支持js解析
+
+###
+patch:node\bug\Macro_bug_107.h  __BROWSER__
 
 
 

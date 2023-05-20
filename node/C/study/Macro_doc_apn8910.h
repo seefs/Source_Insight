@@ -17,7 +17,37 @@ Save:node\C\study\Macro_doc_apn8910.h \[1.14\]
 
 
 
+### 新增运营商delta nv
+// --SIM(HPLMN)相关NV项
+// "国家名称缩写_运营商名称_S.nv"
+//
+// --PLMN(VPLMN)相关NV项
+// "国家名称缩写_运营商名称_P.nv"
+common\nv_parameters\delta_nv\Index.xml
+
+
+### nv build
+common\nv_parameters\delta_nv\
+common\nv_parameters\delta_nv\_DeltaNV添加说明.txt
+
+//PS\nv\internal\ps\common\h\
+//PS\nv\internal\ps\common\h\COMMON_LIST.h
+//
+//build\[project_name]_builddir\img目录生成[projectname]_deltanv.bin
+
+// delta
+//PS\nv\export\ps\common\
+
+// 包含所有可动态加载参数的默认值
+common\nv_parameters\delta_nv\Default_P.nv
+common\nv_parameters\delta_nv\Default_S.nv
+
+
+
+
+
 [1.1] 425
+common\nv_parameters\delta_nv\Index.xml  mcc="425"
 //
 app:phone\h\
 app:phone\h\plmn_ts25_database_enum.h  PLMN_425_09
@@ -29,6 +59,8 @@ source:mmi_app\common\h\plmn_ts25_database_str.h  TXT_NET_894A
 
 
 [1.2] 460
+common\nv_parameters\delta_nv\Index.xml  mcc="460"
+
 // 移动148号段
 // 缺少 PLMN_460_13
 app:phone\h\plmn_ts25_database_enum.h  PLMN_460_11
@@ -88,6 +120,7 @@ app:phone\h\plmn_ts25_database_table.h  PLMN_460_11
 
 
 [1.3] 466
+common\nv_parameters\delta_nv\Index.xml  mcc="466"
 
 
 

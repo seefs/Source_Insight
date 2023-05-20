@@ -85,30 +85,28 @@ C:\Users\Administrator\.ssh\config
 [1.5] create SSH key
 // git bash here
 ssh-keygen -t rsa -C "seefs@163.com"
-ssh-keygen -t rsa -C "xiaojia"
-ssh-keygen -t rsa -C "xiaojia_bm@163.com"
-ssh-keygen -t rsa -C "xiaojia"
+ssh-keygen -t rsa -C "xiaojia_bm@163.com" -f ~/.ssh/id_github2
 ssh-keygen -t ed25519 -C "xiaojia_bm@163.com"
 ssh-keygen -t rsa -b 2048 -C "xiaojia_bm@163.com"
+
 // .ssh file
-C:\Users\seefs\.ssh\
-C:\Users\{user}\.ssh\
-C:\Users\Administrator\.ssh
-C:\Users\Administrator\.ssh\id_rsa.pub
-C:\Users\Administrator\.ssh\id_gitlab.pub
-C:\Users\Administrator\.ssh\id_github.pub
-//
-J:\Users\Administrator\.ssh\
-C:\Users\Administrator\.ssh\id_rsa.pub
+C:\Users\{Admin}\.ssh\
+C:\Users\{Admin}\.ssh\id_rsa.pub                //未使用----------seefs@163.com
+C:\Users\{Admin}\.ssh\id_gitlab.pub             //未使用
+C:\Users\{Admin}\.ssh\id_github.pub             //github--个人用--seefs@163.com
+C:\Users\{Admin}\.ssh\id_github2.pub            //github--公司用--xiaojia_bm@163.com
+C:\Users\{Admin}\.ssh\bm2048pub.ppk             //GitLab--公司用--xiaojia_bm@163.com(小乌龟)
+
+// ssh bak
+Save:\..\patch\ssh\\PC_BM_ME
+
 // 复制该密钥
-// 打开github
+// 打开 github
 https://github.com/settings/keys
 //点自己头像 >> settings >> SSH and GPG keys >>New SSH key
 //
 //SHA256:qbGf7djIgrozd8XuKP7w2hpxUMF6yVqyIhuvNRbn8UM
 
-// ssh bak
-Save:\..\patch\ssh\\PC_BM_ME
 
 // GPG 与 SSH对比
 SSH (Secure Shell) 用于交互通信过程中的安全，是双向的。
@@ -221,6 +219,15 @@ patch:ssh\Macro_gitlab_url.h
 // --自己用 tmp04/id_github, 其他用 bm2048
 // --tmp04 报错
 patch:ssh\Macro_github_url.h
+
+
+### 上传新代码
+//	2、在本地目录把代码放好
+//	3、git init
+//	4、git add .
+//	5、git commit -m "first commit"
+//	6、git remote add origin git@git.spdephone.com:8910-developer/MOCOR_20B_W22.15.2.git
+//	7、git push -u origin master
 
 
 // 新电脑

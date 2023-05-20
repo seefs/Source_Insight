@@ -2,7 +2,7 @@
 
 //Ä¿Â¼:
 Save:node\C\Macro_Note_C.h \[1.1\] °²×°+ÅäÖÃ
-Save:node\C\Macro_Note_C.h \[1.2\] project----------8910 mtk
+Save:node\C\Macro_Note_C.h \[1.2\] project----------8910/mtk
 Save:node\C\Macro_Note_C.h \[1.3\] ext,third
 Save:node\C\Macro_Note_C.h \[1.4\] list
 Save:node\C\Macro_Note_C.h \[1.5\] //other
@@ -24,9 +24,10 @@ Save:node\ToolsMsg\Macro_SI.h  __SI_MTK__
 
 
 
-[1.2] 8910 mtk
+[1.2] 8910/mtk
 Save:node\C\project\
 
+### __Note__
 // __8910__
 Save:node\C\project\Macro_Note_8910.h
 Save:node\C\project\Macro_cfg_8910.h

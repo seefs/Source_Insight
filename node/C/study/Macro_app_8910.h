@@ -5,25 +5,25 @@ Save:node\C\study\Macro_app_8910.h  \[1.2\] idle, lock
 Save:node\C\study\Macro_app_8910.h  \[1.3\] menu, second
 Save:node\C\study\Macro_app_8910.h  \[1.4\] dial
 Save:node\C\study\Macro_app_8910.h  \[1.5\] test, version
-Save:node\C\study\Macro_app_8910.h  \[1.6\] file, path
-Save:node\C\study\Macro_app_8910.h  \[1.7\] setting
+Save:node\C\study\Macro_app_8910.h  \[1.6\] file, path ----------
+Save:node\C\study\Macro_app_8910.h  \[1.7\] setting -------------
 Save:node\C\study\Macro_app_8910.h  \[1.8\] sms -----------------
-Save:node\C\study\Macro_app_8910.h  \[1.9\] call, asp
-Save:node\C\study\Macro_app_8910.h  \[1.10\] pb, cl
-Save:node\C\study\Macro_app_8910.h  \[1.11\] camera -------------
+Save:node\C\study\Macro_app_8910.h  \[1.9\] call, asp -----------
+Save:node\C\study\Macro_app_8910.h  \[1.10\] pb, cl -------------
+Save:node\C\study\Macro_app_8910.h  \[1.11\] camera
 Save:node\C\study\Macro_app_8910.h  \[1.12\] pic
 Save:node\C\study\Macro_app_8910.h  \[1.13\] record
 Save:node\C\study\Macro_app_8910.h  \[1.14\] fm
 Save:node\C\study\Macro_app_8910.h  \[1.15\] ebook, memo
 Save:node\C\study\Macro_app_8910.h  \[1.16\] vp
 Save:node\C\study\Macro_app_8910.h  \[1.17\] mp3
-Save:node\C\study\Macro_app_8910.h  \[1.18\] alarm --------------
+Save:node\C\study\Macro_app_8910.h  \[1.18\] alarm
 Save:node\C\study\Macro_app_8910.h  \[1.19\] calc
 Save:node\C\study\Macro_app_8910.h  \[1.20\] calendar
 Save:node\C\study\Macro_app_8910.h  \[1.21\] unitconversion
 Save:node\C\study\Macro_app_8910.h  \[1.22\] game
-Save:node\C\study\Macro_app_8910.h  \[1.23\] bt
-Save:node\C\study\Macro_app_8910.h  \[1.24\] env, Profile
+Save:node\C\study\Macro_app_8910.h  \[1.23\] bt -----------------
+Save:node\C\study\Macro_app_8910.h  \[1.24\] env, Profile -------
 Save:node\C\study\Macro_app_8910.h  \[1.25\] other --------------
 Save:node\C\study\Macro_app_8910.h  \[1.26\] wifi
 Save:node\C\study\Macro_app_8910.h  \[1.27\] Browser 网络参数
@@ -451,86 +451,19 @@ Save:node\C\study\Macro_pos_8910.h  __set_pin__
 
 
 [1.8] sms
-// list--enter
-//		==>MMISMS_EnterSMSMainMenuWin
-//		====>MMISMS_MENUWIN_TAB
-//		======>InitPdaSmsMainListCtrl
-app:sms\c\mmisms_mainmenuwin.c  HandleSmsMainMenuWinMsg
 
-// --sms--option
-app:sms\c\mmisms_editsmswin.c  HandleEditMenuWinMsg
-// --sms--option--save  APP_MN_SMS_MEM_FULL_IND
-app:sms\c\mmisms_editsmswin.c  EditSMSWin_SaveSMS
-
-
-//2.edit, 写短信
-// edit--enter
-//		==>MMISMS_OpenWriteWin
-//		====>MMISMS_WriteNewMessage
-//		======>MMISMS_WriteNewMessageEx
-//		========>MMISMS_EnterSmsEditWin
-//		==========>MMISMS_EDIT_SMS_WIN_TAB
-app:sms\c\mmisms_editsmswin.c  HandleEditSmsWinMsg
-// edit--input pbNum
-//		==>
-
-//2.sms--list
-app:sms\c\mmisms_mainmenuwin.c  HandleMsgBoxMainWindow
-// sms--list--mt
-//		==>FOCUS:
-//		====>MMISMS_LoadSmsListFromOrder
-//		======>MMISMS_ListSmsFromOrder
-//		========>MMISMS_BOX_MT:
-//		==========>FormListFromLinkhead    # format
-//		==>DATA:
-//		====>MMISMS_SetListItemData
-//		======>MMISMS_GetSmsInfoFromOrder
-//		======>FormListBoxItem             # time
-app:sms\c\mmisms_messageboxwin.c  HandleMtBoxChildWinMsg
-// sms--list--fail
-//		==>FOCUS:
-//		====>MMISMS_LoadSmsListFromOrder
-//		======>MMISMS_AppendEmptyStr2List
-app:sms\c\mmisms_messageboxwin.c  HandleSendFailBoxChildWinMsg
-// sms--list--unread
-app:sms\c\mmismsapp_order.c  MMISMS_ListSmsFromOrder
-
-
-//3.detail
-
-
-### 来短信
-//		==>SMSAPPNewEventCallback
-app:sms\c\mmismsapp_main.c  MMI_RESULT_E^HandlePsMsg
-app:sms\c\mmismsapp_main.c  case^APP_MN_SMS_IND
-//		==>MMISMS_ShowNewMsgPrompt
-//		====>ShowNewMsgPrompt
-//		======>MMIPUB_OpenAlertWinByTextPtr
-app:sms\c\mmisms_commonui.c  MMISMS_HandleNewMsgWin
-
-### 未读数量
-// mainmenu--sms--num
-//		==>MatrixMenuDraw
-//		====>MatrixMenuDrawItem
-//		======>MMITHEME_DrawMainmenuItem
-app:sms\c\mmisms_api.c MMIAPISMS_GetAllUnreadMsgCount
-
-
-//4.mst--107
-//		==>
-app:sms\c\mmismsapp_main.c  Handle_MST_1_MainMenuWindow
-app:sms\h\mmisms_app_mst.h  MMI_SMS_MST_APP_MENU_NODE_0
-app:sms\h\mmisms_id.h  MMI_SMS_MST_APP_0_CTRL_ID
-
-
-//6.sales
-//		==>
-Save:node\C\project\Macro_cfg_8910.h __sale__
-
-
-//5.voicemail
-//		==>460    ,11
-app:sms\h\sms_voicemailnoromaing.h  100
+### __sms__
+Save:node\C\study\Macro_app_8910sms.h  __enter__
+Save:node\C\study\Macro_app_8910sms.h  __edit__     # 写短信
+Save:node\C\study\Macro_app_8910sms.h  __list__
+Save:node\C\study\Macro_app_8910sms.h  __detail__
+Save:node\C\study\Macro_app_8910sms.h  __mst__      # 
+Save:node\C\study\Macro_app_8910sms.h  __sales__    # sales
+Save:node\C\study\Macro_app_8910sms.h  __voicemail__
+Save:node\C\study\Macro_app_8910sms.h  __MMS__
+Save:node\C\study\Macro_app_8910sms.h  __CB__
+Save:node\C\study\Macro_app_8910sms.h  __SmsNum__   # 条数
+Save:node\C\study\Macro_app_8910sms.h  
 
 
 ### sms
@@ -542,20 +475,6 @@ Save:node\C\study\Macro_res_image_8910.h  __sms__
 Save:node\C\study\Macro_res_color_8910.h  __sms__
 // ==>im
 Save:node\C\study\Macro_im_8910.h  __input__
-
-
-### MMS
-//
-Save:node\C\project\Macro_cfg_8910.h  __MMS__
-
-
-### CB
-// mk
-Save:node\C\project\Macro_cfg_8910.h  __CB__
-//
-Save:node\C\study\Macro_doc_cb8910.h
-
-
 
 
 
@@ -588,6 +507,7 @@ Save:node\C\study\Macro_doc_8910.h  __keyKbd__
 
 
 [1.10] pb, cl
+### pb
 // enter--8910
 //		==>MMIMAINMENU_StartPB/EnterPBMainMenuWin
 //		====>MMIPB_OpenPbWin
@@ -628,7 +548,7 @@ Save:node\C\study\Macro_app_8910pb.h  __detail__     #
 Save:node\C\study\Macro_app_8910pb.h  __memory__     # option
 Save:node\C\study\Macro_app_8910pb.h  __add__
 Save:node\C\study\Macro_app_8910pb.h  __pbBak__
-Save:node\C\study\Macro_app_8910pb.h  __pbNumMax__   # PB和SMS条数修改
+Save:node\C\study\Macro_app_8910pb.h  __pbNumMax__   # PB条数修改
 Save:node\C\study\Macro_app_8910pb.h  __blacklist__  # 黑名单/白名单
 Save:node\C\study\Macro_app_8910pb.h  __pbName__
 Save:node\C\study\Macro_app_8910pb.h  
@@ -641,10 +561,13 @@ Save:node\C\study\Macro_res_image_8910.h  __pb__
 
 ### cl
 // ==>app
-Save:node\C\study\Macro_app_8910pb.h  __clMain__
-Save:node\C\study\Macro_app_8910pb.h  __clInit__    #50条记录
-Save:node\C\study\Macro_app_8910pb.h  __clDeltail__
-Save:node\C\study\Macro_app_8910pb.h  __clTab__
+Save:node\C\study\Macro_app_8910cl.h  __clMain__
+Save:node\C\study\Macro_app_8910cl.h  __clInit__    #50条记录
+Save:node\C\study\Macro_app_8910cl.h  __clDeltail__
+Save:node\C\study\Macro_app_8910cl.h  __clTab__
+Save:node\C\study\Macro_app_8910cl.h  __clTab__
+Save:node\C\study\Macro_app_8910cl.h  __clTab__
+Save:node\C\study\Macro_app_8910cl.h  __clTab__
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __cl__
 // ==>image
@@ -1557,56 +1480,28 @@ app:game\game_snake\c\mmigame_snake_wintab.c
 //		==>BT_PHONE_INDEX_CONTACT
 prj:project_{cur}.mk  BT_PBAP_SUPPORT  同步联系人 功能注释了
 
+//BT--107
+prj:project_{cur}.mk  BLUETOOTH_SUPPORT = SPRD_BT
 
-.mk
-// --bt--enter
-//		==>MMIAPIBT_OpenMainMenuWin
-//		====>MMIBT_OpenMainMenuWin
-// --bt--open--init once (popup)
-//		==>HandleMainMenuWinMsg (bt)
-//		====>MMIBT_UpdateMainMenu
-//		======>DoOperation
-//		========>HIDE:
-//		========>SetBtVisibility
-//		==========>MMIPUB_OpenWaitWin
-app:bt\c\mmibt_mainwin.c  MMI_RESULT_E^^^HandleMainMenuWinMsg
-// --bt--search (popup)
-//		==>PAIRES:
-//		====>OpenInquireDeviceListWin
-//		======>MMIBT_INQUIRED_DEV_LIST_WIN_TAB
-//		========>HandleInquiredDevListWinMsg
-//		==========>DoOperation
-//		============>MMIPUB_OpenWaitWin
-// --bt--search stop
-//		==>CANCEL:
-//		====>BT_CancelSearch()
-//		==>PAIRES: 配对
-//		====>MMIBT_SetOpertor(MMIBT_OPC_NOT_CHANGE, MMIBT_OPC_PAIR);  
-//		==>PAIRES: option--配对的代码少，好看点
-//		====>BT_PairDevice(&s_pin_request_info.addr);
-app:bt\c\mmibt_inquireddevice.c  HandleInquiryOptMenuWinMsg
-//		==>PAIRES ok:
-//		====>MMIBT_GetPairComCnf()
-//		====>WatchBtMain_ProcessBtPsMsg()
-//		==>确认密码:
-//		====>Display_NumericPasskeyInfo()
-//		==>输入密码:
-//		====>OpenPinInputWin()
-//		====>HandlePinInputWinMsg()
+//BT--8910
+prj:{cfg}.cfg  BLUETOOTH_SUPPORT = SPRD_BT
+prj:project_{cur}.mk  BLUETOOTH_SUPPORT = SPRD_BT
+
+// 禁用对方机器发送蓝牙文件
+prj:project_{cur}.mk  BT_OPP_SUPPORT = TRUE
 
 
-// --bt--popwin
-//		==>OpenPinInputWin         # 连接密码
-//		====>STR_BT_ENTER_CODE
-// --bt--rec ok
-//		==>MMIBT_OpenNewReceivedFileWin
 
-// --bt--play--handle
-app:audioplayer\c\mmiap_play.c  MMIMP3_ReqPlayHandle
-// --bt--play--calen--ring
-//		==>MMIAPISET_PlayRingByIdEx
-//		====>PlayFixedRing
-//
+### bt
+// ==>app
+Save:node\C\study\Macro_app_8910bt.h  __enter__
+Save:node\C\study\Macro_app_8910bt.h  __search__
+Save:node\C\study\Macro_app_8910bt.h  __play__
+Save:node\C\study\Macro_app_8910bt.h  __atc__
+Save:node\C\study\Macro_app_8910bt.h  __msg__
+Save:node\C\study\Macro_app_8910bt.h  __share__
+Save:node\C\study\Macro_app_8910bt.h  __enter__
+Save:node\C\study\Macro_app_8910bt.h  
 
 
 ### bt
@@ -1616,68 +1511,6 @@ Save:node\C\study\Macro_res_image_8910.h __bt__
 Save:node\C\study\Macro_nv_8910.h  __bt_nv__
 // ==>statusbar
 Save:node\C\study\Macro_gui_8910.h  __bt_bar__
-
-
-//mmibt_wintab.c
-//MMIAPIBT_AppInit
-
-// 蓝牙自动测试优化
-MS_Ref/source/autotest_device/src/autotest_device.c  1904
-//		Is_BTSearchStart = SCI_FALSE;      //+
-//        BT_CancelSearch();  // add by unisoc 2020        
-
-
-//bt
-// auto/menu CON
-//	CON:A2DP:a-8,CallBack:8-12
-//	CON:A2DP:9-8,
-//	CON:A2DP:ID_STATUS_AVRCP_CONNECT_COMPLETE,CallBack:ID_STATUS_HFAG_HFU_CLCC
-//	CON:A2DP:ID_STATUS_A2DP_CONNECTED,
-//	// menu DIS
-//	DIS:A2DP:a-9,CallBack:1-5
-//	DIS:A2DP:ID_STATUS_AVRCP_DISCONNECT_COMPLETE,CallBack:ID_STATUS_CM_VISIBLE_RES
-//	// menu DIS
-//	DIS:A2DP:9-9,CallBack:1-5
-//	DIS:A2DP:ID_STATUS_A2DP_DISCONNECTED,CallBack:ID_STATUS_CM_VISIBLE_RES
-
-// msg
-app:bt\c\mmibt_app.c  MMIBT_A2DPCallBackFunc
-// 1.CON
-//	10090008  ID_STATUS_A2DP_CONNECTED
-//	100a0008  ID_STATUS_AVRCP_CONNECT_COMPLETE
-//	10090003  ID_STATUS_A2DP_SRC_START_STREAM
-//	100a0009  ID_STATUS_AVRCP_DISCONNECT_COMPLETE
-//	10090009  ID_STATUS_A2DP_DISCONNECTED
-//	10090008  a2_c
-//	10090003  a2_s
-//	10090005  ID_STATUS_A2DP_SRC_CLOSE_STREAM
-//	100a0009  av_dc
-//	10090009  a2_dc
-//	100a0008  av_c
-//	10090008  a2_c
-//	100a0009  av_dc
-//	10090009  a2_dc
-
-
-// bt mode
-app:heroengine\tts\c\hero_tts_api.c  BLUETOOTH_SUPPORT
-
-// bt--set--name
-app:bt\c\mmibt_editwin.c  HandleEditDeviceNameMsg
-
-// bt--nv
-MMIBT_GetBtStatusForIcon
-//    is_poweron = BT_GetState();
-
-// 分享
-// --url--通过短信
-//		==>ID_POPUP_MENU_SEND_URL
-//		====>MMIBROWSER_SendUrlContentBySms
-// --pb--通过email/bt
-//		==>MMIPB_OPERATE_TYPE_MULTI_SHARE
-//		====>SendMultiVcard
-//		======>MMIAPIBT_SendMultiFile
-
 
 
 
@@ -1720,6 +1553,7 @@ Save:node\C\study\Macro_nv_8910.h  __env_nv__
 [1.25] other
 ### other
 Save:node\C\study\Macro_app_8910other.h  __TASK__
+Save:node\C\study\Macro_app_8910other.h  __jewish__
 
 
 
@@ -1780,6 +1614,9 @@ app:browser\c\mmibrowser_wintable_setting.c  MMI_RESULT_E^BrwHandleSettingHomepa
 ### browser
 // ==>image
 Save:node\C\study\Macro_res_image_8910.h  __browser__
+// ==>开宏
+Save:node\C\study\Macro_app_8910other.h  __browser__
+
 
 
 

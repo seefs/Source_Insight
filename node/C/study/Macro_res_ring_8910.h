@@ -453,6 +453,9 @@ Save:node\C\study\Macro_patch_third.h  __xmly__
 source:resource\mmi_res_prj_def.h  R_DL_1
 
 // DC--mp3
+//		==>PlayCaptureRing
+//		====>
+//		======>
 source:resource\mmi_res_prj_def.h  R_DC_1
 
 // TONE--mp3

@@ -133,7 +133,7 @@ Save:node\C\project_demo\Macro_file_fontforge_mtk.h         # 生成code
 Save:node\C\project_demo\Macro_file_fontforge_sprd.h        # 生成code/lib
 Save:node\C\project_demo\Macro_file_fontforge_view.h        # 其他ttf
 
-// exe
+// win--exe
 https://fontforge.org/en-US/downloads/
 
 // ttc 转化ttf 工具

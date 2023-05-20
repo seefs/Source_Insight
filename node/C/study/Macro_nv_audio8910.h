@@ -4,7 +4,7 @@ Save:node\C\study\Macro_nv_audio8910.h \[1.1\] audio_calib_VQE
 Save:node\C\study\Macro_nv_audio8910.h \[1.2\] PA,2IN1,3IN1
 Save:node\C\study\Macro_nv_audio8910.h \[1.3\] Copy107
 Save:node\C\study\Macro_nv_audio8910.h \[1.4\] CLASSAB
-Save:node\C\study\Macro_nv_audio8910.h \[1.5\] 
+Save:node\C\study\Macro_nv_audio8910.h \[1.5\] SAR
 Save:node\C\study\Macro_nv_audio8910.h \[1.6\] 
 Save:node\C\study\Macro_nv_audio8910.h \[1.7\] 
 Save:node\C\study\Macro_nv_audio8910.h \[1.8\] 
@@ -272,7 +272,14 @@ MS_Customize\source\product\driver\gpio\gpio_prod.c  AUDIO_AMP_EXT_PULL_2_TIME
 
 
 
-[1.5] 
+[1.5] SAR
+//Kitty:
+播放最大音量超Rs1时候，要满足三个条件才可以:第一说明书中有指示性安全防护，
+第二就是要有警示语，第三就是重启和恢复出厂设置不能超RS1。
+这个手机最高音量时是Rs2，所以需要满足后三个条件。
+
+//Kitty:
+可以。最大音量时候降到RS1以下，直接过
 
 
 

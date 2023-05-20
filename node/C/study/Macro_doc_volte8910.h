@@ -13,5 +13,3 @@ app:phone\h\ims_toggle_mnc_table.h   xxx  //
 
 
 
-
-

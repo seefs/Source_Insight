@@ -59,10 +59,10 @@ source:resource/mmi_res_prj_def.h  LOGO_S2
 images:common\MMI_RES_DEFAULT\IMAG\startup\
 images:common\MMI_RES_DEFAULT\IMAG\Power_on_off\
 Save:node\C\study\Macro_gui_8910.h  __SECOND_LOGO__
-// --png/default
+// --png/default--107
 source:mmi_app/common/h/common_mdu_def.h  IMAGE_TEMPORARY_BOOTUP_DEFAULT
 // --png
-source:mmi_app/common/h/common_mdu_def.h  IMAGE_POWER_ON_NM
+//source:mmi_app/common/h/common_mdu_def.h  IMAGE_POWER_ON_NM
 source:mmi_app/common/h/common_mdu_def.h  IMAGE_POWER_OFF
 // --gif--107-mid
 source:mmi_app/common/h/common_mdu_def.h  POWER_ONOFF_MID
@@ -138,6 +138,18 @@ source:mmi_app\common\h\common_mdu_def.h  IMAGE_MAINMENU_ICON_CALL_RECORD
 [1.3] Wallpaper--±ÚÖ½
 // --±ÚÖ½
 app:wallpaper\h\wallpaper_mdu_def.h  IMAGE_WALLPAPER_DEFAULT
+//
+images:wallpaper\MMI_RES_DEFAULT\IMAG\staticwallpaper\
+
+
+//  Ç½Ö½²Ã¼ô
+prj:project_{cur}.mk   LOW_MEMORY_SUPPORT   NONE
+//		==>LOW_MEMORY_SUPPORT
+make\app_main\release_app_macro.mk  low_memory_none.mk
+//
+make\app_main\low_memory_none.mk  MMI_SETTING_CUTDOWN_WALLPAPER
+
+
 
 // theme
 //		==>AnimCtrlHandleMsg

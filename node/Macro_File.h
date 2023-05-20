@@ -1,40 +1,36 @@
 
 // File
 Save:node\Macro_File.h \[1.1\] node-----------记录文件
-Save:node\Macro_File.h \[1.2\] patch/bak------补丁/备用文件
-Save:node\Macro_File.h \[1.3\] help-----------编号/默认文件
-Save:node\Macro_File.h \[1.4\] common---------共用文件
+Save:node\Macro_File.h \[1.2\] patch-node-----补丁文件
+Save:node\Macro_File.h \[1.3\] help-----------帮助文件--编号/默认/提示文件
+Save:node\Macro_File.h \[1.4\] common---------公共文件
 Save:node\Macro_File.h \[1.5\] Marco/test-----宏文件/调试/设置
 Save:node\Macro_File.h \[1.6\] Cmd------------bat
 Save:node\Macro_File.h \[1.7\] Win/Office-----系统
-Save:node\Macro_File.h \[1.8\] Svn/Git--------版本
-Save:node\Macro_File.h \[1.9\] SI/BComp-------编辑
-Save:node\Macro_File.h \[1.10\] vc------------编译
+Save:node\Macro_File.h \[1.8\] Svn/Git--------工具--版本
+Save:node\Macro_File.h \[1.9\] SI/BComp-------工具--编辑
+Save:node\Macro_File.h \[1.10\] vc------------工具--编译
 Save:node\Macro_File.h \[1.11\] 
 Save:node\Macro_File.h \[1.12\] 
 
 
 
 [1.1] node
-### android
+// C
+Save:node\C\Macro_Note_C.h  __Note__
+// android
 Save:node\android\Macro_Note_as.h
-Save:node\android\project\Macro_Note_9820e.h
-
-### MTK
-Save:node\C\Macro_Note_C.h  __mtk__
-
-### SPRD
-Save:node\C\Macro_Note_C.h  __8910__
-Save:node\C\Macro_Note_C.h  __6531E__
-
-### Pythons
+Save:node\android\project\Macro_as_9820e.h
+// Pythons
 Save:node\Pythons\Macro_Note_Python.h
-
-### other
+// other
 Save:node\
 
+###
+tool_mini:\
 
-[1.2] patch
+
+[1.2] patch-node
 // 未使用的代码，比较杂乱，移走了
 patch:node\
 
@@ -94,7 +90,7 @@ Save:Cmd_TXT\Tmp_Comp_1.h
 Save:Cmd_TXT\Tmp_Comp_2.h
 
 
-[1.5] SI Marco
+[1.5] Marco/test
 ### __SIHelp__
 // Marco file
 Save:Help\Other\Macro_Help_SI.h  __marco__
@@ -167,7 +163,7 @@ Save:node\ToolsMsg\Macro_git_config.h
 Save:node\ToolsMsg\Macro_git_app.h
 
 
-[1.9] SI
+[1.9] SI/BComp
 ### SI
 // SI
 Save:node\ToolsMsg\Macro_SI.h

@@ -77,11 +77,15 @@ source:resource\mmi_res_prj_def.h  FONT_TYPE_SUPPORT_GRAY
 
 // 简体中文
 source:resource\mmi_res_prj_def.h  LANG_FONT_HAN_VECTOR
+
 // 希伯来
 source:resource\mmi_res_prj_def.h  LANG_FONT_HEBREW_VECTOR
 
+// 英文
+source:resource\mmi_res_prj_def.h  LANG_FONT_LATIN_VECTOR
 
-### 换字库
+
+### 换字库--省空间抓log
 //
 source:resource\Common\FONT\LANG_FONT_LATIN_12_14_29.lib
 source:resource\Common\FONT\

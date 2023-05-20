@@ -11,7 +11,7 @@ Save:node\C\study\Macro_nv_8910.h \[1.8\] hw_ver00-------单软多硬
 Save:node\C\study\Macro_nv_8910.h \[1.9\] test
 Save:node\C\study\Macro_nv_8910.h \[1.10\] Card-----------电子保卡
 Save:node\C\study\Macro_nv_8910.h \[1.11\] thir_nv,107
-Save:node\C\study\Macro_nv_8910.h \[1.12\] 
+Save:node\C\study\Macro_nv_8910.h \[1.12\] nv copy--8910
 Save:node\C\study\Macro_nv_8910.h \[1.13\] 
 Save:node\C\study\Macro_nv_8910.h \[1.14\] nand/nor
 Save:node\C\study\Macro_nv_8910.h \[1.15\] 
@@ -89,6 +89,7 @@ PS\nv\internal\ps\common\NV_PARAM_TYPE_IMSI[1].xml  NV_PARAM_TYPE_IMSI1 id="2004
 //		======>RES_ADD_MODULE        # id=0
 source:mmi_app\kernel\h\mmi_module.h  MMI_MODULE_COMMON
 
+
 ### nv list
 //		==>MMI_RegModuleNv
 //		====>.s_mmi_nv_len
@@ -99,6 +100,11 @@ MS_MMI_Main\source\mmi_app\kernel\c\mmi_modu_main.c  MMI_RegModuleNv
 // 最大项 500+2400=2900?
 common\export\inc\nv_item_id.h  MN_NV_TD_USER_BASE   3200 ~ 3200+2800  # 107
 common\export\inc\nv_item_id.h  MN_NV_USER_BASE      500  ~            # 8910
+//		==>.MMI_NV_MAX_NUM                   # 3200+2800-end
+//		====>.MMI_NV_USER_BASE               # 3200-start
+//		======>.MN_NV_TD_USER_BASE           # 3200
+//		====>.MAX_MMI_NV_USER_ITEM_NUM       # 2800
+
 
 
 [1.5] nv define
@@ -140,9 +146,12 @@ Save:node\C\study\Macro_nv_tool8910.h  __env_nv__
 // apn-edit
 Save:node\C\study\Macro_res_8910.h  __8910_apn__   # apn str
 Save:node\C\study\Macro_res_8910.h  __107_apn__
+//Save:node\C\study\Macro_doc_volte8910.h
 // apn-list
 Save:node\C\study\Macro_doc_apn107.h
+Save:node\C\study\Macro_doc_apn107.h  __apnStr__
 Save:node\C\study\Macro_doc_apn8910.h
+//Save:node\C\study\Macro_doc_volte107.h
 // t6b
 // 台灣大物聯網卡無法上網使用（APN:twm.iot） 
 
@@ -159,14 +168,17 @@ Save:node\C\study\Macro_doc_apn8910.h
  类型 imsi和imsi的筛选值
  类型 imsir和imsi的筛选范围，425150000000000~425159999999999
 
-
-
-
-
-
-
-
-
+// mcc有排序
+https://docs.routee.net/docs/list-of-mccmnc-codes
+https://mcc-mnc-list.com/list
+// 只有3个425
+https://apn.how/israel/pelephone
+// 官网+电话
+https://wiki.droam.com/Israel#Annatel
+// 设置apn 425-16
+https://www.setapn.com/category/israel/
+// 只有常用的--很卡
+https://www.prepaidisraelisim.com/APN_Settings
 
 
 [1.8] 单软多硬
@@ -196,9 +208,25 @@ prj:nvitem/
 Custom_Copy.bat  project\config_nv
 prj:nvitem/hw_ver00.nv
 prj:nvitem/hw_ver01.nv
+// ver--checkout
+project\config_nv\8910FF\
 // mk
 prj:uis8910_phone_base_config.cfg  FORCECHANGE_SUPPORT  = TRUE
 prj:uis8910_phone_user_base_config.cfg  FORCECHANGE_SUPPORT  = TRUE
+//	FORCECHANGE_SUPPORT  = TRUE         # 单软多硬时开
+//	DELTA_NV_CONFIG_PATH = delta_nv     # 默认开
+//	DELTA_NV_BIN_SUPPORT = TRUE         # 默认开
+//	DELTA_NV_PATITION_SUPPORT = TRUE    # 单软多硬时开
+
+//
+config:nv_adaptive_cfg.c  SCI_Get_PA_VERSION
+//
+//		==>NV_Force_Change_Enter
+//		====>REFPARAM_SetFileVersion
+//		==>NV_Force_Change_Enter
+//		====>REFPARAM_GetFileVersion
+MS_Customize\source\common\nv_hwversion_adpter.c  REFPARAM_GetFileVersion
+
 
 
 ### 107单软多硬
@@ -282,7 +310,56 @@ _readme.txt  UMS9117_NEW
 
 
 
-[1.12] 
+[1.12] nv copy--8910
+w22Path = E:\8910_w22base
+
+### nvitem
+// 常用NV
+lib\modem\UIS8910_ROM_16MB_DS_USER\nvitem\
+lib\modem\UIS8910_ROM_16MB_DS_USER\nvitem\RF_nv.nvm
+
+
+### nv_parameters
+// 缺少copy, 不用copy, 默认就是最新的
+// --暂时不用批量加上 nv_ver_flag
+w22:common\nv_parameters\nv_type\
+w22:common\nv_parameters\nv_type\nv_type_uix8910.nvm
+//
+w22:common\nv_parameters\ProductionParam\
+w22:common\nv_parameters\ProductionParam\ProductionParam_uix8910.nvm
+// 缺少copy, 5个NV
+w22:common\nv_parameters\nv_variant\
+w22:common\nv_parameters\nv_variant\NV_VARIANT_CONFIG_APP.nvm
+
+// 缺少copy
+w22:common\nv_parameters\ProductionParam\
+w22:common\nv_parameters\ProductionParam\license.nvm
+
+
+### hw_ver00
+// 默认flag:0-1-1-1-1-1-1-1
+w22:project\config_nv\8910FF\
+w22:project\config_nv\8910FF\hw_ver00.nv
+
+
+### base_nv
+// 缺少copy, 未合并
+w22:BASE\base_nv\BaseParam\
+w22:BASE\base_nv\BaseParam\BaseParam.nvm
+
+// 缺少copy
+w22:BASE\base_nv\CalibrationParam\
+w22:BASE\base_nv\CalibrationParam\Calibrationparam_sc6531efm_AB_7182.nvm
+
+// 缺少copy
+w22:BASE\base_nv\DownloadParam\
+w22:BASE\base_nv\DownloadParam\DownloadParam_sc6531efm_AB_7182.nvm
+
+// 缺少copy, 未合并
+w22:BASE\base_nv\Classmark\
+w22:BASE\base_nv\Classmark\nv_classmark.nvm
+
+
 
 
 

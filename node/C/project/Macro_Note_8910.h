@@ -116,6 +116,9 @@ Save:node\C\study\Macro_im_8910.h  __keymap__
 Save:node\C\study\Macro_im_8910.h  __LONG_0__
 Save:node\C\study\Macro_im_8910.h  __simulator__
 Save:node\C\study\Macro_im_8910.h  __menuInput__
+// --abc输入法
+app:im\c\mmiim_sp_ml9key_data.c  s_key_table_spanish_lower
+
 // --key--虚拟值转实际值
 Save:node\C\study\Macro_doc_8910key.h  __keyKbd__
 // --key--发送信号
@@ -216,6 +219,8 @@ prj:project_{cur}.mk   LCD_DUAL_SPI_FREQ_SUPPORT
 //  ==>
 MS_Ref\source\lcd\src\lcd_uix8910.c  LCD_DUAL_SPI_FREQ_SUPPORT
 
+//复位
+hal_GoudatResetLcdPin
 
 
 // lcd_id
@@ -326,6 +331,8 @@ make\custom_drv\custom_drv.mk  CAP_TP_SUPPORT
 
 // 强制升级
 driver:tp\src\tp_bl6133.c  isBlank^=^1
+// 升级OK log: 前后值都是0xXXXX
+//0101-000013-00924: [BL6133] btl fw update end,fw checksum = 0x76f2,fw_bin_checksum =0x76f2
 
 
 [1.7] ECG
@@ -425,7 +432,7 @@ prj:project_{cur}.mk  DUAL_RECEIVER_SWITCH_SUPPORT
 // 107
 prj:project_{cur}.mk  FM_SUPPORT = TRUE
 prj:project_{cur}.mk  FM_S_ANT_SUPPORT = TRUE
-prj:project_{cur}.mk  FM_VBC   = TRUE
+prj:project_{cur}.mk  FM_VBC   = TRUE    # 不用关
 // 107 插入耳机走长天线，拔出耳机 走短天线
 prj:project_{cur}.mk  MMI_FM_HEADSET_USE_SHORT_ANT
 // 8910

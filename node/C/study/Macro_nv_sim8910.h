@@ -33,6 +33,9 @@ build\{cur}_builddir\..\nv\nvitem\nv_type_uix8910.nvm
 // nv---A352273017386340
 
 
+// nv覆盖
+make\nv_parameter\config_info.nv  com_debug
+
 
 [1.2] 
 ### *.nvm
@@ -97,9 +100,19 @@ nv:nv_type_uix8910.nvm  3651
 
 [1.8] __slot__
 
-// static--sim_slot_switch
+// static-->sim_slot_switch-->reserved[0]
+//  0x0 ==> 0x1
+
+### w21
 //HW:{project}\modem_nv_cat1bis_uix8910_static.nvm  9166
 lib\modem\{ROM}\nvitem/modem_nv_cat1bis_uix8910_static.nvm   9166
+
+### w22
+lib\modem\{ROM}\nvitem/modem_nv_cat1bis_uix8910_static.nvm   9186
+lib\modem\{ROM}\nvitem/modem_nv_cat1bis_uix8910_static.nvm   sim_slot_switch,reserved[0]
+lib\modem\{ROM}\nvitem/modem_nv_cat1bis_uix8910_card2_static.nvm   9186
+lib\modem\{ROM}\nvitem/modem_nv_cat1bis_uix8910_card2_static.nvm   sim_slot_switch,reserved[0]
+
 //   0x0: 链路快速释放
 //   0x1: 默认
 //

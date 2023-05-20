@@ -135,6 +135,10 @@ tools_mdu_def.h clock_mdu_def.h bt_mdu_def.h camera_mdu_def.h
 //	  	MMIAP_ExitVideoTalking();
 //	 } 
 
+// music_called_150.mp3
+app:zmaee_128X128/h/zmaee_128X128_mdu_def.h  AUD_FWATCH_VT_COMEIN
+zmaee:h/zmaee_128X128_mdu_def.h  AUD_FWATCH_VT_COMEIN
+
 
 
 [1.7] sim
@@ -277,6 +281,7 @@ app:phone\c\mmiphone_charge.c  ZMAEE_Watch_OpenChargingWin
 [1.15] 4g/5G
 //
 zmaee:c\zmaee_watch.c  ZMAEE_SYSTEM_EV_GET_5G
+//  result = 0; //◊¥Ã¨¿∏£∫0œ‘ æ4G,1œ‘ æ5G break;
 
 
 [1.16] tcp---------active

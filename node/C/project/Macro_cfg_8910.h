@@ -4,12 +4,12 @@
 // 1. 
 Save:node\C\project\Macro_cfg_8910.h \[1.1\] AUDIO, TONE
 Save:node\C\project\Macro_cfg_8910.h \[1.2\] //PB
-Save:node\C\project\Macro_cfg_8910.h \[1.3\] SMS
-Save:node\C\project\Macro_cfg_8910.h \[1.4\] MMS, CB, CL
-Save:node\C\project\Macro_cfg_8910.h \[1.5\] BROWSER, DL
-Save:node\C\project\Macro_cfg_8910.h \[1.6\] BT
+Save:node\C\project\Macro_cfg_8910.h \[1.3\] //SMS
+Save:node\C\project\Macro_cfg_8910.h \[1.4\] 
+Save:node\C\project\Macro_cfg_8910.h \[1.5\] 
+Save:node\C\project\Macro_cfg_8910.h \[1.6\] 
 Save:node\C\project\Macro_cfg_8910.h \[1.7\] RECORD
-Save:node\C\project\Macro_cfg_8910.h \[1.8\] LCD_SIZE---------------
+Save:node\C\project\Macro_cfg_8910.h \[1.8\] LCD_SIZE---------------移 Macro_info_{1}
 Save:node\C\project\Macro_cfg_8910.h \[1.9\] 
 Save:node\C\project\Macro_cfg_8910.h \[1.10\] //USB
 Save:node\C\project\Macro_cfg_8910.h \[1.11\] CTA
@@ -30,11 +30,11 @@ Save:node\C\project\Macro_cfg_8910.h \[2.8\] WIFI
 Save:node\C\project\Macro_cfg_8910.h \[2.9\] SS
 Save:node\C\project\Macro_cfg_8910.h \[2.10\] Tool
 Save:node\C\project\Macro_cfg_8910.h \[2.11\] lib--------------第3方
-Save:node\C\project\Macro_cfg_8910.h \[2.12\] 
+Save:node\C\project\Macro_cfg_8910.h \[2.12\] Lib--------------平台
 Save:node\C\project\Macro_cfg_8910.h \[2.13\] 
 Save:node\C\project\Macro_cfg_8910.h \[2.14\] 
-Save:node\C\project\Macro_cfg_8910.h \[2.15\] marco
-Save:node\C\project\Macro_cfg_8910.h \[2.16\] Lib
+Save:node\C\project\Macro_cfg_8910.h \[2.15\] marco---------------移 Macro_c_path_sprd.h
+Save:node\C\project\Macro_cfg_8910.h \[2.16\] mem
 Save:node\C\project\Macro_cfg_8910.h \[2.17\] FLASH (大、/小版本)
 Save:node\C\project\Macro_cfg_8910.h \[2.18\] build map
 Save:node\C\project\Macro_cfg_8910.h \[2.19\] 
@@ -60,158 +60,17 @@ SPDE_PRJ/K220U_HYBL_H660A/uis8910_phone_user_base_config.cfg  YOUNGTONE_TTS_LIB
 
 [1.2] 
 
-[1.3] SMS
-
-## 如何调整短信息条数
-// 1.修改控制短信个数的宏：
-BASE\l4\export\inc\mn_type.h  MN_SMS_IN_NV_MAX_NUM
-//		#define MN_SMS_IN_NV_MAX_NUM        200      // the max SMS num in NV 
-
-MS_MMI_Main\source\mmi_service\export\inc\mmi_custom_define.h  MMINV_MAX_SMS_RECORDS
-//		#define MMINV_MAX_SMS_RECORDS    200
-
-// (CQ没说，最好也改下)
-MS_MMI_Main\source\mmi_service\export\inc\mmi_custom_define.h  define^MMISMS_MAX_SYS_SIM_SMS_NUM
-//		#define MMISMS_MAX_SYS_SIM_SMS_NUM    200
-
-// 2.调整RUNNINT NV大小。需要相应的flash cfg的配置增大running nv的sector数目
-// 短信息RUNNINT NV增加大小的计算方式为： 调整的数目* sizeof(MN_SMS_MESSAGE_ITEM_T)
-//  100*230/1024 =  22.46
-MS_Customize/source/product/config/uis8910ff_refphone/spiflash_cfg.c  FLASH_SIZE_128MBIT
-MS_Customize/source/product/config/uis8910ff_refphone/spiflash_cfg.c  559
-//		#define  RUNNIN_NV_SECTOR_NUM       11
-
-// 3.调整RAM的大小
-chip_drv\source\prj_win\mem_cfg_win32.c  MAX_STATIC_HEAP_SIZE
-// 调整 MAX_STATIC_HEAP_SIZE 的大小。
-// 短信息 MAX_STATIC_HEAP_SIZE 增加大小的计算方式为：调整的数目*sizeof(MMISMS_LINKED_ORDER_UNIT_T)
-//  100*188/1024 =  18.3
-
-// 4.RAM调整(另外一个补丁)
-//  100条 约  12K
-MS_Customize\source\product\config\uis8910ff_refphone\mem_cfg.c  252
-//		MAX_STATIC_SPACE_SIZE大小 + 12K
-MS_Customize\source\product\config\uis8910ff_refphone\mem_cfg.c  259
-//		MAX_SYSTEM_SPACE_SIZE大小 - 12K
-
-//	【说明】上面"+ Y" "- Y"只是保守的修改方法，实际系统可能会有冗余，
-//	MAX_SYSTEM_SPACE_SIZE可能调整的大小会小一些。可以适当微调(以50K为单位)，只要编译不报RAM超即可。
-//	因此，如果增加的条数大，会导致系统空间变小，影响browser/camera等大内存应用（风险！！！）
+[1.3] 
 
 
 
-## 关闭短信
-//	请将 APP_RegisterPsService@mmimain.c 中sms 与smscb 部分注掉
-//	{
-//	    //Register sms event
-//	    SCI_RegisterMsg( MN_APP_SMS_SERVICE,
-//	        (uint8)(EV_MN_APP_SMS_READY_IND_F & 0xff), /*lint !e778*/
-//	        (uint8)((MAX_MN_APP_SMS_EVENTS_NUM - 1) & 0xff),
-//	        SCI_NULL);
-//	   
-//	    //Register smscb event
-//	    SCI_RegisterMsg( MN_APP_SMSCB_SERVICE,
-//	        (uint8)(EV_MN_APP_SMSCB_MSG_IND_F & 0xff), /*lint !e778*/
-//	        (uint8)((MAX_MN_APP_SMSCB_EVENTS_NUM - 1) & 0xff),
-//	        SCI_NULL);
-//	}
-//	然后再将主菜单中短信屏蔽掉即可。
-//	要注意的是有其他应用有使用短信的选项也需要屏蔽掉，例如在拨号介面输入号码去发短信，也需从该菜单屏蔽掉。
+[1.4] 
 
 
-// SECURITYBOX
-make\app_main\app_macro.mk  MMI_SMS_SECURITYBOX_SUPPORT
+[1.5] 
 
 
-
-[1.4] MMS, CB, CL
-### __MMS__
-//--107
-prj:project_{cur}.mk  MMS_SMS_IN_1_SUPPORT = TRUE
-prj:project_{cur}.mk  MMS_SUPPORT = DORADO
-//--8910
-prj:{cfg}.cfg  MMS_SMS_IN_1_SUPPORT = TRUE
-prj:project_{cur}.mk  MMS_SUPPORT = DORADO
-
-// 关闭彩信功能可以透过合入patch（需要向我司申请）, 关闭MMS_SUPPORT宏，合入之后另外编版本测试即可
-
-
-### __CB__
-//4.pws
-// 台湾版加预警系统
-prj:project_{cur}.mk  REMOVE_CB_FEATURE = FALSE
-prj:project_{cur}.mk  MMI_ETWS_SUPPORT = TRUE
-// 107默認開
-make\app_main\release_app_macro.mk  MMI_ETWS_SUPPORT
-
-
-### __CL__
-// 条数 80+20 (107)
-app:cl\h\mmicl_internal.h  MMICL_RECORD_TOTAL_NUM
-
-
-[1.5] BROWSER, DL
-// mk--true
-prj:project_{cur}.mk  BROWSER_SUPPORT = TRUE
-prj:project_{cur}.mk  BROWSER_SUPPORT_DORADO = TRUE    # 浏览器1 同时开3会有2个浏览器
-prj:project_{cur}.mk  OPERA_MINI_SUPPORT     = VER6    # 浏览器2
-prj:project_{cur}.mk  OPERA_MINI_SUPPORT     = VER42   # 浏览器3
-prj:project_{cur}.mk  BROWSER_ALL_RUNNING_SUPPORT = TRUE   # 107
-prj:{cfg}.cfg         BROWSER_ALL_RUNNING_SUPPORT = TRUE   # 8910
-// mk--false
-prj:project_{cur}.mk  BROWSER_OPERA_START_PAGE = FALSE
-prj:project_{cur}.mk  BROWSER_OPERA_FAVORITE_WITH_DEFAULT = FALSE
-
-// 8910      
-prj:project_{cur}.mk  BROWSER_OPERA_START_PAGE = TRUE
-prj:project_{cur}.mk  BROWSER_SEARCH_SUPPORT = FALSE
-//
-prj:project_{cur}.mk  OPERA_MINI_SUPPORT = VER42
-
-
-
-// browser UI
-prj:project_{cur}.mk  BROWSER_INPUT_BIG_FONT_BG_STYLE  = TRUE
-prj:project_{cur}.mk  BROWSER_DL_DEFAULT_TCARD         = TRUE
-prj:project_{cur}.mk  BROWSER_IN_TOOLMENU              = TRUE # 整理编译报错 107
-
-
-// Download
-prj:project_{cur}.mk  DL_SUPPORT    = TRUE   # 107 FALSE
-prj:project_{cur}.mk  OMADL_SUPPORT = TRUE   # 107 FALSE
-//
-prj:project_{cur}.mk  AUTO_DOWNLOAD_SUPPORT = TRUE   # 107 TRUE
-
-
-//
-prj:project_{cur}.mk  DATACOUNTER_SUPPORT = TRUE  # 8910才有
-
-
-// 关DORADO: CSS_SUPPORT 没开不用管
-Makefile.verify  CSS_SUPPORT -> BROWSER_SUPPORT_DORADO
-
-// 关于内存提示 SPCSS00992465
-//	因T117项目内存受限，所以给dorado游览器划分的内存为4MB，另外可处理的网页最大size为1MB，
-//	当收到的网页数据大小超过1MB，在处理网页解析SSL的时候内存申请buffer失败，提示网页太大，
-//	当4MB内存用完后就会提示内存不足。
-
-// SPCSS01103989
-//Dorado浏览器在产品规格中配置最大可使用内存为1.5M，不支持js解析
-
-###
-patch:node\bug\Macro_bug_107.h  __BROWSER__
-
-
-[1.6] BT
-//BT--107
-prj:project_{cur}.mk  BLUETOOTH_SUPPORT = SPRD_BT
-
-//BT--8910
-prj:{cfg}.cfg  BLUETOOTH_SUPPORT = SPRD_BT
-prj:project_{cur}.mk  BLUETOOTH_SUPPORT = SPRD_BT
-
-// 禁用对方机器发送蓝牙文件
-prj:project_{cur}.mk  BT_OPP_SUPPORT = TRUE
+[1.6] 
 
 
 
@@ -498,25 +357,8 @@ prj:project_{cur}.mk   AOLEDA_ELECTRIC_GUARANTEE_CARD = TRUE
 Save:node\C\study\Macro_fun_8910.h  __AoledaCard__
 
 
-
 // 4.销量统计
-// sale--set
-Save:node\C\study\Macro_fun_8910.h  __sale__
-//
-prj:project_{cur}.mk   SPDE_SALES_TRACKER_SUPPORT 				= TRUE
-prj:project_{cur}.mk   SPDE_SALES_TRACKER_FOR_T5_W53			= TRUE ###时间，接收号码中心号码
-prj:project_{cur}.mk   SPDE_SALES_TRACKER_SETTING_SUPPORT		= TRUE ###设置菜单
-prj:project_{cur}.mk   SPDE_SALES_TRACKER_RESEND_SMS_IF_FAILED 	= TRUE	###销售追踪发送消息失败后(在不重启的情况下)继续发送
-prj:project_{cur}.mk   SPDE_SALES_TRACKER_CODE_XJ123XJ			= TRUE	###查询指令*#4695#
-prj:project_{cur}.mk   SPDE_SALES_TRACKER_SAVE_SEND_STATUS_AFTER_CLEAR_DATA = TRUE
-prj:project_{cur}.mk   SPDE_SALES_SIM1_FAILE_USE_TO_SIM2		= TRUE ##卡1  失败就用卡2
-// other
-prj:project_{cur}.mk   SPDE_SALES_TRACKER_OTHER_NUMBER_SUPPORT
-prj:project_{cur}.mk   SPDE_SALES_TRACKER_SETTING_ADD_SMS_SHOW
-prj:project_{cur}.mk   SPDE_SALES_TRACKER_CONFIRM_WINDOW
-prj:project_{cur}.mk   SPDE_SALES_TRACKER_SHOW_SUCCESS_NOTIFY
-prj:project_{cur}.mk   SPDE_SALES_TRACKER_DEFAULT_OFF
-prj:project_{cur}.mk   SPDE_SALES_TRACKER_SEND_BY_CONFIRM
+Save:node\C\study\Macro_app_8910sms.h  __sales__
 
 
 [2.4] tihu
@@ -665,29 +507,7 @@ Save:node\C\study\Macro_patch_third.h  zfb_107
 
 
 
-[2.12] 
-
-[2.13]  
-
-
-
-[2.14] 
-
-
-[2.15] marco
-//
-make\chip_drv\def_config\UMS9117.cfg
-// CONFIG_LCDC_VER
-chip_drv/chip_module/lcdc/v5
-// CONFIG_SPI_VER
-chip_drv/chip_module/spi/v5
-// CONFIG_LDO_VER
-chip_drv/chip_module/ldo/sc2720
-// CONFIG_ANALOG_VER
-chip_drv/chip_module/analog/v7
-
-
-[2.16] Lib
+[2.12] Lib
 
 ### w07U
 // baseLib
@@ -746,6 +566,41 @@ lib\ums9117_240X320BAR_48MB_CAT1_rel\
 lib\ums9117_240X320BAR_48MB_CAT1\
 
 
+[2.13]  
+
+
+
+[2.14] 
+
+
+[2.15] marco
+### 107
+//
+make\chip_drv\def_config\UMS9117.cfg
+// CONFIG_LCDC_VER
+chip_drv/chip_module/lcdc/v5
+// CONFIG_SPI_VER
+chip_drv/chip_module/spi/v5
+// CONFIG_LDO_VER
+chip_drv/chip_module/ldo/sc2720
+// CONFIG_ANALOG_VER
+chip_drv/chip_module/analog/v7
+// CONFIG_ADC_VER
+chip_drv\chip_module\adc\sc2720
+
+
+
+[2.16] mem
+
+// Heap的大小
+config:mem_cfg.c  SCI_STATIC_HEAP_SIZE_THRESHOD
+
+// 静态RAM的大小
+config:mem_cfg.h  MEM_RWZI_SIZE
+
+
+
+
 [2.17] FLASH
 ### 8910
 prj:project_{cur}.mk  FLASH_SIZE = 128MBITX64MBIT_NEW   # 大版本
@@ -757,6 +612,8 @@ prj:project_{cur}.mk  _FLASH_STYLE_
 config:\
 config:spiflash_cfg.c  FLASH_SIZE_128MBITX64MBIT_NEW    //大版本
 config:spiflash_cfg.c  FLASH_SIZE_128MBIT$              //小版本
+config:spiflash_cfg.c  (FLASH_SIZE_128MBIT)             //小版本
+config:spiflash_cfg.c  FLASH_SIZE_64MBITX64MBIT         //DM版本
 // SECTOR
 config:spiflash_cfg.c  MMI_RES_SECTOR_NUM
 config:spiflash_cfg.c  604
@@ -783,11 +640,17 @@ fdl_bootloader\nor_bootloader\src\nor_bootloader_fota_uix8910.scf  0xB800
 
 
 ### 107 分区
+fdl_bootloader\fdl2\src\nandparttable\ums9117_barphone\Nand_PartTable_128k.c  MMI_RESOURCE_SIZE
+//#define OSB_SIZE				(96)   //EXEC_KERNEL_IMAGE.bin
+//#define OSA_SIZE				(72)   //EXEC_USER_IMAGE.bin
+//#define MMI_RESOURCE_SIZE		(74)   //mmi_res_240X320.bin
 
 
 ### 并口flash
 prj:project_{cur}.mk  SPI_NAND_FLASH -> FALSE  # 并口flash，死机log
 prj:project_{cur}.mk  SPI_NAND_FLASH -> TRUE   # 串口flash
+
+
 
 
 

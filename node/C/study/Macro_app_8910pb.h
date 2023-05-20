@@ -9,23 +9,17 @@ Save:node\C\study\Macro_app_8910pb.h \[1.6\] search
 Save:node\C\study\Macro_app_8910pb.h \[1.7\] pbBak, instance
 Save:node\C\study\Macro_app_8910pb.h \[1.8\] pbNumMax
 Save:node\C\study\Macro_app_8910pb.h \[1.9\] blacklist
-Save:node\C\study\Macro_app_8910pb.h \[1.10\] 
-Save:node\C\study\Macro_app_8910pb.h \[1.11\] 
+Save:node\C\study\Macro_app_8910pb.h \[1.10\] pbName, len, num
+Save:node\C\study\Macro_app_8910pb.h \[1.11\] pb mk
 Save:node\C\study\Macro_app_8910pb.h \[1.12\] 
 Save:node\C\study\Macro_app_8910pb.h \[1.13\] 
-Save:node\C\study\Macro_app_8910pb.h \[1.14\] clMain
-Save:node\C\study\Macro_app_8910pb.h \[1.15\] clInit    #50记录
-Save:node\C\study\Macro_app_8910pb.h \[1.16\] clDeltail
+Save:node\C\study\Macro_app_8910pb.h \[1.14\] 
+Save:node\C\study\Macro_app_8910pb.h \[1.15\] 
+Save:node\C\study\Macro_app_8910pb.h \[1.16\] 
 Save:node\C\study\Macro_app_8910pb.h \[1.17\] 
 Save:node\C\study\Macro_app_8910pb.h \[1.18\] 
 Save:node\C\study\Macro_app_8910pb.h \[1.19\] 
 Save:node\C\study\Macro_app_8910pb.h \[1.20\] 
-Save:node\C\study\Macro_app_8910pb.h \[1.21\] 
-Save:node\C\study\Macro_app_8910pb.h \[1.22\] 
-Save:node\C\study\Macro_app_8910pb.h \[1.23\] 
-Save:node\C\study\Macro_app_8910pb.h \[1.24\] 
-Save:node\C\study\Macro_app_8910pb.h \[1.25\] 
-Save:node\C\study\Macro_app_8910pb.h \[1.26\] 
 
 
 
@@ -345,6 +339,15 @@ MS_Customize\source\product\config\ums9117_barphone\mem_cfg.c  252
 make\app_main\release_app_macro.mk  MMIPB_MAX_COUNT_200
 
 
+## 增加3000联系人, 最终改法是：--107
+//   减小栈: alloca()
+//   STACK_SYSTEM_MEMORY_SZ 减小500K  (优化设置壁纸 复制pb失败; 但不能减太多，否则开机读sim卡联系人死机)
+//
+//   加大堆: SCI_ALLOC_CONST()
+//   BYTE_STATIC_HEAP_SIZE  增加400K  (不改会开机报错)
+//   MAX_MMI_NV_USER_ITEM_NUM  增加1000  (不改会开机报错)
+
+
 
 
 [1.9] __blacklist__
@@ -387,9 +390,9 @@ source:mmi_app\kernel\h\mmi_modu_main.h  MMIUSERNV_PHONEBOOK_MAIN_LAST_ENTRY 2
 source:mmi_app\kernel\h\mmi_modu_main.h  s_mmi_usernv_len
 
 
-[1.11] 
-
-
+[1.11] pb mk
+//
+make\app_main\app_macro.mk  REMOVE_PB_OWN_SERVICE_NUMBER
 
 
 [1.12] 
@@ -402,94 +405,20 @@ source:mmi_app\kernel\h\mmi_modu_main.h  s_mmi_usernv_len
 
 
 
-[1.14] __clMain__
-//
-//1.cl-menu
-app:cl\c\Mmicl_{wintab}.c   MMICL_ICON_MAIN_MENU_WIN_TAB
-// cl--menu(240)
-app:cc\c\mmicc_menutable.c GUIMENU_ITEM_T^menu_cl
-
-
-//2.cl-list
-// cl--title
-app:cl\c\Mmicl_{wintab}.c   HandleLogListWindow
-### __clNum__
-
-// str
-InitPdaCallLogListCtrl        CallLog
+[1.14] 
 
 
 
-[1.15] __clInit__
-
-// cl list--(107)
-app:cl\c\Mmicl_{wintab}.c   AppendLogListItem
-
-// cl--read
-//		==>MMICL_ReadNV
-//		====>MMICL_ReadAllNV
-//		====>MMICL_RECORD_TOTAL_NUM     # 80+20=100
-//		======>80 40, 看起来uint8最大数只能256-20
-source:mmi_service\export\inc\mmi_custom_define.h  MMICL_RECORD_MAX_NUM
-// cl--write 实际NV
-//		==>MMICL_WriteNV
-//		====>.header
-//		====>.record
-//		======>50000+28~38
-//		========>EFS_NvitemWrite
-//		========>应该用的是RAM: 107 不好算
-source:mmi_app\kernel\h\mmi_modu_main.h  MMIUSERNV_CL_CALL_ALL_CONTENT_BEGIN 2
-//		======>0~9
-source:mmi_app\app\cl\h\mmicl_internal.h  MMICL_RECORD_NVITEM_COUNT
-//		==>CC_DisconnectedCallByIndex
-//		====>MMIAPICL_RecordCallInfo(, calllog_type, cl_info )   # 模拟时调用这个
-//		======>AddNewCallInfo
-//		========>AddNewDetailCallInfo
-//		========>MMICL_WriteNV(MMICL_CALL_ALL, arraycall_info)
-app:cc\c\mmicc_app.c   CC_DisconnectedCall(msg_id, )
-
-
-// cl--Init
-//		==>SetLogListItem
-//		====>.arraycall_info
-//		======>MMICL_GetRecordInfo
-//		====>AppendLogListItem
-//		======>.sim_name_str
-//		======>.name_number_str
-//		======>.time_str
-//		======>...
-//		=======>GUILIST_AppendItem
-//		======>
-//		========>
-//		==========>
-//		============>
-app:cl\c\Mmicl_{wintab}.c   HandleCallLogChildWindow
-
-
-//		==>
-//		====>
-//		======>
-//		========>
-//		==========>
-//		============>
+[1.15] 
 
 
 
 
-[1.16] __clDeltail__
-
-//3.cl-deltail
-//		==>从号码获取姓名
-app:cl\c\Mmicl_{wintab}.c   InitLogListDetailContactItem
-// cl deltail--调显示位置
-app:cl/c/Mmicl_{wintab}.c   AppendLogListDetailItem
-// cl list--(107)
-app:cl\c\Mmicl_{wintab}.c   AppendLogListItem
+[1.16] 
 
 
 
-
-[1.17] __clTab__
+[1.17] 
 
 
 
@@ -508,33 +437,6 @@ app:cl\c\Mmicl_{wintab}.c   AppendLogListItem
 
 
 
-
-[1.21] 
-
-
-
-
-[1.22] 
-
-
-
-
-[1.23] 
-
-
-
-
-[1.24] 
-
-
-
-
-[1.25] 
-
-
-
-
-[1.26] 
 
 
 

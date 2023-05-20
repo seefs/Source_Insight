@@ -35,6 +35,11 @@ Save:node\C\cfg\
 Save:node\C\cfg\Macro_c_path_sprd.h  _sprd_cur_
 
 
+###
+// keyPro是短名, key0是共用名, key1/key2是长名
+patch:node\info\
+patch:node\info\Macro_info_{1}.h
+
 
 [1.2] mk
 //
@@ -362,7 +367,7 @@ resource:Common\DATA\
 // 8910 apn str
 Save:node\C\study\Macro_doc_apn8910.h
 // 8910 volte/白名单
-//Save:node\C\study\Macro_doc_volte8910.h
+Save:node\C\study\Macro_doc_volte8910.h
 
 
 ### __107_apn__
@@ -371,10 +376,6 @@ tools\Common\ResBOCA\Bin\
 // 分段加载
 prj:project_{cur}.mk  DATA_ACCOUNT_USE_SPLIT_FILE = TRUE
 
-// 
-PS\nv\operator_delta\operator_config_all\
-// 所有支持运营商的索引
-PS\nv\operator_delta\operator_config_all\Index.xml
 // 107 apn
 Save:node\C\study\Macro_doc_apn107.h
 // 107 volte/白名单

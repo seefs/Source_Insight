@@ -7,7 +7,7 @@ Save:node\C\study\Macro_nv_charge8910.h \[1.4\] charge_end_voltage 高压电池
 Save:node\C\study\Macro_nv_charge8910.h \[1.5\] 
 Save:node\C\study\Macro_nv_charge8910.h \[1.6\] 充电/放电-------107
 Save:node\C\study\Macro_nv_charge8910.h \[1.7\] bat_capacity
-Save:node\C\study\Macro_nv_charge8910.h \[1.8\] 
+Save:node\C\study\Macro_nv_charge8910.h \[1.8\] ntc--bat_temp
 Save:node\C\study\Macro_nv_charge8910.h \[1.9\] 
 Save:node\C\study\Macro_nv_charge8910.h \[1.10\] 
 Save:node\C\study\Macro_nv_charge8910.h \[1.11\] 
@@ -39,6 +39,8 @@ nv:ProductionParam_uix8910.nvm  usb_current_type
 
 
 [1.2] 充电/放电电压
+//OCV->电压,DOD->百分比
+
 // 充电截止电压
 nv:ProductionParam_uix8910.nvm  charge_end_voltage
 //    ITEM_CONTENT = 0x1112   // 4.37V
@@ -93,6 +95,14 @@ nv:ProductionParam_uix8910.nvm  dischg_bat_tab\[11\]
 nv:ProductionParam_uix8910.nvm  ovp
 
 
+### 停止充电条件
+//		==>改成15次停止充电
+chip_drv/chip_module/charge/uix8910/charge_uix8910.c  PULSE_POS_LEVEL_WIDTH
+
+
+
+
+
 [1.5] 
 
 
@@ -101,13 +111,17 @@ nv:ProductionParam_uix8910.nvm  ovp
 [1.6] 充电/放电-------107
 //  production_param
 prj:RDNV\production_param_T.xml
-// OCV 
+
+// 合入OCV 
 
 // 充电截止电压
 prj:RDNV\
 prj:RDNV\production_param_T.xml  charge_end_current
 // 放电时
 prj:RDNV\production_param_T.xml  dischg_bat_tab
+
+// 编译后
+common\nv_parameters\refbase\production_param_T.xml  dischg_bat_tab
 
 
 ### __charge__
@@ -138,8 +152,29 @@ chip_drv\chip_module\charge\uix8910\charge_uix8910.c  _CHGMNG_VoltagetoPercentum
 
 
 
-[1.8] 
+[1.8] ntc--bat_temp
+//--107
+prj:project_{cur}.mk  BATTERY_NTC_SUPPORT     # 温度状态/用vct电压/弹窗显示停止充电
+prj:project_{cur}.mk  F76T_BAT_NTC_CFG        # 
+prj:project_{cur}.mk  CHG_VBAT_TEMP_55_STOP   #
+prj:project_{cur}.mk  ENG_UITEST_TEMPERATURE  # 充电测试界面--显示温度
 
+
+//
+nitc以前模拟测试方法是，手机上接电池的三个pin，中间那个pin接表格上的电压值，
+然后到工程界面去看，算出来的温度值是不是差不都。
+然后就是到了对应温度，充电是否能截止和恢复。
+
+//	1.低温-25提示15s之后自动关机
+//	2.低温-5度停充提示报警
+//	3.0度恢复充电?
+//	4.0-44度正常??
+//	5.高温45度停充报警，44度恢复充电
+//	6.温度55以上提示并自动关机
+
+
+//
+tool:\
 
 
 

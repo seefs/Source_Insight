@@ -210,6 +210,10 @@ app:eng/c/mmieng_main.c  UITESTWIN_OpenPhoneTestWin
 //         MMIAPIENG_StartUITest
 //    }
 
+// imsi:
+SpdeShow3GIMSIInfo
+
+
 ### 
 //--v--time,data,vol
 //MMIENG_IDLE_DIAL_NUM_PHONE_INFO

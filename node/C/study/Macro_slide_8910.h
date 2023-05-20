@@ -414,6 +414,9 @@ fzd:c/mmifzd_time.c
 //		====>LOSE_FOCUS:  还原
 //		======>ListRecoverSlideByOffsetY
 
+### 修改
+//		====>.offset_y               # timer * 2, 移动更快
+ctrl:ListBox/c/ctrllistbox.c  MMI_WATCH_NEW_STYLE
 
 
 
@@ -749,6 +752,11 @@ app:pic_viewer\c\watch_gallery_main.c  Gallery_Pic_HandleMsg
 Gallery_DisplayFilePreview();
 // btn
 GallerySetPicBtnParam
+
+
+### sys pic
+//
+app:pic_viewer/c/mmipicview_preview.c  MMI_RESULT_E^HandlePicPreviewWinMsg
 
 
 

@@ -13,6 +13,10 @@ Save:node\C\study\Macro_doc_apn107.h \[1.10\]
 Save:node\C\study\Macro_doc_apn107.h \[1.11\] 
 Save:node\C\study\Macro_doc_apn107.h \[1.12\] 
 
+### volte--CQ
+//
+lib\_readme.txt  __ims__
+
 
 ### 新增运营商delta nv
 // --SIM(HPLMN)相关NV项
@@ -34,13 +38,25 @@ build\[project_name]_builddir\img目录生成[projectname]_deltanv.bin
 // delta
 PS\nv\export\ps\common\
 
+###
 // 包含所有可动态加载参数的默认值
 PS\nv\operator_delta\operator_config_all\Default_P.nv
 PS\nv\operator_delta\operator_config_all\Default_S.nv
 
+// 
+PS\nv\operator_delta\operator_config_all\
+// 所有支持运营商的索引
+PS\nv\operator_delta\operator_config_all\Index.xml
 
 
 [1.1] 460
+
+//
+app:phone\h\
+app:phone\h\plmn_ts25_database_enum.h  PLMN_425_
+app:phone\h\plmn_ts25_database_table.h  PLMN_425_
+source:mmi_app\common\h\plmn_ts25_database_str.h  TXT_NET_891
+
 
 // CN_CMCC
 PS\nv\operator_delta\operator_config_all\Index.xml  mcc="460"
@@ -116,10 +132,23 @@ tcpip: sci_async_gethostbyname - url(xcap.ims.taiwanmobile.com), timeout(4000 ms
 PS\nv\operator_delta\operator_config_all\Index.xml  mcc="425"
 // 名字映射的文件
 PS\nv\operator_delta\operator_config_all\
-PS\nv\operator_delta\operator_config_all\IL_Cellcom_P.nv
-PS\nv\operator_delta\operator_config_all\IL_Cellcom_S.nv
-PS\nv\operator_delta\operator_config_all\IL_Partner_P.nv
+PS\nv\operator_delta\operator_config_all\IL_Partner_P.nv       # 425-01
 PS\nv\operator_delta\operator_config_all\IL_Partner_S.nv
+PS\nv\operator_delta\operator_config_all\IL_Cellcom_P.nv       # 425-02
+PS\nv\operator_delta\operator_config_all\IL_Cellcom_S.nv
+PS\nv\operator_delta\operator_config_all\IL_Pelephone_P.nv     # 425-03
+PS\nv\operator_delta\operator_config_all\IL_Pelephone_S.nv
+PS\nv\operator_delta\operator_config_all\IL_HotMobile_P.nv     # 425-07
+PS\nv\operator_delta\operator_config_all\IL_HotMobile_S.nv
+PS\nv\operator_delta\operator_config_all\IL_GolanTelecom_P.nv  # 425-08
+PS\nv\operator_delta\operator_config_all\IL_GolanTelecom_S.nv
+PS\nv\operator_delta\operator_config_all\IL_019_P.nv           # 425-19
+PS\nv\operator_delta\operator_config_all\IL_019_S.nv
+PS\nv\operator_delta\operator_config_all\IL_Annatel_P.nv       # 425-26
+PS\nv\operator_delta\operator_config_all\IL_Annatel_S.nv
+
+PS\nv\operator_delta\operator_config_all\IT_K_SIM_P.nv         # 310-630
+PS\nv\operator_delta\operator_config_all\IT_K_SIM_S.nv
 
 
 
@@ -129,26 +158,30 @@ PS\nv\operator_delta\operator_config_all\Index.xml  mcc="515"   # 错了，记得还原
 PS\nv\operator_delta\operator_config_all\Index.xml  mcc="260"   # 错了，记得还原
 PS\nv\operator_delta\operator_config_all\Index.xml  mcc="310"
 PS\nv\operator_delta\operator_config_all\Index.xml  mcc="222"
-
+IT_K_SIM
 // cp
 apnPath = PS\nv\operator_delta\operator_config_all\
 apn:test\
 
-cp apn:test\test_P.nv apn:test\IL_GolanTelecom_P.nv
-cp apn:test\test_S.nv apn:test\IL_GolanTelecom_S.nv
-cp apn:test\test_P.nv apn:test\IL_RamiLevi_P.nv
-cp apn:test\test_S.nv apn:test\IL_RamiLevi_S.nv
-cp apn:test\test_P.nv apn:test\IL_Widely_P.nv
-cp apn:test\test_S.nv apn:test\IL_Widely_S.nv
-cp apn:test\test_P.nv apn:test\IL_019_P.nv
-cp apn:test\test_S.nv apn:test\IL_019_S.nv
-cp apn:test\test_P.nv apn:test\IL_K_SIM_P.nv
-cp apn:test\test_S.nv apn:test\IL_K_SIM_S.nv
-cp apn:test\test_P.nv apn:test\IL_Annatel_P.nv
-cp apn:test\test_S.nv apn:test\IL_Annatel_S.nv
+//cp apn:test\test_P.nv apn:test\IL_GolanTelecom_P.nv
+//cp apn:test\test_S.nv apn:test\IL_GolanTelecom_S.nv
+//cp apn:test\test_P.nv apn:test\IL_RamiLevi_P.nv
+//cp apn:test\test_S.nv apn:test\IL_RamiLevi_S.nv
+//cp apn:test\test_P.nv apn:test\IL_Widely_P.nv
+//cp apn:test\test_S.nv apn:test\IL_Widely_S.nv
+//cp apn:test\test_P.nv apn:test\IL_019_P.nv
+//cp apn:test\test_S.nv apn:test\IL_019_S.nv
+//cp apn:test\test_P.nv apn:test\IL_K_SIM_P.nv
+//cp apn:test\test_S.nv apn:test\IL_K_SIM_S.nv
+//cp apn:test\test_P.nv apn:test\IL_Annatel_P.nv
+//cp apn:test\test_S.nv apn:test\IL_Annatel_S.nv
+//
+//cp apn:test\test_P.nv apn:test\IT_K_SIM_P.nv
+//cp apn:test\test_S.nv apn:test\IT_K_SIM_S.nv
 
 
-// apnStr
+
+// __apnStr__
 app:phone\h\
 app:phone\h\plmn_ts25_database_enum.h  PLMN_425_
 app:phone\h\plmn_ts25_database_table.h  PLMN_425_

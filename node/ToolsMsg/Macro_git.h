@@ -71,13 +71,10 @@ Save:node\ToolsMsg\Macro_git.h \[4.18\]
 
 
 [1.1] git config----------设置账户(需要和github账户设置一致)
-git config --global user.name xxx
-git config --global user.email xxx@foxmail.com
 
+### 配置 user.name
 git config --global user.name xiaojia
 git config --global user.email seefs@163.com
-
-git config --global user.name xiaojia
 git config --global user.email xiaojia_bm@163.com
 	
 //查看本地的global信息
@@ -85,16 +82,40 @@ git config [--local|--global|--system] --list/-l　　　　　　　　　　
 //删除user.name信息。如果user.name对应多个值，可用unset-all来删除
 git config [--local|--global|--system] --unset[-all] user.name
 
-// win
-C:\Users\Administrator\.gitconfig
-G:\wa03u_git\.git\config
+// gitconfig
+C:\Users\{Admin}\.gitconfig
 
-//
+
+### 配置 2个 user.name
+
+# 查看全局配置
+git config --global user.name
+git config --global user.email
+
+# 查看本地配置(只能在 git 仓库中使用)
+git config --local user.name
+git config --local user.email
+
+
+# 删除全局设置
+git config --global --unset user.name
+git config --global --unset user.email
+
+# 添加本地设置(只能在 git 仓库中使用)
+git config --local user.name xiaojia
+git config --local user.email xiaojia_bm@163.com
+
+# 添加本地设置2(只能在 git 仓库中使用)
+git config --local user.name xiaojia
+git config --local user.email seefs@163.com
+
+
+### 
 //持久化存储的账号密码
 .git/.git-credentials
 
 
-### safe.directory
+### safe.directory (用不上)
 // 多win10账号共享
 git config --global --add safe.directory 'D:\save\SI'
 //
@@ -115,6 +136,13 @@ git config --list
 // 凭证问题请参考
 https://github.com/Microsoft/Git-Credential-Manager-for-Windows
 https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases/tag/1.20.0
+
+
+// Windows系统上，就把它设置成true
+git config --global core.autocrlf true
+//
+https://blog.csdn.net/moamao_jishuyuan/article/details/118994511
+
 
 
 [1.3] git init ------------创建git本地仓库
