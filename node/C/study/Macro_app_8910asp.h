@@ -72,6 +72,25 @@ app:record\c\mmirecord_common_wintab.c  MMI_RESULT_E^HandleRecordMainPlayWinMsg
 
 [1.5] start
 
+###  通道问题
+//		==>MMICC_ConstructAudioHandle   # --APPLET_START
+//		====>                           # MMISRVMGR_Request-0-27
+//		==>CC_HandleCcAnimWinMsg        # --来电
+//		====>PlayNewCallRing            # MMISRVMGR_Request-0-14
+//		==>CC_SyncInd                   # --收到信道分配事件的处理
+//		====>CC_OpenAudioTunnel         # 跳过
+//		==>MMICC_AnswerASPCall          # --接听
+//		====>CC_ConnectCallReq          # accept call
+//		======>CC_OpenAudioTunnel       # MMISRVMGR_Request-16-27
+//		==>CC_SetupCompleteInd          # --接通
+//		====>MMIAPIASP_StartAnswerCall
+//		==>MMIASP_StartPlayAnswerMusic  # --asp
+//		====>MMIASP_PlayAudioInCall     # MMISRVMGR_Request-0-10
+//		====>StartRecord                # MMISRVMGR_Request-0-0
+//		==>MMIAPIASP_HandlePlayAudioEnd # --record
+//		==>CC_DisconnectedCall          # --挂断
+//		====>CC_OpenAudioTunnel
+
 ### asp--MT
 //		==>OPEN_WINDOW:
 //		====>MMIAPIASP_CreateWaitTimer

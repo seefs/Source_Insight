@@ -288,6 +288,12 @@ images:common\MMI_RES_DEFAULT\IMAG\Dial\Callnum\
 images:common\MMI_RES_DEFAULT\IMAG\Dial\CallnumS\
 
 
+### __lock__
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_IDLE_KEYLOCK_TIME_BG
+//
+images:common\MMI_RES_DEFAULT\IMAG\key_lock\
+
+
 
 [1.7] mp3
 

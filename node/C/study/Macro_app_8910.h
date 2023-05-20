@@ -186,6 +186,8 @@ app:keylock\c\mmikl_keylock.c  void^DisplayScreenSaverTime( )
 
 // lock
 Save:node\C\study\Macro_fun_8910.h  __lock__
+// ==>image
+Save:node\C\study\Macro_res_image_8910.h  __idle__
 
 
 [1.3] menu, second

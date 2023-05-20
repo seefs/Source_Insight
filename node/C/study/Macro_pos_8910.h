@@ -193,6 +193,16 @@ app:theme/h/mmi_position_{size}.h  MMI_LIST_ITEM_HEIGHT
 // list--ÆäËû
 app:theme/h/mmi_position_{size}.h  MMI_LIST_EXTRAS_ITEM_HEIGHT_MS
 app:theme/h/mmi_position_{size}.h  MMI_LIST_PB_QUICK_ACTION_ITEM_TEXT_HEIGHT_MS
+// list--set--connect--roaming
+//		==>GUIITEM_STYLE_TWO_LINE_TEXT_AND_SCROLLTEXT_ANIM
+//		====>s_item_style_2_text_and_scrolltext_anim
+app:theme/h/mmi_position_{size}.h  MMI_LIST_DOUBLE_LINE_ITEM_HEIGHT
+
+// list--memo
+//		==>GUIITEM_STYLE_ONE_LINE_SMALL_TEXT_AND_TEXT
+//		====>s_item_style_2_text_and_scrolltext_anim
+app:theme/h/mmi_position_{size}.h  MMI_LIST_DOUBLE_LINE_ITEM_HEIGHT
+
 
 ### __alarm__
 // alarm--icon+str

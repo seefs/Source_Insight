@@ -24,6 +24,11 @@ Save:node\Simple_CTRL_K.h unfinished:
 /************************** 新功能和BUG说明 ****************************/
 /***********************************************************************/
 
+// 第3个
+source:mmi_app\common\h\common_mdu_def.h   SPDE_UI_STYLE_BLACK_BG_WHITE_FONT  3
+
+
+
 //
 patch:...
 --对比当前项目文件
