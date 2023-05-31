@@ -2,7 +2,7 @@
 // File
 Save:node\Macro_File.h \[1.1\] node-----------记录文件
 Save:node\Macro_File.h \[1.2\] patch-node-----补丁文件
-Save:node\Macro_File.h \[1.3\] help-----------帮助文件--编号/默认/提示文件
+Save:node\Macro_File.h \[1.3\] help-----------帮助文件
 Save:node\Macro_File.h \[1.4\] common---------公共文件
 Save:node\Macro_File.h \[1.5\] Marco/test-----宏文件/调试/设置
 Save:node\Macro_File.h \[1.6\] Cmd------------bat
@@ -26,54 +26,18 @@ Save:node\Pythons\Macro_Note_Python.h
 // other
 Save:node\
 
-###
-tool_mini:\
 
 
 [1.2] patch-node
-// 未使用的代码，比较杂乱，移走了
 patch:node\
-
-### bak(未整理, 未改)
-patch:node\bak\
-patch:node\Macro_node_bak.h
-
-### tmp
-patch:node\tmp\
-patch:node\Macro_node_tmp.h
-
-### bug
-patch:node\bug\
-patch:node\Macro_node_bug.h
-
-### patch
-patch:\
 patch:node\Macro_node_patch.h
 
-### psw
-// 
-patch:ssh\Macro_user_psw.h
-patch:ssh\Macro_user_psw.h  __CQ__
 
 
 [1.3] help
-### Num
-//参考标号:
-//  2个\\是为了不被替换
-Save:Help\\DefaultFile\\Macro_Node_Num.h
+// --编号/默认/提示文件
+Save:node\_help\Macro_Note_help.h
 
-### default file
-//样板文件:
-Save:Help\DefaultFile\Macro_z_index.h
-Save:Help\DefaultFile\Macro_z_null.h
-Save:Help\DefaultFile\Macro_z_null.py
-//样板文件-(更多序号+):
-Save:Help\DefaultFile\Macro_z_index_2.h
-
-### Info file
-// 自定义帮助文档
-Save:Help\LangInfo\Macro_Info_Android.h
-Save:Help\LangInfo\Macro_Info_Python.h
 
 
 [1.4] common
@@ -198,7 +162,6 @@ Save:node\ToolsMsg\Macro_VS2010.h
 
 
 [1.12] 
-
 
 
 

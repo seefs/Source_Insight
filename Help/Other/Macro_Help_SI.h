@@ -1,10 +1,5 @@
 
-基础路径设置:
-//basePath = 
-
-
 //目录:
-// 1. 
 Save:Help\Other\Macro_Help_SI.h \[1.1\] marco file
 Save:Help\Other\Macro_Help_SI.h \[1.2\] marco test...
 Save:Help\Other\Macro_Help_SI.h \[1.3\] set save-------宏路径设置
@@ -44,19 +39,14 @@ Save:Help\
 // 功能测试
 Save:Help\Macro_Note_Test.h
 
-// 批量替换--nv
-Save:Help\Other\Macro_Help_replace.h
-
-// 批量合并
-Save:Help\Other\Macro_Help_merge.h
-
-// 批量搜索
-Save:Help\Other\Macro_Help_search.h
+// 批量替换、批量合并、批量搜索
+patch:node\Help\Macro_node_Help.h
 
 
 // 项目文件统计/调试命令
-//Save:node\ToolsMsg\Macro_SI.h  __filelist__
 Save:Help\Other\Macro_Help_filelist.h
+// 语法
+//Save:node\ToolsMsg\Macro_SI.h  __filelist__
 
 
 [1.3] set save

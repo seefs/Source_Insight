@@ -10,8 +10,13 @@ Save:node\C\study\Macro_app_8910sms.h \[1.7\] voicemail
 Save:node\C\study\Macro_app_8910sms.h \[1.8\] MMS
 Save:node\C\study\Macro_app_8910sms.h \[1.9\] CB
 Save:node\C\study\Macro_app_8910sms.h \[1.10\] SmsNum
-Save:node\C\study\Macro_app_8910sms.h \[1.11\] 
-Save:node\C\study\Macro_app_8910sms.h \[1.12\] 
+Save:node\C\study\Macro_app_8910sms.h \[1.11\] SmsModis
+Save:node\C\study\Macro_app_8910sms.h \[1.12\] AoledaCard
+Save:node\C\study\Macro_app_8910sms.h \[1.13\] SpdeCard
+Save:node\C\study\Macro_app_8910sms.h \[1.14\] SmsTpInput
+Save:node\C\study\Macro_app_8910sms.h \[1.15\] 
+Save:node\C\study\Macro_app_8910sms.h \[1.16\] 
+Save:node\C\study\Macro_app_8910sms.h \[1.17\] 
 
 
 
@@ -307,74 +312,107 @@ MS_Customize\source\product\config\uis8910ff_refphone\mem_cfg.c  259
 make\app_main\app_macro.mk  MMI_SMS_SECURITYBOX_SUPPORT
 
 
-[1.11] 
+[1.11] __SmsModis__
+sms_member
+// sms_member
+app:sms\c\mmisms_editsmswin.c
+//        uint8 i = 0;
+//        uint8 aaaaa = 0;
+//		SMS_HANDLE_T sms_ret = PNULL;
+//		for(i=0;i<48;i++)
+//		{
+//			sms_ret = MMISMSAPP_SaveSms(op_data,PNULL,PNULL,PNULL);
+//			if(i>40)
+//			{
+//				aaaaa = 0;
+//			}
+//			else if(i>10)
+//			{
+//				aaaaa = 0;
+//			}
+//			if(PNULL==sms_ret)
+//				break;
+//		}
 
 
 
+[1.12] __AoledaCard__
 
-[1.12] 
+### (107不可擦除/8910升级可保留)
+// nv  8910/107
+Save:node\C\study\Macro_nv_8910.h __Card__
+
+// card--timer
+//		==>IdleWin_HandleMsg
+//		====>MSG_OPEN_WINDOW
+//		======>checkStartEleGuarCardTimer
+//		      8910:已激活忽略;8小时有卡激活;5分钟测试激活
+//		      107: 6小时未激活; wait sms/call
+app:idle\c\mainapp.c  case^MSG_OPEN_WINDOW
+app:idle\c\mainapp.c  case^MSG_TIMER
+// card--view
+//		==>EngShowGuaranteeCardString
+//		====>NV_ELECTRIC_GUARANTEE_CARD
+//		==>MMIAPIENG_ViewElectircGuanateeCard  # 107
+//		====>getEleGuaranteeCard
+// card--reset
+//		==>HandleResetElectircQueryWinMsg
+//		====>resetTimerInfo
+//		====>checkStartEleGuarCardTimer
+// card--test
+//		==>testEleGuarCard      # 5分钟测试激活
+//		====>HandleEleGuarCard  # (第一次指令有效)
+app:eng\c\mmieng_win.c  MMIENG_VIEW_GUANATEECARD_TAB
+// card--sms/call  # 107
+//		==>AOLEDA_call_connected_handle
+//		==>setEleGuaranteeCard
+//		==>setEleCardCreatedInfo
+app:eng\c\mmieng_win.c  void^AOLEDA_call_connected_handle
 
 
 
+[1.13] __SpdeCard__
 
-[1.13] 
+###  (不可擦除)
+//		==>initSpdeEleGuaranteeCard
+app:eng\c\mmieng_win.c  void^SEGC_call_connected_handle
+// card--timer
+//		==>IdleWin_HandleMsg
+//		====>MSG_OPEN_WINDOW
+//		======>StartSpdeEleGuarCardTimer
+app:idle\c\mainapp.c  case^MSG_OPEN_WINDOW
 
 
 
+[1.14] __SmsTpInput__
 
-[1.14] 
-
-
+SMS--tp input
+// 1
+//DispatchMSGTpUp
+// 2
+//TpDownCtrlHandleTpMsg
+//TextEditCtrlHandleMsg
+//BaseEditCtrlHandleMsg
+// 4
+//CTRLIM_SetInput
+// 5
+//SetParameter
 
 
 [1.15] 
 
 
 
-[2.1] 
 
-
-[2.2] 
-
-
-[2.3] 
-
-
-[2.4] 
-
-
-[2.5] 
-
-
-[2.6] 
-
-
-[2.7] 
-
-
-[2.8] 
-
-
-[2.9] 
-
-
-[2.10] 
+[1.16] 
 
 
 
-[2.11] 
+[1.17] 
 
 
-[2.12] 
 
-
-[2.13] 
-
-
-[2.14] 
-
-
-[2.15] 
+[1.18] 
 
 
 

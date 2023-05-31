@@ -3,8 +3,8 @@
 Save:node\C\study\Macro_app_8910other.h \[1.1\] TASK
 Save:node\C\study\Macro_app_8910other.h \[1.2\] jewish
 Save:node\C\study\Macro_app_8910other.h \[1.3\] browser
-Save:node\C\study\Macro_app_8910other.h \[1.4\] 
-Save:node\C\study\Macro_app_8910other.h \[1.5\] 
+Save:node\C\study\Macro_app_8910other.h \[1.4\] TORCH
+Save:node\C\study\Macro_app_8910other.h \[1.5\] keyModis
 Save:node\C\study\Macro_app_8910other.h \[1.6\] 
 Save:node\C\study\Macro_app_8910other.h \[1.7\] 
 Save:node\C\study\Macro_app_8910other.h \[1.8\] 
@@ -132,6 +132,24 @@ prj:project_{cur}.mk  AUTO_DOWNLOAD_SUPPORT = TRUE   # 107 TRUE
 prj:project_{cur}.mk  DATACOUNTER_SUPPORT = TRUE  # 8910才有
 
 
+### __browserImgModis__
+//
+app:browser/control/src/brw_control_PIC.c uint32^Brw_InitImageListInfo
+//#if 1//
+//	    {
+//	    	BRW_IMAGE_INFO_LIST_T img_add = {0};
+//			
+//			img_add.image_info.url_ptr = "aaaaa";
+//			img_add.image_info.url_len = strlen(img_add.image_info.url_ptr);
+//			img_add.image_info.mime_type = BRW_MIME_IMG_PNG;
+//			img_add.image_data_ptr = "aaaaa";
+//			img_add.image_data_len = strlen(img_add.image_data_ptr);
+//			img_add.next = PNULL;
+//	        BrwInsertImageItem(&img_add);
+//			
+//	    }
+//#endif
+
 // 关DORADO: CSS_SUPPORT 没开不用管
 Makefile.verify  CSS_SUPPORT -> BROWSER_SUPPORT_DORADO
 
@@ -148,13 +166,89 @@ patch:node\bug\Macro_bug_107.h  __BROWSER__
 
 
 
-[1.4] 
+[1.4] __TORCH__
+
+// 1.ENG_MANU_TORCH, ENG_MANU_TORCH_PATCH  (软开)
+//		==>ID_ENG_TEST_MANU_TORCH
+//		====>旧
+//		======>(1)上键点亮，下键关闭 (no use)
+//		======>(2)侧边开关
+//		========>ENG_MANU_TORCH_HELP_STR1
+//		====>107新, ENG_MANU_TORCH_107_STYLE
+//		======>(1)上键点亮，下键关闭
+//		========>TORCH_SUPPORT                #软开
+//		======>(2)侧边开关
+//		========>ENG_MANU_TORCH_HELP_STR1     #硬开
+app:eng\c\mmieng_uitestwin.c  case^ID_ENG_TEST_MANU_TORCH
+//		====>8910
+//		========>TXT_ENG_TORCHNOTE_HELP_STR1   #硬开
+//		========>TXT_ENG_TORCHNOTE             #软开 1line
+//		========>TXT_ENG_TORCH_TEST            #软开 2line
+//		====>107
+//		========>TXT_ENG_TORCHNOTE_HELP_STR1   #硬开
+//		========>TXT_ENG_TORCHNOTE             #软开
+
+// 2.MMI_TORCH_LED_SUPPORT (手机默认开, 手表默认关)
+//		==>"*#555#"
+//		====>ID_ENG_TORCH_LED_TEST
+//		======>上键点亮，下键关闭
+//		==>单项测试style2 (默认未开)
+//		====>ID_ENG_TEST_TORCH_LED
+//		======>上键点亮，下键关闭
+app:eng\c\mmieng_main.c   case^ID_ENG_TORCH_LED_TEST
+//		==>"*#222#"
+//		====>UITestTorchLedTestWinHandleMsg
+app:eng\c\mmieng_uitestwin.c  case^ID_ENG_TEST_TORCH_LED
+
+// 3.TORCH_SUPPORT (手机默认开, 手表默认关)
+//		==>状态条显示
+//		==>shortcut
+
+// 4.mainmenu
+//		==>MMIMAINMENU_StartTorch
+//		==>shortcut
 
 
 
+[1.5] __keyModis__
 
-[1.5] 
-
+// Test----key id
+app:eng/c/mmieng_uitestwin.c  TestKeyboard
+//#if 1//def WIN32
+//	{
+//    	wchar               disp_text[20] = {0};
+//	    char 		        key_text[20] ={0};
+//		MMI_STRING_T        string = {0};
+//	    GUISTR_STYLE_T      text_style = {0};
+//	    GUISTR_STATE_T      state = GUISTR_STATE_ALIGN|GUISTR_STATE_WORDBREAK|GUISTR_STATE_SINGLE_LINE;
+//		
+//        draw_rect.left = 6;
+//        draw_rect.top = 270;
+//        draw_rect.right = 240;
+//        draw_rect.bottom = 300;
+//        LCD_FillRect(&lcd_dev_info, draw_rect, MMI_WHITE_COLOR);
+//		
+//        sprintf((char*)key_text, "key:%d", key_msg_id);
+//        string.wstr_len = strlen(key_text);
+//        MMI_STRNTOWSTR(disp_text, 20, (uint8*)key_text,string.wstr_len,string.wstr_len);
+//        string.wstr_ptr = disp_text;
+//        
+//        // display
+//        text_style.align = ALIGN_HVMIDDLE;
+//        text_style.font = MMI_DEFAULT_TEXT_FONT;
+//        text_style.font_color = MMI_BLACK_COLOR;
+//
+//        GUISTR_DrawTextToLCDInRect( 
+//            (const GUI_LCD_DEV_INFO *)&lcd_dev_info,
+//            (const GUI_RECT_T      *)&draw_rect,       //the fixed display area
+//            (const GUI_RECT_T      *)&draw_rect,       //ó??§òa???Dμ?êμ?ê??óò
+//            (const MMI_STRING_T    *)&string,
+//            &text_style,
+//            state,
+//            GUISTR_TEXT_DIR_AUTO
+//            ); 
+//    }
+//#endif
 
 
 

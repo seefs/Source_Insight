@@ -152,7 +152,7 @@ chip_drv\chip_module\charge\uix8910\charge_uix8910.c  _CHGMNG_VoltagetoPercentum
 
 
 
-[1.8] ntc--bat_temp
+[1.8] __ntc__--bat_temp
 //--107
 prj:project_{cur}.mk  BATTERY_NTC_SUPPORT     # 温度状态/用vct电压/弹窗显示停止充电
 prj:project_{cur}.mk  F76T_BAT_NTC_CFG        # 
@@ -174,6 +174,9 @@ nitc以前模拟测试方法是，手机上接电池的三个pin，中间那个pin接表格上的电压值，
 
 
 //
+chip_drv\chip_module\charge\charge.c  CHG_VBAT_TEMP_55_STOP
+
+
 tool:\
 
 

@@ -1,49 +1,30 @@
 
 //目录
-// 1. constant
 Save:node\C\study\Macro_fun_8910.h \[1.1\] resource_main
 Save:node\C\study\Macro_fun_8910.h \[1.2\] str, wstr
-Save:node\C\study\Macro_fun_8910.h \[1.3\] timer----
+Save:node\C\study\Macro_fun_8910.h \[1.3\] draw str wchar
 Save:node\C\study\Macro_fun_8910.h \[1.4\] MSG
 Save:node\C\study\Macro_fun_8910.h \[1.5\] 
 Save:node\C\study\Macro_fun_8910.h \[1.6\] Win, Param, id---ID转换
 Save:node\C\study\Macro_fun_8910.h \[1.7\] #define----------宏套宏
-Save:node\C\study\Macro_fun_8910.h \[1.8\] 
-Save:node\C\study\Macro_fun_8910.h \[1.9\] sms_member
+Save:node\C\study\Macro_fun_8910.h \[1.8\] Sleep
+Save:node\C\study\Macro_fun_8910.h \[1.9\] 
 Save:node\C\study\Macro_fun_8910.h \[1.10\] //popup
 Save:node\C\study\Macro_fun_8910.h \[1.11\] make------------
 Save:node\C\study\Macro_fun_8910.h \[1.12\] debug, trace
 Save:node\C\study\Macro_fun_8910.h \[1.13\] 
-Save:node\C\study\Macro_fun_8910.h \[1.14\] 
-Save:node\C\study\Macro_fun_8910.h \[1.15\] 
-Save:node\C\study\Macro_fun_8910.h \[1.16\] draw str wchar
+Save:node\C\study\Macro_fun_8910.h \[1.14\] select_sim
+Save:node\C\study\Macro_fun_8910.h \[1.15\] sim--显示单卡
+Save:node\C\study\Macro_fun_8910.h \[1.16\] timer----
 Save:node\C\study\Macro_fun_8910.h \[1.17\] time------------时间
-Save:node\C\study\Macro_fun_8910.h \[1.18\] key, handle
+Save:node\C\study\Macro_fun_8910.h \[1.18\] cursor
 Save:node\C\study\Macro_fun_8910.h \[1.19\] Rect
 Save:node\C\study\Macro_fun_8910.h \[1.20\]
-// 2.func
-Save:node\C\study\Macro_fun_8910.h \[2.1\] lock
-Save:node\C\study\Macro_fun_8910.h \[2.2\] light
-Save:node\C\study\Macro_fun_8910.h \[2.3\] ADN FDN SDN
-Save:node\C\study\Macro_fun_8910.h \[2.4\] Dtmf
-Save:node\C\study\Macro_fun_8910.h \[2.5\] CC--msg, 静默电话
-Save:node\C\study\Macro_fun_8910.h \[2.6\] SMS--tp input
-Save:node\C\study\Macro_fun_8910.h \[2.7\] cursor
-Save:node\C\study\Macro_fun_8910.h \[2.8\] 
-Save:node\C\study\Macro_fun_8910.h \[2.9\] select_sim
-Save:node\C\study\Macro_fun_8910.h \[2.10\] Sleep
-Save:node\C\study\Macro_fun_8910.h \[2.11\] 
-Save:node\C\study\Macro_fun_8910.h \[2.12\] 
-Save:node\C\study\Macro_fun_8910.h \[2.13\] Browser--------默认PIC
-Save:node\C\study\Macro_fun_8910.h \[2.14\] BT-------------msg
-Save:node\C\study\Macro_fun_8910.h \[2.15\] Test-----------key id
-Save:node\C\study\Macro_fun_8910.h \[2.16\] sim--显示单卡
-Save:node\C\study\Macro_fun_8910.h \[2.17\] 
-Save:node\C\study\Macro_fun_8910.h \[2.18\] 
-Save:node\C\study\Macro_fun_8910.h \[2.19\] 
-Save:node\C\study\Macro_fun_8910.h \[2.20\] 
-// 其他标号
-Save:Help\\DefaultFile\\Macro_Node_Num.h
+Save:node\C\study\Macro_fun_8910.h \[1.21\] lock
+Save:node\C\study\Macro_fun_8910.h \[1.22\] light
+Save:node\C\study\Macro_fun_8910.h \[1.23\] 
+Save:node\C\study\Macro_fun_8910.h \[1.24\] 
+Save:node\C\study\Macro_fun_8910.h \[1.25\] 
 
 
 
@@ -117,39 +98,44 @@ make\resource_main\resource_target.mk 42
 //MMIAPICOM_BcdToStr
 
 
-[1.3] timer
-//	LOCAL uint8 g_test_timer  = 0;
-//	LOCAL void Test_Callback(uint8 timer_id, uint32 param)
+[1.3] draw str wchar
+//{
+//    GUI_LCD_DEV_INFO  lcd_dev_info = {0, 0};
+//    GUI_RECT_T        test_rect   = {0, 0, 239, 25};
+//    MMI_STRING_T      text_str = {0};
+//    wchar             temp_wstr[8 + 1] = {0};
+//    uint8             num_str[8 + 1]  = {0};
+//    GUISTR_STYLE_T   text_style = {0};/*lint !e64*/
+//    GUISTR_STATE_T   text_state = GUISTR_STATE_BOLD;
+//	
+//    //MMK_GetWinLcdDevInfo(win_id, &lcd_dev_info);
+//    sprintf((char*)num_str, "x %02d", (int)num);
+//	MMI_STRNTOWSTR( temp_wstr, 8, (char*)num_str, strlen(num_str),  strlen(num_str) );
+//	text_str.wstr_ptr = temp_wstr;
+//	text_str.wstr_len = strlen(num_str);
+//	
+//    text_style.font = SONG_FONT_16;
+//    text_style.font_color = MMI_BLACK_COLOR;
+//
+//	GUISTR_DrawTextToLCDInRect( 
+//		(const GUI_LCD_DEV_INFO *)&lcd_dev_info,
+//		&test_rect,
+//		&test_rect,
+//	    (const MMI_STRING_T     *)&text_str,
+//	    &text_style,
+//	    text_state,
+//	    GUISTR_TEXT_DIR_AUTO);
+//}
+
+
+//	PUBLIC void str_test(void)
 //	{
-//	    MMK_StopTimer(0);
+//	    uint8 test_name[1000];
+//	    wchar   file_name[MMIBROWSER_DL_FILE_FULL_PATH_MAX_LEN + 1] = {0};
+//
+//	    MMIAPICOM_WstrToStr(file_name, (uint8*)test_name);
+//
 //	}
-//	PUBLIC void MMIMANMENU_EnterSetting(uint32 param1, uint32 param2)
-//	{
-//		g_test_timer = MMK_CreateTimerCallback(5*1000, Test_Callback, PNULL, FALSE);
-//	    MMIAPIMENU_EnterSetting();
-//	}
-
-
-//
-SCI_CreatePeriodTimer
-//
-SCI_CreateTimer();
-SCI_DeactiveTimer(ptr);
-SCI_IsTimerActive(ptr);
-SCI_DeleteTimer(ptr);
-//
-SCI_ChangeTimer(ptr);
-SCI_ActiveTimer(ptr);
-
-// 背光, 上锁
-app:setting/c/mmiset_func.c  MMIAPISET_GetAutoBoardKeyMS
-source:mmi_app\kernel\c\mmi_default.c  void^MMIDEFAULT_StartAutoKeylockTimer
-
-// timer中无法关闭win:
-//	MMK_DelayUpdateScreen
-//	MMITHEME_SetUpdateDelayCount
-//	MMITHEME_GET_MUTEX
-
 
 
 [1.4] MSG
@@ -242,30 +228,14 @@ source:mmi_kernel_sys\source\c\mmk_window.c  ^CreateWin( )
 
 
 
-[1.8] 
+[1.8] Sleep
+//
+//	SCI_Sleep(50);
 
 
 
-[1.9] sms_member
-// sms_member
-app:sms\c\mmisms_editsmswin.c
-//        uint8 i = 0;
-//        uint8 aaaaa = 0;
-//		SMS_HANDLE_T sms_ret = PNULL;
-//		for(i=0;i<48;i++)
-//		{
-//			sms_ret = MMISMSAPP_SaveSms(op_data,PNULL,PNULL,PNULL);
-//			if(i>40)
-//			{
-//				aaaaa = 0;
-//			}
-//			else if(i>10)
-//			{
-//				aaaaa = 0;
-//			}
-//			if(PNULL==sms_ret)
-//				break;
-//		}
+
+[1.9] 
 
 
 
@@ -320,52 +290,84 @@ Save:node\C\study\Macro_patch_8910.h  __Trace__
 
 
 
-[1.14] 
+[1.14] select_sim
+// select_sim
+//	MMIAPISET_GetFlyMode()
+
+### rxlevel_step
+//		==>HandleNetworkStatusInd
+//		====>MAIN_SetIdleRxLevel
+//		======>0
+//		==>HandleScellRssiInd
+//		====>.srri_ind.rxlev       
+//		======>.g_service_rxlev_map  # 107
+//		======>MMIPHONE_GetRSSIMap   # 8910
+app:phone\c\mmiphone.c  HandleScellRssiInd
 
 
-[1.15] 
 
+[1.15] sim--显示单卡
+// code
+Save:node\C\study\Macro_doc_8910.h  __ELECTRIC__
 
+### 显示单卡
+app:phone/c/mmiphone.c  MMIAPIPHONE_GetSimExistedStatus
+//#if 0//defined IDLE_NETWORK_ONE_SIM_SHOW_EXIST_STYLE
+//	if(dual_sys==MN_DUAL_SYS_1)
+//		return FALSE;
+//	else if(dual_sys==MN_DUAL_SYS_2)
+//		return TRUE;
+//#else
+//    if (dual_sys >= MMI_DUAL_SYS_MAX)
+//    {
+//        return FALSE;
+//    }
+//    
+//    return(s_sim_existed_status[dual_sys]);
+//#endif
 
-[1.16] draw str wchar
-//{
-//    GUI_LCD_DEV_INFO  lcd_dev_info = {0, 0};
-//    GUI_RECT_T        test_rect   = {0, 0, 239, 25};
-//    MMI_STRING_T      text_str = {0};
-//    wchar             temp_wstr[8 + 1] = {0};
-//    uint8             num_str[8 + 1]  = {0};
-//    GUISTR_STYLE_T   text_style = {0};/*lint !e64*/
-//    GUISTR_STATE_T   text_state = GUISTR_STATE_BOLD;
-//	
-//    //MMK_GetWinLcdDevInfo(win_id, &lcd_dev_info);
-//    sprintf((char*)num_str, "x %02d", (int)num);
-//	MMI_STRNTOWSTR( temp_wstr, 8, (char*)num_str, strlen(num_str),  strlen(num_str) );
-//	text_str.wstr_ptr = temp_wstr;
-//	text_str.wstr_len = strlen(num_str);
-//	
-//    text_style.font = SONG_FONT_16;
-//    text_style.font_color = MMI_BLACK_COLOR;
 //
-//	GUISTR_DrawTextToLCDInRect( 
-//		(const GUI_LCD_DEV_INFO *)&lcd_dev_info,
-//		&test_rect,
-//		&test_rect,
-//	    (const MMI_STRING_T     *)&text_str,
-//	    &text_style,
-//	    text_state,
-//	    GUISTR_TEXT_DIR_AUTO);
-//}
+app:phone/c/mmiphone.c  MMIAPIPHONE_GetSimExistedNum
+//#if 0//defined IDLE_NETWORK_ONE_SIM_SHOW_EXIST_STYLE
+//    return 1;
+//#else
+//    return num;
+//#endif
 
 
-//	PUBLIC void str_test(void)
+
+[1.16] timer
+//	LOCAL uint8 g_test_timer  = 0;
+//	LOCAL void Test_Callback(uint8 timer_id, uint32 param)
 //	{
-//	    uint8 test_name[1000];
-//	    wchar   file_name[MMIBROWSER_DL_FILE_FULL_PATH_MAX_LEN + 1] = {0};
-//
-//	    MMIAPICOM_WstrToStr(file_name, (uint8*)test_name);
-//
+//	    MMK_StopTimer(0);
+//	}
+//	PUBLIC void MMIMANMENU_EnterSetting(uint32 param1, uint32 param2)
+//	{
+//		g_test_timer = MMK_CreateTimerCallback(5*1000, Test_Callback, PNULL, FALSE);
+//	    MMIAPIMENU_EnterSetting();
 //	}
 
+
+//
+SCI_CreatePeriodTimer
+//
+SCI_CreateTimer();
+SCI_DeactiveTimer(ptr);
+SCI_IsTimerActive(ptr);
+SCI_DeleteTimer(ptr);
+//
+SCI_ChangeTimer(ptr);
+SCI_ActiveTimer(ptr);
+
+// 背光, 上锁
+app:setting/c/mmiset_func.c  MMIAPISET_GetAutoBoardKeyMS
+source:mmi_app\kernel\c\mmi_default.c  void^MMIDEFAULT_StartAutoKeylockTimer
+
+// timer中无法关闭win:
+//	MMK_DelayUpdateScreen
+//	MMITHEME_SetUpdateDelayCount
+//	MMITHEME_GET_MUTEX
 
 
 [1.17] time
@@ -378,16 +380,40 @@ Save:node\C\study\Macro_patch_8910.h  __Trace__
 //    TM_GetSysTimeEx(&timeX);
 
 
-[1.18] press key
-//dial edit--press
-//
-//	HandleMSGKbd--MMK_DispMsgToWin
-//	ImHandleMsg--AppHandle
-//	CommitData--MSG_NOTIFY_IM_COMMIT
-//	playkeypadtoneTTS
-//	//dial edit--set
-//	GUIIM_SetNotify
-//	MMIAPISET_PlayRing
+[1.18] __cursor__
+// 不显示 cursor
+MS_MMI_Main/source/mmi_ctrl/source/editbox/c/ctrlbaseflex_cursor.c  void^FillCursorColor
+//	#ifdef WIN32
+//	#endif
+
+
+// 不显示 cursor timer
+//		==>TextEditCtrlHandleMsg
+//		====>BASEFLEX_HandleCursorTimer
+//		======>BASEFLEX_DisplayCursor
+//		========>BASEFLEX_StartCursorTimer
+ctrl:editbox\c\ctrlbaseflex_display.c   BaseFlexCtrlDisplayAll
+
+
+// cursor--draw
+ctrl:editbox\c\ctrlbaseflex_cursor.c  void^FillCursorColor
+//#ifdef WIN32
+//	{
+//    	static uint16  test_disable_cursor = 0;
+//		if(test_disable_cursor>0)
+//			return;
+//    }
+//#endif
+
+// cursor--关定时器--没有timer消息
+ctrl:editbox\c\ctrlbaseflex_cursor.c   BASEFLEX_StartCursorTimer
+//#ifdef WIN32
+//	{
+//    	static uint16  test_disable_cursor = 0;
+//		if(test_disable_cursor>0)
+//			return;
+//    }
+//#endif
 
 
 [1.19] Rect
@@ -408,7 +434,7 @@ Save:node\C\study\Macro_patch_8910.h  __Trace__
 
 
 
-[2.1] __lock__
+[1.21] __lock__
 //
 app:keylock\c\mmikl_keylock.c  MMIAPIKL_LockPhone
 app:keylock\c\mmikl_keylock.c  MMIAPIKL_UnlockPhone
@@ -424,7 +450,7 @@ app:setting\c\mmiset_security.c  MMI_RESULT_E^^HandleSetAutoKeyLockWindow
 app:keylock\c\mmikl_keylock.c  KEYLOCK_PRESS_LSK_UNLOCK
 
 
-[2.2] light
+[1.22] light
 //
 source:mmi_app\kernel\c\mmi_default.c  KEYLOCK_PRESS_ANY_KEY_BACKLIGHT
 //
@@ -475,358 +501,13 @@ app:idle\c\mainapp.c  MMI_KEYLOCK_SCREENSAVER_D11Y_STYLE
 
 
 
-[2.3] ADN FDN SDN
-//
-//	ADN Abbreviated dialing number
-//	FDN Fixed dialer number
-//	BDN Barred dialing numbers
-//	LND Last number dialed
-//	SDN Service dialing number
+[1.23] 
 
-//	ADN(SIM 电话簿) 缩位拨号。数字 + #，然后按SNED键。
-//	FDN(SIM 固定拨号) 固定拨号。当启用后，只能拨打所设置的号码，来电不受影响。需要输入PIN2码
-//	能否使用固定拨号功能取决于SIM卡类型以及网络商是否提供此功能
-//	MSISDN(SIM 保护号码)
-//	EN(SIM 紧急号码)
-//	LND(合成 ME 和 SIM 最后拨号)
-//	MSD(SIM 未接听号码)
-//	ME(ME 电话簿)
-//	MT(合成 ME 和 SIM 电话簿)
-//	LIC(ME 接听号码)
-//	SDN (系统拨叫号码) 网络服务拨号。固化的用户不能编辑。
 
-//SIM卡中最多能存放的电话号码数量等于:AND+FDN+SDN
+[1.24] 
 
 
-[2.4] Dtmf
-//	DefaultDtmf
+[1.25] 
 
-//
-
-
-[2.5] CC--msg, 静默电话
-//	3529 [dial_tts] play result = 1   
-//	// MMICC_HandlePsMsg                                                                             	                                                                	0:02:16.475  	
-//	5212 ccapp.c:enter function CC_HandlePsMsg(), msg_id = 41365      
-//	8700 [dial_tts] is_incoming_call_ring = 0 
-//	10996 [dial_tts] play handle = 18677760
-//	11700 [dial_tts] play result = 1 
-//	// 41317--APP_MN_SETUP_IND
-//	12194 ccapp: CC_HandlePsMsg->APP_MN_SETUP_IND  
-//	12199 CC_CallSetupIndEx  calling_num_present = 1 
-
-
-### 静默电话(拨出)
-//		==>MMICC_HandlePsMsg
-//		====>case^APP_MN_ALERTING_IND                # 收到振铃提示事件的处理
-//		======>CC_CallAlertingInd                    # 2G网络回铃音处理
-//		======>CC_CallEarlyMediaInd                  # volte网络回铃音处理
-//		========>case^MN_CALL_REMOTE_USER_ALERTING   # 收到对端发送来的ALERT消息
-//		==========>MNPHONE_StartVolteCodec           # 可放在接通后调用
-app:cc\c\mmicc_app.c  case^APP_MN_ALERTING_IND
-//	StopLocalNetRing
-//	PlayLocalNetRing  # no use
-//		====>case^APP_MN_CALL_START_IND              # ring
-//		======>CC_CallStartInd                       # 
-//		========>MMICC_ConstructVoiceCodec           # 不要关，关了后都没声音
-//		====>case^APP_MN_SYNC_IND                    # ring, MMISRVAUD_TYPE_VOICE
-//		======>CC_SyncInd                            # 
-//		========>CC_OpenAudioTunnel                  # //bt
-//		===========>MMICC_ConstructVoiceCodec        # no use
-
-
-### 静默电话(拨出)
-source:mmi_app\kernel\c\mmi_default.c  BOOLEAN^DefaultSideKey
-// log:
-// CC_MT_CONNECTING_STATE          # 打进
-// CC_MO_CONNECTING_STATE          # 打出
-// CC_IN_CALL_STATE                # 1 
-// CC_CALL_CONNECTED_STATE         # 接通
-// MMICC_IsExistIncommingCall()    # 打进，未接通
-
-
-[2.6] SMS--tp input
-// 1
-//DispatchMSGTpUp
-// 2
-//TpDownCtrlHandleTpMsg
-//TextEditCtrlHandleMsg
-//BaseEditCtrlHandleMsg
-// 4
-//CTRLIM_SetInput
-// 5
-//SetParameter
-
-
-
-[2.7] __cursor__
-// 不显示 cursor
-MS_MMI_Main/source/mmi_ctrl/source/editbox/c/ctrlbaseflex_cursor.c  void^FillCursorColor
-//	#ifdef WIN32
-//	#endif
-
-
-// 不显示 cursor timer
-//		==>TextEditCtrlHandleMsg
-//		====>BASEFLEX_HandleCursorTimer
-//		======>BASEFLEX_DisplayCursor
-//		========>BASEFLEX_StartCursorTimer
-ctrl:editbox\c\ctrlbaseflex_display.c   BaseFlexCtrlDisplayAll
-
-
-// cursor--draw
-ctrl:editbox\c\ctrlbaseflex_cursor.c  void^FillCursorColor
-//#ifdef WIN32
-//	{
-//    	static uint16  test_disable_cursor = 0;
-//		if(test_disable_cursor>0)
-//			return;
-//    }
-//#endif
-
-// cursor--关定时器--没有timer消息
-ctrl:editbox\c\ctrlbaseflex_cursor.c   BASEFLEX_StartCursorTimer
-//#ifdef WIN32
-//	{
-//    	static uint16  test_disable_cursor = 0;
-//		if(test_disable_cursor>0)
-//			return;
-//    }
-//#endif
-
-
-
-
-[2.8] 
-
-
-[2.9] select_sim
-// select_sim
-//	MMIAPISET_GetFlyMode()
-
-### rxlevel_step
-//		==>HandleNetworkStatusInd
-//		====>MAIN_SetIdleRxLevel
-//		======>0
-//		==>HandleScellRssiInd
-//		====>.srri_ind.rxlev       
-//		======>.g_service_rxlev_map  # 107
-//		======>MMIPHONE_GetRSSIMap   # 8910
-app:phone\c\mmiphone.c  HandleScellRssiInd
-
-
-
-[2.10] Sleep
-//
-//	SCI_Sleep(50);
-
-
-
-[2.11] 
-
-
-[2.12] 
-
-
-
-[2.13] Browser--------
-//
-app:browser/control/src/brw_control_PIC.c uint32^Brw_InitImageListInfo
-//#if 1//
-//	    {
-//	    	BRW_IMAGE_INFO_LIST_T img_add = {0};
-//			
-//			img_add.image_info.url_ptr = "aaaaa";
-//			img_add.image_info.url_len = strlen(img_add.image_info.url_ptr);
-//			img_add.image_info.mime_type = BRW_MIME_IMG_PNG;
-//			img_add.image_data_ptr = "aaaaa";
-//			img_add.image_data_len = strlen(img_add.image_data_ptr);
-//			img_add.next = PNULL;
-//	        BrwInsertImageItem(&img_add);
-//			
-//	    }
-//#endif
-
-
-[2.14] BT-msg
-//
-app:bt/c/mmibt_app.c MMIBT_CallBackFunc
-app:bt/c/mmibt_app.c MMIBT_A2DPCallBackFunc
-//	PUBLIC void MMIBT_A2DPCallBackFunc_Test(uint16 mode)
-//	{
-//	    BT_MSG_T dg_msg;
-//	    if(mode==1)
-//	    {
-//		    dg_msg.msg_id     = ID_STATUS_AVRCP_CONNECT_COMPLETE;//0x100A0008
-//		    dg_msg.status     = BT_SUCCESS;
-//		    dg_msg.body_size  = 0;
-//		    dg_msg.body_ptr   = NULL;
-//		    MMIBT_A2DPCallBackFunc( &dg_msg );
-//			
-//		    dg_msg.msg_id     = ID_STATUS_HFAG_HFU_CLCC;//0x10010001
-//		    MMIBT_CallBackFunc( &dg_msg );
-//		}
-//		else
-//		{
-//		    dg_msg.msg_id     = ID_STATUS_A2DP_DISCONNECTED;//0x100A0008
-//		    dg_msg.status     = BT_SUCCESS;
-//		    dg_msg.body_size  = 0;
-//		    dg_msg.body_ptr   = NULL;
-//		    MMIBT_A2DPCallBackFunc( &dg_msg );
-//			
-//		    dg_msg.msg_id     = ID_STATUS_CM_VISIBLE_RES;//0x10010001
-//		    MMIBT_CallBackFunc( &dg_msg );
-//		}
-//		
-//	}
-
-
-
-[2.15] Test----key id
-//
-app:eng/c/mmieng_uitestwin.c  TestKeyboard
-//#if 1//def WIN32
-//	{
-//    	wchar               disp_text[20] = {0};
-//	    char 		        key_text[20] ={0};
-//		MMI_STRING_T        string = {0};
-//	    GUISTR_STYLE_T      text_style = {0};
-//	    GUISTR_STATE_T      state = GUISTR_STATE_ALIGN|GUISTR_STATE_WORDBREAK|GUISTR_STATE_SINGLE_LINE;
-//		
-//        draw_rect.left = 6;
-//        draw_rect.top = 270;
-//        draw_rect.right = 240;
-//        draw_rect.bottom = 300;
-//        LCD_FillRect(&lcd_dev_info, draw_rect, MMI_WHITE_COLOR);
-//		
-//        sprintf((char*)key_text, "key:%d", key_msg_id);
-//        string.wstr_len = strlen(key_text);
-//        MMI_STRNTOWSTR(disp_text, 20, (uint8*)key_text,string.wstr_len,string.wstr_len);
-//        string.wstr_ptr = disp_text;
-//        
-//        // display
-//        text_style.align = ALIGN_HVMIDDLE;
-//        text_style.font = MMI_DEFAULT_TEXT_FONT;
-//        text_style.font_color = MMI_BLACK_COLOR;
-//
-//        GUISTR_DrawTextToLCDInRect( 
-//            (const GUI_LCD_DEV_INFO *)&lcd_dev_info,
-//            (const GUI_RECT_T      *)&draw_rect,       //the fixed display area
-//            (const GUI_RECT_T      *)&draw_rect,       //ó??§òa???Dμ?êμ?ê??óò
-//            (const MMI_STRING_T    *)&string,
-//            &text_style,
-//            state,
-//            GUISTR_TEXT_DIR_AUTO
-//            ); 
-//    }
-//#endif
-
-
-//
-ATEST_SUPPORT
-
-
-[2.16] sim--显示单卡
-// code
-Save:node\C\study\Macro_doc_8910.h  __ELECTRIC__
-
-### 显示单卡
-app:phone/c/mmiphone.c  MMIAPIPHONE_GetSimExistedStatus
-//#if 0//defined IDLE_NETWORK_ONE_SIM_SHOW_EXIST_STYLE
-//	if(dual_sys==MN_DUAL_SYS_1)
-//		return FALSE;
-//	else if(dual_sys==MN_DUAL_SYS_2)
-//		return TRUE;
-//#else
-//    if (dual_sys >= MMI_DUAL_SYS_MAX)
-//    {
-//        return FALSE;
-//    }
-//    
-//    return(s_sim_existed_status[dual_sys]);
-//#endif
-
-//
-app:phone/c/mmiphone.c  MMIAPIPHONE_GetSimExistedNum
-//#if 0//defined IDLE_NETWORK_ONE_SIM_SHOW_EXIST_STYLE
-//    return 1;
-//#else
-//    return num;
-//#endif
-
-
-### __AoledaCard__  (107不可擦除/8910升级可保留)
-// nv  8910/107
-Save:node\C\study\Macro_nv_8910.h __Card__
-
-// card--timer
-//		==>IdleWin_HandleMsg
-//		====>MSG_OPEN_WINDOW
-//		======>checkStartEleGuarCardTimer
-//		      8910:已激活忽略;8小时有卡激活;5分钟测试激活
-//		      107: 6小时未激活; wait sms/call
-app:idle\c\mainapp.c  case^MSG_OPEN_WINDOW
-app:idle\c\mainapp.c  case^MSG_TIMER
-// card--view
-//		==>EngShowGuaranteeCardString
-//		====>NV_ELECTRIC_GUARANTEE_CARD
-//		==>MMIAPIENG_ViewElectircGuanateeCard  # 107
-//		====>getEleGuaranteeCard
-// card--reset
-//		==>HandleResetElectircQueryWinMsg
-//		====>resetTimerInfo
-//		====>checkStartEleGuarCardTimer
-// card--test
-//		==>testEleGuarCard      # 5分钟测试激活
-//		====>HandleEleGuarCard  # (第一次指令有效)
-app:eng\c\mmieng_win.c  MMIENG_VIEW_GUANATEECARD_TAB
-// card--sms/call  # 107
-//		==>AOLEDA_call_connected_handle
-//		==>setEleGuaranteeCard
-//		==>setEleCardCreatedInfo
-app:eng\c\mmieng_win.c  void^AOLEDA_call_connected_handle
-
-
-### __SpdeCard__ (不可擦除)
-//		==>initSpdeEleGuaranteeCard
-app:eng\c\mmieng_win.c  void^SEGC_call_connected_handle
-// card--timer
-//		==>IdleWin_HandleMsg
-//		====>MSG_OPEN_WINDOW
-//		======>StartSpdeEleGuarCardTimer
-app:idle\c\mainapp.c  case^MSG_OPEN_WINDOW
-
-
-
-[2.17] 
-
-
-
-[2.18] 
-
-
-[2.19] 
-
-
-
-
-
-
-[2.20] 
-
-
-[2.21] 
-
-
-[2.22] 
-
-
-[2.23] 
-
-
-[2.24] 
-
-
-[2.25] 
 
 

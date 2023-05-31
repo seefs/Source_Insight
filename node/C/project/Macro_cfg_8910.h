@@ -1,317 +1,32 @@
 
-
 //目录:
-// 1. 
-Save:node\C\project\Macro_cfg_8910.h \[1.1\] AUDIO, TONE
-Save:node\C\project\Macro_cfg_8910.h \[1.2\] //PB
-Save:node\C\project\Macro_cfg_8910.h \[1.3\] //SMS
-Save:node\C\project\Macro_cfg_8910.h \[1.4\] 
-Save:node\C\project\Macro_cfg_8910.h \[1.5\] 
-Save:node\C\project\Macro_cfg_8910.h \[1.6\] 
-Save:node\C\project\Macro_cfg_8910.h \[1.7\] RECORD
-Save:node\C\project\Macro_cfg_8910.h \[1.8\] LCD_SIZE---------------移 Macro_info_{1}
-Save:node\C\project\Macro_cfg_8910.h \[1.9\] 
-Save:node\C\project\Macro_cfg_8910.h \[1.10\] //USB
-Save:node\C\project\Macro_cfg_8910.h \[1.11\] CTA
-Save:node\C\project\Macro_cfg_8910.h \[1.12\] //CALL record
-Save:node\C\project\Macro_cfg_8910.h \[1.13\] simulator
-Save:node\C\project\Macro_cfg_8910.h \[1.14\] torch
-Save:node\C\project\Macro_cfg_8910.h \[1.15\] 
-Save:node\C\project\Macro_cfg_8910.h \[1.16\] 
-//
-Save:node\C\project\Macro_cfg_8910.h \[2.1\] IM
-Save:node\C\project\Macro_cfg_8910.h \[2.2\] DTMF, Dial, SIM, 天线
-Save:node\C\project\Macro_cfg_8910.h \[2.3\] 电子保卡
-Save:node\C\project\Macro_cfg_8910.h \[2.4\] tihu--------------语音王
-Save:node\C\project\Macro_cfg_8910.h \[2.5\] PLS---------------语音王
-Save:node\C\project\Macro_cfg_8910.h \[2.6\] SIMPLIFY_TTS------简易版语音王
-Save:node\C\project\Macro_cfg_8910.h \[2.7\] FM
-Save:node\C\project\Macro_cfg_8910.h \[2.8\] WIFI
-Save:node\C\project\Macro_cfg_8910.h \[2.9\] SS
-Save:node\C\project\Macro_cfg_8910.h \[2.10\] Tool
-Save:node\C\project\Macro_cfg_8910.h \[2.11\] lib--------------第3方
-Save:node\C\project\Macro_cfg_8910.h \[2.12\] Lib--------------平台
-Save:node\C\project\Macro_cfg_8910.h \[2.13\] 
-Save:node\C\project\Macro_cfg_8910.h \[2.14\] 
-Save:node\C\project\Macro_cfg_8910.h \[2.15\] marco---------------移 Macro_c_path_sprd.h
-Save:node\C\project\Macro_cfg_8910.h \[2.16\] mem
-Save:node\C\project\Macro_cfg_8910.h \[2.17\] FLASH (大、/小版本)
-Save:node\C\project\Macro_cfg_8910.h \[2.18\] build map
-Save:node\C\project\Macro_cfg_8910.h \[2.19\] 
-Save:node\C\project\Macro_cfg_8910.h \[2.20\] 
+Save:node\C\project\Macro_cfg_8910.h \[1.1\] IM
+Save:node\C\project\Macro_cfg_8910.h \[1.2\] DTMF, Dial, SIM, 天线
+Save:node\C\project\Macro_cfg_8910.h \[1.3\] 电子保卡
+Save:node\C\project\Macro_cfg_8910.h \[1.4\] tihu--------------语音王
+Save:node\C\project\Macro_cfg_8910.h \[1.5\] PLS---------------语音王
+Save:node\C\project\Macro_cfg_8910.h \[1.6\] SIMPLIFY_TTS------简易版语音王
+Save:node\C\project\Macro_cfg_8910.h \[1.7\] 
+Save:node\C\project\Macro_cfg_8910.h \[1.8\] 
+Save:node\C\project\Macro_cfg_8910.h \[1.9\] SS
+Save:node\C\project\Macro_cfg_8910.h \[1.10\] simulator
+Save:node\C\project\Macro_cfg_8910.h \[1.11\] lib--------------第3方
+Save:node\C\project\Macro_cfg_8910.h \[1.12\] Lib--------------平台
+Save:node\C\project\Macro_cfg_8910.h \[1.13\] LCD_SIZE---------------移 Macro_info_{1}
+Save:node\C\project\Macro_cfg_8910.h \[1.14\] 
+Save:node\C\project\Macro_cfg_8910.h \[1.15\] marco---------------移 Macro_c_path_sprd.h
+Save:node\C\project\Macro_cfg_8910.h \[1.16\] mem
+Save:node\C\project\Macro_cfg_8910.h \[1.17\] FLASH (大、/小版本)
+Save:node\C\project\Macro_cfg_8910.h \[1.18\] build map
+Save:node\C\project\Macro_cfg_8910.h \[1.19\] 
+Save:node\C\project\Macro_cfg_8910.h \[1.20\] 
 // 其他标号
 Save:Help\\DefaultFile\\Macro_Node_Num.h
 
 
 
 
-[1.1] AUDIO, TONE
-
-
-// 双听筒
-//	DUAL_RECEIVER_SWITCH_SUPPORT
-SPDE_PRJ/K220U_HYBL_H660A_HTX_LTC/project_UIS8910_ROM_16MB_DS_USER.mk
-
-
-## TONE
-SPDE_PRJ/K220U_HYBL_H660A/uis8910_phone_user_base_config.cfg  YOUNGTONE_TTS_LIB
-// YOUNGTONE_TTS_LIB = MAN
-
-
-[1.2] 
-
-[1.3] 
-
-
-
-[1.4] 
-
-
-[1.5] 
-
-
-[1.6] 
-
-
-
-[1.7] RECORD
-// MMI_RECORD_SUPPORT
-lib/modem/UIS8910_ROM_16MB_DS_USER/nvitem/RF_calib.nvm
-lib/modem/UIS8910_ROM_16MB_DS_USER/nvitem/RF_nv.nvm
-lib/modem/UIS8910_ROM_16MB_DS_USER/nvitem/audio_arm_6531efm.nvm
-lib/modem/UIS8910_ROM_16MB_DS_USER/nvitem/audio_calib_VQE.nvm
-
-
-
-
-[1.8] Lcd
-// 128*128
-SPDE_PRJ\K220U_L680_QQVGA\uis8910_phone_user_base_config.cfg 128X128
-
-// 128*160
-SPDE_PRJ\K220U_QQVGA\uis8910_phone_user_base_config.cfg 128X160
-
-// 128*160H
-SPDE_PRJ\K220U_SHY_S13_HQQVGA\uis8910_phone_user_base_config.cfg 128X160
-SPDE_PRJ\K220U_SHY_S13_HQQVGA\uis8910_phone_user_base_config.cfg MMI_RES_ORIENT
-
-// 160*128
-SPDE_PRJ\K220U_QQVGA\uis8910_phone_user_base_config.cfg 160X128
-SPDE_PRJ\K220U_LBR_L691_HS_L51_HQQVGA\uis8910_phone_user_base_config.cfg 160X128
-
-// LAND
-//	MMI_RES_ORIENT_LANDSCAPE
-//	MAINLCD_LOGIC_ANGLE_90
-//	MAINLCD_DEV_SIZE_160X128
-//	MAINLCD_SIZE_160X128
-//	MMI_RES_DIR_mmi_res_160x128
-
-// MAINLCD
-//	MAINLCD_SIZE_176X220
-//	SPDE_UI_176X220_STYLE
-
-### new add
-// 1.add file
-source:resource\mmi_res_160x128\
-source:winsimulator_tp/skin/
-source:winsimulator_tp/skin/mssim_duallcd_160_128_T.ini
-source:winsimulator_tp/skin/mssim_duallcd_160_128_T.png
-// 2.cfg
-K220SU.bat  160X128
-// 107
-prj:project_{cur}.mk  MAINLCD_DEV_SIZE = 160X128
-prj:project_{cur}.mk  MAINLCD_SIZE = 128X160
-prj:project_{cur}.mk  MMI_RES_DIR = mmi_res_160x128
-prj:project_{cur}.mk  MMI_RES_ORIENT = LANDSCAPE
-prj:project_{cur}.mk  MAINLCD_LOGIC_ANGLE = 90
-// 8910
-prj:{cfg}.cfg  MAINLCD_DEV_SIZE = 160X128
-prj:{cfg}.cfg  MAINLCD_SIZE = 128X160
-prj:{cfg}.cfg  MMI_RES_DIR = mmi_res_160x128
-prj:{cfg}.cfg  MMI_RES_ORIENT = LANDSCAPE
-prj:{cfg}.cfg  MAINLCD_LOGIC_ANGLE = 90
-// 3.cfg
-//	MAINLCD_SIZE_176X220
-//	SPDE_UI_176X220_STYLE
-// 4.mk
-//  160X128
-make/
-make/simulator_main/
-make/simulator_main/simulator_main.mk
-
-
-[1.9] 
-
-
-
-[1.10] 
-
-
-
-[1.11] CTA
-// PLMN
-prj:project_{cur}.mk  MMI_PREFER_PLMN_SUPPORT
-// PLMN--popup
-//  ----都改为: TXT_COMPLETE
-app:setting/c/mmiset_callwin.c  BOOLEAN^MMIAPISET_HandlePreferNetworkListCnf
-
-
-// 单软多硬
-prj:{cfg}.cfg  FORCECHANGE_SUPPORT  = TRUE
-prj:{cfg}.cfg  DELTA_NV_CONFIG_PATH = delta_nv   
-//
-prj:{cfg}.cfg  DELTA_NV_BIN_SUPPORT = TRUE         
-prj:{cfg}.cfg  DELTA_NV_PATITION_SUPPORT = TRUE
-
-
-[1.12] 
-
-
-
-
-[1.13] simulator
-// simulator
-make\simulator\simulator.ini  MMI_LCD_176_220
-make\simulator_idh\simulator.ini   MMI_LCD_176_220
-make\simulator_main\simulator.ini   MMI_LCD_176_220
-// 
-app:cs\h\mmics_position.h 
-app:dcd\h\mmidcd_position.h 
-// ini(copy)--8910
-make/simulator_idh/simulator_idh.mk  mssim_duallcd_
-// ini(copy)--107
-make/simulator_main/simulator_main.mk  mssim_duallcd_
-
-// skin name
-make\simulator\simulator.mk  SKIN_FILE_NAME
-make\simulator_idh\simulator_idh.mk  SKIN_FILE_NAME
-make\simulator_main\simulator_main.mk  SKIN_FILE_NAME
-// skin name _T
-make\simulator_idh\simulator_idh.mk  SUFFIX
-make\simulator_main\simulator_main.mk  SUFFIX
-// skin file
-MS_MMI_Main\source\winsimulator_tp\skin\
-//   mssim_duallcd_160_128
-//   mssim_duallcd_160_128_T   90^
-
-
-// vs2010--lib
-make\simulator_main\simulator_main.mk  devps
-// 
-
-
-[1.14] __torch__
-
-// 1.ENG_MANU_TORCH, ENG_MANU_TORCH_PATCH  (软开)
-//		==>ID_ENG_TEST_MANU_TORCH
-//		====>旧
-//		======>(1)上键点亮，下键关闭 (no use)
-//		======>(2)侧边开关
-//		========>ENG_MANU_TORCH_HELP_STR1
-//		====>107新, ENG_MANU_TORCH_107_STYLE
-//		======>(1)上键点亮，下键关闭
-//		========>TORCH_SUPPORT                #软开
-//		======>(2)侧边开关
-//		========>ENG_MANU_TORCH_HELP_STR1     #硬开
-app:eng\c\mmieng_uitestwin.c  case^ID_ENG_TEST_MANU_TORCH
-//		====>8910
-//		========>TXT_ENG_TORCHNOTE_HELP_STR1   #硬开
-//		========>TXT_ENG_TORCHNOTE             #软开 1line
-//		========>TXT_ENG_TORCH_TEST            #软开 2line
-//		====>107
-//		========>TXT_ENG_TORCHNOTE_HELP_STR1   #硬开
-//		========>TXT_ENG_TORCHNOTE             #软开
-
-// 2.MMI_TORCH_LED_SUPPORT (手机默认开, 手表默认关)
-//		==>"*#555#"
-//		====>ID_ENG_TORCH_LED_TEST
-//		======>上键点亮，下键关闭
-//		==>单项测试style2 (默认未开)
-//		====>ID_ENG_TEST_TORCH_LED
-//		======>上键点亮，下键关闭
-app:eng\c\mmieng_main.c   case^ID_ENG_TORCH_LED_TEST
-//		==>"*#222#"
-//		====>UITestTorchLedTestWinHandleMsg
-app:eng\c\mmieng_uitestwin.c  case^ID_ENG_TEST_TORCH_LED
-
-// 3.TORCH_SUPPORT (手机默认开, 手表默认关)
-//		==>状态条显示
-//		==>shortcut
-
-// 4.mainmenu
-//		==>MMIMAINMENU_StartTorch
-//		==>shortcut
-
-
-
-[1.15] 新宏
-// 新宏
-prj:project_{cur}.mk  BT_LOG_MENU_SUPPORT = FALSE
-prj:project_{cur}.mk  DEBUG_VERSION = FALSE
-prj:project_{cur}.mk  FLASH_SIZE = FALSE
-prj:project_{cur}.mk  FLV_DEC_SUPPORT = FALSE
-prj:project_{cur}.mk  AP_CP_RAM_SIZE = 40X88
-prj:project_{cur}.mk  FLASH_SIZE = 128MBIT
-prj:project_{cur}.mk  SRAM_SIZE = 128MBIT
-prj:project_{cur}.mk   = FALSE
-prj:project_{cur}.mk  xxxxxx = FALSE
-prj:project_{cur}.mk  xxxxxx = FALSE
-prj:project_{cur}.mk  xxxxxx = FALSE
-prj:{cfg}.cfg  CARD_LOG = FALSE
-prj:{cfg}.cfg  MBEDTLS_SUPPORT = FALSE
-prj:{cfg}.cfg  ENABLE_HTTPC = FALSE
-//prj:{cfg}.cfg  AVI_DEC_SUPPORT = FALSE
-prj:{cfg}.cfg  FLV_DEC_SUPPORT = FALSE
-prj:{cfg}.cfg  H264_DEC_SUPPORT = FALSE
-prj:{cfg}.cfg  HAS_MODEM_NV = FALSE
-prj:{cfg}.cfg  JPG_DEC_SUPPORT = FALSE
-prj:{cfg}.cfg  MULIT_VARIANT_SUPPORT = FALSE
-//prj:{cfg}.cfg  NETFRONT_SUPPORT = NONE
-prj:{cfg}.cfg  OAUTH_SUPPORT = FALSE
-prj:{cfg}.cfg  PNG_DEC_SUPPORT = NONE
-prj:{cfg}.cfg  SIM_LANGUAGE_SUPPORT = FALSE
-prj:{cfg}.cfg  SMART_PAGING_SUPPORT = FALSE
-prj:{cfg}.cfg  SMSCB_MSG_ID_MAX_NUM = 35
-prj:{cfg}.cfg  UMEM_PRTITION = LARGE
-prj:{cfg}.cfg  TF_LOAD_SUPPORT = FALSE
-prj:{cfg}.cfg  XML_SUPPORT = FALSE
-prj:{cfg}.cfg   = FALSE
-prj:{cfg}.cfg  XML_SUPPORT = FALSE
-prj:{cfg}.cfg  xxxxxx = FALSE
-
-// lang
-prj:project_{cur}.mk  IM_SIMP_CHINESE_SUPPORT = DUAL
-//--开点阵link报错(SPMLAPI_Init)
-prj:{cfg}.cfg  FONT_TYPE_SUPPORT   = DE_BITMAP / VECTOR
-prj:{cfg}.cfg  VECTOR_FONT_SUPPORT = NONE      / DEFAULT
-prj:{cfg}.cfg  VECTOR_TABLE_ADDR   = HIGH
-prj:{cfg}.cfg  VM_TABLE_CONFIG     = SMALL
-//
-prj:{cfg}.cfg  VM_SUPPORT = FALSE
-prj:{cfg}.cfg  VIDEO_RECORD_SUPPORT = FALSE
-prj:{cfg}.cfg  xxxxxx = FALSE
-prj:{cfg}.cfg  xxxxxx = FALSE
-//
-prj:project_{cur}.mk  MMI_MULTI_SIM_SYS = DUAL
-prj:{cfg}.cfg  MULTI_SIM_SYS = DUAL
-prj:{cfg}.cfg  SMART_DUAL_SIM_SUPPORT = FALSE
-// lib
-prj:{cfg}.cfg  TCPIP_SUPPORT = DUAL
-// appmain
-prj:project_{cur}.mk  GBK_SUPPORT = FALSE
-prj:project_{cur}.mk  MMI_BYD_EMAIL_SUPPORT = FALSE
-prj:project_{cur}.mk  CALENDAR_REMINDER_TYPE_SUPPORT = FALSE
-prj:project_{cur}.mk  MMI_PVTEST_SUPPORT = FALSE
-prj:project_{cur}.mk  MMI_IDLE_CUSTOM_WORD_SUPPORT = FALSE
-prj:project_{cur}.mk  MMI_FMM_PICTHUMBNAIL_SUPPORT = FALSE
-prj:project_{cur}.mk  SALES_SUPPORT = FALSE
-prj:project_{cur}.mk  MMI_SMS_VOICE_MAIL_SUPPORT = FALSE
-prj:project_{cur}.mk  MMI_SPEEDDIAL_SUPPORT = FALSE
-prj:project_{cur}.mk  MMI_AUDIOPLAYER_ALBUM_SUPPORT = FALSE
-prj:project_{cur}.mk  MMI_PLMN_LOAD_DEFAULT_SUPPORT = FALSE
-
-
-[2.1] IM
+[1.1] IM
 //IM_ENGINE = NONE
 
 
@@ -321,7 +36,7 @@ Save:node\C\study\Macro_im_8910.h  __input__
 
 
 
-[2.2] DTMF, Dial, SIM, 天线
+[1.2] DTMF, Dial, SIM, 天线
 //
 MMI_DIALPANEL_DTMF_SUPPORT
 
@@ -332,16 +47,37 @@ app:phone\c\mmiphone.c  MMI_RESULT_E^HandleScellRssiInd
 MS_Customize\source\product\driver\gpio\gpio_prod.c  GPIO_SIMIntHandler
 
 
+### ADN FDN SDN
+//	ADN Abbreviated dialing number
+//	FDN Fixed dialer number
+//	BDN Barred dialing numbers
+//	LND Last number dialed
+//	SDN Service dialing number
+
+//	ADN(SIM 电话簿) 缩位拨号。数字 + #，然后按SNED键。
+//	FDN(SIM 固定拨号) 固定拨号。当启用后，只能拨打所设置的号码，来电不受影响。需要输入PIN2码
+//	能否使用固定拨号功能取决于SIM卡类型以及网络商是否提供此功能
+//	MSISDN(SIM 保护号码)
+//	EN(SIM 紧急号码)
+//	LND(合成 ME 和 SIM 最后拨号)
+//	MSD(SIM 未接听号码)
+//	ME(ME 电话簿)
+//	MT(合成 ME 和 SIM 电话簿)
+//	LIC(ME 接听号码)
+//	SDN (系统拨叫号码) 网络服务拨号。固化的用户不能编辑。
+
+//SIM卡中最多能存放的电话号码数量等于:AND+FDN+SDN
 
 
-[2.3] 电子保卡
+
+[1.3] 电子保卡
 
 // 1.本地版(不可擦除)(107)
 prj:project_{cur}.mk   SPDE_ELECTRIC_GUARANTEE_CARD = TRUE
 // nv同网络版
 prj:project_{cur}.mk   NV_CUS_FIXNV_DATA_LEN_128 = TRUE
 // card--set
-Save:node\C\study\Macro_fun_8910.h  __SpdeCard__
+Save:node\C\study\Macro_app_8910sms.h  __SpdeCard__
 
 
 // 2.网络版
@@ -354,14 +90,14 @@ prj:project_{cur}.mk   NV_CUS_FIXNV_DATA_LEN_128 = TRUE
 // 3.本地版(107不可擦除/8910升级可保留)
 prj:project_{cur}.mk   AOLEDA_ELECTRIC_GUARANTEE_CARD = TRUE
 // card--set
-Save:node\C\study\Macro_fun_8910.h  __AoledaCard__
+Save:node\C\study\Macro_app_8910sms.h  __AoledaCard__
 
 
 // 4.销量统计
 Save:node\C\study\Macro_app_8910sms.h  __sales__
 
 
-[2.4] tihu
+[1.4] tihu
 
 //
 prj:project_{cur}.mk  HERO_ENGINE_SUPPORT
@@ -405,11 +141,11 @@ app:heroengine\c\heroEngineApp.c  heroenginedata_eim_tw
 app:heroengine\h\heroengine_mdu_def.h x
 
 
-[2.5] PLS
+[1.5] PLS
 
 
 
-[2.6] SIMPLIFY_TTS
+[1.6] SIMPLIFY_TTS
 //
 prj:project_{cur}.mk  MMI_SIMPLIFY_TTS
 prj:project_{cur}.mk  MMI_SIMPLIFY_ENV_TTS
@@ -424,48 +160,15 @@ prj:project_{cur}.mk  MMI_READPB_ENABLE
 Save:node\C\study\Macro_res_ring_8910.h  __time__
 
 
-[2.7] FM
-// mk
-prj:{cfg}.cfg  FM_SUPPORT = SPRD_V0 
-prj:{cfg}.cfg  FM_VBC_EQ = TRUE                                     ###
-prj:{cfg}.cfg  FM_VBC = TRUE
-//
-prj:{cfg}.cfg  BYD_CUSTOM_FM_TUNNING_STEP = TRUE
-
-// mk--低噪放
-// --代码里面应该默认会判断插入耳机用耳机的，没插耳机用低噪放的
-// --要是不想用耳机的天线用宏控一下
-prj:project_{cur}.mk  FM_S_ANT_SUPPORT = FALSE  # 天线, eng分开测试
-
-
-// test--fm
-app:eng\c\mmieng_uitestwin.c  MMI_RESULT_E^UITestFmWinHandleMsg
-// --打开低噪放 / 用天线
-//        GPIO_SetFmLNA( 1 );
-// --关闭低噪放
-//        GPIO_SetFmLNA( 0 ); //恢复内置天线的GPIO值
+[1.7] 
 
 
 
-[2.8] WIFI
-//
-prj:{cfg}.cfg  WIFI_SUPPORT = UNISOC_RX
-prj:{cfg}.cfg  WIFI_VENDOR = UNISOC 
-
-
-// WIFI
-//		==>MMIAPIENG_StartEngineerMenu
-app:eng/c/mmieng_main.c  MMI_RESULT_E^ENGMainMenuWinHandleMsg
-// 单项测试--menu
-app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_eng
-// 单项测试--WIFI
-app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_app_set
-// 单项测试--WIFI--usb
-app:eng/c/mmieng_uitestwin.c  case^ID_ENG_TEST_WIFI
+[1.8] 
 
 
 
-[2.9] SS
+[1.9] SS
 //MMS--107
 prj:project_{cur}.mk  SCREENSAVER_SUPPORT = TRUE
 
@@ -474,19 +177,39 @@ prj:{cfg}.cfg  SCREENSAVER_SUPPORT = TRUE
 
 
 
-[2.10] Tool
-// CALCULATOR_SUPPORT
-prj:project_{cur}.mk CALCULATOR_SUPPORT
-// STOPWATCH_SUPPORT
-prj:project_{cur}.mk STOPWATCH_SUPPORT
-// CALENDAR_SUPPORT
-prj:project_{cur}.mk CALENDAR_SUPPORT
-// WORLD_CLOCK_SUPPORT
-prj:project_{cur}.mk WORLD_CLOCK_SUPPORT
+[1.10] simulator
+// simulator
+make\simulator\simulator.ini  MMI_LCD_176_220
+make\simulator_idh\simulator.ini   MMI_LCD_176_220
+make\simulator_main\simulator.ini   MMI_LCD_176_220
+// 
+app:cs\h\mmics_position.h 
+app:dcd\h\mmidcd_position.h 
+// ini(copy)--8910
+make/simulator_idh/simulator_idh.mk  mssim_duallcd_
+// ini(copy)--107
+make/simulator_main/simulator_main.mk  mssim_duallcd_
+
+// skin name
+make\simulator\simulator.mk  SKIN_FILE_NAME
+make\simulator_idh\simulator_idh.mk  SKIN_FILE_NAME
+make\simulator_main\simulator_main.mk  SKIN_FILE_NAME
+// skin name _T
+make\simulator_idh\simulator_idh.mk  SUFFIX
+make\simulator_main\simulator_main.mk  SUFFIX
+// skin file
+MS_MMI_Main\source\winsimulator_tp\skin\
+//   mssim_duallcd_160_128
+//   mssim_duallcd_160_128_T   90^
+
+
+// vs2010--lib
+make\simulator_main\simulator_main.mk  devps
+// 
 
 
 
-[2.11] lib
+[1.11] lib
 // fota--alup
 mk: 
 // ADUPS_FOTA_DELETE_SETTING_MENU
@@ -507,7 +230,7 @@ Save:node\C\study\Macro_patch_third.h  zfb_107
 
 
 
-[2.12] Lib
+[1.12] Lib
 
 ### w07U
 // baseLib
@@ -566,14 +289,67 @@ lib\ums9117_240X320BAR_48MB_CAT1_rel\
 lib\ums9117_240X320BAR_48MB_CAT1\
 
 
-[2.13]  
+[1.13]  Lcd
+// 128*128
+SPDE_PRJ\K220U_L680_QQVGA\uis8910_phone_user_base_config.cfg 128X128
+
+// 128*160
+SPDE_PRJ\K220U_QQVGA\uis8910_phone_user_base_config.cfg 128X160
+
+// 128*160H
+SPDE_PRJ\K220U_SHY_S13_HQQVGA\uis8910_phone_user_base_config.cfg 128X160
+SPDE_PRJ\K220U_SHY_S13_HQQVGA\uis8910_phone_user_base_config.cfg MMI_RES_ORIENT
+
+// 160*128
+SPDE_PRJ\K220U_QQVGA\uis8910_phone_user_base_config.cfg 160X128
+SPDE_PRJ\K220U_LBR_L691_HS_L51_HQQVGA\uis8910_phone_user_base_config.cfg 160X128
+
+// LAND
+//	MMI_RES_ORIENT_LANDSCAPE
+//	MAINLCD_LOGIC_ANGLE_90
+//	MAINLCD_DEV_SIZE_160X128
+//	MAINLCD_SIZE_160X128
+//	MMI_RES_DIR_mmi_res_160x128
+
+// MAINLCD
+//	MAINLCD_SIZE_176X220
+//	SPDE_UI_176X220_STYLE
+
+### new add
+// 1.add file
+source:resource\mmi_res_160x128\
+source:winsimulator_tp/skin/
+source:winsimulator_tp/skin/mssim_duallcd_160_128_T.ini
+source:winsimulator_tp/skin/mssim_duallcd_160_128_T.png
+// 2.cfg
+K220SU.bat  160X128
+// 107
+prj:project_{cur}.mk  MAINLCD_DEV_SIZE = 160X128
+prj:project_{cur}.mk  MAINLCD_SIZE = 128X160
+prj:project_{cur}.mk  MMI_RES_DIR = mmi_res_160x128
+prj:project_{cur}.mk  MMI_RES_ORIENT = LANDSCAPE
+prj:project_{cur}.mk  MAINLCD_LOGIC_ANGLE = 90
+// 8910
+prj:{cfg}.cfg  MAINLCD_DEV_SIZE = 160X128
+prj:{cfg}.cfg  MAINLCD_SIZE = 128X160
+prj:{cfg}.cfg  MMI_RES_DIR = mmi_res_160x128
+prj:{cfg}.cfg  MMI_RES_ORIENT = LANDSCAPE
+prj:{cfg}.cfg  MAINLCD_LOGIC_ANGLE = 90
+// 3.cfg
+//	MAINLCD_SIZE_176X220
+//	SPDE_UI_176X220_STYLE
+// 4.mk
+//  160X128
+make/
+make/simulator_main/
+make/simulator_main/simulator_main.mk
 
 
 
-[2.14] 
+[1.14] 
 
 
-[2.15] marco
+[1.15] marco
 ### 107
 //
 make\chip_drv\def_config\UMS9117.cfg
@@ -590,7 +366,7 @@ chip_drv\chip_module\adc\sc2720
 
 
 
-[2.16] mem
+[1.16] mem
 
 // Heap的大小
 config:mem_cfg.c  SCI_STATIC_HEAP_SIZE_THRESHOD
@@ -601,7 +377,7 @@ config:mem_cfg.h  MEM_RWZI_SIZE
 
 
 
-[2.17] FLASH
+[1.17] FLASH
 ### 8910
 prj:project_{cur}.mk  FLASH_SIZE = 128MBITX64MBIT_NEW   # 大版本
 prj:project_{cur}.mk  FLASH_SIZE = 128MBIT              # 小版本
@@ -654,7 +430,7 @@ prj:project_{cur}.mk  SPI_NAND_FLASH -> TRUE   # 串口flash
 
 
 
-[2.18] build map
+[1.18] build map
 //
 tmpPath = build\tmp
 tmp:\\
@@ -690,12 +466,12 @@ build\{cur}_builddir\tmp\link_UIX8910_uis8910ff_refphone_vm.scf  LOAD_FLASH_B_DF
 // 0x60B60000
 
 
-[2.19] 
+[1.19] 
 
 
 
 
-[2.20] 
+[1.20] 
 
 
 

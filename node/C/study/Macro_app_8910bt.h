@@ -6,7 +6,7 @@ Save:node\C\study\Macro_app_8910bt.h \[1.3\]
 Save:node\C\study\Macro_app_8910bt.h \[1.4\] 
 Save:node\C\study\Macro_app_8910bt.h \[1.5\] 
 Save:node\C\study\Macro_app_8910bt.h \[1.6\] 
-Save:node\C\study\Macro_app_8910bt.h \[1.7\] 
+Save:node\C\study\Macro_app_8910bt.h \[1.7\] btModis
 Save:node\C\study\Macro_app_8910bt.h \[1.8\] 
 Save:node\C\study\Macro_app_8910bt.h \[1.9\] 
 Save:node\C\study\Macro_app_8910bt.h \[1.10\] 
@@ -152,8 +152,38 @@ MMIBT_GetBtStatusForIcon
 
 
 
-[1.7] 
+[1.7] __btModis__
 
+// BT-msg
+app:bt/c/mmibt_app.c MMIBT_CallBackFunc
+app:bt/c/mmibt_app.c MMIBT_A2DPCallBackFunc
+//	PUBLIC void MMIBT_A2DPCallBackFunc_Test(uint16 mode)
+//	{
+//	    BT_MSG_T dg_msg;
+//	    if(mode==1)
+//	    {
+//		    dg_msg.msg_id     = ID_STATUS_AVRCP_CONNECT_COMPLETE;//0x100A0008
+//		    dg_msg.status     = BT_SUCCESS;
+//		    dg_msg.body_size  = 0;
+//		    dg_msg.body_ptr   = NULL;
+//		    MMIBT_A2DPCallBackFunc( &dg_msg );
+//			
+//		    dg_msg.msg_id     = ID_STATUS_HFAG_HFU_CLCC;//0x10010001
+//		    MMIBT_CallBackFunc( &dg_msg );
+//		}
+//		else
+//		{
+//		    dg_msg.msg_id     = ID_STATUS_A2DP_DISCONNECTED;//0x100A0008
+//		    dg_msg.status     = BT_SUCCESS;
+//		    dg_msg.body_size  = 0;
+//		    dg_msg.body_ptr   = NULL;
+//		    MMIBT_A2DPCallBackFunc( &dg_msg );
+//			
+//		    dg_msg.msg_id     = ID_STATUS_CM_VISIBLE_RES;//0x10010001
+//		    MMIBT_CallBackFunc( &dg_msg );
+//		}
+//		
+//	}
 
 
 

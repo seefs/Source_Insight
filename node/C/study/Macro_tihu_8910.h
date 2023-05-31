@@ -30,6 +30,9 @@ Save:node\C\study\Macro_tihu_8910.h \[1.20\]
 app:bmiotcard\h\bmiotcardadapter.h  14
 
 //
+//14800337323
+
+//
 //公众号：校贝通
 //绑定小朋友的邀请码 ：448565
 //绑定小朋友的邀请码 ：075051

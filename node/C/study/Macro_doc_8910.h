@@ -2,12 +2,12 @@
 //目录
 Save:node\C\study\Macro_doc_8910.h \[1.1\] Message, keyStatus
 Save:node\C\study\Macro_doc_8910.h \[1.2\] FUN 入口-------------
-Save:node\C\study\Macro_doc_8910.h \[1.3\] //lang
+Save:node\C\study\Macro_doc_8910.h \[1.3\] 
 Save:node\C\study\Macro_doc_8910.h \[1.4\] 
 Save:node\C\study\Macro_doc_8910.h \[1.5\] 说明文档
 Save:node\C\study\Macro_doc_8910.h \[1.6\] Win数据
 Save:node\C\study\Macro_doc_8910.h \[1.7\] tool
-Save:node\C\study\Macro_doc_8910.h \[1.8\] //File-----------------
+Save:node\C\study\Macro_doc_8910.h \[1.8\] 
 Save:node\C\study\Macro_doc_8910.h \[1.9\] test code-------------
 Save:node\C\study\Macro_doc_8910.h \[1.10\] ImageNote
 Save:node\C\study\Macro_doc_8910.h \[1.11\] arm log
@@ -17,7 +17,9 @@ Save:node\C\study\Macro_doc_8910.h \[1.14\]
 Save:node\C\study\Macro_doc_8910.h \[1.15\] ATEST_SUPPORT
 Save:node\C\study\Macro_doc_8910.h \[1.16\] fota----------adups
 Save:node\C\study\Macro_doc_8910.h \[1.17\] fota----------rs
-Save:node\C\study\Macro_doc_8910.h \[1.18\] 
+Save:node\C\study\Macro_doc_8910.h \[1.18\] T卡升级
+Save:node\C\study\Macro_doc_8910.h \[1.19\] 
+Save:node\C\study\Macro_doc_8910.h \[1.20\] 
 
 
 
@@ -40,8 +42,6 @@ Save:node\C\study\Macro_Spr_Fun.h
 
 
 [1.3] 
-//
-Save:node\C\study\Macro_res_8910.h __lang__
 
 
 
@@ -515,7 +515,54 @@ prj:project_{cur}.mk  SPDE_FOTA_TIP_USE_GRAY_IMG = TRUE
 
 
 
-[1.18] 
+[1.18] T卡升级
+### UMS9117--FAQ202172534
+prj:project_{cur}.mk  TF_LOAD_SUPPORT   # 必须开启该宏
+prj:project_{cur}.mk  F_LOAD_PROTECT    #
+// TRUE: 会把TF BOOTLOADER编进主程序第一个SECTOR分区，支持强制升级,在T卡上不用放tfboot.bin，默认支持这种方式
+// FALSE: 只支持工程模式下T卡升级,且T卡上必须包含.pac和T卡热升级tfboot.bin，默认不支持这种方式。
+
+// 升级方法
+//⑴ 在T卡上新建目录 bl_update ，在该目录下放入tfload.pac(将需要升级的PAC文件更名为tfload.pac)
+//⑵ 升级方式:
+
+// A. 强制升级--组合键：
+// 强制升级是指在手机不能正常开机并且BOOT没有损坏的情况下，使用组合键（一般是长按2S左右）直接升级。
+// 如果进入不了强制升级界面，就说明BOOT文件损坏,必须使用PC工具才能重新下载程序。
+// 强制升级过程，不必通过手机备份用户信息。
+
+// 进入强制升级方式为在现在关机状态下按: KEYIN_0_KEYOUT_0 和 KEYIN_1_KEYOUT_1 和 POWER 键组合键。
+// 进入强制升级方式要求（除BOOT区被破坏的特殊情况外）在升级过程中出现断电的异常情况下，
+// 也可以通过强制升级方式进行下载(从头下载不是断点续传)且在任何情况下都不能破坏校准参数。
+
+//注： KEYIN_0_KEYOUT_0 和 KEYIN_1_KEYOUT_1 对应的按键请参考 keymap_cfg.c (UMS9117 平台参考手机对应的是KEY3和OK键)。
+// 如需使用其他组合键，请根据具体芯片的SPEC修改tf_load.c中的 TF_EnterVerify()。
+
+//B. 自动升级
+// 自动升级是指手机在能够开机的情况下：通过在IDLE界面下输入组合键: #*8378#9# 进入工程模式热升级界面按提示进行升级。
+
+###
+driver:tf_load\src\tf_load.c  TF_EnterVerify
+//		==>ok+CALL,实测ok+CALL+任意键+Red
+config:keymap_cfg.c  KEYMAP_CONFIG
+
+###
+//		==>HandleTFLoadWinMsg
+//		====>TF_LoadInit
+app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_TFLOAD_ENTER
+
+
+###
+// --key--读键
+Save:node\C\study\Macro_doc_8910key.h  __keyPhy__
+// error
+patch:node\bug\Macro_bug_other.h  __tf_load__
+
+
+[1.19] 
+
+
+[1.20] 
 
 
 

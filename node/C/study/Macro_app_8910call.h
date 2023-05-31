@@ -12,8 +12,10 @@ Save:node\C\study\Macro_app_8910call.h \[1.9\] vib
 Save:node\C\study\Macro_app_8910call.h \[1.10\] record
 Save:node\C\study\Macro_app_8910call.h \[1.11\] speaker
 Save:node\C\study\Macro_app_8910call.h \[1.12\] other
-Save:node\C\study\Macro_app_8910call.h \[1.13\] asp----------
-Save:node\C\study\Macro_app_8910call.h \[1.14\] 
+Save:node\C\study\Macro_app_8910call.h \[1.13\] 
+Save:node\C\study\Macro_app_8910call.h \[1.14\] CC--msg, 静默电话
+Save:node\C\study\Macro_app_8910call.h \[1.15\] 
+Save:node\C\study\Macro_app_8910call.h \[1.16\] 
 // 其他标号
 Save:Help\\DefaultFile\\Macro_Node_Num.h
 
@@ -270,19 +272,53 @@ app:cc\c\mmicc_{wintab}.c  MMI_RESULT_E^HandleHoldMenuWinMsg
 app:cc\c\mmicc_{wintab}.c  MMI_IDLE_8_KEY_LONG_TO_HANDHOLD 
 
 
-[1.13] __asp__
+[1.13] 
 //
 
 
 
 
-[1.14] 
+[1.14] __ALERTING__
+CC--msg, 静默电话
+
+### 静默电话(拨出)
+//		==>MMICC_HandlePsMsg
+//		====>case^APP_MN_ALERTING_IND                # 收到振铃提示事件的处理
+//		======>CC_CallAlertingInd                    # 2G网络回铃音处理
+//		======>CC_CallEarlyMediaInd                  # volte网络回铃音处理
+//		========>case^MN_CALL_REMOTE_USER_ALERTING   # 收到对端发送来的ALERT消息
+//		==========>MNPHONE_StartVolteCodec           # 可放在接通后调用
+app:cc\c\mmicc_app.c  case^APP_MN_ALERTING_IND
+//	StopLocalNetRing
+//	PlayLocalNetRing  # no use
+//		====>case^APP_MN_CALL_START_IND              # ring
+//		======>CC_CallStartInd                       # 
+//		========>MMICC_ConstructVoiceCodec           # 不要关，关了后都没声音
+//		====>case^APP_MN_SYNC_IND                    # ring, MMISRVAUD_TYPE_VOICE
+//		======>CC_SyncInd                            # 
+//		========>CC_OpenAudioTunnel                  # //bt
+//		===========>MMICC_ConstructVoiceCodec        # no use
+
+
+### 静默电话(拨出)
+source:mmi_app\kernel\c\mmi_default.c  BOOLEAN^DefaultSideKey
+// log:
+// CC_MT_CONNECTING_STATE          # 打进
+// CC_MO_CONNECTING_STATE          # 打出
+// CC_IN_CALL_STATE                # 1 
+// CC_CALL_CONNECTED_STATE         # 接通
+// MMICC_IsExistIncommingCall()    # 打进，未接通
 
 
 
 
 [1.15] 
 
+
+
+
+
+[1.16] 
 
 
 

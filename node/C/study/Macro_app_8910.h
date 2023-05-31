@@ -402,12 +402,16 @@ app:eng/c/mmieng_uitestwin.c  s_pceng_test_win_ptr_tab
 
 
 // torch
-Save:node\C\project\Macro_cfg_8910.h  __torch__
+Save:node\C\study\Macro_app_8910other.h  __TORCH__
+// key test
+Save:node\C\study\Macro_app_8910other.h  __keyModis__
 
 
 ### test
 // ==>font/color
 Save:node\C\study\Macro_res_color_8910.h  __test__
+//
+Save:node\C\study\Macro_app_8910bt.h  __btModis__  # msg
 
 
 
@@ -463,6 +467,10 @@ Save:node\C\study\Macro_app_8910sms.h  __voicemail__
 Save:node\C\study\Macro_app_8910sms.h  __MMS__
 Save:node\C\study\Macro_app_8910sms.h  __CB__
 Save:node\C\study\Macro_app_8910sms.h  __SmsNum__   # 条数
+Save:node\C\study\Macro_app_8910sms.h  __SmsModis__ # 模拟短信数量
+Save:node\C\study\Macro_app_8910sms.h  __AoledaCard__  # 电子保卡
+Save:node\C\study\Macro_app_8910sms.h  __SpdeCard__    # 电子保卡
+Save:node\C\study\Macro_app_8910sms.h  __SmsTpInput__
 Save:node\C\study\Macro_app_8910sms.h  
 
 
@@ -493,7 +501,9 @@ Save:node\C\study\Macro_app_8910call.h  __vib__          # vib
 Save:node\C\study\Macro_app_8910call.h  __record__       # record
 Save:node\C\study\Macro_app_8910call.h  __speaker__      # speaker
 Save:node\C\study\Macro_app_8910call.h  __other__
-Save:node\C\study\Macro_app_8910asp.h  __asp__
+Save:node\C\study\Macro_app_8910call.h  __ALERTING__     # 静默电话
+Save:node\C\study\Macro_app_8910call.h  
+Save:node\C\study\Macro_app_8910asp.h  __start__         # asp
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __call__
 Save:node\C\study\Macro_pos_8910.h  __WaCall__
@@ -1500,7 +1510,7 @@ Save:node\C\study\Macro_app_8910bt.h  __play__
 Save:node\C\study\Macro_app_8910bt.h  __atc__
 Save:node\C\study\Macro_app_8910bt.h  __msg__
 Save:node\C\study\Macro_app_8910bt.h  __share__
-Save:node\C\study\Macro_app_8910bt.h  __enter__
+Save:node\C\study\Macro_app_8910bt.h  __btModis__  # msg
 Save:node\C\study\Macro_app_8910bt.h  
 
 
@@ -1557,7 +1567,23 @@ Save:node\C\study\Macro_app_8910other.h  __jewish__
 
 
 
+
 [1.26] wifi
+//
+prj:{cfg}.cfg  WIFI_SUPPORT = UNISOC_RX
+prj:{cfg}.cfg  WIFI_VENDOR = UNISOC 
+
+
+// WIFI
+//		==>MMIAPIENG_StartEngineerMenu
+app:eng/c/mmieng_main.c  MMI_RESULT_E^ENGMainMenuWinHandleMsg
+// 单项测试--menu
+app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_eng
+// 单项测试--WIFI
+app:eng\c\mmieng_menutable.c  GUIMENU_ITEM_T^menu_app_set
+// 单项测试--WIFI--usb
+app:eng/c/mmieng_uitestwin.c  case^ID_ENG_TEST_WIFI
+
 
 //		==>WifiHandleListWinMsg
 //		====>WEB:
@@ -1616,6 +1642,7 @@ app:browser\c\mmibrowser_wintable_setting.c  MMI_RESULT_E^BrwHandleSettingHomepa
 Save:node\C\study\Macro_res_image_8910.h  __browser__
 // ==>开宏
 Save:node\C\study\Macro_app_8910other.h  __browser__
+Save:node\C\study\Macro_app_8910other.h  __browserImgModis__  # 默认PIC
 
 
 

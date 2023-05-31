@@ -1,9 +1,9 @@
 
 //目录:
-Save:node\C\project\Macro_Note_8910trace.h \[1.1\] SIM
-Save:node\C\project\Macro_Note_8910trace.h \[1.2\] 
-Save:node\C\project\Macro_Note_8910trace.h \[1.3\] 
-Save:node\C\project\Macro_Note_8910trace.h \[1.4\] 
+Save:node\C\project\Macro_Note_8910trace.h \[1.1\] USB
+Save:node\C\project\Macro_Note_8910trace.h \[1.2\] uart
+Save:node\C\project\Macro_Note_8910trace.h \[1.3\] SIM
+Save:node\C\project\Macro_Note_8910trace.h \[1.4\] NVTool
 Save:node\C\project\Macro_Note_8910trace.h \[1.5\] 
 Save:node\C\project\Macro_Note_8910trace.h \[1.6\] 
 Save:node\C\project\Macro_Note_8910trace.h \[1.7\] 
@@ -94,6 +94,23 @@ uart抓trace:
 [1.3] __SIM__
 ### 呼入失败问题，请参考[FAQ202172533] 提供log
 // MO、MT两个手机的系统时间调整设置一致后，复现此问题；
+
+// 抓 WCN CP2 LOG.pdf
+//	其中 SPRD WCN LOG 端口用于输出 CM4 的 FM 和 BT Log, DIAG 端口用于输出 AP Log.
+//	因此抓 LOG 时,需要同时连接两个端口抓。
+//	电脑上同时打开 2 个 Logel 工具。
+//	第一个 Logel 工具 Diag Port 连接 DIAG 端口（有的功能机项目是连接 SPRD LOG 端口），
+//	用于抓 AP Log。
+//	第二个 Logel 工具 Log Port 连接 WCN LOG 端口，用于抓 WCN CP2 Log。
+//	测试完成后保存两个工具的 log，提供给我们，谢谢
+
+// 注意不同: 2个tool目录/保存路径/Diag或Log Port
+
+// pdf
+H:\Desktop\SPRD_T107\_log\
+
+// log
+H:\Desktop\tool\file_down\4^soft^tool\ArmLogel_new\AP_log\
 
 
 [1.4] NVTool

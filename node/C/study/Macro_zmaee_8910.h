@@ -27,9 +27,12 @@ Save:node\C\study\Macro_zmaee_8910.h \[1.14\] version, IMEI
 Save:node\C\study\Macro_zmaee_8910.h \[1.15\] 4g/5G
 Save:node\C\study\Macro_zmaee_8910.h \[1.16\] tcp---------active
 Save:node\C\study\Macro_zmaee_8910.h \[1.17\] patch
-Save:node\C\study\Macro_zmaee_8910.h \[1.18\] 
+Save:node\C\study\Macro_zmaee_8910.h \[1.18\] 电子保卡
 Save:node\C\study\Macro_zmaee_8910.h \[1.19\] log
-Save:node\C\study\Macro_zmaee_8910.h \[1.20\] 
+Save:node\C\study\Macro_zmaee_8910.h \[1.20\] 下拉列表禁用返回
+Save:node\C\study\Macro_zmaee_8910.h \[1.21\] 
+Save:node\C\study\Macro_zmaee_8910.h \[1.22\] 
+Save:node\C\study\Macro_zmaee_8910.h \[1.23\] 
 
 
 
@@ -165,10 +168,9 @@ SIM_PLUG_IN_SUPPORT
 [1.9] Torch
 //
 zmaee:c/zmaee_watch.c  ZMAEETorchWinHandleMsg
+// 
+Save:node\C\study\Macro_res_image_wa8910.h  __torch__
 
-
-zmaee:\\
-zmaee:c/zmaee_watch.c  ZMAEETorchWinHandleMsg
 
 
 [1.10] 客户
@@ -313,7 +315,22 @@ lib/UIS8910_ROM_16MB_SS_USER/img_proc.a
 
 
 
-[1.18] 
+[1.18] 电子保卡
+
+// --开机上传
+//		==>ZMAEE_IwatchLib_OnTimerUpdate()
+app:idle\c\mainapp.c  MISC_MSG_RTC_MIN
+//		==>httpUploadGuaranteeCard      # 复用
+zmaee:c\zmaee_watch_dll.c  ZMAEE_IwatchLib_OnTimerUpdate
+//		==>StartHttpVcardData
+//		====>SendHttpVcardDataCallBack
+zmaee:c\zmaee_watchos.c  StartHttpVcardData
+
+
+// --快速测试/开机上传--测试时会重复发送
+//		==>httpUploadGuaranteeCard
+app:idle\c\mainapp.c  testEleGuarCard   # 改成2分钟
+
 
 
 
@@ -331,9 +348,32 @@ Save:node\C\study\Macro_slide_8910.h  __log__
 Save:node\C\study\Macro_fun_8910.h  __debug__
 
 
-[1.20] 
+
+[1.20] 下拉列表禁用返回
+//	
+zmaee:c\zmaee_watchos.c  SPD_ENGINEER_SW46E_TWO_KEY
 
 
+
+[1.21] 
+
+
+
+
+
+
+
+
+
+[1.22] 
+
+
+
+
+
+
+
+[1.23] 
 
 
 

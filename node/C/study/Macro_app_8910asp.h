@@ -70,7 +70,7 @@ app:record\c\mmirecord_common_wintab.c  MMI_RESULT_E^HandleRecordMainPlayWinMsg
 //		==>.menu_asp_play_win_msg_opt
 
 
-[1.5] start
+[1.5] __start__
 
 ###  通道问题
 //		==>MMICC_ConstructAudioHandle   # --APPLET_START

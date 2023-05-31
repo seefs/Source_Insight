@@ -75,3 +75,71 @@ prj:project_{cur}.mk VIDEO_PLAYER_SUPPORT = FALSE
 prj:project_{cur}.mk PIC_VIEWER_SUPPORT = FALSE
 
 
+
+###  __RmMacro__
+// 新宏
+prj:project_{cur}.mk  BT_LOG_MENU_SUPPORT = FALSE
+prj:project_{cur}.mk  DEBUG_VERSION = FALSE
+prj:project_{cur}.mk  FLASH_SIZE = FALSE
+prj:project_{cur}.mk  FLV_DEC_SUPPORT = FALSE
+prj:project_{cur}.mk  AP_CP_RAM_SIZE = 40X88
+prj:project_{cur}.mk  FLASH_SIZE = 128MBIT
+prj:project_{cur}.mk  SRAM_SIZE = 128MBIT
+prj:project_{cur}.mk   = FALSE
+prj:project_{cur}.mk  xxxxxx = FALSE
+prj:project_{cur}.mk  xxxxxx = FALSE
+prj:project_{cur}.mk  xxxxxx = FALSE
+prj:{cfg}.cfg  CARD_LOG = FALSE
+prj:{cfg}.cfg  MBEDTLS_SUPPORT = FALSE
+prj:{cfg}.cfg  ENABLE_HTTPC = FALSE
+//prj:{cfg}.cfg  AVI_DEC_SUPPORT = FALSE
+prj:{cfg}.cfg  FLV_DEC_SUPPORT = FALSE
+prj:{cfg}.cfg  H264_DEC_SUPPORT = FALSE
+prj:{cfg}.cfg  HAS_MODEM_NV = FALSE
+prj:{cfg}.cfg  JPG_DEC_SUPPORT = FALSE
+prj:{cfg}.cfg  MULIT_VARIANT_SUPPORT = FALSE
+//prj:{cfg}.cfg  NETFRONT_SUPPORT = NONE
+prj:{cfg}.cfg  OAUTH_SUPPORT = FALSE
+prj:{cfg}.cfg  PNG_DEC_SUPPORT = NONE
+prj:{cfg}.cfg  SIM_LANGUAGE_SUPPORT = FALSE
+prj:{cfg}.cfg  SMART_PAGING_SUPPORT = FALSE
+prj:{cfg}.cfg  SMSCB_MSG_ID_MAX_NUM = 35
+prj:{cfg}.cfg  UMEM_PRTITION = LARGE
+prj:{cfg}.cfg  TF_LOAD_SUPPORT = FALSE
+prj:{cfg}.cfg  XML_SUPPORT = FALSE
+prj:{cfg}.cfg   = FALSE
+prj:{cfg}.cfg  XML_SUPPORT = FALSE
+prj:{cfg}.cfg  xxxxxx = FALSE
+
+// lang
+prj:project_{cur}.mk  IM_SIMP_CHINESE_SUPPORT = DUAL
+//--开点阵link报错(SPMLAPI_Init)
+prj:{cfg}.cfg  FONT_TYPE_SUPPORT   = DE_BITMAP / VECTOR
+prj:{cfg}.cfg  VECTOR_FONT_SUPPORT = NONE      / DEFAULT
+prj:{cfg}.cfg  VECTOR_TABLE_ADDR   = HIGH
+prj:{cfg}.cfg  VM_TABLE_CONFIG     = SMALL
+//
+prj:{cfg}.cfg  VM_SUPPORT = FALSE
+prj:{cfg}.cfg  VIDEO_RECORD_SUPPORT = FALSE
+prj:{cfg}.cfg  xxxxxx = FALSE
+prj:{cfg}.cfg  xxxxxx = FALSE
+//
+prj:project_{cur}.mk  MMI_MULTI_SIM_SYS = DUAL
+prj:{cfg}.cfg  MULTI_SIM_SYS = DUAL
+prj:{cfg}.cfg  SMART_DUAL_SIM_SUPPORT = FALSE
+// lib
+prj:{cfg}.cfg  TCPIP_SUPPORT = DUAL
+// appmain
+prj:project_{cur}.mk  GBK_SUPPORT = FALSE
+prj:project_{cur}.mk  MMI_BYD_EMAIL_SUPPORT = FALSE
+prj:project_{cur}.mk  CALENDAR_REMINDER_TYPE_SUPPORT = FALSE
+prj:project_{cur}.mk  MMI_PVTEST_SUPPORT = FALSE
+prj:project_{cur}.mk  MMI_IDLE_CUSTOM_WORD_SUPPORT = FALSE
+prj:project_{cur}.mk  MMI_FMM_PICTHUMBNAIL_SUPPORT = FALSE
+prj:project_{cur}.mk  SALES_SUPPORT = FALSE
+prj:project_{cur}.mk  MMI_SMS_VOICE_MAIL_SUPPORT = FALSE
+prj:project_{cur}.mk  MMI_SPEEDDIAL_SUPPORT = FALSE
+prj:project_{cur}.mk  MMI_AUDIOPLAYER_ALBUM_SUPPORT = FALSE
+prj:project_{cur}.mk  MMI_PLMN_LOAD_DEFAULT_SUPPORT = FALSE
+
+

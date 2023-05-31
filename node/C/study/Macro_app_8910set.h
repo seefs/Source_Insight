@@ -97,6 +97,8 @@ app:setting\c\mmiset_callwin.c  MMI_RESULT_E^HandleEditSimNameWindow
 // callset--set time
 app:setting\c\mmiset_callwin.c  MMI_RESULT_E^HandleSetMinuteReminderEditWindow
 // fly--open
+//  µ¥¿¨flyÔÚcallset;
+//  Ë«¿¨flyÔÚmultiSim
 app:setting\c\mmiset_callwin.c  HandleFlyModeOpenPhoneWindow
 
 

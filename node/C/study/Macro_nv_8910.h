@@ -28,6 +28,7 @@ Save:node\C\study\Macro_nv_8910.h \[1.22\]
 [1.1] 充电
 // 充电相关
 Save:node\C\study\Macro_nv_charge8910.h
+Save:node\C\study\Macro_nv_charge8910.h  __ntc__
 
 
 [1.2] sim
@@ -64,6 +65,16 @@ Save:node\C\study\Macro_nv_audio8910.h  __CLASSAB__
 //  107
 Save:node\C\study\Macro_nv_audio8910.h  __PA107__
 Save:node\C\study\Macro_nv_audio8910.h  __Copy107__  # copy audio nv
+
+
+### AUDIO, TONE
+// 双听筒
+//	DUAL_RECEIVER_SWITCH_SUPPORT
+SPDE_PRJ/K220U_HYBL_H660A_HTX_LTC/project_UIS8910_ROM_16MB_DS_USER.mk
+
+### TONE
+SPDE_PRJ/K220U_HYBL_H660A/uis8910_phone_user_base_config.cfg  YOUNGTONE_TTS_LIB
+// YOUNGTONE_TTS_LIB = MAN
 
 
 [1.4] mmi
@@ -182,6 +193,8 @@ https://www.prepaidisraelisim.com/APN_Settings
 
 
 [1.8] 单软多硬
+	
+
 
 ### hw_nv 版本
 //
@@ -194,6 +207,12 @@ nv_type_uix8910.nvm里面4938行，
 
 
 ### 8910单软多硬 (row = newV /oldV)
+// 单软多硬
+prj:{cfg}.cfg  FORCECHANGE_SUPPORT  = TRUE         # 单软多硬时开
+prj:{cfg}.cfg  DELTA_NV_CONFIG_PATH = delta_nv     # 默认开
+prj:{cfg}.cfg  DELTA_NV_BIN_SUPPORT = TRUE         # 默认开     
+prj:{cfg}.cfg  DELTA_NV_PATITION_SUPPORT = TRUE    # 单软多硬时开
+
 // prdt
 prj:nvitem/ProductionParam_uix8910.nvm  1393 = 0x5 /0x0
 prj:nvitem/ProductionParam_uix8910.nvm  1403 = 0x7 /0x0
@@ -210,13 +229,6 @@ prj:nvitem/hw_ver00.nv
 prj:nvitem/hw_ver01.nv
 // ver--checkout
 project\config_nv\8910FF\
-// mk
-prj:uis8910_phone_base_config.cfg  FORCECHANGE_SUPPORT  = TRUE
-prj:uis8910_phone_user_base_config.cfg  FORCECHANGE_SUPPORT  = TRUE
-//	FORCECHANGE_SUPPORT  = TRUE         # 单软多硬时开
-//	DELTA_NV_CONFIG_PATH = delta_nv     # 默认开
-//	DELTA_NV_BIN_SUPPORT = TRUE         # 默认开
-//	DELTA_NV_PATITION_SUPPORT = TRUE    # 单软多硬时开
 
 //
 config:nv_adaptive_cfg.c  SCI_Get_PA_VERSION

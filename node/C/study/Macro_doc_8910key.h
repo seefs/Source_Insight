@@ -6,7 +6,7 @@ Save:node\C\study\Macro_doc_8910key.h \[1.3\] keyDial
 Save:node\C\study\Macro_doc_8910key.h \[1.4\] keyStatus------³¤°´
 Save:node\C\study\Macro_doc_8910key.h \[1.5\] keySlide
 Save:node\C\study\Macro_doc_8910key.h \[1.6\] keySOS
-Save:node\C\study\Macro_doc_8910key.h \[1.7\] 
+Save:node\C\study\Macro_doc_8910key.h \[1.7\] keyPhy
 Save:node\C\study\Macro_doc_8910key.h \[1.8\] 
 Save:node\C\study\Macro_doc_8910key.h \[1.9\] 
 Save:node\C\study\Macro_doc_8910key.h \[1.10\] 
@@ -299,9 +299,15 @@ source:mmi_app\kernel\c\mmi_default.c  DefaultExtKey
 
 
 
-[1.7] 
-
-
+[1.7] __keyPhy__
+//
+//		==>0x00
+//		==>0x11
+//		====>key_code:001001, int001+out001
+chip_drv\chip_module\kpd\v5\
+chip_drv\chip_module\kpd\v5\kpd_phy.c  GetKeycode
+//
+driver:tf_load\src\tf_load.c  TF_EnterVerify
 
 
 [1.8] 

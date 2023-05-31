@@ -11,7 +11,7 @@ Save:node\C\project\Macro_Note_8910.h \[1.7\] ECG
 Save:node\C\project\Macro_Note_8910.h \[1.8\] hr
 Save:node\C\project\Macro_Note_8910.h \[1.9\] breathled
 Save:node\C\project\Macro_Note_8910.h \[1.10\] motionsensor
-Save:node\C\project\Macro_Note_8910.h \[1.11\] 
+Save:node\C\project\Macro_Note_8910.h \[1.11\] vib
 Save:node\C\project\Macro_Note_8910.h \[1.12\] 
 // 设置
 Save:node\C\project\Macro_Note_8910.h \[2.1\] 
@@ -365,7 +365,22 @@ driver:motionsensor\accelerometer\msensor_qmaX981.c
 make\custom_drv\custom_drv.mk  QMA7981
 
 
-[1.11] 
+[1.11] vib
+// 不带马达：
+//prj:project_{cur}.mk __HHT_REMOVE_VIBRA__ =TRUE
+prj:project_{cur}.mk  ELT_NO_VIBRATOR
+prj:project_{cur}.mk  VIRTUAL_VIBRATE_FUNC
+prj:project_{cur}.mk  REMOVE_VIBRA_AND_RING  # tts
+// 震动强度
+prj:project_{cur}.mk  VIBRATE_DRIVER_VOLT_3_0V
+// 107
+prj:project_{cur}.mk
+
+// 震动强度 0x02已经最小
+chip_drv\chip_module\analog\analog_phy.h  LDO_VIBR_V^
+//
+chip_drv\chip_module\analog\{analog}\{analog_phy}.c  _ANA_SetVibrator
+config:gpio_{config}_cfg.c  _GPIO_OpenVibrator
 
 
 [1.12] 
@@ -397,14 +412,6 @@ source:resource\Common\RING\
 Save:node\C\study\Macro_nv_sim8910.h  __IMEI__
 Save:node\C\study\Macro_nv_sim107.h   __BAND__
 
-// 不带马达：
-//prj:project_{cur}.mk __HHT_REMOVE_VIBRA__ =TRUE
-prj:project_{cur}.mk  ELT_NO_VIBRATOR
-prj:project_{cur}.mk  VIRTUAL_VIBRATE_FUNC
-prj:project_{cur}.mk  REMOVE_VIBRA_AND_RING  # tts
-prj:project_{cur}.mk  VIBRATE_DRIVER_VOLT_3_0V
-// 107
-prj:project_{cur}.mk
 
 
 // 双卡：
@@ -429,13 +436,25 @@ prj:project_{cur}.mk  DUAL_RECEIVER_SWITCH_SUPPORT
 //prj:project_{cur}.mk SBD_FM_THRESHOLD_TYPE1=TRUE     #带上搜的台多一点
 //prj:project_{cur}.mk HHT_FM_USE_GSM_ANT_SIGNAL_STRONG=TRUE  #外放时打开
 
-// 107
+### 107
 prj:project_{cur}.mk  FM_SUPPORT = TRUE
-prj:project_{cur}.mk  FM_S_ANT_SUPPORT = TRUE
-prj:project_{cur}.mk  FM_VBC   = TRUE    # 不用关
+prj:project_{cur}.mk  FM_VBC   = TRUE         # 不用关
+// mk--低噪放
+// --代码里面应该默认会判断插入耳机用耳机的，没插耳机用低噪放的
+// --要是不想用耳机的天线用宏控一下
+prj:project_{cur}.mk  FM_S_ANT_SUPPORT = TRUE # 天线, eng分开测试
 // 107 插入耳机走长天线，拔出耳机 走短天线
 prj:project_{cur}.mk  MMI_FM_HEADSET_USE_SHORT_ANT
-// 8910
+
+// test--fm
+app:eng\c\mmieng_uitestwin.c  MMI_RESULT_E^UITestFmWinHandleMsg
+// --打开低噪放 / 用天线
+//        GPIO_SetFmLNA( 1 );
+// --关闭低噪放
+//        GPIO_SetFmLNA( 0 ); //恢复内置天线的GPIO值
+
+
+### 8910
 prj:{cfg}.cfg         FM_SUPPORT       = SPRD_V0    /  NONE
 prj:{cfg}.cfg         FM_VBC_EQ        = TRUE
 prj:{cfg}.cfg         FM_VBC           = TRUE
@@ -444,6 +463,9 @@ prj:project_{cur}.mk  FM_S_ANT_SUPPORT = TRUE
 // fm--ui
 prj:project_{cur}.mk  MMI_FM_NEW_STYLE  = TRUE
 prj:project_{cur}.mk  MMI_FM_MENU_SLIM_STYLE  = TRUE
+
+// mk
+prj:{cfg}.cfg  BYD_CUSTOM_FM_TUNNING_STEP = TRUE
 
 // 8910 未开
 make\app_main\app_macro.mk  MMI_FM_NEED_HEADSET
@@ -501,6 +523,10 @@ Save:node\C\study\Macro_nv_audio6531E.h  __6531_K__
 prj:project_{cur}.mk  TORCH_SUPPORT = TRUE
 prj:project_{cur}.mk  MMI_MENU_TORCH_SUPPORT = TRUE
 prj:project_{cur}.mk  ENG_MANU_TORCH = TRUE
+
+### 手电筒
+Save:node\C\study\Macro_app_8910other.h  __TORCH__
+
 
 // 闪光灯
 prj:project_{cur}.mk  DC_FLASH_SUPPORT = TRUE
@@ -650,10 +676,19 @@ prj:project_{cur}.mk  PRODUCT_BASELIB_DIR = sc6531efm_32X32_320X240BAR_AB_CE
 prj:project_{cur}.mk  BT_NONSIG_SUPPORT = TRUE
 
 
+### CTA
+// PLMN
+prj:project_{cur}.mk  MMI_PREFER_PLMN_SUPPORT
+// PLMN--popup--107
+//  ----都改为: TXT_COMPLETE
+app:setting/c/mmiset_callwin.c  BOOLEAN^MMIAPISET_HandlePreferNetworkListCnf
+
+
 ### 
 // 省空间
 Save:node\C\study\Macro_Spr_mem.h  __trace__
-
+// 新宏
+Save:node\C\study\Macro_Spr_mem.h  __RmMacro__
 
 
 [2.16] 扩展项目:

@@ -210,7 +210,13 @@ images:common\MMI_RES_DEFAULT\IMAG\Pubwin\BAR\
 
 [1.12] common
 
-### 
+### alarm
+images:common\MMI_RES_DEFAULT\IMAG\Idle_screen\
+// Í¸Ã÷°ëÆÁ
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_IDLE_SCREEN_ALARM_ACTIVE_ICON_NEW
+// È«ÆÁ--ÎÞÄÖÖÓ
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_IDLE_SCREEN_ALARM_ICON_NEW
+
 
 
 ### __btn__
@@ -286,6 +292,13 @@ source:mmi_app\common\h\common_mdu_def.h  IMAGE_CALENDAR_HIGHLIGHT
 source:mmi_app\app\accessory\h\clock_mdu_def.h  IMAGE_CLOCK_CALENDAR_DEFAULT
 source:mmi_app\app\accessory\h\clock_mdu_def.h  IMAGE_CLOCK_CALENDAR_GREEN_DEFAULT
 source:mmi_app\app\accessory\h\clock_mdu_def.h  IMAGE_CALENDAR_FOCUSED_TODAY_RED
+
+
+### __torch__
+//
+images:zmaee\MMI_RES_DEFAULT\IMAG\zmaee/
+//
+app:zmaee\h\zmaee_mdu_def.h  IMG_FWATCH_OS_FIND
 
 
 
