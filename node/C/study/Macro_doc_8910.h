@@ -154,41 +154,60 @@ app:eng\c\mmieng_main.c  MMIENG_IDLE_ITEM_TEST
  
 // Product
 "#*8378#3#",
+
 // PhoneInfo -- bg
 "#*8378#4#",
+
 // SN
 "####2222#",
+
 // Net--mcc,mnc
 "####1040#",
 
 // Engineer
 "#*8378#1#", "*#555#",--mcc,mnc
 
+
+//--v--mk--sw--hide
+//app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SW_VERSION
+
 // Version--Out -- bg
-app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SHOW_VERSION1
 "#*8378#2#", "####0000#", 
-// Version--3
-app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SHOW_VERSION2
+app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SHOW_VERSION1
+
+// Version--2
 "*#888#",
+app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SHOW_VERSION2
+
+// Version--3--wa01u, mk,//显示更多版本信息
+//"*#888#",
+//app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SHOW_VERSION3
+
 
 // Chip
 "#*8378#5#",
+
 // NV
 "#*786646468#",
-// Monkey
+
+// Monkey--no use
 "#*8378#8#",
+app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_MONKEY_TEST_AUTOSET
+
 // TFload
 "#*8378#9#",
+app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_TFLOAD_ENTER
+
 // ALLSVN -- bg
 "#*786837#",
 
 // HW
-app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SHOW_HW_VERSION
 "*#999#", "*#523#",
+app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SHOW_HW_VERSION
 
 // IMEI
-app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SET_SIM_IMEI_ALL
 "*#333#", "*#0066#", "*#3184#"; "*#06#",
+app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_SET_SIM_IMEI_ALL
 
 // Reset
 "*#119*#", "*#70#",
@@ -217,25 +236,20 @@ SpdeShow3GIMSIInfo
 ### 
 //--v--time,data,vol
 //MMIENG_IDLE_DIAL_NUM_PHONE_INFO
-//--v--mk--sw--hide
-//MMIENG_IDLE_DIAL_NUM_SW_VERSION
-//--v--8910--outV, HW closed
-//MMIENG_IDLE_DIAL_NUM_SHOW_VERSION1,
-//--v--8910--outV, HW closed
-//MMIENG_IDLE_DIAL_NUM_SHOW_VERSION2,
-//--l--no use
-//MMIENG_IDLE_DIAL_NUM_MONKEY_TEST_AUTOSET,
+
+
 //--t--nv error
 //MMIENG_IDLE_DIAL_NUM_NV_COUNTING,
+
 //--x--no use
 //MMIENG_IDLE_DIAL_NUM_AUDIO_DEMO,
 //MMIENG_IDLE_DIAL_NUM_VIDEO_DEMO,
 //MMIENG_IDLE_DIAL_NUM_MEDIA_DEMO,
+
 //--x--no use
 //MMIENG_IDLE_DIAL_NUM_AUTO_LOG,
 //MMIENG_IDLE_DIAL_NUM_LOG_OFF,
-//--wa01u, mk,
-//MMIENG_IDLE_DIAL_NUM_SHOW_VERSION3, //显示更多版本信息
+
 
 
 ### 暗码查看
@@ -318,6 +332,10 @@ MMIAPISET_IsNeedResetDateTime
 //	4、copy HW_NV_PARA这个目录的相关文件到SPDE_PRJ对应项目的nv目录中
 //	5、编译的时候会运行项目的bat文件，会把SPDE_PRJ的nv文件和资源文件复制到代码编译中相关目录
 //	6、开始正常的编译
+
+
+### bat
+// 本地编译可能没有copy RDNV，服务器编译另外copy RDNV
 
 
 ### make
@@ -516,6 +534,10 @@ prj:project_{cur}.mk  SPDE_FOTA_TIP_USE_GRAY_IMG = TRUE
 
 
 [1.18] T卡升级
+### 8910
+prj:{cfg}.cfg  TF_LOAD_SUPPORT = TRUE  
+prj:{cfg}.cfg  F_LOAD_PROTECT = FALSE  
+
 ### UMS9117--FAQ202172534
 prj:project_{cur}.mk  TF_LOAD_SUPPORT   # 必须开启该宏
 prj:project_{cur}.mk  F_LOAD_PROTECT    #
@@ -545,6 +567,8 @@ prj:project_{cur}.mk  F_LOAD_PROTECT    #
 driver:tf_load\src\tf_load.c  TF_EnterVerify
 //		==>ok+CALL,实测ok+CALL+任意键+Red
 config:keymap_cfg.c  KEYMAP_CONFIG
+//  keyRawIntSts, 如果改按键，这个值不对
+//  0~15，试几版估计可以把值试出来
 
 ###
 //		==>HandleTFLoadWinMsg
@@ -560,6 +584,8 @@ patch:node\bug\Macro_bug_other.h  __tf_load__
 
 
 [1.19] 
+
+
 
 
 [1.20] 

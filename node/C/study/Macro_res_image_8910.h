@@ -440,6 +440,9 @@ app:theme\c\mmitheme_menu.c  IMAGE_COMMON_SELECTED_BAR
 //		======>IMAGE_SCROLL_VER_BAR_2
 app:theme\c\mmitheme_prgbox.c  scroll_bar_id
 
+// dial listbox bg
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_COMMON_BG_LIGHT
+
 
 // 24*24
 // 18*18

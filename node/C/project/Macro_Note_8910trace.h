@@ -4,7 +4,7 @@ Save:node\C\project\Macro_Note_8910trace.h \[1.1\] USB
 Save:node\C\project\Macro_Note_8910trace.h \[1.2\] uart
 Save:node\C\project\Macro_Note_8910trace.h \[1.3\] SIM
 Save:node\C\project\Macro_Note_8910trace.h \[1.4\] NVTool
-Save:node\C\project\Macro_Note_8910trace.h \[1.5\] 
+Save:node\C\project\Macro_Note_8910trace.h \[1.5\] BBAT_log
 Save:node\C\project\Macro_Note_8910trace.h \[1.6\] 
 Save:node\C\project\Macro_Note_8910trace.h \[1.7\] 
 Save:node\C\project\Macro_Note_8910trace.h \[1.8\] 
@@ -87,7 +87,28 @@ uart抓trace:
 //8 para set->usb log:close (不确定)
 //8 para set->debug (para)->assert:open  (不确定开不开)
 
+// 接线--绿白红黑
+//--没数据--绿白对调
+//--红--不接
+//--黑--接最下面的“左2”
+//--白--接上面的“上1”
+//--绿--接上面的“上2”
 
+// 开UART
+MS_Ref\source\base\src\init.c  UART_LOG_SUPPORT        // 107
+MS_Ref\source\base\src\init.c  UART_LOG_MODE_SUPPORT   // 8910
+//  看看参考下8910里有没有更详细些的改动
+MS_Ref\source\base\src\init.c  uint32^SCI_InitRef
+
+// 现象:
+//   下载第1次开机, 报rf错误
+// 正常:
+//   波特率：921600，软件上: com0,   RX TX反过来
+//   原理图上用uart1
+// 异常:
+//   波特率：115200，软件上: com1,  RX TX没变，只有开机log+乱码，
+//   如果设置波特率：921600，就是输出0
+//   用uart2无法开机
 
 
 
@@ -148,8 +169,10 @@ common\nv_parameters\PS102_MB\PS102_KLS_2IN1\nv_type\....     nvm =^DSP_log_swit
 
 
 
-[1.5] 
-
+[1.5] __BBAT_log__
+如沟通，OK软件版本不会掉口，NG软件进模式一会就掉口，麻烦用NG版本抓下掉口现象的串口log和armlog
+抓log可以参考文档《常用Log抓取方法说明V1.1.pdf》2.2.3 BBAT 模式抓Armlog（BBAT G3 工具+Logel 工具）
+https://unisupport.unisoc.com/file/index?fileid=34086
 
 
 

@@ -210,6 +210,18 @@ app:phone\h\plmn_ts25_database_enum.h  PLMN_204_04
 //这些都要检查.
 
 
+//
+虚拟运营商需要提供：
+ 1.MVNO Type。虚拟运营商类型。
+ 2.MVNO Value。虚拟运营商类型筛选值。
+ 3.42515的apn、name。
+如：
+ 不填MVNO，无筛选条件
+ 类型 spn和spn的筛选值
+ 类型 gid和gid的筛选值
+ 类型 pnn和pnn的筛选值
+ 类型 imsi和imsi的筛选值
+ 类型 imsir和imsi的筛选范围，425150000000000~425159999999999
 
 
 

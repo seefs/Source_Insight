@@ -24,7 +24,7 @@ Save:node\C\study\Macro_res_ring_8910.h \[1.17\] asp
 Save:node\C\study\Macro_res_ring_8910.h \[1.18\] 
 Save:node\C\study\Macro_res_ring_8910.h \[1.19\] VIB
 Save:node\C\study\Macro_res_ring_8910.h \[1.20\] RING
-Save:node\C\study\Macro_res_ring_8910.h \[1.21\] 
+Save:node\C\study\Macro_res_ring_8910.h \[1.21\] zmaee
 Save:node\C\study\Macro_res_ring_8910.h \[1.22\] 
 // ÆäËû±êºÅ
 Save:Help\\DefaultFile\\Macro_Node_Num.h
@@ -66,6 +66,13 @@ app:envset\h\mmienvset_internal.h  MMIENVSET_POWER_RING_VOL_STANDARD_MODE
 
 
 [1.3] mp3
+### __Mp3__
+// mk
+prj:project_{cur}.mk  MMI_AUDIO_PLAYER_ADD_TEST_SONG
+prj:project_{cur}.mk  TWO_TEST_SONGS
+prj:project_{cur}.mk  THREE_TEST_SONGS
+prj:project_{cur}.mk  MMI_AUDIO_PLAYER_TEST_FILE_MID_FORMAT
+
 // mp3-8910
 prj:resource\my^music\
 prj:resource\my^music\mmiap_song_name.h
@@ -514,9 +521,9 @@ key:RING,file:mmi_res_prj_def.h
 
 
 
-[1.21] 
-
-
+[1.21] zmaee
+//
+Save:node\C\study\Macro_zmaee_8910.h __RING__
 
 
 [1.22] 

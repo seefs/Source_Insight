@@ -238,8 +238,8 @@ make\perl_script\perl_pm\CreateDSP\createDSP.pm  Get_VS_2010_File_Name_Compile_O
 //
 make\perl_script\create_dsp.pl  VS2010
 
-
-
+// SCI_MPALLOC ±¨´í
+Save:node\C\study\Macro_res_8910.h  __load__
 
 
 [1.9] 

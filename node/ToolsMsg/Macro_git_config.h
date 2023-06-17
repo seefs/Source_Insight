@@ -83,6 +83,7 @@ C:\Users\Administrator\.ssh\config
 
 
 [1.5] create SSH key
+### __SSH__
 // git bash here
 ssh-keygen -t rsa -C "seefs@163.com"
 ssh-keygen -t rsa -C "xiaojia_bm@163.com" -f ~/.ssh/id_github2
@@ -181,6 +182,7 @@ git remote add origin git@github.com:seefs/Source_Insight.git
 
 
 [1.8] git(Ð¡ÎÚ¹ê)
+### __TortoiseGit__
 //
 // ½â¾öno supported authentication methods avaiable
 //

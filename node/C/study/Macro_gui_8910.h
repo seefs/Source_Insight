@@ -1472,6 +1472,8 @@ app:theme\c\mmitheme_menu.c  MMITHEME_GetPopMenuTheme
 ### menu
 //  ==>pos
 Save:node\C\study\Macro_pos_8910.h  __menu__
+// ==>font/color
+Save:node\C\study\Macro_res_color_8910.h  __menu__
 
 
 ### menuSec

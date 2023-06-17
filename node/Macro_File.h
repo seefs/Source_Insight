@@ -87,7 +87,8 @@ Save:node\ToolsMsg\Macro_perl.h
 Save:node\ToolsMsg\Macro_win.h
 Save:node\ToolsMsg\Macro_win10.h
 Save:node\ToolsMsg\Macro_win_dll.h
-Save:node\ToolsMsg\Macro_win_soft.h  __Hyper_V__
+Save:node\ToolsMsg\Macro_win_soft.h
+Save:node\ToolsMsg\Macro_win_user.h
 
 ### sprd/mtk tool
 Save:node\ToolsMsg\

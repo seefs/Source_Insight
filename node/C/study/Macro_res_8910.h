@@ -342,14 +342,14 @@ Save:node\C\study\Macro_pos_8910.h  __idle__
 //		====>MMIRES_FreeAllNodeRes        # 分配为空释放报错
 //		======>
 
-
-
+//改法:
+//  SCI_MPALLOC--SCI_MemPoolMalloc, 改成 malloc
+//  SCI_MPFREE---SCI_MemPoolFree, --改成 free
 
 
 
 [1.16] apn
-//
-tool_mini:\
+// ntac整理
 tool_mini:6_res_str\
 tool_mini:6_res_str\res_ntac.xlsx
 
@@ -364,33 +364,32 @@ Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 resource:Common\DATA\
 {8910wa21}\source:resource\Common\DATA\
 {8910wa_git}\source:resource\Common\DATA\
-// 8910 apn str
+//	excel
+patch:code\UIS8910_git\_ex_w22\
+// 8910 apn str-list
 Save:node\C\study\Macro_doc_apn8910.h
+Save:node\C\study\Macro_doc_apn8910.h   __MVNO__
 // 8910 volte/白名单
 Save:node\C\study\Macro_doc_volte8910.h
 
 
 ### __107_apn__
-// tools
-tools\Common\ResBOCA\Bin\
 // 分段加载
 prj:project_{cur}.mk  DATA_ACCOUNT_USE_SPLIT_FILE = TRUE
-
-// 107 apn
+// tools
+tools\Common\ResBOCA\Bin\
+// data
+resource:Common\DATA\
+//	excel
+patch:code\t107\_ex_w22P5\
+// 107 apn-list
 Save:node\C\study\Macro_doc_apn107.h
+// 资料/搜索
+Save:node\C\study\Macro_doc_apn107.h  __search__
+Save:node\C\study\Macro_doc_apn107.h  __apnStr__
+Save:node\C\study\Macro_doc_apn107.h  __err__
 // 107 volte/白名单
 Save:node\C\study\Macro_doc_volte107.h
-//
-resource:Common\DATA\
-// apn_list_BigThan_300_LessThan_430.ntac
-// apn_list_BigThan_430.ntac
-// apn_list_LessThan_300.ntac
-// 资料
-https://unisupport.unisoc.com/file/index?fileid=31001
-// android aosp--apn有点旧
-http://aospxref.com/
-http://aospxref.com/android-13.0.0_r3/xref/device/generic/goldfish/data/etc/apns-conf.xml
-http://aospxref.com/android-13.0.0_r3/xref/device/sample/etc/apns-full-conf.xml
 
 
 ### 8910 variant
@@ -399,6 +398,9 @@ common:h\common_mdu_def.h R_NETWORK_ACCOUNT
 
 // R_MULIT_VARIANT
 common:h\common_mdu_def.h R_MULIT_VARIANT
+
+
+
 
 
 

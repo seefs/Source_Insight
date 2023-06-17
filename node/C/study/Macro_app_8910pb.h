@@ -233,7 +233,8 @@ app:pb\c\Mmipb_menu.c  PB_OPTMENU_NODE_VCARD_EXPORT_CONTACT
 //		======>MMIPB_ExportNextVcardAsyn
 
 
-// 一键备份
+// 一键备份 __IKEYBACKUP__
+prj:project_{cur}.mk  IKEYBACKUP_SUPPORT
 //		==>MMIAPIIKB_OpenMainWin
 //		====>.backup
 //		======>.s_ui_backup_list

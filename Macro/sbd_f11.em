@@ -1363,60 +1363,60 @@ macro NoteAutoRun(hbuf)
 						if (1)
 						{
 						//op: delete
-//						DeleteNvmIdRange(wrBuf, 12817, 12817)  //replace one
-//						DeleteNvmIdRange(wrBuf, 5738, 5738)    //replace one
-//						DeleteNvmIdRange(wrBuf, 4759, 4775)    //size20->size3
-//						DeleteNvmIdRange(wrBuf, 4642, 4654)    //size26->size13
-//						DeleteNvmIdRange(wrBuf, 3018, 3019)    //size9->size7
+						DeleteNvmIdRange(wrBuf, 12817, 12817)  //replace one
+						DeleteNvmIdRange(wrBuf, 5738, 5738)    //replace one
+						DeleteNvmIdRange(wrBuf, 4759, 4775)    //size20->size3
+						DeleteNvmIdRange(wrBuf, 4642, 4654)    //size26->size13
+						DeleteNvmIdRange(wrBuf, 3018, 3019)    //size9->size7
 
 
 						//op: insert
-//						if (!IsExistNvmName(wrBuf, "lte_ns04_ampr")){
-//							AddNvmFileToLast(wrBuf, 3009, patchVal, "RF_nv_patch1.nvm")
-//						}
-//						if (!IsExistNvmName(wrBuf, "LTE_MDLL_DYN")){
-//							AddNvmFileToLast(wrBuf, 4627, patchVal, "RF_nv_patch2.nvm")  //4632 ~ 4659
-//						}
-//						if (!IsExistNvmName(wrBuf, "LTE_FLT_BWTUN")){
-//							AddNvmFileToLast(wrBuf, 4754, patchVal, "RF_nv_patch3.nvm")  //4774 ~ 4836
-//						}
-//						if (!IsExistNvmName(wrBuf, "GSM_TX_GPIO_PA_INIT")){
-//							AddNvmFileToLast(wrBuf, 5737, patchVal, "RF_nv_patch4.nvm")
-//						}
-//						if (!IsExistNvmName(wrBuf, "gsm_stub_flag")){
-//							AddNvmFileToLast(wrBuf, 12816, patchVal, "RF_nv_patch5.nvm")
-//						}
+						if (!IsExistNvmName(wrBuf, "lte_ns04_ampr")){
+							AddNvmFileToLast(wrBuf, 3009, patchVal, "RF_nv_patch1.nvm")
+						}
+						if (!IsExistNvmName(wrBuf, "LTE_MDLL_DYN")){
+							AddNvmFileToLast(wrBuf, 4627, patchVal, "RF_nv_patch2.nvm")  //4632 ~ 4659
+						}
+						if (!IsExistNvmName(wrBuf, "LTE_FLT_BWTUN")){
+							AddNvmFileToLast(wrBuf, 4754, patchVal, "RF_nv_patch3.nvm")  //4774 ~ 4836
+						}
+						if (!IsExistNvmName(wrBuf, "GSM_TX_GPIO_PA_INIT")){
+							AddNvmFileToLast(wrBuf, 5737, patchVal, "RF_nv_patch4.nvm")
+						}
+						if (!IsExistNvmName(wrBuf, "gsm_stub_flag")){
+							AddNvmFileToLast(wrBuf, 12816, patchVal, "RF_nv_patch5.nvm")
+						}
 
 
 						//op: auto id
 						//  func(hbuf, lnStart, fromI, toI, newfromI, newtoI, parentfromI, parenttoI)
-//						UpdateNvmAutoIdRange(wrBuf, 30187, 3010, 3017, 3016, 0, 2694, 0)              // 到 delete1 中断 / 从 patch1 后开始
-//						UpdateNvmAutoIdRange(wrBuf, 30267, 3020, 3055, 3024, 0, 2694, 0)              //  +层 中断
-//						UpdateNvmAutoIdRange(wrBuf, 30628, 3056, 4627, 3060, 0, 2693, 0)              // 到 patch2 中断 / 从层开始
-//						UpdateNvmAutoIdRange(wrBuf, 46895, 4628, 4641, 4660, 0, 3056, 3060)           // 到 delete2 中断 / 从 patch2 后开始
-//
-//						UpdateNvmAutoIdRange(wrBuf, 47035, 4655, 4754, 4674, 0, 3056, 3060)           // 到 patch3 中断 / 从 delete2 后开始
-//						UpdateNvmAutoIdRange(wrBuf, 48690, 4755, 4758, 4837, 0, 3056, 3060)           // 到 delete3 中断 / 从 patch3 后开始 (size3)
-//						UpdateNvmAutoIdRange(wrBuf, 48730, 4776, 5737, 4841, 0, 2693, 0)              // 到 patch4 中断 / 从 delete3 后开始
-//						UpdateNvmAutoIdRange(wrBuf, 58382, 5739, 5746, 5806, 0, 2693, 0)              // +层 中断 / 从 delete4 后开始 (删1个) 
+						UpdateNvmAutoIdRange(wrBuf, 30187, 3010, 3017, 3016, 0, 2694, 0)              // 到 delete1 中断 / 从 patch1 后开始
+						UpdateNvmAutoIdRange(wrBuf, 30267, 3020, 3055, 3024, 0, 2694, 0)              //  +层 中断
+						UpdateNvmAutoIdRange(wrBuf, 30628, 3056, 4627, 3060, 0, 2693, 0)              // 到 patch2 中断 / 从层开始
+						UpdateNvmAutoIdRange(wrBuf, 46895, 4628, 4641, 4660, 0, 3056, 3060)           // 到 delete2 中断 / 从 patch2 后开始
 
-//						UpdateNvmAutoIdRange(wrBuf, 58462, 5747, 11670, 5814, 0, 0, 0)                // base0,一次弄不完
+						UpdateNvmAutoIdRange(wrBuf, 47035, 4655, 4754, 4674, 0, 3056, 3060)           // 到 patch3 中断 / 从 delete2 后开始
+						UpdateNvmAutoIdRange(wrBuf, 48690, 4755, 4758, 4837, 0, 3056, 3060)           // 到 delete3 中断 / 从 patch3 后开始 (size3)
+						UpdateNvmAutoIdRange(wrBuf, 48730, 4776, 5737, 4841, 0, 2693, 0)              // 到 patch4 中断 / 从 delete3 后开始
+						UpdateNvmAutoIdRange(wrBuf, 58382, 5739, 5746, 5806, 0, 2693, 0)              // +层 中断 / 从 delete4 后开始 (删1个) 
 
-//						UpdateNvmAutoIdRange(wrBuf, 117775, 11671, 11672, 11738, 0, 11666, 11733)     //  +层 中断
-//						UpdateNvmAutoIdRange(wrBuf, 117795, 11673, 11772, 11740, 0, 11644, 11711)     //  +层 中断
-//						UpdateNvmAutoIdRange(wrBuf, 118796, 11773, 12329, 11840, 0, 5747, 5814)       //  +层 中断
-//						UpdateNvmAutoIdRange(wrBuf, 124369, 12330, 12816, 12397, 0, 0, 0)             // 到 patch5 中断 / 从层开始
-//						UpdateNvmAutoIdRange(wrBuf, 129278, 12818, 13057, 12885, 0, 12330, 12397)     // 到结束 / 从 delete5 后开始 (删1个) 
+						UpdateNvmAutoIdRange(wrBuf, 58462, 5747, 11670, 5814, 0, 0, 0)                // base0,一次弄不完
+
+						UpdateNvmAutoIdRange(wrBuf, 117775, 11671, 11672, 11738, 0, 11666, 11733)     //  +层 中断
+						UpdateNvmAutoIdRange(wrBuf, 117795, 11673, 11772, 11740, 0, 11644, 11711)     //  +层 中断
+						UpdateNvmAutoIdRange(wrBuf, 118796, 11773, 12329, 11840, 0, 5747, 5814)       //  +层 中断
+						UpdateNvmAutoIdRange(wrBuf, 124369, 12330, 12816, 12397, 0, 0, 0)             // 到 patch5 中断 / 从层开始
+						UpdateNvmAutoIdRange(wrBuf, 129278, 12818, 13057, 12885, 0, 12330, 12397)     // 到结束 / 从 delete5 后开始 (删1个) 
 
 						//op: array size
-//						UpdateNvmArraySizeById(wrBuf, 3016, 9, 7)
-//						UpdateNvmArraySizeById(wrBuf, 4660, 26, 13)
-//						UpdateNvmArraySizeById(wrBuf, 4837, 20, 3)
-//						UpdateNvmArraySizeById(wrBuf, 5783, 20, 19)
-//						UpdateNvmArraySizeById(wrBuf, 12837, 47, 46)
+						UpdateNvmArraySizeById(wrBuf, 3016, 9, 7)
+						UpdateNvmArraySizeById(wrBuf, 4660, 26, 13)
+						UpdateNvmArraySizeById(wrBuf, 4837, 20, 3)
+						UpdateNvmArraySizeById(wrBuf, 5783, 20, 19)
+						UpdateNvmArraySizeById(wrBuf, 12837, 47, 46)
 						}
 
-						if (1)
+						if (0)
 						{
 						//op: delete
 //						DeleteNvmIdRange(wrBuf, 960, 961)  //replace one

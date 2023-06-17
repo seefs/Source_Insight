@@ -8,8 +8,8 @@ Save:node\C\study\Macro_nv_sim107.h \[1.5\] REG
 Save:node\C\study\Macro_nv_sim107.h \[1.6\] //4G
 Save:node\C\study\Macro_nv_sim107.h \[1.7\] custom
 Save:node\C\study\Macro_nv_sim107.h \[1.8\] plmn_while_list
-Save:node\C\study\Macro_nv_sim107.h \[1.9\] 
-Save:node\C\study\Macro_nv_sim107.h \[1.10\] 
+Save:node\C\study\Macro_nv_sim107.h \[1.9\] SIM_HOT_PLUG
+Save:node\C\study\Macro_nv_sim107.h \[1.10\] other nv copy
 Save:node\C\study\Macro_nv_sim107.h \[1.11\] 
 Save:node\C\study\Macro_nv_sim107.h \[1.12\] 
 
@@ -232,12 +232,46 @@ PS\nv\operator_delta\NV_PARAM_TYPE_IMS_ISIM_SETTINGS.xml
 //		====>MMIAPIENG_IsWhitelistEnable
 
 
-[1.9] 
+[1.9] SIM_HOT_PLUG
+
+### SIM_HOT_PLUG
+//
+chip_drv\chip_module\sim\SIM_HOT_PLUG_CFG.xml
+//
+nv:SIM_HOT_PLUG_CFG.xml
+
+
+[1.10] other nv copy
+### __otherNvCopy__
 
 
 
 
-[1.10] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

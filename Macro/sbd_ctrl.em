@@ -421,8 +421,15 @@ macro CtrlR()
 			return
 		}
 		
-		//  单行跳转
 		cur_line = GetBufLine(hbuf, sel.lnFirst )	
+		if(getMacroValue(hbuf, "dBCompare", 1) == "TRUE")
+		{
+			baseDir = getBasePath(hbuf)
+			BComparePath(hbuf, baseDir # "\\" # cur_line)
+			return
+		}
+		
+		//  单行跳转
 		if(strlen(cur_line) > 2) {
 			//2. 标签跳转到索引，只能在文件内
 			//  [1.1]  ==>  \[1.1\]

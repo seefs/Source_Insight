@@ -83,6 +83,7 @@ git config [--local|--global|--system] --list/-l　　　　　　　　　　
 git config [--local|--global|--system] --unset[-all] user.name
 
 // gitconfig
+C:\Users\{Admin}\
 C:\Users\{Admin}\.gitconfig
 
 
@@ -139,10 +140,27 @@ https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases/tag/1.2
 
 
 // Windows系统上，就把它设置成true
+git config --global core.autocrlf
 git config --global core.autocrlf true
-//
-https://blog.csdn.net/moamao_jishuyuan/article/details/118994511
+git config --global core.autocrlf false
+git config --local core.autocrlf
+git config --local core.autocrlf true
+git config --local core.autocrlf false
+git config --local --unset core.autocrlf
 
+// Windows-true 表示在推送时转成 \n，在拉取时转成 \r\n。
+https://blog.csdn.net/moamao_jishuyuan/article/details/118994511
+https://blog.csdn.net/WPwalter/article/details/107033210
+
+//
+//解决办法：设置autocrlf false，然后删掉本地代码重新拉新代码即可，新代码会看到换行符变为了LF
+
+
+// 文件
+.gitattribute
+// 在末尾加了一行：
+++  *.inf       binary
+//这样，*.inf 文件会被 git 视为二进制文件，也就不会处理换行符了。
 
 
 [1.3] git init ------------创建git本地仓库
@@ -314,6 +332,7 @@ git reflog
 //be74e6e HEAD@{1}: reset: moving to HEAD^
 //3c38201 HEAD@{2}: commit: test 2
 //be74e6e HEAD@{3}: commit (initial): test
+git reset cce8d9ef
 
 //5) 
 git log dev ^master

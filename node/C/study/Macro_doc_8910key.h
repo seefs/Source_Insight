@@ -303,9 +303,13 @@ source:mmi_app\kernel\c\mmi_default.c  DefaultExtKey
 //
 //		==>0x00
 //		==>0x11
-//		====>key_code:001001, int001+out001
+//		====>status: x001x002
+//		====>key_code:002001
+//		====>in:002, out:001
+//		====>row:002, column:001
 chip_drv\chip_module\kpd\v5\
-chip_drv\chip_module\kpd\v5\kpd_phy.c  GetKeycode
+chip_drv\chip_module\kpd\v5\kpd_phy.c  uint16^GetKeycode
+chip_drv\chip_module\kpd\v5\kpd_phy.c  uint16^GetVirtualKey
 //
 driver:tf_load\src\tf_load.c  TF_EnterVerify
 

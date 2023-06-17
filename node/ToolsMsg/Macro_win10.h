@@ -107,27 +107,8 @@ https://www.disktool.cn/content-center/ssd-alignment-windows-10-2111.html
 
 [1.7] win10编译时间
 
-### __Buildtime__
-
-### 8910
-// -D-：
-All Time consuming: 496 seconds!
-//
-All Time consuming: 366 seconds!
-// 改电源没效果
-All Time consuming: 364 seconds!
-// -G-job12-j12：(卸载驱动精灵)
-All Time consuming: 131 seconds!
-// -G-job12-j12：(手表)
-All Time consuming: 292 seconds!
-
-### 107
-// -E-job12-j12：
-All Time consuming: 771 seconds!
-// -G-job12-j12：(有更新git)
-All Time consuming: 1113 seconds!
-// -G-job12-j12：(卸载驱动精灵)
-All Time consuming: 466 seconds!
+// code:编译时间
+patch:node\info\Macro_info_code_buildtime.h
 
 
 [1.8] win10慢
@@ -150,6 +131,17 @@ All Time consuming: 466 seconds!
 //
 // 360安全卫士==>右上角菜单==>设置
 //==>安全防护中心==>开发者模式==>确定
+
+
+### 360 占用CPU _360_
+//
+// 提醒大家注意最新版360安全卫士的“安全中心防护模块”占用CPU和持续读写硬盘
+// 设置==>安全防护中心==>开发者模式/关闭自我保护/关闭主动防护服务
+https://zhidao.baidu.com/question/2137652291115286748.html
+// 排除项:
+D:\soft
+E:\soft
+G:\UIS8910_git2
 
 
 ### AHCI模式 (找不到)

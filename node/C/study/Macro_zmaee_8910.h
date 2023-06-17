@@ -31,7 +31,7 @@ Save:node\C\study\Macro_zmaee_8910.h \[1.18\] 电子保卡
 Save:node\C\study\Macro_zmaee_8910.h \[1.19\] log
 Save:node\C\study\Macro_zmaee_8910.h \[1.20\] 下拉列表禁用返回
 Save:node\C\study\Macro_zmaee_8910.h \[1.21\] 
-Save:node\C\study\Macro_zmaee_8910.h \[1.22\] 
+Save:node\C\study\Macro_zmaee_8910.h \[1.22\] ring
 Save:node\C\study\Macro_zmaee_8910.h \[1.23\] 
 
 
@@ -317,19 +317,25 @@ lib/UIS8910_ROM_16MB_SS_USER/img_proc.a
 
 [1.18] 电子保卡
 
-// --开机上传
-//		==>ZMAEE_IwatchLib_OnTimerUpdate()
+### 1. 先激活后插卡上传，"active_time":"20230101"
+//		==>mainapp-RTC                      # 插卡开机上传
+//		====>ZMAEE_IwatchLib_OnTimerUpdate()
+//		======>httpUploadGuaranteeCard      # 先调用这个，兼容第2种情况
+//		========>StartHttpVcardData
+//		==========>SendHttpVcardDataCallBack
+//		============>上传成功状态为2
 app:idle\c\mainapp.c  MISC_MSG_RTC_MIN
-//		==>httpUploadGuaranteeCard      # 复用
 zmaee:c\zmaee_watch_dll.c  ZMAEE_IwatchLib_OnTimerUpdate
-//		==>StartHttpVcardData
-//		====>SendHttpVcardDataCallBack
 zmaee:c\zmaee_watchos.c  StartHttpVcardData
 
 
+### 2. 先插卡后激活上传，"active time":"20230526"
+//		==>待机8小时
+//		====>httpUploadGuaranteeCard        # 同上
+
+
 // --快速测试/开机上传--测试时会重复发送
-//		==>httpUploadGuaranteeCard
-app:idle\c\mainapp.c  testEleGuarCard   # 改成2分钟
+app:idle\c\mainapp.c  testEleGuarCard       # 同上第2种情况
 
 
 
@@ -365,12 +371,9 @@ zmaee:c\zmaee_watchos.c  SPD_ENGINEER_SW46E_TWO_KEY
 
 
 
-[1.22] 
-
-
-
-
-
+[1.22] __RING__
+// 
+images:zmaee_128X128/MMI_RES_DEFAULT\RING\zmaee\RING/
 
 
 [1.23] 

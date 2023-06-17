@@ -14,7 +14,7 @@ Save:node\C\study\Macro_nv_8910.h \[1.11\] thir_nv,107
 Save:node\C\study\Macro_nv_8910.h \[1.12\] nv copy--8910
 Save:node\C\study\Macro_nv_8910.h \[1.13\] 
 Save:node\C\study\Macro_nv_8910.h \[1.14\] nand/nor
-Save:node\C\study\Macro_nv_8910.h \[1.15\] 
+Save:node\C\study\Macro_nv_8910.h \[1.15\] 自动测试
 Save:node\C\study\Macro_nv_8910.h \[1.16\] 
 Save:node\C\study\Macro_nv_8910.h \[1.17\] 
 Save:node\C\study\Macro_nv_8910.h \[1.18\] 
@@ -38,6 +38,7 @@ Save:node\C\study\Macro_nv_sim107.h  __ECC__      # copy sim nv
 Save:node\C\study\Macro_nv_sim107.h  __BAND__
 Save:node\C\study\Macro_nv_sim107.h  __REG__      # sim CQ list
 Save:node\C\study\Macro_nv_sim107.h  __custom__
+Save:node\C\study\Macro_nv_sim107.h  __otherNvCopy__
 Save:node\C\study\Macro_nv_sim107.h  
 // sim相关--8910
 Save:node\C\study\Macro_nv_sim8910.h  __IMEI__
@@ -150,46 +151,11 @@ Save:node\C\study\Macro_nv_tool8910.h  __env_nv__
 // 2.手机关机, 连接usb，等success后，点disconnect
 // 3.打开 NVTool, set port 为 SPRD DIAL, 打开nv.xprj, 点导入
 
+// MobileTester
+file_down:4^soft^tool\MOBILETESTER_R5.0.0001\Bin\
 
 
-
-[1.7] apn
-// apn-edit
-Save:node\C\study\Macro_res_8910.h  __8910_apn__   # apn str
-Save:node\C\study\Macro_res_8910.h  __107_apn__
-//Save:node\C\study\Macro_doc_volte8910.h
-// apn-list
-Save:node\C\study\Macro_doc_apn107.h
-Save:node\C\study\Macro_doc_apn107.h  __apnStr__
-Save:node\C\study\Macro_doc_apn8910.h
-//Save:node\C\study\Macro_doc_volte107.h
-// t6b
-// 台灣大物聯網卡無法上網使用（APN:twm.iot） 
-
-//
-虚拟运营商需要提供：
- 1.MVNO Type。虚拟运营商类型。
- 2.MVNO Value。虚拟运营商类型筛选值。
- 3.42515的apn、name。
-如：
- 不填MVNO，无筛选条件
- 类型 spn和spn的筛选值
- 类型 gid和gid的筛选值
- 类型 pnn和pnn的筛选值
- 类型 imsi和imsi的筛选值
- 类型 imsir和imsi的筛选范围，425150000000000~425159999999999
-
-// mcc有排序
-https://docs.routee.net/docs/list-of-mccmnc-codes
-https://mcc-mnc-list.com/list
-// 只有3个425
-https://apn.how/israel/pelephone
-// 官网+电话
-https://wiki.droam.com/Israel#Annatel
-// 设置apn 425-16
-https://www.setapn.com/category/israel/
-// 只有常用的--很卡
-https://www.prepaidisraelisim.com/APN_Settings
+[1.7] 
 
 
 [1.8] 单软多硬
@@ -251,12 +217,14 @@ prj:project_{cur}.mk   DELTA_NV_BIN_SUPPORT      = TRUE
 prj:project_{cur}.mk   DELTA_NV_OPERATOR         = TRUE
 //prj:project_{cur}.mk   CONFIG_BOARD_ID
 
-//
+
+# 制作单软多硬的delta NV
 https://unisupport.unisoc.com/faq/getFaqDetialView?id=75469
-//
-// 1.deltaNV--base NV, 配置最多的band配置，选择为base NV
-// 2.deltaNV命名依次为hw_ver00、hw_ver01~hw_ver07 
+// 1.base NV, 配置最多的band配置，选择为base NV
+//   增加空的deltaNV hw_ver00，并在里面添加一句nv_type\REF_PARAMETER\nv_ver_flag=0
+// 2.命名依次为hw_ver00、hw_ver01~hw_ver07 
 //   软件默认最多支持8种配置
+//   打开所有导出的deltanv 手动增加一句nv_type\REF_PARAMETER\nv_ver_flag=1
 // 3.差分配置，为hw_ver01
 // 4.NV_calibration/校准参数，不允许导入到deltaNV; 将calibration项全部删除
 // 5.nv_ver_flag=0,1
@@ -270,6 +238,12 @@ prj:ConfigNV/hw_ver02.nv  nv_type\REF_PARAMETER\nv_ver_flag=1
 
 // copy
 project\config_nv\ums9117\
+
+
+//单软多硬delta NV生成中不可带任何calibration参数。 
+//  正常流程“下载PAC-->校准”没有问题，主要是考虑““下载PAC-->校准-->OTA升级/重刷PAC”，
+//  那么在OTA升级/重刷PAC，delta NV会再做一次merge操作，将delta NV中的calibration参数merge到手机中，
+//  导致手机的校准信息变成delta NV的校准参数。
 
 
 
@@ -386,8 +360,16 @@ w22:BASE\base_nv\Classmark\nv_classmark.nvm
 
 
 
-[1.15] 
+[1.15] 自动测试
+// 尝试先去掉它看是否能通过测试
+MS_Ref\source\aud_dev\src\armvb_as.c  ARMVB_PLAYBACK_Callback
+// 合入喇叭听筒二合一的补丁，影响了自动测试
 
+
+BASE/
+BASE/atc/feature_phone/source/c/atc_lex.c
+BASE\atc\v3\source\c/atc_lex.c
+BASE\atc\v3\source\c/atc_info.c  ATC_Process
 
 
 [1.16] 

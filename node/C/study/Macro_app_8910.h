@@ -558,6 +558,7 @@ Save:node\C\study\Macro_app_8910pb.h  __detail__     #
 Save:node\C\study\Macro_app_8910pb.h  __memory__     # option
 Save:node\C\study\Macro_app_8910pb.h  __add__
 Save:node\C\study\Macro_app_8910pb.h  __pbBak__
+Save:node\C\study\Macro_app_8910pb.h  __IKEYBACKUP__ # 一键备份
 Save:node\C\study\Macro_app_8910pb.h  __pbNumMax__   # PB条数修改
 Save:node\C\study\Macro_app_8910pb.h  __blacklist__  # 黑名单/白名单
 Save:node\C\study\Macro_app_8910pb.h  __pbName__
@@ -1180,6 +1181,8 @@ app:audioplayer\c\mmiapwin_main_mini.c  435
 Save:node\C\study\Macro_pos_8910.h  __Mp3__
 // ==>image
 Save:node\C\study\Macro_res_image_8910.h __Mp3__
+// ==>内置mp3
+Save:node\C\study\Macro_res_ring_8910.h __Mp3__
 
 
 

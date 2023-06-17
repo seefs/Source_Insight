@@ -6,12 +6,12 @@ Save:node\C\study\Macro_doc_apn107.h \[1.3\] 425 以色列/巴勒斯坦
 Save:node\C\study\Macro_doc_apn107.h \[1.4\] 259 摩尔多瓦
 Save:node\C\study\Macro_doc_apn107.h \[1.5\] 404 印度
 Save:node\C\study\Macro_doc_apn107.h \[1.6\] 220
-Save:node\C\study\Macro_doc_apn107.h \[1.7\] 
+Save:node\C\study\Macro_doc_apn107.h \[1.7\] 302
 Save:node\C\study\Macro_doc_apn107.h \[1.8\] 
 Save:node\C\study\Macro_doc_apn107.h \[1.9\] 
 Save:node\C\study\Macro_doc_apn107.h \[1.10\] 
-Save:node\C\study\Macro_doc_apn107.h \[1.11\] 
-Save:node\C\study\Macro_doc_apn107.h \[1.12\] 
+Save:node\C\study\Macro_doc_apn107.h \[1.11\] search
+Save:node\C\study\Macro_doc_apn107.h \[1.12\] err
 
 ### volte--CQ
 //
@@ -224,7 +224,12 @@ PS\nv\operator_delta\operator_config_all\IN_Airtel_S.nv
 
 
 
-[1.7] 
+[1.7] 302
+//302 720
+PS\nv\operator_delta\operator_config_all\Index.xml  mcc="302"
+//
+PS\nv\operator_delta\operator_config_all\IN_Airtel_P.nv
+PS\nv\operator_delta\operator_config_all\IN_Airtel_S.nv
 
 
 
@@ -243,13 +248,35 @@ PS\nv\operator_delta\operator_config_all\IN_Airtel_S.nv
 
 
 
-[1.11] 
+[1.11] __search__
+// apn_list_BigThan_300_LessThan_430.ntac
+// apn_list_BigThan_430.ntac
+// apn_list_LessThan_300.ntac
+// 资料
+https://unisupport.unisoc.com/file/index?fileid=31001
+// android aosp--apn有点旧
+http://aospxref.com/
+http://aospxref.com/android-13.0.0_r3/xref/device/generic/goldfish/data/etc/apns-conf.xml
+http://aospxref.com/android-13.0.0_r3/xref/device/sample/etc/apns-full-conf.xml
 
 
+### 425
+// mcc有排序
+https://docs.routee.net/docs/list-of-mccmnc-codes
+https://mcc-mnc-list.com/list
+// 只有3个425
+https://apn.how/israel/pelephone
+// 官网+电话
+https://wiki.droam.com/Israel#Annatel
+// 设置apn 425-16
+https://www.setapn.com/category/israel/
+// 只有常用的--很卡
+https://www.prepaidisraelisim.com/APN_Settings
 
 
-[1.12] 
-
+[1.12] __err__
+// t6b
+// 台灣大物聯網卡無法上網使用（APN:twm.iot） 
 
 
 
@@ -264,54 +291,6 @@ PS\nv\operator_delta\operator_config_all\IN_Airtel_S.nv
 
 
 [1.15] 
-
-
-
-[2.1] 
-
-
-[2.2] 
-
-
-[2.3] 
-
-
-[2.4] 
-
-
-[2.5] 
-
-
-[2.6] 
-
-
-[2.7] 
-
-
-[2.8] 
-
-
-[2.9] 
-
-
-[2.10] 
-
-
-
-[2.11] 
-
-
-[2.12] 
-
-
-[2.13] 
-
-
-[2.14] 
-
-
-[2.15] 
-
 
 
 

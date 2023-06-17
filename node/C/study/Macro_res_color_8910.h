@@ -166,13 +166,15 @@ ctrl:Menu\c\ctrlmenu_sec.c  SPDE_UI_STYLE_BLACK_BG_WHITE_FONT
 //		====>MMI_THEME_LIST_ITEM0    # 
 //		======>excel_row_10          # 非焦点 --W
 
+### __menu__
 // gui--popmenu
 //		==>PopmenuDisplayItemText
 //		====>text_color              # 灰色   --G
 //		====>text_color              # 焦点 !same --B
 //		====>MMI_THEME_POPMENU       # 
 //		======>excel_row_3           # 焦点/非焦点 same --W; 非焦点 !same --w
-
+//		==>bg_color                  # 61341
+app:theme\c\mmitheme_menu.c  MMITHEME_GetPopMenuTheme
 
 
 [1.4] gui----------font
@@ -210,6 +212,12 @@ ctrl:Menu\c\ctrlmenu_sec.c  SPDE_UI_STYLE_BLACK_BG_WHITE_FONT
 //		======>.pubwin_theme.normal_font
 //		==>softkey                             # --f40 写死
 Save:node\C\study\Macro_pos_8910.h   __list__
+// gui--list--bg
+app:theme\c\mmitheme_list.c   MMI_WINDOW_BACKGROUND_COLOR 
+// gui--listbox--bg (拨号界面)
+//		==>IMAGE_COMMON_BG_LIGHT
+ctrl:ListBox\c\ctrllistbox.c   ListDrawBackground
+
 
 // gui--popmenu
 //		==>MMITHEME_GetOptionsMenuTheme        # --small 20
@@ -217,7 +225,6 @@ Save:node\C\study\Macro_pos_8910.h   __list__
 //		====>text_color              # 焦点 !same --B
 //		====>MMI_THEME_POPMENU       # 非焦点
 //		======>excel_row_3           # --W
-
 
 
 

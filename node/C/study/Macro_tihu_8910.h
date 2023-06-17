@@ -543,6 +543,10 @@ BM_WATCH_NOSIM_POWEROFF
 app:idle\c\mainapp.c  WatchTimer_Init
 
 
+#
+WATCH_DORMANCY_TIMER
+
+
 
 [1.14] 
 

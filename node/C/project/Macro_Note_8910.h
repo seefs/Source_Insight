@@ -179,7 +179,9 @@ driver:lcd/tft_GC9107.c
 
 // 新屏
 //  ==>修改画屏方向: (0x36)0xC8->0xD8
-make\custom_drv\custom_drv.mk  tft_ST7735S.c
+make\custom_drv\custom_drv.mk            tft_ST7735S.c
+make\tf_fdl\tf_fdl.mk                    tft_ST7735S.c  #
+make\fota_bootloader\fota_bootloader.mk  tft_ST7735S.c  #
 
 // te
 MS_Customize\source\product\config\
@@ -191,6 +193,8 @@ MS_Customize\export\inc\lcm_cfg.h  LCD_DRV_ID_ST7735S
 MS_Customize/source/common/lcm_prod.c  ST7735S
 //
 driver:lcd/tft_ST7735S.c
+// fdl
+fdl_bootloader\tf_fdl\src\tf_lcd\src\tf_lcmcfg.c  LCD_DRV_ID_GC9307
 
 
 ### 其他调试
@@ -207,6 +211,7 @@ chip_drv\chip_module\analog\{analog}\{analog_phy}.c  BLTC_LCM_CURRENT_V
 chip_drv\chip_module\analog\{analog}\{analog_phy}.c  s_ana_dev_tab
 // 背景电流 = BLTC_LCM_CURRENT_V
 chip_drv\chip_module\analog\analog_phy.h  LCM_V_SW
+chip_drv\chip_module\analog\analog_phy.h
 
 
 // --刷新帧率
@@ -218,6 +223,11 @@ chip_drv\chip_module\lcdc\uix8910\hal_gouda.c  uint32^hal_GoudaUpdateSerialTimin
 prj:project_{cur}.mk   LCD_DUAL_SPI_FREQ_SUPPORT
 //  ==>
 MS_Ref\source\lcd\src\lcd_uix8910.c  LCD_DUAL_SPI_FREQ_SUPPORT
+// --107帧率 70改40(不然4线1切屏调不动)
+s_GC9306_lcmtiming
+
+// ESD
+prj:{cfg}.cfg  LCD_ESD_SUPPORT = FALSE
 
 //复位
 hal_GoudatResetLcdPin
@@ -669,11 +679,14 @@ Save:node\C\project\Macro_Note_8910trace.h  __USB__
 Save:node\C\project\Macro_Note_8910trace.h  __uart__
 Save:node\C\project\Macro_Note_8910trace.h  __SIM__
 //Save:node\C\project\Macro_Note_8910trace.h  __SIM__
+Save:node\C\project\Macro_Note_8910trace.h  __BBAT_log__
 
 
 ### CE 蓝牙定频版本:
+// 6531
 prj:project_{cur}.mk  PRODUCT_BASELIB_DIR = sc6531efm_32X32_320X240BAR_AB_CE
 prj:project_{cur}.mk  BT_NONSIG_SUPPORT = TRUE
+// 107不用开宏，默认有功能
 
 
 ### CTA
@@ -717,6 +730,7 @@ cmd: cmd
 // ----8910
 // ------halo_rec     # 未找到
 cmd_s: cd build\{cur}_builddir\log&&findstr /s /i "nas_emm" *.log>aaaa.txt&&start aaaa.txt
+build\{cur}_builddir\log\
 
 // --set
 Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
