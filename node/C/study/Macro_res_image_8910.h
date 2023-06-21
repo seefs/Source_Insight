@@ -425,6 +425,7 @@ images:common\MMI_RES_DEFAULT\IMAG\Pubwin\BAR\IMAGE_PUBWIN_BG.png
 
 [1.10] list
 ### __list__
+images:common\MMI_RES_DEFAULT\IMAG\Bg\
 images:common\MMI_RES_DEFAULT\IMAG\Number\
 images:common\MMI_RES_DEFAULT\IMAG\List\
 images:common\MMI_RES_DEFAULT\IMAG\Common\

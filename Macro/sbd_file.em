@@ -53,6 +53,7 @@ macro GetPubPathBuf(hbuf)
 	type = n/10 *10
 	nKey = getBaseKey(n)
 	
+	//”√tag+keyªÚkeyΩ®≈‰÷√
 	curTag = getBaseOther(type, "tag1")
 	if(curTag == "SPRD" || curTag == "RDA")
 	{
@@ -80,7 +81,7 @@ macro GetPubPathBuf(hbuf)
 		setBuf = OpenCache(SetName)
 		return setBuf
 	}
-	else // "hexo"
+	else if(curTag == "") // "hexo"
 	{
 		if (nKey != nil)
 		{
@@ -92,14 +93,25 @@ macro GetPubPathBuf(hbuf)
 			}
 		}
 	}
+	else
+	{
+		if (nKey != nil)
+		{
+			SetName = getSetPath(0) # "\\Macro_Set_Path_" # curTag # "_" # nKey # ".h"
+			if (IsExistFile(SetName))
+			{
+				setBuf = OpenCache(SetName)
+				return setBuf
+			}
+		}
+	}
 	
 	msg("cfg null: " # CharFromKey(13)
-	   # "baseName: " # baseName # CharFromKey(13)
+	   # "SetName: " # getSetPath(0) # "\\Macro_Set_Path_" # curTag # "_" # nKey # ".h" # CharFromKey(13)
+	   # "BasePath: " # baseName # CharFromKey(13)
 	   # "n: " # n # CharFromKey(13)
 	   # "type: " # type # CharFromKey(13)
-	   # "tag1: " # curTag # CharFromKey(13)
-	   # baseName # CharFromKey(13) # CharFromKey(13)
-	   # nKey)
+	   # "tag1: " # curTag)
 	
 	return hNil
 }

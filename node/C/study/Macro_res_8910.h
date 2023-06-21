@@ -365,9 +365,10 @@ resource:Common\DATA\
 {8910wa21}\source:resource\Common\DATA\
 {8910wa_git}\source:resource\Common\DATA\
 //	excel
-patch:code\UIS8910_git\_ex_w22\
+patch:code\UIS8910\_ex_w22\
 // 8910 apn str-list
 Save:node\C\study\Macro_doc_apn8910.h
+Save:node\C\study\Macro_doc_apn8910.h  __strApn__
 Save:node\C\study\Macro_doc_apn8910.h   __MVNO__
 // 8910 volte/°×Ãûµ¥
 Save:node\C\study\Macro_doc_volte8910.h

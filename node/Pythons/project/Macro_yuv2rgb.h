@@ -2,8 +2,6 @@
 »ù´¡Â·¾¶ÉèÖÃ:
 basePath = D:\project\python\yuv2rgb\
 base:\\
-tmpPath = D:\project\audio\tmp
-tmp:\\
 
 
 

@@ -72,6 +72,12 @@ USB抓trace:
 //8 para set->debug->alert:debug
 
 
+//		====>.enable_arm_log: 0x1
+//		====>.dsp_log_set: 0x2
+//		====>.cap_log_enable: 0x1
+
+
+
 [1.2] __uart__
 
 uart抓trace:
@@ -99,6 +105,12 @@ MS_Ref\source\base\src\init.c  UART_LOG_SUPPORT        // 107
 MS_Ref\source\base\src\init.c  UART_LOG_MODE_SUPPORT   // 8910
 //  看看参考下8910里有没有更详细些的改动
 MS_Ref\source\base\src\init.c  uint32^SCI_InitRef
+//		====>.baud_rate: 921600          # 波特率
+//		==>SIO_Create:
+//		====>.parity: FALSE              # 无校验
+//		====>.byte_size: EIGHT_BITS
+//		====>.stop_bits: ONE_STOP_BIT
+
 
 // 现象:
 //   下载第1次开机, 报rf错误
@@ -109,6 +121,21 @@ MS_Ref\source\base\src\init.c  uint32^SCI_InitRef
 //   波特率：115200，软件上: com1,  RX TX没变，只有开机log+乱码，
 //   如果设置波特率：921600，就是输出0
 //   用uart2无法开机
+
+
+//
+//先把通信双方的RX和TX短接，做回环测试，可以先验证本身程序的逻辑问题。
+//如果其中一方是PC的话或者是Linux系统的话，可以下个串口调试工具，先用这个程序和ARM对接，
+//看硬件和下位机的设置有问题没有。最后才是你的程序和ARM通信。一步一步的查，缩小问题的范围，
+//一定能找到问题的。串口通信的问题基本都可以像这么来查，是个较通用的方法。
+
+
+//串口显示乱码
+https://blog.csdn.net/hfyutdg/article/details/83896091
+
+
+// serial
+Save:node\Pythons\project\Macro_serial.h
 
 
 

@@ -217,6 +217,7 @@ app:theme\c\mmitheme_list.c   MMI_WINDOW_BACKGROUND_COLOR
 // gui--listbox--bg (²¦ºÅ½çÃæ)
 //		==>IMAGE_COMMON_BG_LIGHT
 ctrl:ListBox\c\ctrllistbox.c   ListDrawBackground
+Save:node\C\study\Macro_res_image_8910.h  IMAGE_COMMON_BG_LIGHT
 
 
 // gui--popmenu

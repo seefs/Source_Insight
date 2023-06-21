@@ -1,6 +1,6 @@
 
 基础路径设置: 
-//base
+//base “python.exe”在上级目录, 环境变量未生效时用不了
 basePath = pyScripts:
 base:\\
 //test
@@ -37,7 +37,9 @@ Save:node\Pythons\install\Macro_Pythons_Install.h \[2.10\] input_data
 Save:node\Pythons\install\Macro_Pythons_Install.h \[2.11\] Pycharm
 Save:node\Pythons\install\Macro_Pythons_Install.h \[2.12\] requests
 Save:node\Pythons\install\Macro_Pythons_Install.h \[2.13\] googletrans
-Save:node\Pythons\install\Macro_Pythons_Install.h \[2.14\] 
+Save:node\Pythons\install\Macro_Pythons_Install.h \[2.14\] serial
+Save:node\Pythons\install\Macro_Pythons_Install.h \[2.15\] 
+Save:node\Pythons\install\Macro_Pythons_Install.h \[2.16\] 
 //	lib
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.1\] pandas
 Save:node\Pythons\install\Macro_Pythons_Install.h \[3.2\] gensim
@@ -161,7 +163,10 @@ open: C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe
 //  win10--3.10.0
 		
 //添加环境变量, path:
-C:\Users\Administrator\AppData\Local\Programs\Python\Python36\
+C:\Users\{Admin}\AppData\Local\Programs\Python\Python36\
+C:\Users\{Admin}\AppData\Local\Programs\Python\Python310\Scripts\
+D:\Program\Python\Python311\
+D:\Program\Python\Python311\Scripts\
 cmd_w: path
 //自定义路径
 Save:node\S\cfg\Macro_s_path.h  __PY__
@@ -315,7 +320,22 @@ cmd_w: pip install pygoogletranslation
 cmd_w: python -m pip install --upgrade pip
 
 
-[2.14] 
+[2.14] serial
+cmd_w: python -m pip install --upgrade serial
+cmd_w: python -m pip install --upgrade pyserial
+
+cmd_w: pip show serial
+//	Version: 0.0.97
+cmd_w: pip show pyserial
+//	Version: 3.5
+
+
+
+
+[2.15] 
+
+
+[2.16] 
 
 
 [3.1] pandas

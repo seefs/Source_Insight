@@ -232,13 +232,16 @@ source:mmi_app\common\h\
 source:mmi_app\common\h\common_mdu_def.h   plmn_extra_database_str
 // str--apn--watch--Ìæ»»Îªnull
 source:mmi_app\common\h\plmn_ts25_database_str_watch_cn.h
+source:mmi_app\common\h\plmn_ts25_database_str_watch_cn.h  STR_OPERATOR_CHINA_MOBILE
 // str--apn
 source:mmi_app\common\h\plmn_ts25_database_str.h  TXT_NET_886
+source:mmi_app\common\h\plmn_ts25_database_str.h  STR_OPERATOR_CHINA_MOBILE
 // str--apn ex
 source:mmi_app\common\h\plmn_extra_database_str.h
-// ID ¶ÔÓ¦
-Save:node\C\study\Macro_doc_apn8910.h  __strApn__
-
+// id
+app:phone\h\
+app:phone\h\plmn_ts25_database_enum.h  PLMN_460_
+app:phone\h\plmn_ts25_database_table.h  PLMN_460_
 
 
 

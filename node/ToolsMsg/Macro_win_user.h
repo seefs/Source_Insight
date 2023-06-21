@@ -28,6 +28,9 @@ C:\Users\seefs\Documents\Tencent Files\284487000\FileRecv\
 H:\Tencent Files\
 
 
+// 删无用数据
+H:\Program^Files^(x86)\Tencent\WeChat3\WeChat^Files\wxid_q1vmlzbtj7c522\FileStorage\File\
+
 
 [1.2] chrome
 // chrome 书签位置
@@ -120,6 +123,8 @@ patch:node\info\Macro_info_code_buildtime.h
 [1.7] svn/git
 // svn--icon非常卡
 
+// svn
+// 上传格式: *.a
 
 
 [1.8] 

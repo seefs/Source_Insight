@@ -10,9 +10,9 @@ Save:node\C\study\Macro_nv_8910.h \[1.7\] apn
 Save:node\C\study\Macro_nv_8910.h \[1.8\] hw_ver00-------单软多硬
 Save:node\C\study\Macro_nv_8910.h \[1.9\] test
 Save:node\C\study\Macro_nv_8910.h \[1.10\] Card-----------电子保卡
-Save:node\C\study\Macro_nv_8910.h \[1.11\] thir_nv,107
-Save:node\C\study\Macro_nv_8910.h \[1.12\] nv copy--8910
-Save:node\C\study\Macro_nv_8910.h \[1.13\] 
+Save:node\C\study\Macro_nv_8910.h \[1.11\] thir_nv--------107
+Save:node\C\study\Macro_nv_8910.h \[1.12\] nv copy--------8910
+Save:node\C\study\Macro_nv_8910.h \[1.13\] RF-------------107
 Save:node\C\study\Macro_nv_8910.h \[1.14\] nand/nor
 Save:node\C\study\Macro_nv_8910.h \[1.15\] 自动测试
 Save:node\C\study\Macro_nv_8910.h \[1.16\] 
@@ -349,10 +349,13 @@ w22:BASE\base_nv\Classmark\nv_classmark.nvm
 
 
 
-[1.13] 
+[1.13] RF
+//
+drv_rf_iram.c  321
+// assert(g_rfic_type<MAX_NUM_RF_TYPE)
+// -1<24
 
-
-
+MAX_NUM_RF_TYPE
 
 [1.14] nand/nor
 // 

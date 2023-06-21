@@ -2,7 +2,7 @@
 //目录:
 Save:node\C\study\Macro_nv_charge8910.h \[1.1\] 充电------------电流
 Save:node\C\study\Macro_nv_charge8910.h \[1.2\] 充电/放电-------电压(修改放电n%)
-Save:node\C\study\Macro_nv_charge8910.h \[1.3\] 低电电压
+Save:node\C\study\Macro_nv_charge8910.h \[1.3\] 低电电压--------8910
 Save:node\C\study\Macro_nv_charge8910.h \[1.4\] charge_end_voltage 高压电池
 Save:node\C\study\Macro_nv_charge8910.h \[1.5\] 
 Save:node\C\study\Macro_nv_charge8910.h \[1.6\] 充电/放电-------107
