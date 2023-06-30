@@ -41,7 +41,8 @@ sensorsPath = MS_Customize\source\product\driver\sensors\
 versionKey  = UMS9117_ums9117_barphone_version
 configKey  = S89T
 lteKey      = NemoL_T117_3595D
-
+analogKey   = v7
+analog_phyKey  = analog_phy
 
 ### 2.cur
 prjPath  = SPDE_PRJ\{project}\

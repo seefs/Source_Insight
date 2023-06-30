@@ -343,15 +343,9 @@ app:idle\c\mainapp.c  testEleGuarCard       # 同上第2种情况
 
 [1.19] log
 ### __log__
-//
-Save:node\C\study\Macro_patch_8910.h  __Trace__
-
-
-### 其他
-// slide
-Save:node\C\study\Macro_slide_8910.h  __log__
 // trace
-Save:node\C\study\Macro_fun_8910.h  __debug__
+patch:node\code\Macro_code_trace.h
+
 
 
 

@@ -43,6 +43,8 @@ fzdPath = MS_MMI_Main\source\mmi_app\app\fzd\
 versionKey  = UIX8910_uis8910ff_refphone_version
 configKey  = wa03u_v2
 
+analogKey   = sc2720
+analog_phyKey  = analog_phy_sc2720
 
 ### 2.cur
 prjPath  = SPDE_PRJ\{project}\
@@ -79,6 +81,8 @@ newKey = xx
 ### 4.tmp
 wintabKey = wintab_custom
 UIX8910Key = UIX8910
+ROMKey = UIS8910_ROM_16MB_DS_USER
+ROM1Key = UIS8910_ROM_16MB_DS_DEBUG
 
 
 ### 5.build

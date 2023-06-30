@@ -11,7 +11,7 @@ Save:node\C\study\Macro_fun_8910.h \[1.8\] Sleep
 Save:node\C\study\Macro_fun_8910.h \[1.9\] 
 Save:node\C\study\Macro_fun_8910.h \[1.10\] //popup
 Save:node\C\study\Macro_fun_8910.h \[1.11\] make------------
-Save:node\C\study\Macro_fun_8910.h \[1.12\] debug, trace
+Save:node\C\study\Macro_fun_8910.h \[1.12\] 
 Save:node\C\study\Macro_fun_8910.h \[1.13\] 
 Save:node\C\study\Macro_fun_8910.h \[1.14\] select_sim
 Save:node\C\study\Macro_fun_8910.h \[1.15\] sim--œ‘ æµ•ø®
@@ -273,17 +273,7 @@ app_main.mk
 
 
 
-[1.12] debug, trace
-### __debug__
-//
-//	SCI_TRACE_LOW("[ccapp]is_handfree = %d", dev);
-
-// watch log
-Save:node\C\study\Macro_tihu_8910.h  __log__
-// slide log
-Save:node\C\study\Macro_slide_8910.h  __log__
-// Trace log
-Save:node\C\study\Macro_patch_8910.h  __Trace__
+[1.12] 
 
 
 [1.13] 

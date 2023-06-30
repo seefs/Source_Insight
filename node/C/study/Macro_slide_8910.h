@@ -241,13 +241,6 @@ zdt:c\zdt_tcp.c sci_sock_recv
 
 [1.12] log
 ### __log__
-### zdt
-zdt:c\zdt_app.c  MMIZDT_AppInit
-zdt:c\zdt_app.c  MMIZDT_InitModule
-//
-common:h\mmi_appmsg.h  MSG_WATCH_LOG_BUF_SAVE
-app:phone\c\mmiphone.c  MSG_WATCH_LOG_BUF_SAVE
-app:fmm\c\mmi_filemgr.c  FILE_LOG_SUPPORT
 // 20480 发送一次
 app:launcher\c\watch_comm_test.c  MSG_WATCH_LOG_BUF_SAVE
 //		==>1:
@@ -261,16 +254,10 @@ app:launcher\c\watch_comm_test.c  MSG_WATCH_LOG_BUF_SAVE
 
 
 ### 其他
-// tihu
-Save:node\C\study\Macro_tihu_8910.h  __log__
-// zmaee
-Save:node\C\study\Macro_zmaee_8910.h   __log__
 // trace
-Save:node\C\study\Macro_fun_8910.h  __debug__
-// Trace log--替换log代码
-Save:node\C\study\Macro_patch_8910.h  __Trace__
+patch:node\code\Macro_code_trace.h
 // usb mode
-Save:node\C\study\Macro_app_8910.h  __UsbMode__
+Save:node\C\study\Macro_app_8910file.h  __UsbMode__
 
 
 ### fzd

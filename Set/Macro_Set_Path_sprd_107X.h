@@ -5,7 +5,8 @@
 ###
 
 0Key  = 8910
-1Key  = 107_x212
+1Key  = t107
+2Key  = _log_x212
 
 HWPath  = HWNV:T107\W20.46.4\
 HW:\\
@@ -51,8 +52,8 @@ prj:\\
 
 // 目录名称自动拼接成mk名称
 //projectKey   = X332_FOUR_G2
-projectKey   = X212T_MID
-//projectKey   = X212T
+//projectKey   = X212T_MID
+projectKey   = X212T
 // --_debug --_user
 curKey   = ums9117_{size}BAR_48MB_{project}_user
 cfgKey   = xx

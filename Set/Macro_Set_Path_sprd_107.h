@@ -5,7 +5,8 @@
 ###
 
 0Key  = 8910
-1Key  = wa03u_git
+1Key  = t107
+2Key  = _log
 
 HWPath  = HWNV:T107\W20.46.4\
 HW:\\
@@ -40,27 +41,23 @@ sensorsPath = MS_Customize\source\product\driver\sensors\
 
 ### 1.cfg
 versionKey  = UMS9117_ums9117_barphone_version
-configKey  = S89T
+configKey   = S89T
 lteKey      = NemoL_T117_3595D
-
+analogKey   = v7
+analog_phyKey  = analog_phy
 
 ### 2.cur
 prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
 // 目录名称自动拼接成mk名称
-//projectKey   = S89T_BYD_A9
 //projectKey   = S89T_BYD_L66A_IN
-//projectKey   = S89T_BYD_A9_2_4G
-//projectKey   = S98T_FLP_E535_31
 //projectKey   = S98T_FLP_E535_C
-//projectKey   = S98T_JL_F13
+projectKey   = S98T_JL_F13
 //projectKey   = S98T_JL_F15_2
-//projectKey   = T5_A82WD_VIET
-//projectKey   = F55T_E2412L
 //projectKey   = F79T_DERONG
 //projectKey   = F76T_SUOAI_V909L
-projectKey   = X229T_BYD_D200
+//projectKey   = X229T_BYD_D200
 // --_debug --_user
 curKey   = ums9117_{size}BAR_48MB_{project}_user
 cfgKey   = xx

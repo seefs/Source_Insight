@@ -263,14 +263,15 @@ app:idle\c\mmiidle_statusbar.c   void^MAIN_SetIdleDbatLevel
 
 
 // 电量--5格
-//		==>calc
+//		==>calc: [0 2 4 6 8]
 app:phone/c/mmiphone_charge.c  uint8^MMIAPIPHONE_GetBatCapacity
+//		==>id: [1 2 3 4 5]
+source:mmi_app\common\c\mmicom_statusarea.c  charge_icon_id
+app:setting/c/mmiset_phonewin.c  icon_array\[5\]
+//app:idle/c/mmiidle_statusbar.c  charge_icon_id\[5\]    # no use
 //		==>动画calc //no use
 app:phone/h/mmiphone_charge.h  PHONE_RX_BAT_DEFAULT_LEVEL
 app:phone/h/mmiphone_export.h  PHONE_RX_BAT_LEVEL_SPAN
-//		==>动画图标
-app:idle/c/mmiidle_statusbar.c  charge_icon_id\[5\]
-app:setting/c/mmiset_phonewin.c  icon_array\[5\]
 source:mmi_kernel/include/mmitheme_statusbar.h  MMISTATUSBAR_ITEM_ICON_FRAME
 source:mmi_app/common/h/common_mdu_def.h  IMAGE_IDLE_TITLE_ICON_BATTERY6
 //		==>3.5V低电量msg

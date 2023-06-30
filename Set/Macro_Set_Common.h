@@ -23,9 +23,13 @@ App:\\
 codePath  = D:\project\
 code:\\
 
+hexoPath  = D:\save\hexo\
+hexo:\\
+
 
 ### 安装路径:
-pyScriptsPath  = C:\Users\seefs\AppData\Local\Programs\Python\Python310\Scripts\
+//pyScriptsPath  = C:\Users\seefs\AppData\Local\Programs\Python\Python310\Scripts\
+pyScriptsPath  = D:\Program\Python\Python311\Scripts\
 pyScripts:\\
 
 
@@ -60,8 +64,8 @@ SDriversPath    =  C:\Windows\System32\drivers\
 
 
 ### 公共设置
-//AdminKey   = Administrator
-AdminKey   = seefs
+AdminKey   = Administrator
+Admin2Key  = seefs
 tNumKey = Disable
 dGroupKey = 目录
 

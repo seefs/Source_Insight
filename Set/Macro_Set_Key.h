@@ -108,8 +108,8 @@
 61 = G:\UIS8910_git
 62 = G:\UIS8910_schcard_git
 63 = G:\wa01u_svn
-65 = G:\wa01u_svn_small_new
-66 = G:\wa01u_svn_small_new3
+65 = G:\wa01u_svn_small_new3
+66 = E:\soft\8910_W22
 67 = G:\wa01u_svn_small_w21
 68 = D:\soft\wa01u_w21_svn2
 69 = E:\8910_w21base
@@ -121,9 +121,9 @@
 62key = 8910sch
 63key = 8910wa
 65key = 8910wa
-66key = 8910wa
+66key = 8910W22
 67key = 8910wa21
-68key = 8910wa21D
+68key = 8910wa21
 69key = 8910B
 
 
@@ -135,7 +135,8 @@
 //
 70 = G:\T1072
 71 = G:\T1071
-72 = E:\T107old
+71 = E:\T107old
+72 = E:\soft\T107_W22P5
 73 = D:\soft\T1073
 74 = E:\T107base
 76 = G:\wa03u_git
@@ -145,14 +146,14 @@
 
 
 70key = 107
-71key = 107
-72key = 107Old
+71key = 107Old
+72key = 107P5
 73key = 107D
 74key = 107B
 76key = 8910wa_git
 77key = 8910wa_git
 78key = 8910B
-79key = 107O
+79key = 107X
 
 //(8) MTK 项目路径1
 80alias = MTK
@@ -200,6 +201,8 @@
 
 //(10) tmp
 100alias = tmp
+100RuleEn = tmp
+100tag1 = tmp
 // 估计外部用的少，common里也可以设置
 101 = G:\_HW_NV_PARA.git
 102 = D:\save\patch

@@ -40,19 +40,20 @@ sensorsPath = MS_Customize\source\product\driver\sensors\
 versionKey  = UIX8910_uis8910ff_refphone_version
 configKey  = S89T
 
+analogKey   = sc2720
+analog_phyKey  = analog_phy_sc2720
 
 ### 2.cur
-//prjPath  = SPDE_PRJ\{project}\
-prjPath  = ./
+prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
-projectKey   = xxx
+projectKey   = K220U_MRD_X12S_2In1_V11_QQVGA
 //projectKey   = 
 //curKey   = UIS8910_ROM_16MB_DS_DEBUG
-curKey   = UIS8910_ROM_128x160_16MB_DS_DEBUG
-cfgKey   = uis8910_phone_base_config
+curKey   = UIS8910_ROM_16MB_DS_USER
+cfgKey   = uis8910_phone_user_base_config
 sizeNext  = 1
-size1Key  = 240X320
+size1Key  = 128X160
 //sizeNext  = 2
 //size1Key  = 320X240
 //size2Key  = 240X320
@@ -65,6 +66,8 @@ newKey = xx
 ### 4.tmp
 wintabKey = wintab_custom
 UIX8910Key = UIX8910
+ROMKey = UIS8910_ROM_16MB_DS_USER
+ROM1Key = UIS8910_ROM_16MB_DS_DEBUG
 
 
 ### 5.build

@@ -1306,7 +1306,7 @@ macro getKeyHead(hbuf, fHead)
 		return ""
 	}
 	
-	//get new Key
+	//get project cfg Key
 	keyVal = getMacroValue(pathBuf, fHead # "Key", 1)
 	if(keyVal != ""){
 		keyVal  = ReAllKeyHead(hbuf, keyVal)  //replace loop
@@ -1316,7 +1316,7 @@ macro getKeyHead(hbuf, fHead)
 	//2.get common cfg
 	pathBuf = GetCommonPathBuf(hbuf)
 	if(pathBuf != hNil){
-		//get new Key
+		//get common cfg Key
 		keyVal = getMacroValue(pathBuf, fHead # "Key", 1)
 		if(keyVal != ""){
 			keyVal  = ReAllKeyHead(hbuf, keyVal)  //replace loop
@@ -1324,10 +1324,10 @@ macro getKeyHead(hbuf, fHead)
 		}
 	}
 	
-	//3.get num key
+	//3.get key cfg(path)
 	hbufConfig = GetPubKeyBuf(hbuf)
 	if(hbufConfig != hNil){
-		//get path
+		//get key cfg Key
 		path = getPathFromKey(hbufConfig, fHead)
 		if("" != path){
 			return path

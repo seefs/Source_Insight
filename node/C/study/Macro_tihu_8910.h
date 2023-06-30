@@ -580,8 +580,8 @@ bm_iot_card_set_love_number
 [1.19] log
 //
 ### __log__
-//
-app:udisk/c/mmiudisk_wintab.c  USB_CONNECT_DEFAULT_CHARGE
+// trace
+patch:node\code\Macro_code_trace.h
 //
 app:launcher\c\watch_comm_test.c  WATCH_ALL_LOG_SUPPORT
 // log--总开关
@@ -594,8 +594,6 @@ app:launcher\c\watch_comm_net.c  WATCH_ALL_LOG_SUPPORT
 ### 其他
 // slide
 Save:node\C\study\Macro_slide_8910.h  __log__
-// trace
-Save:node\C\study\Macro_fun_8910.h  __debug__
 
 
 

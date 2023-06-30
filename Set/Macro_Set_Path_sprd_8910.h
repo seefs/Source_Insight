@@ -5,7 +5,8 @@
 ###
 
 0Key  = 8910
-1Key  = wa03u_git
+1Key  = UIS8910
+2Key  = _log
 
 HWPath  = HWNV:8910FFS\W21.12.7\
 HW:\\
@@ -40,15 +41,19 @@ sensorsPath = MS_Customize\source\product\driver\sensors\
 versionKey  = UIX8910_uis8910ff_refphone_version
 configKey  = S89T
 
+analogKey   = sc2720
+analog_phyKey  = analog_phy_sc2720
 
 ### 2.cur
 prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
-//projectKey   = K220U_MRD_X12_2In1_V11_QVGA
-projectKey   = X225U_HQVGA
+projectKey   = X225U_DM_64_64_HQVGA
+//projectKey   = X225U_HQVGA
+//projectKey   = X213U_MRD_XH2402N4_NV7644_QVGA
+
 // --DEBUG --USER
-curKey   = UIS8910_ROM_16MB_DS_DEBUG
+curKey   = UIS8910_ROM_16MB_DS_USER
 cfgKey   = uis8910_phone_user_base_config
 //sizeNext  = 1
 //size1Key  = 128X128
@@ -65,6 +70,8 @@ newKey = xx
 ### 4.tmp
 wintabKey = wintab_custom
 UIX8910Key = UIX8910
+ROMKey = UIS8910_ROM_16MB_DS_USER
+ROM1Key = UIS8910_ROM_16MB_DS_DEBUG
 
 
 ### 5.build

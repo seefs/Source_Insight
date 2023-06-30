@@ -12,7 +12,7 @@ Save:node\ToolsMsg\Macro_VS2010.h \[1.5\]
 Save:node\ToolsMsg\Macro_VS2010.h \[1.6\] 模拟器联网
 Save:node\ToolsMsg\Macro_VS2010.h \[1.7\] 
 Save:node\ToolsMsg\Macro_VS2010.h \[1.8\] code
-Save:node\ToolsMsg\Macro_VS2010.h \[1.9\] 
+Save:node\ToolsMsg\Macro_VS2010.h \[1.9\] mp3
 Save:node\ToolsMsg\Macro_VS2010.h \[1.10\] 
 
 
@@ -242,8 +242,8 @@ make\perl_script\create_dsp.pl  VS2010
 Save:node\C\study\Macro_res_8910.h  __load__
 
 
-[1.9] 
-
+[1.9] mp3
+// win7-8910-mp3无法模拟，试下win10
 
 
 

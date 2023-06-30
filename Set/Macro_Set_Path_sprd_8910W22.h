@@ -47,7 +47,7 @@ analog_phyKey  = analog_phy_sc2720
 prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
-projectKey   = X225U_HQVGA
+projectKey   = X225U_DM_64_64_HQVGA
 //projectKey   = WA22U_SW34E_QQVGA
 
 // --_DEBUG --_USER

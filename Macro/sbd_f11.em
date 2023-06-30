@@ -608,9 +608,9 @@ macro NoteHander(hbuf, cNum, prompt)
 		if(tmpPath != "")
 			curPath = tmpPath
 
-		tmpPath = ReAllKeyHead(hbuf, noteWord)
-		if(tmpPath != "")
-			noteWord = tmpPath
+		tmpWord = ReAllKeyHead(hbuf, noteWord)
+		if(tmpWord != "")
+			noteWord = tmpWord
 
 	}
 

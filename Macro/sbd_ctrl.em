@@ -380,6 +380,7 @@ macro CtrlT()
 }
 macro Ctrl_Shift_R()
 {
+	//用设置路径
 	hbuf = GetCurrentBuf()
 	NoteHander(hbuf, 6, 0)
 }
@@ -399,6 +400,7 @@ macro CtrlR()
 		prompt = 1
 	if(prompt != 100)
 	{
+		//浏览器
 		if(getMacroValue(hbuf, "dUrl", 1) == "TRUE")
 		{
 			if(GoCsvUrl(hbuf))
@@ -421,11 +423,21 @@ macro CtrlR()
 			return
 		}
 		
+		//比较文件(F6只能比较当前文件)
 		cur_line = GetBufLine(hbuf, sel.lnFirst )	
 		if(getMacroValue(hbuf, "dBCompare", 1) == "TRUE")
 		{
 			baseDir = getBasePath(hbuf)
 			BComparePath(hbuf, baseDir # "\\" # cur_line)
+			return
+		}
+		
+		//比较补丁文件
+		if(getMacroValue(hbuf, "dPatch", 1) != "" && LFindString( cur_line, "Save") == "X" && LFindString( cur_line, "patch") == "X")
+		{
+			//BComparePatch(0)  //0:file
+			//BComparePatch(1)  //1:dir
+			BComparePatch(2)    //2:bat
 			return
 		}
 		

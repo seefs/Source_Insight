@@ -59,6 +59,7 @@ nv:ProductionParam_uix8910.nvm  bat_safety_vol
 //nv:ProductionParam_uix8910.nvm  ^chg_bat_tab[0]
 //    ITEM_CONTENT = 0x10F2   // 4.338V
 
+### __dischg8910__
 // 放电时 电池%的换算 是依据dischg_bat_tab
 nv:ProductionParam_uix8910.nvm  dischg_bat_tab[0]
 //    ITEM_CONTENT = 0x10F2   // 4.338V
@@ -114,6 +115,8 @@ prj:RDNV\production_param_T.xml
 
 // 合入OCV 
 
+
+###  __dischg107__
 // 充电截止电压
 prj:RDNV\
 prj:RDNV\production_param_T.xml  charge_end_current

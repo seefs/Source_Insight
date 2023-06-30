@@ -148,7 +148,7 @@ macro SwtichTools(cmd)
 		}
 		else
 		{
-			msg ("other work")
+			msg ("other f7 type")
 			return 0
 		}
 	}

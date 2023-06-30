@@ -40,6 +40,8 @@ sensorsPath = MS_Customize\source\product\driver\sensors\
 versionKey  = UIX8910_uis8910ff_refphone_version
 configKey  = wa03u_v2
 
+analogKey   = sc2720
+analog_phyKey  = analog_phy_sc2720
 
 ### 2.cur
 prjPath  = SPDE_PRJ\{project}\
@@ -47,24 +49,20 @@ prj:\\
 
 //projectKey   = BMWATCH_FS_22
 //projectKey   = WA22U_SW46E_QQVGA
-//projectKey   = WA22U_SW40E_QQVGA
-//projectKey   = WA22U_SW42E_QQVGA
 //projectKey   = WA22U_W59E_QQVGA
-projectKey   = WA22U_W59E_4G_QQVGA
 //projectKey   = WA22U_W48E
-//projectKey   = WA03U_T6_B
-//projectKey   = WA03U_T6_B_HERO
-//projectKey   = WA03U_T6_B_EN
+//projectKey   = WA22U_Y63_DM_QQVGA
+projectKey   = WA22U_Y63_4G_DH_DM_QQVGA
 // --DEBUG --USER
 curKey   = UIS8910_ROM_16MB_SS_{project}_USER
 //curKey   = UIS8910_ROM_16MB_SS_{project}_DEBUG
 //curKey   = UIS8910_240x320BAR_16MB_SS_{project}_USER
 cfgKey   = uis8910_phone_user_base_config
 sizeNext  = 1
-//size1Key  = 128X128
+size1Key  = 128X128
 //size1Key  = 240X240
 //size1Key  = 240X280
-size1Key  = 240X284
+//size1Key  = 240X284
 //size2Key  = 128X128
 
 
@@ -76,7 +74,7 @@ newKey = xx
 wintabKey = wintab_custom
 UIX8910Key = UIX8910
 ROMKey = UIS8910_ROM_16MB_DS_USER
-//ROMKey = UIS8910_ROM_16MB_DS_DEBUG
+ROM1Key = UIS8910_ROM_16MB_DS_DEBUG
 
 
 ### 5.build

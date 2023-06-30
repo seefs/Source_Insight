@@ -12,10 +12,10 @@ Save:node\C\study\Macro_nv_8910.h \[1.9\] test
 Save:node\C\study\Macro_nv_8910.h \[1.10\] Card-----------电子保卡
 Save:node\C\study\Macro_nv_8910.h \[1.11\] thir_nv--------107
 Save:node\C\study\Macro_nv_8910.h \[1.12\] nv copy--------8910
-Save:node\C\study\Macro_nv_8910.h \[1.13\] RF-------------107
+Save:node\C\study\Macro_nv_8910.h \[1.13\] nv copy--------107
 Save:node\C\study\Macro_nv_8910.h \[1.14\] nand/nor
 Save:node\C\study\Macro_nv_8910.h \[1.15\] 自动测试
-Save:node\C\study\Macro_nv_8910.h \[1.16\] 
+Save:node\C\study\Macro_nv_8910.h \[1.16\] RF err---------107
 Save:node\C\study\Macro_nv_8910.h \[1.17\] 
 Save:node\C\study\Macro_nv_8910.h \[1.18\] 
 Save:node\C\study\Macro_nv_8910.h \[1.19\] 
@@ -28,6 +28,8 @@ Save:node\C\study\Macro_nv_8910.h \[1.22\]
 [1.1] 充电
 // 充电相关
 Save:node\C\study\Macro_nv_charge8910.h
+Save:node\C\study\Macro_nv_charge8910.h  __dischg8910__
+Save:node\C\study\Macro_nv_charge8910.h  __dischg107__
 Save:node\C\study\Macro_nv_charge8910.h  __ntc__
 
 
@@ -349,13 +351,16 @@ w22:BASE\base_nv\Classmark\nv_classmark.nvm
 
 
 
-[1.13] RF
+[1.13] nv copy--------107
 //
-drv_rf_iram.c  321
-// assert(g_rfic_type<MAX_NUM_RF_TYPE)
-// -1<24
+NV_PARAM_TYPE_PREV_UMTS_FDD_RA_CAPABILITY
+hw_
+G:\_HW_NV_PARA.git\T107\W22.04.6_P5\_default
 
-MAX_NUM_RF_TYPE
+HW:{project}\
+HWNV:T107\W22.04.6_P5\_default\_CopyDefaultNv.bat  NV_PARAM_TYPE_PREV_UMTS_FDD_RA_CAPABILITY
+
+
 
 [1.14] nand/nor
 // 
@@ -368,6 +373,11 @@ MAX_NUM_RF_TYPE
 MS_Ref\source\aud_dev\src\armvb_as.c  ARMVB_PLAYBACK_Callback
 // 合入喇叭听筒二合一的补丁，影响了自动测试
 
+//
+//版本号太长导致BBAT连接失败，把这个设为0就不会检测软件版本号了
+如沟通，工具目录的SP BBAutoTester.ini
+ReadVerion_After_Entermode = 1 改成0
+
 
 BASE/
 BASE/atc/feature_phone/source/c/atc_lex.c
@@ -375,7 +385,13 @@ BASE\atc\v3\source\c/atc_lex.c
 BASE\atc\v3\source\c/atc_info.c  ATC_Process
 
 
-[1.16] 
+[1.16] RF err
+//
+drv_rf_iram.c  321
+// assert(g_rfic_type<MAX_NUM_RF_TYPE)
+// -1<24
+
+MAX_NUM_RF_TYPE
 
 
 
