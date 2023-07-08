@@ -7,7 +7,7 @@ Save:node\C\study\Macro_doc_8910key.h \[1.4\] keyStatus------长按
 Save:node\C\study\Macro_doc_8910key.h \[1.5\] keySlide
 Save:node\C\study\Macro_doc_8910key.h \[1.6\] keySOS
 Save:node\C\study\Macro_doc_8910key.h \[1.7\] keyPhy
-Save:node\C\study\Macro_doc_8910key.h \[1.8\] 
+Save:node\C\study\Macro_doc_8910key.h \[1.8\] MsgId
 Save:node\C\study\Macro_doc_8910key.h \[1.9\] 
 Save:node\C\study\Macro_doc_8910key.h \[1.10\] 
 Save:node\C\study\Macro_doc_8910key.h \[1.11\] 
@@ -314,7 +314,17 @@ chip_drv\chip_module\kpd\v5\kpd_phy.c  uint16^GetVirtualKey
 driver:tf_load\src\tf_load.c  TF_EnterVerify
 
 
-[1.8] 
+[1.8] MsgId
+
+//	Message 切换
+Save:node\C\study\Macro_Spr_MsgId.h
+
+//	FUN 入口
+Save:node\C\study\Macro_Spr_Fun.h
+
+//	Win数据
+Save:node\C\study\Macro_Spr_Win.h
+
 
 
 

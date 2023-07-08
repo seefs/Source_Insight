@@ -5,8 +5,8 @@ Save:node\C\project\Macro_Note_8910trace.h \[1.2\] uart
 Save:node\C\project\Macro_Note_8910trace.h \[1.3\] SIM
 Save:node\C\project\Macro_Note_8910trace.h \[1.4\] NVTool
 Save:node\C\project\Macro_Note_8910trace.h \[1.5\] BBAT_log
-Save:node\C\project\Macro_Note_8910trace.h \[1.6\] 
-Save:node\C\project\Macro_Note_8910trace.h \[1.7\] 
+Save:node\C\project\Macro_Note_8910trace.h \[1.6\] AT_log
+Save:node\C\project\Macro_Note_8910trace.h \[1.7\] ATEST
 Save:node\C\project\Macro_Note_8910trace.h \[1.8\] 
 Save:node\C\project\Macro_Note_8910trace.h \[1.9\] 
 Save:node\C\project\Macro_Note_8910trace.h \[1.10\] 
@@ -203,13 +203,29 @@ https://unisupport.unisoc.com/file/index?fileid=34086
 
 
 
-[1.6] 
+[1.6] __AT_log__
+### arm log
+//
+//	客户您好，
+//
+//	请帮忙再提供一份log，需要修改一下nv: AUDIO\AUDIO_ARM\Handsfree\AudioStructure\reserve\reserve[63]=0x131D
+//	测试前还需发送AT指令：
+//	DSP侧dump开关：
+//	开：
+//	AT+SPDSPOP=2
+//	AT+SPDSP=65535,0,0,4096
+//	nv修改和at是开启arm 和 dsp的通话语音dump，语音数据会发送到log里。log抓完后重放一下log，
+//	然后分别点击 Tool -> audio Arm Transfer -> Transfer 和 Tool -> audio DSP Transfer -> Transfer 
+//	会解析出两个*.pcm文件夹 说明log抓取成功。
+//	谢谢！
 
 
 
+[1.7] __ATEST__
 
-[1.7] 
-
+ATEST_SUPPORT
+// ATEST 默认不开, 没有项目开
+make\app_main\app_main.mk  ATEST_SUPPORT
 
 
 

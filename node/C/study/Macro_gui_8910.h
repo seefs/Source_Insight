@@ -1028,38 +1028,50 @@ source:mmi_app\kernel\c\mmi_default.c  BOOLEAN^DefaultSideKey
 // sublcd--Bat
 //		==>MMIAPIPHONE_GetBatCapacity
 app:idle\c\mmi_subwintab.c  uint8^MMISUB_GetBatteryLevel
-// sublcd--sim
-app:idle\c\mmi_subwintab.c  void^DisplaySubLcdIconOneLine
 // sublcd--content
-//		==>MMISUB_SetSubLcdDisplay(SUB_CONTENT_CHARGE_OFF)
-// sublcd--show(mp3,fm,sms,call)
-//		==>开机
-//		====>DisplaySubLcdDateOrStr
-//		==>关机
-//		====>MMISUB_DisplayIdlePic        # bg
-//		====>DisplaySubLcdDateOrStr       # data/charge
-//		====>DisplaySubLcdTime4ChargeOff  # time
-//		====>DisplaySubLcdWeek            # week
+//		==>MMISUB_SetSubLcdDisplay(ID)        # 5项传参--str
+// sublcd--show
+//		==>更新:
+//		====>数字时钟:
+//		======>DisplaySubLcdDateOrStr         # 
+//		==>开机:
+//		====>模拟时钟:
+//		======>DisplaySubLcdTimeAnalog
+//		====>数字时钟:
+//		======>DisplaySubLcdDateOrStr         # (mp3,fm,sms,call,lunar/date-week/集中显示date)
+//		======>DisplaySubLcdIconOneLine       # sim
+//		======>DisplaySubLcdTime              # time--str
+//		======>DisplaySubLcdTimeByPic         # time--pic
+//		======>DisplaySubLcdPLMN              # PLMN
+//		==>关机:
+//		====>数字时钟:
+//		======>MMISUB_DisplayIdlePic          # bg
+//		======>DisplaySubLcdDateOrStr         # data/charge
+//		======>DisplaySubLcdTime4ChargeOff    # time
+//		======>DisplaySubLcdWeek              # week
+app:idle\c\mmi_subwintab.c  void^MMISUB_UpdateDisplaySubLcd
+// sublcd--show
 //		==>来电
 //		====>CC_OpenMtCallWin
 //		======>.prompt_str_array
 //		==>滚动
 //		<====DisplayCycleText
-//		<======DisplaySubLcdLunarDate
+//		<======DisplaySubLcdLunarDate         # y1--SUB_LINE_1_Y
 //		<======DisplayTextByPtr
-//		<==========MP3: 第1行   //SUB_LINE_1_Y
-//		<==========ALARM: 第1行
-//		<==========COUNTEDTIME: 第1行
-//		<==========FM: 第1行
-//		<==========CALL1: 第1行
+//		<==========MP3: 第1行                   # y1
+//		<==========ALARM: 第1行                 # y1
+//		<==========COUNTEDTIME: 第1行           # y1
+//		<==========FM: 第1行                    # y1
+//		<==========CALL1: 第1行                 # y1
 //		<========DisplaySubLcdDate: (no use)
 //		<======DisplayTextByWithFontPtr
-//		<========DisplaySubLcdDateOrStr:
-//		<========CALL: 第2行
+//		<========DisplaySubLcdDateOrStr:      # 
+//		<========CALL: 第2行                    # y2
 //		<========SMS: 第2行
 //		<========MISSED: 第2行
 //		<========default: 第2行
-app:idle\c\mmi_subwintab.c  void^MMISUB_UpdateDisplaySubLcd
+//		==>其他
+//		<==========chg_ok:                    # y1+10
 
 // ==>image
 Save:node\C\study\Macro_res_image_8910.h __sublcd__

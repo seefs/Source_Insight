@@ -433,8 +433,12 @@ app:phone\c\mmiphone_wintab.c  MMI_RESULT_E^HandlePinInputExceptPhone
 
 
 
-[1.13] 
+[1.13] __SCREENSAVER__
+//SS--107
+prj:project_{cur}.mk  SCREENSAVER_SUPPORT = TRUE
 
+//SS--8910
+prj:{cfg}.cfg  SCREENSAVER_SUPPORT = TRUE
 
 
 

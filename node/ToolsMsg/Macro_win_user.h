@@ -47,6 +47,8 @@ C:\Users\Administrator\AppData\Local\Google\Chrome\User^Data\Default
 [1.3] ssh
 // git--ssh
 Save:node\ToolsMsg\Macro_git_config.h  __SSH__
+// git--ppk--Admin
+Save:node\ToolsMsg\Macro_git_config.h  __gitlab__
 //
 C:\Users\{Admin}\.ssh\
 C:\Users\{Admin2}\.ssh\

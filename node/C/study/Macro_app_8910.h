@@ -270,6 +270,7 @@ app:idle\c\mmiidle_dial.c  HandleDialWinMsg
 ### 微调
 // display--分行--平均行间距 
 ctrl:editbox\c\ctrlbaseflex_display.c  void^DisplayTextString
+//		==>MMIThemeGetBigDialNumImgId
 ctrl:editbox\c\ctrlbaseflex_display.c  BIG_DIAL_NUM
 // display--分行--取消底部间距，相差1个像素刚好对齐
 ctrl:editbox\c\ctrlbaseedit_internal.c  GUI_RECT_T^BASEEDIT_GetClientRect
@@ -322,7 +323,7 @@ ctrl:editbox\c\ctrlbaseedit_internal.c  BASEEDIT_DisplayBg
 
 [1.5] test
 // test code
-Save:node\C\study\Macro_doc_8910.h  __code__
+Save:node\C\study\Macro_Spr_TestCode.h
 
 
 // version
@@ -448,6 +449,7 @@ Save:node\C\study\Macro_app_8910set.h  __startup__     # 开关机
 Save:node\C\study\Macro_app_8910set.h  __charge__      # 充电
 Save:node\C\study\Macro_app_8910set.h  __privacy__
 Save:node\C\study\Macro_app_8910set.h  __psw__
+Save:node\C\study\Macro_app_8910set.h  __SCREENSAVER__
 Save:node\C\study\Macro_app_8910set.h  
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __set_display__
@@ -573,9 +575,9 @@ Save:node\C\study\Macro_res_image_8910.h  __pb__
 ### cl
 // ==>app
 Save:node\C\study\Macro_app_8910cl.h  __clMain__
-Save:node\C\study\Macro_app_8910cl.h  __clInit__    #50条记录
+Save:node\C\study\Macro_app_8910cl.h  __clInit__
+Save:node\C\study\Macro_app_8910cl.h  __CLNum__      # 50条记录
 Save:node\C\study\Macro_app_8910cl.h  __clDeltail__
-Save:node\C\study\Macro_app_8910cl.h  __clTab__
 Save:node\C\study\Macro_app_8910cl.h  __clTab__
 Save:node\C\study\Macro_app_8910cl.h  __clTab__
 Save:node\C\study\Macro_app_8910cl.h  __clTab__
@@ -1491,7 +1493,7 @@ app:game\game_snake\c\mmigame_snake_wintab.c
 [1.23] bt
 // mk
 //		==>BT_PHONE_INDEX_CONTACT
-prj:project_{cur}.mk  BT_PBAP_SUPPORT  同步联系人 功能注释了
+//prj:project_{cur}.mk  BT_PBAP_SUPPORT  同步联系人 功能注释了
 
 //BT--107
 prj:project_{cur}.mk  BLUETOOTH_SUPPORT = SPRD_BT
@@ -1572,6 +1574,11 @@ Save:node\C\study\Macro_app_8910other.h  __jewish__
 
 
 [1.26] wifi
+//wifi--107
+prj:project_{cur}.mk  WIFI_SUPPORT = UNISOC_RX
+prj:project_{cur}.mk  WIFI_VENDOR = UNISOC 
+
+//wifi--8910
 //
 prj:{cfg}.cfg  WIFI_SUPPORT = UNISOC_RX
 prj:{cfg}.cfg  WIFI_VENDOR = UNISOC 

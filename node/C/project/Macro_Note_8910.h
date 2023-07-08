@@ -19,7 +19,7 @@ Save:node\C\project\Macro_Note_8910.h \[2.2\] 颜色---------common_mdu_def.h
 Save:node\C\project\Macro_Note_8910.h \[2.3\] 配置
 Save:node\C\project\Macro_Note_8910.h \[2.4\] fm
 Save:node\C\project\Macro_Note_8910.h \[2.5\] 语言, 字体----mmi_custom_define.h
-Save:node\C\project\Macro_Note_8910.h \[2.6\] 情景模式 音频参数:
+Save:node\C\project\Macro_Note_8910.h \[2.6\] 音频
 Save:node\C\project\Macro_Note_8910.h \[2.7\] 手电筒
 Save:node\C\project\Macro_Note_8910.h \[2.8\] U盘-----------mmisrvfmm_export.h 
 Save:node\C\project\Macro_Note_8910.h \[2.9\] 版本号--------version_software_mocor.h
@@ -205,6 +205,7 @@ driver:lcd\tft_GC9300.c GC9300_Ex(void)
 // 屏亮度/背光电流:
 // --set
 Save:node\C\cfg\Macro_c_path_sprd.h  __ANALOG__
+//
 chip_drv\chip_module\analog\
 chip_drv\chip_module\analog\{analog}\{analog_phy}.c  s_ana_bln_sw_tab     # 背光亮度
 chip_drv\chip_module\analog\{analog}\{analog_phy}.c  BLTC_LCM_CURRENT_V
@@ -427,7 +428,6 @@ Save:node\C\study\Macro_nv_sim107.h   __BAND__
 // 双卡：
 prj:project_{cur}.mk MMI_MULTI_SIM_SYS = DUAL   //单卡只改这个
 prj:project_{cur}.mk MULTI_SIM_SYS = DUAL
-// nv_type_4band.nvm 0x10203, 0x1000203,    卡反
 // 单卡翻译：
 //TXT_SIM_SEL_SIM1--pb --  SIM1
 //SIM1 network account
@@ -559,7 +559,7 @@ source:mmi_service\export\inc\mmisrvfmm_export.h
 
 [2.10] 型号---------bt_cfg.h
 
- 型号--MSD, 翻译：
+// 型号--MSD, 翻译：
 prj:project_{cur}.mk MMI_MSD_SUPPORT
 //TXT_MSD_NOTIFY_INFO
 
@@ -680,6 +680,8 @@ Save:node\C\project\Macro_Note_8910trace.h  __uart__
 Save:node\C\project\Macro_Note_8910trace.h  __SIM__
 //Save:node\C\project\Macro_Note_8910trace.h  __SIM__
 Save:node\C\project\Macro_Note_8910trace.h  __BBAT_log__
+Save:node\C\project\Macro_Note_8910trace.h  __AT_log__
+Save:node\C\project\Macro_Note_8910trace.h  __ATEST__
 
 
 ### CE 蓝牙定频版本:

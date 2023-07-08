@@ -281,13 +281,20 @@ app:theme/h/mmi_position_{size}.h  MMI_CHOICE_PICKER_DOUBLE_LINE_LIST_ITEM_HEIGH
 
 
 ### __cl__
-// cl--list--sim2
+// cl--list--sim2--8910
 //		==>AppendCustomLogListItem
-//		======>GUIITEM_STYLE_TWO_LINE_TEXT_ICON_AND_TEXT_MS
-//		========>s_item_style_2_text_icon_and_text_ms
+//		===>GUIITEM_STYLE_TWO_LINE_TEXT_ICON_AND_TEXT_MS
+//		=====>s_item_style_2_text_icon_and_text_ms
 app:theme/h/mmi_position_{size}.h  MMI_LIST_DOUBLE_LINE_ITEM2_HEIGHT_MS   # 68
 app:theme/h/mmi_position_{size}.h  MMI_LIST_ICON_MARGIN_MS                # 6
 app:theme/h/mmi_position_{size}.h  MMI_LIST_SMALL_ICON_WIDTH_MS           # 16
+
+// cl--list--107
+//		==>AppendLogListItem
+//		====>GUIITEM_STYLE_ONE_TWO_LINE_TWO_ICON_TEXT_AND_TWO_TEXT
+//		======>s_item_style_1_2_2icon_text_and_2text
+
+
 
 
 // cl--details--title--form

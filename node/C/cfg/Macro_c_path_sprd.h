@@ -204,6 +204,20 @@ Save:set\Macro_Set_Path_sprd_{pro}.h  lteKey
 // LTE_RF_TYPE = NemoL_T117_3595D
 prj:project_{cur}.mk   LTE_RF_TYPE
 
+//
+make\chip_drv\def_config\UMS9117.cfg
+// CONFIG_LCDC_VER
+chip_drv/chip_module/lcdc/v5
+// CONFIG_SPI_VER
+chip_drv/chip_module/spi/v5
+// CONFIG_LDO_VER
+chip_drv/chip_module/ldo/sc2720
+// CONFIG_ANALOG_VER
+chip_drv/chip_module/analog/v7
+// CONFIG_ADC_VER
+chip_drv\chip_module\adc\sc2720
+
+
 
 ### __ANALOG__
 // lte

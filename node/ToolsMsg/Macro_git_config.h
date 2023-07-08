@@ -211,7 +211,7 @@ Save:Cmd_other\add_env\
 Save:Cmd_other\add_env\set_env_git_path.bat
 
 
-[1.9] gitlab
+[1.9] __gitlab__
 //
 patch:ssh\
 // ¹«Ë¾ÓÃ

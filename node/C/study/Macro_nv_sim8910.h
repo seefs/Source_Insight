@@ -8,7 +8,7 @@ Save:node\C\study\Macro_nv_sim8910.h \[1.5\] //REG
 Save:node\C\study\Macro_nv_sim8910.h \[1.6\] 4G
 Save:node\C\study\Macro_nv_sim8910.h \[1.7\] comData
 Save:node\C\study\Macro_nv_sim8910.h \[1.8\] slot  链路
-Save:node\C\study\Macro_nv_sim8910.h \[1.9\] 
+Save:node\C\study\Macro_nv_sim8910.h \[1.9\] sim
 Save:node\C\study\Macro_nv_sim8910.h \[1.10\] 
 Save:node\C\study\Macro_nv_sim8910.h \[1.11\] 
 Save:node\C\study\Macro_nv_sim8910.h \[1.12\] 
@@ -126,8 +126,33 @@ lib\modem\{ROM}\nvitem/modem_nv_cat1bis_uix8910_card2_static.nvm   sim_slot_swit
 
 
 
-[1.9] 
+[1.9] __sim__
 
+### sim反--8910
+nv:\\
+nv:nv_type_uix8910.nvm  sim_slot_cfg
+build\{cur}_builddir\img\nvitem\
+build\{cur}_builddir\img\nvitem\nv_type_uix8910.nvm  sim_slot_cfg
+// 0x10203, 0x1000302
+common\nv_parameters\nv_type\nv_type_uix8910.nvm  sim_slot_cfg
+
+// 8910的CP侧有个配置文件 target.def。里面有个宏用来控制卡序，正常的卡序是1 2，如果要对调卡序，就改成2 1。
+// 原来这个配置是开放给客户的，客户可调的，由于现在CP只开放bin，这个控制看不到。如果生成BIN后，这个配置就不可变了。
+target.def
+
+
+### sim反--107
+nv:\\
+PS/NV/config/mn.nv  sim_slot_cfg
+// 0x10203, 0x1000203
+PS\nv\export\ps\mn\NV_PARAM_TYPE_EXPORT_MN_CUSTOMER_SETTINGS.xml  sim_slot_cfg
+
+
+### sim反--6531
+//
+nv:nv_type_4band.nvm  sim_slot_cfg
+// 0x10203, 0x1000203
+common\nv_parameters\nv_type\nv_type_4band.nvm  sim_slot_cfg
 
 
 

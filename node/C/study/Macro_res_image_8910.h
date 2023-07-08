@@ -14,7 +14,7 @@ Save:node\C\study\Macro_res_image_8910.h \[1.8\] call
 Save:node\C\study\Macro_res_image_8910.h \[1.9\] alert
 Save:node\C\study\Macro_res_image_8910.h \[1.10\] list, file
 Save:node\C\study\Macro_res_image_8910.h \[1.11\] anim
-Save:node\C\study\Macro_res_image_8910.h \[1.12\] 
+Save:node\C\study\Macro_res_image_8910.h \[1.12\] sublcd
 Save:node\C\study\Macro_res_image_8910.h \[1.13\] sec_menu
 Save:node\C\study\Macro_res_image_8910.h \[1.14\] record--------------非common模块
 Save:node\C\study\Macro_res_image_8910.h \[1.15\] vp
@@ -33,6 +33,11 @@ Save:node\C\study\Macro_res_image_8910.h \[1.27\] calen
 Save:node\C\study\Macro_res_image_8910.h \[1.28\] memo
 Save:node\C\study\Macro_res_image_8910.h \[1.29\] bt
 Save:node\C\study\Macro_res_image_8910.h \[1.30\] 小图标
+Save:node\C\study\Macro_res_image_8910.h \[1.31\] PicDir--------------查找图标
+Save:node\C\study\Macro_res_image_8910.h \[1.32\] 
+
+
+
 
 
 
@@ -185,11 +190,12 @@ source:mmi_app\common\h\common_mdu_def.h  IMAGE_IDLE_KEYLOCK_TIME_BG
 //
 //	IMAGE_IDLE_KEYLOCK_NUM_AM
 
-###  __sublcd__
-images:common\MMI_RES_DEFAULT\IMAG\SUBLCD_SIZE_128_160\StatusbarIcon\
-// bg--128*160
-source:mmi_app\common\h\common_mdu_def.h  IMAGE_SUBLCD_ICON_BACKGROUND
-
+### power
+images:common\MMI_RES_DEFAULT\IMAG\key_lock\effect4\
+images:common\MMI_RES_DEFAULT\IMAG\QVGA_TIME\Idle_time\
+//
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_CHARGE_DIGIT0
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_IDLE_KEYLOCK_NUM_AM
 
 
 [1.5] Statusicons
@@ -526,8 +532,16 @@ images:common\MMI_RES_DEFAULT\IMAG\Pubwin\BAR\
 
 
 
-[1.12] 
+[1.12] __sublcd__
+//
+images:common\MMI_RES_DEFAULT\IMAG\SUBLCD_SIZE_128_160\StatusbarIcon\
+images:cc\MMI_RES_DEFAULT\IMAG\cc\
 
+// bg--128*160
+source:mmi_app\common\h\common_mdu_def.h  IMAGE_SUBLCD_ICON_BACKGROUND
+
+// cc
+app:cc\h\cc_mdu_def.h  IMAGE_SUB_CC_INCOMING_PHOTO_ANIM
 
 
 
@@ -940,4 +954,21 @@ source:mmi_app\common\h\common_mdu_def.h  IMAGE_SECMENU_ICON_TOOL_HMGS
 //	select-sim
 // 不改
 //	pb-edit
+
+
+[1.31] __PicDir__
+
+
+//查找图标是否存在
+Save:node\C\study\Show_Pic_dir.h IMAGE_PUBWIN_QUERY
+
+//
+build\UIS8910_ROM_16MB_DS_USER_builddir\tmp\mmi_res_240x320_imag.txt IMAGE_PUBWIN_QUERY
+
+//	图片资源大小:
+build\{cur}_builddir\tmp\mmi_res_{size}_imag.txt
+
+
+[1.32] 
+
 

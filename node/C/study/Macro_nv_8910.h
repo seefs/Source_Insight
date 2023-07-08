@@ -46,7 +46,7 @@ Save:node\C\study\Macro_nv_sim107.h
 Save:node\C\study\Macro_nv_sim8910.h  __IMEI__
 Save:node\C\study\Macro_nv_sim8910.h  __4G__
 Save:node\C\study\Macro_nv_sim8910.h  __slot__  # 链路
-Save:node\C\study\Macro_nv_sim8910.h  
+Save:node\C\study\Macro_nv_sim8910.h  __sim__   # sim反
 Save:node\C\study\Macro_nv_sim8910.h  
 
 
@@ -357,8 +357,22 @@ NV_PARAM_TYPE_PREV_UMTS_FDD_RA_CAPABILITY
 hw_
 G:\_HW_NV_PARA.git\T107\W22.04.6_P5\_default
 
+
+// defautl path
 HW:{project}\
 HWNV:T107\W22.04.6_P5\_default\_CopyDefaultNv.bat  NV_PARAM_TYPE_PREV_UMTS_FDD_RA_CAPABILITY
+
+
+//
+
+// 如
+patch:node\bug\Macro_bug_8910.h  
+
+
+### Help
+// 批量搜索 nv
+patch:node\Help\Macro_node_Help.h  __nv__
+
 
 
 

@@ -80,8 +80,8 @@ make\resource_main\resource_main.mk  resgen.pl
 //		==>resource_main
 UIX8910.modules  resource
 
-//
-make/perl_script/resgen.pl
+// path
+make/perl_script/resgen.pl  str_table
 
 
 ### color_table
@@ -114,6 +114,7 @@ images:\
 
 // ==>image
 Save:node\C\study\Macro_res_image_8910.h
+Save:node\C\study\Macro_res_image_8910.h  __PicDir__  #查找图标
 // ==>image watch
 Save:node\C\study\Macro_res_image_wa8910.h
 
@@ -123,12 +124,6 @@ Save:node\C\study\Macro_res_image_wa8910.h
 //  IMG_CMP_PNG_ARGB                   -------正常
 //  IMG_CMP_PNG_ARGB |SABM_HOR_STRETCH -------重叠
 //  IMG_CMP_PNG_SABM_RLE |SABM_HOR_STRETCH ---带花纹
-
-
-###
-//	图片资源大小:
-build\{cur}_builddir\tmp\mmi_res_{size}_imag.txt
-
 
 
 [1.6] ring
@@ -143,8 +138,6 @@ Save:node\C\study\Macro_res_ring_8910.h
 // ==>goto跳转
 Save:node\C\study\Macro_res_ring_8910.h  __VIB__
 Save:node\C\study\Macro_res_ring_8910.h  __RING__
-
-
 
 
 
@@ -326,6 +319,7 @@ Save:node\C\study\Macro_pos_8910.h  __idle__
 //		====>MMK_LoadStaticModInfo
 //		====>MMIRES_ResourceInit
 //		====>MMIRES_LoadAllStaticComResource
+//		========>.s_spml_init_data
 //		======>MMIRES_LoadComResource
 //		========>GetComCafResInfo        # init if null
 //		==========>.node_ptr->mod_id=1
@@ -345,6 +339,25 @@ Save:node\C\study\Macro_pos_8910.h  __idle__
 //改法:
 //  SCI_MPALLOC--SCI_MemPoolMalloc, 改成 malloc
 //  SCI_MPFREE---SCI_MemPoolFree, --改成 free
+//  SCI_CreateMemPool
+
+//
+//  MMITHEME_DestroyMenuItemCache
+//
+//	Assertion failed!
+//	Program: ...
+//	File: d: enkins workspace s1 2 25445 ... thread..ppmem.c
+//	Line: 1060
+//	Expression: TX_APP_MEM_ID == cur_app_mem_ptr->app_mem_id
+//	For information on how your program can cause an assertionfailure, see the Visual C++ documentation on asserts
+//	(Press Retry to debug the application - IlT must be enabled)
+
+
+//
+//		====>RES_MEM_TOTAL_SIZE                         # 700 K ++
+//		====>MMITHEME_MENU_DEFAULT_ITEM_CACHE           # 700 K ++
+MS_MMI_Main\source\mmi_app\kernel\c\mmi_resource.c  MMIRES_MemPoolConfig
+
 
 
 

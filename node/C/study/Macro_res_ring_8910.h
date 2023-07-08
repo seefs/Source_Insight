@@ -1,9 +1,5 @@
 
-基础路径设置:
-//basePath = 
-
-//目录[Num][Ca]:
-// 1. 
+//目录
 Save:node\C\study\Macro_res_ring_8910.h \[1.1\] power
 Save:node\C\study\Macro_res_ring_8910.h \[1.2\] 
 Save:node\C\study\Macro_res_ring_8910.h \[1.3\] mp3
@@ -507,17 +503,14 @@ app:setting\c\mmiset_ring.c   MMISET_RING_TYPE_ASP
 
 
 [1.19] __VIB__
-// VIB
-key:VIB,file:mmi_res_prj_def.h
-
-
+//
+source:resource\mmi_res_prj_def.h  VIB
 
 
 
 [1.20] __RING__
-
-// RING
-key:RING,file:mmi_res_prj_def.h
+// 
+source:resource\mmi_res_prj_def.h  RING
 
 
 

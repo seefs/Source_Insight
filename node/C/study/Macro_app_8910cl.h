@@ -25,10 +25,9 @@ app:cc\c\mmicc_menutable.c GUIMENU_ITEM_T^menu_cl
 //2.cl-list
 // cl--title
 app:cl\c\Mmicl_{wintab}.c   HandleLogListWindow
-### __clNum__
 
 // str
-InitPdaCallLogListCtrl        CallLog
+app:cl\c\Mmicl_{wintab}.c   InitPdaCallLogListCtrl  CallLog
 
 
 
@@ -36,7 +35,25 @@ InitPdaCallLogListCtrl        CallLog
 [1.2] __clInit__
 
 // cl list--(107)
+//		==>SetLogListItem
+//		====>.arraycall_info
+//		======>MMICL_GetRecordInfo
+//		====>AppendLogListItem
+//		======>.sim_name_str
+//		======>.name_number_str
+//		======>.time_str
+//		======>...
+//		=======>GUILIST_AppendItem
 app:cl\c\Mmicl_{wintab}.c   AppendLogListItem
+// ==>pos
+Save:node\C\study\Macro_pos_8910.h  __cl__
+
+//		======>
+//		========>
+//		==========>
+//		============>
+app:cl\c\Mmicl_{wintab}.c   HandleCallLogChildWindow
+
 
 // cl--read
 //		==>MMICL_ReadNV
@@ -62,21 +79,6 @@ source:mmi_app\app\cl\h\mmicl_internal.h  MMICL_RECORD_NVITEM_COUNT
 app:cc\c\mmicc_app.c   CC_DisconnectedCall(msg_id, )
 
 
-// cl--Init
-//		==>SetLogListItem
-//		====>.arraycall_info
-//		======>MMICL_GetRecordInfo
-//		====>AppendLogListItem
-//		======>.sim_name_str
-//		======>.name_number_str
-//		======>.time_str
-//		======>...
-//		=======>GUILIST_AppendItem
-//		======>
-//		========>
-//		==========>
-//		============>
-app:cl\c\Mmicl_{wintab}.c   HandleCallLogChildWindow
 
 
 //		==>
@@ -89,7 +91,7 @@ app:cl\c\Mmicl_{wintab}.c   HandleCallLogChildWindow
 
 
 
-### __CL__
+### __CLNum__
 // 条数 80+20 (107)
 app:cl\h\mmicl_internal.h  MMICL_RECORD_TOTAL_NUM
 
@@ -103,8 +105,6 @@ app:cl\h\mmicl_internal.h  MMICL_RECORD_TOTAL_NUM
 app:cl\c\Mmicl_{wintab}.c   InitLogListDetailContactItem
 // cl deltail--调显示位置
 app:cl/c/Mmicl_{wintab}.c   AppendLogListDetailItem
-// cl list--(107)
-app:cl\c\Mmicl_{wintab}.c   AppendLogListItem
 
 
 
