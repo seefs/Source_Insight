@@ -7,7 +7,7 @@ Save:node\C\project\Macro_Note_8910trace.h \[1.4\] NVTool
 Save:node\C\project\Macro_Note_8910trace.h \[1.5\] BBAT_log
 Save:node\C\project\Macro_Note_8910trace.h \[1.6\] AT_log
 Save:node\C\project\Macro_Note_8910trace.h \[1.7\] ATEST
-Save:node\C\project\Macro_Note_8910trace.h \[1.8\] 
+Save:node\C\project\Macro_Note_8910trace.h \[1.8\] flash
 Save:node\C\project\Macro_Note_8910trace.h \[1.9\] 
 Save:node\C\project\Macro_Note_8910trace.h \[1.10\] 
 Save:node\C\project\Macro_Note_8910trace.h \[1.11\] 
@@ -229,8 +229,61 @@ make\app_main\app_main.mk  ATEST_SUPPORT
 
 
 
-[1.8] 
+[1.8] __flash__
 
+### fota分区小可能报错
+//
+fdl_bootloader\nor_bootloader\src\nor_bootloader_fota_uix8910.scf  0xB800
+
+
+### flash
+//		==>NVITEM_GetProductInfo_Protect
+//		====>...                                      # 在库中
+//		======>FLASH_GetProductInfoSize
+//		========>.Addr
+//		==========>FLASH_GetProductInfoAddr
+//		============>.s_flash_product_info_addr       # 不知道在哪初始化
+//		==>.s_Nor_Config_ptr
+chip_drv\chip_module\norflash\flash.c  FLASH_GetPartitionEndAddr
+
+// flash--log
+// 	SFS FAT error = 0 SFS_CloseFileInternal
+// 	[DRM] DRM_CloseFile normal file error_code =0\n 
+// 	[flash_cfg_addr_table] addr = 7031fc00 
+// 	[flash_cfg_addr_table] s_flash_end_addr = 60800000 
+// 	[flash_cfg_addr_table] s_flash_fixed_nvitem_addr = 70300000 
+// 	[flash_cfg_addr_table] s_flash_product_info_addr = 7031fc00 
+// 	[flash_cfg_addr_table] s_flash_efs_start_addr = 60750000             # running nv
+// 	[flash_cfg_addr_table] s_flash_umem_addr = 607c0000
+// 	[flash_cfg_addr_table] s_flash_lcd_sensor_addr = ffffffff
+// 	[flash_cfg_addr_table] s_flash_end_addr = 60800000 
+// 	[flash_cfg_addr_table] next_partition_addr = ffffffff  
+
+
+// flash--init
+//		==>.pSpiFlashSpec
+//		====>SPIFLASH_SPEC_Get
+//		======>.SpiFlashSpec
+//		========>.s_platform_patitiion_config         # 64x64 全部用 PATITION_A
+//		========>.s_platform_patitiion_config_B       # 128x64 用 PATITION_A + PATITION_B
+fdl_bootloader/tf_fdl/src/tf_main_nor.c  SPIFLASH_HWInit
+//
+config:spiflash_cfg.c                         s_platform_patitiion_config
+config:spiflash_cfg_64X64_CP_RES_FIX_IN_FB.h  s_platform_patitiion_config
+
+
+// flash--Erase
+//		==>FDL_EraseFlash
+//		====>FDL_FlashErase (0x70000000, 0x800000);
+fdl_bootloader/nor_fdl/src/fdl_main.c   FDL_EraseFlash
+fdl_bootloader/nor_fdl/src/fdl_main.c   flash_partition_ptr->ProdinfoAdress
+
+
+### mem
+config:mem_cfg.c  mem_ro2_start_add
+//
+MS_Customize/source/common/mem_prod.c  MEM_IsRWRegionOverflow
+MS_Customize/source/common/mem_prod.c  MEM_IsRORegion
 
 
 

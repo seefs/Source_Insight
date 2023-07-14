@@ -11,14 +11,14 @@ app:eng\c\mmieng_base.c  BUILD
 
 
 // Phone
-"#*8378#0#", "*#222#", "*#15963#", "####1111#",
+"#*8378#0#", "*#222#", "*#15963#",
 app:eng\c\mmieng_main.c  MMIENG_IDLE_DIAL_NUM_UI_TEST1
 
-// UI
-"####1111#", "*#87#", "*#666#",
+// 自动测试--UI
+"####1111#", "*#87#", "*#666#","####1111#"
 app:eng\c\mmieng_main.c  MMIENG_IDLE_FULL_TEST
 
-// Item
+// 手动测试--Item
 app:eng\c\mmieng_main.c  MMIENG_IDLE_ITEM_TEST
  "*#777#", "*#66*#", "*#79*#",
  

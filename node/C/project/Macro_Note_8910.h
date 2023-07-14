@@ -233,6 +233,9 @@ prj:{cfg}.cfg  LCD_ESD_SUPPORT = FALSE
 //复位
 hal_GoudatResetLcdPin
 
+//屏闪--107--实测没用
+PWM_MOD_COUNTER
+
 
 // lcd_id
 //  ==>_LCM_DevIdIdentify

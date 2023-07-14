@@ -51,8 +51,8 @@ projectKey   = X225U_DM_64_64_HQVGA
 //projectKey   = WA22U_SW34E_QQVGA
 
 // --_DEBUG --_USER
-//curKey   = UIS8910_ROM_16MB_DS_USER
-curKey   = UIS8910_ROM_16MB_DS_DEBUG
+curKey   = UIS8910_ROM_16MB_DS_USER
+//curKey   = UIS8910_ROM_16MB_DS_DEBUG
 cfgKey   = uis8910_phone_user_base_config
 //sizeNext  = 1
 //size1Key  = 128X128

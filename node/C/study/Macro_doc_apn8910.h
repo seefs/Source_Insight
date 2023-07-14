@@ -9,8 +9,8 @@ Save:node\C\study\Macro_doc_apn8910.h \[1.6\]
 Save:node\C\study\Macro_doc_apn8910.h \[1.7\] 
 Save:node\C\study\Macro_doc_apn8910.h \[1.8\] 
 Save:node\C\study\Macro_doc_apn8910.h \[1.9\] 
-Save:node\C\study\Macro_doc_apn8910.h \[1.10\] 
-Save:node\C\study\Macro_doc_apn8910.h \[1.11\] 
+Save:node\C\study\Macro_doc_apn8910.h \[1.10\] apn大小写
+Save:node\C\study\Macro_doc_apn8910.h \[1.11\] AutoAdapting
 Save:node\C\study\Macro_doc_apn8910.h \[1.12\] MVNO
 Save:node\C\study\Macro_doc_apn8910.h \[1.13\] strApn-----ID 对应
 Save:node\C\study\Macro_doc_apn8910.h \[1.14\] 
@@ -190,12 +190,20 @@ app:phone\h\plmn_ts25_database_enum.h  PLMN_204_04
 
 
 
-[1.10] 
+[1.10] apn大小写
+// CQ:
+//	sim 卡中的 spn/pnn 字串必须和 net_comparetable 中的 pnn_or_spn 中设置的一样，
+//	区分大小写。
+//	运营商中apn 信息，需要在 ntac 文件中添加，并且表中 Setting Name 保持一致，
+//	也区分大小写
 
 
-
-[1.11] 
-
+[1.11] AutoAdapting
+//		==>ZMAEE_INetMgr_ActiveDataLink
+//		====>.apn_idx_arr           # apn数组
+//		====>.setting_item_ptr      # apn上网项
+//		====>.setting_item_ptr.apn  # apn
+app:connection\c\mmiconn_manager_wintab.c  MMICONNECTION_SaveNetworkAccount
 
 
 

@@ -1,11 +1,5 @@
 
-基础路径设置:
-//basePath = 
-
-/***********************************************************************/
-
-//目录[Num][Ca]:
-// 1. 
+//目录:
 Save:node\ToolsMsg\Macro_perl.h \[1.1\] tool
 Save:node\ToolsMsg\Macro_perl.h \[1.2\] cmd
 Save:node\ToolsMsg\Macro_perl.h \[1.3\] str

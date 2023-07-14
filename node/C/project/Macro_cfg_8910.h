@@ -531,9 +531,8 @@ config:spiflash_cfg.c  646
 //	#define  PS_STONE_SECTOR_NUM		124 // 123 //123
 
 
-// fota分区小可能报错
-fdl_bootloader\nor_bootloader\src\nor_bootloader_fota_uix8910.scf  0xB800
-
+// error
+Save:node\C\project\Macro_Note_8910trace.h  __flash__
 
 
 ### 107 分区

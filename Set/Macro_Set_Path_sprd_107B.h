@@ -5,6 +5,8 @@
 ###
 
 0Key  = 8910
+1Key  = t107
+2Key  = w22P5
 
 HWPath  = HWNV:T107\W20.46.4\
 HW:\\

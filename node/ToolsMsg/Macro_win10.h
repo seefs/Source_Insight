@@ -8,7 +8,7 @@ Save:node\ToolsMsg\Macro_win10.h \[1.1\] 加速固态硬盘
 Save:node\ToolsMsg\Macro_win10.h \[1.2\] 驱动没装完
 Save:node\ToolsMsg\Macro_win10.h \[1.3\] 
 Save:node\ToolsMsg\Macro_win10.h \[1.4\] 
-Save:node\ToolsMsg\Macro_win10.h \[1.5\] 
+Save:node\ToolsMsg\Macro_win10.h \[1.5\] RAR
 Save:node\ToolsMsg\Macro_win10.h \[1.6\] box
 Save:node\ToolsMsg\Macro_win10.h \[1.7\] win10编译时间
 Save:node\ToolsMsg\Macro_win10.h \[1.8\] win10慢
@@ -95,9 +95,10 @@ https://www.disktool.cn/content-center/ssd-alignment-windows-10-2111.html
 
 
 
-[1.5] 
+[1.5] RAR
+//
 
-
+cmd_f:start chrome.exe  https://www.win-rar.com/download.html
 
 
 [1.6] 

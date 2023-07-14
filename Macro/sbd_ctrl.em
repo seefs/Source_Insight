@@ -392,8 +392,10 @@ macro CtrlR()
 	
 	//check file type
 	prompt = 100
-	//a.marco file
-	//b.normal file
+	//仅处理宏文件:
+	//  100.normal file
+	//  0.  marco file
+	//  1.  all file
 	if(IsNoteFile(hbuf) || IsMdFile(hbuf))
 		prompt = 0
 	else if(ReadMode(getContentsRow(0))>0)

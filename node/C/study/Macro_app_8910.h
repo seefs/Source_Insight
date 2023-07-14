@@ -1632,11 +1632,7 @@ app:browser\c\mmibrowser_func.c  MMIBROWSER_IsOnlyChooseStorage
 //MMIBROWSER_GetNetSettingIndex：根据sim卡，获取对应的设置的index
 //MMICONNECTION_GetLinkSettingItemByIndex来获取网络设置
 
-// CQ:
-//	sim 卡中的 spn/pnn 字串必须和 net_comparetable 中的 pnn_or_spn 中设置的一样，
-//	区分大小写。
-//	运营商中apn 信息，需要在 ntac 文件中添加，并且表中 Setting Name 保持一致，
-//	也区分大小写
+
 
 // browser--set--mainpage
 app:browser\c\mmibrowser_wintable_setting.c  MMI_RESULT_E^BrwHandleSettingHomepageWinMsg

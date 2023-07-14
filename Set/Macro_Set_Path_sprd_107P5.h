@@ -5,7 +5,8 @@
 ###
 
 0Key  = 8910
-1Key  = wa03u_git
+1Key  = t107
+2Key  = w22P5
 
 HWPath  = HWNV:T107\W20.46.4\
 HW:\\
@@ -50,9 +51,9 @@ prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
 // 目录名称自动拼接成mk名称
-//projectKey   = F55T_N31T_4G_MUL
+projectKey   = F55T_N32T_4G_TR
 //projectKey   = F79T_DERONG
-projectKey   = F76T_SUOAI_V909L_TAG
+//projectKey   = F76T_SUOAI_V909L
 //projectKey   = S89T_BYD_A9
 //projectKey   = S98T_JL_F13
 //projectKey   = X399T_M2

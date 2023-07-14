@@ -262,8 +262,19 @@ Error loading key "/c/Users/seefs/.ssh/tmp04": invalid format
 //	 puttykeyfile = C:\\Users\\Administrator\\.ssh\\bm2048pub.ppk
 
 
-[1.11] 
+[1.11] error
+### Permission denied
+//	git@github.com: Permission denied (publickey).
+//	fatal: Could not read from remote repository.
+//	Please make sure you have the correct access rights
+//	and the repository exists.
 
+// 重新生成公钥, 用可以load的key, 删除 .ssh\config--ip
+//   id_rsa 与 id_github 不一致
+//     id_rsa:    RSA
+//     id_github: OPENSSH
+ssh-keygen -y -f id_rsa > id_rsa_new.pub
+ssh-keygen -y -f id_github > id_github_new.pub
 
 
 

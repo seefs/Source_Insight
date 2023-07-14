@@ -4,8 +4,8 @@
 Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 //
 //zmaeePath = prj:zmaee
-zmaeePath = prj:zmaee_128X128
-//zmaeePath = app:zmaee_128X128
+//zmaeePath = prj:zmaee_128X128
+zmaeePath = app:zmaee_128X128
 zmaee:\\
 
 //目录:
@@ -30,7 +30,7 @@ Save:node\C\study\Macro_zmaee_8910.h \[1.17\] patch
 Save:node\C\study\Macro_zmaee_8910.h \[1.18\] 电子保卡
 Save:node\C\study\Macro_zmaee_8910.h \[1.19\] log
 Save:node\C\study\Macro_zmaee_8910.h \[1.20\] 下拉列表禁用返回
-Save:node\C\study\Macro_zmaee_8910.h \[1.21\] 
+Save:node\C\study\Macro_zmaee_8910.h \[1.21\] qrcode
 Save:node\C\study\Macro_zmaee_8910.h \[1.22\] ring
 Save:node\C\study\Macro_zmaee_8910.h \[1.23\] 
 
@@ -355,12 +355,9 @@ zmaee:c\zmaee_watchos.c  SPD_ENGINEER_SW46E_TWO_KEY
 
 
 
-[1.21] 
-
-
-
-
-
+[1.21] qrcode
+//1.imei未上传, 二维码显示空白
+//2.默认imei, 用不了 
 
 
 

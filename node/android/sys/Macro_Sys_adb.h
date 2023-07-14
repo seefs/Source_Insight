@@ -119,7 +119,7 @@ adb push  E:\资源\壁纸\default_thumb\default_thumb.jpg /data/data/com.androi
 adb pull   /data/data/com.android.launcher3/files/default_thumb.jpg E:\资源\壁纸\default_thumb_new.jpg
 
 
-[1.10] adb -- other apk
+[1.10] __adb__ -- other apk
 //install
 cmd_w: adb install  E:\Desktop\SGIT\GitClub\apk\app-release.apk
 

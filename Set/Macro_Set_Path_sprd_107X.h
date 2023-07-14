@@ -6,7 +6,7 @@
 
 0Key  = 8910
 1Key  = t107
-2Key  = _log_x212
+2Key  = x212
 
 HWPath  = HWNV:T107\W20.46.4\
 HW:\\

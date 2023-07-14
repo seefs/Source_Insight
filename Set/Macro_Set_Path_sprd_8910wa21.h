@@ -5,7 +5,8 @@
 ###
 
 0Key  = 8910
-1Key  = wa22u_new
+1Key  = UIS8910
+2Key  = w21_svn
 
 HWPath  = HWNV:8910FFS\W21.12.7\
 HW:\\
@@ -47,14 +48,11 @@ analog_phyKey  = analog_phy_sc2720
 prjPath  = SPDE_PRJ\{project}\
 prj:\\
 
-//projectKey   = BMWATCH_FS_22
 //projectKey   = WA22U_SW46E_QQVGA
-//projectKey   = WA22U_W59E_QQVGA
-//projectKey   = WA22U_W48E
-//projectKey   = WA22U_Y63_DM_QQVGA
-projectKey   = WA22U_Y63_4G_DH_DM_QQVGA
+projectKey   = WA22U_Y63_4G_DH_BAT_DM_QQVGA
+
 // --DEBUG --USER
-curKey   = UIS8910_ROM_16MB_SS_{project}_USER
+curKey   = UIS8910_ROM_16MB_SS_{project}_DEBUG
 //curKey   = UIS8910_ROM_16MB_SS_{project}_DEBUG
 //curKey   = UIS8910_240x320BAR_16MB_SS_{project}_USER
 cfgKey   = uis8910_phone_user_base_config

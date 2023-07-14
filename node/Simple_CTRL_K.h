@@ -1,21 +1,21 @@
 
 //目录:
-Save:node\Simple_CTRL_K.h \[1.1\] F1-0 宏说明
-Save:node\Simple_CTRL_K.h \[2.1\] F1 (按F1后再按0~9、A~Z、F2~F12)
-Save:node\Simple_CTRL_K.h \[2.2\] F2 打开目录
-Save:node\Simple_CTRL_K.h \[2.3\] F3 修改默认向前搜索
-Save:node\Simple_CTRL_K.h \[2.4\] F4 修改默认向后搜索
-Save:node\Simple_CTRL_K.h \[2.5\] F5 打开/跳转
-Save:node\Simple_CTRL_K.h \[2.6\] F6 (区分中文跳转 和 英文跳转)
-Save:node\Simple_CTRL_K.h \[2.7\] F7
-Save:node\Simple_CTRL_K.h \[2.8\] F8 高亮   同原功能
-Save:node\Simple_CTRL_K.h \[2.9\] F9 关闭文件, 显示所有宏, 便于查找
-Save:node\Simple_CTRL_K.h \[2.10\] F10 分组索引
-Save:node\Simple_CTRL_K.h \[2.11\] F11 宏注释 项目笔记
-Save:node\Simple_CTRL_K.h \[2.12\] F12 显示配置 是否定义
-Save:node\Simple_CTRL_K.h \[2.13\] CTRL组合
-Save:node\Simple_CTRL_K.h \[3.1\] 当前文件快捷键
-Save:node\Simple_CTRL_K.h \[3.2\] 特殊标记
+Save:node\Simple_CTRL_K.h \[1.0\] F1-0 宏说明
+Save:node\Simple_CTRL_K.h \[1.1\] F1 (按F1后再按0~9、A~Z、F2~F12)
+Save:node\Simple_CTRL_K.h \[1.2\] F2 打开目录
+Save:node\Simple_CTRL_K.h \[1.3\] F3 修改默认向前搜索
+Save:node\Simple_CTRL_K.h \[1.4\] F4 修改默认向后搜索
+Save:node\Simple_CTRL_K.h \[1.5\] F5 打开/跳转
+Save:node\Simple_CTRL_K.h \[1.6\] F6 (区分中文跳转 和 英文跳转)
+Save:node\Simple_CTRL_K.h \[1.7\] F7
+Save:node\Simple_CTRL_K.h \[1.8\] F8 高亮   同原功能
+Save:node\Simple_CTRL_K.h \[1.9\] F9 关闭文件, 显示所有宏, 便于查找
+Save:node\Simple_CTRL_K.h \[1.10\] F10 分组索引
+Save:node\Simple_CTRL_K.h \[1.11\] F11 宏注释 项目笔记
+Save:node\Simple_CTRL_K.h \[1.12\] F12 显示配置 是否定义
+Save:node\Simple_CTRL_K.h \[1.13\] CTRL组合
+Save:node\Simple_CTRL_K.h \[1.14\] 当前文件快捷键
+Save:node\Simple_CTRL_K.h \[1.15\] 特殊标记
 
 //新功能(未完成):
 Save:node\Simple_CTRL_K.h unfinished:

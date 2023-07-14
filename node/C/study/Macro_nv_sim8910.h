@@ -140,6 +140,11 @@ common\nv_parameters\nv_type\nv_type_uix8910.nvm  sim_slot_cfg
 // 原来这个配置是开放给客户的，客户可调的，由于现在CP只开放bin，这个控制看不到。如果生成BIN后，这个配置就不可变了。
 target.def
 
+// 0x0 / 0x1
+common\nv_parameters\modem_nv\Cfw_nv.nvm  sim_card_switch
+
+
+
 
 ### sim反--107
 nv:\\
