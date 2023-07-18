@@ -1,16 +1,15 @@
 
-
-Save
+// base
 Save:node\Macro_File.h
 Save:node\Macro_History.h
 Save:node\Macro_Future.h
 Save:node\Macro_Memory.h
 Save:node\Macro_tmp.h
+patch:ssh\Macro_user_psw.h
 
-//C
+// C
 Save:node\C\Macro_Note_C.h
-patch:node\Macro_node_bug.h  __cur__  //其他问题
-Save:node\ToolsMsg\Macro_win_soft.h  __Hyper_V__
+patch:node\Macro_node_patch.h    __code__
 //
 Save:node\C\project\Macro_Note_{0}.h
 Save:node\C\project\Macro_cfg_{0}.h
@@ -18,31 +17,27 @@ Save:node\C\study\
 Save:node\C\study\Macro_app_{0}.h
 Save:node\C\study\Macro_gui_{0}.h
 Save:node\C\study\Macro_fun_{0}.h
-Save:node\C\study\Macro_doc_{0}.h
 Save:node\C\study\Macro_res_{0}.h
 Save:node\C\study\Macro_nv_{0}.h
 // ext
-Save:node\C\study\
 Save:node\C\study\Macro_slide_8910.h
 Save:node\C\study\Macro_zmaee_8910.h
 Save:node\C\study\Macro_tihu_8910.h
-Save:node\C\study\Macro_patch_third.h
 // 功能测试
 Save:Help\Macro_Note_Test.h   goto_word
 
 /***********************************************************************/
 
+//
+patch:node\chrome\Macro_node_chrome.h
+
+明天带包
 
 
 
 
-
-
-
-
-
-
-
+// set cur
+Save:set\Macro_Set_Path_sprd_{pro}.h  curKey
 // mtk
 make {cur} {GSM} new
 make {cur} {GSM} remake
@@ -63,7 +58,7 @@ make p={cur} m={resource_main} VS2010=1
 make p={cur} m=app_watch_main
 make p={cur} m=custom_drv
 make p={cur} m=dc
-make p={cur} m= custom_drv {app_main}  update image
+make p={cur} m=custom_drv {app_main}  update image
 make p={cur} m=ctrl
 make p={cur} m=chip_drv
 make p={cur} m=nv_parameter

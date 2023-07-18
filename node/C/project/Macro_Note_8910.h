@@ -307,6 +307,10 @@ dvp spi mipi’‚÷÷°£
 // 60mA
 chip_drv\chip_plf\uix8910\uix8910_reg_analog.h  ANA_FLASH_VALUE
 
+// …¡π‚µ∆
+prj:project_{cur}.mk  DC_FLASH_SUPPORT = TRUE
+prj:project_{cur}.mk  CAMERA_FLASH_AS_TORCH = TRUE
+
 
 
 [1.6] TP

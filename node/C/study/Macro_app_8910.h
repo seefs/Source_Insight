@@ -579,8 +579,6 @@ Save:node\C\study\Macro_app_8910cl.h  __clInit__
 Save:node\C\study\Macro_app_8910cl.h  __CLNum__      # 50Ìõ¼ÇÂ¼
 Save:node\C\study\Macro_app_8910cl.h  __clDeltail__
 Save:node\C\study\Macro_app_8910cl.h  __clTab__
-Save:node\C\study\Macro_app_8910cl.h  __clTab__
-Save:node\C\study\Macro_app_8910cl.h  __clTab__
 // ==>pos
 Save:node\C\study\Macro_pos_8910.h  __cl__
 // ==>image

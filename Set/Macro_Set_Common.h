@@ -4,7 +4,7 @@
 
 
 ### 其他路径:
-HWNVPath  = G:\_HW_NV_PARA.git\
+HWNVPath  = D:\soft\HW_NV_PARA\
 HWNV:\\
 	
 downPath  = D:\Desktop\tool\UIS8910_down_tool\wa03u_git\
@@ -25,6 +25,7 @@ code:\\
 
 hexoPath  = D:\save\hexo\
 hexo:\\
+
 
 
 ### 安装路径:
@@ -68,5 +69,6 @@ AdminKey   = Administrator
 Admin2Key  = seefs
 tNumKey = Disable
 dGroupKey = 目录
+bookmarkKey   = patch:node\chrome\chrome_bookmark.csv
 
 
