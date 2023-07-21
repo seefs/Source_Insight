@@ -4,7 +4,9 @@
 ### 1.Configuration of the "save" directory
 ###
 
-0Key  = Base
+0Key  = 8910
+1Key  = UIS8910
+2Key  = _log
 
 nodeCPath = node\C\
 nodeC:\\
@@ -17,6 +19,16 @@ studyC:\\
 
 demoCPath = nodeC:{prj}_demo\
 demoC:\\
+
+
+###
+godPath = Save:node\S\god\
+god:\\
+softPath = Save:node\S\soft\
+soft:\\
+
+hexoPath  = Save:node\S\god\hexo\
+hexo:\\
 
 
 ### 1.Key

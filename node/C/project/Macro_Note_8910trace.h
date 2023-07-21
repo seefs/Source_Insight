@@ -219,6 +219,10 @@ https://unisupport.unisoc.com/file/index?fileid=34086
 //	会解析出两个*.pcm文件夹 说明log抓取成功。
 //	谢谢！
 
+//SPCSS01205265
+//?log中没有抓到dsp audio dump，怎么确认这个抓到没有？
+//? 通话开启前发送at。log抓完后重放一下log，然后分别点击 Tool -> audio DSP Transfer -> Transfer 会解析出*.pcm文件夹 说明log抓取成功。
+// 谢谢！
 
 
 [1.7] __ATEST__

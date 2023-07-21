@@ -87,6 +87,7 @@ C:\Users\Administrator\.ssh\config
 // git bash here
 ssh-keygen -t rsa -C "seefs@163.com"
 ssh-keygen -t rsa -C "xiaojia_bm@163.com" -f ~/.ssh/id_github2
+ssh-keygen -t rsa -C "284487000@qq.com" -f ~/.ssh/id_github3
 ssh-keygen -t ed25519 -C "xiaojia_bm@163.com"
 ssh-keygen -t rsa -b 2048 -C "xiaojia_bm@163.com"
 
@@ -96,6 +97,7 @@ C:\Users\{Admin}\.ssh\id_rsa.pub                //未使用----------seefs@163.com
 C:\Users\{Admin}\.ssh\id_gitlab.pub             //未使用
 C:\Users\{Admin}\.ssh\id_github.pub             //github--个人用--seefs@163.com
 C:\Users\{Admin}\.ssh\id_github2.pub            //github--公司用--xiaojia_bm@163.com
+C:\Users\{Admin}\.ssh\id_github3.pub            //github--个人用--284487000@qq.com
 C:\Users\{Admin}\.ssh\bm2048pub.ppk             //GitLab--公司用--xiaojia_bm@163.com(小乌龟)
 
 // ssh bak

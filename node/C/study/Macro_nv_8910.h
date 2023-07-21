@@ -6,7 +6,7 @@ Save:node\C\study\Macro_nv_8910.h \[1.3\] audio----------audio相关
 Save:node\C\study\Macro_nv_8910.h \[1.4\] mmi------------common相关
 Save:node\C\study\Macro_nv_8910.h \[1.5\] nv define------tool/app相关
 Save:node\C\study\Macro_nv_8910.h \[1.6\] nvTool
-Save:node\C\study\Macro_nv_8910.h \[1.7\] apn
+Save:node\C\study\Macro_nv_8910.h \[1.7\] 
 Save:node\C\study\Macro_nv_8910.h \[1.8\] hw_ver00-------单软多硬
 Save:node\C\study\Macro_nv_8910.h \[1.9\] test
 Save:node\C\study\Macro_nv_8910.h \[1.10\] Card-----------电子保卡

@@ -136,7 +136,7 @@
 70 = G:\T1072
 71 = G:\T1071
 71 = E:\T107old
-72 = E:\soft\T107_W22P5
+72 = D:\soft\T107_W22P5
 73 = D:\soft\T1073
 74 = E:\T107base
 76 = G:\wa03u_git
@@ -204,7 +204,7 @@
 100RuleEn = tmp
 100tag1 = tmp
 // 估计外部用的少，common里也可以设置
-101 = G:\_HW_NV_PARA.git
+101 = D:\soft\HW_NV_PARA
 102 = D:\save\patch
 103 = D:\save\SI
 104 = D:\save\tool_mini
@@ -250,7 +250,7 @@
 150Same = hexo
 150Cfg = null
 //
-150 = D:\project\S\hexo.git\hexo-blog-geektutu
+150 = D:\save\hexo
 151 = D:\project\S\hexo.git\hexo-blog-geektutu_old
 152 = D:\project\S\hexo.git\hexo-theme-geektutu
 153 = D:\project\S\hexo.git\seefs.github.io

@@ -378,7 +378,7 @@ resource:Common\DATA\
 {8910wa21}\source:resource\Common\DATA\
 {8910wa_git}\source:resource\Common\DATA\
 //	excel
-patch:code\UIS8910\_ex_w22\
+patch:code\UIS8910\_ex_w21_svn\
 // 8910 apn str-list
 Save:node\C\study\Macro_doc_apn8910.h
 Save:node\C\study\Macro_doc_apn8910.h  __strApn__

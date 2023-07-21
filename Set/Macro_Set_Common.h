@@ -23,8 +23,8 @@ App:\\
 codePath  = D:\project\
 code:\\
 
-hexoPath  = D:\save\hexo\
-hexo:\\
+hexoSrcPath  = D:\save\hexo\
+hexoSrc:\\
 
 
 
