@@ -27,6 +27,19 @@ Save:node\ToolsMsg\Macro_SI.h  __SI_MTK__
 [1.2] 8910/mtk
 Save:node\C\project\
 
+###
+Save:node\C\Macro_Note_C.h
+patch:node\Macro_node_patch.h    __code__
+//
+Save:node\C\project\Macro_Note_{0}.h
+Save:node\C\project\Macro_cfg_{0}.h
+Save:node\C\study\
+Save:node\C\study\Macro_app_{0}.h
+Save:node\C\study\Macro_gui_{0}.h
+Save:node\C\study\Macro_fun_{0}.h
+Save:node\C\study\Macro_res_{0}.h
+Save:node\C\study\Macro_nv_{0}.h
+
 ### __Note__
 // __8910__
 Save:node\C\project\Macro_Note_8910.h
@@ -35,7 +48,6 @@ Save:node\C\study\
 Save:node\C\study\Macro_app_8910.h
 Save:node\C\study\Macro_gui_8910.h
 Save:node\C\study\Macro_fun_8910.h
-Save:node\C\study\Macro_doc_8910.h
 Save:node\C\study\Macro_res_8910.h
 Save:node\C\study\Macro_nv_8910.h
 
@@ -76,10 +88,8 @@ Save:node\C\study\Macro_tihu_8910.h
 Save:node\C\study\Macro_zmaee_8910.h
 Save:node\C\study\Macro_sch_8910.h
 Save:node\C\study\Macro_socket_8910.h
-// patch
-Save:node\C\study\Macro_patch_8910.h
-Save:node\C\study\Macro_patch_third.h
-
+// π¶ƒ‹≤‚ ‘
+Save:Help\Macro_Note_Test.h   goto_word
 
 
 

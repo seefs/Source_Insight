@@ -25,7 +25,10 @@ code:\\
 
 hexoSrcPath  = D:\save\hexo\
 hexoSrc:\\
-
+bmDocPath    = hexoSrc:source\_posts\
+bmDoc:\
+hexoPath  = Save:node\S\god\hexo\
+hexo:\\
 
 
 ### °²×°Â·¾¶:

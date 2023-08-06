@@ -27,9 +27,6 @@ god:\\
 softPath = Save:node\S\soft\
 soft:\\
 
-hexoPath  = Save:node\S\god\hexo\
-hexo:\\
-
 
 ### 1.Key
 prjKey  = project
@@ -38,6 +35,7 @@ sizeNext  = 2
 size1Key  = Git2
 size2Key  = Git
 abcKey  = cmd
+searchKey  = base
 
 
 ### 4.tmp

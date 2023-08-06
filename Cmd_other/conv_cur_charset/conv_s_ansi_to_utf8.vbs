@@ -5,20 +5,22 @@ charset_new = "UTF-8"
 
 
 ' Convert the entire directory, there can be no non-existent folders:
-ConvPath ".\\..\\..\\node\\S\\Info",charset_new
-ConvPath ".\\..\\..\\node\\S\\install",charset_new
-ConvPath ".\\..\\..\\node\\S\\Mirror",charset_new
-ConvPath ".\\..\\..\\node\\S\\Mirror\\Lang",charset_new
-ConvPath ".\\..\\..\\node\\S\\Mirror\\Wu",charset_new
-ConvPath ".\\..\\..\\node\\S\\project",charset_new
-ConvPath ".\\..\\..\\node\\S\\project\\Doc",charset_new
-ConvPath ".\\..\\..\\node\\S\\projectBank",charset_new
-ConvPath ".\\..\\..\\node\\S\\projectTry",charset_new
-ConvPath ".\\..\\..\\node\\S\\study",charset_new
-ConvPath ".\\..\\..\\node\\S\\World",charset_new
+ConvPath ".\\..\\..\\node\\S\\cfg",charset_new
+ConvPath ".\\..\\..\\node\\S\\God\\Bank",charset_new
+ConvPath ".\\..\\..\\node\\S\\God\\Bank\\project",charset_new
+ConvPath ".\\..\\..\\node\\S\\God\\hexo",charset_new
+ConvPath ".\\..\\..\\node\\S\\God\\hexo\\install",charset_new
+ConvPath ".\\..\\..\\node\\S\\God\\meta",charset_new
+ConvPath ".\\..\\..\\node\\S\\God\\Try",charset_new
+ConvPath ".\\..\\..\\node\\S\\God\\Try\\project",charset_new
+ConvPath ".\\..\\..\\node\\S\\God",charset_new
+ConvPath ".\\..\\..\\node\\S\\info",charset_new
+ConvPath ".\\..\\..\\node\\S\\soft\\cfg",charset_new
+ConvPath ".\\..\\..\\node\\S\\soft\\help",charset_new
+ConvPath ".\\..\\..\\node\\S\\soft\\install",charset_new
+ConvPath ".\\..\\..\\node\\S\\soft\\project",charset_new
+ConvPath ".\\..\\..\\node\\S\\soft",charset_new
 
-' Convert a single file:
-convertct ".\\..\\..\\node\\S\\Macro_Note_S.h",charset_new
 
 
 MsgBox "End of character encoding conversion",,"prompt"
