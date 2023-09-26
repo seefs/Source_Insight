@@ -11,7 +11,7 @@ Save:node\ToolsMsg\Macro_git_config.h \[1.7\] auto psw
 Save:node\ToolsMsg\Macro_git_config.h \[1.8\] git(小乌龟)
 Save:node\ToolsMsg\Macro_git_config.h \[1.9\] gitlab---------------url, 换电脑
 Save:node\ToolsMsg\Macro_git_config.h \[1.10\] ppk
-Save:node\ToolsMsg\Macro_git_config.h \[1.11\] 
+Save:node\ToolsMsg\Macro_git_config.h \[1.11\] error
 Save:node\ToolsMsg\Macro_git_config.h \[1.12\] 
 
 
@@ -85,9 +85,9 @@ C:\Users\Administrator\.ssh\config
 [1.5] create SSH key
 ### __SSH__
 // git bash here
-ssh-keygen -t rsa -C "seefs@163.com"
+ssh-keygen -t rsa -C "seefs@163.com"            //-C后其实就是个key
 ssh-keygen -t rsa -C "xiaojia_bm@163.com" -f ~/.ssh/id_github2
-ssh-keygen -t rsa -C "284487000@qq.com" -f ~/.ssh/id_github3
+ssh-keygen -t rsa -C "284487000@qq.com" -f ~/.ssh/id_github_seefsi
 ssh-keygen -t ed25519 -C "xiaojia_bm@163.com"
 ssh-keygen -t rsa -b 2048 -C "xiaojia_bm@163.com"
 
@@ -97,11 +97,11 @@ C:\Users\{Admin}\.ssh\id_rsa.pub                //未使用----------seefs@163.com
 C:\Users\{Admin}\.ssh\id_gitlab.pub             //未使用
 C:\Users\{Admin}\.ssh\id_github.pub             //github--个人用--seefs@163.com
 C:\Users\{Admin}\.ssh\id_github2.pub            //github--公司用--xiaojia_bm@163.com
-C:\Users\{Admin}\.ssh\id_github3.pub            //github--个人用--284487000@qq.com
+C:\Users\{Admin}\.ssh\id_github_seefsi.pub      //github--个人用--284487000@qq.com
 C:\Users\{Admin}\.ssh\bm2048pub.ppk             //GitLab--公司用--xiaojia_bm@163.com(小乌龟)
 
 // ssh bak
-Save:\..\patch\ssh\\PC_BM_ME
+patch:ssh\
 
 // 复制该密钥
 // 打开 github
@@ -203,14 +203,6 @@ C:\Program Files\TortoiseGit\bin\TortoiseGitPlink.exe
 //putty 报错
 // no supported authentication methods available (server sent:publickey...)
 
-### error
-//
-//too many files to display
-https://gitlab.com/tortoisegit/tortoisegit/-/issues/3878
-
-### 设置git path
-Save:Cmd_other\add_env\
-Save:Cmd_other\add_env\set_env_git_path.bat
 
 
 [1.9] __gitlab__
@@ -234,24 +226,6 @@ patch:ssh\Macro_github_url.h
 //	7、git push -u origin master
 
 
-// 新电脑
-//	Load key "/c/Users/seefs/.ssh/tmp04": invalid format
-//	git@github.com: Permission denied (publickey).
-//
-https://blog.csdn.net/qq_40047019/article/details/122898308
-//
-ssh-agent -s
-//	SSH_AUTH_SOCK=/tmp/ssh-NrsndLFrMOsx/agent.1117; export SSH_AUTH_SOCK;
-//	SSH_AGENT_PID=1118; export SSH_AGENT_PID;
-//	echo Agent pid 1118;
-ssh-add ~/.ssh/tmp04
-// --err1
-//Could not open a connection to your authentication agent.
-// 先执行如下命令
-ssh-agent bash
-// --err2
-Error loading key "/c/Users/seefs/.ssh/tmp04": invalid format
-// 换 id_github
 
 
 
@@ -278,6 +252,43 @@ Error loading key "/c/Users/seefs/.ssh/tmp04": invalid format
 ssh-keygen -y -f id_rsa > id_rsa_new.pub
 ssh-keygen -y -f id_github > id_github_new.pub
 
+
+### 新电脑
+//	Load key "/c/Users/seefs/.ssh/tmp04": invalid format
+//	git@github.com: Permission denied (publickey).
+https://blog.csdn.net/qq_40047019/article/details/122898308
+
+ssh-keygen -t rsa -C "seefs@163.com"
+//
+
+ssh -v git@github.com
+//	git@github.com: Permission denied (publickey).
+
+ssh-agent -s
+//	SSH_AUTH_SOCK=/tmp/ssh-NrsndLFrMOsx/agent.1117; export SSH_AUTH_SOCK;
+//	SSH_AGENT_PID=1118; export SSH_AGENT_PID;
+//	echo Agent pid 1118;
+
+// 先执行如下命令
+ssh-agent bash
+
+ssh-add ~/.ssh/id_github
+// --先执行如下命令, 不会提示以下err:
+//Could not open a connection to your authentication agent.
+
+
+### 测试您的 SSH 连接
+ssh -T git@github.com
+
+
+### error
+//
+//too many files to display
+https://gitlab.com/tortoisegit/tortoisegit/-/issues/3878
+
+### 设置git path
+Save:Cmd_other\add_env\
+Save:Cmd_other\add_env\set_env_git_path.bat
 
 
 [1.12] 
