@@ -265,11 +265,6 @@
 155key = hexo
 
 
-//
-//
-//新加 type 同步修改笔记名称：
-//    getBaseFileType(pathName s)
-//
 
 
 
